@@ -1,0 +1,136 @@
+---
+title: "TP : Gestion des permissions avancées avec SUID, SGID et ACL sous Linux"
+author: Tom Avenel
+date: 2024 / 2025
+correction: false
+---
+
+## Objectif du TP
+
+Ce TP a pour objectif d'apprendre l'utilisation des permissions avancées sous Linux, à savoir le SUID, le SGID et les listes de contrôle d'accès (ACL). À la fin de ce TP, vous serez capable de configurer des permissions avancées pour différents utilisateurs et groupes.
+
+### Prérequis
+
+- Avoir des connaissances de base sur les permissions standards (rwx).
+
+## Partie 1 : Comprendre et manipuler le SUID
+
+### Qu'est-ce que le SUID ?
+
+Le `SUID` (Set User ID) est un mécanisme de permission qui permet à un utilisateur d'exécuter un fichier avec les privilèges de son propriétaire, plutôt qu'avec ses propres privilèges.
+
+### Étape 1 : Création d'un fichier avec le SUID
+
+1. Créez un script simple appartenant à root et affichant qui est l'utilisateur courant du script.
+2. Rendre ce script exécutable et tester son exécution
+3. Modifiez les permissions pour activer le SUID et tester l'exécution du script
+
+::: {.correction .if correction="true"}
+```bash
+#!/bin/bash
+echo "Le fichier est exécuté avec les privilèges de $(whoami)"
+```
+
+```bash
+chmod +x suid_script.sh
+sudo chown root:root suid_script.sh
+./suid_script.sh
+# tom
+```
+
+```bash
+sudo chmod u+s suid_script.sh
+./suid_script.sh
+# root
+```
+:::
+
+
+## Partie 2 : Comprendre et manipuler le SGID
+
+### Qu'est-ce que le SGID ?
+
+Le SGID (Set Group ID) est similaire au SUID, mais il affecte le groupe propriétaire du fichier. Il permet à un utilisateur d'exécuter un fichier avec les privilèges du groupe propriétaire.
+
+### Étape 1 : Création d'un fichier avec le SGID
+
+1. Créez un répertoire de test :
+    ```bash
+    mkdir /tmp/sgid_test
+    ```
+
+2. Modifiez les permissions du répertoire pour activer le SGID :
+    ```bash
+    chmod g+s /tmp/sgid_test
+    ```
+
+3. Ajoutez un fichier dans le répertoire :
+    ```bash
+    touch /tmp/sgid_test/fichier_test.txt
+    ```
+
+4. Vérifiez les permissions du fichier et du répertoire :
+    ```bash
+    ls -l /tmp/sgid_test
+    ```
+
+### Question :
+
+Expliquez ce que fait le SGID dans cet exemple. Que se passe-t-il lorsque vous ajoutez des fichiers dans ce répertoire ?
+
+::: {.correction .if correction="true"}
+Le SGID (Set Group ID) applique les privilèges du groupe propriétaire à tout fichier créé dans le répertoire. Dans l'exemple, lorsque le SGID est activé sur le répertoire `/tmp/sgid_test`, tout fichier créé dans ce répertoire hérite automatiquement du groupe du répertoire, plutôt que du groupe de l'utilisateur qui a créé le fichier. Cela permet d'assurer que tous les fichiers créés dans un répertoire partagé appartiennent à un même groupe, facilitant la collaboration entre les membres de ce groupe.
+:::
+
+## Partie 3 : Gestion des ACL
+
+### Qu'est-ce que les ACL ?
+
+Les ACL (Access Control List) permettent de définir des permissions supplémentaires plus fines que celles offertes par les permissions standards (rwx). Les ACL sont utiles lorsque plusieurs utilisateurs ou groupes nécessitent des permissions différentes sur un fichier ou un répertoire.
+
+### Étape 1 : Activation des ACL
+
+1. Assurez-vous que le système de fichiers supporte les ACL :
+    ```bash
+    mount | grep acl
+    ```
+
+    Si ce n'est pas le cas, ajoutez l'option `acl` dans `/etc/fstab` pour votre système de fichiers et redémarrez la machine ou remontez le système de fichiers : `mount -o remount /`
+
+### Étape 2 : Gestion des ACL avec `setfacl` et `getfacl`
+
+1. Créez un fichier de test :
+    ```bash
+    touch fichier_acl.txt
+    ```
+
+2. Ajoutez une permission spécifique pour un utilisateur (par exemple `user1`) :
+    ```bash
+    setfacl -m u:user1:r fichier_acl.txt
+    ```
+
+3. Vérifiez les ACL du fichier :
+    ```bash
+    getfacl fichier_acl.txt
+    ```
+
+4. Ajoutez une permission pour un groupe (par exemple `group1`) :
+    ```bash
+    setfacl -m g:group1:rw fichier_acl.txt
+    ```
+
+5. Supprimez une ACL pour un utilisateur :
+    ```bash
+    setfacl -x u:user1 fichier_acl.txt
+    ```
+
+### Question :
+
+Pourquoi utiliser des ACL plutôt que les permissions standard ? Donnez un exemple de cas où cela est utile.
+
+::: {.correction .if correction="true"}
+Les ACL permettent de définir des permissions plus fines que les permissions standard rwx. Les permissions standard ne permettent de définir des droits d'accès qu'à trois entités : le propriétaire, le groupe, et les autres utilisateurs. Avec les ACL, vous pouvez spécifier des permissions pour des utilisateurs et des groupes supplémentaires, sans changer la propriété ou les groupes principaux du fichier.
+
+Exemple de cas utile : Supposons que vous ayez un fichier accessible par un groupe de collaborateurs, mais qu'un seul membre d'un autre groupe ait besoin d'y accéder en écriture. Au lieu de changer la propriété ou de créer un groupe spécifique, vous pouvez utiliser les ACL pour attribuer l'accès en écriture à cet utilisateur, tout en laissant les autres utilisateurs du groupe avec les permissions habituelles.
+:::
+

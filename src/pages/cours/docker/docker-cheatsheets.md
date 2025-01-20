@@ -1,0 +1,1185 @@
+---
+title: Cheatsheets Docker®
+author: Tom Avenel
+date: 2023 / 2024
+---
+
+# Cheatsheet Docker®
+
+## Docker run : créer un nouveau conteneur
+
+```sh
+docker run nginx
+```
+
+***Le conteneur s'arrête une fois le processus principal (`PID=1`, celui lancé par `docker run`) se termine !***
+
+-d : créer un nouveau conteneur en arrière-plan
+
+```sh
+docker run -d nginx
+```
+
+-name : nommer le conteneur
+
+```sh
+docker run --name my_custom_name nginx
+```
+
+--restart=always : permet de redémarrer le conteneur en cas d'échec
+
+```sh
+docker run --restart=always nginx
+```
+
+## Docker exec : exécuter une commande dans un conteneur déjà en activité
+
+```sh
+docker exec 12345 /bin/ls
+```
+
+`docker exec` revient à créer un conteneur temporaire avec le même contexte (`namespace`, `cgroups`) que le conteneur en cours d'exécution. **Rend la main une fois la commande terminée**
+
+-ti : attacher le terminal pour une commande interactive (ne rend pas la main, par exemple pour un shell)
+
+```sh
+docker exec -ti 12345 /bin/bash
+```
+
+## Docker ps : lister les conteneurs créés
+
+Lister les csontainers en activité :
+
+```sh
+docker ps
+```
+
+Lister tous les conteneurs (y compris ceux arrêtés) :
+
+```sh
+docker ps -a
+```
+
+## Démarrer un conteneur
+
+```sh
+docker start 12345
+```
+
+## Arrêter un conteneur
+
+### Arrêt propre (SIGTERM)
+
+```sh
+docker stop 12345
+```
+
+### Terminaison (SIGKILL)
+
+```sh
+docker kill 12345
+```
+
+## Supprimer un conteneur
+
+```sh
+docker rm 12345
+```
+
+## Docker images : lister les images récupérées ou créées sur la machine hôte
+
+Lister toutes les images :
+
+```sh
+docker images -a
+```
+
+## Supprimer une image :
+
+```sh
+docker rmi 54321
+```
+
+## Lister les commandes ayant créé l'image et inspecter les layers
+
+```sh
+docker image history mon_image
+```
+
+## Différence runtime vs image
+
+```sh
+docker diff
+```
+
+## Docker container
+
+- `docker container ls`
+- `docker container attach` : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
+- `docker container cp`
+- `docker container prune` : détruit tous les conteneurs arrêtés
+- `docker container rename`
+- `docker container stats`
+- `docker container commit` : crée une image depuis un conteneur existant (à éviter)
+
+## Docker volumes
+
+### Gérer les volumes
+
+```sh
+docker volume create
+```
+
+```sh
+docker volume ls
+```
+
+```sh
+docker volume inspect mon_volume
+```
+
+### Créer un volume à la création du conteneur
+
+```sh
+docker run -v /mon_volume mon_image …
+```
+
+### Data volume depuis une baie externe et driver Convoy (NFS, EBS d’AWS)
+
+```sh
+docker run --volume-driver=convoy -v mon_volume:/mon_point_de_montage_dans_conteneur …
+```
+
+### Data volume en mémoire temporaire (tmpfs)
+
+```sh
+docker run --mount type=tmpfs,destination=/tmp …
+```
+
+### Bind mount
+
+-v : crée un volume depuis un répertoire visible de la machine hôte et monte ce volume comme répertoire local au conteneur.
+
+```sh
+docker run -v mon_repertoire_sur_hote:mon_point_de_montage_dans_conteneur mon_image …
+
+# Par exemple :
+docker run -it -v C:\mon_repertoire_partage_windows:/mon_repertoire_dans_le_conteneur …
+```
+
+### Utilisation de volume
+
+```sh
+docker run -v mon_volume:mon_point_de_montage_dans_conteneur mon_image
+```
+
+## Configuration du réseau
+
+### Lister les réseaux
+
+```sh
+docker network ls
+```
+
+### Créer un réseau
+
+```sh
+docker network create --driver <DRIVER TYPE> mon_reseau
+```
+
+```sh
+docker network create --driver <DRIVER TYPE> mon_reseau --subnet=192.168.0.0/24 --gateway=192.168.0.1
+```
+
+### Supprimer un réseau
+
+```sh
+docker network rm mon_reseau
+```
+
+### Inspecter un réseau
+
+```sh
+docker network inspect mon_reseau
+```
+
+### Créer un conteneur en utilisant un réseau spécifique
+
+```sh
+docker run --network mon_reseau mon_image
+```
+
+### Connexion / Déconnexion à un réseau existant
+
+```sh
+docker network connect mon_reseau mon_conteneur
+docker network disconnect mon_reseau mon_conteneur
+```
+
+### Mapping de port
+
+-p : lier un port du conteneur (80) à un port de l’hôte (8080)
+
+```sh
+docker run -p 8080:80 mon_conteneur
+```
+
+### Nettoyer les ressources
+
+```sh
+docker container prune # supprime les conteneurs inactifs
+docker image prune # supprime les images non utilisées par un conteneur
+
+# Supprimer **toutes** les données non utilisées : conteneurs, images, réseaux, volumes.
+# Attention à la perte de données !!!
+docker system prune 
+```
+
+## Limiter les ressources d'un conteneur
+
+Exemple de version simpliste :
+
+```sh
+docker run --memory="1g" --cpus=".5" mon_image
+```
+
+Voir la documentation : <https://docs.docker.com/config/containers/resource_constraints/>
+
+## Exporter les logs (ELK, …)
+
+```sh
+docker --log-driver gelf --log-opt gelf-address=udp://… …
+```
+
+## Docker scout : analyses de sécurité
+
+Docker Scout est un outil de sécurité pour Docker qui aide à analyser les images de conteneurs pour identifier les vulnérabilités, les dépendances, et les mises à jour de sécurité nécessaires.
+
+```sh
+docker scout cves nginx:latest # CVEs (vulnérabilités)
+docker scout recommendations nginx:latest # MAJ à effectuer
+```
+
+## Serveur distant
+
+Docker est un modèle client-serveur, il est possible d'exposer publiquement le serveur (qui tourne les conteneurs) et d'utiliser un client distant :
+
+```sh
+# Server
+dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+# Client
+docker -H tcp://<ip>:2375 ps
+```
+
+### Accéder au serveur du host dans un conteneur
+
+```sh
+# On monte la socket Docker dans le conteneur
+docker run -v var/run/docker.sock:/var/run/docker.sock …`
+# Permet de faire des commandes : `docker …` à l'intérieur du conteneur et de voir les autres conteneurs (monitoring, …)
+```
+
+## docker init : générer un Dockerfile
+
+`docker init` : génère un `Dockerfile` de base pour une application, sans avoir à le créer manuellement.
+
+## Liens
+
+:::link
+Voir aussi : 
+
+- <https://spacelift.io/blog/docker-commands-cheat-sheet>
+- <https://github.com/wsargent/docker-cheat-sheet>
+- <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/cheat-sheet/>
+:::
+
+---
+
+# Cheatsheet Dockerfile
+
+- `FROM` : permet de définir l'image source
+- `ADD <SOURCE> <DESTINATION>` : permet d'ajouter / télécharger des fichiers dans l'image
+  + `<SOURCE>` est un chemin sur l'hyperviseur, `<DESTINATION>` est un chemin à l'intérieur de l'image en création.
+- `RUN` : permet d’exécuter des commandes dans votre conteneur
+- `EXPOSE <PORT>` : permet de documenter l'utilisation d'un port du conteneur.
+  + Remplacer `<PORT>` par la valeur du port utilisé dans le conteneur, par exemple `80`.
+- `VOLUME <VOL>` : permet de documenter l'utilisation d'un répertoire du conteneur partageant des données avec l'hyperviseur.
+  + Remplacer `<VOL>` par le chemin du répertoire dans le conteneur.
+- `WORKDIR <DIR>` : définit le nouveau répertoire de travail à utiliser dans le conteneur.
+  + Remplacer `<DIR>` par le chemin du répertoire dans le conteneur.
+- `ENTRYPOINT <COMMANDE>` : définit le processus principal (PID=1) permettant de lancer le conteneur.
+  + Remplacer `<COMMANDE>` par la commande désirée, par exemple `['java','-jar','myapp.jar']`.
+  + Préférer un tableau d'arguments à une chaîne de caractères.
+  + Non remplacé par la commande `docker run`
+- `CMD <COMMANDE>` : (re)définit la commande et ses arguments par défaut à exécuter au démarrage du conteneur.
+  + Préférer un tableau d'arguments à une chaîne de caractères.
+  + Peut être remplacé par la commande `docker run …`
+  + Préférer définir uniquement des arguments par défaut et définir la commande dans l'entrypoint (évite de remplacer le processus par un `docker run …`)
+- `HEALTHCHECK` permet d'exécuter une commande dans le conteneur pour vérifier son état : [doc](https://docs.docker.com/reference/dockerfile/#healthcheck)
+
+[Lien : vidéo CMD vs ENTRYPOINT mais c'est quoi la différence ?](https://www.youtube.com/watch?v=kfyDu5R4VrM)
+
+## Build multistage
+
+- Plusieurs `FROM … AS etapeX`
+- Seul le dernier `FROM …` reste dans l'image finale, le reste est détruit…
+- …Mais accès aux fichiers d'un autre layer `FROM` précédent par `COPY --from=etapeX …` dans le `Dockerfile`
+
+```Dockerfile
+FROM npm AS mon-build
+RUN npm package
+
+# On repart d'une image vierge
+FROM nginx AS ma-prod
+# Mais on peut copier des fichiers du build précédent
+COPY --fromt=mon-build dist/ build/
+…
+```
+
+## Créer une image depuis un fichier nommé `Dockerfile`
+
+```sh
+docker build -t NOM_DE_MA_NOUVELLE_IMAGE REPERTOIRE_DU_DOCKERFILE
+```
+
+## Créer une image depuis un fichier ayant un nom personnalisé
+
+```sh
+docker build -t NOM_DE_MA_NOUVELLE_IMAGE -f NOM_DU_FICHIER_DOCKERFILE REPERTOIRE_DU_DOCKERFILE
+```
+
+## Tagger une image
+
+`docker tag <NOM_DE_MON_IMAGE_LOCALE:latest> <YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE>` : tag d'une image locale pour préparer un tag distant.
+
+## Publier une image
+
+`docker push YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE`
+
+## Chercher une image
+
+`docker search`
+
+## Ignorer des fichiers lors d'un `ADD` : `.dockerignore`
+
+Le fichier `.dockerignore` fonctionne comme un fichier `.gitignore` pour ignorer des fichiers lors d'une opération `ADD` dans le `Dockerfile`.
+
+Ce fichier contient une liste de patterns de fichiers à ignorer, par exemple :
+
+```
+.git
+node_modules
+build
+```
+
+---
+
+# Cheatsheet docker compose
+
+## Démarrer la stack :
+
+```sh
+docker compose up
+```
+
+## Détruire la stack :
+
+```sh
+docker compose down
+```
+
+## Afficher la configuration finale après vérification
+
+```sh
+docker compose config
+```
+
+## Reconstruire la stack en cas de changement dans le code
+
+```sh
+docker compose watch
+```
+
+## Attributs d’un service décrit dans un `docker compose.yml` :
+
+- `image` : permet de spécifier l'image source pour le conteneur
+- `build` : permet de spécifier le `Dockerfile` source pour créer l'image du conteneur
+- `volume` : permet de spécifier les points de montage entre le système hôte et les conteneurs
+- `restart` : permet de définir le comportement du conteneur en cas d'arrêt du processus
+- `environment` : permet de définir les variables d’environnement
+- `depends_on ` permet de dire que le conteneur dépend d'un autre conteneur
+- `ports` : permet de définir les ports disponibles entre la machine host et le conteneur
+
+---
+
+# Cheatsheet Kubernetes
+
+## Commandes
+
+### Lister les types de ressources supportées
+
+```sh
+kubectl api-resources -o wide
+kubectl explain [--recursive] RESOURCE_NAME # documentation
+```
+
+### Vérifier la présence d'un composant k8s
+
+```sh
+kubectl get apiservices | grep metrics-server
+```
+
+### dry-run : simule la commande sans modification du cluster
+
+```sh
+kubectl … --dry-run
+```
+
+### Sorties `yaml` ou `json` et sélecteur `jsonpath`
+
+```sh
+kubectl -o yaml …
+kubectl -o json …
+kubectl -o jsonpath='{.items[0].metadata.name}' …
+```
+
+### Gérer le contexte
+
+```sh
+kubectl config get-contexts
+
+kubectl config use-context …
+```
+
+### Créer une ressource (pod, service, ...)
+
+```sh
+kubectl apply -f monFichier.yml
+```
+
+### Lister les ressources créés (pod, service, storage, ...)
+
+```sh
+kubectl get deployments,svc,pods,pv,pvc,nodes [--all-namespaces]
+```
+
+### Inspecter des ressources
+
+```sh
+kubectl describe deployment myapp1
+
+kubectl describe po/mon-pod
+
+kubectl describe svc myapp1-sv
+```
+
+### Lister les conteneurs d'un pod (i.e. namespace==default)
+
+```sh
+kubectl describe po/mon-pod -n default
+```
+
+### Port-Forward (pour débug uniquement)
+
+```sh
+kubectl port-forward MON_POD PORT_HOST:PORT_CONTAINER
+```
+
+### Exposer un Pod (créer un service)
+
+```sh
+kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
+```
+
+### kubectl exec : exécuter une commande dans un pod déjà en activité
+
+```sh
+kubectl exec -it MON_POD -c MON_CONTENEUR MA_COMMANDE
+```
+
+### kubectl attach : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
+
+```sh
+kubectl attach MON_POD
+```
+
+### Gestion des labels
+
+```sh
+kubectl label MA_RESSOURCE MON_LABEL=MA_VALEUR
+kubectl label MA_RESSOURCE MON_LABEL- # supprime le label
+```
+
+### Namespace
+
+```sh
+kubectl create namespace MON_NAMESPACE
+kubectl get namespaces
+kubectl config set-context minikube --namespace=MON_NAMESPACE [--cluster=…]
+```
+
+### ConfigMap
+
+```sh
+# Créer un ConfigMap depuis un fichier de conf existant
+kubectl create configmap ma-conf --from-file=mon_fichier.conf
+
+# Créer un ConfigMap depuis un fichier d'environnement (clé=valeur) existant
+kubectl create configmap ma-conf-env --from-env-file=mon_fichier.env
+```
+
+### (Auto)scaling
+
+```sh
+# Voir fichier de déploiement
+
+# Scaling manuel
+kubectl scale deployment php-apache --replicas=3
+
+# Scaling automatique
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+kubectl get hpa
+```
+
+### Rollout
+
+```sh
+kubectl rollout status deployment my-app
+kubectl rollout history deployment my-app [--revision=2]
+kubectl rollout undo deployment my-app [--to-revision=2]
+kubectl rollout pause/resume deployment my-app
+kubectl rollout restart deployment my-app-deployment # recrée les pods
+```
+
+## Structure d'un fichier k8s
+
+```yaml
+apiVersion: v1 # Version de l'APIServer k8s
+kind: … # Le type de ressource à gérer : Pod, Deployment, Service, …
+metadata: # Métadatas de la ressource
+  name: … # nom (interne) de la ressource à créer et/ou monitorer
+  namespace: mon-namespace # Namespace spécial (optionnel - sinon default)
+  labels: # ajout de labels (optionnel)
+    ma-cle: ma-valeur 
+  […]
+spec: # Les spécifications de la ressource. Différent pour chaque type de ressource
+  […]
+```
+
+## Pod
+
+### Exemple minimal de fichier de description d'un Pod
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp # nom du Pod
+spec:
+  containers:
+  - name: front-end # nom du conteneur
+    image: nginx # image Docker
+    ports:
+    - containerPort: 80 # port dans le conteneur
+```
+
+### Exemple avancé de fichier de description d'un Pod
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp # nom du Pod
+  labels:
+    app: web # optionnel - pour utiliser un service
+  namespace: mon-namespace # optionnel - dans un namespace dédié
+spec:
+  containers:
+  - name: main-container # nom du conteneur
+    image: nginx # image Docker
+    command: ["printenv"] # The command to start the container
+    args: ["HOSTNAME", "KUBERNETES_PORT"] # args for the command
+    restartPolicy: Always # restart toujours si stoppé
+    restartPolicy: OnFailure # restart seulement si erreur
+    restartPolicy: Never
+    env: # Variables d'environnement à injecter dans le conteneur
+    - name: MA_VAR # variable $MA_VAR
+      value: 42 # MA_VAR=42
+    - name: LOG_LEVEL # variable $LOG_LEVEL
+      valueFrom: # récupération de la valeur de $LOG_LEVEL à injecter
+        configMapKeyRef: #env de type ConfigMap (`ma-config-map-env` déjà créée avec `log_level=…`)
+          name: ma-config-map-env # où récupérer la valeur ?
+          key: log_level # la valeur de $LOG_LEVEL à injecter
+    ports: # Ports à exposer
+    - containerPort: 80 # port dans le conteneur
+    resources:
+      requests: # ressources minimum
+        memory: 50Mi
+        cpu: 0.2
+      limits: # ressources maximum
+        memory: 250Mi
+        cpu: 0.5
+    readinessProbe: # check du démarrage
+      httpGet:
+        path: /monitor/status
+        port: 8080
+        scheme: HTTPS
+      initialDelaySeconds: 2
+      periodSeconds: 1
+    livenessProbe: # check pendant fonctionnement (healthcheck)
+      httpGet:
+        path: /monitor/status
+        port: 8080
+        scheme: HTTPS
+      initialDelaySeconds: 20
+      periodSeconds: 10
+    volumeMounts: # montage de volume
+    - name: mon-volume # on monte une configuration de volume appelée 'mon-volume'
+      mountPath: "/mon/montage/dans/le/conteneur" # point de montage à l'intérieur du conteneur
+    - name: log-volume
+      mountPath: "/log"
+  - name: sidecar-container
+    image: busybox
+    command: ["sh", "-c", "tail -f /logs/app.log"]
+    volumeMounts:
+    - name: log-volume
+      mountPath: "/log"
+  initContainers:
+  - name: wait-for-myservice
+    image: busybox:1.28
+    command: ['sh', '-c', "until nslookup myservice.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
+  volumes:
+  - name: mon-volume # le nom de la configuration de volume à utiliser
+    configMap: #volume de type ConfigMap (`ma-config-map` déjà créée)
+      name: ma-config-map # où récupérer la configuration ?
+  - name: log-volume
+    emptyDir: {}
+  affinity: # Affinité : Pod / Node
+    nodeAffinity: # Affinité de Node
+      # [1] affinité "hard" : requis sinon échec
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: environment
+                operator: In
+                values:
+                  - production
+      # ou [2] affinité "soft" : si possible sinon non respecté
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+              - key: environment
+                operator: In
+                values:
+                  - production
+    podAffinity: # Affinité de Pod (ou `podAntiAffinity`)
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              cle: valeur # label à matcher
+          topologyKey: "kubernetes.io/hostname"
+```
+
+Pour un `podAffinity`, le champ `topologyKey` spécifie la "topologie" sur laquelle vous voulez appliquer l'affinité. Ici, `kubernetes.io/hostname` signifie que les pods doivent être planifiés sur le même nœud (identifié par le nom d'hôte). Autres exemples : `topology.kubernetes.io/zone` pour contraindre les pods à être répartis sur plusieurs zones de disponibilité (si le cluster est multi-zone, comme dans les environnements cloud) ou `topology.kubernetes.io/region` pour répartir les pods dans différentes régions géographiques (pour les clusters multi-régions).
+
+### Priorité, réquisition et limitation de ressources
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: test
+    image: alpine
+    priority: 0 # schédulé en dernier
+    resources:
+      requests: # ressources minimum
+        memory: 50Mi
+        cpu: 0.2
+      limits: # ressources maximum
+        memory: 250Mi
+        cpu: 0.5
+```
+
+Pour récupérer la classe de QoS :
+
+```sh
+kubectl get pod <POD_NAME> -o jsonpath='{ .status.qosClass}{"\n"}'
+```
+
+#### Qualité de Service (QoS)
+
+Les définition de `resources requests` et `resources limits` permettent de gérer de la QoS dans Kubernetes.
+
+Il existe 3 classes de QoS :
+
+- `Guaranteed` : tous les conteneurs du Pod doivent définir des `resource` `requests` (`memory`, `cpu`) et les mêmes valeurs en `limits`.
+  - Ressources garanties en permanence pour le pod.
+  - Prioritaires pour l'accès aux ressources et derniers à être évincés en cas de pression sur les ressources.
+- sinon : `Burstable` : au moins 1 conteneur du Pod a une `resource request` ou `limit`
+  - Garantie minimale de ressources définie par leurs demandes.
+  - Peuvent utiliser plus de ressources que leur demande si elles sont disponibles sur le nœud.
+  - Évincés après les pods `BestEffort` mais avant les pods `Guaranteed`.
+- sinon : `BestEffort`: priorité la plus basse, ressources allouées en fonction de leur disponibilité.
+  - Aucune garantie de ressources.
+  - Premiers à être évincés.
+
+##### Exemple de QoS Guaranteed
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: test
+    image: alpine
+    resources:
+      requests: # ressources minimum
+        memory: 250Mi
+        cpu: 0.5
+      limits: # ressources maximum
+        memory: 250Mi
+        cpu: 0.5
+```
+
+##### Exemple de QoS Burstable
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: test
+    image: alpine
+    resources:
+      requests: # ressources minimum
+        memory: 50Mi
+      limits: # ressources maximum
+        memory: 250Mi
+```
+
+##### Exemple de QoS BestEffort
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: test
+    image: alpine
+```
+
+### Priorité, Tolerations et Terminaison d'un Pod
+
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: test
+    image: alpine
+    terminationGracePeriodSeconds: 60 # shutdown timeout before kill
+    # Logs écrits à la destruction d'un Pod
+    terminationMessagePath: /dev/termination-log # défaut
+    terminationMessagePolicy: File # défaut
+    terminationMessagePolicy: FallbackToLogsOnError # utilise les logs du Pod
+    # Tolerations
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready # Node : not ready
+      key: node.kubernetes.io/unreachable # Node : unreachable
+      operator: Exists
+      tolerationSeconds: 300 # Le Pod peut rester 300s sur un Node "NotReady" ou "Unreachable"
+```
+
+Voir aussi :
+
+- <https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/>
+- <https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/>
+- <https://kubernetes.io/docs/concepts/scheduling-eviction/>
+- <https://kubernetes.io/docs/tasks/debug/debug-application/determine-reason-pod-failure/>
+- <https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/>
+- <https://medium.com/@prateek.malhotra004/demystifying-taint-and-toleration-in-kubernetes-controlling-the-pod-placement-with-precision-d4549c411c67>
+
+## Stockage k8s
+
+### Exemple de montage d'un volume hostPath
+
+```yaml
+apiVersion: v1
+kind: Pod
+[…]
+spec:
+  containers:
+  - name: front-end # nom du conteneur
+    image: nginx # image Docker
+    volumeMounts: # montage de volume
+    - name: mon-volume # on monte une configuration de volume appelée 'mon-volume'
+      mountPath: "/mon/montage/dans/le/conteneur" # point de montage à l'intérieur du conteneur
+  volumes:
+  - name: mon-volume # le nom de la configuration de volume à utiliser
+    hostPath:
+      path: /data/nginx # Chemin sur le nœud hôte
+      type: DirectoryOrCreate # Type de volume
+```
+
+Valeurs possible de `type` de `hostPath` : `DirectoryOrCreate`, `Directory`, `FileOrCreate`, `File`, `Socket`, `CharDevice`, `BlockDevice`
+
+### Exemple de montage d'un PersistantVolume
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+spec:
+  capacity:
+    storage: 1Gi  # Capacité du volume
+  accessModes:
+    - ReadWriteOnce  # Seul un pod peut monter ce volume en lecture/écriture à la fois
+  hostPath:
+    path: "/mnt/data"  # Chemin sur le Node où les données seront stockées
+```
+
+### Exemple de PersistanceVolumeClaim
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+spec:
+  accessModes:
+    - ReadWriteOnce  # Mode d'accès similaire à celui du PV
+  resources:
+    requests:
+      storage: 500Mi  # La quantité de stockage demandée par ce PVC
+```
+
+## Network k8s
+
+### Exemple de fichier de ClusterIP
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-clusterip-service
+  labels:
+    app: my-app
+spec:
+  type: ClusterIP
+  selector:
+    app: my-app
+  ports:
+    - port: 80          # Port interne exposé par le service
+      targetPort: 8080   # Port interne sur lequel le conteneur écoute
+```
+
+Pour accéder au service : <http://my-clusterip-service> (même namespace) ou <http://my-clusterip-service.nom-du-namespace.svc.cluster.local>
+
+### Exemple de fichier de NodePort
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nodeport-service
+  labels:
+    app: my-app
+spec:
+  type: NodePort
+  selector:
+    app: my-app
+  ports:
+    - port: 8080      # Port interne exposé par le service
+      targetPort: 80  # Port sur lequel le conteneur écoute
+      nodePort: 30007 # Port sur lequel le service sera accessible depuis l'extérieur du cluster (facultatif)
+```
+
+`nodePort` est facultatif : Kubernetes définiera un port aléatoire si cet attribut n'est pas renseigné. Assurez-vous que le port `NodePort` choisi est dans la plage autorisée par votre configuration Kubernetes (généralement entre 30000 et 32767).
+
+### Exemple de fichier LoadBalancer
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nodeport-service
+  labels:
+    app: my-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-app
+  ports:
+    - port: 8080      # Port interne exposé par le service
+      targetPort: 80  # Port sur lequel le conteneur écoute
+      nodePort: 30007 # Port sur lequel le service sera accessible depuis l'extérieur du cluster (facultatif)
+```
+
+### DNS spécifique
+
+Par défaut, un Pod utilise le DNS de Kubernetes.
+
+Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/>
+
+## Deployment
+
+### Exemple de fichier de Déploiement et de Service
+
+```yaml
+# From: https://raw.githubusercontent.com/kubernetes/website/main/content/en/examples/application/php-apache.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache # Requis
+        image: registry.k8s.io/hpa-example # Requis
+        ports:
+        - containerPort: 80
+        startupProbe: […] # sonde de démarrage
+        livenessProbe: […] # sonde de healthcheck
+        readinessProbe: […] # sonde d'état "Ready"
+        resources: # limitation de ressources pour auto-scaling
+          limits:
+            cpu: 500m # 0.5 unités CPU
+          requests:
+            cpu: 200m # 0.2 unités CPU
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+```
+
+### Exemple de stratégie
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3  # 3 réplicas du pod
+  strategy:
+    type: RollingUpdate  # Stratégie par défaut, sinon `Recreate`
+    rollingUpdate:
+      maxUnavailable: 25%  # Maximum 25% de pods indisponibles pendant la mise à jour
+      maxSurge: 25%        # Maximum 25% de nouveaux pods créés en plus des réplicas prévus
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: my-app-image
+```
+
+Kubernetes "met à jour" le Déploiement en cas de changement dans la configuration : version de l'image, … Il faut donc avoir des tags différents dans les images pour mettre à jour le(s) conteneur(s) (par exemple : `mon-image-docker:v1`, `mon-image-docker-v2`, … ).
+
+### Exemple de fichier de ReplicaSet
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replicaset
+  labels:
+    app: my-app
+spec:
+  replicas: 3  # Nombre de réplicas (pods) à maintenir
+  selector: # Le ReplicaSet doit surveiller les pods avec le label app: my-app.
+    matchLabels:
+      app: my-app
+  template: # Modèle pour créer les pods si nécessaire
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: nginx:latest 
+        ports:
+        - containerPort: 80
+```
+
+### Exemple de fichier HorizontalPodAutoscaler
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php-apache
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50 # 50% de CPU
+```
+
+## Exemple de fichier de Namespace
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mon-namespace
+```
+
+Pour plus d’information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
+
+---
+
+# Cheatsheet Helm
+
+## Parcourir le hub et les répos
+
+```sh
+helm search hub prometheus
+helm repo list
+```
+
+## Récupérer et déployer un chart tout fait
+
+```sh
+helm repo add …
+helm install [--set …] <chart_name>
+```
+
+## Historique, rollback
+
+```sh
+helm show all <chart_name>
+helm history …
+helm upgrade <chart_name>
+helm rollback <chart_name>
+```
+
+---
+
+# Cheatsheet FluxCD
+
+## Bootstrap d'un nouveau dépôt
+
+<https://fluxcd.io/flux/installation/bootstrap/>
+
+## Ajouter un dépôt Git existant
+
+```sh
+flux create source git flux-system \
+  --url=https://github.com/MON_GITHUB_USER/MON_GITHUB_REPO \
+  --branch=main \
+  --interval=1m \
+  --namespace=flux-system
+```
+
+## Déployer des manifestes Kubernetes à partir de ce dépôt
+
+```sh
+flux create kustomization flux-system \
+  --target-namespace=default \
+  --source=flux-system \
+  --path="./clusters/my-cluster" \
+  --prune=true \
+  --interval=10m \
+  --namespace=flux-system
+```
+
+## Lister les HelmRelease
+
+```sh
+flux get helmreleases --all-namespaces
+```
+
+## Suivre les kustomizations
+
+```sh
+flux get kustomizations --watch
+```
+
+## Suspendre / reprendre la MAJ depuis une kustomization
+
+```sh
+flux suspend/resume kustomization nom-de-la-kusto
+```
+
+## Appliquer une kustomization manuellement
+
+### Tester les modifications (dry-run)
+
+```sh
+kubectl kustomize path/to/local/kustomization
+```
+
+### Appliquer la kustomization depuis un fichier local (test)
+
+```sh
+kubectl apply -k path/to/local/kustomization
+```
+
+---
+
+# Cheatsheet Kyverno
+
+Exemple simple de politique `Kyverno` qui refuse la création de pods s'ils n'ont pas de label `app` :
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-app-label
+spec:
+  validationFailureAction: enforce
+  rules:
+    - name: check-for-label
+      match:
+        resources:
+          kinds:
+            - Pod
+      validate:
+        message: "Le label 'app' est requis pour tous les pods."
+        pattern:
+          metadata:
+            labels:
+              app: "?*"
+```
+
+
+\newpage{}
+
+# Legal
+
+- © 2024 Tom Avenel under CC  BY-SA 4.0
+- Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
+- Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
+
