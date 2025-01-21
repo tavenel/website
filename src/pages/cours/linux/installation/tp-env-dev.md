@@ -47,6 +47,10 @@ Utiliser une police de caractères supportant les symboles permet d'afficher dan
 Utiliser les commandes `fc-list` pour afficher les polices disponibles et `fc-cache -fv` pour raffraichir le cache.
 :::
 
+:::tip
+Quelques polices recommandées pour coder : `Hack`, `Inconsolata`, `Noto Color Emoji`, `FiraCode`, `VictorMono` (cursif).
+:::
+
 ### Interpréteur de commandes : le shell
 
 Le shell lui-même peut être modifié.
