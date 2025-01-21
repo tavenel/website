@@ -66,6 +66,7 @@ updated: 2024-10-17
   - `k3s` (installable par `k3d`), `microk8s` (ubuntu) : implémentations légères
   - `minikube` : version 1 noeud simple pour dev/test uniquement
   - `kind` : déploiement local utilisant Docker : [tuto](https://blog.stephane-robert.info/post/kubernetes-kind/)
+	- [`Talos` : OS immuable pour k8s](https://une-tasse-de.cafe/blog/talos/)
   - `openshift` : orchestrateur de RedHat
 - `swarm` : orchestrateur inclus dans Docker
 - `docker compose` : orchestrateur simple de Docker (dev, test, CI/CD, prod simpliste)
@@ -75,13 +76,14 @@ updated: 2024-10-17
 #### Kubernetes-specific
 
 - linter (vérification fichiers) => `kubeconform`
-- installation => `kubeadm`, `rke`, `kubespray`, `rancher`, [`Talos` : OS immuable pour k8s](https://une-tasse-de.cafe/blog/talos/)
+- installation => `kubeadm`, `rke`, `kubespray`, `rancher`
 - package manager (sur-couche) => `helm`
 - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
-- ingress (service d'accès aux requêtes des pods, _service mesh_) :
+- ingress & service mesh :
   - `traefik` : reverse-proxy automatique
   - `Consul` (+DNS, reverse proxy, load balancing, …)
   - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par `Kiali`
+	- `Cilium` : networking, security, observability
 - scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
 - sécurité
@@ -95,7 +97,10 @@ updated: 2024-10-17
   - `argoscd`
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
-- Consommation d'énergie => `kepler` : monitor Pod energy consumption, `kube-green` : k8s operator for energy-saving actions 
+- Consommation d'énergie :
+  - `kepler` : monitor Pod energy consumption
+	- `kube-green` : k8s operator for energy-saving actions 
+	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
 
 ### 🔙 Backups
 
@@ -258,7 +263,12 @@ updated: 2024-10-17
 
 ## Backend tools
 
-- IA / LLMs : <https://www.langchain.com/>, <https://haystack.deepset.ai/>
+- IA / LLMs :
+  - <https://www.langchain.com/>
+	- <https://haystack.deepset.ai/>
+	- `vLLM`
+	- <https://pollinations.ai/>
+	- <https://docs.sillytavern.app/>
 - Database :
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
@@ -279,6 +289,7 @@ updated: 2024-10-17
   - `portr`
 - Scanner de technologies de site web : <https://ingredients.work/>
 - free icons : <https://tabler.io/icons>
+- <https://frontendchecklist.io/>
 
 ## Data science, data mining, machine learning
 
@@ -336,6 +347,7 @@ updated: 2024-10-17
 ### Outils DevOps poste de travail
 
 - [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
+- <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
 - `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `tfsec`, `trivy`
 - `Kubernetes` => `kubectx` (change context), `kubens` (change namespace), `kube-ps1` (show k8s cluster/context in shell), `kubecolor` (colored kubectl output), `k9s` (Terminal UI k8s management), `k8s lens` (graphical cluster management), `kube-capacity` (monitor ressources)
 - <https://github.com/Lifailon/lazyjournal> : lecteur `journalctl`
