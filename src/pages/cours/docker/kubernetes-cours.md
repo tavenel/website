@@ -473,6 +473,7 @@ _Architecture de FluxCD (source: documentation FluxCD)_
 - [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes)
 - [Article très complet sur le service mesh Istio](https://une-tasse-de.cafe/blog/istio/)
 - <https://spacelift.io/blog/kubernetes-secrets>
+- [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
 
 ---
 

@@ -613,6 +613,7 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
 ---
 
 - <https://coder.com/> : environnements de dev dockerisés
+- [Dev Containers in VS Code](https://www.youtube.com/watch?v=LH5qMhpko8k)
 - <https://github.com/RamiKrispin/vscode-python> : Python dev containers (VScode)
 - [Awesome Docker : development environment](https://github.com/veggiemonk/awesome-docker#development-environment)
 - <https://containertoolbx.org/> : environnements de dev utilisant Podman
