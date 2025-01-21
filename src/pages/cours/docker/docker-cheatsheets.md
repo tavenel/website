@@ -124,6 +124,18 @@ docker diff
 
 ## Docker volumes
 
+## Démarrer un conteneur avec un filesystem Read/Only
+
+```sh
+docker run --read-only …
+```
+
+## Utiliser un filesystem temporaire (tmpfs) dans un répertoire
+
+```sh
+docker run --tmpfs /mon_repertoire …
+```
+
 ### Gérer les volumes
 
 ```sh
@@ -451,6 +463,13 @@ kubectl config get-contexts
 kubectl config use-context …
 ```
 
+### Monitoring
+
+```sh
+kubectl top nodes
+kubectl top pods
+```
+
 ### Créer une ressource (pod, service, ...)
 
 ```sh
@@ -496,6 +515,14 @@ kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
 ```sh
 kubectl exec -it MON_POD -c MON_CONTENEUR MA_COMMANDE
 ```
+
+### kubectl debug démarrer un nouveau conteneur dans un Pod pour du débug
+
+```sh
+kubectl debug mypod -it --image=busybox
+```
+
+Voir : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
 
 ### kubectl attach : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
 
@@ -634,11 +661,15 @@ spec:
         scheme: HTTPS
       initialDelaySeconds: 20
       periodSeconds: 10
+    securityContext:
+      readOnlyRootFilesystem: true
     volumeMounts: # montage de volume
     - name: mon-volume # on monte une configuration de volume appelée 'mon-volume'
       mountPath: "/mon/montage/dans/le/conteneur" # point de montage à l'intérieur du conteneur
     - name: log-volume
       mountPath: "/log"
+    - name: tmpfs-volume
+      mountPath: "/tmp"
   - name: sidecar-container
     image: busybox
     command: ["sh", "-c", "tail -f /logs/app.log"]
@@ -655,6 +686,9 @@ spec:
       name: ma-config-map # où récupérer la configuration ?
   - name: log-volume
     emptyDir: {}
+  - name: tmpfs-volume
+    emptyDir:
+      medium: "Memory"
   affinity: # Affinité : Pod / Node
     nodeAffinity: # Affinité de Node
       # [1] affinité "hard" : requis sinon échec
