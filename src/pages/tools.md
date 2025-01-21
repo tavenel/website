@@ -6,22 +6,27 @@ updated: 2024-10-17
 
 ## Commandes utiles
 
-### `entr` : réexécute une commande
+### 💻 `entr` : réexécute une commande
 
 - `ls file1.py | entr python /_` : réexécute le fichier `file1.py` à chaque sauvegarde
   - `entr -c` : avec clear d'écran
   - `entr -p` : postpone la 1e exécution au 1e changement
   - `entr -r` : redémarre une commande qui tourne en continu
 
-## 🔗 Landscape Devops (liens externes)
+## 🌍 Utilitaires en ligne
+
+- Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
+- Aides sur les commandes : `curl cheat.sh/ma_commande`
+
+## Outils utiles Devops (liste non exhaustive)
+
+### 🔗 Landscape Devops (liens externes)
 
 - <https://platformengineering.org/platform-tooling>
 - <https://xavki.blog/devops-sources/>
 - <https://landscape.cncf.io/>
 
-## Outils utiles Devops (liste non exhaustive)
-
-### Versioning
+### 1️⃣  Versioning
 
 - `git`
   - forges logicielles => `github`, `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, …
@@ -38,7 +43,7 @@ updated: 2024-10-17
   - <https://github.com/adamtornhill/code-maat> : data mining dans dépôt Git
   - <https://github.com/smontanari/code-forensics>
 
-### Conteneurs
+### 🐳 Conteneurs
 
 - `docker`
   - sécurité :
@@ -90,14 +95,15 @@ updated: 2024-10-17
   - `argoscd`
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
+- Consommation d'énergie => `kepler` : monitor Pod energy consumption, `kube-green` : k8s operator for energy-saving actions 
 
-### Backups
+### 🔙 Backups
 
 - `bareos`
 - `restic`
 - `timeshift` (Linux btrfs)
 
-### Infrastructure-as-Code (IaC)
+### 🗃️ Infrastructure-as-Code (IaC)
 
 - `ansible` (sans agent)
   - galaxy : grande collection de rôles tout prêts
@@ -109,18 +115,19 @@ updated: 2024-10-17
 - `puppet`
 - `semaphore` : UI for operating `ansible`, `terraform/OpenTofu`, `pulumi`. <https://semaphoreui.com/>
 - diagrammes : `plantuml`, `mermaid`, `ditaa`, `kroki`, <https://diagrams.mingrammer.com/>, `dot`
+- `Infracost` : track coût plateformes IaC (`Terraform`, …)
 
-### Build tools et dépendances
+### 🛠️ Build tools et dépendances
 
 - gestion et update de dépendances => `renovate`, `asdf`, [mise](https://mise.jdx.dev/)
 - builds généralistes => `make`, `taskfile`, `packer`
 - JS => `npm`, `yarn`, `webpack`
 - Java => `mvn`, `gradle`
 - PHP => `composer`
-- Python => `venv` + `pip`, `poetry`
+- Python => `venv` + `pip`, `poetry`, `uv`, `pipx`, `hatch`
 - Virtual machines => `packer`, `vagrant` (+TUI : <https://github.com/braheezy/violet>), `incus`
 
-### CI/CD
+### ➿ CI/CD
 
 #### Serveurs CI
 
@@ -142,18 +149,12 @@ updated: 2024-10-17
 - `flux` (dans cluster k8s)
 - `argocd` [tuto](https://une-tasse-de.cafe/blog/argocd/)
 
-#### Gestionnaires d'artefacts / dépendances
+#### 📦 Gestionnaires d'artefacts / dépendances
 
 - tous types : `artifactory`, `nexus`
 - Docker, Helm : `Harbor`
 - tracking dépendances : `Dependency Track` [tuto](https://blog.stephane-robert.info/docs/securiser/analyser-code/dependency-track/)
-
-#### Outils de build et de gestion de dépendances dev
-
-- Java : `maven`, `gradle`
-- Python : `pip`, `uv`, `pipx`, `hatch`, `poetry`
-
-### Administration sécurisée
+### 🔐 Administration sécurisée
 
 - `ssh`, `assh` (sur-couche SSH)
   - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
@@ -166,12 +167,14 @@ updated: 2024-10-17
   - `screen` => moins utilisé aujourd'hui, support natif de sessions.
 - clients HTTP : <https://github.com/darrenburns/posting>
 - `wazuh` (intégration Docker)
+- IDS (Intrusion Detection System) : Suricata
 
 ### Supervision / Monitoring / Observabilité
 
 - `prometheus` (push par `node exporter`, puissant mais lourd) + `grafana` => solution classique
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
   - [`grafterm`](https://github.com/slok/grafterm) similaire à grafana mais dans un terminal
+	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
 - `loki` + `grafana`
 - `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
 - `zabbix` (plutôt sysadmin que devops)
@@ -181,7 +184,7 @@ updated: 2024-10-17
 - statuspage : <https://hydrozen.io/>
 - API monitoring : `checkly`
 
-### Gestion des secrets
+### 🤫 Gestion des secrets
 
 - `vault` (HashiCorp), `OpenBAO` (fork open-source)
 - `Sops` (Mozilla, directement dans le fichier)
@@ -192,15 +195,16 @@ updated: 2024-10-17
 - `cron`
 - `dkron`
 
-### Documentation
+### 📔 Documentation
 
 - `markdown` : support natif pour beaucoup d'outils
 - `asciidoc` : proche markdown, documentations poussées
   - `asciidoctor` : websites from asciidoc
 - `pandoc` : transformation de documents d'un format à un autre : md, html, docx, …
 - `docusaurus` : wiki
+- `MarkItDown`: PDF, PPT, Word vers Markdown
 
-### IAM, SSO
+### 🤵 IAM, SSO
 
 - `keycloak`
 
@@ -232,7 +236,7 @@ updated: 2024-10-17
 - `consul`
 - `traefik`
 
-## Tests
+## 🧪 Tests
 
 - Tests unitaires :
   - Java : `Junit`, `TestNG`, `Mockito` (mocks)
@@ -240,20 +244,25 @@ updated: 2024-10-17
   - JS : `Jasmine`, `Jest`, `Mocha`, `Vitest`
   - PHP : `PHPUnit`
 - <https://argos-ci.com/> : tests visuels (offre gratuite 5000 tests / mois)
-- Tests HTTP : <https://hurl.dev/>
+- Tests HTTP / API :
+  - <https://hurl.dev/>
+  - Wiremock (mock API)
+  - [ATAC](https://github.com/Julien-cpsn/ATAC)
+	- `Swagger`
 - Tests de charge : `Jmeter`, `Gatlin`, [Vegeta](https://github.com/tsenart/vegeta)
 - Tests e2e (interface Web principalement) : `Selenium`, `Selenide`, `Geb`, `Testing library`, `Playwright`, `Cypress`
 - BDD : `Cucumber`, `Spock`, `JBehave`
-- Tests API : [ATAC](https://github.com/Julien-cpsn/ATAC), `Swagger`
 - Tests d'infrastructure : <https://une-tasse-de.cafe/blog/testinfra/>
 - <https://testcontainers.com>
 - <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
 
 ## Backend tools
 
+- IA / LLMs : <https://www.langchain.com/>, <https://haystack.deepset.ai/>
 - Database :
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
+	- Backend dans 1 seul fichier : `PocketBase`
 
 ## Frontend development
 
@@ -269,6 +278,7 @@ updated: 2024-10-17
 - exposer API de dev pour tests :
   - `portr`
 - Scanner de technologies de site web : <https://ingredients.work/>
+- free icons : <https://tabler.io/icons>
 
 ## Data science, data mining, machine learning
 
@@ -283,7 +293,54 @@ updated: 2024-10-17
 - `JIRA` : free forever < 10 / team
 - Github Pull-request in terminal : <https://github.com/dlvhdr/gh-dash>
 
-## Awesome lists
+## 💻 Outils Poste de travail
+
+- IDE
+	- (Neo)vim et [LazyVim][LazyVim].
+		- [Kulala](https://www.lazyvim.org/keymaps#kulalanvim) : HTTP requests from Neovim
+	- <https://lazyman.dev/> : test de configurations pour `neovim`.
+	- Voir le guide : [LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes/)
+	- [helix][helix] : très inspiré de `vim`.
+- clients HTTP : <https://github.com/zaghaghi/openapi-tui>, <https://github.com/Julien-cpsn/ATAC>, <https://posting.sh/>
+- bat
+- émulateur de terminal : 
+  - [alacritty][alacritty] : rapide (utilise le GPU)
+  - [foot][foot] : très léger
+  - [wezterm][wezterm], [kitty][kitty], [warp][warp] : terminaux avec fonctionnalités supplémentaires
+- Multiplexeurs de terminaux :
+  - `zellij` : facile pour débuter : `bash <(curl -L zellij.dev/launch)`
+  - [tmux][tmux] : le plus populaire
+- shell :
+	- `bash`, disponible partout (avec [Oh My Bash][oh-my-bash])
+  - `zsh`, plus puissant avec [Oh My ZSH][oh-my-zsh] (voir aussi [awesome-zsh][awesome-zsh])
+	- exotiques : `fish` (avec [Fisher][fisher]), [nu][nushell]
+- prompt shell (`PS1`) :
+	- [pure][pure] : prompt très rapide sous ZSH
+	- [poweline][powerline] : très populaire
+- Police de caractères (font) : utiliser les versions [nerd-fonts][nerd-fonts], polices recommandées pour coder : `Hack`, `Inconsolata`, `Noto Color Emoji`, `FiraCode`, `VictorMono` (cursif)
+- lister / explorer des fichiers :
+  - [eza][eza] (anciennement `exa`) : alternative à `ls`
+	- [bat][bat] : alternative à `cat`. `bat --list-themes`
+	- [yazi][yazi], [n3][nnn] et [ranger][ranger] : explorateurs de fichiers en mode console
+	- [fd][fd] : alternative à `find`
+	- [ripgrep][rg] (`rg`), [Silver Searcher][ag] (`ag` ), [ack][ack] : alternatives à `grep`
+	- [plocate][plocate] : implémentation rapide pour `locate`
+- fuzzy-finder :
+	- [fzf][fzf] : `export FZF_DEFAULT_COMMAND='fd . --hidden'`, `docker ps -a | fzf`, `fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'`
+- interfaces utilisateurs en mode terminal (TUI):
+	- [glow][glow] : lecteur markdown
+	- [lazygit][lazygit]
+	- `ddgr` : recherche Web
+	- <https://aider.chat> : AI pair programming
+
+### Outils DevOps poste de travail
+
+- [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
+- `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `tfsec`, `trivy`
+- `Kubernetes` => `kubectx` (change context), `kubens` (change namespace), `kube-ps1` (show k8s cluster/context in shell), `kubecolor` (colored kubectl output), `k9s` (Terminal UI k8s management), `k8s lens` (graphical cluster management), `kube-capacity` (monitor ressources)
+- <https://github.com/Lifailon/lazyjournal> : lecteur `journalctl`
+
+## 🔗 Awesome lists
 
 - <<https://www.trackawesomelist.com/ansible-community/awesome-ansible/rss.xml> : awesome Ansible
 - <<https://www.trackawesomelist.com/awesome-lists/awesome-bash/rss.xml> : awesome Bash
@@ -315,3 +372,46 @@ updated: 2024-10-17
 - <<https://www.trackawesomelist.com/markodenic/web-development-resources/rss.xml> : awesome Web development resources
 - <<https://www.trackawesomelist.com/aviaryan/awesome-no-login-web-apps/rss.xml> : awesome No-login Web apps
 - <<https://www.trackawesomelist.com/unixorn/awesome-zsh-plugins/rss.xml> : awesome ZSH Plugins
+
+
+
+[ack]: https://github.com/beyondgrep/ack3
+[ag]: https://github.com/ggreer/the_silver_searcher
+[alacritty]: https://alacritty.org/
+[awesome-zsh]: https://github.com/unixorn/awesome-zsh-plugins
+[bat]: https://github.com/sharkdp/bat
+[cmus]: https://cmus.github.io/
+[dry]: https://github.com/moncho/dry
+[eza]: https://github.com/eza-community/eza
+[fd]: https://github.com/sharkdp/fd
+[fisher]: https://github.com/jorgebucaran/fisher
+[foot]: https://codeberg.org/dnkl/foot
+[fzf]: https://github.com/junegunn/fzf
+[glow]: https://github.com/charmbracelet/glow
+[helix]: https://helix-editor.com/
+[k9s]: https://k9scli.io/
+[kitty]: https://sw.kovidgoyal.net/kitty/
+[lazydocker]: https://github.com/jesseduffield/lazydocker
+[lazygit]: https://github.com/jesseduffield/lazygit
+[lazyvim]: https://www.lazyvim.org/
+[nerd-fonts]: https://www.nerdfonts.com/
+[nnn]: https://github.com/jarun/nnn
+[nushell]: https://www.nushell.sh/
+[oh-my-bash]: https://ohmybash.nntoan.com/
+[oh-my-zsh]: https://ohmyz.sh/
+[plocate]: https://plocate.sesse.net/
+[powerline]: https://github.com/b-ryan/powerline-shell
+[pure]: https://github.com/sindresorhus/pure
+[ranger]: https://github.com/ranger/ranger
+[rg]: https://github.com/BurntSushi/ripgrep
+[sc-im]: https://github.com/andmarti1424/sc-im
+[screen]: https://www.gnu.org/software/screen/
+[term-dbms]: https://github.com/mathaou/termdbms
+[tig]: https://jonas.github.io/tig/
+[tmux]: https://github.com/tmux/tmux/wiki
+[warp]: https://www.warp.dev/
+[wezterm]: https://wezfurlong.org/wezterm/index.html
+[yazi]: https://github.com/sxyazi/yazi
+[zellij]: https://zellij.dev/
+[zsh-autosuggestions]: https://github.com/zsh-users/zsh-autosuggestions
+
