@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+import type { MarkdownLayoutProps } from 'astro';
+type Props = MarkdownLayoutProps<{
+	// Define frontmatter props here
+	title: string;
+	date: string;
+	updated: string;
+}>;
+
+// Now, `frontmatter`, `url`, and other Markdown layout properties
+// are accessible with type safety
+const { frontmatter, url } = Astro.props;
+const date = new Date(frontmatter.date).toLocaleDateString();
+const updatedDate = frontmatter.updated ? new Date(frontmatter.updated).toLocaleDateString() : '?';
+---
+<BaseLayout title={frontmatter.title} url={url}>
+	<h1>{frontmatter.title}</h1>
+	<div class="versioning">
+		<div class="version-first">{date}</div>
+		{frontmatter.updated && <div class="version-update">Mis à jour le : {updatedDate}</div>}
+	</div>
+	<slot />
+</BaseLayout>
