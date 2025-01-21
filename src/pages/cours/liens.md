@@ -28,6 +28,7 @@ Quelques références utiles en informatique.
 - VulnHub: plateforme regroupant des machines virtuelles vulnérables à exploiter.
 - Root-Me: plateforme d'apprentissage immersive permettant de se familiariser avec la cybersécurité en s'entraînant sur des environnements réels.
 - SecureCodeWarrior : apprendre à développer du code robuste
+- <https://hackropole.fr/fr/> : rejouer les épreuves du France Cybersecurity Challenge
 
 ## Informations transverses
 
