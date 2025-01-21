@@ -299,6 +299,7 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 - [Recueil de liens et mindmap des outils DevSecOps](https://blog.stephane-robert.info/docs/)
 - [xavki - Vidéos sur le Devops](https://www.youtube.com/playlist?list=PLn6POgpklwWrBPMKFniOiMyLMdxlgFhrG)
 - [xavki - roadmap DevOps](https://www.youtube.com/watch?v=1W0oUxaJz_8)
+- [Playlist 90 days of DevOps](https://yewtu.be/playlist?list=PLsKoqAvws1psCnkDaTPRHaqcTLSTPDFBR)
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 [tuto-openclassrooms-monitoring]: https://openclassrooms.com/fr/courses/2035736-mettez-en-place-lintegration-et-la-livraison-continues-avec-la-demarche-devops/6183162-monitorez-votre-application
