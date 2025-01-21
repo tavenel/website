@@ -852,11 +852,14 @@ Voir le TP correspondant.
 - `git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"` => crée l'alias `git lola` pour afficher un graphe des commit
 - `git log -p` => log avec diff
 - `git commit -S` et `git config --global user.signingkey <gpg_key_id>` => utilisation de commit signés
+- `git clone --depth=1` : clone seulement le dernier commit
+- `git clone --filter=blob:none` : ne pas cloner les blobs (seulement l'historique)
 
 ---
 
 - `git gc --aggressive` => réduire la taille d'un dépôt par un garbage collector aggressif
-- `git sparse-checkout` pour faire du lazy-checkout de fichiers (utile en monorépos).
+- `git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc` : garbage collector très aggressif
+- `git sparse-checkout set [dir1] [dir2] …` pour faire du lazy-checkout de fichiers (utile en monorépos).
 - `git bisect` : crée un arbre binaire de recherche pour trouver un commit en particulier (utile pour trouver la cause d'un bug)
 - `git restore` et `git switch` (2019) : sépare `git checkout` en 2 commandes pour séparer les responsabilités
   - `git switch feature/A` : change de branche
@@ -871,6 +874,23 @@ Voir le TP correspondant.
   - `git commit --fixup=amend:[sha]` change aussi le contenu du commit d'origine.
 - `git push --force` : MAJ forcée de la branche - écrase les contributions sur la branche distante non récupérées !
 - `git push --force-with-lease` : vérification contre les écrasements accidentels (pas de nouveaux commits ajoutés à distance depuis le dernier `fetch` / `pull`).
+
+---
+
+- Retrouver des commits perdus : `git reflog` && `git checkout` && `git cherry-pick <commit-id>`
+- Blame et log sur certaines lignes seulement : `git blame -L 20,40 my_file` et `git log -L20,40:my_file`
+- Blame sur un block en suivant un `PATTERN` : `git blame -L :'PATTERN' my_file` et `git blame -L :'class MyClass' MyClass.java`
+- Blame en ignorant les espaces et sauts de ligne : `git blame -w`
+-  Scheduler une optimisation du dépôt : `git maintenance` et `git maintenance run`
+
+---
+
+- Suivre les fichier(s) / block(s) à travers : 
+  - Le commit courrant : `git blame -C …`
+  - Le commit courrant vs le commit ayant créé le fichier : `git blame -C …`
+  - Tous les commits (très utile) : `git blame -C -C -C …`
+- Code churn : `git log --pretty='' --date=short --numstat`
+- Nuage de mots extraits des messages de commits : `git log --pretty=format:'%s' | tr ' ' '\n' | sed 's/.*/\L&/' | sort | uniq -c | sort -rg | head -n 100`
 
 ---
 
@@ -1009,6 +1029,9 @@ Voir le TP correspondant.
 - [Pourquoi écrire des commits atomiques](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84)
 - [Utiliser git pour gérer ses dotfiles (atlassian)](https://www.atlassian.com/fr/git/tutorials/dotfiles) et [Armand Philippot](https://www.armandphilippot.com/article/dotfiles-git-fichiers-configuration)
 - [Inside .git : structure interne de Git](https://jvns.ca/blog/2024/01/26/inside-git/)
+- [Advanced Git rebase techniques (youtube, Andrew Courter)](https://www.youtube.com/watch?v=OdFW1embsHw)
+- [Git Merge vs Git Rebase (youtube, Andrew Courter)](https://www.youtube.com/watch?v=YMBhhje-Sgs)
+- Exemple de repo avec un conflit de merge à gérer : <https://github.com/redguardtoo/test-git-mergetool>
 
 [git-book]: https://git-scm.com/book/
 [learn-git-branch]: https://learngitbranching.js.org/?locale=fr_FR
