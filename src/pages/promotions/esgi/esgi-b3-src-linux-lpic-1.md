@@ -112,6 +112,9 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - [Créer une distribution "Live" (qui reste en mémoire) - tuto complet, reprend les principes de base, du boot à un système minimal](https://zestedesavoir.com/tutoriels/268/creer-son-premier-rim-linux/)
 - [Supports recommandés par le LPI](https://lpi-fr.net/ressources/supports-de-formation/)
+- <https://www.antoinefi.net/index.php/2024/12/19/linux-lpic-1-101-500-1/>
+- <https://www.antoinefi.net/index.php/2024/12/30/linux-lpic-1-101-500-2/>
+- <https://www.antoinefi.net/index.php/2025/01/13/linux-lpic-1-101-500-3/>
 
 ## LPIC-101
 
