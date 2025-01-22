@@ -4,9 +4,15 @@ pagetitle: Tom Avenel - Gestion de projet
 
 # 📅 Gestion de projet
 
-_Modifié le: 2023-10-30_
+_Modifié le: 2025-01-22_
 
 ![](/resources/images/cover/gestion-projet.jpg)
+
+## La checklist - Création de Projet
+
+- [html](/cours/gestion-projet/checklist-creation-projet.html)
+- [pdf](/cours/gestion-projet/checklist-creation-projet.pdf)
+- [markdown](/cours/gestion-projet/checklist-creation-projet.md)
 
 ## 🤓 Cours - Introduction à la gestion de projet
 
