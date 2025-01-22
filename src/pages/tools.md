@@ -50,6 +50,7 @@ updated: 2024-10-17
     - <https://github.com/docker/docker-bench-security>
     - <https://github.com/aquasecurity/trivy> (inclus k8s)
     - `dive`
+		- <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
 - `podman` : idem Docker sans agent, supporte Docker et pods k8s
 - `cri-o` : container runtime k8s
 
@@ -89,6 +90,7 @@ updated: 2024-10-17
 - sécurité
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
+	- [Sealed Secret](https://une-tasse-de.cafe/blog/sealed-secrets/) : chiffrement de secrets dans k8s
 - supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
@@ -254,7 +256,11 @@ updated: 2024-10-17
   - Wiremock (mock API)
   - [ATAC](https://github.com/Julien-cpsn/ATAC)
 	- `Swagger`
-- Tests de charge : `Jmeter`, `Gatlin`, [Vegeta](https://github.com/tsenart/vegeta)
+- Tests de charge :
+  - `Jmeter`
+	- `Gatlin`
+	- [Vegeta](https://github.com/tsenart/vegeta)
+	- `k6` : [exemple](https://github.com/grafana/quickpizza)
 - Tests e2e (interface Web principalement) : `Selenium`, `Selenide`, `Geb`, `Testing library`, `Playwright`, `Cypress`
 - BDD : `Cucumber`, `Spock`, `JBehave`
 - Tests d'infrastructure : <https://une-tasse-de.cafe/blog/testinfra/>
@@ -349,8 +355,18 @@ updated: 2024-10-17
 - [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
 - `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `tfsec`, `trivy`
-- `Kubernetes` => `kubectx` (change context), `kubens` (change namespace), `kube-ps1` (show k8s cluster/context in shell), `kubecolor` (colored kubectl output), `k9s` (Terminal UI k8s management), `k8s lens` (graphical cluster management), `kube-capacity` (monitor ressources)
-- <https://github.com/Lifailon/lazyjournal> : lecteur `journalctl`
+- `Kubernetes`
+  - `kubectx` : change context
+	- `kubens` : change namespace
+	- `kube-ps1` : show k8s cluster/context in shell
+	- `kubecolor` : colored kubectl output
+	- `k9s` : Terminal UI k8s management
+	- `k8s lens` : graphical cluster management
+	- `kube-capacity` : monitor ressources
+	- <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
+- Gestion de services :
+  - TUI `systemd`: <https://isd-project.github.io/isd/>
+  - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
 
 ## 🔗 Awesome lists
 
