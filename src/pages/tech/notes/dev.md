@@ -6,115 +6,6 @@ updated: 2024-09-29
 
 > Content checked : 2024-09-29
 
-FOSS alternates
-===============
-
-- `dropbox`, `google drive`, `one drive` => `nextcloud`
-- `airtable` => `NocoDB`
-- `notion` => `appflowy`
-- `salesforce CRM` => `ERPNext`
-- `slack` => `mattermost`
-- `zoom`, `teams` => `jitsi`
-- `jira` => `plane`
-- `asana` => `OpenProject`
-- `firebase` => `convex`, `supabase`, `appwrite`, `instant`
-- `heroku`, `netlify`, `vercel` => `coolify`, `dokku`
-- `github` => `gitlab`
-- `docusign` => `docuseal`
-- `google analytics` => `matomo`
-
-Tools
-=====
-
-## Desktop
-
-- `mpv` // `mpv --profile=fast` // `mpv --profile=high-quality` => video player
-- `geany` => small IDE (alpine)
-- `picard` => update mp3 tags graphically and automatically
-- `jpegoptim` => optim jpg size
-- Zero-loss jpg/png
-  - `$ find . -regextype posix-extended -iregex '.*(jpeg|jpg)' -print0 | xargs -0 -n 1 -P $((`nproc`/ 2)) jpegoptim -pt`
-  - `$ find . -name \*.png -print0 | xargs -0 -n 1 -P $((`nproc`/ 2)) -I {} zopflipng -m --lossy_8bit --lossy_transparent -y {} {}`
-- `wdisplays` // `wlr-randr` => manage displays (`Wayland`) : graphical // textual
-- `chattr +i /mnt/backup` => Immutable directory / file
-- packages `gst-plugins-good` && `gst-plugins/libav` : req for YouTube videos
-  - `gst-plugins-vaadi` for hardware acceleration
-- `kiwix` => `.zim` browser (offline websites like Wikipedia)
-- `grim` => screenshots
-
-## Terminal
-
-- See also : </cours/linux/installation/tp-env-dev.md>
-- Terminal emulator : `foot` (Wayland) // `st` (X) // `alacritty` (GPU-accelerated) // `wezterm` (modern) // `zellij`, `tmux` (multiplexers)
-  - `bash <(curl -L zellij.dev/launch)` => terminal multiplexer
-- File editors and IDEs : `vim` // `neovim` (VIM fork in Lua) // `hellix` => "post-moderm" vim
-- File manager : `nnn` // `yazi` // `eza` (better `ls`)
-  - `eza` // `eza -T` => `ls` // `tree` replacement // `bat` (`cat` with syntax highliting, very small)
-  - `eza --header --long --git --icons --sort=ext --tree --accessed --created --modified --group --links --grid --classify` => full eza options
-- `bsdtar` => archive management on Linux, includes `rar` format
-- `column -s ',' -t` => better CSV output
-- `ntfy send ...` => send notification (can use many backends)
-- `tig` // `lazygit` => graphical `git` viewer
-- `cmus` // `mocp` => audio player
-- Grep with colors => `grep --color=always <pattern> | less -R`
-- `plocate` => very efficient locate (far better than `mlocate`)
-- `ls file1.py | entr python /_` // `entr -c` // `entr -p` // `entr -r` => execute cmd on file change // clear screen first // postpone 1st cmd before change // reload a non-stopping cmd
-- `catimg` (req. `imagemagick`) => show image in terminal
-- `glow` => markdown reader
-- `termdbms` => SQL queries in TUI
-- `dry` => manage Docker containers and Swarm cluster
-- `k9s` => k8s management
-- `ctop` => like `top` for containers
-- `sc-im` => spreadsheet
-- `curl ifconfig.me/ip` // `curl ifconfig.me/all.json`
-- `curl cheat.sh/<command>` => minimal man page on `<command>`
-- `curl wttr.in/Grenoble` => weather at Grenoble, France.
-- `fc-list` // `fc-cache -fv` => show available fonts // refresh font cache
-- `chvt N` => go to TTY `N` (idem C-A-FN)
-- `docker run --rm -it browsh/browsh` // `docker run --rm -ti fathyb/carbonyl https://youtube.com` => terminal-based web browsers
-- `fx` // `jq` // `jqp` => json viewers and processors
-- `figlet` => ascii-art of text
-- `pv` => type-writter effect
-- `termshark` => packet sniffer using `wireshark` in terminal
-- `atuin` => command history with persistence
-
-## Network
-
-- `aria2` => downloader (HTTP / Magnet)
-- `wavemon` => monitor wifi
-- `netstat -pultn` => processes with network activity (one shot)
-- `nethogs` => processes with network activity (live)
-- `iw dev wlp3s0 info` => get wifi info (including power)
-- `iw dev wlp3s0 set txpower fixed 700` => limit wifi power (save battery) to 7dBm (default 22)
-- `lsof -i -P -n` => opened ports and connexions
-- `netscanner` => network scanner
-
-## Disk
-
-- `shake` => defragment Ext4
-- `lsblk -f` => list software (partitions) with topology
-- `blkid` => partitions IDs
-- `smartctl -a /dev/sda` => infos on HDD
-- `hdparm`
-  - `hdparm -C /dev/sda` => current disk state (active vs standby)
-  - `hdparm -T /dev/sda` => test RAM reading speed
-  - RC service `hdparm` => spin down disk when idle (/etc/conf.d/hdparm)
-- Change root mount => `pivot_root`
-- `davfs2` => WebDAV mount
-- `rmlint` => find duplicates
-
-## Hardware
-
-- `nmon` => hardware monitoring
-- `inxi` // `inxi -xxAv6` => description système
-- `lstopo -.txt` => vision graphique système - package `hwloc`
-- `lspci` // `lsusb` // `lscpu` => liste pci // usb // cpu
-- `usbutils` => installs full `lsusb` on Busybox's distribution
-- `powerstat`
-- Kernel/CPU bugs => `cat /proc/cpuinfo | grep bug`
-- Kernel option `SATA_MOBILE_LPM_POLICY` => 3 (seems recommended by Lenovo SSD)
-- Kernel firmwares : `iwlwifi-7265D-29.ucode`
-
 ## Games
 
 - `1ad` => age of empires-like
@@ -344,6 +235,25 @@ TTY
 ------------------------------
 
 - `tty` => shows TTY device associated with current terminal (`tty` or `pts`). Can be used to redirect cmd input/output from/to other TTY.
+- `chvt N` => go to TTY `N` (idem C-A-FN)
+
+SysRq
+------------------------------
+
+- To execute :
+	- `SysRq` key if present on the keyboard
+  - `Alt` + `PrintScreen` + `…` on a Thinkpad
+
+`b` => reboot (no sync no umount)
+`e` => SIGTERM (sauf init)
+`i` => SIGKILL (sauf init)
+`s` => sync (wait for `OK` or `Done`)
+`j` => if your system becomes unresponsive due to a frozen (probably root) filesystem via the FIFREEZE ioctl.
+`u` => remount all filesystems R/O (useful for proper unmount)
+`k` => Kills all programs on the current virtual console (exit hanging program, or before login to avoid trojans)
+`R` => Replay kernel logs on consoles
+`r` => Turns off keyboard raw mode and sets it to XLATE => handy when your X server or a svgalib program crashes.
+`v` => Forcefully restores framebuffer console
 
 lxc
 ------------------------------
@@ -376,7 +286,3 @@ Android
 - `insular` => isolate some apps in _islands_ and stops them while the island is not running
 - `futo` => local keyboard with voice-to-text
 
-Isolation
-=========
-
-- <https://hub.docker.com/u/kasmweb> => Linux distribution / application in Docker container with VNC access in browser
