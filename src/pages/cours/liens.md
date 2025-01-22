@@ -36,6 +36,14 @@ Quelques références utiles en informatique.
 
 ## Informations transverses
 
+### CRDTS
+
+**Conflict Free Replicated Data types** : comment fusionner des données répliquées ?
+
+- <https://vlcn.io/blog/intro-to-crdts> : Enjeux des CRDTS
+- <https://jakelazaroff.com/words/an-interactive-intro-to-crdts/> : Introduction et exemples de CRDTS
+- <https://zknill.io/posts/collaboration-no-crdts/> : comment collaborer sans CRDTS
+
 ### Cybersécurité (2020)
 
 - 50% des applications Web ont une faille critique
