@@ -116,6 +116,7 @@ updated: 2024-10-17
   - galaxy : grande collection de rôles tout prêts
   - sécurité : voir collection `devsec.hardening` dans ansible galaxy
   - `ansible-vault` (voir `vault`)
+	- [ansible-inventory-grapher](https://github.com/willthames/ansible-inventory-grapher) : graph Ansible
 - `pulumi` (multi-langages)
 - `terraform`, [OpenTofu : fork Terraform open-source](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml), [Burrito : "ArgoCD for Terraform"](https://github.com/padok-team/burrito)
 - `chef` (client/serveur)
