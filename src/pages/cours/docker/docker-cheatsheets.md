@@ -1092,6 +1092,37 @@ metadata:
   name: mon-namespace
 ```
 
+## Exemple de RBAC avec un ClusterRole
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cluster-role-example
+rules:
+  # Règle pour créer des pods dans tout le cluster
+  - apiGroups: ["apps"]
+    resources: ["pods"]
+    verbs: ["create", "get", "list", "watch"]
+
+  # Règle pour utiliser les services de réseau
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["use"]
+
+  # Règle pour créer des ConfigMaps et Secrets
+  - apiGroups: [""]
+    resources: ["configmaps", "secrets"]
+    verbs: ["create"]
+ 
+  # Règle pour utiliser les endpoints
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch"]
+```
+
+## Autres commandes
+
 Pour plus d’information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
 
 ---
