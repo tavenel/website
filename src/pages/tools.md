@@ -17,6 +17,7 @@ updated: 2024-10-17
 
 - Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
 - Aides sur les commandes : `curl cheat.sh/ma_commande`
+- `curl wttr.in/Grenoble` => weather at Grenoble, France.
 
 ## Outils utiles Devops (liste non exhaustive)
 
@@ -336,13 +337,21 @@ updated: 2024-10-17
 	- [pure][pure] : prompt très rapide sous ZSH
 	- [poweline][powerline] : très populaire
 - Police de caractères (font) : utiliser les versions [nerd-fonts][nerd-fonts], polices recommandées pour coder : `Hack`, `Inconsolata`, `Noto Color Emoji`, `FiraCode`, `VictorMono` (cursif)
+  - `fc-list` // `fc-cache -fv` => show available fonts // refresh font cache
+- `atuin` => command history with persistence
 - lister / explorer des fichiers :
   - [eza][eza] (anciennement `exa`) : alternative à `ls`
+    - `eza --header --long --git --icons --sort=ext --tree --accessed --created --modified --group --links --grid --classify` => full eza options
 	- [bat][bat] : alternative à `cat`. `bat --list-themes`
 	- [yazi][yazi], [n3][nnn] et [ranger][ranger] : explorateurs de fichiers en mode console
 	- [fd][fd] : alternative à `find`
 	- [ripgrep][rg] (`rg`), [Silver Searcher][ag] (`ag` ), [ack][ack] : alternatives à `grep`
-	- [plocate][plocate] : implémentation rapide pour `locate`
+	- [plocate][plocate] : implémentation rapide pour `locate` (plus rapide que `mlocate`)
+  - Grep with colors => `grep --color=always <pattern> | less -R`
+  - `ls file1.py | entr python /_` => execute cmd on file change
+    - `entr -c` => clear screen first
+    - `entr -p` => postpone 1st cmd before change
+    - `entr -r` => reload a non-stopping cmd
 - fuzzy-finder :
 	- [fzf][fzf] : `export FZF_DEFAULT_COMMAND='fd . --hidden'`, `docker ps -a | fzf`, `fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'`
 - interfaces utilisateurs en mode terminal (TUI):
@@ -350,8 +359,18 @@ updated: 2024-10-17
 	- [lazygit][lazygit]
 	- `ddgr` : recherche Web
 	- <https://aider.chat> : AI pair programming
+  - `cmus` // `mocp` => audio player
+  - `docker run --rm -it browsh/browsh` // `docker run --rm -ti fathyb/carbonyl https://youtube.com` => terminal-based web browsers
+- json viewers and processors :
+  - `fx`
+	- `jq`
+	- `jqp`
+	- `vim +set ft=json`
+- `column -s ',' -t` => better CSV output
+- `bsdtar` => archive management on Linux, includes `rar` format
+- `ntfy send ...` => send notification (can use many backends)
 
-### Outils DevOps poste de travail
+### Outils poste de travail DevOps
 
 - [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
@@ -364,10 +383,86 @@ updated: 2024-10-17
 	- `k9s` : Terminal UI k8s management
 	- `k8s lens` : graphical cluster management
 	- `kube-capacity` : monitor ressources
+  - `dry` => manage Docker containers and Swarm cluster
+  - `ctop` => like `top` for containers
 	- <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
+- `termdbms` => SQL queries in TUI
+
+### Outils poste de travail Admin système
+
+#### Network
+
+- `aria2` => downloader (HTTP / Magnet)
+- `wavemon` => monitor wifi
+- `netstat -pultn` => processes with network activity (one shot)
+- `nethogs` => processes with network activity (live)
+- `iw dev wlp3s0 info` => get wifi info (including power)
+- `iw dev wlp3s0 set txpower fixed 700` => limit wifi power (save battery) to 7dBm (default 22)
+- `lsof -i -P -n` => opened ports and connexions
+- `netscanner` => network scanner
+- `termshark` => packet sniffer using `wireshark` in terminal
+- `iftop -i wlan0` => idem `top` mais pour interface réseau
+- `iptraf-ng`
+
+#### Disk
+
+- `shake` => defragment Ext4
+- `lsblk -f` => list software (partitions) with topology
+- `blkid` => partitions IDs
+- `smartctl -a /dev/sda` => infos on HDD
+- `hdparm`
+  - `hdparm -C /dev/sda` => current disk state (active vs standby)
+  - `hdparm -T /dev/sda` => test RAM reading speed
+  - RC service `hdparm` => spin down disk when idle (/etc/conf.d/hdparm)
+- Change root mount => `pivot_root`
+- `davfs2` => WebDAV mount
+- `rmlint` => find duplicates
+
+#### Hardware
+
+- `nmon` => hardware monitoring
+- `inxi` // `inxi -xxAv6` => description système
+- `lstopo -.txt` => vision graphique système - package `hwloc`
+- `lspci` // `lsusb` // `lscpu` => liste pci // usb // cpu
+- `usbutils` => installs full `lsusb` on Busybox's distribution
+- `powerstat`
+- Kernel/CPU bugs => `cat /proc/cpuinfo | grep bug`
+- Kernel option `SATA_MOBILE_LPM_POLICY` => 3 (seems recommended by Lenovo SSD)
+- Kernel firmwares : `iwlwifi-7265D-29.ucode`
+
+### Desktop
+
+- `mpv` // `mpv --profile=fast` // `mpv --profile=high-quality` => video player
+- `geany` => small IDE (alpine)
+- `picard` => update mp3 tags graphically and automatically
+- `jpegoptim` => optim jpg size
+- Zero-loss jpg/png
+  - `$ find . -regextype posix-extended -iregex '.*(jpeg|jpg)' -print0 | xargs -0 -n 1 -P $((`nproc`/ 2)) jpegoptim -pt`
+  - `$ find . -name \*.png -print0 | xargs -0 -n 1 -P $((`nproc`/ 2)) -I {} zopflipng -m --lossy_8bit --lossy_transparent -y {} {}`
+- `wdisplays` // `wlr-randr` => manage displays (`Wayland`) : graphical // textual
+- `chattr +i /mnt/backup` => Immutable directory / file
+- packages `gst-plugins-good` && `gst-plugins/libav` : req for YouTube videos
+  - `gst-plugins-vaadi` for hardware acceleration
+- `grim` => screenshots
+
+### FOSS alternates
+
+- `dropbox`, `google drive`, `one drive` => `nextcloud`
+- `airtable` => `NocoDB`
+- `notion` => `appflowy`
+- `salesforce CRM` => `ERPNext`
+- `slack` => `mattermost`
+- `zoom`, `teams` => `jitsi`
+- `jira` => `plane`
+- `asana` => `OpenProject`
+- `firebase` => `convex`, `supabase`, `appwrite`, `instant`
+- `heroku`, `netlify`, `vercel` => `coolify`, `dokku`
+- `github` => `gitlab`
+- `docusign` => `docuseal`
+- `google analytics` => `matomo`
 
 ## 🔗 Awesome lists
 
