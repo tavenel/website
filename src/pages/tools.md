@@ -104,6 +104,9 @@ updated: 2024-10-17
   - `kepler` : monitor Pod energy consumption
 	- `kube-green` : k8s operator for energy-saving actions 
 	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
+- Upgrade :
+  - `WatchTower`
+  - `Keel` (avec triggers)
 
 ### 🔙 Backups
 
