@@ -119,6 +119,9 @@ updated: 2024-10-17
   - `ansible-vault` (voir `vault`)
 	- [ansible-inventory-grapher](https://github.com/willthames/ansible-inventory-grapher) : graph Ansible
 - `pulumi` (multi-langages)
+  - `pulumi convert --from kubernetes --language <language> --out <output_dir>` : k8s Yaml => pulumi
+  - `pulumi convert --from terraform` : terraform HCL => pulumi
+  - `pulumi import --from terraform` : import terraform state from `tfstate`
 - `terraform`, [OpenTofu : fork Terraform open-source](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml), [Burrito : "ArgoCD for Terraform"](https://github.com/padok-team/burrito)
 - `chef` (client/serveur)
 - `puppet`
@@ -360,7 +363,7 @@ updated: 2024-10-17
 	- `ddgr` : recherche Web
 	- <https://aider.chat> : AI pair programming
   - `cmus` // `mocp` => audio player
-  - `docker run --rm -it browsh/browsh` // `docker run --rm -ti fathyb/carbonyl https://youtube.com` => terminal-based web browsers
+  - `docker run --rm -it browsh/browsh` // `docker run --rm -ti fathyb/carbonyl https://yewtu.be` => terminal-based web browsers
 - json viewers and processors :
   - `fx`
 	- `jq`
