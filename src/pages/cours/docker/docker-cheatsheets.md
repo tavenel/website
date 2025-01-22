@@ -625,6 +625,7 @@ spec:
   containers:
   - name: main-container # nom du conteneur
     image: nginx # image Docker
+    imagePullPolicy: Always # re-pull la dernière version d'image à la (re)création du Pod
     command: ["printenv"] # The command to start the container
     args: ["HOSTNAME", "KUBERNETES_PORT"] # args for the command
     restartPolicy: Always # restart toujours si stoppé
