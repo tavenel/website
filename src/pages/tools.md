@@ -78,7 +78,7 @@ updated: 2024-10-17
 #### Kubernetes-specific
 
 - linter (vérification fichiers) => `kubeconform`
-- installation => `kubeadm`, `rke`, `kubespray`, `rancher`
+- installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
 - package manager (sur-couche) => `helm`
 - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
 - ingress & service mesh :
@@ -92,6 +92,7 @@ updated: 2024-10-17
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 	- [Sealed Secret](https://une-tasse-de.cafe/blog/sealed-secrets/) : chiffrement de secrets dans k8s
+	- <https://external-secrets.io/> : injection de secrets
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
 - supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
@@ -129,6 +130,7 @@ updated: 2024-10-17
 - `terraform`, [OpenTofu : fork Terraform open-source](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml), [Burrito : "ArgoCD for Terraform"](https://github.com/padok-team/burrito)
 - `chef` (client/serveur)
 - `puppet`
+- `packer` : création d'images de VMs
 - `semaphore` : UI for operating `ansible`, `terraform/OpenTofu`, `pulumi`. <https://semaphoreui.com/>
 - diagrammes : `plantuml`, `mermaid`, `ditaa`, `kroki`, <https://diagrams.mingrammer.com/>, `dot`
 - `Infracost` : track coût plateformes IaC (`Terraform`, …)
