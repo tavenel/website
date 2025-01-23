@@ -86,3 +86,5 @@ Quelques références utiles en informatique.
 - <https://perso.crans.org/besson/publis/slides/2016_07__Python_demo_at_EPFL/> : cours Python ML/DL/data science
 - Le paradoxe de la complexité : <https://www.votito.com/methods/togs-paradox/>
 - Impact des IA génératives sur les étudiants : <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
+- Exemple de page d'aide de CLI : voir la commande `kubectl --help`
+ 
