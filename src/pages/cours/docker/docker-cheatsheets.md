@@ -1183,15 +1183,22 @@ metadata:
   name: mon-namespace
 ```
 
-## Exemple de RBAC avec un ClusterRole
+## Exemple de RBAC (Role-Based Access Control)
+
+### (Cluster)Role
+
+Un `Role` (resp. `ClusterRole`) définit les permissions spécifiques qu'un utilisateur ou un système peut avoir. Un `Role` est limité à un seul namespace alors qu'un `ClusterRole` définit les permissions sur l'ensemble du cluster.
+
+Les `verbs` possibles sont : `get`, `list`, `watch`, `create`, `update`, `delete`.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role # ou ClusterRole
 metadata:
-  name: cluster-role-example
+  name: example-role
+  namespace: production # uniquement pour Role
 rules:
-  # Règle pour créer des pods dans tout le cluster
+  # Règle pour créer des pods dans le cluster
   - apiGroups: ["apps"]
     resources: ["pods"]
     verbs: ["create", "get", "list", "watch"]
@@ -1210,6 +1217,25 @@ rules:
   - apiGroups: [""]
     resources: ["endpoints"]
     verbs: ["get", "list", "watch"]
+```
+
+### (Cluster)RoleBinding
+
+Le `RoleBinding` (resp. `ClusterRoleBinding`) lie un `Role` (resp. `ClusterRole`) à un sujet spécifique (utilisateur, groupe, objets) dans un namespace donné.
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding # ou ClusterRoleBinding
+metadata:
+  name: example-rolebinding
+subjects:
+  - kind: User
+    name: example-user
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role # ou ClusterRole
+  name: example-role
+  apiGroup: rbac.authorization.k8s.io
 ```
 
 ## Autres commandes
