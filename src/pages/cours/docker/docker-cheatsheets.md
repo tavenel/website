@@ -241,6 +241,7 @@ docker run -p 8080:80 mon_conteneur
 ```sh
 docker container prune # supprime les conteneurs inactifs
 docker image prune # supprime les images non utilisées par un conteneur
+docker buildx prune # supprime les builds non utilisés
 
 # Supprimer **toutes** les données non utilisées : conteneurs, images, réseaux, volumes.
 # Attention à la perte de données !!!
@@ -263,13 +264,28 @@ Voir la documentation : <https://docs.docker.com/config/containers/resource_cons
 docker --log-driver gelf --log-opt gelf-address=udp://… …
 ```
 
-## Docker scout : analyses de sécurité
-
-Docker Scout est un outil de sécurité pour Docker qui aide à analyser les images de conteneurs pour identifier les vulnérabilités, les dépendances, et les mises à jour de sécurité nécessaires.
+## Afficher l'utilisation disque
 
 ```sh
-docker scout cves nginx:latest # CVEs (vulnérabilités)
-docker scout recommendations nginx:latest # MAJ à effectuer
+docker system df              
+
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          16        8         4.008GB   2.07GB (51%)
+Containers      15        1         2.906MB   2.278kB (0%)
+Local Volumes   13        13        2.764GB   0B (0%)
+Build Cache     32        0         246.5MB   246.5MB
+```
+
+```sh
+docker buildx du
+
+ID						RECLAIMABLE	SIZE		LAST ACCESSED
+9zfls97m6q210we36khnehxl1*              	true 		231.8MB   	29 hours ago
+[…]
+Shared:		187.4MB
+Private:	246.5MB
+Reclaimable:	433.9MB
+Total:		433.9MB
 ```
 
 ## Serveur distant
@@ -304,6 +320,66 @@ Voir aussi :
 - <https://github.com/wsargent/docker-cheat-sheet>
 - <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/cheat-sheet/>
 :::
+
+## Sécurité
+
+### Docker scout : analyses de sécurité
+
+Docker Scout est un outil de sécurité pour Docker qui aide à analyser les images de conteneurs pour identifier les vulnérabilités, les dépendances, et les mises à jour de sécurité nécessaires.
+
+```sh
+docker scout cves nginx:latest # CVEs (vulnérabilités)
+docker scout recommendations nginx:latest # MAJ à effectuer
+```
+
+### Capabilities
+
+Docker permet de contrôler les _capabilities_ du noyau Linux disponibles dans un conteneur.
+
+```sh
+# Retirer des capabilities
+docker run --cap-drop=NET_RAW,MKNOD,SYS_ADMIN,SYS_MODULE mon_image
+```
+
+```sh
+# Retirer TOUTES les capabilities sauf …
+docker run --cap-drop=ALL --cap-add=NET_ADMIN,… mon_image
+```
+Rappel des principales capabilities d'un noyau Linux :
+
+- `AUDIT_WRE` : Audit et accès au file system
+- `CHOWN`, `FOWNER` : Changer l'ownership d'un fichier
+- `DAC_READ_SEARCH` : Lire des fichiers et répertoires
+- `FSETID` : Le process peut changer son `UID`/`GID`
+- `KILL` : Process termination
+- `MKNOD` : permet de créer des fichiers spéciaux comme les liens symboliques.
+- `NET_BIND_SERVICE` : Network binding
+- `NET_RAW` : Raw socket usage (permet d'envoyer des paquets réseau bruts)
+- `SETPCAP` : Changer les capabilities d'un autre processus
+- `SETUID`, `SETGID` : Bits `SUID` et `GID`
+- `SYS_ADMIN` : Donne accès à un large éventail d'opérations système, y compris la gestion des montages, des répertoires temporaires et l'accès aux systèmes de fichiers.
+- `SYS_BOOT` : (Re)boot
+- `SYS_MODULE` : Permet de charger et d'exécuter du code au niveau module du noyau Linux.
+- `SYSLOG` : Logging
+
+### CIS Benchmarks
+
+**Docker Bench for Security** permet de vérifier la conformité aux benchmarks _Center for Internet Security_ (CIS) :
+
+```sh
+docker run -it --net host --pid host --cap-add audit_control \
+-v /var/lib:/var/lib \
+-v /var/run/docker.sock:/var/run/docker.sock \
+docker/docker-bench-security
+```
+
+### WAF
+
+Un _Pare-feu d’applications Web_ (WAF) comme `ModSecurity` permet de protéger vos applications contre les attaques courantes : injections SQL, XSS, …
+
+```sh
+docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
+```
 
 ---
 
@@ -360,6 +436,21 @@ docker build -t NOM_DE_MA_NOUVELLE_IMAGE REPERTOIRE_DU_DOCKERFILE
 ```sh
 docker build -t NOM_DE_MA_NOUVELLE_IMAGE -f NOM_DU_FICHIER_DOCKERFILE REPERTOIRE_DU_DOCKERFILE
 ```
+
+## BuildKit
+
+`BuildKit` (activé par défaut depuis la version 23.0) est un nouveau moteur de build plus performant, sécurisé et flexible voué à remplacer la commande `docker build` :
+
+- Amélioration des performances de build grâce à la construction en parallèle et une meilleure gestion des caches.
+- Utilisation optimisée des ressources (CPU, mémoire).
+- Fonctionnalités avancées comme le support des builds multi-plateformes et des caches de builds distribués.
+- Meilleure sécurité avec des fonctionnalités comme le build _rootless_ (sans accès root).
+
+Pour plus d'information, voir les liens suivants :
+
+- <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/buildkit/>
+- <https://blog.stephane-robert.info/post/docker-build-multiarch/>
+- <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/secrets-docker/>
 
 ## Tagger une image
 
