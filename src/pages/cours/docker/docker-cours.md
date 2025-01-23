@@ -501,8 +501,6 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
     - supprimer tout paquet ou outil inutile
     - éviter les outils de débug
     - mettre à jour les images
-- Gérer le nombre de layers
-    - layer unique : enchaîner les instructions sur 1 ligne avec `&&` ou `\`
 
 ---
 
@@ -534,6 +532,19 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
   - par conteneur : `--log-opt`
   - globalement par config. du serveur : `daemon.json`
 - Ne pas tourner le serveur Docker en `root` (_expérimental_)
+
+---
+
+## Optimiser la taille des images Docker
+
+- Limiter le nombre de couches : chaque instruction `RUN`, `COPY` ou `ADD` ajoute un layer supplémentaire, combiner les commandes si possible :
+  - `apt-get update && apt-get install -y … && rm -rf …`
+- `apt-get` :
+  - L'option `--no-install-recommends` de `apt-get install` permet de ne pas installer les dépendances optionnelles.
+  - Supprimer `/var/lib/apt/lists/*` après avoir installé un package
+- `apk` :
+  - L'option `--no-cache` évite le cache de packets
+- Analysez vos images, par exemple avec <https://github.com/wagoodman/dive>
 
 ---
 
@@ -601,6 +612,9 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
 - [Build multi-plateformes](https://blog.microlinux.fr/docker-cmatrix-alpine-03/)
 - [Analyses de sécurité](https://github.com/docker/docker-bench-security)
 - <https://docker-saigon.github.io/post/Docker-Caveats/>
+
+---
+
 - Bonnes pratiques :
   - [Best pratices dev (doc officielle)](https://docs.docker.com/develop/dev-best-practices/)
   - [Best practives Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
@@ -609,6 +623,7 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
   - [Optimiser les images avec le cache des layers](https://bearstech.com/societe/blog/securiser-et-optimiser-le-build-des-images-docker-pour-vos-applications/)
   - [Démo faille sécu volume Docker (et résolution)](https://lafor.ge/docker-volume-security/)
   - [Documentation sur les logs][doc-logs]
+  - [Bonnes pratiques sur le serveur Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-bonnes-pratiques/)
 
 ---
 
