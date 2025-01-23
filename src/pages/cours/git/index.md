@@ -141,6 +141,14 @@ Petit TP permettant de découvrir les tags dans Git.
 - [pdf](/cours/git/git-tp-fork.pdf)
 - [markdown](/cours/git/git-tp-fork.md)
 
+## 💻 TP - Git™ Bisect
+
+ L'objectif de ce TP est d'utiliser la commande Git Bisect pour trouver un commit par dichotomie.
+
+- [html](/cours/git/git-tp-bisect.html)
+- [pdf](/cours/git/git-tp-bisect.pdf)
+- [markdown](/cours/git/git-tp-bisect.md)
+
 ## 💻 TP Github - Utiliser les Gist
 
 Petit TP dont l'objectif est de découvrir les Gist de GitHub.

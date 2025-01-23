@@ -101,6 +101,14 @@ L'objectif de ce TP est d'utiliser les fonctions d'historique de git.
 - [pdf](/cours/git/git-tp-historique.pdf)
 - [markdown](/cours/git/git-tp-historique.md)
 
+### 💻 TP - Git™ Bisect
+
+ L'objectif de ce TP est d'utiliser la commande Git Bisect pour trouver un commit par dichotomie.
+
+- [html](/cours/git/git-tp-bisect.html)
+- [pdf](/cours/git/git-tp-bisect.pdf)
+- [markdown](/cours/git/git-tp-bisect.md)
+
 ### 💻 TP - Github® et dépôts distants
 
  L'objectif de ce TP est de créer, configurer et utiliser un dépôt git distant sur la plateforme Github®.

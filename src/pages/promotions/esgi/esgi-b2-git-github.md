@@ -157,6 +157,14 @@ Petit TP permettant de découvrir les tags dans Git.
 - [pdf](/cours/git/git-tp-fork.pdf)
 - [markdown](/cours/git/git-tp-fork.md)
 
+### 💻 TP - Git™ Bisect
+
+ L'objectif de ce TP est d'utiliser la commande Git Bisect pour trouver un commit par dichotomie.
+
+- [html](/cours/git/git-tp-bisect.html)
+- [pdf](/cours/git/git-tp-bisect.pdf)
+- [markdown](/cours/git/git-tp-bisect.md)
+
 ### 💻 TP - Git pour un Projet XAMPP
 
 Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
