@@ -141,6 +141,7 @@ updated: 2024-10-17
 - builds généralistes => `make`, `taskfile`, `packer`
 - JS => `npm`, `yarn`, `webpack`
 - Java => `mvn`, `gradle`
+  - <https://docs.openrewrite.org/> : refactoring automatique de code pour mise à jour, …
 - PHP => `composer`
 - Python => `venv` + `pip`, `poetry`, `uv`, `pipx`, `hatch`
 - Virtual machines => `packer`, `vagrant` (+TUI : <https://github.com/braheezy/violet>), `incus`
