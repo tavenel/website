@@ -1,5 +1,7 @@
 -> PDFs
 -> Marp (or all in slidev ?)
+-> astro markdown => mermaid, plantuml, …
+-> astro : icon-link (h1, …) only on hover
 
 ---
 

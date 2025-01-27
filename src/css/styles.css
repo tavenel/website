@@ -30,6 +30,14 @@
 /* 	background-color: revert; */
 /* } */
 
+.icon-link{
+	background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaUlEQVR4nO2USwrAIAwF53gVb11vUnuPFBduhEJ42tKPA+5ihrxA4EtEYAdMeMkjyGJzA1aPoBZfht0tiOJOStTBI+jZyeYRqJHZ2b8pqMyI/hxRaq7icEHL+wV59LFrCaKkNF+EyR/KAfSIpb/qKhqGAAAAAElFTkSuQmCC');
+	background-size:cover;
+	position:absolute;
+	width:20px;
+	height:20px;
+}
+
 a {
 	text-decoration: none;
 	border-bottom: 3px dotted;

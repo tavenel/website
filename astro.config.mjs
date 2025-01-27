@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import remarkToc from 'remark-toc';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 // Set default Layout for Markdown files
 const setLayout = () => {
@@ -19,7 +21,7 @@ export default defineConfig({
 
 	markdown: {
 		remarkPlugins: [setLayout, [remarkToc, { heading: 'Chapitres', maxDepth: 3 }]],
-		rehypePlugins: [rehypeAccessibleEmojis],
+		rehypePlugins: [rehypeAccessibleEmojis, rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }]],
 		shikiConfig: {
 			// https://shiki.style/themes
 			themes: {
