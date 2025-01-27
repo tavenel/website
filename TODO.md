@@ -3,16 +3,28 @@ https://github.com/inokawa/remark-docx
 https://github.com/remcohaszing/rehype-mermaid
 https://github.com/akebifiky/remark-simple-plantuml
 https://github.com/inokawa/remark-pdf
+
+https://github.com/sergioramos/remark-hint?tab=readme-ov-file
+
+https://github.com/remarkjs/remark-validate-links
+
+-> use <Picture /> <https://docs.astro.build/en/guides/images/#images-in-astro-files> for covers
 -> Marp (or all in slidev ?)
 -> astro markdown => mermaid, plantuml, …
 -> astro : icon-link (h1, …) only on hover
--> astro : fix ALL image imports
--> astro : link MD directly inside other MD
--> RM \newpage{}
+-> astro : fix ALL image imports => use MDX in promotions/
+-> astro : link MD directly inside other MD (remove extensions)
 -> fix ::: (corrections, …)
--> RM 'updated' (use 'lastModified')
+-> better `date:`
+-> C-k shortcut => launch search
+-> Copyright 2025
+
+---
 
 -> How-to upgrade Astro : `npx @astrojs/upgrade`
+
+https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins
+https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins
 
 ---
 
