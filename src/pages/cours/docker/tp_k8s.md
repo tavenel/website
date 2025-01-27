@@ -56,6 +56,13 @@ Minikube permet de déployer et lancer le dashboard très simplement :
 minikube dashboard
 ```
 
+### Exécution bac à sable en ligne
+
+En cas de souci avec l'installation du cluster, il est possible de tester l'utilisation de Kubernetes depuis un environnement en ligne :
+
+- <https://labs.play-with-k8s.com/>
+- <https://killercoda.com/playgrounds/scenario/kubernetes>
+
 ## Prise en main d’un cluster Kubernetes
 
 ### Premier pod
