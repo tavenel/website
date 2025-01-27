@@ -11,5 +11,9 @@
 	"dependencies": {
 		"@astrojs/sitemap": "^3.2.1",
 		"astro": "^5.0.9"
+	},
+	"devDependencies": {
+		"rehype-accessible-emojis": "^0.3.2",
+		"remark-toc": "^9.0.0"
 	}
 }
