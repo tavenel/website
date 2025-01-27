@@ -17,6 +17,13 @@ export default defineConfig({
 
 	markdown: {
 		remarkPlugins: [setLayout],
+		shikiConfig: {
+			// https://shiki.style/themes
+			themes: {
+				light: 'one-light',
+				dark: 'houston', // catpuccin-mocha',
+			},
+		},
 	},
 
 	integrations: [sitemap()]
