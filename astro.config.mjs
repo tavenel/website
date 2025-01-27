@@ -6,6 +6,10 @@ import remarkToc from 'remark-toc';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
+import { visualizer } from "rollup-plugin-visualizer";
+
+import { remarkModifiedTime } from './remark-modified-time.mjs';
 
 // Set default Layout for Markdown files
 const setLayout = () => {
@@ -20,9 +24,20 @@ export default defineConfig({
 	site: 'https://www.avenel.pro',
 
 	markdown: {
-		remarkPlugins: [setLayout, [remarkToc, { heading: 'Chapitres', maxDepth: 3 }]],
-		rehypePlugins: [rehypeAccessibleEmojis, rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }]],
-		shikiConfig: {
+		// remark: Markdown processing
+		remarkPlugins: [
+			setLayout,
+			[remarkToc, { heading: 'Chapitres', maxDepth: 3 }],
+			remarkModifiedTime,
+		],
+		// rehype: HTML processing (uses remark)
+		rehypePlugins: [
+			rehypeAccessibleEmojis, // add a span explaining the emoji
+			rehypeSlug, // dependency of AutoLinkHeadings
+			[rehypeAutolinkHeadings, { behavior: 'append' }], // add a link to h1, h2, …
+			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // mark external links
+		],
+		shikiConfig: { // code highlighter
 			// https://shiki.style/themes
 			themes: {
 				light: 'one-light',
@@ -31,5 +46,12 @@ export default defineConfig({
 		},
 	},
 
-	integrations: [sitemap()]
+	integrations: [sitemap()],
+
+	vite: {
+		plugins: [visualizer({ // analyse bundle size
+			emitFile: true,
+			filename: "stats.html",
+		})]
+	}
 })

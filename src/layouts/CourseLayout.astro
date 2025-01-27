@@ -7,6 +7,7 @@ type Props = MarkdownLayoutProps<{
 	title: string;
 	date: string;
 	updated: string;
+	lastModified: string;
 	checked: string;
 }>;
 
@@ -14,7 +15,8 @@ type Props = MarkdownLayoutProps<{
 // are accessible with type safety
 const { frontmatter, url } = Astro.props;
 const initialDate = frontmatter.date ? new Date(frontmatter.date).toLocaleDateString() : '?';
-const updatedDate = frontmatter.updated ? new Date(frontmatter.updated).toLocaleDateString() : '?';
+const updatedDate = frontmatter.updated ? new Date(frontmatter.updated).toLocaleDateString() : '?'; // TODO : RM
+const lastModified = frontmatter.lastModified ? new Date(frontmatter.lastModified).toLocaleDateString() : '?';
 const checkedDate = frontmatter.checked ? new Date(frontmatter.checked).toLocaleDateString() : '?';
 ---
 <BaseLayout title={frontmatter.title} url={url}>
@@ -22,6 +24,7 @@ const checkedDate = frontmatter.checked ? new Date(frontmatter.checked).toLocale
 	<div class="versioning">
 		{frontmatter.date && <div class="version-first">Publié le : {initialDate}</div>}
 		{frontmatter.updated && <div class="version-update">Mis à jour : {updatedDate}</div>}
+		{frontmatter.lastModified && <div class="version-update">Mis à jour : {lastModified}</div>}
 		{frontmatter.checked && <div class="version-checked">Contenu vérifé le : {checkedDate}</div>}
 	</div>
 	<slot />

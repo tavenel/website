@@ -2,6 +2,12 @@
 -> Marp (or all in slidev ?)
 -> astro markdown => mermaid, plantuml, …
 -> astro : icon-link (h1, …) only on hover
+-> astro : fix image imports
+-> RM \newpage{}
+-> fix ::: (corrections, …)
+-> RM 'updated' (use 'lastModified')
+
+-> How-to upgrade Astro : `npx @astrojs/upgrade`
 
 ---
 
