@@ -134,6 +134,7 @@ updated: 2024-10-17
 - `semaphore` : UI for operating `ansible`, `terraform/OpenTofu`, `pulumi`. <https://semaphoreui.com/>
 - diagrammes : `plantuml`, `mermaid`, `ditaa`, `kroki`, <https://diagrams.mingrammer.com/>, `dot`
 - `Infracost` : track coût plateformes IaC (`Terraform`, …)
+- `Typer` : librairie Python pour écrire facilement une CLI
 
 ### 🛠️ Build tools et dépendances
 
