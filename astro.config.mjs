@@ -7,6 +7,7 @@ import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeSanitize from 'rehype-sanitize'
 import { visualizer } from "rollup-plugin-visualizer";
 
 import { remarkModifiedTime } from './remark-modified-time.mjs';
@@ -36,6 +37,7 @@ export default defineConfig({
 			rehypeSlug, // dependency of AutoLinkHeadings
 			[rehypeAutolinkHeadings, { behavior: 'append' }], // add a link to h1, h2, …
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // mark external links
+			 // rehypeSanitize, // sanitize and cleanup HTML
 		],
 		shikiConfig: { // code highlighter
 			// https://shiki.style/themes
