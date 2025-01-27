@@ -37,7 +37,7 @@ export default defineConfig({
 			rehypeSlug, // dependency of AutoLinkHeadings
 			[rehypeAutolinkHeadings, { behavior: 'append' }], // add a link to h1, h2, …
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // mark external links
-			 // rehypeSanitize, // sanitize and cleanup HTML
+			// rehypeSanitize, // sanitize and cleanup HTML
 		],
 		shikiConfig: { // code highlighter
 			// https://shiki.style/themes
