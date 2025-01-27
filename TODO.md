@@ -1,4 +1,8 @@
 -> PDFs
+https://github.com/inokawa/remark-docx
+https://github.com/remcohaszing/rehype-mermaid
+https://github.com/akebifiky/remark-simple-plantuml
+https://github.com/inokawa/remark-pdf
 -> Marp (or all in slidev ?)
 -> astro markdown => mermaid, plantuml, …
 -> astro : icon-link (h1, …) only on hover
