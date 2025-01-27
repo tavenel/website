@@ -1,6 +1,5 @@
 ---
 title: TP Sécurité des échanges - SSH et GPG
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

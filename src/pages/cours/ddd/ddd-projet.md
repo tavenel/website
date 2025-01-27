@@ -1,6 +1,5 @@
 ---
 title: Projet DDD - Logiciel de devis et facturation
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

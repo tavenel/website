@@ -1,6 +1,5 @@
 ---
 title: TP Scrum
-author: Tom Avenel
 ---
 
 ## Présentation du projet 

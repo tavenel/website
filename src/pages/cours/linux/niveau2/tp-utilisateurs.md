@@ -1,6 +1,5 @@
 ---
 title: TP - Gestion des utilisateurs
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

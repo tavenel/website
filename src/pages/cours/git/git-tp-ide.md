@@ -1,6 +1,5 @@
 ---
 title: TP Intégration de Git dans l'IDE VsCode
-author: Tom Avenel
 date: 2023 / 2024
 keywords:
 - git

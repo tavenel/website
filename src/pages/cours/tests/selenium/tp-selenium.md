@@ -1,6 +1,5 @@
 ---
 title: Selenium - concevoir et automatiser un processus de tests d'interface utilisateur
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

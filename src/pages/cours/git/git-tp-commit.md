@@ -1,6 +1,5 @@
 ---
 title: TP Premiers pas avec Git™
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

@@ -1,7 +1,5 @@
 ---
 title: Estimateur de Kaplan-Meier
-author: Tom Avenel
-depends: test/data/kaplan-meier.csv
 ---
 
 ## Récupérer les données statistiques

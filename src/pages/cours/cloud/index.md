@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Cloud
-updated: 2023-10-31
+title: Tom Avenel - Cloud
 ---
 
 # 🌐 Le Web, HTTP, Introduction au Cloud et architectures client/serveur

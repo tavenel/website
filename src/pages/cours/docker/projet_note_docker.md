@@ -1,6 +1,5 @@
 ---
 title: TP Docker,docker-compose
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

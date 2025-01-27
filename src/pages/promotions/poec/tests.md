@@ -1,5 +1,5 @@
 ---
-pagetitle: Tom Avenel - POEC Testeur logiciel
+title: Tom Avenel - POEC Testeur logiciel
 ---
 
 # 🧪 POEC Testeur logiciel

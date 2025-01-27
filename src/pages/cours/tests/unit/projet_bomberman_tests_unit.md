@@ -1,6 +1,5 @@
 ---
 title: Projet Bomberman - tests unitaires
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - cours
-updated: 2025-01-15
+title: Cours
 ---
 
 # Cours

@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Git
-updated: 2024-03-06
+title: Tom Avenel - Git
 ---
 
 #   Git™

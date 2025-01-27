@@ -1,7 +1,5 @@
 ---
 title: Exercices Python
-author: Tom Avenel
-depends: test/data/mots.txt
 correction: false
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Liens externes
-updated: 2024-03-08
 ---
 
 # Liens externes

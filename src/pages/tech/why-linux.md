@@ -1,7 +1,6 @@
 ---
 title: Why using Linux ?
-date: 2022-09-01
-updated: 2022-09-01
+created: 2022-09-01
 ---
 
 Linux is a free and open-source operating system that is highly configurable and that can run on mostly everything.

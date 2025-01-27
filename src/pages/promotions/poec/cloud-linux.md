@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - POEC Cloud
-updated: 2024-04-12
+title: Tom Avenel - POEC Cloud
 ---
 
 # 🐧 POEC Cloud - Module Linux

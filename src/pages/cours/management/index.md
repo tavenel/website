@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Management
-updated: 2023-10-31
+title: Tom Avenel - Management
 ---
 
 # 💬 Management

@@ -1,6 +1,5 @@
 ---
 title: Introduction à l'usage de conteneurs Docker®
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

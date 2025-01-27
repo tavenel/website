@@ -1,6 +1,5 @@
 ---
 title: Domain-Driven Design en pratique - Patterns Tactiques
-author: Tom Avenel
 date: 2024 / 2025
 toc: true
 keywords:

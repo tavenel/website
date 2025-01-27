@@ -1,6 +1,5 @@
 ---
 title: Les workflows Git™ et la pull-request
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

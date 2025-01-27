@@ -1,6 +1,5 @@
 ---
 title: Tests automatisés et analyses de code en Python
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

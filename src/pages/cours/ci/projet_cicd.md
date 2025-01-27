@@ -1,6 +1,5 @@
 ---
 title: Projet déploiement continu d'une application
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

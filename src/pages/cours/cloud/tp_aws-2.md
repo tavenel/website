@@ -1,6 +1,5 @@
 ﻿---
 title: Développement d’une application moderne en utilisant les services avancés d’`AWS`
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

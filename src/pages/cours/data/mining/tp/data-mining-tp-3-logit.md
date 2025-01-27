@@ -1,6 +1,5 @@
 ---
 title: Data mining - TP 3 - Régression logistique
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

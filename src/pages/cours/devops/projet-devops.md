@@ -1,6 +1,5 @@
 ﻿---
 title: Projet DevOps
-author: Tom Avenel
 date: 2023 / 2024
 keywords:
 - agile

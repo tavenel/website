@@ -1,6 +1,5 @@
 ---
 title: Exercices Tk
-author: Tom Avenel
 correction: false
 ---
 

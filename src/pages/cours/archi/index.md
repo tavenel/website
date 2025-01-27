@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Architecture
-updated: 2024-03-09
+title: Tom Avenel - Architecture
 ---
 
 # 🏗️ Architecture

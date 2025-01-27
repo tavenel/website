@@ -1,6 +1,5 @@
 ---
 title: TP Le systeme de branches
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

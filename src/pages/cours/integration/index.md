@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Intégration
-updated: 2023-08-29
+title: Tom Avenel - Intégration
 ---
 
 # ☎️ Accompagnement à l'intégration

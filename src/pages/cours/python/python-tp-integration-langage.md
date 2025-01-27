@@ -1,6 +1,5 @@
 ---
 title: Intégration et modification du langage Python
-author: Tom Avenel
 correction: false
 ---
 

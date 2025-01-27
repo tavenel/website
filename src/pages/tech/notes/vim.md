@@ -1,7 +1,6 @@
 ---
 title: Notes VIM
-date: 2022-03-01
-updated: 2024-12-17
+created: 2022-03-01
 checked: 2024-12-17
 ---
 

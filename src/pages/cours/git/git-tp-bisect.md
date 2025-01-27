@@ -1,6 +1,5 @@
 ---
 title: TP Git Bisect
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

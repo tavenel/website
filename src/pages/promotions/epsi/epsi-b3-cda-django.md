@@ -1,6 +1,5 @@
 ---
-pagetitle:   Tom Avenel - B3 CDA Django
-updated: 2023-10-21
+title:   Tom Avenel - B3 CDA Django
 ---
 
 #   Le framework Django

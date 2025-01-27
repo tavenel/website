@@ -1,6 +1,5 @@
 ---
-pagetitle: 🗺️ Tom Avenel - I2 Management multiculturel
-updated: 2023-10-31
+title: 🗺️ Tom Avenel - I2 Management multiculturel
 ---
 
 # 🗺️ Manager une équipe multiculturelle

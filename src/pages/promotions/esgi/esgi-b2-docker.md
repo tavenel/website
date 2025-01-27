@@ -1,6 +1,5 @@
 ---
-pagetitle:   Tom Avenel - B2 Docker
-updated: 2024-10-02
+title:   Tom Avenel - B2 Docker
 ---
 
 #   Conteneurisation Docker (bases)

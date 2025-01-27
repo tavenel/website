@@ -1,6 +1,5 @@
 ---
 title: TD Intégration Continue
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

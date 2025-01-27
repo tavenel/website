@@ -1,6 +1,5 @@
 ---
 title: TP - La ligne de commande
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

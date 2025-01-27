@@ -1,6 +1,5 @@
 ---
 title: Data mining - TP 4 - Algorithme k-means des k moyennes
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

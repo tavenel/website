@@ -1,6 +1,5 @@
 ---
 title: TP - Envoi de mail en utilisant le protocole SMTP
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

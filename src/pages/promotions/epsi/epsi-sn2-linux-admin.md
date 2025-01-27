@@ -1,6 +1,5 @@
 ---
-pagetitle: 🐧 Tom Avenel - SN2 Linux Admin
-updated: 2024-10-23
+title: 🐧 Tom Avenel - SN2 Linux Admin
 ---
 
 # 🐧 Adminisitration Linux (Shell)

@@ -1,6 +1,5 @@
 ---
 title: De la modélisation UML® au développement
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

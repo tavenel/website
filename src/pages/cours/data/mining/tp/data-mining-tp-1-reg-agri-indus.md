@@ -1,6 +1,5 @@
 ---
 title: Data mining - TP 1 - Régression linéaire
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Elaboration de la recette fonctionnelle d'un projet
-author: Tom Avenel
 ---
 
 ## Déroulement du cas pratique 

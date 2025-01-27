@@ -1,6 +1,5 @@
 ---
-pagetitle: 󰊤  Tom Avenel - B2 GIT
-updated: 2024-10-02
+title: 󰊤  Tom Avenel - B2 GIT
 ---
 
 # 󰊤  Versioning avec Git et Github

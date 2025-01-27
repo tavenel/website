@@ -1,6 +1,5 @@
 ---
 title: Projet Fil Rouge du cours d'Introduction à la Gestion de Projet
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

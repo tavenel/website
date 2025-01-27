@@ -1,6 +1,5 @@
 ---
 title: Exercices Python niveau 1
-author: Tom Avenel
 correction: false
 ---
 

@@ -1,12 +1,11 @@
 ---
 title: Tech articles
-date: 2024-05-17
-updated: 2024-05-17
+created: 2024-05-17
 ---
 
 Here are a bunch of articles, howtos, tutorials and thoughts about technology and softwares that I like.
 
-<span>&#9888;</span><!-- warn sign -->
+<span>⚠️</span>
 This page is strongly opinionated : expect advocacy of free, open-source and efficient tools.
 
 ## Quotes

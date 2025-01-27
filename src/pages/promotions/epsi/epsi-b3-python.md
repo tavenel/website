@@ -1,6 +1,5 @@
 ---
-pagetitle: 󰌠  Tom Avenel - B3 Python
-updated: 2024-10-15
+title: 󰌠  Tom Avenel - B3 Python
 ---
 
 # 󰌠  Python

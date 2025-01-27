@@ -1,6 +1,5 @@
 ---
-pagetitle: 📊 Tom Avenel - Data
-updated: 2025-01-15
+title: 📊 Tom Avenel - Data
 ---
 
 # 📊 Formations Data

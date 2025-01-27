@@ -1,6 +1,5 @@
 ---
 title: Intégration continue - pour aller plus loin
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

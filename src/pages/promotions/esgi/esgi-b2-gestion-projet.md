@@ -1,6 +1,5 @@
 ---
-pagetitle: 📅 Tom Avenel - B2 Gestion de Projet
-updated: 2024-10-02
+title: 📅 Tom Avenel - B2 Gestion de Projet
 ---
 
 # 📅 Introduction à la gestion de projet 

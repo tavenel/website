@@ -1,6 +1,5 @@
 ---
 title: TP - Utilisation du protocole HTTP avec Telnet
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

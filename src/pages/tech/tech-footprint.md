@@ -1,7 +1,6 @@
 ---
 title: Carbon footprint of the Tech world
-date: 2024-12-17
-updated: 2024-12-17
+created: 2024-12-17
 ---
 
 ## Small tips

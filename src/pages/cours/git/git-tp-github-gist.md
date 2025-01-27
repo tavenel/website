@@ -1,6 +1,5 @@
 ---
 title: TP Partager un script ou un morceau de code - Gist®
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Intégration continue
-updated: 2024-10-06
+title: Tom Avenel - Intégration continue
 ---
 
 # 🔄 Intégration continue

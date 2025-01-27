@@ -1,7 +1,5 @@
 ---
 title: "TP : Gestion des permissions avancées avec SUID, SGID et ACL sous Linux"
-author: Tom Avenel
-date: 2024 / 2025
 correction: false
 ---
 

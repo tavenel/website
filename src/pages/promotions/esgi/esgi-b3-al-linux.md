@@ -1,6 +1,5 @@
 ---
-pagetitle: 🐧 Tom Avenel - B3 Linux
-updated: 2024-11-19
+title: 🐧 Tom Avenel - B3 Linux
 ---
 
 # 🐧 Linux orienté développeurs

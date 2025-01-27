@@ -1,6 +1,5 @@
 ---
 title: Tests d'un système de cartes météo
-author: Tom Avenel
 date: 2023 / 2024
 ---
  

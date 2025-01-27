@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Devops / Sysops
-updated: 2024-10-17
+title: Tom Avenel - Devops / Sysops
 ---
 
 # 🧑‍💻 Devops - Sysops

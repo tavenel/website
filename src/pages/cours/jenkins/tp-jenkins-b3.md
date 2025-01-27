@@ -1,6 +1,5 @@
 ---
 title: Jenkins - intégration continue
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

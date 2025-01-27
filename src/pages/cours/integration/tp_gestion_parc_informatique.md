@@ -1,6 +1,5 @@
 ﻿---
 title: TD OCSInventory
-author: Tom Avenel
 date: 2023 / 2024
 user-manual: false
 ---

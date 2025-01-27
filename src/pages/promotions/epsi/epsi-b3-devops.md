@@ -1,6 +1,5 @@
 ---
-pagetitle: 󱃾  Tom Avenel - B3 Devops Sysops
-updated: 2024-11-07
+title: 󱃾  Tom Avenel - B3 Devops Sysops
 ---
 
 # 󱃾  Devops - Sysops

@@ -1,6 +1,5 @@
 ﻿---
 title: Création de scripts Bash
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

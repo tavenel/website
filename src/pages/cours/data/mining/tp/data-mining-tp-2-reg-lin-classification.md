@@ -1,6 +1,5 @@
 ---
 title: Data mining - TP 2 - Classification par régression linéaire
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

@@ -1,8 +1,6 @@
 ﻿---
 title: OCSInventory
-author: Tom Avenel
 date: 2023 / 2024
-user-manual: false
 ---
 
 # Gestion de parc informatique : OCSInventory

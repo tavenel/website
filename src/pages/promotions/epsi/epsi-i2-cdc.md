@@ -1,6 +1,5 @@
 ---
-pagetitle: 📒 Tom Avenel - I2 CDC
-updated: 2024-10-02
+title: 📒 Tom Avenel - I2 CDC
 ---
 
 # 📒 Cahier des charges technique et fonctionnel

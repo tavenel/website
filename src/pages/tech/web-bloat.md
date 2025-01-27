@@ -1,7 +1,6 @@
 ---
 title: The Web is Bloated
-date: 2024-12-17
-updated: 2024-12-17
+created: 2024-12-17
 ---
 
 ## The issue

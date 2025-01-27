@@ -1,6 +1,5 @@
 ---
-pagetitle: 🐧 Tom Avenel - SN2 Linux
-updated: 2024-10-09
+title: 🐧 Tom Avenel - SN2 Linux
 ---
 
 # 🐧 Linux : Installation et configuration poste de travail 

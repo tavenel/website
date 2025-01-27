@@ -1,6 +1,5 @@
 ---
 title: Data mining - TP 5 - Algorithme k-NN des proches voisins
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Exercices Python - chiffrement
-author: Tom Avenel
 ---
 
 ## Code de César

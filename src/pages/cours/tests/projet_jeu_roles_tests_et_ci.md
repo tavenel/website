@@ -1,6 +1,5 @@
 ---
 title: Jeu de rôle
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: TP Mise en place de règles de filtrage sous Debian avec Netfilter
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

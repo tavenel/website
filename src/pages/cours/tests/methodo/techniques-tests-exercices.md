@@ -1,6 +1,5 @@
 ---
 title: Exercices Techniques de tests
-author: Tom Avenel
 correction: false
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: TP Dashboard PowerBI et Roadmap 
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

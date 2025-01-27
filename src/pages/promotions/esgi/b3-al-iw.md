@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - ESGI B3
-updated: 2024-10-02
+title: Tom Avenel - ESGI B3
 ---
 
 # Modules ESGI B3 IW et AL

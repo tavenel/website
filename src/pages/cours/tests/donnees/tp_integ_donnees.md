@@ -1,6 +1,5 @@
 ---
 title: Intégration de données depuis différents sites
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

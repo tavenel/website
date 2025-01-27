@@ -1,6 +1,5 @@
 ---
 title: Projet Dockerisation d'un Projet Multi-Composants
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

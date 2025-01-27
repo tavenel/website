@@ -1,6 +1,5 @@
 ---
 title: TP Bash - Gestion des fichiers et des utilisateurs
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

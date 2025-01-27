@@ -1,6 +1,5 @@
 ---
 title: Les tags de Git
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

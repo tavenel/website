@@ -1,6 +1,5 @@
 ---
 title: Jmeter - Tests de performance
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

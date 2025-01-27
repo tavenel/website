@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Django
-updated: 2023-08-29
+title: Tom Avenel - Django
 ---
 
 # 💃 Le framework Django

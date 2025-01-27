@@ -1,6 +1,5 @@
 ﻿---
 title: Atelier DevOps-SysOps & Atelier Méthodes Agiles
-author: Tom Avenel
 date: 2022 / 2023
 keywords:
 - devops

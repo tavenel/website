@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Python
-updated: 2023-11-16
+title: Tom Avenel - Python
 ---
 
 # 🐍 Python

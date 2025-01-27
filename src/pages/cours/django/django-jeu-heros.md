@@ -1,6 +1,5 @@
 ---
 title: Un jeu dont vous êtes le héros
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

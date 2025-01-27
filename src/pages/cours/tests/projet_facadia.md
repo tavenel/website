@@ -1,6 +1,5 @@
 ---
 title: Projet fil rouge de test - Facadia
-author: Tom Avenel
 ---
 
 # Présentation du projet

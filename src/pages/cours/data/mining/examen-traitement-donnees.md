@@ -1,6 +1,5 @@
 ---
 title: B2 ESGI - Examen Mathématiques pour le traitement des données (3H)
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

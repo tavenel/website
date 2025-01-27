@@ -1,6 +1,5 @@
 ---
 title: SN1 EPSI - Projet transversal - Labyrinthe
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

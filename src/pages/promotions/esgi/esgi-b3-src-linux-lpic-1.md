@@ -1,6 +1,5 @@
 ---
-pagetitle: 🐧 Tom Avenel - B3 LPIC-1
-updated: 2024-11-19
+title: 🐧 Tom Avenel - B3 LPIC-1
 ---
 
 # 🐧 Linux administration avancée LPIC-1 v5.0

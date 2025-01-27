@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - UML®
-updated: 2023-08-29
+title: Tom Avenel - UML®
 ---
 
 # 🏷️ UML® 

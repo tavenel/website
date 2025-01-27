@@ -1,6 +1,5 @@
 ---
 title: Data mining - Mise en place de l'environnement
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

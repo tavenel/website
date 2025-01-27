@@ -1,6 +1,5 @@
 ---
 title: Installation d'Ubuntu
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

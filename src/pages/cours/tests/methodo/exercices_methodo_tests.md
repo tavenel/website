@@ -1,6 +1,5 @@
 ---
 title: Exercices Méthodologie des tests
-author: Tom Avenel
 ---
  
 ## Questions générales 

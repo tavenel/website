@@ -1,6 +1,5 @@
 ---
 title: TP - Gestion avancée de fichiers - permissions, liens, recherche
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

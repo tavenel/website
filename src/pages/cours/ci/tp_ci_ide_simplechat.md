@@ -1,6 +1,5 @@
 ﻿---
 title: Intégration continue d'un serveur de chat grâce à l'IDE IntelliJ
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

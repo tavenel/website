@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Tests
-updated: 2024-04-08
+title: Tom Avenel - Tests
 ---
 
 # 🧪 Tests logiciels

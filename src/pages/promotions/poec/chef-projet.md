@@ -1,5 +1,5 @@
 ---
-pagetitle: Tom Avenel - POEC Chef de projet informatique
+title: Tom Avenel - POEC Chef de projet informatique
 ---
 
 # 📅 POEC Chef de projet informatique

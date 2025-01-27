@@ -1,6 +1,5 @@
 ---
 title: Exercice - gestion d'étudiants
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

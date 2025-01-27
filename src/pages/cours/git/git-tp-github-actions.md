@@ -1,6 +1,5 @@
 ---
 title: TP Github Actions - introduction à la CI
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

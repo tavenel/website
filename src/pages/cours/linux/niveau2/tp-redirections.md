@@ -1,6 +1,5 @@
 ---
 title: TP - Utilisation des flux, des pipes et des redirections 
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

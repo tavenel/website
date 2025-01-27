@@ -1,6 +1,5 @@
 ﻿---
 title: Projet Spring / Hibernate
-author: Tom Avenel
 ---
 
 L'objectif de ce projet est la création d'une application fullstack en utilisant le framework Spring Boot. La persistance des données sera assurée par le framework Hibernate.

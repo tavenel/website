@@ -1,6 +1,5 @@
 ---
-pagetitle: 󱃾 Tom Avenel - M1 Devops
-updated: 2024-10-04
+title: 󱃾 Tom Avenel - M1 Devops
 ---
 
 # 󱃾  Conteneurs et Devops

@@ -1,6 +1,5 @@
 ---
-pagetitle: 󱃾 Tom Avenel - M2 Ingénieurie Devops
-updated: 2024-10-04
+title: 󱃾 Tom Avenel - M2 Ingénieurie Devops
 ---
 
 # 󱃾 Ingénierie DevOps (Gestion d'infrastructure de production)

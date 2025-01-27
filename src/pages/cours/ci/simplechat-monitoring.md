@@ -1,6 +1,5 @@
 ---
 title: TP2 - Une interface de monitoring pour les différents serveurs de chat
-author: Tom Avenel
 date: 2023 / 2024
 ---
  

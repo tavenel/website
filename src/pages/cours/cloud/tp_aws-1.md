@@ -1,6 +1,5 @@
 ﻿---
 title: Introduction au Cloud Amazon Web Services
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

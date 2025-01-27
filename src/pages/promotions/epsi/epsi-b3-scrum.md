@@ -1,6 +1,5 @@
 ---
-pagetitle: 🤼 Tom Avenel - B3 Scrum
-updated: 2024-02-18
+title: 🤼 Tom Avenel - B3 Scrum
 ---
 
 # 🤼 Méthodologie agile Scrum

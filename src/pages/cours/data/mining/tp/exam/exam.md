@@ -1,6 +1,5 @@
 ---
 title: Examen Data mining
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

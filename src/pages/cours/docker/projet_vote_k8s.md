@@ -1,6 +1,5 @@
 ---
 title: TP Docker,k8s
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

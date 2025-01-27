@@ -1,6 +1,5 @@
 ﻿---
 title: Utilisation des commandes avancées Linux
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

@@ -1,8 +1,6 @@
 ﻿---
 title: Notions de protocoles Web
-author: Tom Avenel
 date: 2023 / 2024
-#footer: © 2024 Tom Avenel under 󰵫  BY-SA 4.0
 keywords:
 - cloud
 correction: false

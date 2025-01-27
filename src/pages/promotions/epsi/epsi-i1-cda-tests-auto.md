@@ -1,6 +1,5 @@
 ---
-pagetitle: 🧪 Tom Avenel - I1 Automatisation des tests
-updated: 2024-10-02
+title: 🧪 Tom Avenel - I1 Automatisation des tests
 ---
 
 # 🧪 Automatisation des tests

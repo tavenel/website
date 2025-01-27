@@ -1,5 +1,5 @@
 ---
-pagetitle: Tom Avenel - FAQ
+title: Tom Avenel - FAQ
 ---
 
 ## Général

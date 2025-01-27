@@ -1,11 +1,8 @@
 ---
-pagetitle:   Tom Avenel - B3 Docker
-updated: 2024-11-04
+title:   Tom Avenel - B3 Docker
 ---
 
 #   Docker : introduction aux conteneurs
-
-![](/resources/images/cover/conteneurs-devops.jpg)
 
 ## Présentation du module
 
@@ -24,70 +21,25 @@ Module de 10H
 
 ## Documents
 
-### 🤓 Cours - introduction à Docker
+### Cours Docker et Kubernetes
 
-- [html](/cours/docker/docker-cours.html)
-- [pdf](/cours/docker/docker-cours.pdf)
-- [markdown](/cours/docker/docker-cours.md)
+- [🤓 Cours - introduction à Docker](/cours/docker/docker-cours)
+- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
+- [🤓 Cheatsheets commandes Docker®, Dockerfile, Kubernetes®](/cours/docker/docker-cheatsheets)
 
-### 🤓 Cours - introduction à Kubernetes
+### TPs partie Docker
 
-- [html](/cours/docker/kubernetes-cours.html)
-- [pdf](/cours/docker/kubernetes-cours.pdf)
-- [markdown](/cours/docker/kubernetes-cours.md)
+- [  TP Docker® : Introduction à l'usage de conteneurs](/cours/docker/tp_docker)
+- [  TP Docker Compose : Gestion de services applicatifs](/cours/docker/tp_docker-compose)
 
-### 🤓 Cheatsheets commandes Docker®, Dockerfile, Kubernetes®
+### TPs partie Kubernetes
 
-- [html](/cours/docker/docker-cheatsheets.html)
-- [pdf](/cours/docker/docker-cheatsheets.pdf)
-- [markdown](/cours/docker/docker-cheatsheets.md)
-
-###   TP Introduction à l'usage de conteneurs Docker®
-
-L'objectif de ce TP est de se familiariser avec les concepts de base de Docker® - installation du Docker® Engine, création d'images, récupération d'images existantes depuis le Docker® Hub, création de conteneur depuis une image.
-
-- [html](/cours/docker/tp_docker.html)
-- [pdf](/cours/docker/tp_docker.pdf)
-- [markdown](/cours/docker/tp_docker.md)
-
-###   TP Gestion de services applicatifs avec docker-compose
-
-L'objectif de ce TP est d'utiliser une technologie de conteneurs pour isoler une application en plusieurs composants. L'application sera déployée automatiquement dans un environnement docker-compose.
-
-- [html](/cours/docker/tp_docker-compose.html)
-- [pdf](/cours/docker/tp_docker-compose.pdf)
-- [markdown](/cours/docker/tp_docker-compose.md)
-
-### 󱃾  TP : Premiers pas avec Kubernetes
-
-L'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
-
-- [html](/cours/docker/tp_k8s.html)
-- [pdf](/cours/docker/tp_k8s.pdf)
-- [markdown](/cours/docker/tp_k8s.md)
-
-### 󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana
-
-Un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
-
-- [html](/cours/docker/tp_prometheus_grafana_k8s.html)
-- [pdf](/cours/docker/tp_prometheus_grafana_k8s.pdf)
-- [markdown](/cours/docker/tp_prometheus_grafana_k8s.md)
-
-### 󱃾  TP : Logging centralisé d'un cluster Kubernetes
-
-Le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.
-
-- [html](/cours/docker/tp_k8s_elk.html)
-- [pdf](/cours/docker/tp_k8s_elk.pdf)
-- [markdown](/cours/docker/tp_k8s_elk.md)
+- [󱃾  TP Kubernetes : Premiers pas avec k8s](/cours/docker/tp_k8s)
+- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s)
+- [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk)
 
 ### 📌 Projet Docker et Kubernetes : application de vote
 
-Le but de ce TP est d'isoler et de déployer une application dans une stack de conteneurs Kubernetes
-
-- [html](/cours/docker/projet_vote_k8s.html)
-- [pdf](/cours/docker/projet_vote_k8s.pdf)
-- [markdown](/cours/docker/projet_vote_k8s.md)
+- [Sujet du projet](/cours/docker/projet_vote_k8s)
 - Sources git : <https://git.sr.ht/~toma/docker-vote>
 

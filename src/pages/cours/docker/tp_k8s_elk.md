@@ -1,6 +1,5 @@
 ---
 title: Logging centralisé d'un cluster Kubernetes
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

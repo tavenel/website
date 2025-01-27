@@ -1,6 +1,5 @@
 ---
 title: Partie pratique 3 - Utiliser un dépôt distant - Github®
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

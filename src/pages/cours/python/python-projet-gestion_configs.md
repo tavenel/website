@@ -1,6 +1,5 @@
 ---
 title: Projet Python Gestionnaire de Configuration des Serveurs
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

@@ -1,6 +1,5 @@
 ---
 title: Projet Data mining - fouille de données
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

@@ -1,6 +1,5 @@
 ---
 title: Gestion de services avec docker compose
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

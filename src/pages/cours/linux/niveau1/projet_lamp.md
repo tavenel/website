@@ -1,6 +1,5 @@
 ﻿---
 title: Installation d'un serveur LAMP sous Linux
-author: Tom Avenel
 date: 2024 / 2025
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: TP - Affichage de la configuration du système et des périphériques et modules noyau
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

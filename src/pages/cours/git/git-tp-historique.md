@@ -1,6 +1,5 @@
 ---
 title: TP Voyager et manipuler l'historique Git™
-author: Tom Avenel
 date: 2023 / 2024
 keywords:
 - git

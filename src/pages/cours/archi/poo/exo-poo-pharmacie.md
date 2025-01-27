@@ -1,6 +1,5 @@
 ---
 title: Gestion d'une pharmacie
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

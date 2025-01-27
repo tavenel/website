@@ -1,6 +1,5 @@
 ---
 title: TP Podman
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

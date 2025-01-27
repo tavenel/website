@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Jenkins
-updated: 2023-08-29
+title: Tom Avenel - Jenkins
 ---
 
 # 🤵 Jenkins - Pipelines d'intégration continue

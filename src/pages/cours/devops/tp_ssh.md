@@ -1,6 +1,5 @@
 ---
 title: Configuration des clés SSH pour un accès sécurisé
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

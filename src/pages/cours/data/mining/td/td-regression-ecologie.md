@@ -1,6 +1,5 @@
 ---
 title: TD traitement des données - régression linéaire
-author: Tom Avenel
 date: 2023 / 2024
 correction: false
 ---

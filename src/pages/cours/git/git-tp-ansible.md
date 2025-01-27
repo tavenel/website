@@ -1,6 +1,5 @@
 ---
 title: TP Introduction à l'infrastructure-as-code (IaC)
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

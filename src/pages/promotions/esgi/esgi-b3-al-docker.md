@@ -1,6 +1,5 @@
 ---
-pagetitle:   Tom Avenel - B3 Docker
-updated: 2024-10-04
+title:   Tom Avenel - B3 Docker
 ---
 
 #   Conteneurisation Docker

@@ -1,6 +1,5 @@
 ---
-pagetitle: 🤝 Tom Avenel - M2 AL DDD
-updated: 2024-10-02
+title: 🤝 Tom Avenel - M2 AL DDD
 ---
 
 # 🤝 Domain-Driven Design (DDD)

@@ -1,5 +1,5 @@
 ---
-pagetitle: ☑️ Checklist Création de projet
+title: ☑️ Checklist Création de projet
 ---
 
 # ☑️ Checklist Création de projet

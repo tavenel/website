@@ -1,6 +1,5 @@
 ---
-pagetitle: 🧪 Tom Avenel - B3 Tests unitaires et logiciels
-updated: 2024-10-02
+title: 🧪 Tom Avenel - B3 Tests unitaires et logiciels
 ---
 
 # 🧪 Tests unitaires et logiciels

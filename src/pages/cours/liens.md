@@ -1,7 +1,6 @@
 ---
 title: Liens utiles
-date: 2024-10-17
-updated: 2024-10-17
+created: 2024-10-17
 checked: 2025-01-27
 ---
 

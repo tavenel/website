@@ -1,6 +1,5 @@
 ---
 title: TP - Bibliothèques partagées
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

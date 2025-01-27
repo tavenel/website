@@ -1,6 +1,5 @@
 ---
-pagetitle: 🤼 Tom Avenel - WIS3 Scrum
-updated: 2023-11-13
+title: 🤼 Tom Avenel - WIS3 Scrum
 ---
 
 # 🤼 Méthodologie agile Scrum

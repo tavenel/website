@@ -1,6 +1,5 @@
 ---
 title: Le jeu du Moulin
-author: Tom Avenel
 date: 2023 / 2024
 ---
 

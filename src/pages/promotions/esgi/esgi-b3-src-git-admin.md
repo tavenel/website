@@ -1,6 +1,5 @@
 ---
-pagetitle:   Tom Avenel - Versioning Git administrateur
-updated: 2024-10-02
+title:   Tom Avenel - Versioning Git administrateur
 ---
 
 #  Versioning Git pour l'administrateur

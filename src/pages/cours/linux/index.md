@@ -1,6 +1,5 @@
 ---
-pagetitle: Tom Avenel - Linux
-updated: 2024-11-19
+title: Tom Avenel - Linux
 ---
 
 # 🐧 Linux

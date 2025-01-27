@@ -1,6 +1,5 @@
 ---
 title: Monitoring Kubernetes avec Prometheus et Grafana
-author: Tom Avenel
 date: 2024 / 2025
 correction: false
 ---

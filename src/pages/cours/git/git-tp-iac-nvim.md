@@ -1,6 +1,5 @@
 ---
 title: Git pour gérer ses configurations - IaC
-author: Tom Avenel
 date: 2023 / 2024
 ---
 
