@@ -1,10 +1,9 @@
 ---
 pagetitle: 󱃾 Tom Avenel - M1 Devops
+updated: 2024-10-04
 ---
 
 # 󱃾  Conteneurs et Devops
-
-_Modifié le: 2024-10-04_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

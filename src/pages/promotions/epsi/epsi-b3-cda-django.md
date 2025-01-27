@@ -1,10 +1,9 @@
 ---
 pagetitle:   Tom Avenel - B3 CDA Django
+updated: 2023-10-21
 ---
 
 #   Le framework Django
-
-_Modifié le: 2023-10-21_
 
 ![](/resources/images/cover/django.jpg)
 

@@ -1,10 +1,9 @@
 ---
 pagetitle: Tableaux de bord et pilotage des applications du SI
+updated: 2025-01-15
 ---
 
 # Tableaux de bord et pilotage des applications du SI
-
-_Modifié le: 2025-01-15_
 
 ![](/resources/images/cover/dashboard.jpg)
 

@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Gestion de projet
+updated: 2025-01-22
 ---
 
 # 📅 Gestion de projet
-
-_Modifié le: 2025-01-22_
 
 ![](/resources/images/cover/gestion-projet.jpg)
 

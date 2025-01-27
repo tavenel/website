@@ -1,10 +1,9 @@
 ---
 pagetitle:   Tom Avenel - B2 Docker
+updated: 2024-10-02
 ---
 
 #   Conteneurisation Docker (bases)
-
-_Modifié le: 2024-10-02_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

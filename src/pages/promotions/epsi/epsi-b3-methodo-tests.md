@@ -1,10 +1,9 @@
 ---
 pagetitle: 🧪 Tom Avenel - B3 Méthodologie des tests
+updated: 2023-12-06
 ---
 
 # 🧪 Méthodologie des tests logiciels
-
-_Modifié le: 2023-12-06_
 
 ![](/resources/images/cover/tests.jpg)
 

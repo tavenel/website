@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Docker®
+updated: 2024-10-12
 ---
 
 # 🐳 Introduction aux conteneurs - Docker® et Kubernetes® 
-
-_Modifié le: 2024-10-12_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

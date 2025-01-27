@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - EPSI SN2
+updated: 2024-10-02
 ---
 
 # Modules EPSI SN2
-
-_Modifié le: 2024-10-02_
 
 ## Informations
 

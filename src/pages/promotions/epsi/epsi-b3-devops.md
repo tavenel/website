@@ -1,10 +1,9 @@
 ---
 pagetitle: 󱃾  Tom Avenel - B3 Devops Sysops
+updated: 2024-11-07
 ---
 
 # 󱃾  Devops - Sysops
-
-_Modifié le: 2024-11-07_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

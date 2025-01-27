@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - cours
+updated: 2025-01-15
 ---
 
 # Cours
-
-<div class="versioning">Last Update: 2025-01-15</div>
 
 ## Par promotions
 

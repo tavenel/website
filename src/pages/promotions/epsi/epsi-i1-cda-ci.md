@@ -1,10 +1,9 @@
 ---
 pagetitle:  Tom Avenel - I1 CD/CD
+updated: 2024-10-06
 ---
 
 #  Serveurs d'intégration continue (CI/CD)
-
-_Modifié le: 2024-10-06_
 
 ![](/resources/images/cover/ci.jpg)
 

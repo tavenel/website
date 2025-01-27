@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Management
+updated: 2023-10-31
 ---
 
 # 💬 Management
-
-_Modifié le: 2023-10-31_
 
 ![](/resources/images/cover/management.jpg)
 

@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Hibernate
+updated: 2023-11-17
 ---
 
 # 💽 Persistence des données et Object-relational mapping - Hibernate
-
-_Modifié le: 2023-11-17_
 
 ![](/resources/images/cover/hibernate.jpg)
 

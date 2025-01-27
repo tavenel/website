@@ -1,10 +1,9 @@
 ---
 pagetitle:   Tom Avenel - B3 Docker
+updated: 2024-11-04
 ---
 
 #   Docker : introduction aux conteneurs
-
-_Modifié le: 2024-11-04_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

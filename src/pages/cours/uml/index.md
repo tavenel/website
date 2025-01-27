@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - UML®
+updated: 2023-08-29
 ---
 
 # 🏷️ UML® 
-
-_Modifié le: 2023-08-29_
 
 ![](/resources/images/cover/uml.jpg)
 

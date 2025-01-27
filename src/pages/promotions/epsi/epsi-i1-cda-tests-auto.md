@@ -1,10 +1,9 @@
 ---
 pagetitle: 🧪 Tom Avenel - I1 Automatisation des tests
+updated: 2024-10-02
 ---
 
 # 🧪 Automatisation des tests
-
-_Modifié le: 2024-10-02_
 
 ![](/resources/images/cover/auto-tests.jpg)
 

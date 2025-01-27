@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - ESGI B3
+updated: 2024-10-02
 ---
 
 # Modules ESGI B3 SRC
-
-_Modifié le: 2024-10-02_
 
 ## Informations
 

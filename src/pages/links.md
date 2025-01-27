@@ -1,11 +1,9 @@
 ---
 title: Liens externes
-layout: ../layouts/Layout.astro
+updated: 2024-03-08
 ---
 
 # Liens externes
-
-<div class="versioning">Mis à jour : 2024-03-08</div>
 
 ## Tech
 
@@ -101,6 +99,7 @@ layout: ../layouts/Layout.astro
 - Fiches de réparation de matériels électroniques : <https://fr.ifixit.com/>
 - Exemple de pire interface utilisateur : <https://userinyerface.com/>
 - Comment écrire de bons exemples : <https://conventionalcomments.org/>
+- <https://www.librealire.org/bien-gerer-son-projet-libre-que-faire-au-dela-du-code>
 
 ## Frugal
 

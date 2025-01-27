@@ -1,10 +1,9 @@
 ---
 pagetitle:   Tom Avenel - B3 Docker
+updated: 2024-10-04
 ---
 
 #   Conteneurisation Docker
-
-_Modifié le: 2024-10-04_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

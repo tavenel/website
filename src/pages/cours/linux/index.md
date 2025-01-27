@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Linux
+updated: 2024-11-19
 ---
 
 # 🐧 Linux
-
-_Modifié le: 2024-11-19_
 
 ![](/resources/images/cover/linux.jpg)
 

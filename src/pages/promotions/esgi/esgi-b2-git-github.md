@@ -1,10 +1,9 @@
 ---
 pagetitle: 󰊤  Tom Avenel - B2 GIT
+updated: 2024-10-02
 ---
 
 # 󰊤  Versioning avec Git et Github
-
-_Modifié le: 2024-10-02_
 
 ![](/resources/images/cover/git.jpg)
 

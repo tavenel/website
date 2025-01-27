@@ -1,10 +1,9 @@
 ---
 pagetitle: 🏭 Tom Avenel - B3 Industrialisation des tests
+updated: 2023-12-07
 ---
 
 # 🏭 Industrialisation des tests logiciels
-
-_Modifié le: 2023-12-07_
 
 ![](/resources/images/cover/auto-tests.jpg)
 

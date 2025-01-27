@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Git
+updated: 2024-03-06
 ---
 
 #   Git™
-
-_Modifié le: 2024-03-06_
 
 ![](/resources/images/cover/git.jpg)
 

@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Intégration continue
+updated: 2024-10-06
 ---
 
 # 🔄 Intégration continue
-
-_Modifié le: 2024-10-06_
 
 ![](/resources/images/cover/ci.jpg)
 

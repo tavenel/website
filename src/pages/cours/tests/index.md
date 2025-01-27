@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Tests
+updated: 2024-04-08
 ---
 
 # 🧪 Tests logiciels
-
-_Modifié le: 2024-04-08_
 
 ![](/resources/images/cover/tests.jpg)
 

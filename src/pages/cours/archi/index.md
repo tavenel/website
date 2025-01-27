@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Architecture
+updated: 2024-03-09
 ---
 
 # 🏗️ Architecture
-
-_Modifié le: 2024-03-09_
 
 ![](/resources/images/cover/archi.jpg)
 

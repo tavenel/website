@@ -2,6 +2,7 @@
 title: Liens utiles
 date: 2024-10-17
 updated: 2024-10-17
+checked: 2025-01-27
 ---
 
 Quelques références utiles en informatique.
@@ -57,6 +58,12 @@ Quelques références utiles en informatique.
 - _chain of thought_ => "let's think …" (step-by-step example)
 - _RAG_ (retrieval augmented generation) => élévation de contexte par vecteur de contexte
 - _agents_ => conscience de l'environnement
+
+## Citations
+
+> You can only be _pragmatic_ if you know how to be _dogmatic_.
+
+> Toute abstraction visant à simplifier le travail d'un utilisateur transfère la complexité ailleurs, généralement aux équipes techniques. La complexité ne disparaît jamais, elle est déportée vers une application. [Conservation de la Complexité](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
 
 ## Liens transverses
 

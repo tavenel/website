@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Django
+updated: 2023-08-29
 ---
 
 # 💃 Le framework Django
-
-_Modifié le: 2023-08-29_
 
 ![](/resources/images/cover/django.jpg)
 

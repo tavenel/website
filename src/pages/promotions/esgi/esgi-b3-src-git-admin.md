@@ -1,10 +1,9 @@
 ---
 pagetitle:   Tom Avenel - Versioning Git administrateur
+updated: 2024-10-02
 ---
 
 #  Versioning Git pour l'administrateur
-
-_Modifié le: 2024-10-02_
 
 ![](/resources/images/cover/git.jpg)
 

@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Spring
+updated: 2023-11-17
 ---
 
 # 🍃 Le Framework Spring®
-
-_Modifié le: 2023-11-17_
 
 ![](/resources/images/cover/spring.jpg)
 

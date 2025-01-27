@@ -1,12 +1,11 @@
 ---
 pagetitle: Tom Avenel - POEC Cloud
+updated: 2024-04-12
 ---
 
 # 🐧 POEC Cloud - Module Linux
 
 ![](/resources/images/cover/linux.jpg)
-
-_Modifié le: 2024-04-12_
 
 ## Présentation du module
 

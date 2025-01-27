@@ -1,10 +1,9 @@
 ---
 pagetitle: 💬 Tom Avenel - I2 Distanciel
+updated: 2023-10-31
 ---
 
 # 💬 Partage d'informations et collaboration à distance
-
-_Modifié le: 2023-10-31_
 
 ![](/resources/images/cover/distanciel.jpg)
 

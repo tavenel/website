@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - DDD
+updated: 2024-03-11
 ---
 
 # 🧑‍💼 DDD: Domain-driven Design
-
-_Modifié le: 2024-03-11_
 
 ![](/resources/images/cover/ddd.jpg)
 

@@ -2,9 +2,8 @@
 title: Notes dev
 date: 2024-09-29
 updated: 2024-09-29
+checked: 2024-09-29
 ---
-
-> Content checked : 2024-09-29
 
 ## Games
 

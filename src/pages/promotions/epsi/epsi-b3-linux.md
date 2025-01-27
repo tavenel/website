@@ -1,10 +1,9 @@
 ---
 pagetitle: 🐧 Tom Avenel - B3 Environnement Linux
+updated: 2024-10-23
 ---
 
 # 🐧 Atelier Environnement Linux
-
-_Modifié le: 2024-10-23_
 
 ![](/resources/images/cover/linux.jpg)
 

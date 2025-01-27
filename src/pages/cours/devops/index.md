@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Devops / Sysops
+updated: 2024-10-17
 ---
 
 # 🧑‍💻 Devops - Sysops
-
-_Modifié le: 2024-10-17_
 
 ![](/resources/images/cover/conteneurs-devops.jpg)
 

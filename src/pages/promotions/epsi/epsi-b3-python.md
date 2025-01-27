@@ -1,10 +1,9 @@
 ---
 pagetitle: 󰌠  Tom Avenel - B3 Python
+updated: 2024-10-15
 ---
 
 # 󰌠  Python
-
-_Modifié le: 2024-10-15_
 
 ![](/resources/images/cover/python.jpg)
 

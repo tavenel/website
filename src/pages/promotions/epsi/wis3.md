@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - EPSI WIS3
+updated: 2023-12-04
 ---
 
 # Modules EPSI WIS3
-
-_Modifié le: 2023-12-04_
 
 ## Informations
 

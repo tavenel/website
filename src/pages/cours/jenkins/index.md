@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - Jenkins
+updated: 2023-08-29
 ---
 
 # 🤵 Jenkins - Pipelines d'intégration continue
-
-_Modifié le: 2023-08-29_
 
 ![](/resources/images/cover/jenkins.jpg)
 

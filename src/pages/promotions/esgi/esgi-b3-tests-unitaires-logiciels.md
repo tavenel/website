@@ -1,10 +1,9 @@
 ---
 pagetitle: 🧪 Tom Avenel - B3 Tests unitaires et logiciels
+updated: 2024-10-02
 ---
 
 # 🧪 Tests unitaires et logiciels
-
-_Modifié le: 2024-10-02_
 
 ![](/resources/images/cover/tests.jpg)
 

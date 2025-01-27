@@ -1,10 +1,9 @@
 ---
 pagetitle:  Tom Avenel - M2 IW CD/CD
+updated: 2024-10-09
 ---
 
 #  Solutions de déploiements continus CI/CD
-
-_Modifié le: 2024-10-09_
 
 ![](/resources/images/cover/cicd.jpg)
 

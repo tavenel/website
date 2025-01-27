@@ -1,10 +1,9 @@
 ---
 pagetitle: Tom Avenel - RSE
+updated: 2024-03-09
 ---
 
 # ✔️ Bien coder
-
-_Modifié le: 2024-03-09_
 
 ![](/resources/images/cover/green-it.jpg)
 
