@@ -372,9 +372,9 @@ To change every occurrence of a character string between two lines,
 
 - `:help index` => all shortcuts
 - `curl -s -m 3 https://vtip.43z.one` => random Vim tip
-- [Cheat Sheet (JPG)](vi-cheatsheet.jpg)
+- [Cheat Sheet (JPG)](../../../images/vim/vi-cheatsheet.jpg)
 - Another Vim cheatsheet : <https://quickref.me/vim>
-- [Vim Quickfix commands (PNG)](vim-quickfix.png)
+- [Vim Quickfix commands (PNG)](../../../images/vim/vim-quickfix.png)
 - [Neovim - Getting started](https://www.reddit.com/r/neovim/wiki/index/getting-started/)
 - [Demo Vim expert](https://invidious.namazso.eu/watch?v=MquaityA1SM)
 - [Vimcasts - Special registers & advanced C-r paste](http://vimcasts.org/episodes/pasting-from-insert-mode/)

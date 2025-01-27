@@ -160,12 +160,6 @@ Il peut s'agir d'un document simple dans le cas de données simples et/ou maîtr
 
 ---
 
-![](img/exemple-mapping-talendjpg.jpg)
-
-_Exemple de mapping complexe - talend.com_
-
----
-
 # Suivi de l'intégrité
 
 Pour réaliser le suivi de l'intégrité de la migration, on pourra s'aider de la section correspondante dans le manuel d'exploitation.

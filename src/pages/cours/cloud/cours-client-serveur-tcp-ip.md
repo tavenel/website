@@ -368,8 +368,6 @@ Par exemple : serveur mail `POP` + `IMAP`
 
 `RPC` utilise des `stubs` pour simuler dans le code un appel local aux fonctions du serveur chez le client, ou du client chez le serveur. Ces stubs servent d'interfaces pour la procédure.
 
-![](./img/RPC_overview.png)
-
 ---
 
 De nombreuses applications utilisent `(Secure)RPC` : `NFS`, `NIS`, ...
@@ -441,8 +439,6 @@ $ rlogin <machine distante> -l <nom de l'utilisateur>
 `X`, `X Window`, `X11` est un protocole de système de fenêtrage qui permet de tourner des applications graphiques et gère les périphériques d'entrée (clavier, souris, ...).
 
 C'est le système standard sur les UNIX (Linux, BSD, …), optionnel sur MacOS, installable sur Windows.
-
-![](./img/X_client_serveur.png)
 
 ---
 

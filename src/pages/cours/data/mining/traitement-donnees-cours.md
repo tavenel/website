@@ -427,7 +427,7 @@ plt.scatter(x,y) # points
 plt.show()
 ```
 
-![Nuage de points](img/caisses.png)
+![Nuage de points](./img/caisses.png)
 :::
 
 ## Lois de probabilité
@@ -752,8 +752,6 @@ erreur -> réseau [style="dashed", color="royalblue"]
 label = "Schéma d'apprentissage supervisé"
 }
 ```
-
-\newpage{}
 
 ## Méthodes de régression
 
@@ -1259,8 +1257,6 @@ Avec $1_k(i)$ la fonction indicatrice du cluster $k$ : vaut 1 ssi $i\in k$ sinon
 – Itération
 - Si un cluster a un effectif trop faible : régression sur composantes principales du cluster.
 
-\newpage{}
-
 ## Méthodes de classification
 
 ### Méthode des k proches voisins (_k-NN_)
@@ -1378,8 +1374,6 @@ Déterminez la classe de _Verneuil_.
   _Verneuil_ est le plus proche de : (_Fernand_, Admis), (_David_, Ajoutné), (_Billaut_, Admis) => _Verneuil_ est donc dans la classe _Admis_.
 
 :::
-
-\newpage{}
 
 ### Arbres de décision (_CART_)
 
@@ -1671,8 +1665,6 @@ label="Schéma d'apprentissage non supervisé"
 }
 ```
 
-\newpage{}
-
 ## Classification automatique (_Clustering_)
 
 - Méthode mathématique d'analyse de données pour faciliter l'étude d'une population d'effectif important (animaux, plantes, malades, gènes, etc...).
@@ -1788,8 +1780,6 @@ petite.
 La partition d'un nuage en deux classes sera d'autant meilleure que son inertie intra-classe sera petite, ou que son inertie interclasse sera grande puisque leur somme est l'inertie totale qui reste la même quelle que soit la partition.
 :::
 
-\newpage{}
-
 ## Classification hiérarchique ascendante
 
 Pour classifier une population d'effectif $n$ dont les individus sont numérotés $1, 2, ... , n$ :
@@ -1826,8 +1816,6 @@ Il arrive souvent dans les situations concrètes que l'on dispose d'une matrice 
 On peut toujours réaliser une classification mais l'interprétation donnée ci-dessus utilisant le nuage de points, les centres de gravités et l'écart de Ward n'a plus de sens.
 
 On peut alors faire précéder l'algorithme par une méthode appelée positionnement multidimensionnel (_MultiDimentional Scaling MDS_) qui permet de trouver, pour n'importe quelle matrice de distances de taille $n^2$ un ensemble de $n$ points repérés par leur coordonnées euclidiennes dont la matrice de distance est très proche de la matrice de distances donnée, puis calculer l'écart de Ward.
-
-\newpage{}
 
 ## Méthode des centres mobiles
 
@@ -1906,8 +1894,6 @@ Les deux clusters sont donc : $\{A;B;E\}$ de centre $I(10/3;7/3)$ et $\{C;D;F\}$
 Introduction à la densité : exemple échec k-mean smiley (distance proche mais classes différentes).
 :::
 
-\newpage{}
-
 ## Les méthodes à densité (_DBSCAN_)
 
 Les classes des méthodes à densité correspondent aux zones de densité relativement élevées, c'est-à-dire les zones où beaucoup de points sont proches par rapport à d'autres zones de l'espace $\mathbb{R}$ en dimension $p$.
@@ -1939,8 +1925,6 @@ Pour en savoir plus : [article Wikipedia DBSCAN][wiki-dbscan].
 ::: link
 Exemples de visualisations : [lien][visu-clustering-dbscan].
 :::
-
-\newpage{}
 
 ## Méthodes mixtes
 
@@ -2016,8 +2000,6 @@ En catégorisant les données, il est possible de les représenter sous forme de
   + résultats plus visuels et compréhensibles.
   + Les questions à échelle qui portent sur le comportement (habitudes d'achat, etc.) et la psychologie (préférences, croyances, etc.) des consommateurs sont particulièrement adaptées.
 
-\newpage{}
-
 ## Analyse factorielle discriminante
 
 On dispose de $n$ observations sur lesquelles on a relevé :
@@ -2080,8 +2062,6 @@ La définition de la distance de Mahalanobis est nettement plus compliquée lors
 ::: link
 L'analyse discriminante peut également être prédictive (apprentissage supervisé) : il s'agit de l'[analyse discriminante linéaire][wiki-adl] (comparable à la régression logistique).
 :::
-
-\newpage{}
 
 ## ACP : Analyse en Composantes Principales (_PCA_) 
 
