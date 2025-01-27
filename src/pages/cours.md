@@ -70,6 +70,7 @@ updated: 2025-01-15
 ## Par catégories
 
 <div id="cours-cat">
+
 - [☎️  Accompagnement à l'intégration](/cours/integration/index.html)
 - [🏗️ Architecture logicielle](/cours/archi/index.html)
 - [✔️  Accessibilité, Clean Code, Green IT, RSE](/cours/rse/index.html)
@@ -90,6 +91,7 @@ updated: 2025-01-15
 - [  Spring](/cours/spring/index.html)
 - [🧪 Tests](/cours/tests/index.html)
 - [🏷️ UML](/cours/uml/index.html)
+
 </div>
 
 
