@@ -134,8 +134,6 @@ Toujours sans vous déplacer de votre répertoire utilisateur, et en utilisant u
 - Créer un nouveau fichier `monFichier` dans le répertoire `repertoireAbsolu`.
 - Lister les informations du fichier `monFichier`.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

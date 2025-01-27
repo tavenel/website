@@ -63,8 +63,6 @@ Il est possible de se déplacer à n'importe quel moment vers un tag en utilisan
 
 1. Se déplacer vers le tag `v1.0`. _Quel est l'état de la `HEAD` ?_
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

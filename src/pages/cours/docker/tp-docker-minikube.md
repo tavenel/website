@@ -32,8 +32,6 @@ minikube kubectl -- get services hello-minikube
 minikube service hello-minikube
 ```
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

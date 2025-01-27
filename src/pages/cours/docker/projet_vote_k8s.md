@@ -27,8 +27,6 @@ Pour permettre ce déploiement, il faudra donc :
 - Les 4 `Dockerfile`.
 - Les fichiers et/ou commandes de configuration `kubernetes`.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

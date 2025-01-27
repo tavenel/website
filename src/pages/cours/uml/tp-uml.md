@@ -113,8 +113,6 @@ Les liens suivants peuvent servir de rappels de cours concernant la modélisatio
 - [Cours complet et libre sur UML 2](https://laurent-audibert.developpez.com/Cours-UML/)
 - [Article Wikipédia - résumé des diagrammes UML principaux](https://fr.wikipedia.org/wiki/UML_(informatique))
 
-\newpage{}
-
 # Legal
 
 - UML is either a registered trademark or a trademark of Object Management Group, Inc. in the United States and/or other countries.

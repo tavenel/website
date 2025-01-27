@@ -71,8 +71,6 @@ Maintenant, toutes les modifications de la machine virtuelle seront réalisées 
 
 [ansible-copy]: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html#ansible-collections-ansible-builtin-copy-module
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

@@ -120,8 +120,6 @@ Exemple de fichier `devcontainer.json` utilisant le service `app` et le `docker-
 - **Scripts de tests** : Ajoutez un script de test (par exemple, `npm test`)
 - **Environnement de développement avec Docker Compose** : Utilisez `docker-compose up` pour lancer l’environnement complet avec `MongoDB` et vérifiez la connexion entre l’application et la base de données.
 
-\newpage{}
-
 ## Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

@@ -115,8 +115,6 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 - Le ou les dépôts de code source utilisés, que ce soit pour la gestion du code source des applications métier, ou pour la gestion des configurations des infrastructures.
 - Le rapport et les détails d'implémentation seront présentés lors d'une soutenance de projet (dernier cours).
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

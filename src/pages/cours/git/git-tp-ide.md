@@ -33,8 +33,6 @@ Comment VsCode fait-il pour afficher chaque modification faite dans un fichier ?
 VsCode est architecturé pour s'intégrer finement avec GitHub. Pour profiter des fonctions avancées de GitHub (`codespace`, ...), voir la documentation suivante : <https://code.visualstudio.com/docs/sourcecontrol/intro-to-git>
 :::
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

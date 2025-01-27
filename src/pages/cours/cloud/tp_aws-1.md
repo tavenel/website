@@ -93,8 +93,6 @@ Note : Les noms des buckets `S3` sont très sensibles à la casse et aux caract�
 
 ---
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

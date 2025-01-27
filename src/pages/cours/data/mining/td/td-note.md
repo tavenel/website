@@ -190,8 +190,6 @@ Note : en cas de choix multiple, on choisira par défaut la variable selon l'ord
 7. Dans toute la suite, on décidera qu'un segment est terminal si au moins l'une des conditions suivantes est satisfaite : le segment est pur, ou le segment contient un nombre d'unités inférieur ou égal à cinq.
 Préciser pour chacun des segments résultant de la première division s'il s'agit d'un segment terminal ou d'un segment intermédiaire. Justifier votre réponse.
 
-\newpage{}
-
 ## Division 2
 
 1. En se basant sur le travail précédent, compléter les tableaux suivants :
@@ -285,8 +283,6 @@ Note : en cas de choix multiple, on choisira par défaut la variable selon l'ord
 
 4. Préciser pour chacun des segments résultant de la deuxième division s'il s'agit d'un segment terminal ou intermédiaire. Justifier votre réponse.
 
-\newpage{}
-
 ## Division 3
 
 1. A la vue des tableaux suivants, préciser si l'on travaille sur le segment $Credit=Yes$ ou $Credit=No$.
@@ -340,8 +336,6 @@ Note : en cas de choix multiple, on choisira par défaut la variable selon l'ord
 4. Représenter graphiquement cette seconde division en précisant la distribution (en effectifs) de la variable _Assurance_ à l'intérieur de chacun des segments, ainsi que l'effectif total en présence.
 
 5. Préciser pour chacun des segments résultant de la deuxième division s'il s'agit d'un segment terminal ou intermédiaire. Justifier votre réponse.
-
-\newpage{}
 
 ## Division 4
 

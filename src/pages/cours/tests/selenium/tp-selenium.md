@@ -226,8 +226,6 @@ Nous allons donc lancer périodiquement (1x par jour) des jobs Jenkins pour vér
 
 On pourra commencer par exécuter des déploiements `Sélénium` standalone. Lors de l’exécution dans la `Grid Sélénium`, on pourra démarrer la `Grid` manuellement.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

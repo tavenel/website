@@ -94,8 +94,6 @@ J'ai gagné par forfait en 6 coups !!!
 
 Source et crédit : <https://python.developpez.com/exercices/?page=Problemes-complexes#Plus-petit-Plus-grand>
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

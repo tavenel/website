@@ -3,8 +3,6 @@ title: Exercices Méthodologie des tests
 author: Tom Avenel
 ---
  
-\newpage{}
-
 ## Questions générales 
 
 ### Question 1 : 

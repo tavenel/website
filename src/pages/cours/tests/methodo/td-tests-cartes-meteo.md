@@ -4,8 +4,6 @@ author: Tom Avenel
 date: 2023 / 2024
 ---
  
-\newpage{}
-
 # Carte météo
 
 Un système de carte météo (`CM`) doit générer des cartes avec la météo de chaque région en se basant sur les données collectées à partir des stations météo (`SM`) ou autres sources comme les ballons-sondes ou satellites. Les `SM` transmettent leurs données à un central de région (`CR`) en réponse à une requête de celui-ci. Un `CR` valide les données collectées des `SM` et les intègrent avec les données des autres sources. Les données intégrées sont archivées. En utilisant les données de cette archive et une BD de cartes numériques, le `CR` génère toutes les heures un ensemble de cartes météo locales. Ces cartes peuvent être imprimées ou affichées en différents formats.

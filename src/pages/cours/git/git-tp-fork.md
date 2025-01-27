@@ -100,8 +100,6 @@ Publier la branche `modification` du fork vers le dépôt officiel en utilisant 
 
 Voir aussi le [tutoriel Atlassian sur le workflow de fork](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/forking-workflow)
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

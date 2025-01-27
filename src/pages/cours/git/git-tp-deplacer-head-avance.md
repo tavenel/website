@@ -223,8 +223,6 @@ git show $(git rev-parse HEAD~2)
 Documentation de référence : <https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-rev-parse.html>
 :::
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

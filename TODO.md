@@ -2,7 +2,8 @@
 -> Marp (or all in slidev ?)
 -> astro markdown => mermaid, plantuml, …
 -> astro : icon-link (h1, …) only on hover
--> astro : fix image imports
+-> astro : fix ALL image imports
+-> astro : link MD directly inside other MD
 -> RM \newpage{}
 -> fix ::: (corrections, …)
 -> RM 'updated' (use 'lastModified')

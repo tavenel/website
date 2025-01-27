@@ -42,8 +42,6 @@ Pour compiler les services backend et frontend, l'équipe a mis au point un `Mak
 
 _Schématiser le pipeline d’intégration continue que vous proposez pour gérer ce projet (depuis la machine du développeur jusqu'à la mise en production). On pourra par exemple utiliser l'outil <https://diagrams.net> pour réaliser le schéma._
 
-\newpage{}
-
 Pour rappel, voici un exemple de pipeline simpliste : 
 
 ```ditaa
@@ -104,8 +102,6 @@ graph TD
   E2-->|OK|E3[(Livraison sur Artifactory)]-->E4[Production]
 ```
 :::
-
-\newpage{}
 
 # Legal
 

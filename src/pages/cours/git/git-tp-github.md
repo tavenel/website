@@ -143,8 +143,6 @@ Réalisons maintenant un vrai cas de développement collaboratif :
 
 _L'ordre d'exécution des opérations (pull / push apprenant 1 vs apprenant 2) a-t-il un impact ? Pourquoi ?_
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

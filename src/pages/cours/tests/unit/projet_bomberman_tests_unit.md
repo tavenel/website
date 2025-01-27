@@ -43,8 +43,6 @@ Le barème est le suivant :
 - 7 points pour la qualité des tests (design patterns utilisés, lisibilité du code de test, ...)
 - 3 points pour le (re)développement de l'application (aboutissement du projet, qualité du code, ...) suite à l'écriture de tests
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

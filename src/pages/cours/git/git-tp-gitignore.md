@@ -59,8 +59,6 @@ Untracked files:
 - Ajouter le fichier `a.out` quand même à un commit (il faudra peut-être forcer l'ajout).
 - Modifier le contenu du fichier `a.out`. Afficher le statut : que peut-on en déduire ?
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

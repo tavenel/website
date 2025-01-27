@@ -40,8 +40,6 @@ find … | xargs grep <mon_pattern>
 Cela va exécuter `grep <mon_pattern>` pour chacun des fichiers trouvés précédemment.
 :::
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

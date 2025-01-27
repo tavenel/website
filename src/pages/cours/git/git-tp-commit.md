@@ -144,8 +144,6 @@ Nous allons voir maintenant comment intégrer des changements de ce document dan
 5. Intégrer les changements dans un nouveau commit
 6. Vérifier la bonne intégration de ces changements
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

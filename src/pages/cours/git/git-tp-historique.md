@@ -167,8 +167,6 @@ Il est courant pour récupérer un commit perdu de :
 - créer une nouvelle branche depuis ce commit (sans danger) : `git branch <commit-id>`
 - ou ajouter le commit perdu au-dessus du commit actuel (dangereux) : `git cherry-pick <commit-id>`.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

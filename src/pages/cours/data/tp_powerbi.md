@@ -23,8 +23,6 @@ L'objectif de cet exercice est de vous entraîner à sélectionner des indicateu
 
 _Même exercice pour déterminer les indicateurs les plus pertinents à présenter à une direction pour lancer des projets d'évolution du SI._
 
-\newpage{}
-
 ## Exercice 2 : Tableau de bord PowerBI
 
 ### Tutoriels
@@ -54,8 +52,6 @@ _Le but est la création d’un tableau de bord incluant la représentation visu
 3. Dessinez un brouillon de la structure visuelle.
 4. Réalisez le tableau de bord en utilisant Power BI.
 5. Retours croisés : présentez votre dashboard à un autre groupe et faites des retours sur la réalisation de ce groupe.
-
-\newpage{}
 
 ## Exercice 3 : Roadmap
 

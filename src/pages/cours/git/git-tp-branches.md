@@ -166,8 +166,6 @@ $ git checkout branche_contenant_le_commit
 $ git cherry-pick identifiant_du_commit_à_intégrer
 ```
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

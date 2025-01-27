@@ -32,8 +32,6 @@ Pour permettre ce déploiement, il faudra donc :
 - Le fichier `docker-compose.yml`.
 - Les fichiers et/ou commandes de configuration `kubernetes` (bonus).
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

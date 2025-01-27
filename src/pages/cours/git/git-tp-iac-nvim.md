@@ -82,8 +82,6 @@ On peut bien sûr réitérer le même exercice avec tout programme configurable 
 On peut aussi aller jusqu'à stocker le déploiement des infrastructures et des outils (par exemple par des fichiers `Ansible` - voir le TP dédié).
 :::
 
-\newpage{}
-
 # Legal
 
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

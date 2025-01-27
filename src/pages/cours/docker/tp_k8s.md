@@ -1222,8 +1222,6 @@ kubectl config view
 :::
 
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

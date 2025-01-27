@@ -191,8 +191,6 @@ L'équipe projet (noms, prénoms) :
 1. Avez-vous choisi de tester certaines fonctionnalités ou zones de code plus que d'autres ? Pourquoi ?
 1. Avez-vous réalisé des tests manuels ? Si oui, lesquels ?
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

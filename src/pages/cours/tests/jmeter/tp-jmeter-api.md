@@ -54,8 +54,6 @@ Il est attendu une archive des tests de performance effectués sur votre applica
 - Le(s) plan(s) de tests de Jmeter (format `.jmx`) 
 - Les captures d’écran des résultats des tests de performance publiés dans Jenkins (page de rapport des performances) 
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

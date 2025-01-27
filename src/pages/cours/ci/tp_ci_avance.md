@@ -58,8 +58,6 @@ On pourra se demander comment raffiner le pipeline d'intégration continue afin 
 * Mutualiser une ou des plateformes pour exécuter certaines étapes sans tout réinstaller (à quel moment ? Quel est le risque ?) 
 * Mettre en place le nouveau pipeline d'intégration continue. 
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

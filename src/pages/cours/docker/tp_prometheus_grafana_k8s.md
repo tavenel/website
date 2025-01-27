@@ -120,8 +120,6 @@ L'installation de `Prometheus` via `kube-prometheus-stack` comprend également `
 Vous pouvez configurer des alertes dans les fichiers de configuration de `Prometheus` ou via des `CRD` (_Custom Resource Definitions_) associées aux règles d'alerte.
 
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

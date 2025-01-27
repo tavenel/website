@@ -264,8 +264,6 @@ $ coverage html
 
 Tester la couverture des tests réalisés à l'étape précédente. Améliorer cette couverture en ajoutant des tests vérifiant les parties importantes de l'application n'ayant pas encore de test.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

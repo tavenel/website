@@ -46,8 +46,6 @@ Le _diff_ se compose :
 2. Avec la commande `git add -e` ajouter uniquement les changements du 1er paragraphe. Réaliser un deuxième commit.
 3. Ajouter les changements du 2e paragraphe dans un troisième commit.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

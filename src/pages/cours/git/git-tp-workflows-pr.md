@@ -75,8 +75,6 @@ _Un problème a été détecté sur la fonctionnalité A !_
 
 Corriger une erreur dans la fonctionnalité A. Cette erreur devra être corrigée dans toutes les versions du produit.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

@@ -202,8 +202,6 @@ Si nécessaire, certains dépôts de code peuvent être partagés entre les équ
     - La page Confluence générée par Jira pour la rétrospective devra être utilisée comme la page d'accueil du rapport, même s'il est possible d'utiliser un autre outil, par exemple <https://easyretro.io/> et d'ajouter un lien dans Confluence vers la rétrospective générée dans cet autre outil.
     - On intègrera également le résultat de la revue (livrable et commentaires éventuels) sur cette page, directement ou via un lien vers ce livrable
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

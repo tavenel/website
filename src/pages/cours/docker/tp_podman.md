@@ -94,8 +94,6 @@ Si votre pod nécessite des `Volume` ou des `ConfigMap`, vous pouvez définir ce
 
 Le projet <https://containertoolbx.org/> permet d'utiliser `Podman` pour créer des environnements de développement sur mesure en utilisant des conteneurs _stateful_.
 
-\newpage{}
-
 ## Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

@@ -7,8 +7,6 @@ keywords:
 - ddd
 ---
 
-\newpage{}
-
 # Patterns tactiques de base
 
 ## Entity
@@ -750,8 +748,6 @@ print(f"Order created with ID: {order_id}")
 | Responsable de l'orchestration.  | Responsable de la logique métier complexe qui n'appartient pas à une entité. |
 | Interagit avec les API et l'infrastructure. | Agit uniquement au niveau du domaine. |
 | Se situe dans la couche application. | Se situe dans la couche domaine.     |
-
-\newpage{}
 
 # Patterns tactiques avancés
 

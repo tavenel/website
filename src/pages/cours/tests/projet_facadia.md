@@ -290,8 +290,6 @@ Implémenter une automatisation de cette recette fonctionnelle en utilisant le f
 - On pourra également lancer l'application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
 :::
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

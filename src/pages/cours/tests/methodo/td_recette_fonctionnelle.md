@@ -3,8 +3,6 @@ title: Elaboration de la recette fonctionnelle d'un projet
 author: Tom Avenel
 ---
 
-\newpage{}
-
 ## Déroulement du cas pratique 
 
 _L'objectif de ce cas pratique est la réalisation du protocole de recette fonctionnelle du projet. Comme toute recette fonctionnelle, celle-ci sera réalisée en plusieurs étapes décrites ci-dessous._

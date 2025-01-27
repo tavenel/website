@@ -42,8 +42,6 @@ Il est attendu de la part de chaque apprenant, l’URL publique du site créé (
 
 Note : Pendant le développement du site Web, on pourra visualiser (et modifier si besoin) le code de l’application en cliquant sur le bouton `Code editor` (WordPress utilise son propre langage de description).
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

@@ -91,8 +91,6 @@ La CLI `docker compose` est basée sur la CLI `docker` pour être au maximum com
 
 Suivre [cet exercice OpenClassrooms](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/7540111-entrainez-vous-en-orchestrant-vos-images-docker-avec-docker-compose) pour vous entraîner à dockeriser une application.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

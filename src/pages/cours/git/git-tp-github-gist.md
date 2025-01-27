@@ -50,7 +50,6 @@ Créer un script permettant de cloner le Gist précédent (par exemple en utilis
 
 - [Documentation Gist](https://docs.github.com/fr/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
 - Pour parcourir les Gist publiques : <https://gist.github.com>
-\newpage{}
 
 # Legal
 

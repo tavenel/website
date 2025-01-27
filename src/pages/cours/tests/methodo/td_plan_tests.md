@@ -32,8 +32,6 @@ Décrire en quelques phrases, l'impact pressenti de ces tests sur la réalisatio
 
 Décrire également les risques liés aux choix actuels d'architecture, concernant l'exécution des tests sur le produit (Est-ce que tous les tests sont réalisables ? Souhaitables ? Etc.). 
  
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

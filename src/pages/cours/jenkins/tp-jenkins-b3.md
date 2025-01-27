@@ -171,8 +171,6 @@ On sera donc particulièrement vigilant à optimiser la performance de ces tests
   + Fusionner des tests semblables ou obsolètes.
   + Optimiser l'implémentation des tests.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

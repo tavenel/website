@@ -52,8 +52,6 @@ Le barème est le suivant :
   - il est attendu au moins 5 tests `Selenium`.
 - 6 points pour la qualité des tests (design patterns utilisés, lisibilité du code de test, ...)
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

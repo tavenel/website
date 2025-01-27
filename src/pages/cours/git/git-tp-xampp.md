@@ -38,8 +38,6 @@ Configurer un environnement de développement local avec XAMPP et utiliser Git p
 Ouvrez votre navigateur et accédez à <http://localhost/mon_projet> pour voir l'application en action.
 
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

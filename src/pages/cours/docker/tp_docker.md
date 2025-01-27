@@ -577,8 +577,6 @@ docker run --rm -v ${PWD}:/archive mon-archiver:1.0 xzvf mon_archive.tgz mon_fic
 Voir : <https://hub.docker.com/r/ollama/ollama>
 :::
 
-\newpage{}
-
 ## Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

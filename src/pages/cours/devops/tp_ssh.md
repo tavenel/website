@@ -163,8 +163,6 @@ En cas de problème, vérifiez les logs SSH sur le serveur :
 sudo tail -f /var/log/auth.log
 ```
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

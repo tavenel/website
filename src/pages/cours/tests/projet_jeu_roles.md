@@ -81,8 +81,6 @@ Le barème est le suivant :
   + Les choix de réalisations de tests, par exemple : donner un exemple expliquant pourquoi vous avez choisi de tester plus fortement certaines parties du code que d'autres ;
   + Processus de tests : donner un exemple expliquant en quoi l'écriture et l'exécution des tests en parallèle de la réalisation de l'application a impacté l'écriture de votre code de production.
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

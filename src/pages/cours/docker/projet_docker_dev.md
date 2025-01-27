@@ -24,8 +24,6 @@ De nombreux projets modernes sont constitués de plusieurs services interconnect
 - Créez des fichiers de ressources `k8s` / `podman` pour un déploiement en production.
 - (Optionel) créez une chart `Helm` pour gérer de manière unifiée toute votre stack applicative dans k8s.
 
-\newpage{}
-
 ## Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0

@@ -137,8 +137,6 @@ Il suffit de préparer une nouvelle version `v4` pour la future production depui
 Voir la note dans la correction de la question Création du dépôt : il est normal d'avoir une version 4 dans le dépôt de code même si celle-ci n'est pas encore en production, afin de préparer la livraison future de la `v4`.
 :::
 
-\newpage{}
-
 # Legal
 
 - © 2024 Tom Avenel under CC  BY-SA 4.0
