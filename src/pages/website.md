@@ -1,9 +1,7 @@
 ---
 title: Website
-layout: ../layouts/Layout.astro
+updated: 2023-10-13
 ---
-
-<div class="versioning">Last Update: 2023-10-13</div>
 
 ## Accessibility
 
@@ -36,16 +34,9 @@ The PWA uses the "_network-first, cache-second_" strategy : <https://developer.c
 
 ## Technology
 
-This website is generated from markdown using pandoc.
+This website is a lightweight Astro website : <https://astro.build/>.
 
-The default style is light but changed dark if the [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is set to `dark` by the Operating System of the client.
-
-It is a plain HTML/CSS website with (optionally) very little JavaScript to :
-
-- Use a service worker for the Progressive Web App.
-- (this page only) - load the Carbon badge.
-
-It is intended to be extremely fast, small and easy to change or copy.
+It is a static website with very little JavaScript intended to be extremely fast, small and easy to change or copy.
 
 - The whole website pages and deployment scripts are available as a git repo : <https://git.sr.ht/~toma/site>
 - The website is hosted on <https://srht.site/>.
