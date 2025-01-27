@@ -6,7 +6,7 @@ type Props = MarkdownLayoutProps<{
 	// Define frontmatter props here
 	title: string;
 	date: string;
-	updated: string;
+	created: string;
 	lastModified: string;
 	checked: string;
 }>;
@@ -14,16 +14,15 @@ type Props = MarkdownLayoutProps<{
 // Now, `frontmatter`, `url`, and other Markdown layout properties
 // are accessible with type safety
 const { frontmatter, url } = Astro.props;
-const initialDate = frontmatter.date ? new Date(frontmatter.date).toLocaleDateString() : '?';
-const updatedDate = frontmatter.updated ? new Date(frontmatter.updated).toLocaleDateString() : '?'; // TODO : RM
+const initialDate = frontmatter.created ? new Date(frontmatter.created).toLocaleDateString() : '?';
 const lastModified = frontmatter.lastModified ? new Date(frontmatter.lastModified).toLocaleDateString() : '?';
 const checkedDate = frontmatter.checked ? new Date(frontmatter.checked).toLocaleDateString() : '?';
 ---
 <BaseLayout title={frontmatter.title} url={url}>
 	<h1>{frontmatter.title}</h1>
 	<div class="versioning">
-		{frontmatter.date && <div class="version-first">Publié le : {initialDate}</div>}
-		{frontmatter.updated && <div class="version-update">Mis à jour : {updatedDate}</div>}
+		{frontmatter.date && <div class="version-first">Date : {frontmatter.date}</div>}
+		{frontmatter.created && <div class="version-first">Publié le : {initialDate}</div>}
 		{frontmatter.lastModified && <div class="version-update">Mis à jour : {lastModified}</div>}
 		{frontmatter.checked && <div class="version-checked">Contenu vérifé le : {checkedDate}</div>}
 	</div>
