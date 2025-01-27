@@ -1,20 +1,13 @@
 const APP_PREFIX = 'avenel_';
-const VERSION = '01';
+const VERSION = '02';
 
 // Files available offline
 const URLS_INSTALLED = [
 	`/`,
-	`/css/styles.css`,
-	`/icons/favicon.ico`,
+	`/icons/favicon.svg`,
 	`/icons/android-chrome-192x192.png`,
 	`/icons/android-chrome-512x512.png`,
 	`/icons/apple-touch-icon.png`,
-	`/icons/favicon-16x16.png`,
-	`/icons/favicon-32x32.png`,
-	`/icons/maskable_icon.png`,
-	`/images/by.svg`,
-	`/images/cc.svg`,
-	`/images/sa.svg`,
 	`/index.html`,
 ]
 
