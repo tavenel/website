@@ -8,16 +8,16 @@ Here are a bunch of articles, howtos, tutorials and thoughts about technology an
 <span>⚠️</span>
 This page is strongly opinionated : expect advocacy of free, open-source and efficient tools.
 
-## Quotes
+## Fun
 
-Some interesting [quotes about computer science](/tech/quotes.html)
+Some [fun strips about computer science](/tech/fun)
 
 ## Notes
 
 Here are my personal cheatsheets :
 
-- [Dev cheatsheet](/tech/notes/dev.html)
-- [Vim cheatsheet](/tech/notes/vim.html)
+- [Dev cheatsheet](/tech/notes/dev)
+- [Vim cheatsheet](/tech/notes/vim)
 
 ## Dotfiles
 
@@ -25,16 +25,16 @@ Here are my personal cheatsheets :
 
 ## Internet, the Web
 
-- [The Web bloat](/tech/web-bloat.html)
-- [Carbon footprint of the tech and solutions](/tech/tech-footprint.html)
+- [The Web bloat](/tech/web-bloat)
+- [Carbon footprint of the tech and solutions](/tech/tech-footprint)
 
 ## Operating systems (Linux)
 
 I am using Linux as my daily driver for more than 15 years.
 
-I also [teach](/cours.html) GNU/Linux to new computer engineers.
+I also [teach](/cours)
 
-[Why Linux](/tech/why-linux.html)
+[Why Linux](/tech/why-linux)
 
 ## (Neo)Vi(m)
 
