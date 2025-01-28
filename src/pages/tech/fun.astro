@@ -1,0 +1,46 @@
+---
+import { Picture } from 'astro:assets';
+
+import agile from '../../images/fun/agile.gif'
+import audit from '../../images/fun/audit.jpg'
+import conference from '../../images/fun/conference.jpg'
+import correlation from '../../images/fun/correlation.jpg'
+import doc from '../../images/fun/all_the_documentation.jpg'
+import linux from '../../images/fun/xkcd-linux-tar.png'
+import password from '../../images/fun/password.webp'
+import regex from '../../images/fun/regex.jpg'
+import scroll from '../../images/fun/scroll.webp'
+import wtf from '../../images/fun/WFTPM.png'
+import works from '../../images/fun/works.jpg'
+import wsl from '../../images/fun/wsl.jpg'
+import xp from '../../images/fun/xp.gif'
+
+import Layout from '../../layouts/Layout.astro'
+
+const title = 'Fun';
+const { url } = Astro.props;
+---
+
+<Layout title={title} url={url}>
+	<h1>Commic strips about Computer Science</h1>
+
+	<figure>
+    <Picture src="https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Capture__.PNG" alt="Comic strip - problème d'architecture" inferSize={true}/>
+    <figcaption>Crédit : https://lesdieuxducode.com/</figcaption>
+</figure>
+
+	<Picture src={agile} alt="A joke." />
+	<Picture src={audit} alt="A joke." />
+	<Picture src={conference} alt="A joke." />
+	<Picture src={correlation} alt="A joke." />
+	<Picture src={doc} alt="A joke." />
+	<Picture src={linux} alt="A joke." />
+	<Picture src={password} alt="A joke." />
+	<Picture src={regex} alt="A joke." />
+	<Picture src={scroll} alt="A joke." />
+	<Picture src={wtf} alt="A joke." />
+	<Picture src={works} alt="A joke." />
+	<Picture src={wsl} alt="A joke." />
+	<Picture src={xp} alt="A joke." />
+</Layout>
+
