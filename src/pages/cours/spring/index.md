@@ -1,20 +1,16 @@
 ---
-title: Tom Avenel - Spring
+title:  Spring et 󱘻 Hibernate
 ---
 
-# 🍃 Le Framework Spring®
+##  Le Framework Spring
 
-![](/resources/images/cover/spring.jpg)
+- [🤓 Cours](/cours/spring/spring-cours)
 
-## 🤓 Cours
+- [📌 Projet](/cours/spring/spring-projet)
+  -   Code : <https://git.sr.ht/~toma/spring-tp>
 
-- [html](/cours/spring/spring-cours.html)
-- [pdf](/cours/spring/spring-cours.pdf)
-- [markdown](/cours/spring/spring-cours.md)
+## 󱘻 Hibernate : Persistence des données et Object-relational mapping
 
-## 📌 Projet
-
-- [html](/cours/spring/spring-projet.html)
-- [pdf](/cours/spring/spring-projet.pdf)
-- [markdown](/cours/spring/spring-projet.md)
-- Code : <https://git.sr.ht/~toma/spring-tp>
+- [🤓 Cours](/cours/hibernate/hibernate-cours)
+- [📌 Projet](/cours/spring/spring-projet)
+  -  Code : <https://git.sr.ht/~toma/hibernate-tp>

@@ -1,99 +1,59 @@
 ---
-title: 📊 Tom Avenel - Data
+title: 📊 Formations Data
 ---
 
-# 📊 Formations Data
+## 🔗 Tests de données
+
+Voir la [page de cours sur les tests](/cours/tests)
 
 ## 📈 Tableaux de bord et pilotage des applications du SI
 
-![](/resources/images/cover/dashboard.jpg)
-
-### 🤓 Cours : Introduction aux tableaux de bord et feuilles de route
-
-- [Cours pdf](/cours/data/tableau_bord_cours.pdf)
-- [Cours markdown](/cours/data/tableau_bord_cours.md)
-
-### 💻 TP Dashboard PowerBI et Feuille de route
-
-L'objectif de ces exercices est de réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.
-
-- [TP html](/cours/data/tp_powerbi.html)
-- [TP pdf](/cours/data/tp_powerbi.pdf)
-- [TP markdown](/cours/data/tp_powerbi.md)
+- [🤓 Cours : Introduction aux tableaux de bord et feuilles de route](/cours/data/tableau_bord_cours)
+- [💻 TP Dashboard PowerBI et Feuille de route](/cours/data/tp_powerbi) : réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.
 
 ## ⛏️ Introduction au Data Mining
 
-_Modifié le: 2023-08-29_
+### Cours théorique
 
-### Partie mathématiques
+- [🤓 Mathématiques pour le Traitement des données (cours)](/cours/data/mining/traitement-donnees-cours)
 
-#### 🤓 Mathématiques pour le Traitement des données (cours)
+### TPs de Data Mining
 
-- [html](/cours/data/mining/traitement-donnees-cours.html)
-- [pdf](/cours/data/mining/traitement-donnees-cours.pdf)
-- [markdown](/cours/data/mining/traitement-donnees-cours.md)
+#### 💻 TP 0 - Mise en place d'un environnement de data science en Python
 
-### Partie informatique
+- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-0-env)
 
-#### 💻 TP0 - Environnement
+#### 💻 TP 1 - Calculer une régression linéaire pour des indices de production agricole et de production industrielle
 
-Cette partie pratique consiste à mettre en place un environnement de data science en Python.
+- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus)
+- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus.py)
 
-- [html](/cours/data/mining/tp/data-mining-tp-0-env.html)
-- [pdf](/cours/data/mining/tp/data-mining-tp-0-env.pdf)
-- [markdown](/cours/data/mining/tp/data-mining-tp-0-env.md)
+#### 💻 TP 2 - Classification automatique par régression linéaire
 
-#### 💻 TP 1 - Régression linéaire
+- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification) : déterminer une éventuelle relation entre l'impact de la prise d'un petit déjeuner et le score à un examen.
+- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification.py)
 
-Cette partie pratique consiste à calculer une régression linéaire pour des indices de production agricole et de production industrielle.
+#### 💻 TP 3 - Régression logistique simple et généralisée avec sklearn
 
-- [html](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus.html)
-- [pdf](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus.pdf)
-- [markdown](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus.md)
-- [python (correction)](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus.py)
+- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-3-logit) : étudier les corrélations entre les heures de révision, le score à un examen préparatoire et le succès à l'examen final.
+- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-3-logit.py)
 
-#### 💻 TP 2 - Classification par régression linéaire
+#### 💻 TP 4 - Algorithme des k moyennes (k-means) avec sklearn
 
-Dans le TP précédent, nous avons vu comment réaliser une régression linéaire sur un ensemble discret de valeurs. Cette méthode permet également de réaliser une classification automatique, que nous allons utiliser ici pour déterminer une éventuelle relation entre l'impact de la prise d'un petit déjeuner et le score à un examen.
+- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-4-kmeans)
+- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-4-kmeans.py)
 
-- [html](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification.html)
-- [pdf](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification.pdf)
-- [markdown](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification.md)
-- [python (correction)](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification.py)
+#### 💻 TP 5 - Algorithme k-NN des proches voisins avec sklearn
 
-#### 💻 TP 3 - Régression logistique
-
-Dans ce TP, nous utiliserons la librairie de machine learning sklearn pour réaliser une régression linéaire, une régression logistique simple et une régression logistique généralisée pour étudier les corrélations entre les heures de révision, le score à un examen préparatoire et le succès à l'examen final.
-
-- [html](/cours/data/mining/tp/data-mining-tp-3-logit.md)
-- [pdf](/cours/data/mining/tp/data-mining-tp-3-logit.md)
-- [markdown](/cours/data/mining/tp/data-mining-tp-3-logit.md)
-- [python (correction)](/cours/data/mining/tp/data-mining-tp-3-logit.py)
-
-#### 💻 TP 4 - Algorithme k-means des k moyennes
-
-Dans ce TP, nous utiliserons la librairie de machine learning sklearn pour réaliser une classification en utilisant un algorithme des k moyennes.
-
-- [html](/cours/data/mining/tp/data-mining-tp-4-kmeans.html)
-- [pdf](/cours/data/mining/tp/data-mining-tp-4-kmeans.pdf)
-- [markdown](/cours/data/mining/tp/data-mining-tp-4-kmeans.md)
-- [python (correction)](/cours/data/mining/tp/data-mining-tp-4-kmeans.py)
-
-#### 💻 TP 5 - Algorithme k-NN des proches voisins
-
-Dans ce TP, nous utiliserons la librairie de machine learning sklearn pour réaliser une classification en utilisant un algorithme k-NN.
-
-- [html](/cours/data/mining/tp/data-mining-tp-5-knn.html)
-- [pdf](/cours/data/mining/tp/data-mining-tp-5-knn.pdf)
-- [markdown](/cours/data/mining/tp/data-mining-tp-5-knn.md)
-- [python (correction)](/cours/data/mining/tp/data-mining-tp-5-knn.py)
+- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-5-knn)
+- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-5-knn.py)
 
 #### 💻 Autres exemples
 
-- CART [python](/cours/data/mining/tp/cart.py)
-- PCA [python](/cours/data/mining/tp/pca.py)
-- DBScan [python](/cours/data/mining/tp/dbscan.py)
-- LabelEncoder [python](/cours/data/mining/tp/label-encoder.py)
+- CART [🐍 python](/cours/data/mining/tp/cart.py)
+- PCA [🐍 python](/cours/data/mining/tp/pca.py)
+- DBScan [🐍 python](/cours/data/mining/tp/dbscan.py)
+- LabelEncoder [🐍 python](/cours/data/mining/tp/label-encoder.py)
 
 ### 🔗 Liens
 

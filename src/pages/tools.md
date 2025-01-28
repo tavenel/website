@@ -258,6 +258,7 @@ created: 2024-10-17
 
 ## 🧪 Tests
 
+- 🔗 Voir la [page de cours sur les tests](/cours/tests)
 - Tests unitaires :
   - Java : `Junit`, `TestNG`, `Mockito` (mocks)
   - Python : `Pyunit`, `Pytest`
@@ -275,10 +276,12 @@ created: 2024-10-17
 	- [Vegeta](https://github.com/tsenart/vegeta)
 	- `k6` : [exemple](https://github.com/grafana/quickpizza)
 - Tests e2e (interface Web principalement) : `Selenium`, `Selenide`, `Geb`, `Testing library`, `Playwright`, `Cypress`
+  - [Outil d'automatisation de tests d'acceptance FitNesse et intégration avec Junit](http://fitnesse.org/FitNesse.UserGuide.WritingAcceptanceTests.RunningFromJunit)
 - BDD : `Cucumber`, `Spock`, `JBehave`
 - Tests d'infrastructure : <https://une-tasse-de.cafe/blog/testinfra/>
 - <https://testcontainers.com>
 - <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
+- [Outils de test open-source](https://www.guru99.com/best-open-source-testing-tools.html)
 
 ## Backend tools
 
