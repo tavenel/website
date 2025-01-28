@@ -15,12 +15,12 @@ created: 2024-10-17
 ## 🌍 Utilitaires en ligne
 
 - Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
-- Aides sur les commandes : `curl cheat.sh/ma_commande`
-- `curl wttr.in/Grenoble` => weather at Grenoble, France.
+- ❓ Aides sur les commandes : `curl cheat.sh/ma_commande`
+- ⛅ `curl wttr.in/Grenoble` => weather at Grenoble, France.
 
 ## Outils utiles Devops (liste non exhaustive)
 
-### 🔗 Landscape Devops (liens externes)
+### 🗺️ Landscape Devops (liens externes)
 
 - <https://platformengineering.org/platform-tooling>
 - <https://xavki.blog/devops-sources/>
@@ -28,40 +28,40 @@ created: 2024-10-17
 
 ### 1️⃣  Versioning
 
-- `git`
-  - forges logicielles => `github`, `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, …
-  - sécurité
+-  `git`
+  - forges logicielles => `github`, 🦊 `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, …
+  - 🔐 sécurité
     - [git-crypt](https://github.com/AGWA/git-crypt)
-    - `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
+    - 🔑 `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
   - outils
-    - [gitmoji](https://github.com/carloscuesta/gitmoji) : ajouter des emojis de contexte aux commits
+    - 🤪 [gitmoji](https://github.com/carloscuesta/gitmoji) : ajouter des emojis de contexte aux commits
 - sémantique :
-  - <https://semver.org/>
-  - <https://hub.docker.com/r/gittools/gitversion>
+  - 1️⃣  <https://semver.org/>
+  - 2️⃣ <https://hub.docker.com/r/gittools/gitversion>
 - analyses :
   - <https://github.com/gitleaks/gitleaks> : `docker run -v ${PWD}:/path ghcr.io/gitleaks/gitleaks:latest detect --source="/path" -v`
-  - <https://github.com/adamtornhill/code-maat> : data mining dans dépôt Git
-  - <https://github.com/smontanari/code-forensics>
+  - 📊 <https://github.com/adamtornhill/code-maat> : data mining dans dépôt Git
+  - 🔎 <https://github.com/smontanari/code-forensics>
 
-### 🐳 Conteneurs
+### 📦 Conteneurs
 
-- `docker`
-  - sécurité :
+-   `docker`
+  - 🔒 sécurité :
     - <https://github.com/docker/docker-bench-security>
     - <https://github.com/aquasecurity/trivy> (inclus k8s)
     - `dive`
 		- <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
-- `podman` : idem Docker sans agent, supporte Docker et pods k8s
+- 🚢 `podman` : idem Docker sans agent, supporte Docker et pods k8s
 - `cri-o` : container runtime k8s
 
-#### Dockerfile
+#### 📄 Dockerfile
 
-- vérification : `hadolint`, <https://falco.org/>, <https://quay.github.io/clair/>
-- mise à jour : `renovate`
+- 🧐 vérification : `hadolint`, <https://falco.org/>, <https://quay.github.io/clair/>
+- 🔄 mise à jour : `renovate`
 
 #### Orchestration de conteneurs
 
-- Kubernetes : LA référence en orchestration
+- 󱃾 Kubernetes : LA référence en orchestration
   - `k8s` : implémentation principale de Kubernetes
   - `k0s` : implémentation de Docker Enterprise (single binary)
   - `k3s` (installable par `k3d`), `microk8s` (ubuntu) : implémentations légères
@@ -74,42 +74,42 @@ created: 2024-10-17
 - `nomad` : orchestrateur applicatif conteneurisées ou non, simple pour on-premise
 - `mesos` + `dc/os`
 
-#### Kubernetes-specific
+#### 󱃾 Kubernetes-specific
 
-- linter (vérification fichiers) => `kubeconform`
-- installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
-- package manager (sur-couche) => `helm`
+- 🔎 linter (vérification fichiers) => `kubeconform`
+- 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
+- 📦 package manager (sur-couche) => `helm`
 - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
 - ingress & service mesh :
   - `traefik` : reverse-proxy automatique
   - `Consul` (+DNS, reverse proxy, load balancing, …)
   - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par `Kiali`
 	- `Cilium` : networking, security, observability
-- scaling
+- 📦📦 scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
-- sécurité
+- 🔒 sécurité
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 	- [Sealed Secret](https://une-tasse-de.cafe/blog/sealed-secrets/) : chiffrement de secrets dans k8s
 	- <https://external-secrets.io/> : injection de secrets
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
-- supervision
+- 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
-- CD
+- 🚀 CD
   - `fluxcd` : GitOps
   - `argoscd`
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
-- Consommation d'énergie :
+- 🪫 Consommation d'énergie :
   - `kepler` : monitor Pod energy consumption
 	- `kube-green` : k8s operator for energy-saving actions 
 	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
-- Upgrade :
+- 🔄 Upgrade :
   - `WatchTower`
   - `Keel` (avec triggers)
 
-### 🔙 Backups
+### 💾 Backups
 
 - `bareos`
 - `restic`
@@ -117,7 +117,7 @@ created: 2024-10-17
 
 ### 🗃️ Infrastructure-as-Code (IaC)
 
-- `ansible` (sans agent)
+- 🅰️ `ansible` (sans agent)
   - galaxy : grande collection de rôles tout prêts
   - sécurité : voir collection `devsec.hardening` dans ansible galaxy
   - `ansible-vault` (voir `vault`)
@@ -127,30 +127,30 @@ created: 2024-10-17
   - `pulumi convert --from terraform` : terraform HCL => pulumi
   - `pulumi import --from terraform` : import terraform state from `tfstate`
 - `terraform`, [OpenTofu : fork Terraform open-source](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml), [Burrito : "ArgoCD for Terraform"](https://github.com/padok-team/burrito)
-- `chef` (client/serveur)
-- `puppet`
-- `packer` : création d'images de VMs
+- 👨‍🍳 `chef` (client/serveur)
+- 🤹 `puppet`
+- 📦 `packer` : création d'images de VMs
 - `semaphore` : UI for operating `ansible`, `terraform/OpenTofu`, `pulumi`. <https://semaphoreui.com/>
 - diagrammes : `plantuml`, `mermaid`, `ditaa`, `kroki`, <https://diagrams.mingrammer.com/>, `dot`
-- `Infracost` : track coût plateformes IaC (`Terraform`, …)
-- `Typer` : librairie Python pour écrire facilement une CLI
+- 💲 `Infracost` : track coût plateformes IaC (`Terraform`, …)
+- </> `Typer` : librairie Python pour écrire facilement une CLI
 
 ### 🛠️ Build tools et dépendances
 
-- gestion et update de dépendances => `renovate`, `asdf`, [mise](https://mise.jdx.dev/)
+- 🔄 gestion et update de dépendances => `renovate`, `asdf`, [mise](https://mise.jdx.dev/)
 - builds généralistes => `make`, `taskfile`, `packer`
 - JS => `npm`, `yarn`, `webpack`
-- Java => `mvn`, `gradle`
+- ☕ Java => `mvn`, `gradle`
   - <https://docs.openrewrite.org/> : refactoring automatique de code pour mise à jour, …
-- PHP => `composer`
-- Python => `venv` + `pip`, `poetry`, `uv`, `pipx`, `hatch`
+- 🐘 PHP => `composer`
+- 󰌠 Python => `venv` + `pip`, `poetry`, `uv`, `pipx`, `hatch`
 - Virtual machines => `packer`, `vagrant` (+TUI : <https://github.com/braheezy/violet>), `incus`
 
-### ➿ CI/CD
+### 🔄 CI/CD
 
 #### Serveurs CI
 
-- `jenkins` : la référence, très configurable, simple, cloud/on-premise
+-  `jenkins` : la référence, très configurable, simple, cloud/on-premise
 - `teamcity` : très puissant, complexe
 - intégré forge logicielle => `Github Actions`, `Gitlab CI`, `Bitbucket`, `Sourcehut`
 - `woodpecker CI` : léger, intègre Docker
@@ -188,7 +188,7 @@ created: 2024-10-17
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) : Suricata
 
-### Supervision / Monitoring / Observabilité
+### 📈 Supervision / Monitoring / Observabilité
 
 - `prometheus` (push par `node exporter`, puissant mais lourd) + `grafana` => solution classique
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
@@ -228,7 +228,7 @@ created: 2024-10-17
 
 - `keycloak`
 
-### Data, Logs
+### 📊 Data, Logs
 
 - `ELK` : `logstash` (Extract-Transform-Load) --> `elasticsearch` BDD NoSQL --> `kibana` (visualisation, ~= `grafana`)
 - `fluentd` : logs unifiés
@@ -313,7 +313,7 @@ created: 2024-10-17
 - free icons : <https://tabler.io/icons>
 - <https://frontendchecklist.io/>
 
-## Data science, data mining, machine learning
+## 📊 Data science, data mining, machine learning
 
 - Dessin de graphes : `matplotlib`
 - Librairies Python : data science : `numpy`, `pandas` ; data mining et ML : `scipy`, `sklearn`
