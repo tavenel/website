@@ -4,6 +4,11 @@ title: Cours
 
 # Cours
 
+## Pages transverses
+
+- [🔗 Liens utiles et références](/cours/liens.html)
+- [🛠 Liste d'outils](/tools.html)
+
 ## Par promotions
 
 <div id="promos">
@@ -76,7 +81,7 @@ title: Cours
 - [📊  Data](/cours/data)
 - [🤝 Domain-Driven Design (DDD)](/cours/ddd)
 - [󱃾  Devops - Sysops](/cours/devops)
-- [  Docker](/cours/docker)
+- [  Docker® et 󱃾 Kubernetes®](/cours/docker)
 - [📅 Gestion de projet](/cours/gestion-projet)
 - [ Git](/cours/git)
 - [💚 Green IT](/cours/green-it)
@@ -88,11 +93,6 @@ title: Cours
 - [🧪 Tests](/cours/tests)
 
 </div>
-
-
-**La page [🔗 Liens utiles et références](/cours/liens.html) référence des supports (livres, vidéos, …) de qualité et des liens transverses utiles à l'apprentissage.**
-
-**La page [🛠 Liste d'outils](/tools.html) référence un ensemble d'outils utiles d'industrialisation logicielle : DevOps, CI/CD, IaC, Docker/k8s, …**
 
 ## À propos
 
