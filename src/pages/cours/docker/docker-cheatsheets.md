@@ -545,6 +545,12 @@ kubectl -o json …
 kubectl -o jsonpath='{.items[0].metadata.name}' …
 ```
 
+### Créer un template de fichier de ressource en Yaml
+
+```sh
+kubectl create … -o yaml > mon_fichier.yml
+```
+
 ### Gérer le contexte
 
 ```sh
@@ -610,6 +616,7 @@ kubectl exec -it MON_POD -c MON_CONTENEUR MA_COMMANDE
 
 ```sh
 kubectl debug mypod -it --image=busybox
+kubectl debug mypod -it --image=paulbouwer/hello-kubernetes:1.8
 ```
 
 Voir : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>

@@ -70,6 +70,8 @@ Dans ces exemples, nous allons exécuter de la manière la plus simple possible 
 
 Ensuite, nous exposerons un `service` k8s pour pouvoir accéder à nos conteneurs et nous verrons finalement comment configurer l’équilibrage de charge sur nos pods.
 
+**Dans la suite du TP, nous utiliserons une image `nginx` pour simuler un serveur Web. Cette image peut être remplacée par l'image de test : `paulbouwer/hello-kubernetes:1.8` qui permet d'afficher le `Node` et le `Pod` en cours d'exécution pour du débug.**
+
 :::exo
 1. En utilisant la cheatsheet k8s, créer un fichier décrivant un Pod utilisant une image `nginx` pour créer un pod nommé `web`.
 2. Récupérer l'adresse IP du pod créé.
