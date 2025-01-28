@@ -222,6 +222,7 @@ created: 2024-10-17
 - `pandoc` : transformation de documents d'un format à un autre : md, html, docx, …
 - `docusaurus` : wiki
 - `MarkItDown`: PDF, PPT, Word vers Markdown
+- <https://github.com/getomni-ai/zerox> : PDF, PPT, Word vers Markdown using AI for OCR
 
 ### 🤵 IAM, SSO
 
@@ -290,7 +291,7 @@ created: 2024-10-17
 - Database :
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
-	- Backend dans 1 seul fichier : `PocketBase`
+	- Backend dans 1 seul fichier : `PocketBase`, <https://manifest.build/>
 
 ## Frontend development
 
