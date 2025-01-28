@@ -13,11 +13,12 @@ https://github.com/remarkjs/remark-validate-links
 -> astro markdown => mermaid, plantuml, …
 -> astro : icon-link (h1, …) only on hover
 -> astro : fix ALL image imports => use MDX in promotions/
--> astro : link MD directly inside other MD (remove extensions)
 -> fix ::: (corrections, …)
 -> better `date:`
 -> C-k shortcut => launch search
 -> Copyright 2025
+-> "Fun"
+-> promotions/
 
 ---
 
