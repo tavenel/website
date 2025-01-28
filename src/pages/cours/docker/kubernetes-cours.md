@@ -175,15 +175,19 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 - `Pod` : gère un ensemble de conteneurs partageant la même isolation : stack réseau, stockage, …
   - démarré directement ou (mieux) par un `deployment` créant un `ReplicaSet`
   - éphémère : pas de données critiques dans le pod
-  - **1 IP par pod partagée entre tous les conteneurs**
+  - 1 IP par pod partagée entre tous les conteneurs (mais l'IP peut changer)
+    - accès par `localhost` aux autres conteneurs et **partage des ports ouverts**
 
 ---
 
 ## Service
 
-- Ensemble de pods
-- Regroupés à partir de labels
-- 1 Adresse IP spécifique + port pour communiquer avec les pods
+- Service DNS permettant d'accéder à 1 (ou plusieurs) Pods
+  - Nom DNS court (dans le namespace) : `<service_name>.<namespace>` (ou `<service_name>` si `namespace==default`)
+  - Nom DNS complet : `<service_name>.<namespace>.svc.<cluster-domain>`
+  - exemple : `mon_service.mon_namespace.svc.mon_cluster`
+- Association `Service` <-> `Pod`(s) grâce aux _labels_
+- Au moins 2 CIDR (plages réseau) : CIDR Pod et CIDR Services
 
 ---
 
