@@ -19,13 +19,7 @@ https://github.com/remarkjs/remark-validate-links
 -> Copyright 2025
 -> "Fun"
 -> promotions/
-
----
-
--> How-to upgrade Astro : `npx @astrojs/upgrade`
-
-https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins
-https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins
+-> render pdf, docx, …
 
 ---
 
