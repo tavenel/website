@@ -597,8 +597,6 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
 - [Gestion de l'état dans le conteneurs][doc-stateful]
 - [Bac à sable Docker en ligne][play-docker]
 - [Formation complète Docker (stephane-robert.info)](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker/)
-- Podman : autre technologie de conteneurs compatible Docker / docker compose / k8s : <https://podman.io/>
-- [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
 - [Vidéo : 100+ Docker concepts you should know (8')](https://www.youtube.com/watch?v=rIrNIzy6U_g)
 - [Livre : Bootstrapping Microservices with Docker, Kubernetes, and Terraform](https://www.manning.com/books/bootstrapping-microservices-with-docker-kubernetes-and-terraform)
 - Livre : <https://docker-handbook.farhan.dev/>
@@ -633,6 +631,15 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
 - [Awesome Docker : development environment](https://github.com/veggiemonk/awesome-docker#development-environment)
 - <https://containertoolbx.org/> : environnements de dev utilisant Podman
 - [Vidéo : 0 downtime avec Docker stack et Docker Swarm](https://www.youtube.com/watch?v=fuZoxuBiL9o)
+
+---
+
+- [A Decade of Docker](https://opensourcewatch.beehiiv.com/p/decade-docker)
+- [Solomon Hykes : Why we built Docker (youtube)](https://youtu.be/3N3n9FzebAA)
+- Podman : autre technologie de conteneurs compatible Docker / docker compose / k8s : <https://podman.io/>
+- [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
+- [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
+- [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
 
 [img-archi]: https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png
 [doc-docker]: https://docs.docker.com/
