@@ -8,8 +8,7 @@ https://github.com/sergioramos/remark-hint?tab=readme-ov-file
 
 https://github.com/remarkjs/remark-validate-links
 
--> use <Picture /> <https://docs.astro.build/en/guides/images/#images-in-astro-files> for covers
--> Marp (or all in slidev ?)
+-> Marp (or all in sliidev ?)
 -> astro markdown => mermaid, plantuml, …
 -> astro : icon-link (h1, …) only on hover
 -> astro : fix ALL image imports => use MDX in promotions/
@@ -20,6 +19,16 @@ https://github.com/remarkjs/remark-validate-links
 -> "Fun"
 -> promotions/
 -> render pdf, docx, …
+-> switch theme
+-> analytics
+-> RSS in footer
+-> h2#chapitres => floating (right ?), always visible, collapsible
+
+https://code.juliancataldo.com/component/astro-terminal-player/
+https://code.juliancataldo.com/component/astro-seo-metadata/
+https://code.juliancataldo.com/component/astro-code-editor/
+
+https://lunrjs.com/
 
 ---
 
