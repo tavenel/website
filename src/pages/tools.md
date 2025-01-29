@@ -313,6 +313,7 @@ created: 2024-10-17
   - `portr`
 - Scanner de technologies de site web : <https://ingredients.work/>
 - free icons : <https://tabler.io/icons>
+- free images : <https://undraw.co/>
 - <https://frontendchecklist.io/>
 
 ## 📊 Data science, data mining, machine learning
