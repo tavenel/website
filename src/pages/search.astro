@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
 
+import LocalSearch from "astro-pagefind/components/Search";
+
 import { Picture } from 'astro:assets';
-import search from '../assets/undraw/undraw_search-engines_k649.svg'
+import searchImage from '../assets/undraw/undraw_search-engines_k649.svg'
 
 const title = 'Search';
 const { url } = Astro.props;
+const q = "";
 ---
 
 <Layout title={title} url={url}>
-
-	<Picture src={search} alt="An image of a search."/>
-	TODO
+	<Picture src={searchImage} alt="An image of a search."/>
+	<h2>Results for : {q}</h2>
+	<LocalSearch className="pagefind-ui" query={q} />
 </Layout>

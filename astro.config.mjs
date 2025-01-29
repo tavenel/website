@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import pagefind from "astro-pagefind";
+
 import remarkToc from 'remark-toc';
 import remarkEmoji from 'remark-emoji';
 import rehypeSlug from 'rehype-slug';
@@ -48,7 +50,7 @@ export default defineConfig({
 		},
 	},
 
-	integrations: [sitemap()],
+	integrations: [sitemap(), pagefind()],
 
 	vite: {
 		plugins: [visualizer({ // analyse bundle size
