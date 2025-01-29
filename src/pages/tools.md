@@ -316,6 +316,7 @@ created: 2024-10-17
 - free images : <https://undraw.co/>
 - SVG background patterns : <https://heropatterns.com/>
 - <https://frontendchecklist.io/>
+- Client-side search : <https://pagefind.app/>
 
 ## 📊 Data science, data mining, machine learning
 
