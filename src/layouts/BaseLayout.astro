@@ -1,6 +1,9 @@
 ---
 import '../css/styles.css'
 
+// ClientRouter transforms the website into an SPA
+import { ClientRouter } from 'astro:transitions';
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -36,6 +39,7 @@ const { title, url } = Astro.props;
 		}
 		</script>
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
 	<body>
 		<Header />
