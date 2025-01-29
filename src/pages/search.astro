@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import { Picture } from 'astro:assets';
+import search from '../images/undraw/undraw_search-engines_k649.svg'
+
+const title = 'Search';
+const { url } = Astro.props;
+---
+
+<Layout title={title} url={url}>
+
+	<Picture src={search} alt="An image of a search."/>
+	TODO
+</Layout>
