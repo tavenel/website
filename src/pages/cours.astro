@@ -1,0 +1,121 @@
+---
+
+import Layout from '../layouts/Layout.astro'
+
+const title = 'Cours';
+const { url } = Astro.props;
+---
+
+<Layout title={title} url={url}>
+
+	<h1>Cours</h1>
+
+	<h2>Pages transverses</h2> 
+
+	<ul>
+		<li><a href="/cours/liens">🔗 Liens utiles et références</a></li>
+		<li><a href="/tools">🛠 Liste d'outils</a></li>
+	</ul>
+
+	<h2>Par promotions</h2> 
+
+	<div id="promos">
+		<div class="column-promo">
+
+			<div id="epsi">
+
+				<h3>EPSI Grenoble</h3> 
+
+				<ul>
+					<li><a href="/promotions/epsi/sn2">SN2</a></li>
+					<li><a href="/promotions/epsi/b3">B3</a></li>
+					<li><a href="/promotions/epsi/i1">I1</a></li>
+					<li><a href="/promotions/epsi/i2">I2</a></li>
+				</ul>
+
+			</div>
+
+			<div id="wis">
+
+			</div>
+
+		</div>
+		<div class="column-promo">
+
+			<div id="esgi">
+
+				<h3>ESGI Grenoble<span data-tooltip="École Supérieure de Génie Informatique"> 💭</span></h3>
+
+				<ul>
+					<li><a href="/promotions/esgi/b2">B2</a></li>
+					<li><a href="/promotions/esgi/b3-al-iw">B3 AL & IW</a></li>
+					<li><a href="/promotions/esgi/b3-src">B3 SRC</a></li>
+					<li><a href="/promotions/esgi/m1">M1</a></li>
+					<li><a href="/promotions/esgi/m2">M2</a></li>
+				</ul>
+
+			</div>
+
+		</div>
+		<div class="column-promo">
+
+			<div id="cesi">
+
+				<h3>CESI Grenoble</h3>
+
+				<li><a href="promotions/cesi/m1-dashboard">M1</a></li>
+
+			</div>
+
+		</div>
+		<div class="column-promo">
+
+			<div id="poec">
+
+				<h3>POEC<span data-tooltip="Préparation Opérationnelle à l'Emploi Collective"> 💭</span></h3>
+
+				<ul>
+					<li><a href="/promotions/poec/chef-projet">📅 Chef de projet</a></li>
+					<li><a href="/promotions/poec/tests">🧪 Testeur logiciel</a></li>
+					<li><a href="/promotions/poec/cloud-linux">🐧 ASR Cloud</a></li>
+				</ul>
+
+			</div>
+
+		</div>
+	</div>
+
+	<h2>Par catégories</h2> 
+
+	<div id="cours-cat">
+
+		<ul>
+			<li><a href="/cours/archi">🏗️ Architecture logicielle</a></li>
+			<li><a href="/cours/ci">🔄 CI/CD et  Jenkins</a></li>
+			<li><a href="/cours/cloud">🌐 Cloud, Web, TCP/IP, AWS</a></li>
+			<li><a href="/cours/data">📊  Data</a></li>
+			<li><a href="/cours/ddd">🤝 Domain-Driven Design (DDD)</a></li>
+			<li><a href="/cours/devops">󱃾  Devops - Sysops</a></li>
+			<li><a href="/cours/docker">  Docker® et 󱃾 Kubernetes®</a></li>
+			<li><a href="/cours/gestion-projet">📅 Gestion de projet</a></li>
+			<li><a href="/cours/git"> Git</a></li>
+			<li><a href="/cours/green-it">💚 Green IT</a></li>
+			<li><a href="/cours/integration">☎️  Intégration</a></li>
+			<li><a href="/cours/linux">🐧 Linux</a></li>
+			<li><a href="/cours/management">💬 Management</a></li>
+			<li><a href="/cours/python">󰌠  Python et   Django</a></li>
+			<li><a href="/cours/spring">  Spring et 󱘻 Hibernate</a></li>
+			<li><a href="/cours/tests">🧪 Tests</a></li>
+		</ul>
+
+	</div>
+
+	<h2>À propos</h2> 
+
+	<p>J'interviens à la fois en écoles supérieures d'informatique et en milieu professionnel pour de la formation ou du perfectionnement en développement informatique et en gestion de projet : <a href="/about">🧑 About</a>.</p>
+
+	<p>Une suggestion, une idée, une coquille à corriger ? <a href="/website">🌐 Website</a>.</p>
+
+	<em>Les documents de ce site sont mis à disposition selon les termes de la Licence <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution</a> - Partage dans les Mêmes Conditions 4.0 International. En cas de réutilisation, vous devez créditer le créateur du contenu.</em>
+
+</Layout>
