@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import rssIcon from '../assets/rss.png';
 
 import Layout from '../layouts/Layout.astro'
@@ -11,7 +11,9 @@ const { url } = Astro.props;
 <Layout title={title} url={url}>
 	<h1>/home/tavenel</h1>
 
-	Welcome to Tom Avenel's website.
-	<a href="rss.xml"><Image src={rssIcon} alt="The RSS logo icon." width="20" height="20"/></a>
+	<div>
+		<span>Welcome to Tom Avenel's website.</span>
+		<a href="rss.xml"><Picture src={rssIcon} alt="The RSS logo icon." width="20" height="20"/></a>
+	</div>
 </Layout>
 
