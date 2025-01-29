@@ -2,6 +2,8 @@
 title: 💚 Green IT
 ---
 
+![](../../../images/undraw/undraw_eco-conscious_oqny.svg)
+
 - 1er quizz d'introduction : <https://quizanthropocene.fr/quiz/fresque-du-numerique>
 - 2ème quizz d'introduction : <https://quizanthropocene.fr/quiz/le-numerique-est-il-ecologique>
 - [🤓 Informatique responsable GreenIT (cours)](/cours/green-it/green-it) : une introduction à l'informatique responsable : enjeux, cadre légal, référentiels, bonnes pratiques de conception et de développement.

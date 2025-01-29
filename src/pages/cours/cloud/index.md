@@ -2,6 +2,8 @@
 title: 🌐 Cloud Web et HTTP
 ---
 
+![](../../../images/undraw/undraw_cloud-hosting_tfeh.svg)
+
 ## Cours
 
 - 🤓 Cours : Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d'applications mobiles

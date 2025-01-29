@@ -2,7 +2,7 @@
 title: Liens externes
 ---
 
-# Liens externes
+![](../images/undraw/undraw_link-shortener_9ro5.svg)
 
 ## Tech
 
@@ -104,9 +104,3 @@ title: Liens externes
 
 - Got to the <https://www.avenel.pro/tech/tech-footprint.html> page.
 
-## Lobbying et partenariats
-
-- Ce site est ouvert à partenariats **uniquement pour des services éthiques**. Les autres sollicitations sont ignorées.
-- <https://sr.ht/> : forge de code source et micro hébergeur Web. Héberge ce site Web (service <https://srht.site/>) et la plupart de mes dépôts de code dans la forge `git`. Service éthique proche des philosophies <https://suckless.org/>. Serveurs aux États-Unis, en cours de transfert vers les Pays-Bas.
-- <https://www.zaclys.com/> : hébergeur Software-as-a-Service (SaaS) français éthique. J'utilise à titre personnel le déploiement Nextcloud pour y stocker des fichiers, gérer mes agendas personnels et professionnels (y compris ceux référencés sur ce site), leur gestionnaire de flux RSS (synchronisés en local par `newsboat`) et parfois d'autres services. Comme tout client Zaclys, je dispose d'une offre de parrainage (3 mois offerts pour le parrain et 3 mois offerts pour le parrainé) : me contacter depuis la page [about me](/about.html).
-- <https://www.leviia.com/> : autre fournisseur d'hébergement Nextcloud, les données sont stockées chez OVH. Compte OnlyOffice inclus dans l'offre. Utilisé pour les données liées à mon activité professionnelle, y compris les rendus des apprenants.

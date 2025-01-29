@@ -2,6 +2,8 @@
 title: 📅 Gestion de projet
 ---
 
+![](../../../images/undraw/undraw_scrum-board_uqku.svg)
+
 ## Introduction à la gestion de projet
 
 - [La checklist - Création de Projet](/cours/gestion-projet/checklist-creation-projet)

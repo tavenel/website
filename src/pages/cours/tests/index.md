@@ -2,6 +2,8 @@
 title: 🧪 Tests logiciels
 ---
 
+![](../../../images/undraw/undraw_scientist_5td0.svg)
+
 ## Méthodologie des tests
 
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)

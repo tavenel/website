@@ -2,6 +2,8 @@
 title: 📊 Formations Data
 ---
 
+![](../../../images/undraw/undraw_data_0ml2.svg)
+
 ## 🔗 Tests de données
 
 Voir la [page de cours sur les tests](/cours/tests)

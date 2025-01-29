@@ -2,6 +2,8 @@
 title: 🏗️ Architecture
 ---
 
+![](../../../images/undraw/undraw_design-components_529l.svg)
+
 ## Programmation Orientée Objet (POO)
 
 - [🤓 Cours d'introduction à la POO](/cours/archi/poo/poo-cours)
