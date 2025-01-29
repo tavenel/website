@@ -314,6 +314,7 @@ created: 2024-10-17
 - Scanner de technologies de site web : <https://ingredients.work/>
 - free icons : <https://tabler.io/icons>
 - free images : <https://undraw.co/>
+- SVG background patterns : <https://heropatterns.com/>
 - <https://frontendchecklist.io/>
 
 ## 📊 Data science, data mining, machine learning
