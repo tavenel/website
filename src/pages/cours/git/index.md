@@ -2,6 +2,8 @@
 title:   Git™
 ---
 
+![](../../../images/undraw/undraw_version-control_eiam.svg)
+
 ## 💡 Résumé des bases
 
 ```ditaa
