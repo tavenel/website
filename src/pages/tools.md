@@ -3,6 +3,8 @@ title: Programmes frameworks et outils
 created: 2024-10-17
 ---
 
+## Chapitres
+
 ## Commandes utiles
 
 ### 💻 `entr` : réexécute une commande
@@ -319,6 +321,7 @@ created: 2024-10-17
 - Librairies Python : data science : `numpy`, `pandas` ; data mining et ML : `scipy`, `sklearn`
 - ETL open-source : `airflow`
 - Local LLM : `ollama`
+- SQL queries on a CSV, Json, Excel file : <https://terminaltrove.com/sqly/>
 
 ## Project management
 
@@ -474,7 +477,7 @@ created: 2024-10-17
 - `asana` => `OpenProject`
 - `firebase` => `convex`, `supabase`, `appwrite`, `instant`
 - `heroku`, `netlify`, `vercel` => `coolify`, `dokku`
-- `github` => `gitlab`
+- `github` => :github: `gitlab`
 - `docusign` => `docuseal`
 - `google analytics` => `matomo`
 
