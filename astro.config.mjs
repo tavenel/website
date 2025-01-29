@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import remarkToc from 'remark-toc';
-import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
+import remarkEmoji from 'remark-emoji';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -30,10 +30,10 @@ export default defineConfig({
 			setLayout,
 			[remarkToc, { heading: 'Chapitres', maxDepth: 3 }],
 			remarkModifiedTime,
+			remarkEmoji,
 		],
 		// rehype: HTML processing (uses remark)
 		rehypePlugins: [
-			rehypeAccessibleEmojis, // add a span explaining the emoji
 			rehypeSlug, // dependency of AutoLinkHeadings
 			[rehypeAutolinkHeadings, { behavior: 'append' }], // add a link to h1, h2, …
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // mark external links
