@@ -2,6 +2,8 @@
 title: 🧑‍💼 DDD Domain-driven Design
 ---
 
+![](../../../images/undraw/undraw_customer-survey_2l89.svg)
+
 ## Cours
 
 - [🤓 Cours : Le Domain-Driven Design](/cours/ddd/ddd-cours)
