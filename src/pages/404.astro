@@ -1,8 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { Picture } from 'astro:assets';
+import img404 from '../images/undraw/undraw_page-not-found_6wni.svg'
 ---
 
 <Layout>
 	<h1>Erreur 404</h1>
 	<h2>Page introuvable !</h2>
+
+	<Picture src={img404} alt="An image of a 404."/>
+
+	<button onclick="history.back()">Revenir en arrière</button>
+
 </Layout>
