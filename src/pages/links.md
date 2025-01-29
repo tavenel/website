@@ -2,7 +2,7 @@
 title: Liens externes
 ---
 
-![](../images/undraw/undraw_link-shortener_9ro5.svg)
+![](../assets/undraw/undraw_link-shortener_9ro5.svg)
 
 ## Tech
 

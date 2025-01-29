@@ -2,7 +2,7 @@
 title: 🌐 Cloud Web et HTTP
 ---
 
-![](../../../images/undraw/undraw_cloud-hosting_tfeh.svg)
+![](../../../assets/undraw/undraw_cloud-hosting_tfeh.svg)
 
 ## Cours
 

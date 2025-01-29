@@ -2,7 +2,7 @@
 title: 📊 Formations Data
 ---
 
-![](../../../images/undraw/undraw_data_0ml2.svg)
+![](../../../assets/undraw/undraw_data_0ml2.svg)
 
 ## 🔗 Tests de données
 

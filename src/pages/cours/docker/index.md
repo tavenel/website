@@ -2,7 +2,7 @@
 title:   Docker® et 󱃾 Kubernetes® 
 ---
 
-![](../../../images/undraw/undraw_container-ship_t6yx.svg)
+![](../../../assets/undraw/undraw_container-ship_t6yx.svg)
 
 ##   Docker®
 

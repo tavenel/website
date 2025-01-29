@@ -2,7 +2,7 @@
 title: 🏗️ Architecture
 ---
 
-![](../../../images/undraw/undraw_design-components_529l.svg)
+![](../../../assets/undraw/undraw_design-components_529l.svg)
 
 ## Programmation Orientée Objet (POO)
 

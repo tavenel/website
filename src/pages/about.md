@@ -5,7 +5,7 @@ layout: ../layouts/Layout.astro
 
 # About me
 
-![](../images/undraw/undraw_personal-info_yzls.svg)
+![](../assets/undraw/undraw_personal-info_yzls.svg)
 
 I am a freelance software developper and I teach computer science in graduate schools.
 
