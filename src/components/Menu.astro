@@ -1,5 +1,5 @@
 ---
-import Search from "astro-pagefind/components/Search";
+import PageFind from "./PageFind.astro";
 ---
 <nav>
 	<menu>
@@ -10,7 +10,7 @@ import Search from "astro-pagefind/components/Search";
 		<li id="menu-links"><a href="/links.html">🔗 Links</a></li>
 		<li id="menu-about"><a href="/about.html">🧑 Contact</a></li>
 		<li id="menu-search"><a href="/search.html">🔍 Search</a></li>
-		<li><Search id="menu-search" className="pagefind-ui" uiOptions={{ showImages: true, showSubResults: true }} /></li>
+		<li><PageFind /></li>
 	</menu>
 </nav>
 
