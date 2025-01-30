@@ -2,7 +2,6 @@
 import PageFind from "./PageFind.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 // <li id="menu-search"><a href="/search.html">🔍 Search</a></li>
-// client:idle => Load once the rest of page is done loading
 ---
 <nav>
 	<menu>
@@ -12,8 +11,8 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 		<li id="menu-website"><a href="/website.html">🌐 Website</a></li>
 		<li id="menu-links"><a href="/links.html">🔗 Links</a></li>
 		<li id="menu-about"><a href="/about.html">🧑 Contact</a></li>
-		<li><ThemeSwitcher client:idle/></li>
-		<li><PageFind client:idle/></li>
+		<li><ThemeSwitcher/></li>
+		<li><PageFind/></li>
 	</menu>
 </nav>
 
