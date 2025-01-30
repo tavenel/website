@@ -63,6 +63,7 @@
 	--cours-link-text: var(--dark-main);
 	--cours-link-border: var(--light-grey);
 	--versioning: var(--light-grey);
+	--select-color: var(--dark-grey);
 }
 
 [data-theme="dark"] {
@@ -99,6 +100,7 @@
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
 
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
@@ -144,6 +146,7 @@
 	--cours-link-text: #2e3440;
 	--cours-link-border: #2e3440;
 	--versioning: #b48ead;
+	--select-color: #88c0d0;
 
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
@@ -189,6 +192,7 @@
 	--cours-link-text: #1e1e2e;
 	--cours-link-border: #7f849c;
 	--versioning: #a6adc8;
+	--select-color: #89b4fa;
 
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
@@ -203,6 +207,12 @@
 /*                                    MAIN                                    */
 /******************************************************************************/
 
+*,
+*::before,
+*::after {
+	/* Reset all styles */
+  box-sizing: border-box;
+}
 
 a {
 	text-decoration: none;
@@ -380,6 +390,22 @@ menu > li {
 	}
 
 }
+
+select {
+	color: var(--select-color);
+	background-color: var(--background);
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+
+	@media (min-width: 768px) { width: 70%; }
+	@media (min-width: 992px) { width: 50%; }
+	@media (min-width: 1200px) { width: 30%; }
+}
+
+#themeSwitch { width: min-content; }
 
 /******************************************************************************/
 /*                                    TODO                                    */
