@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import Layout from '@layouts/BaseLayout.astro'
 
 import LocalSearch from "astro-pagefind/components/Search";
 
@@ -12,6 +12,7 @@ const q = "";
 ---
 
 <Layout title={title} url={url}>
+	<h1>{title}</h1>
 	<Picture src={searchImage} alt="An image of a search."/>
 	<h2>Results for : {q}</h2>
 	<LocalSearch className="pagefind-ui" query={q} />

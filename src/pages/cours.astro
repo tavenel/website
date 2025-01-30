@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets';
 import undrawProfessor from '@assets/undraw/undraw_professor_d7zn.svg'
 
-import Layout from '@layouts/Layout.astro'
+import Layout from '@layouts/BaseLayout.astro'
 
 const title = 'Cours';
 const { url } = Astro.props;
@@ -10,7 +10,7 @@ const { url } = Astro.props;
 
 <Layout title={title} url={url}>
 
-	<h1>Cours</h1>
+	<h1>{title}</h1>
 
 	<Picture src={undrawProfessor} alt="An image of a professor with a dashboard."/>
 

@@ -1,9 +1,6 @@
 ---
 title: About me
-layout: "@layouts/Layout.astro"
 ---
-
-# About me
 
 ![](@assets/undraw/undraw_personal-info_yzls.svg)
 
