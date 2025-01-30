@@ -1,6 +1,9 @@
 ---
 title: Website
+layout: '@layouts/Layout.astro'
 ---
+
+# Website
 
 ![](@assets/undraw/undraw_static-website_x3tn.svg)
 

@@ -1,6 +1,9 @@
 ---
 title: Liens externes
+layout: '@layouts/Layout.astro'
 ---
+
+# Liens externes
 
 ![](@assets/undraw/undraw_link-shortener_9ro5.svg)
 
