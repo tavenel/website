@@ -19,7 +19,8 @@ https://github.com/remarkjs/remark-validate-links
 -> "Fun"
 -> promotions/
 -> render pdf, docx, …
--> switch theme
+-> search :
+  - theme : PageFind
 -> analytics
 -> RSS in footer
 -> h2#chapitres => floating (right ?), always visible, collapsible
@@ -29,6 +30,16 @@ https://code.juliancataldo.com/component/astro-seo-metadata/
 https://code.juliancataldo.com/component/astro-code-editor/
 
 https://lunrjs.com/
+
+Keyboard
+Use the <kbd> tag to denote keys on the keyboard.
+<kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd>
+CTRL + ALT + Delete
+
+Highlight
+Use the <mark> tag to denote highlighted text.
+Do or do not. <mark>There is no try.</mark>
+Do or do not. There is no try.
 
 ---
 
