@@ -32,7 +32,7 @@ _Tom Avenel_
 ---
 
 * De loin l'orchestrateur le plus utilisé avec Docker®
-* D'autres orchestrateurs existent : `Swarm`, `Apache Mesos / DC/OS`, ...
+* D'autres orchestrateurs existent : `OpenShift`, `Swarm`, `Apache Mesos`, …
 
 ---
 
@@ -46,6 +46,78 @@ _Tom Avenel_
 * `Docker®` seul / `docker compose` pour CI/CD et outils internes
 * `k8s®` pour gestion applicative de l'environnement de production
 * `k8s®` duplique des fonctionnalités de Docker® => préférer 100% Docker® ou k8s®
+
+---
+
+# Technologies de conteneurs supportées
+
+1. `containerd` : projet open-source créé pour Kubernetes (runtime de `Docker` : _Docker sans la CLI_)
+2. `Docker Engine` : _Docker avec la CLI_
+3. `Podman` : alternative _serverless_ à Docker
+4. `CRI-O` : conteneurs légers
+5. `Mirantis Container Runtime (MCR)` (anciennement _Docker Enterprise_)
+
+---
+
+# Distributions Kubernetes
+
+1. Rancher :
+   - Plateforme complète pour gérer des clusters Kubernetes
+   - Propose des fonctionnalités avancées comme la gestion multi-cluster
+   - Offre une interface graphique intuitive
+
+2. K3s :
+   - Version allégée de Kubernetes conçue pour les environnemets embarqués
+   - Consomme moins de ressources que Kubernetes standard
+   - Idéal pour les systèmes à faible puissance
+
+3. OpenShift :
+   - Distribution propriétaire de Red Hat basée sur Kubernetes
+   - Inclut des fonctionnalités supplémentaires comme l'orchestration d'applications
+   - Forte sécurité et conformité
+
+4. Docker Kubernetes Service (DKS)
+   - Surveillance intégrée du cluster et des applications.
+   - Nombreux drivers storage
+
+5. MicroK8s :
+   - Distribution légère et sécurisée de Kubernetes
+   - Conçue pour les environnemets Ubuntu
+   - Propose des fonctionnalités avancées comme l'installation de paquets
+
+6. Minikube : 
+   - Version légère pour le développement et le test
+   - Fonctionne sur un seul ordinateur
+   - Idéal pour débutants et environnement de développement
+
+7. Docker Desktop :
+   - Intègre Kubernetes nativement
+   - Offre une expérience utilisateur simplifiée
+   - Adapté aux développeurs utilisant Docker
+
+8. Kind (Kubernetes IN Docker) :
+   - Déploie Kubernetes dans un conteneur pour le développement et le test
+   - Crée rapidement un ou plusieurs clusters localement
+   - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, …
+
+---
+
+# Plateformes managées
+
+- Amazon Elastic Kubernetes Service (EKS)
+- Google Kubernetes Engine (GKE)
+- Azure Kubernetes Services (AKS) 
+- Oracle Kubernetes Engine (OKE)
+- IBMCloud K8s
+- OVHCloud K8s
+
+---
+
+# Installation
+
+- `kubeadm` : l'outil officiel (installation de chaque composant séparément)
+- Intégré dans la distribution : `k3s`, `minikube`, `microk8s`, …
+- Versions managées : outils dédiés au fournisseur de Cloud
 
 ---
 
@@ -387,16 +459,6 @@ Voir la [cheatsheet sur Docker®][docker-cheatsheet].
 
 ---
 
-# Tester Kubernetes
-
-`K8s` est très complexe à utiliser. Pour s'entraîner à utiliser un environnement Kubernetes, il existe des alternatives plus simples :
-
-- `Minikube` permet de déployer facilement un mini cluster `k8s` composé d'un seul serveur : <https://github.com/kubernetes/minikube>
-- `K3s` est une mini distribution `k8s` beaucoup plus légère, optimisée IoT : <https://k3s.io/>
-- Il existe d'autres mini-distributions `k8s` : <https://blog.palark.com/small-local-kubernetes-comparison/>
-
----
-
 # Outils externes
 
 ---
@@ -450,6 +512,7 @@ _Architecture de FluxCD (source: documentation FluxCD)_
 
 - [Site web Kubernetes](https://kubernetes.io/)
 - Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/>
+- Mini-distributions : <https://blog.palark.com/small-local-kubernetes-comparison/>
 - [Introduction à k8s](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
 - Cours sur kubernetes :
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
