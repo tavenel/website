@@ -317,6 +317,7 @@ created: 2024-10-17
 - SVG background patterns : <https://heropatterns.com/>
 - <https://frontendchecklist.io/>
 - Client-side search : <https://pagefind.app/>
+- Système de commentaires utilisant Github : <https://giscus.app/>
 
 ## 📊 Data science, data mining, machine learning
 
