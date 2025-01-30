@@ -73,6 +73,7 @@ Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1.html)
 - [Scripts Shell](https://linux.goffinet.org/administration/scripts-shell/) et [TP pas à pas](https://systemes.gricad-pages.univ-grenoble-alpes.fr/www-unix/avance/seance1-2-script-sh-pas-a-pas/tp-pas-a-pas.pdf)
 - [Variables d'environnement : TP pas à pas](https://systemes.gricad-pages.univ-grenoble-alpes.fr/www-unix/avance/seance4-varenv-pas-a-pas/tp-pas-a-pas-varenv.pdf)
 - [Mind map SSH](https://www.formation-lpi.com/Mind-Map-SSH.html) et [Mind map GPG](https://www.formation-lpi.com/Mind-Map-gpg.html)
+- [Migrer une installation Linux](https://www.antoinefi.net/index.php/2025/01/29/migrer-une-installation-linux/)
 - Livre : Unix and Linux system administration handbook, 5th edition. Evi Nemeth, Garth Snyder, Trent R.Hein, Ben Whaley, Dan Mackin
 
 ### Liens VIM
