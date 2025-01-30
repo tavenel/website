@@ -158,8 +158,9 @@ Ex : `gradle build` ou `mvn package` intègrent par défaut l'exécution des tes
 ---
 
 
-<!--```{render="{{ditaa.svg}}" alt="Exemple de processus d'intégration continue."}-->
-```ditaa
+```plantuml
+@startditaa
+
   +------------------------+
   | cYEL                   |
   | Machine du développeur |
@@ -197,9 +198,11 @@ Ex : `gradle build` ou `mvn package` intègrent par défaut l'exécution des tes
   | Serveur                |
   | d'intégration continue |
   +------------------------+
-```
 
-_Exemple de processus d'intégration continue._
+= Exemple de processus d'intégration continue.
+
+@endditaa
+```
 
 ---
 

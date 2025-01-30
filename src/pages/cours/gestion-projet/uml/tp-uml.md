@@ -17,11 +17,13 @@ Le projet a été spécifié grâce à un ensemble de diagrammes de classes et d
 
 ## Diagramme de cas d'utilisation
 
-<!--TODO DIAG
-```{render="{{plantuml.svg}}" alt="Diagramme de cas d'utilisation"}
--->
-```
+``` plantuml
 @startuml
+
+caption
+= Diagramme de cas d'utilisation
+endcaption
+
 "Search in the application" as (Search)
 :Patron: --> (Login)
 :Patron: --> (Search)
@@ -43,10 +45,13 @@ Les deux interfaces correspondent à deux vues différentes dans l'application W
 
 ## Diagrammes de composants
 
-<!--TODO DIAG
-```{render="{{plantuml.svg}}" alt="Diagramme de composants"}
--->
-```
+``` plantuml
+@startuml
+
+caption
+= Diagramme de composants
+endcaption
+
 database "Persistence"
 
 package "Backend" {
@@ -67,6 +72,8 @@ package "Frontend" {
 [:Manage] --> [:Library] : Add/Update/Delete inventory
 [:Library] --> [Persistence] : Load/Persist
 [:Authentication] --> [Persistence] : Load/Persist
+
+@enduml
 ```
 
 L'application est composée de trois composants principaux :

@@ -454,11 +454,11 @@ layout: section
         |     +--- Bounded Context
         |
         +--- Langage Ubiquitaie
+
+= Domaine, Bounded context, langage ubiquitaire.
+
 @endditaa
 ```
-
-<!-- _class: legende -->
-Domaine, Bounded context, langage ubiquitaire.
 
 ---
 layout: section
@@ -589,6 +589,11 @@ https://www.eventstorming.com/book/
 
 ```plantuml
 @startuml
+
+caption
+= Exemple : diagramme de cas d'utilisation d'un vidéoclub
+endcaption
+
 left to right direction
 skinparam actorStyle awesome
 
@@ -615,15 +620,16 @@ nabo --> (Demande d'abonnement)
 @enduml
 ```
 
-<!-- _class: legende -->
-Exemple : diagramme de cas d'utilisation d'un vidéoclub
-
 ---
 
 # Diagramme de classe
 
 ```plantuml
 @startuml
+
+caption
+= Exemple de diagramme de classes pour le modèle d'une librairie.
+endcaption
 
 class Book {
   +title: String
@@ -665,9 +671,6 @@ Book "1" -- "0..*" BookInstance
 
 @enduml
 ```
-
-<!-- _class: legende -->
-Exemple de diagramme de classes pour le modèle d'une librairie.
 
 ---
 layout: default

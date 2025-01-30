@@ -6,6 +6,7 @@ import pagefind from "astro-pagefind";
 
 import remarkToc from 'remark-toc';
 import remarkEmoji from 'remark-emoji';
+import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -33,6 +34,7 @@ export default defineConfig({
 			[remarkToc, { heading: 'Chapitres', maxDepth: 3 }],
 			remarkModifiedTime,
 			remarkEmoji,
+			remarkPlantUML,
 		],
 		// rehype: HTML processing (uses remark)
 		rehypePlugins: [

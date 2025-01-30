@@ -25,10 +25,9 @@ Le parc informatique se compose des machines suivantes :
 - Un poste de travail Windows
 - Un serveur Linux hébergeant une stack `LAMP` (`Linux Apache MySQL PHP`)
 
-<!--TODO DIAG
-```{render="{{ditaa.svg}}"}
--->
-```ditaa
+```plantuml
+@startditaa
+
     +------------------+    +------------------+
     | Poste de travail |    | Poste de travail |
     | Linux            |    | Windows          |
@@ -41,6 +40,8 @@ Le parc informatique se compose des machines suivantes :
         +----------------------------------+
         | Serveur OCSInventory             |
         +----------------------------------+
+
+@endditaa
 ```
 
 # Installation d’un environnement de test

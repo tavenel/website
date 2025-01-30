@@ -7,8 +7,13 @@ date: 2023 / 2024
 
 Un système de carte météo (`CM`) doit générer des cartes avec la météo de chaque région en se basant sur les données collectées à partir des stations météo (`SM`) ou autres sources comme les ballons-sondes ou satellites. Les `SM` transmettent leurs données à un central de région (`CR`) en réponse à une requête de celui-ci. Un `CR` valide les données collectées des `SM` et les intègrent avec les données des autres sources. Les données intégrées sont archivées. En utilisant les données de cette archive et une BD de cartes numériques, le `CR` génère toutes les heures un ensemble de cartes météo locales. Ces cartes peuvent être imprimées ou affichées en différents formats.
 
-```{render="{{plantuml.svg}}" alt="Architecture logicielle d'un système de cartes météo"}
+```plantuml
 @startuml
+
+caption
+= Figure 1 : Architecture logicielle d'un système de cartes météo
+endcaption
+
 package DataCollection {
   rectangle Comms
   rectangle Observateur
@@ -47,8 +52,6 @@ DataArchiving -right- DataDisplay
 @enduml
 ```
 
-_Figure 1 : Architecture logicielle d'un système de cartes météo._
-
 ## Exercice 1 : Plan de test
 
 En utilisant l'architecture de ce système, constituez un plan de test en précisant plus particulièrement : 
@@ -76,8 +79,13 @@ Dans la suite, nous allons nous intéresser plus particulièrement au sous-syst�
 
 Les figures ci-dessous décrivent les architectures de haut niveau et détaillée du sous-système `SM`.
 
-```{render="{{plantuml.svg}}" alt="Architecture haut niveau du sous-système SM"}
+```plantuml
 @startuml
+
+caption
+= Architecture haut niveau du sous-système SM
+endcaption
+
 package "Station météo" {
   [<<subsystem>> Interface] as C1
   note right of C1
@@ -97,8 +105,13 @@ package "Station météo" {
 @enduml
 ```
 
-```{render="{{plantuml.svg}}" alt="Architecture détaillée du sous-système SM"}
+```plantuml
 @startuml
+
+caption
+= Architecture détaillée du sous-système SM
+endcaption
+
 package "<<subsystem>> Interface" {
   [CommsController] as CC
   [WeatherStation] as WS
@@ -127,8 +140,13 @@ package "<<subsystem>> Instruments" as INS {
 
 Les cas d'utilisation de ce sous-système ainsi que le diagramme de flot des services du `SM` sont donnés dans les figures ci-dessous.
 
-```{render="{{plantuml.svg}}" alt="Architecture détaillée du sous-système SM"}
+```plantuml
 @startuml
+
+caption
+= Architecture détaillée du sous-système SM
+endcaption
+
 utilisateur as A
 A --> (Startup)
 A --> (Shutdown)
@@ -138,8 +156,13 @@ A --> (Test)
 @enduml
 ```
 
-```{render="{{plantuml.svg}}" alt="Diagramme d'activité du sous-système SM"}
+```plantuml
 @startuml
+
+caption
+= Diagramme d'activité du sous-système SM
+endcaption
+
 [*] --> Shutdown
 
 state "Operation" as Operation {
@@ -183,8 +206,13 @@ Dans le cahier des charges, le cas d'utilisation Report est spécifié à l'aide
 
 En utilisant le diagramme de flot et le diagramme de classe, proposez une suite de tests pour tester la classe `WeatherStation`. Pourquoi s'agit-il de tests en boîte noire ?
 
-```{render="{{plantuml.svg}}" alt="Diagramme de flot"}
+```plantuml
 @startuml
+
+caption
+= Diagramme de flot
+endcaption
+
 actor User
 participant "CommsController" as CC
 participant "WeatherStation" as WS
@@ -200,8 +228,13 @@ User -> CC : acknowledge()
 @enduml
 ```
 
-```{render="{{plantuml.svg}}" alt="Diagramme de classe"}
+```plantuml
 @startuml
+
+caption
+= Diagramme de classe
+endcaption
+
 class WeatherStation {
   identifier
   reportWeather()

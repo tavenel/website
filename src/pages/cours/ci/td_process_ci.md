@@ -82,7 +82,7 @@ Pour rappel, voici un exemple de pipeline simpliste :
 ```
 
 ::: {.correction .if correction="true"}
-```{render="{{mmdc.svg}}" alt="Pipeline CI"}
+```mermaid
 graph TD
   subgraph Machine personnelle
     A1{{fa:fa-laptop-code Modification code backend}}-->A2{make dev : OK?}-->|Oui|A3[fa:fa-code-branch Push répo backend]

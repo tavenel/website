@@ -37,9 +37,13 @@ Le scénario est alors décomposé en 3 phases :
 
 # Page Object
 
-<!-- ```{render="{{plantuml.svg}}" alt="Design Pattern Page Object"} -->
 ```plantuml
 @startuml
+
+caption
+= Design Pattern Page Object
+endcaption
+
 title Page Object
 
 interface HomePage
@@ -112,9 +116,13 @@ En automatisation de tests, ce design pattern sert surtout à tester facilement 
 
 ---
 
-<!-- ```{render="{{plantuml.svg}}" alt="Design Pattern Composition"} -->
 ```plantuml
 @startuml
+
+caption
+= Design Pattern Composition
+endcaption
+
 title Tree (Composition)
 
 class TreeItem {
@@ -154,9 +162,13 @@ En automatisation de tests, sont but est principalement de regrouper des `PageOb
 
 ---
 
-<!-- ```{render="{{plantuml.svg}}" alt="Design Pattern Façade"} -->
 ```plantuml
 @startuml
+
+caption
+= Design Pattern Façade
+endcaption
+
 title Facade
 
 class Client
@@ -226,9 +238,13 @@ En automatisation de tests, on utilise principalement les décorateurs pour :
 
 ---
 
-<!-- ```{render="{{plantuml.svg}}" alt="Design Pattern Decorateur"} -->
 ```plantuml
 @startuml
+
+caption
+= Design Pattern Decorateur
+endcaption
+
 title Decorator
 
 interface Component {

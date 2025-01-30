@@ -48,7 +48,8 @@ Le code source est monitoré (ou une notification reçue) pour chaque nouveau ch
 
 # Architecture d'un serveur d'intégration continue
 
-```{render="{{ditaa.svg}}" alt="Architecture d'un serveur d'intégration continue : gestion des sources, orchestration des builds, exécution des tests, génération des rapports"}
+```plantuml
+@startditaa
  +-------------+  +---------------+  
  | cBLU        |  | cPNK          |
  | Gestion des |  | Orchestration |
@@ -64,11 +65,11 @@ Le code source est monitoré (ou une notification reçue) pour chaque nouveau ch
  | Exécution   |  | Génération des     |
  |  des tests  |  | rapports et notifs |
  +-------------+  +--------------------+
+
+= Les 4 composants d'un serveur d'intégration continue.
+
+@endditaa
 ```
-
-<!-- _class: legende -->
-
-Les 4 composants d'un serveur d'intégration continue.
 
 ---
 

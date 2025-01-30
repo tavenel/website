@@ -21,9 +21,13 @@ Le but est de décrire la vue des besoins (_use case view_) de ce système.
 2. Décrire le scénario _Location Cassettes_ par un diagramme de séquence.
 
 ::: {.correction .if correction="true"}
-```{render="{{plantuml.svg}}" alt="Diagramme de Cas d'utilisation d'un VideoClub"}
-
+```plantuml
 @startuml
+
+caption
+= Diagramme de Cas d'utilisation d'un VideoClub
+endcaption
+
 actor Adhérent as adherent
 actor "Non adhérent" as nadherent
 Client <|-- adherent
@@ -56,8 +60,13 @@ note right of (Approvisionnement en cassettes) : Scénarios : Location cassettes
 :::
 
 ::: {.correction .if correction="true"}
-```{render="{{plantuml.svg}}" alt="Diagramme de séquence de location de cassettes"}
+```plantuml
 @startuml
+
+caption
+= Diagramme de séquence de location de cassettes
+endcaption
+
 actor Adherent as A
 participant Systeme as S
 

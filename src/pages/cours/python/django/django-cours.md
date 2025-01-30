@@ -110,9 +110,13 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-<!--```{render="{{plantuml.svg}}" alt="Diagramme UML Projet aggrégation d'Applications"}-->
 ```plantuml
 @startuml
+
+caption
+= Un projet est une aggrégation d'applications
+endcaption
+
 left to right direction
 
 class Projet {
@@ -140,8 +144,6 @@ Application *-- "*" Template
 Model *-- "*" Champ
 @enduml
 ```
-
-_Un projet est une aggrégation d'applications._
 
 ---
 

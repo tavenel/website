@@ -34,8 +34,9 @@ Ces pipelines peuvent être exécutés manuellement, mais ils seront aussi la r�
 
 # Exemple simpliste de pipeline
 
-<!-- ```{render="{{mmdc.svg}}" alt="Un pipeline CI/CD"} -->
 ```mermaid
+<!-- ```{render="{{mmdc.svg}}" alt="Un pipeline CI/CD"} -->
+
 graph LR
   subgraph Intégration continue
     Source-->Build-->Test
@@ -118,8 +119,9 @@ Il existe 2 grands schémas de lancement de pipeline d'intégration continue (et
 
 ---
 
-<!-- ```{render="{{mmdc.svg}}" alt="Le processus de pull-request."} -->
 ```mermaid
+<!-- ```{render="{{mmdc.svg}}" alt="Le processus de pull-request."} -->
+
 graph LR
   subgraph Machine personnelle
     A1{{fa:fa-laptop-code Code, exécute, teste}}-->A2{OK?}-->|Oui|A3[fa:fa-code-branch Push branche fonctionnalité]

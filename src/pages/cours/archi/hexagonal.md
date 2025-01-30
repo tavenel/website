@@ -35,13 +35,20 @@ _Tom Avenel_
 
 ```plantuml
 @startuml
-folder controler
-folder model
-folder view
+
+folder my_app {
+  component View
+  component Controller
+  database Model
+  
+  View --> Controller
+  Controller --> Model
+}
+
 @enduml
 ```
 
-_Quel est le but de cette application ?_ :thinking:
+_Quel est le <span v-mark.underline.red="0">but</span> de cette application ?_ 🤔
 
 ---
 
@@ -55,7 +62,7 @@ folder ticket
 @enduml
 ```
 
-_Quel est le but de [cette application][ddd-django] ?_ :bulb:
+_Quel est le <span v-mark.underline.red="0">but</span> de [cette application django][ddd-django] ?_ 💡
 
 ---
 

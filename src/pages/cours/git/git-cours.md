@@ -28,8 +28,6 @@ _Tom Avenel_
 
 ---
 
-<!-- class: fd bvert -->
-
 # Introduction
 
 - `git` : gestionnaire de versions (_Linus Torvalds, 2005_)
@@ -38,8 +36,6 @@ _Tom Avenel_
 - Autres gestionnaires de versions : `mercurial`, `cvs`, ... (`git` largement majoritaire aujourd'hui)
 
 ---
-
-<!-- class: fd brose -->
 
 # Versionner son code source
 
@@ -98,8 +94,6 @@ Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the
 
 ---
 
-<!-- class: fd bbleu -->
-
 # Principe de fonctionnement
 
 `git` est un gestionnaire de versions **décentralisé** (ou distribué) :
@@ -117,7 +111,8 @@ Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
     +-------------------+    +---------+    +------------+
     | cBLK              |    | cYEL    |    | {s} cBLU   |
@@ -140,11 +135,10 @@ Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the
 Changements      |                 |               |
 locaux           |                 |               |
 
+= Les différentes zones de travail de git
+
+@endditaa
 ```
-
-<!-- _class: legende -->
-
-Les différentes zones de travail de git
 
 ---
 
@@ -177,8 +171,6 @@ Les différentes zones de travail de git
 Synchronisation dépôt local <-> dépôt distant
 
 ---
-
-<!-- class: fd bjaune -->
 
 # Le commit
 
@@ -214,8 +206,6 @@ Date:   Mon Nov 27 12:47:48 2023 +0100
 
 ---
 
-<!-- class: fd bvert -->
-
 # Pourquoi Git et Github ?
 
 `Git` et `GitHub` sont deux technologies différentes parfois confondues
@@ -229,8 +219,6 @@ Il existe d'autres services de Cloud `git` : `Bitbucket`, et des versions open-s
 
 ---
 
-<!-- class: fd borange -->
-
 # Pourquoi utiliser un dépôt public ?
 
 - Le dépôt public permet d'utiliser un dépôt comme référence commune à tous les développeurs.
@@ -238,8 +226,6 @@ Il existe d'autres services de Cloud `git` : `Bitbucket`, et des versions open-s
 - Pour un travail individuel : le dépôt distant permet d'indexer, de sauver et d'archiver ses différents projets
 
 ---
-
-<!-- class: fd bjaune -->
 
 # Que mettre dans un dépôt git ?
 
@@ -264,8 +250,6 @@ Un dépôt git sert à centraliser des données (majoritairement du code source)
 # Les branches
 
 ---
-
-<!-- class: fd bvert -->
 
 # Notion de branches
 
@@ -297,8 +281,6 @@ _Un nouveau commit `c4` vient d'être ajouté à la branche `dev`_
 
 ---
 
-<!-- class: fd brose -->
-
 # Isolation par branches
 
 L'intérêt des branches est donc de pouvoir isoler du code pendant un temps avant de le fusionner si nécessaire.
@@ -316,13 +298,9 @@ checkout stable-1
 commit
 ```
 
-![](https://kroki.io/mermaid/svg/eNpTVa3OzMsssVKoVlAvyUjNTVW3UlBPSU1LLM0pUddRUE_PLHEvSizIAApXq-cmZuY5FSXmJWf4JcJUlumWGanX1irUqqpywRRzJefn5maWwKgksBaF4pLEpJxUXUO4bEZqcnZ-aYkCxBAMYXT1AA0ZOeg=)
-
 _Un projet avec deux branches : `stable-v1` pour les hotfix dans la version stable v1, `dev-v2` pour la version 2 en développement._
 
 ---
-
-<!-- class: fd bjaune -->
 
 # Fusion de branches
 
@@ -330,7 +308,6 @@ Ce comportement permet par exemple d'isoler une branche de développement avant 
 
 ---
 
-<!--```{render="{{mmdc.svg}}" alt="Branches dev isolée de main"}-->
 ```mermaid
 gitGraph
 commit
@@ -343,11 +320,8 @@ checkout dev
 commit
 ```
 
-![](https://kroki.io/mermaid/svg/eNpLzyxxL0osyOBKzs_NzSyBUUlFiXnJGQopqWVwiYzU5Oz80hKF3MTMPAxBJIUA4Pgd2w==)
-
 _Une branche `dev` isolée de la branche `main` avant stablilisation._
 
-<!--```{render="{{mmdc.svg}}" alt="Fusion de dev dans main"}-->
 ```mermaid
 gitGraph
 commit
@@ -362,13 +336,9 @@ checkout main
 merge dev
 ```
 
-![](https://kroki.io/mermaid/svg/eNpLzyxxL0osyOBKzs_NzSyBUUlFiXnJGQopqWVwiYzU5Oz80hKF3MTMPAxBnApzU4vSU8HSAB8vJnk=)
-
 _Fusion de la branche `dev` dans la branche `main`._
 
 ---
-
-<!-- class: fd bvert -->
 
 # Merge vs rebase
 
@@ -382,7 +352,6 @@ Techniquement, il s'agit de réaliser un nouveau commit dans la branche `dev` qu
 
 Cette opération est non-destructive et permet de repérer quand les changements ont été fusionnés.
 
-<!--```{render="{{mmdc.svg}}" alt="Fusion de main dans dev par commit"}-->
 ```mermaid
 gitGraph
 commit
@@ -402,13 +371,9 @@ commit
 merge main
 ```
 
-![](https://kroki.io/mermaid/svg/eNpLzyxxL0osyOBKzs_NzSzBTiUVJeYlZyikpJZxJWekJmfnl5Yo5CZm5qGrhsmBFeIxD0rlphalp0IMAgAodDEs)
-
 _Merge des changements de `main` dans la branche `dev` par un nouveau commit._
 
 ---
-
-<!-- class: fd bjaune -->
 
 ## Le rebase
 
@@ -420,7 +385,6 @@ Cette solution permet de garder l'historique de `dev` et une unique histoire lin
 
 ---
 
-<!--```{render="{{mmdc.svg}}" alt="Rebase de dev depuis main"}-->
 ```mermaid
 gitGraph
 commit
@@ -436,8 +400,6 @@ commit
 commit
 ```
 
-![](https://kroki.io/mermaid/svg/eNpLzyxxL0osyOBKzs_NzSwhhkoqSsxLzlBISS3DqwwA4_wg1g==)
-
 _Rebase de la branche `dev` depuis la branche `main`._
 
 **Pas de rebase d'une branche publique comme `main` : risque de désynchronisation avec les autres développeurs**
@@ -450,8 +412,6 @@ _Rebase de la branche `dev` depuis la branche `main`._
 
 ---
 
-<!-- class: fd bvert -->
-
 # Workflows
 
 - Workflow Git : processus cohérent d'utilisation de Git pour réaliser une tâche, généralement Devops
@@ -459,8 +419,6 @@ _Rebase de la branche `dev` depuis la branche `main`._
 - Permet de se comprendre entre développeurs, process à formaliser en équipe
 
 ---
-
-<!-- class: fd bvert -->
 
 # Workflow centralisé
 
@@ -526,8 +484,6 @@ _Ajout de 2 commit au `main`._
 
 ---
 
-<!-- class: fd brose -->
-
 # Workflow branche de fonctionnalité
 
 - Un dépôt centralisé de référence
@@ -591,8 +547,6 @@ _Fusion de la branche de fonctionnalité dans `main` (tronc unique)._
 
 ---
 
-<!-- class: fd bvert -->
-
 # Pull-request
 
 - Popularisé par GitHub, la `pull-request` ou `merge-request` est aujourd'hui largement répandue en gestion de projet.
@@ -611,7 +565,6 @@ _Fusion de la branche de fonctionnalité dans `main` (tronc unique)._
 
 ---
 
-<!--```{render="{{mmdc.svg}}" alt="Processus de pull-request"}-->
 ```mermaid
 graph LR
   subgraph Machine personnelle
@@ -634,8 +587,6 @@ _Le processus de pull-request._
 
 ---
 
-<!-- class: fd borange -->
-
 # Workflow Gitflow
 
 - Branches de fonctionnalité mais plusieurs branches stables d'intégration :
@@ -654,7 +605,6 @@ _Le processus de pull-request._
 
 ---
 
-<!--```{render="{{mmdc.svg}}" alt="Description du workflow GitFlow"}-->
 ```mermaid
 %%{init: { 'theme': 'base', 'gitGraph': {'showCommitLabel': false}} }%%
 gitGraph
@@ -686,13 +636,9 @@ checkout main
 merge livraison-1.0 tag:"v1.0"
 ```
 
-![](https://kroki.io/mermaid/svg/eNqNjs9qg0AQh8_uUwyC7CUJsUdvJYde8hLjZnSHurtFJ7YgvnuMrGlFhJ7m3zf8viwb2LMUMIAWS450AbrEjvQBdM3y0eKXnXaD7mz4vgTnWK5YUjPtKmw6GkcYs0wtqDIzEgsI1gWk_fmUp6ps0RsLNkjFPyqJ4FKNJfMZ7gIO2S_sjfoNmMRbFbwRDt5jw0LHd5W8iP1mneKorSkKzapP07f0l5rz_1LLtA3fsWy4b5G74I_56fxPodVP9Jq6VD0ABE-OVQ==)
-
 _Le workflow Gitflow._
 
 ---
-
-<!-- class: fd bvert -->
 
 # Workflow développement basé sur le tronc (trunk)
 
@@ -703,8 +649,6 @@ _Le workflow Gitflow._
 - Réduit la _feedback loop_
 
 ---
-
-<!-- class: fd brose -->
 
 # Workflow de duplication (fork)
 
@@ -757,8 +701,6 @@ _Intégration d'une branche `feature` dans un workflow `fork`_
 # Alternatives à la ligne de commandes
 
 ---
-
-<!-- class: fd bjaune -->
 
 # Interface graphiques
 

@@ -150,8 +150,9 @@ Les bureaux graphiques disposent de nombreux outils d'accessibilité :
 
 ## Architecture d'une machine virtuelle (fully-virtualized)
 
-<!--```{render="{{ditaa.svg}}" alt="Architecture de Machine Virtuelle : chaque VM virtualise un OS invité complet, ses librairies et ses applications. Les VMs tournent sur un hyperviseur, au-dessus d'un OS hôte"}-->
-```ditaa
+```plantuml
+@startditaa
+
 +--------------+--------------+
 | cGRE VM A    | cGRE VM B    |
 | +----------+ | +----------+ |
@@ -169,14 +170,19 @@ Les bureaux graphiques disposent de nombreux outils d'accessibilité :
 +-----------------------------+
 | cBLK   Infrastructure       |
 +-----------------------------+
+
+= Architecture de machine virtuelle : chaque VM virtualise un OS invité complet, ses librairies et ses applications. Les VMs tournent sur un hyperviseur, au-dessus d'un OS hôte
+
+@endditaa
 ```
 
 ---
 
 ## Architecture d'un conteneur
 
-<!--```{render="{{ditaa.svg}}" alt="Architecture de conteneur : chaque conteneur isole uniquement ses librairies et son application. Les conteneurs tournent sur un OS hôte commun tournant un engine Docker"}-->
-```ditaa
+```plantuml
+@startditaa
+
 +--------------+--------------+
 | cPNK         | cPNK         |
 | Conteneur A  | Conteneur B  |
@@ -190,6 +196,10 @@ Les bureaux graphiques disposent de nombreux outils d'accessibilité :
 +-----------------------------+
 | cBLK   Infrastructure       |
 +-----------------------------+
+
+= Architecture de conteneur : chaque conteneur isole uniquement ses librairies et son application. Les conteneurs tournent sur un OS hôte commun tournant un engine Docker
+
+@endditaa
 ```
 
 ---

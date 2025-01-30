@@ -723,11 +723,10 @@ Cadre classique :
 - _Régression_ : Méthodes d'analyse statistique permettant d'approcher une variable à partir d'autres qui lui sont corrélées. Généralement $Y$ est continue ou est une fonction (variables _quantitatives_).
 - Règle de classification : à partir de l'échantillon d'apprentissage, construire $f_n : X \rightarrow Y$ associant à chaque entrée possible $x$ la classe $y$ prédite pour elle.
 
-<!--TODO DIAG
-```{render="{{dot.svg}}" alt="Schéma d'apprentissage supervisé"}
--->
-```
-digraph {
+```plantuml
+@startdot
+
+digraph supervised {
 
 node [style="filled"]
 entrées [color="indianred"]
@@ -749,6 +748,8 @@ entrées -> superviseur, réseau
 erreur -> réseau [style="dashed", color="royalblue"]
 
 label = "Schéma d'apprentissage supervisé"
+
+@enddot
 }
 ```
 
@@ -1267,11 +1268,10 @@ Pour estimer la sortie associée à une nouvelle entrée $x$, on prend en compte
 - En classification k-NN, on retiendra la classe la plus représentée parmi les $k$ sorties associées aux $k$ entrées les plus proches de la nouvelle entrée $x$.
 - En régression k-NN, le résultat est la moyenne des valeurs des $k$ plus proches voisins.
 
-<!--TODO DIAG
-```{render="{{dot.svg}}" alt="Exemple de 3 plus proches voisins"}
--->
-```
-digraph {
+```plantuml
+@startdot
+
+digraph kNN {
 node[style="filled"]
 
 subgraph cluster1 {
@@ -1300,6 +1300,8 @@ x8 -> x7,x2,x3 [style="bold" color="royalblue"]
 
 label="Classification pour k=3 plus proches voisins"
 }
+
+@enddot
 ```
 
 #### Algorithme de classification
@@ -1649,11 +1651,10 @@ Afin de résumer, détecter des régularités, comprendre...
 - Repèrent des similarités dans les données pour pouvoir ensuite les structurer.
 - Exemple : similarités entre individus pour les partitionner en différents groupes (clustering).
 
-<!--TODO DIAG
-```{render="{{dot.svg}}" alt="Schéma d'apprentissage non supervisé"}
--->
-```
-digraph {
+```plantuml
+@startdot
+
+digraph non-supervise {
 
 subgraph {
 réseau "sortie obtenue" x[shape=point]
@@ -1662,6 +1663,8 @@ entrées -> réseau -> x -> "sortie obtenue", réseau
 
 label="Schéma d'apprentissage non supervisé"
 }
+
+@enddot
 ```
 
 ## Classification automatique (_Clustering_)

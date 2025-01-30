@@ -159,11 +159,13 @@ Dans la suite du projet, nous allons utiliser `Django` pour développer le site 
 
 Pour rappel, un projet `Django` est un aggrégat d'applications réutilisables, elles-mêmes composées de _Modèles_, de _Vues_ et de _Templates_ :
 
-<!--TODO DIAG
-```{render="{{plantuml.svg}}" alt="Diagramme UML Projet aggrégation d'Applications"}
--->
-```
+```plantuml
 @startuml
+
+caption
+= Diagramme UML Projet aggrégation d'Applications
+endcaption
+
 left to right direction
 
 class Projet {
@@ -198,11 +200,12 @@ Ce sujet de TP est fortement inspiré du [tutoriel de Mozilla](https://developer
 
 Le modèle de notre application sera le suivant :
 
-<!--TODO DIAG
-```{render="{{plantuml.svg}}" alt="Diagramme de classe UML du modèle de l'application"}
--->
-```
+```plantuml
 @startuml
+
+caption
+= Diagramme de classe UML du modèle de l'application
+endcaption
 
 class Book {
   +title: String
@@ -797,10 +800,9 @@ Cette section est importante - elle décrit la base du fonctionnement de `Django
 
 ## Architecture globale
 
-<!--TODO DIAG
-```{render="{{ditaa.svg}}" alt="Architecture générale de Django : requête HTTP vers urls.py vers views.py read/write models.py utilise template.html retourne réponse HTTP"}
--->
-```
+```plantuml
+@startditaa
+
                           +-----------+
              requête HTTP | URLs      |
              ------------>| (urls.py) |
@@ -819,9 +821,11 @@ Cette section est importante - elle décrit la base du fonctionnement de `Django
                          | Template          |
                          | (filename...html) |
                          +-------------------+
-```
 
-_Architecture globale de Django._
+= Architecture globale de Django : requête HTTP vers urls.py vers views.py read/write models.py utilise template.html retourne réponse HTTP
+
+@endditaa
+```
 
 Le diagramme ci-dessus modélise l'architecture basique de `Django`.
 Nous avons travaillé le modèle de données (à gauche du diagramme), nous allons désormais nous atteler à :
@@ -1242,13 +1246,13 @@ Pour plus d'information sur les vues génériques, [voir la page dédiée de la 
 
 ## Les étapes de gestion d'un formulaire
 
-<!-- source : https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms/form_handling_-_standard.png -->
-
-<!--TODO DIAG
-```{render="{{plantuml.svg}}" alt="Diagramme d'activité des étapes de gestion d'un formulaire"}
--->
-```
+```plantuml
 @startuml
+
+caption
+= Diagramme d'activité des étapes de gestion d'un formulaire
+endcaption
+
 |Web browser|
 start
 :Browser requests page with form;
@@ -1267,7 +1271,7 @@ repeat
 @enduml
 ```
 
-_Les étapes de gestion de requêtes de formulaires en `Django`. (Source et crédits : developer.mozilla.org)_
+_Les étapes de gestion de requêtes de formulaires en `Django`. (Source et crédits : [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms/form_handling_-_standard.png) )_
 
 Nous allons créer un formulaire de renouvellement d'emprunt d'un livre et y ajouter des conditions de validation.
 

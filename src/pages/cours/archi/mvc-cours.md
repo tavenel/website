@@ -37,10 +37,13 @@ MVC est composé de 3 modules :
 
 ---
 
-<!--```{render="{{plantuml.svg}}" alt="Design Pattern MVC"}-->
 ```plantuml
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+caption
+= Le pattern MVC.
+endcaption
 
 HIDE_STEREOTYPE()
 
@@ -55,10 +58,6 @@ Rel_U(controller, model, "Manipule")
 @enduml
 ```
 
-<!-- _class: legende -->
-
-Le pattern MVC.
-
 ---
 
 > Architecture of an application is all about its intent. _(Robert Martin)_
@@ -72,10 +71,13 @@ Le pattern MVC.
 
 ---
 
-<!--```{render="{{plantuml.svg}}" alt="Anti-Pattern MVC"}-->
 ```plantuml
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+caption
+= Anti-pattern MVC
+endcaption
 
 HIDE_STEREOTYPE()
 
@@ -91,10 +93,6 @@ Rel(controller, view, " ")
 BiRel(controller, model, " ")
 @enduml
 ```
-
-<!-- _class: legende -->
-
-Un anti-pattern MVC.
 
 ---
 

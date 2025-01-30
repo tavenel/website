@@ -204,8 +204,13 @@ public class MaClasseAvecDependance {
 
 ---
 
-```{render="{{plantuml.svg}}" alt="Design Pattern Singleton"}
+```plantuml
 @startuml
+
+caption
+= Le Design Pattern Singleton
+
+endcaption
 
 class Singleton {
  - Singleton instance
@@ -215,8 +220,6 @@ class Singleton {
 
 @enduml
 ```
-_Le pattern Singleton._
-
 ---
 
 # Programmation par template
@@ -229,7 +232,8 @@ En Programmation orientée objet, design pattern qui laisse libre l'implémentat
 
 ---
 
-```{render="{{mmdc.svg}}" alt="Design Pattern de Template"}
+```mermaid
+{render="{{mmdc.svg}}" alt="Design Pattern de Template"}
 classDiagram
     ClasseAbstraite <|-- SousClasse1 : Implémente
     ClasseAbstraite <|-- SousClasse2 : Implémente

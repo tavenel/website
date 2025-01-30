@@ -26,10 +26,13 @@ Le code source est surveillé (ou une notification reçue) pour chaque nouveau c
 
 ---
 
-<!-- ```{render="{{plantuml.svg}}" alt="Exemple d'utilisation d'un serveur d'intégration continue."} -->
 ```plantuml
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+caption
+= Exemple d'utilisation d'un serveur d'intégration continue.
+endcaption
 
 HIDE_STEREOTYPE()
 
@@ -47,10 +50,6 @@ Rel(jenkins, artifact, "Création des livrables")
 Rel(jenkins, reports, "Génération des rapports")
 @enduml
 ```
-
-<!-- _class: legende -->
-
-Exemple d'utilisation d'un serveur d'intégration continue.
 
 ---
 
@@ -74,8 +73,9 @@ Un serveur dédié permet de contrôler plus finement l'intégration mais néces
 
 # Architecture d'un serveur d'intégration continue
 
-<!-- ```{render="{{ditaa.svg}}" alt="Diagramme d'architecture d'un serveur CI."} -->
-```ditaa
+```plantuml
+@startditaa
+
  +-------------+  +---------------+  
  | cBLU        |  | cPNK          |
  | Gestion des |  | Orchestration |
@@ -91,11 +91,11 @@ Un serveur dédié permet de contrôler plus finement l'intégration mais néces
  | Exécution   |  | Génération des     |
  |  des tests  |  | rapports et notifs |
  +-------------+  +--------------------+
+
+= Les 4 composants d'un serveur d'intégration continue.
+
+@endditaa
 ```
-
-<!-- _class: legende -->
-
-Les 4 composants d'un serveur d'intégration continue.
 
 ---
 

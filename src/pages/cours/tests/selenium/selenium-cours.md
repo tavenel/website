@@ -118,8 +118,9 @@ class TestSearch(unittest.TestCase):
 
 ---
 
-<!-- ```{render="{{ditaa.svg}}" alt="Architecture de Selenium Grid : Framework de tests avec WebDriver, Selenium Serveur ou Grid, Navigateur avec driver Sélénium lié au navigateur"} -->
-```ditaa
+```plantuml
+@startditaa
+
 +-------------------+
 | Framework de test |
 |                   |
@@ -154,9 +155,11 @@ class TestSearch(unittest.TestCase):
 | |Navigateur|    |
 | +----------+    |
 +-----------------+
-```
 
-_Architecture de Selenium._
+= Architecture de Selenium Grid : Framework de tests avec WebDriver, Selenium Serveur ou Grid, Navigateur avec driver Sélénium lié au navigateur
+
+@endditaa
+```
 
 ---
 
