@@ -138,7 +138,7 @@ $ sleep 1000&
 ```
 $ fg
 sleep 1000
-(CTRL-Z)
+# [CTRL] + [Z]
 [1]+ Stopped sleep 1000 
 $ bg 
 [1]+ sleep 1000 &
@@ -222,7 +222,7 @@ Quelques-unes des fonctionnalités principales de `Tmux` :
 8. Détacher la session courante, en créer une nouvelle qui s'appelle `session2` et dont le nom de la fenêtre est `session2 window`.
 9. Détacher la session `session2` et afficher la liste des sessions.
 10. Partage de session :
-  - En utilisant l'invité de commandes (`Ctrl` + `b` - `:`) et la commande `setw -g permit-attach on` activer le partage de session
+  - En utilisant l'invité de commandes (`[CTRL]` + `[b]` puis `[:]` et la commande `setw -g permit-attach on` activer le partage de session
   - Dans un autre terminal, s'attacher à la session
   - Déconnecter le nouvel utilisateur pour laisser un unique utilisateur de session
 11. [Optionel] Utiliser `tmux` pour gérer un ensemble de sessions de terminaux via une seule session `ssh`. Couper la connexion `ssh` et récupérer la session.
@@ -237,29 +237,29 @@ Par exemple, pour tester `zellij` sans avoir besoin de l'installer : `bash <(cur
 1. Installer et lancer `tmux`.
 2. Lancer le programme `top`
 3. Dans `Tmux`, ouvrir une nouvelle fenêtre pour y ouvrir le fichier `~/.tmux.conf` dans `nano`.
-`Ctrl` + `b` - `c`
+`[CTRL]` + `[b]` puis `[c]`
 
 ```
 nano ~/.tmux.conf
 ```
 
 4. Séparer la fenêtre verticalement et réduire la taille du nouvel onglet.
-`Ctrl` + `b` - `"`
-`Ctrl` + `b` - `Ctrl`  + `↓`
+`[CTRL]` + `[b]` puis `["]`
+`[CTRL]` + `[b]` puis `Ctrl` + `[↓]`
 5. Changer le nom de la fenêtre courante.
 6. Lister les sessions de `tmux`.
-`Ctrl` + `b` - `,`. Entrer un nouveau nom et valider avec `[Entrée]`.
-`Ctrl` + `b` - `s`  ou `tmux ls`.
+`[CTRL]` + `[b]` puis `[,]`. Entrer un nouveau nom et valider avec `[Entrée]`.
+`[CTRL]` + `[b]` puis `[s]`  ou `tmux ls`.
 7. Se déplacer vers la fenêtre qui tourne `top` puis revenir à la fenêtre courante.
-`Ctrl` + `b` - `n`  ou `Ctrl`  + `b` - `p`
+`[CTRL]` + `[b]` puis `[n]`  ou `[CTRL]` + `[b]` puis `[p]`
 8. Détacher la session courante, en créer une nouvelle qui s'appelle `session2` et dont le nom de la fenêtre est `session2 window`.
-`Ctrl` + `b` - `d` 
+`[CTRL]` + `[b]` puis `[d]` 
     ```
     tmux new -s "session2" -n "session2 window"
     tmux ls
     ```
 9. Détacher la session `session2` et afficher la liste des sessions.
-`Ctrl` + `b` - `d`
+`[CTRL]` + `[b]` puis `[d]`
 10. Partage de session
     ```
     tmux attach-session -t nom-de-session

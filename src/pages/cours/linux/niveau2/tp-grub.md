@@ -9,7 +9,7 @@ correction: false
 But : démarrer Linux dans un mode minimal en cas de perte de mot de passe.
 
 1. Démarrez votre machine Fedora et arrêtez-vous au menu de GRUB. Si vous êtes en mode graphique appuyez sur [Echap]. Sur l’entrée par défaut, appuyez sur la touche `e` pour éditer les informations de boot de ce menu. 
-1. Au bout de la ligne commençant par `linux`, supprimer les instructions `rghb quiet` et ajoutez `init=/bin/sh` et appuyez sur [Ctrl-X]. Que fait cette modification ?
+1. Au bout de la ligne commençant par `linux`, supprimer les instructions `rghb quiet` et ajoutez `init=/bin/sh` et appuyez sur `[Ctrl] + [X]`. Que fait cette modification ?
 1. Au bout de quelques secondes, un prompt apparaît. Si besoin, passez en clavier français : `# loadkeys fr`
 1. Remontez le système de fichiers racine en lecture seule : `# mount -o remount,rw /`
 1. Tapez maintenant `passwd` et validez : vous pouvez changer le mot de passe de `root`. 

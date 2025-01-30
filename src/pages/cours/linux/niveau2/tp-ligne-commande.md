@@ -141,23 +141,23 @@ $ echo ${^array}.png # one.png two.png three.png
   - L'auto-complétion de certains binaires non natifs demandent l'installation et la configuration de scripts ou paquets supplémentaires.
 - Les touches directionnelles permettent de naviguer dans l'historique des commandes
 - La plupart des shells utilisent par défaut les mêmes raccourcis (basés sur `emacs`):
-  - `Ctrl + a` : aller au début de la ligne
-  - `Ctrl + e` : aller à la fin de la ligne
-  - `Ctrl + w` : supprimer un mot en arrière (et le mets dans le presse-papier)
-  - `Alt + d` : supprimer un mot en avant
-  - `Alt + b` : revenir en arrière d'un mot
-  - `Alt + f` : avancer d'un mot
-  - `Ctrl + u` : supprimer le texte avant le curseur (et le mets dans le presse-papier)
-  - `Ctrl + k` : supprimer le texte après le curseur (et le mets dans le presse-papier)
-  - `Ctrl + y` : colle le contenu du presse-papier
-  - `Ctrl + c` : tuer proprement le programme en cours d'exécution
-  - `Ctrl + z` : suspendre le programme en cours d'exécution (`fg` pour ramener au 1er plan, `bg` pour continuer l'exécution en arrière-plan)
-  - `Ctrl + r` : chercher dans l'historique (à l'envers)
-  - `Ctrl + l` : nettoyer l'écrant (`clear`)
-  - `Ctrl + d` : fermer le terminal (`exit`)
-  - `Ctrl + s` : arrêter le défilement de l'écran
-  - `Ctrl + q` : reprendre le défilement de l'écran
-  - `Ctrl + XX` : naviguer entre 2 positions (par défaut : position courante du curseur et début de ligne)
-  - `Ctrl + T` : inverse les 2 derniers caractères
-  - `Alt + T` : inverse les 2 derniers mots
+  - `[Ctrl] + [a]` : aller au début de la ligne
+  - `[Ctrl] + [e]` : aller à la fin de la ligne
+  - `[Ctrl] + [w]` : supprimer un mot en arrière (et le mets dans le presse-papier)
+  - `[Alt] + [d]` : supprimer un mot en avant
+  - `[Alt] + [b]` : revenir en arrière d'un mot
+  - `[Alt] + [f]` : avancer d'un mot
+  - `[Ctrl] + [u]` : supprimer le texte avant le curseur (et le mets dans le presse-papier)
+  - `[Ctrl] + [k]` : supprimer le texte après le curseur (et le mets dans le presse-papier)
+  - `[Ctrl] + [y]` : colle le contenu du presse-papier
+  - `[Ctrl] + [c]` : tuer proprement le programme en cours d'exécution
+  - `[Ctrl] + [z]` : suspendre le programme en cours d'exécution (`fg` pour ramener au 1er plan, `bg` pour continuer l'exécution en arrière-plan)
+  - `[Ctrl] + [r]` : chercher dans l'historique (à l'envers)
+  - `[Ctrl] + [l]` : nettoyer l'écrant (`clear`)
+  - `[Ctrl] + [d]` : fermer le terminal (`exit`)
+  - `[Ctrl] + [s]` : arrêter le défilement de l'écran
+  - `[Ctrl] + [q]` : reprendre le défilement de l'écran
+  - `[Ctrl] + [XX]` : naviguer entre 2 positions (par défaut : position courante du curseur et début de ligne)
+  - `[Ctrl] + [T]` : inverse les 2 derniers caractères
+  - `[Alt] + [T]` : inverse les 2 derniers mots
 - Il est possible d'utiliser plutôt les raccourcis `vi` : `set -o vi`
