@@ -1,3 +1,7 @@
+/******************************************************************************/
+/*                                   THEMES                                   */
+/******************************************************************************/
+
 :root {
 	color-scheme: light dark;
 	--light-main: #fff;
@@ -25,7 +29,7 @@
 	--dark-link: #09D4FF; /* #4da6ff;*/
 }
 
-body.light {
+[data-theme="light"] {
 	--background: var(--light-main);
 	--text: var(--dark-main);
 	--link: inherit;
@@ -61,7 +65,7 @@ body.light {
 	--versioning: var(--light-grey);
 }
 
-body.dark {
+[data-theme="dark"] {
 	--background: var(--dark-main);
 	--text: var(--light-main);
 	--link: var(--dark-link);
@@ -104,6 +108,101 @@ body.dark {
 	#poec li { background: var(--poec-li); }
 
 }
+
+[data-theme="nord"] {
+	/* Based on the Nord Theme : https://www.nordtheme.com/docs/colors-and-palettes */
+	--background: #2e3440;
+	--text: #eceff4;
+	--link: #88c0d0;
+	--link-hover: #88c0d0;
+	--link-border: inherit;
+	--h1: #e5e9f0;
+	--h2: #e5e9f0;
+	--h3: #d8dee9;
+	--h4: #d8dee9;
+	--hr: #d8dee9;
+	--menu-home: #88c0d0;
+	--menu-tech: #88c0d0;
+	--menu-cours: #88c0d0;
+	--menu-website: #88c0d0;
+	--menu-links: #88c0d0;
+	--menu-about: #88c0d0;
+	--menu-search: #88c0d0;
+	--promo-link: #2e3440;
+	--promo-background: #d8dee9;
+	--epsi: #88c0d0;
+	--epsi-li: #88c0d0;
+	--esgi: #88c0d0;
+	--esgi-li: #88c0d0;
+	--cesi: #88c0d0;
+	--cesi-li: #88c0d0;
+	--wis: #88c0d0;
+	--wis-li: #88c0d0;
+	--poec: #88c0d0;
+	--poec-li: #88c0d0;
+	--cours-cat-li: #eceff4;
+	--cours-link-text: #2e3440;
+	--cours-link-border: #2e3440;
+	--versioning: #b48ead;
+
+	/* li is not set on light mode to avoir breaking inheritance */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+
+}
+
+[data-theme="catpuccin"] {
+	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
+	--background: #1e1e2e;
+	--text: #cdd6f4;
+	--link: #89dceb;
+	--link-hover: #f2cdcd;
+	--link-border: inherit;
+	--h1: #f5c2e7;
+	--h2: #f9e2af;
+	--h3: #a6e3a1;
+	--h4: #f38ba8;
+	--hr: #9399b2;
+	--menu-home: #f2cdcd;
+	--menu-tech: #89dceb;
+	--menu-cours: #f9e2af;
+	--menu-website: #a6e3a1;
+	--menu-links: #f38ba8;
+	--menu-about: #fab387;
+	--menu-search: #94e2d5;
+	--promo-link: #11111b;
+	--promo-background: #bac2de;
+	--epsi: #89b4fa;
+	--epsi-li: #89b4fa;
+	--esgi: #a6e3a1;
+	--esgi-li: #a6e3a1;
+	--cesi: #f38ba8;
+	--cesi-li: #f38ba8;
+	--wis: #bac2de;
+	--wis-li: #bac2de;
+	--poec: #fab387;
+	--poec-li: #fab387;
+	--cours-cat-li: #94e2d5;
+	--cours-link-text: #1e1e2e;
+	--cours-link-border: #7f849c;
+	--versioning: #a6adc8;
+
+	/* li is not set on light mode to avoir breaking inheritance */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+
+}
+
+/******************************************************************************/
+/*                                    MAIN                                    */
+/******************************************************************************/
+
 
 a {
 	text-decoration: none;
@@ -281,6 +380,11 @@ menu > li {
 	}
 
 }
+
+/******************************************************************************/
+/*                                    TODO                                    */
+/******************************************************************************/
+
 
  /* .pagefind-ui { */
  /*    --pagefind-ui-scale: 0.75; */

@@ -1,7 +1,9 @@
 <select name="themeSwitch" id="themeSwitch">
   <option value="system">System</option>
-  <option value="dark">Dark</option>
   <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="catpuccin">Catpuccin</option>
+  <option value="nord">Nord</option>
 </select>
 
 <script>
@@ -19,8 +21,7 @@
 
   function updateTheme(value: string) {
     const theme = value === "system" ? systemTheme : value;
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(theme);
+		document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem("theme", value);
   }
 
