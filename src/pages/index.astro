@@ -1,6 +1,8 @@
 ---
 import RSS from '@components/RSS.astro';
 import Layout from '@layouts/Layout.astro'
+import { Picture } from 'astro:assets';
+import persoImg from '@assets/undraw/undraw_programming_65t2.svg'
 
 const title = '/home/tavenel';
 const { url } = Astro.props;
@@ -9,8 +11,9 @@ const { url } = Astro.props;
 <Layout title={title} url={url}>
 	<h1>/home/tavenel</h1>
 
+<Picture src={persoImg} alt="An image of a person coding" />
 	<div>
-		<p>Welcome to Tom Avenel's website.</p>
+		<p>Welcome to my personal website.</p>
 		<p>You can subscribe to updates using RSS <RSS width="20" height="20"/></p>
 	</div>
 </Layout>
