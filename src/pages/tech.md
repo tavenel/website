@@ -3,7 +3,7 @@ title: Tech articles
 created: 2024-05-17
 ---
 
-![](../assets/undraw/undraw_programming_65t2.svg)
+![](@assets/undraw/undraw_programming_65t2.svg)
 
 Here are a bunch of articles, howtos, tutorials and thoughts about technology and softwares that I like.
 

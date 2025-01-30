@@ -2,7 +2,7 @@
 title: Website
 ---
 
-![](../assets/undraw/undraw_static-website_x3tn.svg)
+![](@assets/undraw/undraw_static-website_x3tn.svg)
 
 ## Accessibility
 

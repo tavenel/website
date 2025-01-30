@@ -2,7 +2,7 @@
 title: 💚 Green IT
 ---
 
-![](../../../assets/undraw/undraw_eco-conscious_oqny.svg)
+![](@assets/undraw/undraw_eco-conscious_oqny.svg)
 
 - 1er quizz d'introduction : <https://quizanthropocene.fr/quiz/fresque-du-numerique>
 - 2ème quizz d'introduction : <https://quizanthropocene.fr/quiz/le-numerique-est-il-ecologique>

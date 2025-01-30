@@ -2,7 +2,7 @@
 title: 🧪 Tests logiciels
 ---
 
-![](../../../assets/undraw/undraw_scientist_5td0.svg)
+![](@assets/undraw/undraw_scientist_5td0.svg)
 
 ## Méthodologie des tests
 

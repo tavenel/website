@@ -2,7 +2,7 @@
 title: ☎️ Accompagnement à l'intégration
 ---
 
-![](../../../assets/undraw/undraw_circuit_92r1.svg)
+![](@assets/undraw/undraw_circuit_92r1.svg)
 
 - [🤓 Cours sur le manuel utilisateur](/cours/integration/cours-manuel-utilisateur)
 - [🤓 Cours sur la formation des utilisateurs](/cours/integration/cours-formation-utilisateur])

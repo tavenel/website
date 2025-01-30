@@ -2,7 +2,7 @@
 title: 💬 Management
 ---
 
-![](../../../assets/undraw/undraw_founding-team_8uhm.svg)
+![](@assets/undraw/undraw_founding-team_8uhm.svg)
 
 - [🤓 Partage d'informations et collaboration à distance (cours)](/cours/management/distanciel/cours-presentation-distance-outils-collab)
 - [📌 Atelier pratique - Présentation en distanciel](/cours/management/distanciel/presentation_distanciel)
