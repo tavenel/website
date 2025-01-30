@@ -20,3 +20,12 @@ title: 💚 Green IT
 - [Extension pour navigateur GreenIT-Analysis (Lien externe www.greenit.fr)](https://www.greenit.fr/2019/07/02/web-evaluez-lempreinte-dune-page-en-un-clic/)
 - [NumEcoDiag : Outil d'évaluation d'écoconception (Lien externe ecoresponsable.numerique.gouv.fr)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/numecodiag/)
 
+### Impacts de l'IA (principalement LLMs)
+
+- <https://www.morganstanley.com/ideas/ai-energy-demand-infrastructure>
+- <https://podcast.ausha.co/trench-tech/sasha-luccioni-ia-crise-climatique-prets-choc>
+- <https://blogs.nvidia.com/wp-content/uploads/2024/07/llm-inference-energy-efficient.jpg>
+- <https://www.deloitte.com/global/en/issues/climate/powering-ai.html>
+- [Hype, Sustainability, and the Price of the Bigger-is-Better Paradigm in AI (Gael Varoquaux, Alexandra Sasha Luccioni, Meredith Whittaker)](https://arxiv.org/pdf/2409.14160)
+- <https://sustainableai.substack.com/p/how-much-electricity-will-data-centers>
+- [ADEME: Evaluation de l'impact environnemental du numérique en France](https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html)
