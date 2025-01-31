@@ -1,45 +1,43 @@
 -> PDFs
 https://github.com/inokawa/remark-docx
-https://github.com/remcohaszing/rehype-mermaid
-https://github.com/akebifiky/remark-simple-plantuml
 https://github.com/inokawa/remark-pdf
 
 https://github.com/sergioramos/remark-hint?tab=readme-ov-file
 
 https://github.com/remarkjs/remark-validate-links
 
--> Marp (or all in sliidev ?)
--> astro markdown => mermaid, plantuml, …
+-> DDD et hexagonal => fix emojis (no :thinking:)
+-> fix v-clicks (auto -> slidev)
+
+-> slides in Astro ? (or Marp / Slidev ?)
+-> diagrams
+  -> `mermaid` => title in graph
+  -> fix style : .flowchartTitleText
+  -> fix `ditaa`
+  -> fix `katex` : loaded but nothing
 -> astro : icon-link (h1, …) only on hover
--> astro : fix ALL image imports => use MDX in promotions/
--> fix ::: (corrections, …)
 -> better `date:`
 -> C-k shortcut => launch search
 -> Copyright 2025
--> "Fun"
 -> promotions/
 -> render pdf, docx, …
--> search :
-  - theme : PageFind
+-> theme :
+  -> PageFind results
+  -> visited links
 -> analytics
--> RSS in footer
 -> h2#chapitres => floating (right ?), always visible, collapsible
+-> Pages transverses => 2 cards
+-> Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
+  -> warning, exo, correction, strong, link
+-> "latest" page
+-> "favorites" in storage => page, headers
 
 https://code.juliancataldo.com/component/astro-terminal-player/
 https://code.juliancataldo.com/component/astro-seo-metadata/
 https://code.juliancataldo.com/component/astro-code-editor/
 
-https://lunrjs.com/
 
-Keyboard
-Use the <kbd> tag to denote keys on the keyboard.
-<kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd>
-CTRL + ALT + Delete
-
-Highlight
-Use the <mark> tag to denote highlighted text.
-Do or do not. <mark>There is no try.</mark>
-Do or do not. There is no try.
+=> RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
 
 ---
 
