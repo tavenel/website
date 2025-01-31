@@ -1,43 +1,49 @@
--> PDFs
-https://github.com/inokawa/remark-docx
-https://github.com/inokawa/remark-pdf
+- https://code.juliancataldo.com/component/astro-terminal-player/
+- https://code.juliancataldo.com/component/astro-seo-metadata/
+- https://code.juliancataldo.com/component/astro-code-editor/
 
-https://github.com/sergioramos/remark-hint?tab=readme-ov-file
+- https://github.com/sergioramos/remark-hint?tab=readme-ov-file
+- https://github.com/remarkjs/remark-validate-links
+- tsconfig.json :	"verbatimModuleSyntax": true,
+- better `date:`
+- Copyright 2025
+- analytics
+- Cours : liens outils et transverses => 2 cards
+- "latest" page
+- seo : https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
+- fix all unknown files at start
+- RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
 
-https://github.com/remarkjs/remark-validate-links
+- PDFs
+  - https://github.com/inokawa/remark-docx
+  - https://github.com/inokawa/remark-pdf
 
--> DDD et hexagonal => fix emojis (no :thinking:)
--> fix v-clicks (auto -> slidev)
+- promotions => https://docs.astro.build/en/guides/content-collections/#the-collection-config-file
 
--> slides in Astro ? (or Marp / Slidev ?)
--> diagrams
-  -> `mermaid` => title in graph
-  -> fix style : .flowchartTitleText
-  -> fix `ditaa`
-  -> fix `katex` : loaded but nothing
--> astro : icon-link (h1, …) only on hover
--> better `date:`
--> C-k shortcut => launch search
--> Copyright 2025
--> promotions/
--> render pdf, docx, …
--> theme :
-  -> PageFind results
-  -> visited links
--> analytics
--> h2#chapitres => floating (right ?), always visible, collapsible
--> Pages transverses => 2 cards
--> Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
-  -> warning, exo, correction, strong, link
--> "latest" page
--> "favorites" in storage => page, headers
+- search
+  - C-k shortcut => launch search
+  - PageFind results theme : https://pagefind.app/docs/ui-usage/
 
-https://code.juliancataldo.com/component/astro-terminal-player/
-https://code.juliancataldo.com/component/astro-seo-metadata/
-https://code.juliancataldo.com/component/astro-code-editor/
+- diagrams
+  - Astro component : better loading (add yarn dep, …) instead of inline script
+  - fix style : .flowchartTitleText
+  - fix `katex` : loaded but nothing
+  - fix `ditaa`
+  - fix `@startdot`
 
+- slides in Astro ? (or Marp / Slidev ?)
+  - fix v-clicks (auto -> slidev)
 
-=> RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
+- theme :
+  - visited links
+  - h2#chapitres => floating (right ?), always visible, collapsible
+
+- Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
+  - warning, exo, correction, strong, link
+
+- "favorites" :
+  - delete
+	- icons (star)
 
 ---
 
