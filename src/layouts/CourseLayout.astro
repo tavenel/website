@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
+import Layout from '@layouts/BaseLayout.astro';
 import Diagrams from '@components/Diagrams.astro';
 
-import { GIT_FILE_TREE_PAGES } from '../constants.ts';
+import { GIT_FILE_TREE_PAGES } from '@ts/constants.ts';
 
 import type { MarkdownLayoutProps } from 'astro';
 type Props = MarkdownLayoutProps<{
@@ -23,8 +23,12 @@ const lastModified = frontmatter.lastModified ? new Date(frontmatter.lastModifie
 const checkedDate = frontmatter.checked ? new Date(frontmatter.checked).toLocaleDateString() : '?';
 const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 ---
-<BaseLayout title={frontmatter.title} url={url}>
-	<h1>{frontmatter.title}</h1>
+<Layout title={frontmatter.title} url={url}>
+	<h1 id="title">{frontmatter.title}
+	<a tabindex="-1" class="add-bookmark" href="#">
+		<span class="icon icon-link"></span>
+	</a>
+</h1>
 	<div class="versioning">
 		{frontmatter.date && <div class="version-first">Date : {frontmatter.date}</div>}
 		{frontmatter.created && <div class="version-first">Publié le : {initialDate}</div>}
@@ -38,4 +42,4 @@ const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 		markmap={ frontmatter.extra?.includes('markmap') }
 		mermaid={ frontmatter.extra?.includes('mermaid') }
 	/>
-</BaseLayout>
+</Layout>

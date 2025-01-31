@@ -42,8 +42,15 @@ export default defineConfig({
 		// rehype: HTML processing (uses remark)
 		rehypePlugins: [
 			rehypeSlug, // dependency of AutoLinkHeadings
-			[rehypeAutolinkHeadings, { behavior: 'append' }], // add a link to h1, h2, …
-			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // mark external links
+			[
+				// add a link to h1, h2, …
+				rehypeAutolinkHeadings, 
+				{
+					behavior: 'append',
+					properties: {ariaHidden: true, tabIndex: -1, class:['add-bookmark']},
+				 }
+			],
+			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // external links have this symbol
 			// rehypeSanitize, // sanitize and cleanup HTML
 		],
 		shikiConfig: { // code highlighter

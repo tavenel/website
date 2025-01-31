@@ -1,0 +1,28 @@
+<div id="bookmarks">
+	<ul></ul>
+</div>
+
+<script>
+	import type { BookmarkT } from "@ts/bookmarks";
+	import { Bookmarks } from "@ts/bookmarks";
+
+	const bookmarksDiv = document.getElementById(
+		"bookmarks",
+	) as HTMLSelectElement;
+
+	function addBookmarkInUi(bookmark: BookmarkT) {
+		const item = `<li class="bookmark">
+<a class="visit" href="${bookmark.url}" data-link='${bookmark.url}'>${bookmark.page_title ? bookmark.page_title + ' : ' : ''}${bookmark.section ? bookmark.section : ''}</a>
+<a onclick="removeBookmark(this)" class="delete" href="#">delete</a>
+</li>`;
+		bookmarksDiv.innerHTML += item;
+	}
+
+	function showBoookmarks() {
+		const bookmarks: BookmarkT[] = new Bookmarks().getFromStorage();
+		bookmarks.forEach(addBookmarkInUi);
+	}
+	
+	showBoookmarks();
+
+</script>

@@ -1,0 +1,21 @@
+---
+const { title } = Astro.props;
+---
+
+<script>
+	import { Bookmarks } from "@ts/bookmarks";
+    const page_title = document.getElementById("title")?.outerText;
+    const items = document.getElementsByClassName("add-bookmark");
+    for (let index = 0; index < items.length; index++) {
+        const item = items[index];
+        item.addEventListener("click", (event) => {
+            const parent = (event.target as Element)
+                .parentElement as HTMLAnchorElement;
+            const url = parent.href;
+            const header_title = parent.parentElement?.outerText; // title is in grandparent (header)
+            const bookmark = {'page_title': page_title, 'section':  header_title, 'url': url};
+            new Bookmarks().store(bookmark);
+            console.debug('Added bookmark', bookmark);
+        });
+    }
+</script>

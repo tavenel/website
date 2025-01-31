@@ -18,7 +18,10 @@
 			],
 			"@layouts/*": [
 				"src/layouts/*"
-			]
+			],
+			"@ts/*": [
+				"src/ts/*"
+			],
 		}
 	}
 }
