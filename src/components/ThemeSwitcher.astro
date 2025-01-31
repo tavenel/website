@@ -1,35 +1,45 @@
 <select name="themeSwitch" id="themeSwitch">
-  <option value="system">System</option>
-  <option value="light">Light</option>
-  <option value="dark">Dark</option>
-  <option value="catpuccin">Catpuccin</option>
-  <option value="nord">Nord</option>
+	<option value="system">System</option>
+	<option value="light">Light</option>
+	<option value="dark">Dark</option>
+	<option value="catpuccin">Catpuccin</option>
+	<option value="nord">Nord</option>
 </select>
 
 <script>
-  const select = document.getElementById("themeSwitch") as HTMLSelectElement;
-  const theme = localStorage.getItem("theme");
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+const select = document.getElementById("themeSwitch") as HTMLSelectElement;
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+	? "dark"
+	: "light";
 
-  if (theme !== null) {
-    select.value = theme;
-  } else {
-    select.value = systemTheme;
-  }
+function setTheme(value: string) {
+	const theme = value === "system" ? systemTheme : value;
+	document.documentElement.setAttribute('data-theme', theme);
+	localStorage.setItem("theme", value);
+}
 
-  function updateTheme(value: string) {
-    const theme = value === "system" ? systemTheme : value;
-		document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem("theme", value);
-  }
+function updateTheme() {
+	const theme = localStorage.getItem("theme");
 
-  updateTheme(select.value);
+	// Update select value in UI
+	if (theme !== null) {
+		select.value = theme;
+	} else {
+		select.value = systemTheme;
+	}
 
-  select.addEventListener("change", (event: Event) => {
-    const select = event.target as HTMLSelectElement;
-    updateTheme(select.value);
-  });
+	// Set theme according to select value
+	setTheme(select.value);
+}
+
+updateTheme();
+
+select.addEventListener("change", (event: Event) => {
+	const select = event.target as HTMLSelectElement;
+	setTheme(select.value);
+});
+
+// Runs on view transitions navigation
+document.addEventListener('astro:after-swap', updateTheme);
 </script>
 
