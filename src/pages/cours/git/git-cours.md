@@ -309,6 +309,10 @@ Ce comportement permet par exemple d'isoler une branche de développement avant 
 ---
 
 ```mermaid
+---
+title: Une branche `dev` isolée de la branche `main` avant stablilisation.
+---
+
 gitGraph
 commit
 commit
@@ -320,9 +324,11 @@ checkout dev
 commit
 ```
 
-_Une branche `dev` isolée de la branche `main` avant stablilisation._
-
 ```mermaid
+---
+title: Fusion de la branche `dev` dans la branche `main`.
+---
+
 gitGraph
 commit
 commit
@@ -335,8 +341,6 @@ commit
 checkout main
 merge dev
 ```
-
-_Fusion de la branche `dev` dans la branche `main`._
 
 ---
 
@@ -353,6 +357,10 @@ Techniquement, il s'agit de réaliser un nouveau commit dans la branche `dev` qu
 Cette opération est non-destructive et permet de repérer quand les changements ont été fusionnés.
 
 ```mermaid
+---
+title: Merge des changements de `main` dans la branche `dev` par un nouveau commit.
+---
+
 gitGraph
 commit
 commit
@@ -371,8 +379,6 @@ commit
 merge main
 ```
 
-_Merge des changements de `main` dans la branche `dev` par un nouveau commit._
-
 ---
 
 ## Le rebase
@@ -386,6 +392,10 @@ Cette solution permet de garder l'historique de `dev` et une unique histoire lin
 ---
 
 ```mermaid
+---
+title: Rebase de la branche `dev` depuis la branche `main`.
+---
+
 gitGraph
 commit
 commit
@@ -399,8 +409,6 @@ commit
 commit
 commit
 ```
-
-_Rebase de la branche `dev` depuis la branche `main`._
 
 **Pas de rebase d'une branche publique comme `main` : risque de désynchronisation avec les autres développeurs**
 
@@ -576,6 +584,10 @@ _Rebase de la branche `dev` depuis la branche `main`._
 ---
 
 ```mermaid
+---
+title: Le processus de pull-request.
+---
+
 graph LR
   subgraph Machine personnelle
     A1{{fa:fa-laptop-code Code, exécute, teste}}-->A2{OK?}-->|Oui|A3[fa:fa-code-branch Push branche fonctionnalité]
@@ -592,8 +604,6 @@ style A1 fill:#f96;
 style B1 fill:#f9f;
 style B2 fill:#98fb98;
 ```
-
-_Le processus de pull-request._
 
 ---
 
@@ -616,6 +626,10 @@ _Le processus de pull-request._
 ---
 
 ```mermaid
+---
+title: Le workflow Gitflow.
+---
+
 %%{init: { 'theme': 'base', 'gitGraph': {'showCommitLabel': false}} }%%
 gitGraph
 commit
@@ -645,8 +659,6 @@ checkout dev
 checkout main
 merge livraison-1.0 tag:"v1.0"
 ```
-
-_Le workflow Gitflow._
 
 ---
 

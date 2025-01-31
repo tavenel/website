@@ -233,7 +233,10 @@ En Programmation orientée objet, design pattern qui laisse libre l'implémentat
 ---
 
 ```mermaid
-{render="{{mmdc.svg}}" alt="Design Pattern de Template"}
+---
+title: Design Pattern de Template
+---
+
 classDiagram
     ClasseAbstraite <|-- SousClasse1 : Implémente
     ClasseAbstraite <|-- SousClasse2 : Implémente
