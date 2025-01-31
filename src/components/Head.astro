@@ -5,6 +5,10 @@ import '../css/styles.css'
 import { ClientRouter } from 'astro:transitions';
 
 const { title, url } = Astro.props;
+type Props = {
+	title: string,
+	url: string,
+};
 ---
 
 <head>
