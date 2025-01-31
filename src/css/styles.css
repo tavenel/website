@@ -64,6 +64,7 @@
 	--cours-link-border: var(--light-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--dark-grey);
+	--mermaid-title: var(--middle-orange);
 }
 
 [data-theme="dark"] {
@@ -101,6 +102,7 @@
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
+	--mermaid-title: var(--light-yellow);
 
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
@@ -147,6 +149,7 @@
 	--cours-link-border: #2e3440;
 	--versioning: #b48ead;
 	--select-color: #88c0d0;
+	--mermaid-title: #e5e9f0;
 
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
@@ -193,6 +196,7 @@
 	--cours-link-border: #7f849c;
 	--versioning: #a6adc8;
 	--select-color: #89b4fa;
+	--mermaid-title: #f9e2af;
 
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
@@ -406,6 +410,9 @@ select {
 }
 
 #themeSwitch { width: min-content; }
+
+/* Mermaid diagrams title */
+.flowchartTitleText { fill: var(--mermaid-title); }
 
 /******************************************************************************/
 /*                                    TODO                                    */
