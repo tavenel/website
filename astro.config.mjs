@@ -13,7 +13,8 @@ import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSanitize from 'rehype-sanitize'
 import { visualizer } from "rollup-plugin-visualizer";
 
-import { remarkModifiedTime } from './remark-modified-time.mjs';
+import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
+import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 
 // Set default Layout for Markdown files
 const setLayout = () => {
@@ -32,8 +33,10 @@ export default defineConfig({
 		remarkPlugins: [
 			setLayout,
 			[remarkToc, { heading: 'Chapitres', maxDepth: 3 }],
-			remarkModifiedTime,
+			remarkCalloutDirectives,
+			remarkDiagram,
 			remarkEmoji,
+			remarkModifiedTime,
 			remarkPlantUML,
 		],
 		// rehype: HTML processing (uses remark)

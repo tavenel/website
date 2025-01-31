@@ -1,5 +1,6 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Diagrams from '@components/Diagrams.astro';
 
 import { GIT_FILE_TREE_PAGES } from '../constants.ts';
 
@@ -11,6 +12,7 @@ type Props = MarkdownLayoutProps<{
 	created: string;
 	lastModified: string;
 	checked: string;
+	extra: string[];
 }>;
 
 // Now, `frontmatter`, `url`, and other Markdown layout properties
@@ -31,5 +33,9 @@ const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 		<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
 	</div>
 	<slot />
-	<!-- <Mermaid /> -->
+	<Diagrams
+		math={ frontmatter.extra?.includes('math') }
+		markmap={ frontmatter.extra?.includes('markmap') }
+		mermaid={ frontmatter.extra?.includes('mermaid') }
+	/>
 </BaseLayout>

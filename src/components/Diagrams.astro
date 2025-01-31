@@ -1,0 +1,28 @@
+---
+const { math, markmap, mermaid } = Astro.props;
+type Props = {
+	math: boolean,
+	markmap: boolean,
+	mermaid: boolean
+};
+---
+
+{ math && (
+<link
+	rel='stylesheet'
+	href='https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css'
+	integrity='sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI'
+	crossorigin='anonymous'
+/>
+
+) }
+{ markmap && (
+<script is:inline data-astro-rerun src='https://cdn.jsdelivr.net/npm/markmap-autoloader' />
+) }
+
+{ mermaid && (
+<script is:inline data-astro-rerun type='module'>
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ startOnLoad: true });
+</script>
+) }
