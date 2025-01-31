@@ -120,17 +120,17 @@ Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the
     +-------------------+    +---------+    +------------+
                  |                 |               |
                  |                 |               |
-                 |================>|               |
+                 |---------------->|               |
    /----------+  |     git add     |               |
    |{d} cPNK  |  |                 |               |
    |  Fichier |  |                 |               |
    |          |  |                 |               |
    |   AaBbC  |  |                 |               |
-   |   01234  |  |                 |==============>|
+   |   01234  |  |                 |-------------->|
 +--|   AaBbC  |  |                 |   git commit  |
 |  +----------+  |                 |               |
 |      ^         |                 |               |
-|      |         |<================================|
+|      |         |<--------------------------------|
 +------+         |       git checkout / merge      |
 Changements      |                 |               |
 locaux           |                 |               |
@@ -142,7 +142,8 @@ locaux           |                 |               |
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
 +-------------+   +---------------+
 | {s} cGRE    |   | {s} cBLU      |
@@ -164,11 +165,10 @@ locaux           |                 |               |
        | git pull +------+ |
        |                   |
 
+= Synchronisation dépôt local & distant
+
+@endditaa
 ```
-
-<!-- _class: legende -->
-
-Synchronisation dépôt local <-> dépôt distant
 
 ---
 
@@ -422,7 +422,8 @@ _Rebase de la branche `dev` depuis la branche `main`._
 
 # Workflow centralisé
 
-```ditaa
+```plantuml
+@startditaa
 
          +--------+
          |{s} cBLU|
@@ -430,7 +431,7 @@ _Rebase de la branche `dev` depuis la branche `main`._
          |        |
          +--------+
            : : :        
-   +=======+ : +=======+
+   +-------+ : +-------+
    :         :         :
    :         :         :
    v         v         v
@@ -440,6 +441,7 @@ _Rebase de la branche `dev` depuis la branche `main`._
 |  1  |   |  2  |   |  3  |
 +-----+   +-----+   +-----+
 
+@endditaa
 ```
 
 ---
@@ -452,7 +454,8 @@ _Rebase de la branche `dev` depuis la branche `main`._
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
 /-----\    /-----\    /-----\    /-----\
 |c888 |    |c888 |    |c888 |    |c888 |
@@ -463,11 +466,13 @@ _Rebase de la branche `dev` depuis la branche `main`._
                                     |
                                    main
 
+= Une unique branche `main` dans le dépôt distant.
+
+@endditaa
 ```
 
-_Une unique branche `main` dans le dépôt distant._
-
-```ditaa
+```plantuml
+@startditaa
 
 /-----\    /-----\    /-----\    /-----\    /-----\    /-----\
 |c888 |    |c888 |    |c888 |    |c888 |    |cBLU |    |cBLU |
@@ -478,9 +483,10 @@ _Une unique branche `main` dans le dépôt distant._
                                     |                     |
                                 ancien main          nouveau main
 
-```
+= Ajout de 2 commit au `main`.
 
-_Ajout de 2 commit au `main`._
+@endditaa
+```
 
 ---
 
@@ -499,7 +505,8 @@ _Ajout de 2 commit au `main`._
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
                                    main
                                     |
@@ -517,13 +524,15 @@ _Ajout de 2 commit au `main`._
                            |     \-----/    \-----/
                    branche de fontionnalité
 
-```
+= Travail dans la branche de fonctionnalité créée depuis `main`.
 
-_Travail dans la branche de fonctionnalité créée depuis `main`._
+@endditaa
+```
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
                                                              main
                                                               |
@@ -541,9 +550,10 @@ _Travail dans la branche de fonctionnalité créée depuis `main`._
                            |     \-----/    \-----/
                    branche de fontionnalité
 
-```
+= Fusion de la branche de fonctionnalité dans `main` (tronc unique).
 
-_Fusion de la branche de fonctionnalité dans `main` (tronc unique)._
+@endditaa
+```
 
 ---
 
@@ -660,10 +670,11 @@ _Le workflow Gitflow._
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
                             3. pull request `feature`
-            +===========================================================+
+            +-----------------------------------------------------------+
             :                                                           :
             v                                                           :
 +----------------+                          +-----------------------+   :
@@ -684,15 +695,16 @@ _Le workflow Gitflow._
    :                       |                                     :
    :                       |                                     :
    :                   /---*--+                                  :
-   :                   |{d}   |==================================+
+   :                   |{d}   |----------------------------------+
    :                   |cPNK  | 2. push branch `feature` origin
-   +===================|Commit|
+   +-------------------|Commit|
     4. push branch     +------+ 
   `feature` upstream
 
-```
+= Intégration d'une branche `feature` dans un workflow `fork`
 
-_Intégration d'une branche `feature` dans un workflow `fork`_
+@endditaa
+```
 
 ---
 
@@ -858,7 +870,8 @@ Voir le TP correspondant.
 
 # Résumé
 
-```ditaa
+```plantuml
+@startditaa
 
 +-----------+    +---------+    +-------------+  +---------------+ 
 | cBLK      |    | cYEL    |    | {s} cBLU    |  | {s} cGRE      | 
@@ -866,28 +879,29 @@ Voir le TP correspondant.
 | Directory |    |         |    |   .git      |  | .git          | 
 +-----------+    +---------+    +-------------+  +---------------+ 
       |                 |               |                |
-      |<=================================================|
+      |<-------------------------------------------------|
       |                          clone                   |
       |                 |               |                |
-      |================>|               |                |
+      |---------------->|               |                |
       |       add       |               |                |
       |                 |               |                |
-      |                 |==============>|                |
+      |                 |-------------->|                |
       |                 |     commit    |                |
       |                 |               |                |
-      |                 |               |===============>|
+      |                 |               |--------------->|
       |                 |               |      push      |
       |                 |               |                |
-      |                 |               |<===============|
+      |                 |               |<---------------|
       |                 |               |      fetch     |
       |                 |               |                |
-      |<================================|                |
+      |<--------------------------------|                |
       |        checkout / merge         |                |
       |                 |               |                |
-      |<=================================================|
+      |<-------------------------------------------------|
       |                          pull                    |
       |                 |               |                |
 
+@endditaa
 ```
 
 ---
