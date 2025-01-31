@@ -11,6 +11,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSanitize from 'rehype-sanitize'
+import rehypeKatex from 'rehype-katex';
 import { visualizer } from "rollup-plugin-visualizer";
 
 import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
@@ -52,6 +53,7 @@ export default defineConfig({
 			],
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // external links have this symbol
 			// rehypeSanitize, // sanitize and cleanup HTML
+			rehypeKatex,
 		],
 		shikiConfig: { // code highlighter
 			// https://shiki.style/themes
