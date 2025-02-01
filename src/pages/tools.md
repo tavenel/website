@@ -186,7 +186,6 @@ created: 2024-10-17
   - `zellij` => moderne, très simple
   - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
   - `screen` => moins utilisé aujourd'hui, support natif de sessions.
-- clients HTTP : <https://github.com/darrenburns/posting>
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) : Suricata
 
@@ -341,7 +340,7 @@ created: 2024-10-17
 	- <https://lazyman.dev/> : test de configurations pour `neovim`.
 	- Voir le guide : [LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes/)
 	- [helix][helix] : très inspiré de `vim`.
-- clients HTTP : <https://github.com/zaghaghi/openapi-tui>, <https://github.com/Julien-cpsn/ATAC>, <https://posting.sh/>
+- clients HTTP : <https://github.com/zaghaghi/openapi-tui>, <https://github.com/Julien-cpsn/ATAC>, <https://posting.sh/>, <https://github.com/ffuf/ffuf> (ressource discovery)
 - bat
 - émulateur de terminal : 
   - [alacritty][alacritty] : rapide (utilise le GPU)
