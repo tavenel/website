@@ -45,11 +45,11 @@ export default defineConfig({
 			rehypeSlug, // dependency of AutoLinkHeadings
 			[
 				// add a link to h1, h2, …
-				rehypeAutolinkHeadings, 
+				rehypeAutolinkHeadings,
 				{
 					behavior: 'append',
-					properties: {ariaHidden: true, tabIndex: -1, class:['add-bookmark']},
-				 }
+					properties: { ariaHidden: true, tabIndex: -1, class: ['add-bookmark'] },
+				}
 			],
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // external links have this symbol
 			// rehypeSanitize, // sanitize and cleanup HTML
