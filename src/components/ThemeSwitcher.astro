@@ -1,16 +1,26 @@
 <select name="themeSwitch" id="themeSwitch">
 	<option value="system">System</option>
-	<option value="light">Light</option>
-	<option value="dark">Dark</option>
-	<option value="catpuccin">Catpuccin</option>
+	<option value="github">Github Light (default)</option>
+	<option value="everforest">Everforest Light</option>
+	<option value="one">One Light</option>
+	<option value="ayu">Ayu Dark</option>
+	<option value="catppuccin">Catppuccin</option>
+	<option value="dracula">Dracula</option>
+	<option value="kanagawa">Kanagawa</option>
+	<option value="laserwave">Laserwave</option>
+	<option value="houston">Houston</option>
 	<option value="nord">Nord</option>
+	<option value="rose">Rosé Pine</option>
+	<option value="synthwave">Synthwave'84</option>
+	<option value="tokyonight">Tokyonight</option>
+	<option value="vesper">Vesper</option>
 </select>
 
 <script>
 const select = document.getElementById("themeSwitch") as HTMLSelectElement;
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-	? "dark"
-	: "light";
+	? "houston"
+	: "github";
 
 function setTheme(value: string) {
 	const theme = value === "system" ? systemTheme : value;

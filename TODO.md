@@ -13,6 +13,7 @@
 - seo : https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
 - fix all unknown files at start
 - RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
+- merge "links" page (?) => "links" and "tools" idem ?
 
 - PDFs
   - https://github.com/inokawa/remark-docx
@@ -34,15 +35,19 @@
   - fix v-clicks (auto -> slidev)
 
 - theme :
-  - visited links
   - h2#chapitres => floating (right ?), always visible, collapsible
+	- styles.css => !important ?
+	- laserwave: 'laserwave', => neon violet
+	- rose: 'rose-pine',
+	- tokyonight: 'tokyo-night',
+	- vesper: 'vesper', => mono orange
 
 - Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
   - warning, exo, correction, strong, link
 
 - "favorites" :
   - delete
-	- link to favorites
+	- fix favorites navigation (after astro hydration ?)
 
 ---
 

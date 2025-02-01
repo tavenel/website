@@ -58,9 +58,24 @@ export default defineConfig({
 		shikiConfig: { // code highlighter
 			// https://shiki.style/themes
 			themes: {
-				light: 'one-light',
-				dark: 'houston', // catpuccin-mocha',
+				// light
+				github: 'github-light', // default
+				everforest: 'everforest-light',
+				one: 'one-light',
+				// dark
+				houston: 'houston', // default if dark
+				ayu: 'ayu-dark',
+				catppuccin: 'catppuccin-mocha',
+				dracula: 'dracula',
+				kanagawa: 'kanagawa-dragon',
+				laserwave: 'laserwave',
+				nord: 'nord',
+				rose: 'rose-pine',
+				synthwave: 'synthwave-84',
+				tokyonight: 'tokyo-night',
+				vesper: 'vesper',
 			},
+			defaultColor: false, // no default theme
 		},
 	},
 

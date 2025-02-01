@@ -1,213 +1,4 @@
 /******************************************************************************/
-/*                                   THEMES                                   */
-/******************************************************************************/
-
-:root {
-	color-scheme: light dark;
-	--light-main: #fff;
-	--light-second: #e5e9f0;
-	--dark-main: #1f2833;
-	--dark-second: #3b4252;
-	--light-blue: #80d2e5;
-	--dark-blue: #00598b;
-	--x-light-green: #007b7b26;
-	--bright-green: #38ec84;
-	--light-green: #008080;
-	--middle-green: #3bc4ab;
-	--dark-green: #117489;
-	--light-orange: #ff9e48;
-	--middle-orange: #bd510f;
-	--dark-orange: #8B4513;
-	--light-red: #d48ead;
-	--middle-red: #a6476b;
-	--dark-red: #8a0912;
-	--light-yellow: #ffe084;
-	--light-grey: #bbb;
-	--middle-grey: #c28e91;
-	--dark-grey: grey;
-	--salmon: #ff7c7c;
-	--dark-link: #09D4FF; /* #4da6ff;*/
-}
-
-[data-theme="light"] {
-	--background: var(--light-main);
-	--text: var(--dark-main);
-	--link: inherit;
-	--link-hover: inherit;
-	--link-border: var(--dark-blue);
-	--h1: var(--dark-red);
-	--h2: var(--middle-orange);
-	--h3: var(--light-green);
-	--h4: var(--middle-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--dark-red);
-	--menu-tech: var(--dark-blue);
-	--menu-cours: var(--dark-orange);
-	--menu-website: var(--light-green);
-	--menu-links: var(--middle-red);
-	--menu-about: var(--middle-orange);
-	--menu-search: var(--dark-green);
-	--promo-link: inherit;
-	--promo-background: var(--light-second);
-	--epsi: var(--dark-blue);
-	--epsi-li: inherit;
-	--esgi: var(--light-green);
-	--esgi-li: inherit;
-	--cesi: var(--middle-red);
-	--cesi-li: inherit;
-	--wis: var(--dark-second);
-	--wis-li: inherit;
-	--poec: var(--middle-orange);
-	--poec-li: inherit;
-	--cours-cat-li: var(--x-light-green);
-	--cours-link-text: var(--dark-main);
-	--cours-link-border: var(--light-grey);
-	--versioning: var(--light-grey);
-	--select-color: var(--dark-grey);
-	--mermaid-title: var(--middle-orange);
-}
-
-[data-theme="dark"] {
-	--background: var(--dark-main);
-	--text: var(--light-main);
-	--link: var(--dark-link);
-	--link-hover: var(--light-red);
-	--link-border: inherit;
-	--h1: var(--middle-grey);
-	--h2: var(--light-yellow);
-	--h3: var(--middle-green);
-	--h4: var(--light-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--salmon);
-	--menu-tech: var(--light-blue);
-	--menu-cours: var(--light-yellow);
-	--menu-website: var(--middle-green);
-	--menu-links: var(--light-red);
-	--menu-about: var(--light-orange);
-	--menu-search: var(--bright-green);
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: var(--light-blue);
-	--epsi-li: var(--light-blue);
-	--esgi: var(--bright-green);
-	--esgi-li: var(--bright-green);
-	--cesi: var(--light-red);
-	--cesi-li: var(--light-red);
-	--wis: var(--light-second);
-	--wis-li: var(--light-second);
-	--poec: var(--light-orange);
-	--poec-li: var(--light-orange);
-	--cours-cat-li: var(--middle-green);
-	--cours-link-text: var(--light-main);
-	--cours-link-border: var(--dark-grey);
-	--versioning: var(--light-grey);
-	--select-color: var(--light-main);
-	--mermaid-title: var(--light-yellow);
-
-	/* li is not set on light mode to avoir breaking inheritance */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-}
-
-[data-theme="nord"] {
-	/* Based on the Nord Theme : https://www.nordtheme.com/docs/colors-and-palettes */
-	--background: #2e3440;
-	--text: #eceff4;
-	--link: #88c0d0;
-	--link-hover: #88c0d0;
-	--link-border: inherit;
-	--h1: #e5e9f0;
-	--h2: #e5e9f0;
-	--h3: #d8dee9;
-	--h4: #d8dee9;
-	--hr: #d8dee9;
-	--menu-home: #88c0d0;
-	--menu-tech: #88c0d0;
-	--menu-cours: #88c0d0;
-	--menu-website: #88c0d0;
-	--menu-links: #88c0d0;
-	--menu-about: #88c0d0;
-	--menu-search: #88c0d0;
-	--promo-link: #2e3440;
-	--promo-background: #d8dee9;
-	--epsi: #88c0d0;
-	--epsi-li: #88c0d0;
-	--esgi: #88c0d0;
-	--esgi-li: #88c0d0;
-	--cesi: #88c0d0;
-	--cesi-li: #88c0d0;
-	--wis: #88c0d0;
-	--wis-li: #88c0d0;
-	--poec: #88c0d0;
-	--poec-li: #88c0d0;
-	--cours-cat-li: #eceff4;
-	--cours-link-text: #2e3440;
-	--cours-link-border: #2e3440;
-	--versioning: #b48ead;
-	--select-color: #88c0d0;
-	--mermaid-title: #e5e9f0;
-
-	/* li is not set on light mode to avoir breaking inheritance */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-}
-
-[data-theme="catpuccin"] {
-	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
-	--background: #1e1e2e;
-	--text: #cdd6f4;
-	--link: #89dceb;
-	--link-hover: #f2cdcd;
-	--link-border: inherit;
-	--h1: #f5c2e7;
-	--h2: #f9e2af;
-	--h3: #a6e3a1;
-	--h4: #f38ba8;
-	--hr: #9399b2;
-	--menu-home: #f2cdcd;
-	--menu-tech: #89dceb;
-	--menu-cours: #f9e2af;
-	--menu-website: #a6e3a1;
-	--menu-links: #f38ba8;
-	--menu-about: #fab387;
-	--menu-search: #94e2d5;
-	--promo-link: #11111b;
-	--promo-background: #bac2de;
-	--epsi: #89b4fa;
-	--epsi-li: #89b4fa;
-	--esgi: #a6e3a1;
-	--esgi-li: #a6e3a1;
-	--cesi: #f38ba8;
-	--cesi-li: #f38ba8;
-	--wis: #bac2de;
-	--wis-li: #bac2de;
-	--poec: #fab387;
-	--poec-li: #fab387;
-	--cours-cat-li: #94e2d5;
-	--cours-link-text: #1e1e2e;
-	--cours-link-border: #7f849c;
-	--versioning: #a6adc8;
-	--select-color: #89b4fa;
-	--mermaid-title: #f9e2af;
-
-	/* li is not set on light mode to avoir breaking inheritance */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-}
-
-/******************************************************************************/
 /*                                    MAIN                                    */
 /******************************************************************************/
 
@@ -228,6 +19,10 @@ a:link { color: var(--link); }
 a:hover, a:active {
 	color: var(--link-hover);
 	border: 3px solid;
+}
+
+a:visited {
+	color: var(--link-visited);
 }
 
 ul{ list-style:circle }
@@ -290,10 +85,10 @@ menu > li {
 #menu-home > a { color: var(--menu-home); }
 #menu-tech > a { color: var(--menu-tech); }
 #menu-cours > a { color: var(--menu-cours); }
-#menu-website > a { color: var(--menu-website); }
+#menu-favorites> a { color: var(--menu-favorites); }
 #menu-links > a { color: var(--menu-links); }
 #menu-about > a { color: var(--menu-about); }
-#menu-search > a { color: var(--menu-search); }
+/* #menu-search > a { color: var(--menu-search); } */
 
 #promos {
 	text-align: center;
@@ -411,8 +206,849 @@ select {
 
 #themeSwitch { width: min-content; }
 
+/* Bookmarks */
+a.add-bookmark {
+	text-decoration: none;
+	border: none;
+}
+
+.icon-link{
+	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9ImN1cnJlbnRDb2xvciIgIHN0cm9rZS13aWR0aD0iMiIgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgIHN0cm9rZS1saW5lam9pbj0icm91bmQiICBjbGFzcz0iaWNvbiBpY29uLXRhYmxlciBpY29ucy10YWJsZXItb3V0bGluZSBpY29uLXRhYmxlci1zdGFyIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTIgMTcuNzVsLTYuMTcyIDMuMjQ1bDEuMTc5IC02Ljg3M2wtNSAtNC44NjdsNi45IC0xbDMuMDg2IC02LjI1M2wzLjA4NiA2LjI1M2w2LjkgMWwtNSA0Ljg2N2wxLjE3OSA2Ljg3M3oiIC8+PC9zdmc+');
+	background-size:cover;
+	position:absolute;
+	width:20px;
+	height:20px;
+}
+
+.icon-link:hover {
+	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg==');
+}
+
+.bookmarked {
+	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg==');
+}
+
 /* Mermaid diagrams title */
 .flowchartTitleText { fill: var(--mermaid-title); }
+
+/******************************************************************************/
+/*                                   THEMES                                   */
+/******************************************************************************/
+
+:root {
+	color-scheme: light dark;
+	--light-main: #fff;
+	--light-second: #e5e9f0;
+	--dark-main: #1f2833;
+	--dark-second: #3b4252;
+	--light-blue: #80d2e5;
+	--dark-blue: #00598b;
+	--x-light-green: #007b7b26;
+	--bright-green: #38ec84;
+	--light-green: #008080;
+	--middle-green: #3bc4ab;
+	--dark-green: #117489;
+	--light-orange: #ff9e48;
+	--middle-orange: #bd510f;
+	--dark-orange: #8B4513;
+	--light-red: #d48ead;
+	--middle-red: #a6476b;
+	--dark-red: #8a0912;
+	--light-yellow: #ffe084;
+	--light-grey: #bbb;
+	--middle-grey: #c28e91;
+	--dark-grey: grey;
+	--salmon: #ff7c7c;
+	--dark-link: #09D4FF; /* #4da6ff;*/
+}
+
+[data-theme="github"] {
+	/* 
+* Github Light - default theme.
+* code colorscheme is Github Light
+* but the rest of the website is another light theme
+*/
+	--background: var(--light-main);
+	--text: var(--dark-main);
+	--link: inherit;
+	--link-hover: inherit;
+	--link-visited: inherit;
+	--link-border: var(--dark-blue);
+	--h1: var(--dark-red);
+	--h2: var(--middle-orange);
+	--h3: var(--light-green);
+	--h4: var(--middle-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--dark-red);
+	--menu-tech: var(--dark-blue);
+	--menu-cours: var(--dark-orange);
+	--menu-favorites: var(--light-green);
+	--menu-links: var(--middle-red);
+	--menu-about: var(--middle-orange);
+	/* --menu-search: var(--dark-green); */
+	--promo-link: inherit;
+	--promo-background: var(--light-second);
+	--epsi: var(--dark-blue);
+	--epsi-li: inherit;
+	--esgi: var(--light-green);
+	--esgi-li: inherit;
+	--cesi: var(--middle-red);
+	--cesi-li: inherit;
+	--wis: var(--dark-second);
+	--wis-li: inherit;
+	--poec: var(--middle-orange);
+	--poec-li: inherit;
+	--cours-cat-li: var(--x-light-green);
+	--cours-link-text: var(--dark-main);
+	--cours-link-border: var(--light-grey);
+	--versioning: var(--light-grey);
+	--select-color: var(--dark-grey);
+	--mermaid-title: var(--middle-orange);
+}
+[data-theme='github'] .astro-code,
+[data-theme='github'] .astro-code span {
+	/* https://docs.astro.build/en/guides/syntax-highlighting/ */
+	/* https://shiki.style/guide/dual-themes */
+	/* Shiki theme related to `github` is in `astro.config.mjs` */
+	background-color: var(--shiki-github-bg);
+	color: var(--shiki-github);
+	font-style: var(--shiki-github-font-style);
+	font-weight: var(--shiki-github-font-weight);
+	text-decoration: var(--shiki-github-text-decoration);
+}
+
+[data-theme="everforest"] {
+	/* Light theme inspired by : https://github.com/sainnhe/everforest/blob/master/palette.md */
+	--background: #FDF6E3;
+	--text: #5C6A72;
+	--link: inherit;
+	--link-hover: inherit;
+	--link-visited: inherit;
+	--link-border: var(--dark-blue);
+	--h1: #5C6A72;
+	--h2: #829181;
+	--h3: #939F91;
+	--h4: #A6B0A0;
+	--hr: var(--light-grey);
+	--menu-home: #E66868;
+	--menu-tech: #3A94C5;
+	--menu-cours: #F57D26;
+	--menu-favorites: #35A77C;
+	--menu-links: #DF69BA;
+	--menu-about: #93B259;
+	/* --menu-search: var(--dark-green); */
+	--promo-link: inherit;
+	--promo-background: #EAEDC8;
+	--epsi: #3A94C5;
+	--epsi-li: inherit;
+	--esgi: #35A77C;
+	--esgi-li: inherit;
+	--cesi: #F85552;
+	--cesi-li: inherit;
+	--wis: #829181;
+	--wis-li: inherit;
+	--poec: #DFA000;
+	--poec-li: inherit;
+	--cours-cat-li: #EAEDC8;
+	--cours-link-text: #5C6A72;
+	--cours-link-border: #A6B0A0;
+	--versioning: #A6B0A0;
+	--select-color: #829181;
+	--mermaid-title: #DFA000;
+}
+[data-theme='everforest'] .astro-code,
+[data-theme='everforest'] .astro-code span {
+	background-color: var(--shiki-everforest-bg);
+	color: var(--shiki-everforest);
+	font-style: var(--shiki-everforest-font-style);
+	font-weight: var(--shiki-everforest-font-weight);
+	text-decoration: var(--shiki-everforest-text-decoration);
+}
+
+[data-theme="one"] {
+	/* Light theme inspired by : https://github.com/nathanbuchar/atom-one-dark-terminal/blob/master/COLORS */
+	--background: #F9F9F9;
+	--text: #383A42;
+	--link: inherit;
+	--link-hover: inherit;
+	--link-visited: inherit;
+	--link-border: #4078F2;
+	--h1: #A626A4;
+	--h2: #986801;
+	--h3: #0184BC;
+	--h4: #E45649;
+	--hr: var(--light-grey);
+	--menu-home: #E45649;
+	--menu-tech: #4078F2;
+	--menu-cours: #0184BC;
+	--menu-favorites: #50A14F;
+	--menu-links: #A626A4;
+	--menu-about: #986801;
+	/* --menu-search: var(--dark-green); */
+	--promo-link: inherit;
+	--promo-background: inherit;
+	--epsi: #4078F2;
+	--epsi-li: inherit;
+	--esgi: #50A14F;
+	--esgi-li: inherit;
+	--cesi: #E45649;
+	--cesi-li: inherit;
+	--wis: #383A42;
+	--wis-li: inherit;
+	--poec: #986801;
+	--poec-li: inherit;
+	--cours-cat-li: inherit;
+	--cours-link-text: #383A42;
+	--cours-link-border: #3A3F4B;
+	--versioning: #3A3F4B;
+	--select-color: #3A3F4B;
+	--mermaid-title: #A626A4;
+}
+[data-theme='one'] .astro-code,
+[data-theme='one'] .astro-code span {
+	background-color: var(--shiki-one-bg);
+	color: var(--shiki-one);
+	font-style: var(--shiki-one-font-style);
+	font-weight: var(--shiki-one-font-weight);
+	text-decoration: var(--shiki-one-text-decoration);
+}
+
+[data-theme="houston"] {
+	/*
+* Main dark theme.
+* Code is `houston` but the rest of the website
+* is a dedicated dark theme.
+*/
+	--background: var(--dark-main);
+	--text: var(--light-main);
+	--link: var(--dark-link);
+	--link-hover: var(--light-red);
+	--link-visited: var(--dark-link);
+	--link-border: inherit;
+	--h1: var(--middle-grey);
+	--h2: var(--light-yellow);
+	--h3: var(--middle-green);
+	--h4: var(--light-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--salmon);
+	--menu-tech: var(--light-blue);
+	--menu-cours: var(--light-yellow);
+	--menu-favorites: var(--middle-green);
+	--menu-links: var(--light-red);
+	--menu-about: var(--light-orange);
+	/* --menu-search: var(--bright-green); */
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: var(--light-blue);
+	--epsi-li: var(--light-blue);
+	--esgi: var(--bright-green);
+	--esgi-li: var(--bright-green);
+	--cesi: var(--light-red);
+	--cesi-li: var(--light-red);
+	--wis: var(--light-second);
+	--wis-li: var(--light-second);
+	--poec: var(--light-orange);
+	--poec-li: var(--light-orange);
+	--cours-cat-li: var(--middle-green);
+	--cours-link-text: var(--light-main);
+	--cours-link-border: var(--dark-grey);
+	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
+	--mermaid-title: var(--light-yellow);
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='houston'] .astro-code,
+[data-theme='houston'] .astro-code span {
+	background-color: var(--shiki-houston-bg);
+	color: var(--shiki-houston);
+	font-style: var(--shiki-houston-font-style);
+	font-weight: var(--shiki-houston-font-weight);
+	text-decoration: var(--shiki-houston-text-decoration);
+}
+
+[data-theme="ayu"] {
+	/* Theme inspired by : https://github.com/ayu-theme/ayu-colors */
+	--background: #0B0E14;
+	--text: #BFBDB6;
+	--link: #39BAE6;
+	--link-hover: #F07178;
+	--link-visited: #D2A6FF;
+	--link-border: inherit;
+	--h1: #FF8F40;
+	--h2: #59C2FF;
+	--h3: #D2A6FF;
+	--h4: #AAD94C;
+	--hr: #409FFF21;
+	--menu-home: #F07178;
+	--menu-tech: #39BAE6;
+	--menu-cours: #95E6CB;
+	--menu-favorites: #7FD962;
+	--menu-links: #D2A6FF;
+	--menu-about: #E6B673;
+	/* --menu-search: var(--bright-green); */
+	--promo-link: #0B0E14;
+	--promo-background: inherit;
+	--epsi: #39BAE6;
+	--epsi-li: #39BAE6;
+	--esgi: #7FD962;
+	--esgi-li: #7FD962;
+	--cesi: #F07178;
+	--cesi-li: #F07178;
+	--wis: #E6B673;
+	--wis-li: #E6B673;
+	--poec: #FF8F40;
+	--poec-li: #FF8F40;
+	--cours-cat-li: #95E6CB;
+	--cours-link-text: #0B0E14;
+	--cours-link-border: #6C7380;
+	--versioning: #6C7380;
+	--select-color: #BFBDB6;
+	--mermaid-title: #D2A6FF;
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='ayu'] .astro-code,
+[data-theme='ayu'] .astro-code span {
+	background-color: var(--shiki-ayu-bg);
+	color: var(--shiki-ayu);
+	font-style: var(--shiki-ayu-font-style);
+	font-weight: var(--shiki-ayu-font-weight);
+	text-decoration: var(--shiki-ayu-text-decoration);
+}
+
+[data-theme="catppuccin"] {
+	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
+	--background: #1e1e2e;
+	--text: #cdd6f4;
+	--link: #89dceb;
+	--link-hover: #f2cdcd;
+	--link-visited: #f5c2e7;
+	--link-border: inherit;
+	--h1: #f5c2e7;
+	--h2: #f9e2af;
+	--h3: #a6e3a1;
+	--h4: #f38ba8;
+	--hr: #9399b2;
+	--menu-home: #f2cdcd;
+	--menu-tech: #89dceb;
+	--menu-cours: #f9e2af;
+	--menu-favorites: #a6e3a1;
+	--menu-links: #f38ba8;
+	--menu-about: #fab387;
+	/* --menu-search: #94e2d5; */
+	--promo-link: #11111b;
+	--promo-background: #bac2de;
+	--epsi: #89b4fa;
+	--epsi-li: #89b4fa;
+	--esgi: #a6e3a1;
+	--esgi-li: #a6e3a1;
+	--cesi: #f38ba8;
+	--cesi-li: #f38ba8;
+	--wis: #bac2de;
+	--wis-li: #bac2de;
+	--poec: #fab387;
+	--poec-li: #fab387;
+	--cours-cat-li: #94e2d5;
+	--cours-link-text: #1e1e2e;
+	--cours-link-border: #7f849c;
+	--versioning: #a6adc8;
+	--select-color: #89b4fa;
+	--mermaid-title: #f9e2af;
+	/* li is not set on light mode to avoir breaking inheritance */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='catppuccin'] .astro-code,
+[data-theme='catppuccin'] .astro-code span {
+	background-color: var(--shiki-catppuccin-bg);
+	color: var(--shiki-catppuccin);
+	font-style: var(--shiki-catppuccin-font-style);
+	font-weight: var(--shiki-catppuccin-font-weight);
+	text-decoration: var(--shiki-catppuccin-text-decoration);
+}
+
+[data-theme="dracula"] {
+	/* Theme inspired by : https://en.wikipedia.org/wiki/Dracula_(color_scheme) */
+	--background: #282a36;
+	--text: #f8f8f2;
+	--link: #8be9fd;
+	--link-hover: #8be9fd;
+	--link-visited: #ff79c6;
+	--link-border: inherit;
+	--h1: #ff79c6;
+	--h2: #bd93f9;
+	--h3: #8be9fd;
+	--h4: #50fa7b;
+	--hr: #44475a;
+	--menu-home: #ff5555;
+	--menu-tech: #8be9fd;
+	--menu-cours: #ff79c6;
+	--menu-favorites: #50fa7b;
+	--menu-links: #ffb86c;
+	--menu-about: #f1fa8c;
+	--promo-link: #44475a;
+	--promo-background: inherit;
+	--epsi: #8be9fd;
+	--epsi-li: #8be9fd;
+	--esgi: #bd93f9;
+	--esgi-li: #bd93f9;
+	--cesi: #ffb86c;
+	--cesi-li: #ffb86c;
+	--wis: #bac2de;
+	--wis-li: #bac2de;
+	--poec: #ff79c6;
+	--poec-li: #ff79c6;
+	--cours-cat-li: #bd93f9;
+	--cours-link-text: #44475a;
+	--cours-link-border: #44475a;
+	--versioning: #44475a;
+	--select-color: #bd93f9;
+	--mermaid-title: #bd93f9;
+	/* li is not set on light mode to avoir breaking inheritance */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='dracula'] .astro-code,
+[data-theme='dracula'] .astro-code span {
+	background-color: var(--shiki-dracula-bg);
+	color: var(--shiki-dracula);
+	font-style: var(--shiki-dracula-font-style);
+	font-weight: var(--shiki-dracula-font-weight);
+	text-decoration: var(--shiki-dracula-text-decoration);
+}
+
+[data-theme="kanagawa"] {
+	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.yml */
+	--background: #181616;
+	--text: #c5c9c5;
+	--link: #8ba4b0;
+	--link-hover: #8ba4b0;
+	--link-visited: #a292a3;
+	--link-border: inherit;
+	--h1: #c4b28a;
+	--h2: #8a9a7b;
+	--h3: #a292a3;
+	--h4: #c5c9c5;
+	--hr: var(--dark-second);
+	--menu-home: #c4b28a;
+	--menu-tech: #c4b28a;
+	--menu-cours: #c4b28a;
+	--menu-favorites: #c4b28a;
+	--menu-links: #c4b28a;
+	--menu-about: #c4b28a;
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: #c4b28a;
+	--epsi-li: #c4b28a;
+	--esgi: #8a9a7b;
+	--esgi-li: #8a9a7b;
+	--cesi: #8ba4b0;
+	--cesi-li: #8ba4b0;
+	--wis: #c4746e;
+	--wis-li: #c4746e;
+	--poec: #a292a3;
+	--poec-li: #a292a3;
+	--cours-cat-li: inherit;
+	--cours-link-text: #c5c9c5;
+	--cours-link-border: #c5c9c5;
+	--versioning: #c5c9c5;
+	--select-color: #c4b28a;
+	--mermaid-title: #c4b28a;
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='kanagawa'] .astro-code,
+[data-theme='kanagawa'] .astro-code span {
+	background-color: var(--shiki-kanagawa-bg);
+	color: var(--shiki-kanagawa);
+	font-style: var(--shiki-kanagawa-font-style);
+	font-weight: var(--shiki-kanagawa-font-weight);
+	text-decoration: var(--shiki-kanagawa-text-decoration);
+}
+
+[data-theme="laserwave"] {
+	/* TODO */
+	--background: var(--dark-main);
+	--text: var(--light-main);
+	--link: var(--dark-link);
+	--link-hover: var(--light-red);
+	--link-visited: TODO;
+	--link-border: inherit;
+	--h1: var(--middle-grey);
+	--h2: var(--light-yellow);
+	--h3: var(--middle-green);
+	--h4: var(--light-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--salmon);
+	--menu-tech: var(--light-blue);
+	--menu-cours: var(--light-yellow);
+	--menu-favorites: var(--middle-green);
+	--menu-links: var(--light-red);
+	--menu-about: var(--light-orange);
+	/* --menu-search: var(--bright-green); */
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: var(--light-blue);
+	--epsi-li: var(--light-blue);
+	--esgi: var(--bright-green);
+	--esgi-li: var(--bright-green);
+	--cesi: var(--light-red);
+	--cesi-li: var(--light-red);
+	--wis: var(--light-second);
+	--wis-li: var(--light-second);
+	--poec: var(--light-orange);
+	--poec-li: var(--light-orange);
+	--cours-cat-li: var(--middle-green);
+	--cours-link-text: var(--light-main);
+	--cours-link-border: var(--dark-grey);
+	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
+	--mermaid-title: var(--light-yellow);
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='laserwave'] .astro-code,
+[data-theme='laserwave'] .astro-code span {
+	background-color: var(--shiki-laserwave-bg);
+	color: var(--shiki-laserwave);
+	font-style: var(--shiki-laserwave-font-style);
+	font-weight: var(--shiki-laserwave-font-weight);
+	text-decoration: var(--shiki-laserwave-text-decoration);
+}
+
+[data-theme="nord"] {
+	/* Based on the Nord Theme : https://www.nordtheme.com/docs/colors-and-palettes */
+	--background: #2e3440;
+	--text: #eceff4;
+	--link: #88c0d0;
+	--link-hover: #88c0d0;
+	--link-visited: #88c0d0;
+	--link-border: inherit;
+	--h1: #e5e9f0;
+	--h2: #e5e9f0;
+	--h3: #d8dee9;
+	--h4: #d8dee9;
+	--hr: #d8dee9;
+	--menu-home: #88c0d0;
+	--menu-tech: #88c0d0;
+	--menu-cours: #88c0d0;
+	--menu-favorites: #88c0d0;
+	--menu-links: #88c0d0;
+	--menu-about: #88c0d0;
+	/* --menu-search: #88c0d0; */
+	--promo-link: #2e3440;
+	--promo-background: #d8dee9;
+	--epsi: #88c0d0;
+	--epsi-li: #88c0d0;
+	--esgi: #88c0d0;
+	--esgi-li: #88c0d0;
+	--cesi: #88c0d0;
+	--cesi-li: #88c0d0;
+	--wis: #88c0d0;
+	--wis-li: #88c0d0;
+	--poec: #88c0d0;
+	--poec-li: #88c0d0;
+	--cours-cat-li: #eceff4;
+	--cours-link-text: #2e3440;
+	--cours-link-border: #2e3440;
+	--versioning: #b48ead;
+	--select-color: #88c0d0;
+	--mermaid-title: #e5e9f0;
+	/* li is not set on light mode to avoir breaking inheritance */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='nord'] .astro-code,
+[data-theme='nord'] .astro-code span {
+	background-color: var(--shiki-nord-bg);
+	color: var(--shiki-nord);
+	font-style: var(--shiki-nord-font-style);
+	font-weight: var(--shiki-nord-font-weight);
+	text-decoration: var(--shiki-nord-text-decoration);
+}
+
+[data-theme="rose"] {
+	/* TODO */
+	--background: var(--dark-main);
+	--text: var(--light-main);
+	--link: var(--dark-link);
+	--link-hover: var(--light-red);
+	--link-visited: TODO;
+	--link-border: inherit;
+	--h1: var(--middle-grey);
+	--h2: var(--light-yellow);
+	--h3: var(--middle-green);
+	--h4: var(--light-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--salmon);
+	--menu-tech: var(--light-blue);
+	--menu-cours: var(--light-yellow);
+	--menu-favorites: var(--middle-green);
+	--menu-links: var(--light-red);
+	--menu-about: var(--light-orange);
+	/* --menu-search: var(--bright-green); */
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: var(--light-blue);
+	--epsi-li: var(--light-blue);
+	--esgi: var(--bright-green);
+	--esgi-li: var(--bright-green);
+	--cesi: var(--light-red);
+	--cesi-li: var(--light-red);
+	--wis: var(--light-second);
+	--wis-li: var(--light-second);
+	--poec: var(--light-orange);
+	--poec-li: var(--light-orange);
+	--cours-cat-li: var(--middle-green);
+	--cours-link-text: var(--light-main);
+	--cours-link-border: var(--dark-grey);
+	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
+	--mermaid-title: var(--light-yellow);
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='rose'] .astro-code,
+[data-theme='rose'] .astro-code span {
+	background-color: var(--shiki-rose-bg);
+	color: var(--shiki-rose);
+	font-style: var(--shiki-rose-font-style);
+	font-weight: var(--shiki-rose-font-weight);
+	text-decoration: var(--shiki-rose-text-decoration);
+}
+
+[data-theme="synthwave"] {
+	/* Theme inspired by : https://github.com/robb0wen/synthwave-vscode */
+	--background: #262335;
+	--text: #f97e72;
+	--link: #03edf9;
+	--link-hover: #fede5d;
+	--link-visited: #ff7edb;
+	--link-border: inherit;
+	--h1: #fede5d;
+	--h2: #ff7edb;
+	--h3: #72f1b8;
+	--h4: #03edf9;
+	--hr: #ffffff80;
+	--menu-home: #fe4450;
+	--menu-tech: #72f1b8;
+	--menu-cours: #03edf9;
+	--menu-favorites: #fede5d;
+	--menu-links: #ff7edb;
+	--menu-about: #ffffff;
+	/* --menu-search: var(--bright-green); */
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: #03edf9;
+	--epsi-li: #03edf9;
+	--esgi: #72f1b8;
+	--esgi-li: #72f1b8;
+	--cesi: #fede5d;
+	--cesi-li: #fede5d;
+	--wis: #fe4450;
+	--wis-li: #fe4450;
+	--poec: #ff7edb;
+	--poec-li: #ff7edb;
+	--cours-cat-li: #463465;
+	--cours-link-text: #ffffff;
+	--cours-link-border: #f97e72;
+	--versioning: #ffffff80;
+	--select-color: #f97e72;
+	--mermaid-title: #ff7edb;
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='synthwave'] .astro-code,
+[data-theme='synthwave'] .astro-code span {
+	background-color: var(--shiki-synthwave-bg);
+	color: var(--shiki-synthwave);
+	font-style: var(--shiki-synthwave-font-style);
+	font-weight: var(--shiki-synthwave-font-weight);
+	text-decoration: var(--shiki-synthwave-text-decoration);
+}
+[data-theme="synthwave"] h1 {
+	  text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
+}
+[data-theme="synthwave"] h2 {
+	  text-shadow: 0 0 2px #000, 0 0 10px #ff7edb75, 0 0 5px #ff7edb75, 0 0 25px #ff7edb75;
+}
+[data-theme="synthwave"] h3 {
+	  text-shadow: 0 0 2px #000, 0 0 10px #72f1b8, 0 0 5px #72f1b8, 0 0 25px #72f1b8;
+}
+[data-theme="synthwave"] h4 {
+	  text-shadow: 0 0 2px #000, 0 0 10px #03edf9, 0 0 5px #03edf9, 0 0 25px #03edf9;
+}
+[data-theme="synthwave"] #menu-home {
+	  text-shadow: 0 0 2px #000, 0 0 10px #fe4450, 0 0 5px #fe4450, 0 0 25px #fe4450;
+}
+[data-theme="synthwave"] #menu-tech {
+	  text-shadow: 0 0 2px #000, 0 0 10px #72f1b8, 0 0 5px #72f1b8, 0 0 25px #72f1b8;
+}
+[data-theme="synthwave"] #menu-cours {
+	  text-shadow: 0 0 2px #000, 0 0 10px #03edf9, 0 0 5px #03edf9, 0 0 25px #03edf9;
+}
+[data-theme="synthwave"] #menu-favorites {
+	  text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
+}
+[data-theme="synthwave"] #menu-links {
+	  text-shadow: 0 0 2px #000, 0 0 10px #ff7edb, 0 0 5px #ff7edb, 0 0 25px #ff7edb;
+}
+[data-theme="synthwave"] #menu-about {
+	  text-shadow: 0 0 2px #000, 0 0 10px #ffffff, 0 0 5px #ffffff, 0 0 25px #ffffff;
+}
+[data-theme="synthwave"] #themeSwitch {
+	  text-shadow: 0 0 2px #000, 0 0 10px #f97e72, 0 0 5px #f97e72, 0 0 25px #f97e72;
+}
+
+[data-theme="tokyonight"] {
+	/* TODO */
+	--background: var(--dark-main);
+	--text: var(--light-main);
+	--link: var(--dark-link);
+	--link-hover: var(--light-red);
+	--link-visited: TODO;
+	--link-border: inherit;
+	--h1: var(--middle-grey);
+	--h2: var(--light-yellow);
+	--h3: var(--middle-green);
+	--h4: var(--light-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--salmon);
+	--menu-tech: var(--light-blue);
+	--menu-cours: var(--light-yellow);
+	--menu-favorites: var(--middle-green);
+	--menu-links: var(--light-red);
+	--menu-about: var(--light-orange);
+	/* --menu-search: var(--bright-green); */
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: var(--light-blue);
+	--epsi-li: var(--light-blue);
+	--esgi: var(--bright-green);
+	--esgi-li: var(--bright-green);
+	--cesi: var(--light-red);
+	--cesi-li: var(--light-red);
+	--wis: var(--light-second);
+	--wis-li: var(--light-second);
+	--poec: var(--light-orange);
+	--poec-li: var(--light-orange);
+	--cours-cat-li: var(--middle-green);
+	--cours-link-text: var(--light-main);
+	--cours-link-border: var(--dark-grey);
+	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
+	--mermaid-title: var(--light-yellow);
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='tokyonight'] .astro-code,
+[data-theme='tokyonight'] .astro-code span {
+	background-color: var(--shiki-tokyonight-bg);
+	color: var(--shiki-tokyonight);
+	font-style: var(--shiki-tokyonight-font-style);
+	font-weight: var(--shiki-tokyonight-font-weight);
+	text-decoration: var(--shiki-tokyonight-text-decoration);
+}
+
+[data-theme="vesper"] {
+	/* TODO */
+	--background: var(--dark-main);
+	--text: var(--light-main);
+	--link: var(--dark-link);
+	--link-hover: var(--light-red);
+	--link-visited: TODO;
+	--link-border: inherit;
+	--h1: var(--middle-grey);
+	--h2: var(--light-yellow);
+	--h3: var(--middle-green);
+	--h4: var(--light-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--salmon);
+	--menu-tech: var(--light-blue);
+	--menu-cours: var(--light-yellow);
+	--menu-favorites: var(--middle-green);
+	--menu-links: var(--light-red);
+	--menu-about: var(--light-orange);
+	/* --menu-search: var(--bright-green); */
+	--promo-link: var(--dark-main);
+	--promo-background: var(--light-second);
+	--epsi: var(--light-blue);
+	--epsi-li: var(--light-blue);
+	--esgi: var(--bright-green);
+	--esgi-li: var(--bright-green);
+	--cesi: var(--light-red);
+	--cesi-li: var(--light-red);
+	--wis: var(--light-second);
+	--wis-li: var(--light-second);
+	--poec: var(--light-orange);
+	--poec-li: var(--light-orange);
+	--cours-cat-li: var(--middle-green);
+	--cours-link-text: var(--light-main);
+	--cours-link-border: var(--dark-grey);
+	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
+	--mermaid-title: var(--light-yellow);
+	/* li is not set on light mode to avoir breaking inheritance */
+	/* TODO => !important ? */
+	#epsi li { background: var(--epsi-li); }
+	#esgi li { background: var(--esgi-li); }
+	#cesi li { background: var(--cesi-li); }
+	#wis li { background: var(--wis-li); }
+	#poec li { background: var(--poec-li); }
+}
+[data-theme='vesper'] .astro-code,
+[data-theme='vesper'] .astro-code span {
+	background-color: var(--shiki-vesper-bg);
+	color: var(--shiki-vesper);
+	font-style: var(--shiki-vesper-font-style);
+	font-weight: var(--shiki-vesper-font-weight);
+	text-decoration: var(--shiki-vesper-text-decoration);
+}
 
 /******************************************************************************/
 /*                                    TODO                                    */
@@ -492,25 +1128,4 @@ body.dark {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-}
-
-a.add-bookmark {
-	text-decoration: none;
-	border: none;
-}
-
-.icon-link{
-	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9Im5vbmUiICBzdHJva2U9ImN1cnJlbnRDb2xvciIgIHN0cm9rZS13aWR0aD0iMiIgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgIHN0cm9rZS1saW5lam9pbj0icm91bmQiICBjbGFzcz0iaWNvbiBpY29uLXRhYmxlciBpY29ucy10YWJsZXItb3V0bGluZSBpY29uLXRhYmxlci1zdGFyIj48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMTIgMTcuNzVsLTYuMTcyIDMuMjQ1bDEuMTc5IC02Ljg3M2wtNSAtNC44NjdsNi45IC0xbDMuMDg2IC02LjI1M2wzLjA4NiA2LjI1M2w2LjkgMWwtNSA0Ljg2N2wxLjE3OSA2Ljg3M3oiIC8+PC9zdmc+');
-	background-size:cover;
-	position:absolute;
-	width:20px;
-	height:20px;
-}
-
-.icon-link:hover {
-	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg==');
-}
-
-.bookmarked {
-	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg==');
 }
