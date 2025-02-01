@@ -42,7 +42,7 @@
 
 - "favorites" :
   - delete
-	- icons (star)
+	- link to favorites
 
 ---
 
