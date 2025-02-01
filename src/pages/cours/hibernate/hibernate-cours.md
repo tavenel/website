@@ -44,7 +44,8 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 # Composants
 
-```ditaa
+```plantuml
+@startditaa
 
 +---------------------------------+
 |           Application           |
@@ -59,6 +60,7 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 |{s}       Base de données        |
 +---------------------------------+
 
+@endditaa
 ```
 
 ---
@@ -77,7 +79,8 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 # Persistent Objects
 
-```ditaa
+```plantuml
+@startditaa
 
 +--------------------------+
 |       Application        |
@@ -97,6 +100,7 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 |       Database           |
 +--------------------------+
 
+@endditaa
 ```
 
 ---

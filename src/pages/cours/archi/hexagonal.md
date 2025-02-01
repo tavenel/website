@@ -94,7 +94,8 @@ _Quel est le <span v-mark.underline.red="0">but</span> de [cette application dja
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
 +--------------------+       +---------------------+       +---------------------+
 |     USER-SIDE      |       |    BUSINESS LOGIC   |       |     SERVER-SIDE     |
@@ -121,10 +122,10 @@ _Quel est le <span v-mark.underline.red="0">but</span> de [cette application dja
   final, avec quoi                                           WS externes)         
   il interagit                                                                    
 
-```
+= Architecture hexagonale (blog.octo.com)
 
-<!-- _class: legende -->
-Architecture hexagonale (blog.octo.com)
+@endditaa
+```
 
 ---
 
@@ -172,7 +173,8 @@ Type enter to exit...
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 
 +--------------------+       +--------------------------------+       +-----------------------------+
 |     USER-SIDE      |       |    BUSINESS LOGIC              |       |     SERVER-SIDE             |
@@ -199,10 +201,10 @@ Type enter to exit...
   final, avec quoi                                                           WS externes)         
   il interagit                                                                           
 
-```
+= Architecture hexagonale du programme de poésie (blog.octo.com)
 
-<!-- _class: legende -->
-Architecture hexagonale du programme de poésie (blog.octo.com)
+@endditaa
+```
 
 ---
 

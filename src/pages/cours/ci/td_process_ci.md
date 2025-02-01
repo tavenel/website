@@ -43,7 +43,8 @@ _Schématiser le pipeline d’intégration continue que vous proposez pour gére
 
 Pour rappel, voici un exemple de pipeline simpliste : 
 
-```ditaa
+```plantuml
+@startditaa
   +------------------------+
   | Machine du développeur |
   |                        |
@@ -79,6 +80,7 @@ Pour rappel, voici un exemple de pipeline simpliste :
   | Serveur                |
   | d'intégration continue |
   +------------------------+
+@endditaa
 ```
 
 ::: {.correction .if correction="true"}

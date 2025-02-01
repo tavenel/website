@@ -113,7 +113,8 @@ Le code source est monitoré (ou une notification reçue) pour chaque nouveau ch
 
 # Architecture d'un serveur d'intégration continue
 
-```ditaa
+```plantuml
+@startditaa
 
  +-------------+  +---------------+  
  | cBLU        |  | cPNK          |
@@ -131,6 +132,7 @@ Le code source est monitoré (ou une notification reçue) pour chaque nouveau ch
  |  des tests  |  | rapports et notifs |
  +-------------+  +--------------------+
 
+@endditaa
 ```
 
 <!-- _class: legende -->

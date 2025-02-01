@@ -87,7 +87,8 @@ _Docker®_
 
 # Architecture d'une machine virtuelle
 
-```ditaa
+```plantuml
+@startditaa
 +--------------+--------------+
 | cGRE VM A    | cGRE VM B    |
 | +----------+ | +----------+ |
@@ -105,13 +106,15 @@ _Docker®_
 +-----------------------------+
 | cBLK   Infrastructure       |
 +-----------------------------+
+@endditaa
 ```
 
 ---
 
 # Architecture d'un conteneur
 
-```ditaa
+```plantuml
+@startditaa
 +--------------+--------------+
 | cPNK         | cPNK         |
 | Conteneur A  | Conteneur B  |
@@ -125,6 +128,7 @@ _Docker®_
 +-----------------------------+
 | cBLK   Infrastructure       |
 +-----------------------------+
+@endditaa
 ```
 
 ---

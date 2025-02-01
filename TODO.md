@@ -28,7 +28,6 @@
   - Astro component : better loading (add yarn dep, …) instead of inline script
   - fix style : .flowchartTitleText
   - fix `katex` : loaded but nothing
-  - fix `ditaa`
   - fix `@startdot`
 
 - slides in Astro ? (or Marp / Slidev ?)

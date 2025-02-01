@@ -213,7 +213,8 @@ AppServer --> C2 : Response
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
         +----------+
         |          |
         |  Client  |
@@ -233,9 +234,11 @@ AppServer --> C2 : Response
   |    Serveur   |
   |              |
   +--------------+
-```
 
-_Architecture d'un middleware : intercepte la requête du client avant envoie au serveur, le serveur répond directement au client._
+= Architecture d'un middleware : intercepte la requête du client avant envoie au serveur, le serveur répond directement au client.
+
+@endditaa
+```
 
 ---
 
@@ -282,7 +285,8 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 +----------------------------+
 |        Modèle OSI          |
 +----------------------------+
@@ -308,6 +312,7 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 |  Couche 1 : Physique       |
 |  Ex: Câbles, Radio         |
 +----------------------------+
+@endditaa
 ```
 
 ---
@@ -368,7 +373,8 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 
 ---
 
-```ditaa
+```plantuml
+@startditaa
 +----------------------------+          +----------------------------+
 |        Modèle OSI          |          |        Modèle TCP/IP       |
 +----------------------------+          +----------------------------+
@@ -394,6 +400,7 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 |  Couche 1 : Physique       |          |                            |
 |  Ex: Câbles, Radio         |          |                            |
 +----------------------------+          +----------------------------+
+@endditaa
 ```
 
 ---

@@ -534,7 +534,8 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ## Architecture d'une machine virtuelle (fully-virtualized)
 
-```ditaa
+```plantuml
+@startditaa
 
 +--------------+--------------+
 | cGRE VM A    | cGRE VM B    |
@@ -554,13 +555,15 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 | cBLK   Infrastructure       |
 +-----------------------------+
 
+@endditaa
 ```
 
 ---
 
 ## Architecture d'un conteneur
 
-```ditaa
+```plantuml
+@startditaa
 
 +--------------+--------------+
 | cPNK         | cPNK         |
@@ -576,6 +579,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 | cBLK   Infrastructure       |
 +-----------------------------+
 
+@endditaa
 ```
 
 ---
