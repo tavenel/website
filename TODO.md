@@ -1,7 +1,6 @@
 ## P1
 
 - fix all unknown files at start
-- <h2>Chapitres</h2>
 - slides in Astro ? (or Marp / Slidev ?)
 
 - Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
@@ -33,15 +32,29 @@
 - seo
 	- https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
 	- https://code.juliancataldo.com/component/astro-seo-metadata/
-	- RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
 
 ## P3
 
+- <h2>Chapitres</h2>
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
 - analytics
 - Cours : liens outils et transverses => 2 cards
 - "latest" page
+  ```js
+  fetch('https://example.com/feed.rss') // Replace with your RSS feed URL
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => {
+    const items = data.querySelectorAll("item");
+    let html = "<ul>";
+    items.forEach(item => {
+      html += `<li><a href="${item.querySelector("link").textContent}">${item.querySelector("title").textContent}</a></li>`;
+    });
+    html += "</ul>";
+    document.getElementById("rss-feed").innerHTML = html; // Replace "rss-feed" with the ID of your target element
+  });
+	```
 - merge "links" page (?) => "links" and "tools" idem ?
 - merge "liens" ?
 

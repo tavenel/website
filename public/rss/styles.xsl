@@ -129,9 +129,9 @@ This file is in BETA. Please test and contribute to the discussion:
                   <xsl:value-of select="title"/>
                 </a>
               </h3>
-              <small class="text-gray">
-                Published: <xsl:value-of select="pubDate" />
-              </small>
+              <!-- <small class="text-gray"> -->
+              <!--   Published: <xsl:value-of select="pubDate" /> -->
+              <!-- </small> -->
             </div>
           </xsl:for-each>
         </div>
