@@ -1064,7 +1064,7 @@ a.add-bookmark {
  /*    --pagefind-ui-border-radius: 0.25rem; */
  /*    --pagefind-ui-font: sans-serif; */
  /**/
- /*    /* width: 50%; */ */
+ /*    width: 50%; */
  /*  } */
 
 body.dark {
@@ -1092,12 +1092,12 @@ body.dark {
  /*  } */
  /**/
  /*  .pagefind-ui .pagefind-ui__result-link { */
- /*    /* color: var(--pagefind-ui-primary); */ */
- /* /* color: yellow; */ */
+ /*    color: var(--pagefind-ui-primary); */
+ /* color: yellow; */
  /*  } */
  /**/
  /*  .pagefind-ui .pagefind-ui__result-excerpt { */
- /*    /* color: var(--pagefind-ui-text); */ */
+ /*    color: var(--pagefind-ui-text); */
  /* color: red; */
  /*  } */
 

@@ -1,33 +1,27 @@
-- https://code.juliancataldo.com/component/astro-terminal-player/
-- https://code.juliancataldo.com/component/astro-seo-metadata/
-- https://code.juliancataldo.com/component/astro-code-editor/
+## P1
 
-- https://github.com/sergioramos/remark-hint?tab=readme-ov-file
-- https://github.com/remarkjs/remark-validate-links
-
-- tsconfig.json :	"verbatimModuleSyntax": true,
-- better `date:`
-- analytics
-- Cours : liens outils et transverses => 2 cards
-- "latest" page
-- seo : https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
 - fix all unknown files at start
-- RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
-- merge "links" page (?) => "links" and "tools" idem ?
+- <h2>Chapitres</h2>
+- slides in Astro ? (or Marp / Slidev ?)
 
-
-- promotions => https://docs.astro.build/en/guides/content-collections/#the-collection-config-file
+- Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
+  - warning, exo, correction, strong, link
 
 - diagrams
   - Astro component : better loading (add yarn dep, …) instead of inline script
-  - fix style : .flowchartTitleText
   - fix `katex` : loaded but nothing
   - fix `@startdot`
 
-- slides in Astro ? (or Marp / Slidev ?)
-  - fix v-clicks (auto -> slidev)
+## P2
 
-- theme :
+- fix v-clicks (auto -> slidev)
+- "favorites" :
+  - delete
+	- fix favorites navigation (after astro hydration ?)
+
+- styles :
+  - cleanup CSS "TODO"
+  - fix diagram style : .flowchartTitleText
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
   - h2#chapitres => floating (right ?), always visible, collapsible
 	- styles.css => !important ?
@@ -36,12 +30,23 @@
 	- tokyonight: 'tokyo-night',
 	- vesper: 'vesper', => mono orange
 
-- Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
-  - warning, exo, correction, strong, link
+- seo
+	- https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
+	- https://code.juliancataldo.com/component/astro-seo-metadata/
+	- RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
 
-- "favorites" :
-  - delete
-	- fix favorites navigation (after astro hydration ?)
+## P3
+
+- tsconfig.json :	"verbatimModuleSyntax": true,
+- better `date:`
+- analytics
+- Cours : liens outils et transverses => 2 cards
+- "latest" page
+- merge "links" page (?) => "links" and "tools" idem ?
+- merge "liens" ?
+
+- remark-lint
+	- https://github.com/remarkjs/remark-validate-links
 
 ---
 
