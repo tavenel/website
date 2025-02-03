@@ -13,8 +13,8 @@ title: 🐧 Linux
 ## Découverte de Linux
 
 - 🤓 Cours découverte de Linux
-  - [pdf (1.4M)](/cours/linux/niveau1/linux-cours.pdf)
-  - [pptx (1.9M)](/cours/linux/niveau1/linux-cours.pptx)
+  - [pdf (1.4M)](/cours/linux/niveau1/linux-cours.pdf) <!-- TODO -->
+  - [pptx (1.9M)](/cours/linux/niveau1/linux-cours.pptx) <!-- TODO -->
 - [  TP - Utilisation des commandes Linux](/cours/linux/niveau1/tp-commandes_linux)
 - [  TP - Utilisation des commandes avancées](/cours/linux/niveau1/tp-commandes_avancees)
 - [📜 TP - Création de scripts Bash](/cours/linux/niveau1/tp-scripts_bash)
@@ -27,6 +27,7 @@ title: 🐧 Linux
 - 🤓 Cours Linux niveau 2 :
   - [Partie 1](/cours/linux/niveau2/cours-linux-niveau2_partie1)
   - [Partie 2](/cours/linux/niveau2/cours-linux-niveau2_partie2)
+- [🤓 Cours Linux de niveau 2 orienté Développeurs](/cours/linux/niveau2/cours-linux-dev)
 - [🤓 Cours Linux sur les permissions et les droits](/cours/linux/niveau2/cours-linux-droits)
 - [🤓 Cours Linux d'introduction à l'administration réseau](/cours/linux/niveau2/cours-linux-network)
 - [🤓 Cours sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)

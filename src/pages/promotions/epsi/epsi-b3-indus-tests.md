@@ -1,10 +1,9 @@
 ---
-title: 🏭 Tom Avenel - B3 Industrialisation des tests
+title: ⚛️ Tom Avenel - B3 Industrialisation des tests
+layout: ../../../layouts/BaseLayout.astro
 ---
 
-# 🏭 Industrialisation des tests logiciels
-
-![](/resources/images/cover/auto-tests.jpg)
+# ⚛️ Industrialisation des tests logiciels
 
 ## Présentation du module
 
@@ -22,28 +21,11 @@ Module de 10H
 
 ## Documents
 
-### Selenium - Automatisation de tests fonctionnels d'interface Web
+- [🤓 Cours Selenium](/cours/tests/selenium/selenium-cours)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
+  -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
+- [📌 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium/projet-selenium)
 
-#### 🤓 Cours Selenium
+## Pour aller plus loin
 
-- [Cours html](/cours/tests/selenium/selenium-cours.html)
-- [Cours pdf](/cours/tests/selenium/selenium-cours.pdf)
-- [Cours markdown](/cours/tests/selenium/selenium-cours.md)
-
-#### 💻 TP Selenium
-
-Dans ce cas pratique, nous allons automatiser et industrialiser le processus de test d’interface utilisateur d'un projet existant.
-
-- [TP html](/cours/tests/selenium/tp-selenium.html)
-- [TP pdf](/cours/tests/selenium/tp-selenium.pdf)
-- [TP markdown](/cours/tests/selenium/tp-selenium.md)
-- Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-
-#### 📌 Projet tests automatisés d'interface utilisateur
-
-Le but de ce projet est de coder des tests automatisés d'interface utilisateur pour un site web existant.
-
-- [html](/cours/tests/selenium/projet-selenium.html)
-- [pdf](/cours/tests/selenium/projet-selenium.pdf)
-- [markdown](/cours/tests/selenium/projet-selenium.md)
-
+- Voir les autres ressources du [cours sur les tests](/cours/tests).

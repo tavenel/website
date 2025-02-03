@@ -1,10 +1,9 @@
 ---
 title:   Tom Avenel - B3 CDA Django
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 #   Le framework Django
-
-![](/resources/images/cover/django.jpg)
 
 Django est un framework Python gratuit et open-source de haut niveau pour développer une application Web simplement.
 
@@ -27,39 +26,12 @@ Module de 14H
 
 ## Documents
 
-### 🤓 Cours d'architecture : choisir un framework
+- [🤓 Introduction à l'utilisation de framework (cours)](/cours/archi/choix-framework-cours)
+- [🤓 MVC : Modèle Vue Contrôleur (cours)](/cours/archi/mvc-cours)
+- [🤓 Cours : introduction à Django, framework Python gratuit et open-source de haut niveau pour développer une application Web simplement](/cours/python/django/django-cours)
+- [💻 TP bibliothèque : utiliser Django pour générer un petit projet Web de gestion d'une bibliothèque locale.](/cours/python/django/django-tp)
+- [📌 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/cours/python/django/django-jeu-heros)
 
-- [html](/cours/archi/choix-framework-cours.html)
-- [pdf](/cours/archi/choix-framework-cours.pdf)
-- [markdown](/cours/archi/choix-framework-cours.md)
+## Pour aller plus loin
 
-### 🤓 Cours d'architecture : le pattern MVC
-
-- [html](/cours/archi/mvc-cours.html)
-- [pdf](/cours/archi/mvc-cours.pdf)
-- [markdown](/cours/archi/mvc-cours.md)
-
-### 🤓 Cours : introduction à Django
-
-Une courte introduction aux concepts de Django.
-
-- [html](/cours/django/django-cours.html)
-- [pdf](/cours/django/django-cours.pdf)
-- [markdown](/cours/django/django-cours.md)
-
-### 💻 TP d'apprentissage en cours : gérer une bibliothèque
-
-Un TP guidé pour apprendre à programmer en Django.
-
-- [html](/cours/django/django-tp.html)
-- [pdf](/cours/django/django-tp.pdf)
-- [markdown](/cours/django/django-tp.md)
-
-### 📌 Projet noté : un jeu dont vous êtes le héros
-
-Le sujet du projet noté à réaliser.
-
-- [html](/cours/django/django-jeu-heros.html)
-- [pdf](/cours/django/django-jeu-heros.pdf)
-- [markdown](/cours/django/django-jeu-heros.md)
-
+- Voir les autres ressources du [cours sur Python](/cours/python).

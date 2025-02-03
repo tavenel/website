@@ -1,10 +1,9 @@
 ---
 title: 🐧 Tom Avenel - B3 Environnement Linux
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 🐧 Atelier Environnement Linux
-
-![](/resources/images/cover/linux.jpg)
 
 ## Présentation du module
 
@@ -23,38 +22,13 @@ title: 🐧 Tom Avenel - B3 Environnement Linux
 - Module de 7H
 - Évaluation : TP noté
 
-## 💻 Environnement de travail : Machine virtuelle Ubuntu
-
-Installation d'une machine virtuelle Ubuntu de type Desktop dans VirtualBox.
-
-- [html](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation.html)
-- [pdf](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation.pdf)
-- [markdown](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation.md)
-
 ## Documents
 
-### 🤓 Cours B3 EPSI ASRBD
+- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
+- [🤓 Cours](/cours/linux/niveau1/linux-cours-b3-asrbd)
+- [👥 TP : Gestion des utilisateurs et de la sécurité](/cours/linux/niveau2/tp-utilisateurs)
+- [📌 Projet : Administration d'un système Linux](/cours/linux/tp-admin-technova) : Cas fictif pour mettre en pratique les commandes shell sous Linux, en se concentrant sur la gestion des droits des utilisateurs et des groupes et la configuration de l'élévation de privilèges.
 
-- [html](/cours/linux/niveau1/linux-cours-b3-asrbd.html)
-- [pdf](/cours/linux/niveau1/linux-cours-b3-asrbd.pdf)
-- [markdown](/cours/linux/niveau1/linux-cours-b3-asrbd.md)
+## Pour aller plus loin
 
-### 👥 TP : Gestion des utilisateurs et de la sécurité
-
-L'objectif de ce TP est de créer un utilisateur et d'appliquer une politique de sécurité. 
-
-- [html](/cours/linux/niveau2/tp-utilisateurs.html)
-- [pdf](/cours/linux/niveau2/tp-utilisateurs.pdf)
-- [markdown](/cours/linux/niveau2/tp-utilisateurs.md)
-
-### 📌 Projet Administration d'un système Linux
-
-🔐 Cas fictif pour mettre en pratique les commandes shell sous Linux, en se concentrant sur :
-
-- La gestion des droits des utilisateurs et des groupes.
-- Une recherche et configuration sur l'élévation de privilèges.
-
-- [html](/cours/linux/tp-admin-technova.html)
-- [pdf](/cours/linux/tp-admin-technova.pdf)
-- [markdown](/cours/linux/tp-admin-technova.md)
-
+- Voir les autres ressources du [cours sur Linux](/cours/linux).

@@ -1,10 +1,9 @@
 ---
 title: 🗺️ Tom Avenel - I2 Management multiculturel
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 🗺️ Manager une équipe multiculturelle
-
-![](/resources/images/cover/management.jpg)
 
 ## Présentation du module
 
@@ -21,15 +20,6 @@ Module de 7H.
 
 ## Documents
 
-### 🤓 Manager une équipe multiculturelle (cours)
-
-- [html](/cours/management/multiculturel/management-multiculturel-cours.html)
-- [pdf](/cours/management/multiculturel/management-multiculturel-cours.pdf)
-- [markdown](/cours/management/multiculturel/management-multiculturel-cours.md)
-
-### 📌 Projet accompagner une équipe multiculturelle à distance
-
-- [html](/cours/management/multiculturel/projet.html)
-- [pdf](/cours/management/multiculturel/projet.pdf)
-- [markdown](/cours/management/multiculturel/projet.md)
+- [🤓 Manager une équipe multiculturelle (cours)](/cours/management/multiculturel/management-multiculturel-cours)
+- [📌 Projet accompagner une équipe multiculturelle à distance](/cours/management/multiculturel/projet)
 

@@ -70,7 +70,6 @@ title:   Git™
 ## 📄 Documents
 
 - [🤓 Cours](/cours/git/git-cours)
-
 - [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
 - [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/git-tp-gitignore)
 - [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)
@@ -86,4 +85,4 @@ title:   Git™
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/cours/git/git-tp-ansible)
 - [💻 TP - Intégrer Git dans un IDE](/cours/git/git-tp-ide)
 - [💻 TP - Manipulations avancées de la HEAD](/cours/git/git-tp-deplacer-head-avance)
-
+- [💻 TP Neovim - gérer ses configurations avec Git](/cours/git/git-tp-iac-nvim)

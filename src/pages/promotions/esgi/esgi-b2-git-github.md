@@ -1,10 +1,9 @@
 ---
 title: 󰊤  Tom Avenel - B2 GIT
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 󰊤  Versioning avec Git et Github
-
-![](/resources/images/cover/git.jpg)
 
 ## Présentation du module
 
@@ -76,113 +75,15 @@ Module de 12H
 
 ## Documents
 
-### 🤓 Cours
+- [🤓 Cours](/cours/git/git-cours)
+- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
+- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/git-tp-gitignore)
+- [💻 TP - Intégrer Git dans un IDE](/cours/git/git-tp-ide)
+- [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)
+- [💻 TP - Github® et dépôts distants](/cours/git/git-tp-github)
+- [💻 TP - Les branches Git™](/cours/git/git-tp-branches)
+- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : _à réaliser en binôme._
+- [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/git-tp-fork)
+## Pour aller plus loin
 
-- [html](/cours/git/git-cours.html)
-- [pdf](/cours/git/git-cours.pdf)
-- [markdown](/cours/git/git-cours.md)
-
-### 💻 TP - Premiers pas (le commit)
-
-L'objectif de ce TP est d'installer et de configurer git, puis de se familiariser avec ses concepts de base.
-
-- [html](/cours/git/git-tp-commit.html)
-- [pdf](/cours/git/git-tp-commit.pdf)
-- [markdown](/cours/git/git-tp-commit.md)
-
-### 💻 TP - Le gitignore
-
-L'objectif de ce TP est d'utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git.
-
-- [html](/cours/git/git-tp-gitignore.html)
-- [pdf](/cours/git/git-tp-gitignore.pdf)
-- [markdown](/cours/git/git-tp-gitignore.md)
-
-### 💻 TP - Intégrer Git dans un IDE
-
-L'objectif de ce TP est d'utiliser Git directement dans l'IDE et d'y afficher les derniers changements dans le code.
-
-- [html](/cours/git/git-tp-ide.html)
-- [pdf](/cours/git/git-tp-ide.pdf)
-- [markdown](/cours/git/git-tp-ide.md)
-
-### 💻 TP - Utiliser l'historique de Git™
-
-L'objectif de ce TP est d'utiliser les fonctions d'historique de git.
-
-- [html](/cours/git/git-tp-historique.html)
-- [pdf](/cours/git/git-tp-historique.pdf)
-- [markdown](/cours/git/git-tp-historique.md)
-
-### 💻 TP - Github® et dépôts distants
-
- L'objectif de ce TP est de créer, configurer et utiliser un dépôt git distant sur la plateforme Github®.
-
-- [html](/cours/git/git-tp-github.html)
-- [pdf](/cours/git/git-tp-github.pdf)
-- [markdown](/cours/git/git-tp-github.md)
-
-### 💻 TP - Les branches Git™
-
- L'objectif de ce TP est de manipuler un des concepts les plus puissants de Git™ - la notion de branches.
-
-- [html](/cours/git/git-tp-branches.html)
-- [pdf](/cours/git/git-tp-branches.pdf)
-- [markdown](/cours/git/git-tp-branches.md)
-
-### 💻 TP - Les tags
-
-Petit TP permettant de découvrir les tags dans Git.
-
-- [html](/cours/git/git-tp-tags.html)
-- [pdf](/cours/git/git-tp-tags.pdf)
-- [markdown](/cours/git/git-tp-tags.md)
-
-### 💻 TP - Workflows Git™ et Pull Request
-
- L'objectif de ce TP est d'utiliser de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
- **L'intégralité de ce cas pratique est à réaliser en binôme.**
-
-- [html](/cours/git/git-tp-workflows-pr.html)
-- [pdf](/cours/git/git-tp-workflows-pr.pdf)
-- [markdown](/cours/git/git-tp-workflows-pr.md)
-
-### 💻 TP - Workflow de Fork
-
- L'objectif de ce TP est de découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel.
-
-- [html](/cours/git/git-tp-fork.html)
-- [pdf](/cours/git/git-tp-fork.pdf)
-- [markdown](/cours/git/git-tp-fork.md)
-
-### 💻 TP - Git™ Bisect
-
- L'objectif de ce TP est d'utiliser la commande Git Bisect pour trouver un commit par dichotomie.
-
-- [html](/cours/git/git-tp-bisect.html)
-- [pdf](/cours/git/git-tp-bisect.pdf)
-- [markdown](/cours/git/git-tp-bisect.md)
-
-### 💻 TP - Git pour un Projet XAMPP
-
-Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
-
-- [html](/cours/git/git-tp-xampp.html)
-- [pdf](/cours/git/git-tp-xampp.pdf)
-- [markdown](/cours/git/git-tp-xampp.md)
-
-### 💻 TP Neovim - gérer ses configurations avec Git
-
-L'objectif de ce TP est d'utiliser Git pour gérer les fichiers de configuration d'un programme (ici `Neovim`).
-
-- [html](/cours/git/git-tp-iac-nvim.html)
-- [pdf](/cours/git/git-tp-iac-nvim.pdf)
-- [markdown](/cours/git/git-tp-iac-nvim.md)
-
-### 💻 TP - Manipulations avancées de la HEAD
-
-Dans ce TP, nous allons voir des commandes avancées pour déplacer le pointeur vers le commit courant (`HEAD`) de Git.
-
-- [html](/cours/git/git-tp-deplacer-head-avance.html)
-- [pdf](/cours/git/git-tp-deplacer-head-avance.pdf)
-- [markdown](/cours/git/git-tp-deplacer-head-avance.md)
+- Voir les autres ressources du [cours sur Git](/cours/git).

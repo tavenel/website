@@ -1,0 +1,14 @@
+---
+import Layout from '@layouts/BaseLayout.astro';
+
+const { title, mail, agenda, url } = Astro.props;
+---
+<Layout title={title} url={url}>
+	<h1>{title}</h1>
+	<h2>Informations</h2>
+	<ul>
+		<li>📧 contact : <a href=mailto:{mail}>mailto:{mail}</a></li>
+		<li><a href={agenda}>📅 Agenda des rendus</a></li>
+	</ul>
+	<slot />
+</Layout>

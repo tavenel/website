@@ -24,11 +24,11 @@ title: 🔄 CI/CD et  Jenkins
 - [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins niveau 1](/cours/jenkins/tp-jenkins-b3) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
-  -  Sources pour le TP : `git clone https://git.sr.ht/~toma/jenkins-b3`
+  -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins-b3>
 -  TP Jenkins niveau 2 : Un TP plus poussé que le précédent.
-  - [word (1.2M)](/cours/jenkins/tp-jenkins.docx)
-  - [pdf (1.3M)](/cours/jenkins/tp-jenkins.pdf)
-  - exemples : <https://git.sr.ht/~toma/jenkins_exemples>
+  - [word (1.2M)](/cours/jenkins/tp-jenkins.docx) <!-- TODO -->
+  - [pdf (1.3M)](/cours/jenkins/tp-jenkins.pdf) <!-- TODO -->
+  -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
 
 ## Projets
 
@@ -38,7 +38,7 @@ Vous venez de récupérer le code source d’un projet Java dont l’objectif é
 
 L’objectif de ce TP est travailler en binôme afin de finir ce projet et de le valider en s’aidant des principes de l’intégration continue.
 
-- [Lien vers le sujet](/cours/ci/tp_ci_ide_simplechat)
+- [📄 Lien vers le sujet](/cours/ci/tp_ci_ide_simplechat)
 
 ### 📌 Projet SimpleChat 2 : développer une application de monitoring en intégration continue
 
@@ -46,17 +46,17 @@ Suite du projet SimpleChat 1.
 
 Afin de pouvoir avoir une vue centralisée sur l'état des différents serveurs de chat nous allons développer, en utilisant les principes de l'intégration continue, une interface utilisateur permettant de lister les utilisateurs enregistrés et les chatrooms créées.
 
-- [Lien vers le sujet](/cours/ci/simplechat-monitoring)
+- [📄 Lien vers le sujet](/cours/ci/simplechat-monitoring)
 
 ### 📌 Projet intégration et déploiement continus d'une application de groupes de travail
 
 Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 
-- [Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci)
+- [📄 Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci)
 
 ### 📌 Projet intégration continue et automatisation des tests d'une application de groupes de travail
 
 Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 
-- [Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci_et_tests)
+- [📄 Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci_et_tests)
 

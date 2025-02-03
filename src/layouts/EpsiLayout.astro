@@ -1,0 +1,9 @@
+---
+import Layout from '@layouts/PromoLayout.astro';
+
+const { promo, agenda, url } = Astro.props;
+const title = "Modules EPSI " + promo;
+---
+<Layout title={title} mail="tom.avenel@mail-formateur.net" agenda={agenda} url={url}>
+	<slot />
+</Layout>

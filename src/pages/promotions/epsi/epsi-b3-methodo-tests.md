@@ -1,5 +1,6 @@
 ---
 title: 🧪 Tom Avenel - B3 Méthodologie des tests
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 🧪 Méthodologie des tests logiciels
@@ -25,7 +26,7 @@ Module de 10H
 ### Méthodologie des tests
 
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests) : _Pourquoi le test logiciel ?_ _Qu'est-ce qu'un testeur ?_
-- [🤓 Cours : les types de tests (pdf, 2M)](/cours/tests/methodo/cours-tests.pdf)
+- [🤓 Cours : les types de tests (pdf, 2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
 - [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
 - [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
 - [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
@@ -40,3 +41,6 @@ Module de 10H
   - Sources pour le TP : `git clone https://git.sr.ht/~toma/python-unit`
 - [📌 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
 
+## Pour aller plus loin
+
+- Voir les autres ressources du [cours sur les tests](/cours/tests).

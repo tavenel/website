@@ -1,10 +1,9 @@
 ---
 title: 🧪 Tom Avenel - B3 Tests unitaires et logiciels
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 🧪 Tests unitaires et logiciels
-
-![](/resources/images/cover/tests.jpg)
 
 ## Présentation du module
 
@@ -141,161 +140,45 @@ Les frameworks.
 
 ## Documents
 
-### 🤓 Rappels de cours : Le langage Python
+### Méthodologie
 
-Voir la [page du cours Python](/cours/python/index.html)
+- [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)
+- 🤓 Cours : les types de tests : [pdf (2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
+- [🤓 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
+- [🤓 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
+- [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
+- [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
+- [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
+- [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
+- [📝 Exercices sur les techniques de tests](/cours/tests/methodo/techniques-tests-exercices)
 
-### Introduction aux tests logiciels
+### Industrialisation des tests
 
-#### 🤓 Cours d'introduction
+- [🤓 Cours sur l'industrialisation des tests](/cours/tests/methodo/indus-tests-cours)
+- [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
+- [🤓 Cours sur les design patterns de test](/cours/tests/methodo/patterns-cours)
 
-- _Pourquoi le test logiciel ?_
-- _Qu'est-ce qu'un testeur ?_
+### Tests unitaires
 
-- [html](/cours/tests/methodo/cours-introduction-tests.html)
-- [pdf](/cours/tests/methodo/cours-introduction-tests.pdf)
-- [markdown](/cours/tests/methodo/cours-introduction-tests.md)
+- [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
+-  Dépôts d'exemples de tests unitaires :
+  - 󰌠 Python : <https://git.sr.ht/~toma/python-unit>
+  - ☕ Java : <https://git.sr.ht/~toma/java-unit>
+  - 🇰 Kotlin : <https://git.sr.ht/~toma/kotlin-unit>
+  - Jest : <https://git.sr.ht/~toma/unit-jest>
+- [💻 TP : Tests automatisés et analyses de code en Python](/cours/tests/unit/python/tp-python-tests)
+- [💻 TP : Tests unitaires Frontend en Jest](/cours/tests/unit/jest/tp-jest)
 
-#### 🤓 Cours : les types de tests
+### ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
-- [pdf (2M)](/cours/tests/methodo/cours-tests.pdf)
+- [🤓 Cours Selenium](/cours/tests/selenium/selenium-cours)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
+  -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
 
-#### 📝 Exercices sur la méthodologie des tests
+### Projet noté
 
-- [html](/cours/tests/methodo/exercices_methodo_tests.html)
-- [pdf](/cours/tests/methodo/exercices_methodo_tests.pdf)
-- [markdown](/cours/tests/methodo/exercices_methodo_tests.md)
+- [📌 Projet jeu de rôle](/cours/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
 
-#### 🤓 Exemple de rapport de bug
+## Pour aller plus loin
 
-- [html](/cours/tests/methodo/exemple-rapport-bug.html)
-- [pdf](/cours/tests/methodo/exemple-rapport-bug.pdf)
-- [markdown](/cours/tests/methodo/exemple-rapport-bug.md)
-
-#### 🧪 Exemple de template de plan de tests
-
-- [html](/cours/tests/methodo/exemple-template-plan-tests.html)
-- [pdf](/cours/tests/methodo/exemple-template-plan-tests.pdf)
-- [markdown](/cours/tests/methodo/exemple-template-plan-tests.md)
-
-### Stratégies et techniques de tests
-
-#### 🤓 Cours sur les tests statiques
-
-- [html](/cours/tests/methodo/test-statique.html)
-- [pdf](/cours/tests/methodo/test-statique.pdf)
-- [markdown](/cours/tests/methodo/test-statique.md)
-
-#### 🤓 Cours sur les techniques de tests
-
-- [html](/cours/tests/methodo/techniques-tests.html)
-- [pdf](/cours/tests/methodo/techniques-tests.pdf)
-- [markdown](/cours/tests/methodo/techniques-tests.md)
-
-#### 🤓 Cours sur les stratégies de tests
-
-- [html](/cours/tests/methodo/cours-strategies-tests.html)
-- [pdf](/cours/tests/methodo/cours-strategies-tests.pdf)
-- [markdown](/cours/tests/methodo/cours-strategies-tests.md)
-
-#### 📝 Exercices sur les techniques de tests
-
-- [html](/cours/tests/methodo/techniques-tests-exercices.html)
-- [pdf](/cours/tests/methodo/techniques-tests-exercices.pdf)
-- [markdown](/cours/tests/methodo/techniques-tests-exercices.md)
-
-#### 🤓 Cours : écrire du code testable
-
-- [html](/cours/tests/methodo/ecrire-code-testable-cours.html)
-- [pdf](/cours/tests/methodo/ecrire-code-testable-cours.pdf)
-- [markdown](/cours/tests/methodo/ecrire-code-testable-cours.md)
-
-#### 🤓 Cours sur les design patterns de test
-
-- [html](/cours/tests/methodo/patterns-cours.html)
-- [pdf](/cours/tests/methodo/patterns-cours.pdf)
-- [markdown](/cours/tests/methodo/patterns-cours.md)
-
-#### 🤓 Cours sur l'industrialisation des tests
-
-_Pourquoi et comment automatiser les tests ?_
-
-- [html](/cours/tests/methodo/indus-tests-cours.html)
-- [pdf](/cours/tests/methodo/indus-tests-cours.pdf)
-- [markdown](/cours/tests/methodo/indus-tests-cours.md)
-
-### Les tests unitaires
-
-#### 🤓 Cours : le framework Unittest en Python
-
-- [TP html](/cours/tests/unit/python/cours-python-unittest.html)
-- [TP pdf](/cours/tests/unit/python/cours-python-unittest.pdf)
-- [TP markdown](/cours/tests/unit/python/cours-python-unittest.md)
-
-#### 💻 TP : Tests automatisés et analyses de code en Python
-
-Dans ce TP, nous allons voir comment automatiser des tests dans le langage Python.
-
-- [TP html](/cours/tests/unit/python/tp-python-tests.html)
-- [TP pdf](/cours/tests/unit/python/tp-python-tests.pdf)
-- [TP markdown](/cours/tests/unit/python/tp-python-tests.md)
-- Sources pour le TP : `git clone https://git.sr.ht/~toma/python-unit`
-
-#### 💻 Tests unitaires Java - exemples de cours
-
-- Sources pour le TP : `git clone https://git.sr.ht/~toma/java-unit`
-
-#### 💻 Tests unitaires frontend Jest
-
-- [TP html](/cours/tests/unit/jest/tp-jest.html)
-- [TP pdf](/cours/tests/unit/jest/tp-jest.pdf)
-- [TP markdown](/cours/tests/unit/jest/tp-jest.md)
-
-### Selenium - Automatisation de tests fonctionnels d'interface Web
-
-#### 🤓 Cours Sélénium - tests end to end
-
-- [Cours html](/cours/tests/selenium/selenium-cours.html)
-- [Cours pdf](/cours/tests/selenium/selenium-cours.pdf)
-- [Cours markdown](/cours/tests/selenium/selenium-cours.md)
-
-#### 💻 TP Sélénium
-
-Dans ce cas pratique, nous allons automatiser et industrialiser le processus de test d’interface utilisateur d'un projet existant.
-
-- [TP html](/cours/tests/selenium/tp-selenium.html)
-- [TP pdf](/cours/tests/selenium/tp-selenium.pdf)
-- [TP markdown](/cours/tests/selenium/tp-selenium.md)
-- Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-
-### 💻 TP d'entraînement : Facadia
-
-Le but de ce projet est de récupérer un projet JS déjà développé (Facadia) pour écrire des tests unitaires, des tests d'intégration et des tests end-to-end.
-- [html](/cours/tests/projet_facadia.html)
-- [pdf](/cours/tests/projet_facadia.pdf)
-- [markdown](/cours/tests/projet_facadia.md)
-
-### 📌 Projet noté : jeu de rôle
-
-Le but de ce projet est de développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
-
-- [html](/cours/tests/projet_jeu_roles.html)
-- [pdf](/cours/tests/projet_jeu_roles.pdf)
-- [markdown](/cours/tests/projet_jeu_roles.md)
-
-### Pour aller plus loin
-
-#### 🤓 Introduction à l'intégration continue 
-
-- [html](/cours/ci/cours-intro-ci.html)
-- [pdf](/cours/ci/cours-intro-ci.pdf)
-- [markdown](/cours/ci/cours-intro-ci.md)
-
-#### 📝 Travaux dirigés : écrire un plan de tests
-
-Dans ce cas pratique, vous allez décrire un plan de test pour un projet existant.
-
-- [html](/cours/tests/methodo/td_plan_tests.html)
-- [pdf](/cours/tests/methodo/td_plan_tests.pdf)
-- [markdown](/cours/tests/methodo/td_plan_tests.md)
-
+- Voir les autres ressources du [cours sur les tests](/cours/tests) et du [cours sur l'intégration continue](/cours/ci).

@@ -1,10 +1,9 @@
 ---
 title: 🤼 Tom Avenel - WIS3 Scrum
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 🤼 Méthodologie agile Scrum
-
-![](/resources/images/cover/scrum.jpg)
 
 ## Présentation du module
 
@@ -26,20 +25,12 @@ Module de 20H
 
 ## Documents
 
-### 🤓 Scrum et les méthodes agiles (cours)
+- 🤓 Scrum et les méthodes agiles (cours)
+  - [pdf (1,3M)](/cours/gestion-projet/agile/scrum.pdf) <!-- TODO -->
+  - [pptx (1,9M)](/cours/gestion-projet/agile/scrum.pptx) <!-- TODO -->
+- [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
+- [📌 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
 
-- [pdf (1,3M)](/cours/gestion-projet/agile/scrum.pdf)
-- [pptx (1,9M)](/cours/gestion-projet/agile/scrum.pptx)
+## Pour aller plus loin
 
-### 🤓 Comparaison des méthodes agiles classiques (cours)
-
-- [html](/cours/gestion-projet/agile/comparaisons-agile.html)
-- [pdf](/cours/gestion-projet/agile/comparaisons-agile.pdf)
-- [markdown](/cours/gestion-projet/agile/comparaisons-agile.md)
-
-### 📌 Projet Scrum dans Jira - écriture de scénario itératif
-
-- [html](/cours/gestion-projet/agile/projet_jira.html)
-- [pdf](/cours/gestion-projet/agile/projet_jira.pdf)
-- [markdown](/cours/gestion-projet/agile/projet_jira.md)
-
+- Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).

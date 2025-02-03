@@ -7,7 +7,7 @@ title: 🧪 Tests logiciels
 ## Méthodologie des tests
 
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)
-- 🤓 Cours : les types de tests : [pdf (2M)](/cours/tests/methodo/cours-tests.pdf)
+- 🤓 Cours : les types de tests : [pdf (2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
 - [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
 - [🤓 Cours sur les design patterns de test](/cours/tests/methodo/patterns-cours)
 - [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
@@ -61,7 +61,6 @@ title: 🧪 Tests logiciels
 - [🤓 Cours Selenium](/cours/tests/selenium/selenium-cours)
 - [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-
 - [📌 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium/projet-selenium)
 
 ## 🐇 Jmeter - tests de performance

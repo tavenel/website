@@ -1,10 +1,9 @@
 ---
 title: 🤼 Tom Avenel - B3 Scrum
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 🤼 Méthodologie agile Scrum
-
-![](/resources/images/cover/scrum.jpg)
 
 ## Présentation du module
 
@@ -26,14 +25,11 @@ Module de 10H
 
 ## Documents
 
-### 🤓 Scrum et les méthodes agiles (cours)
+- 🤓 Scrum et les méthodes agiles (cours)
+  - [pdf (1,3M)](/cours/gestion-projet/agile/scrum.pdf) <!-- TODO -->
+  - [pptx (1,9M)](/cours/gestion-projet/agile/scrum.pptx) <!-- TODO -->
+- [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
 
-- [pdf (1,3M)](/cours/gestion-projet/agile/scrum.pdf)
-- [pptx (1,9M)](/cours/gestion-projet/agile/scrum.pptx)
+## Pour aller plus loin
 
-### 🤓 Comparaison des méthodes agiles classiques (cours)
-
-- [html](/cours/gestion-projet/agile/comparaisons-agile.html)
-- [pdf](/cours/gestion-projet/agile/comparaisons-agile.pdf)
-- [markdown](/cours/gestion-projet/agile/comparaisons-agile.md)
-
+- Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).

@@ -1,10 +1,9 @@
 ---
+layout: '../../../layouts/BaseLayout.astro'
 title: Tableaux de bord et pilotage des applications du SI
 ---
 
 # Tableaux de bord et pilotage des applications du SI
-
-![](/resources/images/cover/dashboard.jpg)
 
 ## Présentation du module
 
@@ -33,16 +32,5 @@ title: Tableaux de bord et pilotage des applications du SI
 
 ## Documents
 
-### 🤓 Cours : Introduction aux tableaux de bord et feuilles de route
-
-- [Cours pdf](/cours/data/tableau_bord_cours.pdf)
-- [Cours markdown](/cours/data/tableau_bord_cours.md)
-
-### 💻 TP Dashboard PowerBI et Feuille de route
-
-L'objectif de ces exercices est de réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.
-
-- [TP html](/cours/data/tp_powerbi.html)
-- [TP pdf](/cours/data/tp_powerbi.pdf)
-- [TP markdown](/cours/data/tp_powerbi.md)
-
+- [🤓 Cours : Introduction aux tableaux de bord et feuilles de route](/cours/data/tableau_bord_cours)
+- [💻 TP Dashboard PowerBI et Feuille de route](/cours/data/tp_powerbi) : réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.

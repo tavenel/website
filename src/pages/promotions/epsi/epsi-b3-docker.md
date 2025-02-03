@@ -1,5 +1,6 @@
 ---
 title:   Tom Avenel - B3 Docker
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 #   Docker : introduction aux conteneurs
@@ -21,25 +22,26 @@ Module de 10H
 
 ## Documents
 
-### Cours Docker et Kubernetes
+### Docker
 
 - [🤓 Cours - introduction à Docker](/cours/docker/docker-cours)
-- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
-- [🤓 Cheatsheets commandes Docker®, Dockerfile, Kubernetes®](/cours/docker/docker-cheatsheets)
-
-### TPs partie Docker
-
+- [🤓 Cheatsheet commandes Docker®, Dockerfile & Docker Compose](/cours/docker/docker-cheatsheet)
 - [  TP Docker® : Introduction à l'usage de conteneurs](/cours/docker/tp_docker)
 - [  TP Docker Compose : Gestion de services applicatifs](/cours/docker/tp_docker-compose)
 
-### TPs partie Kubernetes
+### Kubernetes
 
+- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
+- [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP Kubernetes : Premiers pas avec k8s](/cours/docker/tp_k8s)
 - [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s)
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk)
 
 ### 📌 Projet Docker et Kubernetes : application de vote
 
-- [Sujet du projet](/cours/docker/projet_vote_k8s)
-- Sources git : <https://git.sr.ht/~toma/docker-vote>
+- 📄 [Sujet du projet](/cours/docker/projet_vote_k8s)
+-  Sources git : <https://git.sr.ht/~toma/docker-vote>
 
+## Pour aller plus loin
+
+- Voir les autres ressources du [cours sur Docker & Kubernetes](/cours/docker).

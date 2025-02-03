@@ -23,19 +23,19 @@ title: 📅 Gestion de projet
 
 - [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges/cahier_charges-cours)
 - Exemples de cahier des charges :
-  - Devis vers facture, CDC fonctionnel : [pdf](/cours/gestion-projet/cahier-charges/dvf_fonctionnel.pdf)
-  - Devis vers facture, CDC technique  : [pdf](/cours/gestion-projet/cahier-charges/dvf_technique.pdf)
-  - Cahier des charges technique : [pdf](/cours/gestion-projet/cahier-charges/ex_t1.pdf)
+  - Devis vers facture, CDC fonctionnel : [pdf](/cours/gestion-projet/cahier-charges/dvf_fonctionnel.pdf) <!-- TODO -->
+  - Devis vers facture, CDC technique  : [pdf](/cours/gestion-projet/cahier-charges/dvf_technique.pdf) <!-- TODO -->
+  - Cahier des charges technique : [pdf](/cours/gestion-projet/cahier-charges/ex_t1.pdf) <!-- TODO -->
   - Cahier des charges : [Hotel Paradis](https://docs.google.com/document/d/1k1kHGk7QgoY3-hMCi0CURhRDo0zMawqyDluuXvYmq5E)
 - [📌 Projet - écrire un cahier des charges](/cours/gestion-projet/cahier-charges/projet-cdc)
 
 ## Agilité
 
 - 🤓 Scrum et les méthodes agiles (cours)
-  - [pdf (1,3M)](/cours/gestion-projet/agile/scrum.pdf)
-  - [pptx (1,9M)](/cours/gestion-projet/agile/scrum.pptx)
+  - [pdf (1,3M)](/cours/gestion-projet/agile/scrum.pdf) <!-- TODO -->
+  - [pptx (1,9M)](/cours/gestion-projet/agile/scrum.pptx) <!-- TODO -->
 - [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
-- [💻 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
+- [📌 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
 
 ## 🏷️ UML® 
 

@@ -1,10 +1,9 @@
 ---
 title: 💬 Tom Avenel - I2 Distanciel
+layout: ../../../layouts/BaseLayout.astro
 ---
 
 # 💬 Partage d'informations et collaboration à distance
-
-![](/resources/images/cover/distanciel.jpg)
 
 ## Présentation du module
 
@@ -22,14 +21,6 @@ Module de 7H.
 
 ## Documents
 
-### 🤓 Partage d'informations et collaboration à distance (cours)
+- [🤓 Partage d'informations et collaboration à distance (cours)](/cours/management/distanciel/cours-presentation-distance-outils-collab)
+- [📌 Atelier pratique - Présentation en distanciel](/cours/management/distanciel/presentation_distanciel)
 
-- [html](/cours/management/distanciel/cours-presentation-distance-outils-collab.html)
-- [pdf](/cours/management/distanciel/cours-presentation-distance-outils-collab.pdf)
-- [markdown](/cours/management/distanciel/cours-presentation-distance-outils-collab.md)
-
-### 📌 Atelier pratique - Présentation en distanciel
-
-- [html](/cours/management/distanciel/presentation_distanciel.html)
-- [pdf](/cours/management/distanciel/presentation_distanciel.pdf)
-- [markdown](/cours/management/distanciel/presentation_distanciel.md)
