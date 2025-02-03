@@ -66,6 +66,7 @@ Quelques références utiles en informatique.
 
 ## Liens transverses
 
+- Les méta-lois en informatique : <https://github.com/StephaneTrebel/presentations/tree/main/meta-lois>
 - [CERISE : Conseils aux Etudiants en Recherche d'InformationS Efficace](https://callisto-formation.fr/course/view.php?id=263)
 - Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
 - Gérer la variable d'environnement `$PATH` :
