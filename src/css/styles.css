@@ -1129,3 +1129,24 @@ body.dark {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+
+
+
+
+/*
+* Change style for physically printed documents.
+* Keep at the end of this file.
+*/
+@media print {
+  header,
+  footer,
+  nav,
+	#course-header,
+	#chapters {
+    display: none !important;
+  }
+
+	h1 {
+		text-align:center;
+	}
+}

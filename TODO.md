@@ -15,9 +15,6 @@
 - RSS :     <link rel='alternate' type='application/rss+xml' title={SiteMetadata.title} href={`${Astro.site}rss.xml`} />
 - merge "links" page (?) => "links" and "tools" idem ?
 
-- PDFs
-  - https://github.com/inokawa/remark-docx
-  - https://github.com/inokawa/remark-pdf
 
 - promotions => https://docs.astro.build/en/guides/content-collections/#the-collection-config-file
 

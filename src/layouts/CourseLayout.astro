@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/BaseLayout.astro';
 import Diagrams from '@components/Diagrams.astro';
+import Print from '@components/Print.astro';
 import Versioning from '@components/Versioning.astro';
 
 import { GIT_FILE_TREE_PAGES } from '@ts/constants.ts';
@@ -21,15 +22,19 @@ type Props = MarkdownLayoutProps<{
 const { frontmatter, url } = Astro.props;
 const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 ---
+
 <Layout title={frontmatter.title} url={url}>
 	<h1 id="title">{frontmatter.title}
-	<a tabindex="-1" class="add-bookmark" href="#">
-		<span class="icon icon-link"></span>
-	</a>
-</h1>
-		<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
+	  <a tabindex="-1" class="add-bookmark" href="#">
+		  <span class="icon icon-link"></span>
+	  </a>
+  </h1>
 	<div id="course-header">
 		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
+		<div id="formats">
+			<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
+			<Print />
+		</div>
 	</div>
 	<slot />
 	<Diagrams
