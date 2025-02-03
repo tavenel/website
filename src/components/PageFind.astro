@@ -4,3 +4,18 @@ import Search from "astro-pagefind/components/Search";
 
 <Search id="menu-search" className="pagefind-ui" uiOptions={{ showImages: true, showSubResults: true }} />
 
+<script>
+function handleShortcut(event) {
+	if (event.ctrlKey && event.key === 'k') {
+		event.preventDefault();
+		const items = document.getElementsByClassName("pagefind-ui__search-input");
+		if (items && items.length === 1) {
+			items[0].focus();
+		} else {
+			console.error("Expected to find exactly 1 search input, got", items);
+		}
+	}
+}
+document.addEventListener("keydown", handleShortcut);
+</script>
+

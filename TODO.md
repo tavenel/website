@@ -21,10 +21,6 @@
 
 - promotions => https://docs.astro.build/en/guides/content-collections/#the-collection-config-file
 
-- search
-  - C-k shortcut => launch search
-  - PageFind results theme : https://pagefind.app/docs/ui-usage/
-
 - diagrams
   - Astro component : better loading (add yarn dep, …) instead of inline script
   - fix style : .flowchartTitleText
@@ -35,6 +31,7 @@
   - fix v-clicks (auto -> slidev)
 
 - theme :
+  - PageFind results theme : https://pagefind.app/docs/ui-usage/
   - h2#chapitres => floating (right ?), always visible, collapsible
 	- styles.css => !important ?
 	- laserwave: 'laserwave', => neon violet
