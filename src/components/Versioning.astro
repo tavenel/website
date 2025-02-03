@@ -1,0 +1,21 @@
+---
+const { date, created, modified, checked } = Astro.props;
+interface Props {
+	date?: string;
+	created?: string;
+	modified?: string;
+	checked?: string;
+
+};
+
+const initialDate = created ? new Date(created).toLocaleDateString() : undefined;
+const lastModified = modified ? new Date(modified).toLocaleDateString() : undefined;
+const checkedDate = checked ? new Date(checked).toLocaleDateString() : undefined;
+---
+<div class="versioning">
+	{date && <div class="version-first">Date : {date}</div>}
+	{created && <div class="version-first">Publié le : {initialDate}</div>}
+	{modified && <div class="version-update">Mis à jour : {lastModified}</div>}
+	{checked && <div class="version-checked">Contenu vérifé le : {checkedDate}</div>}
+</div>
+

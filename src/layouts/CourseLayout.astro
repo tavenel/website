@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/BaseLayout.astro';
 import Diagrams from '@components/Diagrams.astro';
+import Versioning from '@components/Versioning.astro';
 
 import { GIT_FILE_TREE_PAGES } from '@ts/constants.ts';
 
@@ -18,9 +19,6 @@ type Props = MarkdownLayoutProps<{
 // Now, `frontmatter`, `url`, and other Markdown layout properties
 // are accessible with type safety
 const { frontmatter, url } = Astro.props;
-const initialDate = frontmatter.created ? new Date(frontmatter.created).toLocaleDateString() : '?';
-const lastModified = frontmatter.lastModified ? new Date(frontmatter.lastModified).toLocaleDateString() : '?';
-const checkedDate = frontmatter.checked ? new Date(frontmatter.checked).toLocaleDateString() : '?';
 const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 ---
 <Layout title={frontmatter.title} url={url}>
@@ -29,12 +27,9 @@ const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 		<span class="icon icon-link"></span>
 	</a>
 </h1>
-	<div class="versioning">
-		{frontmatter.date && <div class="version-first">Date : {frontmatter.date}</div>}
-		{frontmatter.created && <div class="version-first">Publié le : {initialDate}</div>}
-		{frontmatter.lastModified && <div class="version-update">Mis à jour : {lastModified}</div>}
-		{frontmatter.checked && <div class="version-checked">Contenu vérifé le : {checkedDate}</div>}
 		<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
+	<div id="course-header">
+		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
 	</div>
 	<slot />
 	<Diagrams
