@@ -262,6 +262,45 @@ a.add-bookmark {
 	--dark-link: #09D4FF; /* #4da6ff;*/
 }
 
+[data-theme="none"] {
+	/* A theme with default browser styling. */
+	--background: inherit;
+	--text: inherit;
+	--link: inherit;
+	--link-hover: inherit;
+	--link-visited: inherit;
+	--link-border: inherit;
+	--h1: inherit;
+	--h2: inherit;
+	--h3: inherit;
+	--h4: inherit;
+	--hr: inherit;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--promo-link: inherit;
+	--promo-background: inherit;
+	--epsi: inherit;
+	--epsi-li: inherit;
+	--esgi: inherit;
+	--esgi-li: inherit;
+	--cesi: inherit;
+	--cesi-li: inherit;
+	--wis: inherit;
+	--wis-li: inherit;
+	--poec: inherit;
+	--poec-li: inherit;
+	--cours-cat-li: inherit;
+	--cours-link-text: inherit;
+	--cours-link-border: inherit;
+	--versioning: inherit;
+	--select-color: inherit;
+	--mermaid-title: inherit;
+}
+
 [data-theme="github"] {
 	/* 
 * Github Light - default theme.
