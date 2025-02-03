@@ -135,7 +135,7 @@ La dernière étape correspond à l'écriture de l'enveloppe du mail (c'est-à-d
 
 La dernière ligne doit être un caractère point `.` seul, ce qui permet de finir le corps du message et d'envoyer le mail.
 
-```smtp
+```
 DATA
 From: adresse@expediteur.com
 To: adresse@destinataire.com

@@ -842,7 +842,7 @@ root@config-map:/# cat /configs/ma_conf_test.conf
 Injecter le fichier d'environnement suivant dans un conteneur. Vérifier que la variable d'environnement est bien injectée dans le conteneur.
 :::
 
-```env
+```dotenv
 serveur1=1.2.3.4
 serveur2=1.2.3.5
 ```

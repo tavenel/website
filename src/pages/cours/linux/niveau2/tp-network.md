@@ -94,7 +94,7 @@ Le fichier `/etc/network/interfaces` permet de configurer le réseau de manière
 
 #### Exemple de fichier `/etc/network/interfaces`
 
-```/etc/network/interfaces
+```
 # loopback
 auto lo
 iface lo inet loopback
@@ -222,7 +222,7 @@ Il s'agit de la table `ARP` qui affiche les corrélations entre adresses IP et a
 
 L'ordre de résolution des noms est géré par priorité dans le fichier de configuration _Name Service Switch_ : `/etc/nsswitch.conf`
 
-```/etc/nsswitch.conf
+```
 hosts: files dns
 ```
 
@@ -230,7 +230,7 @@ hosts: files dns
 
 - Le fichier `/etc/hosts` contient les résolutions codées en dur sur la machine locale (par exemple : `localhost`)
 
-```/etc/hosts
+```
 127.0.0.1 localhost
 192.168.1.10 foo.mydomain.org foo
 ::1 localhost ip6-localhost ip6-loopback
@@ -240,7 +240,7 @@ hosts: files dns
 
 - Le fichier `/etc/resolv.conf` contient les adresses des serveurs de noms distants
 
-```/etc/resolv.conf
+```
 # Google
 nameserver 8.8.8.8
 # Auto-add the domain to short hostnames

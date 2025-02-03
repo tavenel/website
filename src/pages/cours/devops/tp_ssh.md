@@ -118,7 +118,7 @@ sudo nano /etc/ssh/sshd_config
 
 Recherchez les lignes suivantes et modifiez-les comme indiqué :
 
-```conf
+```
 PubkeyAuthentication yes
 PasswordAuthentication no
 ```

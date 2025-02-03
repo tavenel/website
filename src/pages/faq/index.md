@@ -35,7 +35,7 @@ Les tâches sont décrites dans un fichier nommé `Makefile`.
 
 Exemple de `Makefile` :
 
-```Makefile
+```makefile
 install :
     npm install
 test : install

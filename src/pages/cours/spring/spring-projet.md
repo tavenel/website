@@ -396,7 +396,7 @@ Nous allons utiliser les tags de formulaire Spring permettant d'utiliser la noti
 
 Pour cela on pourra utiliser les 2 `taglib` suivantes dans les vues possédant des formulaires :
 
-```jsp
+```html
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -423,7 +423,7 @@ public class MyEntity {
 
 On pourra utiliser le formulaire suivant :
 
-```jsp
+```html
 <form:form method="POST" action="/monAction" modelAttribute="myEntity">
 
 <form:label path="attributA">Attribut A</form:label>

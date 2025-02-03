@@ -866,7 +866,7 @@ Voir le [TP sur les journaux][tp-syslog].
 
 #### Fichier `/etc/network/interfaces`
 
-```/etc/network/interfaces
+```
 # loopback
 auto lo
 iface lo inet loopback
@@ -902,16 +902,17 @@ iface enp3s6 inet static
 - `files` => local (`/etc/hosts`)
 - `dns` => resolver DNS (`/etc/resolv.conf`)
 
-```/etc/nsswitch.conf
+```
 hosts: files dns
 ```
+
 ---
 
 #### Résolution locale
 
 - Fichier `/etc/hosts`
 
-```/etc/hosts
+```
 127.0.0.1 localhost
 192.168.1.10 foo.mydomain.org foo
 ::1 localhost ip6-localhost ip6-loopback
@@ -923,7 +924,7 @@ hosts: files dns
 
 - Fichier `/etc/resolv.conf`
 
-```/etc/resolv.conf
+```
 # Google
 nameserver 8.8.8.8
 # Auto-add the domain to short hostnames

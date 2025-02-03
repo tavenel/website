@@ -542,7 +542,7 @@ Le protocole `SMB` (Server Message Block), autrefois `CIFS`, est un protocole pe
 
 Les ressources partagées sont accessibles à partir d'une adresse utilisant la convention `UNC` de type : 
 
-```smb
+```
 \\serveur\partage\chemin\nom_fichier
 ```
 

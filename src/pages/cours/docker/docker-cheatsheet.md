@@ -412,7 +412,7 @@ docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
 - Seul le dernier `FROM …` reste dans l'image finale, le reste est détruit…
 - …Mais accès aux fichiers d'un autre layer `FROM` précédent par `COPY --from=etapeX …` dans le `Dockerfile`
 
-```Dockerfile
+```dockerfile
 FROM npm AS mon-build
 RUN npm package
 

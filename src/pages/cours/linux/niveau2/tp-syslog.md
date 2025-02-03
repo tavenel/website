@@ -30,7 +30,7 @@ Certaines de ces informations sont optionnelles.
 
 Par exemple :
 
-```syslog
+```log
 Sep 14 14:09:09 machine_de_test dhcp service[warning] 110 corps du message
 ```
 

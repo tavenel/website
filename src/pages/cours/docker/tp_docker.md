@@ -124,7 +124,7 @@ Un `Dockerfile` démarre par l’instruction `FROM` qui indique quelle est l’i
 
 Nous allons partir de l’image officielle `debian:12`
 
-```Dockerfile
+```dockerfile
 FROM debian:12
 ```
 
@@ -134,7 +134,7 @@ L'instruction `RUN` permet d’exécuter des commandes dans l’image durant sa 
 
 Nous allons installer `NginX` dans l'image pour éviter de le faire à chaque création de conteneur :
 
-```Dockerfile
+```dockerfile
 RUN apt-get update -yq && apt-get install -yq nginx
 ```
 
@@ -148,7 +148,7 @@ Le `Dockerfile` possède un ensemble d’instructions permettant de configurer l
 
 Nous allons exposer le port 80 de `NginX` dans chaque conteneur créé depuis notre image :
 
-```Dockerfile
+```dockerfile
 EXPOSE 80
 ```
 
@@ -160,7 +160,7 @@ Cette instruction ne sera pas utilisée lors de la création de l’image et ser
 
 Ici, nous allons exécuter la commande `nginx` qui démarre `NginX` et rend la main. Pour que notre conteneur ne s’arrête pas après l'exécution de la commande `NginX`, on ajoute un `sleep infinity` pour continuer à faire tourner le conteneur :
 
-```Dockerfile
+```dockerfile
 CMD nginx && sleep infinity
 ```
 
@@ -168,7 +168,7 @@ CMD nginx && sleep infinity
 
 Résumé du `Dockerfile` complet :
 
-```Dockerfile
+```dockerfile
 FROM debian:12
 
 RUN apt-get update -yq && apt-get install -yq nginx
@@ -228,7 +228,7 @@ Il est possible d'utiliser plusieurs `FROM … AS etapeX` dans un `Dockerfile` :
 
 Utilisons un multi-stage build pour un `hello-world` de Golang en créant un fichier `main.go` :
 
-```golang
+```go
 //main.go
 package main
 
@@ -243,7 +243,7 @@ func main() {
 
 Nous allons d'abord commencer par créer un `Dockerfile` pour builder le fichier dans un environnement `Golang`.
 
-```Dockerfile
+```dockerfile
 # Stage 1: Build Environment (Golang)
 FROM golang:alpine AS build-stage
 # À faire: Copier le fichier main.go de la machine dans l'image
@@ -269,7 +269,7 @@ docker run --rm multi:v1 /bin/ls
 
 Ajouter un 2e stage dans le `Dockerfile` précédent pour créer un 2e layer sur l'image, servant à exécuter le fichier compilé. Le `golang` étant compilé en langage machine, il n'est plus nécessaire d'avoir une image avec un environnement `golang` complet : on utilisera un simple système `alpine`.
 
-```Dockerfile
+```dockerfile
 # Stage 1: Build Environment (Golang)
 FROM golang:alpine AS build-stage
 # À faire: Copier le fichier main.go de la machine dans l'image
@@ -298,7 +298,7 @@ docker run --rm multi:v2 /bin/ls
 ```
 
 ::: {.correction .if correction="true"}
-```Dockerfile
+```dockerfile
 # Stage 1: Build Environment (Golang)
 FROM golang:alpine AS build-stage
 COPY main.go .

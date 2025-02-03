@@ -76,7 +76,7 @@ Le nom du service peut varier dans d'autres distributions : `crond.service` sous
 
 Le fichier `/etc/crontab` permet de planifier finement la répétition d'une commande.
 
-```/etc/crontab
+```crontab
 SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
@@ -93,7 +93,7 @@ MAILTO=root
 
 Par exemple, pour lancer un script toutes les minutes :
 
-```/etc/crontab
+```crontab
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)
