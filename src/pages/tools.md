@@ -136,6 +136,7 @@ created: 2024-10-17
 - diagrammes : `plantuml`, `mermaid`, `ditaa`, `kroki`, <https://diagrams.mingrammer.com/>, `dot`
 - 💲 `Infracost` : track coût plateformes IaC (`Terraform`, …)
 - </> `Typer` : librairie Python pour écrire facilement une CLI
+- <https://github.com/Textualize/rich> : Rich library for text-based GUI and advanced text formatting in Python
 
 ### 🛠️ Build tools et dépendances
 
@@ -224,6 +225,7 @@ created: 2024-10-17
 - `docusaurus` : wiki
 - `MarkItDown`: PDF, PPT, Word vers Markdown
 - <https://github.com/getomni-ai/zerox> : PDF, PPT, Word vers Markdown using AI for OCR
+- `asciinema` : enregistrement de sessions de terminal
 
 ### 🤵 IAM, SSO
 
