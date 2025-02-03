@@ -79,7 +79,7 @@ _Ajouter un fichier `README.md` pour afficher le badge de statut sur la page d'a
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
 - GITHUB®, the GITHUB® logo design, the INVERTOCAT logo design, OCTOCAT®, and the OCTOCAT® logo design are trademarks of GitHub, Inc., registered in the United States and other countries.
 

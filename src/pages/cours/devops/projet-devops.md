@@ -116,7 +116,7 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker, Docker Swarm and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Prometheus®, Kubernetes® and K8s® are registered trademarks of The Linux Foundation in the United States and/or other countries.
 - Oracle and Oracle® VirtualBox are registered trademarks of Oracle and/or its affiliates.

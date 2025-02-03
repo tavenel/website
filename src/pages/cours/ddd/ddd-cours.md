@@ -3,7 +3,7 @@
 #theme: the-unnamed
 slidev: true
 paginate: true
-#footer: _© 2024 Tom Avenel under 󰵫  BY-SA 4.0_
+#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: DDD
 keywords:
 - ddd
@@ -24,7 +24,7 @@ _Tom Avenel_
 
 <span class="legende">©lesdieuxducode.com</span>
 
-<!-- _footer: "© 2024 Tom Avenel under 󰵫  BY-SA 4.0" -->
+<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
 
 ---
 layout: center

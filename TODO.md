@@ -4,9 +4,9 @@
 
 - https://github.com/sergioramos/remark-hint?tab=readme-ov-file
 - https://github.com/remarkjs/remark-validate-links
+
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
-- Copyright 2025
 - analytics
 - Cours : liens outils et transverses => 2 cards
 - "latest" page

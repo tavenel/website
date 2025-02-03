@@ -39,7 +39,7 @@ Ouvrez votre navigateur et accédez à <http://localhost/mon_projet> pour voir l
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
 
 

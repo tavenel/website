@@ -172,7 +172,7 @@ On sera donc particulièrement vigilant à optimiser la performance de ces tests
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Apache, Apache Maven, and Maven are trademarks of the Apache Software Foundation.
 - Jenkins® is a registered trademark of LF Charities Inc.
 - GRADLE is a trademark of GRADLE, INC.

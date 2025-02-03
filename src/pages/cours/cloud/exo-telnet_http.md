@@ -45,4 +45,4 @@ _Vérifier que le serveur renvoie bien un code de retour de succès (HTTP 2xx)._
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0

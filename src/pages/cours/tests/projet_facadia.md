@@ -291,5 +291,5 @@ Implémenter une automatisation de cette recette fonctionnelle en utilisant le f
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Ce projet est inspiré du tutoriel OpenClassrooms sous license CC  BY-SA : [testez vos applications frontend avec javascript](https://openclassrooms.com/fr/courses/7159306-testez-vos-applications-front-end-avec-javascript).

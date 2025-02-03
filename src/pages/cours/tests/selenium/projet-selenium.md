@@ -53,7 +53,7 @@ Le barème est le suivant :
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - SELENIUM is a trademark of Software Freedom Conservancy, Inc.
 - Firefox® is a registered trademark of the Mozilla Foundation.
 - Chrome™ is a trademark of Google LLC.

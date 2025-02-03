@@ -1,7 +1,7 @@
 ---
 marp: true
 paginate: true
-#footer: _© 2024 Tom Avenel under 󰵫  BY-SA 4.0_
+#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Linux Networking
 keywords:
 - linux
@@ -17,7 +17,7 @@ _Tom Avenel_
 
 <https://www.avenel.pro/>
 
-<!-- _footer: "© 2024 Tom Avenel under 󰵫  BY-SA 4.0" -->
+<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
 
 ---
 

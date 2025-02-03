@@ -227,7 +227,7 @@ On pourra commencer par exécuter des déploiements `Sélénium` standalone. Lor
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - SELENIUM is a trademark of Software Freedom Conservancy, Inc.
 - GRADLE is a trademark of GRADLE, INC
 - Oracle and Java are registered trademarks of Oracle and/or its affiliates.

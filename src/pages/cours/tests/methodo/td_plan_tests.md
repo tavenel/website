@@ -33,4 +33,4 @@ Décrire également les risques liés aux choix actuels d'architecture, concerna
  
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0

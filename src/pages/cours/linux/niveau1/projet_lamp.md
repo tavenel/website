@@ -188,7 +188,7 @@ header('Location: minichat.php');
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Linux is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Apache is a trademark of the Apache Software Foundation.
 - Oracle and MySQL are registered trademarks of Oracle and/or its affiliates.

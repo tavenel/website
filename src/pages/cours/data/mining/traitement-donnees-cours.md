@@ -2,6 +2,8 @@
 title: Introduction au Data Mining
 date: 2023 / 2024
 correction: false
+extra:
+- math
 ---
 
 # Introduction

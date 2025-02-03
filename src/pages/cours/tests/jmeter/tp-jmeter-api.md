@@ -55,6 +55,6 @@ Il est attendu une archive des tests de performance effectués sur votre applica
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Oracle and Java are registered trademarks of Oracle and/or its affiliates.
 - Jenkins® is a registered trademark of LF Charities Inc.

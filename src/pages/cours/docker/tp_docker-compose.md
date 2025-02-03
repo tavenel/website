@@ -92,7 +92,7 @@ Suivre [cet exercice OpenClassrooms](https://openclassrooms.com/fr/courses/20357
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Oracle and MySQL are registered trademarks of Oracle and/or its affiliates.
 - WordPress is a registered trademark of the WordPress Foundation in the United States and other countries.

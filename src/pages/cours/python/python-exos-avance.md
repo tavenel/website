@@ -95,5 +95,5 @@ Source et crédit : <https://python.developpez.com/exercices/?page=Problemes-com
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well.

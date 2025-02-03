@@ -44,6 +44,6 @@ Le barème est le suivant :
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - "Python" is a registered trademark of the PSF.
 

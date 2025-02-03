@@ -192,7 +192,7 @@ Une façon courante d’installer `Loki` est d'utiliser `Helm` : voir <https://g
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Prometheus® is a registered trademark of The Linux Foundation in the United States and/or other countries.

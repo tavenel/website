@@ -279,4 +279,4 @@ La couverture par instructions est un sous-ensemble de la couverture par décisi
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0

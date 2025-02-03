@@ -41,5 +41,5 @@ Cela va exécuter `grep <mon_pattern>` pour chacun des fichiers trouvés précé
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Linux is a registered trademark of The Linux Foundation in the United States and/or other countries.

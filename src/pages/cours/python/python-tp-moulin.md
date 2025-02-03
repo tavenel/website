@@ -130,4 +130,4 @@ Le développement de l'interface graphique peut être intégré dès la créatio
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0

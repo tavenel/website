@@ -1,7 +1,7 @@
 ---
 marp: true
 paginate: true
-#footer: _© 2024 Tom Avenel under 󰵫  BY-SA 4.0_
+#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Ansible
 keywords:
 - devops

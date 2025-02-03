@@ -1579,7 +1579,7 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
 - Oracle and MySQL are registered trademarks of Oracle and/or its affiliates.
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well. ®

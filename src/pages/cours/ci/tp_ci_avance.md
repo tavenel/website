@@ -59,7 +59,7 @@ On pourra se demander comment raffiner le pipeline d'intégration continue afin 
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - Spring® is a trademark of Pivotal Software, Inc. in the U.S. and other countries.
 - Prometheus® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Oracle and Java are registered trademarks of Oracle and/or its affiliates.

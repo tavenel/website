@@ -94,5 +94,5 @@ Note : Les noms des buckets `S3` sont très sensibles à la casse et aux caract�
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - “Amazon Web Services", the “Powered by Amazon Web Services” logo, Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage Service (Amazon S3), Amazon Relational Database Service (Amazon RDS) are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries

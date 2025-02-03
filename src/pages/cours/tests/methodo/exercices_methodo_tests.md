@@ -113,4 +113,4 @@ _On supposera les différents composants déjà réalisés et testés unitaireme
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0

@@ -43,6 +43,6 @@ Note : Pendant le développement du site Web, on pourra visualiser (et modifier 
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - WordPress is a registered trademark of the WordPress Foundation in the United States and other countries.
 

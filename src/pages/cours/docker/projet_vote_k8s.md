@@ -28,5 +28,5 @@ Pour permettre ce déploiement, il faudra donc :
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 

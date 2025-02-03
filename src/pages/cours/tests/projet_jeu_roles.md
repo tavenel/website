@@ -82,7 +82,7 @@ Le barème est le suivant :
 
 # Legal
 
-- © 2024 Tom Avenel under CC  BY-SA 4.0
+- © 2025 Tom Avenel under CC  BY-SA 4.0
 - SELENIUM is a trademark of Software Freedom Conservancy, Inc.
 - "Python" is a registered trademark of the PSF.
 - Java is a registered trademark of Oracle and/or its affiliates.
