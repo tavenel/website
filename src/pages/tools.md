@@ -87,6 +87,7 @@ created: 2024-10-17
   - `Consul` (+DNS, reverse proxy, load balancing, …)
   - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par `Kiali`
 	- `Cilium` : networking, security, observability
+	- `ingress2gateway` : aide à convertir un _Ingress_ en _Gateway API_
 - 📦📦 scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
 - 🔒 sécurité
