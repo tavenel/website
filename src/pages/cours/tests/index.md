@@ -6,6 +6,7 @@ title: 🧪 Tests logiciels
 
 ## Méthodologie des tests
 
+- [🤓 Cours intégral : méthodologie des tests](/cours/tests/methodo/cours-full)
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)
 - 🤓 Cours : les types de tests : [pdf (2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
 - [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
@@ -15,7 +16,7 @@ title: 🧪 Tests logiciels
 - [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
 - [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
 - [🤓 Cours sur l'industrialisation des tests](/cours/tests/methodo/indus-tests-cours)
-- [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd/hexagonal)
+- [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd)
 - [🤓 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
 - [🤓 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
@@ -83,3 +84,11 @@ title: 🧪 Tests logiciels
 - [Cas d'étude sur les tests d'intégration](https://blog.thecodewhisperer.com/permalink/using-integration-tests-mindfully-a-case-study)
 - [Définition d'un test unitaire](https://www.artofunittesting.com/definition-of-a-unit-test)
 - [Vidéo sur les tests unitaires et la progammation par contrats](https://blog.thecodewhisperer.com/series#integrated-tests-are-a-scam)
+- Liens Openclassrooms : 
+  - [Testez l'interface de votre site](https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site)
+  - [Testez fonctionnellement votre application PHP Symfony](https://openclassrooms.com/fr/courses/4087076-testez-fonctionnellement-votre-application-php-symfony)
+- Livre [A Frontend Web Developer's Guide to Testing](https://univ.scholarvox.com/catalog/book/docid/88929017)
+
+## ⚒️ Outils
+
+- Voir la [⚒️ page sur les outils](/tools)
