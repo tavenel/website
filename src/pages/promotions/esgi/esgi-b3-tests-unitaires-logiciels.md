@@ -181,4 +181,4 @@ Les frameworks.
 
 ## Pour aller plus loin
 
-- Voir les autres ressources du [cours sur les tests](/cours/tests) et du [cours sur l'intégration continue](/cours/ci).
+- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests) et du [cours sur l'intégration continue](/cours/ci).

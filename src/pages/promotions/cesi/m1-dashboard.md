@@ -3,7 +3,7 @@ layout: '../../../layouts/BaseLayout.astro'
 title: Tableaux de bord et pilotage des applications du SI
 ---
 
-# Tableaux de bord et pilotage des applications du SI
+# 📈 Tableaux de bord et pilotage des applications du SI
 
 ## Présentation du module
 

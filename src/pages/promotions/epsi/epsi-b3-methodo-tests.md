@@ -43,4 +43,4 @@ Module de 10H
 
 ## Pour aller plus loin
 
-- Voir les autres ressources du [cours sur les tests](/cours/tests).
+- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).

@@ -262,7 +262,7 @@ created: 2024-10-17
 
 ## 🧪 Tests
 
-- 🔗 Voir la [page de cours sur les tests](/cours/tests)
+- 🔗 Voir la [🧪 page de cours sur les tests](/cours/tests)
 - Tests unitaires :
   - Java : `Junit`, `TestNG`, `Mockito` (mocks)
   - Python : `Pyunit`, `Pytest`

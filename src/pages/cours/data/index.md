@@ -6,7 +6,7 @@ title: 📊 Formations Data
 
 ## 🔗 Tests de données
 
-Voir la [page de cours sur les tests](/cours/tests)
+Voir la [🧪 page de cours sur les tests](/cours/tests)
 
 ## 📈 Tableaux de bord et pilotage des applications du SI
 
@@ -15,7 +15,7 @@ Voir la [page de cours sur les tests](/cours/tests)
 
 ## ⛏️ Introduction au Data Mining
 
-### Cours théorique
+### Partie mathématique
 
 - [🤓 Mathématiques pour le Traitement des données (cours)](/cours/data/mining/traitement-donnees-cours)
 
