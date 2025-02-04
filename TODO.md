@@ -3,8 +3,7 @@
 - fix all unknown files at start
 - slides in Astro ? (or Marp / Slidev ?)
 
-- Callouts (`:::`) : <https://github.com/Microflash/remark-callout-directives>
-  - warning, exo, correction, strong, link
+- Callouts => correction : svg + style + callout
 
 - diagrams
   - Astro component : better loading (add yarn dep, …) instead of inline script
@@ -22,6 +21,7 @@
   - cleanup CSS "TODO"
   - fix diagram style : .flowchartTitleText
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
+	- Callouts themes : https://github.com/Microflash/remark-callout-directives
   - h2#chapitres => floating (right ?), always visible, collapsible
 	- styles.css => !important ?
 	- laserwave: 'laserwave', => neon violet
