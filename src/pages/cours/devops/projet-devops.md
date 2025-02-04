@@ -1,7 +1,7 @@
 ﻿---
 title: Projet DevOps
 date: 2023 / 2024
-keywords:
+tags:
 - agile
 - devops
 - docker

@@ -3,7 +3,7 @@ marp: true
 paginate: true
 #footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Industrialisation des tests
-keywords:
+tags:
 - tests
 - patterns
 ---

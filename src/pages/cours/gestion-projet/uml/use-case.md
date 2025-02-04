@@ -3,7 +3,7 @@ marp: true
 paginate: true
 #footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Diagrammes de Cas d'Utilisation et de Séquence
-keywords:
+tags:
 - projet
 - uml
 ---

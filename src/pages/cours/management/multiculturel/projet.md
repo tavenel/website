@@ -1,6 +1,6 @@
 ---
 title: Projet accompagner une équipe multiculturelle
-keywords:
+tags:
 - management
 ---
 

@@ -2,7 +2,7 @@
 marp: true
 #footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Le manuel utilisateur
-keywords:
+tags:
 - integration
 - production
 ---

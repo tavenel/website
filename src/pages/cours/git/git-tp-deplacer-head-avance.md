@@ -1,7 +1,7 @@
 ---
 title: TP Manipulations avancées de la HEAD
 date: 2023 / 2024
-keywords:
+tags:
 - git
 - ci
 - devops

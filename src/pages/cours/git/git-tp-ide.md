@@ -1,7 +1,7 @@
 ---
 title: TP Intégration de Git dans l'IDE VsCode
 date: 2023 / 2024
-keywords:
+tags:
 - git
 - vscode
 ---

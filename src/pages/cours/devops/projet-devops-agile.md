@@ -1,7 +1,7 @@
 ﻿---
 title: Atelier DevOps-SysOps & Atelier Méthodes Agiles
 date: 2022 / 2023
-keywords:
+tags:
 - devops
 - agile
 - docker

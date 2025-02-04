@@ -1,7 +1,7 @@
 ---
 title: TP Voyager et manipuler l'historique Git™
 date: 2023 / 2024
-keywords:
+tags:
 - git
 - ci
 - devops

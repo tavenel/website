@@ -1,7 +1,7 @@
 ---
 title: Gitignore
 date: 2023 / 2024
-keywords:
+tags:
 - git
 - ci
 - devops

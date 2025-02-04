@@ -3,7 +3,7 @@ marp: true
 paginate: true
 #footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Linux LPIC-101
-keywords:
+tags:
 - linux
 ---
 

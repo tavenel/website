@@ -1,7 +1,7 @@
 ---
 #footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Tests de données
-keywords:
+tags:
 - integration
 - data
 - tests

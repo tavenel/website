@@ -3,8 +3,6 @@
 - fix all unknown files at start
 - slides in Astro ? (or Marp / Slidev ?)
 
-- Callouts => correction : svg + style + callout
-
 - diagrams
   - Astro component : better loading (add yarn dep, …) instead of inline script
   - fix `katex` : loaded but nothing
@@ -12,7 +10,6 @@
 
 ## P2
 
-- .md frontmatter : keywords => tags
 - fix v-clicks (auto -> slidev)
 - "favorites" :
   - delete
@@ -23,6 +20,7 @@
   - fix diagram style : .flowchartTitleText
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
 	- Callouts themes : https://github.com/Microflash/remark-callout-directives
+  - Callouts => correction : svg in astro.config.mjs
   - h2#chapitres => floating (right ?), always visible, collapsible
 	- styles.css => !important ?
 	- laserwave: 'laserwave', => neon violet
