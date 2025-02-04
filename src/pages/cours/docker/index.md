@@ -26,4 +26,5 @@ title:   Docker® et 󱃾 Kubernetes®
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk) : le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.
 - [📌 Projet Docker et Kubernetes : application de vote](/cours/docker/projet_vote_k8s) : le but de ce TP est d'isoler et de déployer une application dans une stack de conteneurs Kubernetes
   -  Sources git : <https://git.sr.ht/~toma/docker-vote>
+- [📌 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/docker/projet_appli_kubernetes)
 
