@@ -6,9 +6,9 @@
 
 ## 🧞 Commands
 
+- The main build uses a <https://taskfile.dev> here : <./Taskfile.yml> 
 - `yarn run dev` => <http://localhost:4321>
 - `yarn run astro --help`
-- Upgrade Astro : `npx @astrojs/upgrade`
 
 ## 🔗 Links
 
@@ -18,3 +18,7 @@
 - <https://github.com/akebifiky/remark-simple-plantuml>
 - <https://github.com/hellotham/hello-astro/>
 - <https://github.com/shishkin/astro-pagefind/>
+
+## Licenses
+
+<./LICENSE>

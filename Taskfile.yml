@@ -1,0 +1,31 @@
+# A https://taskfile.dev (similar to Makefile)
+version: "3"
+
+tasks:
+  full-build:
+    deps: [build, licenses]
+
+  serve:
+    # serve in container on <http://localhost:8080>
+    cmds:
+      - docker run --rm --name astro-webserver -d -v "${PWD}/dist:/usr/share/nginx/html" -p 8080:80 nginx
+
+  serve-stop:
+    cmds:
+      - docker container stop astro-webserver
+
+  build:
+    cmds:
+      - yarn build
+
+  licenses:
+    cmds:
+      - cp .LICENSE.main LICENSE
+      - yarn licenses generate-disclaimer >> LICENSE
+      - yarn licenses list >> LICENSE
+
+  upgrade:
+    cmds:
+      - npx @astrojs/upgrade
+      - task: build
+      - task: licenses
