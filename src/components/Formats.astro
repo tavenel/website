@@ -1,0 +1,16 @@
+---
+import Print from '@components/Print.astro';
+import { GIT_FILE_TREE_PAGES } from '@ts/constants.ts';
+
+const { url } = Astro.props;
+interface Props {
+	url: string;
+};
+
+const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
+---
+
+<div id="formats">
+	<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
+	<Print />
+</div>

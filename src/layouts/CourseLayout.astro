@@ -1,10 +1,8 @@
 ---
 import Layout from '@layouts/BaseLayout.astro';
 import Diagrams from '@components/Diagrams.astro';
-import Print from '@components/Print.astro';
 import Versioning from '@components/Versioning.astro';
-
-import { GIT_FILE_TREE_PAGES } from '@ts/constants.ts';
+import Formats from '@components/Formats.astro';
 
 import type { MarkdownLayoutProps } from 'astro';
 type Props = MarkdownLayoutProps<{
@@ -20,7 +18,6 @@ type Props = MarkdownLayoutProps<{
 // Now, `frontmatter`, `url`, and other Markdown layout properties
 // are accessible with type safety
 const { frontmatter, url } = Astro.props;
-const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
 ---
 
 <Layout title={frontmatter.title} url={url}>
@@ -31,11 +28,9 @@ const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
   </h1>
 	<div id="course-header">
 		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
-		<div id="formats">
-			<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
-			<Print />
-		</div>
+		<Formats url={url} />
 	</div>
+	<h2 id="chapters">Chapitres</h2>
 	<slot />
 	<Diagrams
 		math={ frontmatter.extra?.includes('math') }
