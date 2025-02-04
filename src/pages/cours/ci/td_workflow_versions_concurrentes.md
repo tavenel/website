@@ -14,7 +14,7 @@ Dans la suite de l'exercice, un fichier unique `contenu.txt` simulera le contenu
 
 - Réfléchir à un workflow Git **simple** permettant de gérer en parallèle 2 versions stables du produit (versions `v1` et `v2` actuellement déployées en production) et une version future en cours de développement. Décrire les branches principales à utiliser (hors branches temporaires éventuelles) pour réaliser ce workflow.
 
-::: {.correction .if correction="true"}
+:::correction
 
 Le workflow utilise comme branches principales :
 
@@ -34,7 +34,7 @@ Le workflow utilise comme branches principales :
 
 _Attention à bien respecter la typo : `Versios` pour la suite de l'exercice !_
 
-::: {.correction .if correction="true"}
+:::correction
 
 1. Créer un dépôt sur `Github`.
 2. `v1` du fichier (en cours de développement):
@@ -58,7 +58,7 @@ Note - la `v3` n'existe pas encore en production, mais ce n'est pas un problème
 
 - Ajouter une nouvelle fonctionnalité `F1` au produit en cours de développement : pour cela, ajouter une ligne `F1` dans le fichier et intégrer ce changement dans la branche correspondante.
 
-::: {.correction .if correction="true"}
+:::correction
 
 - Déplacement dans la branche de développement : `git checkout v3`
 - Ajout de la ligne au fichier
@@ -80,7 +80,7 @@ Note - on pourrait également créer une branche de fonctionnalité dédiée ava
 
 _La version de développement contiendra donc toujours la ligne : `v2` et non `v2.1`_
 
-::: {.correction .if correction="true"}
+:::correction
 
 - Déplacement dans la branche `v2` : `git checkout v2`
 - Changement de `v2` en `v2.1`
@@ -98,7 +98,7 @@ _Un bug critique a été trouvé en production depuis la version 1 ! Dans le fic
 
 _Attention : pour réaliser le portage, on n'utilisera que des commandes `git`, c'est-à-dire que le changement de ligne dans le fichier ne devra être réalisé qu'une seule et unique fois depuis un éditeur de texte pour la version `v1`._
 
-::: {.correction .if correction="true"}
+:::correction
 
 - Correction dans la `v1` :
   - Déplacement dans la branche `v1` : `git checkout v1`
@@ -124,7 +124,7 @@ Note - sans branche intermédiaire de fonctionnalité `fix-typo`, on aurait pu d
 - Préparer une nouvelle version de développement à la suite de la version `v3` et ajouter une ligne `v4` dans le fichier.
 - Ne devrait-on pas attendre de déployer `v4` en production avant d'ajouter cette ligne dans le fichier ? Pourquoi ?
 
-::: {.correction .if correction="true"}
+:::correction
 
 Il suffit de préparer une nouvelle version `v4` pour la future production depuis `v3` :
 

@@ -6,13 +6,13 @@ title: Tom Avenel - FAQ
 
 ### Que signifie ce terme dans la culture Cloud / Devops ?
 
-::: link
+:::link
 Voir le glossaire de la _Cloud Native Computing Foundation_ : <https://glossary.cncf.io/fr/>
 :::
 
 ### Quelle est la différence entre un langage compilé, interprété, ou tournant dans une machine virtuelle ?
 
-::: link
+:::link
 Voir la section _"Exécuter du code"_ de cet article : <https://lafor.ge/rust/pourquoi/#executer-du-code>
 :::
 
@@ -20,7 +20,7 @@ Voir la section _"Exécuter du code"_ de cet article : <https://lafor.ge/rust/po
 
 Un shell (le programme qui exécute les commandes dans le terminal) utilise la variable PATH pour faire le lien entre le nom d'une commande et le chemin vers le fichier du programme à exécuter. Par exemple, lorsque l'on tape `ls mon_fichier`, le shell cherche le chemin du programme `ls` à exécuter dans les répertoires définis dans la variable PATH. Si le programme n'est pas trouvé, la variable PATH est sûrement mal configurée.
 
-::: tip
+:::tip
 Pour apprendre à gérer la variable d'environnement `$PATH` :
 
 - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
@@ -54,7 +54,7 @@ Voir [cet article](https://vinta.ws/code/use-makefile-as-the-task-runner-for-arb
 
 La programmation fonctionnelle utilise des concepts mathématiques permettant, entre autres, d'éviter les erreurs non gérées par l'utilisation de fonctions _pures_ (sans effet de bord).
 
-::: link
+:::link
 Voir ce très bon article pour une introduction (simple) à la programmation fonctionnelle sans concept mathématique.
 :::
 
@@ -72,7 +72,7 @@ Attention, sous Windows il faut remplacer `C:\...\mon_programme.exe` par des sla
 
 Par exemple, pour utiliser `vsCode` sous Windows avec le chemin par défaut : `git config --global core.editor "C:/Program\ Files/Microsoft\ VS\ Code/Code.exe --wait"`
 
-::: tip
+:::tip
 Si vous souhaitez utiliser `vsCode` comme éditeur, attention à bien ajouter l'option `--wait` à la commande : `git config --global core.editor "C:/.../code.exe --wait`. 
 :::
 
@@ -215,7 +215,7 @@ InnoDB n'accepte pas les écritures concurrentes - il y a certainement 2 serveur
 
 ### Lorsque j'utilise `docker compose` j'ai des erreurs `changes out of order` :
 
-::: link
+:::link
 Utiliser la dernière version de `docker` et `docker-compose`.
 
 Si vous avez installé `docker` via Docker Desktop, il se peut (2024-02) que la version de `docker-compose` installée ne soit pas compatible avec la dernière version de `docker`.

@@ -61,7 +61,7 @@ Suite à cette action, le modèle du plateau est mis à jour et c'est au 2e joue
 
 Le moteur de jeu doit également calculer si la partie est terminée ou non et déclarer le vainqueur.
 
-::: warning
+:::warn
 Attention : la cohérence du programme repose essentiellement sur le bon fonctionnement du moteur ! Ne pas négliger les tests dans cette partie
 :::
 
@@ -83,7 +83,7 @@ L'interface de cette IA doit être un module `ia` respectant le contrat suivant 
     - `"move",(x1,y1),(x2,y2),(u,v)` demande à déplacer un pion de la case `(X1,Y1)` à la case `(X2,Y2)` et à voler le pion en position `(u,v)`. Si aucun pion n'a été volé, alors `(u,v)` vaut `(None,None)`.
     - Attention : les retours de ces méthodes sont des tuples (et non une simple chaîne de caractères.Par exemple `"set",(x,y),(u,v)` est de type `tuple(str, tuple(int,int), tuple(int,int))`
 
-::: warning
+:::warn
 L'IA a 1 minute pour répondre : après une minute sans réponse ou si le programme crash (exception, ...), la partie s'arrête et l'IA est déclarée perdante.
 :::
 

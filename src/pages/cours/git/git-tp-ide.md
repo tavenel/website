@@ -6,11 +6,11 @@ keywords:
 - vscode
 ---
 
-::: link
+:::link
 Utiliser la documentation suivante pour apprendre à intégrer `git` directement dans l'IDE `VsCode` : <https://code.visualstudio.com/docs/sourcecontrol/overview>
 :::
 
-::: exo
+:::exo
 En utilisant la documentation précédente :
 
 - Créer un dépôt Git en ligne sur Github.
@@ -22,13 +22,13 @@ En utilisant la documentation précédente :
 - Utiliser votre IDE pour afficher le dernier commit ayant modifié la ligne du fichier sur lequel vous travaillez. Cette fonctionnalité est l'une des plus utiles une fois Git intégré dans notre IDE.
 :::
 
-::: exo
+:::exo
 Comment VsCode fait-il pour afficher chaque modification faite dans un fichier ? Git fournit en fait une commande dédiée : `git blame`.
 
 - Utiliser la commande `git blame` pour afficher les mêmes informations sur un fichier que celles affichées dans VsCode.
 :::
 
-::: link
+:::link
 VsCode est architecturé pour s'intégrer finement avec GitHub. Pour profiter des fonctions avancées de GitHub (`codespace`, ...), voir la documentation suivante : <https://code.visualstudio.com/docs/sourcecontrol/intro-to-git>
 :::
 

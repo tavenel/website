@@ -93,7 +93,7 @@ Objectif : Identifier le type de fichier.
 1. Identifier le type du fichier `/tmp/`.
 1. Retrouver les mêmes résultats avec la commande `ls`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 $ file /etc/passwd
 /etc/passwd: ASCII text
@@ -180,7 +180,7 @@ Instructions :
 1. Utilisez la commande `dd` pour copier le contenu de `source.txt` vers un nouveau fichier nommé `destination.txt`.
 1. Vérifiez que `destination.txt` contient le même contenu que `source.txt` en utilisant la commande `diff` pour comparer les fichiers.
 
-::: {.correction .if correction="true"}
+:::correction
 
 ```
 # Commandes gzip et bzip2

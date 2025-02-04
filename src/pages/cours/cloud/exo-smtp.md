@@ -24,7 +24,7 @@ set type=mx
 gmail.com
 ```
 
-::: tip
+:::tip
 La configuration `DNS` reçue est assez complexe : dans la suite du TP, on utilisera le serveur `SMTP` principal `smtp.office365.com:587`
 :::
 
@@ -82,7 +82,7 @@ On peut par exemple utiliser l'utilitaire `base64` :
 echo MA_CHAINE | base64
 ```
 
-::: warning
+:::warn
 Attention : `Base64` n'est pas un algorithme de chiffrement, uniquement un type d'encodage ! `SMTP` est non sécurisé, l'authentification n'est donc pas chiffrée par le protocole. Cependant, toute la communication est encapsulée dans un tunnel `TLS`, ce qui assure la sécurité des échanges.
 :::
 
@@ -125,7 +125,7 @@ rcpt to: adresse@destinataire.com
 
 Attention, `rcpt to` doit être en minuscule sous `openssl` !
 
-::: warning
+:::warn
 Même une fois authentifié, il est nécessaire de fournir une adresse d'émetteur. En effet, l'émetteur peut avoir plusieurs adresses mails ou des alias. Le protocole `SMTP` permet d'entrer n'importe quelle valeur dans ce champ, ce qui pose un gros problème d'usurpation d'identité ! Pour limiter le spam, la plupart des fournisseurs de mails vérifient que ce champ correspond à une adresse autorisée par l'utilisateur authentifié. Cela n'est pas une garantie : le protocole mail est donc par essence **non sûr** (on pourra résoudre ce problème en ajoutant des certificats dans les messages : `GPG`, ...)
 :::
 
@@ -146,14 +146,14 @@ Ceci est un message envoyé directement depuis SMTP
 .
 ```
 
-::: tip
+:::tip
 Pourquoi un champ `To:` alors qu'une requête `rcpt to:` a déjà été envoyée ? Le champ `To:` correspond à une information stockée dans l'enveloppe du mail et accessible au destinataire à sa lecture, alors que la requête `rcpt to:` décrit à qui réellement envoyer le message. Cela permet l'utilisation de _blind copies_ `bcc` : le destinataire ne saura pas que le message a également été transmis à d'autres destinataires.
 :::
 
 
 ## Exercice attendu :
 
-::: exo
+:::exo
 1. Envoyer un ou plusieurs mails de test à sa propre adresse mail. On pourra tester l'usage (et l'absence) des différents champs dans l'enveloppe du mail : `From:`, `To:`, ...
 2. Envoyer un mail depuis votre adresse en utilisant `SMTP` vers l'adresse du formateur. Le sujet du mail devra être : _tp-smtp-nom-prénom_
 :::

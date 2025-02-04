@@ -52,7 +52,7 @@ Voulez-vous supprimer /home/user/temp/test2.tmp ? (y/n) n
 2 fichiers .tmp trouvés, 1 supprimé(s).
 ```
 
-::: {.correction .if correction="true"}
+:::correction
 ### Corrigé
 
 ```bash
@@ -129,7 +129,7 @@ Répertoire /home/bob créé avec permissions 700.
 Répertoire /home/charlie créé avec permissions 700.
 ```
 
-::: {.correction .if correction="true"}
+:::correction
 ### Corrigé
 
 ```bash
@@ -192,7 +192,7 @@ Analyse des logs dans /var/log...
 Logs contenant des erreurs sauvegardés dans error_report.txt.
 ```
 
-::: {.correction .if correction="true"}
+:::correction
 ### Corrigé
 
 ```bash

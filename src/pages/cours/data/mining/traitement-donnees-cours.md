@@ -34,7 +34,7 @@ Le Data Mining est né de :
   + Attrition, satisfaction, etc.
 - Recherches en Intelligence artificielle, apprentissage, extraction de connaissances
 
-::: tip
+:::tip
 Qu'est-ce qu'un bon algorithme d'apprentissage ?
 
 - Interprétable : la règle de classification est "compréhensible" ;
@@ -70,7 +70,7 @@ Quelques paradoxes :
 
 ## Vocabulaire
 
-::: strong
+:::strong
 - _Donnée statistique_ : observation ou mesure qui sert de base à un raisonnement. C'est le point de départ pour une recherche.
 - _Individu_ ou _unité statistique_ : Élément observé ou mesuré : par exemple une personne dans un sondage, un objet dans un comparatif.
 - _Population_ : Ensemble des individus observés ou mesurés dans le cadre d'une étude. Peut être infini. Par exemple : l'ensemble des entreprises françaises.
@@ -83,7 +83,7 @@ Quelques paradoxes :
 
 ### Échantillon vs population
 
-::: warning
+:::warn
 Attention à ne pas confondre échantillon et population !
 
 - L'étude d'un échantillon est une science : la statistique descriptive.
@@ -93,7 +93,7 @@ Attention à ne pas confondre échantillon et population !
 
 ### Exercice
 
-::: exo
+:::exo
 On souhaite réaliser un sondage à Paris pour connaître le temps de trajet moyen des utilisateurs des transports en commun pour aller travailler.
 
 Pour cela, pour chaque personne sondée, on recueille :
@@ -109,7 +109,7 @@ Quels sont :
 - Les variables étudiées ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 - Les individus sont les personnes sondées.
 - La population est l'ensemble des personnes utilisant les transports en commun.
@@ -120,7 +120,7 @@ Quels sont :
 
 ## Types de variables
 
-::: strong
+:::strong
 2 types de variables :
 
 - Les variables _quantitatives_ : variables à valeurs numériques, pour lesquelles les opérations arithmétiques ont un sens. Par exemple, un âge, une distance, un volume, etc :
@@ -131,11 +131,11 @@ Quels sont :
   + _nominale_ : aucun ordre (couleur des yeux, ville de naissance).
 :::
 
-::: exo
+:::exo
 Quel est le type des variables précédentes ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 - âge : variable quantitative discrète
 - CSP : variable qualitative ordinale
@@ -144,7 +144,7 @@ Quel est le type des variables précédentes ?
 
 # Statistique descriptive à une dimension
 
-::: link
+:::link
 Pour plus d'information, voir le [cours zeste de savoir de statistique descriptive à une dimension][zds-stat-desc-1d].
 :::
 
@@ -156,7 +156,7 @@ Pour plus d'information, voir le [cours zeste de savoir de statistique descripti
   + Peu robuste aux valeurs extrêmes.
   + Exemple d'un unique salaire élevé.
 
-::: link
+:::link
 Voir [l'article Wikipedia sur la moyenne][wiki-moyenne].
 :::
 
@@ -164,7 +164,7 @@ Voir [l'article Wikipedia sur la moyenne][wiki-moyenne].
 
 C'est de très loin la moyenne la plus utilisée : somme des valeurs divisé par nombre de valeurs.
 
-::: strong
+:::strong
 $$\mu = \frac{\sum_{i=1}^n{m_i \cdot x_i}}{\sum_{i=1}^n {m_i}}$$
 :::
 
@@ -176,13 +176,13 @@ $$\mu = \frac{\sum_{i=1}^n{m_i \cdot x_i}}{\sum_{i=1}^n {m_i}}$$
 - La moyenne numérique est généralisable : barycentre en géométrie, espérance en probabilités, ...
 - En absence de précision, le terme seul de _moyenne_ décrit la _moyenne arithmétique_.
 
-::: link
+:::link
 Lien vers [la Moyenne de Hölder][wiki-moyenne-holder].
 :::
 
 ### Exercice
 
-::: exo
+:::exo
 Soit une promotion de 20 étudiants :
 
 - 19 d'entre-eux sont embauchés avec un salaire situé entre $20000$ et $30000$ euros par an
@@ -193,7 +193,7 @@ Quelle est la moyenne arithmétique ? Que remarquez-vous ?
 Calculer la moyenne d'ordre 2 et la moyenne d'ordre 50. Que remarquez-vous ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 **Moyenne arithmétique**
 
 $$m=\frac{19 \times 25 000 + 1 \times 1 000 000}{20}=73750$$
@@ -227,7 +227,7 @@ La [médiane][wiki-mediane] indique le centre d'une série statistique : c'est l
 
 La médiane se définit formellement par :
 
-::: strong
+:::strong
 $$Med=\displaystyle \text{argmin}_{\alpha \in \mathbb{R}} \sum_{i=1}^n |\alpha-x_i|$$
 :::
 
@@ -258,13 +258,13 @@ Pour une série de $n$ éléments :
   + Toute valeur entre l'élément à la position $\frac{n}{2}$ et l'élément à la position $\frac{n}{2}+1$ est une médiane.
   + En pratique, on utilise la moyenne arithmétique de ces deux éléments.
 
-::: link
+:::link
 Lien vers [la page Wikipedia sur la médiane][wiki-mediane].
 :::
 
 ### Exercice
 
-::: exo
+:::exo
 Reprenons l'exercice sur la moyenne des salaires d'une promotion :
 
 Soit une promotion de 20 étudiants :
@@ -275,7 +275,7 @@ Soit une promotion de 20 étudiants :
 Quelle est le salaire médian ? Que remarquez-vous ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 La médiane est entre les classes $20000$ euros et $30000$ euros donc $Med=25000$ euros.
 
@@ -293,7 +293,7 @@ La variance se calcule comme la moyenne des carrés des écarts à la moyenne :
 - On peut le voir comme la "distance" des valeurs à la moyenne.
 - Donne une indication sur l'homogénéité de la distribution.
 
-::: strong
+:::strong
 $$\sigma=\sqrt{V}$$
 
 $$V = \frac{1}{n}\sum_{i=1}^n \left(x_i - \overline{x}\right)^2$$
@@ -305,7 +305,7 @@ _Deux exemples de distribution ayant la même moyenne mais un écart-type diffé
 
 ### En programmation
 
-::: warning
+:::warn
 Attention : l'écart-type calculé directement avec la formule mathématique peut être [incorrect en programmation][deviation-computing-error] à cause d'arrondis, notamment pour des valeurs faibles (entre 0 et 1). 
 
 Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-computing-solution] pour ce besoin.
@@ -313,7 +313,7 @@ Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-compu
 
 ### Avantages et inconvénients
 
-::: tip
+:::tip
 +  Mesures particulièrement représentatives de la réalité lorsque la distribution est normale.
 +  Tient compte de toutes les valeurs de la distribution donc représentent bien sa dispersion.
 +  Utiles pour comparer la dispersion d'une variable d'une même population à des temps différents ou de populations semblables.
@@ -322,13 +322,13 @@ Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-compu
   * Un grand écart-type n'est pas synonyme de grande dispersion (dépend des valeurs).
 :::
 
-::: link
+:::link
 Voir [la page Wikipedia sur l'écart-type][wiki-deviation].
 :::
 
 ### Exercice
 
-::: exo
+:::exo
 On donne ci-dessous les notes de trois groupes d'étudiants :
 
 $$G_1=\{10,12,11,13,14,12,7,15\} \qquad G_2=\{12,17,4,8,19,11,12,9\} \qquad G_3=\{8,7,12,10,14,10,8,3,8,7\}$$
@@ -336,7 +336,7 @@ $$G_1=\{10,12,11,13,14,12,7,15\} \qquad G_2=\{12,17,4,8,19,11,12,9\} \qquad G_3=
 Quelle est le groupe le plus hétérogène ? Que remarquez-vous ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 On commence par calculer les moyenne de chaque groupe, que l'on notera $\bar{G1}, \bar{G2}$ et $\bar{G3}$ :
 
@@ -368,7 +368,7 @@ Si tous les points du nuage étaient pratiquement situés sur une même droite (
 
 Pour mesurer _l'étendue en surface_ du nuage, on calcule la _covariance_ des deux séries, c'est-à-dire la moyenne des produits des écarts à la moyenne :
 
-::: strong
+:::strong
 $$Cov(x, y) = \frac{1}{n}\sum_{i=1}^n(x_i - \bar{x})(y_i - \bar{y})$$
 :::
 
@@ -382,7 +382,7 @@ Par contre la valeur absolue de la covariance (le fait qu'elle ait une valeur pe
 
 Pour obtenir un équivalent de la covariance qui soit indépendant des unités dans lesquelles ont été exprimé les deux séries de mesures il convient de calculer le coefficient de corrélation linéaire :
 
-::: strong
+:::strong
 $$\rho(x,y)=\frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}$$
 :::
 
@@ -390,13 +390,13 @@ On peut montrer que sa valeur est toujours comprise entre $-1$ et $+1$.
 
 On dit que les deux séries sont faiblement corrélées lorsque $\rho(x, y)$ est proche de 0, et dans ce cas le nuage a une forme très dispersée. Au contraire si $\rho(x, y)$ est proche de $-1$ ou $+1$, les deux séries sont dites fortement corrélées (positivement si $\rho(x, y) > 0$ et négativement si $\rho(x, y) < 0$) et dans ce cas le nuage est regroupé le long d'une droite.
 
-::: tip
+:::tip
 On utilise souvent plutôt le carré de ce terme pour augmenter sa dispersion vers 0 ou 1.
 :::
 
 Ce coefficient sera très utile lors des régressions linéaires.
 
-::: exo
+:::exo
 | Nombre de caisses ouvertes (x) :       | 3  | 4  | 5  | 6    | 8    | 10   | 12   |
 |----------------------------------------| ---| ---| ---| -----| -----| -----| -----|
 | Temps moyen d'attente en minutes (y) : | 16 | 15 | 16 | 14.9 | 16.6 | 14.7 | 14.8 |
@@ -404,7 +404,7 @@ Ce coefficient sera très utile lors des régressions linéaires.
 Dans cet exemple, y a-t-il une relation directe entre le nombre de caisses ouvertes et le temps moyen d'attente ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. Commençons par calculer le centre de gravité du nuage de points $\{x;y\}$ : $G=(6.8 ; 15.4)$.
 2. Calculons les variances de $X$ et $Y$ :
   + $Var(X) = 9.27$
@@ -435,7 +435,7 @@ plt.show()
 
 ### Rappels et notations
 
-::: tip
+:::tip
 - $P(Y=1)$ est la probabilité a priori pour que $Y=1$. Pour simplifier, on note parfois : $p(1)$.
 - $p(X|1)$ est la distribution conditionnelle des $X$ sachant la valeur prise par $Y$.
 - $\sum_{i=1}^n p_i = 1$
@@ -448,7 +448,7 @@ plt.show()
 
 L'espérance d'une variable aléatoire $X$ correspond à la moyenne des valeurs possibles de $X$ pondérées par les probabilités associées à ces valeurs et est définie par :
 
-::: strong
+:::strong
 $$\bar{X} = \sum_i P_i x_i$$
 :::
 
@@ -460,15 +460,15 @@ C'est intuitivement la valeur que l'on s'attend à trouver (en moyenne...).
 
 ### Théorème de Bayes
 
-::: strong
+:::strong
 $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
 :::
 
-::: {.note .if correction="true"}
+:::correction
 Démonstration par $P(A\cap B) = P(A) P(B|A) = P(B) P(A|B)$
 :::
 
-::: link
+:::link
 Voir : [Théorème de Bayes][wiki-bayes].
 :::
 
@@ -512,7 +512,7 @@ _Exemples de distributions binomiales. [Crédits et sources : Wikimedia](https:/
 
 Loi théorique d'une variable _continue_ approchant bien les distributions expérimentales dans lesquelles la dispersion de la variable résulte d'effets nombreux, additifs, indépendants et de même grandeur.
 
-::: link
+:::link
 Voir la [page Wikipedia sur la loi normale][wiki-loi-normale].
 :::
 
@@ -560,7 +560,7 @@ Dans un test statistique, la _p-valeur_ est la probabilité pour un modèle stat
 
 En termes statistiques, la p-valeur s'interprète comme la probabilité d'un résultat au moins aussi "extrême" que le résultat observé, sachant l'hypothèse nulle:
 
-::: strong
+:::strong
 $$p = \mathbb P(x|H_0)$$
 :::
 
@@ -577,7 +577,7 @@ On utilise généralement les seuils suivants :
 
 _Illustration de la p-valeur. $X$ désigne la loi de probabilité de la statistique de test et $z$ la valeur calculée de la statistique de test. [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Valeur-p.jpg)_.
 
-::: warning
+:::warn
 La p-valeur interprète $\mathbb P(x|H_0)$ or en faisant un test statistique, on cherche à savoir quelle est la probabilité que $H_0$ soit vraie sachant les données donc $\mathbb P(H_0|x)$ ! D'après le théorême de Bayes : $\mathbb P(x|H_0) = \frac{\mathbb P(H_0 | x) \mathbb P(x)}{\mathbb P(H_0)}$
 :::
 
@@ -597,7 +597,7 @@ C'est un test statistique pour rejetter une hypothèse d'indépendance entre var
 
 $H_0$ : $X$ suit une [loi du $\chi^2$][wiki-loi-chi-2] à $k$ degrés de liberté si :
 
-::: strong
+:::strong
 $$X=\sum_{i=1}^k X_i^2$$
 :::
 
@@ -610,7 +610,7 @@ où $X_1, ..., X_k$ sont $k$ variables aléatoires indépendantes qui suivent la
 - On utilise une [table de valeurs des quantiles][wiki-chi-2-table] du $\chi^2$ par degré de liberté.
 - On rejette $H_0$ pour une _p-valeur_ choisie (appelé niveau de risque $\alpha$), généralement : $p\leq 0.05$.
 
-::: link
+:::link
 [Table de valeurs des quantiles][wiki-chi-2-table]
 :::
 
@@ -618,7 +618,7 @@ où $X_1, ..., X_k$ sont $k$ variables aléatoires indépendantes qui suivent la
 
 On définit alors la statistique du $\chi_2$ par :
 
-::: strong
+:::strong
 $$T = \sum_{j=1}^J \frac{(N \hat{p}_j - N p_j)^2}{N p_j}$$
 :::
 
@@ -638,7 +638,7 @@ On généralise ce cas particulier à une variable aléatoire $Y$ prenant un nom
 
 #### Exercice
 
-::: exo
+:::exo
 On souhaite tester l'hypothèse selon laquelle un dé à six faces n'est pas truqué, avec un risque $\alpha = 0.05$.
 
 Pour cela, le dé est lancé 600 fois de suite. S'il est équilibré, on s'attend que sur ces 600 jets, chaque chiffre tombe 100 fois.
@@ -664,7 +664,7 @@ c'est-à-dire nous avons obtenu 88 fois le chiffre 1, 109 fois le chiffre 2, etc
 
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 1. L'hypothèse que l'on souhaite rejeter (qu'on appelle hypothèse nulle et qu'on note $H_0$) est donc ici : "Le dé est équilibré". 
 2. Le nombre de degrés de liberté est de $6 - 1 = 5$. En effet, $88 + 109 + 107 + 94 + 105 + 97 = 600$ et si l'on connaît par exemple les nombres de fois où l'on obtient les chiffres 1 à 5, on connaît le nombre de fois où l'on obtient le chiffre 6 : $600 - (88 + 109 + 107 + 94 + 105) = 97$. 
@@ -684,7 +684,7 @@ c'est-à-dire nous avons obtenu 88 fois le chiffre 1, 109 fois le chiffre 2, etc
 
 ### Apprentissage supervisé vs non-supervisé
 
-::: tip
+:::tip
 Les algorithmes d'apprentissage peuvent se catégoriser selon le type d'apprentissage qu'ils emploient :
 
 - L'apprentissage **supervisé**
@@ -704,7 +704,7 @@ Les algorithmes d'apprentissage peuvent se catégoriser selon le type d'apprenti
 
 À partir d'un échantillon d'apprentissage $D_n = (x_1, y_1), ... ,(x_n, y_n)$ , inférer la relation entre $x$ et $y$.
 
-::: tip
+:::tip
 Exemples d'utilisation :
 
 - Détecteur de spam
@@ -792,7 +792,7 @@ Le but de la régression linéaire simple (respectivement multiple) est d'expliq
 
 La variable $Y$ est appelée variable _à expliquer_ ou variable _dépendante_ et les variables $X_j (j=1, ... ,q)$ sont appelées variables _explicatives_ ou variables _indépendantes_. 
 
-::: strong
+:::strong
 Le but est donc de trouver une fonction $f$ telle que : $y_i \approx f(x_i)$.
 :::
 
@@ -848,7 +848,7 @@ Ces différences peuvent être expliquées par d'autres variables ayant une infl
 
 Pour rendre compte de cette situation, on écrit la relation entre la tension et l'âge sous la forme générale suivante : _droite + erreur_ :
 
-::: strong
+:::strong
 $$Y_i = aX_i + b + \epsilon_i, i=1..n$$
 :::
 
@@ -895,13 +895,13 @@ $$\chi^2(\theta) = \sum_{i=1}^N \left(\frac{y_i - f(x_i;\theta)}{\sigma_i}\right
 
 Dans le cas d'une régression linéaire simple, on vérifie que cette valeur est minimale pour $grad(\chi^2) = 0$ et par développement, pour un modèle $Y=aX+b+\epsilon$ et si $Var(X)\neq 0$ :
 
-::: strong
+:::strong
 $$a = \frac{Cov(X,Y)}{Var(X)}$$
 
 $$b = \bar{Y} - a \bar{X}$$
 :::
 
-::: warning
+:::warn
 Attention : dans la pratique, on ne connaît jamais $a$ et $b$ (valeurs exactes du modèle) ! 
 
 On calcule donc : $\hat{a}$ et $\hat{b}$, valeurs estimées de $a$ et $b$ dans les conditions de l'expérience.
@@ -911,7 +911,7 @@ Ces valeurs ne sont donc pas exactes - nous verrons dans la suite du cours comme
 
 #### Cas général
 
-::: link
+:::link
 Pour un calcul de $grad(\chi^2) = 0$ dans le cas général, voir la [page Wikipedia de la méthode des moindres carrés][wiki-moindres-carres].
 :::
 
@@ -922,7 +922,7 @@ Attention, la méthode des moindres carrés gère mal les valeurs aberrantes. Pl
 - Modifier le $\chi^2$ en ne calculant plus le carré des résidus mais une fonction bien choisie de ceux-ci (méthodes des M-estimateurs) ;
 - Remplacer la somme par la médiane, qui contrairement à la moyenne est un estimateur robuste (méthode des moindres carrés médians).
 
-::: link
+:::link
 La méthode des moindres carrés est un cas particulier du [maximum de vraisemblance][wiki-max-vraisemblance] - cette méthode est utile notamment si les résidus ne sont pas indépendants.
 :::
 
@@ -936,11 +936,11 @@ On obtient : $\hat{a} = 1.5771$ et $\hat{b} = 60.3928$.
 
 _Source et crédit : Ana Karina Fermin Rodriguez._
 
-::: exo
+:::exo
 Quelle est la signification des paramètres $a$ et $b$ ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 - $a$ est la pente de la droite : une augmentation de l'âge d'un an se traduit par une augmentation ($a > 0$) de la tension estimée à $1,5771$.
 - $b$ est l'ordonnée à l'origine : attention à ne pas extrapoler la droite au delà des limites du domaine observé de $X$. Ici, la droite a été ajustée pour des âges compris entre 40 et 66 ans. Le coefficient fixe uniquement la hauteur de la droite.
@@ -979,7 +979,7 @@ La seconde étape consiste à calculer la variance résiduelle ou non expliquée
 
 $$SSR = \sum_{i=1}^N (y_i - \hat{y_i})^2$$
 
-::: tip
+:::tip
 Pourquoi utiliser un estimateur sans biais pour $\sigma^2$ : $\hat{\sigma}^2 = \frac{SSR}{n-2}$ et non $\frac{1}{n}SSR$ ?.
 
 Ce biais provient du fait que nos calculs utilisent une estimation de la moyenne (basée sur des valeurs empiriques) et non l'espérance théorique de la variable. Cette notion sera approfondie plus en détails en TP.
@@ -995,7 +995,7 @@ $$SST = \sum (y_i - \bar{y})^2 = SSR + SSE$$
 
 On définit alors $R^2$ le _coefficient de détermination_ qui mesure la part de la variation de $Y$ expliquée par $X$ :
 
-::: strong
+:::strong
 $$R^2 = \frac{SSE}{SST}$$
 :::
 
@@ -1003,7 +1003,7 @@ Lorsque $R^2$ est proche de 1, le modèle de régression explique bien la variat
 
 Dans notre exemple : $r^2=0.6191$ : le modèle explique $61,91$% de la variation totale.
 
-::: tip
+:::tip
 Pourquoi utiliser la même notation : $R^2$ pour le carré du coefficient de corrélation linéaire et pour le coefficient de détermination ?
 
 On [démontre](https://en.wikipedia.org/wiki/Residual_sum_of_squares) que ces deux valeurs sont en effet équivalentes :
@@ -1078,7 +1078,7 @@ Autrement dit, il existe une fonction de lien $g$ telle que :
 
 $$g(\bar{y}) = \eta = \sum_{j=1}^{p} \beta_j\ X_{ij}$$
 
-::: link
+:::link
 Pour plus de détails sur la régression linéaire généralisée, voir [ce lien][slides-glm].
 :::
 
@@ -1099,7 +1099,7 @@ $$g(\bar{y}) = log(\bar{y}) = \sum_{j=1}^{p} \beta_j\ X_{ij}$$
 
 $ln\frac{p(X|1)}{p(X|0)}$ (fonction `logit`) est linéaire, c'est-à-dire :
 
-::: strong
+:::strong
 $$ln\left(\frac{p}{1-p}\right) = ln\left(\frac{p(Y=1|X)}{1-p(Y=1|X)}\right) = \sum_{j=1}^{p} \beta_j\ X_{ij}$$
 :::
 
@@ -1130,7 +1130,7 @@ $$\begin{cases}
 -\ln (1 - p(x_j)) & \text{ si } y_j = 0.
 \end{cases}$$
 
-::: {.note .if correction="true"}
+:::correction
 log loss == "surprise" de $y_j$ sachant $x_j$ ($=0$ si prédiction parfaite, $\rightarrow \infty$ si prédiction fausse et $p_j \rightarrow \{0,1\}$).
 
 $P(y_j=1|x_j) = p(x_j)$ et $P(y_j=0|x_j) = 1-p(x_j)$ (Bernoulli) d'où  :
@@ -1161,7 +1161,7 @@ $$R_{logit}^2 = 1 - \frac{-2LL_{modèle}}{-2LL_{base}}$$
 
 #### Qualités
 
-::: tip
+:::tip
 - Interprétable : NON
 - Critique : OUI (très utilisé pour le scoring)
 - Consistance : NON (sauf si le modèle est exact)
@@ -1171,11 +1171,11 @@ $$R_{logit}^2 = 1 - \frac{-2LL_{modèle}}{-2LL_{base}}$$
 - En ligne : possible
 :::
 
-::: link
+:::link
 Voir la [page Wikipedia de la Régression logistique][wiki-regression-logistique].
 :::
 
-::: {.note .if correction="true"}
+:::correction
 Reg logistique : pas de valeurs extrêmes des résiduels : comme dans la régression multiple, des valeurs résiduelles standardisées plus élevées que 2,58 ou moins élevées que -2,58 influencent les coefficients du modèle et limitent la qualité de l'ajustement.
 :::
 
@@ -1227,7 +1227,7 @@ Ses principaux inconvénients sont :
   * Un autre cas, où les corrélations posent problème, est quand les variables d'intérêts sont corrélées avec d'autres variables. Dans ce cas, la consistance de la sélection du lasso n'est plus assurée.
 - La très grande dimension : lorsque notamment la dimension est trop élevée ($p >> n$) ou si le vrai vecteur $\beta$ n'est pas suffisamment creux (trop de variables d'intérêts), le lasso ne pourra pas retrouver l'ensemble de ces variables d'intérêts.
 
-::: link
+:::link
 Pour une vision mathématique du lasso, voir [ce cours][slides-lasso].
 :::
 
@@ -1246,7 +1246,7 @@ Utilise deux approches principales :
 
 En général, on utilise la méthode des moindres carrés pour minimiser les résidus :
 
-::: strong
+:::strong
 $$\sum_{i=1}^n\sum_{k=1}^K1_k(i)(y_i - (\alpha_k + \beta_k x_i))^2$$
 
 Avec $1_k(i)$ la fonction indicatrice du cluster $k$ : vaut 1 ssi $i\in k$ sinon 0.
@@ -1322,7 +1322,7 @@ label="Classification pour k=3 plus proches voisins"
 
 #### Qualités
 
-::: tip
+:::tip
 - Interprétable : OUI et NON
 - Critique : OUI mais pas très fiable
 - Consistance : NON mais possible si $k = log(n)$ (par exemple)
@@ -1332,13 +1332,13 @@ label="Classification pour k=3 plus proches voisins"
 - En ligne : OUI
 :::
 
-::: link
+:::link
 Voir aussi : [l'article Wikipedia sur la méthode des k plus proches voisins][wiki-k-neighbors] et [l'article Wikipedia sur la recherche de proches voisins][wiki-closest-neighbors].
 :::
 
 #### Exercice
 
-::: exo
+:::exo
 On dispose d'une base de données d'apprentissage constituée de 5 couples entrée-sortie :
 
 - (_Dupont_, Admis)
@@ -1362,7 +1362,7 @@ En utilisant la méthode des $k$ plus proches voisins ($k =3$) et en choisissant
 Déterminez la classe de _Verneuil_.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
   $d(Verneuil,Dupont)^2 = |9-14| + |14-12| + |15-8| + |6-12| = 20$
 
@@ -1398,7 +1398,7 @@ Il existe deux principaux types d'arbre de décision en fouille de données :
 
 #### Avantages / Inconvénients
 
-::: tip
+:::tip
 + Solutions sous formes graphiques simples à interpréter.
 + Peu de préparation des données.
 + Se combinent bien à d'autres techniques d'apprentissage.
@@ -1627,7 +1627,7 @@ Le principe de sélection d'un arbre optimal est donc décrit par l'algorithme s
 
 #### Qualités du classifieur CART
 
-::: tip
+:::tip
 - Interprétable : OUI !
 - Consistance : OUI (sous certaines réserves) MAIS instable !
 - Minimax : NON !
@@ -1636,7 +1636,7 @@ Le principe de sélection d'un arbre optimal est donc décrit par l'algorithme s
 - En ligne : NON
 :::
 
-::: link
+:::link
 Voir la [page Wikipedia sur les arbres de décision][wiki-arbres-decision].
 :::
 
@@ -1682,7 +1682,7 @@ label="Schéma d'apprentissage non supervisé"
 
 Très utile notamment pour parcourir une base de données dans le but d'en extraire des clusters.
 
-::: link
+:::link
 Autre exemple d'utilisation : [Approche mathématique pour le traitement et le clustering de données sonores][clustering-donnees-sonores].
 :::
 
@@ -1695,7 +1695,7 @@ Par exemple s'il s'agit de malades) notées $(x_i, y_i, ...)$ pour le $i^{ème}$
 
 S'il n'y a que deux variables relevées $(x_i, y_i)$ on obtient ainsi un nuage $\Gamma$ de points dans le plan, $\Gamma = {M_i, i = 1, ... , n}$ où $n$ est l'effectif total de la population.
 
-::: strong
+:::strong
 La distance euclidienne de deux individus $M_i$ et $M_j$ est par définition $d_2(M_i, M_j) = \sqrt{(x_i - x_j )^2 + (y_i - y_j )^2}$.
 :::
 
@@ -1720,7 +1720,7 @@ Supposons le nuage $\Gamma = {M_i, i = 1, ... , n}$ décomposé en plusieurs cla
 
 - Le centre de gravité $G$ d'un nuage de points $\Gamma$ est le point moyen du nuage, c'est-à-dire le point $G = (\bar{x}, \bar{y}, ...)$ de coordonnées :
 
-::: strong
+:::strong
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i} , \bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i} , ... $$
 :::
 
@@ -1733,7 +1733,7 @@ $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i} , \bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i
   + Distance des centres de gravité $d_2(G_m, G_l)$.
   + (Le plus souvent) écart de Ward :
 
-::: strong
+:::strong
 $$ d(\Gamma_m,\Gamma_l) = \frac{p_m p_l}{p_m + p_l}d_2(G_m, G_l)^2 $$
 
 Où $p_l$ et $p_m$ sont les poids des deux classes.
@@ -1745,7 +1745,7 @@ On appelle inertie totale I d'un nuage $\Gamma = {M_i, i = 1, ... , n}$ la somme
 
 Donc, si $G$ désigne le centre de gravité de $\Gamma$ et si tous les points du nuage sont de même poids égal à $\frac{1}{n}$ alors l'inertie totale est :
 
-::: strong
+:::strong
 $$ I(\Gamma) = \frac{1}{n}\left(d_2(M_1, G)^2 + d_2(M_2, G)^2 + ... + d_2(M_n, G)^2\right)$$
 :::
 
@@ -1773,11 +1773,11 @@ On montre le résultat suivant appelé décomposition de Huygens :
 
 L'inertie totale d'un nuage de points composé de différentes classes disjointes deux à deux est la somme de son inertie intra-classe et de son inertie interclasse :
 
-::: strong
+:::strong
 $$I(\Gamma) = I(\Gamma_1 \cup \Gamma_2 \cup ... \cup \Gamma_k) = I_{intra} + I_{inter}$$
 :::
 
-::: info
+:::tip
 Lorsqu'un nuage est composé de plusieurs classes on a vu que, si chacune est très bien regroupée autour de son centre de gravité, son inertie intra-classe qui est la somme des inerties de chaque classe sera
 petite.
 
@@ -1847,11 +1847,11 @@ On peut montrer que la variance intra-classe (somme des distances entre les indi
 
 Les classes finales dépendent beaucoup des $k$ individus choisis pour l'initialisation : certains algorithmes de _k-means_ itèrent plusieurs fois le processus avec des initialisations différentes, dans le but de garder la partition qui minimise le plus la variance intra-classe.
 
-::: link
+:::link
 Les autres algorithmes des méthodes centroïdes peuvent prendre en compte d'autres représentants de classes que la moyenne, comme [le médoïde][wiki-k-medoides], individu le plus central du groupe.
 :::
 
-::: link
+:::link
 Exemples de visualisations : [lien][visu-clustering-k-mean].
 :::
 
@@ -1872,13 +1872,13 @@ Si cette décroissance était toujours stricte on serait sûr d'atteindre ainsi 
 
 En pratique, la décroissance n'est pas toujours stricte et on n'est donc sûr de rien... Mais cet algorithme est populaire car il est facile à utiliser et il suffit de peu d'itérations pour avoir une partition de qualité.
 
-::: exo
+:::exo
 En utilisant l'algorithme des K-moyennes et la distance de Manhattan $d(X,Y)=\sum_{i=1}^n|X_i - Y_i|$ et A et B comme centres initiaux, générer deux clusters pour les données suivantes :
 
 $A(2,2) B(3,4) C(7,8) D(9,8) E(5,1) F(8,7)$
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 | Centres | A(2,2) | G(7/2,3/2)   | I(10/3,7/3) |
 |         | B(3,4) | H(27/4,27/4) | K(8,23/3)   |
@@ -1894,7 +1894,7 @@ $A(2,2) B(3,4) C(7,8) D(9,8) E(5,1) F(8,7)$
 Les deux clusters sont donc : $\{A;B;E\}$ de centre $I(10/3;7/3)$ et $\{C;D;F\}$ de centre $K(8;23/3)$.
 :::
 
-::: {.note .if correction="true"}
+:::correction
 Introduction à la densité : exemple échec k-mean smiley (distance proche mais classes différentes).
 :::
 
@@ -1902,7 +1902,7 @@ Introduction à la densité : exemple échec k-mean smiley (distance proche mais
 
 Les classes des méthodes à densité correspondent aux zones de densité relativement élevées, c'est-à-dire les zones où beaucoup de points sont proches par rapport à d'autres zones de l'espace $\mathbb{R}$ en dimension $p$.
 
-::: {.note .if correction="true"}
+:::correction
 Montrer graphiquement zones de densité sur le smiley.
 :::
 
@@ -1922,11 +1922,11 @@ Tant que tous les individus n'ont pas été visités, on réitère cette étape 
 
 _L'algorithme DBSCAN pas à pas (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/v2-58145667049e230f95e07c3dfbfd31ad_b.gif) pour animation). Les cercles en mouvement correspondent aux voisinages successifs. Il y a ici 4 zones où la densité est élevée. La forme des cluster s'adapte à la forme des données proposées. Animation : zhuanlan.zhihu.com_
 
-::: link
+:::link
 Pour en savoir plus : [article Wikipedia DBSCAN][wiki-dbscan].
 :::
 
-::: link
+:::link
 Exemples de visualisations : [lien][visu-clustering-dbscan].
 :::
 
@@ -1943,7 +1943,7 @@ Lorsque le nombre d'individus est très grands et qu'il est alors difficile de c
 
 ## Conclusion
 
-::: tip
+:::tip
 - Au-delà de ces 3 catégories d'algorithmes, beaucoup d'autres méthodes moins intuitives existent comme la maximisation de l'espérance, qui repose sur des outils mathématiques probabilistes ou des réseaux de neurones.
 - Chaque méthode présente ses avantages mais aussi ses limites, selon le type de données à traiter :
   + Les méthodes hiérarchiques peuvent être gourmandes en calculs.
@@ -1963,13 +1963,13 @@ Lorsque le nombre d'individus est très grands et qu'il est alors difficile de c
 - Permet de _réduire les dimensions_ des données en une ou plusieurs _super variables_ latentes.
 - Variables latentes exprimées comme _combinaison linéaire_ des variables observées.
 
-::: link
+:::link
 Pour une approche mathématique de l'analyse factorielle, voir le très bon [cours de Rodolphe Palm][cours-analyse-facto-maths] (attention, il faut être à l'aise avec le calcul matriciel avancé : vecteurs propres, déterminants, ...).
 :::
 
 #### Avantages
 
-::: tip
+:::tip
 - Condenser des variables.
 - Découvrir des rassemblements de données.
 - Simplifier la compréhension.
@@ -2063,7 +2063,7 @@ La définition de la distance de Mahalanobis est nettement plus compliquée lors
 
 ### Approche prédictive
 
-::: link
+:::link
 L'analyse discriminante peut également être prédictive (apprentissage supervisé) : il s'agit de l'[analyse discriminante linéaire][wiki-adl] (comparable à la régression logistique).
 :::
 

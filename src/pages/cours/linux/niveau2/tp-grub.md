@@ -15,7 +15,7 @@ But : démarrer Linux dans un mode minimal en cas de perte de mot de passe.
 1. Tapez maintenant `passwd` et validez : vous pouvez changer le mot de passe de `root`. 
 1. Redémarrer le système : puisque le "vrai" `init` n'a pas été chargé, le système ne sera pas capable de redémarrer proprement. Taper la commande `exit` puis fermer la machine virtuelle.
 
-::: {.correction .if correction="true"}
+:::correction
 La ligne `init=/bin/sh` change la commande d'`init` du noyau : au lieu de lancer `/sbin/init`, on lance un simple script shell (`/bin/sh` est le Bourne Shell, le shell script le plus minimal normalement disponible sur tout système de type Linux/Unix/POSIX/...)
 :::
 

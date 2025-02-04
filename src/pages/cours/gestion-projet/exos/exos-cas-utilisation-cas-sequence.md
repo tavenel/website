@@ -20,7 +20,7 @@ Le but est de décrire la vue des besoins (_use case view_) de ce système.
 1. Donner le diagramme des cas d'utilisation du système. Penser à utiliser la généralisation d’acteurs.
 2. Décrire le scénario _Location Cassettes_ par un diagramme de séquence.
 
-::: {.correction .if correction="true"}
+:::correction
 ```plantuml
 @startuml
 
@@ -59,7 +59,7 @@ note right of (Approvisionnement en cassettes) : Scénarios : Location cassettes
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```plantuml
 @startuml
 
@@ -110,6 +110,6 @@ On souhaite analyser les besoins de ce système d'inscription.
 1. Donner le diagramme des cas d'utilisation du système.
 2. Décrire le scénario principal de chaque cas d’utilisation par un diagramme de séquence.
 
-::: {.correction .if correction="true"}
+:::correction
 Correction : <https://cour2.blogspot.com/2012/12/etude-de-cas-systeme-denregistrement.html>
 :::

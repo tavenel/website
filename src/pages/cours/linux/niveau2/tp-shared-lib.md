@@ -10,7 +10,7 @@ Voir aussi la [wikiversité][wiki-shared-lib]
 
 1. Afficher la liste des dépendances du programme `cp`.
 
-::: {.correction .if correction="true"}
+:::correction
 
 ```
 ldd -d -v /bin/cp
@@ -37,7 +37,7 @@ ldd -d -v /bin/cp
 
 Exécutez ensuite la commande `ldconfig`.
 
-::: {.correction .if correction="true"}
+:::correction
 
 ```
 mkdir /tmp/lib
@@ -56,7 +56,7 @@ libacl.so.1 => not found
 
 3. Éditez le fichier de configuration `/etc/ld.so.conf` et rajoutez-y le chemin `/tmp/lib`. Exécutez à nouveau `ldconfig` puis relancez la commande `cp`. Que se passe-t-il ?
 
-::: {.correction .if correction="true"}
+:::correction
 En rajoutant le chemin `/tmp/lib` puis en mettant à jour le cache du chargeur dynamique avec `ldconfig`, la bibliothèque est de nouveau accessible.
 
 ```

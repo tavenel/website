@@ -70,7 +70,7 @@ _A l'inverse, il est possible d'exécuter du code directement dans les machines 
 - Très utiles pour détecter les régressions.
 - Cette isolation minimise les problèmes d'intégration
 
-Voir le [cours sur les tests unitaires][site-perso].
+Voir le [🧪 cours sur les tests unitaires][site-perso].
 
 ---
 

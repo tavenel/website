@@ -25,26 +25,26 @@ Voir aussi : <https://www.linuxtricks.fr/wiki/la-commande-ip-reseau-interfaces-r
 
 ### Visualiser les adresses
 
-::: exo
+:::exo
 1. En utilisant la commande `ifconfig -a`, visualisez les interface et les adresses IP associées sur votre système.
 2. Même exercice en utilisant les commandes `ip` : `ip addr show` et `ip link show`.
 3. Bonus : utiliser un filtre `grep` et `awk` pour n'afficher que les adresses IP des interfaces `inet`.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. `ifconfig | grep -w inet | awk '{ print $2}'`
 2. `ip a s | grep -w inet | awk '{ print $2}'`
 :::
 
 ### Activer / désactiver une interface
 
-::: exo
+:::exo
 1. En utilisant les scripts `ifup` et `ifdown`, désactiver puis réactiver une interface réseau.
 2. Même question en utilisant `ifconfig`.
 3. Même question en utilisant `ip`.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. En utilisant les scripts `ifup` et `ifdown`, désactiver puis réactiver une interface réseau.
 ```
 sudo ifdown eth0
@@ -64,7 +64,7 @@ sudo ip link set eth0 up
 
 ### Ajouter / supprimer une adresse IPv4
 
-::: exo
+:::exo
 1. En utilisant `ifconfig` ajouter une adresse IP. La syntaxe est : `ifconfig <interface> <IP>`
 2. En utilisant `ip addr` ajouter une adresse IP. La syntaxe est : `ip addr add <IP> dev <interface>`
 3. Supprimer l'adresse IP.
@@ -72,7 +72,7 @@ sudo ip link set eth0 up
 5. Même question avec `ip addr`.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # Ajout IP
 sudo ifconfig eth0 192.168.0.77/24
@@ -153,7 +153,7 @@ Attention, il sera aussi indispensable d’adapter le fichier de configuration `
 2. Changer le _hostname_ de 2 manières différentes, depuis un fichier de configuration et depuis une commande dédiée provenant de `systemd`
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. Afficher le hostname : `hostname`
 2. Changer le hostname :
 
@@ -165,12 +165,12 @@ hostnamectl set-hostname monhostname
 
 ## DHCP
 
-::: exo
+:::exo
 1. En utilisant `dhclient`, libérer un bail et arrêter le client DHCP.
 2. Relancer le client et obtenir de nouveaux paramètres DHCP.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. En utilisant `dhclient`, libérer un bail et arrêter le client DHCP.
   ```
   sudo dhclient -r
@@ -196,11 +196,11 @@ hostnamectl set-hostname monhostname
 
 ## Table de voisinage
 
-::: exo
+:::exo
 En utilisant `ip neigh` afficher la table de voisinage. À quoi correspondent ces informations ?
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 ip neigh show
 
@@ -272,7 +272,7 @@ search mydomain.net mydomain.com
 :::
 
 
-::: {.correction .if correction="true"}
+:::correction
 1. `ping -4 google.fr` et `ping -6 google.fr`
 2. `route` et `ip route list`
 3. `ip route get 216.58.212.99`
@@ -318,7 +318,7 @@ Netcat permet d'établir une connexion réseau entre deux machines et de transf�
 
 ## Monitoring réseau
 
-::: exo
+:::exo
 1. Vérifier et noter les paramètre des interfaces réseau :
   - Nom
   - Statut

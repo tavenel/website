@@ -16,7 +16,7 @@ Lorsque l'on tape `2 + 3` dans le shell, quelle est réellement l'opération ré
   + Vérifier que ces deux écritures font similaires en testant leur égalité.
   + Rappel : en Python, `mon_instance.ma_methode()` est un raccourci pour appeler `MaClasse.ma_methode(mon_instance)` si `mon_instance` est une instance de `MaClasse`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```python
 # 2 + 3 réalise une opération `__add__()`
 # sur les instances `int(2)` et `int(3)` donc :
@@ -49,7 +49,7 @@ class Point:
 - De manière similaire, implémenter la méthode `__eq__(self, autre_instance)` qui retourne `True` si et seulement si deux instances sont égales.
 - Vérifier que `Point(1,2,3) == Point(1,2,3)`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```python
 class Point:
 
@@ -141,7 +141,7 @@ Les méthodes `__getitem__(self, indice)` et `__setitem(self, indice, item)__` p
 - Itérer sur les 10 points de la classe en utilisant une boucle `for` et afficher chaque point atteint.
   + Pour afficher les instances de `Point`, on pourra utiliser `__repr__(self)` et `__str__(self)` qui retournent un objet `str` pour l'affichage (la 1ere méthode donne une représentation interne pour les logs, la seconde sert à un affichage "propre").
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 class CollectionDePoints:
     '''
@@ -184,7 +184,7 @@ class CollectionDePoints:
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```python
 class CollectionDePointsDelegate:
     '''
@@ -212,7 +212,7 @@ class CollectionDePointsDelegate:
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```python
 if __name__ == '__main__':
     # COLLECTIONS
@@ -275,7 +275,7 @@ t.celsius = 0
 print(t.fahrenheit)
 ```
 
-::: {.correction .if correction="true"}
+:::correction
 ### Correction - Classe descripteur : getter et setter personnalisés
 
 ```python

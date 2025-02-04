@@ -25,7 +25,7 @@ Quelques exemples de fichiers journaux courants et de sous-répertoires :
 - `/var/log/audit/` : Ce répertoire contient les fichiers journaux du service d'audit Linux (`auditd`), qui enregistre les activités de sécurité et d'audit du système.
 - `/var/log/journal/` : logs gérés par `journalctl` (logs de `systemctl`).
 
-::: tip
+:::tip
 La commande `logger` permet d'écrire facilement un message de l'utilisateur dans le fichier `/var/log/syslog`. Écrire un log personnalisé et vérifier son apparition dans le fichier `/var/log/syslog`.
 :::
 
@@ -90,7 +90,7 @@ Les modifications apportées à l'aide de `sysctl` sont généralement temporair
 6. Modifiez dynamiquement pour l’ensemble des adaptateurs la valeur `arp_announce` à `1` (on utilisera l'option `-w` pour modifier une valeur dynamiquement). 
 7. Cette modification doit être définitive. Modifiez le fichier `/etc/sysctl.conf` et rechargez-le.
 
-::: {.correction .if correction="true"}
+:::correction
 
 1. Vérifiez votre version du noyau Linux, et déplacez-vous dans le répertoire de ses modules : 
 
@@ -178,7 +178,7 @@ $ sysctl -p
 
 1. Chercher dans les logs du noyau les lignes correspondant aux firmwares de la machine.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 $ dmesg | grep firmware
 ```
@@ -186,7 +186,7 @@ $ dmesg | grep firmware
 
 1. À l'aide de commandes dédiées, afficher la version du noyau, l'architecture du système, le hostname
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # version du noyau
 
@@ -222,7 +222,7 @@ alpine.tom
 
 1. Depuis combien de temps le noyau est-il en fonctionnement ?
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 uptime
 ```
@@ -230,7 +230,7 @@ uptime
 
 1. Quelle est la taille de la mémoire RAM de votre système (en utilisant un fichier du système) ? Comment afficher de manière lisible pour un humain l'espace RAM et swap libres sur le système par une commande dédiée ?
 
-::: {.correction .if correction="true"}
+:::correction
 Visualiser le fichier `/proc/meminfo`. La taille de la RAM est indiquée à la ligne `Total`.
 
 Par exemple :
@@ -267,7 +267,7 @@ La sortie est divisée en deux sections principales : la section "Mémoire" et l
 
 1. Quels sont les différents CPUs de votre système ?
 
-::: {.correction .if correction="true"}
+:::correction
 Visualiser le fichier `/proc/cpuinfo` :
 
 ```
@@ -306,7 +306,7 @@ power management:
 
 1. Quels sont les périphériques qui partagent la même ligne d'interruption ?
 
-::: {.correction .if correction="true"}
+:::correction
 Exécuter la commande `cat /proc/interrupts`.
 
 Par exemple ici, les 4 CPUs (en réalité 4 coeurs) partagent les mêmes instructions :
@@ -356,7 +356,7 @@ PIW:          0          0          0          0   Posted-interrupt wakeup event
 1. Isolez l’adresse matérielle de votre carte graphique sur le bus PCI. (Les cartes AGP et PCI Express sont vues comme un bus PCI. On cherchera un contrôleur VGA).
 2. Obtenez plus de détails sur cette carte. Notamment, quel module la gère ? Ces informations peuvent être obtenues avec le -v et en spécifiant uniquement la carte avec le -s de `lspci`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 1.
 $ lspci | grep -i vga
@@ -374,13 +374,13 @@ lspci -s 00:02.0 -v
 
 1. Récupérer les informations sur les bus PCI **SANS** utiliser la commande `lspci`.
 
-::: {.correction .if correction="true"}
+:::correction
 `lspci` utilise les informations de `/proc/bus/pci/devices`.
 :::
 
 1. Utilisez l'utilitaire `lspci` avec les options correctes pour obtenir le dessin de l'architecture P.C.I. de votre système : Combien y a-t-il de bus et de ponts P.C.I. ? Et des ponts P.C.I./I.S.A. ?
 
-::: {.correction .if correction="true"}
+:::correction
 - Exécuter la commande `lspci -tv` pour avoir l'arborescence.
 - Exécuter la commande `lspci -v | grep -i bridge` pour trouver les bridges.
 
@@ -418,11 +418,11 @@ $ lspci -v | grep -i bridge
 	Prefetchable memory behind bridge: [disabled] [64-bit]
 00:1f.0 ISA bridge: Intel Corporation Wildcat Point-LP LPC Controller (rev 03) 
 ```
-::: 
+:::
 
 1. Quelles sont les options de `lspci` permettant d’établir la liste des périphériques P.C.I. `Intel` ?
 
-::: {.correction .if correction="true"}
+:::correction
 L'information de vendeur est le 1er segment affiché par `lspci -nn`.
 ```
 $ lspci -nn | grep -i intel
@@ -469,14 +469,14 @@ $ lspci -d 8086:
 
 1. À quoi sert l'utilitaire `setpci` ?
 
-::: {.correction .if correction="true"}
+:::correction
 Accéder aux périphériques P.C.I. et les configurer.
 :::
 
 1. Quelle est la température du processeur ? Utiliser l'ACPI, le chemin exact peut être dépendant du constructeur (chercher `thermal` ou `temperature`).
 Attention, il faut que le service ACPI soit installé. Sur Fedora, on pourra utiliser : `sudo dnf install -y acpid && systemctl start acpid` et sur Ubuntu : `sudo apt install -y acpid && systemctl start acpid`
 
-::: {.correction .if correction="true"}
+:::correction
 Exemples de réponses :
 
 ```
@@ -489,7 +489,7 @@ temperatures:	41 0 0 0 0 0 0 0
 
 1. Branchez une clé USB sur votre PC. Si vous êtes en environnement graphique, il se peut que le gestionnaire de fichiers s’ouvre. Quels sont les mécanismes mis en œuvre ? Comment trouver des informations sur le périphérique ?
 
-::: {.correction .if correction="true"}
+:::correction
 Voici les mécanismes mis en œuvre :
 
 - Dans un premier temps, le noyau détecte la connexion et charge le module USB correspondant. 
@@ -509,7 +509,7 @@ Pour obtenir des informations :
 1. Utiliser `udev` pour afficher toutes les informations possibles sur la carte réseau du système.
 2. Utiliser `udev` pour récupérer le fichier système associé au fichier de périphérique de la partition racine du système.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 #1.
 udevadm info -p /sys/class/net/eth0 -a

@@ -14,7 +14,7 @@ Soit le spécifications techniques suivantes pour l'exécution d'une fonction `F
 
 _Proposer des classes d'équivalence à tester._
 
-::: {.correction .if correction="true"}
+:::correction
 - $n < 0$ ou $n > 200$ : classe d'erreur 1 - message d'erreur à afficher ;
 - $n \in [0,1]$ : classe d'erreur 2 - entrée non attendue ;
 - $n \in [1,20[$ : classe valeur exacte `Factoriel(n)` ;
@@ -27,7 +27,7 @@ Un programme de classification de triangles prend en entrée un triplet de réel
 
 Donner des exemples de valeurs aux limites.
 
-::: {.correction .if correction="true"}
+:::correction
 - $(0,0,0)$ un point,
 - $(0.1,0.1,0.1)$ un petit triangle,
 - $(1,1,2)$ un segment,
@@ -51,18 +51,18 @@ Les conditions d'utilisation sont simples :
 1. Écrire les règles liées à cette fonctionnalité en utilisant une table de décision.
 2. En déduire un jeu de tests appropriés permettant de couvrir toutes les règles.
 
-| Conditions     | Cas 1 | Cas 2 | ...
-|----------------|-------|-------|-----
-| Username (T/F) |       |       |
-| Password (T/F) |       |       |
-| Output (E/N)   |       |       |
+| Conditions     | Cas 1 | Cas 2 | ... |
+|----------------|-------|-------|-----|
+| Username (T/F) |       |       |     |
+| Password (T/F) |       |       |     |
+| Output (E/N)   |       |       |     |
 
-- T = True
-- F = False
-- E = Error
-- N = Next
+- `T` = True
+- `F` = False
+- `E` = Error
+- `N` = Next
 
-::: {.correction .if correction="true"}
+:::correction
 - Case 1 – Username and password both were wrong. The user is shown an error message.
 - Case 2 – Username was correct, but the password was wrong. The user is shown an error message.
 - Case 3 – Username was wrong, but the password was correct. The user is shown an error message.
@@ -100,7 +100,7 @@ Sortie     | Photo uploaded | Error message resolution mismatch | Error message 
 
 En utilisant cette table de décision, proposer un ensemble de cas de tests permettant une couverture complète de la fonctionnalité en testant toutes les sorties possibles.
 
-::: {.correction .if correction="true"}
+:::correction
 Nous pouvons créer 8 cas de tests permettant une couverture complète de la fonctionnalité :
 
 - Upload a photo with format `.jpg`, size less than 32kb and resolution 137x177 and click on upload.
@@ -139,7 +139,7 @@ Pour limiter le nombre de tests, on procède à un plan de test par paires : on 
 
 Proposer un plan de tests permettant de valider chaque paire d'interactions. 
 
-::: {.correction .if correction="true"}
+:::correction
 |OS     |Réseau   |
 |-------|---------|
 |Linux  |IP       |
@@ -192,7 +192,7 @@ Proposer un plan de tests permettant de valider chaque paire d'interactions.
 |Bluetooth|Canon-EX  |
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 |Réseau   |Application|
 |---------|-----------|
 |IP       |Word       |
@@ -262,7 +262,7 @@ Proposer des jeux de tests permettant :
 
 Y a-t-il une différence ?
 
-::: {.correction .if correction="true"}
+:::correction
 1. Couverture des instructions :
 
 - Cas de test $a$ vrai, $b$ faux, $c$ faux => test du `if` et du dernier `println()` ;

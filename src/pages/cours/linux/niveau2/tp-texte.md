@@ -43,7 +43,7 @@ Afficher du texte à l'écran est primordial mais faire défiler de longues lign
 9. Diviser le fichier `/tmp/mon_fichier.txt` en segments de 100 lignes nommés `/tmp/extrait-...`
 10. Calculer le `hash` du fichier `/tmp/mon_fichier.txt`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 #1.
 $ cat /etc/passwd
@@ -127,7 +127,7 @@ Les filtres permettent d'aller un peu plus loin en sélectionnant plus finement 
 6. Convertissez tous les login en majuscules.
 7. Isolez maintenant la huitième ligne de `/etc/passwd`.
 
-::: {.correction .if correction="true"}
+:::correction
 1. Le fichier `/etc/passwd` est un grand classique sous Unix. Il se compose de sept champs séparés par des `:` : `login:passwd:UID:GID:Commentaire:homedir:shell` . Récupérez la ligne de l'utilisateur `root` dans `/etc/passwd`.
 
 ```
@@ -207,7 +207,7 @@ Les jokers sont extrêmement utiles pour effectuer des opérations en masse sur 
     'Plus jamais ça !' a-t-il répondu.
     ```
 
-::: {.correction .if correction="true"}
+:::correction
 1. `ls *.txt` : Affichera tous les fichiers ayant l'extension `.txt` dans le répertoire courant.
 2. `rm backup*` : Supprimera tous les fichiers qui commencent par "backup" dans le répertoire courant.
 3. `cp image[1-3].jpg` : Copiera les fichiers `image1.jpg`, `image2.jpg` et `image3.jpg` dans le répertoire courant.
@@ -264,7 +264,7 @@ Pour une introduction aux regex, voir les tutoriels <https://thevaluable.dev/reg
 Voir aussi les exercices : https://github.com/learnbyexample/TUI-apps
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 ```
 #2.
@@ -314,7 +314,7 @@ $ grep "^[[:upper:]]" GPL-3
 
 1. Affichez le nombre de mots dans tous les fichiers commençant par la lettre `h` dans le dossier `/etc`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 $ wc -w /etc/{**/,}h*
 ```
@@ -322,7 +322,7 @@ $ wc -w /etc/{**/,}h*
 
 2. [Difficile] Quelle est la commande pour remplacer tous les séparateurs `:` dans le fichier `/etc/password` par le caractère `#` ?
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 $ sed 's,^\([^:]*\):\([^:]*\):,\1#\2#,' -i /etc/password
 ```

@@ -14,13 +14,13 @@ Une ligne de commande Linux comprend les éléments suivants :
 - _Redirections et Pipes_ : Vous pouvez rediriger la sortie d'une commande vers un fichier en utilisant >, ajouter la sortie à un fichier avec >>, ou rediriger l'entrée à partir d'un fichier avec <. Vous pouvez également utiliser des pipes (|) pour diriger la sortie d'une commande vers l'entrée d'une autre. _Voir le TP sur les redirections._
 - _Wildcards_ : Les caractères génériques, comme `*`, `?`, `[`, `]`, `{`, `}`, sont utilisés pour effectuer des correspondances de motifs avec des noms de fichiers. Par exemple, `*.txt` correspondra à tous les fichiers avec l'extension `.txt`. _Voir le TP sur les flux de texte._
 
-::: tip
+:::tip
 L'argument `--` permet de séparer la commande et ses options des arguments. Ce paramètre spécial est très utile pour travailler sur des noms spéciaux de fichiers.
 
 Par exemple : `rm -- -1` supprime le fichier `-1` (alors que `rm -1` fournit l'option `-1` à la commande `rm`).
 :::
 
-::: link
+:::link
 Voir aussi :
 
 - <https://doc.ubuntu-fr.org/tutoriel/console_ligne_de_commande>
@@ -53,7 +53,7 @@ Vous pouvez également utiliser la commande `env` pour exécuter un programme av
 env NOM_DE_VARIABLE=VALEUR mon_programme
 ```
 
-::: exo
+:::exo
 1. Créer une variable `ma_variable` ayant comme valeur `42`. Afficher la valeur de cette variable.
 1. Taper la commande `bash` : ceci va créer un nouveau shell (dans un nouveau processus) fils du shell courant.
 1. Vérifier que la variable `ma_variable` n'est pas instanciée. Finir l'exécution de ce processus par la commande `exit`.
@@ -73,7 +73,7 @@ env NOM_DE_VARIABLE=VALEUR mon_programme
 - Si la commande spécifiée ne se trouve pas dans les répertoires du `PATH`, le système vérifie également le répertoire courant.
 - La variable `PATH` peut être modifiée par l'utilisateur.
 
-::: exo
+:::exo
 Modifier le `PATH` pour ajouter un répertoire de votre choix.
 :::
 
@@ -84,7 +84,7 @@ Modifier le `PATH` pour ajouter un répertoire de votre choix.
 3. La commande `which` est utilisée pour déterminer l'emplacement du fichier exécutable d'une commande. Lorsque vous saisissez `which` suivi du nom d'une commande, elle affiche le chemin absolu du fichier exécutable correspondant. Cela peut être utile pour savoir quelle version d'une commande est exécutée si plusieurs versions sont installées sur votre système.
 4. La commande `type` est utilisée pour déterminer le type d'une commande. Elle indique si une commande est une commande interne du shell, une commande externe ou un alias.
 
-::: exo
+:::exo
 1. Afficher la page de manuel de la commande `ls`.
 1. Trouver des commandes liées à la copie de fichiers.
 1. Chercher le chemin vers l'exécutable de la commande `python`.
@@ -121,7 +121,7 @@ $ echo ${var//<pattern>/<replacement>} # remplace toutes occurences de `pattern`
 $ echo ${^array}.png # one.png two.png three.png
 ```
 
-::: exo
+:::exo
 1. Comment affichez-vous les 10 dernières commandes de l'historique ?
 1. Utilisez la commande `!n` (où `n` est un numéro de commande) pour réexécuter une commande spécifique à partir de l'historique.
 1. Utilisez la commande `!!` pour réexécuter la dernière commande de votre historique.
@@ -130,7 +130,7 @@ $ echo ${^array}.png # one.png two.png three.png
 1. Comment effacez-vous l'historique des commandes ?
 :::
 
-::: tip
+:::tip
 - Pour éviter d'ajouter une commande dans l'historique, par exemple pour des raisons de sécurité, il suffit d'ajouter un espace avant la commande.
 - La commande `history -c` efface l’historique de la session courante.
 :::

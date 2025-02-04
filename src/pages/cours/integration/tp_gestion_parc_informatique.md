@@ -1,7 +1,6 @@
 ﻿---
 title: TD OCSInventory
 date: 2023 / 2024
-user-manual: false
 ---
 
 # Gestion de parc informatique : OCSInventory
@@ -54,7 +53,6 @@ En vous aidant de la section Installation du document fourni en annexe :
 - Connectez-vous sur l’interface du serveur pour vérifier son bon fonctionnement et le référencement des agents.
 
 
-::: {.if user-manual=true}
 # Manuel utilisateur
 
 Réaliser un manuel utilisateur décrivant les fonctionnalités d’inventaire et d’administration des machines qui composent le parc :
@@ -67,7 +65,6 @@ Réaliser des formations pour les nouveaux utilisateurs du parc informatique, co
 
 - Une formation à destination des administrateurs système utilisant le serveur OCSInventory
 - Une formation à destination des utilisateurs des postes de travail du parc informatique, concernant le rattachement du poste de l’utilisateur au serveur OCSInventory (dans ce parc informatique, cette opération est réalisée par les utilisateurs finaux, qui n’ont pas de connaissance technique sur le parc).
-:::
 
 # Migration des données de GLPI vers OCSInventory
 

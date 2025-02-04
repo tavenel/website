@@ -14,31 +14,31 @@ _Comment pouvez-vous les répartir, sachant que vous voulez séparer vos donnée
 
 1. Quelle doit être la taille de la partition d’échange SWAP ?
 
-::: {.correction .if correction="true"}
+:::correction
 La partition d’échange est utilisée lorsque Linux ne dispose plus d’assez de place en mémoire vive pour traiter toutes ses données. Les données sont déplacées en mémoire virtuelle sur cette partition d’échange pour libérer plus ou moins temporairement de la mémoire pour d’autres données. Votre système disposant de 2 Go de mémoire, vous pouvez ne prévoir que 2 Go de swap. Il reste alors 118 Go d’espace disque pour la suite.
 :::
 
 2. Quelle place réserver au système `/` ?
 
-::: {.correction .if correction="true"}
+:::correction
 Même si vous deviez installer tous les produits présents sur un DVD d’installation, le total n’atteindrait pas 10 Go. Mais deux choses doivent attirer votre attention : vous pouvez rajouter des produits issus d’autres sources (nouveaux dépôts, installation manuelle, etc.) par la suite, et les répertoires `/var` et `/tmp` peuvent être amenés à grossir.Disposant d’assez de place, pourquoi ne pas réserver 20 ou 30 Go à la racine ? Partez par exemple sur 20 Go. Il reste 98 Go.
 :::
 
 3. Quelle place réserver au `/home` ?
 
-::: {.correction .if correction="true"}
+:::correction
 La partition qui contient `/home` est celle qui contient vos données, ou celle des autres utilisateurs. C’est elle qui occupe le plus de place, entre les photos, la musique, les films, les documents de travail, etc. Réservez les 98 Go restants. Le disque est entièrement partitionné.
 :::
 
 4. Est-il utile de créer une partition étendue ?
 
-::: {.correction .if correction="true"}
+:::correction
 Vous avez trois partitions à créer sur le disque, en plus de celle qui existe déjà soit en tout quatre partitions. C’est le nombre exact pour prévoir quatre partitions primaires. Mais pensez que vous pouvez avoir besoin de réduire, supprimer ou recréer des partitions. Dans ce cas, la limite est déjà atteinte. Soyez prévoyant et créez une partition étendue où créer des partitions logiques.
 :::
 
 5. Quel est le schéma final du disque ?
 
-::: {.correction .if correction="true"}
+:::correction
 - Partition primaire 1 : l'OS déjà présent, 40 Go.
 - Partition étendue :
   - Partition logique 1 : `/`, 20 Go.
@@ -69,7 +69,7 @@ But : créer une partition et la faire reconnaître par le système. Attention l
 3. Forcez la mise à jour de la nouvelle table des partitions avec `partprobe`.
 4. Vérifiez dans `/dev` la présence des fichiers de partitions du nouveau disque.
 
-::: {.correction .if correction="true"}
+:::correction
 
 Lancez `fdisk`. Le 2e disque `SATA` s'appelle `/dev/sdb` :
 
@@ -125,7 +125,7 @@ But : créer et manipuler le système de fichiers dans `/dev/sdb1`. Attention ce
   - Par `blkid`
   - Par `dumpe2fs`
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # #1.
 # mkfs -t ext2 /dev/sdb1
@@ -162,7 +162,7 @@ But : créer et manipuler le système de fichiers dans `/dev/sdb5`. Attention ce
   - fournir une option pour une taille `FAT` de 32
   - fournir une option pour un label `DONNEES`
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # mkfs -t vfat -F 32 -n DONNEES /dev/sdb5
 ## ou
@@ -183,7 +183,7 @@ But : accéder aux nouveaux systèmes de fichiers créés.
   - exécuter la commande `systemctl daemon-reload` pour recharger `/etc/fstab`.
 6. Montez le système de fichiers simplement depuis le nom de son point de montage.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # #1.
 # mkdir /mnt/backup /mnt/donnees
@@ -236,7 +236,7 @@ But : obtenir des informations sur l’occupation du système de fichiers et le 
     - `sudo dnf install hdparm`
 7. Quelle est la commande permettant d'activer/désactiver le cache d’un disque dur ?
 
-::: {.correction .if correction="true"}
+:::correction
 1. Regardez l’état d’occupation de vos systèmes de fichiers, de manière lisible pour un humain.
 
 ```
@@ -308,7 +308,7 @@ But : gérer le swap et la mémoire.
 3. Le swap sur cette machine, à ce niveau de charge, est probablement inutile. Désactivez- le. 
 4. Quelques instants plus tard, vous devez charger une application lourde de traitement d'image qui va énormément consommer de mémoire. Rechargez l'intégralité des zones de swap.
 
-::: {.correction .if correction="true"}
+:::correction
 1. Sur une machine donnée, le bilan mémoire se présente ainsi, qu'en déduisez-vous ? 
 
 ```
@@ -366,7 +366,7 @@ Voir aussi :
 - <https://www.linuxtricks.fr/wiki/gestion-des-quotas-sous-linux-ext4-xfs>
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. Modifiez avec `vi` la ligne rajoutée dans `/etc/fstab` au TP _Accès et montage du système de fichiers_ pour activer les quotas utilisateur et remontez le système de fichiers.
 
 Dans `/etc/fstab` : 

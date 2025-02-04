@@ -23,7 +23,7 @@ Le `SUID` (Set User ID) est un mécanisme de permission qui permet à un utilisa
 2. Rendre ce script exécutable et tester son exécution
 3. Modifiez les permissions pour activer le SUID et tester l'exécution du script
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/bin/bash
 echo "Le fichier est exécuté avec les privilèges de $(whoami)"
@@ -76,7 +76,7 @@ Le SGID (Set Group ID) est similaire au SUID, mais il affecte le groupe proprié
 
 Expliquez ce que fait le SGID dans cet exemple. Que se passe-t-il lorsque vous ajoutez des fichiers dans ce répertoire ?
 
-::: {.correction .if correction="true"}
+:::correction
 Le SGID (Set Group ID) applique les privilèges du groupe propriétaire à tout fichier créé dans le répertoire. Dans l'exemple, lorsque le SGID est activé sur le répertoire `/tmp/sgid_test`, tout fichier créé dans ce répertoire hérite automatiquement du groupe du répertoire, plutôt que du groupe de l'utilisateur qui a créé le fichier. Cela permet d'assurer que tous les fichiers créés dans un répertoire partagé appartiennent à un même groupe, facilitant la collaboration entre les membres de ce groupe.
 :::
 
@@ -126,7 +126,7 @@ Les ACL (Access Control List) permettent de définir des permissions supplément
 
 Pourquoi utiliser des ACL plutôt que les permissions standard ? Donnez un exemple de cas où cela est utile.
 
-::: {.correction .if correction="true"}
+:::correction
 Les ACL permettent de définir des permissions plus fines que les permissions standard rwx. Les permissions standard ne permettent de définir des droits d'accès qu'à trois entités : le propriétaire, le groupe, et les autres utilisateurs. Avec les ACL, vous pouvez spécifier des permissions pour des utilisateurs et des groupes supplémentaires, sans changer la propriété ou les groupes principaux du fichier.
 
 Exemple de cas utile : Supposons que vous ayez un fichier accessible par un groupe de collaborateurs, mais qu'un seul membre d'un autre groupe ait besoin d'y accéder en écriture. Au lieu de changer la propriété ou de créer un groupe spécifique, vous pouvez utiliser les ACL pour attribuer l'accès en écriture à cet utilisateur, tout en laissant les autres utilisateurs du groupe avec les permissions habituelles.

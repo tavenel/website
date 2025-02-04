@@ -17,7 +17,7 @@ La distance choisie pour cette classification, qui apparait dans les quatre matr
 4. Calculer les coordonnées du centre de gravité $G_9$ des cinq points.
 5. Tracer un dendrogramme résumant cette classification.
 
-::: {.correction .if correction="true"}
+:::correction
 ![](./classif-hierarchique-ascendante_corrige.png)
 
 $G_6$ est le milieu du segment $M_2(0;1)$ et $M_3(0;2)$ donc $G_6=(\frac{0-0}{2};\frac{1+2}{2}) = (0; \frac{3}{2})$.

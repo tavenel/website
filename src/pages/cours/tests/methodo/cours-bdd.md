@@ -30,12 +30,12 @@ _Tom Avenel_
 
 ## Spécification par scénarios (User-Story)
 
-- :star: Base : exemples issus de cas d'usages précis ;
-- :scroll: En découlent les scénarios (exemples) : compréhension commune et précise de ce qui est à faire.
+- ⭐ Base : exemples issus de cas d'usages précis ;
+- 📜 En découlent les scénarios (exemples) : compréhension commune et précise de ce qui est à faire.
 - But :
-  - :office_worker: Retranscrire le besoin métier dans le code (idem DDD) : **communication** :speech_balloon:
-  - :thumbsup: La fonctionnalité couvre tous les cas d'usages métiers
-  - :white_check_mark: Un test valide, implémente et documente le scénario
+  - 🧑‍💼 Retranscrire le besoin métier dans le code (idem DDD) : **communication** 💬
+  - 👍 La fonctionnalité couvre tous les cas d'usages métiers
+  - ✅ Un test valide, implémente et documente le scénario
 
 ---
 
@@ -52,7 +52,7 @@ _Tom Avenel_
 
 ---
 
-## Chercher les cas d'erreur :x:
+## Chercher les cas d'erreur ❌
 
 ---
 
@@ -75,7 +75,7 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-## Du scénario au critère d'acceptation :thumbsup:
+## Du scénario au critère d'acceptation 👍
 
 ---
 
@@ -97,21 +97,21 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-## Comment écrire de bons scénarios :heavy_check_mark:
+## Comment écrire de bons scénarios ✔️
 
-- :scroll: Avoir des noms de tests expressifs : le but de BDD est de documenter le produit depuis les scénarios
-- :bulb: 1 phrase = 1 test
-- :speech_balloon: Utiliser le langage (ubiquitaire) du métier : voir DDD
-  - :warning: les experts métier doivent être disponibles !
-- :star: Le BDD est piloté par la valeur métier (et donc, le développement !)
+- 📜 Avoir des noms de tests expressifs : le but de BDD est de documenter le produit depuis les scénarios
+- 💡 1 phrase = 1 test
+- 💬 Utiliser le langage (ubiquitaire) du métier : voir DDD
+  - ⚠️ les experts métier doivent être disponibles !
+- ⭐ Le BDD est piloté par la valeur métier (et donc, le développement !)
 
 ---
 
 ## Atelier 3 Amigos
 
-- :office_worker: _Business_ : **Définit** le problème ou la fonctionnalité attendue, défini la valeur business (Product Owner, Business Analyst, ...) ;
-- :technologist: _Développeurs_ : Suggèrent un **moyen** de corriger ce problème ou de créer la fonctionnalité ;
-- :scientist: _Utilisateur / Testeur_ : Cherchent les **problèmes** et les failles dans le raisonnement.
+- 🧑‍💼 _Business_ : **Définit** le problème ou la fonctionnalité attendue, défini la valeur business (Product Owner, Business Analyst, ...) ;
+- 🧑‍💻 _Développeurs_ : Suggèrent un **moyen** de corriger ce problème ou de créer la fonctionnalité ;
+- 🧑‍🔬 _Utilisateur / Testeur_ : Cherchent les **problèmes** et les failles dans le raisonnement.
 - Autre rôles si nécessaire : _UX Designer_, _AdminSys_, …
 
 ---
@@ -123,7 +123,7 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-![](http://www.arolla.fr/blog/wp-content/uploads/2012/06/bdd-dialogue.png)
+![](https://www.arolla.fr/bdd-dialogue-png/)
 
 <span class="legende">©www.arolla.fr</span>
 

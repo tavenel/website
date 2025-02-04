@@ -19,7 +19,7 @@ Attention, sous Windows il faut remplacer `C:\...\mon_programme.exe` par des sla
 
 Par exemple, pour utiliser `vsCode` sous Windows avec le chemin par défaut : `git config --global core.editor "C:/Program\ Files/Microsoft\ VS\ Code/Code.exe --wait"`
 
-::: tip
+:::tip
 Si vous souhaitez utiliser `vsCode` comme éditeur, attention à bien ajouter l'option `--wait` à la commande : `git config --global core.editor "C:/.../code.exe --wait`. 
 :::
 

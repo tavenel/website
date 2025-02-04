@@ -20,7 +20,7 @@ correction: false
 5. `xargs` est une commande UNIX puissante qui permet de récupérer les arguments en sortie de la commande précédente et de les traiter à travers un pipe. Utiliser `xargs` pour chercher le pattern `127.0.0.1` dans tout fichier de `/etc`.
 6. Utiliser `xargs` pour compter le nombre de lignes de tous les fichiers `.md` présents récursivement dans un répertoire et trier ces fichiers par nombre de lignes croissant.
 
-::: {.correction .if correction="true"}
+:::correction
 1. La commande `find /` retourne beaucoup d’erreurs si elle est utilisée par un simple utilisateur à cause d’un problème de droits. Évitez les messages d’erreurs en les redirigeant vers un _trou noir_
 
 ```

@@ -108,7 +108,7 @@ df -h /mnt/users
 ```
 
 
-::: {.correction .if correction="true"}
+:::correction
 # Correction
 
 ## Initialisation des disques pour LVM

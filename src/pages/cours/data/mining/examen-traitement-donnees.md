@@ -10,7 +10,7 @@ correction: false
 2. Définissez dans vos propres mots ce qu'est un "bon" modèle de data mining en utilisant les termes `prédiction` et `observation`.
 3. L'existence d'un "bon" modèle de régression linéaire entre deux variables $X$ et $Y$ implique-t-il un relation de causalité entre $X$ et $Y$ ?
 
-::: {.correction .if correction="true"}
+:::correction
 1. Un algorithme d'apprentissage non supervisé est un algorithme qui n'a pas besoin de données d'apprentissage, c'est-à-dire qu'on ne connaît pas d'avance les valeurs possibles de la variable à prédire Y (et donc, à l'inverse d'un algorithme d'apprentissage supervisé, on ne dispose pas de données étiquetées contenant des valeurs de Y pour des valeurs de(s) variable(s) prédictive(s) X). L'intérêt d'un tel algorithme est de ne pas avoir besoin de connaissance du métier pour réaliser l'étiquettage (par exemple, pas besoin d'être médecin pour faire une étude sur une maladie). L'inconvénient est que les résultats peuvent êtres moins précis, et le sens des données de sortie pas toujours facile à expliquer (puisqu'il n'y a plus de sens du métier dans les données - par exemple, segmenter des patients malades en fonction de variables non observables dans la vraie vie).
 2. Un bon modèle de data mining est un modèle dont les prédictions ($\hat{Y}$) sont assez proches des observations ($Y$) sans pour autant créer de surapprentissage, c'est-à-dire que les prédictions seront toujours valables pour de nouvelles observations sur la même étude.
 3. Non, il peut y avoir corrélation sans causalité : voir [ce lien](https://www.tylervigen.com/spurious-correlations).
@@ -58,7 +58,7 @@ _Prix observé_ | 130.00 | 280.00 | 650.00 | 800.00  | 268.00 | 790.00 | 500.00 
 _Prix prédit_  | 120.42 | 238.19 | 537.97 | 1019.75 | 264.96 | 987.64 | 559.38 | 291.72 | 227.49 | 157.89 |
 _Résidus_      | 9.58   | 41.81  | 112.03 | -219.75 | 3.04   | -197.64| -59.38 | 28.28  | 22.51  | 92.11  |
 
-::: {.correction .if correction="true"}
+:::correction
 1. $b+ a x_i$ est la prédiction de $y$ le prix de l'apartement étant donnée $x$ la surface. $\epsilon_i$ est le résidu, c'est-à-dire la différence entre $y$ observé et $\hat{y}$ prédit pour le prix.
 2. On utilise la méthode des moindres carrés, qui permet de minimiser la moyenne des écarts au carré entre les prédictions et les observations.
 3.
@@ -93,7 +93,7 @@ i | $x_i$ | $y_i$ | $x_i^2$ | $y_i^2$ | $x_iy_i$
 7. Calculer le coefficient de corrélation linéaire. Commenter.
 8. Calculer la longueur prédite par ce modèle pour l'humérus d'un spécimen dont le fémur mesurerait 50cm.
 
-::: {.correction .if correction="true"}
+:::correction
 4. $cov(x,y) = 171.36$
 5. $\hat{y} = 1.175x - 3.019$
 6. Oui : le centre de gravité est le point central du nuage - c'est l'individu qui représente le mieux la population. La droite passe donc par ce point car elle minimise les écarts à la moyenne.
@@ -128,7 +128,7 @@ Soit $U$ le nouveau fruit de largeur $L = 1$, et de hauteur $H = 4$.
    Chaque voisin vote selon un poids $w$ inversement proportionnel au carré de sa distance : $w = 1/d^2$.
    On prend 3 voisins, quelle est la couleur de $U$ ? Comparez vos résultats à ceux de la question 2.
 
-::: {.correction .if correction="true"}
+:::correction
 1. et 2. Voir cours - application directe de k-NN
 3. Plutôt qu'un vote majoritaire (chaque élément a un poids = 1), on utilise le poids dans le vote de la classe finale. Ainsi pour $k = 3$ proches voisins, si l'on a 2 éléments dans la classe rouge $x_1$ et $x_2$ et un élément dans la classe orange $x_3$ le vote de la classe orange vaudra $vote_{orange}=w_{x_3}=\frac{1}{d_{x_3}^2}$ et $vote_{rouge}=w_{x_1} + w_{x_2}=\frac{1}{d_{x_1}^2} + \frac{1}{d_{x_2}^2}$. Il est alors possible que $vote_{orange} > vote_{rouge}$ même si il y a plus d'éléments rouges proches voisins que d'éléments oranges : la distance permet de pondérer le nombre d'individus (on préfère donc être très proche de quelques individus d'une classe plutôt que d'être un peu proche mais plus éloigné quand même de pleins d'individus d'une autre classe).
 :::
@@ -152,6 +152,6 @@ Faire une classification par la méthode des centres mobiles en utilisant un alg
 
 On arrêtera l'algorithme lorsque cela sera jugé nécessaire (en justifiant).
 
-::: {.correction .if correction="true"}
+:::correction
 Voir cours - application directe de k-means
 :::

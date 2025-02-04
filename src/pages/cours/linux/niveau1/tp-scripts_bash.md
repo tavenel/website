@@ -34,7 +34,7 @@ Créer un premier script ayant le comportement suivant :
 - Afficher le contenu de la variable `monMessage` à l’écran.
 - Stocker le contenu de la variable `monMessage` dans un fichier `/tmp/monScript.out`.
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -50,7 +50,7 @@ Modifier le script précédent pour demander à l'utilisateur le contenu du mess
 
 On pourra utiliser la page de manuel de la commande `read` pour connaître la syntaxe de cette commande (ou `help read` si la page de manuel n'est pas installée).
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -68,7 +68,7 @@ Créer un nouveau script qui demande deux nombres à l'utilisateur, et affiche �
 Pour effectuer une opération arithmétique en Bash, on peut utiliser l'opérateur `$(())`, par exemple : `$((1+2))`.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -93,7 +93,7 @@ Pour cela, le script dispose de variable d’environnement prédéfinies :
 
 Modifier le script précédent pour effectuer l’addition de 3 nombres passés en paramètres.
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -122,7 +122,7 @@ fi
 
 En utilisant une condition `if`, demander à l'utilisateur d’entrer un mot et vérifier que le mot entré est bien celui attendu.
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -144,7 +144,7 @@ Si le nombre de paramètres n’est pas correct, on pourra quitter le script ave
 
 Rappel : la commande `exit` prend en paramètre le code de retour du script. Par convention, on renvoie 0 en cas de succès (c’est en fait ce que fait le shell `Bash` automatiquement pour nous), et une valeur différente de 0 en cas d’échec.
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -175,7 +175,7 @@ Le code de retour de la commande précédente est stocké dans la variable point
 - Lister les informations du fichier `/fichierNonExistant` en redirigeant la sortie standard et la sortie d’erreur vers la sortie nulle : `/dev/null`.
 - Tester le code de retour de la commande utilisée pour lister le fichier. En cas d’erreur, afficher un message d’erreur à l'utilisateur.
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 
@@ -198,7 +198,7 @@ On utilise généralement cette commande avec la fonction `while` qui permet d�
 
 En utilisant la fonction `while` et la commande `shift`, modifier le script 4 pour effectuer l'addition de tous les paramètres, quel que soit le nombre de paramètres fournis par l'utilisateur.
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 #!/usr/bin/env bash
 

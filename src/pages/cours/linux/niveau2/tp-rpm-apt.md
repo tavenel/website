@@ -17,7 +17,7 @@ Le but de ce TP est de travailler sur la base RPM des packages déjà installés
 
 1. Déterminez le nombre de packages RPM actuellement installés sur votre poste de travail.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 $ rpm -qa | wc -l
 ```
@@ -25,7 +25,7 @@ $ rpm -qa | wc -l
 
 2. Vérifiez que le package `coreutils` est bien présent sur votre système, puis déterminez à quoi il sert à l’aide de sa description. Pouvez-vous faire en sorte de n’obtenir que la description et rien d’autre ? Lisez la page du manuel pour en savoir plus. _Indice : Le paramètre `-q` accepte un format de sortie que vous pouvez formater avec `--queryformat` . Le format se spécifie ainsi : `%{CHAMP}` avec le champ en majuscules._
 
-::: {.correction .if correction="true"}
+:::correction
 Dans un premier temps interrogez la base `RPM` sur ce package pour en obtenir les informations :
 
 ```
@@ -41,7 +41,7 @@ $ rpm -q --queryformat=%{DESCRIPTION} coreutils
 
 3. Essayez de supprimer le package `coreutils`. Pouvez-vous fournir la liste des dépendances qui vous en empêche ?
 
-::: {.correction .if correction="true"}
+:::correction
 
 ```
 # rpm -e coreutils
@@ -65,7 +65,7 @@ coreutils = 6.9-43
 4. Téléchargez le package `RPM` de `tuxpaint` présent sur <https://src.fedoraproject.org/rpms/tuxpaint>, choisissez la version de Fedora correspondante (`cat /etc/fedora-release`) et le téléchargement pour architecture x86-64.
   - Essayez d'installer ce package directement avec `rpm`. Que remarque-t-on ?
 
-::: {.correction .if correction="true"}
+:::correction
 Installez le package avec les paramètres `-i`, `-v` et `-h` :
 
 ```
@@ -77,7 +77,7 @@ Installez le package avec les paramètres `-i`, `-v` et `-h` :
 
 5. En utilisant `dnf (uniquement pour cette question)`, installer facilement `tuxpaint` depuis les dépôts.
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # dnf install tuxpain
 ```
@@ -85,7 +85,7 @@ Installez le package avec les paramètres `-i`, `-v` et `-h` :
 
 6. Si le package était déjà installé, comment auriez-vous pu le mettre à jour ? Sachant qu'il est déjà installé maintenant, tentez de mettre à jour ce package de manière inconditionnelle. Dans quel cas cela peut-il être nécessaire ? Enfin, supprimez-le.
 
-::: {.correction .if correction="true"}
+:::correction
 Vous pouvez mettre à jour le package avec les paramètres `-U` ou `-F`. 
 
 Notez que vous auriez pu installer le package directement avec `-U` :
@@ -121,7 +121,7 @@ Le poste, ou une machine virtuelle, doit disposer d’une distribution de type D
 
 1. Répondez aux questions 1 à 4 du TP rpm, mais avec les commandes et packages `DPKG` équivalents : `coreutils` est présent sous le même nom et `tuxpaint` dispose de packages Debian sur <https://pkgs.org/search/?q=tuxpaint> (pour la version d'Ubuntu : `cat /etc/issue`). En cas de problèmes de dépendances, on ne cherchera pas à les résoudre (voir `apt` ci-dessous).
 
-::: {.correction .if correction="true"}
+:::correction
 1. La liste des packages installés doit être filtrée. Par défaut `dpkg` fournit la liste de tous les paquets connus, dont ceux installés. Ils commencent par `ii` :
 
 ```
@@ -180,7 +180,7 @@ Il n’y a pas de méthode directe équivalente à `rpm` pour la mise à jour d�
 
 2. `APT` est un gestionnaire de meta-packages : il gère les dépendances à votre place et travaille sur des dépôts et non plus sur des packages individuels. `Tuxpaint` est présent dans le dépôt des paquets Debian, notamment dans le dépôt `Universe`. Le but est d'ajouter (si besoins) ce dépôt, mettre à jour le système vers `Universe` puis d'installer le package `tuxpaint`. 
 
-::: {.correction .if correction="true"}
+:::correction
 Ajout du dépôt `universe` :
 
 ```

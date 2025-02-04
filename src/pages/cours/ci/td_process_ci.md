@@ -14,7 +14,7 @@ L'équipe de développement vous signale également que les besoins de ce projet
 
 Quel(s) conseil(s) souhaitez-vous apporter à cette équipe ? Justifiez votre choix. 
 
-::: {.correction .if correction="true"}
+:::correction
 - Réduire le temps avant intégration afin de tester au plus tôt et donc réduire la "feedback loop".
 :::
 
@@ -83,7 +83,7 @@ Pour rappel, voici un exemple de pipeline simpliste :
 @endditaa
 ```
 
-::: {.correction .if correction="true"}
+:::correction
 ```mermaid
 graph TD
   subgraph Machine personnelle

@@ -5,7 +5,7 @@ date: 2023 / 2024
 
 # Disclamer
 
-::: warning
+:::warn
 `Django` est un framework qui demande une certaine rigueur car les erreurs peuvent être délicates à tracer.
 
 En cas d'erreur, attention à bien vérifier que le bon fichier a été modifié ou créé au bon endroit, etc...
@@ -13,7 +13,7 @@ En cas d'erreur, attention à bien vérifier que le bon fichier a été modifié
 Plutôt que d'essayer de "bidouiller" le code pour résoudre un problème, il est nécessaire également de prendre du recul et comprendre la manipulation à effectuer.
 :::
 
-::: warning
+:::warn
 Le début de ce TP est très guidé et peut être réalisé rapidement sans essayer de comprendre ce qui est réalisé.
 Or il est nécessaire de parfaitement maîtriser les premières étapes avant de passer à la suite pour bien comprendre les notions fondamentales du framework avant d'en étudier les subtilités.
 :::
@@ -48,7 +48,7 @@ C:\>python -m venv C:\chemin\vers\le\nouveau\repertoire\du\venv
 
 Cette commande crée une installation locale de Python dans le répertoire spécifié.
 
-::: tip
+:::tip
 Il faut ensuite, **dans chaque terminal ouvert par la suite pour notre projet**, activer cet environnement en sourçant la configuration (voir le [tableau ici](https://docs.python.org/fr/3/library/venv.html#how-venvs-work)).
 
 Par exemple sous Linux / Mac :
@@ -107,7 +107,7 @@ Cette commande crée un nouveau répertoire `mon_projet` (le **projet**) avec :
   + `wsgi.py` : interface avec le serveur Web (interne).
 - un script `manage.py` qui servira de version locale de `django-admin` pour ce projet. C'est donc ce script qui remplacera de préférence les commandes `django-admin` dans la suite.
 
-::: warning
+:::warn
 **Par la suite, toutes les commandes `python manage.py` sont à exécuter dans le répertoire de ce fichier !**
 :::
 
@@ -129,7 +129,7 @@ Pour vérifier le bon démarrage du serveur, aller sur la page Web indiquée dan
 Starting development server at <http://127.0.0.1:8000/>
 ```
 
-::: link
+:::link
 Il est possible de modifier les paramètres du serveur de développement (port d'écoute, ...) : voir la [page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/django-admin/#runserver).
 :::
 
@@ -311,7 +311,7 @@ DATABASES = {
 }
 ```
 
-::: link
+:::link
 Pour une liste des bases de données supportées et leur configuration, voir la [page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/databases/).
 :::
 
@@ -348,7 +348,7 @@ from . import views
 urlpatterns = []
 ```
 
-::: exo
+:::exo
 Tester le démarrage du serveur de développement.
 :::
 
@@ -368,7 +368,7 @@ urlpatterns = [
 
 ## Fichiers statiques en développement
 
-::: tip
+:::tip
 Par défaut, `Django` ne gère pas les fichiers statiques : `CSS`, `JavaScript`, images, ...
 
 Pour disposer de ces fichiers dans le serveur **de développement**, on peut utiliser l'instruction `static()` dans le fichier `urls.py` du projet :
@@ -384,11 +384,11 @@ urlpatterns = [
 ```
 :::
 
-::: warning
+:::warn
 Cette méthode n'est à utiliser que pour le serveur de développement ! En production, on utilisera le serveur Web de déploiement pour charger ces fichiers : `Nginx`, ...
 :::
 
-::: exo
+:::exo
 Tester le démarrage du serveur de développement et aller sur l'URL principale du site Web : <http://127.0.0.1:8000/>.
 :::
 
@@ -404,7 +404,7 @@ _La redirection s'est bien effectuée vers l'URL `/catalog/` mais aucune route n
 
 `Django` utilise un `ORM` (object-relational mapping) pour modéliser le schéma d'une base de données relationnelle (SGBD) directement en objets Python.
 
-::: link
+:::link
 Voir le [cours sur la persistence des données Hibernate][site-perso] pour plus d'information sur les `ORM`.
 :::
 
@@ -422,7 +422,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-::: warning
+:::warn
 Chaque fois que vous ferez évoluer le modèle de données, vous devrez exécuter les commandes ci-dessus (elles seront traduites en structure dans la base de données que cela conduise à l'ajout ou au retrait d'objets ou d'attributs).
 :::
 
@@ -430,13 +430,13 @@ Nous n'avons pas encore ajouté de modèle métier dans notre projet mais à la 
 
 Pour disposer de ces modèles dans le SGBD, effectuer une première migration à l'aide des commandes décrites ci-dessus.
 
-::: tip
+:::tip
 Un avantage non négligeable de ce principe est la possibilité de stocker les scripts de migration dans le gestionnaire de versions (Git).
 
 Cela permet de revoir et de gérer l'historique des changements dans le SGBD, et participe au principe d'_Infrastructure as Code_ très important en DevOps.
 :::
 
-::: link
+:::link
 Pour plus d'information sur les migrations `Django`, voir [la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/migrations/).
 :::
 
@@ -457,7 +457,7 @@ En tant que développeur `Django`, il suffit donc de décrire le modèle de donn
 - `ForeignKey` : relation un à $n$ ;
 - `ManyToManyField` : relation $n$ à $n$.
 
-::: tip
+:::tip
 Le champ `BookInstance:status` est une chaîne de caractères codée en dur : `LOAN_STATUS` car on suppose qu'il ne changera jamais.
 
 On utilisera comme valeurs :
@@ -472,7 +472,7 @@ On utilisera comme valeurs :
 ```
 :::
 
-::: warning
+:::warn
 Les objets à persister sont **toujours** définis dans le fichier `models.py` de chaque application et héritent de `django.db.models.Model`.
 :::
 
@@ -502,7 +502,7 @@ class MyModelName(models.Model):
 ```
 ## Types de champs
 
-::: tip
+:::tip
 Principaux type de champs :
 
 - `CharField` : chaîne de caractères (argument `max_length` obligatoire) ;
@@ -517,14 +517,14 @@ Principaux type de champs :
 - `FileField` et `ImageField`.
 :::
 
-::: link
+:::link
 - Pour une liste des types de champs disponibles en Django, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#field-types).
 - Pour plus d'information sur les types énumérés, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#enumeration-types).
 :::
 
 ## Arguments des champs
 
-::: tip
+:::tip
 Principaux arguments des champs à persister :
 
 - `help_text`: Étiquette du champ pour les formulaires `HTML` ;
@@ -536,7 +536,7 @@ Principaux arguments des champs à persister :
 - `primary_key`: si `True` le champ est une clé primaire.
 :::
 
-::: link
+:::link
 Pour une liste des arguments des champs, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#field-options).
 :::
 
@@ -544,7 +544,7 @@ Pour une liste des arguments des champs, [voir la page dédiée de la documentat
 
 La classe `Meta` permet d'ajouter des métadonnées au modèle.
 
-::: tip
+:::tip
 On utilise cette classe principalement pour :
 
 ```python
@@ -558,7 +558,7 @@ class Meta:
 ```
 :::
 
-::: link
+:::link
 Pour une liste des métadonnées disponibles, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/options/)
 :::
 
@@ -566,7 +566,7 @@ Pour une liste des métadonnées disponibles, [voir la page dédiée de la docum
 
 Un modèle peut posséder un ensemble de méthodes, gérées par `Django` ou des méthodes Python indépendantes.
 
-::: warning
+:::warn
 Chaque modèle de données devra a minima définir une implémentation de la méthode `__str__()` pour :
 
 - permettre d'afficher un élément compréhensible qui représentera l'instance de la classe ;
@@ -608,7 +608,7 @@ number_wild_books = wild_books.count()
 
 Pour rechercher un enregistrement avec des conditions sur un champ, on utilise la syntaxe : `nom_du_champ__filtre` (i.e. on ajoute `__` après le nom du champ puis le nom du filtre).
 
-::: tip
+:::tip
 Principaux filtres :
 
 - `contains`
@@ -620,11 +620,11 @@ Principaux filtres :
 - `startswith`
 :::
 
-::: link
+:::link
 Pour une liste des paramètres de recherche, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/querysets/#field-lookups)
 :::
 
-::: tip
+:::tip
 Le double `__` est aussi utilisé pour parcourir le modèle UML, par exemple pour une relation 1 à 1 `Book` vers `Genre` ayant un champ `name` :
 
 ```python
@@ -638,18 +638,18 @@ Utiliser le diagramme de classe UML du modèle pour définir et implémenter les
 
 _On ordonnera les objets `BookInstance` par ordre chronologique des champs `due_back`_.
 
-::: warning
+:::warn
 Pour les relations entre data classes, on utilisera en premier paramètre :
 
 - une chaîne de caractères si la classe destination n'a pas encore été définie en Python : `author = models.ForeignKey('Author', ...)` ;
 - la référence vers la classe elle-même si celle-ci a déjà été définie : `author = models.ForeignKey(Author, ...)`.
 :::
 
-::: tip
+:::tip
 Pour la relation `Book` <-> `Author`, on utilisera le paramètre `on_delete=models.SET_NULL` de la relation pour définir la valeur de ce champ en base de données si la destination de la relation est supprimée.
 :::
 
-::: tip
+:::tip
 Pour la clé primaire de la classe `BookInstance`, on utilisera un `UUID` :
 
 ```python
@@ -677,7 +677,7 @@ Ce site d'administration est très utile pour :
 - Manipuler le data model pendant le développement pour tester l'application ;
 - Corriger / surveiller le data model en production.
 
-::: warning
+:::warn
 Le site d'administration n'a pas vocation à être publié à l'utilisateur final - c'est une vue permettant de manipuler directement les données (et donc la base de données).
 
 On privilégiera toujours une expérience utilisateur orientée métier (et non données...), d'où la nécessité de créer des vues différentes.
@@ -739,7 +739,7 @@ class BookAdmin(admin.ModelAdmin):
     fields = [('title', 'ISBN'), 'author', ... 
 ```
 
-::: warning
+:::warn
 Si l'on veut afficher une relation `ManyToManyField`, on ne peut pas afficher l'ensemble des valeurs directement - cela pourrait être coûteux en base de données et donc `Django` l'interdit par défaut.
 
 Il faut pour cela ajouter une méthode réalisant cette opération, par exemple :
@@ -768,7 +768,7 @@ class Book:
 
 ### Utilisation des fieldsets
 
-::: tip
+:::tip
 Pour une gestion plus fine des vues d'administration, on peut utiliser les [`fieldsets`](https://docs.djangoproject.com/fr/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets).
 :::
 
@@ -788,13 +788,13 @@ class BookAdmin(admin.ModelAdmin):
 
 ## Documentation du site d'administration
 
-::: link
+:::link
 Pour plus de détails sur le site d'administration, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/contrib/admin/).
 :::
 
 # Création du site de production - page d'accueil
 
-::: warning
+:::warn
 Cette section est importante - elle décrit la base du fonctionnement de `Django`.
 :::
 
@@ -842,7 +842,7 @@ La liste des URL dont nous aurons besoin se résume à :
 - `catalog/book/<id>`
 - `catalog/author/<id>`
 
-::: tip
+:::tip
 `Django` n'impose pas de format d'URL particulier : on pourrait aussi utiliser une URL du type `/catalog/book/?id=6`.
 
 Attention à utiliser tout de même une URL lisible [comme recommandé par le W3C](https://www.w3.org/Provider/Style/URI).
@@ -871,7 +871,7 @@ urlpatterns = [
 ]
 ```
 
-::: tip
+:::tip
 Le paramètre `name` permet de nommer une URL pour l'utiliser depuis un lien :
 
 ```html
@@ -1004,17 +1004,17 @@ On remarque que les variables sont déclarées entre doubles accolades : `{{ num
 {% endblock %}
 ```
 
-::: exo
+:::exo
 Tester l'affichage de la page d'accueil du site.
 :::
 
-::: tip
+:::tip
 La recherche des template est configurée par la variable `TEMPLATES` du fichier `settings.py` du projet.
 :::
 
 ### Documentation sur les templates
 
-::: link
+:::link
 Pour plus de détails sur les template, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/templates/).
 :::
 
@@ -1100,11 +1100,11 @@ Créer le template de la vue : `catalog/templates/catalog/book_list.html` :
 {% endblock %}
 ```
 
-::: warning
+:::warn
 Ce chemin étrange vers le lieu du template n'est pas une faute de frappe : les vues génériques cherchent les template dans `/application_name/the_model_name_list.html` (`catalog/book_list.html` dans ce cas) à l'intérieur du répertoire `/application_name/templates/` (`/catalog/templates/`).
 :::
 
-::: tip
+:::tip
 Le template utilise des branchements conditionnels `if`, ...
 
 Pour une liste des balises et filtres disponibles, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/templates/builtins/).
@@ -1129,7 +1129,7 @@ urlpatterns = [
 ]
 ```
 
-::: tip
+:::tip
 Il est également possible de définir des URL utilisant des expressions régulières pour un usage avancé - voir par exemple [ce lien](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Generic_views#mappage_durl_2).
 :::
 
@@ -1178,7 +1178,7 @@ Et le template :
 {% endblock %}
 ```
 
-::: tip
+:::tip
 Le lien vers l'auteur dans le template ci-dessus est vide, parce que nous n'avons pas encore crée de page détail pour un auteur. Une fois que cette page sera créée, vous pourrez remplacer l'URL par ceci :
 
 ```html
@@ -1186,7 +1186,7 @@ Le lien vers l'auteur dans le template ci-dessus est vide, parce que nous n'avon
 ```
 :::
 
-::: exo
+:::exo
 Tester l'application !
 :::
 
@@ -1217,11 +1217,11 @@ Tester l'application !
   {% endblock %}
 ```
 
-::: exo
+:::exo
 Tester la pagination
 :::
 
-::: link
+:::link
 Pour plus d'information sur la pagination, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/pagination/#paginator-objects).
 :::
 
@@ -1232,13 +1232,13 @@ Créer les vues :
 - `catalog/authors/`
 - `catalog/author/<id>`
 
-::: exo
+:::exo
 Tester l'application - l'application de la bibliothèque est terminée !
 :::
 
 ## Documentation sur les vues génériques
 
-::: link
+:::link
 Pour plus d'information sur les vues génériques, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/class-based-views/generic-display/).
 :::
 
@@ -1410,7 +1410,7 @@ Ajouter le template associé :
 {% endblock %}
 ```
 
-::: tip
+:::tip
 Notons l'ajout d'un token [`CSRF`](https://en.wikipedia.org/wiki/Cross-site_request_forgery) (prononcer "sea-surf") permettant d'éviter le _Cross Site Request Forgery_ afin de protéger notre application.
 :::
 
@@ -1488,7 +1488,7 @@ urlpatterns = [
 
 ## Documentation sur les formulaires
 
-::: link
+:::link
 Pour plus d'information sur les champs de formulaires, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/forms/fields/).
 :::
 
@@ -1522,7 +1522,7 @@ request.session['my_car'] = 'mini'
 del request.session['my_car']
 ```
 
-::: tip
+:::tip
 `Django` notifie automatiquement d'un changement d'assignation dans la session : `request.session['my_car'] = ...`.
 Cependant il ne peut détecter un changement à l'intérieur de la donnée stockée elle-même, par exemple : `request.session['my_car']['roues'] = 'aluminium'`.
 
@@ -1544,7 +1544,7 @@ request.session.modified = True
 
 ## Documentation
 
-::: link
+:::link
 Pour plus d'information sur les sessions, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/http/sessions/)
 
 Voir aussi la [page de tutoriel dédiée](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions#simple_example_%E2%80%94_getting_visit_counts)
@@ -1558,7 +1558,7 @@ Pour gérer les comptes utilisateurs on pourra se référer au tutoriel suivant 
 
 # Tests
 
-::: link
+:::link
 Pour apprendre à tester une application `Django`, [suivre le tutoriel developer.mozilla.org](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Testing).
 :::
 

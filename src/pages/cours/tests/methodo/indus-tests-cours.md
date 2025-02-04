@@ -82,142 +82,32 @@ Quels sont les tests critiques ?
 
 ---
 
-<!-- _class: titre lead -->
-
-# Jenkins : serveur d'intégration continue
-
-![The Jenkins logo](https://www.jenkins.io/images/logos/jenkins/jenkins.svg)
-
-Le logo Jenkins®.
+# Structure d'un test automatisé
 
 ---
 
+## Framework de tests
 
-# Serveur d'intégration continue
-
-Outil permettant d'orchestrer le lancement de l'intégration continue, l'exécution des différent outils et la génération de rapports sur la qualité du code après leur exécution.
-
-Le code source est monitoré (ou une notification reçue) pour chaque nouveau changement à analyser, afin de lancer la boucle d'intégration continue.
+- On utilise généralement un _framework de tests unitaires_ (`*unit`) comme **ordonnanceur de tests** (exécution, méthodes de vérification, …)
+  - y compris pour d'autres contextes : _end-to-end_, _performance_, … en ajoutant des librairies externes
 
 ---
 
-# Types de serveurs CI
+## Classes de test
 
-- Combinant hébergement des sources et intégration continue du projet : `Github®`, `Gitlab®`, `Bitbucket®`, ...
-  + Ces serveurs proposent des solutions cloud gérant tout le cycle de vie du projet.
-- Dédiés à l'intégration continue uniquement : `Jenkins®`, `TeamCity®`
-  + S'interfacent avec un hébergement distant.
-  + Peuvent être hébergés en ligne ou déployés sur un serveur dédié.
-
----
-
-# Architecture d'un serveur d'intégration continue
-
-```plantuml
-@startditaa
-
- +-------------+  +---------------+  
- | cBLU        |  | cPNK          |
- | Gestion des |  | Orchestration |
- |   sources   |  |  des builds   |
- +-------------+  +---------------+
-           /---------\
-           |{s} cBLK |
-           | Serveur |
-       	   |   CI    |
-           \---------/
- +-------------+  +--------------------+
- | cGRE        |  | cYEL               |
- | Exécution   |  | Génération des     |
- |  des tests  |  | rapports et notifs |
- +-------------+  +--------------------+
-
-@endditaa
-```
-
-<!-- _class: legende -->
-
-Les 4 composants d'un serveur d'intégration continue.
+- Tests regroupés dans des _classes de test_ :
+  + Regroupe les tests sur le même _SUT_ ou avec le même but.
+  + Doit souvent hériter d'une classe de test fournie par le framework : `unittest.TestCase`, …
+  + 1 test = 1 méthode dont le nom commence par `test` ou une annotation `@test`, …
 
 ---
 
+## Code avant/après chaque test
 
-<!-- _class: subtitle lead -->
-
-# Présentation du produit
-
----
-
-# Présentation de Jenkins®
-
-- Serveur d'intégration continue en Java.
-- Système simple mais entièrement configurable.
-- Intégration continue et DevOps par plugins : `Git`, `Maven 2 project`, `Amazon EC2`, `HTML Publisher`, ...
-
----
-
-- Outil d'intégration continue le plus utilisé : vaste communauté, 1500 plugins...
-- ...Mais système vieillissant et difficile à maintenir (en cours de réécriture)
-- Fork open-source de `Hudson` (nombreuses traces dans documentation et configurations).
-
----
-<!-- _class: subtitle lead -->
-
-# Installation et déploiement
-
----
-
-# Installation de Jenkins
-
-- Installation comme application indépendante
-  + facile et rapide sur toute machine
-  + serveur d'applications dédié ou container servlet Java Jetty (voir doc)
-- Installation comme servlet dans un serveur d'applications Java : `Apache Tomcat`, `GlassFish®`, ...
-  + serveur applicatif à administrer
-  + stabilité accrue des tests et du déploiement
-- Déploiement dans des conteneurs `Docker`
-
----
-
-_Pour nos besoins, nous nous limiterons à l'utilisation de Jenkins dans son propre serveur d'applications, en lançant directement le JAR récupéré sur la page du projet._
-
----
-
-<!-- _class: subtitle lead -->
-
-# Les jobs Jenkins
-
----
-
-# Les jobs
-
-- Jenkins fonctionne essentiellement sous la forme de jobs (enchaînement d'étapes), de types variés.
-- 1 projet de build = un job.
-- Peut enregistrer et afficher des processus exécutés à l'extérieur de Jenkins.
-
----
-
-_Un job multi-configuration peut être d’une grande utilité dans des projets plus sophistiqués, notamment lorsque des builds spécifiques à chaque plateforme sont nécessaires._
-
----
-
-<!-- _class: subtitle lead -->
-
-# Tests unitaires et d'intégration
-
----
-
-# Automatisation des tests unitaires et d'intégration
-
-Jenkins est un orchestrateur : il permet donc d'automatiser les tests unitaires et/ou d'intégration, de plusieurs manières :
-
-- En utilisant des plugins dédiés.
-- En s'intégrant avec des outils de build : `Maven`, `Gradle`, ...
-- En fournissant des scripts à exécuter
-
----
-
-_Jenkins permet de s'interfacer avec de nombreux outils d'exécution ou de reporting de tests. Nous verrons comment intégrer Jenkins avec les principaux outils de tests._
+- Les frameworks unitaires fournissent des méthodes :
+  - `setUp()` et `tearDown()` exécutées avant / après **chaque** test
+  - `beforeAll()` et `afterAll()` exécutées **1 fois** au début / à la fin de toute la classe de tests
+  - Les noms peuvent varier suivant le framework
 
 ---
 

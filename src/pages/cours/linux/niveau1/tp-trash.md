@@ -21,7 +21,7 @@ _L'objectif de cet exercice est de créer une commande `trash` qui déplacera le
 8. Ajouter une option `-h` affichant une aide analogue à celle de `cp -h`.
 9. En utilisant un `alias`, utiliser la commande `trash` plutôt que la commande `rm` pour déplacer un fichier vers la poubelle plutôt que de le supprimer.
 
-::: {.correction .if correction="true"}
+:::correction
 ## Correction
 
 ```bash

@@ -13,7 +13,7 @@ correction: false
 3. Tout le monde doit pouvoir lire les fichiers dans ce dossier, mais sans créer ou supprimer les fichiers. De même tous les fichiers déjà créés dans ce répertoire doivent appartenir au groupe `users`. Placez les bons droits.
 4. Créez un répertoire test dans `/tmp` avec les droits `rwxrwxrwx`. Créez-y un fichier et modifiez les droits de celui-ci en retirant le droit `w` au groupe et aux autres. Qui peut le supprimer ? 
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # #1.
 touch /tmp/test_permissions_file
@@ -86,7 +86,7 @@ Reste   rwxr-xr-x (755)
 
 Créez un masque restrictif : vous pouvez faire ce que vous voulez, le groupe a seulement accès aux répertoires et peut lire les fichiers, mais les autres ne peuvent rien faire. 
 
-::: {.correction .if correction="true"}
+:::correction
 - Le masque doit laisser passer tous les droits de l’utilisateur : `0`. 
 - Le masque doit laisser passer les droits `r` et `x` pour les groupes. Seul `w` est masqué : `2`. 
 - Le masque supprime tous les droits aux autres : `7`. 
@@ -107,7 +107,7 @@ Créez un masque restrictif : vous pouvez faire ce que vous voulez, le groupe a 
   - Que remarque-t-on ?
 
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 1.
 $ echo "Une ligne de contenu" > target
@@ -144,7 +144,7 @@ Une ligne de contenu
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 4.
 $ ls -lid ~
@@ -187,7 +187,7 @@ $ ls -lid /mnt/data/Documents
 2. Créer un fichier `target` et un lien symbolique `symlink`. Vérifier le lien créé.
 3. Supprimer le fichier `target`. Que se passe-t-il ? Pourquoi ?
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 1.
 $ ln -s target-fausse symlink-erreur
@@ -293,7 +293,7 @@ But : rechercher des fichiers avec `find`, `whereis` et `locate`.
 6. Indiquez où se situe la commande binaire `ls`. Utilisez la commande `whereis` pour cela.
 7. Vous avez perdu le fichier `lettre_importante.odf`. Où est-il, sans utiliser `find` ?
 
-::: {.correction .if correction="true"}
+:::correction
 1. Affichez tous les fichiers ayant une taille inférieure à 400 octets et ayant les droits 644. Utilisez les paramètres `-size` et `-perm` de la commande `find`.
 
 ```

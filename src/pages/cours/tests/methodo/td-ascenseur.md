@@ -97,6 +97,7 @@ Exemple de simplification :
 
 ## Exemple de trace d'exécution
 
+```
 0. # Usager[0]: # effectue l'appel 1-UP
 1. # Usager[1]: # effectue l'appel 2-DOWN
 2. + Ascenseur: + direction: UP
@@ -123,3 +124,5 @@ Exemple de simplification :
 23. + Ascenseur: + arrêt à l‘étage 0
 24. * Porte[0]: * ouverture
 25. # Usager[1]: # destination atteinte
+```
+

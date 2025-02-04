@@ -17,7 +17,7 @@ telnet SERVEUR PORT
 
 Une fois connecté au serveur, on peut envoyer directement des requêtes `HTTP` au serveur.
 
-::: exo
+:::exo
 Utiliser `telnet` pour récupérer la page de résultats d'une recherche sur votre moteur de recherche préféré. On pourra récupérer l'URL correspondant à la recherche dans un navigateur.
 
 Vérifier que la page contenant les résultats de la recherche est bien renvoyée par le serveur.

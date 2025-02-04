@@ -29,7 +29,7 @@ C:\>python -m venv C:\path\to\myenv
 
 Cette commande crée une installation locale de Python dans le répertoire spécifié.
 
-::: tip
+:::tip
 Il faut ensuite, **dans chaque terminal ouvert par la suite**, activer cet environnement en sourçant la configuration (voir le [tableau ici](https://docs.python.org/fr/3/library/venv.html#how-venvs-work)).
 
 Par exemple :
@@ -63,7 +63,7 @@ Ajouter dans l'environnement la librairie [numpy][numpy-official] :
 $ python -m pip install numpy
 ```
 
-::: tip
+:::tip
 Par convention, on importe cette librairie en utilisant le nom `np` :
 
 ```python
@@ -81,7 +81,7 @@ _Pandas_ est une librairie permettant de gérer des données à destination d'al
 $ python -m pip install pandas
 ```
 
-::: tip
+:::tip
 Par convention, on importe cette librairie en utilisant le nom `pd` :
 
 ```python
@@ -101,7 +101,7 @@ Ajouter dans l'environnement la librairie [matplotlib][matplotlib-official] :
 $ pip install matplotlib
 ```
 
-::: tip
+:::tip
 Par convention, on importe cette librairie (en réalité, l'objet `pyplot` de cette librairie qui nous intéresse pour tracer des courbes) sous le nom `plt` :
 
 ```python
@@ -122,7 +122,7 @@ Pour faire un raccourci :
 
 Voir : [le site de Scipy][scipy-site] et la [documentation de référence][scipy-doc].
 
-::: tip
+:::tip
 Par convention, on importe cette librairie avec le nom `sp` :
 
 ```python
@@ -137,7 +137,7 @@ _Statsmodels_ est une librairie permettant de faire du calcul statistique (et de
 python -m pip install statsmodels
 ```
 
-::: tip
+:::tip
 Par convention, on importe cette librairie avec le nom `sm` :
 
 ```python
@@ -153,7 +153,7 @@ _Scikit-learn_ est une librairie très utilisée en machine learning.
 python -m pip install scikit-learn
 ```
 
-::: tip
+:::tip
 Par convention, on importe cette librairie avec le nom `sklearn` :
 
 ```python

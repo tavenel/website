@@ -4,7 +4,7 @@ title: Tests unitaires frontend avec Jest
 
 ## Récupération des exemples
 
-::: tip
+:::tip
 Le code des exemples est disponible dans le dépôt :
 
 ```
@@ -47,11 +47,11 @@ describe('Hello test', () => {
 })
 ```
 
-::: link
+:::link
 Pour la liste des `matcher` (fonctions de vérification de Jest), voir : <https://jestjs.io/docs/expect>
 :::
 
-::: tip
+:::tip
 De manière similaire aux fonctions `setUp()` et `tearDown()` de JUnit, Jest supporte les fonctions suivantes :
 
 - `beforeEach()` va exécuter ce bloc de code avant chaque test.
@@ -83,7 +83,7 @@ On pourra par exemple utiliser [l'extension Jest pour VSCode](https://marketplac
 
 ### Premier test unitaire
 
-::: exo
+:::exo
 Compléter le `FIXME` du fichier `js/unit/unit1.test.js` pour écrire un premier test unitaire.
 :::
 

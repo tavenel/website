@@ -23,7 +23,7 @@ Décrire succintement :
 - Les Besoins fonctionnels, techniques et organisationnels, ainsi que les contraintes.
 - Les Prestations et livrables attendus.
 
-::: {.if correction=true .correction}
+:::correction
 # Proposition de correction
 
 ## Besoins fonctionnels :

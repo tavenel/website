@@ -96,7 +96,7 @@ Assurez-vous d'avoir un dépôt Git avec plusieurs commits, dont des commits de 
 7. Quelle est la différence entre `HEAD~1` et `HEAD^` ?
 8. Que se passe-t-il lorsque vous utilisez `git reset --hard` ? Quelles sont les implications de cette commande ?
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 # 1.
 git log --oneline
@@ -174,7 +174,7 @@ Assurez-vous d'avoir un dépôt Git avec plusieurs commits, y compris au moins u
 5. Pourquoi est-il important de spécifier quel parent utiliser lors du revert d'un commit de fusion ?
 
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 git checkout -b nouvelle_branche
 git checkout main

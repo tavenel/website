@@ -13,7 +13,7 @@ correction: false
 5. La commande `telinit N` (avec `N` un runlevel) permet de changer de runlevel dynamiquement (sans redémarrer). Passer en mode single-user.
 6. Avec la commande `shutdown`, éteignez l’ordinateur maintenant. Quel est le niveau d’exécution activé ? 
 
-::: {.correction .if correction="true"}
+:::correction
 1. Si vous démarrez en mode graphique, modifiez `/etc/inittab` pour démarrer au niveau 3. 
 
 Changez la valeur de 5 à 3 sur la ligne `initdefault` et redémarrez. 
@@ -152,7 +152,7 @@ Les fichiers de logs de `journalctl` sont stockés **au format binaire** (ce qui
 1. Affichez la cible (`target`) par défaut du système.
 1. Changez la cible par défaut du système pour une cible différente (par exemple, `multi-user.target`).
 
-::: {.correction .if correction="true"}
+:::correction
 1. Vérifiez l'état actuel du service `SSH` avec `systemctl status ssh.service`.
 1. Démarrer le service `SSH` en utilisant `systemctl start ssh.service`.
 1. Arrêter le service `SSH` en utilisant `systemctl stop ssh.service`.

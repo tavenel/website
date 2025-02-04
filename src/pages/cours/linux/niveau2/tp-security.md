@@ -14,7 +14,7 @@ En utilisant les commandes `passwd` et `chage` :
   - vérifier que la poliitque est bien implémentée
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 passwd nom_utilisateur
 chage -M 90 nom_utilisateur
@@ -81,7 +81,7 @@ La commande `fuser` (File User) est utilisée pour afficher les processus qui ut
 4. Tuer le processus `tail`
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 echo 'une_ligne' > mon_fichier
 tail -f mon_fichier
@@ -111,11 +111,11 @@ fuser -k mon_fichier
 
 Le noyau Linux permet de séparer des espaces de noms pour plusieurs types de ressources (c'est une des technologies à la base de Docker !). Ces espaces de noms sont totalement isolés par le noyau et ne peuvent pas échanger de données.
 
-::: exo
+:::exo
 Utiliser la commande `ip netns` pour créer un namespace. En utilisant la commande `python3 -m http.webserver`, démarrer un serveur web dans le network namespace créé et vérifier que seul le namespace a accès au réseau.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```sh
 ip netns add net1
 ip netns exec net1 ip a
@@ -194,7 +194,7 @@ systemctl status sshd.socket
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```sh
 # systemctl enable sshd.socket
 > ln -s '/etc/systemd/system/sshd.socket' '/etc/systemd/system/sockets.target.wants/sshd.socket'
@@ -253,11 +253,11 @@ Ce n'est pas un utilitaire Linux standard (il n'est donc souvent pas installé p
 5. Pourquoi est-il important de connaître les ports ouverts sur une machine ?
 :::
 
-:::warning
+:::warn
 Remarque : Assurez-vous d'avoir les autorisations nécessaires pour scanner des machines distantes et de respecter les politiques de sécurité en vigueur.
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```bash
 nmap -p- <addresse IP>
 ss -tuln

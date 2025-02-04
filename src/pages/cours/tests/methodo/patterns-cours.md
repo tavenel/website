@@ -16,18 +16,33 @@ _Tom Avenel_
 
 ---
 
-# Given-When-Then
+# AAA
 
-Le pattern `Given-When-Then` est un format standardisé d'écriture de scénarios, souvent imposé par les framework de TDD/BDD.
+Un test suit un pattern **AAA** pour **Arrange**, **Act**, **Assert** :
 
-Le scénario est alors décomposé en 3 phases :
-- `Given` : phase de création de l'état initial du test
-- `When` : phase d'exécution du code produit
-- `Then` : phase de vérification des résultats
+- **Arrange** : Mise en place de l’environnement (_SUT_) : création et initialisation des objets nécessaires à l’exécution du test.
+- **Act** : scénario (automatisé) déroulant les étapes du test.
+- **Assert** : Vérification des résultats
 
 ---
 
-## Exemple
+```python
+def test_addition():
+    # Arrange (Préparation)
+    a, b = 3, 5
+
+    # Act (Exécution)
+    result = add_numbers(a, b)
+
+    # Assert (Vérification)
+    assert result == 8
+```
+
+---
+
+## BDD
+
+En _BDD_, on utilise le pattern **Given**, **When**, **Then** qui suit le même formalisme :
 
 - Étant donné un solde positif de mon compte, et aucun retrait cette semaine,
 - Lorsque je retire un montant inférieur à la limite de retrait,

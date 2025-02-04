@@ -80,7 +80,7 @@ Ensuite, nous exposerons un `service` k8s pour pouvoir accéder à nos conteneur
 5. Détruire le conteneur de test
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # 1. Configuration du Pod web
 #web-pod.yml
@@ -135,7 +135,7 @@ Un `Service` permet d'exposer les ports d'un pod. Nous allons voir comment expos
 4. Créer un service de type `NodePort`. Tester l'accès à `nginx` depuis la machine hôte sur le port choisi.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 # 1. Port Forward
 kubectl port-forward web 8181:80
@@ -173,7 +173,7 @@ kubectl describe po/web
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # 3. ClusterIP
 #web-cluster-ip.yml
@@ -205,7 +205,7 @@ wget web-clusterip:8182
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # 4. NodePort
 #web-node-port.yml
@@ -255,7 +255,7 @@ Pour créer un pod avec une affinité pour un nœud ayant un label spécifique, 
 Dans Minikube, il n'y a qu'1 seul `Node`, mais sur un vrai cluster on peut sélectionner le Node qui nous intéresse !
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 # 1. Ajout de label
 kubectl get nodes              
@@ -314,7 +314,7 @@ En Kubernetes, vous pouvez définir des affinités inter-pods pour lier deux pod
 3. Créer un Pod `antagoniste` tournant un conteneur `alpine` avec une anti-affinité pour le Pod `web`. Vérifier la non-affinité.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # 1. Ajout du label
 #web-pod-label.yml 
@@ -344,7 +344,7 @@ kubectl describe po/web
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # 2. Créer un Pod `cache` avec une affinité pour le Pod `web`.
 #web-pod-cache-affinity.yml 
@@ -376,7 +376,7 @@ kubectl get po
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # 3. Créer un Pod `antagoniste` avec une anti-affinité pour le Pod `web`.
 #web-pod-antagoniste-affinity.yml 
@@ -423,7 +423,7 @@ kubectl describe po/antagoniste
 1. Recréer le Pod `web` en ajoutant une limite des ressources (CPU et mémoire). Vérifier la limitation.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 #web-pod-limits.yml 
 # Configuration du Pod web avec limitation de ressources
@@ -463,7 +463,7 @@ Les ressources de type `Pod` sont en réalité rarement utilisées - on leur pr�
 2. Détruire le Pod créé par le déploiement. Lister les Pods : que remarque-t-on ?
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 #web-deployment.yml 
 # Deployment pour Pod Web et Service
@@ -500,7 +500,7 @@ spec:
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 # Utilisation d'un Deployment
 kubectl -f web-deployment.yml apply        
@@ -548,7 +548,7 @@ La commande `kubectl rollout` est utilisée pour gérer et surveiller les déplo
 3. Effectuer un déploiement en utilisant la stratégie `Recreate` et analyser le changement de comportement.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 #1.
 #…
@@ -583,7 +583,7 @@ kubectl rollout status deploy/web-deploy
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 #2. rollback
 kubectl rollout history deploy/web-deploy
@@ -651,7 +651,7 @@ Cependant, l'utilisation de `hostPath` peut présenter des risques de sécurité
 2. Utiliser un `hostPath` pour monter un répertoire du noeud dans le pod. Créer le répertoire s'il n'existe pas.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -693,7 +693,7 @@ Dans Kubernetes, les `accessModes` définissent comment un volume peut être mon
 3. Maintenant que le PVC est créé, vous pouvez l'utiliser dans un pod en le montant en tant que volume. Tester l'accès aux fichiers du dossier hôte dans le conteneur.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 # pv.yaml
 apiVersion: v1
@@ -761,7 +761,7 @@ server2=10.166.10.2
 2. Ajouter cette ConfigMap dans un Pod et vérifier que la configuration est bien disponible.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl create configmap ma-conf-test --from-file=./ma_conf_test.conf
 #configmap/ma-conf-test created
@@ -811,7 +811,7 @@ spec:
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl -f pod-with-conf-volume.yml apply
 #pod/config-map created
@@ -847,7 +847,7 @@ serveur1=1.2.3.4
 serveur2=1.2.3.5
 ```
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl create configmap ma-conf-env --from-env-file=./ma_conf.env      
 #configmap/ma-conf-env created
@@ -921,7 +921,7 @@ On préfère généralement effectuer du scaling vertical sur des machines virtu
 2. Modifier le fichier `/usr/share/nginx/html/index.html` dans chaque conteneur pour savoir quel Pod répond : `POD 1` dans le 1e Pod et `POD 2` dans le 2nd. Tester de nombreuses requêtes pour vérifier le load balancing.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl scale deployment web-deploy --replicas=2
 #deployment.apps/web-deploy scaled
@@ -962,7 +962,7 @@ while true; do curl http://192.168.39.48:30001; done
 1. Utiliser un fichier `ReplicaSet` pour effectuer le scaling depuis un fichier de configuration.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 Voir cours
 :::
 
@@ -981,7 +981,7 @@ minikube addons enable metrics-server
 2. Vérifier que les requêtes n'arrivent pas toutes sur le même pod.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl autoscale deployment monnginx --min=2 --max=10
 ```
@@ -1001,7 +1001,7 @@ Un Horizontal Pod Autoscaler (HPA) en Kubernetes permet de redimensionner dynami
 On pourra utiliser l'image `registry.k8s.io/hpa-example` qui est faite pour créer un gros pic de charge CPU à chaque requête sur le port 80.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 #hpa-base.yml
 apiVersion: apps/v1
@@ -1043,7 +1043,7 @@ spec:
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```yaml
 #hpa-reel.yml
 apiVersion: autoscaling/v2
@@ -1107,7 +1107,7 @@ kubectl get po
 2. Créer un nouveau namespace et déployer un Pod dans ce namespace.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 # Namespace du dashboard
 
@@ -1125,7 +1125,7 @@ kubectl get pods -n kubernetes-dashboard
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl create namespace my-namespace
 ```
@@ -1152,7 +1152,7 @@ spec:
 1. À l'aide de commandes `kubectl`, afficher le plus d'informations possible sur la configuration du cluster.
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl config get-contexts    
 
@@ -1183,7 +1183,7 @@ kubectl get pods -n kube-system
 ```
 :::
 
-::: {.if correction=true .correction}
+:::correction
 ```sh
 kubectl config view
 

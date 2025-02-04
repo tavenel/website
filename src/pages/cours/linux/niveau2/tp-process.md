@@ -20,7 +20,7 @@ La commande `ps` permet d'obtenir des informations sur les processus.
 4. La commande `top` permet d'afficher dynamiquement les informations sur les processus en cours d'exécution.
 5. En utilisant les variables du shell `$` et `PPID`, récupérer le `PID` du processus courant et de son parent.
 
-::: {.correction .if correction="true"}
+:::correction
 La syntaxe de cette commande est très différente d'un système à l'autre (notamment sur système `GNU` vs `BSD`). Lorsque nécessaire, 2 solutions sont données.
 
 1. Listez les processus de tous les utilisateurs du système.
@@ -101,7 +101,7 @@ Il est aussi possible de tuer un processus depuis son nom (attention, dangereux 
 3. `pkill` utilise en fait la commande `pgrep` pour récupérer l'identifiant d'un processus. Comment réécrire facilement la commande `pkill` ?
 
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 $ sleep 1000
 $ pkill 1000
@@ -125,7 +125,7 @@ voir cours _Job Control_, 103.5 Lesson 1 p.290
 6. Envoyez le signal 15 à ce processus. Ceci va le terminer.
 7. Dans un environnement graphique, vous pouvez aussi installer et utiliser le programme `oneko` qui affiche un chat qui suit le pointeur de la souris afin de voir graphiquement la différence entre un processus d'avant plan, d'arrière-plan ou en pause.
 
-::: {.correction .if correction="true"}
+:::correction
 1. Lancez le processus `sleep 1000` en arrière-plan. Récupérez son `PID`.
 
 ```
@@ -227,13 +227,13 @@ Quelques-unes des fonctionnalités principales de `Tmux` :
   - Déconnecter le nouvel utilisateur pour laisser un unique utilisateur de session
 11. [Optionel] Utiliser `tmux` pour gérer un ensemble de sessions de terminaux via une seule session `ssh`. Couper la connexion `ssh` et récupérer la session.
 
-::: tip
+:::tip
 `tmux` est certainement le multiplexeur de terminal le plus connu, mais il en existe d'autres. `screen` est une autre alternative très utilisée, et des versions plus "modernes" existent aussi : `wezterm`, `zellij`, …
 
 Par exemple, pour tester `zellij` sans avoir besoin de l'installer : `bash <(curl -L zellij.dev/launch)`
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 1. Installer et lancer `tmux`.
 2. Lancer le programme `top`
 3. Dans `Tmux`, ouvrir une nouvelle fenêtre pour y ouvrir le fichier `~/.tmux.conf` dans `nano`.

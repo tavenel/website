@@ -4,15 +4,15 @@ title: Projet fil rouge de test - Facadia
 
 # Présentation du projet
 
-::: tip
+## Sources
+
 Récupérer les sources du projet :
 
-```
+```sh
 git clone https://git.sr.ht/~toma/facadia
 ```
-:::
 
-::: tip
+:::tip
 Le projet utilise pour l'instant une version simulée des données météo.
 
 Pour la "vraie" version de production, vous aurez besoin de créer un compte sur l'API `WeatherCast` : <https://weatherstack.com/> et de modifier le fichier `/js/utils/api/sensorsApi.js` en conséquence. Nous utiliserons pour l'instant une version simulée (Mock) de ces appels.
@@ -27,7 +27,7 @@ Le projet comporte quatre pages :
 - La page `façade`, qui donne des détails sur une façade ;
 - La page d’ajout d’une façade. Elle comprend un formulaire.
 
-::: tip
+:::tip
 Pour démarrer le projet, vous pouvez utiliser l'extension VSCode [live server de ritwickdey](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). L'extension ajoute un bouton `Go Live` en bas à droite de l'interface.
 :::
 
@@ -48,7 +48,7 @@ Cette fonction prend un paramètre : `numberOfSensors` . Cela correspond au nomb
 - Un cas de test où je lui passe 7. Le résultat retourné par la fonction devrait être de 1, car j'affiche 8 capteurs par page. Autrement dit, il n'y aura qu'une seule page.
 - Enfin, un cas où je lui passe 34, et où je teste si j’ai bien 5 pages.
 
-::: exo
+:::exo
 Écrire les tests correspondants.
 
 La correction est dans la branche `test-unit-pagination-correction` :
@@ -137,7 +137,7 @@ describe('Sample 1 Integration Test Suites', () => {
 - `import '@testing-library/jest-dom'` est nécessaire si vous utilisez des méthodes d'`expect()` de la `testing-library` : `toBeInDocument()`, `toHaveTextContent()`, … Ici on utilise `toEqual()` de jest standard, l'import ne serait donc pas nécessaire.
 - `<h1 data-testid=...` : ajoute un attribut `data-testid` récupéré ensuite avec `getByTestId()`
 
-::: link
+:::link
 La difficulté des tests sur le DOM vient principalement de la sélection des éléments.
 
 Voir :
@@ -183,7 +183,7 @@ await router() // pour activer le router
 - **When** : je vais sur l'URL `/#/add-sensor`
 - **Then** : je souhaite voir la page d'accueil des capteurs s'afficher avec le titre "Ajout d'un nouveau capteur"
 
-::: tip
+:::tip
 La correction est dans la branche `tests-integration-router-correction` :
 
 ```
@@ -241,7 +241,7 @@ afterEach(() => {
 
 ## Plan de tests d'intégration
 
-::: exo
+:::exo
 Ajouter un ensemble de tests d'intégration permettant de valider le programme.
 :::
 
@@ -253,7 +253,7 @@ Les tests end-to-end sont des tests qui simulent les interactions d'un vrai util
 
 ## Premiers tests end-to-end
 
-::: exo
+:::exo
 En utilisant `Selenium`, implémenter les scénarios de tests suivants. Pensez à lancer l'application en parallèle !
 :::
 
@@ -280,7 +280,7 @@ En utilisant `Selenium`, implémenter les scénarios de tests suivants. Pensez �
 
 ## Plan de tests end-to-end
 
-::: exo
+:::exo
 Décrire un plan de tests complet permettant de valider le fonctionnement du programme d'un point de vue utilisateur (il s'agira donc de réaliser la recette fonctionnelle du projet).
 
 Implémenter une automatisation de cette recette fonctionnelle en utilisant le framework d'automatisation de navigateurs `Selenium`.

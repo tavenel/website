@@ -168,7 +168,7 @@ logger -p err "Un message d'erreur"
 5. Envoyer les logs d'erreur sur un serveur distant (par exemple, utiliser le serveur de la 2e VM).
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 
 #### Installation de rsyslog
 

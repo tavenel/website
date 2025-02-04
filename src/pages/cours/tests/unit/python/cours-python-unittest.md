@@ -9,31 +9,7 @@ keywords:
 - unit
 ---
 
-# Tests unitaires Python
-
----
-
-# Tests unitaires automatisés avec unittest
-
-> Un test automatisé est un programme qui se découpe en trois étapes dites AAA pour **Arrange**, **Act**, **Assert**.
-
----
-
-## Arrange
-
-Mise en place de l’environnement (_SUT_) : création et initialisation des objets nécessaires à l’exécution du test.
-
----
-
-## Act
-
-Le scénario (automatisé) déroulant les étapes du test.
-
----
-
-## Assert
-
-Vérification des résultats obtenus par le test.
+# Tests unitaires Python avec unittest
 
 ---
 
@@ -43,7 +19,7 @@ Vérification des résultats obtenus par le test.
 
 ---
 
-## Structure d’une classe de test
+## Structure d'une classe de test
 
 - Tests regroupés dans des _classes de test_ :
   + Regroupe les tests sur le même SUT ou avec le même but.
@@ -52,7 +28,7 @@ Vérification des résultats obtenus par le test.
 
 ---
 
-## Exemple d’une classe de test
+## Exemple d'une classe de test
 
 ```python
 import unittest

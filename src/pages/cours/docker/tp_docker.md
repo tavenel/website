@@ -110,7 +110,7 @@ Lors de la construction de l’image depuis le `Dockerfile`, chaque instruction 
 
 Afin d’optimiser la taille et les performances de notre image, il faut limiter au maximum le nombre de couches d'images et donc le nombre d’instructions, par exemple en enchaînant les commandes par un `&&` !
 
-:::warning
+:::warn
 Les instructions suivantes ne sont pas des commandes Docker ! Il s'agit des instructions à entrer dans un **fichier nommé `Dockerfile`**. Le `Dockerfile` est donc un langage (comme Python par exemple) qui va être interprété par la commande `docker build` et **NON des commandes à taper dans le terminal** !!!
 :::
 
@@ -250,7 +250,7 @@ FROM golang:alpine AS build-stage
 RUN go build main.go # On build le fichier pour créer /go/main
 ```
 
-:::warning
+:::warn
 **Attention à bien ajouter l'instruction manquante au Dockerfile !**
 :::
 
@@ -297,7 +297,7 @@ docker run --rm multi:v2 /bin/ls
 # […]
 ```
 
-::: {.correction .if correction="true"}
+:::correction
 ```dockerfile
 # Stage 1: Build Environment (Golang)
 FROM golang:alpine AS build-stage
@@ -329,7 +329,7 @@ CMD ["./main"]
   + Accéder au fichier dans le premier conteneur.
   + Que remarquez-vous ?
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 1.
 # Ajouter un fichier dans C:\mon_repertoire_partage_windows
@@ -369,7 +369,7 @@ cat /mon_repertoire_partage_2/mon_fichier
   + On utilisera l'image : `nginx`.
   + Vérifier que le service du conteneur est accessible depuis l'hôte à l'adresse : `http://localhost:8181`
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 1.
 docker run -it --network none bash
@@ -386,7 +386,7 @@ ping compassionate_neumann
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 2.
 docker run -it --network host bash
@@ -433,7 +433,7 @@ PING google.fr (172.217.20.163): 56 data bytes
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 3. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
 # On crée un bridge privé :
@@ -455,7 +455,7 @@ ping google.fr # KO
 ```
 :::
 
-::: {.correction .if correction="true"}
+:::correction
 ```
 # 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
 docker run -p 8181:80 nginx
@@ -487,7 +487,7 @@ Les programmes qui tournent dans un conteneur ne sont pas gérés intégralement
 1. Comment les applications exposent-elles ces logs à Docker® ?
 2. Utiliser les commandes Docker® pour récupérer dynamiquement les logs des conteneurs en cours d’exécution.
 
-::: {.correction .if correction="true"}
+:::correction
 ```sh
 # Pour récupérer les logs actuels :
 docker logs mon_conteneur
@@ -504,7 +504,7 @@ Docker® n’est pas un système de machines virtuelles à proprement parler, ma
 1. Utiliser les commandes Docker® pour limiter les ressources disponibles pour un conteneur.
 2. Quelle est la bonne pratique pour changer les ressources disponibles d'un conteneur en cours d'exécution ?
 
-::: {.correction .if correction="true"}
+:::correction
 ```sh
 docker run --memory="1g" --cpus=".5" mon_image
 ```
@@ -522,7 +522,7 @@ Docker® est très utile pour tester sur sa machine des exécutions proches d'un
 
 1. Utiliser l'image `nginx` pour servir du contenu Web statique depuis le répertoire courant.
 
-::: {.correction .if correction="true"}
+:::correction
 ```sh
 # $PWD est la variable décrivant le chemin absolu du répertoire courant.
 # On peut aussi fournir directement un autre répertoire sur le système hôte (Windows, …)
@@ -539,7 +539,7 @@ Docker® peut être utilisé pour partager un outil à l'ensemble de l’équipe
 3. Utiliser cette même image pour lister le contenu de l'archive : `tar tzvf mon_archive.tgz`
 4. Utiliser cette même image pour extraire le contenu de l'archive : `tar xzvf mon_archive.tgz`
 
-::: {.correction .if correction="true"}
+:::correction
 ```sh
 # Création de l'image : on crée un Dockerfile (ou avec un éditeur de texte)
 cat << EOF > Dockerfile
@@ -572,7 +572,7 @@ docker run --rm -v ${PWD}:/archive mon-archiver:1.0 xzvf mon_archive.tgz mon_fic
 
 1. Utiliser Docker pour tester différents modèles d'IA sur sa machine en utilisant `ollama`.
 
-::: {.correction .if correction="true"}
+:::correction
 Voir : <https://hub.docker.com/r/ollama/ollama>
 :::
 
