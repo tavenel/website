@@ -3,6 +3,7 @@ import Layout from '@layouts/BaseLayout.astro';
 import Diagrams from '@components/Diagrams.astro';
 import Versioning from '@components/Versioning.astro';
 import Formats from '@components/Formats.astro';
+import ShowCorrection from '@components/ShowCorrection.astro';
 
 import type { MarkdownLayoutProps } from 'astro';
 type Props = MarkdownLayoutProps<{
@@ -29,6 +30,7 @@ const { frontmatter, url } = Astro.props;
 	<div id="course-header">
 		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
 		<Formats url={url} />
+		<ShowCorrection />
 	</div>
 	<h2 id="chapters">Chapitres</h2>
 	<slot />

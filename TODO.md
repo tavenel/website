@@ -12,6 +12,7 @@
 
 ## P2
 
+- .md frontmatter : keywords => tags
 - fix v-clicks (auto -> slidev)
 - "favorites" :
   - delete

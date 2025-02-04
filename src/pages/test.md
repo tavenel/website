@@ -5,11 +5,9 @@ extra:
 - math
 ---
 
-import Callout from "@/components/Callout.astro";
-
----
-
-<Callout>Test ici de callout</Callout>
+:::correction
+Une correction
+:::
 
 :::tip
 Un petit tip
@@ -29,10 +27,6 @@ Une balise strong
 
 :::exo
 Un exercice
-:::
-
-:::correction
-Une correction
 :::
 
 ## Subsection

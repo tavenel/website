@@ -1,0 +1,35 @@
+<button id="show-correction" class="link correction-hidden hidden">Afficher la correction</button>
+
+<script>
+const corrections = document.getElementsByClassName("callout-correction");
+const element = document.getElementById("show-correction");
+
+if (!element) {
+	console.error("element not found", element);
+	return;
+}
+// Only show button if there are corrections to show
+if (corrections && corrections.length > 0) {
+	element.classList.remove("hidden");
+}
+
+element.addEventListener('click', () => {
+  if (element.classList.contains('correction-hidden')) {
+		// show corrections
+		Array.prototype.forEach.call(
+			corrections,
+			it => it.style.display = "block",
+		);
+		element.classList.remove("correction-hidden");
+		element.textContent = "Masquer la correction";
+	} else {
+		// hide corrections again
+		Array.prototype.forEach.call(
+			corrections,
+			it => it.style.display = null,
+		);
+		element.classList.add("correction-hidden");
+		element.textContent = "Afficher la correction";
+	};
+});
+</script>
