@@ -1,14 +1,11 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
 title: Kubernetes
 tags:
 - docker
 - k8s
+theme: the-unnamed
+layout: cover
 ---
-
-<!-- _backgroundColor: "#2e3440" -->
 
 # Kubernetes
 
@@ -17,8 +14,8 @@ _Tom Avenel_
 <https://www.avenel.pro/>
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Présentation de Kubernetes
 
@@ -58,42 +55,60 @@ _Tom Avenel_
 5. `Mirantis Container Runtime (MCR)` (anciennement _Docker Enterprise_)
 
 ---
+layout: section
+---
 
 # Distributions Kubernetes
+
+---
 
 1. Rancher :
    - Plateforme complète pour gérer des clusters Kubernetes
    - Propose des fonctionnalités avancées comme la gestion multi-cluster
    - Offre une interface graphique intuitive
 
+---
+
 2. K3s :
    - Version allégée de Kubernetes conçue pour les environnemets embarqués
    - Consomme moins de ressources que Kubernetes standard
    - Idéal pour les systèmes à faible puissance
+
+---
 
 3. OpenShift :
    - Distribution propriétaire de Red Hat basée sur Kubernetes
    - Inclut des fonctionnalités supplémentaires comme l'orchestration d'applications
    - Forte sécurité et conformité
 
+---
+
 4. Docker Kubernetes Service (DKS)
    - Surveillance intégrée du cluster et des applications.
    - Nombreux drivers storage
+
+---
 
 5. MicroK8s :
    - Distribution légère et sécurisée de Kubernetes
    - Conçue pour les environnemets Ubuntu
    - Propose des fonctionnalités avancées comme l'installation de paquets
 
+---
+
 6. Minikube : 
    - Version légère pour le développement et le test
    - Fonctionne sur un seul ordinateur
    - Idéal pour débutants et environnement de développement
 
+---
+
 7. Docker Desktop :
    - Intègre Kubernetes nativement
    - Offre une expérience utilisateur simplifiée
    - Adapté aux développeurs utilisant Docker
+
+---
 
 8. Kind (Kubernetes IN Docker) :
    - Déploie Kubernetes dans un conteneur pour le développement et le test
@@ -110,6 +125,12 @@ _Tom Avenel_
 - Oracle Kubernetes Engine (OKE)
 - IBMCloud K8s
 - OVHCloud K8s
+
+---
+layout: section
+---
+
+# Architecture
 
 ---
 
@@ -149,7 +170,7 @@ _Tom Avenel_
 
 ---
 
-![width:800px](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg)
+![](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg)
 
 <!-- _class: legende -->
 _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
@@ -221,6 +242,8 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 * Interface en ligne de commande `kubectl` (surtout pour lancer les fichiers de config)
 * Interface web (peu utilisée)
 
+---
+layout: section
 ---
 
 # Ressources du cluster
@@ -361,6 +384,8 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 - `Cluster Role Binding` : association `ServiceAccount` <-> `ClusterRole`
 
 ---
+layout: section
+---
 
 # Configuration avancée des Pods
 
@@ -391,7 +416,7 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
   - `limits` : maximum par `Pod`
     - pour la santé des Pod (`Kubelet`)
 - Requirement: installer un `MetricsServer` dans le cluster
-- Utilise les fonctionnalités de Docker : voir le [cours Docker sur le site][site-perso].
+- Utilise les fonctionnalités de Docker : voir le [cours Docker sur le site](https://www.avenel.pro/cours/docker)
 
 ---
 
@@ -425,11 +450,11 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 
 ---
 
-## Pods multi-conteneurs
+# Pods multi-conteneurs
 
 ---
 
-### Sidecars et autres patterns
+## Sidecars et autres patterns
 
 - Conteneur(s) classiques supplémentaire(s) dans le Pod
 - Points d'accès entrée et/ou sortie à la place du conteneur principal
@@ -445,7 +470,7 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 
 ---
 
-### initcontainer
+## initcontainer
 
 - Type de conteneur Kubernetes spécifique : `initContainers`
 - Lancés dans l'ordre de spécification
@@ -455,8 +480,10 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 
 # Commandes de base de Kubernetes® 
 
-Voir la [cheatsheet sur Docker®][docker-cheatsheet].
+Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/cours/docker/kubernetes-cheatsheet)
 
+---
+layout: section
 ---
 
 # Outils externes
@@ -473,12 +500,6 @@ Voir la [cheatsheet sur Docker®][docker-cheatsheet].
 
 ---
 
-# Commandes de base de Helm® 
-
-Voir la [cheatsheet sur Docker®][docker-cheatsheet].
-
----
-
 # FluxCD
 
 - Outil Gitops pour k8s
@@ -492,7 +513,7 @@ Voir la [cheatsheet sur Docker®][docker-cheatsheet].
 
 ---
 
-![width:800px](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
+![](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
 <!-- _class: legende -->
 _Architecture de FluxCD (source: documentation FluxCD)_
 
@@ -504,6 +525,8 @@ _Architecture de FluxCD (source: documentation FluxCD)_
 - Gère des règles de sécurité, de conformité et de gestion (fichiers Yaml)
 - DevSecOps
 
+---
+layout: two-cols
 ---
 
 <!-- class: liens -->
@@ -518,6 +541,9 @@ _Architecture de FluxCD (source: documentation FluxCD)_
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5)
+
+::right::
+
 - [Introduction à kubectl](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - <https://roadmap.sh/kubernetes>
 - [Helm: package manager pour déployer dans k8s](https://helm.sh/)
@@ -525,6 +551,8 @@ _Architecture de FluxCD (source: documentation FluxCD)_
 - [Livre : Bootstrapping Microservices with Docker, Kubernetes, and Terraform](https://www.manning.com/books/bootstrapping-microservices-with-docker-kubernetes-and-terraform)
 - <https://www.cortex.io/post/understanding-kubernetes-services-ingress-networking>
 
+---
+layout: two-cols
 ---
 
 - Autoscaling : [doc](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) et [pratique](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
@@ -534,6 +562,9 @@ _Architecture de FluxCD (source: documentation FluxCD)_
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml)
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes>
 - <https://github.com/QJoly/kubernetes-coffee-image> : applications de test pour k8s (kustomize, helm, yaml, …)
+
+::right::
+
 - Tutoriels sur la communication entre pods :
   - [Utiliser un service](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
   - [Tutoriel complet](https://medium.com/@extio/mastering-kubernetes-pod-to-pod-communication-a-comprehensive-guide-46832b30556b)

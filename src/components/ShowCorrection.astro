@@ -6,7 +6,7 @@ const element = document.getElementById("show-correction");
 
 if (!element) {
 	console.error("element not found", element);
-	return;
+	exit;
 }
 // Only show button if there are corrections to show
 if (corrections && corrections.length > 0) {
@@ -20,7 +20,6 @@ element.addEventListener('click', () => {
 			corrections,
 			it => it.style.display = "block",
 		);
-		element.classList.remove("correction-hidden");
 		element.textContent = "Masquer la correction";
 	} else {
 		// hide corrections again
@@ -28,8 +27,8 @@ element.addEventListener('click', () => {
 			corrections,
 			it => it.style.display = null,
 		);
-		element.classList.add("correction-hidden");
 		element.textContent = "Afficher la correction";
 	};
+	element.classList.toggle("correction-hidden");
 });
 </script>
