@@ -32,7 +32,6 @@ const { frontmatter, url } = Astro.props;
 		<Formats url={url} />
 		<ShowCorrection />
 	</div>
-	<h2 id="chapters">Chapitres</h2>
 	<slot />
 	<Diagrams
 		math={ frontmatter.extra?.includes('math') }
