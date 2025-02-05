@@ -316,41 +316,41 @@ a.add-bookmark {
 
 [data-theme="none"] {
 	/* A theme with default browser styling. */
-	--background: inherit;
-	--text: inherit;
-	--link: inherit;
-	--link-hover: inherit;
-	--link-visited: inherit;
-	--link-border: inherit;
-	--h1: inherit;
-	--h2: inherit;
-	--h3: inherit;
-	--h4: inherit;
-	--hr: inherit;
-	--menu-home: inherit;
-	--menu-tech: inherit;
-	--menu-cours: inherit;
-	--menu-favorites: inherit;
-	--menu-links: inherit;
-	--menu-about: inherit;
-	--promo-link: inherit;
-	--promo-background: inherit;
-	--epsi: inherit;
-	--epsi-li: inherit;
-	--esgi: inherit;
-	--esgi-li: inherit;
-	--cesi: inherit;
-	--cesi-li: inherit;
-	--wis: inherit;
-	--wis-li: inherit;
-	--poec: inherit;
-	--poec-li: inherit;
-	--cours-cat-li: inherit;
-	--cours-link-text: inherit;
-	--cours-link-border: inherit;
-	--versioning: inherit;
-	--select-color: inherit;
-	--mermaid-title: inherit;
+	--background: revert;
+	--text: revert;
+	--link: LinkText;
+	--link-hover: LinkText;
+	--link-visited: VisitedText;
+	--link-border: revert;
+	--h1: revert;
+	--h2: revert;
+	--h3: revert;
+	--h4: revert;
+	--hr: revert;
+	--menu-home: revert;
+	--menu-tech: revert;
+	--menu-cours: revert;
+	--menu-favorites: revert;
+	--menu-links: revert;
+	--menu-about: revert;
+	--promo-link: revert;
+	--promo-background: revert;
+	--epsi: revert;
+	--epsi-li: revert;
+	--esgi: revert;
+	--esgi-li: revert;
+	--cesi: revert;
+	--cesi-li: revert;
+	--wis: revert;
+	--wis-li: revert;
+	--poec: revert;
+	--poec-li: revert;
+	--cours-cat-li: revert;
+	--cours-link-text: revert;
+	--cours-link-border: revert;
+	--versioning: revert;
+	--select-color: revert;
+	--mermaid-title: revert;
 }
 
 [data-theme="github"] {
