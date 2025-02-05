@@ -95,4 +95,5 @@ Quelques références utiles en informatique.
 - Impact des IA génératives sur les étudiants : <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
+- <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
  
