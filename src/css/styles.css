@@ -200,6 +200,7 @@ button.link {
   color: var(--link);
   background-color: inherit;
   border: none;
+	border-bottom: 1px dashed var(--link-border);
   text-decoration: none;
   display: inline-block;
   padding: 0px 0px;
@@ -209,7 +210,7 @@ button.link {
 button.link:hover {
   color: var(--link-hover);
   background-color: inherit;
-	border: 2px solid var(--link-hover);
+	border: 3px solid;
 }
 
 /**********/
