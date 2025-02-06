@@ -1,10 +1,8 @@
 ---
-title: Kubernetes
-tags:
-- docker
-- k8s
+title: Cours Kubernetes
 theme: the-unnamed
-layout: cover
+# layout: cover
+layout: '@layouts/SlideLayout.astro'
 ---
 
 # Kubernetes
