@@ -2,12 +2,12 @@
 /*                                    MAIN                                    */
 /******************************************************************************/
 
-/* *, */
-/* *::before, */
-/* *::after { */
-/* 	/* Reset all styles */ */
-/*   box-sizing: border-box; */
-/* } */
+*,
+*::before,
+*::after {
+	/* Reset all styles */
+  box-sizing: border-box;
+}
 
 .hidden { display: none !important ; }
 
@@ -270,6 +270,34 @@ a.add-bookmark {
 
 /* Mermaid diagrams title */
 .flowchartTitleText { fill: var(--mermaid-title); }
+
+/**********/
+/* SLIDES */
+/**********/
+
+[id^=layout] {
+	/* Slidev uses frontmatter `layout:…` that are computed as `id=layout-section-1`, … */
+	/* Hide these elements */
+	display: none;
+}
+
+#course {
+
+	/* Hide `---` delimiters in MD except the real footer of the website */
+	hr:not(.footer) { display: none; }
+
+}
+
+#slides-content {
+	.slide-mode {
+		display: none;
+		width: 90%;
+		margin: auto;
+		padding: 20px;
+		border: 1px solid var(--hr);
+		border-radius: 10px;
+	}
+}
 
 /*********/
 /* PRINT */

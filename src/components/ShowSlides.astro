@@ -1,0 +1,37 @@
+<button id="show-slide" class="link">Afficher le contenu en mode texte</button>
+
+<script>
+  import { SlideShow, generateSlides } from '@ts/slides';
+
+	generateSlides();
+
+	const slideshow = new SlideShow();
+
+	// Allow navigation with buttons and arrow keys
+	document.addEventListener("keydown", function(event) {
+		if (event.key === "ArrowRight") slideshow.nextSlide();
+		if (event.key === "ArrowLeft") slideshow.prevSlide();
+		if (event.key === "ArrowUp") slideshow.nextChapter();
+		if (event.key === "ArrowDown") slideshow.prevChapter(false);
+	});
+
+  const element = document.getElementById("show-slide");
+	const slides = document.getElementsByClassName('slide-elt');
+
+  element.addEventListener('click', () => {
+    if (element.classList.contains('slides-hidden')) {
+  		// show slides
+		  //Array.prototype.forEach.call(slides, it => it.style.display = "none");
+		  Array.prototype.forEach.call(slides, it => it.classList.add('slide-mode'));
+			slideshow.reset();
+  		element.textContent = "Afficher le contenu en mode texte";
+  	} else {
+  		// show text
+		  //Array.prototype.forEach.call(slides, it => it.style.display = "block");
+		  Array.prototype.forEach.call(slides, it => it.classList.remove('slide-mode'));
+  		element.textContent = "Afficher les slides";
+  	};
+  	element.classList.toggle("slides-hidden");
+  });
+
+</script>

@@ -16,8 +16,6 @@ type Props = MarkdownLayoutProps<{
 	extra: string[];
 }>;
 
-// Now, `frontmatter`, `url`, and other Markdown layout properties
-// are accessible with type safety
 const { frontmatter, url } = Astro.props;
 ---
 
@@ -31,8 +29,12 @@ const { frontmatter, url } = Astro.props;
 		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
 		<Formats url={url} />
 		<ShowCorrection />
+		<slot name="end-header">
 	</div>
-	<slot />
+	<div id="course">
+	  <slot />
+	</div>
+	<slot name="after-course" />
 	<Diagrams
 		math={ frontmatter.extra?.includes('math') }
 		markmap={ frontmatter.extra?.includes('markmap') }
