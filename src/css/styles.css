@@ -9,7 +9,12 @@
 /*   box-sizing: border-box; */
 /* } */
 
-.hidden { display: none !important; }
+.hidden { display: none !important ; }
+
+main {
+	max-width: 90vw; /* 90 % full page */
+	margin: auto;
+}
 
 a {
 	text-decoration: none;
@@ -211,6 +216,7 @@ button.link:hover {
   color: var(--link-hover);
   background-color: inherit;
 	border: 3px solid;
+	cursor:pointer;
 }
 
 /**********/
