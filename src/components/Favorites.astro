@@ -15,7 +15,7 @@
 <a class="visit" href="${bookmark.url}" data-link='${bookmark.url}'>${bookmark.page_title ? bookmark.page_title + ' : ' : ''}${bookmark.section ? bookmark.section : ''}</a>
 <a onclick="removeBookmark(this)" class="delete" href="#">delete</a>
 </li>`;
-		bookmarksDiv.innerHTML += item;
+		bookmarksDiv.innerHTML += item; // TODO: use appendChild() and create TS nodes
 	}
 
 	function showBoookmarks() {
@@ -24,5 +24,7 @@
 	}
 	
 	showBoookmarks();
+	// Runs on view transitions navigation
+	document.addEventListener('astro:after-swap', showBoookmarks);
 
 </script>

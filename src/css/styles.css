@@ -2,12 +2,12 @@
 /*                                    MAIN                                    */
 /******************************************************************************/
 
-*,
-*::before,
-*::after {
-	/* Reset all styles */
-  box-sizing: border-box;
-}
+/* *, */
+/* *::before, */
+/* *::after { */
+/* 	/* Reset all styles */ */
+/*   box-sizing: border-box; */
+/* } */
 
 .hidden { display: none !important; }
 
