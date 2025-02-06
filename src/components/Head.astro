@@ -2,7 +2,7 @@
 import '../css/styles.css'
 
 // ClientRouter transforms the website into an SPA
-import { ClientRouter } from 'astro:transitions';
+// import { ClientRouter } from 'astro:transitions'; // TODO
 
 const { title, url } = Astro.props;
 type Props = {
@@ -39,6 +39,6 @@ type Props = {
 	}
 	</script>
 	<title>{title}</title>
-	<ClientRouter />
+	<!-- <ClientRouter /> -->
 </head>
 
