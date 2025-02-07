@@ -799,11 +799,42 @@ Voir le TP correspondant.
 
 ---
 
+# Multi-repo vs mono-repo
+
+- Multi-répo:
+  - Adapté aux équipes fonctionnelles séparées
+	- Livrables qui ont leur cycle de vie propre
+- Mono-répo:
+  - Adapté à un livrable conséquent
+	- Inclue plusieurs briques distinctes
+
+---
+
 # Gist
 
 - Service GitHub pour partager simplement des extraits de code, de notes, de listes de tâches, ...
 - Besoin seulement d'une URL secrète : facilite l'automatisation.
 - Techniquement : vrai dépôt Git mais utilisation limitée par l'interface Web.
+
+---
+
+# Submodules
+
+- Permettent d'inclure un autre dépôt Git dans un dépôt principal (ex: dépendance).
+- fichier `.gitmodules`
+- `git submodule add <URL_du_dépôt_sous_module> <chemin/dossier>`
+- `git clone --recurse-submodules <URL_du_dépôt_principal>` : clone le dépôt principal et tous les sous-modules.
+- `git submodule update --remote`
+
+---
+
+# Worktree
+
+- `git worktree` crée plusieurs répertoires de travail pour un même dépôt Git
+- Permet de travailler simultanément sur plusieurs branches.
+- Utile avec `git --bare` pour configurer un dépôt central (nu) à partir duquel on peut créer et gérer ces répertoires de travail.
+- `git worktree add ../mon-projet-feature feature-branch`
+- Chaque worktree est indépendant des autres : vous pouvez donc y effectuer des commits, … sans affecter les autres répertoires de travail.
 
 ---
 
@@ -857,26 +888,6 @@ Voir le TP correspondant.
   - Tous les commits (très utile) : `git blame -C -C -C …`
 - Code churn : `git log --pretty='' --date=short --numstat`
 - Nuage de mots extraits des messages de commits : `git log --pretty=format:'%s' | tr ' ' '\n' | sed 's/.*/\L&/' | sort | uniq -c | sort -rg | head -n 100`
-
----
-
-# Submodules
-
-- Permettent d'inclure un autre dépôt Git dans un dépôt principal (ex: dépendance).
-- fichier `.gitmodules`
-- `git submodule add <URL_du_dépôt_sous_module> <chemin/dossier>`
-- `git clone --recurse-submodules <URL_du_dépôt_principal>` : clone le dépôt principal et tous les sous-modules.
-- `git submodule update --remote`
-
----
-
-# Worktree
-
-- `git worktree` crée plusieurs répertoires de travail pour un même dépôt Git
-- Permet de travailler simultanément sur plusieurs branches.
-- Utile avec `git --bare` pour configurer un dépôt central (nu) à partir duquel on peut créer et gérer ces répertoires de travail.
-- `git worktree add ../mon-projet-feature feature-branch`
-- Chaque worktree est indépendant des autres : vous pouvez donc y effectuer des commits, … sans affecter les autres répertoires de travail.
 
 ---
 
