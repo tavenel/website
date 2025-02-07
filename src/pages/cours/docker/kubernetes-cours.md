@@ -193,8 +193,11 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 - Dans ou en dehors du cluster
 - 1 leader (par consensus)
   - déployer un nombre impair d'instances
+  - supporte N/3 instances défaillantes
 - Jamais utilisé directement (`APIServer`)
 - Critique !
+  - machine dédiée ou environnement isolé
+  - bonnes performances réseau / disque
 
 ---
 
@@ -248,14 +251,14 @@ layout: section
 
 ---
 
-## Labels
+## Interactions entre ressources
 
-- attributs clé=valeur des objets du cluster
-- utilisé par kubernetes
-- `NodeSelector` : lance un pod sur un `Node` ayant ce label
-- `NodeAffinity` : décrit des affinités entre un `Pod` et un `Node`
-- `podAffinity`, `podAntiAffinity` : (anti)affinité entre `Pod`
-- il existe aussi des `annotations` : idem mais NON utilisé par k8s ensuite
+- Les `Pod` exécutent les microservices.
+- Les `Service` exposent ces pods pour permettre leur communication et leur accès.
+- Les `ConfigMap` et `Secret` injectent les configurations et les données sensibles.
+- Le/Les `Ingress` gèrent le trafic externe et les certificats SSL.
+- Les `PersistentVolume` et `StatefulSet` supportent les applications avec état.
+- Les `DaemonSet` assurent le fonctionnement des outils d’administration sur chaque noeud.
 
 ---
 
@@ -270,6 +273,17 @@ layout: section
   - éphémère : pas de données critiques dans le pod
   - 1 IP par pod partagée entre tous les conteneurs (mais l'IP peut changer)
     - accès par `localhost` aux autres conteneurs et **partage des ports ouverts**
+
+---
+
+## Labels
+
+- attributs clé=valeur des objets du cluster
+- utilisé par kubernetes
+- `NodeSelector` : lance un pod sur un `Node` ayant ce label
+- `NodeAffinity` : décrit des affinités entre un `Pod` et un `Node`
+- `podAffinity`, `podAntiAffinity` : (anti)affinité entre `Pod`
+- il existe aussi des `annotations` : idem mais NON utilisé par k8s ensuite
 
 ---
 
@@ -307,7 +321,8 @@ layout: section
 
 ## Ingress
 
-- Point d'accès publique unique pour l'accès aux différentes Pods (différent d'un Service)
+- Point d'accès publique HTTP/HTTPS unique pour l'accès aux différentes Pods (différent d'un Service)
+- Règles de routage avancées
 - Recquiert un reverse-proxy et/ou un load balancer : `Nginx`, `Haproxy`, `Traefik`, `Consul`, `Istio`.
 - Add-on réseau à installer (pas de gestion réseau native par k8s)
 
@@ -321,6 +336,18 @@ layout: section
   - logs
 - Gère la communication sécurisée entre conteneurs sur des architectures micro-services
 - À installer : `Istio`, `linkerd`, `consul`, …
+
+---
+
+## Gateway API
+
+- Nouvelle API Kubernetes (successeur Ingress)
+  - Orienté rôles, portable, extensible
+  - Routage multi-namespace
+  - Décorélé de l'installation de kubernetes
+- `GatewayClass` : Ensemble de `Gateway` avec configuration commune et géré par un contrôleur
+- `Gateway` : Définit une instance d'infrastructure de gestion du trafic : Cloud load-balancing, …
+- `HTTPRoute` : Règles pour mapper le trafic d'une `Gateway` à un endpoint réseau (`Service`)
 
 ---
 
@@ -353,9 +380,16 @@ layout: section
 
 ---
 
+## DaemonSet
+
+- Assure que des pods tournent sur tous les noeuds du cluster
+- Utile pour monitoring & logs
+
+---
+
 ## StatefulSet
 
-- Permet de déployer des applications avec état : BDD, …
+- Déploie des applications avec état : BDD, …
 - Ressources **ordonnées** (ordre de lancement)
 - Un même volume monté dans un pod le reste pour toujours (même après recréation)
 - Un DNS dédié (`service headless`) :
@@ -570,6 +604,8 @@ layout: two-cols
 - [Article très complet sur le service mesh Istio](https://une-tasse-de.cafe/blog/istio/)
 - <https://spacelift.io/blog/kubernetes-secrets>
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
+- [Administration de cluster via etcd](https://blog.stephane-robert.info/post/kubernetes-etcd/)
+- [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc)
 
 ---
 

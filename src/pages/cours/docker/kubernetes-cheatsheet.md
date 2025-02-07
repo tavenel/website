@@ -4,7 +4,58 @@ title: Cheatsheet Kubernetes®
 
 # Cheatsheet Kubernetes
 
-## Commandes
+## Administration
+
+### Administration etcd
+
+#### Afficher le pod etcd
+
+```sh
+kubectl describe pod etcd-cluster-1-control-plane -n kube-system
+[…]
+# Recopier et passer les propriétés suivantes comme arguments aux commandes `etcdctl` :
+--cert-file=/etc/kubernetes/pki/etcd/server.crt
+--key-file=/etc/kubernetes/pki/etcd/server.key
+--trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+
+etcdctl --endpoints 172.18.0.4:2379,172.18.0.5:2379,172.18.0.6:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --key-file=/etc/kubernetes/pki/etcd/server.key --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt …
+```
+
+#### Afficher les noeuds du cluster
+
+```sh
+etcdctl […] member list --write-out=table
++------------------+---------+--------------------------+-------------------------+-------------------------+
+|        ID        | STATUS  |           NAME           |       PEER ADDRS        |      CLIENT ADDRS       |
++------------------+---------+--------------------------+-------------------------+-------------------------+
+| 26aead55408e4ad0 | started | cluster-1-control-plane2 | https://172.18.0.5:2380 | https://172.18.0.5:2379 |
+| 5320353a7d98bdee | started | cluster-1-control-plane  | https://172.18.0.4:2380 | https://172.18.0.4:2379 |
+| 983acdc6eb33276f | started | cluster-1-control-plane3 | https://172.18.0.6:2380 | https://172.18.0.6:2379 |
++------------------+---------+--------------------------+-------------------------+-------------------------+
+
+# Afficher le leader
+etcdctl […] endpoint status --write-out=table
+# Transférer le leader
+etcdctl […] move-leader <leader ID>
+```
+
+#### Snapshot / restauration de l'état du cluster
+
+```sh
+etcdctl […] snapshot save /tmp/snapshot-etcd-1.db
+
+etcdctl […] snapshot restore /tmp/snapshot-etcd-1.db
+```
+
+#### Gestion clé/valeur etcd
+
+```sh
+etcdctl […] put cle valeur
+etcdctl […] get cle [-w json] | base64 -d
+etcdctl […] get --prefix cle_commencant_par… 
+etcdctl […] del cle
+etcdctl […] watch cle # scrute les changemens de `cle`
+```
 
 ### Lister les types de ressources supportées
 
@@ -18,6 +69,8 @@ kubectl explain [--recursive] RESOURCE_NAME # documentation
 ```sh
 kubectl get apiservices | grep metrics-server
 ```
+
+## Commandes
 
 ### dry-run : simule la commande sans modification du cluster
 
@@ -542,6 +595,67 @@ Par défaut, un Pod utilise le DNS de Kubernetes.
 
 Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/>
 
+### Ingress
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: api-ingress
+spec:
+ rules:
+    - host: api.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: api-service
+                port: 
+                  number: 8080
+```
+
+### Gateway
+
+```yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: GatewayClass
+metadata:
+  name: example-class
+spec:
+  controllerName: example.com/gateway-controller
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: example-gateway
+spec:
+  gatewayClassName: example-class
+  listeners:
+  - name: http
+    protocol: HTTP
+    port: 80
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: example-httproute
+spec:
+  parentRefs:
+  - name: example-gateway
+  hostnames:
+  - "www.example.com"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /login
+    backendRefs:
+    - name: example-svc
+      port: 8080
+```
+
 ## Deployment
 
 ### Exemple de fichier de Déploiement et de Service
@@ -729,6 +843,71 @@ roleRef:
   kind: Role # ou ClusterRole
   name: example-role
   apiGroup: rbac.authorization.k8s.io
+```
+
+## DaemonSet
+
+Tourne un Nginx sur chaque noeud du cluster :
+
+```yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+ name: nginx-daemonset
+spec:
+ selector:
+    matchLabels:
+      app: nginx
+ template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+```
+
+## StatefulSet
+
+3 réplicas MySQL avec des volumes persistants individuels pour chaque réplica :
+
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+ name: mysql
+spec:
+ serviceName: "mysql" # nom du service headless
+ replicas: 3 # mysql-0, mysql-1, …
+ minReadySeconds: 10 # default 0
+ selector:
+    matchLabels:
+      app: mysql # idem .spec.template.metadata.labels
+ template:
+    metadata:
+      labels:
+        app: mysql # idem .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: mysql-data
+          mountPath: /var/lib/mysql
+ volumeClaimTemplates: # crée les PV de chaque réplica
+ - metadata:
+      name: mysql-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ] # `ReadWriteOncePod` recommandé en prod
+      resources:
+        requests:
+          storage: 5Gi
 ```
 
 ## Autres commandes
