@@ -1,24 +1,9 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: Linux Networking
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Cours Linux Networking
 tags:
 - linux
----
-
-<!-- LPIC1 Sujet 109 : Notions élémentaires sur les réseaux -->
-
-<!-- _class: titre lead -->
-
-# Linux Networking
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
-<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
-
 ---
 
 # Objectifs
@@ -352,8 +337,6 @@ DHCP=yes # ou IPv4 ou IPv6
 <!-- Annexe: liste des liens utiles -->
 [wiki-netfilter]: https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter
 
-<!-- class: legal -->
-
 # Legal
 
 - Linux est une marque déposée par Linus Torvalds aux États Unis et dans d'autres pays.
@@ -362,16 +345,4 @@ DHCP=yes # ou IPv4 ou IPv6
 - SUSE™ (SUSE est une marque de SUSE LINUX Products GmbH, une filiale de Novell)
 - UNIX® est une marque déposée de The Open Group. 
 - Other names may be trademarks of their respective owners
-
----
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/
 

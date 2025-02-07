@@ -1,20 +1,11 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: Jenkins
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Cours Jenkins
 tags:
 - tests
 - ci
 - jenkins
----
-
-# Jenkins : serveur d'intégration continue
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
 ---
 
 <!-- _class: titre lead -->
@@ -178,8 +169,6 @@ La documentation de Jenkins est très complète, on pourra notamment citer :
 
 ---
 
-<!-- class: legal -->
-
 # Legal
 
 - SELENIUM is a trademark of Software Freedom Conservancy, Inc.
@@ -214,14 +203,3 @@ La documentation de Jenkins est très complète, on pourra notamment citer :
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries
 - Other names may be trademarks of their respective owners
 
----
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/

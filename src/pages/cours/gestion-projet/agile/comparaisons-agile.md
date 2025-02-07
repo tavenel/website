@@ -1,19 +1,10 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: Méthodes Agiles
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Comparaison des Méthodes Agiles
 tags:
 - gestion_projet
 - agile
----
-
-# Comparaison des méthodes agiles
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
 ---
 
 # Scrum

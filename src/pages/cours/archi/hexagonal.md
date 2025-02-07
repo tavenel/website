@@ -1,26 +1,13 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: DDD
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+theme: the-unnamed # slidev
+title: Architecture Hexagonale et Clean Architecture
+layout: '@layouts/SlideLayout.astro'
 tags:
 - ddd
 - archi
 - hexagonal
 - clean
----
-
-<!-- _class: titre lead -->
-
-# Architecture Hexagonale
-# Clean architecture
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
-<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
-
 ---
 
 ## Intention :thinking:
@@ -48,7 +35,7 @@ folder my_app {
 @enduml
 ```
 
-_Quel est le <span v-mark.underline.red="0">but</span> de cette application ?_ 🤔
+_Quel est le **but** de cette application ?_ 🤔
 
 ---
 
@@ -62,7 +49,7 @@ folder ticket
 @enduml
 ```
 
-_Quel est le <span v-mark.underline.red="0">but</span> de [cette application django][ddd-django] ?_ 💡
+_Quel est le **but** de [cette application django][ddd-django] ?_ 💡
 
 ---
 
@@ -384,20 +371,4 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 - [Architecture explicite](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
 
 [ddd-django]: https://github.com/johnnncodes/ddd-python-django
-
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/
 

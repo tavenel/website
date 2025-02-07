@@ -1,21 +1,10 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
 title: Docker et docker-compose
 tags:
 - docker
-- k8s
----
-
-<!-- _backgroundColor: "#2e3440" -->
-
-# Docker et docker-compose
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
+- kubernetes
 ---
 
 # Problèmes courants
@@ -274,7 +263,7 @@ _Architecture de Docker®. [Source et crédits][img-archi]._
 
 # Commandes de base de Docker® 
 
-Voir la [cheatsheet sur Docker®][docker-cheatsheet].
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 
 ---
 
@@ -393,7 +382,7 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®][docker-cheatshee
 
 # Configuration du réseau depuis les commandes Docker® 
 
-- Voir la section sur le réseau de la [cheatsheet sur Docker®][[docker-cheatsheet].
+- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 - Voir la documentation officielle : <https://docs.docker.com/network/drivers/>
 
 ---
@@ -426,7 +415,7 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®][docker-cheatshee
 
 # Instructions standards Dockerfile
 
-Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 
 ---
 
@@ -484,7 +473,7 @@ Google, 2014 : 2 milliards conteneurs lancés par semaine
 
 # Commandes de base de Docker compose® 
 
-Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 
 ---
 
@@ -659,8 +648,6 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
 
 ---
 
-<!-- class: legal -->
-
 # Legal
 
 - Docker®, Docker Swarm and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
@@ -670,15 +657,3 @@ Voir la [cheatsheet sur Docker®][[docker-cheatsheet].
 - Oracle and VirtualBox are registered trademarks of Oracle and/or its affiliates.
 - Other names may be trademarks of their respective owners
 
----
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/
-[docker-cheatsheet]: https://www.avenel.pro/cours/docker/docker-cheatsheets.html

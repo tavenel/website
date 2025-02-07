@@ -405,7 +405,7 @@ _La redirection s'est bien effectuée vers l'URL `/catalog/` mais aucune route n
 `Django` utilise un `ORM` (object-relational mapping) pour modéliser le schéma d'une base de données relationnelle (SGBD) directement en objets Python.
 
 :::link
-Voir le [cours sur la persistence des données Hibernate][site-perso] pour plus d'information sur les `ORM`.
+Voir le [cours sur la persistence des données Hibernate](https://www.avenel.pro/cours/) pour plus d'information sur les `ORM`.
 :::
 
 La persistance des données est une fonctionnalité complexe à maintenir, car le schéma de la base de données peut diverger assez rapidement du modèle de classes dans le projet.
@@ -1588,4 +1588,3 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 - SQLite is in the [Public Domain](https://www.sqlite.org/copyright.html)
 - Ce sujet de TP est fortement inspiré du [tutoriel de Mozilla](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Tutorial_local_library_website) by  [Mozilla Contributors](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Tutorial_local_library_website/contributors.txt) sous license CC-BY-SA 2.5
 
-[site-perso]:https://www.avenel.pro/cours.html/

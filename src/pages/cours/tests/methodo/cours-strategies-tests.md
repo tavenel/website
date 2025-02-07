@@ -1,21 +1,9 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
 title: Stratégies de tests
 tags:
 - tests
----
-
-<!-- _backgroundColor: "#000" -->
-<!-- _color: "red" -->
-
-# Stratégies de test
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
 ---
 
 # Stratégie de test
@@ -238,18 +226,3 @@ Principe : avoir une équipe **dédiée** au test **indépendante** des autres �
 - Model-based testing : _Kramer, A., Legeard, B. (2016): "Model-Based Testing Essentials - Guide to the ISTQB(R) Certified Model-Based Tester - Foundation Level". John Wiley & Sons, 2016, (ISBN 978-1119130017)_
 - <https://blog.octo.com/la-pyramide-des-tests-par-la-pratique-1-5>
 
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/

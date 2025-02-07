@@ -1,20 +1,10 @@
 ---
-theme: the-unnamed
-slidev: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: Dashboard DSI
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Introduction aux tableaux de bord et feuilles de route
 tags:
   - gestion_projet
   - data
----
-
-# Introduction aux tableaux de bord et feuilles de route
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
 ---
 layout: section
 ---
@@ -25,38 +15,27 @@ layout: section
 
 # Pourquoi un Découpage en Couches ?
 
-<v-clicks>
-
-- <span v-mark.underline.red="1">**Indépendance fonctionnelle**</span> : Chaque couche remplit un rôle spécifique.
-- <span v-mark.underline.red="2">**Modularité**</span> : Facilite les mises à jour et le remplacement d'une couche.
-- <span v-mark.underline.red="3">**Maintenance simplifiée**</span> : Chaque couche est gérée indépendamment.
-- <span v-mark.underline.red="4">**Scalabilité**</span> : Permet une montée en charge ciblée.
-
-</v-clicks>
-<v-clicks>
+- **Indépendance fonctionnelle** : Chaque couche remplit un rôle spécifique.
+- **Modularité** : Facilite les mises à jour et le remplacement d'une couche.
+- **Maintenance simplifiée** : Chaque couche est gérée indépendamment.
+- **Scalabilité** : Permet une montée en charge ciblée.
 
 > Un SI bien structuré est plus agile et résilient face aux évolutions technologiques.
-
-</v-clicks>
 
 ---
 
 # Les Principales Couches d'un SI
 
-<v-clicks>
-
-- Couche <span v-mark.underline.red="1">Présentation</span> (Front-end)
-- Couche <span v-mark.underline.red="2">Applicative</span> (Back-end)
-- Couche <span v-mark.underline.red="3">Données</span> (Base de données)
-
-</v-clicks>
+- Couche _Présentation_ (Front-end)
+- Couche _Applicative_ (Back-end)
+- Couche _Données_ (Base de données)
 
 ---
 
 # Couche Présentation
 
 - **Rôle** :
-  Fournir une interface pour <span v-mark.underline.red="1">interagir</span> avec le système.
+  Fournir une interface pour **interagir** avec le système.
 
 - **Exemples** :
   - _Applications web : navigateurs._
@@ -71,7 +50,7 @@ layout: section
 # Couche Applicative
 
 - **Rôle** :
-  Traiter les données et appliquer la <span v-mark.underline.red="1">logique métier</span>.
+  Traiter les données et appliquer la **logique métier**.
 
 - **Exemples** :
   - _Services REST ou SOAP._
@@ -86,7 +65,7 @@ layout: section
 # Couche Données
 
 - **Rôle** :
-  Stocker, structurer et sécuriser les <span v-mark.underline.red="1">informations</span>.
+  Stocker, structurer et sécuriser les **informations**.
 
 - **Exemples** :
   - _Bases de données relationnelles : MySQL, PostgreSQL._
@@ -135,73 +114,51 @@ layout: section
 
 # 🎯 Objectifs de cette partie
 
-<v-clicks>
-
 - Comprendre ce qu'est un tableau de bord.
 - Identifier ses avantages et ses limites.
 - Découvrir les types de tableaux de bord.
 - Explorer les cas d’utilisation dans un Système d’Information (SI).
 
-</v-clicks>
-
 ---
 
 # Tableau de bord
 
-<v-clicks>
-
-> Outil <span v-mark.box="1">visuel</span> permettant de **suivre** les performances, **analyser** les données et aider à la prise de **décision**.
+> Outil _visuel_ permettant de **suivre** les performances, **analyser** les données et aider à la prise de **décision**.
 
 - 🎯 **But** :
-  - Fournir une vue <span v-mark.underline.red="2">synthétique</span> des <span v-mark.underline.red="2">indicateurs clés</span>.
-  - Faciliter la <span v-mark.underline.red="2">gestion et le pilotage</span> des applications SI.
-
-</v-clicks>
+  - Fournir une vue **synthétique** des _indicateurs clés_.
+  - Faciliter la _gestion et le pilotage_ des applications SI.
 
 ---
 
 # Avantages
-
-<v-clicks>
 
 - Visualisation en temps réel des métriques clés.
 - Accès aux données critiques à tout moment : prise de décision rapide
 - Identification des tendances et des anomalies.
 - Présentation claire des informations pour les parties prenantes.
 
-</v-clicks>
-
 ---
 
 # Limites
 
-<v-clicks>
-
 - Difficulté du choix et de la récupération des données
 - Illisible si trop de données affichées
-
-</v-clicks>
 
 ---
 
 # Types de Tableaux de Bord
 
-<v-clicks>
-
-- <span v-mark.underline.red="1">**Stratégique**</span> : Suivi des objectifs à long terme
+- **Stratégique** : Suivi des objectifs à long terme
   - _Exemple : Analyse des coûts globaux du parc applicatif._
-- <span v-mark.underline.red="2">**Opérationnel**</span> : Suivi des activités quotidiennes.
+- **Opérationnel** : Suivi des activités quotidiennes.
   - _Exemple : Temps moyen de résolution des incidents._
-- <span v-mark.underline.red="3">**Analytique**</span> : Analyse approfondie des données historiques.
+- **Analytique** : Analyse approfondie des données historiques.
   - _Exemple : Fréquence de déploiement des mises à jour._
-
-</v-clicks>
 
 ---
 
 # Cas d'Utilisation dans le SI
-
-<v-clicks>
 
 1. **Surveillance des Applications** :
    - Disponibilité, performance, et utilisation des applications.
@@ -211,8 +168,6 @@ layout: section
    - Analyse des coûts et des investissements nécessaires.
 4. **Conformité Légale** :
    - Respect des réglementations (ex : RGPD).
-
-</v-clicks>
 
 ---
 
@@ -245,27 +200,19 @@ layout: section
 
 # 🎯 Objectifs de cette partie
 
-<v-clicks>
-
-- Comprendre le <span v-mark.underline.red="1">rôle des indicateurs</span> de performance (KPI) dans la gestion du SI.
-- <span v-mark.underline.red="2">Identifier</span> les métriques clés selon différents axes.
-- Savoir <span v-mark.underline.red="3">choisir</span> les indicateurs pertinents pour un tableau de bord.
-
-</v-clicks>
+- Comprendre le **rôle des indicateurs** de performance (KPI) dans la gestion du SI.
+- **Identifier** les métriques clés selon différents axes.
+- Savoir **choisir** les indicateurs pertinents pour un tableau de bord.
 
 ---
 
 # Pourquoi des Indicateurs de Performance ?
-
-<v-clicks>
 
 - Évaluer la **performance** des applications dans le SI.
 - Identifier rapidement les **points critiques** et **prioriser** les actions.
 - **Suivre les objectifs stratégiques** : Alignement sur les priorités métier.
 
 > _"Un bon indicateur est pertinent, mesurable, et exploitable."_
-
-</v-clicks>
 
 ---
 
@@ -374,21 +321,17 @@ layout: two-cols-header
 
 # Bonnes Pratiques pour Choisir un Indicateur
 
-<v-clicks>
-
 1. **Pertinence** :
-   L'indicateur doit répondre à un objectif précis.
+	L'indicateur doit répondre à un objectif précis.
 
 2. **Clarté** :
-   Il doit être compréhensible par tous les acteurs.
+	Il doit être compréhensible par tous les acteurs.
 
 3. **Fiabilité** :
-   Les données utilisées doivent être exactes et à jour.
+	Les données utilisées doivent être exactes et à jour.
 
 4. **Exploitabilité** :
-   Il doit permettre de prendre des décisions concrètes.
-
-</v-clicks>
+	Il doit permettre de prendre des décisions concrètes.
 
 ---
 
@@ -407,13 +350,9 @@ layout: section
 
 # 🎯 Objectifs de cette partie
 
-<v-clicks>
-
 - Comprendre les étapes nécessaires pour concevoir un tableau de bord.
 - Découvrir les bonnes pratiques de conception.
 - Créer une structure visuelle adaptée aux besoins du SI.
-
-</v-clicks>
 
 ---
 
@@ -421,7 +360,7 @@ layout: section
 
 - Que voulez-vous mesurer ?
 - À qui s'adresse le tableau de bord ?
-  - _Exemple : direction, équipe technique, utilisateurs finaux_
+- _Exemple : direction, équipe technique, utilisateurs finaux_
 
 ---
 
@@ -429,16 +368,16 @@ layout: section
 
 - Priorisez les métriques en fonction des besoins.
 - Assurez-vous qu'ils soient pertinents, mesurables et exploitables.
-  - _Exemple : Temps de réponse des applications, taux de disponibilité, coûts d'exploitation._
+- _Exemple : Temps de réponse des applications, taux de disponibilité, coûts d'exploitation._
 
 ---
 
 # 3. Concevoir la Structure 📑
 
 - **Types de visualisations** :
-  - Graphiques à barres, lignes ou secteurs.
-  - Jauges pour des indicateurs spécifiques.
-  - Cartes de chaleur pour des comparaisons globales.
+- Graphiques à barres, lignes ou secteurs.
+- Jauges pour des indicateurs spécifiques.
+- Cartes de chaleur pour des comparaisons globales.
 
 > Limitez les visuels à l'essentiel pour éviter la surcharge.
 
@@ -447,24 +386,20 @@ layout: section
 # 4. Collecter et Connecter les Données 🗃
 
 - Utilisez des outils adaptés pour centraliser les données :
-  - Bases de données.
-  - APIs d'applications SI.
-  - Outils BI (`Power BI`, `Tableau`, etc.).
+- Bases de données.
+- APIs d'applications SI.
+- Outils BI (`Power BI`, `Tableau`, etc.).
 
 ---
 
 # 5. Tester et Valider 🧪
 
-<v-clicks>
-
 - Vérifiez :
-  - La fiabilité des données.
-  - La lisibilité des visualisations.
-  - La compréhension par les utilisateurs finaux.
+- La fiabilité des données.
+- La lisibilité des visualisations.
+- La compréhension par les utilisateurs finaux.
 
 > Un tableau de bord n'est utile que si les utilisateurs peuvent l'exploiter facilement.
-
-</v-clicks>
 
 ---
 
@@ -490,21 +425,17 @@ layout: section
 
 # Types d'applications
 
-- Power BI <span v-mark.underline.red="0">**Service**</span> <https://app.powerbi.com> : focus sur la création de <span v-mark.box="0">dashboard</span>
-- Power BI <span v-mark.underline.red="0">**Desktop**</span> (à installer) : focus sur la t<span v-mark.box="0">ransformation</span> de données et la création de rapports complexes
-- Power BI <span v-mark.underline.red="0">Mobile</span> : lecture des dashboards, …
+- Power BI **Service** <https://app.powerbi.com> : focus sur la création de _dashboard_
+- Power BI **Desktop** (à installer) : focus sur la _transformation_ de données et la création de rapports complexes
+- Power BI **Mobile** : lecture des dashboards, …
 
 ---
 
 # Glossaire Power BI
 
-<v-clicks>
-
-- Les données servant au suivi des indicateurs sont regroupées dans un ou plusieurs <span v-mark.underline.red="1">**modèles sémantiques**</span>.
-- Un <span v-mark.underline.red="2">**rapport**</span> est une visualisation graphique d'un (et un seul) **modèle sémantique**.
-- Un <span v-mark.underline.red="3">**tableau de bord**</span> (_Dashboard_) est un écran généré depuis un ou plusieurs **rapports**.
-
-</v-clicks>
+- Les données servant au suivi des indicateurs sont regroupées dans un ou plusieurs **modèles sémantiques**.
+- Un **rapport** est une visualisation graphique d'un (et un seul) **modèle sémantique**.
+- Un **tableau de bord** (_Dashboard_) est un écran généré depuis un ou plusieurs **rapports**.
 
 ---
 
@@ -518,8 +449,8 @@ backgroundSize: contain
 
 # Graphique à Barres / Colonnes
 
-- <span v-mark.underline.red="1">Comparer des valeurs</span> entre différentes catégories.
-- Mettre en évidence les <span v-mark.underline.red="1">différences</span> importantes.
+- **Comparer des valeurs** entre différentes catégories.
+- Mettre en évidence les **différences** importantes.
 
 ## Exemple
 
@@ -534,7 +465,7 @@ backgroundSize: contain
 
 # Graphique en Secteurs
 
-- Montrer la <span v-mark.underline.red="1">répartition</span> d'une valeur totale en pourcentages.
+- Montrer la **répartition** d'une valeur totale en pourcentages.
 - Analyser les parts relatives.
 
 ## Exemple
@@ -550,8 +481,8 @@ backgroundSize: contain
 
 # Graphique en courbes
 
-- Suivre l'<span v-mark.underline.red="1">évolution</span> d'une valeur dans le temps.
-- Identifier des <span v-mark.underline.red="1">tendances</span> ou des <span v-mark.underline.red="1">variations</span>.
+- Suivre l'**évolution** d'une valeur dans le temps.
+- Identifier des **tendances** ou des **variations**.
 
 ## Exemple
 
@@ -566,8 +497,8 @@ backgroundSize: contain
 
 # Graphique en Aire
 
-- Montrer une <span v-mark.underline.red="1">évolution</span> et l'<span v-mark.underline.red="1">accumulation</span> de valeurs.
-- Mettre en évidence les <span v-mark.underline.red="1">proportions</span> dans une série temporelle.
+- Montrer une **évolution** et l'**accumulation** de valeurs.
+- Mettre en évidence les **proportions** dans une série temporelle.
 
 ## Exemple
 
@@ -582,7 +513,7 @@ backgroundSize: contain
 
 # Jauge
 
-- Suivre une valeur par rapport à un <span v-mark.underline.red="1">objectif</span> ou un <span v-mark.underline.red="1">seuil</span>.
+- Suivre une valeur par rapport à un **objectif** ou un **seuil**.
 - Idéal pour des KPI simples.
 
 ## Exemple
@@ -596,7 +527,7 @@ backgroundSize: contain
 
 ![](https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png)
 
-- Identifier des modèles ou des <span v-mark.underline.red="1">anomalies</span> dans des données tabulaires.
+- Identifier des modèles ou des **anomalies** dans des données tabulaires.
 - Comparer de grandes quantités de données rapidement.
 - 🚨 Attention : pas de visualisation de type _Heatmap_ par défaut dans PowerBI (à installer ou à simuler en utilisant un formattage des données). 🚨 
 - _**Cas pratique** : Analyse des performances des serveurs (temps moyen de réponse)._
@@ -610,7 +541,7 @@ backgroundSize: contain
 
 # Carte Géographique
 
-- Visualiser des données <span v-mark.underline.red="1">géolocalisées</span>.
+- Visualiser des données **géolocalisées**.
 - Identifier des modèles géographiques.
 
 ## Exemple
@@ -623,7 +554,7 @@ backgroundSize: contain
 # Tableau Croisé Dynamique (Matrice)
 
 ![](https://learn.microsoft.com/fr-fr/power-bi/visuals/media/power-bi-visualization-types-for-reports-and-q-and-a/matrix.png)
-- Présenter des données <span v-mark.underline.red="1">multi-dimensionnelles</span> sous forme de tableau interactif.
+- Présenter des données **multi-dimensionnelles** sous forme de tableau interactif.
 - Explorer des hiérarchies.
 
 ## Exemple
@@ -641,14 +572,10 @@ layout: section
 
 # 🎯 Objectifs de cette partie
 
-<v-clicks>
-
 - Comprendre l'utilité d'une feuille de route.
 - Identifier les éléments clés d'une roadmap.
 - Découvrir les bonnes pratiques de conception.
 - Apprendre à utiliser des outils adaptés.
-
-</v-clicks>
 
 ---
 
@@ -657,24 +584,17 @@ layout: section
 > Représentation **visuelle** et **structurée** des étapes, ressources et échéances nécessaires pour atteindre des objectifs stratégiques.
 
 - 🎯 **Objectif principal** :
-  <span v-mark.underline.red="1">Planifier l'évolution</span> des applications du SI de manière claire et réaliste.
+  **Planifier l'évolution** des applications du SI de manière claire et réaliste.
 
 ---
 
 # Pourquoi une Roadmap pour le SI ?
 
-<v-clicks>
-
-- **Planification stratégique** : définir des <span v-mark.underline.red="1">**priorités**</span> pour l'évolution des applications.
-- Aligner les parties prenantes sur une <span v-mark.underline.red="2">**vision commune**</span>.
-- Évaluer les <span v-mark.underline.red="3">**jalons**</span> atteints et <span v-mark.underline.red="3">**ajuster**</span> si nécessaire.
-
-</v-clicks>
-<v-clicks>
+- **Planification stratégique** : définir des **priorités** pour l'évolution des applications.
+- Aligner les parties prenantes sur une **vision commune**.
+- Évaluer les **jalons** atteints et **ajuster** si nécessaire.
 
 > Une roadmap claire réduit les incertitudes et améliore la coordination des équipes.
-
-</v-clicks>
 
 ---
 
@@ -704,14 +624,9 @@ layout: section
 
 # Bonnes Pratiques pour Construire une Roadmap
 
-<v-clicks>
-
-- <span v-mark.underline.red="1">**Clarté et simplicité**</span> : restez synthétique.
-- <span v-mark.underline.red="2">**Réalisme**</span> : Définissez des étapes atteignables dans le temps imparti.
-- <span v-mark.underline.red="3">**Évolutivité**</span> : Prévoyez des ajustements en cas d'imprévus.
-- <span v-mark.underline.red="4">**Collaboration**</span> : Impliquez toutes les parties prenantes dès le début.
-
-</v-clicks>
+- **Clarté et simplicité** : Définissez des étapes atteignables dans le temps imparti.
+- **Évolutivité** : Prévoyez des ajustements en cas d'imprévus.
+- **Collaboration** : Impliquez toutes les parties prenantes dès le début.
 
 ---
 
@@ -727,6 +642,10 @@ layout: section
 # Exemple de Roadmap
 
 - **Objectif principal** : Migration d'une application vers le cloud.
+
+<!-- [TODO] https://www.lucidchart.com/blog/what-is-a-technology-roadmap -->
+<!-- [TODO] https://www.productplan.com/templates/it-project-roadmap-template/ -->
+<!-- [TODO] https://www.productplan.com/templates/it-architecture-roadmap/ -->
 
 ---
 layout: image
@@ -751,10 +670,6 @@ layout: two-cols
 ---
 
 # Ressources
-
-<!-- https://www.lucidchart.com/blog/what-is-a-technology-roadmap -->
-<!-- https://www.productplan.com/templates/it-project-roadmap-template/ -->
-<!-- https://www.productplan.com/templates/it-architecture-roadmap/ -->
 
 ## Livres
 
@@ -782,20 +697,3 @@ layout: two-cols
 
 [exemples-tableaux]: https://www.journaldunet.com/solutions/dsi/1002623-12-tableaux-de-bord-pour-piloter-ses-activites-informatiques/
 
----
-layout: end
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg)                                                                                        | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg)                                                                                        | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/

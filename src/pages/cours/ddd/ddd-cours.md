@@ -1,31 +1,12 @@
 ---
-# https://github.com/estruyf/slidev-theme-the-unnamed
-#theme: the-unnamed
-slidev: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: DDD
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Domain-Driven Design
 tags:
 - ddd
 - archi
 - hexagonal
 - clean
----
-
-<!-- _class: titre lead -->
-
-# Domain-Driven Design
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
-![](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Capture__.PNG)
-
-<span class="legende">©lesdieuxducode.com</span>
-
-<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
-
 ---
 layout: center
 ---
@@ -57,7 +38,7 @@ folder my_app {
 @enduml
 ```
 
-_Quel est le <span v-mark.underline.red="0">but</span> de cette application ?_ 🤔
+_Quel est le **but** de cette application ?_ 🤔
 
 ---
 
@@ -71,7 +52,7 @@ folder ticket
 @enduml
 ```
 
-_Quel est le <span v-mark.underline.red="0">but</span> de cette application django ?_ 💡
+_Quel est le **but** de cette application django ?_ 💡
 
 ---
 layout: section
@@ -83,18 +64,11 @@ layout: section
 
 # Application _CRUD_
 
-<v-clicks>
-
 1. Entité (`getter`/`setter`) + BDD auto-générée
 2. ??? 🙈
 3. API `REST` : _CRUD_ sur l'entité
 
-</v-clicks>
-<v-clicks>
-
-_Quelle est la <span v-mark.underline.red="0">logique métier</span> derrière ces entités ?_
-
-</v-clicks>
+_Quelle est la **logique métier** derrière ces entités ?_
 
 ---
 layout: section
@@ -130,13 +104,9 @@ public class User {
 ```
 ````
 
-<v-after>
-
 - _Relation `name` / `login` ?_
 - _Conditions de validation `name` et `login` ?_
 - _Contexte de validité d'une instance ?_
-
-</v-after>
 
 ---
 layout: section
@@ -158,11 +128,7 @@ class UserAccount {
 @enduml
 ```
 
-<v-click>
-
 Problème : addresse de livraison différente ?
-
-</v-click>
 
 ---
 
@@ -182,8 +148,6 @@ class UserAccount {
 ```
 ````
 
-<v-clicks>
-
 ```java
 mainAddress = userAccount.address ;
 if (shippingAddress != null) {
@@ -192,9 +156,7 @@ if (shippingAddress != null) {
 […]
 ```
 
-Et des <span v-mark.crossed-off.red="4">rustines</span> partout dans le code… 🙈
-
-</v-clicks>
+Et des **rustines** partout dans le code… 🙈
 
 ---
 
@@ -205,29 +167,21 @@ Et des <span v-mark.crossed-off.red="4">rustines</span> partout dans le code… 
 
 # Un bon design ?
 
-<v-clicks>
-
-- Des cas d'utilisation <span v-mark.underline="1">clairs</span> :office_worker:
-- Facile à <span v-mark.underline="2">maintenir</span> 🧰
-- Facile à <span v-mark.underline="3">tester</span> 🧪
-- <span v-mark.underline="4">Cohérent</span> et <span v-mark.underline="4">facile</span> à comprendre 💭
-- <span v-mark.underline="5">Découplé</span> ⬅️ ➡️
-
-</v-clicks>
+- Des cas d'utilisation **clairs** :office_worker:
+- Facile à **maintenir** 🧰
+- Facile à **tester** 🧪
+- **Cohérent** et **facile** à comprendre 💭
+- **Découplé** ⬅️ ➡️
 
 ---
 
 # Un bon design ! 🤓
 
-<v-clicks>
-
 ```java
 private static final boolean WILL_IT_RAIN_IN_LONDON = true;
 ```
 
-- Le métier s'apprend en <span v-mark.underline="2">lisant le code !</span>
-
-</v-clicks>
+- Le métier s'apprend en **lisant le code !**
 
 ---
 layout: center 
@@ -267,13 +221,9 @@ Source: alexsoyes.com
 
 # Principes
 
-<v-clicks>
-
-- <span v-mark.box="1">**Modéliser**</span> les conceptions complexes (`UML`, …)
-- Mettre en avant le <span v-mark.box="2">**domaine**</span>et la <span v-mark.box="2">**logique métier**</span> associée plutôt que la technologie
-- <span v-mark.box="3">**Langage commun**</span> pour tous (<span v-mark="{ at: 4, type: 'highlight', color: '#be123c'}">_ubiquitaire_</span>)
-
-</v-clicks>
+- **Modéliser** les conceptions complexes (`UML`, …)
+- Mettre en avant le **domaine** et la **logique métier** associée plutôt que la technologie
+- **Langage commun** pour tous (_ubiquitaire_)
 
 ---
 
@@ -283,28 +233,20 @@ Source: alexsoyes.com
 
 ## Pourquoi utiliser DDD ? :white_check_mark:
 
-<v-clicks>
-
-- Application <span v-mark.underline="1">techniquement complexe</span>
-- <span v-mark.underline="2">Métier complexe</span>
-- Haut <span v-mark.underline="3">risque dans le métier</span>(banque, santé, …)
-- L'efficacité de la solution dépend de la <span v-mark.underline="4">compréhension du métier</span>
-
-</v-clicks>
+- Application **techniquement complexe**
+- **Métier complexe**
+- Haut **risque dans le métier** (banque, santé, …)
+- L'efficacité de la solution dépend de la **compréhension du métier**
 
 ---
 
 ## Pourquoi ne pas utiliser DDD ? ❌
 
-<v-clicks>
+- Application basée **data / contenu** **(CMS, CRUD)**
+- Application **techniquement simple**
+- Domaine très **générique** ou peu de complexité métier
+- Le DDD **prend du temps** (time to market)
 
-- Application basée <span v-mark.underline="1">data / contenu</span> <span v-mark.crossed-off.red="2">(CMS, CRUD)</span>
-- Application <span v-mark.underline="2">techniquement simple</span>
-- Domaine très <span v-mark.underline="3">générique</span> ou peu de complexité métier
-- Le DDD <span v-mark="{ at: 4, type: 'circle', color: '#be123c'}">prend du temps</span> (time to market)
-
-
-</v-clicks>
 
 ---
 layout: center
@@ -316,26 +258,18 @@ layout: center
 
 # Stratégie vs tactique
 
-<v-clicks>
-
-- <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">**Stratégie**</span> : <span v-mark.underline="1">définition</span> de l'objectif
-- <span v-mark="{ at: 2, type: 'highlight', color: '#6d2efc'}">**Tactique**</span> : comment <span v-mark.underline="2">atteindre</span> l'objectif (organisation du code)
-- `DDD` est avant tout <span v-mark="{ at: 3, type: 'underline', strokeWidth: 5, iterations: 6, animationDuration: 2000, color: '#be123c'}">**stratégique**</span>
-
-</v-clicks>
+- ****Stratégie**** : **définition** de l'objectif
+- **Tactique** : comment _atteindre_ l'objectif (organisation du code)
+- `DDD` est avant tout **stratégique**
 
 ---
 
 # Méthodologie
 
-<v-clicks>
-
-- 🎯 Commencer par un <span v-mark.underline="1">**design stratégique**</span>
-- :speech_balloon: Définir le <span v-mark.underline="2">**langage ubiquitaire**</span>
-- ✂️ Découper le métier en <span v-mark.underline="3">**Bounded Context**</span>
-- 🔃 <span v-mark.underline="4">Itérer</span>
-
-</v-clicks>
+- 🎯 Commencer par un **design stratégique**
+- :speech_balloon: Définir le **langage ubiquitaire**
+- ✂️ Découper le métier en **Bounded Context**
+- 🔃 **Itérer**
 
 ---
 layout: center
@@ -353,20 +287,12 @@ layout: section
 
 # Domaine :office:
 
-<v-clicks depth="2">
-
-- <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">**Domaine**</span> : ce que fait une organisation (et comment)
-  - un <span v-mark.underline="2">langage dédié</span>
-  - des <span v-mark.underline="3">sous-domaines</span> : l'espace des problèmes à résoudre
-
-</v-clicks>
-
-<v-click>
+- _Domaine_ : ce que fait une organisation (et comment)
+  - un **langage dédié**
+  - des **sous-domaines** : l'espace des problèmes à résoudre
 
 > La sphère d'un métier ou activité pour lequel on développe l'application. (wikipedia)
 
-</v-click>
-
 ---
 layout: section
 ---
@@ -377,7 +303,7 @@ layout: section
 
 # Modèle
 
-- <span v-mark="{ at: 0, type: 'highlight', color: '#be123c'}">Modèle</span> : une <span v-mark.underline="0">abstraction</span> qui représente une <span v-mark.underline="0">partie d'un domaine</span>.
+- _Modèle_ : une **abstraction** qui représente une **partie d'un domaine**.
 
 ---
 layout: section
@@ -389,12 +315,8 @@ layout: section
 
 # Bounded Context :office_worker:
 
-<v-clicks>
-
-- <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">**Bounded Context**</span> : limite de <span v-mark.underline="1">validité</span> d'un modèle <span v-mark.circle.red="2">(frontière linguistique)</span>
-- Concept **métier** précis qui répond à une <span v-mark.underline="1">problématique</span>.
-
-</v-clicks>
+- _Bounded Context_ : limite de **validité** d'un modèle **(frontière linguistique)**
+- Concept **métier** précis qui répond à une **problématique**.
 
 ---
 layout: section
@@ -405,33 +327,20 @@ layout: section
 ---
 
 # Architecture :building_construction:
-
-<v-clicks depth="2">
 
 - Suit les _Bounded Context_
-  - Pas de partage de code mais des <span v-mark.underline="2">interactions</span> entre _Bounded Context_
-  - Séparation en <span v-mark.underline="3">**modules**, **packages**, **mico-services**, …</span>
+  - Pas de partage de code mais des **interactions** entre _Bounded Context_
+  - Séparation en **modules**, **packages**, **mico-services**, …
   - Découpage en **couches** (si besoin) dans chaque _Bounded Context_.
-
-</v-clicks>
-
-<v-after>
 
 > L'Architecture est une affaire d'Intention, pas de Frameworks. (Uncle Bob)
 
-</v-after>
-
-
 ---
 
-<v-clicks depth="2">
-
-- <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">1 bounded context == 1 langage ubiquitaire</span>
-  - Dans le contexte <span v-mark.underline.blue="2">culinaire</span> : 🍅 est un <span v-mark.underline.blue="2">légume</span>
-  - Dans le contexte <span v-mark.underline.yellow="3">botanique</span> : 🍅 est un <span v-mark.underline.yellow="3">fruit</span>
-  - Dans le contexte <span v-mark.underline.green="4">théatral</span> : 🍅 est un <span v-mark.underline.green="4">feedback</span>
-
-</v-clicks>
+- **1 bounded context == 1 langage ubiquitaire**
+  - Dans le contexte _culinaire_ : 🍅 est un _légume_
+  - Dans le contexte _botanique_ : 🍅 est un _fruit_
+  - Dans le contexte _théatral_ : 🍅 est un _feedback_
 
 ---
 
@@ -469,15 +378,11 @@ layout: section
 
 # D'un langage ubiquitaire… :speech_balloon:
 
-<v-clicks depth="2">
-
-- Pas uniquement un glossaire, des <span v-mark.underline.red="1">phrases entières (simples)</span>
-- Provient du <span v-mark.underline="2">métier</span>
-  - Éliminer les <span v-mark.crossed-off="3">synonymes</span>
-  - Coder dans la <span v-mark.underline="4">langue du métier</span>…
-  - …ou s'accorder sur les <span v-mark.underline="5">traductions</span> !
-
-</v-clicks>
+- Pas uniquement un glossaire, des _phrases entières (simples)_
+- Provient du **métier**
+  - Éliminer les **synonymes**
+  - Coder dans la **langue du métier**…
+  - …ou s'accorder sur les **traductions** !
 
 ---
 layout: quote
@@ -489,16 +394,12 @@ layout: quote
 
 # …Au modèle :card_index_dividers:
 
-<v-clicks depth="2">
-
-- <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">**Le langage est le modèle**</span>
+- **Le langage est le modèle**
   - langage => modèle (puis => langage)
-- Pas de <span v-mark.crossed-off="3">duplication du modèle</span> 🚫
-- Privilégier plusieurs éléments <span v-mark.underline="4">simples</span> pour faire des modèles plus complexes 🖇️
-- Pas de <span v-mark.crossed-off="5">technique</span> dans le modèle
-- Utiliser les termes <span v-mark.underline.red="6">métiers</span> dans le code :office_worker:
-
-</v-clicks>
+- Pas de **duplication du modèle** 🚫
+- Privilégier plusieurs éléments **simples** pour faire des modèles plus complexes 🖇️
+- Pas de **technique** dans le modèle
+- Utiliser les termes **métiers** dans le code :office_worker:
 
 ---
 
@@ -516,12 +417,8 @@ layout: center
 
 # Objectifs 🎯
 
-<v-clicks>
-
-1. Clarifier le <span v-mark.underline="1">besoin métier</span> entre les différents experts du domaine
-2. <span v-mark.underline="2">Simplifier</span> les définitions
-
-</v-clicks>
+1. Clarifier le **besoin métier** entre les différents experts du domaine
+2. **Simplifier** les définitions
 
 ---
 layout: section
@@ -533,16 +430,12 @@ layout: section
 
 # L'atelier d'Event Storming
 
-<v-clicks depth="2">
-
 - Réunit les parties prenantes :busts_in_silhouette:
-  - <span v-mark.underline="2">inclus les développeurs</span> :technologist:
+  - **inclus les développeurs** :technologist:
 - Brainstorming :
-  - <span v-mark.underline="4">**fonctionnalités**</span> 💡
-  - <span v-mark.underline="5">**vocabulaire**</span> :speech_balloon:
-  - pas de <span v-mark.crossed-off="6">détail technique</span> ! :no_entry:
-
-</v-clicks>
+  - **fonctionnalités** 💡
+  - **vocabulaire** :speech_balloon:
+  - pas de **détail technique** ! :no_entry:
 
 ---
 
@@ -555,33 +448,21 @@ https://www.eventstorming.com/book/
 
 # Brainstorming
 
-<v-clicks>
-
-1. Trouver les <span v-mark.underline="1">idées</span> 💡 (penser <span v-mark.box="1">_objectifs_</span> 🎯 )
-2. <span v-mark.underline="2">Regrouper </span>les idées 🖇️
-3. Trouver les <span v-mark.underline="3">déclencheurs</span> (_event triggers_) ▶️
-
-</v-clicks>
-
-<v-after>
+1. Trouver les **idées** 💡 (penser _objectifs_ 🎯 )
+2. **Regrouper **les idées 🖇️
+3. Trouver les **déclencheurs** (_event triggers_) ▶️
 
 [Exemple de brainstorming][brainstorming-example]
-
-</v-after>
 
 ---
 
 # Formalisation
 
-<v-clicks>
-
-1. Identifier les <span v-mark.underline="1">**acteurs**</span> 🙋 et les <span v-mark.box="1">**prioriser**</span> :1234:
-2. Identifier les <span v-mark.underline="2">**cas d'utilisation**</span> :juggling_person:
-3. Identifier les <span v-mark.underline="3">**interactions**</span> entre les cas d'utilisation :wrestling:
-4. Identifier les <span v-mark.underline="4">**entités**</span>
-5. Diagramme de **classes** (ou **code** directement) : décrit le <span v-mark.underline="5">**glossaire**</span> :ledger:
-
-</v-clicks>
+1. Identifier les **acteurs** 🙋 et les **prioriser** :1234:
+2. Identifier les **cas d'utilisation** :juggling_person:
+3. Identifier les **interactions** entre les cas d'utilisation :wrestling:
+4. Identifier les **entités**
+5. Diagramme de **classes** (ou **code** directement) : décrit le **glossaire** :ledger:
 
 ---
 
@@ -678,16 +559,12 @@ layout: default
 
 # Loi de Brandolini
 
-<v-clicks depth="2">
-
 > La quantité d'énergie nécessaire pour réfuter des sottises […] est supérieure d'un ordre de grandeur à celle nécessaire pour les produire.
 >
 > _Bullshit asymmetry principle, Brandolini_
 
 - Event storming (très) long (~3 jours) 💤
-  - à <span v-mark.underline>découper</span> (meilleure acceptation) :carpentry_saw:
-
-</v-clicks>
+  - à **découper** (meilleure acceptation) :carpentry_saw:
 
 ---
 layout: center
@@ -728,19 +605,15 @@ Plusieurs stratégies permettent d'y parvenir :
 
 # Découpage
 
-<v-clicks depth="2">
-
-- ⭐ un <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">_core domain_</span> : le <span v-mark.underline="1">problème principal</span>
-  - c'est la <span v-mark.underline="2">raison d'exister</span> de l'organisation
-  - <span v-mark.underline="3">petit</span>, à <span v-mark.box="3">refactorer</span>
+- ⭐ un **core domain** : le _problème principal_
+  - c'est la **raison d'exister** de l'organisation
+  - **petit**, à **refactorer**
   - :rotating_light: doit être bien conçu (_design hexagonal_, …)
-- :pray: au moins un <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">sous-domaine</span> venant en <span v-mark.underline="5">support</span>
+- :pray: au moins un **sous-domaine** venant en **support**
   - moins critique
-- (éventuellement) des sous-domaines <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">génériques</span>
+- (éventuellement) des sous-domaines **génériques**
   - aident le métier
   - souvent des intégrations de solutions externes
-
-</v-clicks>
 
 ---
 
@@ -774,16 +647,12 @@ flowchart TD
 
 # Exemple d'un dentiste
 
-<v-clicks depth="2">
-
-- Le <span v-mark="{ at: 1, type: 'highlight', color: '#be123c'}">**core domain**</span> :tooth: : <span v-mark.underline="1">soigner</span> les dents du patient
+- Le **core domain** :tooth: : **soigner** les dents du patient
   - Notion de `patient` :face_with_head_bandage: (historique des soins, …)
-- Un sous-domaine de <span v-mark="{ at: 3, type: 'highlight', color: '#be123c'}">**support**</span> :date: : gérer les <span v-mark.underline="3">rdv</span> du patient
+- Un sous-domaine de **support** :date: : gérer les **rdv** du patient
   - Notion de `patient` :bust_in_silhouette: (informations de contact, paiement, …)
-- Les 2 domaines ont besoin d'un modèle <span v-mark.underline.red="5">différent</span> de patient (chacun dans son `Bounded Context`)
-- Un sous-domaine <span v-mark="{ at: 6, type: 'highlight', color: '#be123c'}">**générique**</span> de <span v-mark.underline="6">facturation</span>
-
-</v-clicks>
+- Les 2 domaines ont besoin d'un modèle **différent** de patient (chacun dans son `Bounded Context`)
+- Un sous-domaine **générique** de **facturation**
 
 ---
 layout: center
@@ -801,13 +670,9 @@ layout: center
 
 # Carte de contexte
 
-<v-clicks>
-
-- Document représentant les <span v-mark.underline="1">relations</span> entre Bounded Context
+- Document représentant les **relations** entre Bounded Context
 - Diagramme ou document écrit
 - Niveau de détail variable
-
-</v-clicks>
 
 ---
 
@@ -840,14 +705,10 @@ layout: section
 
 # Shared Kernel (Noyau partagé)
 
-<v-clicks depth="2">
-
 - Relation entre 2+ _Bounded Context_ qui partagent du code, des données, …
-- Création d'un <span v-mark.underline="2">contexte partagé</span> (en dépendance) :
-  - évite la <span v-mark.crossed-off="3">duplication</span>
-  - <span v-mark.underline.red="4">collaboration forte</span> : doit <span v-mark.box.red="4">notifier</span> chaque contexte dépendant des changements
-
-</v-clicks>
+- Création d'un **contexte partagé** (en dépendance) :
+  - évite la **duplication**
+  - **collaboration forte** : doit **notifier** chaque contexte dépendant des changements
 
 ---
 
@@ -864,13 +725,9 @@ layout: section
 
 # Customer / Supplier (Client / Fournisseur)
 
-<v-clicks depth="2">
-
-- Relation : un _Bounded Context_ <span v-mark.underline="1">fournit un service</span> (ou des données) à un autre.
-- <span v-mark.underline.red="2">Collaboration forte</span>
+- Relation : un _Bounded Context_ **fournit un service** (ou des données) à un autre.
+- **Collaboration forte**
 - Aussi appelé : `Downstream` (Client) / `Upstream` (Supplier)
-
-</v-clicks>
 
 ---
 
@@ -884,12 +741,8 @@ layout: section
 
 # Conformiste
 
-<v-clicks depth="2">
-
-- Le client <span v-mark.underline="1">adhère</span> au modèle (et conventions, règles, …) de l'équipe fournisseur
-- <span v-mark.underline.red="2">C'est au client de s'adapter</span>
-
-</v-clicks>
+- Le client **adhère** au modèle (et conventions, règles, …) de l'équipe fournisseur
+- _C'est au client de s'adapter_
 
 ---
 
@@ -902,13 +755,9 @@ layout: section
 
 # Separate Ways (Chemins Séparés)
 
-<v-clicks depth="2">
-
-- Contextes très <span v-mark.underline="1">**indépendants**</span> les uns des autres (<span v-mark.underline.red="1">y compris technologiquement</span>)
-- Évoluent <span v-mark.underline="2">séparément</span>
-- Idée de <span v-mark.underline="3">**modularité**</span>
-
-</v-clicks>
+- Contextes très **indépendants** les uns des autres (_y compris technologiquement_)
+- Évoluent **séparément**
+- Idée de **modularité**
 
 ---
 
@@ -923,13 +772,9 @@ layout: section
 
 # Open Host Services (Services Hôtes)
 
-<v-clicks depth="2">
-
-- Rend disponible des systèmes / services <span v-mark.underline="1">communs</span> à différents _Bounded Context_
+- Rend disponible des systèmes / services **communs** à différents _Bounded Context_
   - _RESTful API_, …
-- Définit un <span v-mark.underline.red="3">modèle commun d'intégration</span>
-
-</v-clicks>
+- Définit un **modèle commun d'intégration**
 
 ---
 
@@ -942,23 +787,15 @@ layout: section
 
 # Published Language (Langage publié)
 
-<v-clicks depth="2">
-
-- Version formelle des service hôtes : <span v-mark.underline="1">publication technique du modèle commun</span>
+- Version formelle des service hôtes : **publication technique du modèle commun**
   - `JSON`, `XML`, …
-
-</v-clicks>
 
 ---
 
 # Couche Anticorruption (ACL)
 
-<v-clicks depth="2">
-
-- <span v-mark.underline.red="1">Protège</span> un _Bounded Context_ des complexités et incohérences d'un autre modèle
-- <span v-mark.underline="2">Traducteur</span> et <span v-mark.underline="2">validateur</span> entre deux modèles
-
-</v-clicks>
+- **Protège** un _Bounded Context_ des complexités et incohérences d'un autre modèle
+- **Traducteur** et **validateur** entre deux modèles
 
 ---
 
@@ -977,7 +814,7 @@ layout: section
 
 # Context Map
 
-- <span v-mark="{ at: 0, type: 'highlight', color: '#be123c'}">**Carte de contexte**</span> : formalise les relations entre les bounded context.
+- **Carte de contexte** : formalise les relations entre les bounded context.
 
 ---
 
@@ -1020,34 +857,26 @@ By <a href="https://en.wikipedia.org/wiki/User:Ravenperch" class="extiw" title="
 # Team topologies
 
 - idée : refléter le découpage en composants dans le découpage des équipes
-- <span v-mark.underline="1">Team Topologies</span> : pattern d'organisation complémentaire au DDD
+- **Team Topologies** : pattern d'organisation complémentaire au DDD
   - inverse de la loi de Conway (adapter l'organisation aux modules et pas l'inverse)
 
 ---
 
 # Dépendance mutuelle
 
-<v-clicks depth="2">
-
 - Dépendance mutuelle (Shared Kernel)
-- Relation <span v-mark.underline.red="2">succès/échec partagée</span>
-  - besoin de <span v-mark.underline="3">collaboration forte</span>
-  - relation de <span v-mark.underline="4">partenariat</span>
-
-</v-clicks>
+- Relation **succès/échec partagée**
+  - besoin de **collaboration forte**
+  - relation de **partenariat**
 
 ---
 
 # Dépendance Upstream / Downstream 
 
-<v-clicks depth="2">
-
-- <span v-mark.underline.red="1">Upstream impacte le succès Downstream</span>
+- **Upstream impacte le succès Downstream**
 - Downstream n'impacte pas le succès Upstream
-  - soit : collaboration par requêtes (envie du Customer à remonter au Supplier), pas par <span v-mark.crossed-off="3">exigence (besoin)</span>
+  - soit : collaboration par **requêtes** (envie du Customer à remonter au Supplier), pas par ~~exigence (besoin)~~
   - soit : API publique (Open Host Service) indépendant du consommateur (le Customer doit s'adapter au Supplier)
-
-</v-clicks>
 
 ---
 
@@ -1114,19 +943,15 @@ Cartographie des modèles et de leurs relations (dieuxducode.com)
 
 # Intégration continue
 
-<v-clicks depth="2">
-
-- 🔃 Le DDD est <span v-mark.underline.red="1">itératif</span> (=> CI)
-- 🤔 <span v-mark.underline="2">Repenser</span> régulièrement les `Bounded Context` et <span v-mark.underline="2">changer le type de propagation</span> au besoin
-
-</v-clicks>
+- 🔃 Le DDD est **itératif** (=> CI)
+- 🤔 **Repenser** régulièrement les `Bounded Context` et **changer le type de propagation** au besoin
 
 ---
 
 # XP, Agilité, BDD
 
 - `DDD` s'associe particulièrement bien avec les méthodes agiles (`XP`, …)
-- Le `BDD` (Behavior-Driven Development) permet de faire le lien par le langage des spécifications (<span v-mark.box="1">par l'exemple</span>) au code
+- Le `BDD` (Behavior-Driven Development) permet de faire le lien par le langage des spécifications (**par l'exemple**) au code
 
 ---
 layout: section
@@ -1219,32 +1044,24 @@ layout: section
 
 # Points de vigilance - 1/2
 
-<v-clicks depth="2">
-
-- 🚫 Ne pas utiliser la <span v-mark.crossed-off="1">même architecture</span> pour tous les contextes bornés.
+- 🚫 Ne pas utiliser la **même architecture** pour tous les contextes bornés.
   - Certains contextes sont moins complexes que d'autres.
-- 🚫 Ne pas <span v-mark.crossed-off="3">réutiliser</span> un modèle existant ( ⚠ <span v-mark="{ at: 3, type: 'highlight', color: '#be123c'}">1 domaine == 1 problématique</span> )
-- 💡 <span v-mark.underline.red="4">Comprendre</span> les problèmes métier avant d'essayer des résoudre une problématique technique.
-- ⚠ Ne pas négliger la <span v-mark.underline.red="5">carte de contexte</span>.
-- ✂️ Définir clairement les <span v-mark.box.red="6">limites du contexte</span>.
-- 🤔 Résoudre les problèmes d'<span v-mark.crossed-off="7">ambiguité</span> (impact fort sur le logiciel).
+- 🚫 Ne pas **réutiliser** un modèle existant ( ⚠  **1 domaine == 1 problématique** )
+- 💡 **Comprendre** les problèmes métier avant d'essayer des résoudre une problématique technique.
+- ⚠ Ne pas négliger la **carte de contexte**.
+- ✂️ Définir clairement les **limites du contexte**.
+- 🤔 Résoudre les problèmes d'**ambiguité** (impact fort sur le logiciel).
   - En particulier lorsque la logique métier est complexe.
-
-</v-clicks>
 
 ---
 
 # Points de vigilance - 2/2
 
-<v-clicks depth="2">
-
-- 🤓 DDD n'a **PAS** pour but <span v-mark.crossed-off="1">d'ajouter des couches d'abstraction</span>
-  - Mais <span v-mark.box.red="2">d'isoler la logique métier</span> !
-- ❌ Peu adapté à un <span v-mark.crossed-off="3">domaine simple</span>
+- 🤓 DDD n'a **PAS** pour but ~~d'ajouter des couches d'abstraction~~
+  - Mais **d'isoler la logique métier** !
+- ❌ Peu adapté à un ~~domaine simple~~
   - ou si les acteurs du métier ne sont pas impliqués
-  - 💵 <span v-mark.circle.red="5">coûteux</span> en ressources et en temps
-
-</v-clicks>
+  - 💵 **coûteux** en ressources et en temps
 
 ---
 
@@ -1306,18 +1123,3 @@ layout: two-cols
 - [Playlist: REST API following CLEAN ARCHITECTURE (Youtube)](https://www.youtube.com/playlist?list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k)
 - [DDD en DotNet (linkedin learning)](https://www.linkedin.com/learning/expert-domain-driven-design-ddd-implementation-in-dot-net)
 
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/

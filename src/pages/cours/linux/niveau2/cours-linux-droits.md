@@ -1,22 +1,9 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: Linux - gestion des droits
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Cours Linux - gestion des droits
 tags:
 - linux
----
-
-<!-- _class: titre lead -->
-
-# Linux - gestion des droits
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
-<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
-
 ---
 
 # Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés
@@ -178,22 +165,9 @@ setfacl -b <fichier>
 <!-- Annexe: liste des liens utiles -->
 [wiki-partitions]: https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/P%C3%A9riph%C3%A9riques_et_syst%C3%A8mes_de_fichiers_Linux/Cr%C3%A9er_des_partitions_et_des_syst%C3%A8mes_de_fichiers
 
-<!-- class: legal -->
-
 # Legal
 
 - Linux est une marque déposée par Linus Torvalds aux États Unis et dans d'autres pays.
 - UNIX® est une marque déposée de The Open Group. 
 - Other names may be trademarks of their respective owners
 
----
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/

@@ -1,25 +1,12 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: BDD
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Cours BDD
 tags:
 - ddd
 - bdd
 - test
 - agile
----
-
-<!-- _class: titre lead -->
-
-# Behavior-Driven Development
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
-<!-- _footer: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0" -->
-
 ---
 
 ## But
@@ -193,21 +180,4 @@ Feature: Some terse yet descriptive text of what is desired
 - [Matt Brunt – Behaviour Driven Development and Behat: Telling Stories Through Code (Youtube)](https://www.youtube.com/watch?v=bCLlBgYQoIk)
 
 [LizKeogh]: https://www.slideshare.net/lunivore/behavior-driven-development-11754474
-
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-- Exemples de user stories BDD provenant de [Liz Keogh][LizKeogh]
-
-[site-perso]: https://www.avenel.pro/
 

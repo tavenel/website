@@ -1,22 +1,10 @@
 ---
-marp: true
-paginate: true
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: GreenIT
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Informatique responsable GreenIT
 tags:
 - greenit
 - rse
----
-
-<!-- _backgroundColor: "#000" -->
-<!-- _color: "red" -->
-
-# Informatique responsable GreenIT
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
 ---
 
 <!-- _class: titre lead -->
@@ -586,18 +574,3 @@ Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strat
 - [M. GUILLIOT, R. LEMAIRE, S. REVEREAULT. Green IT, Les clés pour des projets informatiques plus responsables. ENI](https://www.editions-eni.fr/livre/green-it-les-cles-pour-des-projets-informatiques-plus-responsables-9782409036095)
 - [G. Pitron. L'enfer numérique, Voyage au bout d'un like. LLL](http://www.editionslesliensquiliberent.fr/livre-L_enfer_num%C3%A9rique-662-1-1-0-1.html)
 
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/

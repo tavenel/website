@@ -1,18 +1,11 @@
 ---
-#footer: _© 2025 Tom Avenel under 󰵫  BY-SA 4.0_
-title: Tests de données
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Cours de Tests de données
 tags:
 - integration
 - data
 - tests
----
-
-# Tests de données
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
 ---
 
 # Tests de données
@@ -297,18 +290,3 @@ Il peut aussi s'agir d'un outil technique lié au langage de l'application.
 - Nécessite de tout documenter, au risque de se perdre dans le code produit.
 - Peut être éparpillé sur plusieurs serveurs.
 
----
-
-<!-- class: legal -->
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/
