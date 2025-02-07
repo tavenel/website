@@ -1,3 +1,8 @@
+/*
+ * Model :
+ * Chapter: Slide[]
+ * SlideShow: Chapter[]
+ */
 export class SlideShow {
 
 	private chapters: NodeListOf<HTMLElement>;
@@ -21,7 +26,7 @@ export class SlideShow {
 			return;
 		}
 		this._hideSlide();
-		this.currentChapter += 1;
+		this.currentChapter++;
 		this._initNewChapter(false);
 	}
 
@@ -30,14 +35,14 @@ export class SlideShow {
 			return;
 		}
 		this._hideSlide();
-		this.currentChapter -= 1;
+		this.currentChapter--;
 		this._initNewChapter(lastSlide);
 	}
 
 	nextSlide(): void {
 		if (this.currentSlide < this.slides.length - 1) {
 			this._hideSlide();
-			this.currentSlide += 1;
+			this.currentSlide++;
 			this._showSlide();
 		} else {
 			this.nextChapter();
@@ -47,7 +52,7 @@ export class SlideShow {
 	prevSlide(): void {
 		if (this.currentSlide > 0) {
 			this._hideSlide();
-			this.currentSlide -= 1;
+			this.currentSlide--;
 			this._showSlide();
 		} else {
 			this.prevChapter(true);
