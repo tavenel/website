@@ -189,7 +189,9 @@ created: 2024-10-17
   - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
   - `screen` => moins utilisé aujourd'hui, support natif de sessions.
 - `wazuh` (intégration Docker)
-- IDS (Intrusion Detection System) : Suricata
+- IDS (Intrusion Detection System) :
+  - `Suricata`
+	- `Falco` : comportement des conteneurs et des applications
 
 ### 📈 Supervision / Monitoring / Observabilité
 
