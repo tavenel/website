@@ -102,6 +102,41 @@ Quels sont les tests critiques ?
 
 ---
 
+# Exemples
+
+```java
+// arrange
+var repository = Substitute.For<IClientRepository>();
+var client = new Client(repository);
+
+// act
+client.Save();
+
+// assert
+mock.Received.SomeMethod();
+```
+
+---
+
+```js
+// Mocha framework
+
+it('should validate a form with all of the possible validation types', function () {
+
+    const name = form.querySelector('input[name="first-name"]');
+    const age = form.querySelector('input[name="age"]');
+
+    name.value = 'Bob';
+    age.value = '42';
+
+    const result = validateForm(form);
+    expect(result.isValid).to.be.true;
+    expect(result.errors.length).to.equal(0);
+});
+```
+
+---
+
 <!-- class: liens -->
 
 # Références

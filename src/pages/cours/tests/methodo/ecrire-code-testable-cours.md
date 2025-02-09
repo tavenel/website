@@ -14,7 +14,7 @@ tags:
 
 ---
 
-# QUELQUES BONNES PRATIQUES GÉNÉRALES
+# Bonnes pratiques générales
 
 - Nous écrivons tous du code buggué, acceptez-le et faites avec. 
 - Écrivez votre code avec le test et le débuggage à l'esprit. 
@@ -32,11 +32,11 @@ tags:
 
 <!-- _class: subtitle lead -->
 
-# QUALITÉ DE LA CONCEPTION OBJET
+# Qualité de la conception objet
 
 ---
 
-# ABSTRACTION ET RESPONSABILITÉ
+# Abstraction et responsabilité
 
 - Programmation Objet = responsabilité unique : une et une seule raison de modifier une classe/un module.
   + bon indicateur : nom simple de classe (sinon : trop de responsabilités)
@@ -58,7 +58,7 @@ tags:
 
 ---
 
-# CLASSES ABSTRAITES
+# Classes abstraites
 
 - Permet de factoriser un comportement commun à plusieurs classes...
 - ...En laissant des spécificités dans chaque héritage.
@@ -76,7 +76,7 @@ tags:
 
 ---
 
-# KEEP IT SIMPLE, STUPID (KISS)
+# KISS : Kit it simple stupid
 
 - Ligne directrice : toute complexité non indispensable doit être évitée.
 - Complexité = coûts de conception et de maintenance et source potentielle d'erreurs.
@@ -101,7 +101,7 @@ tags:
 
 <!-- _class: subtitle lead -->
 
-# LES MOCKS
+# Les Mocks
 
 ---
 
@@ -137,11 +137,11 @@ On sépare parfois les objets de type Mock en deux types distincts :
 
 <!-- _class: subtitle lead -->
 
-# EXCEPTIONS ET GESTION DES ERREURS 
+# Exceptions et gestion des erreurs
 
 ---
 
-# UTILISATION DES EXCEPTIONS
+# Utilisation des exceptions
 
 - Coupe-circuit permettant de gérer des erreurs… exceptionnelles.
 - Permettent d'obtenir un type d'erreur spécifique au problème et d'ajouter du contexte à l'erreur
@@ -152,35 +152,6 @@ On sépare parfois les objets de type Mock en deux types distincts :
 Comme le reste du code, les exceptions doivent être testées : elles font partie des branches d'exécution du code.
 
 On sera particulièrement attentif au code métier remonté, pour faciliter le débuggage et l'écriture de logs en production.
-
----
-
-<!-- _class: subtitle lead -->
-
-# Test-driven development (TDD) et Behavior-driven development (BDD)
-
----
-
-# Test-driven development (TDD)
-
-- Si possible, un test doit toujours être écrit AVANT l'implémentation qu'il vérifie, et ce afin de certifier que le test lui-même est correct !
-- On pourra utiliser la méthode TDD :
-  + Écrire un test couvrant un code qui n'existe pas encore : le test doit échouer
-  + Lorsque le code est ajouté, le test doit devenir positif
-
----
-
-# Behavior-driven development (BDD)
-
-- En TDD traditionnel, les tests (unitaires) sont très proches de l'implémentation :
-  + Le refactoring peut être compliqué, beaucoup de tests deviennent obsolètes
-  + Seul le besoin métier est invariant, le reste dépend de l'implémentation
-- En BDD, on préfèrera des tests validant les fonctionnalités du programme plutôt que les détails d'implémentation.
-
----
-
-- Chaque méthode a ses avantages, il est possible de cumuler les 2 suivant le besoin.
-- Ces méthodes améliorent considérablement les temps de développement.
 
 ---
 

@@ -160,8 +160,8 @@ Et des **rustines** partout dans le code… 🙈
 
 ---
 
-<!-- TODO ![](/cours/gestion_projet/gestion_projet_balancoire.jpg) -->
-![](https://alexsoyes.com/wp-content/uploads/2022/01/gestion-projet-it-arbre-ce-que-le-client-voulait-vraiment-572x912.png)
+<!-- TODO ![](https://alexsoyes.com/wp-content/uploads/2022/01/gestion-projet-it-arbre-ce-que-le-client-voulait-vraiment-572x912.png) -->
+![](/images/projet/balancoire.jpg)
 
 ---
 

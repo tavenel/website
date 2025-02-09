@@ -63,7 +63,7 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-![](/cours/gestion-projet/gestion_projet_balancoire.jpg)
+![](/images/projet/balancoire.jpg)
 
 ---
 

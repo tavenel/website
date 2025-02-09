@@ -49,7 +49,7 @@ tags:
 
 ---
 
-![width:600px](./selenium-ide-screenshot.png)
+![width:600px](/images/tests/selenium-ide-screenshot.png)
 
 _Le plugin Selenium IDE._
 

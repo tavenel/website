@@ -26,13 +26,13 @@ Module de 10H
 ### Méthodologie des tests
 
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests) : _Pourquoi le test logiciel ?_ _Qu'est-ce qu'un testeur ?_
-- [🤓 Cours : les types de tests (pdf, 2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
+- [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
 - [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
 - [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
 - [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
-- [Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
-- [Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
+- [📖 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
+- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 
 ### Les tests unitaires
 

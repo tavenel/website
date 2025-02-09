@@ -63,6 +63,7 @@ A partir d'un cahier des charges :
 ## Documents
 
 - [🤓 Cours - Introduction à la gestion de projet](/cours/gestion-projet/intro-gestion-projet)
+- [🤓 Cours sur la recette fonctionnelle](/cours/tests/methodo/cours-recette)
 - [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/uml/use-case)
 - [🤓 Modèles et cycles de développement (cours)](/cours/gestion-projet/modeles_dev)
 - [🤓 Le pilotage de projet (cours)](/cours/gestion-projet/pilotage_projet-cours)

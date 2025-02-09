@@ -25,11 +25,12 @@ Module de 14H
 
 ## Documents
 
-- 🤓 Rappels : les types de tests : [pdf (2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
-- [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
+- Rappels : [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
+- [🤓 Cours : Test-Driven Development (TDD)](/cours/tests/methodo/cours-tdd)
+- [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd)
+- [🤓 Cours sur l'industrialisation des tests](/cours/tests/methodo/indus-tests-cours)
 - [🤓 Cours sur les design patterns de test](/cours/tests/methodo/patterns-cours)
-- [🤓 Cours : impact des tests sur l'intégration](/cours/tests/methodo/cours-impact-tests-integration)
-
+- [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
 - [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
 - [💻 TP : Tests automatisés et analyses de code en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)

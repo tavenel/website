@@ -142,14 +142,10 @@ Les frameworks.
 
 ### Méthodologie
 
-- [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)
-- 🤓 Cours : les types de tests : [pdf (2M)](/cours/tests/methodo/cours-tests.pdf) <!-- TODO -->
-- [🤓 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
-- [🤓 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
+- [🤓 Cours : méthodologie des tests](/cours/tests/methodo/cours-full)
+- [📖 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
+- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
-- [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
-- [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
-- [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
 - [📝 Exercices sur les techniques de tests](/cours/tests/methodo/techniques-tests-exercices)
 
 ### Industrialisation des tests

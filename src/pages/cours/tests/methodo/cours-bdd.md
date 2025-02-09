@@ -26,16 +26,16 @@ tags:
 
 ---
 
-> Given Fred has bought a microwave
-> And the microwave costs 100eu
-> When we refund the microwave
-> Then Fred should be refunded 100eu
+- Given Fred has bought a microwave
+- And the microwave costs 100eu
+- When we refund the microwave
+- Then Fred should be refunded 100eu
 
 ---
 
-> **Given (a specific context)**
-> **When (some action is carried out)**
-> **Then (a particular set of observable consequences _should_ occur)**
+- **Given (a specific context)**
+- **When (some action is carried out)**
+- **Then (a particular set of observable consequences _should_ occur)**
 
 ---
 
@@ -45,20 +45,20 @@ tags:
 
 Dans quel **contexte** l'événement aboutira à un résultat différent ?
 
-> Given Fred has bought a microwave
-> And the microwave costs 100eu
-> And the microwave was on 10% discount
-> When we refund the microwave
-> Then Fred should be refunded 90eu
+- Given Fred has bought a microwave
+- And the microwave costs 100eu
+- And the microwave was on 10% discount
+- When we refund the microwave
+- Then Fred should be refunded 90eu
 
 ---
 
 Est-ce vraiment le seul **résultat** à vérifier ?
 
-> Given Fred has bought a microwave
-> And the microwave costs 100eu
-> When we refund the microwave
-> Then the microwave should be added to the stock count.
+- Given Fred has bought a microwave
+- And the microwave costs 100eu
+- When we refund the microwave
+- Then the microwave should be added to the stock count.
 
 ---
 
@@ -66,17 +66,17 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-> Given Fred has bought a microwave
-> And the microwave costs 100eu
-> And the microwave was on 10% discount
-> When we refund the microwave
-> Then Fred should be refunded 90eu
+- Given Fred has bought a microwave
+- And the microwave costs 100eu
+- And the microwave was on 10% discount
+- When we refund the microwave
+- Then Fred should be refunded 90eu
 
 ---
 
-> Given an item was sold with a discount
-> When the customer gets a refund
-> Then he should only be refunded the discounted price
+- Given an item was sold with a discount
+- When the customer gets a refund
+- Then he should only be refunded the discounted price
 
 ---
 
@@ -133,7 +133,7 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-### Exemple Gherkin
+### Exemples
 
 ```gherkin
 # from https://behat.org/en/latest/user_guide/gherkin.html
@@ -156,6 +156,62 @@ Feature: Some terse yet descriptive text of what is desired
 
   Scenario: A different situation
     ...
+```
+
+---
+
+```java
+# Cucumber framework
+
+# @tag
+# Feature: Sale Should Result in Decrease in Inventory
+#   When we make a sale inventory should go down
+#   Scenario: Make a Sale Check Inventory
+#     Given sell 3 items of ABC 
+#     When inventory on hand is 9
+#     Then remaining inventory is 6
+
+@Given("^sell 3 items of ABC$")
+public void makeSale() {
+  // Write code here that instantiates sale function in larger order entry system
+  throw new PendingException();
+}
+
+@When(("^inventory on hand is 9$")
+public void checkInventoryNow() {
+  // put some code here
+  throw new PendingException();
+}
+
+@Then("^remaining inventory is 6$")
+public void checkInventoryAgain() {
+  // put some code here
+  throw new PendingException();
+}
+```
+
+---
+
+```groovy
+# Spock framework
+
+def "events are published to all subscribers"() {
+
+  given: "an empty bank account"
+    def theAccount = Mock(BankAccount)
+
+  when: "the account is credited $10"
+    theAccount.credit(10)
+
+  then: "the account's balance is $10"
+    theAccount.balance == 10
+}
+
+# Condition not satisfied:
+# assert pc.clockRate >= 2333
+# |  |         |
+# |  1666      false
+# ...
 ```
 
 ---
