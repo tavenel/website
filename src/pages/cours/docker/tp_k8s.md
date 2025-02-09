@@ -10,7 +10,7 @@ Dans cette partie, nous allons utiliser l’orchestrateur de conteneurs Kubernet
 
 ## Installation
 
-### Installer Minikube ou k3s
+### Installer Kubernetes
 
 Le déploiement de Kubernetes dans un environnement de production est une étape complexe, nécessitant de nombreuses questions sur le paramétrage (nombre de noeuds, redondance, services de stockage distribués, …).
 
@@ -18,6 +18,8 @@ Pour tester l’utilisation de Kubernetes, vous pouvez :
 
 - Utiliser `Minikube` (Windows / MacOS / Linux), qui permet de déployer un noeud simple dans une instance locale. Minikube peut utiliser différents types de drivers (VirtualBox, KVM, Docker, …) et crée tout le cluster dans une VM (ou dans un conteneur). Les ressources sont donc plus limitées : <https://kubernetes.io/fr/docs/tasks/tools/install-minikube/>
 - Utiliser `k3s` (Linux uniquement, par exemple dans une VM) qui permet de déployer une vraie instance légère de Kubernetes (mono-noeud par défaut) : <https://docs.k3s.io/quick-start>
+- Utiliser `Docker Desktop` qui permet dans les dernières versions de déployer un mini cluster de test Kubernetes
+- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker)
 
 :::tip
 Un cluster k8s complet peut être un peu gourmand en ressources et suivant les installations, Minikube est très restrictif. Ajouter les options suivantes **à la création du cluster** :
