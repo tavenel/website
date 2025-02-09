@@ -6,8 +6,6 @@ tags:
 - kubernetes
 - devops
 ---
-layout: section
----
 
 # Présentation de Kubernetes
 
@@ -45,6 +43,42 @@ layout: section
 3. `Podman` : alternative _serverless_ à Docker
 4. `CRI-O` : conteneurs légers
 5. `Mirantis Container Runtime (MCR)` (anciennement _Docker Enterprise_)
+
+---
+
+# Plugin réseau (CNI)
+
+- Container Networking Interface (_CNI_) :
+  - Permet la communication réseau au sein du cluster
+  - Parfois intégré à la distribution, sinon à installer séparément
+
+---
+
+## Flannel
+
+- Est un réseau de sous-réseaux pour Kubernetes
+- Utilise des tunnels UDP ou TCP pour la communication 
+- Offre une isolation réseau par pod
+- Est plus simple à configurer que les autres options
+- Est majoritairement utilisé
+
+---
+
+## Calico
+
+- Utilise BGP (Border Gateway Protocol) pour le routage
+- Propose une isolation réseau granulaire (par pod)
+- Supporte nativement le routage IPv4 et IPv6
+- S'intègre bien avec l'infrastructure existante
+
+---
+
+## Weave
+
+- Crée un réseau virtuel entre tous les conteneurs
+- Utilise le DNS intégré de Docker
+- Propose une isolation réseau par pod
+- Est facile à configurer mais peut être moins performant que les autres options
 
 ---
 layout: section
@@ -600,6 +634,7 @@ layout: two-cols
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
 - [Administration de cluster via etcd](https://blog.stephane-robert.info/post/kubernetes-etcd/)
 - [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc)
+- [Installer Kubernetes via kubeadm](https://dev.to/abhay_yt_52a8e72b213be229/how-to-set-up-and-install-a-kubernetes-cluster-a-step-by-step-guide-375j)
 
 ---
 
