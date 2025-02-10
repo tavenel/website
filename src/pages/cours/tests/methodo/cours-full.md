@@ -1,18 +1,15 @@
 ---
-title: Méthodologie des tests logiciels
+layout: '@layouts/SlideLayout.astro'
+title: Introduction aux tests logiciels
+tags:
+- tests
 ---
 
 ## Chapitres
 
 ---
 
-<!-- TODO: intro -->
-
 <!-- _class: chapter -->
-# Introduction aux tests logiciels
-
----
-
 # Pourquoi tester le logiciel ?
 
 - Les sondes perdues (Mars Climate Orbiter, Mars Pathfinder)
