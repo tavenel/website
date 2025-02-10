@@ -1,21 +1,19 @@
 ## P1
 
-- src/pages/cours/tests/methodo/cours-tests.pdf
-- src/pages/cours/cloud/cours-cloud-web.pptx
-- src/pages/cours/gestion-projet/agile/scrum.pptx
-- src/pages/cours/linux/niveau1/linux-cours.pptx
-- src/pages/cours/jenkins/tp-jenkins.pdf
+ update  ▶ New version of Astro available: 5.3.0
+  Run yarn dlx @astrojs/upgrade to update
 
+- picture => legend from _alt_ text
+- slides => **bold** and _emphasis_
 - slides => X/N slide number
-- fix all unknown files at start
+- slides => <bug> fullscreen style fix CSS</bug>
+- <bug>fix all unknown files at start</bug>
 - slidev => ::right::
 - slides => :emoji:
-- slides et TPs => RM Legal
-- slides => title => section
-- tag words
+- TPs => RM Legal
+- slides => generate legal
+- slides => title, section, subtitle, lead
 - slides => color / backgroundColor
-- doc => marp / slidev theme: the-unnamed
-- slides et TPs => copyright
 ```md
 # TITLE
 
@@ -45,16 +43,18 @@ _Tom Avenel_
 
 ## P2
 
-- fix v-clicks (auto -> slidev)
+- src/pages/todo/
+- tags:[] in files and word cloud
+
 - "favorites" :
   - delete
-	- fix favorites navigation (after astro hydration ?)
+  - fix favorites navigation (after astro hydration ?)
 
 - styles :
   - cleanup CSS "TODO"
   - fix diagram style : .flowchartTitleText
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
-	- Callouts themes : https://github.com/Microflash/remark-callout-directives
+  - Callouts themes : https://github.com/Microflash/remark-callout-directives
   - Callouts => correction : svg in astro.config.mjs
   - h2#chapitres => floating (right ?<- only if @media landscape), always visible, collapsible
 	- ability to zoom images
@@ -67,6 +67,15 @@ _Tom Avenel_
 - seo
 	- https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
 	- https://code.juliancataldo.com/component/astro-seo-metadata/
+
+- linter `astro.config.mjs`
+	- import remarkLint from 'remark-lint';
+	- import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
+	- import remarkLintNoDeadUrls from 'remark-lint-no-dead-urls';
+	- 		remarkPlugins: [
+	- 			// remarkLint,
+	- 			// remarkPresetLintRecommended,
+	- 			// remarkLintNoDeadUrls,
 
 ## P3
 
