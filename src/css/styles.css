@@ -353,13 +353,12 @@ a.add-bookmark {
   footer,
   nav,
 	#course-header,
-	#chapters {
+	#chapters,
+	#chapitres {
     display: none !important;
   }
 
-	h1 {
-		text-align:center;
-	}
+	h1 { text-align:center; }
 }
 
 /******************************************************************************/

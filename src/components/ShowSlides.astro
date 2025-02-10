@@ -1,4 +1,5 @@
-<button id="show-slide" class="link">Afficher le contenu en mode texte</button>
+<button id="show-slide" class="link">Mode texte</button>
+<button id="slide-fullscreen" class="link">Fullscreen</button>
 
 <script>
   import { SlideShow, generateSlides } from '@ts/slides';
@@ -15,6 +16,11 @@
 		if (event.key === "ArrowDown") slideshow.prevChapter(false);
 	});
 
+	const fullscreen = document.getElementById('slide-fullscreen');
+	fullscreen.addEventListener('click', () => {
+			document.getElementById('slides-content').requestFullscreen();
+	});
+
   const element = document.getElementById("show-slide");
 	const slides = document.getElementsByClassName('slide-elt');
 
@@ -24,12 +30,12 @@
 		  //Array.prototype.forEach.call(slides, it => it.style.display = "none");
 		  Array.prototype.forEach.call(slides, it => it.classList.add('slide-mode'));
 			slideshow.reset();
-  		element.textContent = "Afficher le contenu en mode texte";
+  		element.textContent = "Mode texte";
   	} else {
   		// show text
 		  //Array.prototype.forEach.call(slides, it => it.style.display = "block");
 		  Array.prototype.forEach.call(slides, it => it.classList.remove('slide-mode'));
-  		element.textContent = "Afficher les slides";
+  		element.textContent = "Mode slides";
   	};
   	element.classList.toggle("slides-hidden");
   });
