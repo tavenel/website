@@ -21,15 +21,17 @@ a {
 	border-bottom: 1px dashed var(--link-border);
 }
 
-a:link { color: var(--link); }
+a:link {
+	color: var(--link);
 
-a:hover, a:active {
-	color: var(--link-hover);
-	border: 3px solid;
-}
+	&:hover, &:active {
+		color: var(--link-hover);
+		border: 3px solid;
+	}
 
-a:visited {
-	color: var(--link-visited);
+	&:visited {
+		color: var(--link-visited);
+	}
 }
 
 ul{ list-style:circle }
@@ -122,16 +124,18 @@ menu > li {
 	}
 }
 
-.column-promo h3 { color: inherit; }
-.column-promo a { color: var(--promo-link); }
-
-.column-promo a:hover { border: none; }
-
-.column-promo li {
-	list-style:none;
-	border-radius: 15px 40px;
-	padding: 20px;
-	background: var(--promo-background);
+.column-promo {
+	& h3 { color: inherit; }
+	& a {
+		color: var(--promo-link);
+		&:hover { border: none; }
+	}
+	& li {
+		list-style:none;
+		border-radius: 15px 40px;
+		padding: 20px;
+		background: var(--promo-background);
+	}
 }
 
 #epsi { color: var(--epsi); }
@@ -149,7 +153,23 @@ menu > li {
 	column-gap: 5%;
 	text-align: center;
 	margin-bottom: 10%;
+
+	& li {
+		font-size: 1.3em;
+		list-style:none;
+		border-radius: 30px;
+		padding: 20px;
+		background: var(--cours-cat-li);
+	}
+
+	& a {
+		color: var(--cours-link-text);
+		border-bottom: 2px var(--cours-link-border) dashed;
+		&:hover { border: none; }
+	}
+
 }
+
 @media screen and (max-width: 1200px) {
 	#cours-cat {
 		-webkit-column-count: 2;
@@ -165,21 +185,6 @@ menu > li {
 	}
 }
 
-#cours-cat li {
-	font-size: 1.3em;
-	list-style:none;
-	border-radius: 30px;
-	padding: 20px;
-	background: var(--cours-cat-li);
-}
-
-#cours-cat a {
-	color: var(--cours-link-text);
-	border-bottom: 2px var(--cours-link-border) dashed;
-}
-
-#cours-cat a:hover { border: none; }
-
 .versioning {
 	font-style: italic;
 	color: var(--versioning);
@@ -189,10 +194,7 @@ menu > li {
 
 	a:link {
 		border-bottom: 2px dashed;
-	}
-
-	a:hover, a:active {
-		border: 2px solid;
+		&:hover, &:active { border: 2px solid; }
 	}
 
 }
@@ -210,13 +212,14 @@ button.link {
 	display: inline-block;
 	padding: 0px 0px;
 	font-size: inherit;
-}
 
-button.link:hover {
-	color: var(--link-hover);
-	background-color: inherit;
-	border: 3px solid;
-	cursor:pointer;
+	&:hover {
+		color: var(--link-hover);
+		background-color: inherit;
+		border: 3px solid;
+		cursor:pointer;
+	}
+
 }
 
 /* From : https://www.w3schools.com/howto/howto_js_slideshow.asp */
@@ -288,15 +291,10 @@ a.add-bookmark {
 	position:absolute;
 	width:20px;
 	height:20px;
+	&:hover { background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg=='); }
 }
 
-.icon-link:hover {
-	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg==');
-}
-
-.bookmarked {
-	background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg==');
-}
+.bookmarked { background:url('data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9ImN1cnJlbnRDb2xvciIgIGNsYXNzPSJpY29uIGljb24tdGFibGVyIGljb25zLXRhYmxlci1maWxsZWQgaWNvbi10YWJsZXItc3RhciI+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTguMjQzIDcuMzRsLTYuMzggLjkyNWwtLjExMyAuMDIzYTEgMSAwIDAgMCAtLjQ0IDEuNjg0bDQuNjIyIDQuNDk5bC0xLjA5IDYuMzU1bC0uMDEzIC4xMWExIDEgMCAwIDAgMS40NjQgLjk0NGw1LjcwNiAtM2w1LjY5MyAzbC4xIC4wNDZhMSAxIDAgMCAwIDEuMzUyIC0xLjFsLTEuMDkxIC02LjM1NWw0LjYyNCAtNC41bC4wNzggLS4wODVhMSAxIDAgMCAwIC0uNjMzIC0xLjYybC02LjM4IC0uOTI2bC0yLjg1MiAtNS43OGExIDEgMCAwIDAgLTEuNzk0IDBsLTIuODUzIDUuNzh6IiAvPjwvc3ZnPg=='); }
 
 /************/
 /* DIAGRAMS */
@@ -316,10 +314,8 @@ a.add-bookmark {
 }
 
 #course {
-
 	/* Hide `---` delimiters in MD except the real footer of the website */
 	hr:not(.footer) { display: none; }
-
 }
 
 #slides-content {
@@ -355,6 +351,7 @@ a.add-bookmark {
 	#course-header,
 	#chapters,
 	#chapitres {
+		/* TODO RM chapitres not working */
     display: none !important;
   }
 
@@ -1222,6 +1219,7 @@ a.add-bookmark {
 /******************************************************************************/
 /*                                    TODO                                    */
 /******************************************************************************/
+
 
 
  /* .pagefind-ui { */
