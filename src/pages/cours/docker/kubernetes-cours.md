@@ -208,7 +208,7 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 * `APIServer` : API de gestion du cluster
 * `etcd` : stockage de la configuration du cluster
 * `Controller Manager` : gère les `WorkerNode` depuis le `MasterNode`
-* `Kubelet` : exécute et gère les conteneurs sur les `WorkerNode`
+* `Kubelet` : exécute et gère les conteneurs sur les `Node`
 * `Kube-proxy` : équilibre le trafic sur chaque `Node`
 * `Scheduler` : assigne les `Pod` à un `Node`
 
@@ -256,6 +256,8 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 # Kubelet
 
 - 1 `Kubelet` par `Node`
+  - Un `kubelet` est souvent installé sur le `MasterNode` pour y gérer ses composants dans des pods (optionnel)
+  - En général, on y ajoute le `Taint` : `node-role.kubernetes.io/master:NoSchedule` pour ne pas utiliser le `Master` comme un `Worker`.
 - Connexion permanente à l'`APIServer`
 - Déploie le `Pod` s'il a le `nodeName` du `Node` courant :
     1. Récupération de l'image (format `OCI`)
