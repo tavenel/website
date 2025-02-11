@@ -70,6 +70,15 @@ kubectl explain [--recursive] RESOURCE_NAME # documentation
 kubectl get apiservices | grep metrics-server
 ```
 
+### Sortir un noeud du cluster
+
+```sh
+# Retirer les pods et déconnecter le noeud pour maintenance
+kubectl drain --ignore-daemonsets <node name>
+# Rendre le noeud de nouveau disponible
+kubectl uncordon <node name>
+```
+
 ## Commandes
 
 ### dry-run : simule la commande sans modification du cluster
