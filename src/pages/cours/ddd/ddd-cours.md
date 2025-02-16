@@ -167,7 +167,7 @@ Et des **rustines** partout dans le code… 🙈
 
 # Un bon design ?
 
-- Des cas d'utilisation **clairs** :office_worker:
+- Des cas d'utilisation **clairs** 🧑‍💼
 - Facile à **maintenir** 🧰
 - Facile à **tester** 🧪
 - **Cohérent** et **facile** à comprendre 💭
@@ -201,13 +201,13 @@ _Eric Evans_, 2003
 
 ---
 
-## Vision des équipes métier :office_worker:
+## Vision des équipes métier 🧑‍💼
 
 > Le Domain-Driven Design c'est avant tout faire comprendre le cœur du métier à l'équipe technique.
 
 ---
 
-## Vision des équipes techniques :technologist:
+## Vision des équipes techniques 🧑‍💻
 
 > Le Domain-Driven Design c'est avant tout transcrire l'intention du métier dans le code.
 
@@ -231,7 +231,7 @@ Source: alexsoyes.com
 
 ---
 
-## Pourquoi utiliser DDD ? :white_check_mark:
+## Pourquoi utiliser DDD ? ✅
 
 - Application **techniquement complexe**
 - **Métier complexe**
@@ -267,7 +267,7 @@ layout: center
 # Méthodologie
 
 - 🎯 Commencer par un **design stratégique**
-- :speech_balloon: Définir le **langage ubiquitaire**
+- 💬 Définir le **langage ubiquitaire**
 - ✂️ Découper le métier en **Bounded Context**
 - 🔃 **Itérer**
 
@@ -281,11 +281,11 @@ layout: center
 layout: section
 ---
 
-# Domaine :office:
+# Domaine 🏢
 
 ---
 
-# Domaine :office:
+# Domaine 🏢
 
 - _Domaine_ : ce que fait une organisation (et comment)
   - un **langage dédié**
@@ -309,11 +309,11 @@ layout: section
 layout: section
 ---
 
-# Bounded Context :office_worker:
+# Bounded Context 🧑‍💼
 
 ---
 
-# Bounded Context :office_worker:
+# Bounded Context 🧑‍💼
 
 - _Bounded Context_ : limite de **validité** d'un modèle **(frontière linguistique)**
 - Concept **métier** précis qui répond à une **problématique**.
@@ -322,11 +322,11 @@ layout: section
 layout: section
 ---
 
-# Architecture :building_construction:
+# Architecture 🏗️
 
 ---
 
-# Architecture :building_construction:
+# Architecture 🏗️
 
 - Suit les _Bounded Context_
   - Pas de partage de code mais des **interactions** entre _Bounded Context_
@@ -376,7 +376,7 @@ layout: section
 
 ---
 
-# D'un langage ubiquitaire… :speech_balloon:
+# D'un langage ubiquitaire… 💬
 
 - Pas uniquement un glossaire, des _phrases entières (simples)_
 - Provient du **métier**
@@ -392,14 +392,14 @@ layout: quote
 
 ---
 
-# …Au modèle :card_index_dividers:
+# …Au modèle 🗂️
 
 - **Le langage est le modèle**
   - langage => modèle (puis => langage)
 - Pas de **duplication du modèle** 🚫
 - Privilégier plusieurs éléments **simples** pour faire des modèles plus complexes 🖇️
 - Pas de **technique** dans le modèle
-- Utiliser les termes **métiers** dans le code :office_worker:
+- Utiliser les termes **métiers** dans le code 🧑‍💼
 
 ---
 
@@ -411,7 +411,7 @@ Source: programmerhumor.io
 layout: center
 ---
 
-# Définir le langage :speech_balloon:
+# Définir le langage 💬
 
 ---
 
@@ -430,12 +430,12 @@ layout: section
 
 # L'atelier d'Event Storming
 
-- Réunit les parties prenantes :busts_in_silhouette:
-  - **inclus les développeurs** :technologist:
+- Réunit les parties prenantes 👥
+  - **inclus les développeurs** 🧑‍💻
 - Brainstorming :
   - **fonctionnalités** 💡
-  - **vocabulaire** :speech_balloon:
-  - pas de **détail technique** ! :no_entry:
+  - **vocabulaire** 💬
+  - pas de **détail technique** ! ⛔
 
 ---
 
@@ -458,11 +458,11 @@ https://www.eventstorming.com/book/
 
 # Formalisation
 
-1. Identifier les **acteurs** 🙋 et les **prioriser** :1234:
-2. Identifier les **cas d'utilisation** :juggling_person:
-3. Identifier les **interactions** entre les cas d'utilisation :wrestling:
+1. Identifier les **acteurs** 🙋 et les **prioriser** 🔢
+2. Identifier les **cas d'utilisation** 🤹
+3. Identifier les **interactions** entre les cas d'utilisation 🤼‍♂️
 4. Identifier les **entités**
-5. Diagramme de **classes** (ou **code** directement) : décrit le **glossaire** :ledger:
+5. Diagramme de **classes** (ou **code** directement) : décrit le **glossaire** 📒
 
 ---
 
@@ -564,7 +564,7 @@ layout: default
 > _Bullshit asymmetry principle, Brandolini_
 
 - Event storming (très) long (~3 jours) 💤
-  - à **découper** (meilleure acceptation) :carpentry_saw:
+  - à **découper** (meilleure acceptation) 🪚
 
 ---
 layout: center
@@ -608,8 +608,8 @@ Plusieurs stratégies permettent d'y parvenir :
 - ⭐ un **core domain** : le _problème principal_
   - c'est la **raison d'exister** de l'organisation
   - **petit**, à **refactorer**
-  - :rotating_light: doit être bien conçu (_design hexagonal_, …)
-- :pray: au moins un **sous-domaine** venant en **support**
+  - 🚨 doit être bien conçu (_design hexagonal_, …)
+- 🙏 au moins un **sous-domaine** venant en **support**
   - moins critique
 - (éventuellement) des sous-domaines **génériques**
   - aident le métier
@@ -647,10 +647,10 @@ flowchart TD
 
 # Exemple d'un dentiste
 
-- Le **core domain** :tooth: : **soigner** les dents du patient
-  - Notion de `patient` :face_with_head_bandage: (historique des soins, …)
-- Un sous-domaine de **support** :date: : gérer les **rdv** du patient
-  - Notion de `patient` :bust_in_silhouette: (informations de contact, paiement, …)
+- Le **core domain** 🦷 : **soigner** les dents du patient
+  - Notion de `patient` 🤕 (historique des soins, …)
+- Un sous-domaine de **support** 📅 : gérer les **rdv** du patient
+  - Notion de `patient` 👤 (informations de contact, paiement, …)
 - Les 2 domaines ont besoin d'un modèle **différent** de patient (chacun dans son `Bounded Context`)
 - Un sous-domaine **générique** de **facturation**
 

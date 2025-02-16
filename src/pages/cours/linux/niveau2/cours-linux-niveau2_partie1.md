@@ -6,6 +6,10 @@ tags:
 - linux
 ---
 
+## Chapitres
+
+---
+
 # Objectifs
 
 - Reconnaître le matériel : ports PCI / USB, paramétrage du BIOS / UEFI
@@ -101,6 +105,8 @@ tags:
 - 104.7 Recherche de fichiers et placement des fichiers aux endroits adéquats [2]
   - TP : Gestion avancée de fichiers - permissions, liens, recherche
 
+---
+layout: section
 ---
 
 # Chapitre 1. Architecture matérielle et gestion des périphériques
@@ -375,6 +381,8 @@ Voir le cours pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
 - POST -> UEFI -> EFI (GPT) -> direct ou Grub -> Kernel -> Init -> Runlevel (systemd) 
 
 ---
+layout: section
+---
 
 # Chapitre 2. Installation de Linux et gestion de paquetages
 
@@ -622,6 +630,8 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 - Fichier de configuration `YAML`
 
 ---
+layout: section
+---
 
 # Chapitre 3. Commandes GNU et Unix
 
@@ -844,6 +854,8 @@ Voir cours "103.7 Lesson 2" sur `grep` et `sed` p.372
 
 ### Démo + grep
 
+---
+layout: section
 ---
 
 # Chapitre 4. Disques, systèmes de fichiers Linux, arborescence de fichiers standard (FHS)

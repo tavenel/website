@@ -9,7 +9,6 @@
 - slides => <bug> fullscreen style fix CSS</bug>
 - <bug>fix all unknown files at start</bug>
 - slidev => ::right::
-- slides => :emoji:
 - TPs => RM Legal
 - slides => generate legal
 - slides => title, section, subtitle, lead

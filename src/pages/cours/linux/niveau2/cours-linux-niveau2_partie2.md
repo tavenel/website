@@ -610,7 +610,7 @@ Voir le [TP sur SMTP][tp-smtp].
   - `ip link`, `ip addr`, `ip route`, …
 - `ifup` et `ifdown` : gestion simplifiée
   - `/etc/network/interfaces`
-  - :warning: `ifup` et `ifdown` ne sont pas standardisés :
+  - ⚠️ `ifup` et `ifdown` ne sont pas standardisés :
     - `CentOS` : `/etc/sysconfig/network-scripts/` (un peu différent)
 
 ---

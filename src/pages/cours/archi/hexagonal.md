@@ -10,7 +10,7 @@ tags:
 - clean
 ---
 
-## Intention :thinking:
+## Intention 🤔
 
 > L'Architecture est une affaire d'Intention, pas de Frameworks. (Uncle Bob)
 
@@ -53,7 +53,7 @@ _Quel est le **but** de [cette application django][ddd-django] ?_ 💡
 
 ---
 
-## Objectifs :dart:
+## Objectifs 🎯
 
 - Mettre ensemble uniquement ce qui a la même raison de changer (découplage)
 - Retirer la technologie du métier pour pérenniser sa valeur
@@ -66,17 +66,17 @@ _Quel est le **but** de [cette application django][ddd-django] ?_ 💡
 
 ---
 
-## Idée :bulb:
+## Idée 💡
 
-- :package: **Isoler** le _cœur de métier_ des appelants et des dépendances
-- :test_tube: Le tester **indépendamment**
+- 📦 **Isoler** le _cœur de métier_ des appelants et des dépendances
+- 🧪 Le tester **indépendamment**
 
 ---
 
 ## Principes
 
-- Séparer explicitement `User-Side` :bust_in_silhouette: , `Business Logic` :gear: et `Server-Side` :printer:
-- Les dépendances vont vers la `Business Logic` :gear:
+- Séparer explicitement `User-Side` 👤 , `Business Logic` ⚙️ et `Server-Side` 🖨️
+- Les dépendances vont vers la `Business Logic` ⚙️
 - On isole les frontières par des `Ports` et `Adapters`
 
 ---
@@ -116,28 +116,28 @@ _Quel est le **but** de [cette application django][ddd-django] ?_ 💡
 
 ---
 
-## Business Logic :gear:
+## Business Logic ⚙️
 
 - L'hexagone (centre)
 - Isole et implémente le **domaine** et la **logique métier**
 - Compréhensible par le fonctionnel
 - Unique à l'application (spécificité)
 - Agnostique : minimum de technologie
-  - :no_entry_sign: `Django`, `logger`, :no_entry: persistence :no_entry: , …
+  - 🚫 `Django`, `logger`, ⛔ persistence ⛔ , …
 
 ---
 
-## User-side :bust_in_silhouette:
+## User-side 👤
 
-- Point d'entrée (utilisateur ou autre programme) pour **interagir** et **piloter** la business logic :gear:
+- Point d'entrée (utilisateur ou autre programme) pour **interagir** et **piloter** la business logic ⚙️
 - Routes `HTTP`, sérialisations `JSON`, API, …
 
 ---
 
-## Server-side :printer:
+## Server-side 🖨️
 
 - **Dépendances** et détails d'infrastructure
-- Pilotés par la **business logic** :gear:
+- Pilotés par la **business logic** ⚙️
 - Base de données, Service Provider Interface (SPI), …
 
 ---
@@ -146,7 +146,7 @@ _Quel est le **but** de [cette application django][ddd-django] ?_ 💡
 
 > Alistair in the "Hexagone", Thomas Pierrain, Alistair Cockburn, 2017.
 
-- Objectif : :speech_balloon: programme qui écrit dans la console des poèmes récupérés dans un fichier.
+- Objectif : 💬 programme qui écrit dans la console des poèmes récupérés dans un fichier.
 
 ```sh
 $ ./printPoem
@@ -201,7 +201,7 @@ Type enter to exit...
 - Inversion de dépendances :
   - `Port` (interface) à l'intérieur (hexagone)
   - `Adapter` (implémentation) à l'extérieur (`User-Side` et `Server-Side`)
-- Possibilité de changer d'`Adapter` : base de données :minidisc: , fichiers :file_folder: , …
+- Possibilité de changer d'`Adapter` : base de données 💽 , fichiers 📁 , …
 
 ---
 
@@ -241,20 +241,20 @@ class Program
 
 ---
 
-## Tests :test_tube:
+## Tests 🧪
 
-- `Business Logic` : unitairement sur l'ensemble de la valeur métier :arrow_up::arrow_up::arrow_up:
-- Intégration `User-Side` et `Business Logic` :arrow_upper_right::arrow_upper_right:
-- Intégration `Business Logic` et `Server-Side` :arrow_upper_right::arrow_upper_right:
-- Tests e2e : très peu, uniquement pour valider la traversée de la stack complète du port d'entrée au port de sortie :arrow_lower_right:
+- `Business Logic` : unitairement sur l'ensemble de la valeur métier ⬆️⬆️⬆️
+- Intégration `User-Side` et `Business Logic` ➡️➡️
+- Intégration `Business Logic` et `Server-Side` ↗️↗️
+- Tests e2e : très peu, uniquement pour valider la traversée de la stack complète du port d'entrée au port de sortie ↘️
   - `User-Side` -> `Business Logic` -> `Server-Side`
 
 ---
 
 ### Implémentation des tests
 
-- :bust_in_silhouette: `User-Side` : rôle de pilotage : directement par le framework de test :test_tube:
-- :printer: `Server-Side` : rôle de dépendance : `Mock` :zombie:
+- 👤 `User-Side` : rôle de pilotage : directement par le framework de test 🧪
+- 🖨️ `Server-Side` : rôle de dépendance : `Mock` 🧟
 
 ```cs
 IObtainPoems mockFileAdapter = new IObtainPoems { … } ;
@@ -291,10 +291,10 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 
 - Cœur de la Clean Architecture
 - Domaine métier (voir DDD)
-- :white_check_mark: objets simples
-- :white_check_mark: Peuvent être utilisées par toutes les couches de l'application.
-- :x: Pas de dépendance technique (Framework, BDD)
-- :x: Pas de logique spécifique à un cas d'usage
+- ✅ objets simples
+- ✅ Peuvent être utilisées par toutes les couches de l'application.
+- ❌ Pas de dépendance technique (Framework, BDD)
+- ❌ Pas de logique spécifique à un cas d'usage
 
 ---
 
@@ -302,9 +302,9 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 ## Use Cases
 
 - Encapsulent **toute** la logique métier spécifique à l'application.
-- :arrow_left: :arrow_right: Interagit avec les entités
+- ⬅️ ➡️ Interagit avec les entités
 - Détermine comment les données doivent être transmises entre les entités et les couches extérieures.
-- :warning: 1 Use Case == 1 Processus métier
+- ⚠️ 1 Use Case == 1 Processus métier
 - Indépendant des détails de l'implémentation externe
   - format de donnée agnostique (transformé par le **Presenter**)
 
@@ -313,9 +313,9 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 <!-- _class: bvert -->
 ## Interface Adapters
 
-- :arrow_left: :arrow_right: Fait le lien entre les `Use Case` et les couches externes
-- :building_construction: Adapte les données pour les cas d'usage…
-- :building_construction: …puis les présente dans le bon format à l'interface utilisateur ou d'autres API.
+- ⬅️ ➡️ Fait le lien entre les `Use Case` et les couches externes
+- 🏗️ Adapte les données pour les cas d'usage…
+- 🏗️ …puis les présente dans le bon format à l'interface utilisateur ou d'autres API.
 - Isolent la logique métier des détails techniques de l’application.
 - `controllers`, `presenters`, `gateways`, …
 
@@ -324,9 +324,9 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 <!-- _class: bbleu -->
 ## Couche externe : UI, Frameworks, Drivers
 
-- :arrow_right: Tout ce qui est en contact avec le monde extérieur : interface utilisateur, BDD, serveurs web, …
-- :warning: Séparé des règles métier
-- :warning: Sert uniquement à communiquer avec d'autres systèmes (ou l'utilisateur)
+- ➡️ Tout ce qui est en contact avec le monde extérieur : interface utilisateur, BDD, serveurs web, …
+- ⚠️ Séparé des règles métier
+- ⚠️ Sert uniquement à communiquer avec d'autres systèmes (ou l'utilisateur)
 - Utiliser les adapteurs pour s'adapter facilement aux changements
 
 ---
@@ -339,21 +339,21 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 
 ## Mise en œuvre - 1/2
 
-- :bulb: Analyse et Conception initiales : comprendre le domaine, identifier les entités, les règles métier, les cas d'usage
-- :scissors: Définir des frontières entre les couches
-- :busts_in_silhouette: Créer les Entités
-- :office_worker: Développement des Cas d'Usage
-- :building_construction: Conception des Adaptateurs
+- 💡 Analyse et Conception initiales : comprendre le domaine, identifier les entités, les règles métier, les cas d'usage
+- ✂️ Définir des frontières entre les couches
+- 👥 Créer les Entités
+- 🧑‍💼 Développement des Cas d'Usage
+- 🏗️ Conception des Adaptateurs
 
 ---
 
 ## Mise en œuvre - 2/2
 
-- :arrow_right: Développement et intégration des composants externes : UI, BDD, Service Web, …
-- :test_tube: Tests Rigoureux :
+- ➡️ Développement et intégration des composants externes : UI, BDD, Service Web, …
+- 🧪 Tests Rigoureux :
   - la logique métier fonctionne comme prévu ?
   - les couches externes interagissent correctement avec les cas d'usage ?
-- :arrows_counterclockwise: Révision et Refactorisation
+- 🔄 Révision et Refactorisation
 
 ---
 

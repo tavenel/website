@@ -486,7 +486,7 @@ created: 2024-10-17
 - `asana` => `OpenProject`
 - `firebase` => `convex`, `supabase`, `appwrite`, `instant`
 - `heroku`, `netlify`, `vercel` => `coolify`, `dokku`
-- `github` => :github: `gitlab`
+- `github` => `gitlab`
 - `docusign` => `docuseal`
 - `google analytics` => `matomo`
 
