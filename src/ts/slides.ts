@@ -13,6 +13,7 @@ export class SlideShow {
 	constructor() {
 		this.chapters = document.querySelectorAll("#slides-content .chapter");
 		this.slides = this._initNewChapter(false);
+		// this.slideNumberElt = document.getElementById('slide-nb-total') as HTMLElement;
 	}
 
 	reset() {
@@ -78,11 +79,15 @@ export class SlideShow {
 };
 
 export function generateSlides() {
+
+	let slidesNumber = 0;
+
 	const course = document.getElementById('course') as HTMLElement;
 	const slidesContainer = document.getElementById('slides-content') as HTMLElement;
 
 	let currentChapter = createChapter(slidesContainer);
 	let newSlide = createSlideDiv(currentChapter);
+	slidesNumber++;
 
 	let node = course.firstChild
 	while (node) {
@@ -95,11 +100,13 @@ export function generateSlides() {
 
 			currentChapter = createChapter(slidesContainer);
 			newSlide = createSlideDiv(currentChapter);
+			slidesNumber++;
 		}
 
 		if (node.nodeName === "HR") {
 			// `---` => new slide
 			newSlide = createSlideDiv(currentChapter);
+			slidesNumber++;
 		} else {
 			newSlide.appendChild(node);
 		}
