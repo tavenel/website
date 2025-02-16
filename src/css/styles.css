@@ -19,19 +19,20 @@ main {
 a {
 	text-decoration: none;
 	border-bottom: 1px dashed var(--link-border);
-}
 
-a:link {
-	color: var(--link);
+	&:visited {
+		color: var(--link-visited);
+	}
+
+	&:link {
+		color: var(--link);
+	}
 
 	&:hover, &:active {
 		color: var(--link-hover);
 		border: 3px solid;
 	}
 
-	&:visited {
-		color: var(--link-visited);
-	}
 }
 
 ul{ list-style:circle }
@@ -73,6 +74,10 @@ footer {
 figcaption {
 	font-style: italic;
 	font-size: small;
+}
+
+blockquote {
+	border-left: 3px solid var(--blockquote);
 }
 
 [data-tooltip] {
@@ -240,7 +245,6 @@ button.link {
 	/* remove button style */
 	border: none;
 	background-color: inherit;
-	border: none;
 	text-decoration: none;
 	color: var(--link);
 }
@@ -301,7 +305,7 @@ a.add-bookmark {
 /************/
 
 /* Mermaid diagrams title */
-.flowchartTitleText { fill: var(--mermaid-title); }
+.flowchartTitleText { fill: var(--blockquote); }
 
 /**********/
 /* SLIDES */
@@ -310,7 +314,7 @@ a.add-bookmark {
 [id^=layout] {
 	/* Slidev uses frontmatter `layout:…` that are computed as `id=layout-section-1`, … */
 	/* Hide these elements */
-	display: none;
+	display: none !important;
 }
 
 #course {
@@ -327,6 +331,8 @@ a.add-bookmark {
 	margin: auto;
 
 	.slide-mode {
+		font-size: 2em;
+
 		position: absolute;
 		min-height: 100%;
 		min-width: 100%;
@@ -425,7 +431,7 @@ a.add-bookmark {
 	--cours-link-border: revert;
 	--versioning: revert;
 	--select-color: revert;
-	--mermaid-title: revert;
+	--blockquote: revert;
 }
 
 [data-theme="github"] {
@@ -469,7 +475,7 @@ a.add-bookmark {
 	--cours-link-border: var(--light-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--dark-grey);
-	--mermaid-title: var(--middle-orange);
+	--blockquote: var(--middle-orange);
 }
 [data-theme='github'] .astro-code,
 [data-theme='github'] .astro-code span {
@@ -520,7 +526,7 @@ a.add-bookmark {
 	--cours-link-border: #A6B0A0;
 	--versioning: #A6B0A0;
 	--select-color: #829181;
-	--mermaid-title: #DFA000;
+	--blockquote: #DFA000;
 }
 [data-theme='everforest'] .astro-code,
 [data-theme='everforest'] .astro-code span {
@@ -568,7 +574,7 @@ a.add-bookmark {
 	--cours-link-border: #3A3F4B;
 	--versioning: #3A3F4B;
 	--select-color: #3A3F4B;
-	--mermaid-title: #A626A4;
+	--blockquote: #A626A4;
 }
 [data-theme='one'] .astro-code,
 [data-theme='one'] .astro-code span {
@@ -620,7 +626,7 @@ a.add-bookmark {
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
-	--mermaid-title: var(--light-yellow);
+	--blockquote: var(--light-yellow);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -675,7 +681,7 @@ a.add-bookmark {
 	--cours-link-border: #6C7380;
 	--versioning: #6C7380;
 	--select-color: #BFBDB6;
-	--mermaid-title: #D2A6FF;
+	--blockquote: #D2A6FF;
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -730,7 +736,7 @@ a.add-bookmark {
 	--cours-link-border: #7f849c;
 	--versioning: #a6adc8;
 	--select-color: #89b4fa;
-	--mermaid-title: #f9e2af;
+	--blockquote: #f9e2af;
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
 	#esgi li { background: var(--esgi-li); }
@@ -783,7 +789,7 @@ a.add-bookmark {
 	--cours-link-border: #44475a;
 	--versioning: #44475a;
 	--select-color: #bd93f9;
-	--mermaid-title: #bd93f9;
+	--blockquote: #bd93f9;
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
 	#esgi li { background: var(--esgi-li); }
@@ -836,7 +842,7 @@ a.add-bookmark {
 	--cours-link-border: #c5c9c5;
 	--versioning: #c5c9c5;
 	--select-color: #c4b28a;
-	--mermaid-title: #c4b28a;
+	--blockquote: #c4b28a;
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -891,7 +897,7 @@ a.add-bookmark {
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
-	--mermaid-title: var(--light-yellow);
+	--blockquote: var(--light-yellow);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -946,7 +952,7 @@ a.add-bookmark {
 	--cours-link-border: #2e3440;
 	--versioning: #b48ead;
 	--select-color: #88c0d0;
-	--mermaid-title: #e5e9f0;
+	--blockquote: #e5e9f0;
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
 	#esgi li { background: var(--esgi-li); }
@@ -1000,7 +1006,7 @@ a.add-bookmark {
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
-	--mermaid-title: var(--light-yellow);
+	--blockquote: var(--light-yellow);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1055,7 +1061,7 @@ a.add-bookmark {
 	--cours-link-border: #f97e72;
 	--versioning: #ffffff80;
 	--select-color: #f97e72;
-	--mermaid-title: #ff7edb;
+	--blockquote: #ff7edb;
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1106,6 +1112,80 @@ a.add-bookmark {
 	  text-shadow: 0 0 2px #000, 0 0 10px #f97e72, 0 0 5px #f97e72, 0 0 25px #f97e72;
 }
 
+[data-theme='the-unnamed'] {
+	/* From : https://github.com/estruyf/slidev-theme-the-unnamed */
+	--background: #161c2c;
+	--text: #f3eff5;
+	--link: #15c2cb;
+	--link-hover: #15c2cb;
+	--link-visited: #f141a8;
+	--link-border: #15c2cb;
+	--h1: var(--background);
+	--h2: var(--background);
+	--h3: #5eadf2;
+	--h4: #f141a8;
+	--hr: var(--dark-second);
+	--menu-home: #44ffd2;
+	--menu-tech: #5eadf2;
+	--menu-cours: #ffe45e;
+	--menu-favorites: #fe4a49;
+	--menu-links: #f141a8;
+	--menu-about: #f3eff5;
+	--promo-link: inherit;
+	--promo-background: inherit;
+	--epsi: #15c2cb;
+	--epsi-li: #15c2cb;
+	--esgi: #ffe45e;
+	--esgi-li: #ffe45e;
+	--cesi: #f141a8;
+	--cesi-li: #f141a8;
+	--wis: #5eadf2;
+	--wis-li: #5eadf2;
+	--poec: #fe4a49;
+	--poec-li: #fe4a49;
+	--cours-cat-li: #ffe45e;
+	--cours-link-text: var(--background);
+	--cours-link-border: var(--background);
+	--versioning: #fe4a49;
+	--select-color: var(--text);
+	--blockquote: #f141a8;
+  --header-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+	h1 { &::before { background: #44ffd2; } }
+	h2 { &::before { background: #ffe45e; } }
+
+	h1, h2 {
+		display: inline-block;
+		padding: 0.25em;
+		position: relative;
+		margin-bottom: 1em;
+		z-index: 1;
+
+		&::before {
+			box-shadow: var(--header-shadow);
+			content: " ";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			margin-left: -0.25em;
+			margin-top: -0.25em;
+			z-index: -1;
+			transform: rotate(-1deg);
+		}
+	}
+
+	.slide-elt {
+		& strong {
+			text-decoration: underline red double;
+		}
+		& em {
+			text-decoration: underline yellow wavy;
+		}
+	}
+
+}
+
 [data-theme="tokyonight"] {
 	/* TODO */
 	--background: var(--dark-main);
@@ -1143,7 +1223,7 @@ a.add-bookmark {
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
-	--mermaid-title: var(--light-yellow);
+	--blockquote: var(--light-yellow);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1198,7 +1278,7 @@ a.add-bookmark {
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
-	--mermaid-title: var(--light-yellow);
+	--blockquote: var(--light-yellow);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
