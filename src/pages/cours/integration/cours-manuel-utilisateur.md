@@ -40,19 +40,19 @@ Un manuel utilisateur suit un ensemble de concepts :
 
 Ajouter des informations visuelles :
 
-![](img/formation-info-visuelle.jpg)
+![Un exemple d'informations visuelles](@assets/formation/info-visuelle.jpg)
 
 ---
 
 Les images simplifiées sont un bon moyen de focaliser l'attention de l'utilisateur uniquement sur l'information utile.
 
-![](img/formation-image-simplifiee.jpg)
+![Un exemple d'image simplifiée](@assets/formation/image-simplifiee.jpg)
 
 ---
 
 Un excellent exemple de document utilisateur Ikea. Avec un minimum de texte, ce support marketing contient des schémas clairs et faciles à suivre, accompagnés d’instructions visuelles pour assembler le produit. ©Ikea
 
-![](img/formation-ikea.jpg)
+![Un exemple de plan Ikea](@assets/formation/ikea.jpg)
 
 ---
 

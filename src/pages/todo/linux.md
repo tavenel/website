@@ -1,7 +1,10 @@
-## Chapitres
-
 ---
-layout: section
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/SlideLayout.astro'
+title: Initiation à Linux
+tags:
+  - linux
+  - devops
 ---
 
 # Partie I : Aperçu d'un système Linux
@@ -55,11 +58,11 @@ Il existe de nombreux autres OS : Android, iOS, …
 
 ## Pourquoi linux ?
 
-![](img/linux-cours_solaris.png)
+![The Solaris logo](@assets/linux/solaris.png)
 
-![](img/linux-cours_bsd.png)
+![The BSD logo](@assets/linux/bsd.png)
 
-![](img/linux-cours_macos.png)
+![The MacOS logo](@assets/linux/macos.png)
 
 A la fin des années 1960, AT&T Bell Labs développe Unix : un système d'exploitation accessible et sécurisé pour utilisateurs multiples .
 
@@ -67,7 +70,7 @@ Dans les années 1980, certaines entreprises commencent à vendre leurs propres 
 
 Ces systèmes connaissent un certain succès mais sont coûteux et peu évolutifs : il manque dans cet écosystème un OS gratuit et libre (open-source).
 
-![](img/linux-cours_tux.png)
+![The Linux logo](@assets/linux/tux.png)
 
 En 1991, Linux Torvalds libère la première version du noyau Linux écrit en langage C et copiant les APIs Unix.
 
@@ -107,21 +110,21 @@ Linux est un noyau de système d'exploitation :
   - Au-dessus du noyau Linux, les distributions ajoutent des outils, logiciels et librairies open-source (partagés sous le terme GNU/Linux ) et des outils dédiés (libres ou non-libres)
   - Ces distributions patchent souvent le noyau Linux standard pour fournir leur propre version légèrement modifiée
 
-![](img/linux-cours_gnu.png)
+![Le logo GNU](@assets/linux/gnu.png)
 
 ---
 
-![](img/linux-cours_fedora.png)
+![Le logo Fedora](@assets/linux/fedora.png)
 
-![](img/linux-cours_debian.png)
+![Le logo Debian](@assets/linux/debian.png)
 
-![](img/linux-cours_ubuntu.png)
+![Le logo Ubuntu](@assets/linux/ubuntu.png)
 
 Il existe beaucoup de distributions GNU/Linux : généralistes ou dédiées à un usage particulier (montage vidéo, bureautique, …), multiplateforme ou dédiées à un environnement particulier, généralement embarqué (dongle TV, raspberry pi, …), gratuites ou payantes.
 
 Certaines distributions on tellement dévié du noyau standard qu'on ne les considère plus vraiment comme des distributions Linux mais elles en gardent les concepts principaux (_Android_, …)
 
-![](img/linux-cours_android.png)
+![Le logo Android](@assets/linux/android.png)
 
 Ces distributions partagent des standards communs les rendant grandement interconnectables et interchangeables : _POSIX_, _System-V_ , … mais ne les respectent que partiellement, chacune ayant ses spécificités. Par exemple, la commande `grep` possède des options particulières sur presque chaque distribution.
 
@@ -156,11 +159,11 @@ Quelques fonctions principales d'un système Linux :
 
 ---
 
-## Architecture d'un système linux
+## Architecture d'un système Linux
 
-![](img/linux-cours_archi_1.png)
+![Architecture d'un système Linux](@assets/linux/archi_1.png)
 
-![](img/linux-cours_archi_2.png)
+![Architecture d'un système Linux](@assets/linux/archi_2.png)
 
 ---
 
@@ -194,7 +197,7 @@ Un processus peut créer des sous-processus (processus fils) :
 
 Les processus sont donc hiérarchisés et peuvent être représentés par un arbre dont la racine est le processus `init`
 
-![](img/linux-cours_tree.png)
+![Un arbre de fichiers](@assets/linux/tree.png)
 
 Dans Linux, (sauf spécificité) un processus est mono-threadé : il n'existe pas de threads parallèles d'exécution. Un "programme" (_processus_) possède donc un seul fil d'exécution.
 
@@ -223,7 +226,7 @@ Il existe 2 types de processus :
 
 Le cas particulier des processus _daemon_
 
-![](img/linux-cours_daemon.png)
+![Le logo Tux pour un daemon](@assets/linux/daemon.png)
 
 - Un processus _daemon_ est un sous-type de processus d'arrière-plan qui fournit des services système
 - En général, ils sont lancés au démarrage du système et ne sont jamais arrêtés.
@@ -392,7 +395,7 @@ Même si un shell utilise en général un langage de script complet (utilisatoin
 
 [TODO: IMG] **=> La commande avec ses arguments entrés par l'utilisateur // Les informations renvoyées par la commande**
 
-![](img/linux-cours_33.jpg)
+![Un exemple de prompt](@assets/linux/33.jpg)
 
 Linux étant un système fortement orienté fichiers, il est possible d'utiliser un fichier pour enregistrer la liste des commandes à lancer. Un tel fichier, contenant la liste des commandes qui seront exécutées dans le _shell_, est appelé un **script** .
 
@@ -932,7 +935,7 @@ Par exemple, la commande `find` permet de chercher des chemins de fichiers, et l
 find ~ -name '*.txt' | xargs grep -i "ma recherche"
 ```
 
-![Exemple de redirection complexe : <https://swcarpentry.github.io>](img/linux-cours_pipe.png)
+![Exemple de redirection complexe : <https://swcarpentry.github.io>](@assets/linux/pipe.png)
 
 ---
 layout: section
@@ -1148,7 +1151,7 @@ du -sh MonRepertoire
 
 ---
 
-![](img/linux-cours_fhs.png)
+![Les différents répertoires de la Filesystem Hierarchy Standard](@assets/linux/fhs.png)
 
 ---
 
@@ -1164,7 +1167,7 @@ $ ls -l test.txt
 -rw-rx-r—. 1 tavenel vboxusers 0 Nov 16 14:39 test.txt
 ```
 
-![](img/linux-cours_droits.png)
+![Un exemple de droits](@assets/linux/droits.png)
 
 Dans cet exemple, le propriétaire (`tavenel`) peut lire et écrire dans ce fichier, les utilisateurs du groupe propriétaire (`vboxusers`) peuvent lire et exécuter ce fichier, et tous les autres utilisateurs peuvent lire ce fichier.
 
@@ -1182,7 +1185,7 @@ Par exemple, pour donner les droits Lire/Ecrire/Exécuter à l'utilisateur et Li
 - on applique le bitmask correspondant : `111 110 000`
 - on convertit le format binaire en décimal : `7 6 0`
 
-![](img/linux-cours_droits.png)
+![Un exemple de droits](@assets/linux/droits.png)
 
 ```console
 $ chmod 760 test.txt

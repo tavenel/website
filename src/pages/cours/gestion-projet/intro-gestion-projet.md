@@ -264,7 +264,7 @@ Diagramme de Gantt : graphe d'ordonnancement représentant les différentes tâc
 
 ---
 
-![bg 100%](./gantt.png)
+![Exemple de diagramme de Gantt](@assets/gestion-projet/gantt.png)
 
 ---
 

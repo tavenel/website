@@ -700,7 +700,7 @@ drwxr-xrw- [...]
 
 ---
 
-![](./fhs.png)
+![Les différents répertoires de la Filesystem Hierarchy Standard](@assets/linux/fhs.png)
 
 ---
 
@@ -1036,7 +1036,7 @@ Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 
 # Sécurité
 
-![](../img/run_as_admin.jpg)
+![Run as an admin…](@assets/linux/run_as_admin.jpg)
 
 ---
 

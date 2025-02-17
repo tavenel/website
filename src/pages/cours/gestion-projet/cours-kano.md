@@ -48,9 +48,9 @@ Imaginons un projet de développement d'une application de livraison de repas :
 
 ---
 
-![](./kano-1.jpg)
+![Kano : présence vs absence de la fonction](@assets/gestion-projet/kano-1.jpg)
 
 ---
 
-![](./kano-2.jpg)
+![Exemple de diagramme de Kano](@assets/gestion-projet/kano-2.jpg)
 

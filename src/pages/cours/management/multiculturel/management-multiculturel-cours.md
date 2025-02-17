@@ -117,7 +117,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-![](./Low-and-High-context-countries-and-their-characteristics.png)
+![Une illustration d'incompréhension entre bas et haut contexte](@assets/management/Low-and-High-context-countries-and-their-characteristics.png)
 
 ---
 

@@ -37,8 +37,6 @@ De même, on prendra le temps de **bien lire et comprendre les consignes** de ch
 
 De nombreux services `AWS` (`EC2`, `S3`, …) ont bénéficié récemment d’une refonte globale de leur interface utilisateur récemment. Si cette interface est plus simple à utiliser, ce n'est pas celle qui est décrite dans les différents tutoriels. Le passage à la nouvelle interface est généralement assez trivial à comprendre, mais en cas de doute on pourra revenir à l'interface précédente grâce au switch en haut à gauche de l’écran :
 
-![](./switch-interface.png)
-
 # TP `AWS` 1. Introduction au Cloud Amazon (`EC2`, `S3`, `RDS`) : les services de base d’un Cloud
 
 Dans ce premier TP Amazon Web Services, nous allons découvrir ce qu'est concrètement un fournisseur de services Cloud, comment `AWS` modélise le Cloud et les services qu'il fournit pour mettre en place une infrastructure distante permettant l'hébergement d’un site Web.
@@ -64,14 +62,11 @@ Le but de cette partie est de d’utiliser les principaux services d’IaaS d’
 
 **Note 1 : Au lancement de l'instance de la VM (Etape 7 d'EC2), vérifier que le coût de l'instance est nul**
 
-![](./cout-instance.png)
-
-
 Note 2 : Pour vérifier le bon lancement de la stack `LAMP` dans le serveur, on peut essayer d’atteindre l'URL du `DNS` publique du serveur dans un navigateur (ce nom `DNS` peut être récupéré depuis l’instance du serveur qui héberge la stack `LAMP`, dans `EC2`).
 
 Par exemple : <http://ec2-35-181-153-53.eu-west-3.compute.amazonaws.com/>
 
-![](lamp.png)
+![La page d'accueil du serveur LAMP](@assets/apps/lamp.png)
 
 Note 3 : Contrairement à ce qui est annoncé dans le sujet du TP, l'utilisateur à utiliser pour la connexion `SSH` n’est pas `ubuntu` mais `bitnami`.
 

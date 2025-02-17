@@ -80,7 +80,7 @@ Le répertoire `.jenkins` peut varier d'un environnement à l'autre : c'est le m
 
 Relancez le build : celui-ci doit maintenant être valide. Vérifiez dans la console que la sortie du programme affiche bien : `The result is 5`.
 
-![Résultat attendu dans Jenkins](./jenkins-build-success.png)
+![Résultat attendu dans Jenkins](@assets/jenkins/build-success.png)
 
 # Exécution de tests unitaires et rapports de tests
 
@@ -114,7 +114,7 @@ Installer le plugin de code coverage : dans la page d'accueil de Jenkins® `Tabl
 - Copiez le contenu de l'exemple `calculator-java-gradle` dans le nouveau job. Attention à bien copier le contenu du répertoire directement dans le nouveau job (et pas dans un sous-répertoire `calculator-java-gradle`), sinon Jenkins ne trouvera pas le fichier `build.gradle` et le wrapper de `Gradle`.
 - Lancez un nouveau build. Vérifier que les résultats de tests sont reportés dans la page du projet et que la couverture de code est affichée.
 
-![Couverture des tests dans Jenkins](./jenkins-code-coverage.png)
+![Couverture des tests dans Jenkins](@assets/jenkins/code-coverage.png)
 
 # Développement piloté par les tests
 

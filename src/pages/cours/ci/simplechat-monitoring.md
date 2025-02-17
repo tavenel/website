@@ -40,7 +40,7 @@ Les spécifications de l'application de monitoring sont les suivantes :
  
 ## Exemple de réalisation
 
-![Exemple d'interface](./simplechat-monitoring-exemple.png) 
+![Exemple d'interface](@assets/apps/simplechat-monitoring-exemple.png) 
 
 # Travail demandé
 

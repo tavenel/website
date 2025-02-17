@@ -45,7 +45,7 @@ Le jeu est terminé lorsqu'un joueur perd en étant réduit à deux pièces ou e
 - On limitera également le jeu à la phase 1 (pose des pions) et la phase 2 (mouvement) : le saut ne fera pas partie des actions possibles. (voir règles du jeu)
 - La position des pions sur le damier sera représentée par des coordonnées (X,Y). Ces coordonnées doivent suivre le schéma ci-dessous. Par exemple, un pion placé en bas à droite est identifié par les coordonnées (7,7)
 
-![](./damier.png)
+![Un exemple de damier](@assets/python/damier.png)
 
 ## Modèle
 

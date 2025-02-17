@@ -372,7 +372,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-![](./matrice-exigences.jpg)
+![Exemple de matrice des exigences](@assets/gestion-projet/matrice-exigences.jpg)
 
 ---
 
@@ -431,7 +431,7 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 
 ---
 
-![](./matrice-priorite.jpg)
+![Exemple de matrice de priorisation](@assets/gestion-projet/matrice-priorite.jpg)
 
 ---
 
@@ -492,11 +492,11 @@ Contraintes : développement en `Java` et en `Objective C`, application destiné
 
 On pourra modéliser le besoin à l'aide d'un diagramme _bête à corne_ :
 
-![bg right:60% 100%](./images-diagramme-bete-a-cornes.png)
+![Le diagramme bête à cornes](@assets/gestion-projet/bete-a-cornes.png)
 
 ---
 
-![bg contain](./image-diagrammes-bete-a-cornes-exemple.png)
+![Exemple de diagramme bête à cornes](@assets/gestion-projet/bete-a-cornes-exemple.png)
 
 --- 
 

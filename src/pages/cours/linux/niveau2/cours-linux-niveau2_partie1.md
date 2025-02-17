@@ -1188,7 +1188,7 @@ setfacl -b <fichier>
 
 ---
 
-![](./fhs.png)
+![Les différents répertoires de la Filesystem Hierarchy Standard](@assets/linux/fhs.png)
 
 <!-- Annexe : liste des TPs -->
 

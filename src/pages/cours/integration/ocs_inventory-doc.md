@@ -15,7 +15,51 @@ OCSInventory est un outil de collecte automatisée d'éléments d'un parc inform
 
 Voici une vue synthétique des principales fonctionnalités d'OCS Inventory :
 
-![](ocs-inventory-fonctionnalites.png)
+```plantuml
+@startmindmap
+
+title Fonctionnalités d'OCS Inventory
+
+* Server OCSInventory
+** Collecte des informations
+*** Installation de l'agent sur les postes
+*** Forcer le premier inventaire
+*** Détection des équipements réseau : "IP Discovery"
+**** Requêtes ARP
+**** Création de types
+**** Répartition des équipements selon leur type
+** Administration du serveur d'inventaire
+*** Présentation de l'inventaire
+*** Importation de clés de registre
+*** Détection et gestion des doublons
+*** Gestion des utilisateurs du serveur
+*** Principaux paramètres de configuration
+**** Activations
+***** Inventaire
+***** Déploiement d'applications
+***** IP Discovery
+**** Fréquence inventaire
+**** Fréquence de téléchargement
+**** Fréquence IP discovery
+*** Création d'un label
+*** Importation d'un fichier clé client
+** Déploiement d'applications à distance
+*** Création d'un paquet
+**** Préparation ZIP
+**** Définition d'une priorité
+**** 3 étapes d'actions
+***** Lancer
+***** Exécuter
+***** Sélectionner
+**** Fragmentation du paquet
+*** Activation d'un paquet (envoi vers les serveurs)
+**** Téléchargement sécurisé des fichiers d'instruction (https)
+**** Téléchargement des parties du fichier (http)
+*** Affectation d'un paquet à une ou plusieurs machines
+*** Télé-distribution d'un paquet (modèle via le client)
+
+@endmindmap
+```
 
 ## Architecture
 
@@ -28,7 +72,7 @@ Les communications entre agents et serveurs de gestion utilisent les protocoles 
 
 ## Schéma d'articulation des applications
 
-![](ocs-apps.png)
+![Schema des applications OCS Inventory](@assets/apps/ocs-apps.png)
 
 Le serveur de gestion (Management server) comprend trois composants principaux :
 
@@ -188,8 +232,54 @@ Une fois les inventaires transmis au serveur par les agents et intégrés à la 
 
 Des requêtes de restrictions pourront également être effectuées permettant ainsi d'avoir une vue précise et ciblée des éléments informatiques présents dans l'entreprise.
 
-![](ocs-infos-collect.png)
+```plantuml
 
+@startmindmap
+title Informations collectées par OCS Inventory
+
+* Présentation de l'inventaire
+** Les différentes vues
+*** L'ensemble des machines
+*** Segmentation grâce aux 'tags'
+*** Segmentation grâce aux groupes
+**** Groupes dynamiques
+**** Groupes statiques
+*** L'ensemble des logiciels
+*** Recherches multi-critères
+** Éléments inventoriés
+*** BIOS
+*** Composants matériels
+**** Processeurs
+**** Cartes
+***** Réseau
+***** Contrôleur
+***** Graphique
+***** Son
+**** Mémoires
+***** RAM
+***** Cache
+**** Périphériques
+***** Imprimantes
+***** Scanners
+***** Clavier/Souris
+***** Moniteurs
+***** Modems
+***** Stockage
+****** CD/DVD/Graveur
+****** Disquettes
+****** Cartes mémoires
+****** Disque dur
+*** Composant Logiciels
+**** Système d'exploitation
+**** Applicatifs
+**** Mises à jour
+*** Paramétrages
+**** Paramètres réseau
+**** Clés de registre
+*** Informations administratives
+
+@endmindmap
+```
 ## Récupération des clés de registre
 
 *Une des fonctionnalités intéressantes de la gestion d'un parc est de permettre la gestion des licences logicielles ; pour cela certaines clés de registres (sur les systèmes Windows uniquement) doivent être récupérées.*
