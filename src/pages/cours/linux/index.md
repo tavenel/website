@@ -6,7 +6,7 @@ title: 🐧 Linux
 
 - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
 - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
-- 󰣚  Machine virtuelle Debian serveur dans VirtualBox : [docx](/cours/linux/installation/tp-installation-vbox-debian-server.docx)
+- [󰣚  Machine virtuelle Debian serveur dans VirtualBox](/cours/linux/installation/tp-installation-vbox-debian-server)
 
 - [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
 
