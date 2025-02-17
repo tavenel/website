@@ -1,18 +1,33 @@
 ## P1
 
- update  ▶ New version of Astro available: 5.3.0
-  Run yarn dlx @astrojs/upgrade to update
+- slides => <bug> fullscreen style fix CSS</bug>
+- <bug>fix all unknown files at start</bug>
+- fix Shiki warnings
+- fix _unsupported_ …
+  - data/mining/
+	- gestion_projet/
+	  - agile/scrumPPTX ~> MD
+		- !! cdc/PDF EXEMPLES
+	- jenkins/TP ~> MD
+	- linux/niveau1/coursPPTX ~> MD [img prompt]
+	- python/
+	  - *.py
+		- mots.txt
+		- memento PDFs
+	- archi/poo/*.py
+
+---
+
+## P2
 
 - picture => legend from _alt_ text
 - slides => **bold** and _emphasis_
 - slides => X/N slide number
-- slides => <bug> fullscreen style fix CSS</bug>
-- <bug>fix all unknown files at start</bug>
 - slidev => ::right::
 - TPs => RM Legal
 - slides => generate legal
-- slides => title, section, subtitle, lead
-- slides => color / backgroundColor
+- slides => marp => title, section, subtitle, lead
+- slides => marp => color / backgroundColor
 ```md
 # TITLE
 
@@ -40,12 +55,13 @@ _Tom Avenel_
   - fix `katex` : loaded but nothing
   - fix `@startdot`
 
-## P2
+## P3
 
 - src/pages/todo/
 - tags:[] in files and word cloud
 
 - "favorites" :
+  - link in Menu/
   - delete
   - fix favorites navigation (after astro hydration ?)
 
@@ -76,7 +92,7 @@ _Tom Avenel_
 	- 			// remarkPresetLintRecommended,
 	- 			// remarkLintNoDeadUrls,
 
-## P3
+## P4
 
 - <h2>Chapitres</h2>
 - tsconfig.json :	"verbatimModuleSyntax": true,
