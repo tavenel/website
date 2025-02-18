@@ -99,6 +99,7 @@ created: 2024-10-17
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
+	- <https://k8slens.dev/> : un IDE orienté k8s
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argoscd`
