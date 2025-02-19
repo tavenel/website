@@ -3,7 +3,7 @@ title: Jenkins - intégration continue
 date: 2023 / 2024
 ---
 
-# Récupération du code des exemples de cette séance
+## Récupération du code des exemples de cette séance
 
 L'ensemble des projets utilisés dans cette séance est disponible dans le dépôt de code suivant :
 
@@ -13,20 +13,20 @@ git clone https://git.sr.ht/~toma/jenkins-b3
 
 Ce dépôt contient, pour chaque exemple, un répertoire avec l'ensemble des sources à utiliser.
 
-# Installation de Jenkins®
+## Installation de Jenkins®
 
 Nous allons utiliser le packaging de Jenkins® s'exécutant dans son propre serveur applicatif. Ce packaging n'est pas recommandé pour une véritable mise en production, mais est très utile pour déployer simplement une version de test.
 
-Jenkins® étant basé sur `Java`, vous devez avoir installé une version récente de la technologie `Java`. La version courante supporte les versions 11 et 17 de `Java`.
+Jenkins® étant basé sur `Java`, vous devez avoir installé une version récente de la technologie `Java`. La version courante supporte les versions 17 et 21 de `Java`.
 
-## Installation
+### Installation
 
 1. Récupérer le packaging `WAR` de la version `LTS` de Jenkins® depuis la page de téléchargement : <https://www.jenkins.io/download/>
 2. Lancer Jenkins® depuis la ligne de commandes :
   + Ouvrir un invité de commandes dans le répertoire où a été téléchargé Jenkins®.
-  + Depuis ce répertoire, lancer la commande `java –jar jenkins.war` dans le terminal.
+  + Depuis ce répertoire, lancer la commande `java -jar jenkins.war` dans le terminal.
 
-## Configuration
+### Configuration
 
 L'installation ne devrait prendre que quelques secondes.
 
@@ -40,7 +40,7 @@ Maintenant, il est temps de configurer Jenkins®. L'assistant de configuration v
 
 Remplir la configuration du compte utilisateur que vous souhaitez créer et valider. Jenkins® demande de valider l'URL de son serveur : garder la configuration par défaut <http://localhost:8080> et valider pour atteindre la page d'accueil du service.
 
-# Premiers pas dans Jenkins®
+## Premiers pas dans Jenkins®
 
 Vous démarrez Jenkins® avec un environnement de travail complètement vide.
 
@@ -82,7 +82,7 @@ Relancez le build : celui-ci doit maintenant être valide. Vérifiez dans la con
 
 ![Résultat attendu dans Jenkins](@assets/jenkins/build-success.png)
 
-# Exécution de tests unitaires et rapports de tests
+## Exécution de tests unitaires et rapports de tests
 
 _Le compilateur `javac` fourni par `Java` étant extrêmement limité, les projets `Java` utilisent généralement des outils de build leur permettant de gérer les dépendances.
 
@@ -92,11 +92,11 @@ Le build `Gradle` configure également un plugin `Jacoco` (`JavaCodeCoverage`) p
 
 Dans le tableau de bord de Jenkins®, vous pouvez voir tous les projets sur lesquels vous travaillez. Ici aussi, le programme matérialise l'état du projet par une couleur. Vous obtenez également des informations sur la Stabilité du build sous la forme d'un bulletin météo. Il s'agit d'une statistique sur la stabilité moyenne des builds du projet. Si plus de 80 % de vos builds réussissent, vous verrez un soleil. En dessous de cette valeur, la météo symbolique se dégrade.
 
-## Installation du plugin de code coverage
+### Installation du plugin de code coverage
 
 Installer le plugin de code coverage : dans la page d'accueil de Jenkins® `Tableau de bord`, choisir `Administrer Jenkins`. Cliquer sur `Gestion des plugins` et dans l'onglet `Disponibles` choisir et installer le plugin [Code Coverage API Plugin](https://plugins.jenkins.io/code-coverage-api).
 
-## Création du job
+### Création du job
 
 - Créez un nouveau job dans Jenkins®.
 - Ajoutez une étape de `Build` en choisissant `Invoke Gradle Script`.
@@ -116,11 +116,12 @@ Installer le plugin de code coverage : dans la page d'accueil de Jenkins® `Tabl
 
 ![Couverture des tests dans Jenkins](@assets/jenkins/code-coverage.png)
 
-# Développement piloté par les tests
+## Développement piloté par les tests
 
 Nous allons maintenant réaliser le développement d'une nouvelle fonctionnalité en pilotant ce développement par les tests. Cette méthode de développement permet une augmentation significative de la qualité et de la rapidité de développement.
 
-## Premier exemple
+### Premier exemple
+
 - Créez un nouveau job dans Jenkins. Récupérer les sources de l'exemple `calculator-java-gradle` et configurer l'exécution des tests et des rapports de tests dans Jenkins, de manière similaire aux exemples précédents.
 - Ajoutez les tests correspondant à une nouvelle fonctionnalité permettant la multiplication de 2 entiers. Vérifiez que les tests sont lancés automatiquement dans Jenkins® mais échouent puisque l'implémentation n'est pas encore écrite.
   + En `Java` (programmation par contrat), les tests doivent s'appuyer sur un squelette de code sans implémentation dans le produit pour pouvoir compiler et exécuter le test :
@@ -129,7 +130,7 @@ Nous allons maintenant réaliser le développement d'une nouvelle fonctionnalit�
 - Ajoutez l'implémentation de la fonctionnalité et vérifiez que les tests ne retournent plus d'erreur.
 - Refactorez l'implémentation de la fonctionnalité.
 
-## Second exemple
+### Second exemple
 
 Récupérer le projet `calculator-kotlin`.
 
@@ -157,7 +158,7 @@ L'application peut être lancée de différentes manières :
 - L'opération d'addition est déjà implémentée dans l'application. En s'inspirant du test unitaire de l'addition, ajouter les opérations manquantes en suivant la méthodologie TDD.
 - L'application ne permet pour l'instant de réaliser qu'une unique opération sur deux vecteurs, mais les algorithmes de calcul sur les vecteurs (classe `VectorCal`) doivent supporter des opérations complexes. On vérifiera donc également dans les tests unitaires que les opérations complexes et la priorité des opérateurs sont bien supportés.
 
-## Optimiser les temps d'exécution des tests
+### Optimiser les temps d'exécution des tests
 
 Le TDD crée vite beaucoup de tests unitaires, qui vont tourner souvent.
 

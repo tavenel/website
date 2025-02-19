@@ -23,11 +23,9 @@ title: 🔄 CI/CD et  Jenkins
   - L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
 - [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
-- [ TP Jenkins niveau 1](/cours/jenkins/tp-jenkins-b3) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
+- [ TP Jenkins niveau 1](/cours/jenkins/tp-jenkins-mini) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins-b3>
--  TP Jenkins niveau 2 : Un TP plus poussé que le précédent.
-  - [word (1.2M)](/cours/jenkins/tp-jenkins.docx) <!-- TODO -->
-  - [pdf (1.3M)](/cours/jenkins/tp-jenkins.pdf) <!-- TODO -->
+- [ TP Jenkins niveau 2](/cours/jenkins/tp-jenkins-full) : Un TP plus poussé que le précédent.
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
 
 ## Projets
