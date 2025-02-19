@@ -78,6 +78,7 @@ created: 2024-10-17
 
 #### 󱃾 Kubernetes-specific
 
+- 📦 Build d'images => <https://github.com/GoogleContainerTools/kaniko>
 - 🔎 linter (vérification fichiers) => `kubeconform`
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
 - 📦 package manager (sur-couche) => `helm`
@@ -401,17 +402,18 @@ created: 2024-10-17
 - [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
 - `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `tfsec`, `trivy`
-- `Kubernetes`
-  - `kubectx` : change context
-	- `kubens` : change namespace
-	- `kube-ps1` : show k8s cluster/context in shell
-	- `kubecolor` : colored kubectl output
-	- `k9s` : Terminal UI k8s management
-	- `k8s lens` : graphical cluster management
-	- `kube-capacity` : monitor ressources
+- `Docker` :
   - `dry` => manage Docker containers and Swarm cluster
   - `ctop` => like `top` for containers
-	- <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
+- `Kubernetes` :
+  - `kubectx` : change context
+  - `kubens` : change namespace
+  - `kube-ps1` : show k8s cluster/context in shell
+  - `kubecolor` : colored kubectl output
+  - `k9s` : Terminal UI k8s management
+  - `k8s lens` : graphical cluster management
+  - `kube-capacity` : monitor ressources
+  - <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
