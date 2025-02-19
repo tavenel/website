@@ -72,12 +72,16 @@ Il s’agit d’un programme tournant en permanence et attendant des requêtes H
 1. Deux machines de réseaux IPv4 différents peuvent-elles posséder la même adresse IPv4 ?
 :::correction
   + Non, car le NetID est différent
+:::
 :::correction
 1. Dans le même réseau IPv4 deux machines différentes peuvent-elles posséder la même adresse IPv4 au même moment ?
+:::
 :::correction
   + Non, une adresse IP identifie un hôte de manière unique à un instant donné
+:::
 :::correction
 1. Dans le même réseau IPv4 deux machines différentes peuvent-elles posséder la même adresse IPv4 à deux moments différents ?
+:::
 :::correction
   + Oui, une adresse IP identifie un hôte de manière unique mais seulement à un instant donné. Ce n’est toutefois pas recommandé, mais souvent nécessaire pour recycler des adresses (par exemple, le Cloud utilise beaucoup de machines temporaires, dont la consommation d’adresses IP serait compliquée sans recyclage de celles-ci)
 :::
@@ -96,7 +100,39 @@ Oui, car cette adresse est masquée sur l’interconnexion des réseaux : une ad
 
 Dessinez un réseau local composée d’une box Internet, 3 PC, un téléphone IP, un serveur Web et un serveur d’impression. Ce réseau local est connecté à Internet depuis la box Internet. Supposons que l’adresse du réseau local est 192.168.10, affectez des adresses IP aux différents périphériques.
 
-![](td-schema.png)
+:::correction
+```plantuml
+@startditaa
+
+                      +-------------+
+                      | Internet    |
+                      | IP publique |
++--------------+      | 202.60.23.2 |
+| Printer      |      +-------------+
+| 192.168.10.3 |            ^
++--------------+            |
+     ^                      v
+     |              +--------------+
+     +------------->|              |
++--------------+    | Adresse IP   |
+| Mobile       |<-->| locale       |
+| 192.168.10.7 |    |              |
++--------------+    | 192.168.10.1 |
+     +------------->|              |
+     |              +--------------+
+     v                     ^
++--------------+           |
+| Serveur      |           v
+|   Web        |    +--------------+
+| 192.168.10.2 |    | 3x PC        |
++--------------+    | 192.168.10.4 |
+                    | 192.168.10.5 |
+                    | 192.168.10.6 |
+                    +--------------+
+
+@endditaa
+```
+:::
 
 ## Communications sécurisées avec HTTPS
 

@@ -285,7 +285,7 @@ L'utilisation d'une API (unique) permet de limiter l'intégration avec les inter
 
 ---
 
-![width:600px](./schema-appli-moderne.png)
+![Schema d'architecture d'une application moderne](@assets/archi/schema-appli-moderne.png)
 
 ---
 
