@@ -1,9 +1,8 @@
 ## P1
 
 - slides => <bug> fullscreen style fix CSS</bug>
-- <bug>fix all unknown files at start</bug>
 - fix Shiki warnings
-- fix _unsupported_ …
+- <bug>fix all unknown files at start</bug>
   - data/mining/
 	- gestion_projet/
 	  - agile/scrumPPTX ~> MD
@@ -15,6 +14,7 @@
 		- mots.txt
 		- memento PDFs
 	- archi/poo/*.py
+- TODOs in documents
 
 ---
 
