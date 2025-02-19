@@ -1,7 +1,6 @@
 ---
 title: Introduction à l'usage de conteneurs Docker®
-date: 2023 / 2024
-correction: false
+date: 2024 / 2025
 ---
 
 ## Créer et gérer des conteneurs Docker® depuis des images existantes
@@ -330,8 +329,8 @@ CMD ["./main"]
   + Que remarquez-vous ?
 
 :::correction
-```
-# 1.
+### 1.
+```sh
 # Ajouter un fichier dans C:\mon_repertoire_partage_windows
 # Créer le conteneur avec le répertoire partagé. On utilise le mode interactif ( `-it` ) pour rester dans le conteneur
 docker run -it -v C:\mon_repertoire_partage_windows:/mon_repertoire_partage_linux bash
@@ -339,8 +338,8 @@ docker run -it -v C:\mon_repertoire_partage_windows:/mon_repertoire_partage_linu
 ls /mon_repertoire_partage_linux
 ```
 
-```
-# 2.
+### 2.
+```sh
 docker volume create mon_volume
 # Créer les 2 conteneurs utilisant le volume
 docker run -it -v mon_volume:/mon_repertoire_partage_1 bash
@@ -370,30 +369,40 @@ cat /mon_repertoire_partage_2/mon_fichier
   + Vérifier que le service du conteneur est accessible depuis l'hôte à l'adresse : `http://localhost:8181`
 
 :::correction
-```
-# 1.
-docker run -it --network none bash
-ping google.fr # pas de réponse
-# depuis Windows :
-ping NOM_DU_CONTENEUR (remplacer NOM_DU_CONTENEUR par le nom du conteneur obtenu avec docker ps) # pas de réponse
+### 1.
 
-## Par exemple :
-docker ps
+```sh
+docker run -it --network none bash
+ping google.fr
+# pas de réponse
+```
+
+- depuis Windows :
+
+```sh
+ping NOM_DU_CONTENEUR
+# (remplacer NOM_DU_CONTENEUR par le nom du conteneur obtenu avec docker ps)
+# pas de réponse
+```
+
+- Par exemple :
+
+```console
+$ docker ps
 CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
 78ea503fc460   bash      "docker-entrypoint.s…"   7 seconds ago   Up 5 seconds             compassionate_neumann
 
-ping compassionate_neumann
+$ ping compassionate_neumann
 ```
-:::
 
-:::correction
-```
-# 2.
-docker run -it --network host bash
+### 2.
+
+```console
+$ docker run -it --network host bash
 
 # On voit toutes les interfaces de la machine physique :
 
-bash-5.2# ip link
+$ ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 2: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
@@ -403,7 +412,7 @@ bash-5.2# ip link
 4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN 
     link/ether 02:42:3e:f0:7e:aa brd ff:ff:ff:ff:ff:ff
 
-bash-5.2# ip addr show
+$ ip addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -426,16 +435,15 @@ bash-5.2# ip addr show
        valid_lft forever preferred_lft forever
 
 # On peut joindre le réseau
-bash-5.2# ping google.fr
+$ ping google.fr
 PING google.fr (172.217.20.163): 56 data bytes
 64 bytes from 172.217.20.163: seq=0 ttl=114 time=11.628 ms
 64 bytes from 172.217.20.163: seq=1 ttl=114 time=13.752 ms
 ```
-:::
 
-:::correction
-```
-# 3. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
+### 3. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
+
+```sh
 # On crée un bridge privé :
 docker network create --internal reseau-interne
 # Note : `--internal` est optionnel (choix par défaut)
@@ -453,11 +461,10 @@ ping google.fr # KO
 ping conteneur1 # OK
 ping google.fr # KO
 ```
-:::
 
-:::correction
-```
-# 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
+### 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
+
+```sh
 docker run -p 8181:80 nginx
 
 # Vérifier http://localhost:8181

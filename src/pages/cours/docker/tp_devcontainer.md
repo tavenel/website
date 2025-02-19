@@ -1,7 +1,6 @@
 ---
 title: TP DevContainers
-date: 2023 / 2024
-correction: false
+date: 2024 / 2025
 ---
 
 # TP Docker - Environnement de Développement avec DevContainers
@@ -20,7 +19,7 @@ Un `DevContainer` est un environnement de développement personnalisé et isolé
 
 ### Préparation du Projet
 
-- **Clonez le dépôt frontend** : Récupérer un projet Frontend existant, on pourra par exemple récupérer une des implémentations frontend de l'application <https://github.com/gothinkster/realworld>
+- **Clonez le dépôt frontend** : Récupérer un projet Frontend existant, on pourra par exemple récupérer une des implémentations frontend de l'application <https://github.com/gothinkster/realworld> par exemple : <https://github.com/iancharlesdouglas/ng-realworld-ssr>
 
 ### Création du DevContainer
 

@@ -16,7 +16,7 @@ Module de 2x18H
 ### 🎯 Objectifs du cours
 
 - Connaître le fonctionnement de Kubernetes et ses différents composants
-- Savoir installer, configurer et administrer Kubernetes
+- Savoir installer, configurer et administrer Kubernetes dans un déploiement HA
 
 ### Documents
 

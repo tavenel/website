@@ -44,9 +44,7 @@ Module de 15H
 
 Le but de ce projet est de dockeriser un projet personnel existant qui se compose de plusieurs composants. 
 
-- [html](/cours/docker/projet_docker_dev.html)
-- [pdf](/cours/docker/projet_docker_dev.pdf)
-- [markdown](/cours/docker/projet_docker_dev.md)
+- [📄 Sujet](/cours/docker/projet_docker_dev)
 
 ## Pour aller plus loin
 

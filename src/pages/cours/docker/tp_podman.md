@@ -1,6 +1,6 @@
 ---
 title: TP Podman
-date: 2023 / 2024
+date: 2024 / 2025
 correction: false
 ---
 
@@ -87,7 +87,7 @@ Si votre pod nécessite des `Volume` ou des `ConfigMap`, vous pouvez définir ce
 ### Limitations
 
 - Certaines fonctionnalités avancées de Kubernetes (comme les Ingress, les contrôleurs de service) ne sont pas entièrement supportées par Podman.
-- Les comportements réseau peuvent différer légèrement d’un vrai cluster Kubernetes.
+- Les comportements réseau peuvent différer légèrement d'un vrai cluster Kubernetes.
 
 ## Environnements de développement avec Podman
 

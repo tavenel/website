@@ -7,7 +7,7 @@ tags:
 - kubernetes
 ---
 
-# Problèmes courants
+# Introduction: Problèmes courants
 
 ---
 
@@ -66,6 +66,8 @@ tags:
 
 _Docker®_
 
+---
+layout: section
 ---
 
 <!-- _class: titre lead -->
@@ -140,6 +142,8 @@ _Docker®_
 * `+` Impact quasi nul sur les performances
 
 ---
+layout: section
+---
 
 <!-- _class: titre lead -->
 
@@ -181,6 +185,7 @@ Les images sont versionnées par un tag
 
 Il est possible d'utiliser d'autres hubs que le hub par défaut :
 
+- Hub Github : <https://ghcr.io/>
 - Hub interne à l'entreprise
 - Hub d'images temporaires <https://ttl.sh/>
 - ...
@@ -266,6 +271,12 @@ _Architecture de Docker®. [Source et crédits][img-archi]._
 Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 
 ---
+layout: section
+---
+
+# Persistance des données
+
+---
 
 # Persistance des données
 
@@ -320,8 +331,14 @@ docker run -v mon_volume:/pont_de_montage_conteneur_2 conteneur_image
 Voir la section sur les volumes de la [cheatsheet sur Docker®][docker-cheatsheet].
 
 ---
+layout: section
+---
 
 # Gestion et configuration du réseau
+
+---
+
+# Réseau
 
 - Pour interconnecter les conteneurs et pour communiquer avec l'extérieur, Docker® gère une abstraction du réseau. 
 - Le comportement par défaut décrit est celui d'un système Linux (installation classique). Celui-ci peut varier dans des installations plus exotiques (`Oracle® VirtualBox` sur Windows, ...).
@@ -386,8 +403,14 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®][docker-cheatshee
 - Voir la documentation officielle : <https://docs.docker.com/network/drivers/>
 
 ---
+layout: section
+---
 
 # Le `Dockerfile`
+
+---
+
+# `Dockerfile`
 
 - Fichier texte qui décrit comment créer une nouvelle image Docker®.
 - Décrit une suite d'instructions à exécuter les unes à la suite des autres pour générer l'image.
@@ -418,8 +441,8 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®][docker-cheatshee
 Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Présentation de Docker Compose
 
@@ -476,24 +499,30 @@ Google, 2014 : 2 milliards conteneurs lancés par semaine
 Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
 
 ---
+layout: section
+---
 
 # Quelques bonnes pratiques
 
-- Vérifier l'image de base `FROM` :
-    - image officielle ? reconnue ?
-    - attention aux registry utilisées
-    - layers optimisés ?
-    - failles de sécurité ? image maintenue ?
-    - ne pas utiliser le tag `latest` mais préciser un tag avec numéro de version ou directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE`
+---
+
+# Bonnes pratiques
+
+- Vérifier l'**image de base** `FROM` :
+    - image **officielle** ? **reconnue** ?
+    - attention aux **registry** utilisées
+    - **layers optimisés** ?
+    - failles de **sécurité** ? image **maintenue** ?
+    - ne pas utiliser le tag `latest` mais **préciser un tag** avec numéro de version ou directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE`
 
 ---
 
 - Installation de paquets : `apt`, `apk`, `pip`, … :
-    - versionner les éléments à installer
-    - vider les caches ( et `/var/cache`, …)
-    - supprimer tout paquet ou outil inutile
+    - **versionner** les éléments à installer
+    - **vider les caches** ( et `/var/cache`, …)
+    - **supprimer** tout paquet ou outil inutile
     - éviter les outils de débug
-    - mettre à jour les images
+    - **mettre à jour** les images
 
 ---
 
@@ -505,23 +534,23 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-che
 
 ---
 
-- Créer un utilisateur par défaut et utiliser l'instruction `USER` (au moins pour le `CMD`)
-- Push de l'image : publique ou privée ?
-- Éviter les monolithes : séparer BDD, backend, frontend, …
+- Créer un **utilisateur par défaut** et utiliser l'instruction `USER` (au moins pour le `CMD`)
+- Push de l'image : registry _publique_ ou _privée_ ?
+- **Éviter les monolithes** : séparer BDD, backend, frontend, …
 - utiliser un multi-stage build si besoin
 
 ---
 
-- Utiliser un linter : `docker run --rm -i hadolint/hadolint < Dockerfile`
-- Attention aux informations sensibles (secrets, certificats, …)
-  - utiliser des variables
-  - faire des scans de vulnérabilités : `Clair`, `Falco`, …
+- Utiliser un **linter** : `docker run --rm -i hadolint/hadolint < Dockerfile`
+- Attention aux **informations sensibles** (secrets, certificats, …)
+  - utiliser des **variables**
+  - faire des scans de **vulnérabilités** : `Clair`, `Falco`, …
 
 ---
 
-- Monter les filesystem en lecture seule au maximum
-- Limiter les ressources d'un conteneur (mémoire, CPU, taille des logs, …)
-- Configurer les logs : compression, rotation (`max-size`) : [voir doc][doc-logs]
+- Monter les filesystem en **lecture seule** au maximum
+- **Limiter les ressources** d'un conteneur (mémoire, CPU, taille des logs, …)
+- Configurer les **logs** : compression, rotation (`max-size`) : [voir doc][doc-logs]
   - par conteneur : `--log-opt`
   - globalement par config. du serveur : `daemon.json`
 - Ne pas tourner le serveur Docker en `root` (_expérimental_)
@@ -530,20 +559,20 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-che
 
 ## Optimiser la taille des images Docker
 
-- Limiter le nombre de couches : chaque instruction `RUN`, `COPY` ou `ADD` ajoute un layer supplémentaire, combiner les commandes si possible :
+- Limiter le **nombre de couches** : chaque instruction `RUN`, `COPY` ou `ADD` ajoute un layer supplémentaire, combiner les commandes si possible :
   - `apt-get update && apt-get install -y … && rm -rf …`
 - `apt-get` :
   - L'option `--no-install-recommends` de `apt-get install` permet de ne pas installer les dépendances optionnelles.
   - Supprimer `/var/lib/apt/lists/*` après avoir installé un package
 - `apk` :
   - L'option `--no-cache` évite le cache de packets
-- Analysez vos images, par exemple avec <https://github.com/wagoodman/dive>
+- **Analysez** vos images, par exemple avec <https://github.com/wagoodman/dive>
 
 ---
 
 # Inconvénients de Docker
 
-- Sécurité : isolation limitée (conteneur vs VM)
+- Sécurité : **isolation limitée** (conteneur vs VM)
 - Performance : surcharge (faible) vs exécution native
 - Changement de paradigme : conteneurs "jetables", gestion du stockage, abstraction supplémentaire, …
 - Complexité des réseaux : overlay networks, multi-host networking, …
@@ -555,8 +584,8 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-che
 
 - Isolation (simple) d'applications :
   - Plusieurs versions de `NodeJS`
-  - Microservices
-- CI/CD : même environnement de _build_ et de _test_
+  - _Microservices_
+- _CI/CD_ : même environnement de _build_ et de _test_
 - Environnements de développement reproductibles
 - Sandbox pour expérimentation
 - Scalabilité et gestion des ressources
