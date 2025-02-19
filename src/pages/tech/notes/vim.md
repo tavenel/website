@@ -2,6 +2,7 @@
 title: Notes VIM
 created: 2022-03-01
 checked: 2024-12-17
+layout: '@layouts/CourseLayout.astro'
 ---
 
 ## LazyVim
@@ -367,13 +368,16 @@ To change every occurrence of a character string between two lines,
 - `:filter /archives/ oldfiles` => Only output the marked files with part of the filepath matching archives.
 - `:filter!` => reverse filter
 
+## Cheatsheet
+
+- ![Cheat Sheet Vim](@assets/vim/vi-cheatsheet.jpg)
+- ![Vim Quickfix commands](@assets/vim/vim-quickfix.png)
+
 ## Links
 
 - `:help index` => all shortcuts
 - `curl -s -m 3 https://vtip.43z.one` => random Vim tip
-- [Cheat Sheet (JPG)](../../../images/vim/vi-cheatsheet.jpg)
 - Another Vim cheatsheet : <https://quickref.me/vim>
-- [Vim Quickfix commands (PNG)](../../../images/vim/vim-quickfix.png)
 - [Neovim - Getting started](https://www.reddit.com/r/neovim/wiki/index/getting-started/)
 - [Demo Vim expert](https://invidious.namazso.eu/watch?v=MquaityA1SM)
 - [Vimcasts - Special registers & advanced C-r paste](http://vimcasts.org/episodes/pasting-from-insert-mode/)
