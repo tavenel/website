@@ -9,11 +9,11 @@
 	const slideshow = new SlideShow();
 
 	// Allow navigation with buttons and arrow keys
-	document.addEventListener("keydown", function(event) {
-		if (event.key === "ArrowRight") slideshow.nextSlide();
-		if (event.key === "ArrowLeft") slideshow.prevSlide();
-		if (event.key === "ArrowUp") slideshow.nextChapter();
-		if (event.key === "ArrowDown") slideshow.prevChapter(false);
+	document.addEventListener("keydown", function(e) {
+		if (e.key === "ArrowRight") slideshow.nextSlide(); e.preventDefault();
+		if (e.key === "ArrowLeft") slideshow.prevSlide(); e.preventDefault();
+		if (e.key === "ArrowUp") slideshow.nextChapter(); e.preventDefault();
+		if (e.key === "ArrowDown") slideshow.prevChapter(false); e.preventDefault();
 	});
 
 	const fullscreen = document.getElementById('slide-fullscreen');
