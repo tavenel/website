@@ -13,7 +13,7 @@ Le fichier spécial `.gitignore` (à placer directement dans le répertoire de t
 
 Ce fichier contient un ensemble de patterns (répertoires, noms de fichiers, ...) à ignorer par Git. Par exemple, les fichiers compilés :
 
-```gitignore
+```
 bin/
 classes/
 build/
@@ -38,7 +38,7 @@ Après ajout dans le `.gitignore` ce dossier disparaît :
 
 Fichier `.gitignore` :
 
-```gitignore
+```
 bin/
 ```
 

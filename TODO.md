@@ -1,17 +1,10 @@
 ## P1
 
 - slides => <bug> fullscreen style fix CSS</bug>
-- fix Shiki warnings
-- <bug>fix all unknown files at start</bug>
-  - data/mining/
-	- gestion_projet/
-	  - agile/scrumPPTX ~> MD
-		- !! cdc/PDF EXEMPLES
-	- jenkins/TP ~> MD
-	- python/
-		- mots.txt
-		- memento PDFs
-- TODOs in documents
+- jenkins/TP ~> MD
+- TODOs in tableau-bord-cours
+- TODOs in all files
+- check robots.txt in prod
 
 ---
 

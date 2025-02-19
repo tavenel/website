@@ -17,7 +17,7 @@ Pour cela :
 - Utiliser la fonction `to_csv` de pandas pour écrire le `DataFrame` dans un fichier `CSV`.
 
 :::exo
-Créer un fichier `CSV` nommé `fichier.csv` contenant 1000 lignes et 2 colonnes de données aléatoires comprises entre 0 et 100.
+Créer un fichier `CSV` nommé `kmeans.csv` contenant 1000 lignes et 2 colonnes de données aléatoires comprises entre 0 et 100.
 :::
 
 :::correction
@@ -35,7 +35,7 @@ data = np.random.randint(0, 100, size=(1000, 2))
 df = pd.DataFrame(data, columns=['colonne1', 'colonne2'])
 
 # Écrire le DataFrame dans un fichier CSV
-df.to_csv("fichier.csv", index=False)
+df.to_csv("kmeans.csv", index=False)
 ```
 :::
 
@@ -63,7 +63,7 @@ from sklearn.cluster import KMeans
 import pandas as pd
 
 # Lire le fichier CSV
-data = pd.read_csv("fichier.csv")
+data = pd.read_csv("kmeans.csv")
 
 # Sélectionner les colonnes à utiliser pour le clustering
 X = data[['colonne1', 'colonne2']]

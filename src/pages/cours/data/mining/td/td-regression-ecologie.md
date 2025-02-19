@@ -20,7 +20,7 @@ Afin de vérifier cette relation pour les plantes présentes dans une prairie (p
 
 On voit que la régression linéaire de $\tilde{N}$ sur $\tilde{S}$ a donné l'équation $\tilde{N} = 0,2199 \tilde{S} + 1,7432$ avec $R^2 = 0,9684$.
 
-![](../img/reg-ecologie.png)
+![Régression linéaire nombre d'espèces par surface](@assets/data/reg-ecologie.png)
 
 ## Questions
 
@@ -60,9 +60,9 @@ On veut étudier de quelle façon les variables pH, C/N et P influent sur le pou
 1. Exprimer, par une régression linéaire, %V en fonction de pH et donner l'équation de la droite des moindres carrés ainsi que la valeur du coefficient de détermination $R^2$ (on pourra utiliser le fait que la variance de pH vaut 0.417, que la variance de %V vaut 150.44 et que leur covariance vaut 6.92).
 2. On a aussi cherché à expliquer de la même façon %V à l’aide de deux autres variables, C/N et P. On a obtenu les dessins des nuages et des droites de régression suivants :
 
-  ![](../img/reg-c-n-p.png)
+![Regression C/N et P](@assets/data/reg-c-n-p.png)
 
-  Malheureusement, on a mélangé les résultats ; les équations $y = 1617,4x + 12$ et $y = -0,904x + 50,691$ et les coefficients $R^2 = 0,8178$ et $R^2 = 0,4937$. Sans faire de nouveaux calculs, indiquer quelle équation et quel coefficient correspond à quel dessin en justifiant vos réponses.
+Malheureusement, on a mélangé les résultats ; les équations $y = 1617,4x + 12$ et $y = -0,904x + 50,691$ et les coefficients $R^2 = 0,8178$ et $R^2 = 0,4937$. Sans faire de nouveaux calculs, indiquer quelle équation et quel coefficient correspond à quel dessin en justifiant vos réponses.
 
 3. Parmi ces trois régressions, y en a-t-il à votre avis qui soient acceptables ? Justifier votre réponse.
 4. Finalement, compte tenu de ces résultats, peut-on conclure que la chimie du sol peut expliquer le pourcentage de végétation ? On pourra se servir de la part de dispersion de %V expliquée par les régressions.

@@ -210,7 +210,7 @@ note bottom of MOE: Partenaires (sous-traitants, fournisseurs, ..)
 
 ---
 
-![](/images/projet/balancoire.jpg)
+![](@assets/gestion-projet/balancoire.jpg)
 
 ---
 

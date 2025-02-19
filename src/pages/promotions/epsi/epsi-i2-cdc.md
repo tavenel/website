@@ -31,9 +31,9 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 - [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos/exos-cas-utilisation-cas-sequence)
 - [📌 Projet - écrire un cahier des charges](/cours/gestion-projet/cahier-charges/projet-cdc)
 - Exemples de cahier des charges :
-  - Devis vers facture, CDC fonctionnel : [pdf](/cours/gestion-projet/cahier-charges/dvf_fonctionnel.pdf) <!-- TODO -->
-  - Devis vers facture, CDC technique  : [pdf](/cours/gestion-projet/cahier-charges/dvf_technique.pdf) <!-- TODO -->
-  - Cahier des charges technique : [pdf](/cours/gestion-projet/cahier-charges/ex_t1.pdf) <!-- TODO -->
+  - Devis vers facture, CDC fonctionnel : [pdf](/cours/cahier-charges/dvf_fonctionnel.pdf)
+  - Devis vers facture, CDC technique  : [pdf](/cours/cahier-charges/dvf_technique.pdf)
+  - Cahier des charges technique : [pdf](/cours/cahier-charges/ex_t1.pdf)
   - Cahier des charges : [Hotel Paradis](https://docs.google.com/document/d/1k1kHGk7QgoY3-hMCi0CURhRDo0zMawqyDluuXvYmq5E)
 
 ## Pour aller plus loin

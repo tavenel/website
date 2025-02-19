@@ -24,21 +24,20 @@ Voir la [🧪 page de cours sur les tests](/cours/tests)
 - [💻 TP 0 - Mise en place d'un environnement de data science en Python](/cours/data/mining/tp/data-mining-tp-0-env)
 - [💻 TP 1 - Calculer une régression linéaire pour des indices de production agricole et de production industrielle](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus)
 - [💻 TP 2 - Classification automatique par régression linéaire](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification) : déterminer une éventuelle relation entre l'impact de la prise d'un petit déjeuner et le score à un examen.
+  - [📊 Fichier CSV](/cours/data/mining/students-breakfast.csv)
 - [💻 TP 3 - Régression logistique simple et généralisée avec sklearn](/cours/data/mining/tp/data-mining-tp-3-logit) : étudier les corrélations entre les heures de révision, le score à un examen préparatoire et le succès à l'examen final.
+  - [📊 Fichier CSV](/cours/data/mining/students_hours_exam.csv)
 - [💻 TP 4 - Algorithme des k moyennes (k-means) avec sklearn](/cours/data/mining/tp/data-mining-tp-4-kmeans)
+  - [📊 Fichier CSV](/cours/data/mining/kmeans.csv)
 - [💻 TP 5 - Algorithme k-NN des proches voisins avec sklearn](/cours/data/mining/tp/data-mining-tp-5-knn)
-
-#### 💻 Autres exemples
-
-- CART [🐍 python](/cours/data/mining/tp/cart.py)
-- PCA [🐍 python](/cours/data/mining/tp/pca.py)
-- DBScan [🐍 python](/cours/data/mining/tp/dbscan.py)
-- LabelEncoder [🐍 python](/cours/data/mining/tp/label-encoder.py)
+- [💻 TP 6 - Autres algorithmes : DBScan, CART, PCA, LabelEncoder](/cours/data/mining/tp/data-mining-tp-6-autres)
 
 ### Examen
 
 - [📄 Examen Régression linéaire et classification k-NN](/cours/data/mining/tp/exam/exam)
+  - [📊 Fichier CSV](/cours/data/mining/exam-browsers.csv)
 - [📄 Examen Fouille de données inconnues](/cours/data/mining/tp/exam/data-to-find)
+  - [📊 Fichier CSV](/cours/data/mining/data-to-find.csv)
 
 ### 🔗 Liens
 

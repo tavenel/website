@@ -6,9 +6,7 @@ title: 🌐 Cloud Web et HTTP
 
 ## Cours
 
-- 🤓 Cours : Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d'applications mobiles
-  - [pptx (5M)](/cours/cloud/cours-cloud-web.pptx)
-  - [pdf (3.1M)](/cours/cloud/cours-cloud-web.pdf)
+- [🤓 Cours : Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d'applications mobiles (PowerPoint, 5M)](/cours/cloud-web.pptx)
 - [🤓 Communication entre processus et applications client/serveur sur TCP/IP (cours)](/cours/cloud/cours-client-serveur-tcp-ip)
 - [🤓 HTTP et le Web (cours)](/cours/cloud/cours-http-web)
 

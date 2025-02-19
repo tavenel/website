@@ -50,7 +50,7 @@ layout: section
 - But d'un test : casser le logiciel pour trouver des problèmes
 - Tester montre l'absence de problème mais **~~ne prouve pas l'absence d'erreur~~**
 
-![](/images/tests/grenouille.png)
+![](@assets/tests/grenouille.png)
 
 ---
 

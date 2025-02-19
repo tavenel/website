@@ -6,15 +6,15 @@ title: 󰌠  Python et Django
 
 ### 󰌠 Abrégés Python
 
-- Abrégé Python [pdf](/cours/python/abregepython.pdf)<!-- TODO -->
-- Mémento partie 1 [pdf](/cours/python/Partie_1_memento_Python_3.pdf)<!-- TODO -->
-- Mémento partie 2 [pdf](/cours/python/Partie_2_memento_Python_3.pdf)<!-- TODO -->
+- Abrégé Python [pdf](/cours/python/abregepython.pdf)
+- Mémento partie 1 [pdf](/cours/python/Partie_1_memento_Python_3.pdf)
+- Mémento partie 2 [pdf](/cours/python/Partie_2_memento_Python_3.pdf)
 
 ### 🤓 Cours
 
 - [🤓 Cours d'introduction à Python](/cours/python/python-cours-niveau1)
 - [🤓 Cours sur la librairies standard `stdlib`](/cours/python/python-cours-stdlib)
-  - [📄 Annexe : fichier mots.txt](/cours/python/mots.txt)<!-- TODO -->
+  - [📄 Annexe : fichier mots.txt](/cours/python/mots.txt)
 - [🤓 Cours de programmation orientée objet en Python](/cours/python/python-cours-poo)
 - [🤓 Cours de programmation des interfaces graphiques en Python : Tkinter](/cours/python/python-cours-tkinter)
   -  Exemples de cours : `git clone https://git.sr.ht/~toma/tk-examples`

@@ -59,7 +59,7 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-![](/images/projet/balancoire.jpg)
+![](@assets/gestion-projet/balancoire.jpg)
 
 ---
 
@@ -208,7 +208,7 @@ layout: section
 - But d'un test : casser le logiciel pour trouver des problèmes
 - Tester montre l'absence de problème mais **~~ne prouve pas l'absence d'erreur~~**
 
-![](/images/tests/grenouille.png)
+![](@assets/tests/grenouille.png)
 
 ---
 
@@ -2293,9 +2293,7 @@ layout: section
 
 ---
 
-![width:600px](/images/tests/selenium-ide-screenshot.png)
-
-_Le plugin Selenium IDE._
+![Le plugin Selenium IDE](@assets/tests/selenium-ide-screenshot.png)
 
 ---
 

@@ -161,7 +161,7 @@ Et des **rustines** partout dans le code… 🙈
 ---
 
 <!-- TODO ![](https://alexsoyes.com/wp-content/uploads/2022/01/gestion-projet-it-arbre-ce-que-le-client-voulait-vraiment-572x912.png) -->
-![](/images/projet/balancoire.jpg)
+![](@assets/gestion-projet/balancoire.jpg)
 
 ---
 
