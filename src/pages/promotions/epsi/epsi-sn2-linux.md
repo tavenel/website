@@ -33,9 +33,7 @@ layout: ../../../layouts/BaseLayout.astro
 
 - [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
 - [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
-- 🤓 Cours découverte de Linux
-  - [pdf (1.4M)](/cours/linux/niveau1/linux-cours.pdf) <!-- TODO -->
-  - [pptx (1.9M)](/cours/linux/niveau1/linux-cours.pptx) <!-- TODO -->
+- [🤓 Cours découverte de Linux](/cours/linux/niveau1/linux-cours-niveau1)
 - [  TP - Utilisation des commandes Linux](/cours/linux/niveau1/tp-commandes_linux)
 - [  TP : Utilisation efficace de la ligne de commande](/cours/linux/niveau2/tp-ligne-commande)
 - [  TP - Utilisation des commandes avancées](/cours/linux/niveau1/tp-commandes_avancees)

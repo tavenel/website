@@ -12,9 +12,7 @@ title: 🐧 Linux
 
 ## Découverte de Linux
 
-- 🤓 Cours découverte de Linux
-  - [pdf (1.4M)](/cours/linux/niveau1/linux-cours.pdf) <!-- TODO -->
-  - [pptx (1.9M)](/cours/linux/niveau1/linux-cours.pptx) <!-- TODO -->
+- [🤓 Cours découverte de Linux](/cours/linux/niveau1/linux-cours-niveau1)
 - [  TP - Utilisation des commandes Linux](/cours/linux/niveau1/tp-commandes_linux)
 - [  TP - Utilisation des commandes avancées](/cours/linux/niveau1/tp-commandes_avancees)
 - [📜 TP - Création de scripts Bash](/cours/linux/niveau1/tp-scripts_bash)

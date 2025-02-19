@@ -8,12 +8,9 @@
 	  - agile/scrumPPTX ~> MD
 		- !! cdc/PDF EXEMPLES
 	- jenkins/TP ~> MD
-	- linux/niveau1/coursPPTX ~> MD [img prompt]
 	- python/
-	  - *.py
 		- mots.txt
 		- memento PDFs
-	- archi/poo/*.py
 - TODOs in documents
 
 ---

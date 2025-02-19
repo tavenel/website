@@ -393,9 +393,18 @@ Même si un shell utilise en général un langage de script complet (utilisatoin
 
 ## L'invité de commandes (_prompt_)
 
-[TODO: IMG] **=> La commande avec ses arguments entrés par l'utilisateur // Les informations renvoyées par la commande**
+![Un exemple de prompt](@assets/linux/prompt.jpg)
 
-![Un exemple de prompt](@assets/linux/33.jpg)
+- En vert et bleu (partie avant le `$`) : l'invité de commandes (prompt) : `wiki@ubuntu:~/Desktop` ou `wiki@ubuntu:~/Desktop/text` 
+- En blanc sur la même ligne après le `$`, la commande et ses arguments : `cd text` ou `cat > sample.txt`
+- Sous le prompt, les informations renvoyées par la commande (voir `stdout` et `stderr` dans la suite du cours), ici : 
+
+```
+This is the sample text file created in the linux terminal.
+by wikihow.com
+```
+
+### Script
 
 Linux étant un système fortement orienté fichiers, il est possible d'utiliser un fichier pour enregistrer la liste des commandes à lancer. Un tel fichier, contenant la liste des commandes qui seront exécutées dans le _shell_, est appelé un **script** .
 
