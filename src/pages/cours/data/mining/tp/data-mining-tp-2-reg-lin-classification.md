@@ -3,6 +3,8 @@ title: Data mining - TP 2 - Classification par régression linéaire
 date: 2023 / 2024
 ---
 
+## Sujet
+
 1. Charger les données de test en utilisant la librairie `pandas` :
 
 ```python
@@ -31,3 +33,44 @@ On pourra utiliser les méthodes `groupby()` et `mean()` de la librairie `pandas
 6. Calculer la différence entre les deux moyennes calculées question 3. Que remarquez-vous ?
 
 7. Conclusion : y a-t-il un lien entre la prise d'un petit déjeuner et le score ? Si oui, quelle prédiction nous apporte ce modèle ?
+
+:::correction
+## Correction
+
+```python
+# Load libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Read in the data
+students = pd.read_csv('students-breakfast.csv')
+
+# Create the scatter plot here:
+plt.scatter(students.breakfast, students.score)
+
+# Calculate group means
+means = students.groupby('breakfast').mean().score
+# ou :
+#mean_score_no_breakfast = np.mean(students.score[students.breakfast == 0])
+#mean_score_breakfast = np.mean(students.score[students.breakfast == 1])
+print(means)
+
+# Add the additional line here:
+plt.plot(means, color='red')
+
+# Show the plot
+plt.show()
+
+
+
+# Fit the model and print the coefficients
+model = sm.OLS.from_formula('score ~ breakfast', students)
+results = model.fit()
+print(results.params)
+
+# Calculate and print the difference in group means
+print(mean_score_breakfast - mean_score_no_breakfast)
+```
+:::
+

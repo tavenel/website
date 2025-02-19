@@ -1,7 +1,6 @@
 ---
 title: Examen Data mining
 date: 2023 / 2024
-correction: false
 ---
 
 # Présentation des données
@@ -152,3 +151,164 @@ _Nous allons maintenant tenter de réaliser une classification k-NN en utilisant
 5. Prédire le résultat pour `age=40`. Que veut dire ce résultat ?
 6. Faire varier la valeur de paramètre `k` de 3 à 7. Que remarque-t-on ?
 7. Bonus: quel est le temps moyen passé sur le site par les utilisateurs de Chrome et ceux de Safari ?
+
+:::correction
+# Correction
+
+```python
+# Import des librairies
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn import metrics
+
+# Charger les données CSV
+website = pd.read_csv('exam-browsers.csv')
+
+# En utilisant la méthode `head()` du dataset `pandas` chargé, afficher les 5 premières lignes
+print(website.head())
+
+# Afficher un nuage de points (_scatter plot_) de temps ~ age
+plt.scatter(x = 'age', y = 'time_seconds', data = website, color='black')
+
+# Graphiquement, peut-on s'attendre à une corrélation linéaire ? Pourquoi ?
+# >Oui car les données semblent s'aglomérer autour d'une droite - cependant le nuage de points est assez éparpillé (mauvaise corrélation linéaire ?)
+
+# Afficher le graphique
+#plt.show()
+# Effacer le graphique (utiliser `plt.clf()`)
+plt.clf()
+
+# Utiliser un modèle de régression linéaire pour prédire `time_seconds` depuis `age`
+model = LinearRegression()
+model.fit(website[['age']],website[['time_seconds']])
+# Afficher les coefficients du modèle de régression linéaire
+print('a:',model.coef_)
+print('b:',model.intercept_)
+
+# Tracer sur le même graphique, le nuage de points temps ~ age et la droite de régression linéaire
+plt.scatter(x = 'age', y = 'time_seconds', data = website, color='black')
+plt.plot(website[['age']], model.intercept_ + model.coef_*website[['age']], color='blue')
+
+# Graphiquement, la droite de régression semble-t-elle bien approcher le modèle ? Pourquoi ?
+# >Oui car elle traverse le nuage et semble séparer équitablement les données
+
+#plt.show()
+plt.clf()
+
+# Calculer les prédictions du modèle pour toutes les valeurs de `age`
+#predict = [ model.intercept_[0] + model.coef_[0][0] * x for x in website['age'] ]
+# ou simplement :
+predict = model.predict(website[['age']])
+
+# Afficher sur le même graphe :
+# - Le nuage de points temps ~ age
+# - La droite de régression linéaire
+# - Les prédictions du modèle pour toutes les valeurs de age
+plt.scatter(x = 'age', y = 'time_seconds', data = website, color='black')
+plt.plot(website[['age']], model.intercept_ + model.coef_*website[['age']], color='blue')
+plt.scatter(website[['age']], predict, color='red')
+
+#plt.show()
+plt.clf()
+
+# Calculer les résidus de la prédiction. On pourra utiliser le générateur Python suivant : `resid = [ f(y, y_) for (y, y_) in zip([x for x in website['time_seconds'] ], predict) ]` où `f(y, y_)` est une fonction permettant de calculer le résidu depuis `y` et `y_`
+resid = [ y - y_ for (y, y_) in zip([x for x in website['time_seconds'] ], predict) ]
+
+# Afficher les résidus en fonction de l'âge. Le résultat vous semble-t-il correct graphiquement ?
+plt.scatter(website[['age']], resid)
+# >Graphiquement, le nuage de points semble bien dispersé => on veut un résidu aléatoire sans corrélation, cela semble possible
+
+#plt.show()
+plt.clf()
+
+# Afficher l'histogramme des résidus - que remarque-t-on ? Que peut-on en conclure quand au modèle ?
+plt.hist(resid)
+# >Les résidus suivent une distribution normale : c'est attendu pour un bruit aléatoire. On en déduit que le modèle de régression linéaire peut effectivement être utilisé
+
+#plt.show()
+plt.clf()
+
+# En utilisant la fonction `metrics.r2_score`, calculer le coefficient de corrélation linéaire. Que peut-on en déduire ? https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html
+print(metrics.r2_score(website['time_seconds'], predict))
+# >r2 = 0.51 << 1 : la corrélation linéaire n'est pas très bonne (le modèle ne prévoit pas le temps de manière très précise).
+
+# Prédire le temps de visite moyen d'un utilisateur de 40 ans. Discuter le résultat. On pourra utiliser : `np.array([ma_valeur]).reshap(1, -1)` pour générer une matrice à 1 donnée `ma_valeur` en valeur prédictive.
+pred_40 = model.predict(np.array([40]).reshape(1, -1))
+print(pred_40)
+# >pred_40 = 406s = 6min46s => On peut supposer qu'une personne de 40 ans passera environ 7 minutes sur le site Web (vue la précision toute relative du modèle : R2 pas énorme, il faut s'attendre à un écart potentiellement assez important).
+```
+:::
+
+:::correction
+
+# Correction - 2
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
+
+website = pd.read_csv('exam-browsers.csv')
+
+# Utiliser un encodeur (`from sklearn.preprocessing import LabelEncoder`) pour encoder les données `browser` en `browserN` (données numériques) : # ```python
+# enc = LabelEncoder()
+# enc.fit(website['browser'])
+# website['browserN'] = enc.transform(website['browser'])
+
+from sklearn.preprocessing import LabelEncoder
+enc = LabelEncoder()
+enc.fit(website['browser'])
+website['browserN'] = enc.transform(website['browser'])
+
+# Afficher un nuage de points : `browserN` ~ `age`
+plt.scatter(website[['age']], website[['browserN']])
+#plt.show()
+
+preds = []
+accuracy = []
+for i in range(20):
+    # Séparer les données en données d'apprentissage (75%) et données de test (25%)
+    X_train, X_test, y_train, y_test = train_test_split(website[['time_seconds']], website[['browser']], test_size=0.25) # 75% training and 25% test
+    
+    accu_i = []
+    pred_i = []
+    for j in range(3,8):
+        # Utiliser un algorithme k-NN (k=3). Quelle classification est-on en train de réaliser ?
+        # >On cherche la classe `browser` (`Chrome` ou `Safari`) des données
+        knn = KNeighborsClassifier(n_neighbors=j)
+        knn.fit(X_train, y_train)
+        
+        # Prédire la classification pour le jeu de test et calculer la précision du modèle. Que peut-on en déduire ?
+        y_pred = knn.predict(X_test)
+        accu_i.append( metrics.accuracy_score(y_test, y_pred) )
+        # Prédire la classification pour age=40. Que veut dire ce résultat ?
+        pred_i.append( knn.predict(np.array([40]).reshape(1, -1))[0] )
+    accuracy.append(accu_i)
+    preds.append(pred_i)
+
+#print("Accuracy:", np.mean(accuracy), "from : ", accuracy)
+#print("Pred 40:", preds)
+
+# Faire varier la valeur du paramètre `k` de 3 à 7. Que remarque-t-on ?
+# Répéter l'algorithme plusieurs fois - que remarque-t-on ?
+#> La double boucle sert à calculer directement :
+#> 20x le même algorithme `for i in range(20)`
+#> Pour chaque essai, toutes les prédictions pour `k` allant de 3 à 7
+#> Ici, quelque soit la valeur de k, on prédit toujours que le navigateur sera Safari.
+#> Pour plusieurs essais avec `k` fixe, la précision varie : c'est normal, on choisit de garder aléatoirement 25% de données de test, mais pas toujours les mêmes !
+#> Globalement, on a une précision d'environ 60% : On peut donc prédire qu'un utilisateur de 40 ans a environ 60% de chances d'utiliser Safari (d'après k-NN).
+
+
+# Bonus : quel est le temps moyen passé sur le site pour chaque navigateur ?
+np.mean([ t for (t,b) in zip(website['time_seconds'], website['browser']) if b == 'Safari' ])
+# >391 : En moyenne, un utilisateur de Safari passe 391 secondes sur le site web
+np.mean([ t for (t,b) in zip(website['time_seconds'], website['browser']) if b == 'Chrome' ])
+# >490 : En moyenne, un utilisateur de Chrome passe 490 secondes sur le site web
+```
+:::
+

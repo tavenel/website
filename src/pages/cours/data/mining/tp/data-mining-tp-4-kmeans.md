@@ -20,6 +20,25 @@ Pour cela :
 Créer un fichier `CSV` nommé `fichier.csv` contenant 1000 lignes et 2 colonnes de données aléatoires comprises entre 0 et 100.
 :::
 
+:::correction
+
+### Correction
+
+```python
+import numpy as np
+import pandas as pd
+
+# Générer des données aléatoires
+data = np.random.randint(0, 100, size=(1000, 2))
+
+# Créer un DataFrame pandas à partir de ces données
+df = pd.DataFrame(data, columns=['colonne1', 'colonne2'])
+
+# Écrire le DataFrame dans un fichier CSV
+df.to_csv("fichier.csv", index=False)
+```
+:::
+
 ## Clustering des données
 
 Nous allons maintenant classer ces données en utilisant un algorithme des K-moyennes :
@@ -34,6 +53,34 @@ Nous allons maintenant classer ces données en utilisant un algorithme des K-moy
 
 :::exo
 Créez un programme qui lit un fichier `CSV` et effectue un clustering des données à l'aide de la librairie `scikit-learn` en utilisant un algorithme des k-moyennes..
+:::
+
+:::correction
+### Correction
+
+```python
+from sklearn.cluster import KMeans
+import pandas as pd
+
+# Lire le fichier CSV
+data = pd.read_csv("fichier.csv")
+
+# Sélectionner les colonnes à utiliser pour le clustering
+X = data[['colonne1', 'colonne2']]
+
+# Initialiser l'algorithme de clustering
+kmeans = KMeans(n_clusters=5)
+
+# Entraîner le modèle sur les données
+kmeans.fit(X)
+
+# Prédire les clusters des données
+predictions = kmeans.predict(X)
+
+# Afficher les résultats
+#for i, prediction in enumerate(predictions):
+  #print(f"Ligne {i}: cluster {prediction}")
+```
 :::
 
 ## Représentation graphique
@@ -53,5 +100,22 @@ Les centres de chaque cluster seront également affichés en utilisant des marqu
 - Faire varier le nombre de classes.
 - Commenter les résultats obtenus : crédibilité, précision, ...
 - Quel semble être le meilleur nombre de classes ?
+:::
+
+:::correction
+### Correction
+
+```python
+import matplotlib.pyplot as plt
+
+# Tracer un scatter plot des données
+plt.scatter(X['colonne1'], X['colonne2'], c=predictions)
+
+# Tracer un scatter plot des centres de chaque cluster
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], c='red', marker='x')
+
+# Afficher le graphique
+plt.show()
+```
 :::
 

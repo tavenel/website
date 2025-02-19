@@ -21,34 +21,12 @@ Voir la [🧪 page de cours sur les tests](/cours/tests)
 
 ### TPs de Data Mining
 
-#### 💻 TP 0 - Mise en place d'un environnement de data science en Python
-
-- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-0-env)
-
-#### 💻 TP 1 - Calculer une régression linéaire pour des indices de production agricole et de production industrielle
-
-- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus)
-- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus.py)
-
-#### 💻 TP 2 - Classification automatique par régression linéaire
-
-- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification) : déterminer une éventuelle relation entre l'impact de la prise d'un petit déjeuner et le score à un examen.
-- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification.py)
-
-#### 💻 TP 3 - Régression logistique simple et généralisée avec sklearn
-
-- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-3-logit) : étudier les corrélations entre les heures de révision, le score à un examen préparatoire et le succès à l'examen final.
-- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-3-logit.py)
-
-#### 💻 TP 4 - Algorithme des k moyennes (k-means) avec sklearn
-
-- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-4-kmeans)
-- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-4-kmeans.py)
-
-#### 💻 TP 5 - Algorithme k-NN des proches voisins avec sklearn
-
-- [📄 Sujet](/cours/data/mining/tp/data-mining-tp-5-knn)
-- [✅ python (correction)](/cours/data/mining/tp/data-mining-tp-5-knn.py)
+- [💻 TP 0 - Mise en place d'un environnement de data science en Python](/cours/data/mining/tp/data-mining-tp-0-env)
+- [💻 TP 1 - Calculer une régression linéaire pour des indices de production agricole et de production industrielle](/cours/data/mining/tp/data-mining-tp-1-reg-agri-indus)
+- [💻 TP 2 - Classification automatique par régression linéaire](/cours/data/mining/tp/data-mining-tp-2-reg-lin-classification) : déterminer une éventuelle relation entre l'impact de la prise d'un petit déjeuner et le score à un examen.
+- [💻 TP 3 - Régression logistique simple et généralisée avec sklearn](/cours/data/mining/tp/data-mining-tp-3-logit) : étudier les corrélations entre les heures de révision, le score à un examen préparatoire et le succès à l'examen final.
+- [💻 TP 4 - Algorithme des k moyennes (k-means) avec sklearn](/cours/data/mining/tp/data-mining-tp-4-kmeans)
+- [💻 TP 5 - Algorithme k-NN des proches voisins avec sklearn](/cours/data/mining/tp/data-mining-tp-5-knn)
 
 #### 💻 Autres exemples
 
@@ -56,6 +34,11 @@ Voir la [🧪 page de cours sur les tests](/cours/tests)
 - PCA [🐍 python](/cours/data/mining/tp/pca.py)
 - DBScan [🐍 python](/cours/data/mining/tp/dbscan.py)
 - LabelEncoder [🐍 python](/cours/data/mining/tp/label-encoder.py)
+
+### Examen
+
+- [📄 Examen Régression linéaire et classification k-NN](/cours/data/mining/tp/exam/exam)
+- [📄 Examen Fouille de données inconnues](/cours/data/mining/tp/exam/data-to-find)
 
 ### 🔗 Liens
 

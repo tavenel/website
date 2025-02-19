@@ -299,7 +299,7 @@ $$\sigma=\sqrt{V}$$
 $$V = \frac{1}{n}\sum_{i=1}^n \left(x_i - \overline{x}\right)^2$$
 :::
 
-![Exemples avec même moyenne mais ecart-type différent](img/Comparison_standard_deviations.svg)
+![Exemples avec même moyenne mais ecart-type différent](./img/Comparison_standard_deviations.svg)
 
 _Deux exemples de distribution ayant la même moyenne mais un écart-type différent. Source : [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/f/f9/Comparison_standard_deviations.svg) (domaine public)._
 
@@ -504,7 +504,7 @@ La variable $X$ : "nombre de succès observés lorsqu'on répète $n$ (entier) f
 
 Caractéristiques : $\mu = np, \sigma^2 = np(1-p)$
 
-![Exemples de distributions binomiales](img/binomial-distribution.png)
+![Exemples de distributions binomiales](./img/binomial-distribution.png)
 
 _Exemples de distributions binomiales. [Crédits et sources : Wikimedia](https://commons.wikimedia.org/wiki/File:Binomial_Distribution.PNG)_
 
@@ -516,7 +516,7 @@ Loi théorique d'une variable _continue_ approchant bien les distributions expé
 Voir la [page Wikipedia sur la loi normale][wiki-loi-normale].
 :::
 
-![Exemple de loi normale](img/normal-distribution.svg)
+![Exemple de loi normale](./img/normal-distribution.svg)
 
 _Exemples de distributions normales. [Crédits et sources : Wikimedia](https://commons.wikimedia.org/wiki/File:Normal_Distribution_PDF.svg)_
 
@@ -573,7 +573,7 @@ On utilise généralement les seuils suivants :
 - $0.05 < p\leq 0.1$ : faible présomption contre l'hypothèse nulle ;
 - $0.1 < p$ : pas de présomption contre l'hypothèse nulle.
 
-![Exemple graphique de p-valeur sur une loi normale](img/Valeur-p.jpg)
+![Exemple graphique de p-valeur sur une loi normale](./img/Valeur-p.jpg)
 
 _Illustration de la p-valeur. $X$ désigne la loi de probabilité de la statistique de test et $z$ la valeur calculée de la statistique de test. [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Valeur-p.jpg)_.
 
@@ -587,7 +587,7 @@ La p-valeur interprète $\mathbb P(x|H_0)$ or en faisant un test statistique, on
 - Très utiles en statistiques : de nombreux tests supposent la normalité des distributions pour être applicables.
 - Exemple : application aux résidus d'un modèle de régression linéaire - ces résidus ne peuvent pas être utilisés dans des tests qui font intervenir des hypothèses de normalité (test du $\chi^2$, ...). Si les résidus ne sont pas normalement distribués, cela signifie que la variable dépendante ou au moins une variable explicative pourrait avoir une fonction de répartition erronée.
 
-![Exemples de distributions normale et non-normale](img/Normality_histogram.png)
+![Exemples de distributions normale et non-normale](./img/Normality_histogram.png)
 
 _Exemples de distributions suivant une loi normale (à gauche) et n'en suivant pas (à droite). [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Normality_histogram.png_
 
@@ -827,7 +827,7 @@ Les données sont extraites de _Bouyer et al. (1995) Epidémiologie. Principes e
   - Les données recueillies sur ces individus sont représentées graphiquement à l'aide d'un nuage de points.
   - Si le nuage a une forme particulière s'apparentant à une courbe mathématique, on choisira la fonction mathématique correspondant à cette courbe.
 
-![](img/reg-lin-ex1.png)
+![](./img/reg-lin-ex1.png)
 
 _Source et crédit : Ana Karina Fermin Rodriguez._
  
@@ -875,7 +875,7 @@ Le modèle théorique est une famille de fonctions $f(x;\theta)$ d'une ou plusie
 La méthode des moindres carrés permet de sélectionner parmi ces fonctions celle qui reproduit le mieux les données expérimentales.
 
 
-![](img/Moindres_carres_introduction.png)
+![](./img/Moindres_carres_introduction.png)
 
 _Source et crédits : [Nicolas Regnault, Wikimedia](https://commons.wikimedia.org/wiki/File:Moindres_carres_introduction.png)._
 
@@ -932,7 +932,7 @@ Reprenons notre exemple pour réaliser une régression linéaire simple.
 
 On obtient : $\hat{a} = 1.5771$ et $\hat{b} = 60.3928$.
 
-![](img/reg-lin-ex2.png)
+![](./img/reg-lin-ex2.png)
 
 _Source et crédit : Ana Karina Fermin Rodriguez._
 
@@ -1235,7 +1235,7 @@ Pour une vision mathématique du lasso, voir [ce cours][slides-lasso].
 
 L'idée de base est de chercher à créer un ensemble de modèles locaux qui serait plus performant qu'un modèle global. Au lieu de chercher un modèle global unique permettant de décrire l'ensemble des observations, les méthodes par cluster travaillent en parallèle sur $k$ modèles locaux optimisés pour une partition en $k$ clusters.
 
-![exemple Hennig 2000](img/reg-clusterwise-exemple-hennig-2000.png)
+![exemple Hennig 2000](./img/reg-clusterwise-exemple-hennig-2000.png)
 
 _Figure adaptée de (Hennig, 2000) : (a) données initiale, (b) droite de régression avec un seule modèle, (c) droites de régression avec deux modèles. Une unique régression prédira toujours la valeur 0 alors que la détection de deux sous-ensembles dans les données permettra de trouver deux droites de régressions._
 
@@ -1409,7 +1409,7 @@ Il existe deux principaux types d'arbre de décision en fouille de données :
 - Peut construire des arbres très complexes (sur-apprentissage) qui généralisent mal l'ensemble étudié : besoin d'élagage..
 :::
 
-![Exemple de sur-apprentissage](img/surajustement_modele_2.jpg)
+![Exemple de sur-apprentissage](./img/surajustement_modele_2.jpg)
 
 _Un exemple de sur-apprentissage. [Source et crédits](https://commons.wikimedia.org/wiki/File:Surajustement_Mod%C3%A8le_2.JPG)_.
 
@@ -1809,7 +1809,7 @@ On peut comprendre qu'il sera optimal de couper le dendrogramme à un niveau où
 
 On peut vérifier que l'écart de Ward entre deux classes est en fait égal à la perte d'inertie interclasse (ou le gain d'inertie intra-classe) que produirait la réunion de ces deux classes en une seule. Le niveau des nœuds de l'arbre est donc facile à calculer à partir des écarts de Ward entre les classes.
 
-![](img/hierarch.gif)
+![](./img/hierarch.gif)
 
 _A gauche, une représentation des individus. A droite, le dendrogramme associé et les étapes de sa création (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/hierarch.gif) pour une version animée). Si on souhaite deux classes, on choisira $(p_0,p_1,p_2)$ et $(p_3,p_4,p_5,p_6)$. Si on souhaite des classes éloignées de plus d'une unité de mesure, on choisira $(p_0,p_1,p_2)$, $(p_3)$ et $(p_4,p_5,p_6)$. Animation : dashee87.github.io_
 
@@ -1823,7 +1823,7 @@ On peut alors faire précéder l'algorithme par une méthode appelée positionne
 
 ## Méthode des centres mobiles
 
-![](img/SoftEnragedHypsilophodon.gif)
+![](./img/SoftEnragedHypsilophodon.gif)
 
 _Les points rouges sont les centres des classes, actualisés à chaque étape (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/SoftEnragedHypsilophodon-size_restricted.gif) pour la version animée). On observe bien le phénomène de convergence de ces 10 centres mobiles. Animation : www.analyticsvidhya.com_
 
@@ -1839,7 +1839,7 @@ Appelons $k$ ce nombre. L'algorithme est le suivant :
 
 On répète les étapes 1 et 2 jusqu'à ce que le découpage en classes obtenu ne soit presque plus modifié par une itération supplémentaire (convergence).
 
-![](img/800px-K-means.png)
+![](./img/800px-K-means.png)
 
 _Illustration du déroulement de l'algorithme des k-moyennes. [Source et crédit](https://commons.wikimedia.org/wiki/File:K-means.png?uselang=fr)._
 
@@ -1918,7 +1918,7 @@ Il prend deux paramètres en entrée : $\epsilon$ la distance maximale qui peut 
 
 Tant que tous les individus n'ont pas été visités, on réitère cette étape en commençant par choisir un individu parmi ceux qui sont encore disponibles. Et on obtient finalement notre liste de groupes d'individus ainsi que les individus correspondant à du bruit.
 
-![](img/smiley.gif)
+![](./img/smiley.gif)
 
 _L'algorithme DBSCAN pas à pas (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/v2-58145667049e230f95e07c3dfbfd31ad_b.gif) pour animation). Les cercles en mouvement correspondent aux voisinages successifs. Il y a ici 4 zones où la densité est élevée. La forme des cluster s'adapte à la forme des données proposées. Animation : zhuanlan.zhihu.com_
 
@@ -1934,7 +1934,7 @@ Exemples de visualisations : [lien][visu-clustering-dbscan].
 
 Lorsque le nombre d'individus est très grands et qu'il est alors difficile de choisir d'avance le nombre de classes, on effectue une classification mixte comme indiqué sur la figure suivante :
 
-![](img/classification-mixte.jpg)
+![](./img/classification-mixte.jpg)
 
 - Si l'on a des milliers, voir des dizaines de milliers d'individus à classifier, on commence par les répartir en un (trop) grand nombre de classes (par exemple $k = 100$) par la méthode des centres mobiles.
 - Puis, on ne retient que les centres des classes (avec leur poids qui sera proportionnel au nombre d'individus dans chaque classe) ${(C_1^n,p_1),(C_2^n,p_2), ... , (C_100^n,p_100)}$ et on effectue une classification hiérarchique ascendante sur ces centres.
@@ -2032,7 +2032,7 @@ Précautions et limites de la méthode :
 
 On a relevé les valeurs de deux variables $X_1$ et $X_2$ sur 40 individus statistiques répartis en deux groupes. Le nuage de points représentant ces observations est le suivant :
 
-![](img/analyse-disc-1.png)
+![](./img/analyse-disc-1.png)
 
 Prise isolément, aucune des deux variables $X_1$ et $X_2$ ne permet de différencier les deux groupes $G_1$ et $G_2$. Cependant, on voit bien que les deux groupes occupent des régions du plan bien spécifiques.
 
@@ -2043,7 +2043,7 @@ On voit intuitivement que notre problème pourrait être résolu en considérant
 
 Ainsi, sur notre exemple, la droite d'équation $X_2 = -X_1 + 19$ semble séparer correctement les deux groupes et il semblerait que c'est en projetant les points sur la droite $X_2 = X_1$ que l'on obtiendra une dispersion minimale dans les groupes et maximale entre les groupes.
 
-![](img/analyse-disc-2.png)
+![](./img/analyse-disc-2.png)
 
 Après analyse factorielle discriminante, on obtient ce graphique où les points bien classés sont représentés par des cercles, les points mal classés par des triangles et les points supplémentaires par des carrés. La couleur (rouge ou noir) correspond au groupe calculé.
 
@@ -2098,7 +2098,7 @@ L'analyse factorielle peut révéler des tendances et évolutions de ces répons
 Voici la répartition des réponses pour chaque facteur ou variable.
 Les entreprises clientes ont donc été classées en fonction de leurs similitudes (groupe 1, groupe 2 et groupe 3). Ce facteur de classification peut être la taille de l'entreprise, l'ancienneté, ou tout autre type de données quantitatives.
 
-![width:600px](img/facteur-de-classification.png)
+![width:600px](./img/facteur-de-classification.png)
 _Classement en 3 groupes de similitudes. Source: [qualitrics.com](https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/facteur-de-classification.png)_
 
 On observe dans ce cas que des sous-ensembles de variables se créent pour chaque composante ou facteur.
@@ -2109,7 +2109,7 @@ Le premier pondère fortement les variables liées au coût, le deuxième les va
 - Informatique
 - Organisation
 
-![width:600px](img/composantes-principales-png.png)
+![width:600px](./img/composantes-principales-png.png)
 
 _Classement en composantes principales. Source: [qualitrics.com](https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/composantes-principales-png.png)_
 
@@ -2117,7 +2117,7 @@ En représentant les valeurs sous forme matricielle, l'observation est simplifi�
 
 Si nous devions regrouper les clients potentiels interrogés en fonction de ces trois super variables, nous pouvons clairement voir des tendances se dessiner. Les prospects ont tendance à nommer l'organisation (axe 1) ou le coût (axe 2) comme barrière importante mais pas les deux à fois.
 
-![width:600px](img/cluster-factuer.png)
+![width:600px](./img/cluster-factuer.png)
 
 _Source : [qualitrics.com](https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/cluster-factuer.png)_
 
