@@ -403,6 +403,7 @@ created: 2024-10-17
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
 - `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `tfsec`, `trivy`
 - `Docker` :
+  - `lazydocker` => TUI pour gérer des conteneurs Docker
   - `dry` => manage Docker containers and Swarm cluster
   - `ctop` => like `top` for containers
 - `Kubernetes` :
