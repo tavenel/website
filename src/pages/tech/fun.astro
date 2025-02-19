@@ -22,7 +22,17 @@ const { url } = Astro.props;
 ---
 
 <Layout title={title} url={url}>
-	<h1>Commic strips about Computer Science</h1>
+  <h1>Fun links and strips</h1>
+
+  <h2>Links</h2>
+	  <ul>
+		  <li><a href="https://www.youtube.com/watch?v=j9DOWkw9-pc">Learning Kubernetes, Pods & Deployments with Doom (Youtube)</a></li>
+		  <li><a href="https://github.com/ading2210/doompdf">Doom running inside a PDF file</a></li>
+		  <li><a href="https://github.com/ading2210/linuxpdf">Linux running inside a PDF file</a></li>
+			<li>Doom in a Web container : <code>docker run -p 8080:8080 callumhoughton22/doom-in-docker:0.1</code> then go to <a href="https://localhost:8080">https://localhost:8080</a></li>
+		</ul>
+
+	<h2>Commic strips about Computer Science</h2>
 
 	<figure>
     <Picture src="https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Capture__.PNG" alt="Comic strip - problème d'architecture" inferSize={true}/>
