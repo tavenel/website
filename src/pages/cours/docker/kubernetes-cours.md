@@ -81,6 +81,16 @@ tags:
 - Est facile à configurer mais peut être moins performant que les autres options
 
 ---
+
+## Cilium
+
+- Utilise _BPF_ (_Berkeley Packet Filter_)
+  - performant, débit élevé et latence réduite
+- Métriques détaillées sur le trafic réseau
+- Supporte dynamiquement l'ajout et la suppression de nœuds
+- Conçu pour gérer des clusters de grande taille
+
+---
 layout: section
 ---
 
@@ -95,51 +105,64 @@ layout: section
 
 ---
 
-2. K3s :
+2. K3s (Rancher Labs) :
    - Version allégée de Kubernetes conçue pour les environnemets embarqués
    - Consomme moins de ressources que Kubernetes standard
    - Idéal pour les systèmes à faible puissance
 
 ---
 
-3. OpenShift :
+3. K0s (CNCF) :
+   - Autre version allégée Kubernetes
+	 - Très minimale, aucun composant additionnel
+	 - Compatible on-premise, edge, IoT, …
+
+---
+
+4. OpenShift :
    - Distribution propriétaire de Red Hat basée sur Kubernetes
    - Inclut des fonctionnalités supplémentaires comme l'orchestration d'applications
    - Forte sécurité et conformité
 
 ---
 
-4. Docker Kubernetes Service (DKS)
+5. Docker Kubernetes Service (DKS)
    - Surveillance intégrée du cluster et des applications.
    - Nombreux drivers storage
 
 ---
 
-5. MicroK8s :
+6. MicroK8s (Ubuntu) :
    - Distribution légère et sécurisée de Kubernetes
    - Conçue pour les environnemets Ubuntu
    - Propose des fonctionnalités avancées comme l'installation de paquets
 
 ---
 
-6. Minikube : 
+7. Minikube : 
    - Version légère pour le développement et le test
    - Fonctionne sur un seul ordinateur
    - Idéal pour débutants et environnement de développement
 
 ---
 
-7. Docker Desktop :
+8. Docker Desktop :
    - Intègre Kubernetes nativement
    - Offre une expérience utilisateur simplifiée
    - Adapté aux développeurs utilisant Docker
 
 ---
 
-8. Kind (Kubernetes IN Docker) :
+9. Kind (Kubernetes IN Docker) :
    - Déploie Kubernetes dans un conteneur pour le développement et le test
    - Crée rapidement un ou plusieurs clusters localement
    - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, …
+
+---
+
+10. Talos Linux :
+   - Distribution Linux dédiée
+	 - OS immuable : pas de SSH, shell, …
 
 ---
 
@@ -267,6 +290,19 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 
 ---
 
+# Kube-proxy
+
+- gère le réseau sur chaque `Node` (entre Pods et vers extérieur)
+- plusieurs modes :
+  - tout traffic par `iptables`, règles `DNAT` ( ⚠️ CPU si beaucoup de règles)
+    - load-balancer : _round-robbin_
+  - `ipvs` : module noyau gérant un ensemble de règles d'un coup (plus performant)
+    - load-balancer avancé
+  - Si CNI `Cilium` : règles `eBPF` dans le noyau, plus besoin de `Kube-proxy`
+    - voir section sur les CNI
+
+---
+
 # Gestion du cluster
 
 * Fichiers de configuration `yml` (à privilégier autant que possible !)
@@ -324,6 +360,7 @@ layout: section
   - Nom DNS complet : `<service_name>.<namespace>.svc.<cluster-domain>`
   - exemple : `mon_service.mon_namespace.svc.mon_cluster`
 - Association `Service` <-> `Pod`(s) grâce aux _labels_
+  - **avec gestion des réplicas**
 - Au moins 2 CIDR (plages réseau) : CIDR Pod et CIDR Services
 
 ---
@@ -337,6 +374,7 @@ layout: section
 
 ### Service: NodePort
 
+- Extension du `ClusterIP`
 - Expose à l'extérieur du cluster
 - Accès via des ports sur les Nodes du cluster
 
@@ -344,8 +382,23 @@ layout: section
 
 ### Service: LoadBalancer
 
+- Extension du `NodePort`
 - LoadBalancer pour l'accès au Pod depuis l'extérieur
 - Permet d'avoir un accès unique à plusieurs conteneurs d'un Pod tournant sur plusieurs Nodes.
+- Lié au service de load balancing du Cloud Provider.
+  - on-premise, installer `MetalLB`
+
+---
+
+### Service: ExternalName
+
+- Référence un DNS interne ou externe (alias)
+
+---
+
+### Endpoint
+
+- Lien `Service` <-> `Pod`
 
 ---
 
@@ -630,6 +683,7 @@ layout: two-cols
 - Tutoriels sur la communication entre pods :
   - [Utiliser un service](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
   - [Tutoriel complet](https://medium.com/@extio/mastering-kubernetes-pod-to-pod-communication-a-comprehensive-guide-46832b30556b)
+	- [Youtube Xavki : Kubernetes 021 - Services : NodePort, LoadBalancer, ExternalName et notions de Endpoints](https://www.youtube.com/watch?v=tF28iwTco9A)
 - [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes)
 - [Article très complet sur le service mesh Istio](https://une-tasse-de.cafe/blog/istio/)
 - <https://spacelift.io/blog/kubernetes-secrets>

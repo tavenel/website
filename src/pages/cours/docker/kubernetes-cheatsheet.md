@@ -125,7 +125,7 @@ kubectl apply -f monFichier.yml
 ### Lister les ressources créés (pod, service, storage, ...)
 
 ```sh
-kubectl get deployments,svc,pods,pv,pvc,nodes [--all-namespaces]
+kubectl get deployments,svc,endpoints,pods,pv,pvc,nodes [--all-namespaces]
 ```
 
 ### Inspecter des ressources
@@ -598,6 +598,23 @@ spec:
       nodePort: 30007 # Port sur lequel le service sera accessible depuis l'extérieur du cluster (facultatif)
 ```
 
+### Exemple de fichier ExternalName
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+ name: my-external-name-service
+spec:
+ type: ExternalName
+ externalName: google.com
+```
+
+```console
+$ ping my-external-name-service
+64 bytes from 216.58.205.206: seq=0 ttl=42 time=9.765 ms
+```
+
 ### DNS spécifique
 
 Par défaut, un Pod utilise le DNS de Kubernetes.
@@ -663,6 +680,27 @@ spec:
     backendRefs:
     - name: example-svc
       port: 8080
+```
+
+### Endpoint
+
+Lien entre `Service` et `Pod` :
+
+```console
+$ kubectl get endpoints
+NAME           ENDPOINTS                     AGE
+web-nodeport   10.244.1.2:80,10.244.2.2:80   114s
+
+$ iptables -t nat -L KUBE-SERVICES
+[…]
+KUBE-SVC-GCYSPZR5VVR6P7RM  tcp  --  anywhere             10.96.228.139        /* default/web-nodeport cluster IP */ tcp dpt:82
+
+$  iptables -t nat -L KUBE-SVC-GCYSPZR5VVR6P7RM
+Chain KUBE-SVC-GCYSPZR5VVR6P7RM (2 references)
+target     prot opt source               destination         
+KUBE-MARK-MASQ  tcp  -- !10.244.0.0/16        10.96.228.139        /* default/web-nodeport cluster IP */ tcp dpt:82
+KUBE-SEP-2YVSUODSDOHORZVC  all  --  anywhere             anywhere             /* default/web-nodeport -> 10.244.1.2:80 */ statistic mode random probability 0.50000000000
+KUBE-SEP-XUOJDF7ZKWSRJPSP  all  --  anywhere             anywhere             /* default/web-nodeport -> 10.244.2.2:80 */
 ```
 
 ## Deployment
@@ -852,6 +890,10 @@ roleRef:
   kind: Role # ou ClusterRole
   name: example-role
   apiGroup: rbac.authorization.k8s.io
+```
+
+```sh
+kubectl auth can-i list pods --as=example-user
 ```
 
 ## DaemonSet
