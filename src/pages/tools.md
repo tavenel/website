@@ -428,7 +428,8 @@ created: 2024-10-17
 
 - `aria2` => downloader (HTTP / Magnet)
 - `wavemon` => monitor wifi
-- `netstat -pultn` => processes with network activity (one shot)
+- `netstat -pultn` => processes with network activity (one shot, listening only)
+- `netstat -puatn` => processes with network activity (one shot, including connected)
 - `nethogs` => processes with network activity (live)
 - `iw dev wlp3s0 info` => get wifi info (including power)
 - `iw dev wlp3s0 set txpower fixed 700` => limit wifi power (save battery) to 7dBm (default 22)
