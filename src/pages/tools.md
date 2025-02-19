@@ -384,6 +384,7 @@ created: 2024-10-17
 - interfaces utilisateurs en mode terminal (TUI):
 	- [glow][glow] : lecteur markdown
 	- [lazygit][lazygit]
+	- `lazysql`
 	- `ddgr` : recherche Web
 	- <https://aider.chat> : AI pair programming
   - `cmus` // `mocp` => audio player
