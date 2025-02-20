@@ -159,7 +159,7 @@ kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
 ### kubectl exec : exécuter une commande dans un pod déjà en activité
 
 ```sh
-kubectl exec -it MON_POD -c MON_CONTENEUR MA_COMMANDE
+kubectl exec -it MON_POD -c MON_CONTENEUR -- MA_COMMANDE
 ```
 
 ### kubectl debug démarrer un nouveau conteneur dans un Pod pour du débug
