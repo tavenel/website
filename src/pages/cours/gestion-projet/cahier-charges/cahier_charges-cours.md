@@ -158,8 +158,8 @@ Le cahier des charges techniques peut toutefois n’être que la partie techniqu
 - Le CDC doit prendre en compte ces contraintes pour garantir la conformité et minimiser les risques juridiques.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Méthodes Agiles et CDC
 
@@ -186,8 +186,8 @@ Les méthodes agiles reconnaissent que les besoins évoluent pendant le projet e
 Les besoins sont exprimés sous forme de courtes "User Stories", ce qui permet une compréhension rapide et une implémentation itérative.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Cahier des charges fonctionnel
 
@@ -534,8 +534,8 @@ Pour réaliser le cahier des charges fonctionnel, on pourra se poser les questio
 - Quelles sont les fonctions attendues et leurs caractéristiques ?
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Cahier des charges technique
 

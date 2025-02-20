@@ -7,8 +7,6 @@ tags:
 - iac
 ---
 
-<!-- _class: intro -->
-
 # Objectifs
  
 - Gérer des ressources dans un cluster Cloud avec une notion d'état grâce à Terraform.

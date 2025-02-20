@@ -9,8 +9,9 @@ tags:
 
 ---
 
-<!-- _class: chapter -->
 # Pourquoi tester le logiciel ?
+
+---
 
 - Les sondes perdues (Mars Climate Orbiter, Mars Pathfinder)
 - Les missiles Patriotes
@@ -63,7 +64,6 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-<!-- _class: titre -->
 # Enquête 2017-2018 ISTQB (International Software Testing Qualifications Board)
 
 ---
@@ -110,7 +110,6 @@ Non-testing skills expected from a typical tester are :
 
 ---
 
-<!-- _class: titre lead -->
 # Les métiers du test logiciel
 
 ---
@@ -412,8 +411,6 @@ layout: section
 ---
 
 <!-- TODO: tests statiques -->
-
-<!-- _class: chapter -->
 # Présentation des tests statiques
 
 ---
@@ -456,7 +453,6 @@ layout: section
 
 ---
 
-<!-- _class: titre -->
 # La revue de code
 
 ---
@@ -619,8 +615,6 @@ layout: section
 ---
 
 <!-- TODO: BDD -->
-
-<!-- _class: chapter -->
 # Behavior-Driven Development
 
 ---
@@ -802,8 +796,6 @@ layout: section
 ---
 
 <!-- TODO: stratégies -->
-
-<!-- _class: chapter -->
 # Stratégies de test
 
 ---
@@ -816,7 +808,6 @@ layout: section
 
 ---
 
-<!-- _class: titre -->
 # Stratégies courantes
 
 ---
@@ -955,7 +946,6 @@ Tests conçus, implémentés et exécutés immédiatement **à partir des résul
 
 ---
 
-<!-- _class: titre -->
 # Métriques de tests
 
 ---
@@ -986,7 +976,6 @@ Tests conçus, implémentés et exécutés immédiatement **à partir des résul
 
 ---
 
-<!-- _class: titre -->
 # Indépendance des testeurs
 
 ---
@@ -1033,13 +1022,10 @@ layout: section
 ---
 
 <!-- TODO: techniques -->
-
-<!-- _class: chapter -->
 # Les techniques de tests
 
 ---
 
-<!-- _class: titre -->
 # Techniques de test boîte-noire
 
 ---
@@ -1106,7 +1092,6 @@ Soit `1<=n<=5` avec `n` un entier positif :
 
 ---
 
-<!-- _class: titre -->
 # Techniques de test boîte-blanche
 
 ---
@@ -1128,7 +1113,6 @@ Soit `1<=n<=5` avec `n` un entier positif :
 
 ---
 
-<!-- _class: titre -->
 # Techniques de test basées sur l'expérience
 
 ---
@@ -1164,7 +1148,6 @@ Soit `1<=n<=5` avec `n` un entier positif :
 
 ---
 
-<!-- _class: titre -->
 # Choix des techniques de test
 
 ---
@@ -1204,9 +1187,6 @@ layout: section
 ---
 
 <!-- TODO: indus -->
-
-<!-- _class: titre lead -->
-
 # Automatisation des Tests
 
 ---
@@ -1738,8 +1718,6 @@ layout: section
 ---
 
 <!-- TODO: code-testable -->
-<!-- _class: titre lead -->
-
 # Comment écrire du code testable ?
 
 ---
@@ -1759,8 +1737,6 @@ layout: section
 - Donnez à vos variables, fonctions et modules des noms explicites (pas des noms mathématiques). 
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Qualité de la conception objet
 
@@ -1829,8 +1805,6 @@ layout: section
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Les Mocks
 
 ---
@@ -1865,8 +1839,6 @@ On sépare parfois les objets de type Mock en deux types distincts :
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Exceptions et gestion des erreurs
 
 ---
@@ -1896,8 +1868,6 @@ layout: section
 ---
 
 <!-- TODO: unittest -->
-
-
 # Tests unitaires Python avec unittest
 
 ---
@@ -2250,9 +2220,6 @@ layout: section
 ---
 
 <!-- TODO: selenium -->
-
-<!-- class: titre lead -->
-
 # Sélénium
 
 ---
@@ -2266,13 +2233,9 @@ layout: section
 
 ---
 
-<!-- class: titre lead -->
-
 # Présentation des composants
 
 ---
-
-<!-- class: subtitle lead -->
 
 # Selenium IDE
 
@@ -2296,8 +2259,6 @@ layout: section
 ![Le plugin Selenium IDE](@assets/tests/selenium-ide-screenshot.png)
 
 ---
-
-<!-- class: subtitle lead -->
 
 # Selenium RC et WebDriver
 
@@ -2334,8 +2295,6 @@ class TestSearch(unittest.TestCase):
 ```
 
 ---
-
-<!-- class: subtitle lead -->
 
 # Selenium Grid
 

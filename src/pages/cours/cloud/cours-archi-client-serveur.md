@@ -230,8 +230,8 @@ AppServer --> C2 : Response
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Internet et TCP/IP
 

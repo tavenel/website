@@ -7,8 +7,6 @@ tags:
 - dette-technique
 ---
 
-<!-- _class: titre lead -->
-
 # Pourquoi un Clean Code ?
 
 ---
@@ -32,8 +30,8 @@ tags:
 - Poser un cadre mais pas de limites : **votre responsabilité**
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Règles générales
 
@@ -143,8 +141,8 @@ for student in students:
 - À utiliser pendant les tests fonctionnels.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Design
 
@@ -224,8 +222,8 @@ auto.isRunning();
 - ex `Google Chrome™` : test automatisé de performances dans CI dès le début du projet
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Compréhension
 
@@ -367,8 +365,8 @@ if (isValid(...)):
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Noms
 
@@ -397,8 +395,8 @@ for i in range(NUMBER_OF_STUDENTS):
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Fonctions
 
@@ -480,8 +478,8 @@ widget.repaintLater();
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Commentaires
 
@@ -499,8 +497,8 @@ widget.repaintLater();
 > Code never lies, comments sometimes do. _Ron Jeffries_
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Structure du code source
 
@@ -528,8 +526,8 @@ widget.repaintLater();
   + Beaucoup d'espaces : liens faibles
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Objets et structures de données
 
@@ -546,8 +544,8 @@ widget.repaintLater();
 - Voir le [cours sur la Programmation Orientée Objet et les principes SOLID][site-perso].
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Tests
 
@@ -565,8 +563,8 @@ widget.repaintLater();
 - Voir le [cours sur la méthodologie des tests][site-perso].
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Code smells
 
@@ -630,8 +628,8 @@ def enumerate_array(my_array):
 - Voir [cet article de CodeGuru](https://refactoring.guru/refactoring/smells) pour des exemples de _code smell_.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Gestion des erreurs
 

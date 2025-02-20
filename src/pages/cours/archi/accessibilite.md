@@ -7,8 +7,6 @@ tags:
 - rse
 ---
 
-<!-- _class: titre lead -->
-
 # Accessibilité
 
 ---
@@ -18,8 +16,8 @@ tags:
 - Utiliser un format texte (pas de formats propriétaires type `Microsoft Word` ou `PDF`).
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Web
 
@@ -80,8 +78,8 @@ tags:
 - [Lien Anybrowser : make your website work for everyone](https://anybrowser.org/campaign/)
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Application mobile
 
@@ -105,8 +103,8 @@ tags:
 - Supporter les interfaces **portrait** et paysage
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Tests
 

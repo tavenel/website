@@ -121,8 +121,6 @@ print( mon_instance1.__class__ ) # MaClasseAvecConstructeur
 
 ---
 
-<!-- _class: small -->
-
 # Héritage de classe
 
 ```python
@@ -180,8 +178,6 @@ class A:
 ```
 
 ---
-
-<!-- _class: small -->
 
 ```python
 class A:
@@ -296,8 +292,6 @@ En Python, les interfaces ne sont pas directement implémentées par le langage.
 Il est cependant possible d'utiliser les concepts d'une interface pour s'en approcher.
 
 ---
-
-<!-- _class: small -->
 
 # Interface informelle (Duck Typing)
 
@@ -462,8 +456,6 @@ except Exception as exc:
 ```
 
 ---
-
-<!-- _class: small -->
 
 # try/finally
 

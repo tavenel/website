@@ -7,6 +7,10 @@ tags:
 - devops
 ---
 
+## Chapitres
+
+---
+
 # Présentation de Kubernetes
 
 ---
@@ -221,7 +225,6 @@ layout: section
 
 ![](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg)
 
-<!-- _class: legende -->
 _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
 
 ---
@@ -629,7 +632,7 @@ layout: section
 ---
 
 ![](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
-<!-- _class: legende -->
+
 _Architecture de FluxCD (source: documentation FluxCD)_
 
 ---

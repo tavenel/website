@@ -7,8 +7,6 @@ tags:
 - jenkins
 ---
 
-<!-- _class: intro -->
-
 # Objectifs
  
 - Gérer ses projets tant en développement qu'en infrastructure en adoptant une approche Devops / Sysops
@@ -34,8 +32,6 @@ tags:
   - Interruptions de service
 
 ---
-
-<!-- _class: citation -->
 
 # Devops
 
@@ -87,8 +83,8 @@ tags:
 Voir le [cours sur les gestionnaires de versions (Git)][site-perso].
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Intégration continue
 
@@ -97,8 +93,6 @@ Voir le [cours sur les gestionnaires de versions (Git)][site-perso].
 Voir le [cours d'introduction sur l'intégration continue][site-perso].
 
 ---
-
-<!-- _class: titre lead -->
 
 # Les outils de l'intégration continue
 

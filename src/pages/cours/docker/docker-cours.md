@@ -60,8 +60,6 @@ tags:
 
 ---
 
-<!-- _class: citation -->
-
 > Develop faster. Run anywhere.
 
 _Docker®_
@@ -69,8 +67,6 @@ _Docker®_
 ---
 layout: section
 ---
-
-<!-- _class: titre lead -->
 
 # Introduction aux conteneurs
 
@@ -144,8 +140,6 @@ layout: section
 ---
 layout: section
 ---
-
-<!-- _class: titre lead -->
 
 # Présentation de Docker®
 

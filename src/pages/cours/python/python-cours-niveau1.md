@@ -6,8 +6,6 @@ tags:
 - python
 ---
 
-<!-- _class: titre lead -->
-
 # Installation de l'environnement de développement
 
 ---
@@ -38,8 +36,8 @@ tags:
   - anciennes versions : désinstaller et réinstaller Python
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Présentation du langage
 
@@ -68,13 +66,10 @@ Il est donc courant de déployer à la fois un interpréteur Python 2 et Python 
 Ce cours se concentre sur la dernière version de **Python 3**.
 
 ---
+layout: section
+---
 
-<!-- Section -->
-<style scoped>
-section { background: cornflowerblue; }
-h1 { color: white; }
-</style>
-# <!-- fit --> Eléments principaux de syntaxe
+# Eléments principaux de syntaxe
 
 ---
 
@@ -609,8 +604,6 @@ def http_error(status):
 
 ---
 
-<!-- _class: small -->
-
 # Pattern matching utilisant une structure
 
 ```python
@@ -726,8 +719,6 @@ ma_func('valeur 2') # valeur 2
 ```
 
 ---
-
-<!-- _class: small -->
 
 # Exercice: Visibilité des variables
 

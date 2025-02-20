@@ -14,7 +14,6 @@ tags:
 
 ---
 
-<!-- _class: titre -->
 # Stratégies courantes
 
 ---
@@ -152,8 +151,9 @@ Tests conçus, implémentés et exécutés immédiatement **à partir des résul
 - Non automatisable.
 
 ---
+layout: section
+---
 
-<!-- _class: titre -->
 # Métriques de tests
 
 ---
@@ -183,8 +183,9 @@ Tests conçus, implémentés et exécutés immédiatement **à partir des résul
 - _Rapport Bénéfice / Coût_ de la découverte d'autres défauts ou de l'exécution de tests supplémentaires.
 
 ---
+layout: section
+---
 
-<!-- _class: titre -->
 # Indépendance des testeurs
 
 ---

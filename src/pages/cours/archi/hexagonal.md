@@ -280,13 +280,10 @@ IRequestVerses poetryReader = new PoetryReader(mockFileAdapter);
 
 ![](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
-<!-- _class: legende -->
-
-Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
+_Clean Architecture. Credits: Robert C. Martin (Uncle Bob)_
 
 ---
 
-<!-- _class: bjaune -->
 ## Entities
 
 - Cœur de la Clean Architecture
@@ -298,7 +295,6 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 
 ---
 
-<!-- _class: brose -->
 ## Use Cases
 
 - Encapsulent **toute** la logique métier spécifique à l'application.
@@ -310,7 +306,6 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 
 ---
 
-<!-- _class: bvert -->
 ## Interface Adapters
 
 - ⬅️ ➡️ Fait le lien entre les `Use Case` et les couches externes
@@ -321,7 +316,6 @@ Clean Architecture. Credits: Robert C. Martin (Uncle Bob)
 
 ---
 
-<!-- _class: bbleu -->
 ## Couche externe : UI, Frameworks, Drivers
 
 - ➡️ Tout ce qui est en contact avec le monde extérieur : interface utilisateur, BDD, serveurs web, …

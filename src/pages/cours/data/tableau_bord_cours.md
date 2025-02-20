@@ -515,7 +515,7 @@ layout: section
 
 ![Exemple de graphique à barres](@assets/bi/7-power-bi-matrix-with-heatmap-1.png)
 
-<br>Source: https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png</br>
+_Source: https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png_
 
 - Identifier des modèles ou des **anomalies** dans des données tabulaires.
 - Comparer de grandes quantités de données rapidement.
@@ -636,19 +636,19 @@ layout: section
 
 ![Exemple de roadmap technologique IT](@assets/roadmap/roadmap1.png)
 
-<br>Source: https://www.lucidchart.com/blog/what-is-a-technology-roadmap</br>
+_Source: https://www.lucidchart.com/blog/what-is-a-technology-roadmap_
 
 ---
 
 ![Exemple de roadmap de projet IT](@assets/roadmap/roadmap2.jpg)
 
-<br>https://www.productplan.com/templates/it-project-roadmap-template/</br>
+_https://www.productplan.com/templates/it-project-roadmap-template/_
 
 ---
 
 ![Exemple de roadmap d'architecture IT](@assets/roadmap/roadmap3.jpg)
 
-<br>https://www.productplan.com/templates/it-architecture-roadmap/</br>
+_https://www.productplan.com/templates/it-architecture-roadmap/_
 
 ---
 layout: section

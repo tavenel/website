@@ -16,8 +16,8 @@ tags:
   + soit les moins performantes
 
 ---
-
-<!-- .class: titre -->
+layout: section
+---
 
 # Partie I : Différentes cultures
 
@@ -176,8 +176,8 @@ _D'après Chevrier, 2003; Hall & Hall, 1990_
 - Comprendre la culture pour comprendre les codes sociaux est important
 
 ---
-
-<!-- .class: titre -->
+layout: section
+---
 
 # Partie II : Gérer une équipe multiculturelle
 

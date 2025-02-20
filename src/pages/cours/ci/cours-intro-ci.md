@@ -41,8 +41,6 @@ La CI se positionne dans une stratégie **Shift Left** :
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Avantages de l'intégration continue
 
 ---
@@ -66,8 +64,6 @@ Les changements concurrents sont validés contre une éventuelle régression
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Inconvénients de l'intégration continue
 
 ---
@@ -86,8 +82,8 @@ Les changements concurrents sont validés contre une éventuelle régression
 Le principal défaut est souvent humain !
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Les grands principes de l'intégration continue
 

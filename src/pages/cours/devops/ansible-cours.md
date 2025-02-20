@@ -7,8 +7,6 @@ tags:
 - iac
 ---
 
-<!-- _class: intro -->
-
 # Objectifs
  
 - Gérer un parc de machine simplement par Infrastructure-as-Code grâce à Ansible.

@@ -8,8 +8,6 @@ tags:
 - devops
 ---
 
-<!-- _class: titre lead -->
-
 # Introduction
 
 ---
@@ -73,8 +71,8 @@ Versionner son code source permet :
 Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the-planet>
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Présentation de Git
 
@@ -185,8 +183,8 @@ Date:   Mon Nov 27 12:47:48 2023 +0100
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Comment utiliser Git ?
 
@@ -230,8 +228,8 @@ Un dépôt git sert à centraliser des données (majoritairement du code source)
 - Format commun de messages de commit (par exemple [BUG], [FEATURE], ... ) : <https://www.conventionalcommits.org/fr/>
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Les branches
 
@@ -399,8 +397,8 @@ commit
 **Pas de rebase d'une branche publique comme `main` : risque de désynchronisation avec les autres développeurs**
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Travailler en équipe
 
@@ -705,8 +703,8 @@ merge livraison-1.0 tag:"v1.0"
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Alternatives à la ligne de commandes
 
@@ -958,13 +956,9 @@ Voir le TP correspondant.
 
 ---
 
-<!-- _class: titre lead -->
-
-# Ressources utiles
-
----
-
 <!-- class: liens -->
+
+# Liens
 
 - [Livre officiel et gratuit][git-book]
 - [Exercices interactifs en ligne][learn-git-branch]

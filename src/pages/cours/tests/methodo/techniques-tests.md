@@ -6,7 +6,6 @@ tags:
 - tests
 ---
 
-<!-- _class: titre -->
 # Techniques de test boîte-noire
 
 ---
@@ -72,8 +71,9 @@ Soit `1<=n<=5` avec `n` un entier positif :
 - _Les interactions peuvent être représentées graphiquement par des flux de travail, des diagrammes d'activités ou des modèles de processus métier._
 
 ---
+layout: section
+---
 
-<!-- _class: titre -->
 # Techniques de test boîte-blanche
 
 ---
@@ -94,8 +94,9 @@ Soit `1<=n<=5` avec `n` un entier positif :
 - Aide à trouver des **conditions pas totalement testées**.
 
 ---
+layout: section
+---
 
-<!-- _class: titre -->
 # Techniques de test basées sur l'expérience
 
 ---
@@ -130,8 +131,9 @@ Soit `1<=n<=5` avec `n` un entier positif :
 - _Utile si base de test existante peu formelle_.
 
 ---
+layout: section
+---
 
-<!-- _class: titre -->
 # Choix des techniques de test
 
 ---

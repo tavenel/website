@@ -133,16 +133,14 @@ _Quels sont les composants principaux d'une architecture PC ?_
 
 ---
 
-![bg 60%](https://upload.wikimedia.org/wikipedia/commons/c/cf/Linux_kernel_diagram.svg)
+![Diagramme d'architecture du kernel](https://upload.wikimedia.org/wikipedia/commons/c/cf/Linux_kernel_diagram.svg)
 
-<!-- _class: legende -->
 [_Linux kernel diagram : architecture haut niveau_](https://commons.wikimedia.org/wiki/File:Linux_kernel_diagram.svg)
 
 ---
 
-![bg 60%](https://upload.wikimedia.org/wikipedia/commons/5/5b/Linux_kernel_map.png)
+![Linux kernel map](https://upload.wikimedia.org/wikipedia/commons/5/5b/Linux_kernel_map.png)
 
-<!-- _class: legende -->
 [_Linux kernel map (pour info)_](https://commons.wikimedia.org/wiki/File:Linux_kernel_map.png)
 
 ---

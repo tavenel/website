@@ -6,8 +6,6 @@ tags:
 - ci
 ---
 
-<!-- _class: titre lead -->
-
 # Pipelines
 
 ---
@@ -53,12 +51,10 @@ On pourra répliquer certains éléments de la boucle d’intégration continue 
 Cela ne dispense pas de reproduire ces étapes sur le serveur d’intégration (environnement neutre).
 
 ---
-
-<!-- _class: subtitle lead -->
+layout: section
+---
 
 # Lien avec les workflows Git
-
-## Pull requests
 
 ---
 

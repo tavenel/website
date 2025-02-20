@@ -2,7 +2,6 @@
 
 - slides => <bug> fullscreen style fix CSS</bug>
 - jenkins/TP ~> MD
-- Head.astro => ClientRouter transitions
 - check robots.txt in prod
 
 ---
@@ -14,15 +13,16 @@
   - fix `katex` : loaded but nothing
   - fix `@startdot`
 
+- Head.astro => ClientRouter transitions
+- JS slide
 - picture => legend from _alt_ text
-- slides => **bold** and _emphasis_
 - slides => X/N slide number
 - slidev => ::right::
 - slidev => layout image-right
-- TPs => RM Legal
+- TPs => RM Legal and generate it
 - slides => generate legal
-- slides => marp => title, section, subtitle, lead
 - slides => marp => color / backgroundColor
+- marp => class: liens
 ```md
 # TITLE
 
@@ -58,6 +58,7 @@ _Tom Avenel_
 - styles :
   - cleanup CSS "TODO"
   - fix diagram style : .flowchartTitleText
+	- slides => **bold** and _emphasis_
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
   - Callouts themes : https://github.com/Microflash/remark-callout-directives
   - Callouts => correction : svg in astro.config.mjs

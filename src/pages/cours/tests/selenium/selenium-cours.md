@@ -7,8 +7,6 @@ tags:
 - tests
 ---
 
-<!-- class: titre lead -->
-
 # Sélénium
 
 ---
@@ -21,14 +19,12 @@ tags:
   + remplir un formulaire, etc.
 
 ---
-
-<!-- class: titre lead -->
+layout: section
+---
 
 # Présentation des composants
 
 ---
-
-<!-- class: subtitle lead -->
 
 # Selenium IDE
 
@@ -52,8 +48,6 @@ tags:
 ![Le plugin Selenium IDE](@assets/tests/selenium-ide-screenshot.png)
 
 ---
-
-<!-- class: subtitle lead -->
 
 # Selenium RC et WebDriver
 
@@ -90,8 +84,6 @@ class TestSearch(unittest.TestCase):
 ```
 
 ---
-
-<!-- class: subtitle lead -->
 
 # Selenium Grid
 

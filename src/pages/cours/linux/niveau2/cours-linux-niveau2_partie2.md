@@ -155,10 +155,9 @@ tags:
 
 ---
 
-![width:700px](https://learning.lpi.org/en/learning-materials/102-500/106/106.1/106.1_01/images/image_01.png)
+![Architecture de X11](https://learning.lpi.org/en/learning-materials/102-500/106/106.1/106.1_01/images/image_01.png)
 
-<!-- _class: legende -->
-Architecture de X11 (crédits: learning.lpi.org)
+_Architecture de X11 (crédits: learning.lpi.org)_
 
 ---
 

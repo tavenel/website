@@ -88,8 +88,6 @@ Un serveur dédié permet de contrôler plus finement l'intégration mais néces
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Avantages d'un serveur d'intégration
 
 ---
@@ -115,8 +113,6 @@ Permet de planifier l'exécution des tâches de l'intégration continue
 Mutualise les ressources entre plusieurs développeurs et/ou plusieurs équipes
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Inconvénients d'un serveur d'intégration
 
@@ -152,8 +148,8 @@ On parallélisera au maximum les tests d’intégration continue (souvent unitai
 Plus les intégrations sont fréquentes, plus la feedback loop devra être rapide.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Jenkins
 
@@ -162,8 +158,6 @@ Plus les intégrations sont fréquentes, plus la feedback loop devra être rapid
 Le [logo Jenkins®][jenkins-website].
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Présentation du produit
 
@@ -182,7 +176,6 @@ Le [logo Jenkins®][jenkins-website].
 - Fork open-source de `Hudson` (nombreuses traces dans documentation et configurations).
 
 ---
-<!-- _class: subtitle lead -->
 
 # Installation et déploiement
 
@@ -217,8 +210,6 @@ _Afin de réduire la charge de l'orchestrateur au maximum, il est recommandé de
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Principaux plugin
 
 ---
@@ -249,8 +240,6 @@ Jenkins est avant tout un orchestrateur de build, délégant chaque tâche à un
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Les jobs Jenkins
 
 ---
@@ -267,8 +256,6 @@ _Un job multi-configuration peut être d’une grande utilité dans des projets 
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Automatisation
 
 ---
@@ -282,8 +269,6 @@ _Un job multi-configuration peut être d’une grande utilité dans des projets 
   + 3 implémentations : `XML`, `JSON`, `Python`
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Références
 
@@ -300,14 +285,12 @@ La documentation de Jenkins est très complète, on pourra notamment citer :
 - [Guide complet de Jenkins][jenkins-guide-complet]
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Tests, métriques et outils d'analyse
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Tests unitaires et d'intégration
 
@@ -326,8 +309,6 @@ Jenkins est un orchestrateur : il permet donc d'automatiser les tests unitaires 
 _Jenkins permet de s'interfacer avec de nombreux outils d'exécution ou de reporting de tests. Nous verrons comment intégrer Jenkins avec les principaux outils de tests._
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Lier et enchaîner les jobs
 
@@ -349,8 +330,6 @@ En pratique, on utilise les dépendances entre jobs pour :
 - Séparer les étapes d’un process d’intégration continue : compilation des sources, exécution des tests, analyse statique, ...
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Les outils d'analyse principaux
 
@@ -395,9 +374,7 @@ Celui-ci centralise les rapports d’outils d’analyse de code pour afficher de
 
 ![Sonarqube UI][sonarqube-ui]
 
-<!-- _class: legende -->
-
-Exemples de rapports SonarQube™ (source: Ganncamp at <https://en.wikipedia.org/wiki/SonarQube>).
+_Exemples de rapports SonarQube™ (source: Ganncamp at <https://en.wikipedia.org/wiki/SonarQube>)._
 
 ---
 
@@ -427,8 +404,8 @@ _Si SonarQube permet de quantifier la dette technique d'un projet, il est import
 Voir le [TP sur TestLink][site-perso].
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Pipelines Jenkins et jobs complexes
 
@@ -561,8 +538,6 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 
 ---
 
-<!-- _class: titre lead -->
-
 # Pour aller plus loin - pratiques DevOps
 
 Voir le [cours sur les pratiques DevOps][site-perso].
@@ -581,13 +556,12 @@ Voir le [cours sur les pratiques DevOps][site-perso].
 [doc-jenkins-pipelines]: https://www.jenkins.io/doc/tutorials/#pipeline
 [doc-jenkins-builds]: https://www.jenkins.io/doc/tutorials/#tools
 [jenkins-guide-complet]: https://jenkins-le-guide-complet.github.io/html/book.html
+
 <!--plugins-->
 [plugin-depgraph-view]: https://plugins.jenkins.io/depgraph-view/
 [plugin-join]: https://plugins.jenkins.io/join/
 
----
-
-# Legal 
+# Legal
 
 - Oracle and Java are registered trademarks of Oracle and/or its affiliates
 - Jenkins® and the Jenkins logo are registered trademarks of LF Charities Inc.

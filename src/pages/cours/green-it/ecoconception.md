@@ -7,8 +7,6 @@ tags:
 - dette-technique
 ---
 
-<!-- _class: titre lead -->
-
 # Bonnes pratiques générales
 
 ---
@@ -73,8 +71,8 @@ tags:
 - Voir [la règle dédiée des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/chapters/BP_4032_fr.md)
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Frontend
 
@@ -223,8 +221,8 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
   - transforme un site statique en Single Page Application (SPA).
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Backend
 
@@ -292,8 +290,8 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 - Bonus : Sécurité des donnés : `ISO 27001`
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Gains transverses
 
@@ -329,8 +327,8 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 - Limite la couverture d'attaques
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Points à surveiller
 
@@ -407,8 +405,8 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 - <https://www.ademe.fr/une-logique-d-ecoconception/>
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Ressources utiles
 

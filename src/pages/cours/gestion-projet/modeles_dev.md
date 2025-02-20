@@ -7,8 +7,6 @@ tags:
 - architecture
 ---
 
-<!-- _class: titre lead -->
-
 # Modèle en cascade (waterfall)
 
 ---
@@ -116,8 +114,8 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
 Ce modèle n'est plus très utilisé en pratique car peu réaliste mais il est à la base des modèles que nous allons aborder.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Cycle en V
 
@@ -236,8 +234,8 @@ Mais en cas de changement dans les premières étapes du modèle (changement de 
 Une solution consiste à travailler en versions (itérations) successives du cycle en V (voir les méthodologies suivantes).
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Cycle en W
 
@@ -300,8 +298,8 @@ La réalisation du prototype induit cependant un coût et une durée de réalisa
 ```
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Cycle en spirale
 
@@ -332,8 +330,12 @@ Le cycle en spirale se déroule en quatre phases :
 Le cycle en spirale met plus l'accent sur la **gestion des risques** que le cycle en V. En effet, le début de chaque itération comprend une phase d'analyse des risques. Celle-ci est rendue nécessaire par le fait que, lors d'un développement cyclique, il y a plus de risques de défaire, au cours de l'itération, ce qui a été fait au cours de l'itération précédente.
 
 ---
+layout: section
+---
 
-<!-- _class: titre lead -->
+# Cycle en Y
+
+---
 
 # Cycle en Y (Two Tracks Unified Process)
 
@@ -410,8 +412,8 @@ L’architecture technique construit le squelette du système informatique et é
 - L’étape de recette : valide les fonctions du système développé
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Développement rapide d'applications : RUP
 
@@ -535,8 +537,8 @@ Les méthodes PU (et particulièrement RUP) sont des méthodes puissantes, combi
 Ces méthodes imposent cependant une certaine lourdeur à l'exécution et demandent une équipe très qualifiée : maitrise des approches itératives, connaissance approfondie d'UML, connaissance des enchainements d'activités et de leurs interdépendances.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Développement rapide d'applications : RAD
 

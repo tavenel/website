@@ -44,8 +44,9 @@ tags:
 > Se réunir est un début ; rester ensemble est un progrès ; travailler ensemble est la réussite. _Henri Ford_
 
 ---
+layout: section
+---
 
-<!-- titre -->
 # La gestion et le travail en équipe
 
 ---
@@ -144,8 +145,9 @@ Dans un projet collaboratif, l'organisation est radicalement différente :
 - On passe d'une responsabilité individuelle à une responsabilité partagée => la coopération doit primer sur la compétition
 
 ---
+layout: section
+---
 
-<!-- .class titre -->
 # Les outils de collaboration à distance
 
 ---
@@ -278,8 +280,9 @@ Quelques exemples d'outils collaboratifs les plus utilisés :
 _Les projets informatiques open source sont souvent de bons exemples d'utilisation d'outils collaboratifs et de travail décentralisé_.
 
 ---
+layout: section
+---
 
-<!-- .class titre -->
 # Processus de partage d'informations
 
 ---
@@ -333,8 +336,8 @@ Comment concevoir un processus de partage d'informations pour faciliter la colla
 - Soyez ouvert aux différentes façons de travailler qui peuvent être nécessaires pour s'adapter à ces situations.
 
 ---
-
-<!-- .class titre -->
+layout: section
+---
 
 # Animer un atelier de collaboration à distance
 

@@ -7,7 +7,6 @@ tags:
 - revue
 ---
 
-<!-- _class: titre -->
 # Les tests statiques
 
 ---
@@ -49,8 +48,9 @@ tags:
 - Amélioration de la **communication** dans l'équipe : _revues_.
 
 ---
+layout: section
+---
 
-<!-- _class: titre -->
 # La revue de code
 
 ---

@@ -7,8 +7,6 @@ tags:
 - rse
 ---
 
-<!-- _class: titre lead -->
-
 # Introduction
 
 ---
@@ -159,8 +157,8 @@ C'est une association :
 - Charbon : 1060g C02eq /kWh
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Référentiels, normes et textes de loi
 
@@ -364,8 +362,6 @@ C'est une association :
 
 ---
 
-<!-- _class: titre lead -->
-
 # Un enjeu global pour l'entreprise
 
 ---
@@ -472,8 +468,8 @@ C'est une association :
 Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strategie-et-durabilite/strategie-globale-rse/>
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Déchets d'équipements électriques et électroniques (DEEE)
 
@@ -525,8 +521,8 @@ Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strat
 - Cadre légal : [site e-dechet.com](https://www.e-dechet.com/outils/telecharger-documentation)
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Ressources utiles
 

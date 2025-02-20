@@ -7,8 +7,6 @@ tags:
 - client-server
 ---
 
-<!-- class: intro -->
-
 # Compétences à acquérir
 
 - Connaître le modèle Client/Serveur
@@ -17,14 +15,14 @@ tags:
 - Savoir mettre en place les services associés sous Linux et sous Windows
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Partie I : Architecture Client/Serveur
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Partie II : Les modes de communication entre processus
 
@@ -364,8 +362,8 @@ De nombreuses applications utilisent `(Secure)RPC` : `NFS`, `NIS`, ...
 Il existe beaucoup d'implémentations (incompatibles) de `RPC`.
 
 ---
-
-<!-- _class: titre lead -->
+layout: section
+---
 
 # Applications client/serveur sur `TCP/IP`
 
@@ -380,7 +378,7 @@ Lorsqu'une version sécurisée est disponible, un `S` est ajouté à la fin du n
 
 ---
 
-# <!--fit--> Connexions à distance
+# Connexions à distance
 
 ---
 
@@ -440,7 +438,7 @@ Le client est simplement l'application logicielle (jeu, traitement de texte, cal
 
 ---
 
-# <!--fit--> Transfert de fichiers
+# Transfert de fichiers
 
 ---
 
@@ -537,7 +535,7 @@ Les ressources partagées sont accessibles à partir d'une adresse utilisant la 
 
 ---
 
-# <!--fit--> Gestion d'utilisateurs distants
+# Gestion d'utilisateurs distants
 
 ---
 
@@ -556,7 +554,7 @@ Le client récupère les informations en interrogeant le serveur à partir d'app
 
 ---
 
-# <!--fit--> Le courrier électronique
+# Le courrier électronique
 
 ---
 
@@ -616,7 +614,7 @@ Cependant, les courriers électroniques ne sont alors plus accessibles en local.
 
 ---
 
-# <!--fit--> Un annuaire fédérateur
+# Un annuaire fédérateur
 
 ---
 
@@ -652,7 +650,7 @@ cn=ordinateur       cn=Jean
 
 ---
 
-# <!--fit--> L'administration de réseaux
+# L'administration de réseaux
 
 ---
 
@@ -667,12 +665,6 @@ cn=ordinateur       cn=Jean
 Les objets `SNMP` contenus dans les nœuds peuvent être des informations matérielles, des paramètres de configuration, des statistiques de performance et autres objets qui sont directement liés au comportement en cours de l'équipement en question.
 
 `SNMP` est très utilisé et de nombreux outils l'intègrent pour effectuer de la surveillance et maintenance applicative et matérielle : `Zabix`, `Nagios`, ...
-
----
-
-<!-- _class: titre lead -->
-
-# Annexes
 
 ---
 

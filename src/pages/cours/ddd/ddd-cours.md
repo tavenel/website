@@ -213,8 +213,8 @@ _Eric Evans_, 2003
 ---
 
 ![](https://alexsoyes.com/wp-content/uploads/2022/04/ddd-ubiquitous-language-912x697.png)
-<!-- _class: legende -->
-Source: alexsoyes.com
+
+_Source: alexsoyes.com_
 
 ---
 
@@ -403,8 +403,8 @@ layout: quote
 ---
 
 ![](https://programmerhumor.io/wp-content/uploads/2021/05/programmerhumor-io-8fb4c03b81cbbab-758x621.png)
-<!-- _class: legende -->
-Source: programmerhumor.io
+
+_Source: programmerhumor.io_
 
 ---
 layout: center
@@ -440,8 +440,7 @@ layout: section
 
 ![](https://www.eventstorming.com/images/book-cover.11a5.jpg)
 
-<!-- _class: legende -->
-https://www.eventstorming.com/book/
+_https://www.eventstorming.com/book/_
 
 ---
 
@@ -821,8 +820,7 @@ layout: section
 
 ![](https://www.methodsandtools.com/archive/ddd3.gif)
 
-<!-- _class: legende -->
-Source: methodsandtools.com
+_Source: methodsandtools.com_
 
 ---
 
@@ -880,8 +878,8 @@ By <a href="https://en.wikipedia.org/wiki/User:Ravenperch" class="extiw" title="
 ---
 
 ![](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture2.png)
-<!-- _class: legende -->
-DDD Strategic design patterns (dieuxducode.com)
+
+_DDD Strategic design patterns (dieuxducode.com)_
 
 ---
 
@@ -935,8 +933,8 @@ layout: center
 ---
 
 ![](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture1.png)
-<!-- _class: legende -->
-Cartographie des modèles et de leurs relations (dieuxducode.com)
+
+_Cartographie des modèles et de leurs relations (dieuxducode.com)_
 
 ---
 
@@ -1030,8 +1028,7 @@ layout: center
 
 ![](https://thedomaindrivendesign.io/wp-content/uploads/2019/06/DomainDrivenDesignReference-700x620.png)
 
-<!-- _class: legende -->
-by: Eric Evans 
+_by: Eric Evans_
 
 ---
 layout: section

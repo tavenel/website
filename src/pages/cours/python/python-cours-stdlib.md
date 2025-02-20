@@ -6,7 +6,6 @@ tags:
 - python
 ---
 
-<!-- titre -->
 # La librairie standard StdLib
 
 ---
@@ -225,8 +224,6 @@ Pour plus d'information : [documentation venv][doc-venv].
 
 ---
 
-<!-- _class: small -->
-
 # SQLite : inclus dans le langage
 
 ## Connection à la base de données et création d'une table
@@ -284,8 +281,6 @@ $ pip install mysql-connector-python
 ```
 
 ---
-
-<!-- _class: small -->
 
 ## Connexion à la base de données et création d'une base
 

@@ -7,8 +7,6 @@ tags:
 - patterns
 ---
 
-<!-- _class: titre lead -->
-
 # Automatisation des Tests
 
 ---

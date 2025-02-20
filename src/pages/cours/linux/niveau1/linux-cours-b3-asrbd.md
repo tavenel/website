@@ -270,7 +270,7 @@ setfacl -b <fichier>
 
 ---
 
-<!-- Annexe: liste des liens utiles -->
+<!-- _class: liens -->
 [wiki-partitions]: https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/P%C3%A9riph%C3%A9riques_et_syst%C3%A8mes_de_fichiers_Linux/Cr%C3%A9er_des_partitions_et_des_syst%C3%A8mes_de_fichiers
 
 # Legal

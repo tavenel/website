@@ -8,8 +8,6 @@ tags:
 - architecture
 ---
 
-<!-- _class: titre lead -->
-
 # Comment écrire du code testable ?
 
 ---
@@ -29,8 +27,8 @@ tags:
 - Donnez à vos variables, fonctions et modules des noms explicites (pas des noms mathématiques). 
 
 ---
-
-<!-- _class: subtitle lead -->
+layout: section
+---
 
 # Qualité de la conception objet
 
@@ -98,8 +96,8 @@ tags:
   + Test plus robuste au changement d'implémentation.
 
 ---
-
-<!-- _class: subtitle lead -->
+layout: section
+---
 
 # Les Mocks
 
@@ -134,8 +132,8 @@ On sépare parfois les objets de type Mock en deux types distincts :
   + Exemple : Mock simulant une base de données pour stocker en mémoire les données ajoutées pour retourner une liste à jour en cas de listing.
 
 ---
-
-<!-- _class: subtitle lead -->
+layout: section
+---
 
 # Exceptions et gestion des erreurs
 

@@ -8,8 +8,6 @@ tags:
 - jenkins
 ---
 
-<!-- _class: titre lead -->
-
 # Jenkins : serveur d'intégration continue
 
 ![The Jenkins logo][jenkins-logo]
@@ -64,9 +62,6 @@ Le code source est monitoré (ou une notification reçue) pour chaque nouveau ch
 
 ---
 
-
-<!-- _class: subtitle lead -->
-
 # Présentation du produit
 
 ---
@@ -84,7 +79,6 @@ Le code source est monitoré (ou une notification reçue) pour chaque nouveau ch
 - Fork open-source de Hudson (nombreuses traces dans documentation et configurations).
 
 ---
-<!-- _class: subtitle lead -->
 
 # Installation et déploiement
 
@@ -106,8 +100,6 @@ _Pour nos besoins, nous nous limiterons à l'utilisation de Jenkins dans son pro
 
 ---
 
-<!-- _class: subtitle lead -->
-
 # Les jobs Jenkins
 
 ---
@@ -123,8 +115,6 @@ _Pour nos besoins, nous nous limiterons à l'utilisation de Jenkins dans son pro
 _Un job multi-configuration peut être d’une grande utilité dans des projets plus sophistiqués, notamment lorsque des builds spécifiques à chaque plateforme sont nécessaires._
 
 ---
-
-<!-- _class: subtitle lead -->
 
 # Tests unitaires et d'intégration
 
@@ -144,7 +134,7 @@ _Jenkins permet de s'interfacer avec de nombreux outils d'exécution ou de repor
 
 ---
 
-<!-- class: liens -->
+<!-- _class: liens -->
 
 # Références
 

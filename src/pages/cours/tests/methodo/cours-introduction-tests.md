@@ -67,7 +67,6 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-<!-- _class: titre -->
 # Enquête 2017-2018 ISTQB (International Software Testing Qualifications Board)
 
 ---
@@ -114,7 +113,6 @@ Non-testing skills expected from a typical tester are :
 
 ---
 
-<!-- _class: titre lead -->
 # Les métiers du test logiciel
 
 ---

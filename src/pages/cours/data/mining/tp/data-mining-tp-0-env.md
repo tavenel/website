@@ -216,4 +216,3 @@ Pour une utilisation plus poussée, il est recommandé d'utiliser un environneme
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well.
 - PYPI is a trademark of Python Software Foundation.
 
-<!-- vscode pycharm jupyter matplotlib numpy scikit sklearn -->

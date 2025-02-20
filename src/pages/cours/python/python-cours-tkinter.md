@@ -6,7 +6,6 @@ tags:
 - python
 ---
 
-<!-- titre -->
 # La bibliothèque Tkinter
 
 ---
