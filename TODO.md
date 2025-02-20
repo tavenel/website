@@ -2,7 +2,6 @@
 
 - slides => <bug> fullscreen style fix CSS</bug>
 - jenkins/TP ~> MD
-- TODOs in tableau-bord-cours
 - TODOs in all files
 - check robots.txt in prod
 

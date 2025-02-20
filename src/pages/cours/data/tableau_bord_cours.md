@@ -6,8 +6,6 @@ tags:
   - gestion_projet
   - data
 ---
-layout: section
----
 
 # Rappel : Découpage en Couches du SI
 
@@ -442,12 +440,10 @@ layout: section
 # Principales Visualisations Power BI  
 
 ---
-layout: image-left
-image: /visual-bar-chart.png
-backgroundSize: contain
----
 
 # Graphique à Barres / Colonnes
+
+![Exemple de graphique à barres](@assets/bi/visual-bar-chart.png)
 
 - **Comparer des valeurs** entre différentes catégories.
 - Mettre en évidence les **différences** importantes.
@@ -458,12 +454,10 @@ backgroundSize: contain
 - _**Visualisation** : Barres verticales pour les coûts par application (janvier à décembre)._
 
 ---
-layout: image-left
-image: /visual-pie-chart.png
-backgroundSize: contain
----
 
 # Graphique en Secteurs
+
+![Exemple de graphique en secteurs](@assets/bi/visual-pie-chart.png)
 
 - Montrer la **répartition** d'une valeur totale en pourcentages.
 - Analyser les parts relatives.
@@ -474,12 +468,10 @@ backgroundSize: contain
 - _**Visualisation** : Diagramme circulaire avec des segments pour chaque catégorie._
 
 ---
-layout: image-left
-image: /visual-line-chart.png
-backgroundSize: contain
----
 
 # Graphique en courbes
+
+![Exemple de courbe](@assets/bi/visual-line-chart.png)
 
 - Suivre l'**évolution** d'une valeur dans le temps.
 - Identifier des **tendances** ou des **variations**.
@@ -490,12 +482,10 @@ backgroundSize: contain
 - _**Visualisation** : Ligne représentant l'évolution du pourcentage de disponibilité._
 
 ---
-layout: image-left
-	image: /basic-area-map-small.png
-backgroundSize: contain
----
 
 # Graphique en Aire
+
+![Exemple de graphique en aire](@assets/bi/basic-area-map-small.png)
 
 - Montrer une **évolution** et l'**accumulation** de valeurs.
 - Mettre en évidence les **proportions** dans une série temporelle.
@@ -506,12 +496,10 @@ backgroundSize: contain
 - _**Visualisation** : Aires empilées montrant les contributions cumulatives._
 
 ---
-layout: image-left
-image: /gauge-m.png
-backgroundSize: contain
----
 
 # Jauge
+
+![Exemple de jauge](@assets/bi/gauge-m.png)
 
 - Suivre une valeur par rapport à un **objectif** ou un **seuil**.
 - Idéal pour des KPI simples.
@@ -525,7 +513,9 @@ backgroundSize: contain
 
 # Carte de Chaleur (Heatmap)
 
-![](https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png)
+![Exemple de graphique à barres](@assets/bi/7-power-bi-matrix-with-heatmap-1.png)
+
+<br>Source: https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png</br>
 
 - Identifier des modèles ou des **anomalies** dans des données tabulaires.
 - Comparer de grandes quantités de données rapidement.
@@ -534,12 +524,10 @@ backgroundSize: contain
 - _**Visualisation** : Couleurs variant du vert (bon) au rouge (mauvais)._
 
 ---
-layout: image-left
-image: /visual-map.png
-backgroundSize: contain
----
 
 # Carte Géographique
+
+![Exemple de carte](@assets/bi/visual-map.png)
 
 - Visualiser des données **géolocalisées**.
 - Identifier des modèles géographiques.
@@ -553,7 +541,8 @@ backgroundSize: contain
 
 # Tableau Croisé Dynamique (Matrice)
 
-![](https://learn.microsoft.com/fr-fr/power-bi/visuals/media/power-bi-visualization-types-for-reports-and-q-and-a/matrix.png)
+![Exemple de matrice](@assets/bi/matrix.png)
+
 - Présenter des données **multi-dimensionnelles** sous forme de tableau interactif.
 - Explorer des hiérarchies.
 
@@ -643,33 +632,31 @@ layout: section
 
 - **Objectif principal** : Migration d'une application vers le cloud.
 
-<!-- [TODO] https://www.lucidchart.com/blog/what-is-a-technology-roadmap -->
-<!-- [TODO] https://www.productplan.com/templates/it-project-roadmap-template/ -->
-<!-- [TODO] https://www.productplan.com/templates/it-architecture-roadmap/ -->
-
----
-layout: image
-image: /roadmap1.png
-backgroundSize: contain
 ---
 
----
-layout: image
-image: /roadmap2.jpg
-backgroundSize: contain
----
+![Exemple de roadmap technologique IT](@assets/roadmap/roadmap1.png)
+
+<br>Source: https://www.lucidchart.com/blog/what-is-a-technology-roadmap</br>
 
 ---
-layout: image
-image: /roadmap3.jpg
-backgroundSize: contain
----
+
+![Exemple de roadmap de projet IT](@assets/roadmap/roadmap2.jpg)
+
+<br>https://www.productplan.com/templates/it-project-roadmap-template/</br>
 
 ---
-layout: two-cols
+
+![Exemple de roadmap d'architecture IT](@assets/roadmap/roadmap3.jpg)
+
+<br>https://www.productplan.com/templates/it-architecture-roadmap/</br>
+
+---
+layout: section
 ---
 
 # Ressources
+
+---
 
 ## Livres
 
@@ -677,13 +664,12 @@ layout: two-cols
 - [Microsoft Power BI Complete Reference](https://univ.scholarvox.com/catalog/book/docid/88865488)
 - [Enterprise Solution Architecture - Strategy Guide](https://univ.scholarvox.com/catalog/book/docid/88939086)
 
+---
+
 ## Liens
 
 - [MTBF, MTTR, MTTA et MTTF : Maîtriser quelques-unes des métriques d'incident les plus courantes](https://www.atlassian.com/fr/incident-management/kpis/common-metrics)
 - [Atlassian - Indicateurs de performance SI](https://www.atlassian.com/fr/itsm/service-request-management/it-metrics-and-reporting)
-
-::right::
-
 - [Exemples : 12 tableaux de bord pour piloter ses activités informatiques][exemples-tableaux]
 - [70 Exemples de dashboard](https://www.geckoboard.com/dashboard-examples/)
 - [Concepts de base de Power BI](https://learn.microsoft.com/fr-fr/power-bi/consumer/end-user-basic-concepts)
