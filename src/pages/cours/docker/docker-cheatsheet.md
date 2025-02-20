@@ -502,6 +502,11 @@ docker compose config
 docker compose watch
 ```
 
+:::link
+- Voir la documentation : <https://docs.docker.com/compose/how-tos/file-watch/>
+- Pour un exemple, voir : <https://github.com/dockersamples/avatars>
+:::
+
 ## Attributs d’un service décrit dans un `docker compose.yml` :
 
 - `image` : permet de spécifier l'image source pour le conteneur
