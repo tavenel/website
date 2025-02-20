@@ -2,7 +2,7 @@
 
 - slides => <bug> fullscreen style fix CSS</bug>
 - jenkins/TP ~> MD
-- TODOs in all files
+- Head.astro => ClientRouter transitions
 - check robots.txt in prod
 
 ---
@@ -53,6 +53,7 @@ _Tom Avenel_
   - link in Menu/
   - delete
   - fix favorites navigation (after astro hydration ?)
+  - Favorites.astro => fix TODO
 
 - styles :
   - cleanup CSS "TODO"

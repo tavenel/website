@@ -562,8 +562,8 @@ Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strat
 - [Étude "Quelle démarche Green IT pour les grandes entreprises françaises ?" (WeGreenIT)](https://www.wwf.fr/sites/default/files/doc-2018-10/20181003_etude_wegreenit_d%C3%A9marche_green_it_entreprises_francaises_WWF-min.pdf)
 - [Article : Les acteurs du CAC 40 éco-conçoivent leurs sites web (greenit.fr)](https://presse.ademe.fr/2023/03/impact-environnemental-du-numerique-en-2030-et-2050-lademe-et-larcep-publient-une-evaluation-prospective.html).
 
-[greenit-empreinte-numerique-mondial]:https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/
-[greenit-empreinte-numerique-mondial-pdf]:https://www.greenit.fr/wp-content/uploads/2019/10/2019-10-GREENIT-etude_EENM-infographie.VF_.pdf
+[greenit-empreinte-numerique-mondial]: https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/
+[greenit-empreinte-numerique-mondial-pdf]: https://www.greenit.fr/wp-content/uploads/2019/10/2019-10-GREENIT-etude_EENM-infographie.VF_.pdf
 
 ---
 

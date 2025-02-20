@@ -1,7 +1,6 @@
 ---
 title: Kubernetes
 date: 2024 / 2025
-correction: false
 ---
 
 # Introduction à Kubernetes®
