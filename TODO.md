@@ -9,10 +9,16 @@
 
 ## P2
 
+- diagrams
+  - Astro component : better loading (add yarn dep, …) instead of inline script
+  - fix `katex` : loaded but nothing
+  - fix `@startdot`
+
 - picture => legend from _alt_ text
 - slides => **bold** and _emphasis_
 - slides => X/N slide number
 - slidev => ::right::
+- slidev => layout image-right
 - TPs => RM Legal
 - slides => generate legal
 - slides => marp => title, section, subtitle, lead
@@ -39,14 +45,8 @@ _Tom Avenel_
 [site-perso]: https://www.avenel.pro/
 ```
 
-- diagrams
-  - Astro component : better loading (add yarn dep, …) instead of inline script
-  - fix `katex` : loaded but nothing
-  - fix `@startdot`
-
 ## P3
 
-- src/pages/todo/
 - tags:[] in files and word cloud
 
 - "favorites" :
