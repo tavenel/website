@@ -10,6 +10,8 @@ La distance choisie pour cette classification, qui apparait dans les quatre matr
 
 ![Classification hierarchique ascendante](@assets/data/classif-hierarch-ascendante.png)
 
+<div class="caption">Exemple de Classification hierarchique ascendante.</div>
+
 1. Compléter le troisième dessin en y plaçant les trois points devant y figurer et indiquer sur les quatre dessins le nom des points.
 2. Compléter les six distances manquantes dans les matrices de distances.
 3. Préciser les coordonnées des points $G_6$, $G_7$ et $G_8$.
@@ -19,6 +21,8 @@ La distance choisie pour cette classification, qui apparait dans les quatre matr
 :::correction
 ![Correction de la classification hierarchique ascendante](@assets/data/classif-hierarchique-ascendante_corrige.png)
 
+<div class="caption">Correction de la classification hierarchique ascendante</div>
+
 $G_6$ est le milieu du segment $M_2(0;1)$ et $M_3(0;2)$ donc $G_6=(\frac{0-0}{2};\frac{1+2}{2}) = (0; \frac{3}{2})$.
 
 $G_7$ est le milieu du segment $M_4$ et $M_5$ donc $G_7=(4;4)$.
@@ -27,4 +31,7 @@ $G_8$ est le centre de gravité de $G_6$ (poids 2) et $M_1$ (poids 1) donc $G_8 
 $G_9$ est le centre de gravité du nuage : c'est la moyenne des 5 points, ou aussi le centre de gravité de $G_7$ (poids 2) et $G_8$ (poids 3): $G_9 = (\frac{2+0+0+3+5}{5};\frac{0+1+2+4+4}{5}) = (2;2.2)$
 
 ![Correction de la classification hierarchique ascendante](@assets/data/classification-hierarchique-ascendate_correction2.png)
+
+<div class="caption">Correction de la classification hierarchique ascendante</div>
+
 :::

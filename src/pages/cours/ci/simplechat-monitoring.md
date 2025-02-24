@@ -42,6 +42,8 @@ Les spécifications de l'application de monitoring sont les suivantes :
 
 ![Exemple d'interface](@assets/apps/simplechat-monitoring-exemple.png) 
 
+<div class="caption">Un exemple de réalisation.</div>
+
 # Travail demandé
 
 Le TP sera effectué en binôme différent du premier TP.

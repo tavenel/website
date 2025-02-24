@@ -47,6 +47,8 @@ layout: section
 
 ![Le plugin Selenium IDE](@assets/tests/selenium-ide-screenshot.png)
 
+<div class="caption">Le plugin Selenium IDE</div>
+
 ---
 
 # Selenium RC et WebDriver

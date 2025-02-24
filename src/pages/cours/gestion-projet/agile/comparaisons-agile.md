@@ -64,7 +64,9 @@ Exemple : ajouter un point sur le post-it chaque jour
 
 ## Diagramme de flux cumulés
 
-![](https://blog.myagilepartner.fr/wp-content/uploads/2019/04/diagramme-de-flux-cumules.png)
+![Diagramme de flux cumulés](https://blog.myagilepartner.fr/wp-content/uploads/2019/04/diagramme-de-flux-cumules.png)
+
+<div class="caption">Diagramme de flux cumulés</div>
 
 ---
 

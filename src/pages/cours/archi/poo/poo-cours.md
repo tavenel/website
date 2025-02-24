@@ -216,7 +216,9 @@ Techniquement, un objet est caractérisé par 3 choses :
 
 ---
 
-![](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/objet.webp)
+![Un exemple d'objet](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/objet.webp) <!--TODO: DIAG -->
+
+<div class="caption">Un exemple d'objet</div>
 
 ---
 
@@ -298,7 +300,9 @@ Récupération du nombre de roues
 
 ---
 
-![](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/encapsulation.webp)
+![Un exemple d'encapsulation](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/encapsulation.webp) <!--TODO: DIAG -->
+
+<div class="caption">Un exemple d'encapsulation.</div>
 
 **On utilise donc une classe comme une boîte noire - l'utilisateur d'une classe n'a pas à connaître les détails d'implémentation.**
 
@@ -354,7 +358,9 @@ layout: section
 
 En POO une classe peut **hériter** des caractéristiques (attributs, méthodes) d’une autre classe.
 
-![](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/heritage.webp)
+![Un exemple d'héritage](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/heritage.webp) <!-- TODO: DIAG -->
+
+<div class="caption">Un exemple d'héritage.</div>
 
 - `Avion` hérite de `Véhicule`
 - `Avion` est la _classe fille_ (ou sous-classe) de `Véhicule` qui est la _classe parent_ (ou super-classe)

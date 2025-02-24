@@ -82,6 +82,8 @@ Relancez le build : celui-ci doit maintenant être valide. Vérifiez dans la con
 
 ![Résultat attendu dans Jenkins](@assets/jenkins/build-success.png)
 
+<div class="caption">Résultat attendu dans Jenkins</div>
+
 ## Exécution de tests unitaires et rapports de tests
 
 _Le compilateur `javac` fourni par `Java` étant extrêmement limité, les projets `Java` utilisent généralement des outils de build leur permettant de gérer les dépendances.
@@ -115,6 +117,8 @@ Installer le plugin de code coverage : dans la page d'accueil de Jenkins® `Tabl
 - Lancez un nouveau build. Vérifier que les résultats de tests sont reportés dans la page du projet et que la couverture de code est affichée.
 
 ![Couverture des tests dans Jenkins](@assets/jenkins/code-coverage.png)
+
+<div class="caption">Couverture des tests dans Jenkins</div>
 
 ## Développement piloté par les tests
 

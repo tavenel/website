@@ -155,7 +155,7 @@ layout: section
 
 ![The Jenkins logo][jenkins-logo]
 
-Le [logo Jenkins®][jenkins-website].
+<div class="caption">Le [logo Jenkins®][jenkins-website].</div>
 
 ---
 
@@ -374,7 +374,7 @@ Celui-ci centralise les rapports d’outils d’analyse de code pour afficher de
 
 ![Sonarqube UI][sonarqube-ui]
 
-_Exemples de rapports SonarQube™ (source: Ganncamp at <https://en.wikipedia.org/wiki/SonarQube>)._
+<div class="caption">Exemples de rapports SonarQube™ (source: Ganncamp at https://en.wikipedia.org/wiki/SonarQube).</div>
 
 ---
 

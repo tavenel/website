@@ -532,8 +532,7 @@ layout: section
 
 ## Green IT
 
-- [Étude : Empreinte environnementale du numérique mondial. (greenit.fr)][greenit-empreinte-numerique-mondial]
-- [Infographie : Empreinte environnementale du numérique mondial. (greenit.fr)][greenit-empreinte-numerique-mondial-pdf]
+- [Étude : Empreinte environnementale du numérique mondial. (greenit.fr, mis à jour 2025)](https://greenit.eco/nos-etudes-et-essais/impacts-environnementaux-du-numerique-dans-le-monde-2025/)
 - [Pierre Boulet, Sylvain Bouveret, Aurélie Bugeau, Frenoux Emmanuelle, Julien Lefevre, et al.. Référentiel de connaissances pour un numérique éco-responsable. EcoInfo. 2020.](https://hal.science/hal-02954188)
 - [Génération de graphiques liés à l'énergie et au climat](http://www.theshiftdataportal.org/)
 - [Article sur l'impact de fabrication vs utilisation : Mise en perspective (raphael-lemaire.com)](https://raphael-lemaire.com/2020/02/02/mise-en-perspective-suite/)
@@ -558,9 +557,6 @@ layout: section
 - [Étude "Quelle démarche Green IT pour les grandes entreprises françaises ?" (WeGreenIT)](https://www.wwf.fr/sites/default/files/doc-2018-10/20181003_etude_wegreenit_d%C3%A9marche_green_it_entreprises_francaises_WWF-min.pdf)
 - [Article : Les acteurs du CAC 40 éco-conçoivent leurs sites web (greenit.fr)](https://presse.ademe.fr/2023/03/impact-environnemental-du-numerique-en-2030-et-2050-lademe-et-larcep-publient-une-evaluation-prospective.html).
 
-[greenit-empreinte-numerique-mondial]: https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/
-[greenit-empreinte-numerique-mondial-pdf]: https://www.greenit.fr/wp-content/uploads/2019/10/2019-10-GREENIT-etude_EENM-infographie.VF_.pdf
-
 ---
 
 # Bibliographie
@@ -569,4 +565,11 @@ layout: section
 - [F. Bordage., M. Morelle, Tendre vers la sobriété numérique. Actes Sud](https://www.actes-sud.fr/catalogue/essais/tendre-vers-la-sobriete-numerique)
 - [M. GUILLIOT, R. LEMAIRE, S. REVEREAULT. Green IT, Les clés pour des projets informatiques plus responsables. ENI](https://www.editions-eni.fr/livre/green-it-les-cles-pour-des-projets-informatiques-plus-responsables-9782409036095)
 - [G. Pitron. L'enfer numérique, Voyage au bout d'un like. LLL](http://www.editionslesliensquiliberent.fr/livre-L_enfer_num%C3%A9rique-662-1-1-0-1.html)
+
+---
+
+# IA
+
+- <https://ia-frugale.org/> : ressources pour une IA frugale
+- [Graphique : Consommation électrique de l'IA (2024)](https://www.standblog.org/dc-blog/public/2025/Consommation_e_lectrique_de_l_IA_et_approvisionnement.jpg)
 

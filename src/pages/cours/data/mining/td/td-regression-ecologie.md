@@ -22,6 +22,8 @@ On voit que la régression linéaire de $\tilde{N}$ sur $\tilde{S}$ a donné l'�
 
 ![Régression linéaire nombre d'espèces par surface](@assets/data/reg-ecologie.png)
 
+<div class="caption">Régression linéaire nombre d'espèces par surface</div>
+
 ## Questions
 
 1. Pourquoi n'a-t-on pas effectué directement une régression linéaire de $N$ sur $S$ et a-t-on préféré transformer $N$ en $\tilde{N}$ et $S$ en $\tilde{S}$ ?
@@ -61,6 +63,8 @@ On veut étudier de quelle façon les variables pH, C/N et P influent sur le pou
 2. On a aussi cherché à expliquer de la même façon %V à l’aide de deux autres variables, C/N et P. On a obtenu les dessins des nuages et des droites de régression suivants :
 
 ![Regression C/N et P](@assets/data/reg-c-n-p.png)
+
+<div class="caption">Regression C/N et P</div>
 
 Malheureusement, on a mélangé les résultats ; les équations $y = 1617,4x + 12$ et $y = -0,904x + 50,691$ et les coefficients $R^2 = 0,8178$ et $R^2 = 0,4937$. Sans faire de nouveaux calculs, indiquer quelle équation et quel coefficient correspond à quel dessin en justifiant vos réponses.
 

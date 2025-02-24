@@ -374,6 +374,8 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ![Exemple de matrice des exigences](@assets/gestion-projet/matrice-exigences.jpg)
 
+<div class="caption">Exemple de matrice des exigences</div>
+
 ---
 
 ## Diagrammes de Cas d'Utilisation
@@ -432,6 +434,8 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 ---
 
 ![Exemple de matrice de priorisation](@assets/gestion-projet/matrice-priorite.jpg)
+
+<div class="caption">Exemple de matrice de priorisation</div>
 
 ---
 
@@ -494,9 +498,13 @@ On pourra modéliser le besoin à l'aide d'un diagramme _bête à corne_ :
 
 ![Le diagramme bête à cornes](@assets/gestion-projet/bete-a-cornes.png)
 
+<div class="caption">Le diagramme bête à cornes</div>
+
 ---
 
 ![Exemple de diagramme bête à cornes](@assets/gestion-projet/bete-a-cornes-exemple.png)
+
+<div class="caption">Exemple de diagramme bête à cornes</div>
 
 --- 
 

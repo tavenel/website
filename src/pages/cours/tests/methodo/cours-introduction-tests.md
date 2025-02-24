@@ -63,7 +63,9 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-![](@assets/gestion-projet/balancoire.jpg)
+![Ce que voulait le client](@assets/gestion-projet/balancoire.jpg)
+
+<div class="caption">Ce que voulait le client.</div>
 
 ---
 

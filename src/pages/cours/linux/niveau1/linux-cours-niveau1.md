@@ -72,6 +72,8 @@ Ces systèmes connaissent un certain succès mais sont coûteux et peu évolutif
 
 ![The Linux logo](@assets/linux/tux.png)
 
+<div class="caption">Le logo Linux</div>
+
 En 1991, Linux Torvalds libère la première version du noyau Linux écrit en langage C et copiant les APIs Unix.
 
 ---
@@ -112,19 +114,29 @@ Linux est un noyau de système d'exploitation :
 
 ![Le logo GNU](@assets/linux/gnu.png)
 
+<div class="caption">Le logo GNU</div>
+
 ---
 
 ![Le logo Fedora](@assets/linux/fedora.png)
 
+<div class="caption">Le logo Fedora</div>
+
 ![Le logo Debian](@assets/linux/debian.png)
 
+<div class="caption">Le logo Debian</div>
+
 ![Le logo Ubuntu](@assets/linux/ubuntu.png)
+
+<div class="caption">Le logo Ubuntu</div>
 
 Il existe beaucoup de distributions GNU/Linux : généralistes ou dédiées à un usage particulier (montage vidéo, bureautique, …), multiplateforme ou dédiées à un environnement particulier, généralement embarqué (dongle TV, raspberry pi, …), gratuites ou payantes.
 
 Certaines distributions on tellement dévié du noyau standard qu'on ne les considère plus vraiment comme des distributions Linux mais elles en gardent les concepts principaux (_Android_, …)
 
 ![Le logo Android](@assets/linux/android.png)
+
+<div class="caption">Le logo Android</div>
 
 Ces distributions partagent des standards communs les rendant grandement interconnectables et interchangeables : _POSIX_, _System-V_ , … mais ne les respectent que partiellement, chacune ayant ses spécificités. Par exemple, la commande `grep` possède des options particulières sur presque chaque distribution.
 
@@ -164,6 +176,8 @@ Quelques fonctions principales d'un système Linux :
 ![Architecture d'un système Linux](@assets/linux/archi_1.png)
 
 ![Architecture d'un système Linux](@assets/linux/archi_2.png)
+
+<div class="caption">Architecture d'un système Linux</div>
 
 ---
 
@@ -394,6 +408,8 @@ Même si un shell utilise en général un langage de script complet (utilisatoin
 ## L'invité de commandes (_prompt_)
 
 ![Un exemple de prompt](@assets/linux/prompt.jpg)
+
+<div class="caption">Un exemple de prompt</div>
 
 - En vert et bleu (partie avant le `$`) : l'invité de commandes (prompt) : `wiki@ubuntu:~/Desktop` ou `wiki@ubuntu:~/Desktop/text` 
 - En blanc sur la même ligne après le `$`, la commande et ses arguments : `cd text` ou `cat > sample.txt`
@@ -946,6 +962,8 @@ find ~ -name '*.txt' | xargs grep -i "ma recherche"
 
 ![Exemple de redirection complexe : <https://swcarpentry.github.io>](@assets/linux/pipe.png)
 
+<div class="caption">Exemple de redirection complexe</div>
+
 ---
 layout: section
 ---
@@ -1162,6 +1180,8 @@ du -sh MonRepertoire
 
 ![Les différents répertoires de la Filesystem Hierarchy Standard](@assets/linux/fhs.png)
 
+<div class="caption">Les différents répertoires de la Filesystem Hierarchy Standard (FHS)</div>
+
 ---
 
 ## Gestion des droits d'accès
@@ -1177,6 +1197,8 @@ $ ls -l test.txt
 ```
 
 ![Un exemple de droits](@assets/linux/droits.png)
+
+<div class="caption">Un exemple de droits</div>
 
 Dans cet exemple, le propriétaire (`tavenel`) peut lire et écrire dans ce fichier, les utilisateurs du groupe propriétaire (`vboxusers`) peuvent lire et exécuter ce fichier, et tous les autres utilisateurs peuvent lire ce fichier.
 
@@ -1195,6 +1217,8 @@ Par exemple, pour donner les droits Lire/Ecrire/Exécuter à l'utilisateur et Li
 - on convertit le format binaire en décimal : `7 6 0`
 
 ![Un exemple de droits](@assets/linux/droits.png)
+
+<div class="caption">Un exemple de droits</div>
 
 ```console
 $ chmod 760 test.txt

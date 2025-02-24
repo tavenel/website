@@ -84,9 +84,9 @@ L'application est composée de trois composants principaux :
 
 ## Diagrammes de classes du Domain Model de la bibliothèque
 
-![](https://www.uml-diagrams.org/examples/class-example-library-domain.png)
+![Exemple de diagramme de classe pour le domaine d'une librairie](https://www.uml-diagrams.org/examples/class-example-library-domain.png)
 
-_[Source et crédit](https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html)._
+<div class="caption">Exemple de diagramme de classe pour le domaine d'une librairie. Source et crédit: https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html</div>
 
 Ce diagramme représente le domain model de la bibliothèque, c'est-à-dire les classes comportant et interagissant avec la donnée de l'application dans le composant `Backend`.
 

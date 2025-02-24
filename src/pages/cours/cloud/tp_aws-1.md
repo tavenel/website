@@ -68,6 +68,8 @@ Par exemple : <http://ec2-35-181-153-53.eu-west-3.compute.amazonaws.com/>
 
 ![La page d'accueil du serveur LAMP](@assets/apps/lamp.png)
 
+<div class="caption">La page d'accueil du serveur LAMP.</div>
+
 Note 3 : Contrairement à ce qui est annoncé dans le sujet du TP, l'utilisateur à utiliser pour la connexion `SSH` n’est pas `ubuntu` mais `bitnami`.
 
 ## ` `Partie 3 : Intégrer des services Cloud (1) : `RDS`, le `DBaaS` d'`AWS`

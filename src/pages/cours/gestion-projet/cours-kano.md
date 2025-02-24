@@ -50,7 +50,11 @@ Imaginons un projet de développement d'une application de livraison de repas :
 
 ![Kano : présence vs absence de la fonction](@assets/gestion-projet/kano-1.jpg)
 
+<div class="caption">Kano : présence vs absence de la fonction</div>
+
 ---
 
 ![Exemple de diagramme de Kano](@assets/gestion-projet/kano-2.jpg)
+
+<div class="caption">Exemple de diagramme de Kano</div>
 

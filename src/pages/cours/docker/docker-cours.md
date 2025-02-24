@@ -255,8 +255,9 @@ Docker utilise massivement deux technologies du noyau Linux pour isoler et assoc
 
 ---
 
-![width:500px][img-archi]
-_Architecture de Docker®. [Source et crédits][img-archi]._
+![Architecture de Docker](https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png)
+
+<div class="caption">Architecture de Docker®</div>
 
 ---
 

@@ -37,11 +37,15 @@ tags:
 
 ---
 
-![](https://www.formation-lpi.com/IMG/png/01-programme-lpi101-v5.0.png)
+![Programme LPIC 101](https://www.formation-lpi.com/IMG/png/01-programme-lpi101-v5.0.png)
+
+<div class="caption">Programme LPIC-101</div>
 
 ---
 
-![](https://www.formation-lpi.com/IMG/png/programme-lpi102-v5.0.png)
+![Programme LPIC 102](https://www.formation-lpi.com/IMG/png/programme-lpi102-v5.0.png)
+
+<div class="caption">Programme LPIC-102</div>
 
 ---
 

@@ -114,7 +114,7 @@ layout: section
 
 ![Screenshot application capitaine train](https://jaimelesstartups.b-cdn.net/wp-content/uploads/2011/07/bar.jpg.webp)
 
-_L'application capitaine train_
+<div class="caption">L'application capitaine train</div>
 
 ---
 

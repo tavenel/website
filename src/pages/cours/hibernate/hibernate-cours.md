@@ -116,9 +116,11 @@ public class MyEntity {
 
 ![](https://docs.jboss.org/hibernate/orm/3.2/reference/fr/shared/images/lite.gif)
 
+<div class="caption">Architecture Hibernate légère.</div>
+
 ![](https://docs.jboss.org/hibernate/orm/3.2/reference/fr/shared/images/full_cream.gif)
 
-_Architecture Hibernate. Source et crédits: <https://docs.jboss.org/hibernate/orm/3.2/reference/fr/html/architecture.html>_
+<div class="caption">Architecture Hibernate complète. Source et crédits: https://docs.jboss.org/hibernate/orm/3.2/reference/fr/html/architecture.html</div>
 
 ---
 

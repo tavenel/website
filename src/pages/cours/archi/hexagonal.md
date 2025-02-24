@@ -278,9 +278,9 @@ IRequestVerses poetryReader = new PoetryReader(mockFileAdapter);
 
 ---
 
-![](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
+![Diagramme de Clean Architecture](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
-_Clean Architecture. Credits: Robert C. Martin (Uncle Bob)_
+<div class="caption">Clean Architecture. Credits: Robert C. Martin (Uncle Bob)</div>
 
 ---
 

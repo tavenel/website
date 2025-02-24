@@ -403,15 +403,21 @@ layout: section
 
 # Exemples de Tableaux de Bord
 
-![](https://www.geckoboard.com/uploads/Live-customer-support-dashboard-example.png)
+![Exemple de tableau de bord de support utilisateur](https://www.geckoboard.com/uploads/Live-customer-support-dashboard-example.png)
+
+<div class="caption">Exemple de tableau de bord de support utilisateur</div>
 
 ---
 
-![](https://www.geckoboard.com/uploads/IT-dashboard-example.png)
+![Exemple de tableau de bord IT](https://www.geckoboard.com/uploads/IT-dashboard-example.png)
+
+<div class="caption">Exemple de tableau de bord IT</div>
 
 ---
 
-![](https://www.geckoboard.com/uploads/sustainability-dashboard-example.png)
+![Exemple de tableau de bord de durabilité environnementale](https://www.geckoboard.com/uploads/sustainability-dashboard-example.png)
+
+<div class="caption">Exemple de tableau de bord de durabilité environnementale</div>
 
 ---
 layout: section
@@ -515,7 +521,7 @@ layout: section
 
 ![Exemple de graphique à barres](@assets/bi/7-power-bi-matrix-with-heatmap-1.png)
 
-_Source: https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png_
+<div class="caption">Source: https://blog.coupler.io/wp-content/uploads/2024/03/7-power-bi-matrix-with-heatmap-1.png</div>
 
 - Identifier des modèles ou des **anomalies** dans des données tabulaires.
 - Comparer de grandes quantités de données rapidement.
@@ -636,19 +642,19 @@ layout: section
 
 ![Exemple de roadmap technologique IT](@assets/roadmap/roadmap1.png)
 
-_Source: https://www.lucidchart.com/blog/what-is-a-technology-roadmap_
+<div class="caption">Exemple de roadmap technologique IT. Source: https://www.lucidchart.com/blog/what-is-a-technology-roadmap</div>
 
 ---
 
 ![Exemple de roadmap de projet IT](@assets/roadmap/roadmap2.jpg)
 
-_https://www.productplan.com/templates/it-project-roadmap-template/_
+<div class="caption">Exemple de roadmap de projet IT. Source: https://www.productplan.com/templates/it-project-roadmap-template/</div>
 
 ---
 
 ![Exemple de roadmap d'architecture IT](@assets/roadmap/roadmap3.jpg)
 
-_https://www.productplan.com/templates/it-architecture-roadmap/_
+<div class="caption">Exemple de roadmap d'architecture IT. Source: https://www.productplan.com/templates/it-architecture-roadmap/</div>
 
 ---
 layout: section

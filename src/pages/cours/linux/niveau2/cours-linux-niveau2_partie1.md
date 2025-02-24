@@ -135,13 +135,19 @@ _Quels sont les composants principaux d'une architecture PC ?_
 
 ![Diagramme d'architecture du kernel](https://upload.wikimedia.org/wikipedia/commons/c/cf/Linux_kernel_diagram.svg)
 
-[_Linux kernel diagram : architecture haut niveau_](https://commons.wikimedia.org/wiki/File:Linux_kernel_diagram.svg)
+<div class="caption">Diagramme d'architecture du kernel</div>
+
+[Linux kernel diagram : architecture haut niveau](https://commons.wikimedia.org/wiki/File:Linux_kernel_diagram.svg)
+
+<div class="caption">Linux kernel diagram : architecture haut niveau</div>
 
 ---
 
 ![Linux kernel map](https://upload.wikimedia.org/wikipedia/commons/5/5b/Linux_kernel_map.png)
 
 [_Linux kernel map (pour info)_](https://commons.wikimedia.org/wiki/File:Linux_kernel_map.png)
+
+<div class="caption">Linux kernel map</div>
 
 ---
 
@@ -400,8 +406,9 @@ layout: section
 
 ---
 
-![](https://upload.wikimedia.org/wikipedia/commons/a/a3/GParted_1.3.1_screenshot.png)
-_GParted est un outil graphique permettant de voir les partitions d'un disque (source: Wikipedia)_
+![Screenshot de Gparted](https://upload.wikimedia.org/wikipedia/commons/a/a3/GParted_1.3.1_screenshot.png)
+
+<div class="caption">GParted est un outil graphique permettant de voir les partitions d'un disque (source: Wikipedia)</div>
 
 ---
 
@@ -1187,6 +1194,8 @@ setfacl -b <fichier>
 ---
 
 ![Les différents répertoires de la Filesystem Hierarchy Standard](@assets/linux/fhs.png)
+
+<div class="caption">Les différents répertoires de la Filesystem Hierarchy Standard (FHS)</div>
 
 <!-- Annexe : liste des TPs -->
 

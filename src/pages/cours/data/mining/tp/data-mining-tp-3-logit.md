@@ -193,7 +193,9 @@ X = scaler.transform(X)
   - Les données d'apprentissage sont fournies uniquement en entrée de l'algorithme et permettent à celui-ci de générer un modèle.
   - Les données de test permettent de valider la bonne exécution du modèle.
 
-![](https://cdn-coiao.nitrocdn.com/CYHudqJZsSxQpAPzLkHFOkuzFKDpEHGF/assets/static/optimized/rev-85bf93c/wp-content/uploads/2022/05/machine-learning-process_train-and-test.png)
+![Processus _train and test_](https://cdn-coiao.nitrocdn.com/CYHudqJZsSxQpAPzLkHFOkuzFKDpEHGF/assets/static/optimized/rev-85bf93c/wp-content/uploads/2022/05/machine-learning-process_train-and-test.png)
+
+<div class="caption">Processus train and test</div>
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -225,15 +227,15 @@ L'algorithme de prédiction logistique est un algorithme non paramétrique. Cepe
 
 Par défaut, `sklearn` utilise un _threshold_ de 0.5, c'est-à-dire que toute prédiction ayant une probabilité supérieure à 0.5 est considérée comme un succès.
 
-![](https://content.codecademy.com/programs/data-science-path/logistic-regression/Threshold-01.svg)
+![Exemple de threshold de 0.5](https://content.codecademy.com/programs/data-science-path/logistic-regression/Threshold-01.svg)
 
-_Un threshold de 0.5 (défaut)._
+<div class="caption">Un threshold de 0.5 (défaut).</div>
 
 Or le besoin peut ne pas être symétrique - dans l'exemple précédent par exemple, on peut préférer augmenter les chances de détecter la maladie, quitte à augmenter les faux positifs (détection positive pour des personnes saines) :
 
-![](https://content.codecademy.com/programs/data-science-path/logistic-regression/Threshold-02.svg)
+![Exemple de threshold de 0.4](https://content.codecademy.com/programs/data-science-path/logistic-regression/Threshold-02.svg)
 
-_Un threshold de 0.4_
+<div class="caption">Un threshold de 0.4</div>
 
 
 9. Modifier le threshold de succès pour les prédictions des valeurs de tests pour mieux coller aux données.

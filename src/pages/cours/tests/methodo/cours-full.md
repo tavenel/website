@@ -60,7 +60,9 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-![](@assets/gestion-projet/balancoire.jpg)
+![Ce que voulait le client](@assets/gestion-projet/balancoire.jpg)
+
+<div class="caption">Ce que voulait le client.</div>
 
 ---
 
@@ -207,7 +209,7 @@ layout: section
 - But d'un test : casser le logiciel pour trouver des problèmes
 - Tester montre l'absence de problème mais **~~ne prouve pas l'absence d'erreur~~**
 
-![](@assets/tests/grenouille.png)
+> Non, je n'ai pas de preuve de cette grenouille qui parle mais cela ne veut pas dire qu'elle n'existe pas
 
 ---
 
@@ -720,15 +722,15 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-![](https://www.arolla.fr/bdd-dialogue-png/)
+![Le dialogue en BDD](https://www.arolla.fr/bdd-dialogue-png/) <!-- TODO: REDO DIAG -->
 
-<span class="legende">©www.arolla.fr</span>
+<div class="caption">Le dialogue en BDD ©www.arolla.fr</div>
 
 ---
 
-![height:600px](https://blog.octo.com/le-bdd/behavior-driven-development-1-702x1024.webp)
+![Résumé du BDD](https://blog.octo.com/le-bdd/behavior-driven-development-1-702x1024.webp) <!-- TODO: REDO DIAG -->
 
-<span class="legende">©blog.octo.com</span>
+<div class="caption">Résumé du BDD. ©blog.octo.com</div>
 
 ---
 
@@ -2257,6 +2259,8 @@ layout: section
 ---
 
 ![Le plugin Selenium IDE](@assets/tests/selenium-ide-screenshot.png)
+
+<div class="caption">Le plugin Selenium IDE</div>
 
 ---
 

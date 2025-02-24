@@ -85,8 +85,9 @@ BiRel(controller, model, " ")
 
 ---
 
-![width:600px](https://terasolunaorg.github.io/guideline/5.3.0.RELEASE/en/_images/RequestLifecycle.png)
-_Une implémentation MVC : Spring MVC Request Lifecycle (source : terasolunaorg.github.io)._
+![Schema de requête Spring MVC](https://terasolunaorg.github.io/guideline/5.3.0.RELEASE/en/_images/RequestLifecycle.png)
+
+<div class="caption">Une implémentation MVC : Spring MVC Request Lifecycle (source : terasolunaorg.github.io).</div>
 
 ---
 

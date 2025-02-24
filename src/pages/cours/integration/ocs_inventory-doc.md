@@ -74,6 +74,8 @@ Les communications entre agents et serveurs de gestion utilisent les protocoles 
 
 ![Schema des applications OCS Inventory](@assets/apps/ocs-apps.png)
 
+<div class="caption">Schema des applications OCS Inventory</div>
+
 Le serveur de gestion (Management server) comprend trois composants principaux :
 
 - **le serveur de base de données (Database server)**, lieu de stockage des informations d'inventaire ;

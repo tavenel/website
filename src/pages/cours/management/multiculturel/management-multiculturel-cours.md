@@ -23,9 +23,9 @@ layout: section
 
 ---
 
-![width:600px](https://regards-interculturels.fr/wp-content/uploads/2015/03/Salutations_Asiatique_Occidental_rvb.jpg)
+![Un exemple d'incompréhension culturel](https://regards-interculturels.fr/wp-content/uploads/2015/03/Salutations_Asiatique_Occidental_rvb.jpg)
 
-_Source : regards-interculturels.fr_
+<div class="caption">Un exemple d'incompréhension culturel. Source : regards-interculturels.fr</div>
 
 ---
 

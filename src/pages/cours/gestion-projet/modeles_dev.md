@@ -307,8 +307,9 @@ layout: section
 
 # Cycle en spirale
 
-![bg right:60% 100%](https://upload.wikimedia.org/wikipedia/commons/e/ec/Spiral_model_%28Boehm%2C_1988%29.svg)
-_Le cycle en spirale. Source : [wikipedia][img-spirale]_
+![Le cycle en spirale](https://upload.wikimedia.org/wikipedia/commons/e/ec/Spiral_model_%28Boehm%2C_1988%29.svg)
+
+<div class="caption">Le cycle en spirale.</div>
 
 Le développement reprend les différentes étapes du cycle en V. Par l'implémentation de **versions** successives, le cycle recommence en proposant un produit de plus en plus complet et robuste.
 
@@ -638,8 +639,7 @@ Pour une mise en opération, le RAD impose :
 
 ---
 
-![](https://upload.wikimedia.org/wikipedia/commons/4/46/SemiIteratif.jpg)
-_Développement RAD semi-itératif. Source : [wikipedia](https://commons.wikimedia.org/wiki/File:SemiIteratif.jpg?uselang=fr)_
+![Développement RAD semi-itératif](https://upload.wikimedia.org/wikipedia/commons/4/46/SemiIteratif.jpg)
 
-[img-spirale]: https://en.wikipedia.org/wiki/File:Spiral_model_(Boehm,_1988).svg
+<div class="caption">Développement RAD semi-itératif. Source : https://commons.wikimedia.org/wiki/File:SemiIteratif.jpg?uselang=fr</div>
 

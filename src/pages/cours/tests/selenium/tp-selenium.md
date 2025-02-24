@@ -122,7 +122,8 @@ Depuis `Grid 4`, le `Hub` est maintenant découpé en sous-composants (`Router`,
 - Des noeuds de la grille fonctionnent comme des agents qui attendent les commandes à exécuter et réalisent l’opération sur le ou les navigateurs installés sur la même machine.
 
 ![Diagramme d'architecture](https://www.selenium.dev/images/documentation/grid/components.png)
-_Principaux composants Selenium Grid (source et crédits : https://www.selenium.dev)_
+
+<div class="caption">Principaux composants Selenium Grid (source et crédits : https://www.selenium.dev)</div>
 
 Note :
 

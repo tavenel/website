@@ -162,6 +162,8 @@ Et des **rustines** partout dans le code… 🙈
 
 ![Ce que le client voulait vraiment](@assets/gestion-projet/balancoire.jpg)
 
+<div class="caption">Ce que le client voulait vraiment</div>
+
 ---
 
 # Un bon design ?
@@ -212,9 +214,9 @@ _Eric Evans_, 2003
 
 ---
 
-![](https://alexsoyes.com/wp-content/uploads/2022/04/ddd-ubiquitous-language-912x697.png)
+![Le langage ubiquitaire](https://alexsoyes.com/wp-content/uploads/2022/04/ddd-ubiquitous-language-912x697.png)
 
-_Source: alexsoyes.com_
+<div class="caption">Le langage ubiquitaire. Source: alexsoyes.com</div>
 
 ---
 
@@ -226,7 +228,9 @@ _Source: alexsoyes.com_
 
 ---
 
-![](https://alexsoyes.com/wp-content/uploads/2022/02/ddd-ubiquitous-language-450x225.jpg)
+![Le langage ubiquitaire à la rencontre du contexte métier et de la conception technique](https://alexsoyes.com/wp-content/uploads/2022/02/ddd-ubiquitous-language-450x225.jpg)
+
+<div class="caption">Le langage ubiquitaire à la rencontre du contexte métier et de la conception technique</div>
 
 ---
 
@@ -402,9 +406,9 @@ layout: quote
 
 ---
 
-![](https://programmerhumor.io/wp-content/uploads/2021/05/programmerhumor-io-8fb4c03b81cbbab-758x621.png)
+![Un exemple de fonction mal nommée](https://programmerhumor.io/wp-content/uploads/2021/05/programmerhumor-io-8fb4c03b81cbbab-758x621.png)
 
-_Source: programmerhumor.io_
+<div class="caption">Un exemple de fonction mal nommée. Source: programmerhumor.io</div>
 
 ---
 layout: center
@@ -438,9 +442,9 @@ layout: section
 
 ---
 
-![](https://www.eventstorming.com/images/book-cover.11a5.jpg)
+![Livre Event Storming (Alberto Brandolini)](https://www.eventstorming.com/images/book-cover.11a5.jpg)
 
-_https://www.eventstorming.com/book/_
+<div class="caption">Livre Event Storming (Alberto Brandolini).</div>
 
 ---
 
@@ -595,9 +599,12 @@ Plusieurs stratégies permettent d'y parvenir :
 
 ---
 
-![](https://thedomaindrivendesign.io/wp-content/uploads/2021/05/thedomaindrivedesign-domain-700x606.jpg)
+![Exemple de domaine](https://thedomaindrivendesign.io/wp-content/uploads/2021/05/thedomaindrivedesign-domain-700x606.jpg)
+<div class="caption">Exemple de domaine</div>
 
-![](https://thedomaindrivendesign.io/wp-content/uploads/2021/05/thedomaindrivedesign-distilling-700x606.jpg)
+![Exemple de domaine distillé](https://thedomaindrivendesign.io/wp-content/uploads/2021/05/thedomaindrivedesign-distilling-700x606.jpg)
+
+<div class="caption">Exemple de domaine distillé</div>
 
 ---
 
@@ -818,11 +825,9 @@ layout: section
 
 # Exemple de context map
 
-![](https://www.methodsandtools.com/archive/ddd3.gif)
+![Exemple de context map](https://www.methodsandtools.com/archive/ddd3.gif)
 
-_Source: methodsandtools.com_
-
----
+<div class="caption">Exemple de context map. Source: methodsandtools.com</div>
 
 ---
 layout: section
@@ -834,7 +839,7 @@ layout: section
 
 ![Photo de l'intérieur d'un PC portable](@assets/sysadmin/EBMotherboard.jpg)
 
-By <a href="https://en.wikipedia.org/wiki/User:Ravenperch" class="extiw" title="wikipedia:User:Ravenperch">Ravenperch</a> at <a href="https://en.wikipedia.org/wiki/" class="extiw" title="wikipedia:">English Wikipedia</a> - <span class="int-own-work" lang="en">Own work</span> (<span lang="en" dir="ltr">Original text: Self created</span>), <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=18540450">Link</a>
+<div class="caption">Photo de l'intérieur d'un PC portable. By <a href="https://en.wikipedia.org/wiki/User:Ravenperch" class="extiw" title="wikipedia:User:Ravenperch">Ravenperch</a> at <a href="https://en.wikipedia.org/wiki/" class="extiw" title="wikipedia:">English Wikipedia</a> - <span class="int-own-work" lang="en">Own work</span> (<span lang="en" dir="ltr">Original text: Self created</span>), <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=18540450">Link</a></div>
 
 À votre avis, quelles sont les différentes équipes à travailler sur la réalisation de cet ordinateur ?
 
@@ -877,9 +882,9 @@ By <a href="https://en.wikipedia.org/wiki/User:Ravenperch" class="extiw" title="
 
 ---
 
-![](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture2.png)
+![Résumé des patterns stratégiques](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture2.png)
 
-_DDD Strategic design patterns (dieuxducode.com)_
+<div class="caption">Résumé des patterns stratégiques. Source : dieuxducode.com</div>
 
 ---
 
@@ -932,9 +937,9 @@ layout: center
 
 ---
 
-![](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture1.png)
+![Cartographie des modèles et de leurs relations](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture1.png)
 
-_Cartographie des modèles et de leurs relations (dieuxducode.com)_
+<div class="caption">Cartographie des modèles et de leurs relations. Source: dieuxducode.com</div>
 
 ---
 
@@ -1026,9 +1031,9 @@ layout: center
 
 # Résumé
 
-![](https://thedomaindrivendesign.io/wp-content/uploads/2019/06/DomainDrivenDesignReference-700x620.png)
+![Résumé du Domain Driven Design](https://thedomaindrivendesign.io/wp-content/uploads/2019/06/DomainDrivenDesignReference-700x620.png)
 
-_by: Eric Evans_
+<div class="caption">Résumé du Domain Driven Design. By: Eric Evans</div>
 
 ---
 layout: section

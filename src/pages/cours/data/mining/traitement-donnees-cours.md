@@ -300,7 +300,7 @@ $$V = \frac{1}{n}\sum_{i=1}^n \left(x_i - \overline{x}\right)^2$$
 
 ![Exemples avec même moyenne mais ecart-type différent](@assets/data/Comparison_standard_deviations.svg)
 
-_Deux exemples de distribution ayant la même moyenne mais un écart-type différent. Source : [Wikipedia](https://upload.wikimedia.org/wikipedia/commons/f/f9/Comparison_standard_deviations.svg) (domaine public)._
+<div class="caption">Deux exemples de distribution ayant la même moyenne mais un écart-type différent. Source : https://upload.wikimedia.org/wikipedia/commons/f/f9/Comparison_standard_deviations.svg (domaine public).</div>
 
 ### En programmation
 
@@ -428,6 +428,9 @@ plt.show()
 ```
 
 ![Nuage de points](@assets/data/caisses.png)
+
+<div class="caption">Le nuage de points</div>
+
 :::
 
 ## Lois de probabilité
@@ -505,7 +508,7 @@ Caractéristiques : $\mu = np, \sigma^2 = np(1-p)$
 
 ![Exemples de distributions binomiales](@assets/data/binomial-distribution.png)
 
-_Exemples de distributions binomiales. [Crédits et sources : Wikimedia](https://commons.wikimedia.org/wiki/File:Binomial_Distribution.PNG)_
+<div class="caption">Exemples de distributions binomiales. (Crédits et sources : https://commons.wikimedia.org/wiki/File:Binomial_Distribution.PNG)</div>
 
 ### Loi normale
 
@@ -517,7 +520,7 @@ Voir la [page Wikipedia sur la loi normale][wiki-loi-normale].
 
 ![Exemple de loi normale](@assets/data/normal-distribution.svg)
 
-_Exemples de distributions normales. [Crédits et sources : Wikimedia](https://commons.wikimedia.org/wiki/File:Normal_Distribution_PDF.svg)_
+<div class="caption">Exemples de distributions normales. (Crédits et sources : https://commons.wikimedia.org/wiki/File:Normal_Distribution_PDF.svg)</div>
 
 #### Cas particulier
 
@@ -574,7 +577,9 @@ On utilise généralement les seuils suivants :
 
 ![Exemple graphique de p-valeur sur une loi normale](@assets/data/Valeur-p.jpg)
 
-_Illustration de la p-valeur. $X$ désigne la loi de probabilité de la statistique de test et $z$ la valeur calculée de la statistique de test. [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Valeur-p.jpg)_.
+<div class="caption">Illustration de la p-valeur</div>
+
+$X$ désigne la loi de probabilité de la statistique de test et $z$ la valeur calculée de la statistique de test. [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Valeur-p.jpg)_.
 
 :::warn
 La p-valeur interprète $\mathbb P(x|H_0)$ or en faisant un test statistique, on cherche à savoir quelle est la probabilité que $H_0$ soit vraie sachant les données donc $\mathbb P(H_0|x)$ ! D'après le théorême de Bayes : $\mathbb P(x|H_0) = \frac{\mathbb P(H_0 | x) \mathbb P(x)}{\mathbb P(H_0)}$
@@ -588,7 +593,7 @@ La p-valeur interprète $\mathbb P(x|H_0)$ or en faisant un test statistique, on
 
 ![Exemples de distributions normale et non-normale](@assets/data/Normality_histogram.png)
 
-_Exemples de distributions suivant une loi normale (à gauche) et n'en suivant pas (à droite). [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Normality_histogram.png_
+<div class="caption">Exemples de distributions suivant une loi normale (à gauche) et n'en suivant pas (à droite). Source et crédits : https://commons.wikimedia.org/wiki/File:Normality_histogram.png</div>
 
 ### Test du Khi-2
 
@@ -828,7 +833,7 @@ Les données sont extraites de _Bouyer et al. (1995) Epidémiologie. Principes e
 
 ![Exemple de régression linéaire](@assets/data/reg-lin-ex1.png)
 
-_Source et crédit : Ana Karina Fermin Rodriguez._
+<div class="caption">Source et crédit : Ana Karina Fermin Rodriguez.</div>
  
 La forme étirée et croissante du nuage suggère une relation linéaire entre la tension et l'âge. Le coefficient de corrélation linéaire observé sur l'échantillon est $r = 0, 7868$ assez proche de $1$ : on va modéliser cette relation à l'aide d'une droite.
 
@@ -876,7 +881,7 @@ La méthode des moindres carrés permet de sélectionner parmi ces fonctions cel
 
 ![Méthode des moindres carrés](@assets/data/Moindres_carres_introduction.png)
 
-_Source et crédits : [Nicolas Regnault, Wikimedia](https://commons.wikimedia.org/wiki/File:Moindres_carres_introduction.png)._
+<div class="caption">Source et crédits : Nicolas Regnault https://commons.wikimedia.org/wiki/File:Moindres_carres_introduction.png</div>
 
 
 
@@ -933,7 +938,7 @@ On obtient : $\hat{a} = 1.5771$ et $\hat{b} = 60.3928$.
 
 ![Régression linéaire simple](@assets/data/reg-lin-ex2.png)
 
-_Source et crédit : Ana Karina Fermin Rodriguez._
+<div class="caption">Source et crédit : Ana Karina Fermin Rodriguez.</div>
 
 :::exo
 Quelle est la signification des paramètres $a$ et $b$ ?
@@ -1236,7 +1241,7 @@ L'idée de base est de chercher à créer un ensemble de modèles locaux qui ser
 
 ![exemple Hennig 2000](@assets/data/reg-clusterwise-exemple-hennig-2000.png)
 
-_Figure adaptée de (Hennig, 2000) : (a) données initiale, (b) droite de régression avec un seule modèle, (c) droites de régression avec deux modèles. Une unique régression prédira toujours la valeur 0 alors que la détection de deux sous-ensembles dans les données permettra de trouver deux droites de régressions._
+<div class="caption">Figure adaptée de (Hennig, 2000) : (a) données initiale, (b) droite de régression avec un seule modèle, (c) droites de régression avec deux modèles. Une unique régression prédira toujours la valeur 0 alors que la détection de deux sous-ensembles dans les données permettra de trouver deux droites de régressions.</div>
 
 Utilise deux approches principales :
 
@@ -1410,7 +1415,7 @@ Il existe deux principaux types d'arbre de décision en fouille de données :
 
 ![Exemple de sur-apprentissage](@assets/data/surajustement_modele_2.jpg)
 
-_Un exemple de sur-apprentissage. [Source et crédits](https://commons.wikimedia.org/wiki/File:Surajustement_Mod%C3%A8le_2.JPG)_.
+<div class="caption">Un exemple de sur-apprentissage. Source et crédits https://commons.wikimedia.org/wiki/File:Surajustement_Mod%C3%A8le_2.JPG</div>
 
 #### Méthode _CART Classification And Regression Tree_ : construction d'un arbre binaire
 
@@ -1810,7 +1815,9 @@ On peut vérifier que l'écart de Ward entre deux classes est en fait égal à l
 
 ![Exemple de classification hierarchique](@assets/data/hierarch.gif)
 
-_A gauche, une représentation des individus. A droite, le dendrogramme associé et les étapes de sa création (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/hierarch.gif) pour une version animée). Si on souhaite deux classes, on choisira $(p_0,p_1,p_2)$ et $(p_3,p_4,p_5,p_6)$. Si on souhaite des classes éloignées de plus d'une unité de mesure, on choisira $(p_0,p_1,p_2)$, $(p_3)$ et $(p_4,p_5,p_6)$. Animation : dashee87.github.io_
+<div class="caption">A gauche, une représentation des individus. A droite, le dendrogramme associé et les étapes de sa création. Animation : dashee87.github.io</div>
+
+Si on souhaite deux classes, on choisira $(p_0,p_1,p_2)$ et $(p_3,p_4,p_5,p_6)$. Si on souhaite des classes éloignées de plus d'une unité de mesure, on choisira $(p_0,p_1,p_2)$, $(p_3)$ et $(p_4,p_5,p_6)$.
 
 ### Cas non euclidien : positionnement multidimentionnel (_MDS_)
 
@@ -1824,7 +1831,9 @@ On peut alors faire précéder l'algorithme par une méthode appelée positionne
 
 ![Méthode des centres mobiles](@assets/data/SoftEnragedHypsilophodon.gif)
 
-_Les points rouges sont les centres des classes, actualisés à chaque étape (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/SoftEnragedHypsilophodon-size_restricted.gif) pour la version animée). On observe bien le phénomène de convergence de ces 10 centres mobiles. Animation : www.analyticsvidhya.com_
+<div class="caption">Les points rouges sont les centres des classes, actualisés à chaque étape. Animation : www.analyticsvidhya.com</div>
+
+On observe bien le phénomène de convergence de ces 10 centres mobiles.
 
 Cette méthode s'applique lorsque l'on sait à l'avance combien de classes on veut obtenir.
 
@@ -1840,7 +1849,7 @@ On répète les étapes 1 et 2 jusqu'à ce que le découpage en classes obtenu n
 
 ![Algorithme des K moyennes](@assets/data/800px-K-means.png)
 
-_Illustration du déroulement de l'algorithme des k-moyennes. [Source et crédit](https://commons.wikimedia.org/wiki/File:K-means.png?uselang=fr)._
+<div class="caption">Illustration du déroulement de l'algorithme des k-moyennes. Source et crédit https://commons.wikimedia.org/wiki/File:K-means.png?uselang=fr</div>
 
 On peut montrer que la variance intra-classe (somme des distances entre les individus d'une même classe) ne peut que décroître lorsque l'on passe d'un découpage en classes au suivant.
 
@@ -1919,7 +1928,7 @@ Tant que tous les individus n'ont pas été visités, on réitère cette étape 
 
 ![Algorithme DBSCAN](@assets/data/smiley.gif)
 
-_L'algorithme DBSCAN pas à pas (voir [ce lien](https://larevueia.fr/wp-content/uploads/2020/06/v2-58145667049e230f95e07c3dfbfd31ad_b.gif) pour animation). Les cercles en mouvement correspondent aux voisinages successifs. Il y a ici 4 zones où la densité est élevée. La forme des cluster s'adapte à la forme des données proposées. Animation : zhuanlan.zhihu.com_
+<div class="caption">L'algorithme DBSCAN pas à pas. Les cercles en mouvement correspondent aux voisinages successifs. Il y a ici 4 zones où la densité est élevée. La forme des cluster s'adapte à la forme des données proposées. Animation : zhuanlan.zhihu.com</div>
 
 :::link
 Pour en savoir plus : [article Wikipedia DBSCAN][wiki-dbscan].
@@ -1933,7 +1942,9 @@ Exemples de visualisations : [lien][visu-clustering-dbscan].
 
 Lorsque le nombre d'individus est très grands et qu'il est alors difficile de choisir d'avance le nombre de classes, on effectue une classification mixte comme indiqué sur la figure suivante :
 
-![Classification mixte](@assets/data/classification-mixte.jpg)
+![Exemple de classification mixte](@assets/data/classification-mixte.jpg)
+
+<div class="caption">Exemple de classification mixte</div>
 
 - Si l'on a des milliers, voir des dizaines de milliers d'individus à classifier, on commence par les répartir en un (trop) grand nombre de classes (par exemple $k = 100$) par la méthode des centres mobiles.
 - Puis, on ne retient que les centres des classes (avec leur poids qui sera proportionnel au nombre d'individus dans chaque classe) ${(C_1^n,p_1),(C_2^n,p_2), ... , (C_100^n,p_100)}$ et on effectue une classification hiérarchique ascendante sur ces centres.
@@ -2031,7 +2042,9 @@ Précautions et limites de la méthode :
 
 On a relevé les valeurs de deux variables $X_1$ et $X_2$ sur 40 individus statistiques répartis en deux groupes. Le nuage de points représentant ces observations est le suivant :
 
-![Analyse discriminante](@assets/data/analyse-disc-1.png)
+![Exemple d'analyse discriminante](@assets/data/analyse-disc-1.png)
+
+<div class="caption">Exemple d'analyse discriminante</div>
 
 Prise isolément, aucune des deux variables $X_1$ et $X_2$ ne permet de différencier les deux groupes $G_1$ et $G_2$. Cependant, on voit bien que les deux groupes occupent des régions du plan bien spécifiques.
 
@@ -2043,6 +2056,8 @@ On voit intuitivement que notre problème pourrait être résolu en considérant
 Ainsi, sur notre exemple, la droite d'équation $X_2 = -X_1 + 19$ semble séparer correctement les deux groupes et il semblerait que c'est en projetant les points sur la droite $X_2 = X_1$ que l'on obtiendra une dispersion minimale dans les groupes et maximale entre les groupes.
 
 ![Une autre analyse discriminante](@assets/data/analyse-disc-2.png)
+
+<div class="caption">Une autre analyse discriminante</div>
 
 Après analyse factorielle discriminante, on obtient ce graphique où les points bien classés sont représentés par des cercles, les points mal classés par des triangles et les points supplémentaires par des carrés. La couleur (rouge ou noir) correspond au groupe calculé.
 
@@ -2098,7 +2113,8 @@ Voici la répartition des réponses pour chaque facteur ou variable.
 Les entreprises clientes ont donc été classées en fonction de leurs similitudes (groupe 1, groupe 2 et groupe 3). Ce facteur de classification peut être la taille de l'entreprise, l'ancienneté, ou tout autre type de données quantitatives.
 
 ![Classement en 3 groupes de similitudes](@assets/data/facteur-de-classification.png)
-_Source: [qualitrics.com](https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/facteur-de-classification.png)_
+
+<div class="caption">Classement en 3 groupes de similitudes. Source: https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/facteur-de-classification.png</div>
 
 On observe dans ce cas que des sous-ensembles de variables se créent pour chaque composante ou facteur.
 
@@ -2110,7 +2126,7 @@ Le premier pondère fortement les variables liées au coût, le deuxième les va
 
 ![Classement en Composantes Principales](@assets/data/composantes-principales-png.png)
 
-_Source: [qualitrics.com](https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/composantes-principales-png.png)_
+<div class="caption">Classement en Composantes Principales. Source: https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/composantes-principales-png.png</div>
 
 En représentant les valeurs sous forme matricielle, l'observation est simplifiée.
 
@@ -2118,9 +2134,7 @@ Si nous devions regrouper les clients potentiels interrogés en fonction de ces 
 
 ![Classement des prospects](@assets/data/cluster-factuer.png)
 
-_Source : [qualitrics.com](https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/cluster-factuer.png)_
-
-
+<div class="caption">Classement des prospects. Source : https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/cluster-factuer.png</div>
 
 <!-- class: liens -->
 

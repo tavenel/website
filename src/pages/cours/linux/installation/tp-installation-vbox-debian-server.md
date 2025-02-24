@@ -58,7 +58,7 @@ title: Installation de Linux Debian Serveur dans une machine virtuelle
 - Nous allons nous connecter en tant que super-utilisateur sur le système (utilisateur `root`) pour disposer des droits d’administration
   - Attendre le lancement du système jusqu’à l’écran demandant les identifiants de connexion
 
-![](@assets/virtualbox/login.png)
+![Login dans la VM](@assets/virtualbox/login.png)
 
 - - Entrer le nom de l’utilisateur racine : `root` et valider (touche <kbd>Entrée</kbd>)
     - Entrer le mot de passe : `osboxes.org` et valider (touche <kbd>Entrée</kbd>)
@@ -84,12 +84,12 @@ Nous allons commencer par reconfigurer le clavier pour utiliser un clavier _AZER
 - Garder le clavier standard (_Generic 105-key PC (intl.)_) : appuyer sur <kbd>Entrée</kbd>
 - Dans l’écran suivant, sélectionner "_Other_" puis sélectionner le clavier "_French_", puis de nouveau "_French_". Valider.
 
-![](@assets/virtualbox/french.png)
+![Sélection du clavier French](@assets/virtualbox/french.png)
 
 - Dans l’écran suivant, sélectionner "_The default for the keyboard layout_" puis "_No compose key_"
     - Valider, vérifier que la configuration est terminée et que le système est revenu en mode ligne de commande (curseur clignotant en bas de l’écran).
 
-![](@assets/virtualbox/no-compose.png)
+![Clavier No compose key](@assets/virtualbox/no-compose.png)
 
 Pour que les changements soient pris en compte, nous allons redémarrer le système.
 
@@ -111,7 +111,7 @@ ip link
 
 Cette commande va afficher dans la console les deux interfaces configurées sur le système : une interface identifiée "_loopback_" (interface interne), et une seconde interface réseau (qui correspond au _bridge_ que nous avons créé, par exemple, `enp0s3`)
 
-![](@assets/virtualbox/ip-link.png)
+![Résultat de la commande ip link](@assets/virtualbox/ip-link.png)
 
 - Une fois le nom de l’interface récupéré, nous allons modifier le fichier `/etc/réseau/interfaces` avec l’éditeur de texte nano pour y inscrire la configuration de cette interface. Pour cela, exécuter la commande :
   ```sh
@@ -126,7 +126,7 @@ Cette commande va afficher dans la console les deux interfaces configurées sur 
   - L'éditeur demande si l’on veut enregistrer les changements avant de quitter : taper <kbd>Y</kbd> pour _Yes_
   - L'éditeur demande ensuite quel nom de fichier utiliser : garder le nom du fichier (`/etc/network/interfaces`) et appuyer sur <kbd>Entrée</kbd>
 
-![](@assets/virtualbox/interfaces.png)
+![Interfaces VirtualBox](@assets/virtualbox/interfaces.png)
 
 - Nous allons maintenant redémarrer le service réseau pour prendre en compte ces changements :
   - Assurez-vous de bien avoir quitté l’éditeur nano et d’être retourné dans l’invité de commandes (curseur clignotant en bas de l’écran)
@@ -139,7 +139,7 @@ Cette commande va afficher dans la console les deux interfaces configurées sur 
   systemctl status networking
   ```
 
-![](@assets/virtualbox/status-networking.png)
+![systemctl status networking](@assets/virtualbox/status-networking.png)
 
 - Vérifiez que vous avez maintenant une adresse IP dans la machine virtuelle et que vous pouvez atteindre le réseau :
   ```sh
@@ -152,7 +152,7 @@ Cette commande va afficher dans la console les deux interfaces configurées sur 
 ping www.google.fr
 ```
 
-![](@assets/virtualbox/ping.png)
+![ping google.fr](@assets/virtualbox/ping.png)
 
 - Vérifier dans le retour affiché à l’écran que la commande ping ne retourne pas d’erreur et que tous les paquets ont bien été transmis
 
@@ -202,7 +202,7 @@ deb http://deb.debian.org/debian/ buster contrib main
 
 - Sauver les changements et quitter l'éditeur `nano` (<kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Y</kbd> pour les modifications et <kbd>Entrée</kbd> pour garder le même nom de fichier).
 
-![](@assets/virtualbox/apt-sources.png)
+![apt sources](@assets/virtualbox/apt-sources.png)
 
 - Une fois le fichier modifié, nous allons mettre à niveau le système :
 

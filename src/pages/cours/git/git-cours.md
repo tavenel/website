@@ -722,15 +722,17 @@ Des interfaces graphiques en ligne de commandes existent également : `tig`, `la
 
 # Sourcetree®
 
-![width:600px][sourcetree-ui]
-_L'interface graphique Sourcetree®._
+![L'interface graphique Sourcetree®][sourcetree-ui]
+
+<div class="caption">L'interface graphique Sourcetree®.</div>
 
 ---
 
 # GitKraken®
 
-![width:600px][gitkraken-ui]
-_L'interface graphique GitKraken®._
+![L'interface graphique GitKraken®.][gitkraken-ui]
+
+<div class="caption">L'interface graphique GitKraken®.</div>
 
 ---
 
@@ -822,7 +824,9 @@ Voir le TP correspondant.
 
 ---
 
-![](https://www.linuxnix.com/wp-content/uploads/2017/10/Git.png)
+![Résumé des commandes Git](https://www.linuxnix.com/wp-content/uploads/2017/10/Git.png)
+
+<div class="caption">Résumé des commandes Git</div>
 
 ---
 

@@ -42,17 +42,23 @@ Ajouter des informations visuelles :
 
 ![Un exemple d'informations visuelles](@assets/formation/info-visuelle.jpg)
 
+<div class="caption">Un exemple d'informations visuelles</div>
+
 ---
 
 Les images simplifiées sont un bon moyen de focaliser l'attention de l'utilisateur uniquement sur l'information utile.
 
 ![Un exemple d'image simplifiée](@assets/formation/image-simplifiee.jpg)
 
+<div class="caption">Un exemple d'image simplifiée</div>
+
 ---
 
 Un excellent exemple de document utilisateur Ikea. Avec un minimum de texte, ce support marketing contient des schémas clairs et faciles à suivre, accompagnés d’instructions visuelles pour assembler le produit. ©Ikea
 
 ![Un exemple de plan Ikea](@assets/formation/ikea.jpg)
+
+<div class="caption">Un exemple de plan Ikea</div>
 
 ---
 

@@ -50,7 +50,7 @@ layout: section
 - But d'un test : casser le logiciel pour trouver des problèmes
 - Tester montre l'absence de problème mais **~~ne prouve pas l'absence d'erreur~~**
 
-![](@assets/tests/grenouille.png)
+> Non, je n'ai pas de preuve de cette grenouille qui parle mais cela ne veut pas dire qu'elle n'existe pas
 
 ---
 

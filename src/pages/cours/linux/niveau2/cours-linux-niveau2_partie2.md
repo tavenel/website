@@ -157,7 +157,7 @@ tags:
 
 ![Architecture de X11](https://learning.lpi.org/en/learning-materials/102-500/106/106.1/106.1_01/images/image_01.png)
 
-_Architecture de X11 (crédits: learning.lpi.org)_
+<div class="caption">Architecture de X11. Crédits: learning.lpi.org</div>
 
 ---
 
@@ -182,19 +182,25 @@ _Architecture de X11 (crédits: learning.lpi.org)_
 
 ### Gnome : le bureau intégré
 
-![](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/gnome-debian-10.1.0.png)
+![Le bureau Gnome](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/gnome-debian-10.1.0.png)
+
+<div class="caption">Le bureau Gnome</div>
 
 ---
 
 ### KDE : le bureau configurable
 
-![](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/kde-opensuse-15.1.png)
+![Le bureau KDE](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/kde-opensuse-15.1.png)
+
+<div class="caption">Le bureau KDE</div>
 
 ---
 
 ### XFCE : le bureau léger
 
-![](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/xfce-manjaro-18.1.0.png)
+![Le bureau XFCE](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/xfce-manjaro-18.1.0.png)
+
+<div class="caption">Le bureau XFCE</div>
 
 ---
 
@@ -793,6 +799,8 @@ Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 ## 110.2 Configuration de la sécurité du système [3]
 
 ![Run as an admin…](@assets/linux/run_as_admin.jpg)
+
+<div class="caption">Run as an admin…</div>
 
 ---
 

@@ -110,15 +110,15 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-![](https://www.arolla.fr/bdd-dialogue-png/)
+![Le dialogue en BDD](https://www.arolla.fr/bdd-dialogue-png/) <!-- TODO: REDO DIAG -->
 
-<span class="legende">©www.arolla.fr</span>
+<div class="caption">Le dialogue en BDD ©www.arolla.fr</div>
 
 ---
 
-![height:600px](https://blog.octo.com/le-bdd/behavior-driven-development-1-702x1024.webp)
+![Résumé du BDD](https://blog.octo.com/le-bdd/behavior-driven-development-1-702x1024.webp) <!-- TODO: REDO DIAG -->
 
-<span class="legende">©blog.octo.com</span>
+<div class="caption">Résumé du BDD. ©blog.octo.com</div>
 
 ---
 

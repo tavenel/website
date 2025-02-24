@@ -12,7 +12,7 @@ tags:
 
 ![The Jenkins logo][jenkins-logo]
 
-Le [logo Jenkins®][jenkins-website].
+<div class="caption">Le logo Jenkins®</div>
 
 ---
 
