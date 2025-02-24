@@ -50,6 +50,8 @@ Quelques références utiles en informatique.
 - 50 nouvelles CVE découvertes chaque jour
 - 50% des PME attaquées ont coulé
 
+### IA
+
 ### Types de prompts IA
 
 - _zero-shot_ => pas de contexte
@@ -57,6 +59,10 @@ Quelques références utiles en informatique.
 - _chain of thought_ => "let's think …" (step-by-step example)
 - _RAG_ (retrieval augmented generation) => élévation de contexte par vecteur de contexte
 - _agents_ => conscience de l'environnement
+
+### Liens IA
+
+- <https://www.comparia.beta.gouv.fr/>
 
 ## Citations
 
@@ -93,6 +99,7 @@ Quelques références utiles en informatique.
 - <https://perso.crans.org/besson/publis/slides/2016_07__Python_demo_at_EPFL/> : cours Python ML/DL/data science
 - Le paradoxe de la complexité : <https://www.votito.com/methods/togs-paradox/>
 - Impact des IA génératives sur les étudiants : <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
+- [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
 - <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
