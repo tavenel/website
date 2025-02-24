@@ -19,6 +19,7 @@ created: 2024-10-17
 - Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
 - ❓ Aides sur les commandes : `curl cheat.sh/ma_commande`
 - ⛅ `curl wttr.in/Grenoble` => weather at Grenoble, France.
+- [Extension Firefox et Chrome pour alerter sur les sites générés par IA](https://next.ink/164873/outils-next-une-extension-chrome-et-firefox-pour-etre-alerte-des-sites-genai/)
 
 ## Outils utiles Devops (liste non exhaustive)
 
@@ -81,6 +82,7 @@ created: 2024-10-17
 - 📦 Build d'images => <https://github.com/GoogleContainerTools/kaniko>
 - 🔎 linter (vérification fichiers) => `kubeconform`
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
+	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
 - 📦 package manager (sur-couche) => `helm`
 - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
 - ingress & service mesh :
@@ -101,6 +103,8 @@ created: 2024-10-17
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
 	- <https://k8slens.dev/> : un IDE orienté k8s
+	- <https://github.com/stern/stern> : logs multi-pods
+	- <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argoscd`
@@ -110,9 +114,11 @@ created: 2024-10-17
   - `kepler` : monitor Pod energy consumption
 	- `kube-green` : k8s operator for energy-saving actions 
 	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
+	- <https://karpenter.sh/> : démarrage / arrêt automatique de noeuds sur le cluster
 - 🔄 Upgrade :
   - `WatchTower`
   - `Keel` (avec triggers)
+- [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 
 ### 💾 Backups
 
@@ -303,6 +309,9 @@ created: 2024-10-17
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
 	- Backend dans 1 seul fichier : `PocketBase`, <https://manifest.build/>
+- Gestion d'erreurs : `Sentry`
+- APIs : `OpenAPI`
+- Paiement en ligne : `Stripe`
 
 ## Frontend development
 
@@ -324,6 +333,8 @@ created: 2024-10-17
 - <https://frontendchecklist.io/>
 - Client-side search : <https://pagefind.app/>
 - Système de commentaires utilisant Github : <https://giscus.app/>
+- Layouts et composants tout faits : <https://pagedone.io/>, <https://www.preline.co/>, <https://flowbite.com/>
+- Affichage de messages et d'alertes : <https://alertifyjs.com/>
 
 ## 📊 Data science, data mining, machine learning
 
@@ -416,6 +427,7 @@ created: 2024-10-17
   - `k8s lens` : graphical cluster management
   - `kube-capacity` : monitor ressources
   - <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
+	- <https://k8slens.dev/> : IDE dédié à Kubernetes
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
