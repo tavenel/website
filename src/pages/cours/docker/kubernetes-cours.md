@@ -55,6 +55,20 @@ tags:
 - Container Networking Interface (_CNI_) :
   - Permet la communication réseau au sein du cluster
   - Parfois intégré à la distribution, sinon à installer séparément
+	- <https://github.com/containernetworking/cni/>
+
+---
+
+## CNI (Kubernetes) vs CNM (Docker)
+
+- Docker :
+  - réseaux **multiples** et **isolés**
+	- DNS par **réseau**
+	- **pas d'interconnexion** des réseaux
+- Kubernetes :
+  - **1 seul** réseau _flat_
+	- DNS par **`Namespace`**
+	- **pas d'isolation** des réseaux par défaut (utiliser des `NetworkPolicies`)
 
 ---
 
@@ -102,69 +116,82 @@ layout: section
 
 ---
 
-1. Rancher :
+1. Kubeadm
+   - outil officiel
+	 - installation de chaque composant séparément
+	 - le plus configurable mais le plus complexe
+
+---
+
+2. Kubespray
+   - Utilise `Ansible` pour (re)déployer automatiquement un cluster
+	 - compatible _bare-metal_ et _cloud_
+
+---
+
+3. Rancher (RKE) :
    - Plateforme complète pour gérer des clusters Kubernetes
    - Propose des fonctionnalités avancées comme la gestion multi-cluster
    - Offre une interface graphique intuitive
 
 ---
 
-2. K3s (Rancher Labs) :
+4. K3s (Rancher Labs) :
    - Version allégée de Kubernetes conçue pour les environnemets embarqués
    - Consomme moins de ressources que Kubernetes standard
    - Idéal pour les systèmes à faible puissance
 
 ---
 
-3. K0s (CNCF) :
+5. K0s (CNCF) :
    - Autre version allégée Kubernetes
 	 - Très minimale, aucun composant additionnel
 	 - Compatible on-premise, edge, IoT, …
 
 ---
 
-4. OpenShift :
+6. OpenShift :
    - Distribution propriétaire de Red Hat basée sur Kubernetes
    - Inclut des fonctionnalités supplémentaires comme l'orchestration d'applications
    - Forte sécurité et conformité
 
 ---
 
-5. Docker Kubernetes Service (DKS)
+7. Docker Kubernetes Service (DKS)
    - Surveillance intégrée du cluster et des applications.
    - Nombreux drivers storage
 
 ---
 
-6. MicroK8s (Ubuntu) :
+8. MicroK8s (Ubuntu) :
    - Distribution légère et sécurisée de Kubernetes
    - Conçue pour les environnemets Ubuntu
    - Propose des fonctionnalités avancées comme l'installation de paquets
 
 ---
 
-7. Minikube : 
+9. Minikube : 
    - Version légère pour le développement et le test
    - Fonctionne sur un seul ordinateur
    - Idéal pour débutants et environnement de développement
 
 ---
 
-8. Docker Desktop :
+10. Docker Desktop :
    - Intègre Kubernetes nativement
    - Offre une expérience utilisateur simplifiée
    - Adapté aux développeurs utilisant Docker
 
 ---
 
-9. Kind (Kubernetes IN Docker) :
+11. Kind (Kubernetes IN Docker) :
    - Déploie Kubernetes dans un conteneur pour le développement et le test
    - Crée rapidement un ou plusieurs clusters localement
    - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, …
 
 ---
 
-10. Talos Linux :
+12. Talos Linux :
    - Distribution Linux dédiée
 	 - OS immuable : pas de SSH, shell, …
 
@@ -223,9 +250,32 @@ layout: section
 
 ---
 
-![](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg)
+![Architecture d'un cluster Kubernetes](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg)
 
-_Architecture d'un cluster Kubernetes (source: kubernetes.io)_
+<div class="caption">Architecture d'un cluster Kubernetes (source: kubernetes.io)</div>
+
+---
+
+```plantuml
+@startditaa
++-------------------------------------------------+
+|                                                 |
+| +--------------------------------------------+  |
+| |              Pod web : 1 adresse IP        |  |
+| |  +-----------+    +-----------+            |  |
+| |  | conteneur |    | conteneur |            |  |
+| |  | docker    |    | docker    |            |  |
+| |  | logger    |    | nginx     |            |  |
+| |  +-----------+    +-----------+            |  |
+| |                                            |  |
+| +--------------------------------------------+  |
+|                      Node                       |
++-------------------------------------------------+
+
+@endditaa
+```
+
+<div class="caption">Architecture d'un Pod</div> 
 
 ---
 
@@ -303,6 +353,8 @@ _Architecture d'un cluster Kubernetes (source: kubernetes.io)_
     - load-balancer avancé
   - Si CNI `Cilium` : règles `eBPF` dans le noyau, plus besoin de `Kube-proxy`
     - voir section sur les CNI
+- Connexion entre `Pods` : niveau 3 (_IP_)
+- Connexion par `Services` : niveau 4 (_TCP_, _UDP_)
 
 ---
 
@@ -345,6 +397,28 @@ layout: section
 
 ---
 
+```plantuml
+@startditaa
++-------------------------------------------------+
+|                 Deployment : replicas=2         |
+| +--------------------------------------------+  |
+| |              ReplicaSet : 2 Pods           |  |
+| |  +-----------+    +-----------+            |  |
+| |  | Pod 1     |    | Pod 2     |            |  |
+| |  | nginx     |    | nginx     |            |  |
+| |  +-----------+    +-----------+            |  |
+| |                                            |  |
+| +--------------------------------------------+  |
+|                                                 |
++-------------------------------------------------+
+
+@endditaa
+```
+
+<div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div> 
+
+---
+
 ## Labels
 
 - attributs clé=valeur des objets du cluster
@@ -353,6 +427,16 @@ layout: section
 - `NodeAffinity` : décrit des affinités entre un `Pod` et un `Node`
 - `podAffinity`, `podAntiAffinity` : (anti)affinité entre `Pod`
 - il existe aussi des `annotations` : idem mais NON utilisé par k8s ensuite
+
+---
+
+### Labels et debug
+
+- Beaucoup de ressources utilisent les labels pour sélectionner les ressources (`Pod`, …) à manager
+- Pour debugger un `Pod` fautif, on peut changer son `Label` :
+  - le Pod fautif sera retiré du Service (plus de Load balancing)
+  - un nouveau Pod est créé par le `ReplicaSet` ou le `DaemonSet`
+  - le Pod fautif est toujours actif pour du debug
 
 ---
 
@@ -371,7 +455,9 @@ layout: section
 ### Service: ClusterIP
 
 - Expose à l'intérieur du cluster uniquement
+- Crée une Virtual IP
 - Accès via le nom du service
+- Load balancer interne sur les Pods
 
 ---
 
@@ -380,15 +466,16 @@ layout: section
 - Extension du `ClusterIP`
 - Expose à l'extérieur du cluster
 - Accès via des ports sur les Nodes du cluster
+- Load balancer interne sur les Pods
 
 ---
 
 ### Service: LoadBalancer
 
-- Extension du `NodePort`
 - LoadBalancer pour l'accès au Pod depuis l'extérieur
+  - idéalement directement, sinon par un `NodePort`
 - Permet d'avoir un accès unique à plusieurs conteneurs d'un Pod tournant sur plusieurs Nodes.
-- Lié au service de load balancing du Cloud Provider.
+- Load balancer externe : lié au service de load balancing du Cloud Provider.
   - on-premise, installer `MetalLB`
 
 ---
@@ -396,6 +483,8 @@ layout: section
 ### Service: ExternalName
 
 - Référence un DNS interne ou externe (alias)
+- exemple : BDD externe au cluster
+- pas de Load balancer
 
 ---
 
@@ -511,13 +600,31 @@ layout: section
 
 ## Healthcheck
 
-- `Readiness`
-  - démarrage du Pod
-  - remplacement si défectueux
-- `Liveness`
+- `ReadinessProbe`
+  - remplacement du Pod si défectueux
+  - exemple : dépendance service externe
+  - laisser de la marge : ne pas tuer en boucle un conteneur qui démarre !
+- `LivenessProbe`
   - monitoring du Pod
-  - redémarrage automatique si problème
+  - kill du conteneur si échec
+	- et donc (souvent) redémarrage automatique du Pod
+  - jamais de dépendance vers l'extérieur du Pod
+- `StartupProbe`
+  - doit renvoyer un échec tant que l'application n'est pas initialisée
 - 3 modes : `exec` (commande), `httpGet`, `tcpSocket`
+- si vérification > 1 seconde, préférer précalculer (asynchrone) et retourner un cache
+
+---
+
+### ⚠️ Healthcheck exec : processus orphelins 
+
+- En Linux, quand un processus se termine : 
+  - son parent gère son _exit status_ (`wait()`/`waitpid()`) => état _zombie_
+  - si le processus a été tué, ses enfants sont rattachés au `PID=1` (responsable de tuer les zombies)
+  - OK sur système "standard" (`/sbin/init`, …) mais ici `PID=1` est le processus principal du conteneur
+- Besoin d'un tueur de zombies 🧟 en cas d'`exec`
+  - <https://github.com/krallin/tini> : utiliser un mini `init`
+  - Ou [partager le namespace PID entre tous les conteneurs du Pod](https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/) : `gcr.io/pause` tuera les zombies
 
 ---
 
@@ -546,6 +653,16 @@ layout: section
 - Scaling vertical : redimensionner les ressources de l'application (mémoire, CPU)
   - par mise à jour du déploiement et création d'un nouveau Pod
   - ou automatiquement : `VerticalPodAutoscaler` [extension à installer](https://github.com/kubernetes/autoscaler/tree/9f87b78df0f1d6e142234bb32e8acbd71295585a/vertical-pod-autoscaler)
+
+---
+
+## Sécurité
+
+- Appliquer un `SecurityContext` : 
+  - changer le `UID`, `GID`
+	- drop de _capabilities_
+	- filesystem _R/O_
+	- …
 
 ---
 
@@ -601,10 +718,39 @@ layout: section
 Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/cours/docker/kubernetes-cheatsheet)
 
 ---
+
+# Structure d'un fichier k8s
+
+```yaml
+apiVersion: v1 # Version de l'APIServer k8s
+kind: … # Le type de ressource à gérer : Pod, Deployment, Service, …
+metadata: # Métadatas de la ressource
+  name: … # nom (interne) de la ressource à créer et/ou monitorer
+  namespace: mon-namespace # Namespace spécial (optionnel - sinon default)
+  labels: # ajout de labels (optionnel)
+    ma-cle: ma-valeur 
+  […]
+spec: # Les spécifications de la ressource. Différent pour chaque type de ressource
+  […]
+```
+
+---
 layout: section
 ---
 
 # Outils externes
+
+---
+
+# Kustomize
+
+- Permet d'ajouter / modifier des ressources Kubernetes par `Kustomization` (fichier YAML)
+- Utile pour config dev vs prod, …
+- Intégré dans `kubectl` : `apply -k …`
+
+![Exemple d'utilisation de Kustomize](https://kustomize.io/images/header_templates.png)
+
+<div class="caption">Exemple d'usage de Kustomize. Credits: kustomize.io</div>
 
 ---
 
@@ -614,7 +760,8 @@ layout: section
   - en fait des fichiers Yaml
   - ajout du versionning
 - `chart` : ensemble de fichiers manifests
-- `hub` <https://hub.helm.sh/>
+- Stockés dans des `repositories`
+  - `hub` officiel : <https://hub.helm.sh/>
 
 ---
 
@@ -631,9 +778,9 @@ layout: section
 
 ---
 
-![](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
+![Architecture de FluxCD](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
 
-_Architecture de FluxCD (source: documentation FluxCD)_
+<div class="caption">Architecture de FluxCD (source: documentation FluxCD)</div>
 
 ---
 
@@ -659,6 +806,12 @@ layout: two-cols
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5)
+	- <https://container.training/> : formations Jérôme Petazzo, notamment :
+	  - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html)
+		- [Packaging d'applications et CI/CD pour Kubernetes](https://2021-05-enix.container.training/3.yml.html)
+		- [Kubernetes Avancé](https://2021-05-enix.container.training/4.yml.html)
+		- [Opérer Kubernetes](https://2021-05-enix.container.training/5.yml.html)
+- [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
 
 ::right::
 
@@ -695,6 +848,8 @@ layout: two-cols
 - [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc)
 - [Installer Kubernetes via kubeadm](https://dev.to/abhay_yt_52a8e72b213be229/how-to-set-up-and-install-a-kubernetes-cluster-a-step-by-step-guide-375j)
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
+- [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
+- [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
 
 ---
 

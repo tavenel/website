@@ -335,7 +335,7 @@ layout: section
 
 # Réseau
 
-- Pour interconnecter les conteneurs et pour communiquer avec l'extérieur, Docker® gère une abstraction du réseau. 
+- Pour interconnecter les conteneurs et pour communiquer avec l'extérieur, Docker® gère une abstraction du réseau : le _CNM_ (_Container Network Model_).
 - Le comportement par défaut décrit est celui d'un système Linux (installation classique). Celui-ci peut varier dans des installations plus exotiques (`Oracle® VirtualBox` sur Windows, ...).
 - La configuration du réseau est gérée par des pilotes (driver) différents décrits ci-après.
 
@@ -601,6 +601,7 @@ layout: section
 - [Docker Awesome - écosystème Docker][docker-awesome]
 - <https://blog.stephane-robert.info/docs/conteneurs/introduction/>
 - <https://github.com/groda/big_data/blob/master/docker_for_beginners.md>
+- [Jérôme Petazzo : Docker Intensif](https://2021-05-enix.container.training/1.yml.html#1)
 - <https://github.com/eficode-academy/docker-katas> Exercices Docker
 - <https://docker-curriculum.com/> Autres exercices Docker
 - [Comprendre le réseau Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-network/)
@@ -657,6 +658,7 @@ layout: section
 - [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
 - [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
 - [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
+- [Exemples de projets Docker](https://github.com/dockersamples)
 
 [img-archi]: https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png
 [doc-docker]: https://docs.docker.com/

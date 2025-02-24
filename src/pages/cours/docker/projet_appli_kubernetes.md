@@ -32,6 +32,25 @@ Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant êt
    - Ajout de noeuds workers
    - Configuration du réseau avec un CNI (`Flannel`, `Calico`, …)
 
+:::link
+- Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
+- Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
+:::
+
+:::tip
+On pourra tester la compatibilité d'un noeud du cluster avec le _Node Conformance Test_. Remplacer `$CONFIG_DIR` par le chemin du manifeste du kubelet :  `/etc/kubernetes/kubelet`,  `/etc/default/kubelet`,  `/etc/systemd/system/kubelet.service`, … `$LOG_DIR` est le chemin où stocker les résultats du test.
+
+```sh
+sudo docker run -it --rm \
+  --privileged \
+  --net=host \
+  -v /:/rootfs \
+  -v $CONFIG_DIR:$CONFIG_DIR \
+  -v $LOG_DIR:/var/result \
+  registry.k8s.io/node-test:0.2
+```
+:::
+
 ### Phase 2 : Déploiement d’une Application
 
 Le but de cette partie est de déployer dans le cluster un projet personnel existant qui se compose de plusieurs composants (par exemple, une application web front-end, une API back-end, une base de données, etc.). On recommande l'utilisation de fichiers de manifeste `yml` pour créer les ressources Kubernetes.

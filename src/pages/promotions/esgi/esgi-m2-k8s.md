@@ -18,6 +18,14 @@ Module de 2x18H
 - Connaître le fonctionnement de Kubernetes et ses différents composants
 - Savoir installer, configurer et administrer Kubernetes dans un déploiement HA
 
+### ⚠️ Pré-requis
+
+- Bonnes connaissances de Docker et des principes de conteneurisation
+- Connaissances avancées en administration système Linux
+- Les namespace et les cgroups Linux
+- Bonnes notions de réseau, notamment routage et segmentation
+- Connaissance des principes généraux d'un déploiement résilient H.A.
+
 ### Documents
 
 - [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)

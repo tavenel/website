@@ -57,6 +57,22 @@ etcdctl […] del cle
 etcdctl […] watch cle # scrute les changemens de `cle`
 ```
 
+### Ajouter la completion de commandes dans le shell
+
+```sh
+# Pour Bash, à ajouter par exemple dans ~/.bashrc
+source <(kubectl completion bash)
+# Pour ZSH, à ajouter par exemple dans ~/.zshrc
+source <(kubectl completion zsh)
+
+# Idem pour kubectl, helm, k3s, kind, talosctl, minikube, … :
+source <(helm completion zsh)
+```
+
+:::link
+[Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
+:::
+
 ### Lister les types de ressources supportées
 
 ```sh
@@ -79,7 +95,7 @@ kubectl drain --ignore-daemonsets <node name>
 kubectl uncordon <node name>
 ```
 
-## Commandes
+## Généralités
 
 ### dry-run : simule la commande sans modification du cluster
 
@@ -107,6 +123,29 @@ kubectl create … -o yaml > mon_fichier.yml
 kubectl config get-contexts
 
 kubectl config use-context …
+```
+
+Les contextes sont gérés dans le fichier `~/.kube/config`
+
+### Accéder aux ressources à distance (débug uniquement)
+
+#### kubectl proxy
+
+Permet d'obtenir un proxy vers les ressources HTTP. Les Service / Pod peuvent être accédés depuis le proxy en utilisant une URL : `/api/v1/namespaces/<namespace>/services/<service>/proxy/<ma_requete>`
+
+```sh
+kubectl proxy # Démarre le Proxy
+curl localhost:8001/api/v1/namespaces/default/services/web-svc/proxy/index.html # accède à http://web-svc/index.html
+curl localhost:8001 # accès direct à l'API Server
+curl http://localhost:8001/openapi/v2 # Accès à l'OpenAPI (SwaggerUI) de l'API Server Kubernetes
+```
+
+#### Port-Forward
+
+Permet d'obtenir un proxy TCP : `kubectl port-forward service/<nom_du_service> <local_port>:<remote_port>`
+
+```sh
+kubectl port-forward svc/redis 10000:6379
 ```
 
 ### Monitoring
@@ -138,16 +177,12 @@ kubectl describe po/mon-pod
 kubectl describe svc myapp1-sv
 ```
 
+## Ressources
+
 ### Lister les conteneurs d'un pod (i.e. namespace==default)
 
 ```sh
 kubectl describe po/mon-pod -n default
-```
-
-### Port-Forward (pour débug uniquement)
-
-```sh
-kubectl port-forward MON_POD PORT_HOST:PORT_CONTAINER
 ```
 
 ### Exposer un Pod (créer un service)
@@ -169,7 +204,12 @@ kubectl debug mypod -it --image=busybox
 kubectl debug mypod -it --image=paulbouwer/hello-kubernetes:1.8
 ```
 
-Voir : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
+:::link
+Voir aussi : 
+
+- La documentation : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
+- Une image Docker utile pour du debug : <https://github.com/jpetazzo/shpod>
+:::
 
 ### kubectl attach : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
 
@@ -556,7 +596,10 @@ spec:
       targetPort: 8080   # Port interne sur lequel le conteneur écoute
 ```
 
-Pour accéder au service : <http://my-clusterip-service> (même namespace) ou <http://my-clusterip-service.nom-du-namespace.svc.cluster.local>
+:::tip
+- Pour accéder au service : <http://my-clusterip-service> (même namespace) ou <http://my-clusterip-service.nom-du-namespace.svc.cluster.local>
+- Pour récupérer la Virtual IP du service : `kubectl get svc httpenv -o go-template --template '{{ .spec.clusterIP }}'`
+:::
 
 ### Exemple de fichier de NodePort
 
@@ -729,8 +772,8 @@ spec:
         ports:
         - containerPort: 80
         startupProbe: […] # sonde de démarrage
-        livenessProbe: […] # sonde de healthcheck
-        readinessProbe: […] # sonde d'état "Ready"
+        livenessProbe: […] # sonde de healthcheck - conteneur killed si échec
+        readinessProbe: […] # sonde d'état "Ready" - par exemple dépendance externe
         resources: # limitation de ressources pour auto-scaling
           limits:
             cpu: 500m # 0.5 unités CPU
@@ -961,6 +1004,83 @@ spec:
           storage: 5Gi
 ```
 
+## NetworkPolicy
+
+Permet de contrôler le trafic réseau entrant (`Ingress`) ou sortant (`Egress`) entre les pods.
+
+### Exemple 1
+
+Bloquer tout le traffic par défaut :
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-ingress
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+```
+
+### Exemple 2
+
+Permettre uniquement le trafic entrant vers un pod étiqueté avec `app: my-app`` depuis des pods étiquetés avec `role: frontend` :
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend
+spec:
+  podSelector:
+    matchLabels:
+      app: my-app
+  policyTypes:
+  - Ingress # ou Egress
+  ingress:
+  - from:  # Egress => to:
+    - podSelector:
+        matchLabels:
+          role: frontend
+    ports:
+    - protocol: TCP
+      port: 80
+```
+
+:::warn
+Le CNI doit supporter la `NetworkPolicy` : ce n'est pas le cas de Flannel ! La ressource est ajoutée mais sans effet…
+:::
+
+## SecurityContext
+
+Paramètres de sécurité appliqués à un pod ou à un conteneur :
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-pod
+spec:
+  securityContext:
+    runAsUser: 1000 # UID
+    runAsGroup: 3000 # GID principal
+    fsGroup: 2000 # GIDs secondaires
+  containers:
+  - name: secure-container
+    image: nginx
+    securityContext:
+      capabilities:
+        drop: [ALL]
+      readOnlyRootFilesystem: true
+      allowPrivilegeEscalation: false
+      runAsNonRoot: true
+      seccompProfile: {...}
+      appArmorProfile: {...}
+      seLinuxOptions: {...}
+```
+
 ## Autres commandes
 
 Pour plus d’information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
@@ -991,6 +1111,68 @@ helm history …
 helm upgrade <chart_name>
 helm rollback <chart_name>
 ```
+
+---
+
+# Cheatsheet Kustomize
+
+## Exemple de Kustomization
+
+```
+my-app/
+├── kustomization.yaml
+└── deployment.yaml
+```
+
+```yaml
+# my-app/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: myapp
+spec:
+ replicas: 3
+ selector:
+    matchLabels:
+      app: myapp
+ template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: myapp:v1
+```
+
+```yaml
+# my-app/kustomization.yaml
+resources:
+- deployment.yaml
+
+commonLabels:
+  app: my-app
+
+images:
+  - name: my-app
+    newTag: v2
+```
+
+## Tester les modifications (dry-run)
+
+```sh
+kubectl kustomize path/to/local/kustomization
+```
+
+## Appliquer la kustomization depuis un fichier local (test)
+
+```sh
+kubectl apply -k path/to/local/kustomization
+```
+
+:::link
+Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kustomize/>
+:::
 
 ---
 
@@ -1038,20 +1220,6 @@ flux get kustomizations --watch
 
 ```sh
 flux suspend/resume kustomization nom-de-la-kusto
-```
-
-## Appliquer une kustomization manuellement
-
-### Tester les modifications (dry-run)
-
-```sh
-kubectl kustomize path/to/local/kustomization
-```
-
-### Appliquer la kustomization depuis un fichier local (test)
-
-```sh
-kubectl apply -k path/to/local/kustomization
 ```
 
 ---

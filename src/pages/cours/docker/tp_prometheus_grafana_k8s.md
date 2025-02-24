@@ -1,7 +1,6 @@
 ---
 title: Monitoring Kubernetes avec Prometheus et Grafana
 date: 2024 / 2025
-correction: false
 ---
 
 # Monitoring Kubernetes avec Prometheus et Grafana
