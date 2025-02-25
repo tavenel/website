@@ -230,3 +230,14 @@ Voir : <https://medium.com/code-kings/docker-changes-out-of-order-error-try-this
 1. Vérifier que la virtualisation est bien activée dans le BIOS (voir la documentation de votre PC).
 2. `Hyper-V` n'accepte qu'un seul programme à la fois utilisant `VT-x` ce qui peut poser problème. Voir ce lien pour désactiver les services pouvant utiliser `VT-x` : <https://superuser.com/questions/1734650/virtualization-enabled-in-bios-but-intelpiu-not-recognize>.
 
+## Kubernetes
+
+### Mon cluster k3s / k3d / kind reste bloqué sur le démarrage
+
+1. Vérifier dans les logs du conteneur du noeud : `docker logs k3d-server-1` s'il y a des erreurs d'I/O trop élevés du type : `inotify_init: too many open files`
+2. Augmenter le nombre d'accès FS autorisés en parrallèle :
+    ```sh
+    sudo sysctl fs.inotify.max_user_instances=8192
+    sudo sysctl fs.inotify.max_user_watches=524288
+    sudo sysctl -p
+    ```
