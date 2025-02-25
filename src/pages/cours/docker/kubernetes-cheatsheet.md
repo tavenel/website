@@ -875,6 +875,48 @@ spec:
         averageUtilization: 50 # 50% de CPU
 ```
 
+## Exemples de Jobs
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello-job
+spec:
+  completions: 3
+  parallelism: 2
+  activeDeadlineSeconds: 60 # timeout pour le Job total
+  template:
+    spec:
+      containers:
+        - name: hello
+          image: busybox
+          command: ["echo", "Hello from Kubernetes Job"]
+      restartPolicy: Never
+      activeDeadlineSeconds: 20 # timeout pour 1 Pod
+```
+
+```yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+ name: hello
+spec:
+ schedule: "*/5 * * * *"
+ jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
+```
+
 ## Exemple de fichier de Namespace
 
 ```yaml
