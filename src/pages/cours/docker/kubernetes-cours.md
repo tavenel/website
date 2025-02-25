@@ -603,6 +603,15 @@ En résumé :
 
 ---
 
+## Job et CronJob
+
+- Pour travaux "longs" (> minutes / heures)
+- `Job` : Démarre un `Pod`, en cas d'échec, relance jusqu'au _backoff limit_ (default=6)
+  - paramètres : `completions` (default=1) => nombre d'exécutions, `parallelism` (default=1)
+- `CronJob` : Nécessite un `schedule` (idem _Cron_ sur _UNIX_)
+
+---
+
 ## Configuration du cluster
 
 * Metadata
@@ -740,6 +749,7 @@ layout: section
 - Type de conteneur Kubernetes spécifique : `initContainers`
 - Lancés dans l'ordre de spécification
 - Le(s) conteneur(s) classiques démarrent après (si succès uniquement)
+- usage : chargement de données, migration BDD, génération de configs, attente dépendances, … (tous les pré-requis du conteneur)
 
 ---
 
@@ -837,10 +847,12 @@ layout: two-cols
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5)
 	- <https://container.training/> : formations Jérôme Petazzo, notamment :
-	  - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html)
+	  - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html) : cours complet, de l'installation aux usages de kubernetes
 		- [Packaging d'applications et CI/CD pour Kubernetes](https://2021-05-enix.container.training/3.yml.html)
 		- [Kubernetes Avancé](https://2021-05-enix.container.training/4.yml.html)
 		- [Opérer Kubernetes](https://2021-05-enix.container.training/5.yml.html)
+		- <https://github.com/jpetazzo/container.training>
+		- [Video - Deep Dive into Kubernetes Internals for Builders and Operators](https://www.youtube.com/watch?v=3KtEAa7_duA)
 - [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
 
 ::right::
