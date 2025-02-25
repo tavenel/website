@@ -320,12 +320,16 @@ spec:
     restartPolicy: Never
     env: # Variables d'environnement à injecter dans le conteneur
     - name: MA_VAR # variable $MA_VAR
-      value: 42 # MA_VAR=42
+      value: "42" # MA_VAR=42 ⚠️ une string (échapper nombres, …)
     - name: LOG_LEVEL # variable $LOG_LEVEL
       valueFrom: # récupération de la valeur de $LOG_LEVEL à injecter
         configMapKeyRef: #env de type ConfigMap (`ma-config-map-env` déjà créée avec `log_level=…`)
           name: ma-config-map-env # où récupérer la valeur ?
           key: log_level # la valeur de $LOG_LEVEL à injecter
+    - name: MY_POD_NAMESPACE # récupération de valeurs de l'API
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.namespace # https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/
     ports: # Ports à exposer
     - containerPort: 80 # port dans le conteneur
     resources:
