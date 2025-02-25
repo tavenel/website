@@ -106,6 +106,7 @@ created: 2024-10-17
 	- <https://k8slens.dev/> : un IDE orienté k8s
 	- <https://github.com/stern/stern> : logs multi-pods
 	- <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
+	- <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argoscd`
@@ -120,6 +121,7 @@ created: 2024-10-17
   - `WatchTower`
   - `Keel` (avec triggers)
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
+- Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html)
 
 ### 💾 Backups
 
