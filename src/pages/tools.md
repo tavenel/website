@@ -36,13 +36,14 @@ created: 2024-10-17
   - 🔐 sécurité
     - [git-crypt](https://github.com/AGWA/git-crypt)
     - 🔑 `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
+		- <https://github.com/gitleaks/gitleaks> : `docker run -v ${PWD}:/path ghcr.io/gitleaks/gitleaks:latest detect --source="/path" -v`
+		- <https://github.com/trufflesecurity/trufflehog> : trouver des secrets exposés dans ses dépôts Git
   - outils
     - 🤪 [gitmoji](https://github.com/carloscuesta/gitmoji) : ajouter des emojis de contexte aux commits
 - sémantique :
   - 1️⃣  <https://semver.org/>
   - 2️⃣ <https://hub.docker.com/r/gittools/gitversion>
 - analyses :
-  - <https://github.com/gitleaks/gitleaks> : `docker run -v ${PWD}:/path ghcr.io/gitleaks/gitleaks:latest detect --source="/path" -v`
   - 📊 <https://github.com/adamtornhill/code-maat> : data mining dans dépôt Git
   - 🔎 <https://github.com/smontanari/code-forensics>
 
