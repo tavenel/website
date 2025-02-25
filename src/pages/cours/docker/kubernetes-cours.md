@@ -292,7 +292,7 @@ layout: section
 
 # etcd
 
-- Backend k8s : état du cluster
+- Backend k8s : état du cluster (le reste est stateless)
   - store clé=valeur
 - Dans ou en dehors du cluster
 - 1 leader (par consensus)
@@ -315,13 +315,14 @@ layout: section
 - Boucles de réconciliation :
   - reconstruit des ressources si besoin pendant le cycle de vie du cluster
   - sans besoin d'intervention
+- Contient toute l'intelligence de Kubernetes
 
 ---
 
 # Scheduler
 
-- Assigne les `Pod` aux `Node`
-    - Change le `nodeName` du `Pod`
+- Assigne les `Pod` (en state: `Pending`) aux `Node`
+  - techniquement : crée un `Binding` et change le `nodeName` du `Pod`
 - Calcule de score par _filtrage_ puis _score_ :
     1. _filtrage_ : capacité, tolérance, affinité, sélecteurs, …
     2. _score_ : load-balancing, …
@@ -355,6 +356,10 @@ layout: section
     - voir section sur les CNI
 - Connexion entre `Pods` : niveau 3 (_IP_)
 - Connexion par `Services` : niveau 4 (_TCP_, _UDP_)
+
+---
+
+Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple de fonctionnement du _Control Plane_ suite à la création d'un `Deployment`
 
 ---
 
@@ -785,8 +790,11 @@ layout: section
 # Kustomize
 
 - Permet d'ajouter / modifier des ressources Kubernetes par `Kustomization` (fichier YAML)
-- Utile pour config dev vs prod, …
 - Intégré dans `kubectl` : `apply -k …`
+- Utile pour :
+  - config dev vs prod, …
+  - scaling : `replicas: …`
+  - mettre à jour l'image d'un conteneur
 
 ![Exemple d'utilisation de Kustomize](https://kustomize.io/images/header_templates.png)
 
