@@ -530,7 +530,11 @@ layout: section
 
 * `ConfigMap` pour modifier la configuration des applications
   - décorélé du code de l'application
-* `Secret` (mots de passe)
+* `Secret` (mots de passe, …) : assez similaire
+  - [Differents types de Secrets](https://kubernetes.io/docs/concepts/configuration/secret/#secret-types)
+  - ⚠️ par défaut, **simple encodage** : voir les [bonnes pratiques de sécurité](https://kubernetes.io/docs/concepts/security/secrets-good-practices/)
+  - [chiffrement possible](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/) des accès _REST_ mais l'_API Server_ ne peut plus démarrer automatiquement (si très fort besoin de sécurité uniquement)
+* `ConfigMap` et `Secret` peuvent être _immuable_ 
 
 ---
 
