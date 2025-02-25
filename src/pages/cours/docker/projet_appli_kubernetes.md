@@ -18,7 +18,7 @@ Le but de cette partie est d'installer un cluster Kubernetes. Le cluster devra �
 
 Note 1 : il n'est pas demandé de gérer précisément la sécurité du cluster, ni la supervision et le logging, ces parties seront abordées durant le second module Kubernetes.
 
-Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant être déployée en production : `k8s` via `kubeadm`, `rke`, `k3s`, … On pourra éventuellement utiliser un déploiement complet de test type `kind` (compatible _CKA_) mais on évitera les versions orientées développeur : ~~`Docker Desktop`, `Minikube`, …~~
+Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant être déployée en production : `k8s` via `kubeadm`, `rke`, `k3s`, … On évitera donc les versions orientées développeur à déployer uniquement sur sa machine personnelle : ~`Docker Desktop`, `Minikube`, …~
 
 1. **Choix de l’environnement**
    - Déploiement sur des machines virtuelles (VirtualBox, VMware).
@@ -32,8 +32,13 @@ Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant êt
    - Ajout de noeuds workers
    - Configuration du réseau avec un CNI (`Flannel`, `Calico`, …)
 
+:::warn
+Attention, on demande bien d'installer un cluster **production-ready** ! Celui-ci devra donc être en haute disponibilité (Load balancer devant l'API Server, …) et on réfléchira aux procédures d'administration, de sauvegarde, … On pourra cependant s'affranchir d'utiliser HTTPS.
+:::
+
 :::link
 - Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
+- Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
 - Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
 :::
 
