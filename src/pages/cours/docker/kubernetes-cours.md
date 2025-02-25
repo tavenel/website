@@ -540,22 +540,48 @@ layout: section
 
 ## Stockage
 
-- `Volume` : points de montages dans les conteneurs du pod
-  - dans `Pod` => non persistant
-  - extérieur au Pod => persistant
-- `PersistentVolume` (`PV`) : stockage extérieur au pod (donc au conteneur)
-  - provisionné à l'extérieur du pod (statique ou dynamique)
-  - durée de vie indépendante du pod
-- `Volume claim` : création d'un `PV`
+---
+
+### Volume
+
+- `Volume` : **points de montage** d'un Pod
+- pas de ressource dans l'_API Server_ (~`kubectl get volumes`~)
+- très similaire à _Docker_
+- pour accès aux configs, persistence, filesystem temporaire, …
+- accessible à tous les _Conteneurs_ du _Pod_
+- détruit (ou détaché si _remote_) à la destruction du Pod (persiste au redémarrage)
 
 ---
 
-### Types de volumes
+### PersistentVolume
+
+- `PersitentVolume` (PV) : vision _storage_ du cluster Kubernetes
+- **stockage extérieur** à la vision _conteneur/pod_
+- Représente un disque concret : _EBS_, _SAN_, …
+  - existe dans l'_API Server_ : `kubectl get persistentvolumes`
+  - durée de vie indépendante du pod
+  - ~ne peut **pas être associé directement**~ à un _Pod_
+
+- `PersistentVolumeClaim` : réquisition d'un `PV`
+  - permet l'association d'un disque à un _Pod_
+
+---
+
+En résumé :
+
+- `Volume` => vision _container_ : un point de montage pour configs, persistence, filesystem temporaire, …
+- `PersitentVolume` (`PV`) => vision _storage_ du cluster Kubernetes, un espace de stockage
+- `PersistenVolumeClaim` (`PVC`) => un type de _Volume_ permettant de réquisitionner et d'utiliser un `PV`
+
+---
+
+### Quelques types de Volumes
 
 - `emptyDir` : volume vide, supprimé avec le Pod (mais partage entre conteneurs du pod) 
 - `hostPath` : monte un répertoire du Host vers le Pod
 - `configMap` : monte des fichiers de configuration
 - `PersistentVolume` : `iscsi`, `nfs`, `cephfs`
+- beaucoup de types supportés : <https://kubernetes.io/docs/concepts/storage/volumes/>
 
 ---
 
