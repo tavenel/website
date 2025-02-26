@@ -107,6 +107,7 @@ created: 2024-10-17
 	- <https://github.com/stern/stern> : logs multi-pods
 	- <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
 	- <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
+	- <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argoscd`
