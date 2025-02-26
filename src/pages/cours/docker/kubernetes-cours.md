@@ -802,6 +802,16 @@ layout: section
 
 ---
 
+## Vocabulaire Kustomize
+
+- **kustomization** : une **base** ou un **overlay**
+- **base** : _kustomization_ **référencée par** d'autres _kustomization_
+- **overlay** : _kustomization_ **qui référence** d'autres _kustomization_ (récursif)
+- **patch** : une **modification** d'une ressource Kubernetes existante
+- **variant** : **version finale** de la ressource Kubernetes après application des _bases_ et _overlay_
+
+---
+
 # Helm
 
 - Gestionnaire de "paquets" k8s
