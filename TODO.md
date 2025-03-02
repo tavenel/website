@@ -1,7 +1,6 @@
 ## P1
 
 - slides => <bug> fullscreen style fix CSS</bug>
-- jenkins/TP ~> MD
 - check robots.txt in prod
 
 https://programmerhumor.io/wp-content/uploads/2021/05/programmerhumor-io-8fb4c03b81cbbab-758x621.png
@@ -89,6 +88,7 @@ _Tom Avenel_
 
 ## P4
 
+- <whoami.avenel.pro>
 - <h2>Chapitres</h2>
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
