@@ -14,15 +14,19 @@ tasks:
     cmds:
       - docker container stop astro-webserver
 
+  dev:
+    cmds:
+      - bun run dev
+
   build:
     cmds:
-      - yarn build
+      - bun run build
 
   licenses:
     cmds:
       - cp .LICENSE.main LICENSE
-      - yarn licenses generate-disclaimer >> LICENSE
-      - yarn licenses list >> LICENSE
+      - bun run licenses generate-disclaimer >> LICENSE
+      - bun run licenses list >> LICENSE
 
   upgrade:
     cmds:

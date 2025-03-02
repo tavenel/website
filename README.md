@@ -7,9 +7,9 @@
 
 ## 🧞 Commands
 
-- The main build uses a <https://taskfile.dev> here : <./Taskfile.yml> 
-- `yarn run dev` => <http://localhost:4321>
-- `yarn run astro --help`
+- The main build uses a <https://taskfile.dev> here : <./Taskfile.yml>. Use `task …` 
+- `task dev` or `bun run dev` => <http://localhost:4321>
+- `bun run astro --help`
 
 ## 🔗 Links
 
