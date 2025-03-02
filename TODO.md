@@ -3,8 +3,6 @@
 - slides => <bug> fullscreen style fix CSS</bug>
 - check robots.txt in prod
 
-https://programmerhumor.io/wp-content/uploads/2021/05/programmerhumor-io-8fb4c03b81cbbab-758x621.png
-
 ---
 
 ## P2
