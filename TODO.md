@@ -4,9 +4,6 @@
 - check robots.txt in prod
 
 https://programmerhumor.io/wp-content/uploads/2021/05/programmerhumor-io-8fb4c03b81cbbab-758x621.png
-https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/heritage.webp
-https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/objet.webp
-https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/encapsulation.webp
 
 ---
 

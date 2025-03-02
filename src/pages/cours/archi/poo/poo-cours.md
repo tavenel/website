@@ -218,7 +218,29 @@ Techniquement, un objet est caractérisé par 3 choses :
 
 ![Un exemple d'objet](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/objet.webp) <!--TODO: DIAG -->
 
+```plantuml
+@startuml
+
+title: Exemple d'objet
+
+class MaVoiture {
+  blanche
+  1500 Kg
+  7800 euros
+  ---
+  demarrer()
+  accelerer()
+}
+
+
+@enduml
+```
+
 <div class="caption">Un exemple d'objet</div>
+
+- L'**identité** de l'objet est `MaVoiture`
+- Son **état** est composé de : `blanche`, `1500 Kg`, `7800 euros`
+- Ses **comportements** possibles sont : `demarrer()`, `accelerer()`
 
 ---
 
@@ -266,6 +288,8 @@ class Voiture:
   + En Python : `ma_voiture.nom` utilise le `getter` de la propriété `nom` ;
   + `ma_voiture.nom = 'nouveau nom` utilise le `setter` de la propriété `nom`.
 
+**On utilise donc une classe comme une boîte noire - l'utilisateur d'une classe n'a pas à connaître les détails d'implémentation.**
+
 ---
 
 ```python
@@ -297,14 +321,6 @@ Changement du nombre de roues
 Récupération du nombre de roues
 5
 ```
-
----
-
-![Un exemple d'encapsulation](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/encapsulation.webp) <!--TODO: DIAG -->
-
-<div class="caption">Un exemple d'encapsulation.</div>
-
-**On utilise donc une classe comme une boîte noire - l'utilisateur d'une classe n'a pas à connaître les détails d'implémentation.**
 
 ---
 
@@ -358,12 +374,42 @@ layout: section
 
 En POO une classe peut **hériter** des caractéristiques (attributs, méthodes) d’une autre classe.
 
-![Un exemple d'héritage](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/heritage.webp) <!-- TODO: DIAG -->
+```plantuml
+@startuml
+
+title: Exemple d'héritage
+
+class Vehicule {
+    # nom: String
+    # poids: double
+    # prix: double
+    # vitesse: double
+    ---
+    + accelerer() : void
+}
+
+class Voiture {
+    - nombre_portes: int
+    --
+    + accelerer() : void
+}
+
+class Avion {
+    - capacite_soute : double
+    --
+    + accelerer() : void
+}
+
+Vehicule <|-- Voiture : Extends
+Vehicule <|-- Avion : Extends
+
+@enduml
+```
 
 <div class="caption">Un exemple d'héritage.</div>
 
-- `Avion` hérite de `Véhicule`
-- `Avion` est la _classe fille_ (ou sous-classe) de `Véhicule` qui est la _classe parent_ (ou super-classe)
+- `Avion` et `Voiture` (_spécialisations_) héritent de `Véhicule` (_généralisation_)
+- `Avion` est la _classe fille_ (ou sous-classe) de `Véhicule` qui est la _classe parente_ (ou super-classe)
 
 ---
 
