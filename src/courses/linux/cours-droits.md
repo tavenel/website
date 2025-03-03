@@ -1,9 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/SlideLayout.astro'
 title: Cours Linux - gestion des droits
-tags:
-- linux
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 # Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés
@@ -41,6 +39,8 @@ tags:
 
 # Gestion des permissions et de la propriété sur les fichiers
 
+- Voir cours LPIC-1: _104.5 Manage file permissions and ownership_ p.481
+
 ---
 
 ## Les utilisateurs
@@ -75,7 +75,7 @@ Les permissions sur un répertoire ont un sens légèrement différent :
 
 ## Affichage des droits
 
-```
+```console
 $ ls -l
 drwxr-xrw- [...]
 ```
@@ -158,7 +158,7 @@ drwxr-xrw- [...]
 
 ---
 
-```bash
+```sh
 # Lister ACL
 getfacl <nom_fichier>
 # Ajouter / Modifer (-m) ACL
@@ -170,84 +170,4 @@ setfacl -x u:<utilisateur> <fichier>
 # Supprimer tous les ACL
 setfacl -b <fichier>
 ```
-
----
-
-# Création et modification des liens physiques et symboliques sur les fichiers 
-
----
-
-## inode
-
-- _Index node_ : structure de données qui stocke les attributs d'un fichier
-- permissions, propriétaire, bloc disque de stockage, ...
-
----
-
-## Liens symboliques
-
-- Type spécial de fichier
-- _Lien symbolique_ (ou lien faible, _soft link_) : pointe vers le chemin d'un autre fichier (_target_)
-  + `ln -s TARGET NOM_DU_LIEN`
-  + Si suppression de la target, pointe vers rien
-- _Lien réel_ (_hard link_) : 2e référence vers le même fichier
-  + toujours 1 seul inode
-  + `ln TARGET NOM_DU_LIEN`
-
----
-
-```plantuml
-title: Lien réel vs lien symbolique
-
-@startuml
-folder "source" {
-  [F1]
-}
-
-folder "Lien réel (hard link)" {
-  [F2]
-}
-
-[Lien symbolique] as F3
-
-database "Données" as data {
-}
-
-[F1] -> data
-[F2] -> data
-[F3] ..> F1
-@enduml
-```
-
----
-
-```plantuml
-@startuml
-title: Suppression du fichier source
-
-folder "Lien dur (hard link)" {
-  [F2]
-}
-
-[Lien réel (symbolic)] as F3
-
-database "Données" as data {
-}
-
-[F2] -> data
-[F1] #red
-[F3] ..> F1 #red
-@enduml
-```
-
----
-
-<!-- Annexe: liste des liens utiles -->
-[wiki-partitions]: https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/P%C3%A9riph%C3%A9riques_et_syst%C3%A8mes_de_fichiers_Linux/Cr%C3%A9er_des_partitions_et_des_syst%C3%A8mes_de_fichiers
-
-# Legal
-
-- Linux est une marque déposée par Linus Torvalds aux États Unis et dans d'autres pays.
-- UNIX® est une marque déposée de The Open Group. 
-- Other names may be trademarks of their respective owners
 

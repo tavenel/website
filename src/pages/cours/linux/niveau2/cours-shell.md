@@ -46,7 +46,7 @@ Le projet GNU offre des outils pour l'administration de système de type UNIX qu
 
 ## Enchaînement de commandes
 
-```bash
+```sh
 # Exécute commande1 puis commande2
 commande1 ; commande2
 
@@ -59,7 +59,7 @@ commande1 || commande2
 
 ### Exemples
 
-```bash
+```sh
 sudo apt-get update && sudo apt-get -y upgrade
 
 sudo apt-get -y upgrade || echo "échec de la mise à jour !"
@@ -71,13 +71,13 @@ La variable spéciale `$?` contient le code de retour d'exécution de la command
 
 Une commande qui s'exécute avec succès renvoie (par convention) toujours `0`. Par exemple la commande `true` rend toujours ce code de retour :
 
-```bash
+```sh
 true ; echo $?
 ```
 
 Une commande qui échoue renvoie (par convention) autre chose que `0` (souvent, par défaut, `1`). Par exemple la commande `false` renvoie toujours `1` :
 
-```bash
+```sh
 false ; echo $?
 ```
 
@@ -85,7 +85,7 @@ false ; echo $?
 
 Les fonctions `&&` et `||` sont équivalentes à :
 
-```bash
+```sh
 # &&
 commande1
 if [ $? == 0 ]
@@ -105,7 +105,7 @@ fi
 
 Si les arguments diffèrent pour une même commande, on peut créer une boucle et profiter de variables :
 
-```bash
+```sh
 for arg in /home /var /usr
 do
   echo "visualisation : " $arg
@@ -115,7 +115,7 @@ done
 
 Ou encore en une seule ligne
 
-```bash
+```sh
 for arg in /home /usr /var; do ls -la $arg; done
 ```
 
@@ -130,13 +130,13 @@ Il est possible d'exécuter une commande et de récupérer son résultat (la sor
 
 La commande `uname` permet de connaître la version du noyau courant. Comment la substituer dans une variable ?
 
-```
-> uname -a
+```console
+$ uname -a
 
 Linux c7li 3.10.0-327.4.5.el7.x86_64 #1 SMP Mon Jan 25 22:07:14 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-```bash
+```sh
 system=$(uname -a)
 echo $system
 
@@ -150,7 +150,7 @@ echo $system
 
 Comment effectuer une boucle `for` sur tous les résultats de `find` ?
 
-```bash
+```sh
 for resultat in $(find $HOME -type f -mtime -1)
 do
     echo "Ce fichier a été modifié il y a moins de 1 jour : $resultat"
@@ -163,13 +163,13 @@ Un alias est une autre manière de substituer des commandes.
 
 Pour obtenir la liste des alias :
 
-```bash
+```sh
 alias
 ```
 
 Pour créer un alias :
 
-```bash
+```sh
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
@@ -192,7 +192,7 @@ Un fichier de script commence toujours par un _shebang_.
 
 Le shebang, représenté par `#!`, est un en-tête d'un fichier texte qui indique au système d’exploitation que ce fichier n’est pas un fichier binaire mais un script (ensemble de commandes) ; sur la même ligne est précisé l’interpréteur permettant d’exécuter ce script. Pour indiquer au système qu’il s’agit d’un script qui sera interprété par `bash` on placera le shebang sur la première ligne :
 
-```bash
+```sh
 #!/usr/bin/env bash
 ```
 
@@ -238,7 +238,7 @@ Liste de variables prépositionnées
 
 ### Exemple
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 echo "Nom du script $0"
@@ -263,7 +263,7 @@ La commande `echo` pose une question à l’utilisateur.
 
 La commande `read` lit les valeurs entrées au clavier et les stocke dans une variable à réutiliser.
 
-```bash
+```sh
 echo "question"
 read reponse
 echo $response
@@ -271,7 +271,7 @@ echo $response
 
 On peut aller plus vite avec `read -p` qui sort du texte et attend une valeur en entrée :
 
-```bash
+```sh
 read -p "question" reponse
 echo $reponse
 ```
@@ -282,7 +282,7 @@ La fonction `readline` permet également de lire un input utilisateur. Très uti
 
 Une fonction est un bloc d’instructions que l’on peut appeller ailleurs dans le script. Pour déclarer une fonction, on utilise la syntaxe suivante :
 
-```bash
+```sh
 maFonction()
 {
   echo hello world
@@ -299,7 +299,7 @@ La déclaration d’une fonction doit toujours se situer avant son appel. On met
 
 ### Exemple
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 read -p "quel votre prénom ?" prenom
@@ -316,7 +316,7 @@ exit
 
 Le mot clé `local` permet de définir une variable dans un scope local à la fonction en cours d'exécution.
 
-```bash
+```sh
 ma_fonction() {
     local ma_var_locale=2
     echo "Dans la fonction : $ma_var_locale"
@@ -328,7 +328,7 @@ echo "Dans le scope global : $ma_var_locale"
 
 On peut aussi utiliser le mot-clé `declare` qui permet en plus de typer la variable (`declare` implique `local`, sauf dans le scope global) :
 
-```bash
+```sh
 declare -i num # `num` sera de type numérique
 declare -i num=15 # `num` est de type numérique et vaut 15
 # Déclaration de tableau
@@ -348,7 +348,7 @@ $ bash -x mon_script.sh
 
 ## `if` / `then` / `else`
 
-```bash
+```sh
 if condition
 then
     commande1
@@ -369,7 +369,7 @@ fi
 
 La condition pourra contenir un _test_. Deux manières de réaliser un test (avec une préférence pour la première) :
 
-```bash
+```sh
 [ expression ]
 
 # ou
@@ -383,7 +383,7 @@ test expression
 
 On peut aussi utiliser la version étendue de la commande test :
 
-```bash
+```sh
 [[ expression ]]
 ```
 
@@ -391,7 +391,7 @@ Il y a beaucoup d’opérateurs disponibles pour réaliser des tests sur les fic
 
 ### Exemple
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 passwdir=/etc/passwdd
@@ -410,7 +410,7 @@ exit
 
 On reprend la fonction `checkdir` qui lit la valeur de la variable donnée par l’utilisateur :
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 read -p "quel est le dossier à vérifier ?" passwdir
@@ -463,7 +463,7 @@ Quel serait la structure de base d’un script Bash ?
 1. Corps principal
 1. Fin
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 target=$1
@@ -496,7 +496,7 @@ exit
 
 Dans la boucle `for-do-done`, la variable prendra successivement les valeurs dans la liste et les commandes à l’intérieur du `do-done` seront répétées pour chacune de ces valeurs.
 
-```bash
+```sh
 for variable in liste_de_valeur ; do
     commande
     commande
@@ -509,7 +509,7 @@ Par défaut, `for` utilise la liste `in $@` si on omet ce mot-clé.
 
 ### Exemple - créer 10 fichiers
 
-```bash
+```sh
 for num in 0 1 2 3 4 5 6 7 8 9 ; do touch fichier$num.tar.gz ; done
 
 # ou (mieux) :
@@ -521,7 +521,7 @@ for num in {0..9} ; do touch fichier$num.tar.gz ; done
 
 Renomme tous les fichiers `*.tar.gz` en `*.tar.gz.old` :
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 #x prend chacune des valeurs possibles correspondant au motif : *.tar.gz
@@ -538,7 +538,7 @@ exit
 
 `while-do` répète les commandes tant que la condition est vérifiée.
 
-```bash
+```sh
 while condition ; do
     commandes
 done
@@ -546,7 +546,7 @@ done
 
 `until-do` répète les commandes jusqu’à ce que la condition soit vraie (ou par équivalence tant qu'elle est fausse).
 
-```bash
+```sh
 until condition ; do
     commandes
 done
@@ -563,7 +563,7 @@ Comment rompre ou reprendre une boucle ?
 
 Supposons, par exemple que vous souhaitiez afficher les 100 premiers nombres :
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 # boucle while
@@ -577,7 +577,7 @@ exit
 
 De manière plus élégante avec l’instruction `for` :
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 # for ((initial;condition;action))
@@ -635,7 +635,7 @@ On sera donc vigilant à :
 
 Il est possible de modifier le comportement par défaut de Bash en lui ajoutant des options spéciales. Il est recommandé d'ajouter ces options au début de chaque script :
 
-```bash
+```sh
 set -e # quitter le script à la 1e erreur
 set -u # quitter le script dès qu'une variable n'est pas définie
 set -o pipefail # quitter le script si n'importe quelle commande d'un pipeline échoue (et pas seulement la dernière).

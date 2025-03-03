@@ -47,7 +47,7 @@ layout: ../../../layouts/BaseLayout.astro
 ## Documents
 
 - [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
-- [🤓 Cours Linux sur les permissions et les droits](/cours/linux/niveau2/cours-linux-droits)
+- [🤓 Cours Linux : les permissions, les droits, network](/promotions/epsi/epsi-sn2-linux-admin-cours)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/niveau2/tp-fichiers-avance)
 - [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/cours/linux/niveau2/tp-droits-avance)
 - [📃 TP : Traitement de flux de type texte](/cours/linux/niveau2/tp-texte)

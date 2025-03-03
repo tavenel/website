@@ -23,12 +23,26 @@ title: 🐧 Linux
 ## Niveau 2
 
 - 🤓 Cours Linux niveau 2 :
-  - [Partie 1](/cours/linux/niveau2/cours-linux-niveau2_partie1)
-  - [Partie 2](/cours/linux/niveau2/cours-linux-niveau2_partie2)
-- [🤓 Cours Linux de niveau 2 orienté Développeurs](/cours/linux/niveau2/cours-linux-dev)
+  - [Partie 1](/cours/linux/niveau2/cours-linux-niveau2_partie1) TODO
+  - [Partie 2](/cours/linux/niveau2/cours-linux-niveau2_partie2) TODO
+- [🤓 Cours Linux de niveau 2 orienté Développeurs](/cours/linux/niveau2/cours-linux-dev) TODO
+- [🤓 Cours Linux sur l'architecture matérielle et la gestion des périphériques](/cours/linux/niveau2/cours-linux-hardware)
+- [🤓 Cours sur l'installation de Linux et la gestion de paquetages](/cours/linux/niveau2/cours-linux-install)
+- [🤓 Cours sur les commandes GNU/Linux et Unix](/cours/linux/niveau2/cours-linux-commandes)
+- [🤓 Cours sur les disques et les partitions](/cours/linux/niveau2/cours-linux-disks)
 - [🤓 Cours Linux sur les permissions et les droits](/cours/linux/niveau2/cours-linux-droits)
+
+--
+- [🤓 Cours sur les interfaces et bureaux utilisateur](/cours/linux/niveau2/cours-linux-desktop)
+--
+
 - [🤓 Cours Linux d'introduction à l'administration réseau](/cours/linux/niveau2/cours-linux-network)
-- [🤓 Cours sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
+- [🤓 Cours Linux sur la sécurité](/cours/linux/niveau2/cours-linux-security)
+
+
+--
+
+- [🤓 Cours sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell) TODO
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
 - [▶️ TP : SysV init et systemd init](/cours/linux/niveau2/tp-sysv-systemd) : administrer les services et changer de runlevel dans un système SysV ou systemd.

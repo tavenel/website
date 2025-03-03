@@ -1,9 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/SlideLayout.astro'
 title: Cours Linux Networking
-tags:
-- linux
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 # Objectifs
@@ -12,11 +10,7 @@ tags:
 
 ---
 
-# Notions élémentaires sur les réseaux
-
----
-
-## Notions élémentaires sur les protocoles Internet
+## 109.1 Notions élémentaires sur les protocoles Internet [4]
 
 ---
 
@@ -54,11 +48,9 @@ tags:
 
 ---
  
-## Configuration réseau persistante
-
-## Résolution de problèmes réseaux simples
-
-## Configuration de la résolution de noms
+## 109.2 Configuration réseau persistante [4]
+## 109.3 Résolution de problèmes réseaux simples [4]
+## 109.4 Configuration de la résolution de noms [2]
 
 ---
 
@@ -323,26 +315,17 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ## Tables principales
 
-- `filter` : table principale pour intervenir sur les paquets et analyser leur contenu : `DROP`, `ACCEPT`, …
+- `filter` : table principale pour intervenir sur les paquets et analyser leur contenu : `DROP`, `ACCEPT`, `FORWARD`, …
+- `nat` : table dont le but est de faire de la _translation_ d'adresses (uniquement pour les nouvelles connexions)
 - `conntrack` : composant et table rendant `Netfilter` _stateful_ (suit le cycle de vie de la connexion)
 
 ---
 
-- Voir aussi la [wikiversité][wiki-netfilter]
+- Voir aussi la [wikiversité](https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter)
 - Tutoriel complet : <https://www.inetdoc.net/guides/iptables-tutorial/>
 - Tutoriel sur `Conntrack` : <https://www.malekal.com/conntrack-sur-linux-comment-ca-marche/>
 
 ---
 
-<!-- Annexe: liste des liens utiles -->
-[wiki-netfilter]: https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter
-
-# Legal
-
-- Linux est une marque déposée par Linus Torvalds aux États Unis et dans d'autres pays.
-- Red Hat Linux et Red Hat Enterprise Linux sont des marques déposées par RedHat Inc.
-- Mandriva® Linux® est une marque déposée par Mandriva Inc.
-- SUSE™ (SUSE est une marque de SUSE LINUX Products GmbH, une filiale de Novell)
-- UNIX® est une marque déposée de The Open Group. 
-- Other names may be trademarks of their respective owners
+Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 

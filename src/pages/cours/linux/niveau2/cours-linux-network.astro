@@ -1,0 +1,20 @@
+---
+import Layout from '@layouts/SlideLayout.astro';
+
+import Content from '@courses/linux/cours-network.md';
+import {Content as Legal} from '@courses/linux/legal.md';
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours Linux networking",
+  tags: [
+    "linux",
+  ],
+}
+---
+
+<Layout frontmatter={frontmatter} >
+
+  <Content />
+  <Legal />
+
+</Layout>
