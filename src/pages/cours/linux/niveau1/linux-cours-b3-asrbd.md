@@ -170,6 +170,16 @@ tags:
 
 ---
 
+## Permissions des répertoires
+
+Les permissions sur un répertoire ont un sens légèrement différent :
+
+- `r` : Autorise à **lister le contenu** du répertoire (si le droit `x` est également présent)
+- `w` : Autorise à **ajouter, supprimer ou renomer des fichiers** dans le dossier (si le droit `x` est également présent)
+- `x` : Autorise à **se déplacer** dans un répertoire (commande `cd`)
+
+---
+
 ## Affichage des droits
 
 ```

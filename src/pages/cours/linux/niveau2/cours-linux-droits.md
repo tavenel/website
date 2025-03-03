@@ -62,6 +62,17 @@ tags:
 
 ---
 
+## Permissions des répertoires
+
+Les permissions sur un répertoire ont un sens légèrement différent :
+
+- `r` : Autorise à **lister le contenu** du répertoire (si le droit `x` est également présent)
+- `w` : Autorise à **ajouter, supprimer ou renomer des fichiers** dans le dossier (si le droit `x` est également présent)
+- `x` : Autorise à **se déplacer** dans un répertoire (commande `cd`)
+
+---
+
+
 ## Affichage des droits
 
 ```
@@ -158,6 +169,75 @@ setfacl -m g:group1:rw fichier_test.txt
 setfacl -x u:<utilisateur> <fichier>
 # Supprimer tous les ACL
 setfacl -b <fichier>
+```
+
+---
+
+# Création et modification des liens physiques et symboliques sur les fichiers 
+
+---
+
+## inode
+
+- _Index node_ : structure de données qui stocke les attributs d'un fichier
+- permissions, propriétaire, bloc disque de stockage, ...
+
+---
+
+## Liens symboliques
+
+- Type spécial de fichier
+- _Lien symbolique_ (ou lien faible, _soft link_) : pointe vers le chemin d'un autre fichier (_target_)
+  + `ln -s TARGET NOM_DU_LIEN`
+  + Si suppression de la target, pointe vers rien
+- _Lien réel_ (_hard link_) : 2e référence vers le même fichier
+  + toujours 1 seul inode
+  + `ln TARGET NOM_DU_LIEN`
+
+---
+
+```plantuml
+title: Lien réel vs lien symbolique
+
+@startuml
+folder "source" {
+  [F1]
+}
+
+folder "Lien réel (hard link)" {
+  [F2]
+}
+
+[Lien symbolique] as F3
+
+database "Données" as data {
+}
+
+[F1] -> data
+[F2] -> data
+[F3] ..> F1
+@enduml
+```
+
+---
+
+```plantuml
+@startuml
+title: Suppression du fichier source
+
+folder "Lien dur (hard link)" {
+  [F2]
+}
+
+[Lien réel (symbolic)] as F3
+
+database "Données" as data {
+}
+
+[F2] -> data
+[F1] #red
+[F3] ..> F1 #red
+@enduml
 ```
 
 ---

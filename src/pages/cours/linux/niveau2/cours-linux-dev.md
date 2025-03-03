@@ -544,6 +544,16 @@ commande1 | commande2
 
 ---
 
+## Permissions des répertoires
+
+Les permissions sur un répertoire ont un sens légèrement différent :
+
+- `r` : Autorise à **lister le contenu** du répertoire (si le droit `x` est également présent)
+- `w` : Autorise à **ajouter, supprimer ou renomer des fichiers** dans le dossier (si le droit `x` est également présent)
+- `x` : Autorise à **se déplacer** dans un répertoire (commande `cd`)
+
+---
+
 ## Affichage des droits
 
 ```
@@ -645,6 +655,52 @@ drwxr-xrw- [...]
 - _Lien réel_ (_hard link_) : 2e référence vers le même fichier
   + toujours 1 seul inode
   + `ln TARGET NOM_DU_LIEN`
+
+---
+
+```plantuml
+title: Lien réel vs lien symbolique
+
+@startuml
+folder "source" {
+  [F1]
+}
+
+folder "Lien réel (hard link)" {
+  [F2]
+}
+
+[Lien symbolique] as F3
+
+database "Données" as data {
+}
+
+[F1] -> data
+[F2] -> data
+[F3] ..> F1
+@enduml
+```
+
+---
+
+```plantuml
+@startuml
+title: Suppression du fichier source
+
+folder "Lien dur (hard link)" {
+  [F2]
+}
+
+[Lien réel (symbolic)] as F3
+
+database "Données" as data {
+}
+
+[F2] -> data
+[F1] #red
+[F3] ..> F1 #red
+@enduml
+```
 
 ---
 

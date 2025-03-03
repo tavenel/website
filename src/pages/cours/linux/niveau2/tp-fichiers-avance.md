@@ -1,7 +1,6 @@
 ---
 title: TP - Gestion avancée de fichiers - permissions, liens, recherche
 date: 2024 / 2025
-correction: false
 ---
 
 ## Gestion des permissions
@@ -10,11 +9,11 @@ correction: false
 
 1. Créez un fichier `/tmp/test_permissions_file` et changez ses droits pour que le propriétaire ait tous les droits, et seuls les membres du même groupe peuvent lire le contenu du fichier.
 2. Créez un dossier `/tmp/test_permissions_dir` et modifiez le propriétaire en `tom` et le groupe de ce dossier en `users` (ou un autre utilisateur et un autre groupe).
-3. Tout le monde doit pouvoir lire les fichiers dans ce dossier, mais sans créer ou supprimer les fichiers. De même tous les fichiers déjà créés dans ce répertoire doivent appartenir au groupe `users`. Placez les bons droits.
-4. Créez un répertoire test dans `/tmp` avec les droits `rwxrwxrwx`. Créez-y un fichier et modifiez les droits de celui-ci en retirant le droit `w` au groupe et aux autres. Qui peut le supprimer ? 
+3. Tout le monde doit pouvoir **lister** les fichiers dans ce dossier, mais sans créer ou supprimer les fichiers. Changez les droits existants pour que tous les fichiers déjà créés dans ce répertoire appartiennent au groupe `users`. Placez les bons droits.
+4. Créez un répertoire test dans `/tmp` avec les droits `rwxrwxrwx`. Créez-y un fichier et modifiez les droits de ce fichier en retirant le droit `w` au groupe et aux autres. Qui peut le supprimer ?
 
 :::correction
-```
+```sh
 # #1.
 touch /tmp/test_permissions_file
 chmod 750 /tmp/test_permissions_file
@@ -108,7 +107,7 @@ Créez un masque restrictif : vous pouvez faire ce que vous voulez, le groupe a 
 
 
 :::correction
-```
+```sh
 # 1.
 $ echo "Une ligne de contenu" > target
 $ ln target hardlink
@@ -145,7 +144,7 @@ Une ligne de contenu
 :::
 
 :::correction
-```
+```sh
 # 4.
 $ ls -lid ~
      33 drwxr-xr-x   16 tom      tom       600 Aug 28 09:33 /home/tom
@@ -188,7 +187,7 @@ $ ls -lid /mnt/data/Documents
 3. Supprimer le fichier `target`. Que se passe-t-il ? Pourquoi ?
 
 :::correction
-```
+```sh
 # 1.
 $ ln -s target-fausse symlink-erreur
 $ ls -l symlink-erreur
@@ -239,7 +238,7 @@ cat: can't open 'symlink': No such file or directory
 
 ### La commande find
 
-```
+```sh
 find [chemin...] [expression]
 ```
 
@@ -250,7 +249,7 @@ Vous pouvez également agir sur la liste des fichiers trouvés.
 :::tip
 Options les plus courantes (voir le cours p.530 pour plus d'options) :
 
-- `-name` : filtre sur le nom (sensible à la casse, sinon `-iname`).
+- `-name` : filtre sur le nom (sensible à la casse, sinon `-iname`). **Attention à bien échapper les caractères spéciaux : `'*.pdf'` et non `*.pdf` !**
 - `-type` : filtre sur le type **interne** de fichier (pas son extension) :
   + `-type f` : fichiers standards uniquement
   + `-type d` : répertoires uniquement
@@ -261,9 +260,18 @@ Options les plus courantes (voir le cours p.530 pour plus d'options) :
 :::
 
 :::tip
+Pour enchaîner une autre commande avec les résultats de chemins de fichiers récupérés par la commande `find`, on pourra utiliser l'option `-exec`. Cette option utilise un argument `{}` qui sera remplacé par le chemin du fichier trouvé, et doit finir par `\;` :
+
+```sh
+# Trouver les fichiers TXT dans le répertoire utilisateur et afficher leur contenu avec la commande CAT :
+find ~ -type f -name '*.txt' -exec cat {} \;
+```
+:::
+
+:::tip
 Exemple : Compresser tous les fichiers textes de plus de 24 h :
 
-```
+```sh
 find . -name "*.txt" -mtime 1 -type f -print0 | xargs -0 gzip
 ```
 :::
@@ -271,7 +279,7 @@ find . -name "*.txt" -mtime 1 -type f -print0 | xargs -0 gzip
 
 ### La commande locate
 
-```
+```sh
 locate [option]... motif...
 ```
 
@@ -296,19 +304,19 @@ But : rechercher des fichiers avec `find`, `whereis` et `locate`.
 :::correction
 1. Affichez tous les fichiers ayant une taille inférieure à 400 octets et ayant les droits 644. Utilisez les paramètres `-size` et `-perm` de la commande `find`.
 
-```
+```sh
 $ find / -size -400c -perm 644 -print
 ```
 
 2. Affichez tous les fichiers dans votre répertoire personnel ayant une taille inférieure à 400 blocs.
 
-```
+```sh
 $ find ~ -size -400 -print
 ```
 
 3. Listez en format long tous les fichiers du système vous appartenant modifiés il a plus de 7 jours. Utilisez les paramètres `-user` et `-mtime`.
 
-```
+```sh
 $ find / -user seb -mtime +7 -ls
 ```
 
@@ -316,19 +324,19 @@ $ find / -user seb -mtime +7 -ls
  
 Le petit piège réside ici dans le “inclus”. Si vous indiquez +512c, les fichiers de 512 octets sont exclus. Vous devez modifier les bornes en conséquence.
 
-```
+```sh
 $ find ~ -user guest -size +511c -size -1025c -ls
 ```
 
 5. Recherchez tous les fichiers vides du système n’appartenant pas à `root` et tentez de les supprimer. Utilisez les paramètres `-empty` et `-exec` pour exécuter un `rm` sur chaque fichier trouvé.
 
-```
+```sh
 $ find / -type f -empty -exec rm -f {} \;
 ```
 
 6. Indiquez où se situe la commande binaire `ls`. Utilisez la commande `whereis` pour cela.
 
-```
+```sh
 $ whereis -b ls
 ```
 
@@ -336,7 +344,7 @@ $ whereis -b ls
 
 Pour répondre il faut que la base locatedb soit déjà construite avec `updatedb`. Ensuite utilisez la commande `locate` :
 
-```
+```sh
 $ locate lettre_importante.odf 
 ```
 :::
