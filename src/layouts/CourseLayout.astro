@@ -37,7 +37,6 @@ const { frontmatter, url } = Astro.props;
 	<slot name="after-course" />
 	<Diagrams
 		math={ frontmatter.extra?.includes('math') }
-		markmap={ frontmatter.extra?.includes('markmap') }
 		mermaid={ frontmatter.extra?.includes('mermaid') }
 	/>
 </Layout>

@@ -3,24 +3,25 @@ import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import pagefind from "astro-pagefind";
+import { visualizer } from "rollup-plugin-visualizer";
 
-import remarkToc from 'remark-toc';
-import remarkEmoji from 'remark-emoji';
-import remarkDirective from 'remark-directive';
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
+import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
+import remarkDirective from 'remark-directive';
+import remarkEmoji from 'remark-emoji';
+import remarkMath from 'remark-math';
+import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
 import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
-import rehypeSlug from 'rehype-slug';
+import remarkToc from 'remark-toc';
+
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeKatex from 'rehype-katex';
-import { visualizer } from "rollup-plugin-visualizer";
-
-import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
-import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
+import rehypeSlug from 'rehype-slug';
 
 // Set default Layout for Markdown files
-const setLayout = () => {
+const defaultLayout = () => {
 	return function (_, file) {
 		file.data.astro.frontmatter.layout =
 			file.data.astro.frontmatter.layout || "@layouts/CourseLayout.astro";
@@ -60,12 +61,14 @@ export default defineConfig({
 	site: 'https://www.avenel.pro',
 
 	markdown: {
+		// extendDefaultPlugins: true,
 		// remark: Markdown processing
 		remarkPlugins: [
-			setLayout,
+			defaultLayout,
 			[remarkToc, { heading: 'Chapitres', maxDepth: 3 }],
 			remarkDiagram,
 			remarkEmoji,
+			remarkMath,
 			remarkModifiedTime,
 			remarkPlantUML,
 			remarkDirective, // required for remarkCalloutDirectives - must be before

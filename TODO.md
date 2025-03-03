@@ -8,9 +8,15 @@
 ## P2
 
 - diagrams
-  - Astro component : better loading (add yarn dep, …) instead of inline script
-  - fix `katex` : loaded but nothing
+  - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
   - fix `@startdot`
+```css
+	@media (prefers-color-scheme: dark) {
+  .kroki svg {
+    filter: invert(100%);
+  }
+}
+```
 
 - Head.astro => ClientRouter transitions
 - JS slide => <https://www.geeksforgeeks.org/simple-swipe-with-vanilla-javascript/>
@@ -115,37 +121,6 @@ _Tom Avenel_
 - https://github.com/astefanutti/decktape
 - https://markdalgleish.com/projects/bespoke.js/
 - https://github.com/gnab/remark/issues/50#issuecomment-223887379
-
----
-
-https://docs.astro.build/en/guides/testing/
-
-  yarn playwright test
-    Runs the end-to-end tests.
-
-  yarn playwright test --ui
-    Starts the interactive UI mode.
-
-  yarn playwright test --project=chromium
-    Runs the tests only on Desktop Chrome.
-
-  yarn playwright test example
-    Runs the tests in a specific file.
-
-  yarn playwright test --debug
-    Runs the tests in debug mode.
-
-  yarn playwright codegen
-    Auto generate tests with Codegen.
-
-We suggest that you begin by typing:
-
-    yarn playwright test
-
-And check out the following files:
-  - ./tests/e2e/example.spec.ts - Example end-to-end test
-  - ./tests-examples/demo-todo-app.spec.ts - Demo Todo App end-to-end tests
-  - ./playwright.config.ts - Playwright Test configuration
 
 ---
 

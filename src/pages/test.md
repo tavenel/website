@@ -54,3 +54,47 @@ def f(y):
 a = A()
 f(2)
 ```
+
+# gfm
+
+## Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+
+## Tasklist
+
+* [ ] to do
+* [x] done
+
+## Table
+
+| Turtle | Assessment |
+|-|-|
+| Leonardo | Overrated |
+| Raphael | Anger issues &mdash; needs therapy |
+| Michelangelo | Seems fun, probably also needs therapy |
+| Donatello | Relatable; definitely needs therapy |
+
+# Math
+
+Lift($$L$$) can be determined by Lift Coefficient ($$C_L$$) like the following
+equation.
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$

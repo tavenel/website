@@ -1,6 +1,6 @@
 ## Features
 
-- Lazy-load `Markmap` (mind maps), `Mermaid` (diagrams) or `Kattex` (LaTeX maths) JS librairies if needed.
+- Lazy-load `Mermaid` (diagrams) JS librairies if needed.
 - Transform `PlantUML` diagrams into images at build-time using [remark-simple-plantuml](https://github.com/akebifiky/remark-simple-plantuml)
 - Search using `PageFind` integrated by [astro-pagefind](https://github.com/shishkin/astro-pagefind/)
 - Callouts : `:::tip`, `:::link`, `:::warn`, `:::strong`, `:::exo`, `:::correction` using [remark-callout-directives](https://github.com/Microflash/remark-callout-directives)

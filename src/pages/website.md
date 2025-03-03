@@ -59,7 +59,7 @@ No personal data or traffic information is collected.
 
 - This website is developped with ecological principles in mind. It intends to be as frugal as possible and usable on old terminals like old mobile phone or old computers.
 - Éco-index (2023-10-13) [Détails sur ecoindex.fr](https://www.ecoindex.fr/resultat/?id=0cba402f-cc0f-4b2d-ad7a-1495a1ccb6d2#score-details) : <span class="green">A (94/100)</span>
-- <div id="wcb" class="carbonbadge"></div><script src="/resources/js/carbonbadge-1.1.3.min.js"  defer></script>
+- <div id="wcb" class="carbonbadge"></div><script src="/carbonbadge-1.1.3.min.js"  defer></script>
 - For more information, have a look to the [Green IT course](/cours/rse/index.html).
 
 ## Lobbying et partenariats

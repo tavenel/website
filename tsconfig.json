@@ -16,6 +16,12 @@
 			"@components/*": [
 				"src/components/*"
 			],
+			"@css/*": [
+				"src/css/*"
+			],
+			"@courses/*": [
+				"src/courses/*"
+			],
 			"@layouts/*": [
 				"src/layouts/*"
 			],

@@ -18,6 +18,7 @@
         "rehype-slug": "^6.0.0",
         "remark-directive": "^3.0.1",
         "remark-emoji": "^5.0.1",
+        "remark-math": "^6.0.0",
         "remark-mermaidjs": "^7.0.0",
         "remark-toc": "^9.0.0",
         "rollup-plugin-visualizer": "^5.14.0",
@@ -724,6 +725,8 @@
 
     "mdast-util-gfm-task-list-item": ["mdast-util-gfm-task-list-item@2.0.0", "https://registry.yarnpkg.com/mdast-util-gfm-task-list-item/-/mdast-util-gfm-task-list-item-2.0.0.tgz", { "dependencies": { "@types/mdast": "^4.0.0", "devlop": "^1.0.0", "mdast-util-from-markdown": "^2.0.0", "mdast-util-to-markdown": "^2.0.0" } }, ""],
 
+    "mdast-util-math": ["mdast-util-math@3.0.0", "", { "dependencies": { "@types/hast": "^3.0.0", "@types/mdast": "^4.0.0", "devlop": "^1.0.0", "longest-streak": "^3.0.0", "mdast-util-from-markdown": "^2.0.0", "mdast-util-to-markdown": "^2.1.0", "unist-util-remove-position": "^5.0.0" } }, "sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w=="],
+
     "mdast-util-mdx-expression": ["mdast-util-mdx-expression@2.0.1", "https://registry.yarnpkg.com/mdast-util-mdx-expression/-/mdast-util-mdx-expression-2.0.1.tgz", { "dependencies": { "@types/estree-jsx": "^1.0.0", "@types/hast": "^3.0.0", "@types/mdast": "^4.0.0", "devlop": "^1.0.0", "mdast-util-from-markdown": "^2.0.0", "mdast-util-to-markdown": "^2.0.0" } }, ""],
 
     "mdast-util-phrasing": ["mdast-util-phrasing@4.1.0", "https://registry.yarnpkg.com/mdast-util-phrasing/-/mdast-util-phrasing-4.1.0.tgz", { "dependencies": { "@types/mdast": "^4.0.0", "unist-util-is": "^6.0.0" } }, ""],
@@ -759,6 +762,8 @@
     "micromark-extension-gfm-tagfilter": ["micromark-extension-gfm-tagfilter@2.0.0", "https://registry.yarnpkg.com/micromark-extension-gfm-tagfilter/-/micromark-extension-gfm-tagfilter-2.0.0.tgz", { "dependencies": { "micromark-util-types": "^2.0.0" } }, ""],
 
     "micromark-extension-gfm-task-list-item": ["micromark-extension-gfm-task-list-item@2.1.0", "https://registry.yarnpkg.com/micromark-extension-gfm-task-list-item/-/micromark-extension-gfm-task-list-item-2.1.0.tgz", { "dependencies": { "devlop": "^1.0.0", "micromark-factory-space": "^2.0.0", "micromark-util-character": "^2.0.0", "micromark-util-symbol": "^2.0.0", "micromark-util-types": "^2.0.0" } }, ""],
+
+    "micromark-extension-math": ["micromark-extension-math@3.1.0", "", { "dependencies": { "@types/katex": "^0.16.0", "devlop": "^1.0.0", "katex": "^0.16.0", "micromark-factory-space": "^2.0.0", "micromark-util-character": "^2.0.0", "micromark-util-symbol": "^2.0.0", "micromark-util-types": "^2.0.0" } }, "sha512-lvEqd+fHjATVs+2v/8kg9i5Q0AP2k85H0WUOwpIVvUML8BapsMvh1XAogmQjOCsLpoKRCVQqEkQBB3NhVBcsOg=="],
 
     "micromark-factory-destination": ["micromark-factory-destination@2.0.1", "https://registry.yarnpkg.com/micromark-factory-destination/-/micromark-factory-destination-2.0.1.tgz", { "dependencies": { "micromark-util-character": "^2.0.0", "micromark-util-symbol": "^2.0.0", "micromark-util-types": "^2.0.0" } }, ""],
 
@@ -973,6 +978,8 @@
     "remark-lint-no-unused-definitions": ["remark-lint-no-unused-definitions@4.0.1", "https://registry.yarnpkg.com/remark-lint-no-unused-definitions/-/remark-lint-no-unused-definitions-4.0.1.tgz", { "dependencies": { "@types/mdast": "^4.0.0", "devlop": "^1.0.0", "unified-lint-rule": "^3.0.0", "unist-util-visit": "^5.0.0" } }, ""],
 
     "remark-lint-ordered-list-marker-style": ["remark-lint-ordered-list-marker-style@4.0.1", "https://registry.yarnpkg.com/remark-lint-ordered-list-marker-style/-/remark-lint-ordered-list-marker-style-4.0.1.tgz", { "dependencies": { "@types/mdast": "^4.0.0", "mdast-util-phrasing": "^4.0.0", "micromark-util-character": "^2.0.0", "unified-lint-rule": "^3.0.0", "unist-util-position": "^5.0.0", "unist-util-visit-parents": "^6.0.0", "vfile-message": "^4.0.0" } }, ""],
+
+    "remark-math": ["remark-math@6.0.0", "", { "dependencies": { "@types/mdast": "^4.0.0", "mdast-util-math": "^3.0.0", "micromark-extension-math": "^3.0.0", "unified": "^11.0.0" } }, "sha512-MMqgnP74Igy+S3WwnhQ7kqGlEerTETXMvJhrUzDikVZ2/uogJCb+WHUg97hK9/jcfc0dkD73s3LN8zU49cTEtA=="],
 
     "remark-mermaidjs": ["remark-mermaidjs@7.0.0", "https://registry.yarnpkg.com/remark-mermaidjs/-/remark-mermaidjs-7.0.0.tgz", { "dependencies": { "@types/mdast": "^4.0.0", "hast-util-from-html-isomorphic": "^2.0.0", "mermaid-isomorphic": "^3.0.0", "unified": "^11.0.0", "unist-util-visit-parents": "^6.0.0", "vfile": "^6.0.0" }, "peerDependencies": { "playwright": "1" } }, ""],
 
@@ -1232,8 +1239,6 @@
 
     "got/@sindresorhus/is": ["@sindresorhus/is@5.6.0", "https://registry.yarnpkg.com/@sindresorhus/is/-/is-5.6.0.tgz", {}, ""],
 
-    "is-inside-container/is-docker": ["is-docker@3.0.0", "https://registry.yarnpkg.com/is-docker/-/is-docker-3.0.0.tgz", { "bin": "cli.js" }, ""],
-
     "load-yaml-file/js-yaml": ["js-yaml@3.14.1", "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz", { "dependencies": { "argparse": "^1.0.7", "esprima": "^4.0.0" }, "bin": "bin/js-yaml.js" }, ""],
 
     "mdast-util-find-and-replace/escape-string-regexp": ["escape-string-regexp@5.0.0", "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz", {}, ""],
@@ -1268,12 +1273,6 @@
 
     "vite/fsevents": ["fsevents@2.3.3", "", { "os": "darwin" }, "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="],
 
-    "widest-line/string-width": ["string-width@7.2.0", "https://registry.yarnpkg.com/string-width/-/string-width-7.2.0.tgz", { "dependencies": { "emoji-regex": "^10.3.0", "get-east-asian-width": "^1.0.0", "strip-ansi": "^7.1.0" } }, ""],
-
-    "wrap-ansi/string-width": ["string-width@7.2.0", "https://registry.yarnpkg.com/string-width/-/string-width-7.2.0.tgz", { "dependencies": { "emoji-regex": "^10.3.0", "get-east-asian-width": "^1.0.0", "strip-ansi": "^7.1.0" } }, ""],
-
-    "wrap-ansi/strip-ansi": ["strip-ansi@7.1.0", "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-7.1.0.tgz", { "dependencies": { "ansi-regex": "^6.0.1" } }, ""],
-
     "yargs/string-width": ["string-width@4.2.3", "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz", { "dependencies": { "emoji-regex": "^8.0.0", "is-fullwidth-code-point": "^3.0.0", "strip-ansi": "^6.0.1" } }, ""],
 
     "@akebifiky/remark-simple-plantuml/unist-util-visit/@types/unist": ["@types/unist@2.0.11", "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.11.tgz", {}, ""],
@@ -1302,21 +1301,11 @@
 
     "mdast-util-gfm-autolink-literal/mdast-util-find-and-replace/escape-string-regexp": ["escape-string-regexp@5.0.0", "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz", {}, ""],
 
-    "widest-line/string-width/emoji-regex": ["emoji-regex@10.4.0", "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-10.4.0.tgz", {}, ""],
-
-    "widest-line/string-width/strip-ansi": ["strip-ansi@7.1.0", "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-7.1.0.tgz", { "dependencies": { "ansi-regex": "^6.0.1" } }, ""],
-
-    "wrap-ansi/string-width/emoji-regex": ["emoji-regex@10.4.0", "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-10.4.0.tgz", {}, ""],
-
-    "wrap-ansi/strip-ansi/ansi-regex": ["ansi-regex@6.1.0", "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-6.1.0.tgz", {}, ""],
-
     "yargs/string-width/emoji-regex": ["emoji-regex@8.0.0", "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz", {}, ""],
 
     "yargs/string-width/strip-ansi": ["strip-ansi@6.0.1", "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz", { "dependencies": { "ansi-regex": "^5.0.1" } }, ""],
 
     "ansi-align/string-width/strip-ansi/ansi-regex": ["ansi-regex@5.0.1", "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz", {}, ""],
-
-    "widest-line/string-width/strip-ansi/ansi-regex": ["ansi-regex@6.1.0", "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-6.1.0.tgz", {}, ""],
 
     "yargs/string-width/strip-ansi/ansi-regex": ["ansi-regex@5.0.1", "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz", {}, ""],
   }
