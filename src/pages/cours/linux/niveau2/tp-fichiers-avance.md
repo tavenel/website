@@ -276,6 +276,19 @@ find . -name "*.txt" -mtime 1 -type f -print0 | xargs -0 gzip
 ```
 :::
 
+:::tip
+Quelques erreurs courantes :
+
+- Attention à échapper tous les caractères spéciaux : `\*`, `'*.pdf'`, `\?`, `'f?.pdf`, `\(`, `\)`, `\;`.
+	- Sans échapper le caractère `*`, celle-ci est évaluée par le _shell_ **avant** d'exécuter la commande `find` (or, on veut passer le caractère `*` en argument, sans l'évaluer). Par exemple, `find /home/tom -name *.c` ne va **~pas chercher les fichiers terminant par `.c` dans mon répertoire utilisateur~**. Les jokers (`*`, …) sont évalués **dans le répertoire courant avant d'exécuter une commande** : la commande précédente correspond par exemple à la commande réelle : `find /home/tom -name frcode.c locate.c word_io.c` si les fichiers `frcode.c`, `locate.c` et `word_io.c` sont présents **dans le répertoire courant**. On devra donc échapper la commande : `find /home/tom -name '*.c'` ou `find /home/tom -name \*.c` pour que la commande réellement exécutée par le shell soit bien : `find /home/tom -name *.c`
+  - Messages d'erreur liés :
+		- `find: paths must precede expression`
+		- `find: possible unquoted pattern after predicate -name?`
+- L'opérateur _et_ (`-a`) est implicite : `find -type f -name '*.pdf'` et `find -type f -a -name '*.pdf'` sont équivalents.
+- L'opérateur _et_ (`-a`) est prioritaire sur l'opérateur _ou_ (`-o`) : la commande `find . -name afile -o -name bfile -print` va afficher (`print`) uniquement `bfile` car cette commande est équivalent à : `find . -name
+       afile -o \( -name bfile -a -print \)`.
+:::
+
 
 ### La commande locate
 

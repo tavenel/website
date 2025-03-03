@@ -90,10 +90,10 @@ Les ACL (Access Control List) permettent de définir des permissions supplément
 
 1. Assurez-vous que le système de fichiers supporte les ACL :
     ```bash
-    mount | grep acl
+    sudo tune2fs -l /dev/root | grep "Default mount options:"
     ```
 
-    Si ce n'est pas le cas, ajoutez l'option `acl` dans `/etc/fstab` pour votre système de fichiers et redémarrez la machine ou remontez le système de fichiers : `mount -o remount /`
+    Si ce n'est pas le cas, activez les `acl` pour votre système de fichiers : `sudo tune2fs -o acl /dev/root` et redémarrez la machine ou remontez le système de fichiers : `mount -o remount /`
 
 ### Étape 2 : Gestion des ACL avec `setfacl` et `getfacl`
 
