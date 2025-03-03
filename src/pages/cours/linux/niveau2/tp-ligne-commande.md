@@ -49,7 +49,7 @@ Voir aussi :
 
 Vous pouvez également utiliser la commande `env` pour exécuter un programme avec des variables d'environnement spécifiques. Par exemple, pour exécuter un programme `mon_programme` avec une variable d'environnement spécifique, vous pouvez saisir :
 
-```
+```sh
 env NOM_DE_VARIABLE=VALEUR mon_programme
 ```
 
@@ -111,14 +111,14 @@ Modifier le `PATH` pour ajouter un répertoire de votre choix.
 
 Exemple de réutilisation des arguments :
 
-```bash
-$ echo "f1" "f2" "f3"
-$ echo !!:2 # :2 == f2, voir aussi :^, :$, :*
-$ echo !!:2:a # /home/user/f2 => :a récupère le chemin, :A suit les liens (symlink), :h extrait seulement le répertoire, :h1 le 1er répertoire, :t seulement le nom de fichier, :r retire l'extension
-$ echo !!:s/… # substitute, idem Vim
-$ echo ${var/<pattern>/<replacement>} # remplace 1e occurence de `pattern` par `replacement`
-$ echo ${var//<pattern>/<replacement>} # remplace toutes occurences de `pattern` par `replacement`
-$ echo ${^array}.png # one.png two.png three.png
+```sh
+echo "f1" "f2" "f3"
+echo !!:2 # :2 == f2, voir aussi :^, :$, :*
+echo !!:2:a # /home/user/f2 => :a récupère le chemin, :A suit les liens (symlink), :h extrait seulement le répertoire, :h1 le 1er répertoire, :t seulement le nom de fichier, :r retire l'extension
+echo !!:s/… # substitute, idem Vim
+echo ${var/<pattern>/<replacement>} # remplace 1e occurence de `pattern` par `replacement`
+echo ${var//<pattern>/<replacement>} # remplace toutes occurences de `pattern` par `replacement`
+echo ${^array}.png # one.png two.png three.png
 ```
 
 :::exo

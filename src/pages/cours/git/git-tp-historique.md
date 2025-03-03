@@ -42,7 +42,7 @@ _Pensez-vous qu'il est judicieux de créer un même commit pour les deux changem
 
 Il est possible d'annuler des changements dans le `staging` grâce à la commande `reset` :
 
-```bash
+```sh
 $ git reset
 ```
 
@@ -109,7 +109,7 @@ Cette commande est beaucoup plus puissante (et donc dangereuse) et permet en ré
 
 On peut utiliser cette commande pour "annuler" virtuellement un commit (en réalité, le détacher de l'historique) :
 
-```bash
+```sh
 $ git reset HEAD~2 # place la HEAD (modifie la branche courante) avant les deux derniers commit 
 ```
 
@@ -117,7 +117,7 @@ Le symbole `~` permet de remonter (linéairement) l'historique des commit : `HEA
 
 On peut aussi utiliser directement un identifiant de commit :
 
-```bash
+```sh
 $ git reset d56af577052517886f29179409dddc1f65a956d8 # retourne au commit avec le hash : d56af577052517886f29179409dddc1f65a956d8
 ```
 ### Hard reset
@@ -126,7 +126,7 @@ $ git reset d56af577052517886f29179409dddc1f65a956d8 # retourne au commit avec l
 
 **Cette option ne doit être utilisée sur des commit publiés en dehors du dépôt local (après push) au risque de corrompre l'historique du dépôt distant**
 
-```bash
+```sh
 $ git reset --hard
 # Détruit tout changement (working directory, staging) depuis le dernier commit.
 ```
@@ -135,13 +135,13 @@ $ git reset --hard
 
 Il est possible de supprimer des fichiers par la commande `$ git rm`.
 
-```bash
+```sh
 $ git rm index.html
 # Supprime un fichier index.html du working directory et du staging.
 # Nécessite un nouveau commit pour intégrer le changement.
 ```
 
-```bash
+```sh
 $ git rm --cached index.html
 # Supprime le fichier index.html du staging uniquement.
 # Le fichier reste dans le working directory.

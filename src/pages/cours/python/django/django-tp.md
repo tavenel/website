@@ -53,7 +53,7 @@ Il faut ensuite, **dans chaque terminal ouvert par la suite pour notre projet**,
 
 Par exemple sous Linux / Mac :
 
-```bash
+```sh
 $ source /path/to/new/virtual/environment/bin/activate
 ```
 

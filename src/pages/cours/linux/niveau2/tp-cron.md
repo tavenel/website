@@ -135,7 +135,7 @@ Pour s'aider à écrire les `crontab` et les vérifier, on pourra utiliser l'exc
 - Copier le script suivant et le faire exécuter toutes les 2 minutes.
 - Que fait ce script ?
 
-```
+```sh
 #!/usr/bin/env bash
 touch /home/mon_utilisateur/cron-$(date +"%Y%H%M")
 ```
@@ -224,7 +224,7 @@ WantedBy=timers.target
 
 ### Exemples sur le système
 
-```
+```sh
 grep OnCalendar -r /usr/lib/systemd/
 ```
 

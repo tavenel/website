@@ -24,19 +24,19 @@ Le `SUID` (Set User ID) est un mécanisme de permission qui permet à un utilisa
 3. Modifiez les permissions pour activer le SUID et tester l'exécution du script
 
 :::correction
-```bash
+```sh
 #!/bin/bash
 echo "Le fichier est exécuté avec les privilèges de $(whoami)"
 ```
 
-```bash
+```sh
 chmod +x suid_script.sh
 sudo chown root:root suid_script.sh
 ./suid_script.sh
 # tom
 ```
 
-```bash
+```sh
 sudo chmod u+s suid_script.sh
 ./suid_script.sh
 # root
@@ -53,22 +53,22 @@ Le SGID (Set Group ID) est similaire au SUID, mais il affecte le groupe proprié
 ### Étape 1 : Création d'un fichier avec le SGID
 
 1. Créez un répertoire de test :
-    ```bash
+    ```sh
     mkdir /tmp/sgid_test
     ```
 
 2. Modifiez les permissions du répertoire pour activer le SGID :
-    ```bash
+    ```sh
     chmod g+s /tmp/sgid_test
     ```
 
 3. Ajoutez un fichier dans le répertoire :
-    ```bash
+    ```sh
     touch /tmp/sgid_test/fichier_test.txt
     ```
 
 4. Vérifiez les permissions du fichier et du répertoire :
-    ```bash
+    ```sh
     ls -l /tmp/sgid_test
     ```
 
@@ -89,36 +89,37 @@ Les ACL (Access Control List) permettent de définir des permissions supplément
 ### Étape 1 : Activation des ACL
 
 1. Assurez-vous que le système de fichiers supporte les ACL :
-    ```bash
+    ```sh
     sudo tune2fs -l /dev/root | grep "Default mount options:"
     ```
 
     Si ce n'est pas le cas, activez les `acl` pour votre système de fichiers : `sudo tune2fs -o acl /dev/root` et redémarrez la machine ou remontez le système de fichiers : `mount -o remount /`
+    Si besoin, installez également le paquet `acl` (sous _Debian_ ou _Ubuntu_) afin d'avoir les commandes `getfacl` et `setfacl`.
 
 ### Étape 2 : Gestion des ACL avec `setfacl` et `getfacl`
 
 1. Créez un fichier de test :
-    ```bash
+    ```sh
     touch fichier_acl.txt
     ```
 
 2. Ajoutez une permission spécifique pour un utilisateur (par exemple `user1`) :
-    ```bash
+    ```sh
     setfacl -m u:user1:r fichier_acl.txt
     ```
 
 3. Vérifiez les ACL du fichier :
-    ```bash
+    ```sh
     getfacl fichier_acl.txt
     ```
 
 4. Ajoutez une permission pour un groupe (par exemple `group1`) :
-    ```bash
+    ```sh
     setfacl -m g:group1:rw fichier_acl.txt
     ```
 
 5. Supprimez une ACL pour un utilisateur :
-    ```bash
+    ```sh
     setfacl -x u:user1 fichier_acl.txt
     ```
 

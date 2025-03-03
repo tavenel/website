@@ -25,37 +25,37 @@ La syntaxe de cette commande est très différente d'un système à l'autre (not
 
 1. Listez les processus de tous les utilisateurs du système.
 
-```
+```sh
 ps -ef
 ```
 
 ou
 
-```
+```sh
 ps aux
 ```
 
 2. Afficher uniquement les processus de votre utilisateur.
 
-```
+```sh
 ps -u tom
 ```
 
 ou
 
-```
+```sh
 ps u tom
 ```
 
 3. Afficher l'arborescence de tous les processus.
 
-```
+```sh
 ps -ejH
 ```
 
 ou
 
-```
+```sh
 ps axjf
 ```
 
@@ -63,13 +63,13 @@ ps axjf
 
 Pour récupérer le `PID` du processus courant :
 
-```
+```sh
 echo $$
 ```
 
 Pour récupérer le `PID` du processus parent auquel est rattaché le processus courant :
 
-```
+```sh
 echo $PPID
 ```
 :::
@@ -102,10 +102,10 @@ Il est aussi possible de tuer un processus depuis son nom (attention, dangereux 
 
 
 :::correction
-```
-$ sleep 1000
-$ pkill 1000
-$ kill `pgrep sleep`
+```sh
+sleep 1000
+pkill 1000
+kill `pgrep sleep`
 ```
 :::
 
@@ -128,14 +128,14 @@ voir cours _Job Control_, 103.5 Lesson 1 p.290
 :::correction
 1. Lancez le processus `sleep 1000` en arrière-plan. Récupérez son `PID`.
 
-```
+```console
 $ sleep 1000&
 [1] 9168
 ```
 
 2. Replacez ce processus en avant plan, puis stoppez-le (ne le tuez pas) et replacez-le en arrière-plan.
 
-```
+```console
 $ fg
 sleep 1000
 # [CTRL] + [Z]
@@ -146,7 +146,7 @@ $ bg
 
 3. Indiquez les détails de ce processus :
 
-```
+```console
 $ ps p 9168 -f
 UID PID PPID C STIME TTY
 tom 9168 8096 0 10:46 pts/1 STAT S TIME CMD 0:00 sleep 1000
@@ -154,7 +154,7 @@ tom 9168 8096 0 10:46 pts/1 STAT S TIME CMD 0:00 sleep 1000
 
 4. Modifiez la priorité de ce processus passez-la à un facteur 10 :
 
-```
+```console
 $ renice 10 9168
 9168: priorité précédente 0, nouvelle priorité 10
 ```
@@ -164,7 +164,7 @@ $ renice 10 9168
   - À quoi correspond la colonne `PRI` ?
   - Voir aussi : <https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/>
 
-```
+```console
 $ ps p 9168 -l 
 F S UID PID PPID C PRI NI ADDR SZ WCHAN TTY    TIME  CMD
 0 S 1000 9168 8096 0 90 10 - 2324 restar pts/1 0:00  sleep 1000
@@ -175,7 +175,7 @@ F S UID PID PPID C PRI NI ADDR SZ WCHAN TTY    TIME  CMD
 
 6. Envoyez le signal 15 à ce processus. Ceci va le terminer.
 
-```
+```console
 $ kill -15 9168 
 [1]+ Complété sleep 1000 
 ```
@@ -189,7 +189,7 @@ Lorsqu'un processus est exécuté avec la commande `nohup`, les sorties standard
 
 La syntaxe de base de la commande `nohup` est la suivante :
 
-```bash
+```sh
 nohup commande &
 ```
 
@@ -239,7 +239,7 @@ Par exemple, pour tester `zellij` sans avoir besoin de l'installer : `bash <(cur
 3. Dans `Tmux`, ouvrir une nouvelle fenêtre pour y ouvrir le fichier `~/.tmux.conf` dans `nano`.
 `[CTRL]` + `[b]` puis `[c]`
 
-```
+```sh
 nano ~/.tmux.conf
 ```
 
@@ -254,14 +254,14 @@ nano ~/.tmux.conf
 `[CTRL]` + `[b]` puis `[n]`  ou `[CTRL]` + `[b]` puis `[p]`
 8. Détacher la session courante, en créer une nouvelle qui s'appelle `session2` et dont le nom de la fenêtre est `session2 window`.
 `[CTRL]` + `[b]` puis `[d]` 
-    ```
+    ```sh
     tmux new -s "session2" -n "session2 window"
     tmux ls
     ```
 9. Détacher la session `session2` et afficher la liste des sessions.
 `[CTRL]` + `[b]` puis `[d]`
 10. Partage de session
-    ```
+    ```sh
     tmux attach-session -t nom-de-session
     tmux lsc
     tmux detach-client -t nom-du-client

@@ -45,7 +45,7 @@ Créer un script qui :
 
 ### Exemple de sortie attendue
 
-```bash
+```console
 $ ./cleanup.sh /home/user/temp
 Voulez-vous supprimer /home/user/temp/test1.tmp ? (y/n) y
 Voulez-vous supprimer /home/user/temp/test2.tmp ? (y/n) n
@@ -55,7 +55,7 @@ Voulez-vous supprimer /home/user/temp/test2.tmp ? (y/n) n
 :::correction
 ### Corrigé
 
-```bash
+```sh
 #!/bin/bash
 
 # Vérification des arguments
@@ -114,7 +114,7 @@ echo "$count fichiers .tmp supprimé(s)."
 
 ### Exemple de fichier d'entrée
 
-```text
+```
 alice
 bob
 charlie
@@ -122,7 +122,7 @@ charlie
 
 ### Exemple de sortie attendue
 
-```bash
+```console
 $ ./add_users.sh users.txt
 Répertoire /home/alice créé avec permissions 700.
 Répertoire /home/bob créé avec permissions 700.
@@ -132,7 +132,7 @@ Répertoire /home/charlie créé avec permissions 700.
 :::correction
 ### Corrigé
 
-```bash
+```sh
 #!/bin/bash
 
 # Vérification des arguments
@@ -186,7 +186,7 @@ Créer un script qui analyse les fichiers dans `/var/log` et extrait les 10 dern
 
 ### Exemple de sortie attendue
 
-```bash
+```console
 $ ./analyze_logs.sh
 Analyse des logs dans /var/log...
 Logs contenant des erreurs sauvegardés dans error_report.txt.
@@ -195,7 +195,7 @@ Logs contenant des erreurs sauvegardés dans error_report.txt.
 :::correction
 ### Corrigé
 
-```bash
+```sh
 #!/bin/bash
 
 # Répertoire des logs
@@ -242,7 +242,7 @@ Ajouter une fonctionnalité de sauvegarde et de restauration pour les répertoir
 
 #### Exemple de menu interactif
 
-```bash
+```
 1. Sauvegarder un répertoire
 2. Restaurer une sauvegarde
 3. Quitter
@@ -262,7 +262,7 @@ Créer un script qui surveille l'espace disque et alerte si l'utilisation dépas
 
 #### Exemple de sortie
 
-```bash
+```
 Alerte : La partition /dev/sda1 utilise 85 % de l'espace disque.
 ```
 
@@ -280,7 +280,7 @@ Alerte : La partition /dev/sda1 utilise 85 % de l'espace disque.
 
 #### Exemple de menu
 
-```bash
+```
 1. Lister les processus actifs
 2. Rechercher un processus par nom
 3. Terminer un processus (par PID)
@@ -301,7 +301,7 @@ Ajouter un système de journalisation dans tous les scripts.
 
 #### Exemple d'entrée dans le journal
 
-```text
+```
 [2024-11-19 10:30:45] Fichier /home/user/temp/test1.tmp supprimé.
 [2024-11-19 10:32:10] Erreur : Impossible de créer l'utilisateur "bob".
 ```
@@ -319,7 +319,7 @@ Remplacer les interactions en ligne de commande par des interfaces graphiques si
 
 #### Exemple avec Zenity
 
-```bash
+```sh
 zenity --question --text="Voulez-vous supprimer /home/user/temp/test1.tmp ?"
 ```
 

@@ -73,8 +73,8 @@ But : créer une partition et la faire reconnaître par le système. Attention l
 
 Lancez `fdisk`. Le 2e disque `SATA` s'appelle `/dev/sdb` :
 
-```
-# fdisk /dev/sdb
+```sh
+fdisk /dev/sdb
 ```
 
 - Listez les commandes de `fdisk` en appuyant sur `m`.
@@ -103,14 +103,14 @@ Lancez `fdisk`. Le 2e disque `SATA` s'appelle `/dev/sdb` :
 
 3. Forcez la mise à jour de la nouvelle table des partitions avec `partprobe` :
 
-```
-# partprobe /dev/sdb
+```sh
+partprobe /dev/sdb
 ```
 
 4. Vérifiez dans `/dev` la présence des fichiers de partitions du nouveau disque.
 
-```
-# ls -l /dev/sdb*
+```sh
+ls -l /dev/sdb*
 ```
 :::
 
@@ -126,25 +126,25 @@ But : créer et manipuler le système de fichiers dans `/dev/sdb1`. Attention ce
   - Par `dumpe2fs`
 
 :::correction
-```
+```sh
 # #1.
-# mkfs -t ext2 /dev/sdb1
+mkfs -t ext2 /dev/sdb1
 
 ---------------------------------------------------------
 
 # #2.
 
-# tune2fs -j /dev/sdb1
+tune2fs -j /dev/sdb1
 
 ---------------------------------------------------------
 
 # #3.
-# e2label /dev/sdb1 BACKUP 
+e2label /dev/sdb1 BACKUP 
 
 ---------------------------------------------------------
 
 # #4.
-# blkid /dev/sdb1
+blkid /dev/sdb1
 
 527585d3-1e52-4aba-b7fc-70f18388458d
 
@@ -163,10 +163,10 @@ But : créer et manipuler le système de fichiers dans `/dev/sdb5`. Attention ce
   - fournir une option pour un label `DONNEES`
 
 :::correction
-```
-# mkfs -t vfat -F 32 -n DONNEES /dev/sdb5
-## ou
-# mkfs.vfat -F 32 -n DONNEES /dev/sdb5
+```sh
+mkfs -t vfat -F 32 -n DONNEES /dev/sdb5
+# ou
+mkfs.vfat -F 32 -n DONNEES /dev/sdb5
 ```
 :::
 
@@ -184,39 +184,39 @@ But : accéder aux nouveaux systèmes de fichiers créés.
 6. Montez le système de fichiers simplement depuis le nom de son point de montage.
 
 :::correction
-```
-# #1.
-# mkdir /mnt/backup /mnt/donnees
+```sh
+#1.
+mkdir /mnt/backup /mnt/donnees
 
 ---------------------------------------------------------
 
-# #2.
-# mount -t ext3 /dev/sdb1 /mnt/backup
-# mount -t vfat /dev/sdb5 /mnt/donnees
+#2.
+mount -t ext3 /dev/sdb1 /mnt/backup
+mount -t vfat /dev/sdb5 /mnt/donnees
 
 ---------------------------------------------------------
 
-# #3.
-# cd /mnt/backup && touch toto
-# cd /mnt/donnees && touch toto
+#3.
+cd /mnt/backup && touch toto
+cd /mnt/donnees && touch toto
 
 ---------------------------------------------------------
 
-# #4.
-# umount /mnt/backup /mnt/donnees
+#4.
+umount /mnt/backup /mnt/donnees
 
 ---------------------------------------------------------
 
-# #5.
-# #Les lignes sont :
-# LABEL=BACKUP /mnt/backup ext3 defaults 0 0
-# LABEL=DONNEES /mnt/donnees vfat defaults 0 0
+#5.
+#Les lignes sont :
+LABEL=BACKUP /mnt/backup ext3 defaults 0 0
+LABEL=DONNEES /mnt/donnees vfat defaults 0 0
 
 ---------------------------------------------------------
 
 # #6.
-# mount -L BACKUP
-# mount -L DONNEES
+mount -L BACKUP
+mount -L DONNEES
 ```
 :::
 
@@ -239,39 +239,39 @@ But : obtenir des informations sur l’occupation du système de fichiers et le 
 :::correction
 1. Regardez l’état d’occupation de vos systèmes de fichiers, de manière lisible pour un humain.
 
-```
-# df -H
+```sh
+df -H
 ```
 
 2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s’agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et répertoire.
 
-```
-# du -m /home 
+```sh
+du -m /home 
 ```
 
 3. Le résultat est trop long. Triez la sortie de manière à obtenir les plus grosses occupations en dernier.
 
-```
-# du -m | sort -n 
+```sh
+du -m | sort -n 
 ```
 
 4. Un répertoire monté sur `/mnt/backup` (TP précédent) a des problèmes : il semble que le contenu d’un répertoire soit corrompu : noms de fichiers et tailles farfelues. Vérifiez et réparez ce système de fichiers.
 
-```
-# cd 
-# umount /mnt/backup 
-# fsck /dev/sdb1
+```sh
+cd 
+umount /mnt/backup 
+fsck /dev/sdb1
 ```
 
 5. Forcez une vérification de ce système de fichiers au prochain redémarrage.
 
-```
-# tune2fs -C 1000 /dev/sdb1
+```sh
+tune2fs -C 1000 /dev/sdb1
 ```
 
 6. Quelle est la commande permettant de mettre votre disque dur en mode lecture seule ?
 
-```
+```sh
 # Lecture du paramètre
 hdparm -r /dev/sdb
 
@@ -281,7 +281,7 @@ hdparm -r 1 /dev/sdb
 
 7. Quelle est la commande permettant d'activer/désactiver le cache d’un disque dur ?
 
-```
+```sh
 # Lecture du paramètre
 hdparm -W /dev/sdb
 
@@ -296,8 +296,8 @@ But : gérer le swap et la mémoire.
 
 1. Sur une machine donnée, le bilan mémoire se présente ainsi, qu'en déduisez-vous ? 
 
-    ```
-    # free 
+    ```console
+    $ free 
            total      used    free  shared   buffers   cached 
     Mem: 2060680   2011224   49456       0    170628   958508 
     -/+ buffers/cache:  882088  1178592
@@ -311,8 +311,8 @@ But : gérer le swap et la mémoire.
 :::correction
 1. Sur une machine donnée, le bilan mémoire se présente ainsi, qu'en déduisez-vous ? 
 
-```
-# free 
+```console
+$ free 
        total      used    free  shared   buffers   cached 
 Mem: 2060680   2011224   49456       0    170628   958508 
 -/+ buffers/cache:  882088  1178592
@@ -327,8 +327,8 @@ Bien qu’indiquant environ 48 Mo de mémoire libre, il y a environ 950 Mo de m�
 
 Un man de `swapon` indique que l’information peut être trouvée dans `/proc/swaps` : 
 
-```
-# cat /proc/swaps 
+```console
+$ cat /proc/swaps 
 Filename    Type        Size     Used   Priority 
 /dev/zram0   partition   2104472  1336   -1 
 ```
@@ -337,14 +337,14 @@ On remarque ici une partition étrange : `/dev/zram0`. Un swap "classique" s'eff
 
 3. Le swap sur cette machine, à ce niveau de charge, est probablement inutile. Désactivez- le. 
 
-```
-# swapoff /dev/zram0 
+```sh
+swapoff /dev/zram0 
 ```
 
 4. Quelques instants plus tard, vous devez charger une application lourde de traitement d'image qui va énormément consommer de mémoire. Rechargez l'intégralité des zones de swap.
 
-```
-# swapon -a 
+```sh
+swapon -a 
 ```
 :::
 
@@ -377,22 +377,22 @@ LABEL=BACKUP /mnt/backup ext3 defaults,usrjquota=aquota.user,grpjquota=aquota.gr
 
 puis : 
 
-```
-# systemctl daemon-reload
-# mount -o remount -L BACKUP
+```sh
+systemctl daemon-reload
+mount -o remount -L BACKUP
 ```
 
 2. Créez et activez les quotas. 
 
-```
-# quotacheck /mnt/backup 
-# quotaon /mnt/backup 
+```sh
+quotacheck /mnt/backup 
+quotaon /mnt/backup 
 ```
 
 3. Placez une limite globale de 150 Mo à votre utilisateur : 
 
-```
-# edquota tom 
+```sh
+edquota tom 
 ```
 
 Puis inscrivez la valeur `153600` (en octets) en `hard` et `soft`, et sauvez.

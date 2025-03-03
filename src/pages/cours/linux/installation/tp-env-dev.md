@@ -102,7 +102,7 @@ Utiliser des alias est un bon moyen d'améliorer son shell pour répondre à ses
 
 Quelques exemples d'alias courants :
 
-```bash
+```sh
 alias ..="cd .."
 alias l="ls --color"
 alias ll="ls -l"

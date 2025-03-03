@@ -821,7 +821,7 @@ Les données sont extraites de _Bouyer et al. (1995) Epidémiologie. Principes e
   - La variable $X$ : variable âge - c'est la variable explicative (variable régresseur)
 3. Échantillon aléatoire d'individus
   - Pour l'étude, on doit faire des mesures sur $n$ individus tirés au sort dans la population.
-  - On observe deux échantillons appariés de $X$ et $Y$ de taille $n$ : $(x_1, y_1), ... , (x_i, y_i), ... , (x_n, y_n)$ où $x_i$ et $y_i$ sont les valeurs de $X$ et $Y$ observées sur le $i^{ème}$ individu tiré au sort.
+  - On observe deux échantillons appariés de $X$ et $Y$ de taille $n$ : $(x_1, y_1), ... , (x_i, y_i), ... , (x_n, y_n)$ où $x_i$ et $y_i$ sont les valeurs de $X$ et $Y$ observées sur le $i^{eme}$ individu tiré au sort.
 4. Modèle exprimant la relation entre $Y$ et $X$
   - On cherche à exprimer la relation entre la variable tension et la variable âge à l'aide d'une fonction mathématique du type $y = f(x)$.
   - Graphiquement cela revient à représenter cette relation à l'aide d'une courbe (graphe de la fonction).
@@ -1005,7 +1005,7 @@ $$R^2 = \frac{SSE}{SST}$$
 
 Lorsque $R^2$ est proche de 1, le modèle de régression explique bien la variation totale (condition nécessaire mais pas suffisante).
 
-Dans notre exemple : $r^2=0.6191$ : le modèle explique $61,91$% de la variation totale.
+Dans notre exemple : $r^2=0.6191$ : le modèle explique $61,91$ % de la variation totale.
 
 :::tip
 Pourquoi utiliser la même notation : $R^2$ pour le carré du coefficient de corrélation linéaire et pour le coefficient de détermination ?
@@ -1441,7 +1441,7 @@ Une division est elle-même définie par :
 Cet algorithme nécessite :
 
 - La définition d'un critère permettant de sélectionner la "meilleure" division pour les différentes variables ;
-- Une règle permettant de décider qu'un nœud est terminal (feuille) ;
+- Une règle permettant de décider qu'un noeud est terminal (feuille) ;
 - L'affectation de chaque feuille à l'une des classes (par exemple : classe majoritaire dans la feuille) ou à une valeur de la variable à expliquer.
 
 #### Critère de division
@@ -1454,20 +1454,20 @@ Une division est dite _admissible_ si aucun des segments descendants n'est vide.
 
 Objectif : Partager les individus en deux groupes les plus homogènes au sens de la variable à expliquer.
 
-Le critère de division repose sur la définition d'une _fonction d'hétérogénéité_ ou de _désordre_ $D$ d'un nœud :
+Le critère de division repose sur la définition d'une _fonction d'hétérogénéité_ ou de _désordre_ $D$ d'un noeud :
 
 - $D$ est nulle si et seulement si le segment est homogène : tous les individus appartiennent à la même modalité ou prennent la même valeur de $Y$ ;
 - $D$ est maximale lorsque les valeurs de $Y$ sont équiprobables ou très dispersées.
 
-La division du nœud $k$ crée deux fils notés $(k+1)$ et $(k+2)$.
+La division du noeud $k$ crée deux fils notés $(k+1)$ et $(k+2)$.
 
-Parmi toutes les divisions admissibles du nœud $k$, on garde celle qui rend la somme $D_{(k+1)} + D_{(k+2)}$ des désordres des nœuds fils minimale, c'est-à-dire :
+Parmi toutes les divisions admissibles du noeud $k$, on garde celle qui rend la somme $D_{(k+1)} + D_{(k+2)}$ des désordres des nœuds fils minimale, c'est-à-dire :
 
 $$\max_{divisions de X_j ; j=1,...,p}{D_k - D_{(k+1)} - D_{(k+2)}}$$
 
 #### Règle d'arrêt
 
-La croissance de l'arbre s'arrête à un nœud qui devient donc feuille :
+La croissance de l'arbre s'arrête à un noeud qui devient donc feuille :
 
 - Lorsqu'il est homogène c'est-à-dire lorsqu'il n'existe plus de division admissible ;
 - Si le nombre d'observations qu'il contient est inférieur à un seuil fixé par l'utilisateur $d_{min}$. En général $1\leq d_{min}\leq 5$ ;
@@ -1525,11 +1525,11 @@ $D_j$ estimé par $\hat{D_j} = \sum_{i=1}^{n_j}(y_{ij}-y_{.j})^2$ et $D$ par $\h
 
 ##### Cas qualitatif
 
-Soit $Y$ une variable à expliquer à $m$ modalités $\tau_l$. L'arbre induit une partition pour laquelle $n_{+k}$ désigne l'effectif du $k^{eme}$ nœud.
+Soit $Y$ une variable à expliquer à $m$ modalités $\tau_l$. L'arbre induit une partition pour laquelle $n_{+k}$ désigne l'effectif du $k^{eme}$ noeud.
 
-Soit $p_{lk} = \mathbb{P}[\tau_l | k]$ avec $\sum_{l=1}^m p_{lk} = 1$ la probabilité qu'un élément du $k^{eme}$ nœud appartienne à la $l^{eme}$ classe.
+Soit $p_{lk} = \mathbb{P}[\tau_l | k]$ avec $\sum_{l=1}^m p_{lk} = 1$ la probabilité qu'un élément du $k^{eme}$ noeud appartienne à la $l^{eme}$ classe.
 
-Le désordre du $k^{eme}$ nœud, défini à partir de l'entropie de Shannon, s'écrit :
+Le désordre du $k^{eme}$ noeud, défini à partir de l'entropie de Shannon, s'écrit :
 
 $$D_k = -2\sum_{l=1}^m n_{+k}p_{lk}log(p_{lk})$$
 
@@ -1541,7 +1541,7 @@ $$D = D_1 + D_2 = -2\sum_{j=1}^2\sum_{l=1}^{m}n_{+k}p_{lk}log(p_{lk})$$
 
 Cette quantité est positive et nulle si et seulement si les probabilités $p_{lk}$ ne prennent que des valeurs 0 sauf une égale à 1 correspondant à l'absence de mélange.
 
-Soit $n_{lk}$ l'effectif observé de la $l^{eme}$ classe dans le $k^{eme}$ nœud : $n_{+k} = \sum_{l=1}^m n_{lk}$.
+Soit $n_{lk}$ l'effectif observé de la $l^{eme}$ classe dans le $k^{eme}$ noeud : $n_{+k} = \sum_{l=1}^m n_{lk}$.
 
 Estimation des quantités :
 
@@ -1551,12 +1551,12 @@ $$\hat{D} = -2\sum_{k=1}^2\sum_{l=1}^m n_{+k}\frac{n_{lk}}{n_{+k}}log\left(\frac
 
 ##### Critère de Gini
 
-Le _critère de Gini_ du nœud $k$ est défini par $D_k = \sum_{l\neq h}p_{lk}p_{hk}$ et estimé par $\hat{D_k} = \sum_{l\neq h}\frac{n_{lk}}{n_{+k}}\frac{n_{hk}}{n_{+k}}$.
+Le _critère de Gini_ du noeud $k$ est défini par $D_k = \sum_{l\neq h}p_{lk}p_{hk}$ et estimé par $\hat{D_k} = \sum_{l\neq h}\frac{n_{lk}}{n_{+k}}\frac{n_{hk}}{n_{+k}}$.
 
 - Il mesure avec quelle fréquence un élément aléatoire de l'ensemble serait mal classé si son étiquette était choisie aléatoirement selon la distribution des étiquettes dans le sous-ensemble.
 - Le désordre $D_k$ est maximal si $p_{lk} = \frac{1}{m}$ : l'échantillon présente autant d'éléments de chaque modalité.
 - $D_k$ est nul si l'échantillon est pur : $p_{lk} = 1$ et $p_{hk} = 0$ si $h\neq l$.
-- $D_k$ représente la probabilité de mauvais classement pour un individu tiré au hasard parmi les individus du nœud $k$.
+- $D_k$ représente la probabilité de mauvais classement pour un individu tiré au hasard parmi les individus du noeud $k$.
 
 Le désordre de l'échantillon initial de taille $n$ est estimé par $\hat{D} = \sum_{l\neq h}\frac{n_l}{n}\frac{n_h}{n}$ où $n_l$ représente l'effectif observé de la $l^{eme}$ modalité dans l'échantillon initial.
 
@@ -1587,9 +1587,9 @@ La qualité de discrimination d'un arbre $A$ se mesure par le critère $D(A) = \
 La construction de la séquence d'arbres emboîtés repose sur une pénalisation de la complexité de l'arbre : $C(A) = D(A) + \gamma K$.
 
 - Pour $\gamma = 0$, $A_{max} = A_K$ minimise $C(A)$.
-- En faisant croître $\gamma$, l'une des divisions de $A_K$ - celle pour laquelle l'amélioration de $D$ est la plus faible (inférieure à $\gamma$) - apparaît comme superflue et les deux feuilles sont regroupées (élaguées) dans le nœud père qui devient terminal ; $A_{K-1} \subset A_K$.
+- En faisant croître $\gamma$, l'une des divisions de $A_K$ - celle pour laquelle l'amélioration de $D$ est la plus faible (inférieure à $\gamma$) - apparaît comme superflue et les deux feuilles sont regroupées (élaguées) dans le noeud père qui devient terminal ; $A_{K-1} \subset A_K$.
 
-Soit $\mathcal N$ un nœud. On appelle $A_{\mathcal N}$ le sous-arbre (ou la branche) de $A$ extrait(e) à partir de $\mathcal N$ , donc constitué des descendants de $\mathcal N$ et de la racine. On appelle $A'$ le sous-arbre de $A$ auquel on a enlevé la branche $A_\mathcal{N}$ .
+Soit $\mathcal N$ un noeud. On appelle $A_{\mathcal N}$ le sous-arbre (ou la branche) de $A$ extrait(e) à partir de $\mathcal N$ , donc constitué des descendants de $\mathcal N$ et de la racine. On appelle $A'$ le sous-arbre de $A$ auquel on a enlevé la branche $A_\mathcal{N}$ .
 
 On a alors :
 
@@ -1695,7 +1695,7 @@ Autre exemple d'utilisation : [Approche mathématique pour le traitement et le c
 Pour regrouper les individus qui se ressemblent et séparer ceux qui ne se ressemblent pas, il faut un "critère de ressemblance".
 
 Pour cela on examine l'ensemble des informations dont on dispose concernant les individus (pression artérielle, température, ...
-Par exemple s'il s'agit de malades) notées $(x_i, y_i, ...)$ pour le $i^{ème}$ individu, et on imagine que chaque individu est un point $M_i = (x_i, y_i, z_i, ...)$ de l'espace.
+Par exemple s'il s'agit de malades) notées $(x_i, y_i, ...)$ pour le $i^{eme}$ individu, et on imagine que chaque individu est un point $M_i = (x_i, y_i, z_i, ...)$ de l'espace.
 
 S'il n'y a que deux variables relevées $(x_i, y_i)$ on obtient ainsi un nuage $\Gamma$ de points dans le plan, $\Gamma = {M_i, i = 1, ... , n}$ où $n$ est l'effectif total de la population.
 
@@ -1806,7 +1806,7 @@ On construit alors un arbre, appelé _dendrogramme_ de la façon suivante :
 - On aligne sur l'axe horizontal des points représentant les différents individus et on les joint deux à deux, successivement, en suivant cet algorithme de classification hiérarchique ascendante (commençant par les plus proches, etc...).
 - On poursuit ainsi jusqu'à regroupement de tous les individus en une classe unique.
 - Pour plus de lisibilité, on pourra disposer les individus dans l'ordre dans lequel les regroupements ont été effectués.
-- Le niveau (hauteur) de chaque nœud de l'arbre est le plus souvent choisi proportionnel à la nouvelle valeur d'inertie intra-classe ; ce niveau vaut zéro lorsque tous les individus sont séparés (en bas) et est maximal lorsqu'ils sont tous réunis en une seule classe (en haut).
+- Le niveau (hauteur) de chaque noeud de l'arbre est le plus souvent choisi proportionnel à la nouvelle valeur d'inertie intra-classe ; ce niveau vaut zéro lorsque tous les individus sont séparés (en bas) et est maximal lorsqu'ils sont tous réunis en une seule classe (en haut).
 
 En fait, on trace ce dendrogramme afin de visualiser le niveau où couper cet arbre pour réaliser la meilleure partition de l'ensemble initial.
 On peut comprendre qu'il sera optimal de couper le dendrogramme à un niveau où le regroupement entre classes conduit à une perte d'inertie interclasse maximale.

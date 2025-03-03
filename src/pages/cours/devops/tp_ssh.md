@@ -53,7 +53,7 @@ Voici un schéma simplifié du processus :
 
 Depuis la machine cliente (ex. votre ordinateur), ouvrez un terminal et exécutez la commande suivante pour générer une paire de clés :
 
-```bash
+```sh
 ssh-keygen -t rsa -b 4096 -C "votre_email@example.com"
 # Options :
 # -t rsa : spécifie le type de clé.
@@ -68,7 +68,7 @@ ssh-keygen -t rsa -b 4096 -C "votre_email@example.com"
 
 Vérifiez que deux fichiers ont été créés dans le répertoire `~/.ssh/` :
 
-```bash
+```sh
 ls ~/.ssh/id_rsa # la clé privée
 ls ~/.ssh/id_rsa.pub # la clé publique
 ```
@@ -79,7 +79,7 @@ ls ~/.ssh/id_rsa.pub # la clé publique
 
 Utilisez la commande `ssh-copy-id` pour copier la clé publique sur le serveur :
 
-```bash
+```sh
 ssh-copy-id utilisateur@adresse_du_serveur
 ```
 
@@ -90,13 +90,13 @@ Remplacez `utilisateur` par le nom d’utilisateur sur le serveur et `adresse_du
 Si `ssh-copy-id` n'est pas disponible, utilisez cette méthode :
 
 - Connectez-vous au serveur via SSH avec votre mot de passe :
-```bash
+```sh
 ssh utilisateur@adresse_du_serveur
 ```
 
 - Sur le serveur, ouvrez (ou créez) le fichier `~/.ssh/authorized_keys` :
 
-```bash
+```sh
 mkdir -p ~/.ssh
 nano ~/.ssh/authorized_keys
 ```
@@ -110,7 +110,7 @@ nano ~/.ssh/authorized_keys
 
 Connectez-vous au serveur et ouvrez le fichier de configuration SSH :
 
-```bash
+```sh
 sudo nano /etc/ssh/sshd_config
 ```
 
@@ -127,7 +127,7 @@ PasswordAuthentication no
 
 Après avoir enregistré les modifications, redémarrez le service SSH pour appliquer les changements :
 
-```bash
+```sh
 sudo systemctl restart ssh
 ```
 
@@ -137,7 +137,7 @@ sudo systemctl restart ssh
 
 Depuis votre machine cliente, essayez de vous reconnecter au serveur :
 
-```bash
+```sh
 ssh utilisateur@adresse_du_serveur
 ```
 
@@ -149,7 +149,7 @@ Si la configuration est correcte, vous serez connecté sans avoir à entrer de m
 
 Assurez-vous que le fichier `~/.ssh/authorized_keys` a les bonnes permissions :
 
-```bash
+```sh
 chmod 600 ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 ```
@@ -158,7 +158,7 @@ chmod 700 ~/.ssh
 
 En cas de problème, vérifiez les logs SSH sur le serveur :
 
-```bash
+```sh
 sudo tail -f /var/log/auth.log
 ```
 

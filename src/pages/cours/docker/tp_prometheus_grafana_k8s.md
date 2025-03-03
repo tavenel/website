@@ -25,7 +25,7 @@ helm repo update
 
 Vous pouvez installer Prometheus à l'aide de la charte `Helm` `kube-prometheus-stack` (qui inclut à la fois Prometheus et les alertes associées) :
 
-```bash
+```sh
 helm upgrade --install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
 ```
 
@@ -35,7 +35,7 @@ Cela installera `Prometheus`, `Alertmanager`, les `Node Exporters` (pour les mé
 
 Pour vérifier que tout est correctement installé, vous pouvez utiliser la commande suivante :
 
-```bash
+```sh
 kubectl get pods -n monitoring
 ```
 
@@ -47,7 +47,7 @@ Vous devriez voir plusieurs pods liés à `Prometheus`, `Alertmanager`, et `Graf
 
 Utilisez la commande suivante pour exposer l'interface web de Grafana en tant que service de type `NodePort` ou `LoadBalancer` :
 
-```bash
+```sh
 kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring
 ```
 
@@ -56,7 +56,7 @@ Accédez à `Grafana` en ouvrant un navigateur et en entrant l'URL suivante : <h
 Le username par défaut est `admin`.
 Le mot de passe est récupérable avec la commande suivante :
 
-```bash
+```sh
 kubectl get secret --namespace monitoring prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
@@ -64,7 +64,7 @@ kubectl get secret --namespace monitoring prometheus-grafana -o jsonpath="{.data
 
 Vous pouvez également exposer l'interface `Prometheus` :
 
-```bash
+```sh
 kubectl port-forward svc/prometheus-kube-prometheus-prometheus 9090 -n monitoring
 ```
 
@@ -74,7 +74,7 @@ Accédez à Prometheus via l'URL : <http://localhost:9090>.
 
 Les composants `Prometheus` déployés via `Helm` viennent déjà configurés pour scraper les métriques du cluster `Kubernetes`. Vous pouvez cependant ajuster la configuration si nécessaire. Voici où trouver la configuration :
 
-```bash
+```sh
 kubectl edit configmap prometheus-kube-prometheus-prometheus -n monitoring
 ```
 

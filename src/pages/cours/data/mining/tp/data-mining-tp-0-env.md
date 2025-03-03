@@ -34,7 +34,7 @@ Il faut ensuite, **dans chaque terminal ouvert par la suite**, activer cet envir
 
 Par exemple :
 
-```bash
+```sh
 $ source /path/to/new/virtual/environment/bin/activate
 ```
 

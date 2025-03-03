@@ -38,14 +38,14 @@ Note : une fois de plus, `git` est décentralisé : on utilise souvent un modèl
 
 L'opération de `clone` permet de créer une copie locale d'un dépôt distant.
 
-```bash
+```sh
 $ git clone url-distante
 # Crée un dossier du nom du projet contenant un clone local du dépôt.
 ```
 
 Effectuer un clone du dépôt créé précédemment, par exemple :
 
-```bash
+```sh
 $ git clone https://github.com/mon_utilisateur/mon_depot_distant.git
 ```
 
@@ -55,7 +55,7 @@ Note : Par défaut, le dépôt distant récupéré après une opération de `clo
 
 Pour afficher les dépôts distants, utiliser la commande `remote` :
 
-```bash
+```sh
 $ git remote -v
 ```
 
@@ -96,7 +96,7 @@ En pratique, on utilise souvent la commande `pull` directement pour réaliser à
 
 Avant d'effectuer un conflit, configurer l'outil de résolution que vous souhaitez utiliser avec git, par exemple `vscode` (attention à bien ajouter les guillemets simples `'` pour les commandes) :
 
-```bash
+```sh
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'code --wait --merge $REMOTE $LOCAL $BASE $MERGED'
 git config --global diff.tool vscode
@@ -105,7 +105,7 @@ git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
 
 Si vous préférez ne pas utiliser VSCode, vous pouvez installer et utiliser `Meld` qui est l'outil phare de la résolution de conflits (et permet aussi de visualiser les diffs plus élégamment) :
 
-```bash
+```sh
 git config --global diff.tool meld
 git config --global difftool.meld.path "C:/Program\ Files\ (x86)/Meld/Meld.exe"
 git config --global merge.tool meld
@@ -123,7 +123,7 @@ git config --global mergetool.meld.path "C:/Program\ Files\ (x86)/Meld/Meld.exe"
 Une fois les changements locaux effectués, nous voulons également les synchroniser sur le dépôt distant.
 Pour cela, la commande `push` permet d'envoyer les commit à distance :
 
-```bash
+```sh
 $ git push 
 ```
 

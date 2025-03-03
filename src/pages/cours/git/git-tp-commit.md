@@ -32,7 +32,7 @@ Ce dépôt nous servira à stocker les différentes versions de nos fichiers.
 
 Pour créer un dépôt, ouvrir un terminal dans le répertoire à utiliser et taper la commande :
 
-```bash
+```sh
 $ git init
 ```
 
@@ -42,7 +42,7 @@ Attention, tous les fichiers utilisés par la suite devront être dans ce réper
 
 Pour visualiser simplement l'état du dépôt (modifications à intégrer, etc...) on pourra utiliser la commande :
 
-```bash
+```sh
 $ git status
 ```
 
@@ -67,7 +67,7 @@ Créer un nouveau fichier _index.html_ dans le répertoire de travail avec le co
 
 Consulter l'état du dépôt : le nouveau fichier est détecté mais est pour l'instant ignoré : status `untracked`.
 
-```bash
+```sh
 $ git status
 
 On branch master
@@ -90,7 +90,7 @@ Ce comportement par défaut est très pratique. Il est possible de "polluer" son
 
 Utiliser la commande `git add` pour ajouter ce nouveau fichier à l'index du dépôt git :
 
-```bash
+```sh
 $ git add
 ```
 
@@ -112,7 +112,7 @@ La commande `git add -p` permet interactivement d'ajouter ou non des morceaux de
 
 La commande `git log` permet d'afficher l'historique des commit sur le dépôt courant :
 
-```bash
+```sh
 $ git log
 ```
 
@@ -120,7 +120,7 @@ _A-t-on déjà créé un commit dans le dépôt courant ? Pourquoi ?_
 
 Créer un nouveau commit en utilisant la commande `git commit` :
 
-```bash
+```sh
 $ git commit
 ```
 

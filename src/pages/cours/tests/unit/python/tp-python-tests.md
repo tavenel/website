@@ -21,13 +21,13 @@ Python étant un langage fortement dynamique, les erreurs trouvées par le compi
 
 `Pylint` peut être installé depuis `pip` :
 
-```bash
+```sh
 $ pip install pylint
 ```
 
 `Pylint` peut ensuite être exécuté directement sur un fichier de code source :
 
-```bash
+```sh
 $ pylint monFichier.py
 ```
 
@@ -113,13 +113,13 @@ Il existe de nombreuses méthodes pour lancer le débugger `pdb`. On notera nota
 
 * L'exécution d'un fichier sous débugger (équivalent à mettre un breakpoint sur la 1ère ligne)
 
-```bash
+```sh
 $ python -m pdb monFichier.py
 ```
 
 * L'ajout d'une instruction d'arrêt dans le code source (voir fichier `ex1.py`, le fichier s'exécute alors jusqu'au breakpoint) :
 
-```bash
+```sh
 import pdb; pdb.set_trace()
 $ python ex1.py
 ```
@@ -197,25 +197,25 @@ Pour exécuter les tests unitaires, on pourra :
 
 - Exécuter la classe / méthode de test directement en utilisant unittest :
 
-```bash
+```sh
 $ python -m unittest exemple1.MyTest.test
 ```
 
 - Exécuter tous les tests du fichier de test fourni :
 
-```bash
+```sh
 $ python -m unittest exemple1.py
 ```
 
 - Ajouter l'exécution des tests directement dans le main du fichier de tests :
 
-```bash
+```sh
 $ python exemple2.py
 ```
 
 - Utiliser le mode de découverte pour scanner et exécuter automatiquement les tests :
 
-```bash
+```sh
 $ python -m unittest discover répertoire_projet “exemple*.py”
 ```
 
@@ -237,25 +237,25 @@ On utilisera pour cela l'outil `coverage`. Son usage est très simple :
 
 - Exécution des tests sous surveillance : remplacer l'exécution des tests depuis la commande `python` par la commande `coverage run`. Par exemple :
 
-```bash
+```sh
 $ python -m unittest exemple1.py
 ```
 
 Devient
 
-```bash
+```sh
 $ coverage run -m unittest exemple1.py
 ```
 
 - Génération des rapports : une fois les tests exécutés sous surveillance, on génère les rapports d'exécution :
 
-```bash
+```sh
 $ coverage report
 ```
 
 Note : La commande suivante permet de générer un rapport HTML, bien plus utile puisqu'il permet de lire facilement les lignes de code non couvertes :
 
-```bash
+```sh
 $ coverage html
 ```
 

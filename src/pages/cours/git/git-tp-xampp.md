@@ -28,7 +28,7 @@ Configurer un environnement de développement local avec XAMPP et utiliser Git p
 2. **Cloner un dépôt `Github` pour votre projet dans ce répertoire:**  
    Par exemple, on peut récupérer le projet <https://github.com/banago/simple-php-website> ou <https://github.com/aeimskei/basic-php-website> :
 
-   ```bash
+   ```sh
    git clone https://github.com/banago/simple-php-website mon_projet
    ```
 

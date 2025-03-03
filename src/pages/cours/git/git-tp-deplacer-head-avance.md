@@ -18,7 +18,7 @@ Pour naviguer dans l'historique des commits en ligne de commande, on utilise des
 
 Par exemple, on peut utiliser la commande suivante :
 
-```bash
+```sh
 # Place la branche courante avant les deux derniers commit 
 $ git reset HEAD~2
 ```
@@ -48,7 +48,7 @@ Il est possible de combiner ces opérateurs pour effectuer une navigation comple
 
 ##### Lister les changements de HEAD
 
-```bash
+```sh
 git reflog
 ```
 
@@ -58,7 +58,7 @@ Cette commande affiche un journal de tous les changements de `HEAD` (par exemple
 
 Si vous souhaitez revenir à un état précédent de HEAD, utilisez :
 
-```bash
+```sh
 git checkout HEAD@{n}
 ```
 où `n` est le nombre correspondant à l'état que vous voulez retrouver. Cela est utile pour revenir temporairement à un état spécifique sans créer un nouveau commit.
@@ -67,7 +67,7 @@ où `n` est le nombre correspondant à l'état que vous voulez retrouver. Cela e
 
 Vous pouvez également utiliser cette syntaxe avec `git reset` pour remettre la branche courante à une position antérieure :
 
-```bash
+```sh
 git reset --hard HEAD@{n}
 ```
 
@@ -97,7 +97,7 @@ Assurez-vous d'avoir un dépôt Git avec plusieurs commits, dont des commits de 
 8. Que se passe-t-il lorsque vous utilisez `git reset --hard` ? Quelles sont les implications de cette commande ?
 
 :::correction
-```bash
+```sh
 # 1.
 git log --oneline
 # 2.
@@ -139,13 +139,13 @@ Souvent, ce sera le premier parent. Par exemple, si vous étiez sur `main` et qu
 
 Dans ce cas, on exécute :
 
-```bash
+```sh
 git revert -m 1 HEAD
 ```
 
 La commande suivante permet d'afficher les branches parentes dans l'ordre. Le premier parent listé correspond à `-m 1`, et le second à `-m 2` :
 
-```bash
+```sh
 git cat-file -p [ID_DU_COMMIT_DE_FUSION]
 ```
 
@@ -175,7 +175,7 @@ Assurez-vous d'avoir un dépôt Git avec plusieurs commits, y compris au moins u
 
 
 :::correction
-```bash
+```sh
 git checkout -b nouvelle_branche
 git checkout main
 git merge nouvelle_branche
@@ -207,7 +207,7 @@ Options utiles :
 
 Exemples :
 
-```bash
+```sh
 git rev-parse HEAD~2
 git rev-parse main # branche
 git rev-parse v1.0 # tag

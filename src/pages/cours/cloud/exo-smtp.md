@@ -18,7 +18,7 @@ Utiliser un client `DNS` pour obtenir l'adresse du serveur de courriers électro
 
 Par exemple :
 
-```
+```console
 $ nslookup
 set type=mx
 gmail.com
@@ -44,7 +44,7 @@ Commande `openssl` pour créer une connexion `SMTPS` :
 
 Sur Windows :
 
-```batch
+```sh
 openssl s_client -starttls smtp -connect MAIL_SERVEUR:PORT
 ```
 
@@ -78,7 +78,7 @@ Pour des raisons historiques, `SMTP` requiert un encodage `Base64` : le nom d'ut
 
 On peut par exemple utiliser l'utilitaire `base64` :
 
-```
+```sh
 echo MA_CHAINE | base64
 ```
 

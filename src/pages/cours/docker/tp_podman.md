@@ -43,7 +43,7 @@ spec:
 
 Podman peut interpréter des fichiers de pod Kubernetes directement avec la commande `podman play kube`.
 
-```bash
+```sh
 podman play kube nginx-pod.yaml
 ```
 
@@ -56,7 +56,7 @@ Cela va :
 
 Utilisez `podman pod ps` pour vérifier l’état de vos pods et `podman ps` pour voir les conteneurs en cours d'exécution :
 
-```bash
+```sh
 podman pod ps
 podman ps
 ```
@@ -71,7 +71,7 @@ Accédez à votre application via le port spécifié en utilisant `localhost`. S
 
 Pour arrêter et supprimer un pod :
 
-```bash
+```sh
 podman pod stop nginx
 podman pod rm nginx
 ```

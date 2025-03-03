@@ -777,7 +777,7 @@ Voir le TP correspondant.
 
 `pre-commit` pour refuser un commit si un fichier `WIP` est trouvé :
 
-```bash
+```sh
 !/bin/bash
 
 [ -f WIP ] && echo "WIP found : commit refused" > /dev/stderr && exit 1

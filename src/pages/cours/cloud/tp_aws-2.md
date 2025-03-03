@@ -50,13 +50,13 @@ A l'étape 3.C, si vous avez exactement suivi les instructions de copie précéd
 
 Ainsi, au lieu d’exécuter la commande :
 
-```bash
+```sh
 aws cloudformation deploy --template-file /home/ec2-user/environment/MythicalMysfitsStreamingService-Repository/cfn/transformed-streaming.yml --stack-name MythicalMysfitsStreamingStack --capabilities CAPABILITY\_IAM
 ```
 
 On exécutera à la place la commande :
 
-```bash
+```sh
 aws cloudformation deploy --template-file /home/ec2-user/environment/MythicalMysfitsStreamingService-Repository/transformed-streaming.yml --stack-name MythicalMysfitsStreamingStack --capabilities CAPABILITY\_IAM
 ```
 

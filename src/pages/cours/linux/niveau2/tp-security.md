@@ -15,7 +15,7 @@ En utilisant les commandes `passwd` et `chage` :
 :::
 
 :::correction
-```
+```sh
 passwd nom_utilisateur
 chage -M 90 nom_utilisateur
 chage -l nom_utilisateur
@@ -82,7 +82,7 @@ La commande `fuser` (File User) est utilisée pour afficher les processus qui ut
 :::
 
 :::correction
-```
+```sh
 echo 'une_ligne' > mon_fichier
 tail -f mon_fichier
 fuser mon_fichier
@@ -195,17 +195,17 @@ systemctl status sshd.socket
 :::
 
 :::correction
-```sh
-# systemctl enable sshd.socket
-> ln -s '/etc/systemd/system/sshd.socket' '/etc/systemd/system/sockets.target.wants/sshd.socket'
+```console
+$ systemctl enable sshd.socket
+ln -s '/etc/systemd/system/sshd.socket' '/etc/systemd/system/sockets.target.wants/sshd.socket'
 
-# systemctl start sshd.socket
-# systemctl status sshd.socket
-> sshd.socket - SSH Socket for Per-Connection Servers
-> 	  Loaded: loaded (/etc/systemd/system/sshd.socket; enabled)
-> 	  Active: active (listening) since Mon, 26 Sep 2023 20:24:31 +0200; 14s ago
-> 	Accepted: 0; Connected: 0
-> 	  CGroup: name=systemd:/system/sshd.socket
+$ systemctl start sshd.socket
+$ systemctl status sshd.socket
+sshd.socket - SSH Socket for Per-Connection Servers
+ 	  Loaded: loaded (/etc/systemd/system/sshd.socket; enabled)
+ 	  Active: active (listening) since Mon, 26 Sep 2023 20:24:31 +0200; 14s ago
+ 	Accepted: 0; Connected: 0
+ 	  CGroup: name=systemd:/system/sshd.socket
 ```
 :::
 
@@ -258,7 +258,7 @@ Remarque : Assurez-vous d'avoir les autorisations nécessaires pour scanner des 
 :::
 
 :::correction
-```bash
+```sh
 nmap -p- <addresse IP>
 ss -tuln
 ```
@@ -282,7 +282,7 @@ Commencez par capturer tout le trafic réseau sur votre interface par défaut (r
 1. Que remarquez-vous dans la sortie ? Quelle information est affichée ?
 2. Identifiez un type de paquet (TCP, UDP, ICMP, etc.).
 
-```bash
+```sh
 sudo tcpdump -i enp0s3
 ```
 
@@ -290,7 +290,7 @@ sudo tcpdump -i enp0s3
 
 Pour analyser le trafic plus tard, vous pouvez sauvegarder les paquets dans un fichier :
 
-```bash
+```sh
 sudo tcpdump -i enp0s3 -w capture.pcap
 ```
 
@@ -305,7 +305,7 @@ Capturez uniquement le trafic provenant ou à destination d'une adresse IP spéc
 1. Quelle est la différence dans la sortie par rapport à la capture précédente ?
 2. Pourquoi ce type de filtrage est-il utile ?
 
-```bash
+```sh
 sudo tcpdump -i enp0s3 host 8.8.8.8
 ```
 
@@ -315,7 +315,7 @@ Capturez uniquement le trafic HTTP (port 80) puis pour le traffic HTTPS (port 44
 
 1. Quels types de paquets observez-vous ?
 
-```bash
+```sh
 sudo tcpdump -i enp0s3 port 80
 ```
 
@@ -325,7 +325,7 @@ sudo tcpdump -i enp0s3 port 80
 
 Capturez uniquement les paquets DNS :
 
-```bash
+```sh
 sudo tcpdump -i enp0s3 port 53
 ```
 
@@ -336,7 +336,7 @@ sudo tcpdump -i enp0s3 port 53
 
 Capturez uniquement les paquets ICMP pour analyser un ping :
 
-```bash
+```sh
 sudo tcpdump -i enp0s3 icmp
 ```
 
@@ -347,7 +347,7 @@ sudo tcpdump -i enp0s3 icmp
 
 Capturez uniquement les paquets TCP avec le flag SYN activé (qui initient une connexion) :
 
-```bash
+```sh
 sudo tcpdump -i enp0s3 'tcp[tcpflags] & tcp-syn != 0'
 ```
 

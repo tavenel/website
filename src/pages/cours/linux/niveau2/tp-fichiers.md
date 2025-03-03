@@ -12,7 +12,7 @@ Voir cours _Manipulating Files_, 103.3 Lesson 1 p.227
 
 La commande `ls -l` affiche le type d'un fichier :
 
-```
+```console
 $ ls -l
 drwxr-xr-x - root 30 Aug 14:30 /etc/
 ```
@@ -94,7 +94,7 @@ Objectif : Identifier le type de fichier.
 1. Retrouver les mêmes résultats avec la commande `ls`.
 
 :::correction
-```
+```console
 $ file /etc/passwd
 /etc/passwd: ASCII text
 
@@ -182,43 +182,43 @@ Instructions :
 
 :::correction
 
-```
+```sh
 # Commandes gzip et bzip2
 
-$ gzip fichier_texte.txt
+gzip fichier_texte.txt
 
-$ gunzip fichier_texte.gz
+gunzip fichier_texte.gz
 
-$ bzip2 texte_a_compresser.txt
+bzip2 texte_a_compresser.txt
 
-$ bunzip2 texte_compresse.bz2
+bunzip2 texte_compresse.bz2
 
 ---------------------------------------------------------
 
 # Commande tar
 
-$ tar -cf archive.tar fichier_source.txt nouveau_repertoire
+tar -cf archive.tar fichier_source.txt nouveau_repertoire
 
-$ tar -tf archive.tar
+tar -tf archive.tar
 
-$ tar -rf archive.tar fichier4.txt
+tar -rf archive.tar fichier4.txt
 
-$ tar -tf archive.tar
+tar -tf archive.tar
 
 ---------------------------------------------------------
 
 # Commande cpio
 
-$ find . -name "document*.txt" | cpio -o > archive.cpio
+find . -name "document*.txt" | cpio -o > archive.cpio
 
-$ cpio -t < archive.cpio
+cpio -t < archive.cpio
 
-$ cpio -i < archive.cpio -d -v
+cpio -i < archive.cpio -d -v
 
 ---------------------------------------------------------
 
 # Commande dd
 
-$ dd if=source.txt of=destination.txt
+dd if=source.txt of=destination.txt
 ```
 :::

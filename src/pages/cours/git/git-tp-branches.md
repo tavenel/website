@@ -13,13 +13,13 @@ De manière similaire, une ligne commençant par le symbole `#` indique une comm
 
 Pour afficher les branches de notre projet, on utilise la commande `$ git branch`. Une première branche a été créée avec notre dépôt : c'est cette branche que l'on a utilisé dans les autres TP.
 
-```bash
+```sh
 $ git branch # liste des branches locales
 ```
 
 `Git` étant décentralisé, la notion de branche est locale à un dépôt. Pour afficher les branches disponibles dans les dépôts distants (`upstream`), on peut utiliser la commande suivante :
 
-```bash
+```sh
 $ git branch -a # liste des branches distantes
 ```
 
@@ -29,15 +29,15 @@ Créer deux nouvelles branches et modifier la position de la `HEAD` pour utilise
 
 On utilisera les commandes suivantes :
 
-```bash
+```sh
 $ git branch ma_nouvelle_branche # crée une nouvelle branche
 ```
 
-```bash
+```sh
 $ git checkout ma_nouvelle_branche # se déplace vers la branche
 ```
 
-```bash
+```sh
 $ git checkout -b une_branche # crée et se déplace sur la branche
 ```
 
@@ -51,7 +51,7 @@ Utiliser la commande `$ git status` pour vérifier le positionnement sur la nouv
 
 Supprimer la nouvelle branche non utilisée :
 
-```bash
+```sh
 $ git branch -d branche_a_supprimer
 ```
 
@@ -68,13 +68,13 @@ Vérifier la bonne intégration des changements.
 Lors de la création d'une branche, celle-ci est liée au dépôt de code local.
 Pour l'intégrer dans un dépôt distant, il faut la lier au dépôt distant (`upstream`) la première fois.
 
-```bash
+```sh
 $ git push --set-upstream origin new-branch
 ```
 
 Cette commande ne fonctionne que si vous souhaitez créer une branche avec le même nom que la branche locale. Dans le cas contraire, on utilisera la version complète de `$ git push` en spécifiant un upstream :
 
-```bash
+```sh
 $ git push -u origin branche_locale:branche_distante
 ```
 
@@ -114,13 +114,13 @@ A la place d'un merge, il est aussi possible d'effectuer un rebase de cette bran
 
 Une option intéressante au moment du d'une branche est la possibilité de réécrire la suite de commit à intégrer en un commit unique. Cela évite de polluer l'historique avec les commit utilisés pendant le développement.
 
-```bash
+```sh
 $ git merge --squash ma_branche
 ```
 
 Une opération de squash est également possible par rebase intéractif, par exemple, la commande suivante rassemble les 3 derniers commit en un seul :
 
-```bash
+```sh
 $ git rebase -i HEAD~3
 ```
 
@@ -128,7 +128,7 @@ $ git rebase -i HEAD~3
 
 Il est possible de réordonner des commit pendant une opération de rebase interactif : il suffit de sélectionner (`pick`) les commit dans un ordre différent de l'ordre actuel.
 
-```bash
+```sh
 $ git rebase -i HEAD~3
 # pick ...
 # pick ...
@@ -160,7 +160,7 @@ Il peut arriver d'avoir besoin d'intégrer les modifications apportées par un c
 
 Dans ce cas, la commande `git cherry-pick` permet d'intégrer n'importe quel commit (situé dans n'importe quelle branche) dans la branche courante.
 
-```bash
+```sh
 $ git checkout branche_contenant_le_commit
 $ git cherry-pick identifiant_du_commit_à_intégrer
 ```

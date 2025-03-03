@@ -9,7 +9,7 @@ Soit le spécifications techniques suivantes pour l'exécution d'une fonction `F
 
 - Si la valeur $n$ est négative : un message d'erreur est affichée.
 - Si $n$ est dans $[1,20[$ on affiche la valeur exacte de `Factoriel(n)`.
-- Si $n$ est dans $[20,200]$ on affiche une _approximation_ de `Factoriel(n)` en virgule flottante avec une précision de $0,1%$.
+- Si $n$ est dans $[20,200]$ on affiche une _approximation_ de `Factoriel(n)` en virgule flottante avec une précision de $0,1$ %.
 - Si $n>200$ un message d'erreur est affiché.
 
 _Proposer des classes d'équivalence à tester._

@@ -33,7 +33,7 @@ Afin de créer une véritable automatisation des tests, et pour commencer à s�
 
 Récupérer les sources du projet de test : 
 
-```bash
+```sh
 git clone https://git.sr.ht/~toma/selenium
 ```
 
@@ -49,7 +49,7 @@ Ce projet contient un template de projet minimal pour lancer des tests `Selenium
 - Les tests sont exécutés par le framework de tests unitaires `JUnit` pour `Java`
 - Attention à bien placer vos fichiers de test dans le répertoire `src/test` (et non `src/main`) pour que `JUnit` puisse les exécuter.
 
-```bash
+```sh
 {Windows}$ .\gradlew.bat test
 {Linux}$ ./gradlew test
 ```
@@ -63,7 +63,7 @@ Ce projet contient un template de projet minimal pour lancer des tests `Selenium
 - Un exemple de test simpliste est fourni : `test_example.py`
 - Les tests sont exécutés par le framework de tests unitaires `Unittest` pour `Python` :
 
-```bash
+```sh
 $ python -m unittest test_example.py
 ```
 
@@ -146,7 +146,7 @@ Pour commencer, nous allons lancer l’ensemble de la `Grid` (`Hub` + `Node`) de
 
 Exécuter le `JAR` de la `Grid` en mode standalone :
 
-```bash
+```sh
 java -jar selenium-server-4.1.1.jar standalone
 ```
 
@@ -187,13 +187,13 @@ Pour cela :
 
 1. Démarrer le Hub :
 
-```bash
+```sh
 java -jar selenium-server-4.1.1.jar hub
 ```
 
 2. Démarrer un `Node` (pour l’instant sur la même machine). Pour se référencer auprès du `Hub`, il faut définir les points d’accès pour publier et recevoir les événements de test :
 
-```bash
+```sh
 java -jar selenium-server-4.1.1.jar node \
 --publish-events "tcp://localhost:4442" \
 --subscribe-events "tcp://localhost:4443"

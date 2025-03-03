@@ -150,7 +150,7 @@ $ActionMailTo recipient@example.com
 
 La commande `logger` permet d'écrire facilement un message de l'utilisateur dans le fichier `/var/log/syslog`.
 
-```
+```sh
 logger -p err "Un message d'erreur"
 ```
 
@@ -192,13 +192,13 @@ rsyslogd -v
 
 Redémarrage du service :
 
-```
+```sh
 sudo systemctl restart rsyslog
 ```
 
 #### Tests
 
-```
+```sh
 logger -p err "Ceci est un message d'erreur"
 logger -p crit "Ceci est un message critique"
 logger -p info "Ceci est un message d'information"
@@ -219,7 +219,7 @@ SSH est utilisé pour les sessions d'authorisation.
 auth,authpriv.* /var/log/ssh.log
 ```
 
-```
+```sh
 sudo systemctl restart rsyslog
 cat /var/log/ssh.log
 ```
@@ -245,7 +245,7 @@ Voir le TP [tp-sysv-systemd][tp-sysv-systemd] pour des rappels sur `journalctl`.
 
 `systemd-cat` redirige la sortie d'un script vers le journal de `systemd` :
 
-```
+```sh
 echo "Un message d'erreur" | systemd-cat -p err
 ```
 

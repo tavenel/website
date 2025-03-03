@@ -7,7 +7,7 @@ date: 2023 / 2024
 
 L'ensemble des projets utilisés dans cette séance est disponible dans le dépôt de code suivant :
 
-```bash
+```sh
 git clone https://git.sr.ht/~toma/jenkins-b3
 ```
 

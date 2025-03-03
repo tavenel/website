@@ -24,7 +24,7 @@ _L'objectif de cet exercice est de créer une commande `trash` qui déplacera le
 :::correction
 ## Correction
 
-```bash
+```sh
 #!/usr/bin/env bash
 
 usage()

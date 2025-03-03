@@ -285,15 +285,15 @@ const searchUserByUsername = (username) => {
 
 ```php
 $Listeparticipants = [1 => 'Pierre', 2 => 'Paul', 3 => 'Sarah'];
-$prénom = [];
+$prenom = [];
 
 // Imperative
 foreach ($Listeparticipants as $id => $nom) {
-    $prénom[] = $nom;
+    $prenom[] = $nom;
 }
 
 // Declarative
-$prénom = array_values($Listeparticipants);
+$prenom = array_values($Listeparticipants);
 ```
 
 ---

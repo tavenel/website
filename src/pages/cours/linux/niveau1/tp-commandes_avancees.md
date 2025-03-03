@@ -32,7 +32,7 @@ date: 2024 / 2025
 Pour enchaîner des commandes, il peut être utile d'utiliser la commande `xargs`. Cette commande traite l'entrée standard `STDIN` ligne par ligne pour exécuter la commande suivante pour chacune des lignes rencontrées, en ajoutant à la fin de la commande le contenu de la ligne.
 
 Cette commande est utile pour exécuter des commandes ayant besoin de noms de fichiers, par exemple :
-```bash
+```sh
 find … | xargs grep <mon_pattern>
 ```
 

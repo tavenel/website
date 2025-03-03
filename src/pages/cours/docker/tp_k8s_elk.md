@@ -28,7 +28,7 @@ L'ELK Stack est composé de trois principaux composants :
 
 Ajouter le dépôt `Helm` pour `Elasticsearch` et `Kibana` :
 
-```bash
+```sh
 helm repo add elastic https://helm.elastic.co
 helm repo update
 ```
@@ -37,19 +37,19 @@ Installer `Elasticsearch` :
 
 Vous pouvez personnaliser la taille du cluster `Elasticsearch` selon vos besoins.
 
-```bash
+```sh
 helm upgrade --install elasticsearch elastic/elasticsearch --namespace logging --create-namespace
 ```
 
 Installer `Kibana` :
 
-```bash
+```sh
 helm upgrade --install kibana elastic/kibana --namespace logging
 ```
 
 Exposer Kibana :
 
-```bash
+```sh
 kubectl port-forward svc/kibana-kibana 5601:5601 -n logging
 ```
 
@@ -64,7 +64,7 @@ Vous pouvez accéder à `Kibana` en ouvrant un navigateur et en accédant à <ht
 
 Installer `Filebeat` pour la collecte des logs des pods :
 
-```bash
+```sh
 helm upgrade --install filebeat elastic/filebeat --namespace logging
 ```
 
@@ -105,14 +105,14 @@ Utilisez ``Discover pour analyser les logs et créer des dashboards de visualisa
 
 Ajouter le dépôt `Helm` `Fluentd` :
 
-```bash
+```sh
 helm repo add fluent https://fluent.github.io/helm-charts
 helm repo update
 ```
 
 Installer `Fluentd` avec une configuration pour envoyer les logs à `Elasticsearch` :
 
-```bash
+```sh
 helm upgrade --install fluentd fluent/fluentd --namespace logging
 ```
 
@@ -152,7 +152,7 @@ Vérifier les logs dans `Elasticsearch`/`Kibana` : Une fois `Fluentd` configuré
 
 #### Installer `Fluent-bit` avec Helm :
 
-```bash
+```sh
 helm upgrade --install fluent-bit stable/fluent-bit --namespace logging
 ```
 

@@ -14,7 +14,7 @@ Pour créer un script sous Linux, on effectue les opérations suivantes :
 
 Dans notre cas, nous utilisons le shell `Bash`, le `shebang` associé sera donc :
 
-```bash
+```sh
 #!/usr/bin/env bash
 ```
 
@@ -22,7 +22,7 @@ Dans notre cas, nous utilisons le shell `Bash`, le `shebang` associé sera donc 
 - On ajoute les droits d’exécution au fichier.
 - On exécute le script :
 
-```bash
+```sh
 ./monScript.sh
 ```
 
@@ -35,7 +35,7 @@ Créer un premier script ayant le comportement suivant :
 - Stocker le contenu de la variable `monMessage` dans un fichier `/tmp/monScript.out`.
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 monMessage='Hello'
@@ -51,7 +51,7 @@ Modifier le script précédent pour demander à l'utilisateur le contenu du mess
 On pourra utiliser la page de manuel de la commande `read` pour connaître la syntaxe de cette commande (ou `help read` si la page de manuel n'est pas installée).
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 read -p 'Quel est le message? : ' monMessage
@@ -69,7 +69,7 @@ Pour effectuer une opération arithmétique en Bash, on peut utiliser l'opérate
 :::
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 echo 'Ce script multiplie 2 nombres'
@@ -94,7 +94,7 @@ Pour cela, le script dispose de variable d’environnement prédéfinies :
 Modifier le script précédent pour effectuer l’addition de 3 nombres passés en paramètres.
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 echo "Le résultat de la multiplication de $1 par $2 et $3 est : $(($1*$2*$3))"
@@ -108,7 +108,7 @@ La condition `if` permet d’effectuer un branchement conditionnel : si la condi
 
 La syntaxe est la suivante (attention aux espaces !) :
 
-```bash
+```sh
 if [ $maVariable = "monTest1" ]
 then
 	echo "Mon test 1 réussi"
@@ -123,7 +123,7 @@ fi
 En utilisant une condition `if`, demander à l'utilisateur d’entrer un mot et vérifier que le mot entré est bien celui attendu.
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 read -p 'Entrer le mot : "toto" : ' mot
@@ -145,7 +145,7 @@ Si le nombre de paramètres n’est pas correct, on pourra quitter le script ave
 Rappel : la commande `exit` prend en paramètre le code de retour du script. Par convention, on renvoie 0 en cas de succès (c’est en fait ce que fait le shell `Bash` automatiquement pour nous), et une valeur différente de 0 en cas d’échec.
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 usage() {
@@ -176,7 +176,7 @@ Le code de retour de la commande précédente est stocké dans la variable point
 - Tester le code de retour de la commande utilisée pour lister le fichier. En cas d’erreur, afficher un message d’erreur à l'utilisateur.
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 ls /fichierNonExistant >/dev/null 2>/dev/null
@@ -199,7 +199,7 @@ On utilise généralement cette commande avec la fonction `while` qui permet d�
 En utilisant la fonction `while` et la commande `shift`, modifier le script 4 pour effectuer l'addition de tous les paramètres, quel que soit le nombre de paramètres fournis par l'utilisateur.
 
 :::correction
-```bash
+```sh
 #!/usr/bin/env bash
 
 result=0

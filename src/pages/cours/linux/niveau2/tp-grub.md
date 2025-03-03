@@ -29,7 +29,7 @@ Dans un premier temps, nous allons détruire le bootloader pour nos tests. Redé
 
 Sur un `UEFI` (changer `fedora` pour le nom du répertoire correspondant sur une autre distribution) :
 
-```bash
+```sh
 # désinstallation
 apt-get purge os-prober
 
@@ -44,7 +44,7 @@ rm /boot/grub/grub.cfg
 
 Sur un `BIOS`:
 
-```bash
+```sh
 # désinstallation
 apt-get purge os-prober
 

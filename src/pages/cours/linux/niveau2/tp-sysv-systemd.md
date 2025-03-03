@@ -24,8 +24,8 @@ id:3:initdefault:
 
 2. Listez les services qui démarrent au niveau 3.
 
-```
-$ ls -l /etc/init.d/rc3.d/S* 
+```sh
+ls -l /etc/init.d/rc3.d/S* 
 ```
 
 3. Passez à la console virtuelle 6 avec `[Alt][F6]` (ou `[Ctrl][Alt][F6]` sous environnement graphique X ou Wayland). Connectez-vous puis déconnectez-vous. Pourquoi le terminal revient-il au point de départ ?
@@ -34,21 +34,21 @@ Parce que `/etc/inittab` contient la commande `respawn` qui permet au processus 
 
 4. La commande `runlevel` permet d'afficher le runlevel précédent (ou `N` s'il n'a pas changé) et le runlevel courant. Afficher ces runlevels.
 
-```
+```console
 $ runlevel  
 3 1
 ```
 
 5. La commande `telinit N` (avec `N` un runlevel) permet de changer de runlevel dynamiquement (sans redémarrer). Passer en mode single-user.
 
-```
-$ telinit 1
+```sh
+telinit 1
 ```
 
 6. Avec la commande `shutdown`, éteignez l’ordinateur maintenant. Quel est le niveau d’exécution activé ? 
 
-```
-$ shutdown -r now 
+```sh
+shutdown -r now 
 ```
 
 C’est le niveau 0, d’arrêt, qui est activé.

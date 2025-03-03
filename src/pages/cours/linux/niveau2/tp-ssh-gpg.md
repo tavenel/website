@@ -51,19 +51,19 @@ _Objectif : Apprendre à utiliser GPG pour chiffrer, déchiffrer, signer et vér
 
 1. Générez une paire de clés GPG (privée/publique) en utilisant la commande suivante :
 
-```bash
+```sh
 gpg --gen-key
 ```
 
 2. Chiffrez un fichier texte en utilisant la clé publique d'un autre utilisateur :
 
-```bash
+```sh
 gpg --encrypt --recipient destinataire fichier.txt
 ```
 
 3. Déchiffrez le fichier chiffré en utilisant votre propre clé privée :
 
-```bash
+```sh
 gpg --decrypt fichier.txt.gpg
 ```
 
@@ -71,13 +71,13 @@ gpg --decrypt fichier.txt.gpg
 
 1. Signez un fichier en utilisant votre propre clé privée :
 
-```bash
+```sh
 gpg --sign fichier.txt
 ```
 
 2. Vérifiez la signature du fichier en utilisant la clé publique correspondante :
 
-```bash
+```sh
 gpg --verify fichier.txt
 ```
 
@@ -85,25 +85,25 @@ gpg --verify fichier.txt
 
 1. Exportez votre clé publique vers un fichier pour la partager avec d'autres utilisateurs :
 
-```bash
+```sh
 gpg --export --armor votre_email > cle_publique.asc
 ```
 
 2. Importez la clé publique d'un autre utilisateur depuis un fichier :
 
-```bash
+```sh
 gpg --import cle_publique.asc
 ```
 
 3. Affichez la liste des clés publiques disponibles sur votre système :
 
-```bash
+```sh
 gpg --list-keys
 ```
 
 4. Exportez votre clé publique vers un serveur central d'échange de clés.
 
-```bash
+```sh
 gpg --keyserver keyserver.example.com --search-keys email@example.com
 gpg --keyserver keyserver.example.com --recv-keys ABCDEF0123456789
 gpg --keyserver keyserver.example.com --send-keys ABCDEF0123456789

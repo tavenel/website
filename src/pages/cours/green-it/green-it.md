@@ -30,7 +30,7 @@ C'est une association :
 
 # Le $CO_2e$
 
-- L'expression "équivalent en dioxyde de carbone" (abrégé : équivalent $CO_2$ ou $_{éq}CO_2$ ou $CO_2e$) est définie comme la "masse de dioxyde de carbone qui aurait le même potentiel de réchauffement climatique qu'une quantité donnée d'un autre gaz à effet de serre".
+- L'expression "équivalent en dioxyde de carbone" (abrégé : équivalent $CO_2$ ou $_{eq}CO_2$ ou $CO_2e$) est définie comme la "masse de dioxyde de carbone qui aurait le même potentiel de réchauffement climatique qu'une quantité donnée d'un autre gaz à effet de serre".
 - Pour calculer le $CO_2e$ total on additionne tous les $CO_2e$ de tous les gaz à effet de serre (GES).
 
 ---

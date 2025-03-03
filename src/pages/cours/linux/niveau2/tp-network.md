@@ -46,17 +46,17 @@ Voir aussi : <https://www.linuxtricks.fr/wiki/la-commande-ip-reseau-interfaces-r
 
 :::correction
 1. En utilisant les scripts `ifup` et `ifdown`, désactiver puis réactiver une interface réseau.
-```
+```sh
 sudo ifdown eth0
 sudo ifup eth0
 ```
 2. Même question en utilisant `ifconfig`.
-```
+```sh
 sudo ifconfig eth0 down
 sudo ifconfig eth0 up
 ```
 3. Même question en utilisant `ip`.
-```
+```sh
 sudo ip link set eth0 down
 sudo ip link set eth0 up
 ```
@@ -73,7 +73,7 @@ sudo ip link set eth0 up
 :::
 
 :::correction
-```
+```sh
 # Ajout IP
 sudo ifconfig eth0 192.168.0.77/24
 sudo ip address add 192.168.0.77/24 dev eth0
@@ -134,7 +134,7 @@ GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
 
 Il sera alors nécessaire de mettre à jour grub et de redémarrer le système :
 
-```
+```sh
 sudo update-grub
 sudo reboot
 ```
@@ -157,7 +157,7 @@ Attention, il sera aussi indispensable d’adapter le fichier de configuration `
 1. Afficher le hostname : `hostname`
 2. Changer le hostname :
 
-```
+```sh
 echo 'monhostname' > /etc/hostname
 hostnamectl set-hostname monhostname
 ```
@@ -172,7 +172,7 @@ hostnamectl set-hostname monhostname
 
 :::correction
 1. En utilisant `dhclient`, libérer un bail et arrêter le client DHCP.
-  ```
+  ```sh
   sudo dhclient -r
   ip addr show
   ```
@@ -201,8 +201,8 @@ En utilisant `ip neigh` afficher la table de voisinage. À quoi correspondent ce
 :::
 
 :::correction
-```
-ip neigh show
+```console
+$ ip neigh show
 
 192.168.1.254 dev wlan0 lladdr 7c:16:89:cf:91:7c used 0/0/0 probes 1 STALE
 172.17.0.3 dev docker0 lladdr 02:42:ac:11:00:03 used 0/0/0 probes 1 STALE

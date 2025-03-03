@@ -24,7 +24,7 @@ Dans ce premier exemple, nous allons utiliser un workflow de fonctionnalité pou
 
 On pourra utiliser la commande suivante pour afficher un graphe des commit :
 
-```bash
+```sh
 git log --oneline --decorate --graph
 ```
 

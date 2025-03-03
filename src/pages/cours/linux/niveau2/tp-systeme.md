@@ -94,7 +94,7 @@ Les modifications apportées à l'aide de `sysctl` sont généralement temporair
 
 1. Vérifiez votre version du noyau Linux, et déplacez-vous dans le répertoire de ses modules : 
 
-```
+```console
 $ uname -r 
 5.15.59-0-lts
 
@@ -105,7 +105,7 @@ $ cd /lib/modules/5.15.59-0-lts
 
 2. Vérifiez la date du fichier `modules.dep`. Si elle semble ancienne, lancez une commande pour le regénérer. 
 
-```
+```console
 $ ls -l modules.dep 
 -rw-r--r--    1 root     root        465979 Jul  6  2022 modules.dep
 
@@ -116,27 +116,27 @@ $ depmod -a
 
 3. Listez les modules actuellement chargés. S’il n’y est pas, chargez le module `vfat` et ses dépendances. 
 
-```
-$ lsmod 
+```sh
+lsmod 
 
 ---------------------------------------------------------
 
-$ lsmod | grep vfat 
+lsmod | grep vfat 
 
 ---------------------------------------------------------
 
-$ modprobe vfat 
+modprobe vfat 
 ```
 
 4. De la même manière déchargez le module `vfat` et ses dépendances. 
 
-```
-$ modprobe -r vfat 
+```sh
+modprobe -r vfat 
 ```
 
 5. Le paramètre dynamique `arp_announce` du noyau permet de modifier les en-têtes ARP en fonction de l’adresse de destination du paquet. Sur une machine disposant de plusieurs cartes réseaux, la valeur par défaut peut poser des problèmes car Linux peut répondre avec l’adresse d’une carte quelconque. Il faut que la carte réponde avec une adresse du même sous-réseau que la destination. Vérifiez quels paramètres du noyau sont impactés.
 
-```
+```console
 $ sysctl -a | grep arp_announce 
 
 net.ipv4.conf.all.arp_announce = 0 
@@ -149,16 +149,16 @@ net.ipv4.conf.eth2.arp_announce = 0
 
 6. Modifiez dynamiquement pour l’ensemble des adaptateurs la valeur `arp_announce` à `1` (on utilisera l'option `-w` pour modifier une valeur dynamiquement). 
 
-```
-$ sysctl -w net.ipv4.conf.all.arp_announce=1 
+```sh
+sysctl -w net.ipv4.conf.all.arp_announce=1 
 ```
 
 **Attention : cette modification est dynamique mais n'est pas persistée ! Voir la question suivante.**
 
 7. Cette modification doit être définitive. Modifiez le fichier `/etc/sysctl.conf` et rechargez-le.
 
-```
-$ vi /etc/sysctl.conf 
+```sh
+vi /etc/sysctl.conf 
 ```
 
 Ajoutez : 
@@ -169,8 +169,8 @@ net.ipv4.conf.all.arp_announce = 1
 
 Et sauvez. Rechargez les nouvelles valeurs : 
 
-```
-$ sysctl -p
+```sh
+sysctl -p
 ```
 :::
 
@@ -179,20 +179,20 @@ $ sysctl -p
 1. Chercher dans les logs du noyau les lignes correspondant aux firmwares de la machine.
 
 :::correction
-```
-$ dmesg | grep firmware
+```sh
+dmesg | grep firmware
 ```
 :::
 
 1. À l'aide de commandes dédiées, afficher la version du noyau, l'architecture du système, le hostname
 
 :::correction
-```
+```console
 # version du noyau
 
 $ uname -r
 
-udevadm info -q path -n /dev/sdb
+$ udevadm info -q path -n /dev/sdb
 
 ---------------------------------------------------------
 
@@ -223,7 +223,7 @@ alpine.tom
 1. Depuis combien de temps le noyau est-il en fonctionnement ?
 
 :::correction
-```
+```sh
 uptime
 ```
 :::
@@ -235,7 +235,7 @@ Visualiser le fichier `/proc/meminfo`. La taille de la RAM est indiquée à la l
 
 Par exemple :
 
-```
+```console
 $ cat /proc/meminfo | grep Total
 
 MemTotal:       16262708 kB
@@ -244,7 +244,8 @@ SwapTotal:             0 kB
 
 Pour afficher l'utilisation de la RAM et du swap de manière lisible, on peut utiliser la commande `free -h` :
 
-```
+```console
+$ free -h
               total        utilisé      libre     partagé     tamp/cache    disponible
 Mémoire :     15G           2,0G        8,0G         1,1G           5,0G           11G
 Swap :           2,0G        0B            2,0G
@@ -270,7 +271,7 @@ La sortie est divisée en deux sections principales : la section "Mémoire" et l
 :::correction
 Visualiser le fichier `/proc/cpuinfo` :
 
-```
+```console
 $ cat /proc/cpuinfo
 
 [...]
@@ -357,7 +358,7 @@ PIW:          0          0          0          0   Posted-interrupt wakeup event
 2. Obtenez plus de détails sur cette carte. Notamment, quel module la gère ? Ces informations peuvent être obtenues avec le -v et en spécifiant uniquement la carte avec le -s de `lspci`.
 
 :::correction
-```
+```console
 # 1.
 $ lspci | grep -i vga
 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 5500 (rev 09)
@@ -365,7 +366,7 @@ $ lspci | grep -i vga
 ---------------------------------------------------------
 
 # 2.
-lspci -s 00:02.0 -v
+$ lspci -s 00:02.0 -v
 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 5500 (rev 09) (prog-if 00 [VGA controller])
 	[...]
 	Kernel driver in use: i915
@@ -385,7 +386,7 @@ lspci -s 00:02.0 -v
 - Exécuter la commande `lspci -v | grep -i bridge` pour trouver les bridges.
 
 Par exemple ici, un seul pont PCI :
-```
+```console
 $ lspci -tv
 
 -[0000:00]-+-00.0  Intel Corporation Broadwell-U Host Bridge -OPI
@@ -404,7 +405,7 @@ $ lspci -tv
            \-1f.6  Intel Corporation Wildcat Point-LP Thermal Management Controller
 ```
 
-```
+```console
 $ lspci -v | grep -i bridge
 
 00:00.0 Host bridge: Intel Corporation Broadwell-U Host Bridge -OPI (rev 09)
@@ -424,7 +425,7 @@ $ lspci -v | grep -i bridge
 
 :::correction
 L'information de vendeur est le 1er segment affiché par `lspci -nn`.
-```
+```console
 $ lspci -nn | grep -i intel
 
 00:00.0 Host bridge [0600]: Intel Corporation Broadwell-U Host Bridge -OPI [8086:1604] (rev 09)
@@ -446,7 +447,7 @@ $ lspci -nn | grep -i intel
 
 On remarque que tous les périphériques `Intel` ont un `VendorID` à `8086` :
 
-```
+```console
 $ lspci -d 8086:
 
 00:00.0 Host bridge: Intel Corporation Broadwell-U Host Bridge -OPI (rev 09)
@@ -479,7 +480,7 @@ Attention, il faut que le service ACPI soit installé. Sur Fedora, on pourra uti
 :::correction
 Exemples de réponses :
 
-```
+```console
 $ cat /proc/acpi/thermal_zone/THM/temperature
 $ cat /proc/acpi/ibm/thermal
 
@@ -510,7 +511,7 @@ Pour obtenir des informations :
 2. Utiliser `udev` pour récupérer le fichier système associé au fichier de périphérique de la partition racine du système.
 
 :::correction
-```
+```sh
 #1.
 udevadm info -p /sys/class/net/eth0 -a
 

@@ -74,7 +74,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 - Nombreuses distributions : package de distribution, `virtualenv`, ...
 - Le plus simple (dernière version officielle) :
-  ```bash
+  ```sh
   python -m pip install django
   ```
 - Framework Python => attention à avoir une version récente et correctement installée de Python sur votre système !

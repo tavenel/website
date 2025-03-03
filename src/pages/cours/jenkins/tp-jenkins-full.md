@@ -11,7 +11,7 @@ L'objectif de ce TP est d'installer le serveur d'intégration continue Jenkins e
 
 L'ensemble des projets utilisés dans cette séance est disponible dans le dépôt de code suivant :
 
-```bash
+```sh
 git clone https://git.sr.ht/~toma/jenkins_exemples
 ```
 

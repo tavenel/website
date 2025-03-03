@@ -44,62 +44,62 @@ Afficher du texte à l'écran est primordial mais faire défiler de longues lign
 10. Calculer le `hash` du fichier `/tmp/mon_fichier.txt`.
 
 :::correction
-```
+```sh
 #1.
-$ cat /etc/passwd
+cat /etc/passwd
 
 ---------------------------------------------------------
 
 #2.
-$ nl /etc/passwd
+nl /etc/passwd
 
 ---------------------------------------------------------
 
 #3.
-$ head -n 10 /etc/passwd
+head -n 10 /etc/passwd
 
 ---------------------------------------------------------
 
 #4.
-$ tail -n 10 /etc/passwd
+tail -n 10 /etc/passwd
 
 ---------------------------------------------------------
 
 #5.
-$ od --format=x /etc/passwd
+od --format=x /etc/passwd
 
 ---------------------------------------------------------
 
 #6.
-$ tail -f /tmp/mon_fichier.txt
+tail -f /tmp/mon_fichier.txt
 
 ---------------------------------------------------------
 
 #7.
 ## simpliste : more
-$ more /tmp/mon_fichier.txt
+more /tmp/mon_fichier.txt
 
 ## un peu plus puissant : less
-$ less /tmp/mon_fichier.txt
+less /tmp/mon_fichier.txt
 
 ---------------------------------------------------------
 
 #8.
 ## Attention à bien trier le fichier avant !
-$ sort /tmp/mon_fichier.txt | uniq
+sort /tmp/mon_fichier.txt | uniq
 
-$ wc -l /tmp/mon_fichier.txt # 6000 lignes
-$ sort /tmp/mon_fichier.txt | uniq |wc -l # 1250 lignes
+wc -l /tmp/mon_fichier.txt # 6000 lignes
+sort /tmp/mon_fichier.txt | uniq |wc -l # 1250 lignes
 
 ---------------------------------------------------------
 
 #9.
-$ split -l 100 /tmp/mon_fichier.txt /tmp/extrait-
+split -l 100 /tmp/mon_fichier.txt /tmp/extrait-
 
 ---------------------------------------------------------
 
 #10.
-$ md5sum /tmp/mon_fichier.txt
+md5sum /tmp/mon_fichier.txt
 ```
 :::
 
@@ -130,47 +130,47 @@ Les filtres permettent d'aller un peu plus loin en sélectionnant plus finement 
 :::correction
 1. Le fichier `/etc/passwd` est un grand classique sous Unix. Il se compose de sept champs séparés par des `:` : `login:passwd:UID:GID:Commentaire:homedir:shell` . Récupérez la ligne de l'utilisateur `root` dans `/etc/passwd`.
 
-```
-$ grep ^root: /etc/passwd
+```sh
+grep ^root: /etc/passwd
 ```
 
 2. De cette ligne, récupérez l'`UID` de `root`.
 
-```
-$ grep ^root: /etc/passwd | cut -d: -f3
+```sh
+grep ^root: /etc/passwd | cut -d: -f3
 ```
 
 3. Comptez le nombre d'utilisateurs contenus dans ce fichier à l'aide d'une redirection en entrée.
 
-```
-$ wc -l < /etc/passwd
+```sh
+wc -l < /etc/passwd
 ```
 
 4. Un peu plus compliqué : récupérez la liste des `GID`, triez-les par ordre croissant et supprimez les doublons.
 
-```
-$ cut -d: -f4 /etc/passwd | sort -n | uniq
+```sh
+cut -d: -f4 /etc/passwd | sort -n | uniq
 ```
 
 5. De là, extrapolez le nombre de groupes différents utilisés.
 
-```
-$ cut -d: -f4 /etc/passwd | sort -n | uniq | wc -l
+```sh
+cut -d: -f4 /etc/passwd | sort -n | uniq | wc -l
 ```
 
 6. Convertissez tous les login en majuscules.
 
-```
-$ cut -d: -f1 /etc/passwd | tr "[a-z]" "[A-Z]"
+```sh
+cut -d: -f1 /etc/passwd | tr "[a-z]" "[A-Z]"
 ```
 
 7. Isolez maintenant la huitième ligne de `/etc/passwd`.
 
 Il y a plusieurs solutions, en voici deux :
 
-```
-$ head -8 /etc/passwd | tail -1
-$ grep -n "" /etc/passwd | grep ^8: | cut -d: -f2-
+```sh
+head -8 /etc/passwd | tail -1
+grep -n "" /etc/passwd | grep ^8: | cut -d: -f2-
 ```
 :::
 
@@ -266,47 +266,47 @@ Voir aussi les exercices : https://github.com/learnbyexample/TUI-apps
 
 :::correction
 
-```
+```sh
 #2.
-$ grep GNU GPL-3
+grep GNU GPL-3
 
 ---------------------------------------------------------
 
 #3.
-$ grep -i "license" GPL-3
+grep -i "license" GPL-3
 
 ---------------------------------------------------------
 
 #4.
-$ grep -v "the" GPL-3
+grep -v "the" GPL-3
 
 ---------------------------------------------------------
 
 #5.
-$ grep -vn "the" GPL-3
+grep -vn "the" GPL-3
 
 ---------------------------------------------------------
 
 #6.
-$ grep "^GNU" GPL-3
+grep "^GNU" GPL-3
 
 ---------------------------------------------------------
 
 #7.
-$ grep "and$" GPL-3
+grep "and$" GPL-3
 
 ---------------------------------------------------------
 
 #8.
-$ grep "t[wo]o" GPL-3
+grep "t[wo]o" GPL-3
 
 ---------------------------------------------------------
 
 #9.
-$ grep "^[A-Z]" GPL-3
+grep "^[A-Z]" GPL-3
 
 # ou mieux :
-$ grep "^[[:upper:]]" GPL-3
+grep "^[[:upper:]]" GPL-3
 ```
 :::
 
@@ -315,15 +315,15 @@ $ grep "^[[:upper:]]" GPL-3
 1. Affichez le nombre de mots dans tous les fichiers commençant par la lettre `h` dans le dossier `/etc`.
 
 :::correction
-```
-$ wc -w /etc/{**/,}h*
+```sh
+wc -w /etc/{**/,}h*
 ```
 :::
 
 2. [Difficile] Quelle est la commande pour remplacer tous les séparateurs `:` dans le fichier `/etc/password` par le caractère `#` ?
 
 :::correction
-```
-$ sed 's,^\([^:]*\):\([^:]*\):,\1#\2#,' -i /etc/password
+```sh
+sed 's,^\([^:]*\):\([^:]*\):,\1#\2#,' -i /etc/password
 ```
 :::

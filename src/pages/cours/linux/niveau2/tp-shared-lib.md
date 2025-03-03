@@ -12,8 +12,8 @@ Voir aussi la [wikiversité][wiki-shared-lib]
 
 :::correction
 
-```
-ldd -d -v /bin/cp
+```console
+$ ldd -d -v /bin/cp
   libc.so.6 => /lib/libc.so.6 (0x40027000)
   /lib/ld-linux.so.2 => /lib/ld-linux.so.2 (0x40000000)
 
@@ -39,7 +39,7 @@ Exécutez ensuite la commande `ldconfig`.
 
 :::correction
 
-```
+```sh
 mkdir /tmp/lib
 mv /lib/x86_64-linux-gnu/libacl.so* /tmp/lib
 ```
@@ -59,7 +59,7 @@ libacl.so.1 => not found
 :::correction
 En rajoutant le chemin `/tmp/lib` puis en mettant à jour le cache du chargeur dynamique avec `ldconfig`, la bibliothèque est de nouveau accessible.
 
-```
+```console
 $ vi /etc/ld.so.conf
 /tmp/lib/
 ---------------------------------------------------------
