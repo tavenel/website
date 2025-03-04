@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import vercelStatic from '@astrojs/vercel/static';
+import vercelStatic from '@astrojs/vercel';
 
 import sitemap from '@astrojs/sitemap';
 import pagefind from "astro-pagefind";
@@ -63,7 +63,7 @@ export default defineConfig({
 	output: 'static',
 	adapter: vercelStatic({
 		webAnalytics: {
-			enabled: true,
+			enabled: false,
 		},
 	}),
 
