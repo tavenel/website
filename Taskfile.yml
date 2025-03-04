@@ -5,14 +5,10 @@ tasks:
   full-build:
     deps: [build, licenses]
 
-  serve:
-    # serve in container on <http://localhost:8080>
+  preview:
     cmds:
-      - docker run --rm --name astro-webserver -d -v "${PWD}/dist:/usr/share/nginx/html" -p 8080:80 nginx
-
-  serve-stop:
-    cmds:
-      - docker container stop astro-webserver
+      - task: build
+      - bun run preview
 
   dev:
     cmds:
