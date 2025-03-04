@@ -282,6 +282,11 @@ DHCP=yes # ou IPv4 ou IPv6
 - Intercepte et manipule les paquets IP **avant** et **après** le routage.
 - `iptables` / `ip6tables` : commande de configuration de `Netfilter`.
 
+```sh
+iptables -P INPUT DROP
+iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j ACCEPT
+```
+
 ---
 
 ## Modèle
@@ -294,11 +299,21 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
+## Politiques principales
+
+- Politiques principales (option `-j`) :
+- **bloqué** en avertissant l'émetteur : `REJECT`
+- **jeté** sans avertir l'émetteur : `DROP`
+- **accepté** : `ACCEPT`
+- **loggé** : `LOG`
+
+---
+
 ## Chaînes iptables
 
 - chaîne : ensemble de règles qui indiquent ce qu'il faut faire des paquets qui la traversent.
   - règle : combinaison de critères de matching et une cible du paquet.
-- 3 chaînes principales pour filtrer :
+- 3 chaînes principales pour filtrer (option `-A` (règle) ou `-P` (policy)) :
   - `INPUT` : paquets à destination du système,
   - `OUTPUT` : paquets émis par le système,
   - `FORWARD` : paquets à transmettre.
@@ -317,10 +332,11 @@ DHCP=yes # ou IPv4 ou IPv6
 
 - `filter` : table principale pour intervenir sur les paquets et analyser leur contenu : `DROP`, `ACCEPT`, `FORWARD`, …
 - `nat` : table dont le but est de faire de la _translation_ d'adresses (uniquement pour les nouvelles connexions)
-- `conntrack` : composant et table rendant `Netfilter` _stateful_ (suit le cycle de vie de la connexion)
+- `conntrack` : composant et table rendant `Netfilter` _stateful_ (suit le cycle de vie de la connexion).
 
 ---
 
+- Pour des exemples de base de `iptables`, voir [la documentation Ubuntu](https://doc.ubuntu-fr.org/iptables)
 - Voir aussi la [wikiversité](https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter)
 - Tutoriel complet : <https://www.inetdoc.net/guides/iptables-tutorial/>
 - Tutoriel sur `Conntrack` : <https://www.malekal.com/conntrack-sur-linux-comment-ca-marche/>

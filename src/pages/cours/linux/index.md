@@ -69,7 +69,7 @@ title: 🐧 Linux
 
 ## 🔗 LPIC-1
 
-Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1.html)
+Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1)
 
 ## Liens
 
