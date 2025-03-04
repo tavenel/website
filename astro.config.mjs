@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import vercelStatic from '@astrojs/vercel/static';
 
 import sitemap from '@astrojs/sitemap';
 import pagefind from "astro-pagefind";
@@ -60,6 +61,11 @@ const remarkCalloutConfig = {
 export default defineConfig({
 	site: 'https://www.avenel.pro',
 	output: 'static',
+	adapter: vercelStatic({
+		webAnalytics: {
+			enabled: true,
+		},
+	}),
 
 	markdown: {
 		// extendDefaultPlugins: true,
