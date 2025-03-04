@@ -59,6 +59,7 @@ const remarkCalloutConfig = {
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.avenel.pro',
+	output: 'static',
 
 	markdown: {
 		// extendDefaultPlugins: true,
