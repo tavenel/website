@@ -11,6 +11,7 @@ export class SlideShow {
 	private currentSlide: number = 0;
 
 	constructor() {
+		_generateSlides();
 		this.chapters = document.querySelectorAll("#slides-content .chapter");
 		this.slides = this._initNewChapter(false);
 	}
@@ -77,7 +78,7 @@ export class SlideShow {
 
 };
 
-export function generateSlides() {
+function _generateSlides() {
 	const course = document.getElementById('course') as HTMLElement;
 	const slidesContainer = document.getElementById('slides-content') as HTMLElement;
 
