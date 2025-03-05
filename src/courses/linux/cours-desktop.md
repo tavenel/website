@@ -4,11 +4,11 @@ title: Cours Linux Interface graphique
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-## 106.1 Installation et configuration de X11 [2]
+# Installation et configuration de X11
 
 ---
 
-### X11
+## X11
 
 - Système graphique historique de Linux
 - Modèle client / serveur
@@ -24,18 +24,18 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Wayland
+## Wayland
 
 - Successeur de `X11` : adopté par défaut sur `Ubuntu`, `Fedora`, …
 - Session courante : variable `WAYLAND_DISPLAY` : (`wayland-0`, …)
 
 ---
 
-## 106.2 Bureaux graphiques [1]
+# Bureaux graphiques
 
 ---
 
-### Desktop Environment
+## Desktop Environment
 
 - Gestionnaire de fenêtres au-dessus du serveur graphique
 - sur-couche à `X11` ou `Wayland`
@@ -43,7 +43,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Gnome : le bureau intégré
+## Gnome : le bureau intégré
 
 ![Le bureau Gnome](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/gnome-debian-10.1.0.png)
 
@@ -51,7 +51,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### KDE : le bureau configurable
+## KDE : le bureau configurable
 
 ![Le bureau KDE](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/kde-opensuse-15.1.png)
 
@@ -59,7 +59,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### XFCE : le bureau léger
+## XFCE : le bureau léger
 
 ![Le bureau XFCE](https://learning.lpi.org/en/learning-materials/102-500/106/106.2/106.2_01/images/xfce-manjaro-18.1.0.png)
 
@@ -67,7 +67,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Interopérabilité : normes freedesktop.org
+## Interopérabilité : normes freedesktop.org
 
 - Variables à utiliser dans les applications (valeurs par défaut ci-dessous)
 - `XDG_CURRENT_DESKTOP='Wayland'`
@@ -78,13 +78,13 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### VNC et RDP
+## VNC et RDP
 
 - Protocoles de connexion à distance pour sessions graphiques
 
 ---
 
-## 106.3 Accessibilité [1]
+# Accessibilité
 
 ---
 
@@ -101,4 +101,5 @@ Les bureaux graphiques disposent de nombreux outils d'accessibilité :
 - Gestuelles.
 - Reconnaissance vocale.
 
+---
 

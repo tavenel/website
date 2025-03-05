@@ -5,7 +5,7 @@ correction: false
 ---
 
 :::tip
-Voir cours _Manipulating Files_, 103.3 Lesson 1 p.227
+Voir cours LPIC-1 section _Manipulating Files_, 103.3 Lesson 1 p.227
 :::
 
 ## Types de fichiers

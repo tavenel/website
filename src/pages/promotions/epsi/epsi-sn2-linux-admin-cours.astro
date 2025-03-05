@@ -1,22 +1,15 @@
 ---
-import Layout from '@layouts/SlideLayout.astro';
+import Layout from '@layouts/CoursLinuxLayout.astro';
+import Chapter from '@components/Chapter.astro';
 
 import {Content as CoursDroits} from '@courses/linux/cours-droits.md';
+import {Content as CoursShell} from '@courses/linux/cours-shell.md';
 import {Content as CoursNetwork} from '@courses/linux/cours-network.md';
-import {Content as Legal} from '@courses/linux/legal.md';
-const frontmatter = {
-  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
-  title: "Cours Linux SN2",
-  tags: [
-    "linux",
-  ],
-}
 ---
+<Layout title="Cours Linux SN2 d'administration système">
 
-<Layout frontmatter={frontmatter} >
-
-  <CoursDroits />
-  <CoursNetwork />
-  <Legal />
+  <Chapter> <CoursDroits />   </Chapter> 
+	<Chapter> <CoursShell />    </Chapter> 
+  <Chapter> <CoursNetwork />  </Chapter> 
 
 </Layout>

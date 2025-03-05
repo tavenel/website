@@ -4,7 +4,7 @@ title: Architecture matérielle et gestion des périphériques
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# 101.1 Détermination et configuration des paramètres du matériel
+# Détermination et configuration des paramètres du matériel
 
 ---
 
@@ -146,7 +146,7 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 
 ---
 
-# 101.2 Démarrage du système
+# Démarrage du système
 
 ---
 
@@ -239,7 +239,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# 101.3 Changement de runlevels, arrêt et redémarrage.
+# Changement de runlevels, arrêt et redémarrage.
 
 ---
 
@@ -275,4 +275,6 @@ Voir le cours pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
 - POST -> BIOS -> MBR (DOS) -> Grub -> Kernel -> Init -> Runlevel (SysV)
 - POST -> UEFI -> EFI (GPT) -> direct ou Grub -> Kernel -> Init -> Runlevel (systemd) 
 
+
+---
 

@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/CoursLinuxLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Desktop } from '@courses/linux/cours-desktop.md';
+import { Content as Install } from '@courses/linux/cours-install.md';
+import { Content as Commands } from '@courses/linux/cours-commands.md';
+import { Content as Droits } from '@courses/linux/cours-droits.md';
+import { Content as Liens } from '@courses/linux/cours-liens.md';
+import { Content as Find } from '@courses/linux/cours-find.md';
+import { Content as Shell } from '@courses/linux/cours-shell.md';
+---
+<Layout title="Linux orienté Développeurs">
+	<Chapter> <Desktop />  </Chapter>
+	<Chapter> <Install />  </Chapter>
+	<Chapter> <Commands /> </Chapter>>
+	<Chapter> <Droits />   </Chapter>
+	<Chapter> <Liens />    </Chapter>
+	<Chapter> <Find />     </Chapter>
+	<Chapter> <Shell />    </Chapter>
+</Layout>
+

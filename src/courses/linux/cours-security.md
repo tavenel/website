@@ -4,8 +4,7 @@ title: Cours Linux - sécurité
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-## 110.1 Tâches d’administration de sécurité [3]
-## 110.2 Configuration de la sécurité du système [3]
+# Tâches d’administration de sécurité et configuration de la sécurité du système
 
 ![Run as an admin…](@assets/linux/run_as_admin.jpg)
 
@@ -13,7 +12,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Exemples de thèmes de sécurité
+## Exemples de thèmes de sécurité
 
 - Limites utilisateurs pour les connexions, processus, utilisation mémoire : `usermod`, `ulimit`
 - Mots de passe : `passwd`, `chage`
@@ -25,7 +24,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Mots de passe
+## Mots de passe
 
 - Rappel : `/etc/passwd` : fichier comptes utilisateurs (locaux)
 - MDP dans fichier `/etc/shadow`
@@ -42,7 +41,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### TCP wrappers
+## TCP wrappers
 
 - `/etc/hosts.allow` (`/etc/hosts.deny`): adresses IP autorisées (refusées) à se connecter aux services réseau sur le système.
 - Si même IP dans `/etc/hosts.allow` et `/etc/hosts.deny` : **autorisé**
@@ -51,7 +50,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Démarrage dynamique de service depuis une socket
+## Démarrage dynamique de service depuis une socket
 
 - Démarrage à la demande de services **uniquement** lorsque des connexions sont établies sur des sockets spécifiques.
 - `xinetd` (historique) : `/etc/xinetd.conf` et scripts dans : `/etc/xinetd.d/`
@@ -59,7 +58,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### `/etc/inittab`
+## `/etc/inittab`
 
 - Configure le processus initial du système
 - Définit les actions à exécuter lors de différents événements système : démarrage, changement de niveau d'exécution, …
@@ -68,7 +67,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-#### Exemple
+### Exemple
 
 ```
 # /etc/inittab
@@ -98,11 +97,11 @@ Voir le [TP sur la sécurité d'un système Linux][tp-security]
 
 ---
  
-## 110.3 Sécurisation des données avec le chiffrement [4]
+# Sécurisation des données avec le chiffrement
 
 ---
 
-### SSH
+## SSH
 
 - Chiffrement symétrique ou (mieux) asymétrique (clé privée / clé publique)
 - Peut encapsuler un autre protocole dans un tunnel (y compris `X11`)
@@ -114,7 +113,7 @@ Voir le [TP sur la sécurité d'un système Linux][tp-security]
 
 ---
 
-### GNU Privacy Guard (GPG)
+## GNU Privacy Guard (GPG)
 
 - Sécurise les fichiers, les communications et les e-mails : protocole `OpenPGP`
   - Asymétrique
@@ -124,4 +123,6 @@ Voir le [TP sur la sécurité d'un système Linux][tp-security]
 ---
 
 Voir le [TP sur SSH et GPG][tp-ssh-gpg]
+
+---
 

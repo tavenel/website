@@ -106,68 +106,6 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Gérer les disques, partitions et systèmes de fichiers courants
 - Gestion des fichiers : permissions et propriétés, recherche et liens
 
-### Plan de cours
-
-#### Rappels de cours
-
-- Rôle d'un système d'exploitation
-- Le noyau Linux, Noyau Linux vs Distribution GNU/Linux
-- La ligne de commandes
-- Les processus
-- Les utilisateurs
-- Le système de fichiers
-- Les chemins de fichiers
-- Les permissions sur les fichiers
-
-#### 1.1 - Sujet 101 : Architecture système [8]
-
-- 101.1 Détermination et configuration des paramètres du matériel [2]
-  - TP : affichage de la configuration du système et des périphériques, gestion des modules noyau
-- 101.2 Démarrage du système [3]
-  - TP : Grub
-  - TP : SysV init et systemd init
-- 101.3 Changement de niveaux d'exécution / des cibles de démarrage de systemd et arrêt ou redémarrage du système. [3]
-
-#### 1.2 - Sujet 102 : Installation de Linux et gestion de paquetages [12]
-
-- 102.1 Conception du schéma de partitionnement [2]
-- 102.2 Installation d'un gestionnaire d'amorçage [2]
-- 102.3 Gestion des bibliothèques partagées [1]
-  - TP : librairies partagées
-- 102.4 Utilisation du gestionnaire de paquetage Debian [3]
-- 102.5 Utilisation des gestionnaires de paquetage RPM et YUM [3]
-  - TP : Gestion de paquetages : rpm, yum et dnf vs dpkg et apt
-- 102.6 Linux en tant que système virtuel hébergé [1]
-
-#### 1.3 - Sujet 103 : Commandes GNU et Unix [26]
-
-- 103.1 Travail en ligne de commande [4]
-  - TP : Utilisation de la ligne de commande
-- 103.2 Traitement de flux de type texte avec des filtres [2]
-  - TP : Traitement de flux de type texte avec filtres et expressions rationnelles
-- 103.3 Gestion élémentaire des fichiers [4]
-  - TP : Gestion des fichiers
-- 103.4 Utilisation des flux, des pipes et des redirections [4]
-  - TP : Utilisation des flux, des pipes et des redirections 
-- 103.5 Création, contrôle et interruption des processus [4]
-- 103.6 Modification des priorités des processus [2]
-  - TP : Gestion des processus et de leur priorité
-- 103.7 Recherche dans des fichiers texte avec les expressions rationnelles [3]
-- 103.8 Édition de fichier simple [3]
-  - TP : Introduction à vi
-
-#### 1.4 - Sujet 104 : Disques, systèmes de fichiers Linux, arborescence de fichiers standard (FHS) [14]
-
-- 104.1 Création des partitions et des systèmes de fichiers [2]
-- 104.2 Maintenance de l'intégrité des systèmes de fichiers [2]
-- 104.3 Montage et démontage des systèmes de fichiers [3]
-  - TP : Gestion des partitions et des systèmes de fichiers
-- 104.4 Supprimé
-- 104.5 Gestion des permissions et de la propriété sur les fichiers [3]
-- 104.6 Création et modification des liens physiques et symboliques sur les fichiers [2]
-- 104.7 Recherche de fichiers et placement des fichiers aux endroits adéquats [2]
-  - TP : Gestion avancée de fichiers - permissions, liens, recherche
-
 ### 📅 Déroulé du cours
 
 - Module de 18H
@@ -194,7 +132,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Les deux environnements suivants doivent être installés :
   - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
   - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
-- 🤓 [Cours Linux LPIC-101](/cours/linux/niveau2/cours-linux-niveau2_partie1)
+- 🤓 [Slides de cours LPIC-101](/cours/linux/niveau2/cours-lpic-101)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
 - [▶️ TP : SysV init et systemd init](/cours/linux/niveau2/tp-sysv-systemd) : administrer les services et changer de runlevel dans un système SysV ou systemd.
@@ -224,45 +162,6 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Avoir les notions de réseau essentielles à l’administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
 - Savoir mettre en place un niveau de sécurité sur les postes : services en écoute et ports ouverts, limitations d'accès, et chiffrement des données
 
-### Plan de cours
-
-#### Sujet 105 : Shells et scripts Shell [8]
-
-- 105.1 Personnalisation et utilisation de l’environnement du shell [4]
-- 105.2 Personnalisation ou écriture de scripts simples [4]
-
-#### Sujet 106 : Interfaces et bureaux utilisateur [4]
-
-- 106.1 Installation et configuration de X11 [2]
-- 106.2 Bureaux graphiques [1]
-- 106.3 Accessibilité [1]
-
-#### Sujet 107 : Tâches d’administration [12]
-
-- 107.1 Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés [5]
-- 107.2 Automatisation des tâches d’administration par la planification des travaux [4]
-- 107.3 Paramètres régionaux et langues [3]
-
-#### Sujet 108 : Services systèmes essentiels [12]
-
-- 108.1 Gestion de l’horloge système [3]
-- 108.2 Journaux systèmes [4]
-- 108.3 Bases sur l’agent de transfert de courrier (MTA) [3]
-- 108.4 Gestion des imprimantes et de l’impression [2]
-
-#### Sujet 109 : Notions élémentaires sur les réseaux [14]
-
-- 109.1 Notions élémentaires sur les protocoles Internet [4]
-- 109.2 Configuration réseau persistante [4]
-- 109.3 Résolution de problèmes réseaux simples [4]
-- 109.4 Configuration de la résolution de noms [2]
-
-#### Sujet 110 : Securité [10]
-
-- 110.1 Tâches d’administration de sécurité [3]
-- 110.2 Configuration de la sécurité du système [3]
-- 110.3 Sécurisation des données avec le chiffrement [4]
-
 ### 📅 Déroulé du cours
 
 - Module de 16.5H
@@ -270,8 +169,8 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 ### Documents LPIC-102
 
-- [🤓 Cours Linux LPIC-102](/cours/linux/niveau2/cours-linux-niveau2_partie2)
-- [🤓 Cours sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
+- 🤓 [Slides de cours LPIC-102](/cours/linux/niveau2/cours-lpic-102)
+- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
 - [📜 TP - Création de scripts Bash](/cours/linux/niveau1/tp-scripts_bash)
 - [📜 TP Bash - Gestion des fichiers et des utilisateurs](/cours/linux/niveau2/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
 - [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/niveau1/tp-trash)

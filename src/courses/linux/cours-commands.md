@@ -8,18 +8,18 @@ Voir les rappels de cours sur les commandes de base d'un système Linux.
 
 ---
 
-# 103.1 Travail en ligne de commande
+# Travail en ligne de commande
 
 - Échapper les caractères spéciaux avec `"` et `'`
 - Wildcards `*`, `?`, `[a-zA-Z]`, `{toto,titi}`
 - Voir le cours _Quoting to Escape Special Characters_, 103.1 Lesson 2 p.185
 - Voir le cours _Types of Wildcards_, 103.3 Lesson 1 p.238
-- Voir la page (FR) [wikiversité][wiki-filtres] pour un rappel des filtres.
+- Voir la page (FR) [wikiversité sur les filtres](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/GNU_et_commandes_Unix/Ex%C3%A9cution_de_flux_de_textes_en_utilisant_des_filtres)
 - Voir le TP dédié [tp-ligne-commande][tp-ligne-commande].
 
 ---
 
-# 103.2 Traitement de flux de type texte avec des filtres
+# Traitement de flux de type texte avec des filtres
 
 Voir le TP dédié [tp-texte][tp-texte].
 
@@ -27,12 +27,12 @@ Voir le TP dédié [tp-texte][tp-texte].
 
 ---
 
-# 103.3 Gestion élémentaire des fichiers
+# Gestion élémentaire des fichiers
 
 ---
 
 - Voir les rappels de cours sur les fichiers dans un système Linux.
-- Voir la page (FR) [wikiversité][wiki-fichiers] pour un rappel sur la gestion des fichiers.
+- Voir la page (FR) [wikiversité sur la gestion des fichiers](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/GNU_et_commandes_Unix/Gestion_de_base_des_fichiers)
 
 ---
 
@@ -57,14 +57,14 @@ Voir le TP dédié [tp-texte][tp-texte].
 
 ---
 
-# 103.4 Utilisation des flux, des pipes et des redirections
+# Utilisation des flux, des pipes et des redirections
 
 ---
 
 Concepts fondamentaux dans les systèmes Unix/Linux, permettant de gérer efficacement les entrées/sorties des commandes et de manipuler les données dans le terminal.
 
 - Voir rappels de cours sur les flux, les pipes et les redirections.
-- Voir aussi la [wikiversité][wiki-redirections].
+- Voir aussi la [wikiversité sur les redirections](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/GNU_et_commandes_Unix/Utiliser_les_streams,_pipes,_et_redirections)
 
 ---
 
@@ -112,7 +112,7 @@ commande1 | commande2
 
 ---
 
-# 103.5 Création, contrôle et interruption des processus
+# Création, contrôle et interruption des processus
 
 ---
 
@@ -120,7 +120,7 @@ Voir rappels de cours sur les processus.
 
 ---
 
-# 103.6 Modification des priorités des processus
+# Modification des priorités des processus
 
 - priorité demandée par l'utilisateur : `nice` (-20 à 20)
   - champ `NI` de `ps`
@@ -136,7 +136,7 @@ Voir rappels de cours sur les processus.
 - `nice`, `renice`
 - fichiers `/proc/<PID>`
 
-Voir cours _Process Monitoring_, 103.5 Lesson 1 p.295
+Voir cours LPIC-1 section _Process Monitoring_, 103.5 Lesson 1 p.295
 
 ### Démo
 
@@ -147,7 +147,7 @@ Voir cours _Process Monitoring_, 103.5 Lesson 1 p.295
 - Processus démarré interactivement dont l'exécution continue en arrière-plan
 - `jobs`, `fg`, `bg`, `&`, `nohup`
 
-Voir cours _Job Control_, 103.5 Lesson 1 p.290
+Voir cours LPIC-1 section _Job Control_, 103.5 Lesson 1 p.290
 
 ### Démo
 
@@ -167,11 +167,11 @@ Voir le TP dédié [tp-process][tp-process].
   - déconnexion et reconnexion sans perdre l'exécution des commandes
   - très utiles pour gérer un serveur
 
-Voir cours _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.318
+Voir cours LPIC-1 section _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.318
 
 ---
 
-# 103.7 Recherche dans des fichiers texte avec les expressions rationnelles
+# Recherche dans des fichiers texte avec les expressions rationnelles
 
 ---
 
@@ -188,9 +188,9 @@ Voir cours _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.318
 
 ---
 
-- Voir cours "103.7 Lesson 1" sur les expressions régulières, p.361
+- Voir cours LPIC-1 section "103.7 Lesson 1" sur les expressions régulières, p.361
 - Voir la partie sur les expressions régulières du TP sur les flux de texte [tp-texte][tp-texte].
-- Voir la [wikiversité][wiki-regex].
+- Voir la [wikiversité sur les regex](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/GNU_et_commandes_Unix/Expressions_r%C3%A9guli%C3%A8res)
 
 ---
 
@@ -199,13 +199,13 @@ Voir cours _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.318
 - `grep`, `egrep`, `fgrep` : recherche avec regex simples, avec regex étendues (idem `grep -E`), sans regex
 - `sed` : modifications de flux de texte
 
-Voir cours "103.7 Lesson 2" sur `grep` et `sed` p.372
+Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 
 ### Démo
 
 ---
 
-# 103.8 Édition de fichier simple (vi)
+# Édition de fichier simple (vi)
 
 ---
 
@@ -216,8 +216,10 @@ Voir cours "103.7 Lesson 2" sur `grep` et `sed` p.372
 - édition de texte très efficace 
 - POSIX
 - successeurs : `vim`, `neovim`
-- Voir cours 103.8 _Basic file editing_ p.390
+- Voir cours LPIC-1 section 103.8 _Basic file editing_ p.390
 - **Pour une introduction à `vi`, utiliser l'excellent tutoriel intégré : taper `vimtutor` dans un terminal.**
 
 ### Démo + grep
+
+---
 

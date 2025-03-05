@@ -227,8 +227,8 @@ Les jokers sont extrêmement utiles pour effectuer des opérations en masse sur 
 Les expressions régulières permettent d'aller beaucoup plus loin dans la sélection de données d'un fichier texte. Elles peuvent être très complexes afin de réaliser très efficacement des traitements lourds sur de gros fichiers - on se limitera ici à des exemples facilement compréhensibles.
 
 :::tip
-- Voir cours 103.7 Lesson 1 sur les expressions régulières, p.361
-- Voir cours 103.7 Lesson 2 sur `grep` et `sed` p.372
+- Voir cours LPIC-1 section 103.7 Lesson 1 sur les expressions régulières, p.361
+- Voir cours LPIC-1 section 103.7 Lesson 2 sur `grep` et `sed` p.372
 - Voir aussi la section sur les filtres dans le TP sur la gestion des flux textes.
 :::
 

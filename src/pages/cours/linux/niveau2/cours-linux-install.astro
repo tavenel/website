@@ -1,20 +1,8 @@
 ---
-import Layout from '@layouts/SlideLayout.astro';
-
+import Layout from '@layouts/CoursLinuxLayout.astro';
 import Content from '@courses/linux/cours-install.md';
-import {Content as Legal} from '@courses/linux/legal.md';
-const frontmatter = {
-  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
-  title: "Cours Linux Installation et gestion des paquetages",
-  tags: [
-    "linux",
-  ],
-}
 ---
-
-<Layout frontmatter={frontmatter} >
-
+<Layout title="Installation et gestion des paquetages" >
   <Content />
-  <Legal />
-
 </Layout>
+---

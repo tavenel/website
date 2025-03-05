@@ -1,24 +1,18 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Cours Linux Networking
+title: Le réseau sous Linux
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Objectifs
-
-- Découvrir la gestion du réseau sous Linux
+# Notions élémentaires sur les protocoles Internet
 
 ---
 
-## 109.1 Notions élémentaires sur les protocoles Internet [4]
+## Rappels
 
 ---
 
-### Rappels
-
----
-
-#### IPv4/IPv6
+### IPv4/IPv6
 
 - Rappels sur l'adressage IPv4/IPv6 :
   - [Cours LPI](https://learning.lpi.org/en/learning-materials/102-500/109/109.1/109.1_01/)
@@ -27,7 +21,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-#### Quatre couches
+### Quatre couches
 
 - Couche _Application_ : `HTTP`, `DNS`, `DHCP`, `FTP`, …
   - couche de communication entre utilisateurs (sur machines hôtes)
@@ -41,20 +35,18 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-#### Ports par défaut
+### Ports par défaut
 
 - Principaux services et ports par défaut sur TCP/IP : [voir le cours "Communication entre processus et applications client/serveur sur TCP/IP"](/cours/cloud/index.html)
 - `/etc/services` : principaux services
 
 ---
  
-## 109.2 Configuration réseau persistante [4]
-## 109.3 Résolution de problèmes réseaux simples [4]
-## 109.4 Configuration de la résolution de noms [2]
+# Configuration réseau persistante, DNS, résolution de problèmes réseaux simples
 
 ---
 
-### net-tools vs iproute2
+## net-tools vs iproute2
 
 - `net-tools` : anciennes commandes Unix
   - `ifconfig`, `route`, `arp`, `netstat`, `nameif`
@@ -65,11 +57,11 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Noms des interfaces
+## Noms des interfaces
 
 ---
 
-#### Ancien nommage d'interfaces
+### Ancien nommage d'interfaces
 
 - `eth0`, `eth1`, … : réseau filaire
 - `wlan0`, `wlan1`, … : réseau sans fil
@@ -77,7 +69,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-#### Nommage `systemd`
+### Nommage `systemd`
 
 - `en` : Ethernet
 - `ib` : InfiniBand
@@ -87,7 +79,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-#### Algo de nommage `systemd`
+### Algo de nommage `systemd`
 
 1. Index du BIOS du firmware : `eno1`
 1. PCI express slot : `ens1`
@@ -97,7 +89,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Gestion des interfaces
+## Gestion des interfaces
 
 - `ifconfig` : ancienne commande
 - `ip` : plus puissante, et sépare les couches et services
@@ -109,7 +101,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-#### Fichier `/etc/network/interfaces`
+### Fichier `/etc/network/interfaces`
 
 ```
 # loopback
@@ -130,7 +122,7 @@ iface enp3s6 inet static
 
 ---
 
-### Hostname
+## Hostname
 
 - commande: `hostname`
 - `/etc/hostname`
@@ -140,7 +132,7 @@ iface enp3s6 inet static
 
 ---
 
-### DNS
+## DNS
 
 - _Name Service Switch_ configuration file: `/etc/nsswitch.conf`
 - décrit l'ordre de priorité des résolutions
@@ -153,7 +145,7 @@ hosts: files dns
 
 ---
 
-#### Résolution locale
+### Résolution locale
 
 - Fichier `/etc/hosts`
 
@@ -165,7 +157,7 @@ hosts: files dns
 
 ---
 
-#### Configuration DNS
+### Configuration DNS
 
 - Fichier `/etc/resolv.conf`
 
@@ -180,7 +172,7 @@ search mydomain.net mydomain.com
 
 ---
 
-#### Résolution DNS
+### Résolution DNS
 
 - `nslookup www.wikipedia.fr` : résolution DNS
 - `dig @8.8.8.8 www.wikipedia.fr` : résolution DNS en passant par le serveur DNS de Google (`8.8.8.8`)
@@ -189,7 +181,7 @@ search mydomain.net mydomain.com
 
 ---
 
-#### systemd-resolved
+### systemd-resolved
 
 - Résolution DNS via `systemd`
 - caching, espaces de noms de routage spécifiques (`scope`), DNS via VPN, …
@@ -199,7 +191,7 @@ search mydomain.net mydomain.com
 
 ---
 
-### Routage
+## Routage
 
 - `route` : ancienne commande `net-tools`
 - `ip route` : configuration du routage via `iproute2`
@@ -208,14 +200,14 @@ search mydomain.net mydomain.com
 
 ---
 
-### ICMP
+## ICMP
 
 - `ping -4 www.google.fr`
 - `ping -6 www.google.fr`
 
 ---
 
-### systemd
+## systemd
 
 - `systemd-resolved` : DNS
 - `systemd-networkd` : config réseau
@@ -224,7 +216,7 @@ search mydomain.net mydomain.com
 
 ---
 
-#### Exemple
+### Exemple
 
 ```
 [Match]
@@ -241,7 +233,7 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-### NetworkManager
+## NetworkManager
 
 - Configuration centrale du réseau : 1 seul outil
 - commandes `nmcli` et `nmtui`
@@ -250,7 +242,7 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-### Vérifier le réseau
+## Vérifier le réseau
 
 1. `ip addr show` : Adresse IP ?
 2. `ping www.google.fr` : connectivité ?
@@ -259,14 +251,14 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-### Statistiques
+## Statistiques
 
 - `ss` (socket statistics) : informations sockets réseau et connexions actives
 - `netstat` (network statistics) : idem mais ancienne commande
 
 ---
 
-### NetworkCat
+## NetworkCat
 
 - `netcat` (`nc`) : lis / écris des données sur des sockets réseau.
   - ouverture de connexions TCP / UDP
@@ -344,4 +336,6 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 ---
 
 Voir le [TP sur la configuration du réseau sous Linux][tp-network]
+
+---
 

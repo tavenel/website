@@ -1,3 +1,9 @@
+---
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+title: Liens symboliques et réels
+layout: '@layouts/CoursePartLayout.astro'
+---
+
 ## inode
 
 - _Index node_ : structure de données qui stocke les attributs d'un fichier
@@ -60,4 +66,6 @@ database "Données" as data {
 [F3] ..> F1 #red
 @enduml
 ```
+
+---
 

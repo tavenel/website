@@ -39,7 +39,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 # Gestion des permissions et de la propriété sur les fichiers
 
-- Voir cours LPIC-1: _104.5 Manage file permissions and ownership_ p.481
+- Voir cours LPIC-1 section _104.5 Manage file permissions and ownership_ p.481
 
 ---
 
@@ -170,4 +170,6 @@ setfacl -x u:<utilisateur> <fichier>
 # Supprimer tous les ACL
 setfacl -b <fichier>
 ```
+
+---
 

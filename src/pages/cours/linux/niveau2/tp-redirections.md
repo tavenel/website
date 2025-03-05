@@ -7,8 +7,8 @@ correction: false
 ## Cours
 
 :::tip
-- Voir cours _A Quick Review on Redirections and Pipes_, 103.2 Lesson 1 p.194
-- Voir cours _Redirects_, 103.4 Lesson 1 p.267
+- Voir cours LPIC-1 section _A Quick Review on Redirections and Pipes_, 103.2 Lesson 1 p.194
+- Voir cours LPIC-1 section _Redirects_, 103.4 Lesson 1 p.267
 :::
 
 ## Travaux Pratiques

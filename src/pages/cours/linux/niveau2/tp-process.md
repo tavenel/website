@@ -7,7 +7,7 @@ correction: false
 ## Cours
 
 :::tip
-Voir cours _Process Monitoring_, 103.5 Lesson 1 p.295
+Voir cours LPIC-1 section _Process Monitoring_, 103.5 Lesson 1 p.295
 :::
 
 ## Obtenir des informations sur un processus

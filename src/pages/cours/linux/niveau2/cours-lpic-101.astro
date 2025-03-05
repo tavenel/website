@@ -1,0 +1,24 @@
+---
+import Layout from '@layouts/CoursLinuxLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Intro } from '@courses/linux/lpic-101-intro.md';
+import { Content as Hardware } from '@courses/linux/cours-hardware.md';
+import { Content as Install } from '@courses/linux/cours-install.md';
+import { Content as Commands } from '@courses/linux/cours-commands.md';
+import { Content as Disks } from '@courses/linux/cours-disks.md';
+import { Content as Droits } from '@courses/linux/cours-droits.md';
+import { Content as Liens } from '@courses/linux/cours-liens.md';
+import { Content as Find } from '@courses/linux/cours-find.md';
+---
+<Layout title="Formation LPIC 101">
+  <Chapter> <Intro />     </Chapter>
+	<Chapter> <Hardware />  </Chapter>
+	<Chapter> <Install />   </Chapter>
+	<Chapter> <Commands />  </Chapter>
+	<Chapter> <Disks />     </Chapter>
+	<Chapter> <Droits />    </Chapter>
+	<Chapter> <Liens />     </Chapter>
+	<Chapter> <Find />      </Chapter>
+</Layout>
+

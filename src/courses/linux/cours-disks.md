@@ -4,7 +4,7 @@ title: Disques, systèmes de fichiers Linux, arborescence de fichiers standard (
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# 104.1 Création des partitions et des systèmes de fichiers
+# Création des partitions et des systèmes de fichiers
 
 - Partition : morceau de disque physique
   - vu comme "disque" virtuel dans un OS.
@@ -18,9 +18,9 @@ layout: '@layouts/CoursePartLayout.astro'
 
 - `fdisk`, `gdisk` : gère le partitionnement
 - `mkfs` : crée un filesystem (formatte une partition)
-- Voir cours 104.1 _Create partitions and filesystems_ section _mkfs_ p.414
-- Voir cours 104.1 _Create partitions and filesystems_ section _fdisk_ p.407 et _gdisk_ p.411
-- Voir aussi la [wikiversité][wiki-partitions].
+- Voir cours LPIC-1 section 104.1 _Create partitions and filesystems_ section _mkfs_ p.414
+- Voir cours LPIC-1 section 104.1 _Create partitions and filesystems_ section _fdisk_ p.407 et _gdisk_ p.411
+- Voir aussi la [wikiversité sur les partitions](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/P%C3%A9riph%C3%A9riques_et_syst%C3%A8mes_de_fichiers_Linux/Cr%C3%A9er_des_partitions_et_des_syst%C3%A8mes_de_fichiers)
 - Voir le TP dédié [tp-partitions][tp-partitions].
 
 ---
@@ -82,9 +82,9 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# 104.2 Maintenance de l'intégrité des systèmes de fichiers
+# Maintenance de l'intégrité des systèmes de fichiers
 
-- Voir cours _104.2 Maintain the integrity of filesystems_ p.439
+- Voir cours LPIC-1 section _104.2 Maintain the integrity of filesystems_ p.439
 - `du` : taille de fichiers
 - `df` : espace libre partitions
 - `fsck` : vérification de filesystem
@@ -93,7 +93,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# 104.3 Montage et démontage des systèmes de fichiers
+# Montage et démontage des systèmes de fichiers
 
 - Windows : disques `C:`, `D:`, ...
 - Unix : une partition se **monte** dans un **répertoire** (vide) quelconque
@@ -104,7 +104,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-- Voir cours _104.3 Control mounting and unmounting of filesystems_ p.461
+- Voir cours LPIC-1 section _104.3 Control mounting and unmounting of filesystems_ p.461
 - Voir le TP dédié [tp-partitions][tp-partitions].
 
 ---
@@ -114,7 +114,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - `systemd` peut gérer les points de montage à l'init
 - fichiers `*.mount` dans `/etc/systemd/system/` :
   - `mnt-donnees.mount` pour `/mnt/donnees`
-- Voir cours _104.3 Control mounting and unmounting of filesystems_ section _systemd_ p.470
+- Voir cours LPIC-1 section _104.3 Control mounting and unmounting of filesystems_ section _systemd_ p.470
 
 ---
 

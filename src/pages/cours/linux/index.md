@@ -2,6 +2,15 @@
 title: 🐧 Linux
 ---
 
+## Conventions de notation
+
+- Les commandes et noms de fichiers apparaissent dans le texte avec `cette syntaxe`.
+- Les descriptions de commandes suivent le formalisme des _man pages_ :
+  - Les symboles `<>` indiquent un argument obligatoire.
+  - Les symboles `[]` indiquent un argument optionnel.  
+  - Le symbole `|` indique un choix (exclusif) entre 2 arguments.
+  - Le symbole `…` indique un argument pouvant être répété.
+
 ## Installation
 
 - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
@@ -22,27 +31,19 @@ title: 🐧 Linux
 
 ## Niveau 2
 
-- 🤓 Cours Linux niveau 2 :
-  - [Partie 1](/cours/linux/niveau2/cours-linux-niveau2_partie1) TODO
-  - [Partie 2](/cours/linux/niveau2/cours-linux-niveau2_partie2) TODO
-- [🤓 Cours Linux de niveau 2 orienté Développeurs](/cours/linux/niveau2/cours-linux-dev) TODO
 - [🤓 Cours Linux sur l'architecture matérielle et la gestion des périphériques](/cours/linux/niveau2/cours-linux-hardware)
-- [🤓 Cours sur l'installation de Linux et la gestion de paquetages](/cours/linux/niveau2/cours-linux-install)
-- [🤓 Cours sur les commandes GNU/Linux et Unix](/cours/linux/niveau2/cours-linux-commandes)
-- [🤓 Cours sur les disques et les partitions](/cours/linux/niveau2/cours-linux-disks)
-- [🤓 Cours Linux sur les permissions et les droits](/cours/linux/niveau2/cours-linux-droits)
-
---
-- [🤓 Cours sur les interfaces et bureaux utilisateur](/cours/linux/niveau2/cours-linux-desktop)
---
-
-- [🤓 Cours Linux d'introduction à l'administration réseau](/cours/linux/niveau2/cours-linux-network)
-- [🤓 Cours Linux sur la sécurité](/cours/linux/niveau2/cours-linux-security)
-
-
---
-
-- [🤓 Cours sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell) TODO
+- [🤓 Slides de cours sur l'installation de Linux et la gestion de paquetages](/cours/linux/niveau2/cours-linux-install)
+- [🤓 Slides de cours sur les commandes GNU/Linux et Unix](/cours/linux/niveau2/cours-linux-commandes)
+- [🤓 Slides de cours sur les disques et les partitions](/cours/linux/niveau2/cours-linux-disks)
+- [🤓 Slides de cours Linux sur les permissions et les droits](/cours/linux/niveau2/cours-linux-droits)
+- [🤓 Slides de cours Linux sur les liens](/cours/linux/niveau2/cours-linux-liens)
+- [🤓 Slides de cours Linux sur la recherche de fichiers](/cours/linux/niveau2/cours-linux-find)
+- [🤓 Slides de cours sur le Shell](/cours/linux/niveau2/cours-linux-shell)
+- [🤓 Slides de cours sur les interfaces et bureaux utilisateur](/cours/linux/niveau2/cours-linux-desktop)
+- [🤓 Slides de cours Linux sur l'administration système](/cours/linux/niveau2/cours-linux-admin)
+- [🤓 Slides de cours Linux d'introduction à l'administration réseau](/cours/linux/niveau2/cours-linux-network)
+- [🤓 Slides de cours Linux sur la sécurité](/cours/linux/niveau2/cours-linux-security)
+- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
 - [▶️ TP : SysV init et systemd init](/cours/linux/niveau2/tp-sysv-systemd) : administrer les services et changer de runlevel dans un système SysV ou systemd.
@@ -73,6 +74,9 @@ Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1)
 
 ## Liens
 
+- [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
+- Aide simple sur les commandes : <https://cheat.sh/>
+- Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - <https://roadmap.sh/linux>
 - [Une VM Linux dans le navigateur](https://webvm.io/)
 - [Une formation gratuite de la Linux Foundation (LFS101)](https://training.linuxfoundation.org/training/introduction-to-linux/)
@@ -88,6 +92,7 @@ Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1)
 - [Mind map SSH](https://www.formation-lpi.com/Mind-Map-SSH.html) et [Mind map GPG](https://www.formation-lpi.com/Mind-Map-gpg.html)
 - [Migrer une installation Linux](https://www.antoinefi.net/index.php/2025/01/29/migrer-une-installation-linux/)
 - Livre : Unix and Linux system administration handbook, 5th edition. Evi Nemeth, Garth Snyder, Trent R.Hein, Ben Whaley, Dan Mackin
+- [Créer une distribution "Live" (qui reste en mémoire) - tuto complet, reprend les principes de base, du boot à un système minimal](https://zestedesavoir.com/tutoriels/268/creer-son-premier-rim-linux/)
 
 ### Liens VIM
 

@@ -4,7 +4,7 @@ title: Installation de Linux et gestion de paquetages
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# 102.1 Conception du schéma de partitionnement
+# Conception du schéma de partitionnement
 
 ---
 
@@ -49,13 +49,13 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# 102.2 Installation d'un gestionnaire d'amorçage
+# Installation d'un gestionnaire d'amorçage
 
 Voir le TP [tp-grub][tp-grub] déjà réalisé.
 
 ---
 
-# 102.3 Gestion des bibliothèques partagées
+# Gestion des bibliothèques partagées
 
 ---
 
@@ -97,13 +97,12 @@ Voir le TP [tp-grub][tp-grub] déjà réalisé.
 ---
 
 - Voir le cours _102.3 Manage shared libraries_ p.87
-- Voir aussi la [wikiversité][wiki-shared-lib]
+- Voir aussi la [wikiversité sur les librairies partagées](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/Installation_de_Linux_et_gestion_des_packages/G%C3%A9rer_les_biblioth%C3%A8ques_partag%C3%A9es)
 - Voir le TP dédié [tp-shared-lib][tp-shared-lib].
 
 ---
 
-# 102.4 Utilisation du gestionnaire de paquetage Debian
-# 102.5 Utilisation des gestionnaires de paquetage RPM et YUM
+# Utilisation des gestionnaires de paquetage Debian (apt, dpkg) et RHEL (dnf, rpm, yum)
 
 ---
 
@@ -133,7 +132,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-# 102.6 Linux en tant que système virtuel hébergé
+# Linux en tant que système virtuel hébergé
 
 ---
 
@@ -245,3 +244,6 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 - Génère des machines virtuelles ou conteneurs dans un environnement de Cloud
 - Fichier de configuration `YAML`
+
+---
+
