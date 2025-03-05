@@ -66,11 +66,6 @@ footer {
 	font-size: x-small;
 }
 
-#main {
-	margin: auto;
-	max-width: 1024px;
-}
-
 figcaption {
 	font-style: italic;
 	font-size: small;
