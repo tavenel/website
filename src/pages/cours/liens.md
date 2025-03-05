@@ -63,6 +63,7 @@ Quelques références utiles en informatique.
 ### Liens IA
 
 - <https://www.comparia.beta.gouv.fr/>
+- <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
 
 ## Citations
 
