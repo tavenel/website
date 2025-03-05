@@ -135,6 +135,8 @@ _Tom Avenel_
 - https://markdalgleish.com/projects/bespoke.js/
 - https://github.com/gnab/remark/issues/50#issuecomment-223887379
 
+- move HTML emojis to web icons
+
 ---
 
 ```css
