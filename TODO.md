@@ -3,9 +3,22 @@
 - slides => <bug> fullscreen style fix CSS</bug>
 - check robots.txt in prod
 
+- vercel analytics
+- https://vercel.com/tavenels-projects/website/speed-insights
+
+- slides KO from sub-courses (Linux index ~> .astro, lpic, …)
+
 ---
 
 ## P2
+
+```css
+main {
+	/* max-width: 1024px; */ /* TODO (breaks line below and breaks slides) */
+	max-width: 90vw; /* 90 % full page */
+	margin: auto;
+}
+```
 
 - diagrams
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
