@@ -99,3 +99,5 @@ layout: '@layouts/CoursePartLayout.astro'
 - 104.7 Recherche de fichiers et placement des fichiers aux endroits adéquats [2]
   - TP : Gestion avancée de fichiers - permissions, liens, recherche
 
+---
+

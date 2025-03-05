@@ -92,3 +92,5 @@ layout: '@layouts/CoursePartLayout.astro'
   - Les symboles `<>` indiquent un argument obligatoire.
   - Les symboles `[]` indiquent un argument optionnel.  
 
+---
+
