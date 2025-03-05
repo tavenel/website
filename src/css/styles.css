@@ -66,9 +66,9 @@ footer {
 	font-size: x-small;
 }
 
-#content {
+#main {
 	margin: auto;
-	max-width: 960px;
+	max-width: 1024px;
 }
 
 figcaption {
