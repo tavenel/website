@@ -43,9 +43,7 @@ Module de 21H
 
 Dans le but d'accélérer le _time-to-market_ d'une application et d'augmenter la qualité de celle-ci, il est décidé de réaliser un déploiement continu de l'application par l'utilisation de conteneurs.
 
-- [html](/cours/devops/projet-devops.html)
-- [pdf](/cours/devops/projet-devops.pdf)
-- [markdown](/cours/devops/projet-devops.md)
+- [📄 Sujet](/cours/devops/projet-devops)
 
 ## Pour aller plus loin
 

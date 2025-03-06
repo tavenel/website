@@ -78,7 +78,7 @@ Quelques références utiles en informatique.
 - Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
 - Gérer la variable d'environnement `$PATH` :
   - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
-  - sous Linux, voir le TP sur la ligne de commandes [du cours Linux](/cours/linux/index.html)
+  - sous Linux, voir le TP sur la ligne de commandes [du cours Linux](/cours/linux)
 - Article très complet sur les origines de la console et des terminaux Unix : <https://thevaluable.dev/guide-terminal-shell-console/>
 - Versioning sémantique : <https://semver.org/>, <https://calver.org/>
 - <https://www.conventionalcommits.org/en/v1.0.0/>

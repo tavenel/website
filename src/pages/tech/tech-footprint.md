@@ -23,7 +23,7 @@ created: 2024-12-17
 ## Links
 
 - DNS blocklist to block web ads (FR) : <https://sebsauvage.net/wiki/doku.php?id=dns-blocklist>
-- [page: Carbon footprint of the Web](/tech/web-bloat.html)
+- [page: Carbon footprint of the Web](/tech/web-bloat)
 - Carbon footprint of an email : <https://carbonliteracy.com/the-carbon-cost-of-an-email/>
 - BBC smart guide to climate change : <https://www.bbc.com/future/smart-guide-to-climate-change>
-- [page: Cours Green IT](/cours/rse/index.html)
+- [page: Cours Green IT](/cours/rse)

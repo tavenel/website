@@ -21,7 +21,7 @@ Module de 14H
 Évaluation : 
 
 - 1CC : Quizz
-- Un projet commun avec le module [serveurs d'intégration continue](/promotions/epsi/epsi-i1-cda-ci.html)
+- Un projet commun avec le module [serveurs d'intégration continue](/promotions/epsi/epsi-i1-cda-ci)
 
 ## Documents
 

@@ -57,7 +57,7 @@ title: Liens externes
 
 ## Liens de cours hors catégories
 
-- Voir la [page liens utiles des cours](/cours/liens.html)
+- Voir la [page liens utiles des cours](/cours/liens)
 
 ## Online services (Cloud, SaaS)
 

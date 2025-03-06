@@ -22,7 +22,7 @@ layout: ../../../layouts/BaseLayout.astro
 
 Module de 10H
 
-Évaluation : projet commun avec le module [tests automatiques](/promotions/epsi/epsi-i1-cda-tests-auto.html)
+Évaluation : projet commun avec le module [tests automatiques](/promotions/epsi/epsi-i1-cda-tests-auto)
 
 ### Séance 1
 

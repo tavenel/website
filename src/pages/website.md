@@ -60,13 +60,13 @@ Anonymous analytics is collected from _Vercel_ : <https://vercel.com/docs/analyt
 - This website is developped with ecological principles in mind. It intends to be as frugal as possible and usable on old terminals like old mobile phone or old computers.
 - Éco-index (2023-10-13) [Détails sur ecoindex.fr](https://www.ecoindex.fr/resultat/?id=0cba402f-cc0f-4b2d-ad7a-1495a1ccb6d2#score-details) : <span class="green">A (94/100)</span>
 - <div id="wcb" class="carbonbadge"></div><script src="/carbonbadge-1.1.3.min.js"  defer></script>
-- For more information, have a look to the [Green IT course](/cours/rse/index.html).
+- For more information, have a look to the [Green IT course](/cours/rse).
 
 ## Lobbying et partenariats
 
 - Ce site est ouvert à partenariats **uniquement pour des services éthiques**. Les autres sollicitations sont ignorées.
 - <https://sr.ht/> : forge de code source et micro hébergeur Web. Héberge ce site Web (service <https://srht.site/>) et la plupart de mes dépôts de code dans la forge `git`. Service éthique proche des philosophies <https://suckless.org/>. Serveurs aux États-Unis, en cours de transfert vers les Pays-Bas.
-- <https://www.zaclys.com/> : hébergeur Software-as-a-Service (SaaS) français éthique. J'utilise à titre personnel le déploiement Nextcloud pour y stocker des fichiers, gérer mes agendas personnels et professionnels (y compris ceux référencés sur ce site), leur gestionnaire de flux RSS (synchronisés en local par `newsboat`) et parfois d'autres services. Comme tout client Zaclys, je dispose d'une offre de parrainage (3 mois offerts pour le parrain et 3 mois offerts pour le parrainé) : me contacter depuis la page [about me](/about.html).
+- <https://www.zaclys.com/> : hébergeur Software-as-a-Service (SaaS) français éthique. J'utilise à titre personnel le déploiement Nextcloud pour y stocker des fichiers, gérer mes agendas personnels et professionnels (y compris ceux référencés sur ce site), leur gestionnaire de flux RSS (synchronisés en local par `newsboat`) et parfois d'autres services. Comme tout client Zaclys, je dispose d'une offre de parrainage (3 mois offerts pour le parrain et 3 mois offerts pour le parrainé) : me contacter depuis la page [about me](/about).
 - <https://www.leviia.com/> : autre fournisseur d'hébergement Nextcloud, les données sont stockées chez OVH. Compte OnlyOffice inclus dans l'offre. Utilisé pour les données liées à mon activité professionnelle, y compris les rendus des apprenants.
 
 ## License

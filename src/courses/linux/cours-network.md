@@ -16,7 +16,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 - Rappels sur l'adressage IPv4/IPv6 :
   - [Cours LPI](https://learning.lpi.org/en/learning-materials/102-500/109/109.1/109.1_01/)
-  - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d’applications mobiles"](/cours/cloud/index.html)
+  - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d’applications mobiles"](/cours/cloud)
   - [Cours TCP/IP de François Goffinet](https://linux.goffinet.org/administration/configuration-du-reseau/introduction-a-tcp-ip/)
 
 ---
@@ -37,7 +37,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ### Ports par défaut
 
-- Principaux services et ports par défaut sur TCP/IP : [voir le cours "Communication entre processus et applications client/serveur sur TCP/IP"](/cours/cloud/index.html)
+- Principaux services et ports par défaut sur TCP/IP : [voir le cours "Communication entre processus et applications client/serveur sur TCP/IP"](/cours/cloud)
 - `/etc/services` : principaux services
 
 ---
