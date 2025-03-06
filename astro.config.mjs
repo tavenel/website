@@ -62,9 +62,7 @@ export default defineConfig({
 	site: 'https://www.avenel.pro',
 	output: 'static',
 	adapter: vercelStatic({
-		webAnalytics: {
-			enabled: false,
-		},
+		imageService: true,
 	}),
 
 	markdown: {

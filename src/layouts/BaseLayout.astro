@@ -1,5 +1,6 @@
 ---
-// import { Analytics } from '@vercel/analytics/next';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 import Head from '@components/Head.astro';
 import Header from '@components/Header.astro';
@@ -11,7 +12,10 @@ const { title, url } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<Head title={title} url={url}/>
+	<Head title={title} url={url}>
+		<Analytics />
+		<SpeedInsights />
+	</Head>
 	<body>
 		<Header />
 		<main id="main">
@@ -19,7 +23,6 @@ const { title, url } = Astro.props;
 		</main>
 		<Footer />
 		<AddFavorite />
-		<!-- Analytics / -->
 	</body>
 </html>
 
