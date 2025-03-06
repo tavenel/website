@@ -20,6 +20,8 @@ main {
 }
 ```
 
+- 404 style
+
 - diagrams
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
   - fix `@startdot`
