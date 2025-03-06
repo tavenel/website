@@ -4,6 +4,9 @@ import '@css/styles.css'
 // ClientRouter transforms the website into an SPA
 // import { ClientRouter } from 'astro:transitions'; // TODO
 
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+
 const { title, url } = Astro.props;
 type Props = {
 	title: string,
@@ -40,5 +43,7 @@ type Props = {
 	</script>
 	<title>{title}</title>
 	<!-- <ClientRouter /> -->
+	<Analytics />
+	<SpeedInsights />
 </head>
 

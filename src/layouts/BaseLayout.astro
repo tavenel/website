@@ -1,7 +1,4 @@
 ---
-import Analytics from '@vercel/analytics/astro';
-import SpeedInsights from '@vercel/speed-insights/astro';
-
 import Head from '@components/Head.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
@@ -12,10 +9,7 @@ const { title, url } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<Head title={title} url={url}>
-		<Analytics />
-		<SpeedInsights />
-	</Head>
+	<Head title={title} url={url} />
 	<body>
 		<Header />
 		<main id="main">
