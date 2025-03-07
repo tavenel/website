@@ -41,7 +41,7 @@ This website is a lightweight Astro website : <https://astro.build/>.
 It is a static website with very little JavaScript intended to be extremely fast, small and easy to change or copy.
 
 - The whole website pages and deployment scripts are available as a git repo : <https://git.sr.ht/~toma/astro> or <https://github.com/tavenel/website>
-- The website is hosted on <https://srht.site/>.
+- The website is hosted on <https://vercel.com/>.
 - PageSpeed Insights (2023-10-13) [Details of analysis](https://pagespeed.web.dev/analysis/https-www-avenel-pro-promotions-esgi-esgi-b3-src-linux-lpic-1-html/g9fuj8pwm7?form_factor=desktop) : <span class="green">Performance:100%, Accessibility:100%, Best Practices:100%,SEO:100% (Mobile & Desktop)</span>
 - W3 analysis : <https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.avenel.pro%2F>
 - Covers come from the <https://undraw.co/> project.
