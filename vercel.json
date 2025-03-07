@@ -1,0 +1,12 @@
+{
+	"redirects": [
+		{
+			"source": "/k8s",
+			"destination": "/cours/docker#-Kubernetes"
+		},
+		{
+			"source": "/dk",
+			"destination": "/cours/docker"
+		}
+	]
+}
