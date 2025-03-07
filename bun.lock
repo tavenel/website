@@ -8,6 +8,7 @@
         "@astrojs/rss": "^4.0.11",
         "@astrojs/sitemap": "^3.2.1",
         "@astrojs/vercel": "^8.1.1",
+        "@fontsource-variable/fira-code": "^5.2.5",
         "@microflash/remark-callout-directives": "^4.3.2",
         "@types/sanitize-html": "^2.13.0",
         "@vercel/analytics": "^1.5.0",
@@ -84,6 +85,8 @@
     "@chevrotain/utils": ["@chevrotain/utils@11.0.3", "https://registry.yarnpkg.com/@chevrotain/utils/-/utils-11.0.3.tgz", {}, ""],
 
     "@esbuild/linux-x64": ["@esbuild/linux-x64@0.25.0", "https://registry.yarnpkg.com/@esbuild/linux-x64/-/linux-x64-0.25.0.tgz", { "os": "linux", "cpu": "x64" }, ""],
+
+    "@fontsource-variable/fira-code": ["@fontsource-variable/fira-code@5.2.5", "", {}, "sha512-rw0z/D9Tsp7asvwK/XFHz+xMkgR7MPRCa6U9e77alsmJQFqniEWt/c+1xKCZR2omEw1hVP7ej48Z1O8c/YiSVg=="],
 
     "@fortawesome/fontawesome-free": ["@fortawesome/fontawesome-free@6.7.2", "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-6.7.2.tgz", {}, ""],
 
