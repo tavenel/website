@@ -45,6 +45,7 @@ It is a static website with very little JavaScript intended to be extremely fast
 - PageSpeed Insights (2023-10-13) [Details of analysis](https://pagespeed.web.dev/analysis/https-www-avenel-pro-promotions-esgi-esgi-b3-src-linux-lpic-1-html/g9fuj8pwm7?form_factor=desktop) : <span class="green">Performance:100%, Accessibility:100%, Best Practices:100%,SEO:100% (Mobile & Desktop)</span>
 - W3 analysis : <https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.avenel.pro%2F>
 - Covers come from the <https://undraw.co/> project.
+- All emojis designed by [OpenMoji](https://openmoji.org/) - the open-source emoji and icon project. License: CC BY-SA 4.0
 
 ## Search
 
@@ -71,5 +72,5 @@ Anonymous analytics is collected from _Vercel_ : <https://vercel.com/docs/analyt
 
 ## License
 
-Unless stated otherwise, the full content of this website is under the [󰵫  License: CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) : you are free to share and adapt its content but you must credit me and distribute under the same license.
+Unless stated otherwise, the full content of this website is under the [License: CC🅭 BY🅯 SA🄎 4.0](http://creativecommons.org/licenses/by-sa/4.0/) : you are free to share and adapt its content but you must credit me and distribute under the same license.
 
