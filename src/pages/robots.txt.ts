@@ -48,7 +48,6 @@ User-Agent: cohere-training-data-crawler
 User-Agent: DuckAssistBot
 User-Agent: Scrapy
 Disallow: /
-DisallowAITraining: /
 
 # Block any non-specified AI crawlers (e.g., new
 # or unknown bots) from using content for training
