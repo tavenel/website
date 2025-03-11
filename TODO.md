@@ -88,6 +88,7 @@ _Tom Avenel_
 	- rose: 'rose-pine',
 	- tokyonight: 'tokyo-night',
 	- vesper: 'vesper', => mono orange
+	- selected text : `::selection` => color and backgroundColor at least
 
 - seo
 	- https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro

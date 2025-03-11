@@ -273,7 +273,7 @@ select {
 	@media (min-width: 1200px) { width: 30%; }
 }
 
-#themeSwitch { width: min-content; }
+#themeSwitchSelect { width: min-content; }
 
 /*************/
 /* BOOKMARKS */
