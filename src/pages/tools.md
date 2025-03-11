@@ -324,6 +324,7 @@ created: 2024-10-17
   - `React` : most used, heavy, powerfull, quite difficult
   - `Vue` : easy, trending
   - <https://alpinejs.dev/> : minimal, very easy
+	- <https://astro.build/> : framework statique / SSR multi-composants (`React`, …). 0 JS par défaut
 - Backend : `appwrite`, `firebase`
 - animations :
   - Animate text like a typewritter : <https://github.com/mattboldt/typed.js>
@@ -339,6 +340,7 @@ created: 2024-10-17
 - Système de commentaires utilisant Github : <https://giscus.app/>
 - Layouts et composants tout faits : <https://pagedone.io/>, <https://www.preline.co/>, <https://flowbite.com/>
 - Affichage de messages et d'alertes : <https://alertifyjs.com/>
+- <https://www.happyhues.co/> : palettes de couleurs
 
 ## 📊 Data science, data mining, machine learning
 
