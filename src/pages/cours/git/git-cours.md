@@ -969,6 +969,7 @@ Voir le TP correspondant.
 - [Documentation et pages de manuel officiels][git-scm]
 - [Git Cheatsheet de GitHub Education][github-cheatsheet]
 - [Git Cheatsheet interactive de NDP Software][ndp-cheatsheet]
+- [L'essentiel de Git & Gitlab pour les débutants](https://frenchtechlead.com/posts/tech/20201023-git-pour-debutant/)
 - [Cours en ligne OpenClassrooms - 1][openclassrooms1]
 - [Cours en ligne OpenClassrooms - 2][openclassrooms2]
 - [Tutoriels en ligne Git et workflows tous niveaux][atlassian-tutos]
@@ -995,6 +996,7 @@ Voir le TP correspondant.
 - [Advanced Git rebase techniques (youtube, Andrew Courter)](https://www.youtube.com/watch?v=OdFW1embsHw)
 - [Git Merge vs Git Rebase (youtube, Andrew Courter)](https://www.youtube.com/watch?v=YMBhhje-Sgs)
 - Exemple de repo avec un conflit de merge à gérer : <https://github.com/redguardtoo/test-git-mergetool>
+- [A Git story: Not so fun this time (les origines de Git)](https://blog.brachiosoft.com/en/posts/git/)
 
 [git-book]: https://git-scm.com/book/
 [learn-git-branch]: https://learngitbranching.js.org/?locale=fr_FR
