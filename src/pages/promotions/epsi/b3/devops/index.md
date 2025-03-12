@@ -24,8 +24,8 @@ Module de 13H
 
 ## Documents
 
-- [🤓 Cours d'introduction au Devops](/promotions/epsi/b3/devops/cours)
-- [📌 Projet commun Devops/Sysops et méthodes Agile](/promotions/epsi/b3/devops/projet)
+- [🤓 Cours d'introduction au Devops](./devops/cours)
+- [📌 Projet commun Devops/Sysops et méthodes Agile](./devops/projet)
 
 ## Liens
 

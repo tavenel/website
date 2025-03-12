@@ -51,7 +51,7 @@ Module de 10H
 
 ## Documents
 
-- [🤓 Cours sur l'intégration continue ](/promotions/epsi/i1-cda/ci/cours)
+- [🤓 Cours sur l'intégration continue ](./ci/cours)
 
 ### Exercices
 

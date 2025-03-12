@@ -20,36 +20,29 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 2 journées
 
-Jour 1 : 
-Qu’est-ce que le mouvement DevOps ? 
-Naissance du mouvement DevOps 
-Culture et caractéristiques du DevOps 
-DevOps et les autres référentiels 
-DevOps : un métier ? 
-Valeurs, principes et pratiques de DevOps 
-Culture DevOps et ses valeurs (CAMP) 
-Principes du DevOps (process, outils, etc.) 
-Pratiques DevOps (intégration et livraison continue, etc. 
-Jour 2 : 
-Outils d’automatisation 
-Outils de déploiement en continu (Jenkins, TeamCity, Ufaldann) 
-Tests automatisés et en continu 
-Scripts déploiement automatisés 
-Conteneurs d’applications 
-Enjeux et exemples (Docker, etc.)
-
-
-COURS :
-- Devops
-- CI/CD
-- Docker
-- Ansible
-- Terraform
+- Jour 1 : 
+  - Qu’est-ce que le mouvement DevOps ? 
+  - Naissance du mouvement DevOps 
+  - Culture et caractéristiques du DevOps 
+  - DevOps et les autres référentiels 
+  - DevOps : un métier ? 
+  - Valeurs, principes et pratiques de DevOps 
+  - Culture DevOps et ses valeurs (CAMP) 
+  - Principes du DevOps (process, outils, etc.) 
+  - Pratiques DevOps (intégration et livraison continue, etc. 
+- Jour 2 : 
+  - Outils d’automatisation 
+  - Outils de déploiement en continu (Jenkins, TeamCity, Ufaldann) 
+  - Tests automatisés et en continu 
+  - Scripts déploiement automatisés 
+  - Conteneurs d’applications 
+  - Enjeux et exemples (Docker, etc.)
 
 ## Documents
 
-- [🤓 Cours : introduction au Devops, CI/CD, Docker, Ansible & Terraform](/promotions/cesi/b3-asr/devops/cours)
-- 📌 [Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/promotions/cesi/b3-asr/devops/projet)
+- [🤓 Cours : introduction au Devops, CI/CD, Docker, Ansible & Terraform](./devops/cours)
+- 📌 [Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](./devops/projet)
+
 ## Liens
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)

@@ -43,7 +43,7 @@ Module de 18H
 
 ## Documents
 
-- [🤓 Cours sur l'intégration continue ](/promotions/esgi/m2/cicd/cours)
+- [🤓 Cours sur l'intégration continue ](./cicd/cours)
 
 ### Exercices
 
