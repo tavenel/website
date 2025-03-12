@@ -1,4 +1,8 @@
-# Présentation du projet
+---
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+title: Présentation du projet
+layout: '@layouts/CoursePartLayout.astro'
+---
 
 ## Contexte de l'atelier
 
