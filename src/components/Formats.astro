@@ -1,16 +1,30 @@
 ---
 import Print from '@components/Print.astro';
-import { GIT_FILE_TREE_PAGES } from '@ts/constants.ts';
+import { GITHUB_FILE_TREE_PAGES, SRHT_FILE_TREE_PAGES } from '@ts/constants.ts';
 
 const { url } = Astro.props;
 interface Props {
 	url: string;
 };
 
-const markdownPath = new URL(GIT_FILE_TREE_PAGES + url + '.md');
+console.error('HERE' + url);
+
+if (url) {
+	// URL is provided from props (e.g. a Markdown file)
+	var gitUrl = url + '.md'
+} else {
+	// no URL provided - get the directory path from the URL to be sure to match something :
+	// astro file, directory/index.*, …
+	var gitUrl = Astro.url.pathname;
+	gitUrl = gitUrl.slice(0, gitUrl.lastIndexOf('/'));
+}
+
+const githubPath = new URL(GITHUB_FILE_TREE_PAGES + gitUrl);
+const sourcehutPath = new URL(SRHT_FILE_TREE_PAGES + gitUrl);
 ---
 
 <div id="formats">
-	<div class="source-markdown"><a href={markdownPath}>Fichier source (Markdown)</a></div>
+	<div class="source-markdown"><a href={githubPath}>Fichier source (Github)</a></div>
+	<div class="source-markdown"><a href={sourcehutPath}>Fichier source (Sourcehut)</a></div>
 	<Print />
 </div>
