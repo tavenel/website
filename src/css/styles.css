@@ -477,17 +477,17 @@ a.add-bookmark {
 	--versioning: var(--light-grey);
 	--select-color: var(--dark-grey);
 	--blockquote: var(--middle-orange);
-}
-[data-theme='github'] .astro-code,
-[data-theme='github'] .astro-code span {
-	/* https://docs.astro.build/en/guides/syntax-highlighting/ */
-	/* https://shiki.style/guide/dual-themes */
-	/* Shiki theme related to `github` is in `astro.config.mjs` */
-	background-color: var(--shiki-github-bg);
-	color: var(--shiki-github);
-	font-style: var(--shiki-github-font-style);
-	font-weight: var(--shiki-github-font-weight);
-	text-decoration: var(--shiki-github-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		/* https://docs.astro.build/en/guides/syntax-highlighting/ */
+		/* https://shiki.style/guide/dual-themes */
+		/* Shiki theme related to `github` is in `astro.config.mjs` */
+		background-color: var(--shiki-github-bg);
+		color: var(--shiki-github);
+		font-style: var(--shiki-github-font-style);
+		font-weight: var(--shiki-github-font-weight);
+		text-decoration: var(--shiki-github-text-decoration);
+	}
 }
 
 [data-theme="everforest"] {
@@ -528,14 +528,14 @@ a.add-bookmark {
 	--versioning: #A6B0A0;
 	--select-color: #829181;
 	--blockquote: #DFA000;
-}
-[data-theme='everforest'] .astro-code,
-[data-theme='everforest'] .astro-code span {
-	background-color: var(--shiki-everforest-bg);
-	color: var(--shiki-everforest);
-	font-style: var(--shiki-everforest-font-style);
-	font-weight: var(--shiki-everforest-font-weight);
-	text-decoration: var(--shiki-everforest-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-everforest-bg);
+		color: var(--shiki-everforest);
+		font-style: var(--shiki-everforest-font-style);
+		font-weight: var(--shiki-everforest-font-weight);
+		text-decoration: var(--shiki-everforest-text-decoration);
+	}
 }
 
 [data-theme="one"] {
@@ -576,14 +576,14 @@ a.add-bookmark {
 	--versioning: #3A3F4B;
 	--select-color: #3A3F4B;
 	--blockquote: #A626A4;
-}
-[data-theme='one'] .astro-code,
-[data-theme='one'] .astro-code span {
-	background-color: var(--shiki-one-bg);
-	color: var(--shiki-one);
-	font-style: var(--shiki-one-font-style);
-	font-weight: var(--shiki-one-font-weight);
-	text-decoration: var(--shiki-one-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-one-bg);
+		color: var(--shiki-one);
+		font-style: var(--shiki-one-font-style);
+		font-weight: var(--shiki-one-font-weight);
+		text-decoration: var(--shiki-one-text-decoration);
+	}
 }
 
 [data-theme="houston"] {
@@ -635,14 +635,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='houston'] .astro-code,
-[data-theme='houston'] .astro-code span {
-	background-color: var(--shiki-houston-bg);
-	color: var(--shiki-houston);
-	font-style: var(--shiki-houston-font-style);
-	font-weight: var(--shiki-houston-font-weight);
-	text-decoration: var(--shiki-houston-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-houston-bg);
+		color: var(--shiki-houston);
+		font-style: var(--shiki-houston-font-style);
+		font-weight: var(--shiki-houston-font-weight);
+		text-decoration: var(--shiki-houston-text-decoration);
+	}
 }
 
 [data-theme="ayu"] {
@@ -690,14 +690,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='ayu'] .astro-code,
-[data-theme='ayu'] .astro-code span {
-	background-color: var(--shiki-ayu-bg);
-	color: var(--shiki-ayu);
-	font-style: var(--shiki-ayu-font-style);
-	font-weight: var(--shiki-ayu-font-weight);
-	text-decoration: var(--shiki-ayu-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-ayu-bg);
+		color: var(--shiki-ayu);
+		font-style: var(--shiki-ayu-font-style);
+		font-weight: var(--shiki-ayu-font-weight);
+		text-decoration: var(--shiki-ayu-text-decoration);
+	}
 }
 
 [data-theme="catppuccin"] {
@@ -744,14 +744,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='catppuccin'] .astro-code,
-[data-theme='catppuccin'] .astro-code span {
-	background-color: var(--shiki-catppuccin-bg);
-	color: var(--shiki-catppuccin);
-	font-style: var(--shiki-catppuccin-font-style);
-	font-weight: var(--shiki-catppuccin-font-weight);
-	text-decoration: var(--shiki-catppuccin-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-catppuccin-bg);
+		color: var(--shiki-catppuccin);
+		font-style: var(--shiki-catppuccin-font-style);
+		font-weight: var(--shiki-catppuccin-font-weight);
+		text-decoration: var(--shiki-catppuccin-text-decoration);
+	}
 }
 
 [data-theme="dracula"] {
@@ -797,14 +797,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='dracula'] .astro-code,
-[data-theme='dracula'] .astro-code span {
-	background-color: var(--shiki-dracula-bg);
-	color: var(--shiki-dracula);
-	font-style: var(--shiki-dracula-font-style);
-	font-weight: var(--shiki-dracula-font-weight);
-	text-decoration: var(--shiki-dracula-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-dracula-bg);
+		color: var(--shiki-dracula);
+		font-style: var(--shiki-dracula-font-style);
+		font-weight: var(--shiki-dracula-font-weight);
+		text-decoration: var(--shiki-dracula-text-decoration);
+	}
 }
 
 [data-theme="kanagawa"] {
@@ -851,14 +851,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='kanagawa'] .astro-code,
-[data-theme='kanagawa'] .astro-code span {
-	background-color: var(--shiki-kanagawa-bg);
-	color: var(--shiki-kanagawa);
-	font-style: var(--shiki-kanagawa-font-style);
-	font-weight: var(--shiki-kanagawa-font-weight);
-	text-decoration: var(--shiki-kanagawa-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-kanagawa-bg);
+		color: var(--shiki-kanagawa);
+		font-style: var(--shiki-kanagawa-font-style);
+		font-weight: var(--shiki-kanagawa-font-weight);
+		text-decoration: var(--shiki-kanagawa-text-decoration);
+	}
 }
 
 [data-theme="laserwave"] {
@@ -906,14 +906,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='laserwave'] .astro-code,
-[data-theme='laserwave'] .astro-code span {
-	background-color: var(--shiki-laserwave-bg);
-	color: var(--shiki-laserwave);
-	font-style: var(--shiki-laserwave-font-style);
-	font-weight: var(--shiki-laserwave-font-weight);
-	text-decoration: var(--shiki-laserwave-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-laserwave-bg);
+		color: var(--shiki-laserwave);
+		font-style: var(--shiki-laserwave-font-style);
+		font-weight: var(--shiki-laserwave-font-weight);
+		text-decoration: var(--shiki-laserwave-text-decoration);
+	}
 }
 
 [data-theme="nord"] {
@@ -960,14 +960,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='nord'] .astro-code,
-[data-theme='nord'] .astro-code span {
-	background-color: var(--shiki-nord-bg);
-	color: var(--shiki-nord);
-	font-style: var(--shiki-nord-font-style);
-	font-weight: var(--shiki-nord-font-weight);
-	text-decoration: var(--shiki-nord-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-nord-bg);
+		color: var(--shiki-nord);
+		font-style: var(--shiki-nord-font-style);
+		font-weight: var(--shiki-nord-font-weight);
+		text-decoration: var(--shiki-nord-text-decoration);
+	}
 }
 
 [data-theme="rose"] {
@@ -1015,14 +1015,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='rose'] .astro-code,
-[data-theme='rose'] .astro-code span {
-	background-color: var(--shiki-rose-bg);
-	color: var(--shiki-rose);
-	font-style: var(--shiki-rose-font-style);
-	font-weight: var(--shiki-rose-font-weight);
-	text-decoration: var(--shiki-rose-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-rose-bg);
+		color: var(--shiki-rose);
+		font-style: var(--shiki-rose-font-style);
+		font-weight: var(--shiki-rose-font-weight);
+		text-decoration: var(--shiki-rose-text-decoration);
+	}
 }
 
 [data-theme="synthwave"] {
@@ -1070,47 +1070,48 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='synthwave'] .astro-code,
-[data-theme='synthwave'] .astro-code span {
-	background-color: var(--shiki-synthwave-bg);
-	color: var(--shiki-synthwave);
-	font-style: var(--shiki-synthwave-font-style);
-	font-weight: var(--shiki-synthwave-font-weight);
-	text-decoration: var(--shiki-synthwave-text-decoration);
-}
-[data-theme="synthwave"] h1 {
-	  text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
-}
-[data-theme="synthwave"] h2 {
-	  text-shadow: 0 0 2px #000, 0 0 10px #ff7edb75, 0 0 5px #ff7edb75, 0 0 25px #ff7edb75;
-}
-[data-theme="synthwave"] h3 {
-	  text-shadow: 0 0 2px #000, 0 0 10px #72f1b8, 0 0 5px #72f1b8, 0 0 25px #72f1b8;
-}
-[data-theme="synthwave"] h4 {
-	  text-shadow: 0 0 2px #000, 0 0 10px #03edf9, 0 0 5px #03edf9, 0 0 25px #03edf9;
-}
-[data-theme="synthwave"] #menu-home {
-	  text-shadow: 0 0 2px #000, 0 0 10px #fe4450, 0 0 5px #fe4450, 0 0 25px #fe4450;
-}
-[data-theme="synthwave"] #menu-tech {
-	  text-shadow: 0 0 2px #000, 0 0 10px #72f1b8, 0 0 5px #72f1b8, 0 0 25px #72f1b8;
-}
-[data-theme="synthwave"] #menu-cours {
-	  text-shadow: 0 0 2px #000, 0 0 10px #03edf9, 0 0 5px #03edf9, 0 0 25px #03edf9;
-}
-[data-theme="synthwave"] #menu-favorites {
-	  text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
-}
-[data-theme="synthwave"] #menu-links {
-	  text-shadow: 0 0 2px #000, 0 0 10px #ff7edb, 0 0 5px #ff7edb, 0 0 25px #ff7edb;
-}
-[data-theme="synthwave"] #menu-about {
-	  text-shadow: 0 0 2px #000, 0 0 10px #ffffff, 0 0 5px #ffffff, 0 0 25px #ffffff;
-}
-[data-theme="synthwave"] #themeSwitch {
-	  text-shadow: 0 0 2px #000, 0 0 10px #f97e72, 0 0 5px #f97e72, 0 0 25px #f97e72;
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-synthwave-bg);
+		color: var(--shiki-synthwave);
+		font-style: var(--shiki-synthwave-font-style);
+		font-weight: var(--shiki-synthwave-font-weight);
+		text-decoration: var(--shiki-synthwave-text-decoration);
+	}
+
+	& h1 {
+		text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
+	}
+	& h2 {
+		text-shadow: 0 0 2px #000, 0 0 10px #ff7edb75, 0 0 5px #ff7edb75, 0 0 25px #ff7edb75;
+	}
+	& h3 {
+		text-shadow: 0 0 2px #000, 0 0 10px #72f1b8, 0 0 5px #72f1b8, 0 0 25px #72f1b8;
+	}
+	& h4 {
+		text-shadow: 0 0 2px #000, 0 0 10px #03edf9, 0 0 5px #03edf9, 0 0 25px #03edf9;
+	}
+	& #menu-home {
+		text-shadow: 0 0 2px #000, 0 0 10px #fe4450, 0 0 5px #fe4450, 0 0 25px #fe4450;
+	}
+	& #menu-tech {
+		text-shadow: 0 0 2px #000, 0 0 10px #72f1b8, 0 0 5px #72f1b8, 0 0 25px #72f1b8;
+	}
+	& #menu-cours {
+		text-shadow: 0 0 2px #000, 0 0 10px #03edf9, 0 0 5px #03edf9, 0 0 25px #03edf9;
+	}
+	& #menu-favorites {
+		text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
+	}
+	& #menu-links {
+		text-shadow: 0 0 2px #000, 0 0 10px #ff7edb, 0 0 5px #ff7edb, 0 0 25px #ff7edb;
+	}
+	& #menu-about {
+		text-shadow: 0 0 2px #000, 0 0 10px #ffffff, 0 0 5px #ffffff, 0 0 25px #ffffff;
+	}
+	& #themeSwitch {
+		text-shadow: 0 0 2px #000, 0 0 10px #f97e72, 0 0 5px #f97e72, 0 0 25px #f97e72;
+	}
 }
 
 [data-theme='the-unnamed'] {
@@ -1185,6 +1186,13 @@ a.add-bookmark {
 		}
 	}
 
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-darkp-bg);
+		color: var(--shiki-darkp);
+		font-style: var(--shiki-darkp-font-style);
+		font-weight: var(--shiki-darkp-font-weight);
+		text-decoration: var(--shiki-darkp-text-decoration);
+	}
 }
 
 [data-theme="tokyonight"] {
@@ -1232,14 +1240,14 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='tokyonight'] .astro-code,
-[data-theme='tokyonight'] .astro-code span {
-	background-color: var(--shiki-tokyonight-bg);
-	color: var(--shiki-tokyonight);
-	font-style: var(--shiki-tokyonight-font-style);
-	font-weight: var(--shiki-tokyonight-font-weight);
-	text-decoration: var(--shiki-tokyonight-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-tokyonight-bg);
+		color: var(--shiki-tokyonight);
+		font-style: var(--shiki-tokyonight-font-style);
+		font-weight: var(--shiki-tokyonight-font-weight);
+		text-decoration: var(--shiki-tokyonight-text-decoration);
+	}
 }
 
 [data-theme="vesper"] {
@@ -1287,13 +1295,13 @@ a.add-bookmark {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-}
-[data-theme='vesper'] .astro-code,
-[data-theme='vesper'] .astro-code span {
-	background-color: var(--shiki-vesper-bg);
-	color: var(--shiki-vesper);
-	font-style: var(--shiki-vesper-font-style);
-	font-weight: var(--shiki-vesper-font-weight);
-	text-decoration: var(--shiki-vesper-text-decoration);
+
+	& .astro-code, & .astro-code span {
+		background-color: var(--shiki-vesper-bg);
+		color: var(--shiki-vesper);
+		font-style: var(--shiki-vesper-font-style);
+		font-weight: var(--shiki-vesper-font-weight);
+		text-decoration: var(--shiki-vesper-text-decoration);
+	}
 }
 

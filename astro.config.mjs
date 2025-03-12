@@ -103,8 +103,10 @@ export default defineConfig({
 				one: 'one-light',
 				// dark
 				houston: 'houston', // default if dark
+				aurora: 'aurora-x',
 				ayu: 'ayu-dark',
 				catppuccin: 'catppuccin-mocha',
+				darkp: 'dark-plus',
 				dracula: 'dracula',
 				kanagawa: 'kanagawa-dragon',
 				laserwave: 'laserwave',

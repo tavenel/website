@@ -1,7 +1,6 @@
 ## P1
 
 - slides => <bug> fullscreen style fix CSS</bug>
-- check robots.txt in prod
 
 - vercel analytics
 - https://vercel.com/tavenels-projects/website/speed-insights
