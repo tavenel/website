@@ -1,6 +1,6 @@
 ---
 title: 󱃾 Kubernetes
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 󱃾  Kubernetes

@@ -1,6 +1,6 @@
 ---
 title:   Tom Avenel - B3 Docker
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 #   Docker : introduction aux conteneurs

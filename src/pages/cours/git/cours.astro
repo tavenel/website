@@ -1,0 +1,24 @@
+﻿---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Cours } from '@courses/git/cours.md';
+import { Content as Workflows } from '@courses/git/workflows-cours.md';
+import { Content as Fin } from '@courses/git/fin-cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours Git",
+  tags: [
+    "git",
+		"workflows"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Cours />  </Chapter>
+	<Chapter> <Workflows />  </Chapter>
+	<Chapter> <Fin />  </Chapter>
+</Layout>
+

@@ -1,6 +1,7 @@
 ---
-layout: '@layouts/SlideLayout.astro'
-title: Cours Kubernetes
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+title: Kubernetes
+layout: '@layouts/CoursePartLayout.astro'
 tags:
 - docker
 - kubernetes

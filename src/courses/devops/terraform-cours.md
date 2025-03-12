@@ -1,10 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/SlideLayout.astro'
 title: Terraform
-tags:
-- devops
-- iac
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 # Objectifs

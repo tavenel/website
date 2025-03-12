@@ -1,9 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/SlideLayout.astro'
 title: Modèles de déploiements continus
-tags:
-- ci
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 # Différents modèles

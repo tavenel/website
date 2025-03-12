@@ -1,0 +1,25 @@
+﻿---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Intro } from '@courses/devops/projet-intro.md';
+import { Content as Devops } from '@courses/devops/projet-devops.md';
+import { Content as Legal } from '@courses/devops/legal.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Projet DevOps",
+  tags: [
+    "devops",
+		"docker",
+		"kubernetes"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Intro />  </Chapter>
+	<Chapter> <Devops />  </Chapter>
+	<Chapter> <Legal />  </Chapter>
+</Layout>
+

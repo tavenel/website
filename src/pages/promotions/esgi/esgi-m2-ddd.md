@@ -1,6 +1,6 @@
 ---
 title: 🤝 Tom Avenel - M2 AL DDD
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🤝 Domain-Driven Design (DDD)

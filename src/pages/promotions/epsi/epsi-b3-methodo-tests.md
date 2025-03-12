@@ -1,6 +1,6 @@
 ---
 title: 🧪 Tom Avenel - B3 Méthodologie des tests
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🧪 Méthodologie des tests logiciels

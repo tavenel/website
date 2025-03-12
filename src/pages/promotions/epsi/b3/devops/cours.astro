@@ -1,0 +1,34 @@
+---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Devops } from '@courses/devops/devops-cours.md';
+import { Content as LegalDevops } from '@courses/devops/legal.md';
+//import { Content as CICD } from '@courses/cicd/.md';
+import { Content as ModelesCD } from '@courses/cicd/modeles-cd-cours.md';
+import { Content as Ansible } from '@courses/devops/ansible-cours.md';
+import { Content as Terraform } from '@courses/devops/terraform-cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours DevOps",
+  tags: [
+    "devops",
+		"iac",
+		"docker",
+		"ansible",
+		"terraform",
+		"jenkins",
+		"ci/cd"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Devops />  </Chapter>
+	<Chapter> <ModelesCD />  </Chapter>
+	<Chapter> <Ansible />  </Chapter>
+	<Chapter> <Terraform />  </Chapter>
+	<Chapter> <LegalDevops />  </Chapter>
+</Layout>
+

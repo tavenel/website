@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/BaseLayout.astro'
+layout: '@layouts/BaseLayout.astro'
 title: INFAL34 - Tests et recette d’un projet de développement 
 ---
 

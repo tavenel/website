@@ -1,6 +1,6 @@
 ---
 title: 🐧 Tom Avenel - B3 LPIC-1
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Linux administration avancée LPIC-1 v5.0

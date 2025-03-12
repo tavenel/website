@@ -1,4 +1,5 @@
 ---
+import Diagrams from '@components/Diagrams.astro';
 const { frontmatter, url } = Astro.props;
 ---
 
@@ -7,4 +8,8 @@ const { frontmatter, url } = Astro.props;
     <h1>{frontmatter.title}</h1>
 	) }
 	<slot />
+	<Diagrams
+		math={ frontmatter.extra?.includes('math') }
+		mermaid={ frontmatter.extra?.includes('mermaid') }
+	/>
 </div>

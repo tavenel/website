@@ -1,6 +1,6 @@
 ---
 title: 🤼 Tom Avenel - WIS3 Scrum
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🤼 Méthodologie agile Scrum

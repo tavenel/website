@@ -1,6 +1,6 @@
 ---
 title: 🐧 Tom Avenel - SN2 Linux
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Linux : Installation et configuration poste de travail 

@@ -1,10 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/SlideLayout.astro'
-title: Devops / Sysops
-tags:
-- ci
-- jenkins
+title: Le DevOps
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 # Objectifs
@@ -39,16 +36,36 @@ tags:
 
 - Objectif : développement et déploiement d'applications / services en un temps record.
 - RH déploiement et maintenance réduites par la mutualisation des compétences.
+- Réconcilier 2 mondes : ops = stabilité, dev = vitesse
 
 ---
 
-# Les 5 piliers du DevOps
+# Les 5 piliers CALMS du DevOps
 
-- Collaboration
-- Automatisation
-- Intégration continue (CI)
-- Livraison continue (CD)
-- Monitoring continu.
+- **Culture** :
+	- Équipes transverses orientées produit
+	- Gérer le risque et les erreurs
+- **Automatisation** :
+  - Coder l'Infrastructure (**IaC**)
+	- Intégration & Livraison Continus (**CI/CD**)
+- **Lean**
+  - Amélioration continue
+	- Livraison au plutôt, **itérations**
+- **Mesurer** :
+  - Monitoring continu.
+- **Share** :
+  - Collaboration
+	- _Feedback loop_
+
+---
+
+# Culture DevOps
+
+- But commun : la réussite du projet
+- Collaboration étroite entre les équipes : dev, ops, QA, marketing, …
+- Gestion de projet itérative
+- Livraisons fréquentes
+- Focus sur la continuité du service et la résolution rapide des problèmes
 
 ---
 
@@ -251,6 +268,13 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
+# Métiers
+
+- Même si l'on trouve de nombreux postes estampillés _devops_, ce n'est pas un métier mais une philosophie !
+- Quelques métiers où l'on pratique quotidiennement le DevOps : _SRE_ (_Site Reliability Engineer_), _Platform engineer_
+
+---
+
 # Glossaire
 
 - _DevOps_ : ensemble de pratiques, de philosophies et d'outils visant à combiner les pratiques de développement (Dev) et les pratiques opérationnelles (Ops).
@@ -285,24 +309,8 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 - [xavki - Vidéos sur le Devops](https://www.youtube.com/playlist?list=PLn6POgpklwWrBPMKFniOiMyLMdxlgFhrG)
 - [xavki - roadmap DevOps](https://www.youtube.com/watch?v=1W0oUxaJz_8)
 - [Playlist 90 days of DevOps](https://yewtu.be/playlist?list=PLsKoqAvws1psCnkDaTPRHaqcTLSTPDFBR)
+- [OpenClassrooms : Découvrez la méthodologie DevOps](https://openclassrooms.com/fr/courses/6093671-decouvrez-la-methodologie-devops)
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 [tuto-openclassrooms-monitoring]: https://openclassrooms.com/fr/courses/2035736-mettez-en-place-lintegration-et-la-livraison-continues-avec-la-demarche-devops/6183162-monitorez-votre-application
-
----
-
-# Legal 
-
-- Docker, Docker Swarm and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
-- Kubernetes® and Prometheus® are registered trademarks of The Linux Foundation in the United States and/or other countries
-- Jenkins® and the Jenkins logo are registered trademarks of LF Charities Inc.
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries.
-- GitLab is a registered trademark of GitLab Inc.
-- Spring® is a trademark of Pivotal Software, Inc. in the U.S. and other countries.
-- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs (“Grafana Labs”).
-- NGINX® is a registered trademark of F5 NETWORKS, INC.
-- Ansible® is a registered trademark of RED HAT, INC.
-- Terraform is a trademark and brand of HashiCorp, Inc.
-- Puppet are trademarks or registered trademarks of Puppet, Inc.and are used with permission. No endorsement by Puppet, Inc. is implied by the use of these marks
-- Other names may be trademarks of their respective owners
 
