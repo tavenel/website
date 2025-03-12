@@ -6,10 +6,9 @@ title: 🔄 CI/CD et  Jenkins
 
 - [🤓 Introduction à l'intégration continue ](/cours/ci/cours-intro-ci)
 - [🤓 Les serveurs d'intégration continue](/cours/ci/cours-serveur-ci)
-- [🤓 Cours  Jenkins](/cours/jenkins/jenkins-cours-niveau1)
+- [🤓 Cours  Jenkins](/cours/jenkins/cours)
 - [🤓 Les outils de l'intégration continue](/cours/ci/cours-outils-ci)
 - [🤓 Les processus d'intégration](/cours/ci/cours-process-ci)
-- [🤓 Les workflows Git](/cours/git/workflows-cours)
 - [🤓 Les modèles de déploiements continus](/cours/ci/modeles-cd-cours)
 
 ## Exercices
@@ -19,10 +18,7 @@ title: 🔄 CI/CD et  Jenkins
 
 ## TP
 
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr)
-  - L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
-- [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
-  - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
+- [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins niveau 1](/cours/jenkins/tp-jenkins-mini) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins-b3>
 - [ TP Jenkins niveau 2](/cours/jenkins/tp-jenkins-full) : Un TP plus poussé que le précédent.

@@ -51,15 +51,7 @@ Module de 10H
 
 ## Documents
 
-### Cours
-
-- [🤓 Introduction à l'intégration continue ](/cours/ci/cours-intro-ci)
-- [🤓 Les serveurs d'intégration continue](/cours/ci/cours-serveur-ci)
-- [🤓 Cours  Jenkins](/cours/jenkins/jenkins-cours-niveau1)
-- [🤓 Les outils de l'intégration continue](/cours/ci/cours-outils-ci)
-- [🤓 Les processus d'intégration](/cours/ci/cours-process-ci)
-- [🤓 Les workflows Git](/cours/git/workflows-cours)
-- [🤓 Les modèles de déploiements continus](/cours/ci/modeles-cd-cours)
+- [🤓 Cours sur l'intégration continue ](/promotions/epsi/i1-cda/ci/cours)
 
 ### Exercices
 
@@ -72,10 +64,7 @@ Module de 10H
   - L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
 - [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
--  TP Jenkins
-  - L'objectif de ce TP est de se familiariser avec le serveur d'intégration continue Jenkins® au travers de différents exemples concrets. 
-  - [word (1.2M)](/cours/jenkins/tp-jenkins.docx) <!-- TODO -->
-  - [pdf (1.3M)](/cours/jenkins/tp-jenkins.pdf) <!-- TODO -->
+- [ TP Jenkins](/cours/jenkins/tp-jenkins-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
 
 ### 📌 Projet noté CI/CD et Automatisation des tests - un jeu de rôle

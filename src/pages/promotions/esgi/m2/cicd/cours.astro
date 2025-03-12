@@ -1,0 +1,34 @@
+---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Intro } from '@courses/cicd/cours-intro-ci.md';
+import { Content as Server } from '@courses/cicd/cours-serveur-ci.md';
+import { Content as Jenkins } from '@courses/jenkins/cours.md';
+import { Content as Outils } from '@courses/cicd/cours-outils-ci.md';
+import { Content as Process } from '@courses/cicd/cours-process-ci.md';
+import { Content as GITWorkflows } from '@courses/git/workflows-cours.md';
+import { Content as CDModeles } from '@courses/cicd/modeles-cd-cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours DevOps",
+  tags: [
+    "devops",
+		"ci",
+		"cd"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Intro />  </Chapter>
+	<Chapter> <Server />  </Chapter>
+	<Chapter> <Jenkins />  </Chapter>
+	<Chapter> <Outils />  </Chapter>
+	<Chapter> <Process />  </Chapter>
+	<Chapter> <GITWorkflows />  </Chapter>
+	<Chapter> <CDModeles />  </Chapter>
+
+</Layout>
+
