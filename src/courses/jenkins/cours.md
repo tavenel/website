@@ -1,14 +1,8 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/SlideLayout.astro'
-title: Cours Jenkins
-tags:
-- tests
-- ci
-- jenkins
+layout: '@layouts/CoursePartLayout.astro'
+title: Jenkins
 ---
-
-# Jenkins : serveur d'intégration continue
 
 ![The Jenkins logo][jenkins-logo]
 

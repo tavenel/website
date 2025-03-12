@@ -6,7 +6,6 @@ title: 🧪 Tests logiciels
 
 ## Méthodologie des tests
 
-- [🤓 Cours intégral sur les tests](/cours/tests/methodo/cours-full)
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)
 - [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
 - [🤓 Cours : impact des tests sur l'intégration](/cours/tests/methodo/cours-impact-tests-integration)

@@ -1,5 +1,6 @@
 ---
-layout: '@layouts/SlideLayout.astro'
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+layout: '@layouts/CoursePartLayout.astro'
 title: Méthodologie des Tests
 tags:
 - tests
