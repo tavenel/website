@@ -1,6 +1,6 @@
 ---
 title: 🧪 Tom Avenel - I1 Automatisation des tests
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🧪 Automatisation des tests

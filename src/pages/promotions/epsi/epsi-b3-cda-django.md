@@ -1,6 +1,6 @@
 ---
 title:   Tom Avenel - B3 CDA Django
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 #   Le framework Django

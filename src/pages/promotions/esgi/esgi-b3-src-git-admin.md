@@ -1,6 +1,6 @@
 ---
 title:   Tom Avenel - Versioning Git administrateur
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 #  Versioning Git pour l'administrateur
@@ -68,7 +68,7 @@ Module de 12H
 
 ## Documents
 
-- [🤓 Cours](/cours/git/git-cours)
+- [🤓 Cours](/cours/git/cours)
 - [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
 - [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/git-tp-gitignore)
 - [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)

@@ -1,6 +1,6 @@
 ---
 title: 🐧 Tom Avenel - B3 Environnement Linux
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Atelier Environnement Linux

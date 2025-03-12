@@ -1,6 +1,6 @@
 ---
 title: 💬 Tom Avenel - I2 Distanciel
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 💬 Partage d'informations et collaboration à distance

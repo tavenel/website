@@ -1,6 +1,6 @@
 ---
 title: 🐧 Tom Avenel - SN2 Linux Admin
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Adminisitration Linux (Shell)

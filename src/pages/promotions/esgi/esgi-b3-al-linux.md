@@ -1,6 +1,6 @@
 ---
 title: 🐧 Tom Avenel - B3 Linux
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Linux orienté développeurs

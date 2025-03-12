@@ -1,6 +1,6 @@
 ---
 title: 📒 Tom Avenel - I2 CDC
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 📒 Cahier des charges technique et fonctionnel

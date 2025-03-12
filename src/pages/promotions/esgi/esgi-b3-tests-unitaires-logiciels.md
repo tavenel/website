@@ -1,6 +1,6 @@
 ---
 title: 🧪 Tom Avenel - B3 Tests unitaires et logiciels
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🧪 Tests unitaires et logiciels

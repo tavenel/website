@@ -1,6 +1,6 @@
 ---
 title: ⚛️ Tom Avenel - B3 Industrialisation des tests
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # ⚛️ Industrialisation des tests logiciels

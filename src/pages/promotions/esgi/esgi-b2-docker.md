@@ -1,6 +1,6 @@
 ---
 title:   Tom Avenel - B2 Docker
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 #   Conteneurisation Docker (bases)

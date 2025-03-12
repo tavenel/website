@@ -8,9 +8,9 @@ title: 🔄 CI/CD et  Jenkins
 - [🤓 Les serveurs d'intégration continue](/cours/ci/cours-serveur-ci)
 - [🤓 Cours  Jenkins](/cours/jenkins/jenkins-cours-niveau1)
 - [🤓 Les outils de l'intégration continue](/cours/ci/cours-outils-ci)
-- [🤓 Les processus d'intégration](/cours/ci/cours-process-integration-ci)
-- [🤓 Les workflows Git](/cours/git/git-cours)
-- [🤓 Les modèles de déploiements continus](/cours/ci/cours-modeles-cd)
+- [🤓 Les processus d'intégration](/cours/ci/cours-process-ci)
+- [🤓 Les workflows Git](/cours/git/workflows-cours)
+- [🤓 Les modèles de déploiements continus](/cours/ci/modeles-cd-cours)
 
 ## Exercices
 

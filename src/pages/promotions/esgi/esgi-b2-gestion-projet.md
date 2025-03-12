@@ -1,6 +1,6 @@
 ---
 title: 📅 Tom Avenel - B2 Gestion de Projet
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 📅 Introduction à la gestion de projet 

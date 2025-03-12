@@ -1,6 +1,6 @@
 ---
 title: 🗺️ Tom Avenel - I2 Management multiculturel
-layout: ../../../layouts/BaseLayout.astro
+layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🗺️ Manager une équipe multiculturelle
