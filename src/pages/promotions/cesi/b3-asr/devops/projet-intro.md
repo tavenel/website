@@ -14,6 +14,6 @@ Le formateur jouera l'ensemble des rôles externes à l'équipe projet (et donc 
 
 ## Environnements à déployer
 
-- TODO
-
+- Afin de pouvoir déployer des conteneurs, il faudra un environnement de production robuste : on déploira donc un cluster Kubernetes. Étant donné les ressources limitées sur ce projet, on pourra se limiter à une machine virtuelle tournant sur la machine d'un des apprenants afin de démarrer un noeud Kubernetes unique (par exemple, un déploiement Minikube).
+- Il n'est bien sûr pas envisageable de déployer directement une application non testée en production. On veillera donc à créer un 2e environnement qui servira de test et/ou staging. Les contraintes étant moindres sur cet environnement, on pourra au choix déployer un autre cluster Kubernetes (limité) ou se contenter d'un orchestrateur `docker-compose`.
 

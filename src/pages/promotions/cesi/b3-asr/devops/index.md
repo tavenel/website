@@ -20,23 +20,15 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 2 journées
 
-- Jour 1 : 
-  - Qu’est-ce que le mouvement DevOps ? 
-  - Naissance du mouvement DevOps 
-  - Culture et caractéristiques du DevOps 
-  - DevOps et les autres référentiels 
-  - DevOps : un métier ? 
-  - Valeurs, principes et pratiques de DevOps 
-  - Culture DevOps et ses valeurs (CAMP) 
-  - Principes du DevOps (process, outils, etc.) 
-  - Pratiques DevOps (intégration et livraison continue, etc. 
-- Jour 2 : 
-  - Outils d’automatisation 
-  - Outils de déploiement en continu (Jenkins, TeamCity, Ufaldann) 
-  - Tests automatisés et en continu 
-  - Scripts déploiement automatisés 
-  - Conteneurs d’applications 
-  - Enjeux et exemples (Docker, etc.)
+- Jour 1 :
+  - présentation du devops : culture, principes, enjeux
+  - découverte de l’Infrastructure-as-Code (et pratique : Ansible et Terraform)
+  - initiation / rappels sur la CI dans le devops et modèles de déploiements continus (et pratique : Jenkins) 
+  - introduction / rappels sur les conteneurs : Docker & enjeux des orchestrateurs (découverte docker-compose et Kubernetes). Théorie et TP
+  - démarrage du projet collaboratif DevOps
+- Jour 2 :
+  - suite du projet pratique pour déployer une application dans un mini datacenter DevOps : IaC, CI/CD, conteneurs, …
+  - apports théoriques supplémentaires (en autonomie), points de cours magistraux au besoin
 
 ## Documents
 
