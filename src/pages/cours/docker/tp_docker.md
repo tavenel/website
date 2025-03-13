@@ -246,6 +246,7 @@ Nous allons d'abord commencer par créer un `Dockerfile` pour builder le fichier
 # Stage 1: Build Environment (Golang)
 FROM golang:alpine AS build-stage
 # À faire: Copier le fichier main.go de la machine dans l'image
+# ADD … …
 RUN go build main.go # On build le fichier pour créer /go/main
 ```
 

@@ -629,7 +629,6 @@ layout: section
 
 - [Vidéo Docker for novices (Alec Clews, youtube)](https://www.youtube.com/watch?v=xsjSadjKXns)
 - [Vidéo : Docker simplified in 55s (youtube)](https://www.youtube.com/watch?v=vP_4DlOH1G4)
-- [Documentation sur les Namespace et les Cgroupes][doc-namespace-cgroups]
 - [Fonctionnement du réseau sous Docker][doc-reseau]
 - [Gestion de l'état dans le conteneurs][doc-stateful]
 - [Bac à sable Docker en ligne][play-docker]
@@ -640,7 +639,6 @@ layout: section
 
 ---
 
-- [Au final… qu’est-ce qu’un conteneur ? (blog une-tasse-de.cafe)](https://une-tasse-de.cafe/blog/conteneur/)
 - [Pourquoi utiliser l'option `-t` pour un conteneur interactif](https://www.baeldung.com/linux/docker-run-interactive-tty-options)
 - [Astuce _Docker in Docker_ : `-v var/run/docker.sock:/var/run/docker.sock`](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
 - <https://github.com/docker/awesome-compose/>
@@ -678,6 +676,19 @@ layout: section
 - [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
 - [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
 - [Exemples de projets Docker](https://github.com/dockersamples)
+
+---
+
+## Détails techniques d'implémentation
+
+- [Documentation sur les Namespace et les Cgroups][doc-namespace-cgroups]
+- [Au final… qu’est-ce qu’un conteneur ? (blog une-tasse-de.cafe)](https://une-tasse-de.cafe/blog/conteneur/)
+- [Building a Linux container by hand using namespaces](https://www.redhat.com/en/blog/building-container-namespaces)
+- [Building a container by hand using namespaces: The mount namespace](https://www.redhat.com/en/blog/mount-namespaces)
+- [Building containers by hand: The PID namespace](https://www.redhat.com/en/blog/pid-namespace)
+- [Building containers by hand using namespaces: The net namespace](https://www.redhat.com/en/blog/net-namespaces)
+- [Deep-dive into Containerization : Creating containers from scratch](https://www.alanjohn.dev/blog/Deep-dive-into-Containerization-Creating-containers-from-scratch)
+- [Building a Linux Container using Namespace](https://github.com/rockerritesh/Building-a-Linux-Container-using-Namespace)
 
 [img-archi]: https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png
 [doc-docker]: https://docs.docker.com/

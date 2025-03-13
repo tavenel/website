@@ -35,8 +35,6 @@ Exemple de fichier `compose.yaml` final pour une stack `MySQL®` + `WordPress®`
 
 Attention, un fichier `YAML` est sensible à l'indentation !
 
-\pagebreak
-
 ```yaml
 services:
 
