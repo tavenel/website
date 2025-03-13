@@ -159,6 +159,26 @@ Un conteneur ne tourne qu'un seul processus
 
 ---
 
+## Conteneur
+
+Un conteneur est donc un **processus en isolation** du reste du système, il a :
+
+- son propre **namespace** applicatif : ne voit pas les autres processus
+- son propre **système de fichiers** (provient de l'_image_)
+- sa propre **stack réseau** (en principe, _bridge_ simulé par un _namespace_ réseau)
+
+---
+
+## Cycle de vie
+
+Un conteneur peut donc ressembler un peu à une VM mais :
+
+- on ne "démarre" / "arrête" pas un conteneur mais seulement le processus qui tourne en isolation
+- la vision `running`, `stopped`, … de Docker est donc une abstraction
+- **arrêt du processus principal (PID=1, provenant de l'image ou de `docker run …`) == _"arrêt"_ du conteneur**
+
+---
+
 # Docker® Hub
 
 Docker® utilise des caches locaux et distants pour stocker les images des conteneurs
