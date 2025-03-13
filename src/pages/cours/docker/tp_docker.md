@@ -487,6 +487,18 @@ docker run --name lazydocker -it -v /var/run/docker.sock:/var/run/docker.sock la
 docker run -it -v /var/run/docker.sock:/var/run/docker.sock kakshipth/gomanagedocker:latest
 ```
 
+## Analyse d'image
+
+L'outil _Dive_ permet d'analyser finement les _layers_ d'une image Docker. En montant la _socket_ Docker comme précédemment, utiliser l'image `wagoodman/dive` pour analyser une des images que vous avez créées.
+
+:::correction
+Pour analyser l'image `test:v1` :
+
+```sh
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive test:v1
+```
+:::
+
 ## Récupération des logs du conteneur 
 
 Les programmes qui tournent dans un conteneur ne sont pas gérés intégralement par le système d’exploitation de l’hôte : il faut donc un système annexe pour, par exemple, récupérer les logs de conteneurs. 
