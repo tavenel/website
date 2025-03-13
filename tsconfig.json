@@ -19,6 +19,9 @@
 			"@css/*": [
 				"src/css/*"
 			],
+			"@cours/*": [
+				"src/pages/cours/*"
+			],
 			"@courses/*": [
 				"src/courses/*"
 			],
