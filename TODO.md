@@ -2,10 +2,30 @@
 
 - slides => <bug> fullscreen style fix CSS</bug>
 
-- vercel analytics
-- https://vercel.com/tavenels-projects/website/speed-insights
-
 - slides KO from sub-courses (Linux index ~> .astro, lpic, …)
+
+Merge slides => RM ?
+```css
+.chapter .slide-mode.slide-elt:first-child {
+/* Section */
+
+		padding-left: 3.5rem;
+		padding-right: 3.5rem;
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;
+
+  h1 {
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+    font-size: 5rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+  }
+}
+```
 
 ---
 
