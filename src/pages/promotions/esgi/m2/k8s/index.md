@@ -31,7 +31,7 @@ Module de 2x18H
 - [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
-- [📌 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/docker/projet_appli_kubernetes)
+- [📌 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/docker/projet_install_kubernetes)
 
 ## Partie 2
 
