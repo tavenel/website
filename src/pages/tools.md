@@ -110,7 +110,7 @@ created: 2024-10-17
 	- <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
 - 🚀 CD
   - `fluxcd` : GitOps
-  - `argoscd`
+  - `argocd`
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - 🪫 Consommation d'énergie :
@@ -171,6 +171,7 @@ created: 2024-10-17
 - intégré forge logicielle => `Github Actions`, `Gitlab CI`, `Bitbucket`, `Sourcehut`
 - `woodpecker CI` : léger, intègre Docker
 - `tekton`, `drone` : déployer sa CI/CD dans k8s
+- <https://werf.io/> : lier CI/CD et k8s
 
 #### Outils CI
 
@@ -252,6 +253,7 @@ created: 2024-10-17
 - `fluentd` : logs unifiés
 - `benthos` : stream processing
 - `zipkin`, `jaeger`, `OpenTelemetry` : tracing multi-services de requêtes
+- <https://github.com/cbos/observability-toolkit>
 
 ### virtualisation
 

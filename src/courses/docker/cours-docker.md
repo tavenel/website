@@ -165,7 +165,8 @@ Un conteneur est donc un **processus en isolation** du reste du système, il a :
 
 - son propre **namespace** applicatif : ne voit pas les autres processus
 - son propre **système de fichiers** (provient de l'_image_)
-- sa propre **stack réseau** (en principe, _bridge_ simulé par un _namespace_ réseau)
+- sa propre **stack réseau** : en principe, _bridge_ simulé par un _namespace_ réseau
+- il récupère les **logs de la console** écrits par les applications : `println`, …
 
 ---
 
@@ -310,7 +311,7 @@ layout: section
 
 ---
 
-## Data volume et bind mount
+## Bind mount
 
 - Volume virtuel lié et monté dans le conteneur : `bind mount`
 - Monte un dossier de l'hôte directement dans le conteneur
@@ -437,6 +438,7 @@ layout: section
 - Les instructions du `Dockerfile` (`ADD`, …) créent chacun une mini-image (_layer_)
 - L'image finale est l'empilement de tous les _layer_
 - En cas de modification, seuls les nouveaux _layers_ sont modifiés !
+- Les images utilisent _UnionFS_ : chaque layer **ajoute** les changements du filesystem (nouveau fichier, suppression, …) au layer précédent => **un layer ne supprime jamais de données dans l'image finale**
 
 ---
 
@@ -526,8 +528,8 @@ layout: section
     - image **officielle** ? **reconnue** ?
     - attention aux **registry** utilisées
     - **layers optimisés** ?
-    - failles de **sécurité** ? image **maintenue** ?
-    - ne pas utiliser le tag `latest` mais **préciser un tag** avec numéro de version ou directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE`
+    - failles de **sécurité** ? Image **maintenue** ?
+    - ne pas utiliser le tag `latest` mais **préciser un tag** avec numéro de version ou (mieux) directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE` et l'outil `dive`.
 
 ---
 
@@ -567,6 +569,7 @@ layout: section
 - Configurer les **logs** : compression, rotation (`max-size`) : [voir doc][doc-logs]
   - par conteneur : `--log-opt`
   - globalement par config. du serveur : `daemon.json`
+  - les applications doivent écrire leurs logs sur la **console** (`stdout`, `stderr`).
 - Ne pas tourner le serveur Docker en `root` (_expérimental_)
 
 ---
@@ -577,17 +580,18 @@ layout: section
   - `apt-get update && apt-get install -y … && rm -rf …`
 - `apt-get` :
   - L'option `--no-install-recommends` de `apt-get install` permet de ne pas installer les dépendances optionnelles.
-  - Supprimer `/var/lib/apt/lists/*` après avoir installé un package
+  - Supprimer `/var/lib/apt/lists/*` après avoir installé un package **dans le même layer**
 - `apk` :
   - L'option `--no-cache` évite le cache de packets
 - **Analysez** vos images, par exemple avec <https://github.com/wagoodman/dive>
+- Docker utilise _UnionFS_ : ~retirer un fichier d'un layer précédent n'a **aucune influence** sur la taille de l'image~.
 
 ---
 
 # Inconvénients de Docker
 
 - Sécurité : **isolation limitée** (conteneur vs VM)
-- Performance : surcharge (faible) vs exécution native
+- Performance : surcharge (faible) vs exécution native (assez négligeable)
 - Changement de paradigme : conteneurs "jetables", gestion du stockage, abstraction supplémentaire, …
 - Complexité des réseaux : overlay networks, multi-host networking, …
 - Infrastructures des orchestrateurs complexes : Kubernetes, …
@@ -606,6 +610,7 @@ layout: section
   - réplication rapide
   - ressources fortement partagées
 - Déploiement simple et rapide dans un cluster Cloud hébergé
+- Plus besoin de configurer le port de l'application mais seulement le binding de port Docker : plusieurs serveurs Web sur leurs ports 80 respectifs (dans les conteneurs), …
 
 ---
 
@@ -617,7 +622,9 @@ layout: section
 - [Documentation officielle sur le sécurité][doc-docker-secu]
 - [Comparaison de technologies de virtualisation niveau 2 (OS)][wiki-virt]
 - [Architecture Docker][doc-archi]
-- [Docker Awesome - écosystème Docker][docker-awesome]
+- [Awesome Docker - écosystème Docker](https://github.com/veggiemonk/awesome-docker)
+- [Awesome Docker : development environment](https://github.com/veggiemonk/awesome-docker#development-environment)
+- [Awesome Docker Compose : templates pour des stacks classiques](https://github.com/docker/awesome-compose/)
 - <https://blog.stephane-robert.info/docs/conteneurs/introduction/>
 - <https://github.com/groda/big_data/blob/master/docker_for_beginners.md>
 - [Jérôme Petazzo : Docker Intensif](https://2021-05-enix.container.training/1.yml.html#1)
@@ -641,7 +648,6 @@ layout: section
 
 - [Pourquoi utiliser l'option `-t` pour un conteneur interactif](https://www.baeldung.com/linux/docker-run-interactive-tty-options)
 - [Astuce _Docker in Docker_ : `-v var/run/docker.sock:/var/run/docker.sock`](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
-- <https://github.com/docker/awesome-compose/>
 - [Build multi-plateformes](https://blog.microlinux.fr/docker-cmatrix-alpine-03/)
 - [Analyses de sécurité](https://github.com/docker/docker-bench-security)
 - <https://docker-saigon.github.io/post/Docker-Caveats/>
@@ -663,7 +669,6 @@ layout: section
 - <https://coder.com/> : environnements de dev dockerisés
 - [Dev Containers in VS Code](https://www.youtube.com/watch?v=LH5qMhpko8k)
 - <https://github.com/RamiKrispin/vscode-python> : Python dev containers (VScode)
-- [Awesome Docker : development environment](https://github.com/veggiemonk/awesome-docker#development-environment)
 - <https://containertoolbx.org/> : environnements de dev utilisant Podman
 - [Vidéo : 0 downtime avec Docker stack et Docker Swarm](https://www.youtube.com/watch?v=fuZoxuBiL9o)
 
@@ -675,7 +680,7 @@ layout: section
 - [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
 - [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
 - [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
-- [Exemples de projets Docker](https://github.com/dockersamples)
+- Exemples de projets : voir la [page des liens](/cours/liens#docker)
 
 ---
 
@@ -697,7 +702,6 @@ layout: section
 [doc-archi]: https://delftswa.github.io/chapters/docker/
 [doc-namespace-cgroups]: https://medium.com/@kasunmaduraeng/docker-namespace-and-cgroups-dece27c209c7
 [doc-reseau]: https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker
-[docker-awesome]: https://github.com/veggiemonk/awesome-docker
 [doc-stateful]: https://container.training/swarm-selfpaced.yml.html#450
 [play-docker]: https://labs.play-with-docker.com/
 [doc-logs]: https://docs.docker.com/engine/logging/configure/

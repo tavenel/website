@@ -104,4 +104,23 @@ Quelques références utiles en informatique.
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
 - <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
- 
+
+## Exemples de projets
+
+### Docker
+
+- [Exemples de projets Docker](https://github.com/dockersamples)
+- [SF Food trucks : application flask, react, elastic search avec 3 conteneurs](https://docker-curriculum.com/#sf-food-trucks)
+- [Dockercoins : excellent projet de démonstration de Jérôme Petazzo](https://github.com/jpetazzo/container.training)
+- [Petclinic : version Docker Compose](https://github.com/spring-petclinic/spring-petclinic-microservices)
+- [Exemple de microservices en Docker Compose et Kubernetes](https://github.com/microservices-demo/microservices-demo)
+
+### Kubernetes
+
+- [Petclinic : version Kubernetes](https://github.com/spring-petclinic/spring-petclinic-cloud)
+- [Kubercoins : excellent projet de démonstration de Jérôme Petazzo](https://github.com/jpetazzo/kubercoins)
+- [Coffee : applications de test pour k8s (kustomize, helm, yaml, …)](https://github.com/QJoly/kubernetes-coffee-image)
+- [Exemples de tutoriels GKE](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples)
+- [Exemple de microservices en Docker Compose et Kubernetes](https://github.com/microservices-demo/microservices-demo)
+- [BookInfo, application de démonstration d'Istio](https://istio.io/latest/docs/examples/bookinfo/)
+

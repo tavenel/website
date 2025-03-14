@@ -874,8 +874,6 @@ layout: two-cols
 		- [Video - Deep Dive into Kubernetes Internals for Builders and Operators](https://www.youtube.com/watch?v=3KtEAa7_duA)
 - [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
 
-::right::
-
 - [Introduction à kubectl](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - <https://roadmap.sh/kubernetes>
 - [Helm: package manager pour déployer dans k8s](https://helm.sh/)
@@ -889,13 +887,9 @@ layout: two-cols
 
 - Autoscaling : [doc](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) et [pratique](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
 - [HPA Autoscaling depuis des métriques custom dans Prometheus](https://blog.zwindler.fr/2024/10/11/optimisation-ressources-kubernetes-autoscaling-horizontal-custom-metrics-prometheus-adapter/)
-- [Werf: lier CI/CD et k8s](https://werf.io/)
 - [Blue-Green deployment in k8s](https://developer.harness.io/docs/continuous-delivery/deploy-srv-diff-platforms/kubernetes/kubernetes-executions/create-a-kubernetes-blue-green-deployment/)
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml)
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes>
-- <https://github.com/QJoly/kubernetes-coffee-image> : applications de test pour k8s (kustomize, helm, yaml, …)
-
-::right::
 
 - Tutoriels sur la communication entre pods :
   - [Utiliser un service](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
@@ -909,8 +903,10 @@ layout: two-cols
 - [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc)
 - [Installer Kubernetes via kubeadm](https://dev.to/abhay_yt_52a8e72b213be229/how-to-set-up-and-install-a-kubernetes-cluster-a-step-by-step-guide-375j)
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
-- [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
+- [Fichiers perso de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 - [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
+- [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
+- Exemples de projets : voir la [page des liens](/cours/liens#kubernetes)
 
 ---
 

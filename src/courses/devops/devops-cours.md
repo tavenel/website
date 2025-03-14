@@ -181,7 +181,7 @@ Voir le [cours sur les outils de l'intégration continue][site-perso].
 
 - Déploiements complexes => suivi **minutieux** et **automatisé** :
   + Observabilité plateforme Cloud et conteneurs : `Prometheus®` / `Grafana®` ;
-  + Observabilité du métier applicatif (corrélation logs sur `Zipkin`, ...).
+  + Observabilité du métier applicatif : corrélation logs sur `Zipkin` ou `OpenTelemetry`, …
 
 ---
 
