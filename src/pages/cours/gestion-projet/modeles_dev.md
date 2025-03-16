@@ -643,3 +643,9 @@ Pour une mise en opération, le RAD impose :
 
 <div class="caption">Développement RAD semi-itératif. Source : https://commons.wikimedia.org/wiki/File:SemiIteratif.jpg?uselang=fr</div>
 
+---
+
+# Liens
+
+- [Introduction à différentes méthodes de conduite de projet informatique](https://www.teotimepacreau.fr/blog/methodes-gestion-de-projet-informatique/)
+

@@ -44,3 +44,4 @@ title: 📅 Gestion de projet
 - 🔗 Liens :
   - [Online PlantUML Server](https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000)
   - [Exemples UML](https://www.uml-diagrams.org/index-examples.html)
+  - [La modélisation fonctionnelle avec UML](https://www.teotimepacreau.fr/blog/modelisation-fonctionnelle-uml/)
