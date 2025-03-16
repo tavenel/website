@@ -36,6 +36,9 @@ title: 📅 Gestion de projet
 - [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
 - [📌 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
 - [📌 Projet Scrum dans Jira - développement en méthodes agiles](/cours/gestion-projet/agile/projet-scrum)
+- [📌 Projet Scrum dans Jira - développement d'un jeu de rôles en méthodes agiles](/cours/gestion-projet/agile/projet_jeu_role)
+- [📌 Projet Scrum dans Jira - gestion de projet de développement Campus TaskForce en méthodes agiles](/cours/gestion-projet/agile/projet_scrum_dev_campus)
+- [📌 Projet Scrum dans Jira - gestion de projet d'infrastructure système InfraCampus en méthodes agiles](/cours/gestion-projet/agile/projet_scrum_sysops_campus)
 
 ## 🏷️ UML® 
 

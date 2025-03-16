@@ -20,7 +20,7 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 13H
 
-Évaluation : Projet commun Agile/Devops
+Évaluation : Projet
 
 ## Documents
 

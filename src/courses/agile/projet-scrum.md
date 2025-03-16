@@ -34,9 +34,11 @@ L'ensemble des cérémonies Scrum devra être respecté pendant l'itération, no
 
 On prendra soin également de calculer la **vélocité** et le **burndown** après chaque Sprint.
 
+On ajustera également le Sprint en fonction des imprévus signalés durant des mini Daily Scrums.
+
 ## Outil utilisé
 
-Le suivi du projet sera réalisé grâce à l'outil Jira d'Atlassian, disponible gratuitement en SaaS pour de petites équipes : https://www.atlassian.com/fr/software/jira
+Le suivi du projet sera réalisé grâce à l'outil Jira d'Atlassian, disponible gratuitement en SaaS pour de petites équipes : <https://www.atlassian.com/fr/software/jira>
 
 Pour réaliser le suivi du projet :
 
