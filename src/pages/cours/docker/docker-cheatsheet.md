@@ -319,6 +319,20 @@ Voir aussi :
 - <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/cheat-sheet/>
 :::
 
+## Registry
+
+Il est possible d'installer sa propre registry Docker :
+
+```sh
+# Installation d'une registry locale
+docker run -d -p 5000:5000 --restart always --name registry registry:2
+
+# Utilisation de la registry
+docker pull ubuntu
+docker tag ubuntu localhost:5000/ubuntu
+docker push localhost:5000/ubuntu
+```
+
 ## Sécurité
 
 ### Docker scout : analyses de sécurité

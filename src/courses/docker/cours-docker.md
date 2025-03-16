@@ -180,12 +180,12 @@ Un conteneur peut donc ressembler un peu à une VM mais :
 
 ---
 
-# Docker® Hub
+# Registry
 
 Docker® utilise des caches locaux et distants pour stocker les images des conteneurs
 
 * Lors de la création d'un conteneur, Docker® cherche si l'image est disponible en local, sinon celle-ci est récupérée depuis un répertoire distant
-* Par défaut : <https://hub.docker.com>
+* Par défaut, Docker utilise le _Docker Hub_ : <https://hub.docker.com>
 
 ---
 
@@ -197,12 +197,11 @@ Les images sont versionnées par un tag
 
 ---
 
-Il est possible d'utiliser d'autres hubs que le hub par défaut :
+Il est possible d'utiliser d'autres registry que le hub par défaut comme :
 
 - Hub Github : <https://ghcr.io/>
-- Hub interne à l'entreprise
 - Hub d'images temporaires <https://ttl.sh/>
-- ...
+- Registry interne à l'entreprise : `gitea`, <https://hub.docker.com/_/registry> 
 
 ---
 
@@ -654,18 +653,6 @@ layout: section
 
 ---
 
-- Bonnes pratiques :
-  - [Best pratices dev (doc officielle)](https://docs.docker.com/develop/dev-best-practices/)
-  - [Best practives Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-  - [Best practives Dockerfile (2)](https://github.com/hexops-graveyard/dockerfile)
-  - [Optimiser la taille des images](https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/optimiser-taille-image/)
-  - [Optimiser les images avec le cache des layers](https://bearstech.com/societe/blog/securiser-et-optimiser-le-build-des-images-docker-pour-vos-applications/)
-  - [Démo faille sécu volume Docker (et résolution)](https://lafor.ge/docker-volume-security/)
-  - [Documentation sur les logs][doc-logs]
-  - [Bonnes pratiques sur le serveur Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-bonnes-pratiques/)
-
----
-
 - <https://coder.com/> : environnements de dev dockerisés
 - [Dev Containers in VS Code](https://www.youtube.com/watch?v=LH5qMhpko8k)
 - <https://github.com/RamiKrispin/vscode-python> : Python dev containers (VScode)
@@ -694,6 +681,20 @@ layout: section
 - [Building containers by hand using namespaces: The net namespace](https://www.redhat.com/en/blog/net-namespaces)
 - [Deep-dive into Containerization : Creating containers from scratch](https://www.alanjohn.dev/blog/Deep-dive-into-Containerization-Creating-containers-from-scratch)
 - [Building a Linux Container using Namespace](https://github.com/rockerritesh/Building-a-Linux-Container-using-Namespace)
+---
+
+## Bonnes pratiques
+
+- [Best pratices dev (doc officielle)](https://docs.docker.com/develop/dev-best-practices/)
+- [Best practives Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Best practives Dockerfile (2)](https://github.com/hexops-graveyard/dockerfile)
+- [Optimiser la taille des images](https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/optimiser-taille-image/)
+- [Optimiser les images avec le cache des layers](https://bearstech.com/societe/blog/securiser-et-optimiser-le-build-des-images-docker-pour-vos-applications/)
+- [Démo faille sécu volume Docker (et résolution)](https://lafor.ge/docker-volume-security/)
+- [Documentation sur les logs][doc-logs]
+- [Bonnes pratiques sur le serveur Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-bonnes-pratiques/)
+
+---
 
 [img-archi]: https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png
 [doc-docker]: https://docs.docker.com/
@@ -705,8 +706,6 @@ layout: section
 [doc-stateful]: https://container.training/swarm-selfpaced.yml.html#450
 [play-docker]: https://labs.play-with-docker.com/
 [doc-logs]: https://docs.docker.com/engine/logging/configure/
-
----
 
 # Legal
 

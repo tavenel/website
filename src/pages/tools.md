@@ -51,10 +51,11 @@ created: 2024-10-17
 
 -   `docker`
   - 🔒 sécurité :
+    - _Docker Scout_ (inclus dans _Docker desktop_) : voir la [cheatsheet Docker](/cours/docker/docker-cheatsheet)
     - <https://github.com/docker/docker-bench-security>
     - <https://github.com/aquasecurity/trivy> (inclus k8s)
     - `dive`
-		- <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
+    - <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
 - 🚢 `podman` : idem Docker sans agent, supporte Docker et pods k8s
 - `cri-o` : container runtime k8s
 
