@@ -303,6 +303,11 @@ created: 2024-10-17
 - <https://testcontainers.com>
 - <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
 - [Outils de test open-source](https://www.guru99.com/best-open-source-testing-tools.html)
+- mutation testing :
+  - <https://stryker-mutator.io/>
+  - <https://github.com/loicknuchel/mutation-testing-sample/>
+  - <https://pitest.org/>
+  - <https://www.arcmutate.com/>
 
 ## Backend tools
 
