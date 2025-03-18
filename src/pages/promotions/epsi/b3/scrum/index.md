@@ -19,7 +19,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 📅 Déroulé des séances
 
-Module de 10H
+Module de 7H
 
 Évaluation : QCM + Projet Agile
 
