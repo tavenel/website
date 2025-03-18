@@ -301,13 +301,15 @@ created: 2024-10-17
 - BDD : `Cucumber`, `Spock`, `JBehave`
 - Tests d'infrastructure : <https://une-tasse-de.cafe/blog/testinfra/>
 - <https://testcontainers.com>
-- <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
 - [Outils de test open-source](https://www.guru99.com/best-open-source-testing-tools.html)
-- mutation testing :
+- Mutation Testing :
   - <https://stryker-mutator.io/>
   - <https://github.com/loicknuchel/mutation-testing-sample/>
   - <https://pitest.org/>
   - <https://www.arcmutate.com/>
+- Données de test :
+	- <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
+	- Génération de fausses données : <https://fakerjs.dev/>
 
 ## Backend tools
 
