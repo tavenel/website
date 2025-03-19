@@ -48,6 +48,8 @@ On effectue donc en principe l'odre de déploiement suivant :
 	- déploiement `control-manager` et `scheduler` et enregistrement auprès de l'`api-server`
 - Création des autres _control plane_ :
   - déploiement des composants (similaire au 1er noeud) mais enregistrement des composants HA auprès du 1er _control plane_, notamment `api-server` et `etcd`.
+  - choisir une solution de load balancing adaptée : `kube-vip`, `MetalLB`, …
+  - mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
 - Création des workers :
 	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
 :::
@@ -76,6 +78,13 @@ sudo docker run -it --rm \
 ```
 :::
 
+:::exo
+On testera la partie H/A du `control-plane` :
+
+- Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
+- Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
+:::
+
 ### Phase 2 : Déploiement d’une Application
 
 Le but de cette partie est de déployer dans le cluster un projet personnel existant qui se compose de plusieurs composants (par exemple, une application web front-end, une API back-end, une base de données, etc.). On recommande l'utilisation de fichiers de manifeste `yml` pour créer les ressources Kubernetes.
@@ -89,6 +98,15 @@ Le but de cette partie est de déployer dans le cluster un projet personnel exis
 3. **Scalabilité et tolérance aux pannes**
    - Autoscaling avec `Horizontal Pod Autoscaler`
    - Rolling updates et rollback
+
+:::exo
+On testera la partie H/A du déploiement applicatif :
+
+- Tester la suppression d'un conteneur / Pod
+- Tester la déconnexion d'un _worker node_
+- Vérifier la réconciliation des ressources
+- Vérifier le _scaling_ automatique en cas de pic de charge
+:::
 
 ## 📜 Livrables
 
