@@ -213,8 +213,11 @@ created: 2024-10-17
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
   - [`grafterm`](https://github.com/slok/grafterm) similaire à grafana mais dans un terminal
 	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
-- `loki` + `grafana`
-- `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
+- stacks de logging :
+  - `ELK` : _Elastricsearch_, _Logstash_, _Kibana_
+  - `loki` + `grafana`
+  - `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
+	- <https://github.com/openobserve/openobserve> : léger
 - `zabbix` (plutôt sysadmin que devops)
 - `netdata`
 - `Datadog` [article](https://blog.wescale.fr/datadog-et-lart-de-lobservabilit%C3%A9)
