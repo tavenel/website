@@ -227,7 +227,7 @@ created: 2024-10-17
 	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
 - stacks de logging :
   - `ELK` : _Elastricsearch_, _Logstash_, _Kibana_
-  - `loki` + `grafana`
+  - `loki` + `grafana` (pour tester : <https://github.com/grafana/docker-otel-lgtm>)
   - `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
 	- <https://github.com/openobserve/openobserve> : léger
 - `zabbix` (plutôt sysadmin que devops)
@@ -464,6 +464,8 @@ created: 2024-10-17
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
 - `termdbms` : SQL queries in TUI
 - <https://github.com/Macmod/godap> : LDAP in TUI
+- `otel-tui` : TUI `OpenTelemetry`, `Zipkin`, `Prometheus` : <https://github.com/ymtdzzz/otel-tui>
+- `loggo` : TUI for logs : <https://github.com/aurc/loggo>
 
 ### Outils poste de travail Admin système
 
