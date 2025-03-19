@@ -115,6 +115,10 @@ Non-testing skills expected from a typical tester are :
 
 ---
 
+- [Étude JetBrains (2020) sur le test dans les projets informatiques](https://www.jetbrains.com/lp/devecosystem-2020/testing/)
+
+---
+
 # Les métiers du test logiciel
 
 ---
