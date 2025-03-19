@@ -117,7 +117,7 @@ docker diff
 - `docker container cp`
 - `docker container prune` : détruit tous les conteneurs arrêtés
 - `docker container rename`
-- `docker container stats`
+- `docker container stats` : monitoring des ressources Docker
 - `docker container commit` : crée une image depuis un conteneur existant (à éviter)
 
 ## Docker volumes
