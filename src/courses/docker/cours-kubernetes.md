@@ -517,6 +517,7 @@ layout: section
   - logs
 - Gère la communication sécurisée entre conteneurs sur des architectures micro-services
 - À installer : `Istio`, `linkerd`, `consul`, …
+  - Voir la [page des outils Devops](https://www.avenel.pro/tools#-kubernetes-specific)
 
 ---
 

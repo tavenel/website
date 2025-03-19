@@ -32,7 +32,7 @@ created: 2024-10-17
 ### 1️⃣  Versioning
 
 -  `git`
-  - forges logicielles => `github`, 🦊 `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, …
+  - forges logicielles => `github`, 🦊 `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, `forgejo`, `gitea`, …
   - 🔐 sécurité
     - [git-crypt](https://github.com/AGWA/git-crypt)
     - 🔑 `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
@@ -89,10 +89,22 @@ created: 2024-10-17
 - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
 - ingress & service mesh :
   - `traefik` : reverse-proxy automatique
-  - `Consul` (+DNS, reverse proxy, load balancing, …)
-  - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par `Kiali`
-	- `Cilium` : networking, security, observability
-	- `ingress2gateway` : aide à convertir un _Ingress_ en _Gateway API_
+  - amélioration d'Ingress :
+    - _Ingress controller_ (ingress avec _CRD_ custom) :
+      - `Contour`
+      - `Emissary Ingress`
+      - `Voyager` 
+    - _Application proxy_ avec services : _rate limiting_, …
+      - `Kong`
+      - `Apisix`
+      - `Traefik proxy` 
+    - _Service mesh_
+      - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par `Kiali`
+      - `Cilium` : networking, security, observability
+      - `Traefik mesh`
+      - `NGINX Service Mesh`
+      - `Consul` : DNS, reverse proxy, load balancing, …
+    - Gateway API : `ingress2gateway`
 - 📦📦 scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
 - 🔒 sécurité
@@ -523,7 +535,7 @@ created: 2024-10-17
 - `asana` => `OpenProject`
 - `firebase` => `convex`, `supabase`, `appwrite`, `instant`
 - `heroku`, `netlify`, `vercel` => `coolify`, `dokku`
-- `github` => `gitlab`
+- `github` => `gitlab`, `forgejo`, `gitea`
 - `docusign` => `docuseal`
 - `google analytics` => `matomo`
 
