@@ -1,0 +1,14 @@
+---
+import { Picture } from 'astro:assets';
+import srht from '@assets/website/sourcehut.svg';
+import github from '@assets/website/github-mark.svg';
+
+const { width, height } = Astro.props;
+type Props = {
+	width: number,
+	height: number,
+};
+---
+
+<a href="https://github.com/tavenel"><Picture src={github} alt="The Github logo." width={width} height={height} /></a>
+<a href="https://git.sr.ht/~toma"><Picture src={srht} alt="The Sourcehut logo." width={width} height={height} /></a>
