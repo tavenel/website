@@ -592,6 +592,35 @@ En résumé :
 
 ---
 
+### Quelques solutions de stockage
+
+Solution | Type | Mode d'accès | Cas d'usage
+---------|------|--------------|-------------
+_AWS EBS CSI_ | Stockage en bloc | `RWO` (noeud unique) | Stockage haute performance sur AWS
+_Google Persistent Disk CSI_ | Stockage en bloc | `RWO` (noeud unique) | Applications cloud-native sur GCP
+_Ceph RBD CSI_ | Stockage distribué | `RWO`, `RWX` | Bases de données distribuées
+_Longhorn CSI_ | Stockage local | `RWO`, `RWX` | Stockage persistant natif Kubernetes
+
+---
+
+### Volumes statiques - Odre des opérations
+
+- Création du volume `PV` par l'utilisateur : taille, type de stockage, …
+- Création du `PVC` par l'utilisateur : taille et type de stockage requis (correspond à un PV existant qui répond à ces critères).
+- Association entre `PVC` et `PV` par Kubernetes
+- Utilisation du `Volume` par un `Pod`
+
+---
+
+### Volumes dynamiques - Odre des opérations
+
+- `PVC` : l'utilisateur demande un volume persistant et spécifie une `StorageClass`
+- _Provisionnement_ du `Volume` via le driver `CSI` (_Container Storage Interface_) associé à la `StorageClass`
+- _Attachement du volume_ au _Node_ par le `CSI`
+- _Montage du volume_ dans le _conteneur_ depuis le _Node_
+
+---
+
 ## DaemonSet
 
 - Assure que des pods tournent sur tous les noeuds du cluster
@@ -644,7 +673,7 @@ layout: section
 
 ---
 
-## Healthcheck
+## Sondes Healthcheck
 
 - `ReadinessProbe`
   - remplacement du Pod si défectueux
@@ -659,6 +688,8 @@ layout: section
   - doit renvoyer un échec tant que l'application n'est pas initialisée
 - 3 modes : `exec` (commande), `httpGet`, `tcpSocket`
 - si vérification > 1 seconde, préférer précalculer (asynchrone) et retourner un cache
+
+Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/probes/>
 
 ---
 
@@ -725,9 +756,20 @@ layout: section
 
 ---
 
-- autres stratégies en ajoutant d'autres outils :
+- autres stratégies manuelles ou en ajoutant d'autres outils :
   - **blue/green** : coexistance des 2 versions (dont la nouvelle pour test)
   - **canary deployment** : coexistance avec migration progressive des requêtes vers v2
+
+---
+
+## Assigner un Pod à un Node spécifique
+
+- _NodeName_ : assigner un _Pod_ à un _Node_ (test uniquement)
+- _Node Selector_ : sélectionner un _Node_ par _Label_, ex : CI/CD, Node spécialisé stockage pour Pod BDD, …
+- _Node Affinity : contraintes sur les _Label_ du _Node_, ex : répartition géographique, possédant un GPU, …
+- _Pod Affinity_ : regrouper des pods pour améliorer les perfs, par ex d'une même stack applicative, …
+- _Anti-Affinity_ : éloigner des pods pour augmenter la robustesse, par ex instances de H/A, …
+- _Taints_ et _Tolerations_ : réserver des _Node_ pour des workloads spécifiques : le _taint_ empêche de déployer des _Pod_ sur un _Node_ en l'absence de _toleration_) : `NoSchedule` (_Control Plane_, …), `PreferNoSchedule`, `NoExecute` (expulsion)
 
 ---
 
