@@ -64,6 +64,17 @@ created: 2024-10-17
 - 🧐 vérification : `hadolint`, <https://falco.org/>, <https://quay.github.io/clair/>
 - 🔄 mise à jour : `renovate`
 
+#### Registry
+
+- Hubs publics :
+  - Docker Hub : <https://hub.docker.com>
+  - Hub Github : <https://ghcr.io/>
+  - Hub d'images temporaires : <https://ttl.sh/>
+- Registry internes :
+  - <https://github.com/Joxit/docker-registry-ui>
+  - `gitea`
+  - <https://hub.docker.com/_/registry> 
+
 #### Orchestration de conteneurs
 
 - 󱃾 Kubernetes : LA référence en orchestration
@@ -280,6 +291,10 @@ created: 2024-10-17
 - `OpenVZ`
 - `lxc`,`lxd` (conteneurs), `incus`
 
+### Débug
+
+- Image générant de faux logs : <https://github.com/chentex/random-logger>
+
 ## async : queues de messages, brokers
 
 - `kafka`
@@ -323,8 +338,8 @@ created: 2024-10-17
   - <https://pitest.org/>
   - <https://www.arcmutate.com/>
 - Données de test :
-	- <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
-	- Génération de fausses données : <https://fakerjs.dev/>
+  - <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
+  - Génération de fausses données : <https://fakerjs.dev/>
 
 ## Backend tools
 
