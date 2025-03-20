@@ -335,7 +335,8 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
-Voir le [TP sur la configuration du réseau sous Linux][tp-network]
+- Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
+- Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 
 ---
 

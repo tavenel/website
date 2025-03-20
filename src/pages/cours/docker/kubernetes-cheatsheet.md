@@ -4,6 +4,10 @@ title: Cheatsheet Kubernetes®
 
 # Cheatsheet Kubernetes
 
+:::link
+Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
+:::
+
 ## Administration
 
 ### Administration etcd
@@ -409,6 +413,10 @@ spec:
 ```
 
 Pour un `podAffinity`, le champ `topologyKey` spécifie la "topologie" sur laquelle vous voulez appliquer l'affinité. Ici, `kubernetes.io/hostname` signifie que les pods doivent être planifiés sur le même nœud (identifié par le nom d'hôte). Autres exemples : `topology.kubernetes.io/zone` pour contraindre les pods à être répartis sur plusieurs zones de disponibilité (si le cluster est multi-zone, comme dans les environnements cloud) ou `topology.kubernetes.io/region` pour répartir les pods dans différentes régions géographiques (pour les clusters multi-régions).
+
+:::link
+Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/affinity-toleration-taint/>
+:::
 
 ### Priorité, réquisition et limitation de ressources
 

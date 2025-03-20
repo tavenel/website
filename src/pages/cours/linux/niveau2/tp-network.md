@@ -18,7 +18,10 @@ correction: false
 | Statistiques                          | `netstat`   | `ip -s`, `ss`        |
 
 :::link
-Voir aussi : <https://www.linuxtricks.fr/wiki/la-commande-ip-reseau-interfaces-routage-table-arp>
+Voir aussi :
+
+- <https://www.linuxtricks.fr/wiki/la-commande-ip-reseau-interfaces-routage-table-arp>
+- <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
 :::
 
 ## Gestion des interfaces

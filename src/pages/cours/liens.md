@@ -104,6 +104,7 @@ Quelques références utiles en informatique.
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
 - <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
+- [NAT vs BRIDGE](https://blog.stephane-robert.info/docs/homelab/bridge-nat/)
 
 ## Exemples de projets
 

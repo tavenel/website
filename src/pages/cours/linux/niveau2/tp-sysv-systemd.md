@@ -69,6 +69,10 @@ C’est le niveau 0, d’arrêt, qui est activé.
 - Pour plus de détails sur la commande `systemctl`, voir le cours _systemd_, 101.3 Lesson 1 p.41
 :::
 
+:::link
+Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/systemd/> et <https://blog.stephane-robert.info/docs/admin-serveurs/linux/services/>
+:::
+
 ### systemctl
 
 `systemctl` est une commande système de gestion de services et d'unités sur les systèmes Linux utilisant le gestionnaire d'init `systemd`. Elle permet aux administrateurs système de contrôler et de surveiller les services, les socket, les périphériques et d'autres unités système.
@@ -151,6 +155,10 @@ Les fichiers de logs de `journalctl` sont stockés **au format binaire** (ce qui
 1. Utilisez `journalctl` pour rechercher tous les messages contenant le terme `error`.
 1. Affichez la cible (`target`) par défaut du système.
 1. Changez la cible par défaut du système pour une cible différente (par exemple, `multi-user.target`).
+
+:::link
+Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/journalisation/>
+:::
 
 :::correction
 1. Vérifiez l'état actuel du service `SSH` avec `systemctl status ssh.service`.
