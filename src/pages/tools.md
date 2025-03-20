@@ -291,8 +291,9 @@ created: 2024-10-17
 - `OpenVZ`
 - `lxc`,`lxd` (conteneurs), `incus`
 
-### Débug
+### Débug & instances de test
 
+- Buckets S3 locaux : <https://github.com/minio/minio> : `docker run -p 9000:9000 -p 9001:9001 quay.io/minio/minio server /data --console-address ":9001"`
 - Image générant de faux logs : <https://github.com/chentex/random-logger>
 
 ## async : queues de messages, brokers
