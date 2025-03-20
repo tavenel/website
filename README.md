@@ -1,3 +1,5 @@
+This is the repository for my website : <https://www.avenel.pro/>. Feel free to fix any issue / error / typo by creating a pull request.
+
 ## Features
 
 - Lazy-load `Mermaid` (diagrams) JS librairies if needed.
