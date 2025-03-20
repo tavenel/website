@@ -24,7 +24,7 @@ layout: '@layouts/CourseLayout.astro'
 
 ## PWA
 
-<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"><img src="resources/images/pwa-enabled.svg" alt="PWA Banner" width="88" height="20"/></a>
+[![PWA Banner](@assets/website/pwa-enabled.svg)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 This website can be downloaded and installed on your device for offline use as a Progressive Web App.
 
