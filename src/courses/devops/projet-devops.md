@@ -76,6 +76,16 @@ Pour récupérer des sondes `Docker`, on pourra utiliser si besoin `cAdvisor` qu
 - On pourra, au choix, créer son propre dashboard dans `Grafana`, ou utiliser un modèle existant, par exemple : <https://grafana.com/grafana/dashboards/179-docker-prometheus-monitoring/>.
 :::
 
+:::link
+Pour plus d'information, voir :
+
+- la très bonne introduction à l'observabilité : <https://blog.stephane-robert.info/docs/observer/introduction/>
+- une introduction à `prometheus` : <https://blog.stephane-robert.info/docs/observer/metriques/prometheus/>
+- des exemples de métriques : <https://blog.stephane-robert.info/docs/observer/metriques/introduction/>
+- une introduction à `loki` : <https://blog.stephane-robert.info/docs/observer/logs/loki/>
+- une introduction à `grafana` : <https://blog.stephane-robert.info/docs/observer/grafana/introduction/>
+:::
+
 :::tip
 On considère que les 4 signaux principaux (les _golden signals_ en _SRE_) à observer en continue sont :
 
