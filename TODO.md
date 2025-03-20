@@ -38,6 +38,7 @@ main {
 ```
 
 - 404 style
+- copy button for code blocks
 
 - diagrams
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
