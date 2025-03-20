@@ -9,21 +9,19 @@ Merge slides => RM ?
 .chapter .slide-mode.slide-elt:first-child {
 /* Section */
 
-		padding-left: 3.5rem;
-		padding-right: 3.5rem;
-		padding-top: 2.5rem;
-		padding-bottom: 2.5rem;
+padding-left: 3.5rem;
+padding-right: 3.5rem;
+padding-top: 2.5rem;
+padding-bottom: 2.5rem;
 
-  h1 {
-
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-    font-size: 5rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    position: relative;
-  }
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
 }
 ```
 
@@ -33,9 +31,9 @@ Merge slides => RM ?
 
 ```css
 main {
-	/* max-width: 1024px; */ /* TODO (breaks line below and breaks slides) */
-	max-width: 90vw; /* 90 % full page */
-	margin: auto;
+  /* max-width: 1024px; */ /* TODO (breaks line below and breaks slides) */
+  max-width: 90vw; /* 90 % full page */
+  margin: auto;
 }
 ```
 
@@ -45,7 +43,7 @@ main {
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
   - fix `@startdot`
 ```css
-	@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .kroki svg {
     filter: invert(100%);
   }
@@ -96,31 +94,29 @@ _Tom Avenel_
 - styles :
   - cleanup CSS "TODO"
   - fix diagram style : .flowchartTitleText
-	- slides => **bold** and _emphasis_
+  - slides => **bold** and _emphasis_
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
   - Callouts themes : https://github.com/Microflash/remark-callout-directives
   - Callouts => correction : svg in astro.config.mjs
   - h2#chapitres => floating (right ?<- only if @media landscape), always visible, collapsible
-	- ability to zoom images
-	- styles.css => !important ?
-	- laserwave: 'laserwave', => neon violet
-	- rose: 'rose-pine',
-	- tokyonight: 'tokyo-night',
-	- vesper: 'vesper', => mono orange
-	- selected text : `::selection` => color and backgroundColor at least
+  - ability to zoom images
+  - styles.css => !important ?
+  - laserwave: 'laserwave', => neon violet
+  - rose: 'rose-pine',
+  - tokyonight: 'tokyo-night',
+  - vesper: 'vesper', => mono orange
+  - better light themes
+  - selected text : `::selection` => color and backgroundColor at least
 
 - seo
-	- https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
-	- https://code.juliancataldo.com/component/astro-seo-metadata/
+  - https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
+  - https://code.juliancataldo.com/component/astro-seo-metadata/
 
 - linter `astro.config.mjs`
-	- import remarkLint from 'remark-lint';
-	- import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
-	- import remarkLintNoDeadUrls from 'remark-lint-no-dead-urls';
-	- 		remarkPlugins: [
-	- 			// remarkLint,
-	- 			// remarkPresetLintRecommended,
-	- 			// remarkLintNoDeadUrls,
+  - import remarkLint from 'remark-lint';
+  - import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
+  - import remarkLintNoDeadUrls from 'remark-lint-no-dead-urls';
+  - remarkPlugins: [ // remarkLint, // remarkPresetLintRecommended, // remarkLintNoDeadUrls, ]
 
 ## P4
 
@@ -145,12 +141,12 @@ _Tom Avenel_
     html += "</ul>";
     document.getElementById("rss-feed").innerHTML = html; // Replace "rss-feed" with the ID of your target element
   });
-	```
+  ```
 - merge "links" page (?) => "links" and "tools" idem ?
 - merge "liens" ?
 
 - remark-lint
-	- https://github.com/remarkjs/remark-validate-links
+  - https://github.com/remarkjs/remark-validate-links
 
 - test responsive slides with : https://github.com/sindresorhus/pageres
 - https://github.com/astefanutti/decktape
