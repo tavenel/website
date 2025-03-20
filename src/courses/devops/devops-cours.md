@@ -181,7 +181,17 @@ Voir le [cours sur les outils de l'intégration continue][site-perso].
 
 - Déploiements complexes => suivi **minutieux** et **automatisé** :
   + Observabilité plateforme Cloud et conteneurs : `Prometheus®` / `Grafana®` ;
-  + Observabilité du métier applicatif : corrélation logs sur `Zipkin` ou `OpenTelemetry`, …
+  + Observabilité du métier applicatif : corrélation logs, …
+
+---
+
+## Types d'observabilité
+
+- **logs** : messages des applications, à centraliser : `Loki`, `ELK`, `fluentd`, …
+- **métriques** (sondes) : indicateurs sur la santé des composants : CPU, latence réseau, mémoire, … : `prometheus`
+- **traces** : suivi d'un utilisateur / une requête à travers tout le système : `zipkin`, `OpenTelemetry`, …
+
+Cette observabilité doit se coupler à des **alertes** en cas de souci !
 
 ---
 
@@ -286,6 +296,8 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 - _CI_ : Continuous Integration (Intégration Continu). Ensemble de pratiques permettant de réduire la feedback loop.
 - _CD_ : Continuous Delivery/Deployment (Déploiement Continu). Mise en production automatique des artéfacts générés par la CI.
 - _SaaS_ : Software-as-a-Service. Application hébergée sur le cloud et accessible directement à l'utilisateur final.
+
+Voir aussi : <https://blog.stephane-robert.info/docs/glossaire/>
 
 ---
 
