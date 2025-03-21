@@ -234,16 +234,23 @@ created: 2024-10-17
 
 ### 📈 Supervision / Monitoring / Observabilité
 
-- `prometheus` (push par `node exporter`, puissant mais lourd) + `grafana` => solution classique
+- monitoring :
+  - `prometheus` (push par `node exporter`, puissant mais lourd) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/prometheus/)
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
-  - [`grafterm`](https://github.com/slok/grafterm) similaire à grafana mais dans un terminal
 	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
+  - `zabbix` (plutôt sysadmin que devops)
+  - `hertzbeat` (compatible `prometheus`) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/hertzbeat/)
 - stacks de logging :
   - `ELK` : _Elastricsearch_, _Logstash_, _Kibana_
   - `loki` + `grafana` (pour tester : <https://github.com/grafana/docker-otel-lgtm>)
   - `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
 	- <https://github.com/openobserve/openobserve> : léger
-- `zabbix` (plutôt sysadmin que devops)
+- tracing :
+  - `zipkin`
+  - `OpenTelemetry`
+- dashboards :
+  - `grafana`
+  - [`grafterm`](https://github.com/slok/grafterm) similaire à grafana mais dans un terminal
 - `netdata`
 - `Datadog` [article](https://blog.wescale.fr/datadog-et-lart-de-lobservabilit%C3%A9)
 - [Crowdsec](https://blog.stephane-robert.info/docs/securiser/reseaux/crowdsec/) : outil communautaire
@@ -494,6 +501,8 @@ created: 2024-10-17
 - `loggo` : TUI for logs : <https://github.com/aurc/loggo>
 
 ### Outils poste de travail Admin système
+
+- `systemd-analyze` : analyse du temps de démarrage des services
 
 #### Network
 
