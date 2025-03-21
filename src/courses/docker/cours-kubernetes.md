@@ -636,8 +636,9 @@ _Longhorn CSI_ | Stockage local | `RWO`, `RWX` | Stockage persistant natif Kuber
 
 - Déploie des applications avec état : BDD, …
 - Ressources **ordonnées** (ordre de lancement)
-- Un même volume monté dans un pod le reste pour toujours (même après recréation)
-- Un DNS dédié (`service headless`) :
+- Un volume persistant par _Pod_ (vs. _ReplicaSet_ où les volumes sont partagés)
+- Un même volume monté dans un pod (`PVC`) le reste pour toujours (même après recréation)
+- Un DNS dédié (_service headless_) :
   - load-balancing sur tous les pods du set
   - sélection d'un pod en particulier
 
