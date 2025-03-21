@@ -94,9 +94,9 @@ kubectl get apiservices | grep metrics-server
 
 ```sh
 # Retirer les pods et déconnecter le noeud pour maintenance
-kubectl drain --ignore-daemonsets <node name>
+kubectl drain --ignore-daemonsets "<node-name>"
 # Rendre le noeud de nouveau disponible
-kubectl uncordon <node name>
+kubectl uncordon "<node-name>" 
 ```
 
 ## Généralités
@@ -179,6 +179,12 @@ kubectl describe deployment myapp1
 kubectl describe po/mon-pod
 
 kubectl describe svc myapp1-sv
+```
+
+### Nettoyer les Pod en échec
+
+```sh
+kubectl get pods --all-namespaces --field-selector=status.phase=Failed
 ```
 
 ## Ressources
