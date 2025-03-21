@@ -744,23 +744,57 @@ Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concept
 
 ### Ingress
 
+```sh
+# Pré-requis : installation de l'Ingress Controller Nginx
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm install my-ingress ingress-nginx/ingress-nginx
+```
+
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
  name: api-ingress
+ annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+    # Load Balancing strategy
+    # - "round_robin" (default)
+    # - "least_connections" (équilibre charge)
+    # - "ip_hash" (stick IP to Pod)
+    nginx.ingress.kubernetes.io/load-balance: "round_robin"
+
+    # Rate limit
+    nginx.ingress.kubernetes.io/limit-rpm: "100"
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: "5"
+
 spec:
  rules:
-    - host: api.example.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: api-service
-                port: 
-                  number: 8080
+  # redirige http://api.example.com vers le service api-service
+  - host: api.example.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: api-service
+              port: 
+                number: 8080
+ tls: # seulement si TLS sur l'ingress
+   - hosts:
+     - www.example.com
+     secretName: example-tls
+---
+# Si TLS, secret associé
+apiVersion: v1
+kind: Secret
+metadata:
+  name: example-tls
+data:
+  tls.crt: <base64 cert>
+  tls.key: <base64 key>
+type: kubernetes.io/tls
 ```
 
 ### Gateway
