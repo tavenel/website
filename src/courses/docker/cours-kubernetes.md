@@ -503,9 +503,13 @@ layout: section
 ## Ingress
 
 - Point d'accès publique HTTP/HTTPS unique pour l'accès aux différentes Pods (différent d'un Service)
+- Agit comme un _Reverse-proxy_ qui redirige la requête vers le `Service`
 - Règles de routage avancées
-- Recquiert un reverse-proxy et/ou un load balancer : `Nginx`, `Haproxy`, `Traefik`, `Consul`, `Istio`.
-- Add-on réseau à installer (pas de gestion réseau native par k8s)
+- Recquiert une implémentation d'`Ingress Controller` à installer :
+  - `Nginx Ingress Controller` : standard, stable, supporte HTTPS et annotations avancées.
+  - `HAProxy Ingress` : performant
+  - `Traefik` : léger, dynamique (cloud, microservices)
+  - `Consul Ingress / Istio Gateway` : intégration avec les _service mesh_ Consul / Istio
 
 ---
 
