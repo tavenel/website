@@ -121,7 +121,7 @@ created: 2024-10-17
 - 🔒 sécurité
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
-	- [Sealed Secret](https://une-tasse-de.cafe/blog/sealed-secrets/) : chiffrement de secrets dans k8s
+	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
 	- <https://external-secrets.io/> : injection de secrets
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
 - 🧐 supervision
@@ -145,6 +145,7 @@ created: 2024-10-17
 - 🔄 Upgrade :
   - `WatchTower`
   - `Keel` (avec triggers)
+  - `Pluto` : gestion des dépréciations d'API : [tuto](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/pluto/)
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 - Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html)
 
@@ -203,6 +204,7 @@ created: 2024-10-17
 - `Trivy` : détection de vulnérabilités [lien de présentation](https://blog.stephane-robert.info/docs/securiser/outils/trivy/)
 - <https://r2devops.io/> : auditer le pipeline CI/CD
 - [Regula](https://blog.stephane-robert.info/post/infra-as-code-policy-check-regula/) : vérifications de sécurité dans code IaC (Terraform, yaml k8s, …)
+- `Lynis` : sécurité des configs Linux [tuto](https://blog.stephane-robert.info/docs/securiser/durcissement/lynis/)
 
 #### CD & Gitops
 
@@ -475,6 +477,7 @@ created: 2024-10-17
 - `Kubernetes` :
   - `kubectx` : change context
   - `kubens` : change namespace
+  - `kubie` : change context / namespace temporairement
   - `kube-ps1` : show k8s cluster/context in shell
   - `kubecolor` : colored kubectl output
   - `k9s` : Terminal UI k8s management
