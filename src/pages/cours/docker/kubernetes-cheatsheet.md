@@ -594,6 +594,66 @@ spec:
       storage: 500Mi  # La quantité de stockage demandée par ce PVC
 ```
 
+### Exemple de StorageClass NFS
+
+```sh
+# Pré-requis : Installation du driver CSI pour NFS
+helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.10.0
+```
+
+```yml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-csi
+provisioner: nfs.csi.k8s.io # Nom du CSI
+parameters:
+  server: 192.168.20.121 # Remplacer par l'adresse IP du serveur NFS
+  share: /data
+reclaimPolicy: Delete # Kubernetes supprime automatiquement le volume.
+reclaimPolicy: Retain # Le volume doit être supprimé manuellement
+volumeBindingMode: Immediate # volume créé dès la demande
+volumeBindingMode: WaitForFirstConsumer # volume créé uniquement quand un Pod l'utilise
+allowVolumeExpansion: true # agrandir le volume après création ?
+mountOptions:
+  - nfsvers=4.1
+```
+
+```yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-deployment-nfs
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: nfs-csi # StorageClass NFS définie précédemment
+```
+
+### Debug du storage
+
+Les erreurs liées aux volumes sont souvent enregistrées dans les événements Kubernetes :
+
+```sh
+kubectl get events --sort-by=.metadata.creationTimestamp
+```
+
+:::tip
+Un `PV` en état `Released` ou `Failed` ne peut plus être réutilisé.
+:::
+
+:::tip
+En cas d'erreur de montage d'un volume, tester directement le montage dans le _Pod_ :
+
+```sh
+mount -t nfs "<NFS_SERVER_ADDRESS>:<NFS_SHARE_PATH>" /mnt
+```
+:::
+
 ## Network k8s
 
 ### Exemple de fichier de ClusterIP
