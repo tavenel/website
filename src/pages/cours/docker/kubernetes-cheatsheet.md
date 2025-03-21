@@ -768,6 +768,9 @@ metadata:
     nginx.ingress.kubernetes.io/limit-rpm: "100"
     nginx.ingress.kubernetes.io/limit-burst-multiplier: "5"
 
+    # Si SSL
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+
 spec:
  rules:
   # redirige http://api.example.com vers le service api-service
@@ -795,6 +798,31 @@ data:
   tls.crt: <base64 cert>
   tls.key: <base64 key>
 type: kubernetes.io/tls
+```
+
+### ClusterIssuer (Let's Encrypt)
+
+```sh
+# Pré-requis : Installation de cert-manager
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
+```
+
+```yml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: contact@example.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+      - http01:
+          ingress:
+            class: nginx
+
 ```
 
 ### Gateway
