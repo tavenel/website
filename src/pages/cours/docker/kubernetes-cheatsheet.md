@@ -634,6 +634,36 @@ spec:
   storageClassName: nfs-csi # StorageClass NFS définie précédemment
 ```
 
+### Exemple de StorageClass LocalPathProvisionner
+
+Permet d'utiliser dynamiquement le storage local des _Node_ avec des `PVC` utilisant une `storageClassName: local-path`.
+
+```sh
+# Installation du provisionner dans le cluster
+kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+
+# Test d'utilisation
+kubectl create -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/examples/pvc/pvc.yaml
+kubectl create -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/examples/pod/pod.yaml
+```
+
+Pour changer le type de `Volume` (`local` vs `hostPath`) à utiliser :
+
+- `PVC` :
+
+```yaml
+annotations:
+  volumeType: <local or hostPath>
+```
+
+- `StorageClass` :
+
+```yaml
+annotations:
+  defaultVolumeType: <local or hostPath>
+```
+
+
 ### Debug du storage
 
 Les erreurs liées aux volumes sont souvent enregistrées dans les événements Kubernetes :
