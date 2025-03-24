@@ -67,6 +67,8 @@ Attention, on demande bien d'installer un cluster **production-ready** ! Celui-c
 :::tip
 On pourra tester la compatibilité d'un noeud du cluster avec le _Node Conformance Test_. Remplacer `$CONFIG_DIR` par le chemin du manifeste du kubelet :  `/etc/kubernetes/kubelet`,  `/etc/default/kubelet`,  `/etc/systemd/system/kubelet.service`, … `$LOG_DIR` est le chemin où stocker les résultats du test.
 
+Pour plus d'information : <https://kubernetes.io/docs/setup/best-practices/node-conformance/>
+
 ```sh
 sudo docker run -it --rm \
   --privileged \
