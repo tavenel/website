@@ -20,17 +20,46 @@ Note 1 : il n'est pas demandé de gérer précisément la sécurité du cluster,
 
 Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant être déployée en production : `k8s` via `kubeadm`, `rke`, `k3s`, … On évitera donc les versions orientées développeur à déployer uniquement sur sa machine personnelle : ~`Docker Desktop`, `Minikube`, …~
 
-1. **Choix de l’environnement**
-   - Déploiement sur des machines virtuelles (VirtualBox, VMware).
-   - Déploiement sur le cloud (GCP, AWS, Azure, …). Oracle OCI propose une offre gratuite suffisante pour ce projet.
-2. **Installation des prérequis**
-   - Machine Linux
-   - Container runtime (`Docker` ou `containerd` ou autre)
-   - Outils Kubernetes : `kubeadm`, `kubelet`, `kubectl`, …
-3. **Mise en place du cluster**
-   - Initialisation du cluster avec `kubeadm` ou autre
-   - Ajout de noeuds workers
-   - Configuration du réseau avec un CNI (`Flannel`, `Calico`, …)
+#### Pré-requis
+
+Sur chaque `Node` :
+
+- Désactiver le swap : `swapoff -a` et `fstab`
+- Synchroniser les horloges
+- Charger les modules noyau (avec `modprobe`) suivants : `overlay` et `br_netfilter`
+- `sysctl -w net.netfilter.nf_conntrack_max=1000000`
+- `echo "net.netfilter.nf_conntrack_max=1000000" >> /etc/sysctl.conf`
+- Un runtime de conteneurs : `containerd`, `CRI-O`, `Docker`, …
+- `Kubeadm`, `Kubelet` et `Kubectl`
+
+Configuration réseau :
+
+- Tous les _Node_ :
+  - `kubelet` : 10250
+  - Si utilisation de `BGP` : 179
+- _Control Plane_ uniquement : 
+  - `kube-apiserver` : 6443
+	- `scheduler` : 10251
+	- `controller-manager` : 10252
+- Les _Node_ doivent pouvoir communiquer entre eux.
+
+:::tip
+On pourra tester la compatibilité d'un noeud du cluster avec le _Node Conformance Test_. Remplacer `$CONFIG_DIR` par le chemin du manifeste du kubelet :  `/etc/kubernetes/kubelet`,  `/etc/default/kubelet`,  `/etc/systemd/system/kubelet.service`, … `$LOG_DIR` est le chemin où stocker les résultats du test.
+
+Pour plus d'information : <https://kubernetes.io/docs/setup/best-practices/node-conformance/>
+
+```sh
+sudo docker run -it --rm \
+  --privileged \
+  --net=host \
+  -v /:/rootfs \
+  -v $CONFIG_DIR:$CONFIG_DIR \
+  -v $LOG_DIR:/var/result \
+  registry.k8s.io/node-test:0.2
+```
+:::
+
+#### Procédure
 
 :::tip
 Les installations de clusters Kubernetes sont assez hétérogènes en fonction de l'environnement cible, du _CNI_ utilisé et de la distribution choisie (spécificités `k3s`, …). On retrouve cependant un schéma assez standard :
@@ -54,6 +83,64 @@ On effectue donc en principe l'odre de déploiement suivant :
 	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
 :::
 
+Exemple de procédure d'installation sans haute disponibilité :
+
+```sh
+# Init du control plane
+kubeadm init --control-plane-endpoint "<IP_Bastion>:6443" --pod-network-cidr=192.168.0.0/16 --upload-certs --cri-socket unix:///run/containerd/containerd.sock
+# Ajout des Node Worker en récupérant la sortie de la commande précédente
+kubeadm join <IP_bastion>:6443 --token <TOKEN> --discovery-token-ca-cert-hash sha256:<HASH>
+# Puis retour au control plane
+
+# Config kubectl
+sudo cat /etc/kubernetes/admin.conf > ~/.kube/config
+
+# Le Node doit être NotReady
+kubectl get nodes -A
+NAME      STATUS     ROLES           AGE   VERSION
+cplane1   NotReady   control-plane   51s   v1.31.6
+
+# Installation du CNI (par exemple, Calico)
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+# Passage du Node en Ready
+kubectl get nodes -A
+cplane1   Ready    control-plane   113s   v1.31.6
+```
+
+Ou par fichier de configuration :
+
+```yaml
+# kubeadm-config.yaml
+kind: ClusterConfiguration
+apiVersion: kubeadm.k8s.io/v1beta4
+kubernetesVersion: v1.21.0
+---
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd
+[…]
+```
+
+```sh
+$ kubeadm init --config kubeadm-config.yaml
+```
+
+
+Avec H/A :
+
+```bash
+# pré-requis : Bastion => Installation d'un HAProxy entre les OS des Control Plane
+
+# Init du 1e master
+kubeadm init --control-plane-endpoint "<IP_bastion>:6443" --pod-network-cidr=192.168.0.0/16 --upload-cert
+# Join des autres control-plane
+kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>" --control-plane --certificate-key "<HASH_CERT>"
+# Join des workers
+kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>"
+# calico, …
+```
+
 :::warn
 Attention, on demande bien d'installer un cluster **production-ready** ! Celui-ci devra donc être en haute disponibilité (Load balancer devant l'API Server, …) et on réfléchira aux procédures d'administration, de sauvegarde, … On pourra cependant s'affranchir d'utiliser HTTPS, notamment pour la communication entre les différents composants (ce qui est bien sûr une obligation dans une "vraie" production).
 :::
@@ -64,28 +151,58 @@ Attention, on demande bien d'installer un cluster **production-ready** ! Celui-c
 - Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
 :::
 
-:::tip
-On pourra tester la compatibilité d'un noeud du cluster avec le _Node Conformance Test_. Remplacer `$CONFIG_DIR` par le chemin du manifeste du kubelet :  `/etc/kubernetes/kubelet`,  `/etc/default/kubelet`,  `/etc/systemd/system/kubelet.service`, … `$LOG_DIR` est le chemin où stocker les résultats du test.
-
-Pour plus d'information : <https://kubernetes.io/docs/setup/best-practices/node-conformance/>
-
-```sh
-sudo docker run -it --rm \
-  --privileged \
-  --net=host \
-  -v /:/rootfs \
-  -v $CONFIG_DIR:$CONFIG_DIR \
-  -v $LOG_DIR:/var/result \
-  registry.k8s.io/node-test:0.2
-```
-:::
+#### Exercice
 
 :::exo
-On testera la partie H/A du `control-plane` :
+Réaliser l'installation du cluster Kubernetes en H/A :
 
-- Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
-- Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
+1. **Choix de l’environnement**
+   - Déploiement sur des machines virtuelles (VirtualBox, VMware).
+   - Déploiement sur le cloud (GCP, AWS, Azure, …). Oracle OCI propose une offre gratuite suffisante pour ce projet.
+2. **Installation des prérequis**
+   - Machine Linux
+   - Container runtime (`Docker` ou `containerd` ou autre)
+   - Outils Kubernetes : `kubeadm`, `kubelet`, `kubectl`, …
+3. **Mise en place du cluster**
+   - Initialisation du cluster avec `kubeadm` ou autre
+   - Ajout de noeuds workers
+   - Configuration du réseau avec un CNI (`Flannel`, `Calico`, …)
+4. On **testera** la partie H/A du `control-plane` :
+   - Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
+   - Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
 :::
+
+#### Administration
+
+:::warn
+Administrer un cluster Kubernetes ne se limite pas à son installation : il faut gérer les mises à jour, les maintenances, la sécurité, l'observabilité du cluster, … Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/administration/>
+:::
+
+##### Upgrade
+
+```bash
+apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.31.x-y.y' && apt-mark hold kubeadm
+# Upgrade 1e control plane
+kubeadm upgrade plan
+kubeadm upgrade apply vX.Y.Z
+systemctl restart kubelet
+# Upgrade autres control plane
+kubeadm upgrade apply
+# Upgrade workers
+kubectl drain "<node-name>" --ignore-daemonsets # retire tous les Pods
+apt-get update && apt-get install -y kubelet kubectl && apt-mark hold kubelet kubectl
+systemctl restart kubelet
+kubectl uncordon "<node-name>" # fin du drainage
+```
+
+##### Renouvellement des certificats
+
+```bash
+kubectl get csr
+kubeadm alpha certs renew all
+```
+
+
 
 ### Phase 2 : Déploiement d’une Application
 
