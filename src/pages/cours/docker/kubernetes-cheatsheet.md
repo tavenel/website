@@ -812,6 +812,38 @@ spec:
       nodePort: 30007 # Port sur lequel le service sera accessible depuis l'extérieur du cluster (facultatif)
 ```
 
+#### MetalLB
+
+Un `LoadBalancer` recquiert une implémentation de LB, souvent fournie par un provider Cloud. En l'absence de LB (bare-metal, …) on pourra installer `MetalLB` :
+
+```sh
+# Pré-requis : installation de MetalLB
+helm repo add metallb https://metallb.github.io/metallb
+helm install metallb metallb/metallb
+# Ou :
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.11/config/manifests/metallb-native.yaml
+```
+
+```yaml
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool # Pool d'adresses utilisables par le LB
+metadata:
+  name: first-pool
+  # namespace: metallb-system # ! Dans le même namespace que metallb !
+spec:
+  addresses:
+    - 172.18.0.220-172.18.0.250 # définir des adresses utilisables
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement # advertissement du pool d'adresses en L2 (le plus simple)
+metadata:
+  name: example
+  # namespace: metallb-system # ! Dans le même namespace que metallb !
+spec:
+  ipAddressPools:
+    - first-pool
+```
+
 ### Exemple de fichier ExternalName
 
 ```yaml
@@ -843,8 +875,12 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm install my-ingress ingress-nginx/ingress-nginx
 # Ou directement :
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
-# Voir aussi : https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
+
+:::link
+- Voir aussi : <https://kubernetes.github.io/ingress-nginx/deploy/#quick-start>
+- Exemples de déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
+:::
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -869,7 +905,8 @@ metadata:
     # cert-manager.io/issuer: "letsencrypt-prod"
 
 spec:
- tls:
+ ingressClassName: nginx
+ tls: # seulement si TLS sur l'ingress
     - secretName: certif-test-cluster
       hosts:
         - test.cluster
@@ -885,10 +922,6 @@ spec:
               name: api-service
               port: 
                 number: 8080
- tls: # seulement si TLS sur l'ingress
-   - hosts:
-     - www.example.com
-     secretName: example-tls
 ---
 # Si TLS, secret associé (auto-généré si cluster-issuer dans les annotation de l'Ingress)
 apiVersion: v1
@@ -1382,6 +1415,52 @@ spec:
 ## Autres commandes
 
 Pour plus d’information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
+
+---
+
+# Kubeseal
+
+`Kubeseal` : outil transformant un `Secret` Kubernetes en `SealedSecret` chiffré (clé privée dans le cluster, clé publique pour générer les secrets, contrôleur `SealedSecrets`).
+Seul le cluster peut déchiffrer un `SealedSecret`, il est donc possible de laisser les _Secret_ chiffrés dans _Git_.
+
+- `--scope` : gère où un _Sealed Secret_ peut être déchiffré dans le cluster :
+  - `strict` : secret non modifiable
+  - `namespace-wide` : peut être renommé, limité à un namespace
+  - `cluster-wide`
+
+```sh
+# Installation de SealedSecrets
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install sealed-secrets bitnami/sealed-secrets --namespace kube-system
+```
+
+Pour chiffrer un secret `mysecret.yaml` :
+
+```sh
+# Si accès direct au cluster, on chiffre directement le secret :
+kubeseal --controller-name=sealed-secrets --controller-namespace=kube-system --format yaml < mysecret.yaml > mysealedsecret.yaml
+
+# Sinon, récupération de la clé publique avant chiffrement du secret avec cette clef
+kubeseal --fetch-cert --controller-name=sealed-secrets --controller-namespace=kube-system > mycert.pem
+kubeseal --cert mycert.pem --controller-name=sealed-secrets --controller-namespace=kube-system --format yaml < mysecret.yaml > mysealedsecret.yaml
+```
+
+Le déchiffrage s'utilise comme un Secret classique :
+
+```sh
+kubectl get secret secret-name -o yaml
+```
+
+Import / Export de clés :
+
+```sh
+kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > sealed-secret-key.yaml
+kubectl apply -n kube-system -f sealed-secret-key.yaml
+```
+
+:::warn
+Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas être modifié directement dans le cluster. Toute modification requiert un chiffrement avec kubeseal avant d’être appliquée. Attention : Si une application utilise ce secret, elle ne recevra pas immédiatement la nouvelle valeur.
+:::
 
 ---
 
