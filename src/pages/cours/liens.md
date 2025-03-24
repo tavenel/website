@@ -105,6 +105,7 @@ Quelques références utiles en informatique.
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
 - <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
 - [NAT vs BRIDGE](https://blog.stephane-robert.info/docs/homelab/bridge-nat/)
+- <https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing> : erreurs typiques en programmation & déploiement de systèmes distribués
 
 ## Exemples de projets
 
