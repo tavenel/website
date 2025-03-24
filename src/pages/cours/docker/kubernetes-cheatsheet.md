@@ -779,6 +779,9 @@ Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concept
 # Pré-requis : installation de l'Ingress Controller Nginx
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm install my-ingress ingress-nginx/ingress-nginx
+# Ou directement :
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+# Voir aussi : https://kubernetes.github.io/ingress-nginx/deploy/#quick-start
 ```
 
 ```yaml
@@ -799,10 +802,15 @@ metadata:
     nginx.ingress.kubernetes.io/limit-rpm: "100"
     nginx.ingress.kubernetes.io/limit-burst-multiplier: "5"
 
-    # Si SSL
+    # Si SSL, Issuer ou ClusterIssuer. Auto-configure le secret et le certificat
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # cert-manager.io/issuer: "letsencrypt-prod"
 
 spec:
+ tls:
+    - secretName: certif-test-cluster
+      hosts:
+        - test.cluster
  rules:
   # redirige http://api.example.com vers le service api-service
   - host: api.example.com
@@ -820,7 +828,7 @@ spec:
      - www.example.com
      secretName: example-tls
 ---
-# Si TLS, secret associé
+# Si TLS, secret associé (auto-généré si cluster-issuer dans les annotation de l'Ingress)
 apiVersion: v1
 kind: Secret
 metadata:
@@ -831,29 +839,40 @@ data:
 type: kubernetes.io/tls
 ```
 
-### ClusterIssuer (Let's Encrypt)
+### TLS : ClusterIssuer (Let's Encrypt)
 
 ```sh
 # Pré-requis : Installation de cert-manager
+helm repo add jetstack https://charts.jetstack.io --force-update
+helm install cert-manager jetstack/cert-manager \
+  --namespace cert-manager --create-namespace \
+  --version v1.17.0 \
+  --set crds.enabled=true
+# Ou :
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
 ```
 
-```yml
+:::link
+- Tutoriel : <https://cert-manager.io/docs/tutorials/acme/nginx-ingress/>
+- Débug : <https://cert-manager.io/docs/troubleshooting/>
+:::
+
+```yaml
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: contact@example.com
+    server: https://acme-staging-v02.api.letsencrypt.org/directory # à garder - c'est le véritable serveur Let's Encrypt
+    # server: https://acme-v02.api.letsencrypt.org/directory # serveur `prod` : https://letsencrypt.org/docs/rate-limits/
+    email: contact@example.com # à remplacer
     privateKeySecretRef:
-      name: letsencrypt-prod
+      name: letsencrypt-prod # où stocker le secret
     solvers:
       - http01:
           ingress:
             class: nginx
-
 ```
 
 ### Gateway
@@ -1221,6 +1240,10 @@ spec:
 
 Permet de contrôler le trafic réseau entrant (`Ingress`) ou sortant (`Egress`) entre les pods.
 
+:::link
+Pour des exemples, voir : <https://github.com/ahmetb/kubernetes-network-policy-recipes>
+:::
+
 ### Exemple 1
 
 Bloquer tout le traffic par défaut :
@@ -1263,7 +1286,7 @@ spec:
 ```
 
 :::warn
-Le CNI doit supporter la `NetworkPolicy` : ce n'est pas le cas de Flannel ! La ressource est ajoutée mais sans effet…
+Le CNI doit supporter la `NetworkPolicy` : ce n'est pas le cas de `Flannel` ! La ressource est ajoutée mais sans effet…
 :::
 
 ## SecurityContext

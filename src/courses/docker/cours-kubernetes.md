@@ -513,6 +513,15 @@ layout: section
 
 ---
 
+## cert-manager (TLS)
+
+- CRD à ajouter au Cluster pour générer et signer des `Certificat`
+- Stocke la `key` et le `crt` dans un `Secret`
+  - Réutilisables dans `Ingress`, …
+- Utilise des `Issuer` (namespace-limited) ou des `ClusterIssuer` (cluster-wide)
+
+---
+
 ## Service Mesh
 
 - Ajoute les services d'infrastructure communs
@@ -968,6 +977,8 @@ layout: two-cols
 - Exemples de projets : voir la [page des liens](/cours/liens#kubernetes)
 - <https://learnk8s.io/production-best-practices/>
 - [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
+- Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources>
+- Exemple de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
 
 ---
 
