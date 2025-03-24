@@ -908,6 +908,13 @@ layout: section
 
 ---
 
+# Kubeseal
+
+- Transforme un `Secret` Kubernetes en `SealedSecret` chiffré (clé privée dans le cluster, clé publique pour générer les secrets, contrôleur `SealedSecrets`).
+- Seul le cluster peut déchiffrer un `SealedSecret`
+- Il devient possible de laisser les _Secret_ chiffrés dans _Git_.
+
+---
 # Certifications
 
 - Kubernetes and Cloud Native Associate (KCNA)
