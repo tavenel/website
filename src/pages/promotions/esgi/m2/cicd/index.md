@@ -58,6 +58,9 @@ Module de 18H
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins](/cours/jenkins/tp-jenkins-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
+- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
+- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
+- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
 
 ### 📌 Projet intégration et déploiement continus d'une application de groupes de travail
 

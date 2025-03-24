@@ -66,6 +66,9 @@ Module de 10H
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins](/cours/jenkins/tp-jenkins-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
+- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
+- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
+- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
 
 ### 📌 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
 
