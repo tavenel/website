@@ -151,6 +151,10 @@ Attention, on demande bien d'installer un cluster **production-ready** ! Celui-c
 - Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
 :::
 
+:::tip
+Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redimensionner dynamiquement un cluster pendant son cycle de vie : voir ces slides sur le [Sizing de Cluster et le ClusterAutoscaler de Nodes](https://2021-05-enix.container.training/4.yml.html#248) et [Scaling with custom metrics](https://2021-05-enix.container.training/4.yml.html#334).
+:::
+
 #### Exercice
 
 :::exo
