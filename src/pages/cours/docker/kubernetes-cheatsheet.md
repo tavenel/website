@@ -544,6 +544,68 @@ Voir aussi :
 - <https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/>
 - <https://medium.com/@prateek.malhotra004/demystifying-taint-and-toleration-in-kubernetes-controlling-the-pod-placement-with-precision-d4549c411c67>
 
+## LimitRange & ResourceQuota
+
+Des `LimitRange` peuvent gérer des limitations par défaut par `Namespace`, appliquées à la création d'un `Pod` (elles sont cumulatives) :
+
+```yaml
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limitrange-example
+spec:
+  limits:
+  - type: Container # seul type pour l'instant
+    min:
+      cpu: "100m"
+    max:
+      cpu: "2000m"
+      memory: "1Gi"
+    default:
+      cpu: "500m"
+      memory: "250Mi"
+    defaultRequest:
+      cpu: "500m"
+```
+
+Des `ResourceQuota` peuvent aussi limiter les ressources par défaut dans un `Namespace` (le plus strict s'applique) :
+
+```yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: namespace-quota-requests-limits
+spec:
+  hard: # ~soft quota does not exist~
+    requests.cpu: "10"
+    requests.memory: 10Gi
+    limits.cpu: "20"
+    limits.memory: 20Gi
+```
+
+Un `ResourceQuota` peut aussi limiter le nombre d'objets pouvant être créés dans le Namespace :
+
+```yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: namespace-quota-for-objects
+spec:
+  hard: # ~soft quota does not exist~
+    pods: 100
+    services: 10
+    secrets: 10
+    configmaps: 10
+    persistentvolumeclaims: 20
+    services.nodeports: 0
+    services.loadbalancers: 0
+    count/roles.rbac.authorization.k8s.io: 10
+```
+
+```sh
+kubectl describe resourcequota my-resource-quota
+```
+
 ## Stockage k8s
 
 ### Exemple de montage d'un volume hostPath
