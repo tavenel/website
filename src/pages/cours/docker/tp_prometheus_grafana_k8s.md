@@ -31,6 +31,14 @@ helm upgrade --install prometheus prometheus-community/kube-prometheus-stack --n
 
 Cela installera `Prometheus`, `Alertmanager`, les `Node Exporters` (pour les métriques des nœuds), ainsi que `Grafana` dans le namespace monitoring.
 
+En cas de déploiement manuel, voici la procédure à suivre :
+
+- Exécuter le serveur Prometheus dans un `Pod` (en utilisant un `Deployment` pour assurer son bon fonctionnement continu)
+- Exposer l'interface web de Prometheus (par exemple avec un `NodePort`)
+- Exécuter le _Node Exporter_ sur chaque `Node` (via un `DaemonSet`)
+- Configurer un `ServiceAccount` pour permettre à Prometheus d'interroger l'API Kubernetes
+- Configurer le serveur Prometheus (en stockant la configuration dans un `ConfigMap` pour faciliter les mises à jour)
+
 ### Vérifier l'installation de Prometheus
 
 Pour vérifier que tout est correctement installé, vous pouvez utiliser la commande suivante :
@@ -82,8 +90,9 @@ Prometheus collecte les métriques des `Kubelets`, des `Node Exporters`, des `AP
 
 ```yaml
 annotations:
-  prometheus.io/scrape: "true"
-  prometheus.io/port: "8080"
+  prometheus.io/scrape: "true" # pour activer la collecte
+  prometheus.io/port: "9090" # pour indiquer le port utilisé
+  prometheus.io/path: /metrics # pour préciser l'URI (`/metrics` par défaut)
 ```
 
 ## Configurer des Dashboards dans Grafana
@@ -102,10 +111,32 @@ Vous pouvez aussi personnaliser les graphiques pour visualiser les métriques de
 
 Voici quelques exemples de métriques que vous pouvez surveiller avec `Prometheus` et visualiser avec `Grafana` :
 
-- Métriques des pods : Utilisation CPU, utilisation de la mémoire, redémarrages, statut de readiness.
-- Métriques des nœuds : Utilisation des ressources (CPU, mémoire, stockage), saturation des nœuds, nombre de pods par nœud.
+### Métriques _Node_
+
+- Utilisation du CPU, de la RAM et du disque sur l’ensemble du _Node_
+- Nombre total de processus en cours d'exécution et leurs états
+- Nombre de fichiers ouverts, sockets, et leurs états
+- Activité d’I/O (disque, réseau), par opération ou volume
+- Informations physiques/matérielles (si applicable) : température, vitesse des ventilateurs...
 - API Server : Latence des requêtes, nombre de requêtes par seconde.
-- Métriques d'application : Exposez des métriques personnalisées via le client `Prometheus` (`Go`, `Python`, `Java`) dans votre application.
+
+### Métriques _Conteneurs_
+
+- Similaires aux métriques des _Node_
+- Différences pour la RAM :
+  - Distinction entre mémoire active et inactive
+  - Une partie de la mémoire est partagée entre les conteneurs et gérée spécifiquement
+- Suivi de l’activité d’I/O plus complexe :
+  - Les écritures asynchrones peuvent entraîner des "charges" différées
+  - Certains chargements en mémoire (page-ins) sont également partagés entre les conteneurs
+- Voir : <http://jpetazzo.github.io/2013/10/08/docker-containers-metrics/>
+
+### Métriques _applicatives_
+
+- Métriques personnalisées liées à l’application et aux besoins métiers
+- Performance système : latence des requêtes, taux d’erreur...
+- Informations sur les volumes : nombre de lignes en base de données, taille des files de messages...
+- Données métier : stock disponible, articles vendus, chiffre d’affaires...
 
 ## Configurer des Alertes
 
