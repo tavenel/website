@@ -54,8 +54,11 @@ created: 2024-10-17
     - _Docker Scout_ (inclus dans _Docker desktop_) : voir la [cheatsheet Docker](/cours/docker/docker-cheatsheet)
     - <https://github.com/docker/docker-bench-security>
     - <https://github.com/aquasecurity/trivy> (inclus k8s)
-    - `dive`
     - <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
+  - Analyse des images Docker :
+    - `dive` : analyse poussée des layers
+		- [sou](https://github.com/knqyf263/sou) : analyse simple des layers
+    - `Container Structure Test` : tests sur images Docker produites. [tuto](https://blog.stephane-robert.info/docs/conteneurs/outils/container-struct-test/)
 - 🚢 `podman` : idem Docker sans agent, supporte Docker et pods k8s
 - `cri-o` : container runtime k8s
 
@@ -122,8 +125,9 @@ created: 2024-10-17
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
-	- <https://external-secrets.io/> : injection de secrets
+	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
+  - `polaris` : détection de problèmes de sécurité dans un cluster
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
@@ -139,7 +143,9 @@ created: 2024-10-17
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - 🪫 Consommation d'énergie :
   - `kepler` : monitor Pod energy consumption
-	- `kube-green` : k8s operator for energy-saving actions 
+	- `kube-green` : k8s operator for energy-saving actions. [tuto](https://blog.octo.com/arreter-ses-environnements-avec-kubernetes)
+  - [Keda](https://keda.sh/) : Event-driven autoscaling
+  - `sablier` scaling depuis requêtes sur _Ingress_
 	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
 	- <https://karpenter.sh/> : démarrage / arrêt automatique de noeuds sur le cluster
 - 🔄 Upgrade :
@@ -175,6 +181,7 @@ created: 2024-10-17
 - 💲 `Infracost` : track coût plateformes IaC (`Terraform`, …)
 - </> `Typer` : librairie Python pour écrire facilement une CLI
 - <https://github.com/Textualize/rich> : Rich library for text-based GUI and advanced text formatting in Python
+- [Sake](https://github.com/alajmo/sake) : exécution de tâches à distance (SSH, Docker), micro-ansible
 
 ### 🛠️ Build tools et dépendances
 
@@ -236,6 +243,7 @@ created: 2024-10-17
 
 - monitoring :
   - `prometheus` (push par `node exporter`, puissant mais lourd) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/prometheus/)
+    - Liste d'exporters disponibles : <https://prometheus.io/docs/instrumenting/exporters/>
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
 	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
   - `zabbix` (plutôt sysadmin que devops)
@@ -360,6 +368,7 @@ created: 2024-10-17
 	- <https://pollinations.ai/>
 	- <https://docs.sillytavern.app/>
 - Database :
+  - `Postgresql` : `replication manager` pour failover / réplication
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
 	- Backend dans 1 seul fichier : `PocketBase`, <https://manifest.build/>
@@ -375,7 +384,7 @@ created: 2024-10-17
   - `Vue` : easy, trending
   - <https://alpinejs.dev/> : minimal, very easy
 	- <https://astro.build/> : framework statique / SSR multi-composants (`React`, …). 0 JS par défaut
-- Backend : `appwrite`, `firebase`
+- Backend : `appwrite`, `firebase`, `nitric`
 - animations :
   - Animate text like a typewritter : <https://github.com/mattboldt/typed.js>
   - <https://github.com/julianshapiro/velocity> : speed & performance
@@ -422,6 +431,8 @@ created: 2024-10-17
   - <https://github.com/asciimoo/wuzz>
   - <https://github.com/lucaspickering/slumber>
   - <https://github.com/reorx/httpstat> : `cURL` statistics
+  - <https://github.com/rs/curlie> : `curl` frontend
+  - <https://github.com/ducaale/xh> : focus performance
 - bat
 - émulateur de terminal : 
   - [alacritty][alacritty] : rapide (utilise le GPU)
@@ -430,6 +441,7 @@ created: 2024-10-17
 - Multiplexeurs de terminaux :
   - `zellij` : facile pour débuter : `bash <(curl -L zellij.dev/launch)`
   - [tmux][tmux] : le plus populaire
+  - <https://mosh.org> : terminal remote (similaire SSH) avec support roaming, déconnexion, …
 - shell :
 	- `bash`, disponible partout (avec [Oh My Bash][oh-my-bash])
   - `zsh`, plus puissant avec [Oh My ZSH][oh-my-zsh] (voir aussi [awesome-zsh][awesome-zsh])
@@ -459,6 +471,8 @@ created: 2024-10-17
 	- [glow][glow] : lecteur markdown
 	- [lazygit][lazygit]
 	- `lazysql`
+	- [systemctl-tui](https://github.com/rgwood/systemctl-tui)
+	- [pipeform](https://github.com/magodo/pipeform) : TUI pour Terraform
 	- `ddgr` : recherche Web
 	- <https://aider.chat> : AI pair programming
   - `cmus` // `mocp` => audio player
