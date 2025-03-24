@@ -898,6 +898,17 @@ layout: section
 - DevSecOps
 
 ---
+
+# Certifications
+
+- Kubernetes and Cloud Native Associate (KCNA)
+- Certified Kubernetes Application Developer (CKAD)
+- Certified Kubernetes Administrator (CKA)
+- Certified Kubernetes Security Specialist (CKS)
+
+Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a)
+
+---
 layout: two-cols
 ---
 
@@ -955,6 +966,8 @@ layout: two-cols
 - [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
 - [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
 - Exemples de projets : voir la [page des liens](/cours/liens#kubernetes)
+- <https://learnk8s.io/production-best-practices/>
+- [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
 
 ---
 
