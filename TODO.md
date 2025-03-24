@@ -1,10 +1,11 @@
 ## P1
 
+- W3C
+
 - slides => <bug> fullscreen style fix CSS</bug>
 
 - slides KO from sub-courses (Linux index ~> .astro, lpic, …)
 
-Merge slides => RM ?
 ```css
 .chapter .slide-mode.slide-elt:first-child {
 /* Section */
@@ -156,6 +157,8 @@ _Tom Avenel_
 
 - move HTML emojis to web icons
 
+- <https://adamsimpson.net/writing/openring>
+
 ---
 
 ```css
@@ -240,6 +243,22 @@ body.dark {
   mask-size: 100% 100%;
 }
 ```
+
+---
+
+- plantuml 
+
+```
+!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+
+!includeurl KubernetesPuml/kubernetes_Context.puml
+!includeurl KubernetesPuml/kubernetes_Simplified.puml
+
+!includeurl KubernetesPuml/OSS/KubernetesApi.puml
+!includeurl KubernetesPuml/OSS/KubernetesIng.puml
+!includeurl KubernetesPuml/OSS/KubernetesPod.puml
+```
+
 
 ---
 
