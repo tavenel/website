@@ -96,7 +96,7 @@ created: 2024-10-17
 #### 󱃾 Kubernetes-specific
 
 - 📦 Build d'images => <https://github.com/GoogleContainerTools/kaniko>
-- 🔎 linter (vérification fichiers) => `kubeconform`
+- 🔎 linter (vérification fichiers) => `kubeconform`, `kube-score`
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
 	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
 - 📦 package manager (sur-couche) => `helm`
@@ -125,6 +125,7 @@ created: 2024-10-17
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
+  - <https://kamus.soluto.io/> : 0-trust de secrets Git (connus seulement par l'application)
 	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
   - `polaris` : détection de problèmes de sécurité dans un cluster
@@ -267,7 +268,7 @@ created: 2024-10-17
 
 ### 🤫 Gestion des secrets
 
-- `vault` (HashiCorp), `OpenBAO` (fork open-source)
+- `vault` (HashiCorp) : [tuto](https://blog.stephane-robert.info/docs/securiser/secrets/hashicorp-vault/), `OpenBAO` (fork open-source)
 - `Sops` (Mozilla, directement dans le fichier)
 - `novops` (en mémoire)
 
@@ -485,6 +486,7 @@ created: 2024-10-17
 - `column -s ',' -t` => better CSV output
 - `bsdtar` => archive management on Linux, includes `rar` format
 - `ntfy send ...` => send notification (can use many backends)
+- Environnements de développement sous Kubernetes : <https://skaffold.dev/>, <https://tilt.dev/>
 
 ### Outils poste de travail DevOps
 
