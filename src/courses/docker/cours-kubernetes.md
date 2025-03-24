@@ -933,6 +933,32 @@ layout: section
 Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a)
 
 ---
+
+# Bonnes pratiques
+
+---
+
+## Sécurité des Secrets
+
+- ~**Ne pas stocker de `Secret` en clair**~ dans des fichiers YAML : Utiliser `Kubeseal` pour les chiffrer.
+- Limiter l'accès aux `Secret` avec **Role-Based Access Control (RBAC)** : Par défaut, accès à tous les Secrets du Namespace.
+- Activer le **chiffrement des Secrets dans `etcd`** : par défaut les Secrets sont en clair. Attention à l'impact sur les performances.
+- Utiliser des **solutions de gestion externe des Secrets** : _HashiCorp Vault_, _AWS Secrets Manager_, _Azure Key Vault_, …
+
+---
+
+## Limitation des ressources
+
+- Dans chaque `Namespace`, créer un `LimitRange` :
+  - `defaultRequest.cpu` et `defaultLimit.cpu` petits (`100m`, …)
+  - `defaultRequest.memory` et `defaultLimit.memory` en lien avec le workflow standard :
+    - `Java`, `Ruby` : `1G`
+    - `Go`, `Python`, `PHP`, `Node` : `250M`
+- Dans chaque `Namespace`, créer un `ResourceQuota` :
+  - `limits.cpu` et `limits.memory` élevés (1/2 cluster, …)
+  - limite élevée d'objets (seulement si un contrôleur s'emballe)
+- Voir [ces slides sur les limitations de ressources](https://2021-05-enix.container.training/4.yml.html#190)
+
 ---
 layout: two-cols
 ---
@@ -995,6 +1021,8 @@ layout: two-cols
 - [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
 - Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources>
 - Exemple de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
+- [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
+- Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
 
 ---
 
