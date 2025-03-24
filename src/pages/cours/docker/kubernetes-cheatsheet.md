@@ -219,6 +219,7 @@ Voir aussi :
 
 - La documentation : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
 - Une image Docker utile pour du debug : <https://github.com/jpetazzo/shpod>
+- Une autre image utile : <https://github.com/kubernetes-up-and-running/kuard>
 :::
 
 ### kubectl attach : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
