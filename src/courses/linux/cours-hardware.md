@@ -278,3 +278,12 @@ Voir le cours pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
 
 ---
 
+# Commandes utiles pour le matériel
+
+- `lshw`, `lsusb`, `lspci`, `lscpu`, `lsblk`, `lsscsi` : informations générales hardware, usb, PCI port, CPU, block devices (partitions disques durs), disques physiques
+- `lsmod` : liste les modules noyau chargés
+- ` dmidecode -t …` : informations sur le matériel physique (nombre de slots RAM, …)
+- `inxi`, `neofetch`, `fastfetch` (non-POSIX) : résumés d'informations sur le système
+
+---
+
