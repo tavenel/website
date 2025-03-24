@@ -160,6 +160,10 @@ Et des **rustines** partout dans le code… 🙈
 
 ---
 
+> Le produit en production est la compréhension du problème par le développeur.
+
+---
+
 ![Ce que le client voulait vraiment](@assets/gestion-projet/balancoire.jpg)
 
 <div class="caption">Ce que le client voulait vraiment</div>
@@ -173,6 +177,7 @@ Et des **rustines** partout dans le code… 🙈
 - Facile à **tester** 🧪
 - **Cohérent** et **facile** à comprendre 💭
 - **Découplé** ⬅️ ➡️
+- Résilient au **changement de technologie**
 
 ---
 
@@ -371,6 +376,10 @@ layout: section
 
 @endditaa
 ```
+
+:::tip
+Un _Domaine_ peut englober plusieurs _Bounded Context_.
+:::
 
 ---
 layout: section
