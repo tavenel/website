@@ -915,6 +915,14 @@ layout: section
 - Il devient possible de laisser les _Secret_ chiffrés dans _Git_.
 
 ---
+
+# Déploiements continus
+
+- Déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
+- Utiliser un outil comme <https://github.com/weaveworks/flagger> pour des déploiements plus poussés
+
+---
+
 # Certifications
 
 - Kubernetes and Cloud Native Associate (KCNA)
@@ -924,6 +932,7 @@ layout: section
 
 Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a)
 
+---
 ---
 layout: two-cols
 ---
