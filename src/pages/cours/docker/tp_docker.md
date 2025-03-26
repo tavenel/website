@@ -488,6 +488,17 @@ docker run --name lazydocker -it -v /var/run/docker.sock:/var/run/docker.sock la
 docker run -it -v /var/run/docker.sock:/var/run/docker.sock kakshipth/gomanagedocker:latest
 ```
 
+:::tip
+Un autre outil populaire pour gérer des conteneurs est <https://www.portainer.io/> qui possède une interface Web :
+
+```sh
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:lts
+```
+
+Puis se connecter à l'interface Web : <https://localhost:9443>
+:::
+
 ## Analyse d'image
 
 L'outil _Dive_ permet d'analyser finement les _layers_ d'une image Docker. En montant la _socket_ Docker comme précédemment, utiliser l'image `wagoodman/dive` pour analyser une des images que vous avez créées.
