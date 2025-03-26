@@ -93,6 +93,7 @@ Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1)
 - [Migrer une installation Linux](https://www.antoinefi.net/index.php/2025/01/29/migrer-une-installation-linux/)
 - Livre : Unix and Linux system administration handbook, 5th edition. Evi Nemeth, Garth Snyder, Trent R.Hein, Ben Whaley, Dan Mackin
 - [Créer une distribution "Live" (qui reste en mémoire) - tuto complet, reprend les principes de base, du boot à un système minimal](https://zestedesavoir.com/tutoriels/268/creer-son-premier-rim-linux/)
+- [20 years of Linux on the Desktop](https://ploum.net/2024-10-20-20years-linux-desktop-part1.html)
 
 ### Liens VIM
 

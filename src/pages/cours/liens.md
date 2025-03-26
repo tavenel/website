@@ -107,6 +107,7 @@ Quelques références utiles en informatique.
 - [NAT vs BRIDGE](https://blog.stephane-robert.info/docs/homelab/bridge-nat/)
 - <https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing> : erreurs typiques en programmation & déploiement de systèmes distribués
 - <https://nip.io/> : DNS résolvant toute IP vers un hostname : `10.0.0.1.nip.io` résoud vers `10.0.0.1`
+- Cas d'étude d'UX Design : <https://growth.design/>
 
 ## Exemples de projets
 

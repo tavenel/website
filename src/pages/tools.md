@@ -95,6 +95,7 @@ created: 2024-10-17
 
 #### 󱃾 Kubernetes-specific
 
+- Liste d'opérateurs : <https://operatorhub.io/>
 - 📦 Build d'images => <https://github.com/GoogleContainerTools/kaniko>
 - 🔎 linter (vérification fichiers) => `kubeconform`, `kube-score`
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
@@ -137,6 +138,7 @@ created: 2024-10-17
 	- <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
 	- <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
 	- <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
+  - <https://www.tigera.io/> : Unified Network Security & Observability for Kubernetes
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argocd`
@@ -154,7 +156,7 @@ created: 2024-10-17
   - `Keel` (avec triggers)
   - `Pluto` : gestion des dépréciations d'API : [tuto](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/pluto/)
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
-- Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html)
+- Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html), <https://submariner.io/>
 
 ### 💾 Backups
 
