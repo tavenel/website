@@ -1,6 +1,6 @@
 ---
 title: Gestion de services avec docker compose
-date: 2023 / 2024
+date: 2024 / 2025
 ---
 
 Nous allons maintenant utiliser l’outil `docker compose` pour créer, configurer et démarrer une stack `WordPress®` complète contenant un conteneur applicatif `WordPress®` et un conteneur `MySQL®`.
@@ -80,6 +80,21 @@ volumes:
 Utiliser la CLI `docker compose` pour démarrer la stack que nous venons de définir (voir la Cheatsheet en fin de document).
 
 La CLI `docker compose` est basée sur la CLI `docker` pour être au maximum compatible avec elle.
+
+## Scaling de services
+
+Récupérer l'excellent support de formation de _Jérôme Petazzo_ : 
+
+```sh
+git clone https://github.com/jpetazzo/container.training.git
+```
+
+Dans ce dépôt git se trouve le programme `dockercoins` : ce programme simule un miner de _docker coins_ qui est proportionnel au nombre de _workers_ déployés.
+
+:::exo
+1. Utiliser la commande `docker compose up` pour démarrer la stack applicative. Inspecter le fichier `docker-compose.yml` pour trouver comment accéder à l'interface Web du projet sur votre machine.
+2. En utilisant une commande `docker compose`, réaliser un _scaling_ des `workers`. Observer dans la différence dans l'interface Web.
+:::
 
 ## Dockeriser une application
 
