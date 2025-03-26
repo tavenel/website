@@ -61,7 +61,6 @@ sudo docker run -it --rm \
 
 #### Procédure
 
-:::tip
 Les installations de clusters Kubernetes sont assez hétérogènes en fonction de l'environnement cible, du _CNI_ utilisé et de la distribution choisie (spécificités `k3s`, …). On retrouve cependant un schéma assez standard :
 
 - Les noeuds _worker_ (noeuds qui exécutent les applications) n'ont besoin que d'un `kubelet` et d'un `kube-proxy` (le `kube-proxy` est optionnel dans de rares cas, par exemple si l'on utilise `Cilium` ou un `kube-router`). Les `kubelet` n'ont finalement besoin que d'un enregistrement auprès de l'`API Server`. La configuration du `kube-proxy` est en général assez simple car le _CNI_ s'occupe des couches basses (à vérifier auprès du _CNI_).
@@ -81,9 +80,8 @@ On effectue donc en principe l'odre de déploiement suivant :
   - mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
 - Création des workers :
 	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
-:::
 
-Exemple de procédure d'installation sans haute disponibilité :
+##### Exemple de procédure d'installation sans haute disponibilité
 
 ```sh
 # Init du control plane
@@ -127,7 +125,7 @@ $ kubeadm init --config kubeadm-config.yaml
 ```
 
 
-Avec H/A :
+##### Avec H/A
 
 ```bash
 # pré-requis : Bastion => Installation d'un HAProxy entre les OS des Control Plane
@@ -141,6 +139,49 @@ kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-has
 # calico, …
 ```
 
+#### API Server H/A
+
+Chaque _Node_ : `kubelet`, `kube-proxy`, `kube-router`, … doivent se lier à l'`API Server` **dont l'accès doit être H/A**, avec plusieurs possibilités :
+
+1. **Load Balancer externe** devant les _API Server_
+  - _Kubelet_ pointe sur ce _load balancer_
+  - si infra Cloud, souvent géré par le Cloud Provider
+2. **Load Balancer local** : `Nginx`, `HAProxy`, … sur chaque _Node_ pour atteindre les _API Server_
+  - _Kubelet_ pointe sur `localhost`
+3. **round-robin DNS** pour tous les _API Server_ (officiellement non supporté)
+4. H/A API endpoint dans un cluster managé, virtual IP, tunnel _Node_ <-> _API Server_ (`k3s`), …
+
+#### Pods statiques
+
+:::tip
+Déployer le _Control Plane_ dans des _Pods_ permet de les gérer avec toute la puissance de Kubernetes… mais recquiert un cluster opérationnel !
+Pour contourner cette limite, Kubernetes permet de déployer des _Pods_ directement dans le _Kubelet_ (sans passer par l'_API Server_) en utilisant des _manifest_. Le _Kubelet_ réconcilie les _Pods_ en cas de changement(s) dans le _manifest_. Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#227) pour plus d'information.
+:::
+
+#### Sizing
+
+:::tip
+Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redimensionner dynamiquement un cluster pendant son cycle de vie : voir ces slides sur le [Sizing de Cluster et le ClusterAutoscaler de Nodes](https://2021-05-enix.container.training/4.yml.html#248) et [Scaling with custom metrics](https://2021-05-enix.container.training/4.yml.html#334).
+:::
+
+#### Supervision
+
+Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#217) pour plus d'information sur les APIs internes et de monitoring
+
+On pourra notamment monitorer a minima ces endpoints (`HTTP/tcp`, non authentifié) :
+
+- `etcd` :
+  - 2381 `/health` et `/metrics`
+- `kubelet` :
+  - 10248 `/healthz` retourne "ok"
+- `kube-proxy` :
+  - 10249 `/healthz` retourne "ok", `/configz`, `/metrics`
+  - 10256 `/healthz` avec timestamp
+- `kube-controller` & `kube-scheduler` :
+  - 10257 (`kube-controller`) et 10259 (`kube-scheduler`) : `/healthz` (et `/configz` & `/metrics` en `HTTPS` avec authentification)
+
+#### Contraintes
+
 :::warn
 Attention, on demande bien d'installer un cluster **production-ready** ! Celui-ci devra donc être en haute disponibilité (Load balancer devant l'API Server, …) et on réfléchira aux procédures d'administration, de sauvegarde, … On pourra cependant s'affranchir d'utiliser HTTPS, notamment pour la communication entre les différents composants (ce qui est bien sûr une obligation dans une "vraie" production).
 :::
@@ -149,10 +190,6 @@ Attention, on demande bien d'installer un cluster **production-ready** ! Celui-c
 - Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
 - Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
 - Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
-:::
-
-:::tip
-Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redimensionner dynamiquement un cluster pendant son cycle de vie : voir ces slides sur le [Sizing de Cluster et le ClusterAutoscaler de Nodes](https://2021-05-enix.container.training/4.yml.html#248) et [Scaling with custom metrics](https://2021-05-enix.container.training/4.yml.html#334).
 :::
 
 #### Exercice
