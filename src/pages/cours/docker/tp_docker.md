@@ -29,6 +29,16 @@ _Il est également possible d'utiliser le `Docker® Lab` pour utiliser un enviro
 
 Une fois le compte `Docker® Hub` configuré, les images sont automatiquement récupérées depuis celui-ci.
 
+:::warn
+Depuis le 01/04/2025, Docker Hub a mis en place un système de quotas stricts pour la récupération d'images :
+
+- Utilisateurs non authentifiés : 10 pulls d'images toutes les 6 heures.
+- Utilisateurs authentifiés avec un compte gratuit : 100 pulls d’images toutes les 6 heures.
+- Comptes payants (Pro, Team, Business) : pulls illimités, sous réserve d’un usage conforme.
+
+Attention à bien être connecté à votre compte _Docker Hub_ depuis _Docker Desktop_ ou en tapant `docker login` dans un terminal !
+:::
+
 ```sh
 docker run hello-world
 ```
