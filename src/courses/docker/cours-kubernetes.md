@@ -1116,6 +1116,17 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - Voir [ces slides sur les limitations de ressources](https://2021-05-enix.container.training/4.yml.html#190)
 
 ---
+
+## Découpage en sous-clusters :
+
+- Un cluster par application, des `Namespace` différents pour les environnements ?
+- Un cluster par environnement, des `Namespace` différents pour les applications ?
+- Tout sur un seul cluster ? Un cluster par combinaison ?
+- Un cluster intermédiaire :
+  - Cluster de production, cluster de base de données, cluster de développement/préproduction/etc.
+  - Cluster de production et de base de données par application, cluster de développement/préproduction/etc. partagé
+
+---
 layout: two-cols
 ---
 
