@@ -758,6 +758,23 @@ _Longhorn CSI_ | Stockage local | `RWO`, `RWX` | Stockage persistant natif Kuber
 - `Cluster Role Binding` : association `ServiceAccount` <-> `ClusterRole`
 
 ---
+
+## NetworkPolicies
+
+- Par défaut :
+- un `Pod` peut communiquer avec tout autre `Pod`, y compris d'autres `Namespace`
+- un `Service` est accessible partout, y compris depuis d'autres `Namespace`
+- Une `NetworkPolicy` permet d'**ajouter** de l'isolation :
+  - si un `Pod` n'est _sélectionné_ par **aucune `NetworkPolicy`** : **aucune isolation**
+  - si un `Pod` **est _sélectionné_** par au moins une `NetworkPolicy` : **isolation totale par défaut** (sauf règles acceptées par la `NetworkPolicy`)
+  - **stateful** : isolation à la **connexion**, et ~non par paquet~
+  - Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`)
+
+:::warn
+Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet !
+:::
+
+---
 layout: section
 ---
 
@@ -850,7 +867,8 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 - autres stratégies manuelles ou en ajoutant d'autres outils :
   - **blue/green** : coexistance des 2 versions (dont la nouvelle pour test)
-  - **canary deployment** : coexistance avec migration progressive des requêtes vers v2
+  - **canary deployment** : coexistance avec migration progressive des requêtes vers v2 : avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
+- Utiliser un outil comme <https://github.com/weaveworks/flagger> pour des déploiements plus poussés
 
 ---
 
