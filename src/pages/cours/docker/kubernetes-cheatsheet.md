@@ -81,6 +81,7 @@ source <(helm completion zsh)
 
 ```sh
 kubectl api-resources -o wide
+kubectl get crds # Custom Resource Definition
 kubectl explain [--recursive] RESOURCE_NAME # documentation
 ```
 
@@ -882,6 +883,14 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 - Exemples de déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
 :::
 
+:::warn
+Pour accéder à un `Ingress` d'un cluster local :
+
+- Depuis un cluster `Docker` directement dans Linux, par l'adresse IP du _Node_
+- Depuis un cluster `Docker` depuis _Docker Desktop_, en ajoutant un mapping de port puis en se connectant sur le mapping en `localhost`
+- Dans le cas général : `kubectl port-forward 8888:80` vers l'ingress controller puis <http://localhost:8888>
+:::
+
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -950,6 +959,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 :::link
 - Tutoriel : <https://cert-manager.io/docs/tutorials/acme/nginx-ingress/>
 - Débug : <https://cert-manager.io/docs/troubleshooting/>
+- Intégration de `cert-manager` dans un `Ingress` : <https://cert-manager.io/docs/usage/ingress/>
 :::
 
 ```yaml
@@ -1349,7 +1359,7 @@ kind: NetworkPolicy
 metadata:
   name: default-deny-ingress
 spec:
-  podSelector: {}
+  podSelector: {} # i.e. tous les Pods
   policyTypes:
   - Ingress
   - Egress
