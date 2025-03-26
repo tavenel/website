@@ -937,7 +937,67 @@ spec: # Les spécifications de la ressource. Différent pour chaque type de ress
 layout: section
 ---
 
-# Outils externes
+# Étendre Kubernetes
+
+Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4.yml.html#103)
+
+---
+
+# Controller
+
+> Controllers are control loops that watch the state of your cluster, then make or request changes where needed.
+> Each controller tries to move the current cluster state closer to the desired state
+
+<https://kubernetes.io/docs/concepts/architecture/controller/>
+
+- surveilles des ressources
+- applique des changements : API uniquement (`Deployment`, `ReplicaSet`), configure des ressources (`kube-proxy`), provisionne des ressources (_Load Balancer_)
+- `kube-scheduler` est un _Controller_ !
+- [Admission Controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) et [extension](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) : peut examiner ou transformer les requêtes à l'`API Server` avant la création des ressources : `ServiceAccount`, `LimitRanger`, `Kyverno`, `Open Policy Agent`, …
+
+---
+
+![Kubernetes API request lifecycle (source: Banzai Cloud)](@assets/k8s/api-request-lifecycle.png)
+
+---
+
+# CRD
+
+- Kubernetes permet d'ajouter des types de `Ressource` personnalisés
+- nouveau `kind: …`
+- appelées _Custom Ressource Definition (CRD)_
+- `kubectl api-resources` (toutes les ressources)
+- `kubectl get crds` (CRD)
+- <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>
+- <https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/>
+
+---
+
+# Aggregation Layer
+
+- Ressources [APIServer](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/) : lien `kind: …` à un service externe
+- Délègue des parties de l'`API Server` à des API externes
+- ex: `metrics-server`
+- `kubectl get apiservices`
+- (autre option: [Service catalog](https://kubernetes.io/docs/concepts/extend-kubernetes/service-catalog/) utilisant l'_Open service broker API_)
+
+---
+
+# Operators
+
+> An operator represents human operational knowledge in software, to reliably manage an application. - [CoreOS](https://coreos.com/blog/introducing-operators.html)
+
+- Un _Operator_ permet d'ajouter au cluster des _CRDs_ et un _Controller_ pour les gérer
+- liste : <https://operatorhub.io/>
+- exemples :
+  - BDD répliquées primaire / secondaire : `MariaDB`, `MySQL`, `PostgreSQL`, `Redis`
+  - _Node_ qui n'ont pas le même rôle : `ElasticSearch`, `MongoDB`
+  - Dépendances complexes : `Flink` & `Kafka` avec dépendance `Zookeeper`
+  - Ressources externes : `AWS S3`
+  - Add-ons complexes : `Istio`, `Consul`
+  - Gérer ses propres applications
+- Kubernetes a pour projet de tout déléguer dans le futur à des _Operator_ : `Service`, `Deployment`, …
+- [Exemple de création d'Operator par Ansible](https://blog.stephane-robert.info/post/ansible-kubernetes-operator/)
 
 ---
 
@@ -963,6 +1023,12 @@ layout: section
 - **overlay** : _kustomization_ **qui référence** d'autres _kustomization_ (récursif)
 - **patch** : une **modification** d'une ressource Kubernetes existante
 - **variant** : **version finale** de la ressource Kubernetes après application des _bases_ et _overlay_
+
+---
+layout: section
+---
+
+# Outils externes
 
 ---
 
@@ -1001,6 +1067,7 @@ layout: section
 - Moteur de politiques pour k8s
 - Gère des règles de sécurité, de conformité et de gestion (fichiers Yaml)
 - DevSecOps
+- Voir [une introduction à Kyverno](https://2021-05-enix.container.training/4.yml.html#399)
 
 ---
 
@@ -1009,13 +1076,6 @@ layout: section
 - Transforme un `Secret` Kubernetes en `SealedSecret` chiffré (clé privée dans le cluster, clé publique pour générer les secrets, contrôleur `SealedSecrets`).
 - Seul le cluster peut déchiffrer un `SealedSecret`
 - Il devient possible de laisser les _Secret_ chiffrés dans _Git_.
-
----
-
-# Déploiements continus
-
-- Déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
-- Utiliser un outil comme <https://github.com/weaveworks/flagger> pour des déploiements plus poussés
 
 ---
 
@@ -1071,7 +1131,7 @@ layout: two-cols
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5)
-	- <https://container.training/> : formations Jérôme Petazzo, notamment :
+	- <https://container.training/> : Les **excellentes formations (complètes) de Jérôme Petazzo**, notamment :
 	  - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html) : cours complet, de l'installation aux usages de kubernetes
 		- [Packaging d'applications et CI/CD pour Kubernetes](https://2021-05-enix.container.training/3.yml.html)
 		- [Kubernetes Avancé](https://2021-05-enix.container.training/4.yml.html)
@@ -1119,6 +1179,7 @@ layout: two-cols
 - Exemple de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
 - [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
 - Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
+- [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
 
 ---
 
