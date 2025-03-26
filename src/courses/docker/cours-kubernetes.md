@@ -69,7 +69,7 @@ tags:
 - Kubernetes :
   - **1 seul** réseau _flat_
 	- DNS par **`Namespace`**
-	- **pas d'isolation** des réseaux par défaut (utiliser des `NetworkPolicies`)
+	- **aucune isolation** des réseaux par défaut (utiliser des `NetworkPolicies`)
 
 ---
 
@@ -357,6 +357,7 @@ layout: section
     - voir section sur les CNI
 - Connexion entre `Pods` : niveau 3 (_IP_)
 - Connexion par `Services` : niveau 4 (_TCP_, _UDP_)
+- Connexion par `Ingress` : niveau 7 (_HTTP_)
 
 ---
 
@@ -374,7 +375,7 @@ Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple d
 layout: section
 ---
 
-# Ressources du cluster
+# Ressources basiques du cluster
 
 ---
 
@@ -383,7 +384,7 @@ layout: section
 - Les `Pod` exécutent les microservices.
 - Les `Service` exposent ces pods pour permettre leur communication et leur accès.
 - Les `ConfigMap` et `Secret` injectent les configurations et les données sensibles.
-- Le/Les `Ingress` gèrent le trafic externe et les certificats SSL.
+- Le/Les `Ingress` gèrent le trafic externe (routage par _URI_ ou header _host_) et les certificats SSL/TLS.
 - Les `PersistentVolume` et `StatefulSet` supportent les applications avec état.
 - Les `DaemonSet` assurent le fonctionnement des outils d’administration sur chaque noeud.
 
@@ -505,11 +506,65 @@ layout: section
 - Point d'accès publique HTTP/HTTPS unique pour l'accès aux différentes Pods (différent d'un Service)
 - Agit comme un _Reverse-proxy_ qui redirige la requête vers le `Service`
 - Règles de routage avancées
+- En principe, crée un service `LoadBalancer` (point d'entrée de l'Ingress).
 - Recquiert une implémentation d'`Ingress Controller` à installer :
   - `Nginx Ingress Controller` : standard, stable, supporte HTTPS et annotations avancées.
   - `HAProxy Ingress` : performant
   - `Traefik` : léger, dynamique (cloud, microservices)
   - `Consul Ingress / Istio Gateway` : intégration avec les _service mesh_ Consul / Istio
+
+---
+
+```mermaid
+---
+title: Schema d'un Ingress basé path.
+---
+
+graph LR;
+  client([client])-. Ingress-managed <br> load balancer .->ingress[Ingress, 178.91.123.132];
+  ingress-->|/foo|service1[Service service1:4200];
+  ingress-->|/bar|service2[Service service2:8080];
+  subgraph cluster
+  ingress;
+  service1-->pod1[Pod];
+  service1-->pod2[Pod];
+  service2-->pod3[Pod];
+  service2-->pod4[Pod];
+  end
+  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
+  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+  class ingress,service1,service2,pod1,pod2,pod3,pod4 k8s;
+  class client plain;
+  class cluster cluster;
+```
+
+```mermaid
+---
+title: Schema d'un Ingress basé hostname.
+---
+
+graph LR;
+  client([client])-. Ingress-managed <br> load balancer .->ingress[Ingress, 178.91.123.132];
+  ingress-->|Host: foo.bar.com|service1[Service service1:80];
+  ingress-->|Host: bar.foo.com|service2[Service service2:80];
+  subgraph cluster
+  ingress;
+  service1-->pod1[Pod];
+  service1-->pod2[Pod];
+  service2-->pod3[Pod];
+  service2-->pod4[Pod];
+  end
+  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
+  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+  class ingress,service1,service2,pod1,pod2,pod3,pod4 k8s;
+  class client plain;
+  class cluster cluster;
+
+```
+
+<div class="caption">Source: <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></div>
 
 ---
 
@@ -543,6 +598,25 @@ layout: section
 - `GatewayClass` : Ensemble de `Gateway` avec configuration commune et géré par un contrôleur
 - `Gateway` : Définit une instance d'infrastructure de gestion du trafic : Cloud load-balancing, …
 - `HTTPRoute` : Règles pour mapper le trafic d'une `Gateway` à un endpoint réseau (`Service`)
+
+```mermaid
+---
+title: Gateway API
+---
+
+graph LR;
+  client([client])-. requête <br> HTTP .->gateway[Gateway];
+  gateway-->httpRoute[HTTPRoute];
+  httpRoute-->|Règle de routage|service[Service];
+  service-->pod1[Pod];
+  service-->pod2[Pod];
+  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
+  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+  class gateway,httpRoute,service,pod1,pod2, k8s;
+  class client plain;
+  class cluster cluster;
+```
 
 ---
 
@@ -631,6 +705,10 @@ _Longhorn CSI_ | Stockage local | `RWO`, `RWX` | Stockage persistant natif Kuber
 - _Provisionnement_ du `Volume` via le driver `CSI` (_Container Storage Interface_) associé à la `StorageClass`
 - _Attachement du volume_ au _Node_ par le `CSI`
 - _Montage du volume_ dans le _conteneur_ depuis le _Node_
+
+---
+
+# Ressources avancées
 
 ---
 
