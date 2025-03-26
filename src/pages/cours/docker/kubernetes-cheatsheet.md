@@ -100,6 +100,10 @@ kubectl drain --ignore-daemonsets "<node-name>"
 kubectl uncordon "<node-name>" 
 ```
 
+:::warn
+Attention aux pré-requis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
+:::
+
 ## Généralités
 
 ### dry-run : simule la commande sans modification du cluster
@@ -1420,6 +1424,23 @@ spec:
       seccompProfile: {...}
       appArmorProfile: {...}
       seLinuxOptions: {...}
+```
+
+## PodDisruptionBudget
+
+```yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: my-pdb
+spec:
+  #minAvailable: 2
+  #minAvailable: 90% # arrondi au supérieur
+  maxUnavailable: 1
+  #maxUnavailable: 10% # arrondi au supérieur
+  selector:
+    matchLabels:
+      app: my-app
 ```
 
 ## Autres commandes
