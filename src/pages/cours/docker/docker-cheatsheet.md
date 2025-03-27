@@ -119,6 +119,7 @@ docker diff
 - `docker container rename`
 - `docker container stats` : monitoring des ressources Docker
 - `docker container commit` : crée une image depuis un conteneur existant (à éviter)
+- `docker container inspect` : affiche la configuration d'un conteneur en Json. Cette configuration peut être verbeuse, on utilise souvent `jq` pour filtrer l'affichage, par exemple pour afficher uniquement l'état (_healthcheck_) : `docker inspect --format='{{json .State.Health}}'`
 
 ## Docker volumes
 
@@ -415,7 +416,7 @@ docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
   + Préférer un tableau d'arguments à une chaîne de caractères.
   + Peut être remplacé par la commande `docker run …`
   + Préférer définir uniquement des arguments par défaut et définir la commande dans l'entrypoint (évite de remplacer le processus par un `docker run …`)
-- `HEALTHCHECK` permet d'exécuter une commande dans le conteneur pour vérifier son état : [doc](https://docs.docker.com/reference/dockerfile/#healthcheck)
+- `HEALTHCHECK` permet d'exécuter une commande dans le conteneur pour vérifier son état : [doc](https://docs.docker.com/reference/dockerfile/#healthcheck). Par exemple : `HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1`
 
 - [Lien : vidéo CMD vs ENTRYPOINT mais c'est quoi la différence ?](https://www.youtube.com/watch?v=kfyDu5R4VrM)
 - D'autres technologies de construction d'images existent : voir la page <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/introduction/>
