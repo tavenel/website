@@ -643,7 +643,17 @@ graph LR;
 - très similaire à _Docker_
 - pour accès aux configs, persistence, filesystem temporaire, …
 - accessible à tous les _Conteneurs_ du _Pod_
-- détruit (ou détaché si _remote_) à la destruction du Pod (persiste au redémarrage)
+- détruit (ou détaché si _remote_) à la destruction du Pod (persiste au redémarrage du conteneur)
+
+---
+
+### Quelques types de Volumes
+
+- `emptyDir` : volume vide, supprimé avec le Pod (mais partage entre conteneurs du pod) 
+- `hostPath` : monte un répertoire du Host vers le Pod
+- `configMap` : monte des fichiers de configuration
+- `PersistentVolume` : `iscsi`, `nfs`, `cephfs`
+- [Doc: types de Volumes supportés](https://kubernetes.io/docs/concepts/storage/volumes/)
 
 ---
 
@@ -655,9 +665,11 @@ graph LR;
   - existe dans l'_API Server_ : `kubectl get persistentvolumes`
   - durée de vie indépendante du pod
   - ~ne peut **pas être associé directement**~ à un _Pod_
+  - [Doc: types de PV supportés](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes)
 
 - `PersistentVolumeClaim` : réquisition d'un `PV`
   - permet l'association d'un disque à un _Pod_
+  - états : `Pending` (cŕeation `PVC`) -> `Bound` (attaché au `Pod`) -> `Terminating` (attente de suppression)
 
 ---
 
@@ -666,16 +678,6 @@ En résumé :
 - `Volume` => vision _container_ : un point de montage pour configs, persistence, filesystem temporaire, …
 - `PersitentVolume` (`PV`) => vision _storage_ du cluster Kubernetes, un espace de stockage
 - `PersistenVolumeClaim` (`PVC`) => un type de _Volume_ permettant de réquisitionner et d'utiliser un `PV`
-
----
-
-### Quelques types de Volumes
-
-- `emptyDir` : volume vide, supprimé avec le Pod (mais partage entre conteneurs du pod) 
-- `hostPath` : monte un répertoire du Host vers le Pod
-- `configMap` : monte des fichiers de configuration
-- `PersistentVolume` : `iscsi`, `nfs`, `cephfs`
-- beaucoup de types supportés : <https://kubernetes.io/docs/concepts/storage/volumes/>
 
 ---
 
@@ -705,6 +707,22 @@ _Longhorn CSI_ | Stockage local | `RWO`, `RWX` | Stockage persistant natif Kuber
 - _Provisionnement_ du `Volume` via le driver `CSI` (_Container Storage Interface_) associé à la `StorageClass`
 - _Attachement du volume_ au _Node_ par le `CSI`
 - _Montage du volume_ dans le _conteneur_ depuis le _Node_
+
+---
+
+### Modes d'accès
+
+`PV` et `PVC` ont des _access modes_ :
+
+- `ReadWriteOnce` : un seul _Node_ peut accéder au volume à la fois
+- `ReadWriteMany` : plusieurs _Node_ peuvent accéder au volume simultanément
+- `ReadOnlyMany` : plusieurs _Node_ peuvent accéder au volume (mais pas écrire dedans)
+- `ReadWriteOncePod` : un seul _Pod_ peut accéder au volume
+
+- Un `PV` liste les modes d'accès **qu'il supporte**
+- Un `PVC` liste des **contraintes** sur les droits d'accès : seul un `PV` les supportant peut être réquisitionné
+
+Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes)
 
 ---
 
@@ -1246,6 +1264,8 @@ layout: two-cols
 - [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
 - Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
 - [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
+- Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
+- [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M)
 
 ---
 
