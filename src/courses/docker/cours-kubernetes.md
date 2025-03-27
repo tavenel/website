@@ -741,7 +741,8 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 - Déploie des applications avec état : BDD, …
 - Ressources **ordonnées** (ordre de lancement)
-- Un volume persistant par _Pod_ (vs. _ReplicaSet_ où les volumes sont partagés)
+- Un `PV` par _Pod_ (vs. _ReplicaSet_ où les volumes sont partagés)
+- _persistent volume claim templates_ (`spec.volumeClaimTemplates`) : crée un `PVC` par _Pod_ nommé `<claim-name>.<stateful-set-name>.<pod-index>`
 - Un même volume monté dans un pod (`PVC`) le reste pour toujours (même après recréation)
 - Un DNS dédié (_service headless_) :
   - load-balancing sur tous les pods du set
@@ -989,6 +990,7 @@ layout: section
   - _cordon_ (boucle) le _Node_ : _taint_ `NoSchedule`
   - _eviction API_ pour supprimer les _Pod_ (respecte les `PDB`).
   - n'expulsera pas les _Pod_ utilisant des volumes `emptyDir` (sauf `--delete-emptydir-data`)
+- Voir aussi [la doc officielle](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/)
 
 ---
 
@@ -1167,6 +1169,15 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 ---
 
+## Services avec état
+
+- Vous pouvez parfaitement conserver vos bases de données de production hors de Kubernetes (surtout si 1 serveur BDD !)
+- Mettre les BDD de dev et pre-prod dans le cluster
+- Migrer les BDD de prod seulement s'il y en a beaucoup (pour profiter de l'automatisation)
+- **Gérer des services avec état dans Kubernetes est compliqué !**
+
+---
+
 ## Sécurité des Secrets
 
 - ~**Ne pas stocker de `Secret` en clair**~ dans des fichiers YAML : Utiliser `Kubeseal` pour les chiffrer.
@@ -1266,6 +1277,7 @@ layout: two-cols
 - [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
 - [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M)
+- <https://kubernetes.io/docs/tasks/administer-cluster/>
 
 ---
 
