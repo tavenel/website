@@ -216,8 +216,6 @@ Techniquement, un objet est caractérisé par 3 choses :
 
 ---
 
-![Un exemple d'objet](https://www.data-transitionnumerique.com/wp-content/uploads/2021/03/objet.webp) <!--TODO: DIAG -->
-
 ```plantuml
 @startuml
 
