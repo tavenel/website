@@ -635,7 +635,49 @@ spec:
 
 Valeurs possible de `type` de `hostPath` : `DirectoryOrCreate`, `Directory`, `FileOrCreate`, `File`, `Socket`, `CharDevice`, `BlockDevice`
 
-### Exemple de montage d'un PersistantVolume
+### Exemple de montage d'un volume Cloud AWS EBS
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-using-my-ebs-volume
+spec:
+  containers:
+  - image: ...
+    name: container-using-my-ebs-volume
+    volumeMounts:
+    - mountPath: /my-ebs
+      name: my-ebs-volume
+  volumes:
+  - name: my-ebs-volume
+    awsElasticBlockStore:
+      volumeID: vol-049df61146c4d7901
+      fsType: ext4
+```
+
+### Exemple de montage d'un volume NFS
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-using-my-nfs-volume
+spec:
+  containers:
+  - image: ...
+    name: container-using-my-nfs-volume
+    volumeMounts:
+    - mountPath: /my-nfs
+      name: my-nfs-volume
+  volumes:
+  - name: my-nfs-volume
+    nfs:
+      server: 192.168.0.55
+      path: "/exports/assets"
+```
+
+### Exemple de PersistantVolume
 
 ```yaml
 apiVersion: v1
@@ -877,7 +919,7 @@ Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concept
 ```sh
 # Pré-requis : installation de l'Ingress Controller Nginx
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm install my-ingress ingress-nginx/ingress-nginx
+helm install ingress-nginx ingress-nginx/ingress-nginx
 # Ou directement :
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
 ```
@@ -936,7 +978,7 @@ spec:
               port: 
                 number: 8080
 ---
-# Si TLS, secret associé (auto-généré si cluster-issuer dans les annotation de l'Ingress)
+# Si TLS, secret associé (non nécessaire car auto-généré si cluster-issuer dans les annotation de l'Ingress)
 apiVersion: v1
 kind: Secret
 metadata:
@@ -945,6 +987,44 @@ data:
   tls.crt: <base64 cert>
   tls.key: <base64 key>
 type: kubernetes.io/tls
+```
+
+
+#### Traefik Ingress - canary
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rgb
+  annotations:
+    traefik.ingress.kubernetes.io/service-weights: |
+      red: 50%
+      green: 25%
+      blue: 25%
+spec:
+  rules:
+  - host: rgb.`A.B.C.D`.nip.io # remplacer A.B.C.D par l'IP du Node
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: red
+            port:
+              number: 80
+      - path: /
+        backend:
+          service:
+            name: green
+            port:
+              number: 80
+      - path: /
+        backend:
+          service:
+            name: blue
+            port:
+              number: 80
 ```
 
 ### TLS : ClusterIssuer (Let's Encrypt)
