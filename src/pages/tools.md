@@ -378,6 +378,7 @@ created: 2024-10-17
 - Gestion d'erreurs : `Sentry`
 - APIs : `OpenAPI`
 - Paiement en ligne : `Stripe`
+- Liste et algos d'e-mails jetables : <https://github.com/disposable-email-domains/disposable-email-domains>
 
 ## Frontend development
 
