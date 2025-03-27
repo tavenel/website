@@ -10,6 +10,39 @@ Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert
 
 ## Administration
 
+### Versions
+
+#### API Server
+
+```sh
+# Renvoie la version d'une instance APIServer
+kubectl version
+```
+
+:::warn
+Un cluster H/A peut avoir des `APIServer` de versions différentes (résultat aléatoire) !
+:::
+
+#### Kubelet
+
+```sh
+kubectl get nodes -o wide
+```
+
+#### Control-plane dans un Pod
+
+```sh
+kubectl --namespace=kube-system get pods -o json \
+        | jq -r '
+          .items[]
+          | [.spec.nodeName, .metadata.name]
+            + 
+            (.spec.containers[].image | split(":"))
+          | @tsv
+          ' \
+        | column -t
+```
+
 ### Administration etcd
 
 #### Afficher le pod etcd
@@ -22,7 +55,9 @@ kubectl describe pod etcd-cluster-1-control-plane -n kube-system
 --key-file=/etc/kubernetes/pki/etcd/server.key
 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
 
+# administration du cluster etcd par le réseau : `etcdctl`
 etcdctl --endpoints 172.18.0.4:2379,172.18.0.5:2379,172.18.0.6:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --key-file=/etc/kubernetes/pki/etcd/server.key --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt …
+# administration du noeud etcd local : `etcdutl`
 ```
 
 #### Afficher les noeuds du cluster
@@ -48,7 +83,10 @@ etcdctl […] move-leader <leader ID>
 ```sh
 etcdctl […] snapshot save /tmp/snapshot-etcd-1.db
 
-etcdctl […] snapshot restore /tmp/snapshot-etcd-1.db
+# Vérification du snapshot
+etcdutl --write-out=table snapshot status /tmp/snapshot-etcd-1.db
+
+# Voir TP installation de Kubernetes pour la procédure de restauration 
 ```
 
 #### Gestion clé/valeur etcd
