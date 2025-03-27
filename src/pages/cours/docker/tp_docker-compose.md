@@ -79,11 +79,21 @@ volumes:
 
 Utiliser la CLI `docker compose` pour démarrer la stack que nous venons de définir (voir la Cheatsheet en fin de document).
 
-La CLI `docker compose` est basée sur la CLI `docker` pour être au maximum compatible avec elle.
+:::tip
+La CLI `docker compose` est basée sur la CLI `docker` pour être au maximum compatible avec elle : `docker compose ps`, `docker compose logs`, …
+:::
+
+:::exo
+1. Démarrer la stack `docker compose`.
+2. En utilisant `docker compose` et simplement `docker`, afficher les conteneurs, les volumes et le réseau créés.
+:::
 
 ## Réseau docker-compose
 
-Par défaut, un fichier `compose.yml` crée automatiquement un réseau de type `bridge` pour l'ensemble des services dans ce fichier.
+:::tip
+- Tout comme _Docker_ crée un enregistrement _DNS_ par nom de conteneur, _Docker compose_ crée un enregistrement _DNS_ par nom de _Service_ : ainsi dans l'exemple précédent, le _Service_ `wordpress` peut joindre le _Service_ `db`, même si les conteneurs n'ont pas le même nom.
+- Par défaut, un fichier `compose.yml` crée automatiquement un réseau de type `bridge` pour l'ensemble des services dans ce fichier.
+:::
 
 Cette configuration n'est souvent pas suffisante, et l'on préfère définir explicitement les réseaux à utiliser.
 
@@ -117,6 +127,10 @@ networks:
     # Use a custom driver
     driver: custom-driver
 ```
+
+## Dépendances
+
+Le paramètre `depends_on:` est utilisée pour spécifier les dépendances (et donc l'ordre d'exécution) des services dans un fichier `compose.yml` afin de s'assurer que certains services ne commencent qu'une fois leurs dépendances sont prêtes. Cette dépendance est d'autant plus intéressante lorsqu'elle est connectée au `HEALTHCHECK` de _Docker_ : `depends_on: condition: service_healthy`. Ainsi on ne démarre le _Service_ qu'une fois que la dépendance est entièrement opérationnelle (par exemple, la base de données est démarrée et accessible).
 
 ## Scaling de services
 
