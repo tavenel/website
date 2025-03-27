@@ -81,6 +81,43 @@ Utiliser la CLI `docker compose` pour démarrer la stack que nous venons de déf
 
 La CLI `docker compose` est basée sur la CLI `docker` pour être au maximum compatible avec elle.
 
+## Réseau docker-compose
+
+Par défaut, un fichier `compose.yml` crée automatiquement un réseau de type `bridge` pour l'ensemble des services dans ce fichier.
+
+Cette configuration n'est souvent pas suffisante, et l'on préfère définir explicitement les réseaux à utiliser.
+
+Par exemple, dans la stack ci-dessous le `proxy` est uniquement dans un réseau `frontend`, l'`app` est dans 2 réseaux `frontend` et `backend` et `db` uniquement dans un réseau `backend`. Ainsi, `proxy` et `db` ne peuvent pas communiquer. Les conteneurs créés par cette stack sont tous sur des réseaux isolés, mais l'on veut pouvoir communiquer avec `proxy` directement depuis la machine hôte : il faut donc ajouter un _binding_ de port pour accéder depuis le port `8080` de l'hôte au port `80` du conteneur du service `proxy`. On peut donc maintenant accéder à l'application dans un navigateur depuis l'URL : <http://localhost:8080>.
+
+```yaml
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - frontend
+    ports:
+      - "8080:80"
+  app:
+    build: ./app
+    networks:
+      - frontend
+      - backend
+  db:
+    image: postgres
+    networks:
+      - backend
+
+networks:
+  frontend:
+    # Specify driver options
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+  backend:
+    # Use a custom driver
+    driver: custom-driver
+```
+
 ## Scaling de services
 
 Récupérer l'excellent support de formation de _Jérôme Petazzo_ : 
