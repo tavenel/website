@@ -151,6 +151,19 @@ Chaque _Node_ : `kubelet`, `kube-proxy`, `kube-router`, … doivent se lier à l
 3. **round-robin DNS** pour tous les _API Server_ (officiellement non supporté)
 4. H/A API endpoint dans un cluster managé, virtual IP, tunnel _Node_ <-> _API Server_ (`k3s`), …
 
+#### etcd H/A
+
+`etcd` est le composant qui contient toutes les données du cluster, c'est donc le plus critique et il doit bien entendu être déployé en H/A (nombre impaire, 5 recommandé).
+
+Voir les documentations officielles : [HA etcd with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm/) et [HA topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/) et [configure & upgrade etcd](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/)
+
+:::tip
+Il est possible de configurer `etcd` en H/A de 2 manières différentes (voir la documentation HA topology) :
+
+- _stacked etcd_ : chaque _control plane_ possède un `APIServer` lié à un (et un seul) `etcd` installé dans le _control plane_.
+- _external etcd_ : le cluster `etcd` est externe aux _control plane_ : chaque `APIServer` est connecté au cluster de tous les `etcd`.
+:::
+
 #### Pods statiques
 
 :::tip
@@ -161,24 +174,24 @@ Pour contourner cette limite, Kubernetes permet de déployer des _Pods_ directem
 #### Sizing
 
 :::tip
-Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redimensionner dynamiquement un cluster pendant son cycle de vie : voir ces slides sur le [Sizing de Cluster et le ClusterAutoscaler de Nodes](https://2021-05-enix.container.training/4.yml.html#248) et [Scaling with custom metrics](https://2021-05-enix.container.training/4.yml.html#334).
+Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redimensionner dynamiquement un cluster pendant son cycle de vie : voir ces slides sur le [Sizing de Cluster et le ClusterAutoscaler de Nodes](https://2021-05-enix.container.training/4.yml.html#248) et [Scaling with custom metrics](https://2021-05-enix.container.training/4.yml.html#334). Pour information, la base `etcd` ne doit normalement pas dépasser 2GB.
 :::
 
-#### Supervision
+#### Versions et upgrade
 
-Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#217) pour plus d'information sur les APIs internes et de monitoring
-
-On pourra notamment monitorer a minima ces endpoints (`HTTP/tcp`, non authentifié) :
-
-- `etcd` :
-  - 2381 `/health` et `/metrics`
-- `kubelet` :
-  - 10248 `/healthz` retourne "ok"
-- `kube-proxy` :
-  - 10249 `/healthz` retourne "ok", `/configz`, `/metrics`
-  - 10256 `/healthz` avec timestamp
-- `kube-controller` & `kube-scheduler` :
-  - 10257 (`kube-controller`) et 10259 (`kube-scheduler`) : `/healthz` (et `/configz` & `/metrics` en `HTTPS` avec authentification)
+- Kubernetes suit un versionning _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
+- Il est _recommandé_ (pas obligatoire) d'exécuter des versions homogènes sur l'ensemble du cluster mais :
+- Les `APIServer` (en H/A) peuvent avoir différentes versions
+- Différents _Node_ peuvent exécuter différentes versions de `Kubelet`
+- Différents _Node_ peuvent exécuter différentes versions du noyau
+- Différents _Node_ peuvent exécuter différents engines de conteneurs
+- Les composants peuvent être mis à niveau un par un sans problème.
+- Il est toujours possible de combiner différentes versions de _PATCH_ (par exemple, 1.28.9 et 1.28.13 sont compatibles) mais il est recommandé de toujours mettre à jour vers la dernière version de _PATCH_
+- **L'`APIServer` doit être plus récent** que ses clients (`Kubelet` et _Control Plane_), donc **être mis à jour en premier**
+- Tous les composants supportent (au moins) une **différence d'une version _MINEURE_** => upgrade à chaud possible
+- Voir [la documentation sur les versions non homogènes](https://kubernetes.io/releases/version-skew-policy/)
+- Mettre à jour avec **le même outil qui a servi à l'installation du composant** : gestionnaire de package, `kubeadm`, Pod, conteneur, …
+- En moyenne, **une mise à jour tous les 3 mois**
 
 #### Contraintes
 
@@ -212,38 +225,6 @@ Réaliser l'installation du cluster Kubernetes en H/A :
    - Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
    - Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
 :::
-
-#### Administration
-
-:::warn
-Administrer un cluster Kubernetes ne se limite pas à son installation : il faut gérer les mises à jour, les maintenances, la sécurité, l'observabilité du cluster, … Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/administration/>
-:::
-
-##### Upgrade
-
-```bash
-apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.31.x-y.y' && apt-mark hold kubeadm
-# Upgrade 1e control plane
-kubeadm upgrade plan
-kubeadm upgrade apply vX.Y.Z
-systemctl restart kubelet
-# Upgrade autres control plane
-kubeadm upgrade apply
-# Upgrade workers
-kubectl drain "<node-name>" --ignore-daemonsets # retire tous les Pods
-apt-get update && apt-get install -y kubelet kubectl && apt-mark hold kubelet kubectl
-systemctl restart kubelet
-kubectl uncordon "<node-name>" # fin du drainage
-```
-
-##### Renouvellement des certificats
-
-```bash
-kubectl get csr
-kubeadm alpha certs renew all
-```
-
-
 
 ### Phase 2 : Déploiement d’une Application
 
