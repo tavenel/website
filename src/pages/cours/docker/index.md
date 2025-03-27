@@ -27,4 +27,5 @@ title:   Docker® et 󱃾 Kubernetes®
 - [📌 Projet Docker et Kubernetes : application de vote](/cours/docker/projet_vote_k8s) : le but de ce TP est d'isoler et de déployer une application dans une stack de conteneurs Kubernetes
   -  Sources git : <https://git.sr.ht/~toma/docker-vote>
 - [📌 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/docker/projet_install_kubernetes)
+- [📌 Projet Administration d'un Cluster Kubernetes](/cours/docker/tp_administration_kubernetes)
 
