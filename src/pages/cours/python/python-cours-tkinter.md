@@ -194,6 +194,7 @@ Voir le [cours sur le pattern MVC][site-perso].
 - [Event binding dans Tkinter][doc-tkinter-event-binding]
 - [Cours de programmation événementielle en Tkinter][zds-tkinter-events]
 - [Tutoriel pas-à-pas pour apprendre Tkinter](https://www.tutorialspoint.com/python/python_gui_programming.htm)
+- [TTKBootstrap : thèmes Bootstrap pour Tkinter](https://github.com/israel-dryer/ttkbootstrap)
 
 [doc-tkinter]: https://www.pythontutorial.net/tkinter/
 [doc-tkinter-mvc]: https://www.pythontutorial.net/tkinter/tkinter-mvc/
