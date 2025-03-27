@@ -155,6 +155,14 @@ created: 2024-10-17
   - `WatchTower`
   - `Keel` (avec triggers)
   - `Pluto` : gestion des dépréciations d'API : [tuto](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/pluto/)
+- Administration :
+  - [auger](https://github.com/etcd-io/auger?tab=readme-ov-file#use-cases) : décode la data d'`etcd`
+  - [Stash](https://appscode.com/products/stash/) : backup PV
+  - [ReShifter](https://github.com/mhausenblas/reshifter) : cluster state management
+  - [Velero](https://github.com/heptio/velero) : full cluster backup
+  - [kube-backup](https://github.com/pieterlange/kube-backup) : backup YAML dans répo Git
+  - [bivac](https://github.com/camptocamp/bivac) : Backup Interface for Volumes Attached to Containers 
+  - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/) : [snapshots par annotations](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/snaps-annotations/#taking-periodic-snapshots-on-a-running-pod)
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 - Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html), <https://submariner.io/>
 
