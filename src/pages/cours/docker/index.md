@@ -28,4 +28,5 @@ title:   Docker® et 󱃾 Kubernetes®
   -  Sources git : <https://git.sr.ht/~toma/docker-vote>
 - [📌 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/docker/projet_install_kubernetes)
 - [📌 Projet Administration d'un Cluster Kubernetes](/cours/docker/tp_administration_kubernetes)
+- [📌 Projet Déploiement  applicatif dans Kubernetes](/cours/docker/projet_appli_kubernetes)
 

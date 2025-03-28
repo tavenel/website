@@ -41,6 +41,7 @@ layout: '@layouts/BaseLayout.astro'
 - [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [📌 Projet Déploiement  applicatif dans Kubernetes](/cours/docker/projet_appli_kubernetes)
 
 ## Pour aller plus loin
 
