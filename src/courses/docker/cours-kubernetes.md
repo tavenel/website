@@ -1237,10 +1237,45 @@ layout: section
 
 # Kyverno
 
-- Moteur de politiques pour k8s
+- Limitations des permissions standard Kubernetes - comment :
+  - Interdire l’utilisation du tag `:latest`
+  - Obliger chaque _Deployment_, _Service_, … à avoir un label `owner`
+  - Obliger chaque conteneur à avoir un `readinessProbe`
+  - Obliger chaque `Namespace` à avoir des quotas et des limites
+- Solution : utiliser un `AdmissionController`
+
+---
+
+## [Kyverno](https://github.com/kyverno/kyverno/) : moteur de politiques pour k8s
+
 - Gère des règles de sécurité, de conformité et de gestion (fichiers Yaml)
-- DevSecOps
+  - _Controller_ ou _Operator_ Kubernetes, _Webhooks_ et _CRDs_ de politiques, principalement :
+	- `Policy` ou `ClusterPolicy` (par _Namespace_ ou global au Cluster)
+	- `PolicyReport` ou `ClusterPolicyReport` (audit)
+- Autres solutions : [Open Policy Agent](https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/) ou [Validation des politiques d'admission](https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/)
+---
+
+## Fonctionnalités
+
+- *Accepter / Refuser* les manifestes de ressources
+- *Modifier* les ressources lors de leur création ou de leur mise à jour
+- *Générer* des ressources supplémentaires lors de leur création
+- *Auditer* les ressources existantes
 - Voir [une introduction à Kyverno](https://2021-05-enix.container.training/4.yml.html#399)
+
+---
+
+## Mises en garde
+
+- L'écriture et la validation de politiques peuvent être difficiles
+- Le contexte `{{ request }}` est puissant, mais difficile à valider (Kyverno ne peut pas savoir à l'avance comment il sera rempli)
+- Les politiques avancées (avec conditions) ont une syntaxe unique et exotique :
+```yaml
+spec:
+=(volumes):
+=(hostPath):
+path: "!/var/run/docker.sock"
+```
 
 ---
 
@@ -1318,14 +1353,14 @@ layout: two-cols
 # Liens
 
 - [Site web Kubernetes](https://kubernetes.io/)
-- Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/>
+- Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/> et <https://kodekloud.com/playgrounds/>
 - Mini-distributions : <https://blog.palark.com/small-local-kubernetes-comparison/>
 - [Introduction à k8s](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
 - Cours sur kubernetes :
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5)
-	- <https://container.training/> : Les **excellentes formations (complètes) de Jérôme Petazzo**, notamment :
+	- <https://container.training/> : Les **excellentes formations (complètes) de Jérôme Petazzoni**, notamment :
 	  - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html) : cours complet, de l'installation aux usages de kubernetes
 		- [Packaging d'applications et CI/CD pour Kubernetes](https://2021-05-enix.container.training/3.yml.html)
 		- [Kubernetes Avancé](https://2021-05-enix.container.training/4.yml.html)
@@ -1377,6 +1412,11 @@ layout: two-cols
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
 - [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M)
 - <https://kubernetes.io/docs/tasks/administer-cluster/>
+- [Connexion à l'API Kubernetes par OpenID (Jérôme Petazzoni)](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openid-connect.md) : Google account, …
+- <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
+- <https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/>
+- [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo)
+- [Simuler la génération de certificats HTTPS pour un cluster de test avec Pebble](https://blog.manabie.io/2021/11/simulate-https-certificates-acme-k8s/)
 
 ---
 

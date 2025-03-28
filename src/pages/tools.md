@@ -120,6 +120,7 @@ created: 2024-10-17
       - `NGINX Service Mesh`
       - `Consul` : DNS, reverse proxy, load balancing, …
     - Gateway API : `ingress2gateway`
+  - [external DNS](https://github.com/kubernetes-sigs/external-dns) : synchronisation Ingress / Service avec DNS externe (Cloud, …)
 - 📦📦 scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
 - 🔒 sécurité

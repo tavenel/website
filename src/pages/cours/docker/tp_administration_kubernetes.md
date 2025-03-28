@@ -7,7 +7,12 @@ date: 2024 / 2025
 
 Administrer un cluster Kubernetes ne se limite pas à son installation : il faut gérer les mises à jour, les maintenances, la sécurité, l'observabilité du cluster, …
 
-Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/administration/>.
+:::link
+Voir aussi :
+
+- <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/administration/>.
+- <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et les sous-sections
+:::
 
 ## Supervision
 
@@ -63,7 +68,7 @@ L'upgrade d'un cluster suit [la procédure officielle de la documentation](https
 - Le déplacement de pods _stateful_ (BDD, …) peut entraîner des interruptions de service ! Utiliser la réplication de BDD (switch de l'instance _primaire_ sur le _Node_ non impacté) - certains `Operator` (ex [CNPG](https://cloudnative-pg.io/)) effectuent ce basculement automatiquement lorsqu'ils détectent qu'un _Node_ devient _cordon_.
 :::
 
-Exemple simplifié de procédure d'upgrade avec `kubeadm` (pour plus d'information, suivre [la documentation officielle](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)). Voir aussi [la formation de Jérôme Petazzo](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-upgrade.md)
+Exemple simplifié de procédure d'upgrade avec `kubeadm` (pour plus d'information, suivre [la documentation officielle](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)). Voir aussi [la formation de Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-upgrade.md)
 
 ```bash
 # Upgrade kubeadm
@@ -115,7 +120,7 @@ Automatiser le (re)déploiement d'un cluster (GitOps) peut être une procédure 
   - le système de fichiers hôte est monté dans `/host`,
   - le _Pod_ de debug utilise le réseau de l'hôte
 - Transférer le _snapshot_ grâce à un autre debug container_ en _base64_ pour éviter toute corruption.
-- Source et crédits : [Backup Cluster - Jérôme Petazzo](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-backup.md)
+- Source et crédits : [Backup Cluster - Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-backup.md)
 
 ```sh
 # Obtenir le nom d'un _Node_ du _Controle Plane_ :
@@ -158,8 +163,11 @@ Il est également recommandé de redémarrer les composants Kubernetes (`kube-sc
 `etcdutl restore` crée un nouveau répertoire de données à partir du snapshot mais ne met pas à jour le serveur `etcd` en cours d'exécution.
 :::
 
+:::link
 - Voir aussi la [documentation etcd snapshot and restore](https://coreos.com/etcd/docs/latest/op-guide/recovery.html#snapshotting-the-keyspace)
-- Source et crédits : [Backup Cluster - Jérôme Petazzo](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-backup.md)
+- Un [environnement de test pour etcd](https://kodekloud.com/playgrounds/playground-ha-etcd-cluster)
+- Source et crédits : [Backup Cluster - Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-backup.md)
+:::
 
 #### Procédure kubeadm
 

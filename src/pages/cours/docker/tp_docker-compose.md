@@ -134,7 +134,7 @@ Le paramètre `depends_on:` est utilisée pour spécifier les dépendances (et d
 
 ## Scaling de services
 
-Récupérer l'excellent support de formation de _Jérôme Petazzo_ : 
+Récupérer l'excellent support de formation de _Jérôme Petazzoni_ : 
 
 ```sh
 git clone https://github.com/jpetazzo/container.training.git

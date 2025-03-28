@@ -203,6 +203,7 @@ Attention, on demande bien d'installer un cluster **production-ready** ! Celui-c
 - Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
 - Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
 - Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
+- Voir aussi : <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/>
 :::
 
 #### Exercice

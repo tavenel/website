@@ -5,7 +5,8 @@ title: Cheatsheet Kubernetes®
 # Cheatsheet Kubernetes
 
 :::link
-Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
+- Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
+- Liens utiles : <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
 :::
 
 ## Administration
@@ -747,7 +748,7 @@ spec:
 ```sh
 # Pré-requis : Installation du driver CSI pour NFS
 helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
-helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version v4.10.0
+helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace nfs --create-namespace --version v4.10.0
 ```
 
 ```yml
@@ -797,18 +798,29 @@ kubectl create -f https://raw.githubusercontent.com/rancher/local-path-provision
 
 Pour changer le type de `Volume` (`local` vs `hostPath`) à utiliser :
 
-- `PVC` :
+- par `PVC` :
 
 ```yaml
 annotations:
   volumeType: <local or hostPath>
 ```
 
-- `StorageClass` :
+- global à la `StorageClass` :
 
 ```yaml
 annotations:
   defaultVolumeType: <local or hostPath>
+```
+
+
+### Changer de StorageClass par défaut
+
+```console
+$ kubectl annotate storageclass local-path storageclass.kubernetes.io/is-default-class=true
+
+$ kubectl get storageclasses
+NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  26h
 ```
 
 
@@ -1778,6 +1790,23 @@ flux suspend/resume kustomization nom-de-la-kusto
 
 # Cheatsheet Kyverno
 
+```sh
+# Pré-requis : installation de Kyverno
+helm upgrade --install --repo https://kyverno.github.io/kyverno/ \
+--namespace kyverno --create-namespace kyverno kyverno
+```
+
+```sh
+# Rapports de violations dans tous les namespace
+kubectl get clusterpolicyreports --all-namespaces
+```
+
+:::tip
+Il est possible de lier le cycle de vie des objets générés aux objets à l'origine de leur génération : voir [Lier des ressources aux `ownerReferences`](https://kyverno.io/docs/writing-policies/generate/#linking-trigger-with-downstream)
+:::
+
+## Exemples de validations
+
 Exemple simple de politique `Kyverno` qui refuse la création de pods s'ils n'ont pas de label `app` :
 
 ```yaml
@@ -1801,6 +1830,138 @@ spec:
               app: "?*"
 ```
 
+```yaml
+# From: https://github.com/jpetazzo/container.training/blob/main/k8s/kyverno-pod-color-1.yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: pod-color-policy-1
+spec:
+  validationFailureAction: Enforce
+  rules:
+  - name: ensure-pod-color-is-valid
+    match:
+      resources:
+        kinds:
+        - Pod
+        selector:
+          matchExpressions:
+          - key: color
+            operator: Exists
+          - key: color
+            operator: NotIn
+            values: [ red, green, blue ]
+    validate:
+      message: "If it exists, the label color must be red, green, or blue."
+      deny: {}
+```
+
+```yaml
+# From: https://github.com/jpetazzo/container.training/blob/main/k8s/kyverno-pod-color-2.yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: pod-color-policy-2
+spec:
+  validationFailureAction: Enforce
+  background: false # obligatoire pour utiliser `{{ request }}` (update, …) sinon check asynchrone
+  rules:
+  - name: prevent-color-change
+    match:
+      resources:
+        kinds:
+        - Pod
+    preconditions:
+    - key: "{{ request.operation }}"
+      operator: Equals
+      value: UPDATE
+    - key: "{{ request.oldObject.metadata.labels.color || '' }}" # `{{ request.oldObject }}` → l'objet tel qu'il était avant la requête
+      operator: NotEquals
+      value: ""
+    - key: "{{ request.object.metadata.labels.color || '' }}" # `{{ request.object }}` → l'objet avec les modifications apportées par la requête
+      operator: NotEquals
+      value: ""
+    validate:
+      message: "Once label color has been added, it cannot be changed."
+      deny:
+        conditions:
+        - key: "{{ request.object.metadata.labels.color }}"
+          operator: NotEquals
+          value: "{{ request.oldObject.metadata.labels.color }}"
+```
+
+## Exemples de génération de ressources
+
+- Lors de la création d'un espace de noms, nous souhaitons également créer automatiquement :
+- un `LimitRange` pour définir les requêtes et limites CPU et RAM par défaut
+- un `ResourceQuota` pour limiter les ressources utilisées par l'espace de noms
+- une `NetworkPolicy` pour isoler l'espace de noms
+
+```yaml
+# From: https://github.com/jpetazzo/container.training/blob/main/k8s/kyverno-namespace-setup.yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: setup-namespace
+spec:
+  rules:
+  - name: setup-limitrange
+    match:
+      resources: 
+        kinds:
+        - Namespace
+    generate: 
+      kind: LimitRange
+      name: default-limitrange
+      namespace: "{{request.object.metadata.name}}" 
+      data:
+        spec:
+          limits:
+          - type: Container
+            min:
+              cpu: 0.1
+              memory: 0.1
+            max:
+              cpu: 2
+              memory: 2Gi
+            default:
+              cpu: 0.25
+              memory: 500Mi
+            defaultRequest:
+              cpu: 0.25
+              memory: 250Mi
+  - name: setup-resourcequota
+    match:
+      resources: 
+        kinds:
+        - Namespace
+    generate: 
+      kind: ResourceQuota
+      name: default-resourcequota
+      namespace: "{{request.object.metadata.name}}" 
+      data:
+        spec:
+          hard:
+            requests.cpu: "10"
+            requests.memory: 10Gi
+            limits.cpu: "20"
+            limits.memory: 20Gi
+  - name: setup-networkpolicy
+    match:
+      resources: 
+        kinds:
+        - Namespace
+    generate: 
+      kind: NetworkPolicy
+      name: default-networkpolicy
+      namespace: "{{request.object.metadata.name}}" 
+      data:
+        spec:
+          podSelector: {}
+          ingress:
+          - from:
+            - podSelector: {}
+```
 
 # Legal
 

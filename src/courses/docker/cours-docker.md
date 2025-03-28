@@ -626,7 +626,7 @@ layout: section
 - [Awesome Docker Compose : templates pour des stacks classiques](https://github.com/docker/awesome-compose/)
 - <https://blog.stephane-robert.info/docs/conteneurs/introduction/>
 - <https://github.com/groda/big_data/blob/master/docker_for_beginners.md>
-- [Jérôme Petazzo : Docker Intensif](https://2021-05-enix.container.training/1.yml.html#1)
+- [Jérôme Petazzoni : Docker Intensif](https://2021-05-enix.container.training/1.yml.html#1)
 - <https://github.com/eficode-academy/docker-katas> Exercices Docker
 - <https://docker-curriculum.com/> Autres exercices Docker
 - [Comprendre le réseau Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-network/)
