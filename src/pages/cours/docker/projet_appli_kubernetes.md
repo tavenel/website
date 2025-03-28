@@ -16,6 +16,45 @@ date: 2024 / 2025
 - Voir aussi la page <https://www.avenel.pro/cours/docker/kubernetes-cheatsheet> pour l'installation des dépendances.
 :::
 
+### Installation des StorageClass
+
+En s'aidant de la [cheatsheet Kubernetes](/cours/docker/kubernetes-cheatsheet), installer :
+
+- Le [NFS CSI driver for Kubernetes](https://github.com/kubernetes-csi/csi-driver-nfs) pour créer automatiquement des `PersistentVolume` depuis un serveur _NFS_
+- Le [local-path-provisionner de Rancher](https://github.com/rancher/local-path-provisioner) pour créer automatiquement des `PersistentVolume` basés sur `hostPath` (répertoires locaux aux _Node_ : perte du _Node_ = perte de la donnée !).
+
+:::tip
+Pourquoi avoir besoin d'une `StorageClass` générant des `PV` locaux ?
+
+Beaucoup d'opérateurs créent des `StatefulSets` adaptées à la production : ceux-ci instancient des `PersistentVolumeClaim` pour référencer des `PV`, ce qui permet de générer dynamiquement des volumes depuis du storage (en principe distribué). Le `local-path-provisionner` permet de simuler cet usage en utilisant du storage local (et donc **peu adapté à la production !**)
+:::
+
+:::tip
+Pour installer un serveur NFS simple on pourra utiliser une VM Ubuntu :
+
+```sh
+#!/usr/bin/env bash
+
+# Installation et configuration d'un serveur NFS (dans une VM)
+sudo apt install -y nfs-server
+sudo mkdir -p /data
+sudo /bin/sh -c 'echo "/data *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports'
+sudo systemctl restart nfs-kernel-server
+## check
+sudo exportfs
+# /data           <world>
+```
+:::
+
+Vérifier la bonne installation des `StorageClass` :
+
+```console
+$ kubectl get storageclasses.storage.k8s.io
+NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  26h
+nfs-csi                nfs.csi.k8s.io          Delete          Immediate              true                   8m29s
+```
+
 ## Déploiement de l'application
 
 Une fois le cluster installé, nous allons y déployer une application réalisée par vos soins. Cette application doit être multi-composants (frontend, backend, …) et utiliser une base de données.
