@@ -661,7 +661,7 @@ graph LR;
 
 - `PersitentVolume` (PV) : vision _storage_ du cluster Kubernetes
 - **stockage extérieur** à la vision _conteneur/pod_
-- Représente un disque concret : _EBS_, _SAN_, …
+- Représente un disque concret : local, NFS, iSCSI, SMB, EBS, SAN, …
   - existe dans l'_API Server_ : `kubectl get persistentvolumes`
   - durée de vie indépendante du pod
   - ~ne peut **pas être associé directement**~ à un _Pod_
@@ -734,6 +734,7 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 - Assure que des pods tournent sur tous les noeuds du cluster
 - Utile pour monitoring & logs
+- Exemple : installation d'un _Load Balancer_ `MetalLB` sur tous les _Node_ du cluster.
 
 ---
 
@@ -1107,14 +1108,111 @@ layout: section
 
 ---
 
-# Helm
+# Helm : déploiement applicatif
 
 - Gestionnaire de "paquets" k8s
   - en fait des fichiers Yaml
   - ajout du versionning
-- `chart` : ensemble de fichiers manifests
-- Stockés dans des `repositories`
-  - `hub` officiel : <https://hub.helm.sh/>
+- `chart` : ensemble de fichiers manifests, `templates`, … avec paramètres
+- Stockés dans des `repositories` : <https://hub.helm.sh/>, …
+- `values.yaml` : valeurs par défaut
+- `template` : manifest Kubernetes avec _templates Go_.
+- `release` : un déploiement de `chart` (versionnée : upgrade, rollback, uninstall)
+- trouver des `chart` : <https://artifacthub.io/>
+
+---
+
+## Charts Helm populaires
+
+---
+
+1. **MySQL** :
+   - **Description** : Déploie une instance MySQL.
+   - **Repository** : `bitnami/mysql`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add bitnami https://charts.bitnami.com/bitnami
+     helm install my-mysql bitnami/mysql
+     ```
+
+---
+
+2. **WordPress** :
+   - **Description** : Déploie une instance WordPress avec une base de données MySQL.
+   - **Repository** : `bitnami/wordpress`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add bitnami https://charts.bitnami.com/bitnami
+     helm install my-wordpress bitnami/wordpress
+     ```
+
+---
+
+3. **MongoDB** :
+   - **Description** : Déploie une instance MongoDB.
+   - **Repository** : `bitnami/mongodb`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add bitnami https://charts.bitnami.com/bitnami
+     helm install my-mongodb bitnami/mongodb
+     ```
+
+---
+
+4. **Redis** :
+   - **Description** : Déploie une instance Redis.
+   - **Repository** : `bitnami/redis`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add bitnami https://charts.bitnami.com/bitnami
+     helm install my-redis bitnami/redis
+     ```
+
+---
+
+5. **Nginx** :
+   - **Description** : Déploie une instance Nginx.
+   - **Repository** : `bitnami/nginx`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add bitnami https://charts.bitnami.com/bitnami
+     helm install my-nginx bitnami/nginx
+     ```
+
+---
+
+6. **PostgreSQL** :
+   - **Description** : Déploie une instance PostgreSQL.
+   - **Repository** : `bitnami/postgresql`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add bitnami https://charts.bitnami.com/bitnami
+     helm install my-postgresql bitnami/postgresql
+     ```
+
+---
+
+7. **Kubernetes Dashboard** :
+   - **Description** : Déploie le Kubernetes Dashboard pour la gestion visuelle du cluster.
+   - **Repository** : `kubernetes/dashboard`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add kubernetes https://kubernetes.github.io/dashboard
+     helm install my-dashboard kubernetes/dashboard
+     ```
+
+---
+
+8. **Prometheus & Grafana** :
+   - **Description** : Déploie la stack Prometheus & Grafana pour la surveillance et la collecte de métriques.
+   - **Repository** : `prometheus-community/prometheus`
+   - **Exemple de commande** :
+     ```sh
+     helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+		 helm install my-prometheus prometheus-community/kube-prometheus-stack
+		 # ou seulement Prometheus :
+		 # helm install prometheus-community/prometheus
+     ```
 
 ---
 
@@ -1180,6 +1278,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 ## Sécurité des Secrets
 
+- **Utiliser des `Secret` pour remplacer les variables d'environnement sensibles** (`DB_PASSWORD`, …) des `Deployment`, `StatefulSet`, …
 - ~**Ne pas stocker de `Secret` en clair**~ dans des fichiers YAML : Utiliser `Kubeseal` pour les chiffrer.
 - Limiter l'accès aux `Secret` avec **Role-Based Access Control (RBAC)** : Par défaut, accès à tous les Secrets du Namespace.
 - Activer le **chiffrement des Secrets dans `etcd`** : par défaut les Secrets sont en clair. Attention à l'impact sur les performances.
