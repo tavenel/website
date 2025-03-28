@@ -959,7 +959,10 @@ Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concept
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm install ingress-nginx ingress-nginx/ingress-nginx
 # Ou directement :
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.1/deploy/static/provider/cloud/deploy.yaml
+
+# Pour Traefik :
+helm install traefik traefik --namespace=traefik --create-namespace --repo https://traefik.github.io/charts
 ```
 
 :::link
@@ -1618,24 +1621,47 @@ Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas êt
 ## Parcourir le hub et les répos
 
 ```sh
-helm search hub prometheus
+helm search hub prometheus # https://artifacthub.io
 helm repo list
+helm pull "<repo_name>/<chart_name>" --untar # copie locale pour inspecter les fichiers
+helm show readme "<repo_name>/<chart_name>"
+helm show values "<repo_name>/<chart_name>"
 ```
 
-## Récupérer et déployer un chart tout fait
+## Récupérer et déployer une chart toute faite
 
 ```sh
-helm repo add …
-helm install [--set …] <chart_name>
+helm repo add "<repo_name>" "<url>"
+helm install [--set …] "<release_name>" "<repo_name>/<chart_name>"
+helm upgrade -i [--set …] "<release_name>" "<repo_name>/<chart_name>" # upgrade -i installe ou met à jour
+helm list # dans le namespace courant
+helm list -A # dans tous les namespace
+helm delete # ou (alias) helm uninstall
 ```
 
 ## Historique, rollback
 
 ```sh
-helm show all <chart_name>
+helm show all "<chart_name>"
 helm history …
-helm upgrade <chart_name>
-helm rollback <chart_name>
+helm upgrade "<chart_name>"
+helm rollback "<chart_name>"
+```
+
+## Création d'une nouvelle Chart
+
+```sh
+# Crée un template pour la chart
+helm create "<chart_name>"
+```
+
+## Helmfile
+
+```sh
+helmfile init # télécharge les plugins (facultatif)
+helmfile apply # met à jour toutes les versions modifiées
+helmfile sync # met à jour toutes les versions, même celles qui n'ont pas été modifiées
+helmfile destroy
 ```
 
 ---
