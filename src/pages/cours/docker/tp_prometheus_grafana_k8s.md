@@ -9,6 +9,10 @@ date: 2024 / 2025
 
 Le monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation est une solution courante pour collecter, stocker et visualiser les métriques du cluster, des pods et des applications. Voici un exemple pour mettre en place cette infrastructure de monitoring.
 
+:::link
+Une installation courante de _Prometheus_ et _Grafana_ est réalisée via le packager _Helm_ en utilisant la _chart_ `kube-prometheus-stack` : c'est celle que nous utiliserons. Pour plus d'information, voir [le README](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md)
+:::
+
 ## Installer Prometheus et Grafana avec Helm
 
 `Helm` est un gestionnaire de packages pour `Kubernetes` qui facilite l'installation de chartes (charts) comme celles de `Prometheus` et `Grafana`. Si vous n'avez pas encore `Helm`, installez-le d'abord.

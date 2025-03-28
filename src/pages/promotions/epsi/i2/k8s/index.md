@@ -41,6 +41,7 @@ layout: '@layouts/BaseLayout.astro'
 - [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
 - [📌 Projet Déploiement  applicatif dans Kubernetes](/cours/docker/projet_appli_kubernetes)
 
 ## Pour aller plus loin
