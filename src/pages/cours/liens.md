@@ -128,3 +128,6 @@ Quelques références utiles en informatique.
 - [Exemple de microservices en Docker Compose et Kubernetes](https://github.com/microservices-demo/microservices-demo)
 - [BookInfo, application de démonstration d'Istio](https://istio.io/latest/docs/examples/bookinfo/)
 
+### Cybersécurité
+
+- <https://owasp.org/www-project-juice-shop/>
