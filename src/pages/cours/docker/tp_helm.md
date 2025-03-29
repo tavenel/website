@@ -48,10 +48,33 @@ Les templates de manifests utilisent le système de templates de _Go_ :
 - `{{ .Values.xyz }}` fait référence aux [values](https://helm.sh/docs/chart_template_guide/values_files/) modifiables
   - `values.yaml` contient leurs valeurs par défaut
   - modifiables à l'installation par `--set xyz=…` ou `--values fichier.yaml`
+- `{{ if x }} y {{ end }}`
+- `{{ range x }} y {{ end }}` (`.` contient les éléments de l'itération de `x` en cours)
+- `{{- x }}`/`{{ x -}}` supprime les espaces à gauche/droite
+- `{{ template "x.y" }}` fait référence à un [template nommé](https://helm.sh/docs/chart_template_guide/named_templates/#declaring-and-using-templates-with-define-and-template)
+  - `{{ template "x.y" . }}` : Le `.` est le _contexte_ pour ce template (pour transmettre au template les variables du contexte local)
 
 :::link
-Pour plus d'information voir [la documentation sur les template Go](https://golang.org/pkg/text/template/).
+- Et aussi : toute la bibliothèque [Sprig](http://masterminds.github.io/sprig/) et des ajouts : `lower` `upper` `quote` `trim` `default` `b64enc` `b64dec` `sha256sum` `indent` `toYaml` …
+- Pour plus d'information voir [la documentation sur les template Go](https://golang.org/pkg/text/template/).
 :::
+
+:::tip
+Il est possible d'ajouter des fichiers à la _chart_ (en dehors du répertoire `templates`) accessibles avec `.Files` qui peuvent être transformés en `ConfigMap` ou en `Secrets` avec `AsConfig` et `AsSecrets` : voir [cet exemple dans la doc Helm](https://helm.sh/docs/chart_template_guide/accessing_files/#configmap-and-secrets-utility-functions)
+:::
+
+#### Pipelines
+
+- `{{ quote blah }}` peut également être exprimé comme `{{ blah | quote }}`
+- Avec plusieurs arguments, `{{ x y z }}` peut être exprimé comme `{{ z | x y }}`)
+- Exemple : `{{ .Values.annotations | toYaml | indent 4 }}` : transforme la _map_ `annotations` en _string_ YAML et l'indente avec 4 espaces pour correspondre au contexte
+
+#### Hooks et tests
+
+- _hooks_ : ressources annotées avec `helm.sh/hook : NOM-DU-HOOK` : `pre-install`, `post-install`, `test` [et beaucoup d'autres](https://helm.sh/docs/topics/charts_hooks/#the-available-hooks)
+  - `helm.sh/hook: test` => exécuté seulement par `helm test "<ma-release>"`
+- Exécution _synchrone_ : attente de la fin d'un _Job_ ou _Pod_
+- Utilisation : migrations BDD, backup, notifs, smoke tests, …
 
 ### Dépendances
 
