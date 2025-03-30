@@ -978,7 +978,12 @@ helm install traefik traefik --namespace=traefik --create-namespace --repo https
 ```
 
 :::link
-- Voir aussi : <https://kubernetes.github.io/ingress-nginx/deploy/#quick-start>
+Voir aussi :
+
+- <https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md>
+- <https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml>
+- <https://kubernetes.github.io/ingress-nginx/deploy/#quick-start>
+- [Ingress entre différentes namespace](https://tech.aabouzaid.com/2022/08/2-ways-to-route-ingress-traffic-across-namespaces.html)
 - Exemples de déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
 :::
 
