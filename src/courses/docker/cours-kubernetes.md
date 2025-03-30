@@ -141,6 +141,8 @@ layout: section
    - Version allégée de Kubernetes conçue pour les environnemets embarqués
    - Consomme moins de ressources que Kubernetes standard
    - Idéal pour les systèmes à faible puissance
+   - Utilise le CNI `flannel`
+   - Voir aussi : _k3d_ (_k3s in Docker_) : similaire _kind_ (voir ci-dessous) pour k3s
 
 ---
 
@@ -189,6 +191,8 @@ layout: section
    - Déploie Kubernetes dans un conteneur pour le développement et le test
    - Crée rapidement un ou plusieurs clusters localement
    - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, …
+   - CNI custom : `kindnetd`
+   - Utilise `kubeadm`
 
 ---
 
@@ -1352,9 +1356,20 @@ layout: two-cols
 
 # Liens
 
-- [Site web Kubernetes](https://kubernetes.io/)
+## Installation de clusters et environnements de test
+
+- [Fichiers perso de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 - Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/> et <https://kodekloud.com/playgrounds/>
 - Mini-distributions : <https://blog.palark.com/small-local-kubernetes-comparison/>
+- [Administration de cluster via etcd](https://blog.stephane-robert.info/post/kubernetes-etcd/)
+- [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc)
+- [Installer Kubernetes via kubeadm](https://dev.to/abhay_yt_52a8e72b213be229/how-to-set-up-and-install-a-kubernetes-cluster-a-step-by-step-guide-375j)
+- <https://learnk8s.io/production-best-practices/>
+- <https://kubernetes.io/docs/tasks/administer-cluster/>
+
+## Documentation, Cours et Formations
+
+- [Site web Kubernetes](https://kubernetes.io/)
 - [Introduction à k8s](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
 - Cours sur kubernetes :
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
@@ -1367,56 +1382,67 @@ layout: two-cols
 		- [Opérer Kubernetes](https://2021-05-enix.container.training/5.yml.html)
 		- <https://github.com/jpetazzo/container.training>
 		- [Video - Deep Dive into Kubernetes Internals for Builders and Operators](https://www.youtube.com/watch?v=3KtEAa7_duA)
-- [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
-
 - [Introduction à kubectl](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
-- <https://roadmap.sh/kubernetes>
-- [Helm: package manager pour déployer dans k8s](https://helm.sh/)
-    - [Introduction à Helm](https://www.aukfood.fr/helm-le-meilleur-ami-de-votre-kubernetes/)
 - [Livre : Bootstrapping Microservices with Docker, Kubernetes, and Terraform](https://www.manning.com/books/bootstrapping-microservices-with-docker-kubernetes-and-terraform)
-- <https://www.cortex.io/post/understanding-kubernetes-services-ingress-networking>
+- Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
 
----
-layout: two-cols
----
+## Scaling et H/A
 
 - Autoscaling : [doc](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) et [pratique](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
 - [HPA Autoscaling depuis des métriques custom dans Prometheus](https://blog.zwindler.fr/2024/10/11/optimisation-ressources-kubernetes-autoscaling-horizontal-custom-metrics-prometheus-adapter/)
+- [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
+
+## Déploiement continu
+
 - [Blue-Green deployment in k8s](https://developer.harness.io/docs/continuous-delivery/deploy-srv-diff-platforms/kubernetes/kubernetes-executions/create-a-kubernetes-blue-green-deployment/)
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml)
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes>
+
+## Réseau et Service
 
 - Tutoriels sur la communication entre pods :
   - [Utiliser un service](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
   - [Tutoriel complet](https://medium.com/@extio/mastering-kubernetes-pod-to-pod-communication-a-comprehensive-guide-46832b30556b)
 	- [Youtube Xavki : Kubernetes 021 - Services : NodePort, LoadBalancer, ExternalName et notions de Endpoints](https://www.youtube.com/watch?v=tF28iwTco9A)
-- [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes)
-- [Article très complet sur le service mesh Istio](https://une-tasse-de.cafe/blog/istio/)
-- <https://spacelift.io/blog/kubernetes-secrets>
-- [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
-- [Administration de cluster via etcd](https://blog.stephane-robert.info/post/kubernetes-etcd/)
-- [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc)
-- [Installer Kubernetes via kubeadm](https://dev.to/abhay_yt_52a8e72b213be229/how-to-set-up-and-install-a-kubernetes-cluster-a-step-by-step-guide-375j)
-- [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
-- [Fichiers perso de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
-- [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
-- [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
-- Exemples de projets : voir la [page des liens](/cours/liens#kubernetes)
-- <https://learnk8s.io/production-best-practices/>
-- [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
-- Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources>
-- Exemple de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
-- [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
-- Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
-- [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
-- Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
+- <https://www.cortex.io/post/understanding-kubernetes-services-ingress-networking>
 - [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M)
-- <https://kubernetes.io/docs/tasks/administer-cluster/>
+- [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
+
+## Sécurité
+
+- <https://spacelift.io/blog/kubernetes-secrets>
+- [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
 - [Connexion à l'API Kubernetes par OpenID (Jérôme Petazzoni)](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openid-connect.md) : Google account, …
+
+## Test et debug
+
 - <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
 - <https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/>
 - [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo)
 - [Simuler la génération de certificats HTTPS pour un cluster de test avec Pebble](https://blog.manabie.io/2021/11/simulate-https-certificates-acme-k8s/)
+- Images Docker utiles pour lancer des _Pod_ de débug :
+  - <https://github.com/InAnimaTe/echo-server>
+  - <https://github.com/jpetazzo/shpod>
+  - <https://mauilion.dev/posts/etcdclient/>
+
+## Extensions courantes
+
+- [Helm: package manager pour déployer dans k8s](https://helm.sh/) et [Introduction à Helm](https://www.aukfood.fr/helm-le-meilleur-ami-de-votre-kubernetes/)
+- [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes)
+- [Article très complet sur le service mesh Istio](https://une-tasse-de.cafe/blog/istio/)
+
+## Autres
+
+- <https://roadmap.sh/kubernetes>
+- Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources>
+- [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
+- [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
+- [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
+- [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
+- Exemples de projets : voir la [page des liens](/cours/liens#kubernetes)
+- Exemple de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
+- [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
+- Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
 
 ---
 
