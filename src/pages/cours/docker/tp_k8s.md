@@ -20,10 +20,10 @@ Pour tester l’utilisation de Kubernetes, vous pouvez :
 - Utiliser `Minikube` (Windows / MacOS / Linux), qui permet de déployer un noeud simple dans une instance locale. Minikube peut utiliser différents types de drivers (VirtualBox, KVM, Docker, …) et crée tout le cluster dans une VM (ou dans un conteneur). Les ressources sont donc plus limitées : <https://kubernetes.io/fr/docs/tasks/tools/install-minikube/>
 - Utiliser `k3s` (Linux uniquement, par exemple dans une VM) qui permet de déployer une vraie instance légère de Kubernetes (mono-noeud par défaut) : <https://docs.k3s.io/quick-start>
 - Utiliser `Docker Desktop` qui permet dans les dernières versions de déployer un mini cluster de test Kubernetes
-- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker)
+- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker). Ou `k3d` qui permet de faire la même chose avec `k3s`. Ces distributions sont utiles pour avoir plusieurs clusters en parrallèle.
 
 :::tip
-Un cluster k8s complet peut être un peu gourmand en ressources et suivant les installations, Minikube est très restrictif. Ajouter les options suivantes **à la création du cluster** :
+Un cluster kubernetes complet peut être un peu gourmand en ressources et suivant les installations, Minikube est très restrictif. Ajouter les options suivantes **à la création du cluster** :
 
 ```sh
 minikube start --cpus 4 --memory 8192
@@ -50,7 +50,7 @@ Dans la suite du TP, on utilisera uniquement la notation `kubectl` : attention �
 
 ### Dashboard de Kubernetes
 
-Pour vérifier simplement le bon déroulement du TP, on peut déployer le dashboard Web de Kubernetes. En pratique, ce dashboard est rarement utilisé (on lui préfère les commandes `kubectl` beaucoup plus puissantes), mais celui-ci est assez utile pour tester k8s.
+Pour vérifier simplement le bon déroulement du TP, on peut déployer le dashboard Web de Kubernetes. En pratique, ce dashboard est rarement utilisé (on lui préfère les commandes `kubectl` beaucoup plus puissantes), mais celui-ci est assez utile pour tester kubernetes.
 
 Minikube permet de déployer et lancer le dashboard très simplement :
 
@@ -58,28 +58,38 @@ Minikube permet de déployer et lancer le dashboard très simplement :
 minikube dashboard
 ```
 
+:::tip
 ### Exécution bac à sable en ligne
 
 En cas de souci avec l'installation du cluster, il est possible de tester l'utilisation de Kubernetes depuis un environnement en ligne :
 
 - <https://labs.play-with-k8s.com/>
 - <https://killercoda.com/playgrounds/scenario/kubernetes>
+- <https://kodekloud.com/playgrounds/>
+:::
 
 ## Prise en main d’un cluster Kubernetes
 
 ### Premier pod
 
-Dans ces exemples, nous allons exécuter de la manière la plus simple possible des conteneurs en utilisant l’unité de base d’un cluster k8s : le `pod`.
+Dans ces exemples, nous allons exécuter de la manière la plus simple possible des conteneurs en utilisant l’unité de base d’un cluster kubernetes : le `pod`.
 
-Ensuite, nous exposerons un `service` k8s pour pouvoir accéder à nos conteneurs et nous verrons finalement comment configurer l’équilibrage de charge sur nos pods.
+Ensuite, nous exposerons un `service` kubernetes pour pouvoir accéder à nos conteneurs et nous verrons finalement comment configurer l’équilibrage de charge sur nos pods.
 
-**Dans la suite du TP, nous utiliserons une image `nginx` pour simuler un serveur Web. Cette image peut être remplacée par l'image de test : `paulbouwer/hello-kubernetes:1.8` qui permet d'afficher le `Node` et le `Pod` en cours d'exécution pour du débug. On pourra aussi utiliser l'image <https://github.com/kubernetes-up-and-running/kuard> qui affiche des détails sur l'exécution du Pod.**
+:::tip
+Dans la suite du TP, nous utiliserons une image de test pour simuler un serveur Web : [`inanimate/echo-server`](https://github.com/InAnimaTe/echo-server).
+
+Cette image peut être remplacée par d'autres images de test : 
+
+- `paulbouwer/hello-kubernetes:1.8` qui permet d'afficher le `Node` et le `Pod` en cours d'exécution pour du débug.
+- <https://github.com/kubernetes-up-and-running/kuard> qui affiche des détails sur l'exécution du Pod
+:::
 
 :::exo
-1. En utilisant la cheatsheet k8s, créer un fichier décrivant un Pod utilisant une image `nginx` pour créer un pod nommé `web`.
+1. En utilisant la cheatsheet kubernetes, créer un fichier décrivant un Pod utilisant une image `inanimate/echo-server` pour créer un pod nommé `web`. L'application tourne sur le port `8080`.
 2. Récupérer l'adresse IP du pod créé.
 3. Créer un 2e pod nommé `test` et utilisant une image `alpine`. On exécutera une commande `sleep 9999` pour faire tourner ce pod en continue.
-4. Se connecter au pod `test` et exécuter un `ping` du pod `web`.
+4. Se connecter au pod `test` et exécuter un `ping` et un `curl` du pod `web`.
 5. Détruire le conteneur de test
 :::
 
@@ -93,10 +103,10 @@ metadata:
   name: web
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:latest
+    - name: web-container
+      image: inanimate/echo-server:latest
       ports:
-        - containerPort: 80
+        - containerPort: 8080
 ```
 ```sh
 # Création du Pod web
@@ -134,17 +144,27 @@ Un `Service` permet d'exposer les ports d'un pod. Nous allons voir comment expos
 :::exo
 1. En utilisant la ligne de commande `kubectl`, exposer un port du pod `nginx`
 2. Modifier le pod `web` pour lui ajouter un label : `app=web-app`. Ce label permettre de lier le Pod aux Services.
-3. Créer un service de type `ClusterIP` pour exposer `nginx` dans le cluster. Tester la connexion depuis un 2e Pod.
-4. Créer un service de type `NodePort`. Tester l'accès à `nginx` depuis la machine hôte sur le port choisi.
+3. Créer un service de type `ClusterIP` pour exposer le pod `web` dans le cluster. Tester la connexion depuis un 2e Pod.
+4. Créer un service de type `NodePort`. Tester l'accès au serveur Web depuis la machine hôte sur le port choisi.
 :::
 
 :::correction
 ```sh
 # 1. Port Forward
-kubectl port-forward web 8181:80
+kubectl port-forward web 8181:8080
 # Ou (plus propre)
-kubectl expose web --type="NodePort" --port 8181
-# Dans un navigateur ou wget/curl : localhost:8181 => Welcome to nginx!
+kubectl expose web --type="NodePort" --target-port 8080
+# récupération du NodePort (impossible à fixer depuis la CLI expose)
+kubectl get service web
+#NAME          TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+#echo-server   NodePort   10.96.98.162   <none>        8080:31674/TCP   6s
+# => NodePort == 31674
+kubectl get nodes -o wide
+#NAME                 STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
+#real-worker          Ready    <none>          3h18m   v1.32.0   172.18.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.12.20-0-lts    containerd://1.7.24
+[…]
+# On récupère l'IP d'un des worker, par exemple 172.18.0.3
+# Dans un navigateur ou wget/curl : 172.18.0.3:31674 => Welcome to nginx!
 ```
 
 ```yaml
@@ -159,10 +179,10 @@ metadata:
     app: web-app  # Pour l'utiliser dans l'affinité
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:latest
+    - name: web-container
+      image: inanimate/echo-server
       ports:
-        - containerPort: 80
+        - containerPort: 8080
 ```
 
 ```sh
@@ -192,7 +212,7 @@ spec:
     app: web-app
   ports:
     - port: 8182        # Port interne exposé par le service
-      targetPort: 80   # Port interne sur lequel le conteneur écoute
+      targetPort: 8080   # Port interne sur lequel le conteneur écoute
 ```
 
 ```sh
