@@ -58,13 +58,28 @@ nfs-csi                nfs.csi.k8s.io          Delete          Immediate        
 ## Déploiement de l'application
 
 Une fois le cluster installé, nous allons y déployer une application réalisée par vos soins. Cette application doit être multi-composants (frontend, backend, …) et utiliser une base de données.
+On recommande l'utilisation de fichiers de manifeste `yml` pour créer les ressources Kubernetes.
 
 :::exo
 1. Créer des images Docker pour votre application puis _pusher_ ces images sur un dépôt public (docker hub, ghcr.io, etc) ou privé.
 2. Mettre en place une base de données **répliquée** en utilisant un `Operator` déployé par _Helm_, par exemple `mariadb-galera` pour _MariaDB_ / _MySQL_, et [Zalando Postgres Operator](https://github.com/zalando/postgres-operator) pour _Postgresql_
-3. Déployer votre application dans le cluster **avec réplication**.
-4. Exposer votre application à l'extérieur via `ingress-nginx` ou `LoadBalancer`.
-5. Ajouter un certificat TLS (autosigné s'il n'est pas possible de le générer via _Let's Encrypt_) grâce à `certmanager` déployé via `Helm`
+3. Déployer votre application dans le cluster **avec réplication**. : `Deployment`, `Service`, `ConfigMaps` et `Secrets`.
+4. Exposer votre application à l'extérieur via un ingress (`traefik` ou `ingress-nginx`) ou un `LoadBalancer` dédié à l'application.
+5. Réfléchir à la *Scalabilité* et la **tolérance aux pannes** :
+  - Mise à jour du `Deployment` de votre application
+  - Autoscaling avec `Horizontal Pod Autoscaler`
+  - Limitation de ressources
+  - Droits du cluster
+6. Ajouter un certificat TLS (autosigné s'il n'est pas possible de le générer via _Let's Encrypt_) grâce à `certmanager` déployé via `Helm`
+:::
+
+:::tip
+On testera la partie H/A du déploiement applicatif :
+
+- Tester la suppression d'un conteneur / Pod
+- Tester la déconnexion d'un _worker node_
+- Vérifier la réconciliation des ressources
+- Vérifier le _scaling_ automatique en cas de pic de charge : 
 :::
 
 ## Supervision
