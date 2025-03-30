@@ -35,6 +35,7 @@ layout: '@layouts/BaseLayout.astro'
 - Bonnes connaissances de Docker et des principes de conteneurisation
 - Connaissances avancées en administration système Linux
 - Les namespace et les cgroups Linux
+- Notions de réseau
 
 ### Documents
 
