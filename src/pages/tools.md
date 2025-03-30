@@ -164,6 +164,8 @@ created: 2024-10-17
   - [kube-backup](https://github.com/pieterlange/kube-backup) : backup YAML dans répo Git
   - [bivac](https://github.com/camptocamp/bivac) : Backup Interface for Volumes Attached to Containers 
   - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/) : [snapshots par annotations](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/snaps-annotations/#taking-periodic-snapshots-on-a-running-pod)
+- CNI :
+  - [Tigera](https://github.com/tigera/operator) : gestion du _CNI_ Calico dans le cluster
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 - Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html), <https://submariner.io/>
 
