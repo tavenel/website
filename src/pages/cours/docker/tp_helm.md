@@ -160,7 +160,7 @@ bitnami/drupal  10.2.6          9.1.5           One of the most versatile open s
 ```
 
 3. Installation de la chart :
-- `helm upgrade -i` installe ou met à jour la chart.
+- `helm upgrade --install` installe ou met à jour la chart.
 - `--set replicaCount=2` change `replicaCount` des `values.yml`
 
 ```console
