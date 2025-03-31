@@ -17,10 +17,10 @@ Le déploiement de Kubernetes dans un environnement de production est une étape
 
 Pour tester l’utilisation de Kubernetes, vous pouvez :
 
+- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker). Ou `k3d` qui permet de faire la même chose avec `k3s`. Ces distributions sont utiles pour avoir plusieurs clusters en parrallèle.
 - Utiliser `Minikube` (Windows / MacOS / Linux), qui permet de déployer un noeud simple dans une instance locale. Minikube peut utiliser différents types de drivers (VirtualBox, KVM, Docker, …) et crée tout le cluster dans une VM (ou dans un conteneur). Les ressources sont donc plus limitées : <https://kubernetes.io/fr/docs/tasks/tools/install-minikube/>
 - Utiliser `k3s` (Linux uniquement, par exemple dans une VM) qui permet de déployer une vraie instance légère de Kubernetes (mono-noeud par défaut) : <https://docs.k3s.io/quick-start>
 - Utiliser `Docker Desktop` qui permet dans les dernières versions de déployer un mini cluster de test Kubernetes
-- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker). Ou `k3d` qui permet de faire la même chose avec `k3s`. Ces distributions sont utiles pour avoir plusieurs clusters en parrallèle.
 
 :::tip
 Un cluster kubernetes complet peut être un peu gourmand en ressources et suivant les installations, Minikube est très restrictif. Ajouter les options suivantes **à la création du cluster** :

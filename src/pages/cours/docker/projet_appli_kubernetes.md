@@ -8,7 +8,7 @@ date: 2024 / 2025
 :::exo
 1. Mettre en place un petit cluster Kubernetes (1 control plane, 2 à 3 workers). **On ne demande pas de déployer un vrai cluster de production !**
 2. En cas d'installation _on-premise_, installer un _Load Balancer_ `MetalLB` via _Helm_.
-3. Installer un `IngressController`, par exemple `ingress-nginx` via _Helm_.
+3. Installer un `IngressController`, par exemple `traefik` ou `ingress-nginx` via _Helm_.
 :::
 
 :::link

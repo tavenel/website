@@ -1406,6 +1406,7 @@ layout: two-cols
 	- [Youtube Xavki : Kubernetes 021 - Services : NodePort, LoadBalancer, ExternalName et notions de Endpoints](https://www.youtube.com/watch?v=tF28iwTco9A)
 - <https://www.cortex.io/post/understanding-kubernetes-services-ingress-networking>
 - [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M)
+- [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo)
 - [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
 
 ## Sécurité
@@ -1418,12 +1419,29 @@ layout: two-cols
 
 - <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
 - <https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/>
-- [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo)
 - [Simuler la génération de certificats HTTPS pour un cluster de test avec Pebble](https://blog.manabie.io/2021/11/simulate-https-certificates-acme-k8s/)
 - Images Docker utiles pour lancer des _Pod_ de débug :
-  - <https://github.com/InAnimaTe/echo-server>
-  - <https://github.com/jpetazzo/shpod>
-  - <https://mauilion.dev/posts/etcdclient/>
+  - <https://github.com/InAnimaTe/echo-server> : mini webserveur affichant le contexte courant sur le port 8080 : Pod, Node, …
+  - <https://mauilion.dev/posts/etcdclient/> : image statique de Pod pour tester etcd
+  - <https://github.com/kubernetes-up-and-running/kuard> qui affiche des détails sur l'exécution du Pod
+  - <https://github.com/jpetazzo/shpod> : image de debug complète, incluant un serveur SSH et kubectl
+
+:::tip
+L'image `shpod` est très utile pour du débug, on pourra la lancer depuis une _Helm Chart_ :
+
+```sh
+helm upgrade --install --repo https://shpod.in/ shpod shpod \
+	--namespace default \
+	--set service.type=NodePort \
+	--set resources.requests.cpu=0.1 \
+	--set resources.requests.memory=500M \
+	--set resources.limits.cpu=1 \
+	--set resources.limits.memory=500M \
+	--set persistentVolume.enabled=true \
+	--set "rbac.cluster.clusterRoles={cluster-admin}" \
+	--set ssh.authorized_keys="$(cat ~/.ssh/*.pub)"
+```
+:::
 
 ## Extensions courantes
 
@@ -1439,8 +1457,10 @@ layout: two-cols
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
 - [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
 - [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
-- Exemples de projets : voir la [page des liens](/cours/liens#kubernetes)
-- Exemple de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
+- Exemples :
+  - de projets : voir la [page des liens](/cours/liens#kubernetes)
+  - de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
+  - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples>
 - [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
 

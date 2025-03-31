@@ -69,7 +69,7 @@ Le username par défaut est `admin`.
 Le mot de passe est récupérable avec la commande suivante :
 
 ```sh
-kubectl get secret --namespace monitoring prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+kubectl --namespace monitoring get secrets prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
 ```
 
 ### Exposer Prometheus
