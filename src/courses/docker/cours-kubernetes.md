@@ -472,12 +472,249 @@ layout: section
 
 ---
 
+```plantuml
+@startuml
+
+title "ClusterIP Multi-Nodes"
+
+!include <kubernetes/k8s-sprites-unlabeled-25pct>
+
+skinparam rectangle {
+  RoundCorner 15
+}
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 14
+
+' -- Services --
+rectangle "<$svc>\nService blue\nclusterIP 10.0.0.5\nport 81" as svcA #LightBlue
+rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
+
+' -- Noeud 1 --
+component "<$node>\nNode 1" as node1 {
+  rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
+}
+
+' -- Noeud 2 --
+component "<$node>\nNode 2" as node2 {
+  rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
+  rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
+}
+
+' -- Noeud 3 --
+component "<$node>\nNode 3" as node3 {
+  rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
+}
+
+' -- Liaisons (flèches) entre Services et Noeuds --
+svcA -[dotted]-> pod1_1
+svcA -[dotted]-> pod2_1
+
+svcB -[dotted]-> pod2_2
+svcB -[dotted]-> pod3_1
+
+@enduml
+
+```
+
+---
+
+```plantuml
+@startuml
+
+title "Communication entre Pods par ClusterIP"
+
+!include <kubernetes/k8s-sprites-unlabeled-25pct>
+
+skinparam rectangle {
+  RoundCorner 15
+}
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 14
+
+' -- Services --
+rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
+
+rectangle Cluster {
+
+  component "<$node>\nNode 1" as node1 {
+    rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
+  }
+
+  component "<$node>\nNode 2" as node2 {
+    rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
+    rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
+  }
+
+  component "<$node>\nNode 3" as node3 {
+    rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
+  }
+
+}
+
+' -- Liaisons entre Services et Noeuds --
+
+svcB -[dotted]-> pod2_2
+svcB -[dotted]-> pod3_1
+
+pod1_1 -[bold,dashed]right-> svcB #red : <color:red>1 => http://orange:82</color>
+svcB -[bold,dashed]-> pod2_2 #red : <color:red>2 => http://10.4.32.6:8282</color>
+
+@enduml
+
+```
+
+---
+
+```plantuml
+@startuml
+
+title "Communication entre Pods par ClusterIP"
+
+!include <kubernetes/k8s-sprites-unlabeled-25pct>
+
+skinparam rectangle {
+  RoundCorner 15
+}
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 14
+
+' -- Services --
+rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
+
+rectangle Cluster {
+
+  component "<$node>\nNode 1" as node1 {
+    rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
+  }
+
+  component "<$node>\nNode 2" as node2 {
+    rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
+    rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
+  }
+
+  component "<$node>\nNode 3" as node3 {
+    rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
+  }
+
+}
+
+' -- Liaisons entre Services et Noeuds --
+
+svcB -[dotted]-> pod2_2
+svcB -[dotted]-> pod3_1
+
+pod1_1 -[bold,dashed]right-> svcB #red : <color:red>1 => http://orange:82</color>
+svcB -[bold,dashed]-> pod3_1 #red : <color:red>OU (load balancer interne) : 2 => http://10.4.32.8:8282</color>
+
+@enduml
+
+```
+
+---
+
 ### Service: NodePort
 
 - Extension du `ClusterIP`
 - Expose à l'extérieur du cluster
 - Accès via des ports sur les Nodes du cluster
 - Load balancer interne sur les Pods
+
+---
+
+```plantuml
+@startuml
+
+title "NodePort"
+
+!include <kubernetes/k8s-sprites-unlabeled-25pct>
+
+skinparam rectangle {
+  RoundCorner 15
+}
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 14
+
+' -- Services --
+rectangle "<$svc>\nService blue\nNodePort 10.0.0.5\nport 81\nnodePort 30001" as svcA #LightBlue
+rectangle "<$svc>\nService orange\nNodePort 10.0.0.7\nport 82\nnodePort 30002" as svcB #Orange
+
+' -- Noeud 1 --
+component "<$node>\nNode 1\n172.10.10.1\n:30001\n:30002" as node1 {
+  rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
+}
+
+' -- Noeud 2 --
+component "<$node>\nNode 2\n172.10.10.2\n:30001\n:30002" as node2 {
+  rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
+  rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
+}
+
+' -- Noeud 3 --
+component "<$node>\nNode 3\n172.10.10.3\n:30001\n:30002" as node3 {
+  rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
+}
+
+' -- Liaisons (flèches) entre Services et Noeuds --
+svcA -[dotted]-> pod1_1
+svcA -[dotted]-> pod2_1
+
+svcB -[dotted]-> pod2_2
+svcB -[dotted]-> pod3_1
+
+actor User
+User -[bold,dashed]right-> node1 #red : <color:red>1 => http://127.10.10.1:30001</color>
+User -[bold,dashed]-> pod1_1 #red : <color:red>2 => pod-blue-1:8181</color>
+
+@enduml
+
+```
+
+---
+
+```plantuml
+@startuml
+title "NodePort"
+
+!include <kubernetes/k8s-sprites-unlabeled-25pct>
+
+skinparam rectangle {
+  RoundCorner 15
+}
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 14
+
+' -- Services --
+rectangle "<$svc>\nService blue\nNodePort 10.0.0.5\nport 81\nnodePort 30001" as svcA #LightBlue
+rectangle "<$svc>\nService orange\nNodePort 10.0.0.7\nport 82\nnodePort 30002" as svcB #Orange
+
+' -- Noeud 1 --
+component "<$node>\nNode 1\n172.10.10.1\n:30001\n:30002" as node1 {
+  rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
+}
+
+' -- Noeud 2 --
+component "<$node>\nNode 2\n172.10.10.2\n:30001\n:30002" as node2 {
+  rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
+  rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
+}
+
+' -- Noeud 3 --
+component "<$node>\nNode 3\n172.10.10.3\n:30001\n:30002" as node3 {
+  rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
+}
+
+' -- Liaisons (flèches) entre Services et Noeuds --
+svcA -[dotted]-> pod1_1
+svcA -[dotted]-> pod2_1
+
+svcB -[dotted]-> pod2_2
+svcB -[dotted]-> pod3_1
+
+actor User
+User -[bold,dashed]-> node1 #red : <color:red>1 => http://127.10.10.1:30002</color>
+User -[bold,dashed]-> pod2_2 #red : <color:red>2 => pod-orange-1:8282</color>
+@enduml
+```
 
 ---
 
