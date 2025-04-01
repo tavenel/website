@@ -163,6 +163,10 @@ kubectl -o jsonpath='{.items[0].metadata.name}' …
 
 ```sh
 kubectl create … -o yaml > mon_fichier.yml
+# Exemple de création d'un pod (sans créer la ressource sur le serveur)
+kubectl run test-pod --image nginx -o yaml --dry-run=client
+# Exemple de création d'un service
+kubectl create deployment test-deploy --image=nginx -o yaml --dry-run=client
 ```
 
 ### Gérer le contexte

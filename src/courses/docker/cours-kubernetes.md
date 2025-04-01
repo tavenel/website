@@ -1408,6 +1408,7 @@ layout: two-cols
 - [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M)
 - [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo)
 - [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
+- [Fonctionnement interne des Service](https://coroot.com/blog/engineering/a-deep-dive-into-service-to-service-communications/)
 
 ## Sécurité
 
