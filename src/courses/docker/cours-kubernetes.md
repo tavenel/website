@@ -51,6 +51,52 @@ tags:
 
 ---
 
+```plantuml
+@startditaa
+
++--------+          +-----------+
+| Docker |          | Kubernetes|
+| (CLI)  |          |           |
++--------+          +-----------+
+    |                    |
+    |                    v
+    |      +-----------------------------------+
+    |      | Container Runtime Interface (CRI) |
+    |      |         [Kubernetes API]          |
+    |      +-----------------------------------+
+    |           |                     |
+    v           v                     v
++---------------------+         +-------------+
+|      ContainerD     |         |   CRI-O     |
+|    (pull images,    |         |             |
+|  network, storage)  |         |             |
++---------------------+         +-------------+
+         |                            |
+         |                            |
+         v                            v
+    +-----------------------------------------------+
+    |    Open Container Interface (OCI) spec        |
+    +-----------------------------------------------+
+                    |
+                    v
+            +---------------+
+            |     runC      |
+            | (create / run |
+            |  containers)  |
+            +---------------+
+                    |
+                    v
+              +-----------+
+              | Container |
+              +-----------+
+
+= Architecture des technologies de conteneurs
+
+@endditaa
+```
+
+---
+
 # Plugin réseau (CNI)
 
 - Container Networking Interface (_CNI_) :
