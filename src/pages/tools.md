@@ -145,13 +145,14 @@ created: 2024-10-17
   - `argocd`
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
-- 🪫 Consommation d'énergie :
+- 🪫 Consommation d'énergie et pricing :
   - `kepler` : monitor Pod energy consumption
 	- `kube-green` : k8s operator for energy-saving actions. [tuto](https://blog.octo.com/arreter-ses-environnements-avec-kubernetes)
   - [Keda](https://keda.sh/) : Event-driven autoscaling
   - `sablier` scaling depuis requêtes sur _Ingress_
 	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
 	- <https://karpenter.sh/> : démarrage / arrêt automatique de noeuds sur le cluster
+  - <https://www.kubecost.com> : gestion des coûts des clusters (on-premise + cloud)
 - 🔄 Upgrade :
   - `WatchTower`
   - `Keel` (avec triggers)
@@ -258,6 +259,7 @@ created: 2024-10-17
 - monitoring :
   - `prometheus` (push par `node exporter`, puissant mais lourd) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/prometheus/)
     - Liste d'exporters disponibles : <https://prometheus.io/docs/instrumenting/exporters/>
+    - Scaling par `thanos`
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
 	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
   - `zabbix` (plutôt sysadmin que devops)
