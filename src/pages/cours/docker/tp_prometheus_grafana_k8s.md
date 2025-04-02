@@ -25,7 +25,7 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
 
-### Installer Prometheus
+### Installer Prometheus & Grafana
 
 Vous pouvez installer Prometheus à l'aide de la charte `Helm` `kube-prometheus-stack` (qui inclut à la fois Prometheus et les alertes associées) :
 
@@ -52,6 +52,20 @@ kubectl get pods -n monitoring
 ```
 
 Vous devriez voir plusieurs pods liés à `Prometheus`, `Alertmanager`, et `Grafana`.
+
+### Recommandations
+
+Assurez-vous toujours d'exécuter _Prometheus_ conformément aux recommandations de l'équipe Prometheus :
+
+- Placez _Prometheus_ dans le même domaine de défaillance, c'est-à-dire sur le même réseau et au même emplacement géographique que les services surveillés.
+- Utilisez un disque persistant pour conserver les données après chaque redémarrage de _Prometheus_.
+-Utilisez la _compaction locale_ pour des rétentions plus longues.
+- Ne modifiez pas les durées minimales des blocs _TSDB_.
+- Ne faites pas de scaling de _Prometheus_ sauf si nécessaire : une seule instance _Prometheus_ est déjà efficace.
+
+:::tip
+En cas de besoin de scaling de _Prometheus_, il est possible d'utiliser _Thanos_.
+:::
 
 ## Exposer Prometheus et Grafana
 
@@ -98,6 +112,16 @@ annotations:
   prometheus.io/port: "9090" # pour indiquer le port utilisé
   prometheus.io/path: /metrics # pour préciser l'URI (`/metrics` par défaut)
 ```
+
+## Exporters
+
+### NodeExporter
+
+Pour récupérer des sondes `Linux` automatiquement, on pourra utiliser le `NodeExporter` sur les _Node_, qui permet d'envoyer à `Prometheus` les informations liés à l'OS : <https://prometheus.io/docs/guides/node-exporter/>
+
+### cAdvisor
+
+Pour récupérer des sondes `Docker` automatiquement, on pourra utiliser `cAdvisor` sur les _Node_, qui permet d'envoyer à `Prometheus` les informations des conteneurs : <https://prometheus.io/docs/guides/cadvisor/>
 
 ## Configurer des Dashboards dans Grafana
 
