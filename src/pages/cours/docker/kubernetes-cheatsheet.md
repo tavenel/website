@@ -393,7 +393,7 @@ spec:
     - containerPort: 80 # port dans le conteneur
     resources:
       requests: # ressources minimum
-        memory: 50Mi
+        memory: 50Mi # éviter OOMkilled (Out of Memory-Killed)
         cpu: 0.2
       limits: # ressources maximum
         memory: 250Mi
