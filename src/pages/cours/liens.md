@@ -131,3 +131,9 @@ Quelques références utiles en informatique.
 ### Cybersécurité
 
 - <https://owasp.org/www-project-juice-shop/>
+
+### Fullstack
+
+- <https://spring-petclinic.github.io/>
+- <https://github.com/gothinkster/realworld>
+
