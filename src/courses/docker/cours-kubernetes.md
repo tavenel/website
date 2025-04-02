@@ -103,6 +103,7 @@ tags:
   - Permet la communication réseau au sein du cluster
   - Parfois intégré à la distribution, sinon à installer séparément
 	- <https://github.com/containernetworking/cni/>
+  - Par défaut, _Kubelet_ charge les config des plugins réseau depuis : `/etc/cni/net.d`
 
 ---
 
@@ -766,10 +767,12 @@ User -[bold,dashed]-> pod2_2 #red : <color:red>2 => pod-orange-1:8282</color>
 
 ### Service: LoadBalancer
 
-- LoadBalancer pour l'accès au Pod depuis l'extérieur
+- LoadBalancer pour l'accès au `Pod` depuis l'extérieur
   - idéalement directement, sinon par un `NodePort`
 - Permet d'avoir un accès unique à plusieurs conteneurs d'un Pod tournant sur plusieurs Nodes.
-- Load balancer externe : lié au service de load balancing du Cloud Provider.
+- Lié au service de _Load Balancing_ **externe** du Cloud Provider (_ELB_, _Azure LB_, _GCLB_, …).
+  - dans le cluster : idem `ClusterIP`
+  - programme un _Load Balancer_ Cloud puis ajoute l'IP **externe** au `Service`
   - on-premise, installer `MetalLB`
 
 ---
@@ -1503,22 +1506,28 @@ layout: section
 
 ---
 
-# FluxCD
+# GitOps : FluxCD, ArgoCD, Jenkins X
 
-- Outil Gitops pour k8s
+- Outils Gitops pour k8s
     - scrute un dépôt Git distant
     - mise à jour automatique des ressources k8s
     - plus de CLI `kubectl`
     - Utilise des `Kustomizations` de `Kustomize` (outil intégré à k8s)
 - intégrations Helm et Terraform
 - CLI `fluxctl` (pas de GUI)
-    - outils plus avancés : `argoscd`, `jenkins X`
+- Interface Web _Argo CD_, _Jenkins X_
 
 ---
 
 ![Architecture de FluxCD](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
 
 <div class="caption">Architecture de FluxCD (source: documentation FluxCD)</div>
+
+---
+
+![Architecture d'ArgoCD](https://argo-cd.readthedocs.io/en/stable/assets/argocd_architecture.png)
+
+<div class="caption">Architecture d'ArgoCD (source: documentation ArgoCD)</div>
 
 ---
 
@@ -1668,6 +1677,7 @@ layout: two-cols
 - [Introduction à kubectl](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - [Livre : Bootstrapping Microservices with Docker, Kubernetes, and Terraform](https://www.manning.com/books/bootstrapping-microservices-with-docker-kubernetes-and-terraform)
 - Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
+- [Kubernetes and Reconciliation Patterns](https://hkassaei.com/posts/kubernetes-and-reconciliation-patterns/)
 
 ## Scaling et H/A
 
