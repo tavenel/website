@@ -122,7 +122,6 @@ tags:
 - Utilise des tunnels UDP ou TCP pour la communication 
 - Offre une isolation réseau par pod
 - Est plus simple à configurer que les autres options
-- Est majoritairement utilisé
 
 ---
 
@@ -903,6 +902,17 @@ graph LR;
   class client plain;
   class cluster cluster;
 ```
+
+
+---
+
+### CIDRs
+
+- Kubernetes utilise uniquement 3 réseaux :
+- un CIDR pour faire communiquer les _Nodes_
+- un CIDR _flat_ (en principe isolé) pour les Pods
+- un CIDR publique (routé par le plugin CNI) pour communiquer au sein du Cluster (pour les `Service`, …)
+- peuvent s'ajouter des _external IP_ (Load Balancer, …)
 
 ---
 
