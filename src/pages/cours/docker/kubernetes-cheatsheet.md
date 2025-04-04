@@ -46,6 +46,19 @@ kubectl --namespace=kube-system get pods -o json \
 
 ### Administration etcd
 
+#### Authentification
+
+##### Entre pairs
+
+- `--peer-client-cert-auth=true` : activer authentification TLS
+- `--peer-cert-file`, `--peer-key-file`, `--peer-trusted-ca-file`
+
+##### Côté client
+
+- `--client-cert-auth=true`
+- `--trusted-ca-file`, `--cert-file`, `--key-file`
+- Client _APIServer_: `--etcd-cafile`, `--etcd-certfile`, `--etcd-keyfile`
+
 #### Afficher le pod etcd
 
 ```sh
@@ -124,6 +137,52 @@ kubectl get crds # Custom Resource Definition
 kubectl explain [--recursive] RESOURCE_NAME # documentation
 ```
 
+- Lister tous les verbes de toutes les ressources `v1`
+
+```bash
+kubectl get --raw /api/v1 | jq -r '.resources[].verbs[]' | sort -u
+```
+
+- Lister toutes les ressources et sous-ressources dans `apps/v1`
+
+```bash
+kubectl get --raw /apis/apps/v1 | jq -r '.resources[].name'
+```
+
+- Lister les verbes disponibles sur les ressources dans `networking.k8s.io`
+
+```bash
+kubectl get --raw /apis/networking.k8s.io/v1 | \
+jq -r '.resources[] | .name + ": " + (.verbs | join(", "))'
+```
+
+### Gérer les droits
+
+- Lister les actions kubectl disponibles :
+
+```bash
+kubectl auth can-i --list
+```
+
+- Lister les droits :
+
+```sh
+kubectl auth can-i "<verbe>" "<ressource>"
+# Par exemple :
+kubectl auth can-i get pods
+```
+
+- Vérifier les droits d'un utilisateur ou d'un ServiceAccount :
+
+```sh
+kubectl auth can-i "<verbe>" "<ressource>"
+kubectl auth can-i list nodes \
+		--as some-user
+
+kubectl auth can-i list nodes \
+		--as "system:serviceaccount:<namespace>:<name-of-service-account>"
+```
+
 ### Vérifier la présence d'un composant k8s
 
 ```sh
@@ -142,6 +201,31 @@ kubectl uncordon "<node-name>"
 :::warn
 Attention aux pré-requis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
 :::
+
+### Certificats et Tokens
+
+#### Inspection d'un certificat
+
+```sh
+kubectl config view --raw -o json \
+| jq -r '.users[0].user["client-certificate-data"]' \
+| openssl base64 -d -A \
+| openssl x509 -text \
+| grep 'Subject:'
+```
+
+Affiche les champs `CN` (utilisateur) et `O` (groupes) du certificat.
+
+#### Inspection d'un token JWT / OIDC
+
+```sh
+kubectl config view --raw -o json \
+| jq -r '.users[0].user.token' \
+| base64 -d \
+| cut -d. -f2 \
+| base64 -d \
+| jq .
+```
 
 ## Généralités
 
@@ -870,7 +954,10 @@ spec:
 
 :::tip
 - Pour accéder au service : <http://my-clusterip-service> (même namespace) ou <http://my-clusterip-service.nom-du-namespace.svc.cluster.local>
-- Pour récupérer la Virtual IP du service : `kubectl get svc httpenv -o go-template --template '{{ .spec.clusterIP }}'`
+- Pour récupérer la Virtual IP du service :
+  - avec `jq` : `kubectl get svc httpenv -o json | jq -r .spec.clusterIP`
+  - ou en template Go : `kubectl get svc httpenv -o go-template --template '{{ .spec.clusterIP }}'`
+
 :::
 
 ### Exemple de fichier de NodePort
