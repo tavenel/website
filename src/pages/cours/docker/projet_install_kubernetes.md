@@ -26,11 +26,40 @@ Sur chaque `Node` :
 
 - Désactiver le swap : `swapoff -a` et `fstab`
 - Synchroniser les horloges
-- Charger les modules noyau (avec `modprobe`) suivants : `overlay` et `br_netfilter`
-- `sysctl -w net.netfilter.nf_conntrack_max=1000000`
-- `echo "net.netfilter.nf_conntrack_max=1000000" >> /etc/sysctl.conf`
 - Un runtime de conteneurs : `containerd`, `CRI-O`, `Docker`, …
 - `Kubeadm`, `Kubelet` et `Kubectl`
+
+:::tip
+Kubernetes impose un peu de tuning du noyau Linux : 
+
+- Charger les modules noyau `overlay` et `br_netfilter`
+- Appliquer les paramètres de configuration du noyau (`sysctl`) suivants :
+
+```ini
+kernel.panic=10
+kernel.panic_on_oops=1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+net.netfilter.nf_conntrack_max=1000000
+vm.overcommit_memory=1
+```
+:::
+
+:::warn
+Si vous tournez le cluster sur votre machine personnelle dans des VMs, Kubernetes peut être très gourmand en I/O. 
+
+Appliquer également les paramètres suivants :
+
+```ini
+fs.inotify.max_user_instances=1024
+fs.inotify.max_user_watches=1048576
+```
+:::
+
+:::warn
+Docker n'est plus supporté nativement par Kubernetes, il faut un _Container Runtime Interface_ (CRI), par exemple `cri-dockerd`. On utilise souvent `containerd` directement (sans Docker). Voir : <https://kubernetes.io/docs/setup/production-environment/container-runtimes/>
+:::
 
 Configuration réseau :
 
@@ -39,8 +68,8 @@ Configuration réseau :
   - Si utilisation de `BGP` : 179
 - _Control Plane_ uniquement : 
   - `kube-apiserver` : 6443
-	- `scheduler` : 10251
-	- `controller-manager` : 10252
+  - `scheduler` : 10251
+  - `controller-manager` : 10252
 - Les _Node_ doivent pouvoir communiquer entre eux.
 
 :::tip
