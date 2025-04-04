@@ -136,6 +136,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - <https://spacelift.io/blog/kubernetes-secrets>
 - [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
 - [Connexion à l'API Kubernetes par OpenID (Jérôme Petazzoni)](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openid-connect.md) : Google account, …
+- [Managing Kubernetes Users, Groups, and ServiceAccounts: A Deep Dive with Hands-On Scenarios](https://medium.com/careerbytecode/managing-kubernetes-users-groups-and-serviceaccounts-a-deep-dive-with-hands-on-scenarios-e8d1dde38a22)
 - Exemples d'attaques par Pods non sécurisés : <https://github.com/BishopFox/badPods> et [tutoriel](https://bishopfox.com/blog/kubernetes-pod-privilege-escalation)
 - [Doc officielle: sécurité](https://kubernetes.io/docs/concepts/security/) notamment [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [Sécuriser le noyau Linux hôte](https://kubernetes.io/docs/concepts/security/linux-kernel-security-constraints/)
 - [Threat Matrix for Kubernetes (Microsoft)](https://www.microsoft.com/en-us/security/blog/2020/04/02/attack-matrix-kubernetes/)

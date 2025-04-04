@@ -14,78 +14,6 @@ Voir aussi :
 - <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et les sous-sections
 :::
 
-## Supervision
-
-Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#217) pour plus d'information sur les APIs internes et de monitoring
-
-On pourra notamment monitorer a minima ces endpoints (`HTTP/tcp`, non authentifié) :
-
-- `etcd` :
-  - 2381 `/health` et `/metrics`
-- `kubelet` :
-  - 10248 `/healthz` retourne "ok"
-- `kube-proxy` :
-  - 10249 `/healthz` retourne "ok", `/configz`, `/metrics`
-  - 10256 `/healthz` avec timestamp
-- `kube-controller` & `kube-scheduler` :
-  - 10257 (`kube-controller`) et 10259 (`kube-scheduler`) : `/healthz` (et `/configz` & `/metrics` en `HTTPS` avec authentification)
-
-## Renouvellement des certificats
-
-Exemple de procédure pour renouveller les certificats du cluster en utilisant `kubeadm` :
-
-```bash
-kubectl get csr
-kubeadm alpha certs renew all
-```
-
-## Upgrade
-
-### Versions et upgrade
-
-- Kubernetes suit un versionning _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
-- Il est _recommandé_ (pas obligatoire) d'exécuter des versions homogènes sur l'ensemble du cluster mais :
-- Les `APIServer` (en H/A) peuvent avoir différentes versions
-- Différents _Node_ peuvent exécuter différentes versions de `Kubelet`
-- Différents _Node_ peuvent exécuter différentes versions du noyau
-- Différents _Node_ peuvent exécuter différents engines de conteneurs
-- Les composants peuvent être mis à niveau un par un sans problème.
-- Il est toujours possible de combiner différentes versions de _PATCH_ (par exemple, 1.28.9 et 1.28.13 sont compatibles) mais il est recommandé de toujours mettre à jour vers la dernière version de _PATCH_
-- **L'`APIServer` doit être plus récent** que ses clients (`Kubelet` et _Control Plane_), donc **être mis à jour en premier**
-- Tous les composants supportent (au moins) une **différence d'une version _MINEURE_** => upgrade à chaud possible
-- Voir [la documentation sur les versions non homogènes](https://kubernetes.io/releases/version-skew-policy/)
-- Mettre à jour avec **le même outil qui a servi à l'installation du composant** : gestionnaire de package, `kubeadm`, Pod, conteneur, …
-- En moyenne, **une mise à jour tous les 3 mois**
-
-### Procédure
-
-:::link
-L'upgrade d'un cluster suit [la procédure officielle de la documentation](https://kubernetes.io/docs/tasks/administer-cluster/cluster-upgrade/)
-:::
-
-:::warn
-- Lors de l'upgrade d'un `Kubelet`, il est recommandé de le _boucler_ (_cordon_) par la commande `kubectl drain` pour retirer tous les Pods exécutés sur celui-ci au préalable.
-- Le déplacement de pods _stateful_ (BDD, …) peut entraîner des interruptions de service ! Utiliser la réplication de BDD (switch de l'instance _primaire_ sur le _Node_ non impacté) - certains `Operator` (ex [CNPG](https://cloudnative-pg.io/)) effectuent ce basculement automatiquement lorsqu'ils détectent qu'un _Node_ devient _cordon_.
-:::
-
-Exemple simplifié de procédure d'upgrade avec `kubeadm` (pour plus d'information, suivre [la documentation officielle](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)). Voir aussi [la formation de Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-upgrade.md)
-
-```bash
-# Upgrade kubeadm
-apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.31.x-y.y' && apt-mark hold kubeadm
-# Upgrade 1e control plane
-kubeadm upgrade plan
-kubeadm upgrade apply vX.Y.Z
-systemctl restart kubelet
-# Upgrade autres control plane
-kubeadm upgrade apply
-# Upgrade workers
-kubectl drain "<node-name>" --ignore-daemonsets # retire tous les Pods
-apt-get update && apt-get install -y kubelet kubectl && apt-mark hold kubelet kubectl
-systemctl restart kubelet
-kubectl uncordon "<node-name>" # fin du drainage
-```
-
 ## Backup de clusters
 
 - Les sauvegardes peuvent avoir plusieurs objectifs :
@@ -184,4 +112,198 @@ sudo kubeadm init \
 # 3. Rejoindre les autres nœuds
 ```
 
+### Exercice
+
+:::exo
+- Assurer la sauvegarde et la résilience : Mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
+- Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
+:::
+
+## Upgrade
+
+### Versions et upgrade
+
+- Kubernetes suit un versionning _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
+- Il est _recommandé_ (pas obligatoire) d'exécuter des versions homogènes sur l'ensemble du cluster mais :
+- Les `APIServer` (en H/A) peuvent avoir différentes versions
+- Différents _Node_ peuvent exécuter différentes versions de `Kubelet`
+- Différents _Node_ peuvent exécuter différentes versions du noyau
+- Différents _Node_ peuvent exécuter différents engines de conteneurs
+- Les composants peuvent être mis à niveau un par un sans problème.
+- Il est toujours possible de combiner différentes versions de _PATCH_ (par exemple, 1.28.9 et 1.28.13 sont compatibles) mais il est recommandé de toujours mettre à jour vers la dernière version de _PATCH_
+- **L'`APIServer` doit être plus récent** que ses clients (`Kubelet` et _Control Plane_), donc **être mis à jour en premier**
+- Tous les composants supportent (au moins) une **différence d'une version _MINEURE_** => upgrade à chaud possible
+- Voir [la documentation sur les versions non homogènes](https://kubernetes.io/releases/version-skew-policy/)
+- Mettre à jour avec **le même outil qui a servi à l'installation du composant** : gestionnaire de package, `kubeadm`, Pod, conteneur, …
+- En moyenne, **une mise à jour tous les 3 mois**
+
+### Procédure
+
+:::link
+L'upgrade d'un cluster suit [la procédure officielle de la documentation](https://kubernetes.io/docs/tasks/administer-cluster/cluster-upgrade/)
+:::
+
+:::warn
+- Lors de l'upgrade d'un `Kubelet`, il est recommandé de le _boucler_ (_cordon_) par la commande `kubectl drain` pour retirer tous les Pods exécutés sur celui-ci au préalable.
+- Le déplacement de pods _stateful_ (BDD, …) peut entraîner des interruptions de service ! Utiliser la réplication de BDD (switch de l'instance _primaire_ sur le _Node_ non impacté) - certains `Operator` (ex [CNPG](https://cloudnative-pg.io/)) effectuent ce basculement automatiquement lorsqu'ils détectent qu'un _Node_ devient _cordon_.
+:::
+
+Exemple simplifié de procédure d'upgrade avec `kubeadm` (pour plus d'information, suivre [la documentation officielle](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)). Voir aussi [la formation de Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-upgrade.md)
+
+```bash
+# Upgrade kubeadm
+apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.31.x-y.y' && apt-mark hold kubeadm
+# Upgrade 1e control plane
+kubeadm upgrade plan
+kubeadm upgrade apply vX.Y.Z
+systemctl restart kubelet
+# Upgrade autres control plane
+kubeadm upgrade apply
+# Upgrade workers
+kubectl drain "<node-name>" --ignore-daemonsets # retire tous les Pods
+apt-get update && apt-get install -y kubelet kubectl && apt-mark hold kubelet kubectl
+systemctl restart kubelet
+kubectl uncordon "<node-name>" # fin du drainage
+```
+
+### Exercice
+
+:::exo
+- Décrire une procédure de mise à jour pour votre cluster.
+- Tester la procédure en mettant à jour votre cluster.
+:::
+
+## Supervision
+
+Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#217) pour plus d'information sur les APIs internes et de monitoring
+
+On pourra notamment monitorer a minima ces endpoints (`HTTP/tcp`, non authentifié) :
+
+- `etcd` :
+  - 2381 `/health` et `/metrics`
+- `kubelet` :
+  - 10248 `/healthz` retourne "ok"
+- `kube-proxy` :
+  - 10249 `/healthz` retourne "ok", `/configz`, `/metrics`
+  - 10256 `/healthz` avec timestamp
+- `kube-controller` & `kube-scheduler` :
+  - 10257 (`kube-controller`) et 10259 (`kube-scheduler`) : `/healthz` (et `/configz` & `/metrics` en `HTTPS` avec authentification)
+
+### Exercice
+
+:::exo
+- Mettre en place la supervision du cluster en installant une stack _Prometheus_ / _Grafana_ : voir [le TP pour l'installation de Prometheus & Grafana via Helm](/cours/docker/tp_prometheus_grafana_k8s).
+:::
+
+## Sécurité
+
+### Sécurisation du cluster
+
+De nombreux composants acceptent les connexions (et les requêtes) d'autres composants : `api-server`, `etcd`, `Kubelet`
+Nous devons sécuriser ces connexions pour refuser les requêtes non autorisées et pour empêcher l'interception de secrets, de _tokens_ et d'autres informations sensibles
+Sécuriser les control-plane en mettant en place une communication sécurisée entre composants (voir cours).
+
+### Renouvellement des certificats
+
+Exemple de procédure pour renouveller les certificats du cluster en utilisant `kubeadm` :
+
+```bash
+kubectl get csr
+kubeadm alpha certs renew all
+```
+
+### Role-Based Access Control (RBAC)
+
+Mettre en place un système de role pour :
+
+- Sécuriser votre application
+- Créer un compte de support ayant le droit d'afficher des informations sur le cluster mais pas de le modifier.
+
+### NetworkPolicies
+
+Par défaut, un Pod peut communiquer avec tout autre Pod/Service de tout Namespace, ce qui n'est pas idéal ! Les `NetworkPolicies` permettent de segmenter le traffic réseau (voir cours).
+
+:::tip
+Certains CNI ne supportent pas (totalement) les `NetworkPolicies` : la ressource est appliquée mais sans effet ! C'est le cas par exemple de _Flannel_ (même s'il est possible de lui ajouter une partie de _Calico_ pour fixer ce problème : _Canal_ ou d'utiliser [Kube Network Policies](https://github.com/flannel-io/flannel/blob/master/Documentation/netpol.md) ).
+
+Dans notre cas, on ne demande pas de réinstaller un nouveau CNI mais de définir des NetworkPolicies pour le projet (par exemple, dans le plan de changer un jour de CNI).
+:::
+
+:::warn
+Attention à ne pas bloquer les communications attendues par Kubernetes ! Par exemple, on ne demande pas de définir de NetworkPolicy dans le Namespace: `kube-system`.
+:::
+
+### Audit
+
+Une fois le cluster sécurisé, nous allons auditer les rôles disponibles sur celui-ci.
+
+Cet audit peut se réaliser par des plugins `kubectl` (installables par `krew`) :
+
+- `kubectl who-can` / [kubectl-who-can](https://github.com/aquasecurity/kubectl-who-can) by Aqua Security
+- `kubectl access-matrix` / [Rakkess (Review Access)](https://github.com/corneliusweig/rakkess) by Cornelius Weig
+- `kubectl rbac-lookup` / [RBAC Lookup](https://github.com/FairwindsOps/rbac-lookup) by FairwindsOps
+- `kubectl rbac-tool` / [RBAC Tool](https://github.com/alcideio/rbac-tool) by insightCloudSec
+
+Il est bien entendu également nécessaire d'auditer les actions réellement réalisées sur le cluster, à intégrer à la supervision.
+
+### Sealed Secret
+
+:::warn
+Par défaut, les secrets Kubernetes ne sont pas chiffrés mais seulement encodés en base 64 !
+:::
+
+Des outils externes permettent d'ajouter du chiffrement, on pourra par exemple utiliser _Kubeseal_ pour que seul le cluster soit capable de déchiffrer un secret.
+
+### Ingress SSL
+
+Pour pouvoir accéder à l'application en HTTPS, on utilisera un Ingress SSL. Pour cela, il faut :
+
+- Un contrôleur Ingress installé (ex : `NGINX Ingress Controller`)
+- Option 1 : générer un certificat manuellement => il faudra gérer manuellement son cycle de vie !
+- Option 2 : utiliser `cert-manager` pour automatiser la génération du certificat :
+  - par _Let's Encrypt_ si le nom de domaine pointe vers l'IP publique du contrôleur Ingress
+  - en test, on pourra [simuler la génération de certificats HTTPS avec Pebble](https://blog.manabie.io/2021/11/simulate-https-certificates-acme-k8s/)
+
+:::tip
+Pour générer un certificat SSL manuellement :
+
+1. Générer un certificat SSL
+
+```sh
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -out tls.crt -keyout tls.key \
+  -subj "/CN=example.com/O=example"
+```
+
+2. Créer un Secret Kubernetes TLS
+
+```sh
+kubectl create secret tls example-tls \
+  --cert=tls.crt \
+  --key=tls.key \
+  -n default
+```
+:::
+
+:::link
+Voir aussi :
+
+- La [cheatsheet Kubernetes](/cours/docker/kubernetes-cheatsheet/#tls--clusterissuer-lets-encrypt)
+- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/user-guide/tls/)
+- [Documentation Cert-Manager](https://cert-manager.io/docs/)
+:::
+
+### Exercice
+
+:::exo
+- Sécuriser les control-plane en mettant en place une communication sécurisée entre composants.
+- Mettre en place et tester une procédure de renouvellement des certificats.
+- Mettre en place et tester des rôles de sécurité (RBAC) pour :
+  - sécuriser votre application ;
+	- créer un compte de support pouvant lister les ressources principales du cluster sans pouvoir y apporter de modification.
+- Mettre en place des NetworkPolicies pour votre application.
+- Mettre en place un audit des droits sur le cluster.
+- Chiffrer les secrets avec _Kubeseal_.
+- (Bonus) Configurer un Ingress en HTTPS pour accéder à votre application.
+:::
 
