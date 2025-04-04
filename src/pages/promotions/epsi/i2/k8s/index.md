@@ -39,7 +39,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### Documents
 
-- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
+- [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
 - [󱃾  TP : Déploiement applicatif avec Helm](/cours/docker/tp_helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.

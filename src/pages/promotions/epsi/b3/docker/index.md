@@ -31,7 +31,7 @@ Module de 10H
 
 ### Kubernetes
 
-- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
+- [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP Kubernetes : Premiers pas avec k8s](/cours/docker/tp_k8s)
 - [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s)

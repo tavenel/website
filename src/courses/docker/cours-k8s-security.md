@@ -109,11 +109,9 @@ tags:
 ---
 
 - De nombreux composants acceptent les connexions (et les requêtes) d'autres composants :
-
-- `api-server`
-- `etcd`
-- `Kubelet`
-
+  - `api-server`
+  - `etcd`
+  - `Kubelet`
 - Nous devons sécuriser ces connexions :
 	- Pour refuser les requêtes non autorisées
 	- Pour empêcher l'interception de secrets, de _tokens_ et d'autres informations sensibles
@@ -206,6 +204,57 @@ spec:
     #name: web-xyz1234567-pqr89
 EOF
 ```
+
+---
+
+# Sécurité dans le Cluster
+
+---
+
+## Role-Based Access Control (RBAC)
+
+- _authz_ par règles d'autorisation : [verbes](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb) (`create`, `get`, `list`, `update`, `delete`, …) / [ressources](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#referring-to-resources) (`Pod`, `Service`, …) / nom de ressource
+- `Role` : profil permettant des accès / actions / ressources dans un namespace (`ClusterRole` : dans tout le cluster)
+- `ServiceAccount` : user applicatif
+  - génère des token (secrets) : à monter par exemple dans un `Pod` pour permettre l'accès
+  - utilisés pour accorder des autorisations aux applications, services, …
+- `RoleBinding` (`ClusterRoleBinding`) : association `ServiceAccount` <-> `Role` (`ClusterRole`)
+
+---
+
+### `ClusterRoles` par défaut
+
+- `cluster-admin` peut *tout faire* (pensez à `root` sous UNIX)
+- `admin` peut faire *presque tout* (sauf, par exemple, modifier les quotas et les limites de ressources).
+- `edit` est similaire à `admin`, mais ne permet pas d'afficher ni de modifier les permissions.
+- `view` a un accès en lecture seule à la plupart des ressources, à l'exception des permissions et des secrets.
+- Par défaut, les CRD ne sont pas inclus dans `view` / `edit` / etc.
+
+*Dans de nombreux cas, ces rôles suffisent.*
+
+---
+
+### Verbes `list` vs. `get`
+
+- ⚠️ `list` accorde (aussi) des droits de lecture aux ressources !
+- **Si un contrôleur doit pouvoir lister les secrets, il pourra aussi les lire**
+
+---
+
+## NetworkPolicies
+
+- Par défaut :
+- un `Pod` peut communiquer avec tout autre `Pod`, y compris d'autres `Namespace`
+- un `Service` est accessible partout, y compris depuis d'autres `Namespace`
+- Une `NetworkPolicy` permet d'**ajouter** de l'isolation :
+  - si un `Pod` n'est _sélectionné_ par **aucune `NetworkPolicy`** : **aucune isolation**
+  - si un `Pod` **est _sélectionné_** par au moins une `NetworkPolicy` : **isolation totale par défaut** (sauf règles acceptées par la `NetworkPolicy`)
+  - **stateful** : isolation à la **connexion**, et ~non par paquet~
+  - Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`)
+
+:::warn
+Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet !
+:::
 
 ---
 

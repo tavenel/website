@@ -35,7 +35,7 @@ Module de 15H
 
 ### 󱃾 Kubernetes® 
 
-- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
+- [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
 - 󱃾  Learn Kubernetes Basics: Tutoriels officiels pour débuter avec Kubernetes : <https://kubernetes.io/docs/tutorials/kubernetes-basics/>

@@ -18,8 +18,8 @@ title:   Docker® et 󱃾 Kubernetes®
 
 ## 󱃾 Kubernetes® 
 
-- [🤓 Cours - introduction à Kubernetes](/cours/docker/kubernetes-cours)
-- [🤓 Cours - sécurité d'un cluster Kubernetes](/cours/docker/kubernetes-cours-security)
+- [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
+- [🤓 Cours Kubernetes orienté Administrateur Système](/cours/docker/kubernetes-cours-admin)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
 - 󱃾  Learn Kubernetes Basics: Tutoriels officiels pour débuter avec Kubernetes : <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
