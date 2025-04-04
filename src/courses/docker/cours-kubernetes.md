@@ -1,6 +1,6 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Kubernetes
+title: Cours Kubernetes
 layout: '@layouts/CoursePartLayout.astro'
 tags:
 - docker
@@ -1062,10 +1062,31 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ## Role-Based Access Control (RBAC)
 
-- `ClusterRole` : profil permettant des accès / actions / ressources
+- _authz_ par règles d'autorisation : [verbes](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb) (`create`, `get`, `list`, `update`, `delete`, …) / [ressources](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#referring-to-resources) (`Pod`, `Service`, …) / nom de ressource
+- `Role` : profil permettant des accès / actions / ressources dans un namespace (`ClusterRole` : dans tout le cluster)
 - `ServiceAccount` : user applicatif
   - génère des token (secrets) : à monter par exemple dans un `Pod` pour permettre l'accès
-- `Cluster Role Binding` : association `ServiceAccount` <-> `ClusterRole`
+  - utilisés pour accorder des autorisations aux applications, services, …
+- `RoleBinding` (`ClusterRoleBinding`) : association `ServiceAccount` <-> `Role` (`ClusterRole`)
+
+---
+
+### `ClusterRoles` par défaut
+
+- `cluster-admin` peut *tout faire* (pensez à `root` sous UNIX)
+- `admin` peut faire *presque tout* (sauf, par exemple, modifier les quotas et les limites de ressources).
+- `edit` est similaire à `admin`, mais ne permet pas d'afficher ni de modifier les permissions.
+- `view` a un accès en lecture seule à la plupart des ressources, à l'exception des permissions et des secrets.
+- Par défaut, les CRD ne sont pas inclus dans `view` / `edit` / etc.
+
+*Dans de nombreux cas, ces rôles suffisent.*
+
+---
+
+### Verbes `list` vs. `get`
+
+- ⚠️ `list` accorde (aussi) des droits de lecture aux ressources !
+- **Si un contrôleur doit pouvoir lister les secrets, il pourra aussi les lire**
 
 ---
 
@@ -1607,6 +1628,16 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 ---
 
+## Sécurité globale
+
+- Soyez attentif au _RBAC_
+- Utiliser l'_Admission Controller_ sur les pods
+- Logiciels à jour : Kubernetes, OS Linux hôte, conteneurs
+- Collecter et surveiller les journaux de l'_APIServer_
+- Ajouter une _NetworkPolicy_
+
+---
+
 ## Sécurité des Secrets
 
 - **Utiliser des `Secret` pour remplacer les variables d'environnement sensibles** (`DB_PASSWORD`, …) des `Deployment`, `StatefulSet`, …
@@ -1677,6 +1708,7 @@ layout: two-cols
 - [Introduction à kubectl](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - [Livre : Bootstrapping Microservices with Docker, Kubernetes, and Terraform](https://www.manning.com/books/bootstrapping-microservices-with-docker-kubernetes-and-terraform)
 - Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
+- <https://kubernetes.io/case-studies/>
 - [Kubernetes and Reconciliation Patterns](https://hkassaei.com/posts/kubernetes-and-reconciliation-patterns/)
 
 ## Scaling et H/A
@@ -1708,6 +1740,9 @@ layout: two-cols
 - <https://spacelift.io/blog/kubernetes-secrets>
 - [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205)
 - [Connexion à l'API Kubernetes par OpenID (Jérôme Petazzoni)](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openid-connect.md) : Google account, …
+- Exemples d'attaques par Pods non sécurisés : <https://github.com/BishopFox/badPods> et [tutoriel](https://bishopfox.com/blog/kubernetes-pod-privilege-escalation)
+- [Doc officielle: sécurité](https://kubernetes.io/docs/concepts/security/) notamment [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [Sécuriser le noyau Linux hôte](https://kubernetes.io/docs/concepts/security/linux-kernel-security-constraints/)
+- [Threat Matrix for Kubernetes (Microsoft)](https://www.microsoft.com/en-us/security/blog/2020/04/02/attack-matrix-kubernetes/)
 
 ## Test et debug
 

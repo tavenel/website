@@ -42,6 +42,7 @@ Module de 2x18H
 
 ### Documents
 
+- [🤓 Cours - sécurité d'un cluster Kubernetes](/cours/docker/kubernetes-cours-security)
 - [📌 Projet Administration d'un Cluster Kubernetes](/cours/docker/tp_administration_kubernetes)
 
 ## Pour aller plus loin
