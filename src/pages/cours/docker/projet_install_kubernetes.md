@@ -114,9 +114,9 @@ On effectue donc en principe l'odre de déploiement suivant :
 
 ```sh
 # Init du control plane
-kubeadm init --control-plane-endpoint "<IP_Bastion>:6443" --pod-network-cidr=192.168.0.0/16 --upload-certs --cri-socket unix:///run/containerd/containerd.sock
+kubeadm init --cri-socket unix:///run/containerd/containerd.sock --upload-certs
 # Ajout des Node Worker en récupérant la sortie de la commande précédente
-kubeadm join <IP_bastion>:6443 --token <TOKEN> --discovery-token-ca-cert-hash sha256:<HASH>
+kubeadm join "<IP_control_plane>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>"
 # Puis retour au control plane
 
 # Config kubectl
@@ -127,8 +127,13 @@ kubectl get nodes -A
 NAME      STATUS     ROLES           AGE   VERSION
 cplane1   NotReady   control-plane   51s   v1.31.6
 
-# Installation du CNI (par exemple, Calico)
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+# Installation du CNI, par exemple :
+## Flannel : https://github.com/flannel-io/flannel
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+## Calico : https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/tigera-operator.yaml
+curl https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/custom-resources.yaml -o calico.yaml
+kubectl create -f calico.yaml # modifier le fichier avant (bgp: Disabled, CIDR, …)
 
 # Passage du Node en Ready
 kubectl get nodes -A
@@ -139,6 +144,7 @@ Ou par fichier de configuration :
 
 ```yaml
 # kubeadm-config.yaml
+# A retrouver après installation dans : /var/lib/kubelet/config.yaml
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
 kubernetesVersion: v1.21.0
@@ -150,17 +156,27 @@ cgroupDriver: systemd
 ```
 
 ```sh
-$ kubeadm init --config kubeadm-config.yaml
+kubeadm init --config kubeadm-config.yaml --upload-certs
 ```
 
+:::warn
+Forcer un CIDR pour le réseau des pods peut être obligatoire pour certains CNI (_Calico_) :
+
+```sh
+kubeadm init … –pod-network-cidr=100.0.0/16
+```
+:::
 
 ##### Avec H/A
 
 ```bash
-# pré-requis : Bastion => Installation d'un HAProxy entre les OS des Control Plane
+# pré-requis : Bastion =>
+# - Soit : Installation d'un HAProxy entre les OS des Control Plane
+# - Soit : Déploiement d'un kube-vip en utilisant un manifest de Pod statique pendant l'init
+# - Soit : Déférer le H/A après l'installation du 1er control plane (k3s)
 
 # Init du 1e master
-kubeadm init --control-plane-endpoint "<IP_bastion>:6443" --pod-network-cidr=192.168.0.0/16 --upload-cert
+kubeadm init --control-plane-endpoint "<IP_bastion>:6443" --pod-network-cidr=100.0.0.0/16 --upload-certs
 # Join des autres control-plane
 kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>" --control-plane --certificate-key "<HASH_CERT>"
 # Join des workers
@@ -170,19 +186,59 @@ kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-has
 
 #### API Server H/A
 
-Chaque _Node_ : `kubelet`, `kube-proxy`, `kube-router`, … doivent se lier à l'`API Server` **dont l'accès doit être H/A**, avec plusieurs possibilités :
+Chaque _Node_ : `kubelet`, `kube-proxy`, `kube-router`, … doivent se lier à l'`API Server` **dont l'accès doit être H/A**, avec plusieurs possibilités. Dans tous les cas, `kubectl` doit utiliser l'accès H/A publique.
 
 1. **Load Balancer externe** devant les _API Server_
   - _Kubelet_ pointe sur ce _load balancer_
   - si infra Cloud, souvent géré par le Cloud Provider
+  - voir : <https://kifarunix.com/setup-highly-available-kubernetes-cluster-with-haproxy-and-keepalived/>
 2. **Load Balancer local** : `Nginx`, `HAProxy`, … sur chaque _Node_ pour atteindre les _API Server_
   - _Kubelet_ pointe sur `localhost`
-3. **round-robin DNS** pour tous les _API Server_ (officiellement non supporté)
-4. H/A API endpoint dans un cluster managé, virtual IP, tunnel _Node_ <-> _API Server_ (`k3s`), …
+3. **round-robin DNS** pour tous les _API Server_ (officiellement non supporté mais aucun impact sur Kubernetes)
+4. **Autres** : H/A API endpoint dans un cluster managé, virtual IP Cloud, tunnel _Node_ <-> _API Server_ (`k3s`), …
+
+:::tip
+À l'initialisation du cluster (fichier `ClusterConfiguration` ou ligne de commande) :
+
+- `localAPIEndpoint` est l'endpoint local de l'instance de l'api-server sur le noeud courant.
+- Dans un cluster comportant plusieurs instances de _control-plane_, le champ `controlPlaneEndpoint` doit contenir l'adresse "publique" du cluster, par exemple _load-balancer_ externe placé devant les instances du _control-plane_.
+- Dans un cluster sans haute disponibilité, `controlPlaneEndpoint` et `localAPIEndpoint` ont la même valeur.
+- Voir : [ClusterConfiguration: localAPIEndpoint et controlPlaneEndpoint](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#considerations-about-apiserver-advertise-address-and-controlplaneendpoint)
+:::
+
+:::tip
+Dans de rares cas (par exemple _k3s_), il est possible de passer d'un cluster mono control-plane à un cluster H/A à tout moment.
+
+Mais la plupart du temps (_kubeadm_ par exemple) il n'est pas supporté de changer le `controlPlaneEndpoint`. Une solution est d'utiliser systématiquement un nom DNS dans `controlPlaneEndpoint` qui pourra être :
+
+- Temporairement, l'IP du _control plane_ principal
+- Ensuite, la Virtual IP du Load Balancer, …
+:::
+
+:::tip
+_kube-vip_ permet de déployer un _load-balancer_ pour des control plane H/A, et pour faire office de service `LoadBalancer` :
+
+- Si cluster installé par `kubeadm` : néessite une _virtual IP_ à l'installation : la _VIP_ est déployée en _Static Pod_ et stackée dans le 1er _control-plane_.
+  - les autres _control-plane_ rejoignent la _VIP_ et _kube-vip_ gère la réplication de la _VIP_.
+- Si cluster _k3s_, la _VIP_ n'a pas besoin d'être présente à l'initialisation du cluster : celle-ci peut être déployée en `DaemonSet` sur chacun des _Node_.
+:::
+
+![Diagramme HA Proxy en frontal de l'api-server](https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2021/09/27/6c1e741a356141a5964e3a64a241ce86.png)
+
+<div class="caption">Diagramme HA Proxy en frontal de l'api-server.</div>
+
+![Diagramme kube-vip stacké dans le control-plane](https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2021/09/27/6cc2dccc26ac4260bb564a9a4a002670.png)
+
+<div class="caption">Diagramme kube-vip stacké dans le control-plane.</div>
+
+:::link
+- Source des diagrammes et plus d'information : <https://www.sobyte.net/post/2021-09/use-kube-vip-ha-k8s-lb/>
+- Voir aussi : <https://kifarunix.com/setup-highly-available-kubernetes-cluster-with-haproxy-and-keepalived/>
+:::
 
 #### etcd H/A
 
-`etcd` est le composant qui contient toutes les données du cluster, c'est donc le plus critique et il doit bien entendu être déployé en H/A (nombre impaire, 5 recommandé).
+`etcd` est le composant qui contient toutes les données du cluster, c'est donc le plus critique et il doit bien entendu être déployé en H/A (nombre impair, **5 recommandé**, 3 supporté).
 
 Voir les documentations officielles : [HA etcd with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/setup-ha-etcd-with-kubeadm/) et [HA topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/) et [configure & upgrade etcd](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/)
 
@@ -193,11 +249,22 @@ Il est possible de configurer `etcd` en H/A de 2 manières différentes (voir la
 - _external etcd_ : le cluster `etcd` est externe aux _control plane_ : chaque `APIServer` est connecté au cluster de tous les `etcd`.
 :::
 
+![Stacked etcd](https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-stacked-etcd.svg)
+
+<div class="caption">etcd en stack dans les control-plane</div>
+
+![External etcd](https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-external-etcd.svg)
+<div class="caption">etcd externes</div>
+
+:::link
+Source des diagrammes et plus d'information : <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/>
+:::
+
 #### Pods statiques
 
 :::tip
 Déployer le _Control Plane_ dans des _Pods_ permet de les gérer avec toute la puissance de Kubernetes… mais recquiert un cluster opérationnel !
-Pour contourner cette limite, Kubernetes permet de déployer des _Pods_ directement dans le _Kubelet_ (sans passer par l'_API Server_) en utilisant des _manifest_. Le _Kubelet_ réconcilie les _Pods_ en cas de changement(s) dans le _manifest_. Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#227) pour plus d'information.
+Pour contourner cette limite, Kubernetes permet de déployer des _Pods_ dits _statiques_ directement dans le _Kubelet_ (sans passer par l'_API Server_) en utilisant des _manifest_ : c'est ce que fait _kubeadm_ à l'initialisation du cluster : fichiers `/etc/kubernetes/manifests/`. Le _Kubelet_ réconcilie les _Pods_ en cas de changement(s) dans le _manifest_. Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#227) pour plus d'information.
 :::
 
 #### Sizing
@@ -211,10 +278,9 @@ Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redi
 - Kubernetes suit un versionning _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
 - Il est _recommandé_ (pas obligatoire) d'exécuter des versions homogènes sur l'ensemble du cluster mais :
 - Les `APIServer` (en H/A) peuvent avoir différentes versions
-- Différents _Node_ peuvent exécuter différentes versions de `Kubelet`
-- Différents _Node_ peuvent exécuter différentes versions du noyau
-- Différents _Node_ peuvent exécuter différents engines de conteneurs
-- Les composants peuvent être mis à niveau un par un sans problème.
+  - et donc le résultat de `kubectl` peut être … exotique !
+- Différents _Node_ peuvent exécuter différentes versions de `Kubelet` et/ou du noyau Linux et/ou différents engines de conteneurs
+- Les composants peuvent être mis à niveau un par un sans problème (c'est même recommandé).
 - Il est toujours possible de combiner différentes versions de _PATCH_ (par exemple, 1.28.9 et 1.28.13 sont compatibles) mais il est recommandé de toujours mettre à jour vers la dernière version de _PATCH_
 - **L'`APIServer` doit être plus récent** que ses clients (`Kubelet` et _Control Plane_), donc **être mis à jour en premier**
 - Tous les composants supportent (au moins) une **différence d'une version _MINEURE_** => upgrade à chaud possible
@@ -222,18 +288,28 @@ Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redi
 - Mettre à jour avec **le même outil qui a servi à l'installation du composant** : gestionnaire de package, `kubeadm`, Pod, conteneur, …
 - En moyenne, **une mise à jour tous les 3 mois**
 
-#### Contraintes
+#### Debug
 
-:::warn
-Attention, on demande bien d'installer un cluster **production-ready** ! Celui-ci devra donc être en haute disponibilité (Load balancer devant l'API Server, …) et on réfléchira aux procédures d'administration, de sauvegarde, … On pourra cependant s'affranchir d'utiliser HTTPS, notamment pour la communication entre les différents composants (ce qui est bien sûr une obligation dans une "vraie" production).
-:::
+- Tester localement kubectl sur un control plane
 
-:::link
-- Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
-- Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
-- Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
-- Voir aussi : <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/>
-:::
+```sh
+export KUBECONFIG=/etc/kubernetes/admin.conf
+kubectl get nodes -o wide
+```
+
+- Vérifier les logs du kubelet
+
+```sh
+systemctl kubelet
+journalctl -xeu kubelet
+```
+
+- Inspecter les conteneurs
+
+```sh
+crictl --runtime-endpoint unix:///run/containerd/containerd.sock ps -a | grep -v pause
+crictl --runtime-endpoint unix:///run/containerd/containerd.sock logs …
+```
 
 #### Exercice
 
@@ -256,6 +332,17 @@ Réaliser l'installation du cluster Kubernetes en H/A :
    - Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
 :::
 
+:::warn
+Attention, on demande bien d'installer un cluster **production-ready** ! Celui-ci devra donc être en haute disponibilité (Load balancer devant l'API Server, …) et on réfléchira aux procédures d'administration, de sauvegarde, … On pourra cependant s'affranchir d'utiliser HTTPS, notamment pour la communication entre les différents composants (ce qui est bien sûr une obligation dans une "vraie" production).
+:::
+
+:::link
+- Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
+- Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
+- Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
+- Voir aussi : <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/>
+:::
+
 ### Phase 2 : Déploiement d’une Application
 
 Le but de cette partie est de déployer dans le cluster un projet personnel existant qui se compose de plusieurs composants (par exemple, une application web front-end, une API back-end, une base de données, etc.). On recommande l'utilisation de fichiers de manifeste `yml` pour créer les ressources Kubernetes.
@@ -271,8 +358,9 @@ Le but de cette partie est de déployer dans le cluster un projet personnel exis
    - Rolling updates et rollback
 
 :::exo
-On testera la partie H/A du déploiement applicatif :
+On testera la partie H/A du `control-plane` et du déploiement applicatif :
 
+- Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
 - Tester la suppression d'un conteneur / Pod
 - Tester la déconnexion d'un _worker node_
 - Vérifier la réconciliation des ressources
