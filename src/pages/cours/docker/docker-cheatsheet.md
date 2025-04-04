@@ -212,6 +212,8 @@ docker network rm mon_reseau
 
 ```sh
 docker network inspect mon_reseau
+# trouver la plage réseau associée :
+docker network inspect mon_reseau -f '{{ range $i, $a := .IPAM.Config }}{{ println .Subnet }}{{ end }}'
 ```
 
 ### Créer un conteneur en utilisant un réseau spécifique
