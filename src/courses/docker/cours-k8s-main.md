@@ -1062,6 +1062,10 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 * `Namespace` : espaces de noms isolant des ressources
   - cloisonne une partie du cluster
   - idem namespace Linux
+  - Namespaces spéciaux :
+	  - `kube-public` : ressources accessibles à tous (par ex pour le _bootstrap_ du cluster)
+	  - `kube-system` : composants Kubernetes
+    - `default` : si aucun namespace spécifié
 * Rôles
 
 ---
