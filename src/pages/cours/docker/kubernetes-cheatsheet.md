@@ -11,6 +11,14 @@ title: Cheatsheet Kubernetes®
 
 ## Administration
 
+### État du cluster
+
+Vérifier l'état des composants du système :
+
+```sh
+kubectl get ComponentStatus
+```
+
 ### Versions
 
 #### API Server
