@@ -1680,6 +1680,26 @@ spec:
       app: my-app
 ```
 
+## SubjectAccessReview
+
+Ex: vérifier si `jean.doe` peut `get pods -n kube-system` :
+
+```yaml
+apiVersion: authorization.k8s.io/v1
+kind: SubjectAccessReview
+spec:
+  user: jean.doe
+  groups:
+  - foo
+  - bar
+  resourceAttributes:
+    #group: blah.k8s.io
+    namespace: kube-system
+    resource: pods
+    verb: get
+    #name: web-xyz1234567-pqr89
+```
+
 ## Autres commandes
 
 Pour plus d’information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
