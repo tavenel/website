@@ -175,7 +175,13 @@ kubectl uncordon "<node-name>" # fin du drainage
 
 ## Supervision
 
+Un cluster Kubernetes doit bien sûr être supervisé. On utilise très majoritairement le couple _Prometheus_ / _Grafana_ : voir [le TP dédié pour l'installation de Prometheus & Grafana via Helm](/cours/docker/tp_prometheus_grafana_k8s).
+
+### Endpoints
+
+:::link
 Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#217) pour plus d'information sur les APIs internes et de monitoring
+:::
 
 On pourra notamment monitorer a minima ces endpoints (`HTTP/tcp`, non authentifié) :
 
@@ -189,10 +195,47 @@ On pourra notamment monitorer a minima ces endpoints (`HTTP/tcp`, non authentifi
 - `kube-controller` & `kube-scheduler` :
   - 10257 (`kube-controller`) et 10259 (`kube-scheduler`) : `/healthz` (et `/configz` & `/metrics` en `HTTPS` avec authentification)
 
+### node-problem-detector
+
+De nombreux problèmes peuvent affecter les Pods exécutés sur le Node, tels que :
+
+- Problèmes de daemon d'infrastructure : service NTP indisponible ;
+- Problèmes matériels : processeur, mémoire ou disque défectueux ;
+- Problèmes de noyau : deadlock du noyau, système de fichiers corrompu ;
+- Problèmes d'exécution du conteneur : démon d'exécution qui ne répond pas ;
+- …
+
+Ces problèmes sont invisibles pour les composants de gestion du cluster : Kubernetes continuera donc à planifier les Pods vers les Nodes défectueux.
+
+Pour résoudre ce problème, _node-problem-detector_ introduit un nouveau _daemon_ qui collecte les problèmes de Nodes provenant de différents daemons et les rend visibles pour les composants d'administration du cluster.
+
+Concrètement, _node-problem-detector_ utilise les _Event_ et les _NodeCondition_ pour signaler les problèmes à l'_apiserver_ :
+
+- `NodeCondition` : un problème permanent rendant le Node indisponible pour les Pods
+- `Event` : un problème temporaire ayant un impact limité sur le Pod, mais présentant un intérêt informatif
+
+Un système de correction (_Remedy system_) est un ou plusieurs processus conçus pour tenter de résoudre les problèmes détectés par le _node-problem-detector_. Les systèmes de correction observent les _Event_ et/ou les _NodeCondition_ émis et prennent les mesures nécessaires pour rétablir l'intégrité du cluster Kubernetes.
+
+:::link
+Pour plus d'information, voir le dépôt du projet : <https://github.com/kubernetes/node-problem-detector>
+:::
+
+#### Installation
+
+Une façon simple d'installer le _node-problem-detector_ consiste à passer par une _Helm Chart_. Celle-ci déploie un `DaemonSet` (sur chacun des _Node_ du cluster).
+
+```sh
+helm repo add deliveryhero https://charts.deliveryhero.io/
+helm install --generate-name deliveryhero/node-problem-detector
+```
+
 ### Exercice
 
 :::exo
-- Mettre en place la supervision du cluster en installant une stack _Prometheus_ / _Grafana_ : voir [le TP pour l'installation de Prometheus & Grafana via Helm](/cours/docker/tp_prometheus_grafana_k8s).
+- Mettre en place la supervision du cluster en installant une stack _Prometheus_ / _Grafana_.
+- Créer un (ou plusieurs) tableau(x) de bord dans Grafana de supervision de votre cluster et de votre application.
+- Déployer un _node-problem-detector_ sur chaque _Node_ du cluster
+- (Bonus) mettre en place des systèmes de correction en cas de problème sur un _Node_.
 :::
 
 ## Sécurité
