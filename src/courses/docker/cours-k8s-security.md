@@ -43,7 +43,7 @@ tags:
 
 ### Requêtes anonymes
 
-- Si une méthode authn renvoie _rejects_ : requête refusée `401 Unauthorized`
+- Si **une** méthode authn renvoie `rejects` : requête refusée `401 Unauthorized`
 - Requête anonyme (si aucun accept / reject par aucune méthode authn) :
   - _username_ : `system:anonymous`
   - _liste des groupes_ : `system:unauthenticated`
@@ -66,8 +66,8 @@ tags:
 - L'API Kubernetes peut agir comme un CA (encapsule une _CSR X509_ dans une `CertificateSigningRequest`)
 - Permet au _Kubelet_ de renouveler son propre certificat
 - Peut émettre des certificats utilisateur
-- Pas de révocation de certificat (clé compromise, …) par l'_api-server_ : [issue #18982](https://github.com/kubernetes/kubernetes/issues/18982))
-- => Certificats de courte durée (quelques heures) !
+- Pas de révocation de certificat (clé compromise, …) par l'_api-server_ : [issue #18982](https://github.com/kubernetes/kubernetes/issues/18982)
+- => **Certificats de courte durée (quelques heures)** !
 
 ---
 
@@ -120,6 +120,7 @@ tags:
 
 ## etcd
 
+- Stocke toute l'information du Cluster (`Secret`, …) et souvent **non chiffrée** (performances)
 - Client : port `2379`
 - Coordination / réplication des noeuds : port `2380`
 - _authn_ : TLS, sous-CA
@@ -131,7 +132,7 @@ tags:
 ## Kubelet et api-server
 
 - Communication bidirectionnelle _Kubelet_ <-> _api-server_
-- Enregistrement _Kubelet_ -> _api-server_ : le Kubelet reçoit les pods à démarrer/arrêter.
+- Enregistrement _Kubelet_ -> _api-server_ : le Kubelet demande les pods à démarrer/arrêter.
 - Communication _api-server_ -> _Kubelet_ : pour actions logs, exec, attach
 
 ---
@@ -145,7 +146,7 @@ tags:
 - _api-server_ : `--client-ca-file`, `--tls-cert-file`, `--tls-private-key-file`
 - Client _api-server_ : `--kubeconfig` contenant le certificat CA, la clé client et le certificat client
   - Certificat _Scheduler_ : `CN=system:kube-scheduler`
-	- Certificat _Kubelet_ (-> _api-server_) : `CN=system:node:<nodename>` et groupes `O=system:nodes`.
+  - Certificat _Kubelet_ (-> _api-server_) : `CN=system:node:<nodename>` et groupes `O=system:nodes`.
   - Certificat _Controller Manager_ : `CN=system:kube-controller-manager`
 
 ---
@@ -237,7 +238,10 @@ EOF
 ### Verbes `list` vs. `get`
 
 - ⚠️ `list` accorde (aussi) des droits de lecture aux ressources !
+
+:::warn
 - **Si un contrôleur doit pouvoir lister les secrets, il pourra aussi les lire**
+:::
 
 ---
 
@@ -250,7 +254,7 @@ EOF
   - si un `Pod` n'est _sélectionné_ par **aucune `NetworkPolicy`** : **aucune isolation**
   - si un `Pod` **est _sélectionné_** par au moins une `NetworkPolicy` : **isolation totale par défaut** (sauf règles acceptées par la `NetworkPolicy`)
   - **stateful** : isolation à la **connexion**, et ~non par paquet~
-  - Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`)
+  - Pour communication Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`)
 
 :::warn
 Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet !

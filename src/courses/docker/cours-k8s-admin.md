@@ -32,12 +32,12 @@ tags:
 
 ## Arrêt manuel d'un _Node_ et PodDisruptionBudget
 
-- Attention si trop de réplicas sur ce _Node_ ou qui ne devraient pas être interrompues
+- Attention (interruption de service) si trop de réplicas sur ce _Node_ ou qui ne devraient pas être interrompues
 - `PodDisruptionBudget` : contrat entre "sysops" (admin des _Node_ cluster) et "devops" (déployant les applis)
 - ex : *dans cet ensemble de pods, ne pas "perturber" plus de X à la fois*
 - Arrêter un _Node_ uniquement lorsqu'il n'y a plus de _Pod_ exécuté dessus (sauf _Pod_ système d'un `DaemonSets`).
 - `kubectl drain` :
-  - _cordon_ (boucle) le _Node_ : _taint_ `NoSchedule`
+  - _cordon_ ("boucle") le _Node_ : _taint_ `NoSchedule`
   - _eviction API_ pour supprimer les _Pod_ (respecte les `PodDisruptionBudget`).
   - n'expulsera pas les _Pod_ utilisant des volumes `emptyDir` (sauf `--delete-emptydir-data`)
 - Voir aussi [la doc officielle](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/)
@@ -56,7 +56,7 @@ tags:
 
 - Exemple : le pod X effectue beaucoup d'E/S disque (_starvation_)
 - Conséquence : les _Pod_ déplacées sont temporairement interrompus
-- Atténuation : définir un nombre approprié de réplicas, déclarer des PDB, utiliser l'[eviction API](https://kubernetes.io/docs/concepts/scheduling-eviction/api-eviction/)
+- Atténuation : définir un nombre approprié de réplicas, déclarer des `PodDisruptionBudget`, utiliser l'[eviction API](https://kubernetes.io/docs/concepts/scheduling-eviction/api-eviction/)
 
 ---
 
