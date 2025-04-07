@@ -226,7 +226,7 @@ Certaines variables ont une signification spéciale réservée. Ces variables so
 Liste de variables prépositionnées
 
 - `$0` : nom du script. Plus précisément, il s’agit du paramètre 0 de la ligne de commande, équivalent de argv[0]
-- `$1`, `$2`, …, `$9` : respectivement premier, deuxième, …, neuvième paramètre de la ligne de commande
+- `${1}`, `${2}`, …, `${9}` : respectivement premier, deuxième, …, neuvième paramètre de la ligne de commande
 - `$*` : tous les paramètres vus comme un seul mot
 - `$@` : tous les paramètres vus comme des mots séparés : `$@` équivaut à `$1` `$2` …
 - `$#` : nombre de paramètres sur la ligne de commande
@@ -255,6 +255,10 @@ Il existe aussi une commande `shift` permettant de décaler les arguments : `$1`
 
 :::tip
 On peut aussi utiliser la commande `getopts` plus puissante pour gérer des arguments : [voir ici](https://www.quennec.fr/book/export/html/341).
+:::
+
+:::tip
+À partir du 10e argument, attention à utiliser l'écriture `${10}`, `${11}`, … Tester la différence entre `$10` et `${10}`.
 :::
 
 ## Interaction utilisateur
