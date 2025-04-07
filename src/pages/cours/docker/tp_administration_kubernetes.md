@@ -3,6 +3,8 @@ title: 📌 Administration de cluster Kubernetes
 date: 2024 / 2025
 ---
 
+## Chapitres
+
 ## Objectifs
 
 Administrer un cluster Kubernetes ne se limite pas à son installation : il faut gérer les mises à jour, les maintenances, la sécurité, l'observabilité du cluster, …
@@ -111,6 +113,12 @@ sudo kubeadm init \
 
 # 3. Rejoindre les autres nœuds
 ```
+
+#### Procédure k3s
+
+:::link
+Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restoring-snapshots>
+:::
 
 ### Exercice
 
@@ -252,8 +260,14 @@ Exemple de procédure pour renouveller les certificats du cluster en utilisant `
 
 ```bash
 kubectl get csr
+# If you are running cluster with a replicated control plane, this command
+# needs to be executed on all the control-plane nodes.
 kubeadm alpha certs renew all
 ```
+
+:::link
+Pour la procédure complète, voir la documentation : <https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/#manual-certificate-renewal>
+:::
 
 ### Role-Based Access Control (RBAC)
 
@@ -296,6 +310,11 @@ Par défaut, les secrets Kubernetes ne sont pas chiffrés mais seulement encodé
 :::
 
 Des outils externes permettent d'ajouter du chiffrement, on pourra par exemple utiliser _Kubeseal_ pour que seul le cluster soit capable de déchiffrer un secret.
+
+:::link
+- Voir la [cheatsheet Kubernetes sur Kubeseal](/cours/docker/kubernetes-cheatsheet#kubeseal)
+- Sur K3s, on peut aussi utiliser la capacité de chiffrage des secrets intégrée à k3s : <https://docs.k3s.io/security/secrets-encryption>
+:::
 
 ### Ingress SSL
 
@@ -343,7 +362,7 @@ Voir aussi :
 - Mettre en place et tester une procédure de renouvellement des certificats.
 - Mettre en place et tester des rôles de sécurité (RBAC) pour :
   - sécuriser votre application ;
-	- créer un compte de support pouvant lister les ressources principales du cluster sans pouvoir y apporter de modification.
+  - créer un compte de support pouvant lister les ressources principales du cluster sans pouvoir y apporter de modification.
 - Mettre en place des NetworkPolicies pour votre application.
 - Mettre en place un audit des droits sur le cluster.
 - Chiffrer les secrets avec _Kubeseal_.
