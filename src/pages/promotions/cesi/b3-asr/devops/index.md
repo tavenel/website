@@ -32,8 +32,8 @@ Module de 2 journées
 
 ## Documents
 
-- [🤓 Cours : introduction au Devops, CI/CD, Docker, Ansible & Terraform](./cours)
-- 📌 [Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](./projet)
+- [🤓 Cours : introduction au Devops, CI/CD, Docker, Ansible & Terraform](./devops/cours)
+- 📌 [Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](./devops/projet)
 
 ## Liens
 
