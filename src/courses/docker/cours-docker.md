@@ -407,7 +407,10 @@ layout: section
 
 ## Driver `ipvlan`
 
-- Similaire `macvlan` mais partage la même adresse MAC.
+- Similaire `macvlan`, mais partage une interface réseau avec l'hôte et son adresse MAC. Chaque conteneur a sa propre adresse IP.
+- Très performant (pas de _bridge_)
+- Layer 2 VLAN tagging (couche de liaison) : partage de la même interface physique, adresses IP distinctes.
+- IPvlan L3 : agit comme un routeur : routage en couche 3 ("réseau") automatique dans le réseau, à gérer manuellement à l'extérieur.
 
 ---
 
