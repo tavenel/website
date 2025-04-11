@@ -25,7 +25,7 @@ Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant êt
 Sur chaque `Node` :
 
 - Désactiver le swap : `swapoff -a` et `fstab`
-- Synchroniser les horloges
+- **Synchroniser les horloges**
 - Un runtime de conteneurs : `containerd`, `CRI-O`, `Docker`, …
 - `Kubeadm`, `Kubelet` et `Kubectl`
 
@@ -234,6 +234,7 @@ _kube-vip_ permet de déployer un _load-balancer_ pour des control plane H/A, et
 :::link
 - Source des diagrammes et plus d'information : <https://www.sobyte.net/post/2021-09/use-kube-vip-ha-k8s-lb/>
 - Voir aussi : <https://kifarunix.com/setup-highly-available-kubernetes-cluster-with-haproxy-and-keepalived/>
+- Pour K3s, voir <https://docs.k3s.io/architecture#high-availability-k3s>
 :::
 
 #### etcd H/A
@@ -310,6 +311,10 @@ journalctl -xeu kubelet
 crictl --runtime-endpoint unix:///run/containerd/containerd.sock ps -a | grep -v pause
 crictl --runtime-endpoint unix:///run/containerd/containerd.sock logs …
 ```
+
+:::tip
+En _k3s_, le _kubelet_ est directement intégré dans le service de _k3s_ => dans le service systemd `k3s` (_master_) ou `k3s-agent` (_worker_).
+:::
 
 #### Exercice
 

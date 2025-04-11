@@ -259,6 +259,7 @@ Sécuriser les control-plane en mettant en place une communication sécurisée e
 Exemple de procédure pour renouveller les certificats du cluster en utilisant `kubeadm` :
 
 ```bash
+kubeadm certs check-expiration
 kubectl get csr
 # If you are running cluster with a replicated control plane, this command
 # needs to be executed on all the control-plane nodes.
