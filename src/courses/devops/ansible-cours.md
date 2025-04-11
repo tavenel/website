@@ -20,7 +20,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - Outil d'IaC très populaire
   - fichiers `playbook` en `yaml`
 - Simple d'utilisation dans un cadre standard
-- Très nombreux plugins et rôles : <https://galaxy.ansible.com>
+- Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html)
 
 ---
 
@@ -232,6 +232,94 @@ ansible-playbook --ask-vault-pass vault_playbook.yml
 
 ---
 
+# 🧰 Modules Ansible les plus courants
+
+Une sélection des modules les plus utilisés, classés par catégories :
+
+---
+
+## 📦 Gestion des paquets
+
+| Module      | Description                                           |
+|-------------|-------------------------------------------------------|
+| `apt`       | Gère les paquets sur Debian/Ubuntu                    |
+| `dnf`       | Remplaçant moderne de `yum`                           |
+| `package`   | Abstraction commune à `apt`, `yum`, etc.             |
+| `pip`       | Installe des paquets Python via pip                  |
+
+---
+
+## 📁 Fichiers & répertoires
+
+| Module         | Description                                         |
+|----------------|-----------------------------------------------------|
+| `copy`         | Copie un fichier local sur la machine distante     |
+| `template`     | Fichier Jinja2 rendu dynamiquement                 |
+| `file`         | Gère droits, propriétaire, création/suppression    |
+| `stat`         | Récupère les infos sur un fichier distant          |
+| `lineinfile`   | Ajoute/modifie une ligne dans un fichier           |
+| `blockinfile`  | Ajoute/modifie un bloc de texte                    |
+| `replace`      | Remplacement par regex                             |
+
+---
+
+## ⚙️ Services & processus
+
+| Module      | Description                                         |
+|-------------|-----------------------------------------------------|
+| `systemd`   | Gère les services systemd                           |
+| `service`   | Interface générique pour systemd/init/upstart       |
+| `shell`     | Exécute une commande dans un shell                 |
+| `command`   | Exécute une commande sans shell                    |
+| `cron`      | Gère les tâches cron                               |
+
+---
+
+## 👥 Utilisateurs & groupes
+
+| Module            | Description                            |
+|-------------------|----------------------------------------|
+| `user`            | Crée ou gère des comptes utilisateurs  |
+| `group`           | Crée ou modifie des groupes            |
+| `authorized_key`  | Gère les clés SSH autorisées           |
+
+---
+
+## 🔒 Sécurité & accès
+
+| Module        | Description                              |
+|---------------|------------------------------------------|
+| `ufw`         | Gère le pare-feu UFW (Ubuntu)            |
+| `firewalld`   | Pour CentOS/RHEL                         |
+| `iptables`    | Règles de pare-feu manuelles             |
+| `selinux`     | Active/désactive SELinux                 |
+| `seboolean`   | Active/désactive des boolean SELinux     |
+
+---
+
+## 🌐 Réseau & connectivité
+
+| Module       | Description                                  |
+|--------------|----------------------------------------------|
+| `uri`        | Fait des requêtes HTTP/REST                  |
+| `get_url`    | Télécharge des fichiers depuis une URL       |
+| `wait_for`   | Attente sur port, fichier ou socket          |
+| `ping`       | Test de connectivité Ansible (pong attendu)  |
+
+---
+
+## 🧪 Autres modules utiles
+
+| Module           | Description                                  |
+|------------------|----------------------------------------------|
+| `debug`          | Affiche des messages pour le debug           |
+| `set_fact`       | Définit une variable temporaire              |
+| `assert`         | Vérifie une condition                        |
+| `include_tasks`  | Inclut dynamiquement un fichier de tâches    |
+| `import_tasks`   | Inclut statiquement un fichier de tâches     |
+
+---
+
 <!-- class: liens -->
 # Liens
 
@@ -244,6 +332,10 @@ ansible-playbook --ask-vault-pass vault_playbook.yml
 - [AWX : interface Web de gestion d'ansible](https://github.com/ansible/awx)
 - <https://blog.stephane-robert.info/post/ansible-vs-terraform/>
 - <https://blog.microlinux.fr/formation-ansible/>
+- [Ansible tips and tricks](https://docs.ansible.com/ansible/latest/tips_tricks/index.html)
+- Trouver des Plugins et des Rôles :
+  - Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html)
+  - Plugins et rôles de la communauté : <https://galaxy.ansible.com>
 - Voir aussi le cours DevOps sur le [site web][site-perso]
 
 ---
