@@ -101,7 +101,7 @@ docker rmi 54321
 ## Lister les commandes ayant créé l'image et inspecter les layers
 
 ```sh
-docker image history mon_image
+docker image history [--no-trunc] mon_image
 ```
 
 ## Différence runtime vs image
@@ -201,6 +201,15 @@ docker network create --driver <DRIVER TYPE> mon_reseau
 ```sh
 docker network create --driver <DRIVER TYPE> mon_reseau --subnet=192.168.0.0/24 --gateway=192.168.0.1
 ```
+
+:::tip
+Paramètres disponibles pour un réseau de type `bridge` :
+
+- `com.docker.network.bridge.enable_icc` : communication inter-conteneurs (`true` / `false`)
+- `com.docker.network.bridge.enable_ip_masquerade` : Active le masquage IP pour l'accès au réseau externe.
+- `subnet` : Choisir le réseau (CIDR)
+- `gateway` : Spécifier la passerelle du réseau.
+:::
 
 ### Supprimer un réseau
 
