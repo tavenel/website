@@ -35,6 +35,10 @@ helm upgrade --install prometheus prometheus-community/kube-prometheus-stack --n
 
 Cela installera `Prometheus`, `Alertmanager`, les `Node Exporters` (pour les métriques des nœuds), ainsi que `Grafana` dans le namespace monitoring.
 
+:::tip
+Vous pouvez ajouter les options `--set grafana.service.type=NodePort --set prometheus.service.type=NodePort` pour déployer un service de type _NodePort_ pour Prometheus et Grafana pour pouvoir facilement accéder aux dashboards.
+:::
+
 En cas de déploiement manuel, voici la procédure à suivre :
 
 - Exécuter le serveur Prometheus dans un `Pod` (en utilisant un `Deployment` pour assurer son bon fonctionnement continu)
@@ -71,13 +75,17 @@ En cas de besoin de scaling de _Prometheus_, il est possible d'utiliser _Thanos_
 
 ### Exposer Grafana
 
-Utilisez la commande suivante pour exposer l'interface web de Grafana en tant que service de type `NodePort` ou `LoadBalancer` :
+Utilisez la commande suivante pour exposer l'interface web de Grafana (en créant un tunnel, test uniquement) :
 
 ```sh
 kubectl port-forward svc/prometheus-grafana 3000:80 -n monitoring
 ```
 
 Accédez à `Grafana` en ouvrant un navigateur et en entrant l'URL suivante : <http://localhost:3000>.
+
+:::tip
+Il existe d'autres façons d'exposer le service : en tant que service de type `NodePort` ou `LoadBalancer`, derrière un `Ingresse` ou une `GatewayAPI`, …
+:::
 
 Le username par défaut est `admin`.
 Le mot de passe est récupérable avec la commande suivante :
