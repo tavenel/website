@@ -237,7 +237,9 @@ created: 2024-10-17
 
 - tous types : `artifactory`, `nexus`
 - Docker, Helm : `Harbor`
+  - images Docker avec packages générées à la volée : <https://nixery.dev/>
 - tracking dépendances : `Dependency Track` [tuto](https://blog.stephane-robert.info/docs/securiser/analyser-code/dependency-track/)
+
 ### 🔐 Administration sécurisée
 
 - `ssh`, `assh` (sur-couche SSH)
