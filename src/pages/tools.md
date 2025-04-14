@@ -55,6 +55,7 @@ created: 2024-10-17
     - <https://github.com/docker/docker-bench-security>
     - <https://github.com/aquasecurity/trivy> (inclus k8s)
     - <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
+    - `grype` : scan de sécurité des images Docker
   - Analyse des images Docker :
     - `dive` : analyse poussée des layers
 		- [sou](https://github.com/knqyf263/sou) : analyse simple des layers
@@ -594,6 +595,11 @@ created: 2024-10-17
   - `gst-plugins-vaadi` for hardware acceleration
 - `grim` => screenshots
 
+## Self-hosting
+
+- <https://anubis.techaro.lol/> : proxy pour bloquer les bots (AI, …)
+- <https://github.com/Flomp/wanderer> : catalogue de sorties trail
+
 ### FOSS alternates
 
 - `dropbox`, `google drive`, `one drive` => `nextcloud`
@@ -609,6 +615,7 @@ created: 2024-10-17
 - `github` => `gitlab`, `forgejo`, `gitea`
 - `docusign` => `docuseal`
 - `google analytics` => `matomo`
+- <https://silex.me/> => création de site web no-code
 
 ## 🔗 Awesome lists
 
