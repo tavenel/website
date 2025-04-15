@@ -357,7 +357,8 @@ created: 2024-10-17
   - <https://hurl.dev/>
   - Wiremock (mock API)
   - [ATAC](https://github.com/Julien-cpsn/ATAC)
-	- `Swagger`
+  - `Swagger`
+  - `resto`
 - Tests de charge :
   - `Jmeter`
 	- `Gatlin`
