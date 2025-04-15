@@ -1,0 +1,33 @@
+﻿---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Main } from '@courses/docker/cours-k8s-main.md';
+import { Content as Pods } from '@courses/docker/cours-k8s-pods-advanced.md';
+import { Content as Extend } from '@courses/docker/cours-k8s-extend.md';
+import { Content as Admin } from '@courses/docker/cours-k8s-admin.md';
+import { Content as Security } from '@courses/docker/cours-k8s-security.md';
+import { Content as Tools } from '@courses/docker/cours-k8s-tools.md';
+import { Content as End } from '@courses/docker/cours-k8s-end.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours Kubernetes orienté développeur",
+  tags: [
+    "devops",
+		"docker",
+		"kubernetes"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Main />  </Chapter>
+	<Chapter> <Pods />  </Chapter>
+	<Chapter> <Extend />  </Chapter>
+	<Chapter> <Admin />  </Chapter>
+	<Chapter> <Security />  </Chapter>
+	<Chapter> <Tools />  </Chapter>
+	<Chapter> <End />  </Chapter>
+</Layout>
+
