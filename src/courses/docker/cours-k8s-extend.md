@@ -23,10 +23,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 - applique des changements : API uniquement (`Deployment`, `ReplicaSet`), configure des ressources (`kube-proxy`), provisionne des ressources (_Load Balancer_)
 - `kube-scheduler` est un _Controller_ !
 - [Admission Controller](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/) et [extension](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) : peut examiner ou transformer les requêtes à l'`API Server` avant la création des ressources : `ServiceAccount`, `LimitRanger`, `Kyverno`, `Open Policy Agent`, …
-
----
-
-![Kubernetes API request lifecycle (source: Banzai Cloud)](@assets/k8s/api-request-lifecycle.png)
+- Voir la partie _Sécurité_ du cours pour plus de détails !
 
 ---
 

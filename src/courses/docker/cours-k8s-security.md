@@ -305,3 +305,61 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
+## AdmissionController Statiques
+
+- **acceptent / refusent** ou **modifient** la création de ressources
+- ex : valeurs par défaut (image pull secret, sidecars, env var), interdire les tag `latest`, exiger `request` et `limits`, …
+- Intégrés à l'_API Server_ : `kube-apiserver -h | grep enable-admission-plugins`
+- Voir [la liste des AdmissionController](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/), notamment le [PodSecurityAdmission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) et [comment l'utiliser dans un Namespace](https://kubernetes.io/docs/tasks/configure-pod-container/enforce-standards-namespace-labels/#requiring-the-baseline-pod-security-standard-with-namespace-labels)
+
+---
+
+## AdmissionController Dynamiques
+
+- _webhooks_ **dynamiques** (ajoutables/supprimables à la volée)
+- **dans** (`service.name` & `service.namespace`) ou **en-dehors** (`https://…`) du cluster
+- L'_API Server_ et le _webhook_ s'échangent des `AdmissionReview`
+- Voir [les extensions des AdmissionController](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/), le [contenu d'une requête](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#request), les [Admission Webhooks : `ValidatingWebhookConfiguration` & `MutatingWebhookConfiguration`](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks)
+- Voir aussi [les slides de formation : Dynamic Admission Control (Jérôme Petazzoni)](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/admission.md)
+
+---
+
+```plantuml
+@startuml
+left to right direction
+' skinparam linetype ortho
+
+title: Kubernetes API request lifecycle
+
+rectangle {
+  rectangle "API Handler" as API
+  rectangle "Auth" as Auth
+  rectangle "Mutating\nAdmission" as Mutate
+  rectangle "Object Schema\nValidation" as Schema
+  rectangle "Validating\nAdmission" as Validate
+  rectangle "ETCD\nPersistence" as ETCD
+}
+
+' Webhooks with different color
+rectangle "Webhook Code\nImplementation" as MutatingWebhook #cyan
+rectangle "Webhook Code\nImplementation" as ValidatingWebhook #cyan
+
+' Main flow
+API --> Auth
+Auth --> Mutate
+Mutate --> Schema
+Schema --> Validate
+Validate --> ETCD
+
+' Webhook interactions
+Mutate --> MutatingWebhook #blue : <color:blue>Registered Webhook</color>
+MutatingWebhook --> Mutate #blue : <color:blue>ModifiedRequest</color>
+
+Validate --> ValidatingWebhook #blue : <color:blue>Registered Webhook</color>
+ValidatingWebhook --> Validate #blue : <color:blue>Validation Decision</color>
+
+@enduml
+```
+
+---
+
