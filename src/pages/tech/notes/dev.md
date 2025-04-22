@@ -15,6 +15,11 @@ checked: 2024-09-29
 Notes
 ====
 
+curl
+----
+
+- `curl --resolve my-website:127.0.0.1 …` => fake DNS resolving _my-website_
+
 bash
 ----
 
