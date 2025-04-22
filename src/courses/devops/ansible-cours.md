@@ -320,6 +320,125 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
+# Exemples de playbook simples
+
+---
+
+## 1. Ping toutes les machines _hosts_
+
+```yaml
+- name: Ping all hosts
+  hosts: all
+  tasks:
+    - name: Ping
+      ansible.builtin.ping:
+```
+
+---
+
+## 2. Installer NGINX sur Ubuntu
+
+```yaml
+---
+- name: Install NGINX on Ubuntu
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+```
+
+---
+
+## 3. Créer un fichier
+
+```yaml
+---
+- name: Create a file on remote hosts
+  hosts: all
+  tasks:
+    - name: Create an empty file
+      ansible.builtin.file:
+        path: /tmp/hello.txt
+        state: touch
+```
+
+---
+
+## 4. Démarrer et Installer un Service
+
+```yaml
+---
+- name: Ensure nginx is running
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Start and enable nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+```
+
+---
+
+## 5. Copier un fichier local à distance
+
+```yaml
+---
+- name: Copy index.html to webserver
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Copy file
+      ansible.builtin.copy:
+        src: ./index.html
+        dest: /var/www/html/index.html
+
+```
+
+---
+
+## 6. Créer un utilisateur
+
+```yaml
+---
+- name: Add a new user
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create user 'john'
+      ansible.builtin.user:
+        name: john
+        shell: /bin/bash
+        state: present
+
+```
+
+---
+
+## 7. Redémarrer les machines distantes
+
+```yaml
+---
+- name: Reboot all servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Reboot the machine
+      ansible.builtin.reboot:
+
+```
+
+---
+
 <!-- class: liens -->
 # Liens
 
@@ -336,6 +455,10 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - Trouver des Plugins et des Rôles :
   - Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html)
   - Plugins et rôles de la communauté : <https://galaxy.ansible.com>
+- Le [format Yaml][https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax] utilisé par les playbooks : 
+- Exemples de Playbooks :
+  - <https://github.com/ansible/ansible-examples>
+	- <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
 - Voir aussi le cours DevOps sur le [site web][site-perso]
 
 ---
