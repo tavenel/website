@@ -40,9 +40,11 @@ created: 2024-10-17
 		- <https://github.com/trufflesecurity/trufflehog> : trouver des secrets exposés dans ses dépôts Git
   - outils
     - 🤪 [gitmoji](https://github.com/carloscuesta/gitmoji) : ajouter des emojis de contexte aux commits
+    - <https://alchemists.io/projects/git-lint> : linter de commits Git pour une cohérence des messages
 - sémantique :
   - 1️⃣  <https://semver.org/>
   - 2️⃣ <https://hub.docker.com/r/gittools/gitversion>
+  - 3 <https://alchemists.io/projects/milestoner> : automatise la génération de release notes, versioning et déploiements.
 - analyses :
   - 📊 <https://github.com/adamtornhill/code-maat> : data mining dans dépôt Git
   - 🔎 <https://github.com/smontanari/code-forensics>
