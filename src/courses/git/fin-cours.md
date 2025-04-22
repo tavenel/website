@@ -261,7 +261,9 @@ Voir le TP correspondant.
 
 # Liens
 
-- [Livre officiel et gratuit][git-book]
+## Cours
+
+- Livre officiel et gratuit : <https://git-scm.com/book/>
 - [Exercices interactifs en ligne][learn-git-branch]
 - [Documentation et pages de manuel officiels][git-scm]
 - [Git Cheatsheet de GitHub Education][github-cheatsheet]
@@ -269,33 +271,61 @@ Voir le TP correspondant.
 - [L'essentiel de Git & Gitlab pour les débutants](https://frenchtechlead.com/posts/tech/20201023-git-pour-debutant/)
 - [Cours en ligne OpenClassrooms - 1][openclassrooms1]
 - [Cours en ligne OpenClassrooms - 2][openclassrooms2]
-- [Tutoriels en ligne Git et workflows tous niveaux][atlassian-tutos]
-- [Comparaisons des principaux workflows Git][atlassian-workflows]
-- [Comparaison des workflows Github et Gitlab et proposition de nouveau workflow (lafor.ge)][laforge-workflows]
-- [Explication poussée des opérations merge vs rebase][atlassian-merge-rebase]
-- [Exemple de réécriture d'historique][zds-refaire-histoire]
-- [Exemple de création d'un nouveau dépôt depuis un dépôt existant][zds-nouveau-depot-existant]
-- [Documentation sur les hooks][git-hooks] et [exemples pour les Ops](https://blog.wescale.fr/vers-linfrastructure-craftsmanship-avec-les-git-hooks)
-
----
-
 - [Sylvain Bouveret, Grégory Mounié, Matthieu Moy : Git Workflows (cours Ensimag)][ensimag-git-workflows]
 - [Sylvain Bouveret, Grégory Mounié : Git Comprendre le modèle de données (Exercices)][ensimag-git-modele-donnees-tp]
 - [Pierre-Antoine Champin : Introduction à Git][pa-champin]
-- <https://blog.gitbutler.com/git-tips-and-tricks/>
-- <https://semver.org/> : Versioning Sémantique
-- <https://www.conventionalcommits.org/en/v1.0.0/> : Convention commune d'écriture de commits
-- <https://thevaluable.dev/complexity-metrics-environment/> : data mining dans les métadatas git
-- <https://bearstech.com/blog/les-bonnes-pratiques-du-gitflow-avec-gitlab>
-- [Pourquoi écrire des commits atomiques](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84)
-- [Utiliser git pour gérer ses dotfiles (atlassian)](https://www.atlassian.com/fr/git/tutorials/dotfiles) et [Armand Philippot](https://www.armandphilippot.com/article/dotfiles-git-fichiers-configuration)
-- [Inside .git : structure interne de Git](https://jvns.ca/blog/2024/01/26/inside-git/)
+
+---
+
+## Merge et Rebase
+
+- Exemple de repo avec un conflit de merge à gérer : <https://github.com/redguardtoo/test-git-mergetool>
+- <https://alchemists.io/articles/git_rebase>
 - [Advanced Git rebase techniques (youtube, Andrew Courter)](https://www.youtube.com/watch?v=OdFW1embsHw)
 - [Git Merge vs Git Rebase (youtube, Andrew Courter)](https://www.youtube.com/watch?v=YMBhhje-Sgs)
-- Exemple de repo avec un conflit de merge à gérer : <https://github.com/redguardtoo/test-git-mergetool>
+- [Explication poussée des opérations merge vs rebase][atlassian-merge-rebase]
+
+---
+
+## Workflows
+
+- [Tutoriels en ligne Git et workflows tous niveaux][atlassian-tutos]
+- [Comparaisons des principaux workflows Git][atlassian-workflows]
+- [Comparaison des workflows Github et Gitlab et proposition de nouveau workflow (lafor.ge)][laforge-workflows]
+
+---
+
+## Versioning sémantique, conventions et bonnes pratiques
+
+- <https://semver.org/> : Versioning Sémantique
+- <https://www.conventionalcommits.org/en/v1.0.0/> : Convention commune d'écriture de commits
+- <https://bearstech.com/blog/les-bonnes-pratiques-du-gitflow-avec-gitlab>
+- [Pourquoi écrire des commits atomiques](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84)
+
+---
+
+## Git avancé
+
+- <https://alchemists.io/articles/git_commit_anatomy>
+- <https://alchemists.io/articles/git_for_each_ref>
+- <https://alchemists.io/articles/git_trailers>
+- <https://alchemists.io/articles/git_notes>
+- [Git metadata cloning : cloner partiellement un dépôt (alchemists.io)](https://alchemists.io/articles/git_metadata_cloning)
+- [Inside .git : structure interne de Git](https://jvns.ca/blog/2024/01/26/inside-git/)
+- <https://thevaluable.dev/complexity-metrics-environment/> : data mining dans les métadatas git
+- [Exemple de réécriture d'historique][zds-refaire-histoire]
+
+---
+
+## Autres
+
+- <https://blog.gitbutler.com/git-tips-and-tricks/>
+- [Exemple de création d'un nouveau dépôt depuis un dépôt existant][zds-nouveau-depot-existant]
+- [Documentation sur les hooks][git-hooks] et [exemples pour les Ops](https://blog.wescale.fr/vers-linfrastructure-craftsmanship-avec-les-git-hooks)
+- [Utiliser git pour gérer ses dotfiles (atlassian)](https://www.atlassian.com/fr/git/tutorials/dotfiles) et [Armand Philippot](https://www.armandphilippot.com/article/dotfiles-git-fichiers-configuration)
+- <https://alchemists.io/articles/git_configuration>
 - [A Git story: Not so fun this time (les origines de Git)](https://blog.brachiosoft.com/en/posts/git/)
 
-[git-book]: https://git-scm.com/book/
 [learn-git-branch]: https://learngitbranching.js.org/?locale=fr_FR
 [git-scm]: https://git-scm.com/doc
 [github-cheatsheet]: https://training.github.com/downloads/fr/github-git-cheat-sheet/
