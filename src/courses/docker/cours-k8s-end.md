@@ -113,7 +113,12 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - [HPA Autoscaling depuis des métriques custom dans Prometheus](https://blog.zwindler.fr/2024/10/11/optimisation-ressources-kubernetes-autoscaling-horizontal-custom-metrics-prometheus-adapter/)
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
 
-## Déploiement continu
+## Déploiement d'applications
+
+- [Exemple de déploiement d'une application stateless](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/)
+- [Exemple de déploiement d'une application stateful](https://kubernetes.io/docs/tutorials/stateful-application/)
+
+### Déploiement continu
 
 - [Blue-Green deployment in k8s](https://developer.harness.io/docs/continuous-delivery/deploy-srv-diff-platforms/kubernetes/kubernetes-executions/create-a-kubernetes-blue-green-deployment/)
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml)
