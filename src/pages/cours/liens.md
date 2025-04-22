@@ -36,6 +36,14 @@ Quelques références utiles en informatique.
 
 ## Informations transverses
 
+### Sauvegardes : la règle du 3-2-1-1-0
+
+- 3 = Conservez au moins trois copies de vos données : production, sauvegarde, copie de sauvegarde (en bonus l'archivage compte comme une copie)
+- 2 = Utilisez au moins deux types de supports différents pour le stockage (de marque différentes) : disques internes, SAN, NAS (en bonus l'archivage avec les bandes LTO compte comme un support)
+- 1 = Conservez au moins une copie hors site : autre site (de production et de sauvegarde) que ce soit une infra de stockage ou dans un coffre-fort par exemple.
+- 1 = Conservez au moins une copie hors ligne, isolée ou immuable : c'est surtout pour se prémunir d'une destruction volontaire (ransomware, acte malveillant via accès distant)
+- 0 = Zéro erreur après tests de restauration : une sauvegarde non restaurable n'est pas exploitable le jour où on en a besoin.
+
 ### CRDTS
 
 **Conflict Free Replicated Data types** : comment fusionner des données répliquées ?
@@ -67,9 +75,17 @@ Quelques références utiles en informatique.
 
 ## Citations
 
+> Ce qui se conçoit bien s’énonce clairement et les mots pour le dire viennent aisément. (Boileau)
+
 > You can only be _pragmatic_ if you know how to be _dogmatic_.
 
 > Toute abstraction visant à simplifier le travail d'un utilisateur transfère la complexité ailleurs, généralement aux équipes techniques. La complexité ne disparaît jamais, elle est déportée vers une application. [Conservation de la Complexité](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
+
+> La vérité, c’est qu’il n’y a pas de vérité. (Y compris celle-ci). (Proverbe Shadok)
+
+> A force de taper dans rien, il finit toujours par en sortir quelque chose. Et réciproquement. (Proverbe Shadok)
+
+> Avec un escalier prévu pour la montée, on réussit souvent à monter plus bas qu’on ne serait descendu avec un escalier prévu pour la descente. (Proverbe Shadok)
 
 ## Liens transverses
 
