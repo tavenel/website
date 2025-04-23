@@ -131,6 +131,8 @@ Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restorin
 
 ### Versions et upgrade
 
+<!-- TODO versions.md -->
+
 - Kubernetes suit un versionning _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
 - Il est _recommandé_ (pas obligatoire) d'exécuter des versions homogènes sur l'ensemble du cluster mais :
 - Les `APIServer` (en H/A) peuvent avoir différentes versions
