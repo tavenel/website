@@ -361,6 +361,7 @@ created: 2024-10-17
   - [ATAC](https://github.com/Julien-cpsn/ATAC)
   - `Swagger`
   - `resto`
+  - <https://proxymock.io/> : générateur de Mock HTTP (analyse le payload des requêtes)
 - Tests de charge :
   - `Jmeter`
 	- `Gatlin`
