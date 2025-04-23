@@ -322,6 +322,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/glossaire/>
 - [xavki - roadmap DevOps](https://www.youtube.com/watch?v=1W0oUxaJz_8)
 - [Playlist 90 days of DevOps](https://yewtu.be/playlist?list=PLsKoqAvws1psCnkDaTPRHaqcTLSTPDFBR)
 - [OpenClassrooms : Découvrez la méthodologie DevOps](https://openclassrooms.com/fr/courses/6093671-decouvrez-la-methodologie-devops)
+- <https://blog.wescale.fr/gitops-au-pays-des-bisounours>
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 [tuto-openclassrooms-monitoring]: https://openclassrooms.com/fr/courses/2035736-mettez-en-place-lintegration-et-la-livraison-continues-avec-la-demarche-devops/6183162-monitorez-votre-application
