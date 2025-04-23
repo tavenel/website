@@ -39,6 +39,7 @@ main {
 ```
 
 - 404 style
+- style: tables
 - copy button for code blocks
 
 - diagrams
