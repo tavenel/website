@@ -119,18 +119,22 @@ tags:
 ## Flannel
 
 - Est un réseau de sous-réseaux pour Kubernetes
-- Utilise des tunnels UDP ou TCP pour la communication 
+- Fonctionne avec divers backends (VXLAN, UDP, etc.).
 - Offre une isolation réseau par pod
 - Est plus simple à configurer que les autres options
+- Inconvénients : peut introduire une latence supplémentaire, moins de fonctionnalités avancées (`NetworkPolicies`, …), moins adapté aux très grands clusters.
 
 ---
 
 ## Calico
 
-- Utilise BGP (Border Gateway Protocol) pour le routage
+- Supporte plusieurs modes de réseau : BGP, IPIP, VXLAN.
 - Propose une isolation réseau granulaire (par pod)
-- Supporte nativement le routage IPv4 et IPv6
-- S'intègre bien avec l'infrastructure existante
+- Intègre de la sécurité
+- Conçu pour des (très) grand clusters.
+- S'intègre bien avec l'infrastructure existante.
+- Souvent utilisé dans les déploiements Cloud.
+- Inconvénients : complexe, besoin de compatibilité réseau (BGP).
 
 ---
 
@@ -145,11 +149,25 @@ tags:
 
 ## Cilium
 
-- Utilise _BPF_ (_Berkeley Packet Filter_)
-  - performant, débit élevé et latence réduite
+- Utilise _eBPF_ (_Berkeley Packet Filter_)
+  - (très) performant, débit élevé et latence réduite
 - Métriques détaillées sur le trafic réseau
 - Supporte dynamiquement l'ajout et la suppression de nœuds
 - Conçu pour gérer des clusters de grande taille
+- Inconvénients : complexe (eBPF et concepts réseau avancés), eBPF doit être activé dans le noyau Linux.
+
+---
+
+| **Critère**          | **Calico**                        | **Flannel**                       | **Weave Net**                    | **Cilium**                       |
+|-----------------------|-----------------------------------|-----------------------------------|----------------------------------|----------------------------------|
+| **Type de Réseau**    | Couche 3 (IPIP, BGP, VXLAN)       | Couche 3 (VXLAN, UDP)             | Couche 2 (Overlay)               | Couche 3 (eBPF)                  |
+| **Sécurité**          | Politiques de réseau granulaires  | Politiques de réseau basiques     | Politiques de réseau basiques    | Politiques de réseau granulaires |
+| **Performance**       | Haute                             | Moyenne                           | Moyenne                          | Très haute                       |
+| **Scalabilité**       | Très élevée                       | Moyenne                           | Moyenne                          | Très élevée                      |
+| **Complexité**        | Moyenne à élevée                  | Faible                            | Faible à moyenne                 | Élevée                           |
+| **Fonctionnalités**   | Avancées (BGP, IPIP, VXLAN)       | Basiques                          | Basiques à moyennes              | Avancées (eBPF, DNS, chiffrement)|
+| **Compatibilité**     | Kubernetes, OpenShift, Docker     | Kubernetes, Docker                | Kubernetes, Docker, Mesos        | Kubernetes                       |
+| **Résilience**        | Élevée                            | Moyenne                           | Élevée                           | Élevée                           |
 
 ---
 layout: section
