@@ -139,7 +139,23 @@ Pour récupérer des sondes `Docker` automatiquement, on pourra utiliser `cAdvis
 - Ajoutez une nouvelle source de données `Prometheus` avec l'URL : <http://prometheus-kube-prometheus-prometheus.monitoring.svc:9090>.
 - Importez des Dashboards préconfigurés pour `Kubernetes`.
 
-Par exemple, utilisez l'ID `3119` pour importer un tableau de bord `Kubernetes` ou l'ID `6417` pour les métriques de pods.
+Par exemple, utilisez l'ID :
+
+1. `2` pour importer un tableau de bord de monitoring de Prometheus.
+2. `11074` pour une vue orientée Node Exporter (OS Linux "host").
+3. `315` pour importer le tableau de bord classique de `Kubernetes` via Prometheus.
+4. `15661` pour une vue orientée métriques des Nodes du cluster.
+5. `11663` pour une les principales métriques des objets Kubernetes.
+6. `22128` pour monitorer les `HorizontalPodAutoscaler`.
+7. `11454` pour monitorer les `Volume`.
+8. `14279` pour monitorer les `CronJob`.
+9. `12006` pour monitorer l'_API Server_.
+10. `20842` pour monitorer les certificats de _cert-manager_.
+11. `15282` pour un cluster _k3s_.
+
+:::link
+Voir aussi les dashboards de la `kube-prometheus-stack` : <https://github.com/dotdc/grafana-dashboards-kubernetes>
+:::
 
 Vous pouvez aussi personnaliser les graphiques pour visualiser les métriques de vos pods, nœuds, et autres composants du cluster.
 
