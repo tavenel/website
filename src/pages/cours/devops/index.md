@@ -7,6 +7,7 @@ title: 🧑‍💻 Devops - Sysops
 - [🤓 Cours d'introduction au Devops](/cours/devops/devops-cours)
 - [🤓 Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/cours/devops/ansible-cours)
 - [🤓 Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/cours/devops/terraform-cours)
+- [🤓 Cours : technologies de réseaux virtuels](/cours/devops/network-virtual-cours)
 
 ## TP
 
