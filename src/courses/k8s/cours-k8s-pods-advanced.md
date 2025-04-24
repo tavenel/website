@@ -119,7 +119,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 - Points d'accès entrée et/ou sortie à la place du conteneur principal
 - Utilise les volumes partagés ou la couche réseau pour travailler avec le conteneur principal
 - Souvent injectés par des opérateurs k8s
-- Abstraction théorique : pas de modèle kubernetes [mais une implémentation est en beta](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/)
+- Voir la [documentation](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/)
 
 ---
 
