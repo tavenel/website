@@ -135,6 +135,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo)
 - [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
 - [Fonctionnement interne des Service](https://coroot.com/blog/engineering/a-deep-dive-into-service-to-service-communications/)
+- <https://kubernetes.io/docs/tutorials/services/source-ip/> : tester et comprendre l'abstraction de service (NAT, source / destination IP)
 
 ## Sécurité
 

@@ -18,6 +18,7 @@ title:   Docker® et 󱃾 Kubernetes®
 
 ## 󱃾 Kubernetes® 
 
+- [🤓 Cours Kubernetes : initiation basique](/cours/docker/kubernetes-cours-mini)
 - [🤓 Cours Kubernetes : l'intégral](/cours/docker/kubernetes-cours-full)
 - [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
 - [🤓 Cours Kubernetes orienté Administrateur Système](/cours/docker/kubernetes-cours-admin)

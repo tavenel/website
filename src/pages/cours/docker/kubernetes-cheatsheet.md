@@ -34,10 +34,13 @@ kubectl version
 Un cluster H/A peut avoir des `APIServer` de versions différentes (résultat aléatoire) !
 :::
 
-#### Kubelet
+#### Kubelet et Nodes
 
 ```sh
 kubectl get nodes -o wide
+
+# Nodes IP
+kubectl get nodes -o jsonpath='{ $.items[*].status.addresses[?(@.type=="InternalIP")].address }'
 ```
 
 #### Control-plane dans un Pod

@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Mini } from '@courses/k8s/cours-k8s-mini.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours d'initiation rapide à Kubernetes",
+  tags: [
+    "devops",
+		"docker",
+		"kubernetes"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Mini />  </Chapter>
+</Layout>
+
+

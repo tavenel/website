@@ -514,7 +514,7 @@ layout: section
 ## Service
 
 - Service DNS permettant d'accéder à 1 (ou plusieurs) Pods
-  - Nom DNS court (dans le namespace) : `<service_name>.<namespace>` (ou `<service_name>` si `namespace==default`)
+  - Nom DNS court (dans le namespace) : `<service_name>.<namespace>` (ou `<service_name>` si dans le même `namespace`)
   - Nom DNS complet : `<service_name>.<namespace>.svc.<cluster-domain>`
   - exemple : `mon_service.mon_namespace.svc.mon_cluster`
 - Association `Service` <-> `Pod`(s) grâce aux _labels_
@@ -984,6 +984,39 @@ graph LR;
 - `PersistentVolumeClaim` : réquisition d'un `PV`
   - permet l'association d'un disque à un _Pod_
   - états : `Pending` (cŕeation `PVC`) -> `Bound` (attaché au `Pod`) -> `Terminating` (attente de suppression)
+
+---
+
+```plantuml
+@startuml
+
+title "PV et PVC"
+
+!include <kubernetes/k8s-sprites-unlabeled-25pct>
+
+skinparam rectangle {
+  RoundCorner 15
+}
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 14
+
+
+rectangle "<$pv>\nPersistentVolume" as pv
+rectangle "<$sc>\nStorageClass" as sc #Orange
+
+database "Physical Volume" as db #LightGreen
+
+rectangle "<$pod>\npod" as pod #LightBlue {
+  rectangle "<$pvc>\nPersistentVolumeClaim" as pvc {
+}
+
+sc -[dotted]-> pv
+sc -[dotted]up-> pvc
+pv -> db
+
+@enduml
+```
+
 
 ---
 
