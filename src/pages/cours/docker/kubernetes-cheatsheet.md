@@ -1552,6 +1552,22 @@ spec:
 3 réplicas MySQL avec des volumes persistants individuels pour chaque réplica :
 
 ```yaml
+# Service headless pour le StatefulSet
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  ports:
+  - port: 3306
+    name: bdd
+  clusterIP: None
+  selector:
+    app: mysql
+---
+# StatefulSet
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -1574,6 +1590,7 @@ spec:
         image: mysql:5.7
         ports:
         - containerPort: 3306
+          name: bdd
         volumeMounts:
         - name: mysql-data
           mountPath: /var/lib/mysql
