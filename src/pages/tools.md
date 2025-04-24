@@ -32,7 +32,7 @@ created: 2024-10-17
 ### 1️⃣  Versioning
 
 -  `git`
-  - forges logicielles => `github`, 🦊 `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, `forgejo`, `gitea`, …
+  - forges logicielles => `github`, 🦊 `gitlab`, `bitbucket` (Atlassian -> `Jira`), `sourcehut`, `forgejo`, `gitea`, `gitbucket`, …
   - 🔐 sécurité
     - [git-crypt](https://github.com/AGWA/git-crypt)
     - 🔑 `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
