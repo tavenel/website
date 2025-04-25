@@ -134,6 +134,7 @@ created: 2024-10-17
 	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
   - `polaris` : détection de problèmes de sécurité dans un cluster
+  - <https://chaos-mesh.org/> : chaos computing dans un cluster
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
@@ -430,7 +431,7 @@ created: 2024-10-17
 - Dessin de graphes : `matplotlib`
 - Librairies Python : data science : `numpy`, `pandas` ; data mining et ML : `scipy`, `sklearn`
 - ETL open-source : `airflow`
-- Local LLM : `ollama`
+- Local LLM : `ollama`, <https://terminaltrove.com/parllama/> (TUI)
 - SQL queries on a CSV, Json, Excel file : <https://terminaltrove.com/sqly/>
 
 ## Project management
