@@ -153,4 +153,5 @@ Quelques références utiles en informatique.
 
 - <https://spring-petclinic.github.io/>
 - <https://github.com/gothinkster/realworld>
+- <https://github.com/bradtraversy/50projects50days>
 

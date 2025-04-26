@@ -15,3 +15,7 @@ title: 🧑‍💻 Devops - Sysops
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/cours/git/git-tp-ansible)
 - [📌 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet-devops)
 
+## Liens
+
+- <https://supports.uptime-formation.fr> : cours python, docker, k8s, ansible, elastic search, linux, git
+- <https://developer.hashicorp.com/tutorials> : Tutoriels HashiCorp : terraform, vault, consul, nomad, packer, vagrant
