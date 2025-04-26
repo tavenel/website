@@ -53,7 +53,7 @@ tags:
 
 - Les `Pod` ne communiquent jamais directement mais par les noms DNS de `Service`.
 - `Service` == service DNS associé à un Pod ou un Déploiement par un `label` :
-  - l'association crée un objet `Endpoint`
+  - l'association crée un objet `EndpointSlices`
   - DNS : `service_name` dans le même namespace (`mon_service`), sinon `service_name.namespace_name` (`mon_service.mon_namespace`).
   - `type=ClusterIP` (defaut) : communication entre `Pod` dans le cluster uniquement
   - `type=NodePort` : ajoute un accès depuis tous les `Node` du cluster

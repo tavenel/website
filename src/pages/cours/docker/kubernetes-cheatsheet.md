@@ -1267,7 +1267,7 @@ spec:
       port: 8080
 ```
 
-### Endpoint
+### Endpoint (deprecated)
 
 Lien entre `Service` et `Pod` :
 
@@ -1286,6 +1286,17 @@ target     prot opt source               destination
 KUBE-MARK-MASQ  tcp  -- !10.244.0.0/16        10.96.228.139        /* default/web-nodeport cluster IP */ tcp dpt:82
 KUBE-SEP-2YVSUODSDOHORZVC  all  --  anywhere             anywhere             /* default/web-nodeport -> 10.244.1.2:80 */ statistic mode random probability 0.50000000000
 KUBE-SEP-XUOJDF7ZKWSRJPSP  all  --  anywhere             anywhere             /* default/web-nodeport -> 10.244.2.2:80 */
+```
+
+### EndpointSlices
+
+Nouveau lien entre `Service` et `Pod` :
+
+```console
+$ kubectl get endpointslices        
+NAME                ADDRESSTYPE   PORTS   ENDPOINTS     AGE
+bar-service-dhxpp   IPv4          8080    10.244.0.18   47h
+foo-service-5b4kb   IPv4          8080    10.244.0.17   47h
 ```
 
 ## Deployment

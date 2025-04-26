@@ -798,7 +798,7 @@ User -[bold,dashed]-> pod2_2 #red : <color:red>2 => pod-orange-1:8282</color>
 
 ---
 
-### Endpoint
+### EndpointSlice
 
 - Lien `Service` <-> `Pod`
 
