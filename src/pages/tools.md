@@ -103,7 +103,7 @@ created: 2024-10-17
 - 🔎 linter (vérification fichiers) => `kubeconform`, `kube-score`
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
 	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
-- 📦 package manager (sur-couche) => `helm`
+- 📦 package manager (sur-couche) => `helm` (et secrets : <https://github.com/jkroepke/helm-secrets>)
 - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
 - ingress & service mesh :
   - `traefik` : reverse-proxy automatique
@@ -135,6 +135,7 @@ created: 2024-10-17
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
   - `polaris` : détection de problèmes de sécurité dans un cluster
   - <https://chaos-mesh.org/> : chaos computing dans un cluster
+  - <https://github.com/kubernetes-sigs/security-profiles-operator> : Opérateur SELinux, Apparmor, Seccomp
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
