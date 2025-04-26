@@ -117,6 +117,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 - [Exemple de déploiement d'une application stateless](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/)
 - [Exemple de déploiement d'une application stateful](https://kubernetes.io/docs/tutorials/stateful-application/)
+  - [Exemple complet : déploiement d'un cluster ZooKeeper stateful, et maintenance des noeuds](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/)
 
 ### Déploiement continu
 
