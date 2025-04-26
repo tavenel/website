@@ -1048,11 +1048,9 @@ layout: center
 layout: section
 ---
 
-# Points de vigilance
+# Conseils et points de vigilance
 
 ---
-
-# Points de vigilance - 1/2
 
 - 🚫 Ne pas utiliser la **même architecture** pour tous les contextes bornés.
   - Certains contextes sont moins complexes que d'autres.
@@ -1065,8 +1063,6 @@ layout: section
 
 ---
 
-# Points de vigilance - 2/2
-
 - 🤓 DDD n'a **PAS** pour but ~~d'ajouter des couches d'abstraction~~
   - Mais **d'isoler la logique métier** !
 - ❌ Peu adapté à un ~~domaine simple~~
@@ -1075,7 +1071,16 @@ layout: section
 
 ---
 
-# DDD depuis l'existant
+- Partage de base de données possible entre contextes mais **séparer les schémas**
+- Les **tests** doivent aussi êtres **séparés par contextes**
+- _Shared kernel_ : OK si partagé comme librairie, sinon sûrement un _code smell_ !
+- _Conformist_ : toujours ajouter un _Service Provider Interface (SPI)_, même si le contrat est le même (voir architecture hexagonale)
+- Éviter trop de verbiage entre modules (~~RPC~~, …)
+- _DDD_ n'est pas ~~synonyme de _microservice_~~ : commencer par un monolithe modulaire, tester en production, passer aux microservices (si besoin ops)
+
+---
+
+## DDD depuis l'existant
 
 - Peut être complexe à mettre en place (métier mal défini, mal isolé, …)
 - Privilégier des patterns stratégiques pour isoler le nouveau métier
