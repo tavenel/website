@@ -1096,6 +1096,7 @@ Pour accéder à un `Ingress` d'un cluster local :
 
 - Depuis un cluster `Docker` directement dans Linux, par l'adresse IP du _Node_
 - Depuis un cluster `Docker` depuis _Docker Desktop_, en ajoutant un mapping de port puis en se connectant sur le mapping en `localhost`
+- Dans `Minikube`, déployer l'ingress par `minikube addons enable ingress` puis utiliser l'adresse IP du _Node_ Minikube.
 - Dans le cas général : `kubectl port-forward 8888:80` vers l'ingress controller puis <http://localhost:8888>
 :::
 
