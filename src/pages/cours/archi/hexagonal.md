@@ -363,6 +363,7 @@ IRequestVerses poetryReader = new PoetryReader(mockFileAdapter);
 - [Clean architecture - summary](https://gist.github.com/ygrenzinger/14812a56b9221c9feca0b3621518635b)
 - [Daniel Oliveira : How to write robust apps every time, using "The Clean Architecture"](https://www.freecodecamp.org/news/how-to-write-robust-apps-consistently-with-the-clean-architecture-9bdca93e17b)
 - [Architecture explicite](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
+- [Clean Architecture et Laravel](https://laravel-france.com/posts/clean-architecture-laravel)
 
 [ddd-django]: https://github.com/johnnncodes/ddd-python-django
 
