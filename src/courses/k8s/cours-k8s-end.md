@@ -117,6 +117,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 - [Exemple de déploiement d'une application stateless](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/)
 - [Exemple de déploiement d'une application stateful](https://kubernetes.io/docs/tutorials/stateful-application/)
+  - [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
   - [Exemple complet : déploiement d'un cluster ZooKeeper stateful, et maintenance des noeuds](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/)
 
 ### Déploiement continu
@@ -192,9 +193,8 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
 - Exemples :
   - de projets : voir la [page des liens](/cours/liens#kubernetes)
-  - de déploiement de [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
   - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples>
-- [Interconnecting Clusters](https://2021-05-enix.container.training/5.yml.html#186)
+- Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/>
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
 
 ---
