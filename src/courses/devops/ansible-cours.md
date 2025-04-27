@@ -449,7 +449,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - [Ansible : cas pratique (1er partie)](https://blog.levassb.ovh/post/ansible-study-case/)
 - [Cours et TPs Ansible](https://supports.uptime-formation.fr/06-ansible/cours1/)
 - [AWX : interface Web de gestion d'ansible](https://github.com/ansible/awx)
-- <https://blog.stephane-robert.info/post/ansible-vs-terraform/>
+- <https://blog.stephane-robert.info/post/ansible-vs-terraform/> et <https://blog.stephane-robert.info/docs/infra-as-code/gestion-de-configuration/ansible/>
 - <https://blog.microlinux.fr/formation-ansible/>
 - [Ansible tips and tricks](https://docs.ansible.com/ansible/latest/tips_tricks/index.html)
 - Trouver des Plugins et des Rôles :
