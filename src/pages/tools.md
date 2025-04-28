@@ -259,7 +259,8 @@ created: 2024-10-17
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) :
   - `Suricata`
-	- `Falco` : comportement des conteneurs et des applications
+  - `Falco` : comportement des conteneurs et des applications
+- `rkhunter` : détection de rootkits
 
 ### 📈 Supervision / Monitoring / Observabilité
 
@@ -621,6 +622,7 @@ created: 2024-10-17
 - `github` => `gitlab`, `forgejo`, `gitea`
 - `docusign` => `docuseal`
 - `google analytics` => `matomo`
+- _google translate_ => <https://libretranslate.com/>
 - <https://silex.me/> => création de site web no-code
 
 ## 🔗 Awesome lists
