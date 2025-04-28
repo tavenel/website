@@ -15,6 +15,27 @@ _OpenFaaS_ (_Open Functions as a Service_) est une plateforme qui permet de dép
 
 Ses avantages principaux sont la portabilité (pas de verrouillage cloud), la simplicité d'utilisation, et la compatibilité avec n'importe quelle application conteneurisée (pas seulement des petits scripts).
 
+#### Concepts
+
+![OpenFaaS concepts](https://www.openfaas.com/images/2025-01-integrate/conceptual-of.png)
+
+<div class="caption">Concepts OpenFaaS. Source: https://www.openfaas.com/blog/integrate-with-openfaas/</div>
+
+#### Appel de fonction serverless en HTTP
+
+![Appel HTTP via Ingress OpenFaaS](https://www.openfaas.com/images/2025-01-integrate/invocation.png)
+
+<div class="caption">Appel HTTP via Ingress OpenFaaS. Source: https://www.openfaas.com/blog/integrate-with-openfaas/</div>
+
+Les appels de fonctions se font depuis l'Ingress OpenFaaS :
+
+- en synchrone : <http://gateway.openfaas:8080/function/NAME>
+- en asynchrone : <http://gateway.openfaas:8080/async-function/NAME>
+
+:::link
+Voir aussi : <https://www.openfaas.com/blog/integrate-with-openfaas/>
+:::
+
 ### Exemples de cas d'utilisation typiques
 
 #### Traitement d'images
@@ -216,7 +237,7 @@ Un timeout génère une erreur `502`.
 Voir aussi la documentation officielle : <https://docs.openfaas.com/tutorials/expanded-timeouts/>
 :::
 
-## logs
+## Logs et supervision
 
 Vous pouvez visualiser les logs d'une fonction :
 
@@ -240,6 +261,33 @@ Il est possible d'ajouter la variable d'environnement `write_debug=true` pour af
 environment:
   write_debug: true
 ```
+:::
+
+### Dashboard OpenFaaS
+
+OpenFaaS inclut un dashboad permettant de suivre les appels d'une fonction :
+
+![Monitoring de fonctions dans le dashboard OpenFaaS](https://docs.openfaas.com/images/dashboard/load-graphs.png)
+
+<div class="caption">Monitoring de fonctions dans le dashboard OpenFaaS. Source: https://docs.openfaas.com/openfaas-pro/dashboard/</div>
+
+:::link
+Pour plus d'informations, voir : <https://docs.openfaas.com/openfaas-pro/dashboard/>
+:::
+
+### Prometheus & Grafana
+
+OpenFaaS est prévu pour s'intégrer avec _Prometheus_ et _Grafana_ :
+
+![Monitoring de fonctions dans Grafana](https://docs.openfaas.com/images/grafana/overview-dashboard.png)
+
+<div class="caption">Monitoring de fonctions dans Grafana. Source: https://docs.openfaas.com/openfaas-pro/grafana-dashboards/</div>
+
+:::link
+Voir aussi :
+
+- Les métriques Prometheus : <https://docs.openfaas.com/architecture/metrics/>
+- Le dashboard Grafana : <https://docs.openfaas.com/openfaas-pro/grafana-dashboards/>
 :::
 
 ## 📜 Gestion des informations sensibles (secrets) et de la configuration (variables d'environnement)
@@ -553,7 +601,124 @@ Attention, certains triggers sont réservés à la licence professionnelle !
 
 ## Intégration avec des services externes
 
-- [TODO] Configuration des fonctions pour interagir avec des bases de données, des systèmes de messagerie, et d'autres API.
+### Bonnes pratiques générales
+
+- **Secrets** jamais hardcodés dans le code source.
+- **Timeouts** et **retry** dans les appels réseau.
+- **Limiter les permissions** de la fonction (ex: RBAC minimal si besoin).
+- **Valider toutes les entrées utilisateur**.
+
+### Se connecter à MySQL depuis une fonction Python
+
+**Déployer un secret :**
+
+```bash
+echo -n "superpassword" | faas-cli secret create mysql-password
+```
+
+**Dans `stack.yml` de la fonction :**
+
+```yaml
+functions:
+  my-db-function:
+    image: my-db-function:latest
+    secrets:
+      - mysql-password
+    environment:
+      db_host: "mysql.svc.cluster.local"
+      db_user: "admin"
+```
+
+**Dans la fonction Python :**
+
+```python
+import os
+import mysql.connector
+
+def handle(event, context):
+    conn = mysql.connector.connect(
+        host=os.environ.get('db_host'),
+        user=os.environ.get('db_user'),
+        password=open('/var/openfaas/secrets/mysql-password').read()
+    )
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users;")
+    results = cursor.fetchall()
+    return str(results)
+```
+
+### 📨 Intégration avec un **système de messagerie** : envoyer un message RabbitMQ depuis une fonction Node.js
+
+**Même principe** :
+
+- Stocker l'URL, credentials dans secrets/configmaps.
+- Utiliser un client de messagerie dans la fonction.
+
+**Secrets** :
+```bash
+echo -n "amqp://user:password@rabbitmq.svc.cluster.local" | faas-cli secret create rabbitmq-url
+```
+
+**stack.yml** :
+
+```yaml
+functions:
+  send-msg:
+    image: send-msg:latest
+    secrets:
+      - rabbitmq-url
+```
+
+**Code Node.js :**
+
+```javascript
+const amqp = require('amqplib');
+
+module.exports = async (event, context) => {
+    const url = require('fs').readFileSync('/var/openfaas/secrets/rabbitmq-url', 'utf8');
+    const conn = await amqp.connect(url);
+    const ch = await conn.createChannel();
+    await ch.assertQueue('myqueue');
+    ch.sendToQueue('myqueue', Buffer.from(event.body));
+    await ch.close();
+    await conn.close();
+    return context.status(200).succeed('Message sent!');
+};
+```
+
+### 🌎 Appeler une **API externe** OpenWeather en Python
+
+**Secret** :
+
+```bash
+echo -n "my_openweather_token" | faas-cli secret create openweather-token
+```
+
+**stack.yml** :
+
+```yaml
+functions:
+  weather:
+    image: weather-fn:latest
+    secrets:
+      - openweather-token
+    environment:
+      api_url: "http://api.openweathermap.org/data/2.5/weather"
+```
+
+**Fonction Python :**
+
+```python
+import os
+import requests
+
+def handle(event, context):
+    token = open('/var/openfaas/secrets/openweather-token').read().strip()
+    city = event.body or 'Paris'
+    url = f"{os.environ.get('api_url')}?q={city}&appid={token}"
+    response = requests.get(url, timeout=5)
+    return response.text
+```
 
 ## 📜 Créer un **template personnalisé**
 
