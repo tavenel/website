@@ -34,3 +34,8 @@ title:   Docker® et 󱃾 Kubernetes®
 - [📌 Projet Administration d'un Cluster Kubernetes](/cours/docker/tp_administration_kubernetes)
 - [📌 Projet Déploiement  applicatif dans Kubernetes](/cours/docker/projet_appli_kubernetes)
 
+## λ OpenFaaS
+
+- [λ TP serverless : Fonctions-as-a-Service dans Kubernetes avec OpenFaaS](/cours/docker/openfaas-tp)
+- [📌 Projet OpenFaaS dans Kubernetes](/cours/docker/openfaas-projet)
+
