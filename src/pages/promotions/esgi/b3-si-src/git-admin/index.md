@@ -74,6 +74,7 @@ Module de 12H
 - [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)
 - [💻 TP - Github® et dépôts distants](/cours/git/git-tp-github)
 - [💻 TP - Les branches Git™](/cours/git/git-tp-branches)
+- [💻 TP - Recherche dans un dépôt Git™](/cours/git/git-tp-grep)
 - [💻 TP Github - Utiliser les Gist](/cours/git/git-tp-github-gist)
 - [💻 TP - Les tags](/cours/git/git-tp-tags)
 - [💻 TP - Git pour un Projet XAMPP](/cours/git/git-tp-xampp) : Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.

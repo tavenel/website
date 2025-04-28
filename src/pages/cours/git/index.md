@@ -75,6 +75,7 @@ title:   Git™
 - [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)
 - [💻 TP - Github® et dépôts distants](/cours/git/git-tp-github)
 - [💻 TP - Les branches Git™](/cours/git/git-tp-branches)
+- [💻 TP - Recherche dans un dépôt Git™](/cours/git/git-tp-grep)
 - [💻 TP - Les tags](/cours/git/git-tp-tags)
 - [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : _à réaliser en binôme._
 - [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/git-tp-fork)
