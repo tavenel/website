@@ -388,3 +388,21 @@ commit
 
 **Pas de rebase d'une branche publique comme `main` : risque de désynchronisation avec les autres développeurs**
 
+---
+
+# fast-forward
+
+- stratégie de fusion si la branche cible ne contient aucun commit supplémentaire que la branche source
+- Simple déplacement de pointeur vers le dernier commit de la branche source
+- Évite la création d'un _merge commit_
+
+```
+A---B (main)
+     \
+      C---D (feature)
+
+A---B---C---D (main, feature)
+```
+
+---
+

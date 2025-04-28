@@ -93,7 +93,7 @@ Réaliser un merge de la nouvelle branche dans la branche principale :
 1. Se déplacer dans la branche principale.
 2. Créer une nouvelle branche `a-merger` depuis la branche principale et créer un nouveau commit avec un changement dans cette branche.
 3. Se placer dans la branche principale.
-4. Réaliser l'opération de merge : `$ git merge a-merger`
+4. Réaliser l'opération de merge : `$ git merge --no-ff a-merger` (l'option `--no-ff` force à ne pas utiliser le _fast forward_ pour voir clairement la fusion).
 5. Vérifier l'historique des branches.
 
 Note : si des changements on été réalisés dans la branche de destination, on préfèrera ajouter ces changements dans la branche source avant la fusion. Cela permet de réaliser une opération de merge dans la branche `new-branch` et non dans la branche `main` : le risque est ainsi contraint à la branche du développeur et non à la branche publique. On pourra tester localement la version fusionnée avant de la publier.
