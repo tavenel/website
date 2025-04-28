@@ -63,6 +63,20 @@ L'application devra être mise à jour en respectant des contraintes de zero dow
 
 On ne demande cependant pas de mettre en place un HA proxy (pas de "vrai" service de haute disponibilité).
 
+## Gestionnaire d'artefacts (Bonus)
+
+:::tip
+Utiliser un gestionnaire d'artefacts permet à la fois d'éviter d'exposer ceux-ci en dehors de son datacenter, mais aussi de gérer finement ses dépendances internes et fournit un cache aux services ayant besoin de les télécharger régulièrement : `apt`, `yum`, `maven`, `npm`, `Docker image`, `pip`, `go`, `helm`, `composer`, …
+:::
+
+Nexus OSS est un gestionnaire d'_artefacts_, de dépendances, d'images Docker, … pouvant être déployé _on-premise_ et intégrable dans de nombreux outils.
+
+:::link - Pour plus d'information, voir la documentation officielle : <https://help.sonatype.com/en/sonatype-nexus-repository.html>
+- Exemple d'amélioration du temps de build d'image Docker grâce à Nexus : <https://blog.stephane-robert.info/post/homelab-optimisation-temps-build-nexus/>
+- Exemples de gestionnaires d'artefacts : <https://blog.stephane-robert.info/docs/developper/artefacts/>
+- Utiliser Gitlab pour stocker ses images docker : <https://blog.stephane-robert.info/post/gitlab-container-docker-registry/>
+:::
+
 ## Observabilité
 
 Un système de monitoring devra être mis en place, tant au niveau métier (crash de l'application, …) qu'au niveau de l'infrastructure technique (état des services `Docker` ou `k8s`, …)
