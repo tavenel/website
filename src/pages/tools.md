@@ -618,7 +618,7 @@ created: 2024-10-17
 - `jira` => `plane`
 - `asana` => `OpenProject`
 - `firebase` => `convex`, `supabase`, `appwrite`, `instant`
-- `heroku`, `netlify`, `vercel` => `coolify`, `dokku`
+- `heroku`, `netlify`, `vercel` => `coolify`, `dokku`, `dokploy`
 - `github` => `gitlab`, `forgejo`, `gitea`
 - `docusign` => `docuseal`
 - `google analytics` => `matomo`
