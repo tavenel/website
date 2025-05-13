@@ -136,6 +136,15 @@ style B2 fill:#98fb98;
 
 ---
 
+| Catégorie            | Fréquence de Déploiement (vitesse) | Délai d'exécution des modifications (vitesse) | Temps moyen pour restorer (stabilité) | Taux d'erreurs lors de changements (stabilité) |
+|--------------------|---------------------|---------------------|----------------------|--------------------|
+| Elite performers    | > 1/jour (à la demande) | < 1 jour            | < 1 heure           | 0 - 15%            |
+| High performers    | 1/jour - 1/semaine  | 1/jour - 1/semaine | < 1 jour            | 0 - 15%            |
+| Medium performers  | 1/semaine - 1/mois  | 1/semaine - 1/mois  | < 1 jour            | 0 - 15%            |
+| Low performers     | 1/mois - 1/6 mois   | 1/mois - 1/6 mois   | 1 semaine - 1 mois  | 46 - 60%           |
+
+---
+
 <!-- class: liens -->
 
 # Liens
