@@ -305,6 +305,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/glossaire/>
 # Liens
 
 - Voir une sélection d'outils DevOps sur le [site web][site-perso]
+- Un [résumé de Docker et du CI/CD](https://cours.brosseau.ovh/tp/devops/support-docker-cicd.html)
 - <https://roadmap.sh/devops>
 - <https://www.damyr.fr/glossaire/>
 - [Exemple de pipeline Jenkins YAML en Infrastructure-as-Code][gist-jenkins-pipeline-yaml]
