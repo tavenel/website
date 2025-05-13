@@ -971,6 +971,13 @@ graph LR;
 
 ---
 
+:::tip
+- Il est possible d'injecter des volumes issus d'images OCI : <https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/>
+- Exemple : image Docker custom `FROM scratch` + un binaire à injecter dans le conteneur principal
+:::
+
+---
+
 ### PersistentVolume
 
 - `PersitentVolume` (PV) : vision _storage_ du cluster Kubernetes
