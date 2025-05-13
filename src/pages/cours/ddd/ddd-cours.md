@@ -8,6 +8,10 @@ tags:
 - hexagonal
 - clean
 ---
+
+## Chapitres
+
+---
 layout: center
 ---
 
@@ -647,9 +651,19 @@ Plusieurs stratégies permettent d'y parvenir :
 
 ---
 
+## Comparaison des domaines
+
+| Type de domaine | Complexité du modèle | Différenciant business |
+|-----------------|----------------------|------------------------|
+| Core Domain     |   Très complexe      |   Élevé                |
+| Support         |    Complexe          |   Moyen                |
+| Générique       |    Simple            |   Faible               |
+
+---
+
 ```mermaid
 flowchart TD
-    A["La solution peut-elle être achetée/intégrée?"] -->|Yes| B["Will it jeopardize the business?"]
+    A["La solution peut-elle être achetée/intégrée?"] -->|Yes| B["Cela mettra-t-il en péril l’entreprise ?"]
     A -->|Non| C["Complexité de la logique métier?"]
     B -->|Oui| D["Domaine Principal"]
     B -->|Non| E["Sous-domaine Générique"]
@@ -667,6 +681,14 @@ flowchart TD
   - Notion de `patient` 👤 (informations de contact, paiement, …)
 - Les 2 domaines ont besoin d'un modèle **différent** de patient (chacun dans son `Bounded Context`)
 - Un sous-domaine **générique** de **facturation**
+
+---
+
+:::tip
+La frontière entre domaines peut être floue !
+:::
+
+> All models are wrong, but some are useful. (George Box)
 
 ---
 layout: center
@@ -737,6 +759,44 @@ layout: section
 
 ---
 
+```plantuml
+@startuml
+title: SHARED-KERNEL (LIB)
+left to right direction
+
+package "RÉSERVATION" #LightGreen {
+	[Réservation] as booking #LightGreen
+	rectangle "Classe" as comfort_class #LightPink
+	rectangle "Horaires" as schedule #LightPink
+
+	booking --> comfort_class
+	booking --> schedule
+}
+
+rectangle "SHARED-KERNEL (LIB)" #LightPink {
+	rectangle "Classe\n(économique, business, …)" as shared_comfort_class #LightPink
+	rectangle "Horaires" as shared_schedule #LightPink
+
+	comfort_class -[dotted]- shared_comfort_class
+	schedule -[dotted]- shared_schedule
+}
+
+package "RECHERCHE" #LightBlue {
+	[Recherche] as search #LightBlue
+	rectangle "Classe" as search_comfort_class #LightPink
+	rectangle "Horaires" as search_schedule #LightPink
+
+	search_comfort_class <-- search
+	search_schedule <-- search
+}
+
+shared_comfort_class -[dotted]- search_comfort_class
+shared_schedule -[dotted]- search_schedule
+@enduml
+```
+
+---
+
 # Customer / Supplier (Client / Fournisseur)
 
 - Relation : un _Bounded Context_ **fournit un service** (ou des données) à un autre.
@@ -753,6 +813,33 @@ layout: section
 
 ---
 
+```plantuml
+@startuml
+title: relation Client/Fournisseur
+left to right direction
+
+package "Facturation (Supplier)" {
+  class "Client" as client1 {
+    +addresseDeFacturation
+    +récupérerDevis()
+  }
+
+}
+
+package "Marketing (Customer)" {
+  class "Client" as client2 {
+    +addresseDeContact
+    +listerProduitsRécents()
+  } 
+
+}
+
+client2 -- client1
+@enduml
+```
+
+---
+
 # Conformiste
 
 - Le client **adhère** au modèle (et conventions, règles, …) de l'équipe fournisseur
@@ -763,7 +850,163 @@ layout: section
 # Exemple de Conformiste
 
 - Équipe chargée de gérer l'inventaire des produits dans un entrepôt.
-- même modèle que dans le contexte responsable de la gestion des commandes, des clients et des produits.
+  - même modèle que dans le contexte responsable de la gestion des commandes, des clients et des produits.
+- Module de _Recherche_ conforme à un module de _Réservation_ .
+
+---
+
+```plantuml
+@startuml
+title: CONFORMISTE (COMPOSANTS)
+left to right direction
+
+package "RÉSERVATION" #LightGreen {
+    [Sélection] as selection #LightBlue
+    () "getSelection() : SPI" as getter #LightGreen
+}
+
+package "RECHERCHE" #LightBlue {
+    [Sélection] as selection2 #LightBlue
+    () "getSelection() : API" as getter2 #LightBlue
+}
+
+getter2 ..> getter
+@enduml
+```
+
+---
+
+```plantuml
+@startuml
+title: CONFORMISTE (LIB)
+left to right direction
+
+package "RÉSERVATION" #LightGreen {
+	[Prix] as price #LightGreen
+	[Discount] as discount #LightGreen
+	rectangle "Quantité" as amount #LightPink
+	rectangle "Devise" as currency #LightPink
+
+	price --> amount
+	price --> currency
+	discount --> amount
+	discount --> currency
+}
+
+rectangle "MONNAIE (LIB)" #LightPink {
+	rectangle "Quantité" as amount2 #LightPink
+	rectangle "Devise" as currency2 #LightPink
+}
+
+amount -[dotted]- amount2
+currency -[dotted]- currency2
+@enduml
+
+```
+
+---
+
+# Open Host Services (Services Hôtes)
+
+- Rend disponible des systèmes / services **communs** à différents _Bounded Context_
+  - _RESTful API_, …
+- Définit un **modèle commun d'intégration**
+
+---
+
+# Exemple de pattern Open Host Service
+
+- _Open Host Service_ de paiement à distance (possède sa propre logique)
+- À intégrer dans différents contextes de l'application
+
+---
+
+```plantuml
+@startuml
+title: OPEN HOST
+left to right direction
+
+package "RÉSERVATION" #LightGreen {
+  package "DOMAIN" as domain1 {
+    [Train] as train #LightGreen
+    () "getTrainsToBook()\n(SPI)" as getTrainsToBook #LightGreen
+  }
+}
+
+package "RECHERCHE" #LightBlue {
+  package "DOMAIN" as domain2 {
+    [Selection] as domain_selection #LightBlue
+    () "getSelection()\n(API)" as getSelection #LightBlue
+  }
+
+  package "INFRASTRUCTURE" #LightGreen {
+    [Train] as inproc_train #LightGreen
+    [Sélection] as selection #LightBlue
+    selection --> inproc_train : OpenHost
+    () "getTrainsToBook()\n(implémentation)" as getTrainsToBookImpl #LightGreen
+  }
+}
+
+getSelection --> getTrainsToBookImpl
+getTrainsToBookImpl --> getTrainsToBook
+@enduml
+```
+
+---
+
+# Published Language (Langage publié)
+
+- Version formelle des service hôtes : **publication technique du modèle commun**
+  - `JSON`, `XML`, …
+
+---
+
+# Couche Anticorruption (ACL)
+
+- **Protège** un _Bounded Context_ des complexités et incohérences d'un autre modèle
+- **Traducteur** et **validateur** entre deux modèles
+- **Inverse** de l'_Open Host_
+
+---
+
+# Exemple de pattern ACL
+
+- Système e-commerce s'intégrant à un ancien système de gestion des stocks (ancien modèle de données)
+- L'_ACL_ traduit les concepts, données et messages entre les 2 systèmes
+
+---
+
+```plantuml
+@startuml
+title: COUCHE ANTICORRUPTION
+left to right direction
+
+package "RÉSERVATION" #LightGreen {
+  package "DOMAIN" as domain1 {
+    [Train] as train #LightGreen
+    () "getTrainsToBook()\n(SPI)" as getTrainsToBook #LightGreen
+  }
+
+  package "INFRASTRUCTURE" {
+    [Train] as inproc_train #LightGreen
+    [Sélection] as selection #LightBlue
+    selection --> inproc_train : ACL
+    () "getTrainsToBook()\n(implémentation)" as getTrainsToBookImpl #LightGreen
+  }
+}
+
+package "RECHERCHE" #LightBlue {
+  package "DOMAIN" as domain2 {
+    [Selection] as domain_selection #LightBlue
+    () "getSelection()\n(API)" as getSelection #LightBlue
+  }
+
+}
+
+getSelection --> getTrainsToBookImpl
+getTrainsToBookImpl --> getTrainsToBook
+@enduml
+```
 
 ---
 
@@ -784,39 +1027,30 @@ layout: section
 
 ---
 
-# Open Host Services (Services Hôtes)
+```plantuml
+@startuml
+title: Separate Ways
+left to right direction
 
-- Rend disponible des systèmes / services **communs** à différents _Bounded Context_
-  - _RESTful API_, …
-- Définit un **modèle commun d'intégration**
+package "Facturation" {
+  class "ClientPourFacturation" as client1 {
+    +addresseDeFacturation
+    +récupérerDevis()
+  }
 
----
+}
 
-# Exemple de pattern Open Host Service
+package "Marketing" {
+  class "ClientPourMarketing" as client2 {
+    +addresseDeContact
+    +listerProduitsRécents()
+  } 
 
-- _Open Host Service_ de paiement à distance (possède sa propre logique)
-- À intégrer dans différents contextes de l'application
+}
 
----
-
-# Published Language (Langage publié)
-
-- Version formelle des service hôtes : **publication technique du modèle commun**
-  - `JSON`, `XML`, …
-
----
-
-# Couche Anticorruption (ACL)
-
-- **Protège** un _Bounded Context_ des complexités et incohérences d'un autre modèle
-- **Traducteur** et **validateur** entre deux modèles
-
----
-
-# Exemple de pattern ACL
-
-- Système e-commerce s'intégrant à un ancien système de gestion des stocks (ancien modèle de données)
-- L'_ACL_ traduit les concepts, données et messages entre les 2 systèmes
+client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
+@enduml
+```
 
 ---
 layout: section
@@ -1103,8 +1337,6 @@ layout: two-cols
 - [DDD vs Clean architecture en images](https://khalilstemmler.com/articles/software-design-architecture/domain-driven-design-vs-clean-architecture/)
 - [Exemple de brainstorming (event storming)][brainstorming-example]
 
-::right::
-
 - [Stratégies d'organisation du code (medium.com)](https://medium.com/@msandin/strategies-for-organizing-code-2c9d690b6f33)
 - [Martin Fowler : domain data layering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
 - [De CRUD à DDD - Comment Meetic a sauvé son legacy (slides)](https://speakerdeck.com/jmlamodiere/de-crud-a-ddd-comment-meetic-a-sauve-son-legacy)
@@ -1137,4 +1369,6 @@ layout: two-cols
 - [Clean Architecture vs Domain-Driven Design (DDD) - Understand the Difference](https://www.youtube.com/watch?v=eUW2CYAT1Nk)
 - [Playlist: REST API following CLEAN ARCHITECTURE (Youtube)](https://www.youtube.com/playlist?list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k)
 - [DDD en DotNet (linkedin learning)](https://www.linkedin.com/learning/expert-domain-driven-design-ddd-implementation-in-dot-net)
+- [Model Mitosis : ne plus se tromper entre les microservices et le monolithe (Julien Topcu)](https://julientopcu.com/talks/model-mitosis)
+- [Le pattern Hive : une stratégie de modularisation pour votre monolithe modulaire ou vos microservice (Julien Topcu)](https://julientopcu.com/talks/hive)
 
