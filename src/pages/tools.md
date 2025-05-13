@@ -41,6 +41,7 @@ created: 2024-10-17
   - outils
     - 🤪 [gitmoji](https://github.com/carloscuesta/gitmoji) : ajouter des emojis de contexte aux commits
     - <https://alchemists.io/projects/git-lint> : linter de commits Git pour une cohérence des messages
+- [jujutsu](https://github.com/jj-vcs/jj) : autre gestionnaire de versions basé sur un backend Git. TUI : [lazyjj](https://github.com/Cretezy/lazyjj)
 - sémantique :
   - 1️⃣  <https://semver.org/>
   - 2️⃣ <https://hub.docker.com/r/gittools/gitversion>
@@ -232,6 +233,7 @@ created: 2024-10-17
 - <https://r2devops.io/> : auditer le pipeline CI/CD
 - [Regula](https://blog.stephane-robert.info/post/infra-as-code-policy-check-regula/) : vérifications de sécurité dans code IaC (Terraform, yaml k8s, …)
 - `Lynis` : sécurité des configs Linux [tuto](https://blog.stephane-robert.info/docs/securiser/durcissement/lynis/)
+- <https://github.com/woodruffw/zizmor> : analyse statique des actions GitHub.
 
 #### CD & Gitops
 
