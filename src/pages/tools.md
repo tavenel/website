@@ -127,6 +127,7 @@ created: 2024-10-17
   - [external DNS](https://github.com/kubernetes-sigs/external-dns) : synchronisation Ingress / Service avec DNS externe (Cloud, …)
 - 📦📦 scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
+  - `Goldilocks` : génération de recommendations de _requests_ et _limits_
 - 🔒 sécurité
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
