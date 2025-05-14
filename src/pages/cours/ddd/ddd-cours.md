@@ -1125,9 +1125,45 @@ layout: section
 
 ---
 
-![Résumé des patterns stratégiques](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture2.png)
+```plantuml
+@startmindmap
+* Context Map
 
-<div class="caption">Résumé des patterns stratégiques. Source : dieuxducode.com</div>
+  **_ Superposition de contextes coopérant
+    *** Shared Kernel
+
+  **_ Crée un lien de coopération
+    *** Customer/Supplier Teams
+
+  **_ Crée un lien unidirectionnel
+    *** Conformist
+
+  **_ Supporte différents clients
+    *** Open Host Service
+      ****_ Version formelle
+        ***** Published Language
+
+  **_ Libère les contraintes entre équipes
+    *** Separate Ways
+
+  **_ Traduis et isole unilatéralement
+    *** Anticorruption Layer
+
+left side
+
+  **_ Évaluation et examen des relations
+    *** Bounded Context
+
+      ****_ nommage
+        ***** Ubiquitous Language
+
+      ****_ garde le modèle unifié
+        ***** Continuous Integration
+
+@endmindmap
+```
+
+<div class="caption">Résumé des patterns stratégiques.</div>
 
 ---
 
@@ -1180,9 +1216,25 @@ layout: center
 
 ---
 
-![Cartographie des modèles et de leurs relations](https://lesdieuxducode.com/images/blog/rachidabiechehmidouche@expaceocom/Picture1.png)
+```plantuml
+@startmindmap
+* Domain-Driven Design
+  **[#lightgreen] expression du modèle
+    ***[#lightgreen] Services
+    ***[#lightgreen] Value Objects
+    ***[#lightgreen] Entities
+      ****[#FFBBCC] Propriété, frontières et intégrité des objets
+        *****[#FFBBCC] Aggregates
 
-<div class="caption">Cartographie des modèles et de leurs relations. Source: dieuxducode.com</div>
+  **[#lightblue] Accès aux données, ignore la persistance
+    ***[#lightblue] Repositories
+
+  **[#Orange] Création des objets
+    ***[#Orange] Factories
+@endmindmap
+```
+
+<div class="caption">Patterns tactiques de base.</div>
 
 ---
 
@@ -1302,6 +1354,7 @@ layout: section
 - ❌ Peu adapté à un ~~domaine simple~~
   - ou si les acteurs du métier ne sont pas impliqués
   - 💵 **coûteux** en ressources et en temps
+- ❌ DDD est **incompatible** avec un design par _Smart UI_
 
 ---
 
