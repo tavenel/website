@@ -273,11 +273,46 @@ Voir le [TP sur SMTP][tp-smtp].
 
 1. L'utilisateur soumet un fichier pour impression.
 2. Le dæmon `cupsd` dépile le job d'impression (numéro de job, queue d'impression, nom du document).
-3. `CUPS` utilise des filtres installés sur le système pour généré un fichier au format utilisable par l'imprimante.
+3. `CUPS` utilise des filtres installés sur le système pour générer un fichier au format utilisable par l'imprimante.
 4. `CUPS` envoie le fichier re-formatté à l'imprimante
 
 - `/etc/cups/cupsd.conf`
 - Interface héritée de `lpd` (`lpadmin`, `lpinfo`, `lpoptions`, `lpr`, `lpstat`, `lp`, …)
 
 ---
+
+<!-- Annexe : liste des TPs -->
+
+[tp-ligne-commande]: tp-ligne-commande.md
+[tp-systeme]: tp-systeme.md
+[tp-grub]: tp-grub.md
+[tp-shared-lib]: tp-shared-lib.md
+[tp-sysv-systemd]: tp-sysv-systemd.md
+[tp-rpm-apt]: tp-rpm-apt.md
+[tp-texte]: tp-texte.md
+[tp-fichiers]: tp-fichiers.md
+[tp-redirections]: tp-redirections.md
+[tp-process]: tp-process.md
+[tp-fichiers-avance]: tp-fichiers-avance.md
+[tp-partitions]: tp-partitions.md
+
+[tp-ligne-commande]: tp-ligne-commande.md
+[tp-systeme]: tp-systeme.md
+[tp-grub]: tp-grub.md
+[tp-shared-lib]: tp-shared-lib.md
+[tp-sysv-systemd]: tp-sysv-systemd.md
+[tp-rpm-apt]: tp-rpm-apt.md
+[tp-texte]: tp-texte.md
+[tp-fichiers]: tp-fichiers.md
+[tp-redirections]: tp-redirections.md
+[tp-process]: tp-process.md
+[tp-fichiers-avance]: tp-fichiers-avance.md
+[tp-partitions]: tp-partitions.md
+[tp-cron]: tp-cron.md
+[tp-lang]: tp-lang.md
+[tp-smtp]: /cours/cloud/exo-smtp.md
+[tp-syslog]: tp-syslog.md
+[tp-network]: tp-network.md
+[tp-security]: tp-security.md
+[tp-ssh-gpg]: tp-ssh-gpg.md
 

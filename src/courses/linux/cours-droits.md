@@ -173,3 +173,38 @@ setfacl -b <fichier>
 
 ---
 
+<!-- Annexe : liste des TPs -->
+
+[tp-ligne-commande]: tp-ligne-commande.md
+[tp-systeme]: tp-systeme.md
+[tp-grub]: tp-grub.md
+[tp-shared-lib]: tp-shared-lib.md
+[tp-sysv-systemd]: tp-sysv-systemd.md
+[tp-rpm-apt]: tp-rpm-apt.md
+[tp-texte]: tp-texte.md
+[tp-fichiers]: tp-fichiers.md
+[tp-redirections]: tp-redirections.md
+[tp-process]: tp-process.md
+[tp-fichiers-avance]: tp-fichiers-avance.md
+[tp-partitions]: tp-partitions.md
+
+[tp-ligne-commande]: tp-ligne-commande.md
+[tp-systeme]: tp-systeme.md
+[tp-grub]: tp-grub.md
+[tp-shared-lib]: tp-shared-lib.md
+[tp-sysv-systemd]: tp-sysv-systemd.md
+[tp-rpm-apt]: tp-rpm-apt.md
+[tp-texte]: tp-texte.md
+[tp-fichiers]: tp-fichiers.md
+[tp-redirections]: tp-redirections.md
+[tp-process]: tp-process.md
+[tp-fichiers-avance]: tp-fichiers-avance.md
+[tp-partitions]: tp-partitions.md
+[tp-cron]: tp-cron.md
+[tp-lang]: tp-lang.md
+[tp-smtp]: /cours/cloud/exo-smtp.md
+[tp-syslog]: tp-syslog.md
+[tp-network]: tp-network.md
+[tp-security]: tp-security.md
+[tp-ssh-gpg]: tp-ssh-gpg.md
+
