@@ -237,7 +237,38 @@ _Eric Evans_, 2003
 
 ---
 
-![Le langage ubiquitaire à la rencontre du contexte métier et de la conception technique](https://alexsoyes.com/wp-content/uploads/2022/02/ddd-ubiquitous-language-450x225.jpg)
+<svg width="700" height="500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .venn-circle {
+      fill-opacity: 0.5;
+      stroke: black;
+      stroke-width: 2;
+    }
+    .text-label {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+    }
+  </style>
+
+  <circle cx="250" cy="250" r="200" stroke="#4DA6FF" stroke-width="3" fill="none" />
+  <text x="150" y="190" text-anchor="middle" stroke="#4DA6FF" alignment-baseline="middle" font-size="18">
+		<tspan>Contexte</tspan>
+		<tspan dx="-90" dy="20">métier</tspan>
+	</text>
+
+  <circle cx="450" cy="250" r="200" stroke="#FF7B54" stroke-width="3" fill="none" />
+  <text x="550" y="190" text-anchor="middle" stroke="#FF7B54" alignment-baseline="middle" font-size="18">
+		<tspan>Conception</tspan>
+		<tspan dx="-90" dy="20">technique</tspan>
+	</text>
+
+  <text x="270" y="250" fill="purple" font-size="22">
+		<tspan>Langage</tspan>
+		<tspan dx="-120" dy="20">Ubiquitaire</tspan>
+	</text>
+</svg>
+
 
 <div class="caption">Le langage ubiquitaire à la rencontre du contexte métier et de la conception technique</div>
 
@@ -612,12 +643,48 @@ Plusieurs stratégies permettent d'y parvenir :
 
 ---
 
-![Exemple de domaine](https://thedomaindrivendesign.io/wp-content/uploads/2021/05/thedomaindrivedesign-domain-700x606.jpg)
-<div class="caption">Exemple de domaine</div>
+```plantuml
+@startuml
+title: Exemple de Domaine
 
-![Exemple de domaine distillé](https://thedomaindrivendesign.io/wp-content/uploads/2021/05/thedomaindrivedesign-distilling-700x606.jpg)
+rectangle "Domain" {
 
-<div class="caption">Exemple de domaine distillé</div>
+  rectangle "Trading Room"
+  rectangle "Risk"
+  rectangle "Information Technology"
+  rectangle "Financial"
+  rectangle "Human Ressources"
+  rectangle "Account"
+}
+@enduml
+```
+
+```plantuml
+@startuml
+title: Exemple de Domaine distillé
+
+rectangle "Domain" {
+
+  rectangle "Trading Room" as tr
+  rectangle "Risk" as r
+  rectangle " " as b {
+    rectangle "Human Ressources"
+    rectangle "Information Technology"
+  }
+  rectangle "Financial" as f
+  rectangle "Account" as a
+}
+
+tr -- r
+tr -- f
+tr -- b
+r -- b
+r -- a
+a -- b
+f -- b
+
+@enduml
+```
 
 ---
 
@@ -1068,9 +1135,48 @@ layout: section
 
 # Exemple de context map
 
-![Exemple de context map](https://www.methodsandtools.com/archive/ddd3.gif)
+```plantuml
+@startuml
+title: Exemple de Context Map d'une compagnie d'assurance
 
-<div class="caption">Exemple de context map. Source: methodsandtools.com</div>
+' Contexts
+package "Customer Self-Service Context" as cssc {
+  rectangle D as cssc_d
+}
+
+package "Printing Context" as pc {
+  rectangle "OHS ou PL\nU" as pc_u
+}
+
+package "Customer Management Context" as cmc {
+  rectangle U as cmc_u
+  rectangle "ACL\nD" as cmc_d
+  rectangle "OHS ou PL\nU" as cmc_u2
+}
+
+package "Debt Collection Context" as dcc {
+  rectangle "ACL\nD" as dcc_d
+}
+
+rectangle "Risk Management Context" as rmc
+
+package "Policy Management Context" as pmc {
+  rectangle "ACL\nD" as pmc_d
+  rectangle "CONFORMIST\nD" as pmc_d2
+}
+
+' Relationships
+cmc_u -- cssc_d : "Customer/Supplier"
+cmc_u2 -- pmc_d2
+
+pc_u -- cmc_d
+pc_u -- pmc_d
+pc_u -- dcc_d
+
+pmc -- dcc : "Shared Kernel"
+pmc -- rmc : "Partnership"
+@enduml
+```
 
 ---
 layout: section
@@ -1326,9 +1432,9 @@ layout: center
 
 # Résumé
 
-![Résumé du Domain Driven Design](https://thedomaindrivendesign.io/wp-content/uploads/2019/06/DomainDrivenDesignReference-700x620.png)
+![Résumé du Domain Driven Design](@assets/ddd/DomainDrivenDesignReference.png)
 
-<div class="caption">Résumé du Domain Driven Design. By: Eric Evans</div>
+<div class="caption">Résumé du Domain Driven Design. CC By: Eric Evans. https://www.domainlanguage.com/ddd/reference/</div>
 
 ---
 layout: section
@@ -1401,6 +1507,7 @@ layout: two-cols
 - [Discussion about DDD in Symfony issues](https://github.com/symfony/symfony-docs/issues/8893)
 - <https://dddinpython.com/>
 - <https://teamtopologies.com>
+- [Exemples de ContextMap et outil permettant de générer les cartes](https://github.com/ContextMapper/context-mapper-examples)
 
 [brainstorming-example]: https://openclassrooms.com/fr/courses/5647281-appliquez-le-principe-du-domain-driven-design-a-votre-application/6828051-identifiez-les-objectifs-de-votre-application-avec-levent-storming#/id/r-6828246
 [archi-explicite]: https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
