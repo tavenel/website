@@ -686,6 +686,7 @@ layout: section
 - [Building a Linux Container using Namespace](https://github.com/rockerritesh/Building-a-Linux-Container-using-Namespace)
 - [Introduction aux namespaces Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/namespaces/)
 - [Comprendre les Cgroups](https://blog.stephane-robert.info/docs/admin-serveurs/linux/cgroups/)
+- [Building a container filesytem by hand](https://michalpitr.substack.com/p/primer-on-linux-container-filesystems)
 
 ---
 
