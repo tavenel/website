@@ -70,12 +70,12 @@ Il est possible de configurer `etcd` en H/A de 2 manières différentes (voir la
 - _external etcd_ : le cluster `etcd` est externe aux _control plane_ : chaque `APIServer` est connecté au cluster de tous les `etcd`.
 :::
 
-![Stacked etcd](https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-stacked-etcd.svg)
+![Stacked etcd](@assets/k8s/kubeadm-ha-topology-stacked-etcd.svg)
 
-<div class="caption">etcd en stack dans les control-plane</div>
+<div class="caption">etcd en stack dans les control-plane. Source: https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-stacked-etcd.svg</div>
 
-![External etcd](https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-external-etcd.svg)
-<div class="caption">etcd externes</div>
+![External etcd](@assets/k8s/kubeadm-ha-topology-external-etcd.svg)
+<div class="caption">etcd externes. Source: https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-external-etcd.svg</div>
 
 :::link
 Source des diagrammes et plus d'information : <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/>

@@ -17,13 +17,99 @@ Ses avantages principaux sont la portabilité (pas de verrouillage cloud), la si
 
 #### Concepts
 
-![OpenFaaS concepts](https://www.openfaas.com/images/2025-01-integrate/conceptual-of.png)
+```plantuml
+@startuml
+title OpenFaaS for Kubernetes
+
+rectangle "Template Store" as template_store {
+  rectangle "Java"
+  rectangle "Python"
+}
+
+rectangle "Function Store" as function_store {
+  rectangle "Function Definition" as fdd1
+  rectangle "Function Definition" as fdd2
+}
+
+rectangle "Another team's software" as another_team {
+  rectangle "Inbound HTTP Request"
+  rectangle "Kafka Topic"
+}
+
+rectangle "Your team's software" as your_team {
+  rectangle "Custom UI"
+  rectangle "Custom API"
+}
+
+rectangle "Customer or Partner" as customer_partner {
+  rectangle "Inbound HTTP Request"
+  rectangle "S3 Bucket PUT"
+}
+
+rectangle "OpenFaaS Installation" as openfaas_installation {
+  rectangle "Function Deployment" as fdp1 #LightGreen
+  rectangle "Function Deployment" as fdp2 #LightGreen
+  rectangle "Function Deployment" as fdp3 #LightGreen
+
+  rectangle "OpenFaaS" as openfaas #LightBlue
+  rectangle "Autoscaler" #LightBlue
+  rectangle "Prometheus" #LightBlue
+  rectangle "Queue-Worker" #LightBlue
+  rectangle "Cron-Connector" #LightBlue
+  rectangle "Kafka-Connector" #LightBlue
+
+  fdp1 -- openfaas
+  fdp2 -- openfaas
+  fdp3 -- openfaas
+}
+
+template_store -[dashed]- openfaas_installation
+function_store -[dashed]- openfaas_installation
+another_team -[dashed]-> openfaas_installation
+your_team -[dashed]-> openfaas_installation
+customer_partner -[dashed]-> openfaas_installation
+@enduml
+```
 
 <div class="caption">Concepts OpenFaaS. Source: https://www.openfaas.com/blog/integrate-with-openfaas/</div>
 
 #### Appel de fonction serverless en HTTP
 
-![Appel HTTP via Ingress OpenFaaS](https://www.openfaas.com/images/2025-01-integrate/invocation.png)
+```plantuml
+@startuml
+title OpenFaaS for Kubernetes
+
+rectangle "Registry" as registry {
+  rectangle "ghcr.io/openfaas/sleep:0.1.0" as registry_content #LightYellow
+}
+
+rectangle "OpenFaaS Installation" as openfaas_installation {
+  rectangle "Function 'sleep'" as function_sleep #LightGreen
+  rectangle "Deployment" as deployment #LightGreen
+  rectangle "Pod" as pod1 #LightGreen
+  rectangle "Pod" as pod2 #LightGreen
+  rectangle "OpenFaaS Gateway" as openfaas_gateway #LightBlue
+  rectangle "Service TCP/8080" as service #LightGreen
+  rectangle "Ingress\n80, 443" as ingress
+}
+
+actor User
+
+User -> ingress : "HTTP GET /function/sleep"
+function_sleep .. deployment
+function_sleep .. service
+deployment .. pod1
+deployment .. pod2
+
+openfaas_gateway -- function_sleep
+ingress --> openfaas_gateway
+openfaas_gateway --> service
+service --> pod1
+service --> pod2
+
+registry -[dashed]-> function_sleep
+@enduml
+```
 
 <div class="caption">Appel HTTP via Ingress OpenFaaS. Source: https://www.openfaas.com/blog/integrate-with-openfaas/</div>
 

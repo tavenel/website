@@ -23,12 +23,6 @@ layout: section
 
 ---
 
-![Un exemple d'incompréhension culturel](https://regards-interculturels.fr/wp-content/uploads/2015/03/Salutations_Asiatique_Occidental_rvb.jpg)
-
-<div class="caption">Un exemple d'incompréhension culturel. Source : regards-interculturels.fr</div>
-
----
-
 > La culture est la programmation collective de l'esprit humain qui permet de distinguer les membres d'une catégorie d'hommes par rapport à une autre.
 > Ainsi, c'est un acquis commun constituant un ensemble de normes: normes de valeurs, normes de comportements et normes de créations matérielles.
 > Hofstede, 1987
@@ -155,8 +149,6 @@ _D'après Chevrier, 2003; Hall & Hall, 1990_
 
 # Chacun sa place
 
-![bg right width:500px](https://sur-le-bout-de-la-langue.com/wp-content/uploads/2018/07/porx%C3%A9mie-300x285.jpg)
-
 - Cultures latines : toute personne peut entrer dans l'espace personnel (poignée de main, ...).
 - Cultures Sud-Est asiatique : espace intime toléré.
 - Cultures germaniques / slaves : espace social (pas de contact physique). 
@@ -241,7 +233,7 @@ Voir notamment les techniques dérivées des pratiques agiles : bâtons de parol
 
 # Se former aux compétences nécessaires
 
-[_Les défis du gestionnaire de projet en équipe multiculturelle, Sanaa Achaibi_]( https://semaphore.uqar.ca/id/eprint/872/1/Sanaa_Achaibi_mai2012.pdf) :
+[_Les défis du gestionnaire de projet en équipe multiculturelle, Sanaa Achaibi_](https://semaphore.uqar.ca/id/eprint/872/1/Sanaa_Achaibi_mai2012.pdf) :
 
 ---
 
