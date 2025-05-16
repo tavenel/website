@@ -26,6 +26,53 @@ echo "touch file.txt" | at 0545
 4. Même exercice sans supprimer la tâche - vérifier sa bonne exécution.
 :::
 
+:::correction
+Pré-requis : installer le package `at` s'il n'est pas déjà installé.
+
+```sh
+# Installation du package
+sudo apt install at
+sudo yum install at
+
+# Vérification du service
+sudo systemctl status atd
+# Si non activé :
+sudo systemctl enable --now atd
+```
+
+1. Créer une tâche planifiée. Penser à vérifier la date du système avant.
+
+```console
+$ date
+$ echo "touch file.txt" | at 0545
+warning: commands will be executed using /bin/sh
+job 1 at Sat May 17 05:45:00 2025
+```
+
+2. Vérifier que la tâche a bien été planifiée.
+
+```console
+$ at -l
+1	Sat May 17 05:45:00 2025 a root
+```
+
+3. Supprimer la tâche planifiée : `at -r <JOB>`.
+
+```sh
+at -r 1
+at -l
+```
+
+4. Même exercice sans supprimer la tâche - vérifier sa bonne exécution.
+
+```sh
+date
+echo "touch file.txt" | at 0545
+# Attendre jusqu'à 05:45 et vérifier que le fichier file.txt a été créé
+```
+
+:::
+
 ### Fichiers `/etc/at.allow` et `/etc/at.deny`
 
 Ces deux fichiers contrôlent qui peut exécuter des commandes `at`.
@@ -139,6 +186,30 @@ Pour s'aider à écrire les `crontab` et les vérifier, on pourra utiliser l'exc
 #!/usr/bin/env bash
 touch /home/mon_utilisateur/cron-$(date +"%Y%H%M")
 ```
+:::
+
+:::correction
+Pour exécuter ce script toutes les 2 minutes, ajoutez la ligne suivante à votre crontab :
+
+```sh
+crontab -e
+```
+
+Ajoutez la ligne suivante :
+
+```crontab
+*/2 * * * * /chemin/vers/le/script.sh
+```
+
+Ce script crée un fichier dans le répertoire `/home/mon_utilisateur/` avec un nom basé sur la date et l'heure actuelles au format `cron-YYYYHHMM`.
+
+Vérification :
+
+```sh
+crontab -l
+ls /home/mon_utilisateur/cron-*
+```
+:::
 
 ### Fichiers `/etc/cron.allow` et `/etc/cron.deny`
 
@@ -154,12 +225,48 @@ Le répertoire `/var/spool/cron` est un répertoire système utilisé pour stock
 
 ### Dépannage des tâches `cron`
 
-Les fichiers de journaux système `/var/log/syslog` et `/var/log/cron` fournissent les information de dépannage sur les erreurs et problèmes de configuration de jobs `cron`.
+Les fichiers de journaux système `/var/log/syslog` et/ou `/var/log/cron` fournissent les information de dépannage sur les erreurs et problèmes de configuration de jobs `cron`.
 
 ### Exercice
 
 :::exo
-Configurer une tâche `cron` qui vérifie périodiquement l'utilisation du disque dur et envoie une alerte par e-mail si l'espace disque disponible descend en dessous d'un seuil spécifié.
+1. Configurer une tâche `cron` qui vérifie périodiquement l'utilisation du disque dur et envoie une alerte par e-mail si l'espace disque disponible descend en dessous d'un seuil spécifié.
+2. Vérifier la bonne exécution du script.
+:::
+
+:::correction
+Configurer une tâche cron qui vérifie périodiquement l'utilisation du disque dur et envoie une alerte par e-mail si l'espace disque disponible descend en dessous d'un seuil spécifié.
+
+1. Créer un script pour vérifier l'utilisation du disque dur et envoyer une alerte par e-mail :
+
+```sh
+#!/bin/bash
+SEUIL=90
+UTILISATION=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
+if [ "$UTILISATION" -gt "$SEUIL" ]; then
+    echo "Alerte : L'utilisation du disque dur est à $UTILISATION%" | mail -s "Alerte d'utilisation du disque dur" admin@example.com
+else
+    echo "Le disque dur est utilisé à moins de $SEUIL%"
+fi
+```
+
+2. Ajouter ce script à votre crontab pour qu'il s'exécute périodiquement, par exemple toutes les heures :
+
+```sh
+crontab -e
+```
+
+Ajouter la ligne suivante pour une vérification toutes les heures :
+
+```crontab
+0 * * * * /chemin/vers/le/script.sh
+```
+
+3. Vérification de l'exécution du script
+
+```sh
+cat /var/log/syslog | grep -i cron
+```
 :::
 
 ## Compteurs `systemd`
@@ -205,6 +312,7 @@ WantedBy=timers.target
 - `OnBootSec` : Démarre le service du même nom que le timer après X secondes
 - `OnUnitActiveSec` : Répétition toutes les X secondes tant que le système est en fonctionnement
 - `OnCalendar` : Quand lancer le timer :
+  - `hourly` = chaque heure (à 0 minute)
   - `daily` = à minuit chaque jour
   - `weekly` = tous les lundis à minuit
   - `DayOfWeek Year-Month-Day Hour:Minute:Second`
@@ -242,4 +350,58 @@ Pour plus d'information sur les timers systemd, voir ces liens :
 :::exo
 Porter la tâche `cron` en utilisant un timer `systemd`.
 Pour rappel, la tâche consiste à vérifier périodiquement l'utilisation du disque dur et envoie une alerte par e-mail si l'espace disque disponible descend en dessous d'un seuil spécifié.
+:::
+
+:::tip
+On pourra utiliser `systemd-cat` pour rediriger les sorties standard et d'erreur (`stdout` et `stderr` des commandes `echo`) dans le journal de _systemd_.
+:::
+
+:::correction
+1. Créer un fichier de service pour la tâche :
+
+```ini
+# /etc/systemd/system/disk-check.service
+[Unit]
+Description=Check disk usage
+
+[Service]
+ExecStart=/chemin/vers/le/script.sh | systemd-cat
+```
+
+2. Créer un fichier de timer pour planifier la tâche :
+
+```ini
+# /etc/systemd/system/disk-check.timer
+[Unit]
+Description=Run disk check every hour
+
+[Timer]
+OnCalendar=hourly
+# Ou pour tester toutes les minutes :
+OnCalendar=*-*-* *:*:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+3. Activer et démarrer le timer :
+
+```sh
+sudo systemctl enable disk-check.timer
+sudo systemctl start disk-check.timer
+```
+
+4. Vérification
+
+```sh
+# Vérification de l'activation du timer
+sudo systemctl status disk-check.timer
+sudo systemctl list-timers
+# Logs du timer (heure d'exécution)
+sudo journalctl -u disk-check.timer
+# Logs de systemd-cat (résultat du script)
+sudo journalctl -b
+```
+
 :::
