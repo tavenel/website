@@ -27,7 +27,7 @@ En résumé :
 ## Exercice
 
 :::exo
-- Effectuer le TP "Configuration des clés SSH pour un accès sécurisé".
+- Effectuer le TP [Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh).
 - On pourra également consulter le [TP Secure Shell de François Goffinet](https://linux.goffinet.org/administration/secure-shell) pour vous connecter en `SSH` depuis votre machine hôte (Windows, MacOS, Linux) à votre machine virtuelle `Ubuntu`.
 
 Attention, la partie : "Configuration du pare-feu `Firewalld`" n'est pas à effectuer. Si vous utilisez Ubuntu, le pare-feu par défaut est actuellement `ufw` qui est configuré automatiquement à l'installation de `ssh`.
