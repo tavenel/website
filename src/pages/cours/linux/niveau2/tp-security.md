@@ -46,6 +46,8 @@ La commande `ulimit` est utilisée pour afficher ou modifier les limites des res
 
 :::tip
 Les modifications de `ulimit` son temporaires.
+
+Pour les rendre permanentes, il faut éditer le fichier `/etc/security/limits.conf`.
 :::
 
 #### Exemples
@@ -59,8 +61,85 @@ Les modifications de `ulimit` son temporaires.
 :::exo
 1. Afficher les limites de ressources actuelles du shell courant.
 2. Limiter la mémoire virtuelle du shell courant à 200MB.
-3. Limiter la taille maximale de fichier à 10 KB.
+3. Limiter la taille maximale de fichier depuis le shell courant à 10 KB.
 4. Tester cette limite.
+5. Rendre les limitations permanentes.
+:::
+
+:::correction
+1. Afficher les limites de ressources actuelles du shell courant.
+
+```console
+$ ulimit -a
+
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 3529
+max locked memory           (kbytes, -l) 8192
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 1024
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 3529
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+```
+
+2. Limiter la mémoire virtuelle du shell courant à 200MB.
+
+```sh
+ulimit -v 204800
+```
+
+3. Limiter la taille maximale de fichier à 10 KB.
+
+```sh
+ulimit -f 10
+```
+
+4. Tester cette limite : vérification des limitations et création (interdite) d'un fichier de 11 KB.
+
+```console
+$ ulimit -a   
+
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) 10
+pending signals                     (-i) 3529
+max locked memory           (kbytes, -l) 8192
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 1024
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 3529
+virtual memory              (kbytes, -v) 204800
+file locks                          (-x) unlimited
+
+$ dd if=/dev/zero of=testfile bs=1K count=11
+File size limit exceeded
+```
+
+5. Rendre les limitations permanentes.
+
+```console
+$ cat /etc/security/limits.d/99-tp.conf 
+
+* soft as 204800
+* hard as 204800
+* soft fsize 10
+* hard fsize 10
+```
 :::
 
 ### `fuser` : afficher les processus utilisant un fichier
@@ -103,7 +182,7 @@ fuser -k mon_fichier
 - Afficher les fichiers ouverts par un programme exécutable spécifique : `lsof /chemin/vers/programme`
 
 :::exo
-1. Ouvrir plusieurs fichiers dans un éditeur de texte (`vim` ou `nano` par exemple)
+1. Forcer l'ouverture d'un I/O sur un fichier (par exemple avec la commande `tail -f …`).
 2. Utiliser `lsof` pour afficher tous les fichiers ouverts.
 :::
 
@@ -131,7 +210,7 @@ ip netns exec net1 curl localhost:8000 # OK
 :::exo
 Une bonne pratique de sécurité est d'utiliser les gestionnaires de services pour arrêter tous les services inutiles.
 
-1. Utiliser et configurer `systemd` pour ne pas démarrer de service inutile actuellement.
+1. Utiliser et configurer `systemd` pour désactiver de manière permanente tout service inutile.
 :::
 
 ## Démarrage dynamique de service depuis une socket
@@ -173,7 +252,7 @@ Accept=yes
 WantedBy=sockets.target
 ```
 
-Ce ficher fait référence au service `SSH` configuré dans : `/etc/systemd/system/sshd@.service`.
+Ce ficher fait référence au service `SSH` configuré dans : `/etc/systemd/system/sshd.service`.
 
 ```ini
 [Unit]
@@ -192,6 +271,7 @@ systemctl enable sshd.socket
 systemctl start sshd.socket
 systemctl status sshd.socket
 ```
+3. Tester la connexion à la VM par un client SSH.
 :::
 
 :::correction
@@ -206,6 +286,10 @@ sshd.socket - SSH Socket for Per-Connection Servers
  	  Active: active (listening) since Mon, 26 Sep 2023 20:24:31 +0200; 14s ago
  	Accepted: 0; Connected: 0
  	  CGroup: name=systemd:/system/sshd.socket
+
+$ ssh root@10.170.16.201
+root@10.170.16.201's password: 
+Linux debian 6.12.25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.25-1 (2025-04-25) x86_64
 ```
 :::
 
@@ -263,7 +347,7 @@ nmap -p- <addresse IP>
 ss -tuln
 ```
 
-À l'inverse de `nmap`, '`ss` ne peut pas scanner de ports distants mais uniquement afficher les ports ouverts sur la machine locale. `nmap` permet donc de scanner tout un parc de machines pour faire un audit de sécurité depuis un poste central.
+À l'inverse de `nmap`, `ss` ne peut pas scanner de ports distants mais uniquement afficher les ports ouverts sur la machine locale. `nmap` permet donc de scanner tout un parc de machines pour faire un audit de sécurité depuis un poste central.
 
 Il est important de connaître les ports ouverts car ce sont des sources d'intrusion sur les systèmes. Cela permet aussi de détecter d'éventuels programmes non attendus (soit parce qu'ils n'ont pas été correctement arrêtés, soit parce que la machine a été piratée).
 :::
