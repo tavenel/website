@@ -284,7 +284,7 @@ search mydomain.net mydomain.com
 6. `ip route add 192.168.1.0/24 via 192.168.1.254 dev wlan0`
 :::
 
-## Bonus : `systemd-networkd`
+## `systemd-networkd`
 
 :::exo
 Reprendre l'exercice de persistance en utilisant `/etc/network/interfaces` et utiliser un fichier de configuration `systemd-networkd` à la place.
@@ -322,7 +322,7 @@ Netcat permet d'établir une connexion réseau entre deux machines et de transf�
 ## Monitoring réseau
 
 :::exo
-1. Vérifier et noter les paramètre des interfaces réseau :
+1. Vérifier et noter les paramètres des interfaces réseau :
   - Nom
   - Statut
   - Adresse IP et masque
