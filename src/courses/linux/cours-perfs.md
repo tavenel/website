@@ -48,3 +48,14 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+## NUMA (Non-Uniform Memory Access) : Optimisation de placement mémoire
+
+- L'accès à la mémoire peut être plus rapide pour certains processeurs que pour d'autres en fonction de l'emplacement de la mémoire par rapport au processeur.
+- `numactl` : contrôle la politique de placement de la mémoire pour les processus et les threads dans les systèmes multiprocesseurs.
+  - `numactl --hardware` : configuration matérielle NUMA du système.
+  - `numactl --cpunodebind=n ./mon_programme` : Utilise un noeud CPU spécifique.
+  - `numactl --membind=n ./mon_programme` : Utilise un noeud mémoire spécifique.
+  - `numactl --localalloc` : Alloue la mémoire sur le noeud local du processeur qui exécute le thread.
+
+---
+
