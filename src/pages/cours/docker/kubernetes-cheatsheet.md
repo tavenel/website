@@ -349,15 +349,19 @@ kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
 ### kubectl exec : exécuter une commande dans un pod déjà en activité
 
 ```sh
-kubectl exec -it MON_POD -c MON_CONTENEUR -- MA_COMMANDE
+kubectl exec -it MON_POD -c MON_CONTENEUR_DANS_LE_POD -- MA_COMMANDE
 ```
 
 ### kubectl debug démarrer un nouveau conteneur dans un Pod pour du débug
 
 ```sh
-kubectl debug mypod -it --image=busybox
-kubectl debug mypod -it --image=paulbouwer/hello-kubernetes:1.8
+kubectl debug MON_POD -it --image=paulbouwer/hello-kubernetes:1.8
+kubectl debug MON_POD -it --image=busybox --target=MON_CONTENEUR_DANS_LE_POD --profile=general
 ```
+
+:::tip
+Lorsqu'un _debug container_ vise un conteneur spécifique du Pod (`--target=…`) les processus affichés par `ps` sont les mêmes que le conteneur cible. Notamment, le système de fichiers du conteneur cible est accessible sous : `/proc/1/root`
+:::
 
 :::link
 Voir aussi : 
@@ -365,6 +369,14 @@ Voir aussi :
 - La documentation : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
 - Une image Docker utile pour du debug : <https://github.com/jpetazzo/shpod>
 - Une autre image utile : <https://github.com/kubernetes-up-and-running/kuard>
+:::
+
+:::tip
+Il est aussi possible de lancer un _Pod_ de débug directement dans un _Node_. Le système de fichiers est alors accessible dans `/host` :
+
+```sh
+kubectl debug -it nodes/control-plane --image alpine:edge
+```
 :::
 
 ### kubectl attach : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
