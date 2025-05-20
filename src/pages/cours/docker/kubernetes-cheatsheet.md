@@ -936,6 +936,36 @@ NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE
 local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  26h
 ```
 
+### Faire un snapshot de volume
+
+```yaml
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+metadata:
+  name: csi-hostpath-snapclass
+driver: hostpath.csi.k8s.io
+deletionPolicy: Delete
+parameters:
+```
+
+```yaml
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: new-snapshot-test
+spec:
+  volumeSnapshotClassName: csi-hostpath-snapclass
+  source:
+    persistentVolumeClaimName: pvc-test
+```
+
+:::tip
+L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` recquiert l'installation de CRDs (souvent automatique avec l'ajout d'une `StorageClass` depuis un _CSI_).
+:::
+
+:::link
+Voir aussi la documentation officielle : <https://kubernetes.io/docs/concepts/storage/volume-snapshots/> et <https://kubernetes.io/docs/concepts/storage/volume-snapshot-classes/>
+:::
 
 ### Debug du storage
 
