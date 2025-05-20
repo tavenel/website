@@ -363,3 +363,10 @@ ValidatingWebhook --> Validate #blue : <color:blue>Validation Decision</color>
 
 ---
 
+## ValidatingAdmissionPolicy
+
+- Nouvelle alternative simple aux _Validating Admission Webhook_
+- Utilisent le _Common Expression Language_ (`CEL`)
+- Voir la [documentation officielle](https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/)
+
+---

@@ -607,6 +607,10 @@ Pour récupérer la classe de QoS :
 kubectl get pod <POD_NAME> -o jsonpath='{ .status.qosClass}{"\n"}'
 ```
 
+:::tip
+Kubernetes 1.32 introduit la limitation de ressources (`request` et `limit`) directement au niveau du _Pod_ (et non uniquement du _Container_).
+:::
+
 #### Qualité de Service (QoS)
 
 Les définition de `resources requests` et `resources limits` permettent de gérer de la QoS dans Kubernetes.
@@ -1508,6 +1512,10 @@ spec:
           restartPolicy: OnFailure
 ```
 
+:::link
+Voir aussi _Kueue_, une solution plus poussée que les `Job` / `CronJob` de Kubernetes : <https://kueue.sigs.k8s.io/> 
+:::
+
 ## Exemple de fichier de Namespace
 
 ```yaml
@@ -1758,7 +1766,7 @@ spec:
 
 ## SubjectAccessReview
 
-Ex: vérifier si `jean.doe` peut `get pods -n kube-system` :
+Exemple : vérifier si `jean.doe` peut `get pods -n kube-system` :
 
 ```yaml
 apiVersion: authorization.k8s.io/v1
@@ -1775,6 +1783,31 @@ spec:
     verb: get
     #name: web-xyz1234567-pqr89
 ```
+
+## ValidatingAdmissionPolicy
+
+Exemple : empêcher les déploiements de plus de 5 réplicas :
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: "demo-policy.example.com"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:   ["apps"]
+      apiVersions: ["v1"]
+      operations:  ["CREATE", "UPDATE"]
+      resources:   ["deployments"]
+  validations:
+    - expression: "object.spec.replicas <= 5" # expression CEL
+```
+
+:::link
+Pour tester les expressions _CEL_, on pourra utiliser le playground : <https://playcel.undistro.io/>
+:::
 
 ## Autres commandes
 
