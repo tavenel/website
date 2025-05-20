@@ -147,6 +147,7 @@ created: 2024-10-17
 	- <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
 	- <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
   - <https://www.tigera.io/> : Unified Network Security & Observability for Kubernetes
+  - <https://www.kuboscore.io/> : vérification de clusters
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argocd`
