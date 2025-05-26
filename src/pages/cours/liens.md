@@ -72,6 +72,7 @@ Quelques références utiles en informatique.
 
 - <https://www.comparia.beta.gouv.fr/>
 - <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
+- <https://github.com/microsoft/AI-For-Beginners> : Cours gratuits Microsoft
 
 ## Citations
 
