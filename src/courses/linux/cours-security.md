@@ -110,6 +110,7 @@ Voir le [TP sur la sécurité d'un système Linux][tp-security]
 - `~/.ssh/id_rsa` (clé privée) et `~/.ssh/id_rsa.pub` (clé publique)
 - `~/.ssh/authorized_keys` : clés publiques autorisées à ouvrir une connexion
 - `~/.ssh/known_hosts` : IDs des machines distantes connues (pas besoin de revérifier)
+- `fail2ban` permet de refuser des connexions
 
 ---
 
@@ -136,20 +137,6 @@ Voir le [TP sur SSH et GPG][tp-ssh-gpg]
 [tp-systeme]: tp-systeme.md
 [tp-grub]: tp-grub.md
 [tp-shared-lib]: tp-shared-lib.md
-[tp-sysv-systemd]: tp-sysv-systemd.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
-
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-sysv-systemd]: tp-sysv-systemd.md
 [tp-rpm-apt]: tp-rpm-apt.md
 [tp-texte]: tp-texte.md
 [tp-fichiers]: tp-fichiers.md

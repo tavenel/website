@@ -166,7 +166,7 @@ hostnamectl set-hostname monhostname
 ```
 :::
 
-## DHCP
+## Client DHCP
 
 :::exo
 1. En utilisant `dhclient`, libérer un bail et arrêter le client DHCP.

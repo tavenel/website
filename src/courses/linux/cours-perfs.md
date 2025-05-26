@@ -1,10 +1,10 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Cours Linux - performances
+title: Cours Linux - Performances
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# performances d'un système Linux
+# Performances d'un système Linux
 
 ---
 

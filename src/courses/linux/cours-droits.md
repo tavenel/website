@@ -179,20 +179,6 @@ setfacl -b <fichier>
 [tp-systeme]: tp-systeme.md
 [tp-grub]: tp-grub.md
 [tp-shared-lib]: tp-shared-lib.md
-[tp-sysv-systemd]: tp-sysv-systemd.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
-
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-sysv-systemd]: tp-sysv-systemd.md
 [tp-rpm-apt]: tp-rpm-apt.md
 [tp-texte]: tp-texte.md
 [tp-fichiers]: tp-fichiers.md
