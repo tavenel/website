@@ -5,7 +5,6 @@ import Chapter from '@components/Chapter.astro';
 import { Content as Intro } from './projet-intro.md';
 import { Content as Devops } from '@courses/devops/projet-devops.md';
 import { Content as LegalDevops } from '@courses/devops/legal.md';
-import { Content as Scrum } from '@courses/agile/projet-scrum.md';
 
 const frontmatter = {
   license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
@@ -14,8 +13,6 @@ const frontmatter = {
     "devops",
 		"docker",
 		"kubernetes",
-		"scrum",
-		"agile"
   ],
 }
 
@@ -23,7 +20,6 @@ const frontmatter = {
 <Layout frontmatter={frontmatter} >
 	<Chapter> <Intro />  </Chapter>
 	<Chapter> <Devops />  </Chapter>
-	<Chapter> <Scrum />  </Chapter>
 	<Chapter> <LegalDevops />  </Chapter>
 </Layout>
 

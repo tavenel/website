@@ -25,7 +25,7 @@ Module de 13H
 ## Documents
 
 - [🤓 Cours d'introduction au Devops](./devops/cours)
-- [📌 Projet commun Devops/Sysops et méthodes Agile](./devops/projet)
+- [📌 Projet Devops/Sysops](./devops/projet)
 
 ## Liens
 
