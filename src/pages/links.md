@@ -99,6 +99,7 @@ title: Liens externes
 - Exemple de pire interface utilisateur : <https://userinyerface.com/>
 - Comment écrire de bons exemples : <https://conventionalcomments.org/>
 - <https://www.librealire.org/bien-gerer-son-projet-libre-que-faire-au-dela-du-code>
+- Comics about energy : <https://www.stuartmcmillen.com/comic/energy-slaves/>
 
 ## Frugal
 
