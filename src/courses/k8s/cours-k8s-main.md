@@ -384,6 +384,24 @@ layout: section
 
 ---
 
+```plantuml
+@startuml
+
+title: "Boucle de réconciliation"
+
+rectangle "Observation" as observe
+rectangle "Action" as act
+rectangle "Diff" as diff
+
+observe --> diff
+diff --> act
+act --> observe
+
+@enduml
+```
+
+---
+
 # Scheduler
 
 - Assigne les `Pod` (en state: `Pending`) aux `Node`
