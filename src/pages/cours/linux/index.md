@@ -11,6 +11,28 @@ title: 🐧 Linux
   - Le symbole `|` indique un choix (exclusif) entre 2 arguments.
   - Le symbole `…` indique un argument pouvant être répété.
 
+## Rappels
+
+### Architecture d’un système Linux
+
+- Kernel, Shell, FHS
+- Services système (systemd)
+- Structure des répertoires : `/etc`, `/var`, `/usr`, `/home`, `/opt`
+
+### Commandes essentielles
+
+- Navigation : `ls`, `cd`, `pwd`
+- Fichiers : `cp`, `mv`, `rm`, `cat`, `nano`, `vim`
+- Droits : `chmod`, `chown`, `umask`
+- Processus : `ps`, `htop`
+- Services : `systemctl`, `journalctl`
+
+### Comptes utilisateurs sous Linux
+
+- Commandes : `useradd`, `passwd`, `usermod`, `groupadd`
+- Fichiers : `/etc/passwd`, `/etc/shadow`, `/etc/group`
+- Gestion des sudoers
+
 ## Installation
 
 - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
