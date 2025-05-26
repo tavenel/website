@@ -56,11 +56,10 @@ main {
 - Head.astro => ClientRouter transitions
 - JS slide => <https://www.geeksforgeeks.org/simple-swipe-with-vanilla-javascript/>
 - slides => X/N slide number
-- slidev => ::right::
-- slidev => layout image-right
 - TPs => RM Legal and generate it
 - slides => generate legal
 - slides => marp => color / backgroundColor
+- code block => copy icon
 - marp => class: liens
 ```md
 # TITLE
