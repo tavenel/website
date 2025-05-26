@@ -687,6 +687,7 @@ layout: section
 - [Introduction aux namespaces Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/namespaces/)
 - [Comprendre les Cgroups](https://blog.stephane-robert.info/docs/admin-serveurs/linux/cgroups/)
 - [Building a container filesytem by hand](https://michalpitr.substack.com/p/primer-on-linux-container-filesystems)
+- [Linux container from scratch](https://michalpitr.substack.com/p/linux-container-from-scratch)
 
 ---
 

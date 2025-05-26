@@ -59,3 +59,9 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+:::link
+Voir aussi le lien : <https://www.brendangregg.com/linuxperf.html> pour plus d'information sur les performances d'un système Linux, et l'ensemble des outils disponibles.
+:::
+
+---
+

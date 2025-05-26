@@ -112,6 +112,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - Autoscaling : [doc](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) et [pratique](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
 - [HPA Autoscaling depuis des métriques custom dans Prometheus](https://blog.zwindler.fr/2024/10/11/optimisation-ressources-kubernetes-autoscaling-horizontal-custom-metrics-prometheus-adapter/)
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
+- <https://openai.com/index/scaling-kubernetes-to-7500-nodes/>
 
 ## Déploiement d'applications
 
@@ -181,7 +182,6 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 - [Helm: package manager pour déployer dans k8s](https://helm.sh/) et [Introduction à Helm](https://www.aukfood.fr/helm-le-meilleur-ami-de-votre-kubernetes/)
 - [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes)
-- [Article très complet sur le service mesh Istio](https://une-tasse-de.cafe/blog/istio/)
 
 ## Autres
 
@@ -190,12 +190,14 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
 - [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE)
+- [Gitpod: We are leaving Kubernetes](https://www.gitpod.io/blog/we-are-leaving-kubernetes)
 - [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler)
 - Exemples :
   - de projets : voir la [page des liens](/cours/liens#kubernetes)
   - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples>
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/>
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
+- <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.
 
 ---
 

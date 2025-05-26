@@ -96,7 +96,7 @@ Pour plus d'information, voir :
 - la très bonne introduction à l'observabilité : <https://blog.stephane-robert.info/docs/observer/introduction/>
 - une introduction à `prometheus` : <https://blog.stephane-robert.info/docs/observer/metriques/prometheus/>
 - des exemples de métriques : <https://blog.stephane-robert.info/docs/observer/metriques/introduction/>
-- une introduction à `loki` : <https://blog.stephane-robert.info/docs/observer/logs/loki/>
+- une introduction à `loki` : <https://blog.stephane-robert.info/docs/observer/logs/loki/> et <https://une-tasse-de.cafe/blog/loki/>
 - une introduction à `grafana` : <https://blog.stephane-robert.info/docs/observer/grafana/introduction/>
 :::
 

@@ -118,7 +118,7 @@ created: 2024-10-17
       - `Apisix`
       - `Traefik proxy` 
     - _Service mesh_
-      - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par `Kiali`
+      - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par <https://kiali.io/>
       - `Cilium` : networking, security, observability
       - `Traefik mesh`
       - `NGINX Service Mesh`
@@ -138,6 +138,7 @@ created: 2024-10-17
   - `polaris` : détection de problèmes de sécurité dans un cluster
   - <https://chaos-mesh.org/> : chaos computing dans un cluster
   - <https://github.com/kubernetes-sigs/security-profiles-operator> : Opérateur SELinux, Apparmor, Seccomp
+  - `Falco`
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
@@ -150,7 +151,7 @@ created: 2024-10-17
   - <https://www.kuboscore.io/> : vérification de clusters
 - 🚀 CD
   - `fluxcd` : GitOps
-  - `argocd`
+  - `argocd` : <https://une-tasse-de.cafe/blog/argocd/>
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - 🪫 Consommation d'énergie et pricing :
@@ -263,13 +264,13 @@ created: 2024-10-17
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) :
   - `Suricata`
-  - `Falco` : comportement des conteneurs et des applications
+  - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>
 - `rkhunter` : détection de rootkits
 
 ### 📈 Supervision / Monitoring / Observabilité
 
 - monitoring :
-  - `prometheus` (push par `node exporter`, puissant mais lourd) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/prometheus/)
+  - `prometheus` (push par `node exporter`, puissant mais lourd) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/prometheus/) et <https://une-tasse-de.cafe/blog/prometheus/>
     - Liste d'exporters disponibles : <https://prometheus.io/docs/instrumenting/exporters/>
     - Scaling par `thanos`
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
@@ -278,12 +279,13 @@ created: 2024-10-17
   - `hertzbeat` (compatible `prometheus`) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/hertzbeat/)
 - stacks de logging :
   - `ELK` : _Elastricsearch_, _Logstash_, _Kibana_
-  - `loki` + `grafana` (pour tester : <https://github.com/grafana/docker-otel-lgtm>)
+  - `loki` + `grafana` (pour tester : <https://github.com/grafana/docker-otel-lgtm>) : <https://une-tasse-de.cafe/blog/loki/>
   - `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
 	- <https://github.com/openobserve/openobserve> : léger
 - tracing :
   - `zipkin`
   - `OpenTelemetry`
+  - `Jaeger`
 - dashboards :
   - `grafana`
   - [`grafterm`](https://github.com/slok/grafterm) similaire à grafana mais dans un terminal
@@ -295,7 +297,7 @@ created: 2024-10-17
 
 ### 🤫 Gestion des secrets
 
-- `vault` (HashiCorp) : [tuto](https://blog.stephane-robert.info/docs/securiser/secrets/hashicorp-vault/), `OpenBAO` (fork open-source)
+- `vault` (HashiCorp) : [tuto](https://blog.stephane-robert.info/docs/securiser/secrets/hashicorp-vault/) et <https://une-tasse-de.cafe/blog/vault/>, `OpenBAO` (fork open-source)
 - `Sops` (Mozilla, directement dans le fichier)
 - `novops` (en mémoire)
 
@@ -350,7 +352,7 @@ created: 2024-10-17
 
 - `nginx`
 - `haproxy`
-- `consul`
+- `consul` : <https://une-tasse-de.cafe/blog/consul/>
 - `traefik`
 
 ## 🧪 Tests
@@ -406,6 +408,7 @@ created: 2024-10-17
 - APIs : `OpenAPI`
 - Paiement en ligne : `Stripe`
 - Liste et algos d'e-mails jetables : <https://github.com/disposable-email-domains/disposable-email-domains>
+- SSO : `GoAuthentik` et [tutoriel SSO et GoAuthentik complet](https://une-tasse-de.cafe/blog/goauthentik/)
 
 ## Frontend development
 

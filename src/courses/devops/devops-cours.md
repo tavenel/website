@@ -310,6 +310,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/glossaire/>
 - <https://www.damyr.fr/glossaire/>
 - [Exemple de pipeline Jenkins YAML en Infrastructure-as-Code][gist-jenkins-pipeline-yaml]
 - [Tutoriel OpenClassrooms sur le monitoring applicatif en Devops][tuto-openclassrooms-monitoring]
+- Introduction à Prometheus : <https://une-tasse-de.cafe/blog/prometheus/>
 - [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes)
 - [Jeu Metrics, logs, traces, and mayhem pour s'entraîner à Grafana](https://grafana.com/blog/2024/11/20/metrics-logs-traces-and-mayhem-introducing-an-observability-adventure-game-powered-by-grafana-alloy-and-otel/)
 - <https://github.com/bregman-arie/devops-exercises> : questions d'entretien
