@@ -291,12 +291,8 @@ layout: section
 | **Légal** 🏛       | Respect RGPD (%)             | 100 % de conformité. |
 
 ---
-layout: two-cols-header
----
 
 # Autres exemples d'indicateurs
-
-::left::
 
 - Taux de disponibilité des systèmes informatiques
 - Temps moyen de réponse aux incidents
@@ -305,9 +301,6 @@ layout: two-cols-header
 - Coût total de possession des systèmes informatiques
 - Pourcentage d’incidents résolus à l'heure
 - Pourcentage de demandes satisfaites dans les délais impartis
-
-::right::
-
 - Nombre moyen d’incidents résolus par jour
 - Nombre de problèmes résolus par le personnel informatique
 - Nombre de nouvelles applications informatiques déployées
