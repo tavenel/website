@@ -69,3 +69,12 @@ C --> A : problème suivant
 - Chaque méthode a ses avantages, il est possible de cumuler les 2 suivant le besoin.
 - Ces méthodes améliorent considérablement les temps de développement.
 
+---
+
+# TDD et IA
+
+- TDD & BDD se couplent très bien aux IA génératives :
+- écriture des tests décrivant les attentes et cadrant le programme
+- génération du code par IA
+- refactoring assisté par IA
+
