@@ -70,7 +70,9 @@ title: 🐧 Linux
 - [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
-- [▶️ TP : SysV init et systemd init](/cours/linux/niveau2/tp-sysv-systemd) : administrer les services et changer de runlevel dans un système SysV ou systemd.
+- [📀 TP : utiliser un Live CD/USB pour une restauration système](/cours/linux/niveau2/tp-rescue)
+- [▶️ TP : SysV init](/cours/linux/niveau2/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
+- [▶️ TP : Systemd init](/cours/linux/niveau2/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
 - [🗃️ TP : librairies partagées](/cours/linux/niveau2/tp-shared-lib)
 - [📦 TP : Gestion de paquetages](/cours/linux/niveau2/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
 - [  TP : Utilisation efficace de la ligne de commande](/cours/linux/niveau2/tp-ligne-commande)

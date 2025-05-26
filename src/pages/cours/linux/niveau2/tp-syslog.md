@@ -237,9 +237,7 @@ cat /var/log/ssh.log
 
 `systemd` propose sa propre implémentation de journalisation (compatible avec `syslog`) nommée `journald` (service) et `journalctl` (commande).
 
-Voir le TP [tp-sysv-systemd][tp-sysv-systemd] pour des rappels sur `journalctl`.
-
-[tp-sysv-systemd]: tp-sysv-systemd.md
+Voir le TP [tp-systemd](tp-systemd.md) pour des rappels sur `journalctl`.
 
 ### systemd-cat
 

@@ -201,7 +201,7 @@ Voir le [tp dédié aux langues][tp-lang].
 
 - Voir le cours et le TP sur `systemd` dans la partie LPIC-101 :
 - Commandes dédiées : `systemctl`, `journalctl`
-- Voir le TP [tp-sysv-systemd][tp-sysv-systemd].
+- Voir le TP [tp-systemd][tp-systemd].
 - `/etc/systemd/journald.conf`
 
 ---

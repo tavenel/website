@@ -227,7 +227,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 - Compatible `SysV` et `runlevels`
 - Ultra majoritaire dans les serveurs
 - Commandes dédiées : `systemctl`, `journalctl`
-- Voir le TP dédié [tp-sysv-systemd][tp-sysv-systemd].
+- Voir le TP dédié [tp-systemd][tp-systemd].
 
 ---
 
@@ -251,6 +251,8 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 - Runlevel **5** : Multi-user mode (graphique mais sinon idem 3).
 - Runlevel **6** : System restart.
 - Seuls **0, 1 et 6** sont communs à toute distribution.
+
+- Voir le TP dédié [tp-sysv][tp-sysv].
 
 ---
 

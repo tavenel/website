@@ -1,62 +1,10 @@
 ---
-title: SysV init et systemd init
+title: Systemd init
 date: 2024 / 2025
 correction: false
 ---
 
-## SysV : init et runlevel
-
-1. Si vous démarrez en mode graphique, modifiez `/etc/inittab` pour démarrer au niveau 3. 
-2. Listez les services qui démarrent au niveau 3.
-3. Passez à la console virtuelle 6 avec `[Alt][F6]` (ou `[Ctrl][Alt][F6]` sous environnement graphique X ou Wayland). Connectez-vous puis déconnectez-vous. Pourquoi le terminal revient-il au point de départ ?
-4. La commande `runlevel` permet d'afficher le runlevel précédent (ou `N` s'il n'a pas changé) et le runlevel courant. Afficher ces runlevels.
-5. La commande `telinit N` (avec `N` un runlevel) permet de changer de runlevel dynamiquement (sans redémarrer). Passer en mode single-user.
-6. Avec la commande `shutdown`, éteignez l’ordinateur maintenant. Quel est le niveau d’exécution activé ? 
-
-:::correction
-1. Si vous démarrez en mode graphique, modifiez `/etc/inittab` pour démarrer au niveau 3. 
-
-Changez la valeur de 5 à 3 sur la ligne `initdefault` et redémarrez. 
-
-```
-id:3:initdefault: 
-```
-
-2. Listez les services qui démarrent au niveau 3.
-
-```sh
-ls -l /etc/init.d/rc3.d/S* 
-```
-
-3. Passez à la console virtuelle 6 avec `[Alt][F6]` (ou `[Ctrl][Alt][F6]` sous environnement graphique X ou Wayland). Connectez-vous puis déconnectez-vous. Pourquoi le terminal revient-il au point de départ ?
-
-Parce que `/etc/inittab` contient la commande `respawn` qui permet au processus de se relancer s’il est terminé. 
-
-4. La commande `runlevel` permet d'afficher le runlevel précédent (ou `N` s'il n'a pas changé) et le runlevel courant. Afficher ces runlevels.
-
-```console
-$ runlevel  
-3 1
-```
-
-5. La commande `telinit N` (avec `N` un runlevel) permet de changer de runlevel dynamiquement (sans redémarrer). Passer en mode single-user.
-
-```sh
-telinit 1
-```
-
-6. Avec la commande `shutdown`, éteignez l’ordinateur maintenant. Quel est le niveau d’exécution activé ? 
-
-```sh
-shutdown -r now 
-```
-
-C’est le niveau 0, d’arrêt, qui est activé.
-:::
-
-## sytemd
-
-### Terminologie
+## Terminologie
 
 `systemd` est un programme assez générique de gestion de ressources système. La terminologie est donc un peu différente de la terminologie "classique" d'un système Linux :
 
@@ -73,11 +21,11 @@ C’est le niveau 0, d’arrêt, qui est activé.
 Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/systemd/> et <https://blog.stephane-robert.info/docs/admin-serveurs/linux/services/>
 :::
 
-### systemctl
+## systemctl
 
 `systemctl` est une commande système de gestion de services et d'unités sur les systèmes Linux utilisant le gestionnaire d'init `systemd`. Elle permet aux administrateurs système de contrôler et de surveiller les services, les socket, les périphériques et d'autres unités système.
 
-#### Gestion des services
+### Gestion des services
 
 - `systemctl start nom-du-service` : Démarre un service.
 - `systemctl stop nom-du-service` : Arrête un service.
@@ -89,38 +37,38 @@ Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/system
 - `systemctl is-active nom-du-service` : Vérifie si un service est actif (en cours d'exécution).
 - `systemctl is-enabled nom-du-service` : Vérifie si un service est activé pour le démarrage.
 
-#### Gestion des unités
+### Gestion des unités
 
 - `systemctl list-units` : Liste toutes les unités (services, cibles, montages, etc.) actuellement chargées.
 - `systemctl list-unit-files` : Liste toutes les unités disponibles, qu'elles soient activées ou désactivées.
 - `systemctl show nom-de-l-unite` : Affiche des informations détaillées sur une unité spécifique, y compris ses dépendances et ses propriétés.
 
-#### Gestion des cibles (targets)
+### Gestion des cibles (targets)
 
 - `systemctl get-default` : Affiche la cible (`target`) par défaut du système, qui détermine le niveau d'exécution au démarrage.
 - `systemctl set-default nom-de-la-cible` : Définit la cible par défaut du système au démarrage.
 
-#### Gestion des sessions utilisateur
+### Gestion des sessions utilisateur
 
 - `systemctl --user` : Permet de gérer les services et les cibles spécifiques à la session utilisateur.
 
-#### Gestion des journaux (logs)
+### Gestion des journaux (logs)
 
 - `systemctl status nom-du-service` : Affiche les messages de journal liés à un service.
 - `journalctl` : Permet de consulter les messages de journal du système.
 
-#### Contrôle de la sécurité
+### Contrôle de la sécurité
 
 - `systemctl list-timers` : Affiche les minuteries système, qui sont utilisées pour planifier des tâches périodiques (`cron-like`).
 - `systemctl list-sockets` : Affiche les socket système en cours d'utilisation.
 - `systemctl list-machines` : Affiche les machines virtuelles `systemd` en cours d'exécution (nécessite `systemd-machined`).
 
-#### Gestion des instantanés de système
+### Gestion des instantanés de système
 
 - `systemctl snapshot` : Crée un instantané du système pour sauvegarder l'état actuel.
 - `systemctl list-snapshots` : Liste les instantanés système disponibles.
 
-### journalctl
+## journalctl
 
 `journalctl` est une commande utilisée pour interagir avec le système de journalisation, appelé `journal systemd`, présent sur les systèmes Linux utilisant le gestionnaire d'init `systemd`. Le `journal systemd` est responsable de la collecte et du stockage des journaux système, ce qui inclut des informations sur les événements système, les erreurs, les démarrages, les arrêts, ...
 
@@ -140,11 +88,11 @@ Par défaut, `journalctl` lit les journaux dans `/var/log/journal` (option `-D` 
 - `journalctl -b` : informations du boot
 - `journalctl -k` : informations du noyau
 
-#### Fichiers de logs
+### Fichiers de logs
 
 Les fichiers de logs de `journalctl` sont stockés **au format binaire** (ce qui est très rare sous Linux) dans le répertoire `/var/log/journal/`.
 
-### Travaux pratiques systemd
+## Travaux pratiques systemd
 
 1. Vérifiez l'état actuel du service `SSH`.
 1. Démarrer le service `SSH`.
@@ -172,7 +120,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/journa
 1. Changez la cible par défaut du système pour une cible différente (par exemple, `multi-user.target`) en utilisant `systemctl set-default`.
 :::
 
-#### Création d'un service personnalisé
+### Création d'un service personnalisé
 
 1. Création d'un script de service :
   - Créez un script de service simple qui affiche un message à l'écran. Par exemple, créez un fichier `/etc/systemd/system/mon-service.service` avec un contenu tel que :
@@ -193,3 +141,4 @@ Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/journa
 3. Démarrage et vérification du service :
    - Démarrez votre service personnalisé avec `systemctl start mon-service.service`.
    - Vérifiez l'état du service avec `systemctl status mon-service.service`.
+

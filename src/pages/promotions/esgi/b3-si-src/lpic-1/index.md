@@ -135,7 +135,9 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - 🤓 [Slides de cours LPIC-101](/cours/linux/niveau2/cours-lpic-101)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
-- [▶️ TP : SysV init et systemd init](/cours/linux/niveau2/tp-sysv-systemd) : administrer les services et changer de runlevel dans un système SysV ou systemd.
+- [📀 TP : utiliser un live-CD pour une restauration système](/cours/linux/niveau2/tp-rescue)
+- [▶️ TP : SysV init](/cours/linux/niveau2/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
+- [▶️ TP : Systemd init](/cours/linux/niveau2/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
 - [🗃️ TP : librairies partagées](/cours/linux/niveau2/tp-shared-lib)
 - [📦 TP : Gestion de paquetages](/cours/linux/niveau2/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
 - [  TP : Utilisation efficace de la ligne de commande](/cours/linux/niveau2/tp-ligne-commande)
@@ -178,7 +180,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - [🕗 TP : Planification de tâches avec `at`, `cron` et `systemd`](/cours/linux/niveau2/tp-cron)
 - [📨 TP : Langue et encodage](/cours/linux/niveau2/tp-lang) : gérer l'utilisation d'encodages différents (`ASCII`, `UTF-8`, …), de formats de fichiers différents (`Unix`/Linux vs `Dos`/Windows) et de langues différentes par l'utilisation de _locales_.
 - [📜 TP : Journalisation avec Syslog](/cours/linux/niveau2/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng` (l'accent est mis sur `rsyslog`). Les liens entre `syslog` et `systemd-journald` sont également abordés.
-  - Rappel - TP : [journaux de logs avec systemd-journald](/cours/linux/niveau2/tp-sysv-systemd)
+  - Rappel - TP : [journaux de logs avec systemd-journald](/cours/linux/niveau2/tp-systemd)
 - [📡 TP : Configuration réseau](/cours/linux/niveau2/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
 - [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/niveau2/tp-security)
 - [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/niveau2/tp-ssh-gpg)
