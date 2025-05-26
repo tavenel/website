@@ -226,12 +226,18 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-- Impose un échange de clés de chiffrement en début de connexion : tous les segments TCP sont authentifiés et chiffrés
-- Compatible cryptographie asymétrique (RSA/DSA) avec clef privée/publique
+- Chiffrement symétrique ou (mieux) asymétrique (clé privée / clé publique)
+- Peut encapsuler un autre protocole dans un tunnel (y compris `X11`)
+- Supporte différents algorithmes : `RSA`, `DSA`, `RD25519`, …
+  - Le "meilleur" est utilisé (supporté par le client et le serveur)
 - sshv2 fournit `scp` et `sftp` avec la même configuration
+- `fail2ban` permet de refuser des connexions
 
 ---
 
+- `~/.ssh/id_rsa` (clé privée) et `~/.ssh/id_rsa.pub` (clé publique)
+- `~/.ssh/authorized_keys` : clés publiques autorisées à ouvrir une connexion
+- `~/.ssh/known_hosts` : IDs des machines distantes connues (pas besoin de revérifier)
 - `ssh-keygen` crée les clés SSH (public + privée) dans `~/.ssh`
 - `ssh-copy-id -i <public_key> user@cloud_server` : copie la clé publique sur le serveur (dans `~user/.ssh/authorized_keys`)
 - Les permissions des fichiers de clés doivent être :
