@@ -23,7 +23,7 @@ layout: '@layouts/BaseLayout.astro'
 
 - Module de 21H
 - 2CC
-- Projet : programmation Bash
+- Projet
 
 ## Documents
 
@@ -31,21 +31,19 @@ layout: '@layouts/BaseLayout.astro'
 - [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
 - [🤓 Rappels de cours : découverte de Linux](/cours/linux/niveau1/linux-cours-niveau1)
 - [🤓 Cours Linux de niveau 2 orienté Développeurs](./linux/cours)
-- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
-- [  TP - Utilisation des commandes Linux](/cours/linux/niveau1/tp-commandes_linux)
 - [  TP : Utilisation efficace de la ligne de commande](/cours/linux/niveau2/tp-ligne-commande)
-- [📦 TP : Gestion de paquetages](/cours/linux/niveau2/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
-- [📃 TP : Traitement de flux de type texte](/cours/linux/niveau2/tp-texte)
-- [🗃️ TP : librairies partagées](/cours/linux/niveau2/tp-shared-lib)
 - [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/cours/linux/niveau2/tp-fichiers)
-- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/niveau2/tp-redirections)
+- [👥 TP : Gestion des utilisateurs et de la sécurité](/cours/linux/niveau2/tp-utilisateurs)
 - [⚙️ TP : Gestion des processus et de leur priorité](/cours/linux/niveau2/tp-process)
-- ✍️ TP : Introduction à `vi` : exécuter la commande `vimtutor`.
-- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/niveau2/tp-fichiers-avance)
-- [📜 TP - Création de scripts Bash](/cours/linux/niveau1/tp-scripts_bash)
-- [📜 TP Bash - Gestion des fichiers et des utilisateurs](/cours/linux/niveau2/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
-- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/niveau1/tp-trash)
-- [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/niveau2/tp-ssh-gpg)
+- [📦 TP : Gestion de paquetages](/cours/linux/niveau2/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
+- [▶️ TP : Systemd init](/cours/linux/niveau2/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
+- [📜 TP : Journalisation avec Syslog](/cours/linux/niveau2/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng` (l'accent est mis sur `rsyslog`). Les liens entre `syslog` et `systemd-journald` sont également abordés.
+- [💻 TP : Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)
+- [📀 TP : utiliser un live-CD pour une restauration système](/cours/linux/niveau2/tp-rescue)
+- [📌 Projet Déploiement et Administration d'une Application Web sous Linux](./linux/projet)
+
 ## Pour aller plus loin
 
+- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/niveau2/tp-fichiers-avance)
+- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/niveau2/tp-redirections)
 - Voir les autres ressources du [cours sur Linux](/cours/linux).

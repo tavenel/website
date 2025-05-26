@@ -67,6 +67,8 @@ title: 🐧 Linux
 - [🤓 Slides de cours Linux sur la sécurité](/cours/linux/niveau2/cours-linux-security)
 - [🤓 Slides de cours Linux sur la performance](/cours/linux/niveau2/cours-linux-performances)
 - [🤓 Slides de cours Linux sur le debug d'un système Linux](/cours/linux/niveau2/cours-linux-debug)
+- [🤓 Slides de cours sur LDAP](/cours/linux/niveau2/cours-ldap)
+- [🤓 Slides de cours sur Samba](/cours/linux/niveau2/cours-samba)
 - [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
