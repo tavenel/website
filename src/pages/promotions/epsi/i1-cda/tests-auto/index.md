@@ -32,7 +32,7 @@ Module de 14H
 - [🤓 Cours sur les design patterns de test](/cours/tests/methodo/patterns-cours)
 - [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
 - [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
-- [💻 TP : Tests automatisés et analyses de code en Python](/cours/tests/unit/python/tp-python-tests)
+- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
 - [📌 Projet Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 

@@ -162,7 +162,8 @@ Les frameworks.
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>
   - 🇰 Kotlin : <https://git.sr.ht/~toma/kotlin-unit>
   - Jest : <https://git.sr.ht/~toma/unit-jest>
-- [💻 TP : Tests automatisés et analyses de code en Python](/cours/tests/unit/python/tp-python-tests)
+- [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
+- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires Frontend en Jest](/cours/tests/unit/jest/tp-jest)
 
 ### ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web

@@ -36,7 +36,8 @@ title: INFAL34 - Tests et recette d’un projet de développement
 - [🤓 Cours sur les tests logiciels](tests/cours)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
 - [📝 Exercices : tests d'un système de cartes météo](/cours/tests/methodo/td-tests-cartes-meteo)
-- [💻 TP : Tests automatisés et analyses de code en Python](/cours/tests/unit/python/tp-python-tests)
+- [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
+- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests frontend en Jest](/cours/tests/unit/jest/tp-jest)
 - [💻 TP Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 - [💻 TP Selenium - automatiser le test d'interface Web](/cours/tests/selenium/tp-selenium)

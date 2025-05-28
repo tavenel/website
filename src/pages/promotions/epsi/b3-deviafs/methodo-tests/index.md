@@ -37,7 +37,8 @@ Module de 10H
 ### Les tests unitaires
 
 - [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
-- [💻 TP : Tests automatisés et analyses de code en Python](/cours/tests/unit/python/tp-python-tests)
+- [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
+- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
   - Sources pour le TP : `git clone https://git.sr.ht/~toma/python-unit`
 - [📌 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
 
