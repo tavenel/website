@@ -89,9 +89,11 @@ created: 2024-10-17
   - `k0s` : implémentation de Docker Enterprise (single binary)
   - `k3s` (installable par `k3d`), `microk8s` (ubuntu) : implémentations légères
   - `minikube` : version 1 noeud simple pour dev/test uniquement
-  - `kind` : déploiement local utilisant Docker : [tuto](https://blog.stephane-robert.info/post/kubernetes-kind/)
-	- [`Talos` : OS immuable pour k8s](https://une-tasse-de.cafe/blog/talos/)
+  - `kind` : déploiement local utilisant Docker (excellent pour une installation locale) : [tuto](https://blog.stephane-robert.info/post/kubernetes-kind/)
+   [`Talos` : OS immuable pour k8s](https://une-tasse-de.cafe/blog/talos/)
   - `openshift` : orchestrateur de RedHat
+  - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
+  - `k8s-tew` : k8s the easy way, cluster complet. [tuto](https://blog.zwindler.fr/2025/05/26/test-k8s-tew/)
 - `swarm` : orchestrateur inclus dans Docker
 - `docker compose` : orchestrateur simple de Docker (dev, test, CI/CD, prod simpliste)
 - `nomad` : orchestrateur applicatif conteneurisées ou non, simple pour on-premise
@@ -105,7 +107,6 @@ created: 2024-10-17
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
 	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
 - 📦 package manager (sur-couche) => `helm` (et secrets : <https://github.com/jkroepke/helm-secrets>)
-- `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
 - ingress & service mesh :
   - `traefik` : reverse-proxy automatique
   - amélioration d'Ingress :
@@ -256,8 +257,9 @@ created: 2024-10-17
   - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
 - `x-pipe`
 - multiplexeurs :
-  - `tmux` => la référence, très configurable
-    - [MyNav](https://github.com/GianlucaP106/mynav) : gestionnaire de sessions
+  - `tmux` => la référence, très configurable.
+    - [MyNav](https://github.com/GianlucaP106/mynav) : gestionnaire de sessions tmux
+    - <https://tmate.io/> : fork de tmux permettant le partage de session.
   - `zellij` => moderne, très simple
   - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
   - `screen` => moins utilisé aujourd'hui, support natif de sessions.
