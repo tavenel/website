@@ -129,6 +129,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 - APT (Advanced Package Tool) : Utilisé par Debian et dérivés (Ubuntu).
 - RPM (Red Hat Package Manager) : Utilisé par Red Hat, Fedora, CentOS.
 - Voir le TP dédié [tp-rpm-apt][tp-rpm-apt].
+- Voir aussi cet article sur les différents types de paquets : <https://blog.garambrogne.net/packageless.html>
 
 ---
 
@@ -207,6 +208,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 - `RAW` : la taille totale du disque virtuel est réquisitionnée à la création
 - `COW` : quota de taille maximale, espace réquisitionné à l'usage
+- Voir aussi une introduction au stockage réseau : <https://blog.garambrogne.net/diskless.html>
 
 ---
 

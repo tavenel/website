@@ -1,7 +1,7 @@
 ---
-title: LDAP
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-date: 2024 / 2025
+title: LDAP
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 ## 🧠 LDAP : Lightweight Directory Access Protocol
@@ -13,6 +13,8 @@ date: 2024 / 2025
 
 📚 Serveur libre le plus courant : **OpenLDAP**
 
+---
+
 ### 📦 Installation
 
 ```sh
@@ -21,10 +23,14 @@ sudo apt install slapd ldap-utils
 
 🧙 Suivre l’assistant pour configurer le client LDAP : `dpkg-reconfigure slapd`
 
+---
+
 ## 📂 Fichiers importants
 
 - `/etc/ldap/ldap.conf` (remplacé par `/etc/ldap/slapd.d/`) : config client
 - `/var/lib/ldap/` : base de données LDAP
+
+---
 
 ## 🌲 Structure de l'annuaire LDAP (DIT)
 
@@ -38,6 +44,8 @@ dc=example,dc=com
 │ └── cn=admins
 ```
 
+---
+
 ### 📌 Principaux types d’objets
 
 - `dc` : composant de domaine
@@ -46,6 +54,8 @@ dc=example,dc=com
 - `cn` : nom commun
 
 💡 Les objets sont définis par des **schemas** (modèles)
+
+---
 
 ## 🛠️ Ajouter des entrées LDAP
 
@@ -60,6 +70,8 @@ cn: Alice Dupont
 userPassword: {SSHA}motdepasse
 ```
 
+---
+
 🔐 Mot de passe SSHA généré par :
 
 ```sh
@@ -72,6 +84,8 @@ slappasswd
 ldapadd -x -D "cn=admin,dc=example,dc=com" -W -f alice.ldif
 ```
 
+---
+
 ## 🔍 Rechercher des entrées LDAP
 
 🔎 Utiliser `ldapsearch` :
@@ -80,11 +94,15 @@ ldapadd -x -D "cn=admin,dc=example,dc=com" -W -f alice.ldif
 ldapsearch -x -b "dc=example,dc=com" "(objectClass=inetOrgPerson)"
 ```
 
+---
+
 ### 📌 Principaux filtres
 
 - `(uid=alice)` : utilisateur précis
 - `(sn=Dupont)` : nom de famille
 - `(&(objectClass=*)(uid=*))` : tout
+
+---
 
 ## 🔧 Intégration LDAP avec PAM/NSS (authentification du système)
 
@@ -98,4 +116,6 @@ sudo apt install libnss-ldap libpam-ldap nscd
 ```
 
 🧙 Suivre l’assistant pour configurer le client LDAP
+
+---
 

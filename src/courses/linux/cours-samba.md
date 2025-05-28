@@ -1,7 +1,7 @@
 ---
-title: Samba
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-date: 2024 / 2025
+title: Samba
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 ## 🌐 Samba
@@ -10,6 +10,8 @@ date: 2024 / 2025
 - Intégration dans un domaine _Active Directory_ (AD)
 - Gestion des utilisateurs et des autorisations (comme un contrôleur de domaine)
 📡 Implémente le protocole _SMB/CIFS_ (_Server Message Block_).
+
+---
 
 ## 🏗️ Architecture
 
@@ -21,6 +23,8 @@ date: 2024 / 2025
 
 - Windows de voir des partages Linux
 - Linux de monter des partages Windows (`cifs`)
+
+---
 
 ## 🔐 Sécurité et gestion des droits
 
@@ -35,6 +39,8 @@ date: 2024 / 2025
 - **security = share** (ancien, obsolète)
 - **security = domain / ads** (intégration Active Directory)
 
+---
+
 ## 🔧 Dépannage
 
 🛠️ Commandes utiles :
@@ -47,6 +53,8 @@ date: 2024 / 2025
 📄 Logs :
 - `/var/log/samba/log.smbd`
 - `/var/log/syslog` ou `journalctl -xe`
+
+---
 
 ## 🛠️ Exemple de configuration `/etc/samba/smb.conf`
 
@@ -63,6 +71,8 @@ date: 2024 / 2025
    read only = no
    guest ok = yes
 ```
+
+---
 
 ✅ Créer le dossier et ajuster les droits :
 
@@ -81,4 +91,6 @@ sudo smbpasswd -a alice
 
 - Windows : `\\IP_serveur\partage`
 - Linux : `smbclient //IP/partage -U alice`
+
+---
 
