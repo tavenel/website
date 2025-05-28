@@ -153,6 +153,8 @@ created: 2024-10-17
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argocd` : <https://une-tasse-de.cafe/blog/argocd/>
+    - <https://kargo.io/> : promotion de pipelines (test,staging,prod,…). [tuto](https://piotrminkowski.com/2025/01/14/continuous-promotion-on-kubernetes-with-gitops/)
+    - <https://devtron.ai/> : alternative à `Kargo`
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - 🪫 Consommation d'énergie et pricing :
