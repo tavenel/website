@@ -639,7 +639,8 @@ layout: section
 - [Vidéo Docker for novices (Alec Clews, youtube)](https://www.youtube.com/watch?v=xsjSadjKXns)
 - [Vidéo : Docker simplified in 55s (youtube)](https://www.youtube.com/watch?v=vP_4DlOH1G4)
 - [Fonctionnement du réseau sous Docker][doc-reseau]
-- [Gestion de l'état dans le conteneurs][doc-stateful]
+- [Gestion de l'état dans les conteneurs][doc-stateful]
+- <https://blog.garambrogne.net/persister-les-conteneurs.html>
 - [Bac à sable Docker en ligne][play-docker]
 - [Formation complète Docker (stephane-robert.info)](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker/)
 - [Vidéo : 100+ Docker concepts you should know (8')](https://www.youtube.com/watch?v=rIrNIzy6U_g)
