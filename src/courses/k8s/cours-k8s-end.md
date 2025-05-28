@@ -94,8 +94,8 @@ Pour plus d'information, voir [une explication des différentes formations](http
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/)
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/)
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5)
-	- <https://container.training/> : Les **excellentes formations (complètes) de Jérôme Petazzoni**, notamment :
-	  - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html) : cours complet, de l'installation aux usages de kubernetes
+  - <https://container.training/> : Les **excellentes formations (complètes) de Jérôme Petazzoni**, notamment :
+    - [Fondamentaux Kubernetes](https://2021-05-enix.container.training/2.yml.html) : cours complet, de l'installation aux usages de kubernetes
 		- [Packaging d'applications et CI/CD pour Kubernetes](https://2021-05-enix.container.training/3.yml.html)
 		- [Kubernetes Avancé](https://2021-05-enix.container.training/4.yml.html)
 		- [Opérer Kubernetes](https://2021-05-enix.container.training/5.yml.html)
@@ -106,6 +106,8 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - Livre "Kubernetes 101" de Jeff Geerling et [playlist Youtube](https://www.youtube.com/watch?v=IcslsH7OoYo&list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD) et [dépôt Github](https://github.com/geerlingguy/kubernetes-101)
 - <https://kubernetes.io/case-studies/>
 - [Kubernetes and Reconciliation Patterns](https://hkassaei.com/posts/kubernetes-and-reconciliation-patterns/)
+- [Explication des conteneurs `Pause` (et partage de `PID`)](https://www.ianlewis.org/en/almighty-pause-container)
+- [Terminaison de Pod et bonnes pratiques](https://jaadds.medium.com/gracefully-terminating-pods-in-kubernetes-handling-sigterm-fb0d60c7e983)
 
 ## Scaling et H/A
 
@@ -198,6 +200,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/>
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md)
 - <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.
+- [A journey of writing my own Kubernetes](https://medium.com/@jonatan5524/a-journey-of-writing-my-own-kubernetes-ef45839a769d)
 
 ---
 
