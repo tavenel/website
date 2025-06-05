@@ -42,7 +42,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 **Description :**
 - **Définition :** VXLAN est une technologie d'encapsulation qui permet de créer des réseaux virtuels extensibles sur des réseaux physiques.
-- **Fonctionnement :** Utilise l'encapsulation des trames Ethernet dans des paquets UDP/IP, permettant de créer des réseaux virtuels sur des infrastructures IP existantes.
+- **Fonctionnement :** Utilise l'encapsulation des trames Ethernet dans des paquets UDP/IP, permettant de créer des réseaux virtuels sur des infrastructures IP existantes (Layer 2).
 - **Avantages :**
   - **Scalabilité :** Supporte jusqu'à 16 millions de segments réseau.
   - **Flexibilité :** Permet de créer des réseaux virtuels indépendamment de l'infrastructure physique sous-jacente.
@@ -51,12 +51,16 @@ layout: '@layouts/CoursePartLayout.astro'
   - **Complexité :** Peut ajouter une couche de complexité supplémentaire à la gestion du réseau.
   - **Performance :** L'encapsulation peut introduire une latence supplémentaire.
 
+```sh
+ip link show type vxlan
+```
+
 ---
 
 ## 4. BGP (Border Gateway Protocol)
 
 **Description :**
-- **Définition :** BGP est un protocole de routage externe utilisé pour échanger des informations de routage entre différents systèmes autonomes (AS) sur Internet.
+- **Définition :** BGP est un protocole de routage externe (gateway extérieures) utilisé pour échanger des informations de routage entre différents _systèmes autonomes_ (AS) sur Internet.
 - **Fonctionnement :** Utilise des tables de routage pour déterminer les meilleurs chemins pour acheminer le trafic entre les réseaux.
 - **Avantages :**
   - **Scalabilité :** Conçu pour gérer des réseaux de grande taille comme Internet.
@@ -75,7 +79,7 @@ layout: '@layouts/CoursePartLayout.astro'
 ## 5. IPinIP (IP in IP Encapsulation)
 
 **Description :**
-- **Définition :** IPinIP est une technique d'encapsulation où un paquet IP est encapsulé dans un autre paquet IP. Cela permet de transporter des paquets IP sur un réseau IP sans modifier les paquets originaux.
+- **Définition :** **IPinIP** ou **IPIP** est une technique d'encapsulation où un paquet IP est encapsulé dans un autre paquet IP. Cela permet de transporter des paquets IP sur un réseau IP sans modifier les paquets originaux (Layer 3).
 - **Fonctionnement :** Un paquet IP est encapsulé dans un autre paquet IP avec un nouvel en-tête IP, permettant de créer des tunnels virtuels à travers des réseaux IP existants.
 - **Avantages :**
   - **Simplicité :** Facile à mettre en œuvre car il ne nécessite pas de modifications des paquets originaux.

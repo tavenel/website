@@ -2,6 +2,7 @@
 import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
+import { Content as VirtualNet } from '@courses/network/cours-network-virtual.md';
 import { Content as Main } from '@courses/k8s/cours-k8s-main.md';
 import { Content as Pods } from '@courses/k8s/cours-k8s-pods-advanced.md';
 import { Content as Admin } from '@courses/k8s/cours-k8s-admin.md';
@@ -22,6 +23,7 @@ const frontmatter = {
 
 ---
 <Layout frontmatter={frontmatter} >
+	<Chapter> <VirtualNet />  </Chapter>
 	<Chapter> <Main />  </Chapter>
 	<Chapter> <Pods />  </Chapter>
 	<Chapter> <Admin />  </Chapter>
