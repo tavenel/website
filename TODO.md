@@ -158,6 +158,7 @@ _Tom Avenel_
 - move HTML emojis to web icons
 
 - <https://adamsimpson.net/writing/openring>
+- <https://linuxfr.org/news/photos-et-traces-gps-dans-un-blog-statique>
 
 ---
 
