@@ -73,6 +73,9 @@ Quelques références utiles en informatique.
 - <https://www.comparia.beta.gouv.fr/>
 - <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
 - <https://github.com/microsoft/AI-For-Beginners> : Cours gratuits Microsoft
+- Impact des IA génératives sur les étudiants : <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
+- [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
+- [UX : Comment les entreprises de la tech nous forcent à utiliser l'IA](https://limitesnumeriques.fr/travaux-productions/ai-forcing)
 
 ## Citations
 
@@ -97,8 +100,6 @@ Quelques références utiles en informatique.
   - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
   - sous Linux, voir le TP sur la ligne de commandes [du cours Linux](/cours/linux)
 - Article très complet sur les origines de la console et des terminaux Unix : <https://thevaluable.dev/guide-terminal-shell-console/>
-- Versioning sémantique : <https://semver.org/>, <https://calver.org/>
-- <https://www.conventionalcommits.org/en/v1.0.0/>
 - <https://conventionalcomments.org/>
 - <https://zestedesavoir.com/tutoriels/299/la-theorie-rest-restful-et-hateoas/>
 - <https://zestedesavoir.com/tutoriels/621/algorithmique-pour-lapprenti-programmeur/>
@@ -106,7 +107,6 @@ Quelques références utiles en informatique.
 - Lexique du développeur : <https://zestedesavoir.com/tutoriels/531/les-bases-de-la-programmation/>
 - Cours sur les optimisations des compilateurs : <https://zestedesavoir.com/tutoriels/427/les-optimisations-des-compilateurs/>
 - Cours mémoire cache et optimisation de code : <https://zestedesavoir.com/tutoriels/331/memoire-cache-et-optimisation-de-code/>
-- Wiki Ops de SourceHut : <https://man.sr.ht/ops/>
 - Introduction au droit d'auteur et aux licences Creative Commons : <https://zestedesavoir.com/tutoriels/261/le-droit-dauteur-creative-commons-et-les-licences-sur-zeste-de-savoir/>
 - Exemples de bons README : <https://github.com/matiassingers/awesome-readme>
 - UX asynchrone : <https://kyusuf.com/post/fake-it-til-you-make-it-css>
@@ -116,8 +116,6 @@ Quelques références utiles en informatique.
 - <https://killercoda.com/> : playgrounds Dev / Ops (Linux, Git, k8s, …)
 - <https://perso.crans.org/besson/publis/slides/2016_07__Python_demo_at_EPFL/> : cours Python ML/DL/data science
 - Le paradoxe de la complexité : <https://www.votito.com/methods/togs-paradox/>
-- Impact des IA génératives sur les étudiants : <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
-- [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
 - <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
@@ -125,10 +123,10 @@ Quelques références utiles en informatique.
 - <https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing> : erreurs typiques en programmation & déploiement de systèmes distribués
 - <https://nip.io/> : DNS résolvant toute IP vers un hostname : `10.0.0.1.nip.io` résoud vers `10.0.0.1`
 - Cas d'étude d'UX Design : <https://growth.design/>
-- [UX : Comment les entreprises de la tech nous forcent à utiliser l'IA](https://limitesnumeriques.fr/travaux-productions/ai-forcing)
 - [Pattern CQRS/ES et implémentations](https://romaintrm.github.io/posts/cqrs-es-nos-heuristiques-apres-plusieurs-annees-de-production/)
 - <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
 - [Une architecture open-source qui ne déraille pas (Julien Cognet, Snowcamp 2025)](https://www.slideshare.net/slideshow/snowcamp-2025-une-architecture-qui-ne-deraille-pas/275103626)
+- [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
 
 ## Exemples de projets
 

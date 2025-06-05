@@ -108,6 +108,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - [Kubernetes and Reconciliation Patterns](https://hkassaei.com/posts/kubernetes-and-reconciliation-patterns/)
 - [Explication des conteneurs `Pause` (et partage de `PID`)](https://www.ianlewis.org/en/almighty-pause-container)
 - [Terminaison de Pod et bonnes pratiques](https://jaadds.medium.com/gracefully-terminating-pods-in-kubernetes-handling-sigterm-fb0d60c7e983)
+- <https://www.pulumi.com/blog/kubernetes-best-practices-i-wish-i-had-known-before/>
 
 ## Scaling et H/A
 
@@ -141,6 +142,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - [Blog: comparaison des types de réseau et de CNI dans Kubernetes (publié par le CNI Calico)](https://docs.tigera.io/calico/latest/networking/determine-best-networking)
 - [Fonctionnement interne des Service](https://coroot.com/blog/engineering/a-deep-dive-into-service-to-service-communications/)
 - <https://kubernetes.io/docs/tutorials/services/source-ip/> : tester et comprendre l'abstraction de service (NAT, source / destination IP)
+- [Understanding Kubernetes Networking (playlist)](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-)
 
 ## Sécurité
 

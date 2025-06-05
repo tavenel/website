@@ -297,7 +297,7 @@ Voir le TP correspondant.
 
 ## Versioning sémantique, conventions et bonnes pratiques
 
-- <https://semver.org/> : Versioning Sémantique
+- <https://semver.org/> et <https://calver.org/> : Versioning Sémantique
 - <https://www.conventionalcommits.org/en/v1.0.0/> : Convention commune d'écriture de commits
 - <https://bearstech.com/blog/les-bonnes-pratiques-du-gitflow-avec-gitlab>
 - [Pourquoi écrire des commits atomiques](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84)
