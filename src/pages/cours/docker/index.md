@@ -15,6 +15,7 @@ title:   Docker® et 󱃾 Kubernetes®
 - [📌 Projet Docker et Docker compose : application de vote](/cours/docker/projet_note_docker) : le but de ce TP est d'isoler et de déployer une application dans une stack de conteneurs Docker Compose.
   -  Sources git : <https://git.sr.ht/~toma/docker-vote>
 - [📌 Projet Dockerisation d'un Projet Multi-Composants](/cours/docker/projet_docker_dev) : le but de ce projet est de dockeriser un projet personnel existant qui se compose de plusieurs composants. 
+- [🤯 Création de conteneur en utilisant les namespace natifs Linux](/cours/docker/container-from-namespace) : cet exercice montre comment créer des conteneurs sans Docker en utilisant directement les fonctionalités des namespace du noyau Linux.
 
 ## 󱃾 Kubernetes® 
 
