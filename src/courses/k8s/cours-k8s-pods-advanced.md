@@ -57,6 +57,16 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
+:::warn
+Limiter les ressources CPU peut être coûteux (_throttling_). Certaines personnes [1](https://medium.com/@carlosalbertoalvesscorreia/would-the-kubernetes-cpu-limit-be-an-anti-pattern-2b07d92d7bd8) [2](https://www.perfectscale.io/blog/kubernetes-cpu-limits) [3](https://home.robusta.dev/blog/stop-using-cpu-limits) [4](https://medium.com/directeam/kubernetes-resources-under-the-hood-part-3-6ee7d6015965) recommandent :
+
+- `memory limits == requests`
+- Toujours configurer des _CPU requests_ (avec précision pour éviter la surconsommation)
+- Ne **jamais** configurer de ~_CPU limits_~
+:::
+
+---
+
 ## Scaling
 
 - Scaling horizontal : plusieurs instances de l'application

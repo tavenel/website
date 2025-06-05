@@ -8,7 +8,16 @@ tags:
 - devops
 ---
 
-## Services avec état
+## Conteneurisation
+
+- **Image légère** : ✅ < 100 MB, ❌ > 1GB
+- **Démarrage rapide** : ✅< min, ❌ > 5 min
+- **Réplicable** : _Stateless_ (sans état) autant que possible, utiliser des `PVC` pour l'état, déléguer à des services (_DBaaS_, …)
+- Voir le cours Docker pour plus d'information.
+
+---
+
+## Services avec état (Stateful)
 
 - Vous pouvez parfaitement conserver vos bases de données de production hors de Kubernetes (surtout si 1 serveur BDD !)
 - Mettre les BDD de dev et pre-prod dans le cluster
@@ -45,7 +54,7 @@ tags:
     - `Java`, `Ruby` : `1G`
     - `Go`, `Python`, `PHP`, `Node` : `250M`
 - Dans chaque `Namespace`, créer un `ResourceQuota` :
-  - `limits.cpu` et `limits.memory` élevés (1/2 cluster, …)
+  - `limits.memory` élevé (1/2 cluster, …)
   - limite élevée d'objets (seulement si un contrôleur s'emballe)
 - Voir [ces slides sur les limitations de ressources](https://2021-05-enix.container.training/4.yml.html#190)
 

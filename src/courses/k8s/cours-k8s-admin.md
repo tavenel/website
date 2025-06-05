@@ -44,6 +44,22 @@ tags:
 
 ---
 
+### Recommandations de `PodDisruptionBudget`
+
+
+| Nombre de Replica | minAvailable | maxUnavailable |
+|---------------|--------------|----------------|
+| **Exactement 1** | | 🚫 ~Ne pas utiliser de PDB~ |
+| **Exactement 2** | | Affecter l'un ou l'autre (❌ pas les deux !) à **1** |
+| **HPA entre 1 et 2** | | **1** (⚠️ mais risque de downtime) |
+| **Minimum 2 (avec HPA)** | ⚡ **1** pour une remédiation rapide | OU 💪 **1** pour H/A |
+
+:::tip
+Dans tous les cas, ajouter `UnhealthyPodEvictPolicy: AlwaysAllow` pour autoriser l'éviction de Pod _unhealthy_ sans condition.
+:::
+
+---
+
 ## Upgrade d'un _Node_
 
 - Exemple : upgrade `Kubelet` ou noyau `Linux`
