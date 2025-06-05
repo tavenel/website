@@ -545,6 +545,7 @@ created: 2024-10-17
   - `kube-capacity` : monitor ressources
   - <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
 	- <https://k8slens.dev/> : IDE dédié à Kubernetes
+  - <https://github.com/philippemerle/KubeDiagrams> : génération de diagrammes d'infra d'un cluster
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
