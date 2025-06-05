@@ -123,6 +123,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 - Autoscaling : [doc](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) et [pratique](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
 - [HPA Autoscaling depuis des métriques custom dans Prometheus](https://blog.zwindler.fr/2024/10/11/optimisation-ressources-kubernetes-autoscaling-horizontal-custom-metrics-prometheus-adapter/)
+- [Vertical Pod Autoscaler (VPA): A Deep Dive - Part 1](https://erikzilinsky.com/posts/vpa1.html)
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838)
 - <https://openai.com/index/scaling-kubernetes-to-7500-nodes/>
 
