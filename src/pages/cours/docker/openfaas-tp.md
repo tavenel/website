@@ -875,8 +875,6 @@ Pour **accélérer les cold start**, utiliser des images légères (`slim`, `alp
 faas-cli new ma-fonction --lang mon-python-custom
 ```
 
----
-
 # 🚀 Exemple de pipeline serverless de Traitement d'Images
 
 ## Objectif
