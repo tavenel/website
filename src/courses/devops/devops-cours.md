@@ -244,6 +244,23 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
+# Gitlab Devops Platform
+
+- Exemple de solution DevSecOps complète :
+- **Gestion de Code Source** : Git, branches, _merge request_
+- **Gestion de Projet** : tableaux Kanban, listes de tâches, Gantt, Wikis, …
+- **Collaboration d'Équipe** : plateforme commune, code review, …
+- **Suivi des Problèmes** : suivi des bugs et des demandes de fonctionnalités
+- **Gestion des Vulnérabilités** : analyse statique du code (SAST), analyse des dépendances (DAST)
+- **Pipelines CI/CD** : tests, builds, déploiements
+- **Registry de Conteneurs** Docker
+- **Intégration Cloud** pour le déploiement et la gestion des infrastructures
+- **Gestion des Incidents** : gestion des alertes
+- **Intégration** avec de nombreux autres outils
+- Voir aussi : <https://about.gitlab.com/platform/>
+
+---
+
 # Du Devops au Devops/Sysops
 
 - Objectif DevOps == une équipe Dev et Ops mais :
