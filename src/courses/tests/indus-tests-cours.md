@@ -102,6 +102,10 @@ Quels sont les tests critiques ?
 
 # Exemples
 
+---
+
+## Java
+
 ```java
 // arrange
 var repository = Substitute.For<IClientRepository>();
@@ -115,6 +119,8 @@ mock.Received.SomeMethod();
 ```
 
 ---
+
+## JS
 
 ```js
 // Mocha framework
@@ -131,6 +137,86 @@ it('should validate a form with all of the possible validation types', function 
     expect(result.isValid).to.be.true;
     expect(result.errors.length).to.equal(0);
 });
+```
+
+---
+
+## C#
+
+```csharp
+[TestMethod]
+public void Debit_WithValidAmount_UpdatesBalance()
+{
+    // Arrange
+    double beginningBalance = 11.99;
+    double debitAmount = 4.55;
+    double expected = 7.44;
+    BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+    // Act
+    account.Debit(debitAmount);
+
+    // Assert
+    double actual = account.Balance;
+    Assert.AreEqual(expected, actual, 0.001, "Account not debited correctly");
+}
+```
+
+---
+
+## PHP
+
+```php
+# https://docs.phpunit.de/en/10.5/writing-tests-for-phpunit.html
+
+<?php declare(strict_types=1);
+use PHPUnit\Framework\TestCase;
+
+final class GreeterTest extends TestCase
+{
+    public function testGreetsWithName(): void
+    {
+        $greeter = new Greeter;
+        $greeting = $greeter->greet('Alice');
+        $this->assertSame('Hello, Alice!', $greeting);
+    }
+
+    public function testException(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+    }
+}
+```
+
+---
+
+## Mock en PHP
+
+```php
+# https://docs.phpunit.de/en/10.5/test-doubles.html#mock-objects
+
+// ------------
+// INITIALISATION
+// ------------
+
+// Création du Mock
+$mock = $this->createMock(MyClass::class);
+// MyClass->someMethod() retournera 'mocked result'
+$mock->method('someMethod')->willReturn('mocked result');
+
+
+// ------------
+// UTILISATION
+// ------------
+
+// Boîte noire
+// appel de la méthode du Mock et vérification classique de résultat
+$result = $mock->someMethod();
+$this->assertEquals('mocked result', $result);
+
+// Boîte blanche
+// vérification des appels : la bonne méthode du Mock a été appelée
+$mock->expects($this->once())->method('someMethod');
 ```
 
 ---
