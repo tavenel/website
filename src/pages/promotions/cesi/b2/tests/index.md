@@ -33,8 +33,9 @@ title: INFAL34 - Tests et recette d’un projet de développement
   - Jest : <https://git.sr.ht/~toma/unit-jest>
 - Exemples de projets à tester : <https://github.com/gothinkster/realworld>. Codes sources : <https://codebase.show/projects/realworld>
   - PHP : <https://github.com/sawirricardo/realworld-laravel-inertia-vue>
-  - Python (FastAPI) : <https://github.com/borys25ol/fastapi-realworld-backend>
-  - Python (Django) : <https://github.com/Sean-Miningah/realWorld-DjangoRestFramework>
+  - Python (Django fullstack) : <https://github.com/danjac/realworld>
+  - Python (Django backend) : <https://github.com/Sean-Miningah/realWorld-DjangoRestFramework>
+  - Python (FastAPI backend) : <https://github.com/borys25ol/fastapi-realworld-backend>
   - Python (Clean Architecture) : <https://github.com/stkrizh/realworld-aiohttp>
 
 ## 🔗 Pour aller plus loin
