@@ -37,6 +37,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
   - Python (Django backend) : <https://github.com/Sean-Miningah/realWorld-DjangoRestFramework>
   - Python (FastAPI backend) : <https://github.com/borys25ol/fastapi-realworld-backend>
   - Python (Clean Architecture) : <https://github.com/stkrizh/realworld-aiohttp>
+  - Java : <https://github.com/mybatis/jpetstore-6>
 
 ## 🔗 Pour aller plus loin
 
