@@ -1504,6 +1504,7 @@ layout: two-cols
 - [Exemple d'application en DDD (Eric Evans)](https://github.com/citerus/dddsample-core)
 - [Un autre exemple de DDD](https://github.com/mattia-battiston/clean-architecture-example)
 - [Exemple d'application Django en DDD](https://github.com/johnnncodes/ddd-python-django)
+- [Exemple d'application Python en Clean Architecture](https://github.com/stkrizh/realworld-aiohttp)
 - [Discussion about DDD in Symfony issues](https://github.com/symfony/symfony-docs/issues/8893)
 - <https://dddinpython.com/>
 - <https://teamtopologies.com>

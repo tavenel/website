@@ -34,6 +34,11 @@ title: 🧪 Tests logiciels
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>
   - 🇰 Kotlin : <https://git.sr.ht/~toma/kotlin-unit>
   - Jest : <https://git.sr.ht/~toma/unit-jest>
+- Exemples de projets à tester : <https://github.com/gothinkster/realworld>. Codes sources : <https://codebase.show/projects/realworld>
+  - PHP : <https://github.com/sawirricardo/realworld-laravel-inertia-vue>
+  - Python (FastAPI) : <https://github.com/borys25ol/fastapi-realworld-backend>
+  - Python (Django) : <https://github.com/Sean-Miningah/realWorld-DjangoRestFramework>
+  - Python (Clean Architecture) : <https://github.com/stkrizh/realworld-aiohttp>
 
 ### 󰌠  Python
 
