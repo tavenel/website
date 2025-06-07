@@ -43,6 +43,72 @@ Attention, la partie : "Configuration du pare-feu `Firewalld`" n'est pas à effe
 Créer un fichier `/etc/nologin` avec un message de maintenance et vérifier que le message est bien affiché et la connexion SSH refusée.
 :::
 
+## Utilisation d'un tunnel SSH pour accéder à un service distant
+
+* SSH permet de mettre en oeuvre un tunnel local (`-L`) et distant (`-R`) pour sécuriser l'accès à un service non exposé directement
+
+### 🖥️ Contexte
+
+Vous disposez des 3 machines suivantes :
+
+| Machine        | IP Privée      | Rôle                                                |
+| -------------- | -------------- | --------------------------------------------------- |
+| **client**     | `192.168.1.10` | Votre poste de travail                              |
+| **bastion**    | `192.168.1.20` | Serveur SSH accessible                              |
+| **app-server** | `192.168.1.30` | Contient un service web en local (`localhost:8080`) |
+
+Le service web sur `app-server:8080` n’est **pas exposé sur le réseau**, il est uniquement accessible en local. Vous devez configurer un tunnel SSH **via le bastion** pour y accéder depuis votre machine `client`.
+
+1. **Test de connectivité SSH**
+
+   * Depuis `client`, vérifiez que vous pouvez vous connecter au `bastion` :
+
+     ```bash
+     ssh user@192.168.1.20
+     ```
+
+2. **Création d'un tunnel SSH local**
+
+   * Créez un tunnel SSH local permettant d'accéder à `app-server:8080` depuis `client:8080` en passant par `bastion` :
+
+     ```bash
+     ssh -L 8080:192.168.1.30:8080 user@192.168.1.20
+     ```
+
+   * En gardant cette session SSH ouverte, ouvrez un navigateur sur `http://localhost:8080` depuis `client`. Vérifiez que la page du service web s'affiche.
+
+3. **Utilisation d'un tunnel SSH distant**
+
+   * Connectez-vous à `app-server` via `bastion` et redirigez son port `8080` vers un port de `client` (par exemple `8888`) :
+
+     ```bash
+     ssh -R 8888:localhost:8080 user@192.168.1.10
+     ```
+
+   * Que devez-vous faire pour que cette commande fonctionne ? (indice : `sshd_config`)
+
+:::correction
+- `-R` crée un tunnel distant.
+- Cela redirige les connexions sur `client:8888` vers `app-server:8080`.
+- Cela suppose que `sshd` sur le client accepte les tunnels :
+
+```ini
+# /etc/ssh/sshd_config
+GatewayPorts yes
+AllowTcpForwarding yes
+```
+:::
+
+4. **(Bonus)** : Reverse Proxy
+
+   * Utilisez `ssh -D` pour créer un proxy SOCKS et configurez votre navigateur pour l'utiliser.
+
+:::correction
+```sh
+ssh -D 1080 user@192.168.1.20
+```
+:::
+
 # Chiffrement et signature de fichiers : GPG (GNU Privacy Guard)
 
 _Objectif : Apprendre à utiliser GPG pour chiffrer, déchiffrer, signer et vérifier des fichiers._
