@@ -535,7 +535,7 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 
 ---
 
-# Pour aller plus loin - pratiques DevOps
+# 🚀 Pour aller plus loin - pratiques DevOps
 
 Voir le [cours sur les pratiques DevOps][site-perso].
 

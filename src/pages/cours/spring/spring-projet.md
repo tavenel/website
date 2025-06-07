@@ -511,7 +511,7 @@ L'utilisateur doit être en mesure de se connecter sur le site en utilisant son 
 
 L'utilisateur courant sera stocké dans un Cookie. La récupération et l'enregistrement de Cookies est possible en Spring en utilisant un filtre pendant le parcours de la requête. Un template est fourni dans le répertoire `resourcesEtudiant` : `CookieFilter.java`
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 **[Partie optionnelle]** On pourra sécuriser l'accès aux fonctionnalités liées aux produits (création / édition / suppression / affichage) si l'utilisateur n'est pas connecté.
 

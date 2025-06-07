@@ -1,5 +1,5 @@
 ---
-title: Intégration continue - pour aller plus loin
+title: 🚀 Intégration continue - pour aller plus loin
 date: 2023 / 2024
 ---
 

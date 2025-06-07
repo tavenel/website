@@ -12,7 +12,7 @@ correction: false
 - Générer et configurer des clés SSH pour un accès sécurisé à un serveur.
 - Renforcer la sécurité en désactivant l'authentification par mot de passe.
 
-## Prérequis
+## 📋 Prérequis
 
 - Un serveur Linux (ou une VM) avec SSH installé.
 - Un utilisateur non root avec des droits `sudo` sur le serveur.

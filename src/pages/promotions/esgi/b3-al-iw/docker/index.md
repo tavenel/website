@@ -22,7 +22,7 @@ Module de 15H
 
 Évaluation : QCM et Projet (soutenance)
 
-## Documents
+## 📑 Documents
 
 ###   Docker®
 
@@ -40,12 +40,12 @@ Module de 15H
 - [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
 - 󱃾  Learn Kubernetes Basics: Tutoriels officiels pour débuter avec Kubernetes : <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
 
-### 📌 Projet Dockerisation d'un Projet Multi-Composants
+### 🏆 Projet Dockerisation d'un Projet Multi-Composants
 
 Le but de ce projet est de dockeriser un projet personnel existant qui se compose de plusieurs composants. 
 
 - [📄 Sujet](/cours/docker/projet_docker_dev)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [  cours sur Docker & Kubernetes](/cours/docker).

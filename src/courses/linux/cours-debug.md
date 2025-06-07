@@ -1,6 +1,6 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Cours Linux - Problèmes courants
+title: Problèmes courants
 layout: '@layouts/CoursePartLayout.astro'
 ---
 

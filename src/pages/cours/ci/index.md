@@ -29,7 +29,7 @@ title: 🔄 CI/CD et  Jenkins
 
 ## Projets
 
-### 📌 Projet SimpleChat 1 : outils CI dans l'IDE
+### 🏆 Projet SimpleChat 1 : outils CI dans l'IDE
 
 Vous venez de récupérer le code source d’un projet Java dont l’objectif était la création d’un serveur de chat. Malheureusement, ce projet a été abandonné car il ne fonctionnait pas correctement.
 
@@ -37,7 +37,7 @@ L’objectif de ce TP est travailler en binôme afin de finir ce projet et de le
 
 - [📄 Lien vers le sujet](/cours/ci/tp_ci_ide_simplechat)
 
-### 📌 Projet SimpleChat 2 : développer une application de monitoring en intégration continue
+### 🏆 Projet SimpleChat 2 : développer une application de monitoring en intégration continue
 
 Suite du projet SimpleChat 1.
 
@@ -45,13 +45,13 @@ Afin de pouvoir avoir une vue centralisée sur l'état des différents serveurs 
 
 - [📄 Lien vers le sujet](/cours/ci/simplechat-monitoring)
 
-### 📌 Projet intégration et déploiement continus d'une application de groupes de travail
+### 🏆 Projet intégration et déploiement continus d'une application de groupes de travail
 
 Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 
 - [📄 Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci)
 
-### 📌 Projet intégration continue et automatisation des tests d'une application de groupes de travail
+### 🏆 Projet intégration continue et automatisation des tests d'une application de groupes de travail
 
 Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 

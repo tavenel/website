@@ -22,10 +22,10 @@ Module de 13H
 
 Évaluation : Projet
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours d'introduction au Devops](./devops/cours)
-- [📌 Projet Devops/Sysops](./devops/projet)
+- [🏆 Projet Devops/Sysops](./devops/projet)
 
 ## Liens
 

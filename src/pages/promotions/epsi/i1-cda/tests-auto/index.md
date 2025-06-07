@@ -23,7 +23,7 @@ Module de 14H
 - 1CC : Quizz
 - Un projet commun avec le module [serveurs d'intégration continue](/promotions/epsi/epsi-i1-cda-ci)
 
-## Documents
+## 📑 Documents
 
 - Rappels : [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
 - [🤓 Cours : Test-Driven Development (TDD)](/cours/tests/methodo/cours-tdd)
@@ -34,7 +34,7 @@ Module de 14H
 - [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
-- [📌 Projet Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
+- [🏆 Projet Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 
 ### 💻 Exemples
 
@@ -45,7 +45,7 @@ Dépôts d'exemples de tests unitaires :
 - Kotlin : <https://git.sr.ht/~toma/kotlin-unit>
 - Jest : <https://git.sr.ht/~toma/unit-jest>
 
-### 📌 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
+### 🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
 
 Le projet consiste à développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur.
 
@@ -53,6 +53,6 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 - [📄 Lien vers le sujet](/cours/tests/projet_jeu_roles_tests_et_ci)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).

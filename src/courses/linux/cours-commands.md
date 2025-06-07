@@ -12,8 +12,8 @@ Voir les rappels de cours sur les commandes de base d'un système Linux.
 
 - Échapper les caractères spéciaux avec `"` et `'`
 - Wildcards `*`, `?`, `[a-zA-Z]`, `{toto,titi}`
-- Voir le cours _Quoting to Escape Special Characters_, 103.1 Lesson 2 p.185
-- Voir le cours _Types of Wildcards_, 103.3 Lesson 1 p.238
+- Voir le cours _Quoting to Escape Special Characters_, 103.1 Lesson 2 p.185 de la certification LPIC-1.
+- Voir le cours _Types of Wildcards_, 103.3 Lesson 1 p.238 de la certification LPIC-1.
 - Voir la page (FR) [wikiversité sur les filtres](https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/GNU_et_commandes_Unix/Ex%C3%A9cution_de_flux_de_textes_en_utilisant_des_filtres)
 - Voir le TP dédié [tp-ligne-commande][tp-ligne-commande].
 

@@ -1,5 +1,5 @@
 ---
-title: 📌 Administration de cluster Kubernetes
+title: 🏆 Administration de cluster Kubernetes
 date: 2024 / 2025
 ---
 

@@ -30,10 +30,10 @@ Module de 2 journées
   - suite du projet pratique pour déployer une application dans un mini datacenter DevOps : IaC, CI/CD, conteneurs, …
   - apports théoriques supplémentaires (en autonomie), points de cours magistraux au besoin
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours : introduction au Devops, CI/CD, Docker, Ansible & Terraform](./devops/cours)
-- 📌 [Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](./devops/projet)
+- [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](./devops/projet)
 
 ## Liens
 

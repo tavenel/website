@@ -138,7 +138,7 @@ Checkstyle, Cobertura.
 - Objets simulacres : bouchons pour simuler les fonctions appelées, mocking pour remplacer un objet. 
 Les frameworks. 
 
-## Documents
+## 📑 Documents
 
 ### Méthodologie
 
@@ -174,8 +174,8 @@ Les frameworks.
 
 ### Projet noté
 
-- [📌 Projet jeu de rôle](/cours/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
+- [🏆 Projet jeu de rôle](/cours/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/cours/tests) et du [cours sur l'intégration continue](/cours/ci).

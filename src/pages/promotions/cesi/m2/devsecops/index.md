@@ -18,7 +18,7 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 - Définir les rôles dans les équipes DevSecOps
 - Connaitre les étapes de la transformation DevSecOps
 
-### Prérequis
+### 📋 Prérequis
 
 - Méthodes Agiles
 
@@ -26,12 +26,12 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 
 - Module de 2 journées (14H).
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur le Devops](./devsecops/cours)
-- 📌 [Projet - De la culture DevSecOps à la mise en oeuvre CI/CD](./devsecops/projet)
+- [🏆 Projet - De la culture DevSecOps à la mise en oeuvre CI/CD](./devsecops/projet)
 
-## 🔗 Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
 - Voir les autres ressources du [cours sur le devops](/cours/devops).

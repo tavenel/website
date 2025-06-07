@@ -23,12 +23,12 @@ Module de 20H
 
 Évaluation : QCM + Projet
 
-## Documents
+## 📑 Documents
 
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
 - [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
-- [📌 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
+- [🏆 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).

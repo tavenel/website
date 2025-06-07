@@ -20,7 +20,7 @@ Or il est nécessaire de parfaitement maîtriser les premières étapes avant de
 
 # Création de l'environnement
 
-## Prérequis : Python
+## 📋 Prérequis : Python
 
 `Django` est un framework Python, il faut donc commencer par installer, si ce n'est déjà fait, Python sur le système.
 

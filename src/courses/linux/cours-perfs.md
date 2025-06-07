@@ -1,11 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Cours Linux - Performances
+title: Performances d'un système Linux
 layout: '@layouts/CoursePartLayout.astro'
----
-
-# Performances d'un système Linux
-
 ---
 
 ## Métriques CPU

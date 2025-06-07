@@ -17,7 +17,7 @@ title: INF243 - Stratégie de tests
 - Mettre en place un plan de test
 - Automatiser un pipeline de test
 
-### Prérequis
+### 📋 Prérequis
 
 - Connaissance d'un framework de tests unitaires
 
@@ -37,13 +37,13 @@ title: INF243 - Stratégie de tests
   - Intégration des outils dans un pipeline CI/CD
   - Atelier de rédaction d'un plan de test et schématisation du processus de tests
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur les tests logiciels](tests/cours)
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [⚛️ TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
 - [🐇 TP Jmeter : tests de performance d'une API Web](/cours/tests/jmeter/tp-jmeter-api)
-- [📌 Projet Développement et Tests Complets d'une Application Web](tests/projet)
+- [🏆 Projet Développement et Tests Complets d'une Application Web](tests/projet)
 -  Dépôts d'exemples de tests :
   - 󰌠 Python : <https://git.sr.ht/~toma/python-unit>
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>
@@ -51,7 +51,7 @@ title: INF243 - Stratégie de tests
   - Jest : <https://git.sr.ht/~toma/unit-jest>
   -   Sources pour le TP Selenium : <https://git.sr.ht/~toma/selenium>
 
-## 🔗 Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
 

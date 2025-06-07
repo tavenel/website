@@ -49,7 +49,7 @@ title: 🧪 Tests logiciels
 - [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
 - [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
-- [📌 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
+- [🏆 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
 
 ### Frontend
 
@@ -73,7 +73,7 @@ title: 🧪 Tests logiciels
 - [🤓 Cours Selenium](/cours/tests/selenium/selenium-cours)
 - [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-- [📌 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium/projet-selenium)
+- [🏆 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium/projet-selenium)
 
 ## 🐇 Jmeter - tests de performance
 
@@ -81,9 +81,9 @@ title: 🧪 Tests logiciels
 
 ## Projets
 
-- [📌 Projet jeu de rôle](/cours/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
-- [📌 Projet noté CI/CD et Automatisation des tests - un jeu de rôle](/cours/tests/projet_jeu_roles_tests_et_ci) : développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur en suivant un processus CI/CD.
-- [📌 Projet Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
+- [🏆 Projet jeu de rôle](/cours/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
+- [🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle](/cours/tests/projet_jeu_roles_tests_et_ci) : développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur en suivant un processus CI/CD.
+- [🏆 Projet Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 
 
 ## 🔗 Liens

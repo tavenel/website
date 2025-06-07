@@ -3,7 +3,7 @@ title: 🐧 Tom Avenel - SN2 Linux
 layout: '@layouts/BaseLayout.astro'
 ---
 
-# 🐧 Linux : Installation et configuration poste de travail 
+# 🐧 Linux : Installation et configuration poste de travail
 
 ## Présentation du module
 
@@ -29,7 +29,7 @@ layout: '@layouts/BaseLayout.astro'
 - Module de 18H
 - Évaluation : TP machine
 
-## Documents
+## 📑 Documents
 
 - [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
 - [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
@@ -41,6 +41,7 @@ layout: '@layouts/BaseLayout.astro'
 - [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/niveau1/tp-trash)
 - [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/cours/linux/niveau1/projet_lamp)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Linux](/cours/linux).
+

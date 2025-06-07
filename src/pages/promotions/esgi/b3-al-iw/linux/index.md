@@ -25,7 +25,7 @@ layout: '@layouts/BaseLayout.astro'
 - 2CC
 - Projet
 
-## Documents
+## 📑 Documents
 
 - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
 - [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
@@ -40,9 +40,9 @@ layout: '@layouts/BaseLayout.astro'
 - [📜 TP : Journalisation avec Syslog](/cours/linux/niveau2/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng` (l'accent est mis sur `rsyslog`). Les liens entre `syslog` et `systemd-journald` sont également abordés.
 - [💻 TP : Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)
 - [📀 TP : utiliser un live-CD pour une restauration système](/cours/linux/niveau2/tp-rescue)
-- [📌 Projet Déploiement et Administration d'une Application Web sous Linux](./linux/projet)
+- [🏆 Projet Déploiement et Administration d'une Application Web sous Linux](./linux/projet)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/niveau2/tp-fichiers-avance)
 - [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/niveau2/tp-redirections)

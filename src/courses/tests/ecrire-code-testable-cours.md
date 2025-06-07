@@ -157,5 +157,5 @@ On sera particulièrement attentif au code métier remonté, pour faciliter le d
 
 # Références
 
-- Pour aller plus loin : <https://java.developpez.com/tutoriels/programmation-orientee-objet/principes-avances/>
+- 🚀 Pour aller plus loin : <https://java.developpez.com/tutoriels/programmation-orientee-objet/principes-avances/>
 

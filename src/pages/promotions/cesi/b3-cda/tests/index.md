@@ -17,7 +17,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 - Appliquer une méthodologie de recettage 
 - Construire des scenarii de tests d’une application 
 
-### Prérequis
+### 📋 Prérequis
 
 - Savoir réaliser des tests unitaires 
 
@@ -31,7 +31,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 - Jour 2 :  
   - Production du cahier de tests dans le cadre du Projet collaboratif / LOTJ
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur les tests logiciels](tests/cours)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
@@ -48,7 +48,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
   - Jest : <https://git.sr.ht/~toma/unit-jest>
   -   Sources pour le TP Selenium : <https://git.sr.ht/~toma/selenium>
 
-## 🔗 Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)

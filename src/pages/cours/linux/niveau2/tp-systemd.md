@@ -13,8 +13,8 @@ correction: false
 - Un `device` est un périphérique géré par `udev` (utile pour charger des ressources à l'insertion d'un périphérique).
 
 :::tip
-- Voir le cours _systemd_, 101.3 Lesson 1 p.40 pour plus de détails
-- Pour plus de détails sur la commande `systemctl`, voir le cours _systemd_, 101.3 Lesson 1 p.41
+- Voir le cours de la certification LPIC-1 _systemd_, 101.3 Lesson 1 p.40 pour plus de détails
+- Pour plus de détails sur la commande `systemctl`, voir le cours _systemd_, 101.3 Lesson 1 p.41 de la certification LPIC-1.
 :::
 
 :::link

@@ -49,7 +49,7 @@ Module de 10H
 
 - Devoir surveillé sur l'intégration continue - 2H (examen)
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur l'intégration continue ](./ci/cours)
 
@@ -70,7 +70,7 @@ Module de 10H
 - [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
 
-### 📌 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
+### 🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
 
 Le projet consiste à développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur.
 
@@ -78,6 +78,6 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 - [📄 Lien vers le sujet](/cours/tests/projet_jeu_roles_tests_et_ci)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur l'intégration continue](/cours/ci).

@@ -20,7 +20,7 @@ Module de 10H
 
 Évaluation : Projet
 
-## Documents
+## 📑 Documents
 
 ### Docker
 
@@ -37,11 +37,11 @@ Module de 10H
 - [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s)
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk)
 
-### 📌 Projet Docker et Kubernetes : application de vote
+### 🏆 Projet Docker et Kubernetes : application de vote
 
 - 📄 [Sujet du projet](/cours/docker/projet_vote_k8s)
 -  Sources git : <https://git.sr.ht/~toma/docker-vote>
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [  cours sur Docker & Kubernetes](/cours/docker).

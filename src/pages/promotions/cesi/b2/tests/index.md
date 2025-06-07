@@ -22,7 +22,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 
 - Module de 1 journée (7H).
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur les tests logiciels](tests/cours)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
@@ -39,7 +39,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
   - Python (Clean Architecture) : <https://github.com/stkrizh/realworld-aiohttp>
   - Java : <https://github.com/mybatis/jpetstore-6>
 
-## 🔗 Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)

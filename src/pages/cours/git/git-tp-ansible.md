@@ -3,7 +3,7 @@ title: TP Introduction à l'infrastructure-as-code (IaC)
 date: 2023 / 2024
 ---
 
-## Pré-requis et installation
+## 📋 Prérequis et installation
 
 Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
 

@@ -44,7 +44,7 @@ layout: '@layouts/BaseLayout.astro'
 - Module de 10H
 - Évaluation : TP noté
 
-## Documents
+## 📑 Documents
 
 - [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
 - [🤓 Cours Linux : les permissions, les droits, le shell, administration réseau](./linux-admin/cours)
@@ -63,8 +63,8 @@ layout: '@layouts/BaseLayout.astro'
   - <https://thevaluable.dev/vim-expert/>
 - [📜 TP Bash - Gestion des fichiers et des utilisateurs](/cours/linux/niveau2/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
 - [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/niveau2/tp-security)
-- [📌 Projet : Mise en place de règles de filtrage sous Debian avec Netfilter](/cours/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
+- [🏆 Projet : Mise en place de règles de filtrage sous Debian avec Netfilter](/cours/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Linux](/cours/linux).

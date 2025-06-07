@@ -8,7 +8,7 @@ tags:
 - heritage
 ---
 
-# Prérequis
+# 📋 Prérequis
 
 Le vocabulaire basique de programmation objet doit être maîtrisé : voir le [cours d'introduction aux langages objet][site-perso] si besoin.
 

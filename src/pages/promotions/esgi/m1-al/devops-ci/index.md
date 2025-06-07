@@ -18,10 +18,10 @@ Module de 18H
 - 2 CC : QCM et Document de synthèse
 - Évaluation finale : Projet et soutenance
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur le Devops](./devops-ci/cours)
-- !! 📌 [Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet-devops)
+- [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet-devops)
 
 ## Liens
 

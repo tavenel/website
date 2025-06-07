@@ -5,7 +5,7 @@ date: 2023 / 2024
 
 # Création de l'environnement
 
-## Pré-requis : Python
+## 📋 Prérequis : Python
 
 Nous allons utiliser le langage et des bibliothèques Python, il faut donc [commencer par installer][doc-install-win], si ce n'est déjà fait, Python sur le système.
 

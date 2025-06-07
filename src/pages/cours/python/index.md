@@ -77,19 +77,19 @@ Le but de cet exercice est de réaliser une simulation d'un estimateur de Kanpla
 - [📄 Sujet](/cours/python/python-exos-tk)
 - [✅ Correction .py](/cours/python/python-exos-tk_correction.py)
 
-### 📌 Projet transversal 1e année - Thésée et le minotaure
+### 🏆 Projet transversal 1e année - Thésée et le minotaure
 
 L'objectif de ce petit jeu est de mettre en commun les compétences des différents modules de 1e année. Dans ce projet, vous allez construire un labyrinthe et jouer Thésée dans sa quête du minotaure.
 
 - [📄 Sujet](/cours/python/projet-transversal-labyrinthe)
 
-### 📌 Projet Bomberman
+### 🏆 Projet Bomberman
 
 Bienvenue dans ce projet où vous allez coder votre propre jeu en Python ! Le but de ce projet est de vous initier à la programmation tout en développant un petit jeu. Vous allez créer un jeu inspiré de Bomberman : [Wikipedia](https://en.wikipedia.org/wiki/Bomberman) . Le jeu consiste en un plateau de jeu parsemé d'ennemis à éliminer en déposant des bombes stratégiquement.
 
 - [📄 Sujet](/cours/python/python-projet-bomberman)
 
-### 📌 Projet Gestionnaire de Configuration des Serveurs
+### 🏆 Projet Gestionnaire de Configuration des Serveurs
 
 Le but de ce projet est de créer une application en ligne de commande qui permet aux administrateurs système de gérer la configuration de plusieurs serveurs. L'application devra permettre d'ajouter, de modifier et de supprimer des configurations, ainsi que de les sauvegarder et de les restaurer.
 
@@ -113,4 +113,4 @@ Le but de ce projet est de créer une application en ligne de commande qui perme
 
 - [🤓 Cours : introduction à Django, framework Python gratuit et open-source de haut niveau pour développer une application Web simplement](/cours/python/django/django-cours)
 - [💻 TP bibliothèque : utiliser Django pour générer un petit projet Web de gestion d'une bibliothèque locale.](/cours/python/django/django-tp)
-- [📌 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/cours/python/django/django-jeu-heros)
+- [🏆 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/cours/python/django/django-jeu-heros)

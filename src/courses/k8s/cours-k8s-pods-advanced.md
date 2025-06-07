@@ -144,7 +144,7 @@ Limiter les ressources CPU peut être coûteux (_throttling_). Certaines personn
 - Type de conteneur Kubernetes spécifique : `initContainers`
 - Lancés dans l'ordre de spécification
 - Le(s) conteneur(s) classiques démarrent après (si succès uniquement)
-- usage : chargement de données, migration BDD, génération de configs, attente dépendances, … (tous les pré-requis du conteneur)
+- usage : chargement de données, migration BDD, génération de configs, attente dépendances, … (tous les prérequis du conteneur)
 
 ---
 

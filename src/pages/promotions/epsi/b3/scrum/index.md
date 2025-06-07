@@ -23,13 +23,13 @@ Module de 7H
 
 Évaluation : QCM + Projet Agile
 
-## Documents
+## 📑 Documents
 
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
 - [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
-- [📌 Projet DevIA FS : Campus TaskForce](/cours/gestion-projet/agile/projet_scrum_dev_campus)
-- [📌 Projet Sysops : InfraCampus](/cours/gestion-projet/agile/projet_scrum_sysops_campus)
+- [🏆 Projet DevIA FS : Campus TaskForce](/cours/gestion-projet/agile/projet_scrum_dev_campus)
+- [🏆 Projet Sysops : InfraCampus](/cours/gestion-projet/agile/projet_scrum_sysops_campus)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).

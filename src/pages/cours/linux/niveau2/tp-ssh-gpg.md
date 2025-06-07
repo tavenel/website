@@ -33,7 +33,7 @@ En résumé :
 Attention, la partie : "Configuration du pare-feu `Firewalld`" n'est pas à effectuer. Si vous utilisez Ubuntu, le pare-feu par défaut est actuellement `ufw` qui est configuré automatiquement à l'installation de `ssh`.
 :::
 
-### Le fichier `/etc/nologin`
+## Le fichier `/etc/nologin`
 
 - Fichier spécial `SSH` permettant de bloquer les connexions
 - Le contenu du fichier est affiché (ex : "Le système est actuellement en cours de maintenance. Veuillez réessayer plus tard.")

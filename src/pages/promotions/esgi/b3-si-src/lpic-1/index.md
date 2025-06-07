@@ -127,7 +127,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
   * LPIC-1 vise des concepts généraux, pas vraiment de distribution de choix...
   * ...mais vise principalement les dérivés Debian (Ubuntu, ...) et RedHat (RHEL, CentOS, ...)
 
-### Documents LPIC-101
+### 📑 Documents LPIC-101
 
 - Les deux environnements suivants doivent être installés :
   - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
@@ -169,7 +169,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Module de 16.5H
 - Évaluation : QCM et Examen blanc
 
-### Documents LPIC-102
+### 📑 Documents LPIC-102
 
 - 🤓 [Slides de cours LPIC-102](/cours/linux/niveau2/cours-lpic-102)
 - [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
@@ -185,6 +185,6 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/niveau2/tp-security)
 - [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/niveau2/tp-ssh-gpg)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Linux](/cours/linux).

@@ -212,7 +212,7 @@ kubectl uncordon "<node-name>"
 ```
 
 :::warn
-Attention aux pré-requis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
+Attention aux prérequis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
 :::
 
 ### Certificats et Tokens
@@ -863,7 +863,7 @@ spec:
 ### Exemple de StorageClass NFS
 
 ```sh
-# Pré-requis : Installation du driver CSI pour NFS
+# Prérequis : Installation du driver CSI pour NFS
 helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace nfs --create-namespace --version v4.10.0
 ```
@@ -1064,7 +1064,7 @@ spec:
 Un `LoadBalancer` recquiert une implémentation de LB, souvent fournie par un provider Cloud. En l'absence de LB (bare-metal, …) on pourra installer `MetalLB` :
 
 ```sh
-# Pré-requis : installation de MetalLB
+# Prérequis : installation de MetalLB
 helm repo add metallb https://metallb.github.io/metallb
 helm install metallb metallb/metallb
 # Ou :
@@ -1117,7 +1117,7 @@ Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concept
 ### Ingress
 
 ```sh
-# Pré-requis : installation de l'Ingress Controller Nginx
+# Prérequis : installation de l'Ingress Controller Nginx
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm install ingress-nginx ingress-nginx/ingress-nginx
 # Ou directement :
@@ -1239,7 +1239,7 @@ spec:
 ### TLS : ClusterIssuer (Let's Encrypt)
 
 ```sh
-# Pré-requis : Installation de cert-manager
+# Prérequis : Installation de cert-manager
 helm repo add jetstack https://charts.jetstack.io --force-update
 helm install cert-manager jetstack/cert-manager \
   --namespace cert-manager --create-namespace \
@@ -2024,7 +2024,7 @@ flux suspend/resume kustomization nom-de-la-kusto
 # Cheatsheet Kyverno
 
 ```sh
-# Pré-requis : installation de Kyverno
+# Prérequis : installation de Kyverno
 helm upgrade --install --repo https://kyverno.github.io/kyverno/ \
 --namespace kyverno --create-namespace kyverno kyverno
 ```

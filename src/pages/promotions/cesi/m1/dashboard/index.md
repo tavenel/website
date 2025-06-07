@@ -20,7 +20,7 @@ title: Tableaux de bord et pilotage des applications du SI
 - Concevoir une feuille de route d'évolution applicative.
 - Analyser et interpréter les résultats obtenus.
 
-### Prérequis
+### 📋 Prérequis
 
 - Connaissances en architecture des SI
 
@@ -30,7 +30,7 @@ title: Tableaux de bord et pilotage des applications du SI
 - 1/2 journée : tableaux de bord
 - 1/2 journée : feuilles de route
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours : Introduction aux tableaux de bord et feuilles de route](/cours/data/tableau_bord_cours)
 - [💻 TP Dashboard PowerBI et Feuille de route](/cours/data/tp_powerbi) : réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.

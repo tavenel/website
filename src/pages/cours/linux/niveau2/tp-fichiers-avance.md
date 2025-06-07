@@ -247,7 +247,7 @@ La commande `find` permet de rechercher de façon récursive dans un répertoire
 Vous pouvez également agir sur la liste des fichiers trouvés.
 
 :::tip
-Options les plus courantes (voir le cours p.530 pour plus d'options) :
+Options les plus courantes (voir le cours de la certification LPIC-1 p.530 pour plus d'options) :
 
 - `-name` : filtre sur le nom (sensible à la casse, sinon `-iname`). **Attention à bien échapper les caractères spéciaux : `'*.pdf'` et non `*.pdf` !**
 - `-type` : filtre sur le type **interne** de fichier (pas son extension) :

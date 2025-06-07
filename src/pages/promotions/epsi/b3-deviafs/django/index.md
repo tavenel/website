@@ -24,14 +24,14 @@ Module de 14H
 - Quizz
 - Évaluation finale : Projet en groupe
 
-## Documents
+## 📑 Documents
 
 - [🤓 Introduction à l'utilisation de framework (cours)](/cours/archi/choix-framework-cours)
 - [🤓 MVC : Modèle Vue Contrôleur (cours)](/cours/archi/mvc-cours)
 - [🤓 Cours : introduction à Django, framework Python gratuit et open-source de haut niveau pour développer une application Web simplement](/cours/python/django/django-cours)
 - [💻 TP bibliothèque : utiliser Django pour générer un petit projet Web de gestion d'une bibliothèque locale.](/cours/python/django/django-tp)
-- [📌 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/cours/python/django/django-jeu-heros)
+- [🏆 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/cours/python/django/django-jeu-heros)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Python](/cours/python).

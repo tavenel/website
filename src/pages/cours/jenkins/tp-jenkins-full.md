@@ -222,8 +222,8 @@ Dans cet exemple, nous allons utiliser l'outil de build `Gradle` pour construire
 
 Dans cet exemple, nous allons voir un aperçu d'une des fonctionnalités les plus puissantes de Jenkins : celle de créer des liens logiques de dépendances entre les jobs.
 
-1. Créez un premier job dans Jenkins (on gardera la configuration par défaut pour créer un job vide). Ce job sera exécuté automatiquement après un job gérant ses pré-requis.
-2. Créez un second job. Ce job sera le pré-requis à l'exécution du job précédent :
+1. Créez un premier job dans Jenkins (on gardera la configuration par défaut pour créer un job vide). Ce job sera exécuté automatiquement après un job gérant ses prérequis.
+2. Créez un second job. Ce job sera le prérequis à l'exécution du job précédent :
     1. Ajouter une **Action à la suite du Build** pour **Construire d'autres projets en aval**.
     2. Renseigner le projet précédent dans les **Projets à constuire**
     3. Sélectionner l'exécution du premier job seulement si la construction est stable.

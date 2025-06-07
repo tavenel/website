@@ -198,7 +198,7 @@ Ex : `gradle build` ou `mvn package` intègrent par défaut l'exécution des tes
 - Le livre sur l'intégration continue : [Continuous Integration](https://martinfowler.com/books/duvall.html)
 - Le livre sur le déploiement continu : [Continuous Devilery](https://martinfowler.com/books/continuousDelivery.html)
 - Intégration continue avec Gitlab CI : <https://gitlab.com/goffinet/gitlab-ci>
-- Pour aller plus loin : le [cours sur les pratiques DevOps][site-perso].
+- 🚀 Pour aller plus loin : le [cours sur les pratiques DevOps][site-perso].
 
 ---
 

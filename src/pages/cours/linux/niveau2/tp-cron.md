@@ -27,7 +27,7 @@ echo "touch file.txt" | at 0545
 :::
 
 :::correction
-Pré-requis : installer le package `at` s'il n'est pas déjà installé.
+Prérequis : installer le package `at` s'il n'est pas déjà installé.
 
 ```sh
 # Installation du package

@@ -1,11 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Cours Linux recherche de fichiers
+title: Recherche de fichiers et placement des fichiers aux endroits adéquats
 layout: '@layouts/CoursePartLayout.astro'
----
-
-# Recherche de fichiers et placement des fichiers aux endroits adéquats
-
 ---
 
 ## find
@@ -57,7 +53,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-- Pour un rappel de la hierarchie standard des fichiers (FHS), voir le cours _104.7 Find system files and place files in the correct location_, p.524
+- Pour un rappel de la hierarchie standard des fichiers (FHS), voir le cours _104.7 Find system files and place files in the correct location_, p.524 de la certification LPIC-1.
 - Voir le TP dédié [tp-fichiers-avance][tp-fichiers-avance].
 
 ---

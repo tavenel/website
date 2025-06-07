@@ -19,8 +19,8 @@ Module de 7H.
 
 Évaluation : Présentation en groupe de 4.
 
-## Documents
+## 📑 Documents
 
 - [🤓 Partage d'informations et collaboration à distance (cours)](/cours/management/distanciel/cours-presentation-distance-outils-collab)
-- [📌 Atelier pratique - Présentation en distanciel](/cours/management/distanciel/presentation_distanciel)
+- [🏆 Atelier pratique - Présentation en distanciel](/cours/management/distanciel/presentation_distanciel)
 

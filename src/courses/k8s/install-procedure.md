@@ -8,7 +8,7 @@ Les installations de clusters Kubernetes sont assez hétérogènes en fonction d
 
 - Les noeuds _worker_ (noeuds qui exécutent les applications) n'ont besoin que d'un `kubelet` et d'un `kube-proxy` (le `kube-proxy` est optionnel dans de rares cas, par exemple si l'on utilise `Cilium` ou un `kube-router`). Les `kubelet` n'ont finalement besoin que d'un enregistrement auprès de l'`API Server`. La configuration du `kube-proxy` est en général assez simple car le _CNI_ s'occupe des couches basses (à vérifier auprès du _CNI_).
 - Le(s) _control plane_ sont les noeuds d'administration. Ils servent donc à déployer un `API Server` qui permet de communiquer avec le client `kubectl` qui permet de gérer le cluster une fois déployé. Celui-ci a besoin de stocker de l'état : c'est le but du composant `etcd`. Il faut ensuite lui ajouter un `Control Manager` qui exécute l'intelligence du cluster par un ensemble de _controllers_ et un `Scheduler` qui permet de choisir le _Node_ qui exécutera un _Pod_. On ajoute normalement un `Kubelet` afin de gérer les _Pods_ du _control plane_ (il est possible de ne pas déployer les services du _control plane_ dans des _Pods_ mais d'utiliser par exemple `systemd`. Les clusters gérés par des fournisseurs de Cloud utilisent en général ce genre de déploiement, qui est assez rare _on-premise_). Le `Control Manager`, le `Scheduler` et le `Kubelet` n'ont besoin que d'être raccordés à l'`API Server`.
-- Seul l'`etcd` (ou éventuellement la BDD dans le cas de `k3s`) gère l'**état** du cluster : c'est donc le composant critique, celui responsable majoritairement de la résilience du cluster : attention à ses pré-requis !
+- Seul l'`etcd` (ou éventuellement la BDD dans le cas de `k3s`) gère l'**état** du cluster : c'est donc le composant critique, celui responsable majoritairement de la résilience du cluster : attention à ses prérequis !
 
 On effectue donc en principe l'odre de déploiement suivant :
 
@@ -84,7 +84,7 @@ kubeadm init … –pod-network-cidr=100.0.0/16
 ## Avec H/A
 
 ```bash
-# pré-requis : Bastion =>
+# prérequis : Bastion =>
 # - Soit : Installation d'un HAProxy entre les OS des Control Plane
 # - Soit : Déploiement d'un kube-vip en utilisant un manifest de Pod statique pendant l'init
 # - Soit : Déférer le H/A après l'installation du 1er control plane (k3s)

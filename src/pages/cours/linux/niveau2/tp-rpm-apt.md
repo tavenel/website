@@ -6,7 +6,7 @@ correction: false
 
 ## RPM, Yum et DNF
 
-- Voir le cours _102.5 Use RPM and YUM package management_ p.122 pour plus de détails.
+- Voir le cours de la certification LPIC-1 _102.5 Use RPM and YUM package management_ p.122 pour plus de détails.
 - Pour plus d'infos :
   + <https://cheat.sh/rpm>
   + <https://cheat.sh/dnf>
@@ -108,7 +108,7 @@ rpm -Uvh --force tuxpaint.xxxxxxx.rpm
 
 ## Gestion de DPKG et APT
 
-- Voir le cours 102.4 _Use Debian package management_ p.100 pour plus de détails
+- Voir le cours de la certification LPIC-1 102.4 _Use Debian package management_ p.100 pour plus de détails
 - Voir aussi :
   + <https://cheat.sh/dpkg>
   + <https://cheat.sh/apt>

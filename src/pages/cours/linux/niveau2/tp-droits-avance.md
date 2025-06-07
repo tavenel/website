@@ -7,7 +7,7 @@ correction: false
 
 Ce TP a pour objectif d'apprendre l'utilisation des permissions avancées sous Linux, à savoir le SUID, le SGID et les listes de contrôle d'accès (ACL). À la fin de ce TP, vous serez capable de configurer des permissions avancées pour différents utilisateurs et groupes.
 
-### Prérequis
+### 📋 Prérequis
 
 - Avoir des connaissances de base sur les permissions standards (rwx).
 

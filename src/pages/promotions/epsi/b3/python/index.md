@@ -20,7 +20,7 @@ layout: '@layouts/BaseLayout.astro'
 - Module de 10H
 - Classe inversée : 10H de e-learning
 
-## Documents
+## 📑 Documents
 
 ### 󰌠 Abrégés Python
 
@@ -36,13 +36,13 @@ layout: '@layouts/BaseLayout.astro'
 - [🤓 Cours de programmation orientée objet en Python](/cours/python/python-cours-poo)
 - [💻 Corrigé des exercices des supports de cours](/cours/python/python-exos-cours-corrige)
 
-### 📌 Filière CDA : Projet Bomberman
+### 🏆 Filière CDA : Projet Bomberman
 
 Bienvenue dans ce projet où vous allez coder votre propre jeu en Python ! Le but de ce projet est de vous initier à la programmation tout en développant un petit jeu. Vous allez créer un jeu inspiré de Bomberman : [Wikipedia](https://en.wikipedia.org/wiki/Bomberman) . Le jeu consiste en un plateau de jeu parsemé d'ennemis à éliminer en déposant des bombes stratégiquement.
 
 - [📄 Sujet](/cours/python/python-projet-bomberman)
 
-### 📌 Filière ASRBD : Projet Gestionnaire de Configuration des Serveurs
+### 🏆 Filière ASRBD : Projet Gestionnaire de Configuration des Serveurs
 
 Le but de ce projet est de créer une application en ligne de commande qui permet aux administrateurs système de gérer la configuration de plusieurs serveurs. L'application devra permettre d'ajouter, de modifier et de supprimer des configurations, ainsi que de les sauvegarder et de les restaurer.
 
@@ -58,6 +58,6 @@ Le but de ce projet est de créer une application en ligne de commande qui perme
 - <https://python.developpez.com/cours/apprendre-python-3/?page=exercices-corriges>
 - <https://github.com/attreyabhatt/Space-Invaders-Pygame>
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Python](/cours/python).

@@ -21,7 +21,7 @@ Module de 10H
 
 Évaluation : projet noté
 
-## Documents
+## 📑 Documents
 
 ### Méthodologie des tests
 
@@ -40,8 +40,8 @@ Module de 10H
 - [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
   - Sources pour le TP : `git clone https://git.sr.ht/~toma/python-unit`
-- [📌 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
+- [🏆 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).

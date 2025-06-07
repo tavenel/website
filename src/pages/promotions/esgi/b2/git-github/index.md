@@ -73,7 +73,7 @@ Module de 12H
 - Interfaces graphiques pour Git et intégration dans un IDE (cours)
 - Partiel : Travail collaboratif avec Git
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours](/cours/git/cours)
 - [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
@@ -85,6 +85,6 @@ Module de 12H
 - [💻 TP - Recherche dans un dépôt Git™](/cours/git/git-tp-grep)
 - [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : _à réaliser en binôme._
 - [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/git-tp-fork)
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Git](/cours/git).

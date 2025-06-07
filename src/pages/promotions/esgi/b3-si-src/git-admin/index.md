@@ -66,7 +66,7 @@ Module de 12H
 - Interfaces graphiques pour Git et intégration dans un IDE (cours)
 - Partiel : Travail collaboratif avec Git
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours](/cours/git/cours)
 - [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
@@ -82,7 +82,7 @@ Module de 12H
 - [💻 TP Neovim - gérer ses configurations avec Git](/cours/git/git-tp-iac-nvim)
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/cours/git/git-tp-ansible)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Git](/cours/git).
 

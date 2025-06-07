@@ -67,7 +67,7 @@ title:   Git™
 25. `git show <commit-hash>` : Affichez les détails complets d'un commit spécifique.
 26. `git archive` : crée une archive contenant les fichiers d'un commit ou d'une branche sans inclure l'historique Git
 
-## 📄 Documents
+## 📑 Documents
 
 - [🤓 Cours](/cours/git/cours)
 - [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)

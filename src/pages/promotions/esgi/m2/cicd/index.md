@@ -41,7 +41,7 @@ Module de 18H
 - TD sur les workflow d'intégration continue
 - Projet noté (pratique)
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours sur l'intégration continue ](./cicd/cours)
 
@@ -62,12 +62,12 @@ Module de 18H
 - [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
 
-### 📌 Projet intégration et déploiement continus d'une application de groupes de travail
+### 🏆 Projet intégration et déploiement continus d'une application de groupes de travail
 
 Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 
 - [📄 Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur l'intégration continue](/cours/ci).

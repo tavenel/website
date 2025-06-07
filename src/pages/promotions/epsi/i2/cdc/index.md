@@ -22,20 +22,20 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 
 Évaluation : Projet en groupe de 3.
 
-## Documents
+## 📑 Documents
 
 - [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges/cahier_charges-cours)
 - [🤓 Diagramme de Kano](/cours/gestion-projet/cours-kano)
 - [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/uml/use-case)
 - [📝 Exercice Pur Beurre : définir le contexte](/cours/gestion-projet/exos/exo-pur-beurre)
 - [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos/exos-cas-utilisation-cas-sequence)
-- [📌 Projet - écrire un cahier des charges](/cours/gestion-projet/cahier-charges/projet-cdc)
+- [🏆 Projet - écrire un cahier des charges](/cours/gestion-projet/cahier-charges/projet-cdc)
 - Exemples de cahier des charges :
   - Devis vers facture, CDC fonctionnel : [pdf](/cours/cahier-charges/dvf_fonctionnel.pdf)
   - Devis vers facture, CDC technique  : [pdf](/cours/cahier-charges/dvf_technique.pdf)
   - Cahier des charges technique : [pdf](/cours/cahier-charges/ex_t1.pdf)
   - Cahier des charges : [Hotel Paradis](https://docs.google.com/document/d/1k1kHGk7QgoY3-hMCi0CURhRDo0zMawqyDluuXvYmq5E)
 
-## Pour aller plus loin
+## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).

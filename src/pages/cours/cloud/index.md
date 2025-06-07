@@ -19,7 +19,7 @@ title: 🌐 Cloud Web et HTTP
 - [💻 TP AWS 1 : Amazon EC2, Amazon S3, Amazon RDS](/cours/cloud/tp_aws-1)
 - [💻 TP AWS 2 : Développement d’une application Cloud moderne en utilisant des services AWS](/cours/cloud/tp_aws-2)
 
-## 📌 Projet : Exécution de programmes dans un environnement Cloud multi-provider
+## 🏆 Projet : Exécution de programmes dans un environnement Cloud multi-provider
 
 Dans ce projet, chaque groupe représente un fournisseur de Cloud différent, ayant sa propre solution de Cloud et ses propres clients.
 

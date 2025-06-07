@@ -3,7 +3,7 @@ title: Utilisation des commandes Linux
 date: 2024 / 2025
 ---
 
-# Prérequis
+# 📋 Prérequis
 
 _L’ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle (ne pas se connecter avec le compte du super-utilisateur `root` )._
 

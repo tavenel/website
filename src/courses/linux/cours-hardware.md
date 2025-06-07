@@ -235,7 +235,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 - Autre modernisation de `SysV` pour accélérer le démarrage (parallélisme).
 - Popularisé par `Ubuntu` avant son abandon pour `systemd`.
-- Voir le cours "101.3 Lesson 1" p.43 pour plus de détails, `Upstart` ne sera pas abordé en TP.
+- Voir le cours "101.3 Lesson 1" p.43 de la certification LPIC-1 pour plus de détails, `Upstart` ne sera pas abordé en TP.
 
 ---
 
@@ -266,7 +266,7 @@ Le programme `/sbin/init` gère le `runlevel` :
 - `/etc/init.d` contient les scripts qui gèrent les runlevels
 - `/etc/rc0.d`, `/etc/rc1.d`, … contiennent les scripts des runlevels correspondants
 
-Voir le cours pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
+Voir le cours de la certification LPIC-1 pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
 
 ### Démo
 
@@ -287,28 +287,11 @@ Voir le cours pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
 - ` dmidecode -t …` : informations sur le matériel physique (nombre de slots RAM, …)
 - `inxi`, `neofetch`, `fastfetch` (non-POSIX) : résumés d'informations sur le système
 
----
-
 <!-- Annexe : liste des TPs -->
-
-[tp-ligne-commande]: tp-ligne-commande.md
 [tp-systeme]: tp-systeme.md
 [tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
 [tp-sysv]: tp-sysv.md
 [tp-systemd]: tp-systemd.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
-[tp-cron]: tp-cron.md
-[tp-lang]: tp-lang.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
-[tp-syslog]: tp-syslog.md
-[tp-network]: tp-network.md
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
+
+---
 
