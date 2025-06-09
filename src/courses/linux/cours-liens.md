@@ -56,7 +56,7 @@ folder "Lien dur (hard link)" {
   [F2]
 }
 
-[Lien réel (symbolic)] as F3
+[Lien symbolique] as F3
 
 database "Données" as data {
 }

@@ -219,10 +219,6 @@ Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 - Voir cours LPIC-1 section 103.8 _Basic file editing_ p.390
 - **Pour une introduction à `vi`, utiliser l'excellent tutoriel intégré : taper `vimtutor` dans un terminal.**
 
-### Démo + grep
-
----
-
 <!-- Annexe : liste des TPs -->
 
 [tp-ligne-commande]: tp-ligne-commande.md
@@ -243,4 +239,6 @@ Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 [tp-network]: tp-network.md
 [tp-security]: tp-security.md
 [tp-ssh-gpg]: tp-ssh-gpg.md
+
+---
 
