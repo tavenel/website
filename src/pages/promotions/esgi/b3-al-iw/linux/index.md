@@ -39,11 +39,11 @@ layout: '@layouts/BaseLayout.astro'
 - [▶️ TP : Systemd init](/cours/linux/niveau2/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
 - [📜 TP : Journalisation avec Syslog](/cours/linux/niveau2/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng` (l'accent est mis sur `rsyslog`). Les liens entre `syslog` et `systemd-journald` sont également abordés.
 - [💻 TP : Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)
-- [📀 TP : utiliser un live-CD pour une restauration système](/cours/linux/niveau2/tp-rescue)
 - [🏆 Projet Déploiement et Administration d'une Application Web sous Linux](./linux/projet)
 
 ## 🚀 Pour aller plus loin
 
+- [📀 TP : utiliser un live-CD pour une restauration système](/cours/linux/niveau2/tp-rescue)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/niveau2/tp-fichiers-avance)
 - [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/niveau2/tp-redirections)
 - Voir les autres ressources du [cours sur Linux](/cours/linux).
