@@ -7,7 +7,7 @@ correction: false
 ## Cours
 
 :::tip
-Voir cours LPIC-1 section _Process Monitoring_, 103.5 Lesson 1 p.295
+Voir le cours de la formation LPIC-1 section _Process Monitoring_, 103.5 Lesson 1 p.295
 :::
 
 ## Obtenir des informations sur un processus
@@ -115,7 +115,7 @@ kill `pgrep sleep`
 
 ## Jobs
 
-voir cours _Job Control_, 103.5 Lesson 1 p.290
+Voir le cours de la formation LPIC-1 section _Job Control_, 103.5 Lesson 1 p.290
 
 1. Lancez le processus `sleep 1000` en arrière-plan. Récupérez son `PID`.
 2. Replacez ce processus en avant plan, puis stoppez-le (ne le tuez pas) et replacez-le en arrière-plan.
