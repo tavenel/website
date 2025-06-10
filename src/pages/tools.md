@@ -636,6 +636,7 @@ created: 2024-10-17
 - `google analytics` => `matomo`
 - _google translate_ => <https://libretranslate.com/>
 - <https://silex.me/> => création de site web no-code
+- <https://capjs.js.org/> : proof-of-work alternatif aux CAPTCHA
 
 ## 🔗 Awesome lists
 
