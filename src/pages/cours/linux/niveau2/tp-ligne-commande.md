@@ -74,7 +74,7 @@ env NOM_DE_VARIABLE=VALEUR mon_programme
 - La variable `PATH` peut être modifiée par l'utilisateur.
 
 :::exo
-Modifier le `PATH` pour ajouter un répertoire de votre choix.
+Modifier le `PATH` pour ajouter un répertoire de votre choix contenant un binaire. Vérifier que le binaire peut être exécuté en tapant uniquement son nom (et non le chemin complet vers le fichier de programme).
 :::
 
 ## Aide et documentation sur les commandes
