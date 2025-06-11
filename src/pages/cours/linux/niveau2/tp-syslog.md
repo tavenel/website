@@ -247,8 +247,7 @@ Voir le TP [tp-systemd](tp-systemd.md) pour des rappels sur `journalctl`.
 echo "Un message d'erreur" | systemd-cat -p err
 ```
 
-## Liens syslog et systemd 
-
+:::tip
 - `syslog` peut rediriger les messages de journalisation vers `systemd-journald` pour une journalisation centralisée ou pour une gestion des journaux centralisée.
 - `systemd-journald` peut également envoyer des messages de journalisation à `syslog` pour une journalisation étendue ou pour un traitement spécifique des journaux.
 - Les deux services peuvent coexister sur le même système et fonctionner simultanément. Cependant, il est recommandé de configurer correctement les règles de filtrage et de redirection pour éviter toute duplication ou conflit dans la gestion des journaux.
@@ -256,5 +255,5 @@ echo "Un message d'erreur" | systemd-cat -p err
   - `rsyslog` ou `syslog-ng` seuls sur des systèmes sans `systemd`
   - `journald` seul pour un système simple utilisant `systemd`
   - `journald` en point d'entrée, redirigeant les logs vers un serveur `rsyslog` pour un post-traitement avancé.
-
+:::
 
