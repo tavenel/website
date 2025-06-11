@@ -174,6 +174,7 @@ search mydomain.net mydomain.com
 
 ### Résolution DNS
 
+- `resolvectl query www.wikipedia.fr` : résolution DNS par `systemd-resolved`
 - `nslookup www.wikipedia.fr` : résolution DNS
 - `dig @8.8.8.8 www.wikipedia.fr` : résolution DNS en passant par le serveur DNS de Google (`8.8.8.8`)
 - `host www.wikipedia.fr` ou `host www.wikipedia.fr 8.8.8.8`
