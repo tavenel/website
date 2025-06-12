@@ -119,6 +119,10 @@ sudo systemctl status cron.service
 Le nom du service peut varier dans d'autres distributions : `crond.service` sous CentOS, …
 :::
 
+:::tip
+Si le système est éteint alors qu'une tâche devrait s'exécuter, celle-ci est perdue et **non exécutée** ! Attention aux backups par exemple.
+:::
+
 ### Fichier `/etc/crontab`
 
 Le fichier `/etc/crontab` permet de planifier finement la répétition d'une commande.
@@ -321,6 +325,10 @@ WantedBy=timers.target
     - `OnCalendar=*-*-1 00:20:00` : Tous les premiers du mois à 00h20
     - `OnCalendar=Mon *-*-1..7 6:00:00` ; Du 1 au 7 du mois, qui soit un lundi, à 6h (traduisez le premier lundi du mois à 6h)
 - `Persistent` : `yes` = Si le système était à l'arrêt pendant le déclenchement, le lancement raté est rattrapé (utilisé avec `OnCalendar`)
+
+:::tip
+Le paramètre `Persistent=true` est très utile pour rattraper des tâches non exécutées parce que le système était éteint (backup, …) : c'est un gros avantage sur _Cron_ !
+:::
 
 #### Occurences
 
