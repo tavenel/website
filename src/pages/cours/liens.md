@@ -25,15 +25,6 @@ Quelques références utiles en informatique.
 
 - [Bootstrapping Microservices, Second Edition With Docker, Kubernetes, GitHub Actions, and Terraform (Ashley Davis)](https://www.manning.com/books/bootstrapping-microservices-second-edition)
 
-## Cybersécurité
-
-- HackTheBox: plateforme de gamification permettant d'apprendre la cybersécurité en résolvant des défis.
-- TryHackMe: plateforme d'apprentissage gamifiée avec des laboratoires pratiques et des scénarios réels. Cette plateforme est très accessible
-- VulnHub: plateforme regroupant des machines virtuelles vulnérables à exploiter.
-- Root-Me: plateforme d'apprentissage immersive permettant de se familiariser avec la cybersécurité en s'entraînant sur des environnements réels.
-- SecureCodeWarrior : apprendre à développer du code robuste
-- <https://hackropole.fr/fr/> : rejouer les épreuves du France Cybersecurity Challenge
-
 ## Informations transverses
 
 ### Sauvegardes : la règle du 3-2-1-1-0
@@ -127,6 +118,35 @@ Quelques références utiles en informatique.
 - <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
 - [Une architecture open-source qui ne déraille pas (Julien Cognet, Snowcamp 2025)](https://www.slideshare.net/slideshow/snowcamp-2025-une-architecture-qui-ne-deraille-pas/275103626)
 - [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
+
+## Gamification
+
+### Linux
+
+- Un jeu de piste utilisant le terminal : <https://github.com/phyver/GameShell>
+- Un autre jeu de piste utilisant les commandes Linux : <https://github.com/veltman/clmystery>
+- VMs d'entraînement avec des problèmes à résoudre : <https://sadservers.com/>
+
+### VIM
+
+- Un jeu graphique en ligne pour découvrir VIM (3 premiers niveaux gratuits) : <https://vim-adventures.com>
+
+### Git
+
+- Apprendre Git par des tutos en ligne : <https://learngitbranching.js.org/?locale=fr_FR>
+
+### Cybersécurité
+
+- Wargames orientés Linux et déploiement Web (démarrer par _bandit_) : <https://overthewire.org/wargames/bandit/>
+- <https://madhuakula.com/kubernetes-goat/> : Kubernetes Goat - Interactive Kubernetes Security Learning Playground
+- CTF populaires :
+  - <https://www.hackthebox.com/> : plateforme de gamification permettant d'apprendre la cybersécurité en résolvant des défis.
+  - <https://tryhackme.com/> : plateforme d'apprentissage gamifiée avec des laboratoires pratiques et des scénarios réels. Cette plateforme est très accessible
+  - <https://www.vulnhub.com/> : plateforme regroupant des machines virtuelles vulnérables à exploiter.
+  - <https://www.root-me.org/> : plateforme d'apprentissage immersive permettant de se familiariser avec la cybersécurité en s'entraînant sur des environnements réels.
+  - <https://www.securecodewarrior.com/> : apprendre à développer du code robuste
+  - <https://hackropole.fr/fr/> : rejouer les épreuves du France Cybersecurity Challenge
+- <https://github.com/apsdehal/awesome-ctf>
 
 ## Exemples de projets
 
