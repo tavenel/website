@@ -5,15 +5,13 @@ layout: '@layouts/BaseLayout.astro'
 
 # 󱃾  Kubernetes
 
-### 📅 Déroulé des séances
+## 📅 Déroulé des séances
 
 2 Modules : 14H de TP et 4H de cours (après e-learning)
 
-Évaluation : 
+Évaluation : Projet et QCM théorique
 
-## Partie 1
-
-### 🎯 Objectifs du cours
+## 🎯 Objectifs du cours
 
 - Être capable de mettre en place un cluster Kubernetes, soit dans le cloud (AKS,GKE, etc), soit "baremetal" (k3s, k0s, Talos Linux, etc)
 - Administrer un cluster Kubernetes
@@ -30,14 +28,14 @@ layout: '@layouts/BaseLayout.astro'
 - Être capable de déployer ce conteneur dans un espace de noms dédié et de l'exposer à l'extérieur soit via un Service de type Load-Balancer soit via un Ingress
 - Découvrir les opérateurs et déployer une base de données via l'opérateur Postgresql (Zalando ou Crunchy data) ou l'opérateur mariadb-galera
 
-### 📋 Prérequis
+## 📋 Prérequis
 
 - Bonnes connaissances de Docker et des principes de conteneurisation
 - Connaissances avancées en administration système Linux
 - Les namespace et les cgroups Linux
 - Notions de réseau
 
-### 📑 Documents
+## 📑 Documents
 
 - [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
