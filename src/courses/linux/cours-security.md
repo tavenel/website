@@ -48,6 +48,12 @@ layout: '@layouts/CoursePartLayout.astro'
 - Par défaut : autorisé
 - Facile à usurper (changer d'IP)
 
+```ini
+sshd : 10.10.136.241
+sshd : example.com
+all : 1.2.3.4
+```
+
 ---
 
 ## Démarrage dynamique de service depuis une socket
