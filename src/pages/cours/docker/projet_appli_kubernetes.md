@@ -12,8 +12,8 @@ date: 2024 / 2025
 :::
 
 :::link
-- Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : <https://www.avenel.pro/cours/docker/projet_install_kubernetes>
-- Voir aussi la page <https://www.avenel.pro/cours/docker/kubernetes-cheatsheet> pour l'installation des dépendances.
+- Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : </cours/docker/projet_install_kubernetes>
+- Voir aussi la page </cours/docker/kubernetes-cheatsheet> pour l'installation des dépendances.
 :::
 
 ### Installation des StorageClass
