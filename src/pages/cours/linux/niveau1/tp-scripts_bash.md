@@ -86,7 +86,7 @@ echo "Le résultat de la multiplication est : $((nombre1*nombre2))"
 Pour cela, le script dispose de variable d’environnement prédéfinies :
 
 - `$#` : contient le nombre de paramètres
-- `$0` : contient le nom du script exécuté
+- `$0` : contient le nom du script exécuté (en dehors d'un script, contient le nom du shell exécuté)
 - `$1` : contient le premier paramètre
 - `$2` : contient le second paramètre
 - …
