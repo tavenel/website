@@ -22,7 +22,7 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 10H
 
-Évaluation : projet commun avec le module [tests automatiques](/promotions/epsi/epsi-i1-cda-tests-auto)
+Évaluation : Examen + Projet commun avec le module [tests automatiques](/promotions/epsi/epsi-i1-cda-tests-auto)
 
 ### Séance 1
 
@@ -52,23 +52,20 @@ Module de 10H
 ## 📑 Documents
 
 - [🤓 Cours sur l'intégration continue ](./ci/cours)
+- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
+- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
+- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
 
 ### Exercices
 
 - [📝 TD Processus d'intégration continue](/cours/ci/td_process_ci) : une étude de cas d'intégration continue.
-- [📝 TD Intégration continue avancée](/cours/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
 
-## TP
+### TPs
 
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr)
-  - L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
-- [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
-  - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
+- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
 - [ TP Jenkins](/cours/jenkins/tp-jenkins-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
+- [💻 TP Intégration continue avancée](/cours/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
 
 ### 🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
 
@@ -80,4 +77,5 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 ## 🚀 Pour aller plus loin
 
+- [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - Voir les autres ressources du [cours sur l'intégration continue](/cours/ci).
