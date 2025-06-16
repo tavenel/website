@@ -74,6 +74,91 @@ _Un problème a été détecté sur la fonctionnalité A !_
 
 Corriger une erreur dans la fonctionnalité A. Cette erreur devra être corrigée dans toutes les versions du produit.
 
+:::correction
+
+## Correction
+
+```sh
+#!/bin/bash
+
+echo '# Création du dépot'
+git init exam-workflows-concurrents-correction
+cd exam-workflows-concurrents-correction
+git status
+
+echo '## Création de la branche v1'
+git checkout -b v1
+git status
+echo '## Création du commit dans v1'
+echo -e "Versios\nv1" > contenu.txt
+git status
+git add contenu.txt
+git diff --staged
+git commit -m 'v1'
+git status
+git log --decorate --graph
+
+echo '## Création de la branche v2'
+git checkout -b v2
+echo '## Ajout des changements et Création du commit dans v2'
+echo "v2" >> contenu.txt
+git add contenu.txt
+git commit -m 'v2'
+
+echo '## Création de la branche dev'
+git checkout -b dev
+echo '## Ajout des changements et Création du commit dans dev'
+echo "v3" >> contenu.txt
+git add contenu.txt
+git commit -m 'v3'
+git log --oneline --decorate --graph --all
+
+echo '# Ajout de fonctionalité'
+echo '#E Création de la branche f1 depuis dev'
+git checkout dev
+git checkout -b f1
+echo '## Ajout des changements et Création du commit dans dev'
+echo "F1" >> contenu.txt
+git add contenu.txt
+git commit -m 'F1'
+git log --oneline --decorate --graph --all
+echo '## Fusion de f1 dans dev'
+git checkout dev
+git merge f1
+
+echo '# Nouvelle version mineure'
+echo '## Ajout des changements et Création du commit dans v2'
+git checkout v2
+sed -i s/v2/v2.1/g contenu.txt # ou depuis un éditeur de texte
+git status
+git add contenu.txt
+git commit -m 'v2.1'
+git log --oneline --decorate --graph --all
+
+echo '# Portage de correctif'
+echo '## On se déplace sur la branche v1'
+git checkout v1
+echo '## On crée une nouvelle branche (depuis "v1")'
+git checkout -b fix-typo
+echo '## On corrige la typo et on crée un nouveau commit'
+sed -i s/Versios/Versions/g contenu.txt # ou depuis un éditeur de texte
+git commit -am 'typo versios'
+echo '## On effectue une "Merge-Request" sur GitHub de fix-typo vers v1 et on la valide.'
+echo '## On merge fix-typo dans v1 en se déplaçant dans "v1"'
+git checkout v1
+git merge fix-typo
+echo '## Puis on merge fix-typo dans les autres branches...'
+git checkout v2
+git merge -m 'Merging branch fix-typo' fix-typo
+git checkout dev
+git merge -m 'Merging branch fix-typo' fix-typo
+git log --decorate --graph --all
+
+echo "## Autre solution plus propre : utiliser git cherry-pick pour récupérer uniquement le commit désiré (si la branche contenait d'autres changements indésirables)"
+```
+
+:::
+
 # Legal
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
