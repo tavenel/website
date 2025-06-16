@@ -27,9 +27,6 @@ Module de 10H
 
 - [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests) : _Pourquoi le test logiciel ?_ _Qu'est-ce qu'un testeur ?_
 - [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
-- [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
-- [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
-- [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
 - [📖 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
@@ -40,7 +37,7 @@ Module de 10H
 - [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
   - Sources pour le TP : `git clone https://git.sr.ht/~toma/python-unit`
-- [🏆 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
+- [🏆 Projet tests unitaires](/cours/tests/unit/projet_tests_unit)
 
 ## 🚀 Pour aller plus loin
 

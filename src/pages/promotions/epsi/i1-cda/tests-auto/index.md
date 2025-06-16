@@ -14,6 +14,10 @@ layout: '@layouts/BaseLayout.astro'
 - Écrire des tests unitaires et d'intégration automatisés
 - Connaître les design patterns de test et savoir écrire du code testable
 
+### 📋 Prérequis
+
+- Connaissance d'un framework de tests unitaires
+
 ### 📅 Déroulé des séances
 
 Module de 14H
@@ -24,16 +28,10 @@ Module de 14H
 
 ## 📑 Documents
 
-- Rappels : [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
-- [🤓 Cours : Test-Driven Development (TDD)](/cours/tests/methodo/cours-tdd)
-- [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd)
-- [🤓 Cours sur l'industrialisation des tests](/cours/tests/methodo/indus-tests-cours)
-- [🤓 Cours sur les design patterns de test](/cours/tests/methodo/patterns-cours)
-- [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
-- [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
+- [🤓 Cours sur les tests logiciels](tests/cours)
+- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
-- [🏆 Projet Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 
 ### 💻 Exemples
 

@@ -1,16 +1,15 @@
 ---
-title: Projet Bomberman - tests unitaires
+title: Projet tests unitaires
 date: 2024 / 2025
-correction: false
 ---
 
-# Projet Python Bomberman - ajout de tests unitaires
+# Projet Tests unitaires
 
 ## Présentation
 
-Le but de ce projet est de retravailler le projet Bomberman du module Python pour y ajouter des tests unitaires, et d'adapter le code du projet en conséquence.
+Le but de ce projet est d'ajouter des tests unitaires à un projet existant (par exemple votre projet Python), et d'adapter le code du projet en conséquence.
 
-### Objectifs pédagogiques
+### 🎯 Objectifs pédagogiques
 
 Ce projet vous permettra de :
 
@@ -19,7 +18,7 @@ Ce projet vous permettra de :
 - Écrire des tests unitaires en Python
 - (Ré)Architecturer son code pour le rendre testable
 
-## Tests unitaires
+## 🧪 Tests unitaires
 
 Il est très compliqué de définir une couverture de test nécessaire et suffisante, car cela dépend énormément du code à tester : on privilégiera donc toujours la qualité du test sur les statistiques de sa couverture de code.
 
@@ -45,5 +44,4 @@ Le barème est le suivant :
 # Legal
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
-- "Python" is a registered trademark of the PSF.
 

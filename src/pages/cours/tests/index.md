@@ -49,7 +49,7 @@ title: 🧪 Tests logiciels
 - [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
 - [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
-- [🏆 Projet tests unitaires Bomberman](/cours/tests/unit/projet_bomberman_tests_unit)
+- [🏆 Projet tests unitaires](/cours/tests/unit/projet_tests_unit)
 
 ### Frontend
 

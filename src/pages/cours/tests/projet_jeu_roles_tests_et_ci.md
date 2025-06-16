@@ -74,7 +74,11 @@ Ces 2 méthodes sont cumulables.
 
 ## Automatisation des tests
 
-### Tests unitaires
+### 📝 Rédaction d'un Plan de Test
+
+- Réfléchir à un **plan de test** complet qui décrit les objectifs, la portée, l'approche, et les critères des tests. Rédiger succintement ce plan de tests.
+
+### 🧪 Tests unitaires
 
 Il est très compliqué de définir une couverture de test nécessaire et suffisante, car cela dépend énormément du code à tester : on privilégiera donc toujours la qualité du test sur les statistiques de sa couverture de code.
 
@@ -83,15 +87,29 @@ _On appelle code métier du code lié directement aux exigences fonctionnelles (
 Les parties de code _métier_ d'une application sont les plus critiques et celles à tester le plus en profondeur dans les tests unitaires. Au contraire, les classes ayant des dépendances externes sont en général difficiles à tester et sensibles aux changements d'implémentation : il est normal que leur couverture de tests unitaires soit moins importante.
 
 - On activera la couverture de test dans l’IDE afin de vérifier que les classes sont bien testées.
-- On ajoutera les tests unitaires nécessaires.
+- **Backend** : Écrire des tests unitaires pour le backend en utilisant des frameworks appropriés (par exemple, JUnit pour Java, pytest pour Python, phpunit en PHP, …).
+- **Frontend** : Écrire des tests unitaires pour le frontend en utilisant des frameworks comme Jest ou Mocha.
 - On pensera à utiliser des substituts (`Mock`, `Stub`) lorsque c'est nécessaire pour s'abstraire des dépendances.
 - On modifiera le code source de l’application pour corriger les bugs trouvés au fur et à mesure du développement (Test-Driven Development).
 
-### Tests end-to-end
+### 📦 Tests d'Intégration
 
-- En utilisant le framework d'automatisation de navigateurs `Selenium`, ajouter des tests de fonctionnalité depuis l'interface Web.
+- Utiliser **Postman** pour créer, exécuter et **automatiser** des tests d'intégration sur les API du projet. On testera notamment les cas limites et cas d'erreur des API.
+
+### 🧑‍💻 Tests end-to-end
+
+- En utilisant le framework d'automatisation de navigateurs `Selenium`, ajouter des tests de fonctionnalité depuis l'interface Web pour simuler les interactions des utilisateurs avec l'application.
   + On utilisera un design pattern de `PageObject`, c'est-à-dire que les pages et les éléments de l'interface graphique seront décrits dans des classes de tests dédiées (voir cours).
 - On pourra également lancer l’application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
+
+### ⚡ Bonus: Tests de Performance
+
+- Utiliser **JMeter** pour créer et exécuter des tests de performance afin de mesurer la capacité de l'application à gérer des charges élevées. Analyser les résultats des tests de performance et identifier les **goulots d'étranglement**.
+
+### 🛡️ Bonus: Tests de Fiabilité et de Sécurité
+
+- **Simian Army (Cloud)** : Utiliser les outils du Simian Army pour tester la résilience et la fiabilité de l'application dans le cloud.
+- **Chaos Toolkit (Local)** : Utiliser le Chaos Toolkit pour simuler des défaillances en local et tester la robustesse de l'application.
 
 ## Travail demandé 
 
