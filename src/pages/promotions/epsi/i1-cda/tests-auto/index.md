@@ -52,4 +52,4 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
+- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests-auto).
