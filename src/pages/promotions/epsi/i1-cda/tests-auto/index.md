@@ -28,7 +28,7 @@ Module de 14H
 
 ## 📑 Documents
 
-- [🤓 Cours sur les tests logiciels](tests/cours)
+- [🤓 Cours sur les tests logiciels](tests-auto/cours)
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
@@ -52,4 +52,4 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests-auto).
+- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
