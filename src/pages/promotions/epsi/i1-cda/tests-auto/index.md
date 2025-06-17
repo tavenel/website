@@ -32,6 +32,7 @@ Module de 14H
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
+- [💻 TP Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 
 ### 💻 Exemples
 

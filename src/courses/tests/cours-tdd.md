@@ -1,7 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/CoursePartLayout.astro'
-title: Cours TDD - Développement piloté par les tests
+title: TDD - Développement piloté par les tests
 tags:
 - test
 - tdd
