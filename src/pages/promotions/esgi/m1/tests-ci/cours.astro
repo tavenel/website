@@ -1,0 +1,52 @@
+---
+import Layout from '@layouts/CoursTestLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as IntroTest } from '@courses/tests/cours-introduction-tests.md';
+import { Content as Methodo } from '@courses/tests/cours-methodo-tests.md';
+import { Content as TDD } from '@courses/tests/cours-tdd.md';
+import { Content as Indus } from '@courses/tests/indus-tests-cours.md';
+import { Content as Patterns } from '@courses/tests/patterns-cours.md';
+import { Content as CodeTestable } from '@courses/tests/ecrire-code-testable-cours.md';
+import { Content as Unittest } from '@courses/tests/cours-unittest.md';
+import { Content as Selenium } from '@courses/selenium/cours.md';
+import { Content as Postman } from '@courses/postman/cours.md';
+import { Content as JMeter } from '@courses/jmeter/cours.md';
+import { Content as SimianArmy } from '@courses/simian-army/cours.md';
+import { Content as TestsWithDocker } from '@courses/tests/tests-with-docker.md';
+
+import { Content as IntroCI } from '@courses/cicd/cours-intro-ci.md';
+import { Content as Server } from '@courses/cicd/cours-serveur-ci.md';
+import { Content as Jenkins } from '@courses/jenkins/cours.md';
+import { Content as Outils } from '@courses/cicd/cours-outils-ci.md';
+import { Content as Process } from '@courses/cicd/cours-process-ci.md';
+import { Content as GITWorkflows } from '@courses/git/workflows-cours.md';
+import { Content as CDModeles } from '@courses/cicd/modeles-cd-cours.md';
+---
+
+<Layout title="Tests et Automatisations">
+  <Chapter> <IntroTest /> </Chapter>
+  <Chapter> <Methodo /> </Chapter>
+  <Chapter> <TDD /> </Chapter>
+  <Chapter> <Indus /> </Chapter>
+  <Chapter> <Patterns /> </Chapter>
+  <Chapter> <CodeTestable /> </Chapter>
+  <Chapter> <Unittest /> </Chapter>
+  <Chapter> <Selenium /> </Chapter>
+  <Chapter> <Postman /> </Chapter>
+  <Chapter> <JMeter /> </Chapter>
+  <Chapter> <SimianArmy /> </Chapter>
+  <Chapter> <TestsWithDocker /> </Chapter>
+
+	<Chapter> <IntroCI />  </Chapter>
+	<Chapter> <Server />  </Chapter>
+	<Chapter> <Jenkins />  </Chapter>
+	<Chapter> <Outils />  </Chapter>
+	<Chapter> <Process />  </Chapter>
+	<Chapter> <GITWorkflows />  </Chapter>
+	<Chapter> <CDModeles />  </Chapter>
+
+</Layout>
+---
+
+
