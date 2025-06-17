@@ -33,6 +33,7 @@ Module de 14H
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
 - [💻 TP Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
 
 ### 💻 Exemples
 
@@ -42,6 +43,7 @@ Dépôts d'exemples de tests unitaires :
 - Java : <https://git.sr.ht/~toma/java-unit>
 - Kotlin : <https://git.sr.ht/~toma/kotlin-unit>
 - Jest : <https://git.sr.ht/~toma/unit-jest>
+- Selenium : <https://git.sr.ht/~toma/selenium>
 
 ### 🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
 
