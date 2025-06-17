@@ -1,5 +1,7 @@
 ---
 import Layout from '@layouts/CoursTestLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
 import { Content as Intro } from '@courses/tests/cours-introduction-tests.md';
 import { Content as Methodo } from '@courses/tests/cours-methodo-tests.md';
 import { Content as TDD } from '@courses/tests/cours-tdd.md';
@@ -14,17 +16,17 @@ import { Content as SimianArmy } from '@courses/simian-army/cours.md';
 ---
 
 <Layout title="Automatisation de tests">
-  <Intro />
-  <Methodo />
-  <TDD />
-  <Indus />
-  <Patterns />
-  <CodeTestable />
-  <Unittest />
-  <Selenium />
-  <Postman />
-  <JMeter />
-  <SimianArmy />
+  <Chapter> <Intro /> </Chapter>
+  <Chapter> <Methodo /> </Chapter>
+  <Chapter> <TDD /> </Chapter>
+  <Chapter> <Indus /> </Chapter>
+  <Chapter> <Patterns /> </Chapter>
+  <Chapter> <CodeTestable /> </Chapter>
+  <Chapter> <Unittest /> </Chapter>
+  <Chapter> <Selenium /> </Chapter>
+  <Chapter> <Postman /> </Chapter>
+  <Chapter> <JMeter /> </Chapter>
+  <Chapter> <SimianArmy /> </Chapter>
 </Layout>
 ---
 

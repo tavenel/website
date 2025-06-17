@@ -28,7 +28,7 @@ Module de 14H
 
 ## 📑 Documents
 
-- [🤓 Cours sur les tests logiciels](tests-auto/cours)
+- [🤓 Cours sur les tests logiciels](./tests-auto/cours)
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
@@ -37,7 +37,7 @@ Module de 14H
 
 ### 💻 Exemples
 
-Dépôts d'exemples de tests unitaires :
+Dépôts d'exemples de tests :
 
 - Python : <https://git.sr.ht/~toma/python-unit>
 - Java : <https://git.sr.ht/~toma/java-unit>
