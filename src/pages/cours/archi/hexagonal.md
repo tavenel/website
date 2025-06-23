@@ -97,7 +97,7 @@ _Quel est le **but** de [cette application django][ddd-django] ?_ 💡
 |                    |       |     :               |       |                     |
 |                    |       |     :               |       |                     |
 |                    |       | +----+      +----+  |       |  +----+             |
-|                    |       | |cBLA|      |cGRE|  |       |  |cPNK|             |
+|                    |       | |cBLK|      |cGRE|  |       |  |cPNK|             |
 |                    |       | |    |=====>|    |<============|    |             |
 |                    |       | |    |      |    |  |       |  |    |             |
 |                    |       | +----+      +----+  |       |  +----+             |
@@ -176,7 +176,7 @@ Type enter to exit...
 |                    |       |     :                          |       |                             |
 |                    |       |     :                          |       |                             |
 |                    |       | +------+      +-------------+  |       |  +------------------------+ |
-|                    |       | |cBLA  |      |cGRE         |  |       |  |cPNK                    | |
+|                    |       | |cBLK  |      |cGRE         |  |       |  |cPNK                    | |
 |                    |       | |Poetry|=====>|IObtainPoems |<============|PoetryLibraryFileAdapter| |
 |                    |       | |Reader|      | {interface} |  |       |  |                        | |
 |                    |       | +------+      +-------------+  |       |  +------------------------+ |
@@ -197,7 +197,7 @@ Type enter to exit...
 
 ### Inversion de dépendances
 
-- Rappel : les dépendances vont l'intérieur (vers l'hexagone `Business Logic` indépendant)
+- Rappel : les dépendances vont vers l'intérieur (vers l'hexagone indépendant `Business Logic`)
 - Inversion de dépendances :
   - `Port` (interface) à l'intérieur (hexagone)
   - `Adapter` (implémentation) à l'extérieur (`User-Side` et `Server-Side`)

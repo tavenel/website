@@ -80,7 +80,7 @@ class BankAccount:
 
 ### Bonnes pratiques pour les entités
 
-1. **Conservez les responsabilités claires** :
+1. **Responsabilités claires** :
    - L'entité ne doit gérer que sa propre logique métier.
    - Évitez de surcharger les entités avec des dépendances vers d'autres couches (ex. : services ou infrastructure).
 
@@ -90,7 +90,7 @@ class BankAccount:
 3. **Respectez le langage ubiquitaire** :
    - Les noms et les comportements doivent refléter les termes métier discutés avec les experts du domaine.
 
-4. **Favorisez les `Value Objects` :
+4. **Favorisez les `Value Objects`** :
    - Si une propriété ou un concept n'a pas besoin d'identité, utilisez des `Value Object` à la place pour simplifier.
 
 ---
@@ -109,7 +109,7 @@ Contrairement aux **entités**, les `Value Objects` n'ont pas d'**identité uniq
    - Une fois créé, un `Value Object` ne doit pas être modifié.
    - Tout changement produit un **nouveau** `Value Object`.
 
-3. **Petites responsabilités** :
+3. **Responsabilités limitées** :
    - Un Value Object représente souvent une simple **caractéristique** ou **mesure** d'un concept métier (ex. : une adresse, une monnaie, une date).
 
 4. **Encapsulation des règles métier** :
@@ -170,13 +170,13 @@ class Address:
 
 ### Bonnes pratiques avec les **Value Objects**
 
-1. **Favorisez les Value Objects lorsque possible** :
+1. **Favorisez les Value Objects lorsque c'est possible** :
    - Si un concept n'a pas besoin d'une identité unique, préférez un `Value Object` à une `Entity`.
 
 2. **Respectez l'immuabilité** :
    - Fournissez des méthodes pour produire de nouveaux objets au lieu de modifier les objets existants.
 
-3. **Encapsulez les règles métier pertinentes** :
+3. **Encapsulez les règles métier** :
    - Assurez-vous que toute validation ou logique liée aux valeurs est contenue dans le Value Object.
 
 4. **Utilisez des comparateurs** (égalité, …) :
@@ -204,7 +204,7 @@ Regroupe des `Entity` et des `Value Objects` qui forment une unité cohérente p
 4. **Encapsulation** :
    - Les `Entity` et `Value Objects` internes à un `Aggregate` sont accessibles uniquement via la racine d’agrégat.
 
-5. **Consistance transactionnelle** :
+5. **Cohérence transactionnelle** :
    - Les modifications dans un `Aggregate` sont cohérentes et complètes dans une seule transaction. 
 
 ### Exemple d'Aggregate
@@ -268,7 +268,7 @@ Dans cet exemple :
 
 ### Bonnes pratiques pour les **Aggregates**
 
-1. **Gardez les agrégats petits** :
+1. **Petits agrégats** :
    - Chaque agrégat doit rester simple et concentré sur une seule responsabilité métier.
 
 2. **Concevez pour la cohérence interne** :
@@ -470,12 +470,11 @@ src/
   |       - PaymentFailedEvent.py
   +-- shared/
   |   - Logger.py
-  |   - Database.py
 ```
 
 Dans cette structure :
 - Les modules `order` et `payment` ont leurs propres composants métier, comme les **agrégats** (`Order`, `Payment`), les **services** (`OrderService`, `PaymentService`), et les **événements de domaine**.
-- Le module `shared` contient des composants qui peuvent être utilisés par plusieurs autres modules, comme le `Logger` et l'accès à la base de données.
+- Le module `shared` contient des composants qui peuvent être utilisés par plusieurs autres modules, comme le `Logger`.
 
 ### Bonnes pratiques pour l'organisation des **Modules**
 
@@ -571,14 +570,14 @@ Dans cet exemple :
            return Order(customer_id, shipping_address)
    ```
 
-3. `Builder` (souvent combiné avec une `Factory`) :
+3. `Builder` :
    - Un `Builder` est utilisé pour créer des objets complexes de manière progressive (souvent pour des objets qui ont beaucoup d'attributs ou d'étapes de configuration).
    - Exemple : Un `OrderBuilder` pourrait être utilisé pour construire des commandes étape par étape (ajouter des articles, définir l'adresse de livraison, etc.).
    - On utilise un pattern _Fluent_ : chaque méthode du `Builder` retourne l'instance courante pour pouvoir enchaîner les étapes : `OrderBuilder().add_item(…).add_shipping_address(…)`
 
-### Différence entre **Factory** et **Constructor** (Constructeur)
+### Différence entre **Factory** et **Constructeur**
 
-| **Aspect**               | **Factory**                                      | **Constructor (Constructeur)**                       |
+| **Aspect**               | **Factory**                                      | **Constructeur**                       |
 |--------------------------|--------------------------------------------------|-----------------------------------------------------|
 | **But principal**         | Encapsuler la logique de création d'objets complexes. | Créer un objet, mais sans logique complexe.         |
 | **Complexité**            | Gère des objets complexes, des validations, etc. | Simple instanciation d'un objet.                    |
@@ -754,7 +753,9 @@ print(f"Order created with ID: {order_id}")
 
 La **Dependency Injection (DI)** (ou injection de dépendances) est un modèle de conception qui permet d'injecter les dépendances nécessaires à un objet depuis l'extérieur, plutôt que de laisser l'objet créer ou rechercher lui-même ses dépendances. Cela favorise la modularité, la testabilité et la séparation des préoccupations.
 
+:::tip
 L'injection de dépendance permet d'utiliser massivement des design patterns de _Delegation_ : c'est l'une des techniques les plus utiles pour séparer le code métier des dépendances externes (souvent techniques), par exemple en _Clean Architecture_ et en _Architecture Hexagonale_ mais pas uniquement. **À utiliser massivement !**
+:::
 
 ### Principes de base :
 
@@ -898,11 +899,14 @@ Une `Entity` peut représenter différentes choses en fonction du contexte dans 
 
 ### Comment gérer les Split Entities ?
 
-1. **Ubiquitous Language** : Les entités devraient être nommées et définies en fonction du langage omniprésent propre à chaque contexte.
+1. **Ubiquitous Language** : Les entités devraient être nommées et définies en fonction du langage ubiquitaire propre à chaque contexte.
 2. **Mapping et synchronisation** : Si une entité dans un contexte dépend d'une entité dans un autre, vous pouvez utiliser des mécanismes comme des événements de domaine pour synchroniser les informations.
 3. **Anti-Corruption Layer (ACL)** : Si deux contextes doivent interagir fortement, une couche d'adaptation peut être utilisée pour convertir les données entre les entités.
-4. **Pas une duplication** : Une entité n’est pas copiée ; elle est redéfinie avec des attributs et comportements spécifiques au contexte.
-5. Si les besoins des différents contextes se chevauchent significativement, les Split Entities peuvent être **excessifs**.
+4. **Pas de duplication** : Une entité n’est pas copiée : elle est redéfinie avec des attributs et comportements spécifiques au contexte.
+
+:::warn
+Si les besoins des différents contextes se chevauchent significativement, il n'est souvent pas utile d'utiliser de  Split Entity.
+:::
 
 ---
 
@@ -1155,7 +1159,11 @@ Avec le **Specification Pattern**, cela pourrait être implémenté comme suit :
 
 ## CQRS : Command Query Responsibility Segregation
 
-Modèle architectural utilisé pour séparer les responsabilités de lecture (`Query`) et d'écriture (`Command`) dans un système. Cette séparation améliore la flexibilité, la scalabilité et parfois la simplicité des systèmes complexes, notamment ceux avec de fortes contraintes métier.
+Modèle architectural utilisé pour séparer les responsabilités de lecture (`Query`) et d'écriture (`Command`) dans un système.
+
+:::tip
+Cette séparation améliore la flexibilité, la scalabilité et parfois la simplicité des systèmes complexes, notamment ceux avec de fortes contraintes métier.
+:::
 
 ### Principe du CQRS
 
@@ -1296,7 +1304,7 @@ class OrderEventHandler:
 1. **Ne pas abuser des Domain Events** :
    - N'émettez pas d'événements pour chaque petite action, concentrez-vous sur les événements significatifs.
 
-2. **Respectez le langage omniprésent** :
+2. **Respectez le langage ubiquitaire** :
    - Les noms des événements et leur contenu doivent être compréhensibles par les experts métier.
 
 3. **Gestion des événements asynchrones** :
@@ -1311,7 +1319,9 @@ class OrderEventHandler:
 
 Principe utilisé dans les systèmes distribués où il est acceptable que les différentes parties du système ne soient pas immédiatement synchronisées, tant qu'elles finissent par atteindre un état cohérent après un certain délai. Cela contraste avec la cohérence forte, où toutes les parties du système doivent être synchronisées immédiatement.
 
+:::tip
 Dans le contexte du DDD, la cohérence éventuelle est particulièrement pertinente lorsque les différents _Bounded Context_ d'un système ont leurs propres modèles et bases de données. La cohérence éventuelle permet à ces contextes de communiquer via des événements, sans nécessiter une synchronisation immédiate.
+:::
 
 ### Caractéristiques principales :
 
@@ -1445,7 +1455,11 @@ class OrderProjectionUpdater:
 
 ## Saga
 
-Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats. Le pattern Saga est particulièrement utile dans les systèmes distribués et pour garantir la **cohérence éventuelle**, lorsque plusieurs services ou composants doivent participer à un processus métier sans pouvoir s'appuyer sur des transactions _ACID_ traditionnelles à l'échelle du système.
+Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats.
+
+:::tip
+Le pattern Saga est particulièrement utile dans les systèmes distribués et pour garantir la **cohérence éventuelle**, lorsque plusieurs services ou composants doivent participer à un processus métier sans pouvoir s'appuyer sur des transactions _ACID_ traditionnelles à l'échelle du système.
+:::
 
 ### Caractéristiques clés d'une **Saga** :
 

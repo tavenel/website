@@ -405,9 +405,9 @@ layout: section
         |     |
         |     +--- Bounded Context
         |
-        +--- Langage Ubiquitaie
+        +--- Langage Ubiquitaire
 
-= Domaine, Bounded context, langage ubiquitaire.
+= Domaine, Bounded Context & Langage Ubiquitaire.
 
 @endditaa
 ```
@@ -443,10 +443,10 @@ layout: quote
 
 - **Le langage est le modèle**
   - langage => modèle (puis => langage)
-- Pas de **duplication du modèle** 🚫
+- ~Pas de **duplication du modèle**~ 🚫
 - Privilégier plusieurs éléments **simples** pour faire des modèles plus complexes 🖇️
-- Pas de **technique** dans le modèle
-- Utiliser les termes **métiers** dans le code 🧑‍💼
+- ~Pas de **technique** dans le modèle~
+- Utiliser les termes du **métier** dans le code 🧑‍💼
 
 ---
 
@@ -495,7 +495,7 @@ layout: section
 # Brainstorming
 
 1. Trouver les **idées** 💡 (penser _objectifs_ 🎯 )
-2. **Regrouper **les idées 🖇️
+2. **Regrouper** les idées 🖇️
 3. Trouver les **déclencheurs** (_event triggers_) ▶️
 
 [Exemple de brainstorming][brainstorming-example]
@@ -620,6 +620,12 @@ layout: center
 
 ---
 
+# Patterns stratégiques
+
+- Comment définir et découper le domaine ?
+
+---
+
 # Distillation du Core Domain
 
 La **distillation du Core Domain** permet de se concentrer sur les éléments les plus importants du modèle du domaine.
@@ -730,7 +736,7 @@ f -- b
 
 ```mermaid
 flowchart TD
-    A["La solution peut-elle être achetée/intégrée?"] -->|Yes| B["Cela mettra-t-il en péril l’entreprise ?"]
+    A["La solution peut-elle être achetée/intégrée?"] -->|Oui| B["Cela mettra-t-il en péril l’entreprise ?"]
     A -->|Non| C["Complexité de la logique métier?"]
     B -->|Oui| D["Domaine Principal"]
     B -->|Non| E["Sous-domaine Générique"]
@@ -866,42 +872,47 @@ shared_schedule -[dotted]- search_schedule
 
 # Customer / Supplier (Client / Fournisseur)
 
-- Relation : un _Bounded Context_ **fournit un service** (ou des données) à un autre.
+- Relation : un _Bounded Context_ **expose un service** (ou des données) à un autre.
 - **Collaboration forte**
-- Aussi appelé : `Downstream` (Client) / `Upstream` (Supplier)
+- Aussi appelé : _Downstream_ (Client) / _Upstream_ (Supplier)
+- Le contexte _Upstream_ (_Supplier_) **publie** un modèle ou des données
+- Le contexte _Downstream_ (_Client_) **consomme** ces données pour répondre à ses propres besoins métier.
+- Relation asymétrique :
+  - Le fournisseur n'a **pas connaissance de ses clients**.
+  - Le **client s'adapte** aux évolutions de l'upstream en subissant ses choix (mais peut gérer son propre modèle).
+  - **Responsabilités séparées**
 
 ---
 
-# Exemple de Customer / Supplier
+## Exemple de Customer / Supplier
 
-- Processus de gestion des catalogues produits :
-  - _Client_ : définition des exigences et des règles commerciales
-  - _Fournisseur_ : mise en œuvre de l'infrastructure technique
+Un système de gestion d'inventaire (_downstream_) consomme les définitions de produits d'un système de catalogue produits (_upstream_), mais ne peut pas modifier ce modèle.
 
----
+- Contexte "**Gestion des Produits et des Clients**" (_Upstream_ / _Fournisseur_) :
+  - Responsable centralisé de la définition du modèle des produits, des clients et de leurs règles métier.
+  - Publie les événements de modification (ajout, mise à jour, suppression) des produits et expose une API publique (ou un flux d'événements)
+- Contexte "**Gestion de l'Inventaire**" (_Downstream_ / _Client_) :
+  - Dépend des données produit fournies par le contexte "Gestion des Produits".
+  - Consomme les événements ou les API exposées pour maintenir sa propre vue locale de l'inventaire des produits.
+  - Adapte son modèle interne en fonction du modèle publié en amont.
+- Contexte "**Réservation**" (_Downstream_ / _Client_) :
+  - S'appuie sur le modèle produit du contexte "Gestion des Produits".
+  - Consomme les mêmes interfaces publiques pour proposer des réservations cohérentes avec les produits disponibles.
+  - Peut enrichir localement le modèle sans influencer le fournisseur.
 
 ```plantuml
 @startuml
-title: relation Client/Fournisseur
+title: Exemple de relation Client/Fournisseur
 left to right direction
 
-package "Facturation (Supplier)" {
-  class "Client" as client1 {
-    +addresseDeFacturation
-    +récupérerDevis()
-  }
+rectangle "Gestion des Produits\n(et des Clients)" as Products
 
-}
+rectangle "Gestion de l’Inventaire" as Inventory
+rectangle "Réservation" as Reservation
 
-package "Marketing (Customer)" {
-  class "Client" as client2 {
-    +addresseDeContact
-    +listerProduitsRécents()
-  } 
+Products -down-> Inventory : Fournit\n(Modèle produit,\nÉvénements,\nAPI publique)
+Products -down-> Reservation : Fournit\n(Modèle produit,\nÉvénements,\nAPI publique)
 
-}
-
-client2 -- client1
 @enduml
 ```
 
@@ -909,12 +920,16 @@ client2 -- client1
 
 # Conformiste
 
-- Le client **adhère** au modèle (et conventions, règles, …) de l'équipe fournisseur
-- _C'est au client de s'adapter_
+- Relation subie ou acceptée : le client **adhère pleinement** au modèle (et conventions, règles, …) de l'équipe fournisseur
+- Pas de séparation stricte : le client reprend **tel quel** le modèle, les règles métier, voire les implémentations.
+
+:::warn
+Introduit un fort couplage et réduit la flexibilité du client.
+:::
 
 ---
 
-# Exemple de Conformiste
+## Exemple de Conformiste
 
 - Équipe chargée de gérer l'inventaire des produits dans un entrepôt.
   - même modèle que dans le contexte responsable de la gestion des commandes, des clients et des produits.
@@ -975,13 +990,19 @@ currency -[dotted]- currency2
 
 # Open Host Services (Services Hôtes)
 
-- Rend disponible des systèmes / services **communs** à différents _Bounded Context_
+- Rend disponible **explicitement** des systèmes / services **communs** à différents _Bounded Context_
   - _RESTful API_, …
 - Définit un **modèle commun d'intégration**
+- Encourage le **découplage** et la **stabilité contractuelle**.
+
+
+:::tip
+C'est un point d'entrée standardisé, conçu pour l'interopérabilité.
+:::
 
 ---
 
-# Exemple de pattern Open Host Service
+## Exemple de pattern Open Host Service
 
 - _Open Host Service_ de paiement à distance (possède sa propre logique)
 - À intégrer dans différents contextes de l'application
@@ -1036,7 +1057,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-# Exemple de pattern ACL
+## Exemple de pattern ACL
 
 - Système e-commerce s'intégrant à un ancien système de gestion des stocks (ancien modèle de données)
 - L'_ACL_ traduit les concepts, données et messages entre les 2 systèmes
@@ -1085,7 +1106,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-# Exemple de Chemins Séparés
+## Exemple de Chemins Séparés
 
 1. Application principale de e-commerce
 2. Système de gestion des stocks indépendant (propre domaine et logique métier)
@@ -1127,9 +1148,9 @@ layout: section
 
 ---
 
-# Context Map
+# Carte de contexte
 
-- **Carte de contexte** : formalise les relations entre les bounded context.
+- **Carte de contexte** : formalise les relations entre les _Bounded Context_.
 
 ---
 
@@ -1207,13 +1228,13 @@ layout: section
 
 # Team topologies
 
-- idée : refléter le découpage en composants dans le découpage des équipes
+- Idée : refléter le découpage en composants dans le découpage des équipes
 - **Team Topologies** : pattern d'organisation complémentaire au DDD
   - inverse de la loi de Conway (adapter l'organisation aux modules et pas l'inverse)
 
 ---
 
-# Dépendance mutuelle
+## Dépendance mutuelle
 
 - Dépendance mutuelle (Shared Kernel)
 - Relation **succès/échec partagée**
@@ -1222,7 +1243,7 @@ layout: section
 
 ---
 
-# Dépendance Upstream / Downstream 
+## Dépendance Upstream / Downstream 
 
 - **Upstream impacte le succès Downstream**
 - Downstream n'impacte pas le succès Upstream
@@ -1273,7 +1294,7 @@ left side
 
 ---
 
-# Objectifs
+## Objectifs
 
 - Limiter la complexité du système à la charge cognitive de l'équipe
 - Collaboration a minima (complexe)
