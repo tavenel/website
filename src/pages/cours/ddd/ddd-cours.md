@@ -812,7 +812,7 @@ layout: section
 
 ---
 
-# Shared Kernel (Noyau partagé)
+## Shared Kernel (Noyau partagé)
 
 - Relation entre 2+ _Bounded Context_ qui partagent du code, des données, …
 - Création d'un **contexte partagé** (en dépendance) :
@@ -821,7 +821,7 @@ layout: section
 
 ---
 
-# Exemple de noyau partagé
+### Exemple de noyau partagé
 
 - Plateforme de commerce électronique :
   - une boutique en ligne
@@ -870,21 +870,44 @@ shared_schedule -[dotted]- search_schedule
 
 ---
 
-# Customer / Supplier (Client / Fournisseur)
+## Partnership
+
+- Deux équipes co-conçoivent un processus critique (ex. : paiement + facturation)
+- **Coopération étroite** avec **responsabilité partagée**.
+- Direction **Bilatérale**
+- **Couplage élevé**
+- **Coordination forte** : les équipes travaillent ensemble, co-décident des événements partagés, synchronisent leurs livraisons.
+
+---
+
+### Exemple de Partnership
+
+- Contexte métier : Billetterie en ligne
+- Deux Bounded Context : _Réservations_ et _Paiement_ qui doivent travailler ensemble de façon étroite car :
+  - La réservation d'une place dépend directement de la validation du paiement.
+  - Pas de réservation si le paiement échoue, pas de paiement si l'événement est complet.
+- Les deux équipes doivent **décider ensemble** :
+  - Des **événements métier** à émettre (ex. : `PaiementAutorisé`, `RéservationConfirmée`).
+  - Des **modèles** de données minimaux à **partager**.
+  - Du protocole de **communication** (saga, orchestration, messages, etc.).
+- Les **évolutions** sont **coordonnées** (release synchronisées, backlog partagé, etc.).
+
+---
+
+## Customer / Supplier (Client / Fournisseur)
 
 - Relation : un _Bounded Context_ **expose un service** (ou des données) à un autre.
-- **Collaboration forte**
 - Aussi appelé : _Downstream_ (Client) / _Upstream_ (Supplier)
 - Le contexte _Upstream_ (_Supplier_) **publie** un modèle ou des données
 - Le contexte _Downstream_ (_Client_) **consomme** ces données pour répondre à ses propres besoins métier.
 - Relation asymétrique :
-  - Le fournisseur n'a **pas connaissance de ses clients**.
+  - Le fournisseur n'a **pas connaissance de ses clients** (forte autonomie).
   - Le **client s'adapte** aux évolutions de l'upstream en subissant ses choix (mais peut gérer son propre modèle).
-  - **Responsabilités séparées**
+  - **Couplage faible à moyen**
 
 ---
 
-## Exemple de Customer / Supplier
+### Exemple de Customer / Supplier
 
 Un système de gestion d'inventaire (_downstream_) consomme les définitions de produits d'un système de catalogue produits (_upstream_), mais ne peut pas modifier ce modèle.
 
@@ -918,18 +941,18 @@ Products -down-> Reservation : Fournit\n(Modèle produit,\nÉvénements,\nAPI pu
 
 ---
 
-# Conformiste
+## Conformiste
 
 - Relation subie ou acceptée : le client **adhère pleinement** au modèle (et conventions, règles, …) de l'équipe fournisseur
 - Pas de séparation stricte : le client reprend **tel quel** le modèle, les règles métier, voire les implémentations.
 
 :::warn
-Introduit un fort couplage et réduit la flexibilité du client.
+Introduit un **fort couplage** et réduit la flexibilité du client.
 :::
 
 ---
 
-## Exemple de Conformiste
+### Exemple de Conformiste
 
 - Équipe chargée de gérer l'inventaire des produits dans un entrepôt.
   - même modèle que dans le contexte responsable de la gestion des commandes, des clients et des produits.
@@ -988,7 +1011,7 @@ currency -[dotted]- currency2
 
 ---
 
-# Open Host Services (Services Hôtes)
+## Open Host Services (Services Hôtes)
 
 - Rend disponible **explicitement** des systèmes / services **communs** à différents _Bounded Context_
   - _RESTful API_, …
@@ -1002,7 +1025,7 @@ C'est un point d'entrée standardisé, conçu pour l'interopérabilité.
 
 ---
 
-## Exemple de pattern Open Host Service
+### Exemple de pattern Open Host Service
 
 - _Open Host Service_ de paiement à distance (possède sa propre logique)
 - À intégrer dans différents contextes de l'application
@@ -1042,22 +1065,23 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-# Published Language (Langage publié)
+## Published Language (Langage publié)
 
-- Version formelle des service hôtes : **publication technique du modèle commun**
+- Version formelle des service hôtes : **publication du modèle (et donc langage) commun**
   - `JSON`, `XML`, …
 
 ---
 
-# Couche Anticorruption (ACL)
+## Couche Anticorruption (ACL)
 
 - **Protège** un _Bounded Context_ des complexités et incohérences d'un autre modèle
 - **Traducteur** et **validateur** entre deux modèles
 - **Inverse** de l'_Open Host_
+- Souvent utilisé dans un _Customer/Supplier_
 
 ---
 
-## Exemple de pattern ACL
+### Exemple de pattern ACL
 
 - Système e-commerce s'intégrant à un ancien système de gestion des stocks (ancien modèle de données)
 - L'_ACL_ traduit les concepts, données et messages entre les 2 systèmes
@@ -1098,7 +1122,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-# Separate Ways (Chemins Séparés)
+## Separate Ways (Chemins Séparés)
 
 - Contextes très **indépendants** les uns des autres (_y compris technologiquement_)
 - Évoluent **séparément**
@@ -1106,7 +1130,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-## Exemple de Chemins Séparés
+### Exemple de Chemins Séparés
 
 1. Application principale de e-commerce
 2. Système de gestion des stocks indépendant (propre domaine et logique métier)
@@ -1141,6 +1165,36 @@ client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
 ```
 
 ---
+
+## 📊 Tableau comparatif
+
+| Pattern                         | Type de relation        | Couplage            | Autonomie du client | Collaboration entre équipes | Cas typique                                                 |
+| ------------------------------- | ----------------------- | ------------------- | ------------------- | --------------------------- | ----------------------------------------------------------- |
+| **Conformiste**                 | Dépendance passive      | Fort            | Nulle               | Faible / subie              | L’équipe cliente reprend tel quel le modèle de l’upstream   |
+| **Upstream / Downstream**       | Dépendance déclarée     | Variable            | Moyenne à forte     | Faible ou indirecte         | Un fournisseur expose des données, un client les consomme   |
+| **Partnership**                 | Coopération symétrique  | Contrôlé            | Partagée            | Forte                   | Deux domaines fortement liés conçus ensemble                |
+| **Open Host**                   | Interface d’intégration | Faible              | Variable            | Faible                      | API ou événements publics accessibles à tout autre contexte |
+| **Published Language**          | Langage partagé         | Moyen               | Moyenne             | Moyenne                     | JSON schema, GraphQL, ou Avro communs à plusieurs équipes   |
+| **Anti-Corruption Layer (ACL)** | Barrière d'adaptation   | Faible (localement) | Forte           | Faible / unilatérale        | Adapter un modèle externe sans l’importer tel quel          |
+| **Separate Ways**               | Aucune relation         | Aucun           | Totale          | Nulle                   | Les domaines évoluent totalement indépendamment             |
+
+
+---
+
+## 📌 Résumé mnémotechnique
+
+| Besoin                                | Pattern recommandé        |
+| ------------------------------------- | ------------------------- |
+| Reprendre un modèle existant tel quel | **Conformiste**           |
+| Coopérer à égalité                    | **Partnership**           |
+| Protéger mon modèle                   | **ACL**                   |
+| Exposer un contrat public             | **Open Host**             |
+| Partager un langage stable            | **Published Language**    |
+| Ne pas collaborer                     | **Separate Ways**         |
+| Définir une relation asymétrique      | **Upstream / Downstream** |
+
+
+---
 layout: section
 ---
 
@@ -1148,13 +1202,13 @@ layout: section
 
 ---
 
-# Carte de contexte
+## Carte de contexte
 
 - **Carte de contexte** : formalise les relations entre les _Bounded Context_.
 
 ---
 
-# Exemple de context map
+## Exemple de context map
 
 ```plantuml
 @startuml
@@ -1256,8 +1310,11 @@ layout: section
 @startmindmap
 * Context Map
 
-  **_ Superposition de contextes coopérant
+  **_ Superposition de contextes
     *** Shared Kernel
+
+  **_ Contextes coopérant fortement
+    *** Partnership
 
   **_ Crée un lien de coopération
     *** Customer/Supplier Teams
