@@ -32,8 +32,8 @@ _Le formateur jouera le rôle du client à l'origine du projet, formé aux prati
 
 Ce projet comportera 4 rendus notés :
 
-1. L'event storming et le langage ubiquitaire du projet (à rendre à la fin du projet)
-2. La carte de contexte (à rendre après la 1e séance du projet)
+1. L'event storming et le langage ubiquitaire du projet (à rendre le 1e jour)
+2. La carte de contexte (à rendre le 2e jour)
 3. La description des cas d'utilisation, au choix :
   - Diagramme UML de cas d'utilisation
   - Description des fonctionnalités en Gherkin (BDD)
