@@ -67,6 +67,7 @@ Quelques références utiles en informatique.
 - Impact des IA génératives sur les étudiants : <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
 - [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
 - [UX : Comment les entreprises de la tech nous forcent à utiliser l'IA](https://limitesnumeriques.fr/travaux-productions/ai-forcing)
+- <https://blog.wescale.fr/back-to-basics-pere-castor-raconte-moi-le-prompt-engineering>
 
 ## Citations
 
