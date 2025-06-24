@@ -163,6 +163,8 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - Exemples d'attaques par Pods non sécurisés : <https://github.com/BishopFox/badPods> et [tutoriel](https://bishopfox.com/blog/kubernetes-pod-privilege-escalation)
 - [Doc officielle: sécurité](https://kubernetes.io/docs/concepts/security/) notamment [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [Sécuriser le noyau Linux hôte](https://kubernetes.io/docs/concepts/security/linux-kernel-security-constraints/)
 - [Threat Matrix for Kubernetes (Microsoft)](https://www.microsoft.com/en-us/security/blog/2020/04/02/attack-matrix-kubernetes/)
+- <https://www.parseable.com/blog/track-privilege-escalations-with-ebpf>
+- [SPIFFE et mTLS avec cert-manager](https://une-tasse-de.cafe/blog/spiffe/)
 
 ## Test et debug
 
@@ -199,7 +201,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 ## Autres
 
-- <https://roadmap.sh/kubernetes>
+- Roadmap k8s <https://roadmap.sh/kubernetes> et roadmap orientée cybersécurité : <https://kubesec-diagram.github.io/>
 - Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources>
 - [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/)
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc)
@@ -214,6 +216,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.
 - [A journey of writing my own Kubernetes](https://medium.com/@jonatan5524/a-journey-of-writing-my-own-kubernetes-ef45839a769d)
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4)
+- [Article: "Pourquoi le DNS de Kubernetes est claqué au sol (notamment avec kube-proxy en iptables)"](https://mcorbin.fr/posts/2025-06-24-dns-k8s-sol/)
 
 ---
 
