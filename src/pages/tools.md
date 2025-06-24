@@ -546,6 +546,14 @@ created: 2024-10-17
   - <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
 	- <https://k8slens.dev/> : IDE dédié à Kubernetes
   - <https://github.com/philippemerle/KubeDiagrams> : génération de diagrammes d'infra d'un cluster
+  - Plugins `kubectl` :
+    - upgrade : <https://github.com/kubepug/kubepug>
+    - sécurité :
+      - `kubectl who-can` / [kubectl-who-can](https://github.com/aquasecurity/kubectl-who-can) by Aqua Security
+      - `kubectl access-matrix` / [Rakkess (Review Access)](https://github.com/corneliusweig/rakkess) by Cornelius Weig
+      - `kubectl rbac-lookup` / [RBAC Lookup](https://github.com/FairwindsOps/rbac-lookup) by FairwindsOps
+      - `kubectl rbac-tool` / [RBAC Tool](https://github.com/alcideio/rbac-tool) by insightCloudSec
+
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
