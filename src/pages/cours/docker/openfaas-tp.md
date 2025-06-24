@@ -1121,3 +1121,8 @@ curl --data-binary @/chemin/vers/mon/image.jpg http://127.0.0.1:8080/function/up
 ```
 :::
 
+## Liens
+
+:::link
+- Voir aussi, un podcast sur sur le serverless : _Beyond Kubernetes: Serverless Execution Models for Variable Workloads_ : <https://kube.fm/kubernetes-vs-lambda-marc>
+:::
