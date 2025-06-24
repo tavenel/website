@@ -1,0 +1,29 @@
+---
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Context } from '@courses/k8s/projet-appli/context-app-new.md';
+import { Content as Main } from '@courses/k8s/projet-appli/main.md';
+import { Content as CICD } from '@courses/k8s/projet-appli/cicd.md';
+import { Content as Flagger } from '@courses/k8s/projet-appli/flagger.md';
+import { Content as Kyverno } from '@courses/k8s/projet-appli/kyverno.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "🏆 Projet déploiement applicatif dans Kubernetes",
+  tags: [
+    "devops",
+		"docker",
+		"kubernetes"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Context />  </Chapter>
+	<Chapter> <Main />  </Chapter>
+	<Chapter> <CICD />  </Chapter>
+	<Chapter> <Flagger />  </Chapter>
+	<Chapter> <Kyverno />  </Chapter>
+</Layout>
+
