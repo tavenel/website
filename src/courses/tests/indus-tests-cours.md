@@ -245,4 +245,5 @@ Des références pour automatiser les tests dans différents langages :
 - [Outil d'automatisation de tests d'acceptance FitNesse et intégratoin avec Junit](http://fitnesse.org/FitNesse.UserGuide.WritingAcceptanceTests.RunningFromJunit)
 - [Tutoriel sur les tests en Java](https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite)
 - [Vidéo tests sur Android](https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite)
+- <https://laravel-france.com/posts/phpunit-conseils-astuces-qui-nous-ont-vraiment-aid%C3%A9s>
 
