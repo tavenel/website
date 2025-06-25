@@ -1690,6 +1690,7 @@ layout: two-cols
 - [De CRUD à DDD - Comment Meetic a sauvé son legacy (slides)](https://speakerdeck.com/jmlamodiere/de-crud-a-ddd-comment-meetic-a-sauve-son-legacy)
 - [Architecture explicite][archi-explicite]
 - [Application de poésie](https://github.com/tpierrain/hexagonalThis)
+- [Exemple complet en DDD, de l'Event Storming à l'implémentation](https://github.com/ddd-by-examples/library/)
 - [Exemple d'application en DDD (Eric Evans)](https://github.com/citerus/dddsample-core)
 - [Un autre exemple de DDD](https://github.com/mattia-battiston/clean-architecture-example)
 - [Exemple d'application Django en DDD](https://github.com/johnnncodes/ddd-python-django)

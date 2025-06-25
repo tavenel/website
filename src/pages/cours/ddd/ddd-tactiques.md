@@ -8,10 +8,22 @@ tags:
 
 # Patterns tactiques de base
 
-## Entity
+## 🎯 Entity
 
 Une entité représente un **objet métier** dans le **domaine** qui possède une **identité unique** et qui évolue au fil du temps. Il a un ID et est mutable.
 
+```plantuml
+@startuml
+title Pattern DDD - Entity
+
+class Customer {
+  +customerId: UUID
+  +name: String
+  +email: String
+  +changeEmail(newEmail: String): void
+}
+@enduml
+```
 
 ### Caractéristiques principales d'une **Entity**
 
@@ -95,9 +107,22 @@ class BankAccount:
 
 ---
 
-## Value Object
+## 🧩 Value Object
 
 Contrairement aux **entités**, les `Value Objects` n'ont pas d'**identité unique**. Ils sont définis uniquement par leurs **valeurs** et sont souvent **immuables**.
+
+```plantuml
+@startuml
+title Pattern DDD - Value Object
+
+class Money {
+  +amount: float
+  +currency: String
+  +add(other: Money): Money
+  +equals(other: Money): Boolean
+}
+@enduml
+```
 
 ### Caractéristiques principales d'un **Value Object**
 
@@ -184,9 +209,30 @@ class Address:
 
 ---
 
-## Aggregate
+## 📦 Aggregate
 
 Regroupe des `Entity` et des `Value Objects` qui forment une unité cohérente pour la logique métier et la cohérence des données. 
+
+```plantuml
+@startuml
+title Pattern DDD - Aggregate
+
+class Order {
+  +orderId: UUID
+  +items: List<OrderItem>
+  +addItem(productId: UUID, quantity: int, price: Money): void
+  +calculateTotal(): Money
+}
+
+class OrderItem {
+  +productId: UUID
+  +quantity: int
+  +price: Money
+}
+
+Order *-- "1..*" OrderItem
+@enduml
+```
 
 ### Caractéristiques principales d'un **Aggregate**
 
@@ -323,9 +369,24 @@ class Transaction:
 
 ---
 
-## Repository
+## 🗃️ Repository
 
 Pattern utilisé pour gérer la persistance des `Aggregate` et des `Entity` (par exemple dans une base de données). Il agit comme une interface entre le domaine métier et la couche de persistance, permettant au code métier d'interagir avec les objets du domaine sans se soucier des détails de leur stockage.
+
+```plantuml
+@startuml
+title Pattern DDD - Repository
+
+interface OrderRepository {
+  +save(order: Order): void
+  +getById(orderId: UUID): Order
+  +delete(orderId: UUID): void
+}
+
+class InMemoryOrderRepository
+OrderRepository <|.. InMemoryOrderRepository
+@enduml
+```
 
 ### Exemple d'utilisation d'un **Repository**
 
@@ -425,9 +486,39 @@ Dans une architecture **CQRS (Command Query Responsibility Segregation)**, les *
 
 ---
 
-## Module
+## 🧩 Module
 
 En DDD, un **module** fait référence à une structure qui est un regroupement logique de fonctionnalités qui partagent une même responsabilité métier.
+
+```
+└── library
+    ├── catalogue
+    ├── commons
+    │   ├── aggregates
+    │   ├── commands
+    │   └── events
+    │       └── publisher
+    └── lending
+        ├── book
+        │   ├── application
+        │   ├── infrastructure
+        │   └── model
+        ├── dailysheet
+        │   ├── infrastructure
+        │   └── model
+        ├── librarybranch
+        │   └── model
+        ├── patron
+        │   ├── application
+        │   ├── infrastructure
+        │   └── model
+        └── patronprofile
+            ├── infrastructure
+            ├── model
+            └── web
+```
+
+<div class="caption">Un projet de librairie avec 2 contextes "catalogue" et "lending" et un _shared kernel_.</div>
 
 ### Types de **Modules** en DDD
 
@@ -492,9 +583,27 @@ Dans cette structure :
 
 ---
 
-## Factory
+## 🏭 Factory
 
 Design pattern permettant de créer des objets complexes, généralement des entités ou des agrégats. Elle permet de centraliser et d'encapsuler la logique de création d'objets, afin que celle-ci ne soit pas dispersée dans tout le code. Cela simplifie la gestion de la création des objets et garantit que des règles métier et des invariants sont respectés lors de leur instantiation.
+
+```plantuml
+@startuml
+title Pattern DDD - Factory
+
+class OrderFactory {
+  +create(customerId: UUID): Order
+}
+
+class Order {
+  +orderId: UUID
+  +customerId: UUID
+  +status: String
+}
+
+OrderFactory --> Order
+@enduml
+```
 
 ### Avantages d'une **Factory** :
 
@@ -586,9 +695,25 @@ Dans cet exemple :
 
 ---
 
-## Domain Service
+## ⚙️ Domain Service
 
 Objet sans état qui encapsule une logique compliquée du domaine.
+
+```plantuml
+@startuml
+title Pattern DDD - Domain Service
+
+class PricingService {
+  +calculate(order: Order): Money
+}
+
+class Order
+class Money
+
+PricingService --> Order
+PricingService --> Money
+@enduml
+```
 
 ### Caractéristiques d'un Domain Service
 
@@ -647,9 +772,31 @@ class PricingService:
 
 ---
 
-## Application Service
+## 🧭 Application Service
 
 **Orchestrateur** entre le monde extérieur (interface utilisateur, API, etc.) et le domaine métier. Il est responsable de coordonner les opérations, de valider les entrées, et d'exécuter les commandes tout en laissant la logique métier au domaine.
+
+```plantuml
+@startuml
+title Pattern DDD - Application Service
+
+class OrderApplicationService {
+  +placeOrder(cmd: PlaceOrderCommand): UUID
+}
+
+class PlaceOrderCommand {
+  +customerId: UUID
+  +items: List<ItemData>
+}
+
+class OrderRepository
+class Order
+
+OrderApplicationService --> OrderRepository
+OrderApplicationService --> Order
+OrderApplicationService --> PlaceOrderCommand
+@enduml
+```
 
 ### Rôles d'un Application Service
 
@@ -749,13 +896,30 @@ print(f"Order created with ID: {order_id}")
 
 # Patterns tactiques avancés
 
-## Dependency Injection
+## 🔌 Dependency Injection
 
 La **Dependency Injection (DI)** (ou injection de dépendances) est un modèle de conception qui permet d'injecter les dépendances nécessaires à un objet depuis l'extérieur, plutôt que de laisser l'objet créer ou rechercher lui-même ses dépendances. Cela favorise la modularité, la testabilité et la séparation des préoccupations.
 
 :::tip
 L'injection de dépendance permet d'utiliser massivement des design patterns de _Delegation_ : c'est l'une des techniques les plus utiles pour séparer le code métier des dépendances externes (souvent techniques), par exemple en _Clean Architecture_ et en _Architecture Hexagonale_ mais pas uniquement. **À utiliser massivement !**
 :::
+
+```plantuml
+@startuml
+title Pattern - Dependency Injection
+
+class Service {
+  -repository: OrderRepository
+  +Service(repo: OrderRepository)
+}
+
+interface OrderRepository
+class OrderRepositoryImpl
+
+OrderRepository <|.. OrderRepositoryImpl
+Service --> OrderRepository : injected
+@enduml
+```
 
 ### Principes de base :
 
@@ -885,9 +1049,29 @@ service = container.service()
 print(service.process())
 ```
 
-## Split Entities (séparation d'entités)
+## 🧍‍♂️🔀 Split Entities (ou Entitées Séparées par Bounded Context)
 
 Concept : **diviser une `Entity` en plusieurs entités distinctes dans différents contextes limités (_Bounded Contexts_)**, afin de mieux répondre aux exigences spécifiques de chaque contexte.
+
+```plantuml
+@startuml
+title Pattern - Split Entity (User dans 2 Contextes)
+
+package "Context: Auth" {
+  class User {
+    +login: String
+    +passwordHash: String
+  }
+}
+
+package "Context: CRM" {
+  class User {
+    +name: String
+    +email: String
+  }
+}
+@enduml
+```
 
 ### Pourquoi utiliser Split Entities ?
 
@@ -910,9 +1094,25 @@ Si les besoins des différents contextes se chevauchent significativement, il n'
 
 ---
 
-## Policy
+## ⚖️ Policy (Décision métier encapsulée)
 
 Règle métier qui décrit un **comportement** ou une **contrainte métier** applicable à un contexte spécifique (_Bounded Context_). Elle est **déclarative** : elle exprime *quoi* faire plutôt que *comment* le faire.
+
+```plantuml
+@startuml
+title Pattern - Policy
+
+interface CancellationPolicy {
+  +canCancel(order: Order): Boolean
+}
+
+class FreeCancellationPolicy
+class NoCancellationPolicy
+
+CancellationPolicy <|.. FreeCancellationPolicy
+CancellationPolicy <|.. NoCancellationPolicy
+@enduml
+```
 
 ### Où place-t-on une policy ?
 
@@ -943,9 +1143,22 @@ Ici, `ReservationPolicy` encapsule une règle métier et peut être utilisée pa
 
 ---
 
-## Invariant
+## 🔐 Invariant (métier protégé dans l'aggrégat)
 
 Un **invariant** fait référence à une **règle métier** ou une **contrainte** qui doit toujours être vraie pour garantir la cohérence et l'intégrité du modèle de domaine, indépendamment des actions effectuées dans le système. Ces règles sont cruciales pour maintenir l'intégrité du domaine tout au long du cycle de vie des entités et agrégats.
+
+```plantuml
+@startuml
+title Pattern - Invariant
+
+class BankAccount {
+  -balance: float
+  +withdraw(amount: float)
+}
+
+note right of BankAccount : Ne pas autoriser un retrait\nsi balance < montant
+@enduml
+```
 
 ### Caractéristiques d'un **Invariant**
 
@@ -1041,9 +1254,25 @@ Dans cet exemple, la méthode `validate_invariant` vérifie que le montant total
 
 ---
 
-## Specification Pattern
+##  📜 Specification Pattern
 
 Modèle de conception utilisé pour encapsuler des règles ou des critères métier dans un objet réutilisable, combinable et testable. Ce modèle permet de définir des spécifications sous forme d'objets, qui peuvent être utilisés pour valider, filtrer ou décider si un objet ou une entité satisfait à un ensemble de conditions. 
+
+```plantuml
+@startuml
+title Pattern - Specification
+
+interface Specification<T> {
+  +isSatisfiedBy(candidate: T): Boolean
+}
+
+class ActiveCustomerSpecification
+class Customer
+
+Specification <|.. ActiveCustomerSpecification
+ActiveCustomerSpecification --> Customer
+@enduml
+```
 
 ### Caractéristiques principales du **Specification Pattern** :
 
@@ -1157,13 +1386,34 @@ Avec le **Specification Pattern**, cela pourrait être implémenté comme suit :
 
 ---
 
-## CQRS : Command Query Responsibility Segregation
+## 🔁 CQRS : Command Query Responsibility Segregation
 
 Modèle architectural utilisé pour séparer les responsabilités de lecture (`Query`) et d'écriture (`Command`) dans un système.
 
 :::tip
 Cette séparation améliore la flexibilité, la scalabilité et parfois la simplicité des systèmes complexes, notamment ceux avec de fortes contraintes métier.
 :::
+
+```plantuml
+@startuml
+title Pattern - CQRS
+
+package "Command Side" {
+  class OrderCommandHandler {
+    +handlePlaceOrder(cmd: PlaceOrder)
+  }
+}
+
+package "Query Side" {
+  class OrderQueryService {
+    +getOrdersByCustomer(id: UUID): List<OrderDTO>
+  }
+}
+
+OrderCommandHandler --> PlaceOrder
+OrderQueryService --> OrderDTO
+@enduml
+```
 
 ### Principe du CQRS
 
@@ -1249,13 +1499,28 @@ class OrderQueryService:
 
 ---
 
-## Domain Event
+## 📣 Domain Event
 
 Représente un événement **immuable** et **significatif** qui s'est produit dans le domaine métier, et il est généralement utilisé pour signaler qu'un changement d'état ou une action importante a eu lieu.
 
 Les `Domain Events` sont généralement générés par des `Entity`, des `Aggregate` ou des `Domain Service` en réponse à des actions ou à des commandes.
 
 Les Domain Events sont idéaux pour les architectures orientées événements (_Event-Driven Architecture_).
+
+```plantuml
+@startuml
+title Pattern - Domain Event
+
+class Order {
+  +place(): void
+  -raiseEvent(event: DomainEvent)
+}
+
+class OrderPlacedEvent
+
+Order ..> OrderPlacedEvent : déclenche
+@enduml
+```
 
 ### Exemple de Domain Event
 
@@ -1315,13 +1580,27 @@ class OrderEventHandler:
 
 ---
 
-## Cohérence Éventuelle (Eventual Consistency)
+## 🕰️ Cohérence Éventuelle (Eventual Consistency)
 
 Principe utilisé dans les systèmes distribués où il est acceptable que les différentes parties du système ne soient pas immédiatement synchronisées, tant qu'elles finissent par atteindre un état cohérent après un certain délai. Cela contraste avec la cohérence forte, où toutes les parties du système doivent être synchronisées immédiatement.
 
 :::tip
 Dans le contexte du DDD, la cohérence éventuelle est particulièrement pertinente lorsque les différents _Bounded Context_ d'un système ont leurs propres modèles et bases de données. La cohérence éventuelle permet à ces contextes de communiquer via des événements, sans nécessiter une synchronisation immédiate.
 :::
+
+```plantuml
+@startuml
+title Pattern - Eventual Consistency
+
+class InventoryService
+class BillingService
+
+InventoryService --> DomainEvent : ItemReserved
+BillingService ..> DomainEvent : écoute
+
+note bottom of BillingService : Réagit plus tard\nModèle mis à jour\naprès réception de l'événement
+@enduml
+```
 
 ### Caractéristiques principales :
 
@@ -1351,9 +1630,26 @@ Pendant un court moment, l'état de la commande et l'état du stock peuvent ne p
 
 ---
 
-## Event Sourcing
+## 🧾 Event Sourcing
 
 Modèle architectural où l'état d'une application ou d'un domaine n'est pas stocké directement, mais reconstruit à partir d'une série d'événements immuables. Ces événements représentent chaque changement survenu dans le système.
+
+```plantuml
+@startuml
+title Pattern - Event Sourcing
+
+class Order {
+  +apply(event: DomainEvent)
+  +loadFrom(events: List<DomainEvent>)
+}
+
+class OrderPlacedEvent
+class ItemAddedEvent
+class OrderConfirmedEvent
+
+Order ..> DomainEvent : reconstruit depuis événements
+@enduml
+```
 
 ### Principe de l'Event Sourcing
 
@@ -1453,13 +1749,30 @@ class OrderProjectionUpdater:
 
 ---
 
-## Saga
+## 🧩 Saga
 
 Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats.
 
 :::tip
 Le pattern Saga est particulièrement utile dans les systèmes distribués et pour garantir la **cohérence éventuelle**, lorsque plusieurs services ou composants doivent participer à un processus métier sans pouvoir s'appuyer sur des transactions _ACID_ traditionnelles à l'échelle du système.
 :::
+
+```plantuml
+@startuml
+title Pattern - Saga
+
+class OrderService
+class PaymentService
+class ShippingService
+class SagaManager
+
+OrderService --> SagaManager : placeOrder()
+SagaManager --> PaymentService : initiatePayment()
+SagaManager --> ShippingService : prepareShipping()
+
+note right of SagaManager : Coordonne une série d'étapes distribuées
+@enduml
+```
 
 ### Caractéristiques clés d'une **Saga** :
 
@@ -1544,9 +1857,37 @@ Le pattern Saga est particulièrement utile dans les systèmes distribués et po
 
 ---
 
-## Process Manager
+## 🔄 Process Manager
 
 Modèle de conception utilisé pour coordonner des processus métier complexes qui impliquent plusieurs services ou agrégats. Il agit comme un orchestrateur central qui gère le déroulement d'un workflow en envoyant des commandes et en réagissant aux événements.
+
+```plantuml
+@startuml
+title Pattern - Process Manager
+
+class OrderFulfillmentProcessManager {
+  +handleOrderPlaced(event: OrderPlacedEvent): void
+  +handlePaymentConfirmed(event: PaymentConfirmedEvent): void
+  +handleShippingStarted(event: ShippingStartedEvent): void
+  -state: ProcessState
+}
+
+class OrderPlacedEvent
+class PaymentConfirmedEvent
+class ShippingStartedEvent
+
+OrderFulfillmentProcessManager --> OrderPlacedEvent
+OrderFulfillmentProcessManager --> PaymentConfirmedEvent
+OrderFulfillmentProcessManager --> ShippingStartedEvent
+
+enum ProcessState {
+  AWAITING_PAYMENT
+  PAYMENT_CONFIRMED
+  SHIPPING_IN_PROGRESS
+  COMPLETED
+}
+@enduml
+```
 
 ### Caractéristiques principales du **Process Manager** :
 
@@ -1644,4 +1985,30 @@ Bien que les deux soient utilisés pour coordonner des workflows ou des transact
   - Décentralisée (sauf dans le cas d'une Saga orchestrée).  
   - Chaque participant gère son propre état et sait comment réagir.  
   - Coordination souvent basée sur des événements.
+
+---
+
+## 🤓 Récapitulatif
+
+| Pattern              | Rôle principal                                               | Caractéristiques clés                               | Exemple typique                      |
+|----------------------|--------------------------------------------------------------|-----------------------------------------------------|--------------------------------------|
+| **Entity**           | Représente un concept métier avec **identité**              | Mutable, ID unique, encapsule données + comportements | `Order`, `Customer`, `BankAccount`   |
+| **Value Object**     | Représente une **valeur métier sans identité**              | Immuable, égalité par valeur, règles de validation   | `Money`, `Address`, `DateRange`      |
+| **Aggregate**        | Groupe cohérent d'`Entity`/`VO` avec **règles métier fortes**| Racine unique, cohérence transactionnelle           | `Order` contenant `OrderItem`        |
+| **Repository**       | Interface pour accéder aux **agrégats**                     | Abstraction de la persistance, basé sur l'ID         | `OrderRepository`                    |
+| **Factory**          | Centralise la **création d’objets complexes**               | Crée des entités/agrégats valides dès l'instanciation| `OrderFactory.create(customer, ...)` |
+| **Domain Service**   | Contient la **logique métier transversale**                 | Stateless, agit sur plusieurs entités                | `PricingService`, `TaxCalculator`    |
+| **Application Service** | Orchestration métier **hors du domaine**                 | Coordonne services, agrégats, repos. Pas de logique métier | `PlaceOrderService`, `CreateUser`    |
+| **Policy**           | Encapsule une **règle métier conditionnelle**               | Pluggable, interchangeable, injecté, testable              | `CancellationPolicy`, `DiscountPolicy` |
+| **Specification**    | Vérifie si un objet respecte un **critère métier**          | Composable (`AND`/`OR`), testable, réutilisable         | `IsActiveCustomerSpecification`      |
+| **Invariant**        | Règle métier **qui ne doit jamais être violée**             | Implémenté / Encapsulé  dans l'agrégat              | `balance >= 0` dans `BankAccount`    |
+| **Dependency Injection**   | Délègue l'**initialisation des dépendances**                   | Favorise inversion de dépendance, testabilité                    | `Service(repo: Repository)`            |
+| **Split Entity**           | Représente une **même entité** métier dans **plusieurs contextes** | Définitions locales aux Bounded Context                          | `User` dans `Auth` vs `CRM`            |
+| **CQRS**                   | **Sépare lecture / écriture**                                  | Modèles et responsabilités distincts                            | `OrderCommandHandler` / `OrderQueryService` |
+| **Domain Event**           | Représente un **fait métier significatif**                 | Émis par un agrégat, asynchrone, propagable                      | `OrderPlacedEvent`, `UserRegistered`   |
+| **Eventual Consistency**   | Permet la **désynchronisation temporaire** des vues            | Système distribué, écoutes d'événements, résilience              | Mise à jour de stock via événement     |
+| **Event Sourcing**         | L'état est **reconstruit** à partir des événements passés      | Chaque modification est un événement      | `Order.apply(Event)`                   |
+| **Saga**                   | **Coordonne** des opérations distribuées                       | Multi-étapes, orchestrée ou chorégraphiée, peut gérer les erreurs| Paiement → Livraison → Notification    |
+| **Process Manager**        | **Pilote** un processus métier avec mémoire d'état             | Réagit à plusieurs événements, garde un état intermédiaire       | `OrderFulfillmentProcessManager`       |
+
 
