@@ -462,20 +462,14 @@ layout: center
 
 ---
 
-# Objectifs 🎯
+## Objectifs 🎯
 
 1. Clarifier le **besoin métier** entre les différents experts du domaine
 2. **Simplifier** les définitions
 
 ---
-layout: section
----
 
-# Event storming
-
----
-
-# L'atelier d'Event Storming
+## L'atelier d'Event Storming
 
 - Réunit les parties prenantes 👥
   - **inclus les développeurs** 🧑‍💻
@@ -492,7 +486,7 @@ layout: section
 
 ---
 
-# Brainstorming
+## Brainstorming
 
 1. Trouver les **idées** 💡 (penser _objectifs_ 🎯 )
 2. **Regrouper** les idées 🖇️
@@ -502,7 +496,7 @@ layout: section
 
 ---
 
-# Formalisation
+## Formalisation
 
 1. Identifier les **acteurs** 🙋 et les **prioriser** 🔢
 2. Identifier les **cas d'utilisation** 🤹
@@ -512,7 +506,7 @@ layout: section
 
 ---
 
-# Diagramme de cas d'utilisation
+## Diagramme de cas d'utilisation
 
 ```plantuml
 @startuml
@@ -549,7 +543,7 @@ nabo --> (Demande d'abonnement)
 
 ---
 
-# Diagramme de classe
+## Diagramme de classe
 
 ```plantuml
 @startuml
@@ -600,10 +594,8 @@ Book "1" -- "0..*" BookInstance
 ```
 
 ---
-layout: default
----
 
-# Loi de Brandolini
+## Loi de Brandolini
 
 > La quantité d'énergie nécessaire pour réfuter des sottises […] est supérieure d'un ordre de grandeur à celle nécessaire pour les produire.
 >
@@ -1556,6 +1548,124 @@ layout: section
 - Peut être complexe à mettre en place (métier mal défini, mal isolé, …)
 - Privilégier des patterns stratégiques pour isoler le nouveau métier
 - 💡 : générer un nuage de mots depuis le code pour extraire le langage
+
+---
+
+## Exemples de langage ubiquitaire
+
+Voici quelques exemples de **mauvaise communication entre métier et technique** à corriger par l'usage du **langage ubiquitaire** :
+
+---
+
+### ⚠️ **Exemple 1 : Nom de fonction technique non explicite**
+
+#### ❌ Avant (langage technique ambigu)
+
+```java
+userService.processData(user);
+```
+
+**Problème** : que signifie "processData" ? Est-ce une mise à jour du profil ? Une inscription ? Un calcul ? Aucun lien avec le métier.
+
+:::correction
+#### ✅ Après (langage ubiquitaire orienté métier)
+
+```java
+userService.registerNewCustomer(user);
+```
+
+**Amélioration** : Le terme métier *"register"* est explicite et repris des discussions avec les experts. "Customer" est un mot métier utilisé dans les specs.
+:::
+
+---
+
+### ⚠️ **Exemple 2 : Nom d’entité incohérent avec le métier**
+
+#### ❌ Avant (nom générique ou erroné)
+
+```java
+class Transaction { 
+    private Date startDate; 
+    private Date endDate;
+}
+```
+
+**Problème** : en contexte métier, il s’agit de **réservations**, pas de transactions financières.
+
+:::correction
+#### ✅ Après
+
+```java
+class Reservation {
+    private LocalDate startDate;
+    private LocalDate endDate;
+}
+```
+
+**Amélioration** : "Reservation" correspond au langage des utilisateurs métier (hôtellerie, location, etc.). Cela améliore la communication et la compréhension du code.
+:::
+
+---
+
+### ⚠️ **Exemple 3 : Vocabulaire flou ou contradictoire entre équipes**
+
+#### ❌ Avant (entendu en réunion technique)
+
+> "On a un `client`, c’est l'utilisateur connecté, mais aussi un `customer` dans Stripe, et parfois un `user` dans l'app mobile."
+
+**Problème** : 3 termes pour désigner la même chose = confusion sur les rôles, les permissions, les données.
+
+:::correction
+#### ✅ Après (langage ubiquitaire)
+
+> "On utilise **Customer** partout pour désigner l'utilisateur qui paie, y compris dans Stripe et dans notre modèle métier. Pour les logins et tokens, on parle d’**Account**."
+
+**Amélioration** : unification du vocabulaire métier > technique. Plus de synonymes inutiles. Le mot "Customer" devient une **pièce centrale du modèle**.
+:::
+
+---
+
+### ⚠️ **Exemple 4 : Problème de contexte implicite**
+
+#### ❌ Avant
+
+```java
+product.getPrice();
+```
+
+**Problème** : le prix dépend-il d’une réduction ? D’une devise ? D’une date ? C’est flou.
+
+:::correction
+#### ✅ Après
+
+```java
+product.getEffectivePriceAt(date, country, customerGroup);
+```
+
+**Amélioration** : l'intention métier est exprimée clairement ; les dépendances contextuelles sont explicites.
+:::
+
+---
+
+### ⚠️ **Exemple 5 : Utilisation d'abréviations obscures**
+
+#### ❌ Avant
+
+```python
+svc.add_cr2(u);
+```
+
+**Problème** : "svc" ? "cr2" ? "u" ? Incompréhensible hors contexte.
+
+:::correction
+#### ✅ Après
+
+```python
+courseService.createRecurringCourseRequest(user);
+```
+
+**Amélioration** : expression claire, alignée avec les termes métier ("Recurring Course Request").
+:::
 
 ---
 layout: two-cols
