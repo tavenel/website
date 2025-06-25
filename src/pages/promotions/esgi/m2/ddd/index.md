@@ -39,6 +39,7 @@ Module de 30H
 - [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd)
 - [🤓 Cours : Les architectures hexagonales et Clean Architecture](/cours/archi/hexagonal)
 - [🤓 Cours : Les patterns tactiques en DDD](/cours/ddd/ddd-tactiques)
-- [📝 Exercice : Trouver les bounded context et leurs relations en analysant les interfaces d'Amazon et de Youtube](/cours/ddd/ddd-exo)
+- [📝 Exercice : Trouver les bounded context et leurs relations en analysant les interfaces d'Amazon et de Youtube](/cours/ddd/ddd-exo-youtube-amazon)
+- [📝 Exercice : Écrire le langage ubiquitaire & trouver les bounded context et leurs relations depuis des spécifications fonctionnelles](/cours/ddd/ddd-exo-contexts)
 - [🏆 Projet : Logiciel de devis et facturation](/cours/ddd/ddd-projet)
 

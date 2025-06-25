@@ -1573,6 +1573,7 @@ layout: two-cols
 - [DDD en 5 minutes (cdiese.fr)](https://cdiese.fr/domain-driven-design-en-5-min/)
 - [DDD vs Clean architecture en images](https://khalilstemmler.com/articles/software-design-architecture/domain-driven-design-vs-clean-architecture/)
 - [Exemple de brainstorming (event storming)][brainstorming-example]
+- Ressources pour l'event storming : <https://github.com/mariuszgil/awesome-eventstorming>
 
 - [Stratégies d'organisation du code (medium.com)](https://medium.com/@msandin/strategies-for-organizing-code-2c9d690b6f33)
 - [Martin Fowler : domain data layering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)

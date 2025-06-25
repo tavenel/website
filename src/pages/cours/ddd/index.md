@@ -13,6 +13,7 @@ title: 🧑‍💼 DDD Domain-driven Design
 
 ## Exercices
 
-- [📝 Exercice : Trouver les bounded context et leurs relations en analysant les interfaces d'Amazon et de Youtube](/cours/ddd/ddd-exo)
+- [📝 Exercice : Trouver les bounded context et leurs relations en analysant les interfaces d'Amazon et de Youtube](/cours/ddd/ddd-exo-youtube-amazon)
+- [📝 Exercice : Écrire le langage ubiquitaire & trouver les bounded context et leurs relations depuis des spécifications fonctionnelles](/cours/ddd/ddd-exo-contexts)
 - [🏆 Projet : Logiciel de devis et facturation](/cours/ddd/ddd-projet)
 
