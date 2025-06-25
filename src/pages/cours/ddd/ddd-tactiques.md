@@ -367,6 +367,18 @@ class Transaction:
         self.amount = amount
 ```
 
+### ❌ Anti-pattern : violation de la cohérence par modification directe d'un membre interne
+
+```python
+class Order:
+    def __init__(self):
+        self.items = []
+
+# Le code client modifie directement la liste
+order = Order()
+order.items.append({"product": "book", "qty": 0})  # Invalide
+```
+
 ---
 
 ## 🗃️ Repository
@@ -475,6 +487,102 @@ print(f"Total de la commande : {retrieved_order.calculate_total()}")
 4. **Evitez les dépendances directes aux frameworks de persistance dans le domaine** :
    - Le Repository doit être découplé des frameworks de persistance spécifiques. Par exemple, utilisez une interface pour le Repository, et l'implémentation du Repository peut utiliser des outils comme des ORM ou des bibliothèques de persistance.
 
+### ❌ Anti-pattern : Repository qui retourne des DTOs ou des tuples
+
+```python
+def get_order(order_id):
+    return (order_id, "pending", [("item1", 2), ("item2", 3)])
+```
+
+- 🔴 Problème : la couche domaine est court-circuitée, aucun modèle métier n'est reconstruit.
+- ✅ À faire : retourner des entités/agrégats riches, pas des structures plates.
+
+### ❌ Anti-pattern : Repository couplé à l'ORM
+
+```python
+# Couche domaine
+class OrderRepository:
+    def __init__(self, session):
+        self.session = session  # ORM spécifique (ex: SQLAlchemy)
+
+    def save(self, order):
+        self.session.add(order)
+
+    def get_by_id(self, order_id):
+        return self.session.query(Order).get(order_id)
+```
+
+- 🛑 Problème :
+  - Le domaine connaît le détail d’infrastructure.
+  - Impossible à tester sans base de données.
+- ✅ À faire :
+  - Utiliser une interface abstraite dans le domaine
+	- Injecter l'implémentation.
+
+#### Étape 1 — Interface métier (`order_repository.py`)
+
+```python
+# Domaine (indépendant)
+class OrderRepository:
+    def save(self, order): raise NotImplementedError
+    def get_by_id(self, order_id): raise NotImplementedError
+```
+
+#### Étape 2 — Implémentation dans l'infrastructure (`sqlalchemy_order_repository.py`)
+
+```python
+# ORM infrastructure
+from sqlalchemy.orm import Session
+from domain.models import Order
+from orm_entities import OrderModel  # modèle SQLAlchemy
+
+class SqlAlchemyOrderRepository(OrderRepository):
+    def __init__(self, session: Session):
+        self.session = session
+
+    def save(self, order: Order):
+        orm_model = OrderModel.from_domain(order)
+        self.session.add(orm_model)
+        self.session.commit()
+
+    def get_by_id(self, order_id):
+        orm_model = self.session.query(OrderModel).get(order_id)
+        return orm_model.to_domain()
+```
+
+#### Étape 3 — Mapping entre ORM et domaine (`orm_entities.py`)
+
+```python
+class OrderModel(Base):
+    __tablename__ = "orders"
+    id = Column(String, primary_key=True)
+    customer_id = Column(String)
+    status = Column(String)
+
+    def to_domain(self):
+        return Order(self.id, self.customer_id, self.status)
+
+    @staticmethod
+    def from_domain(order: Order):
+        return OrderModel(
+            id=order.id,
+            customer_id=order.customer_id,
+            status=order.status
+        )
+```
+
+#### Étape 4 — Utilisation dans l'Application Service
+
+```python
+class OrderApplicationService:
+    def __init__(self, repository: OrderRepository):
+        self.repository = repository
+
+    def place_order(self, customer_id):
+        order = Order.create(customer_id)
+        self.repository.save(order)
+```
+
 ### Cas d'utilisation avancé : Repository dans CQRS et Event Sourcing
 
 Dans une architecture **CQRS (Command Query Responsibility Segregation)**, les **Repositories** peuvent être utilisés différemment pour la **Command Side** (écriture) et la **Query Side** (lecture). De plus, dans une architecture **Event Sourcing**, les Repositorys ne manipulent pas directement les entités ou agrégats, mais peuvent utiliser des événements pour reconstituer l'état des objets métier. Voir les sections _CQRS_ et _Event Sourcing_.
@@ -518,7 +626,7 @@ En DDD, un **module** fait référence à une structure qui est un regroupement 
             └── web
 ```
 
-<div class="caption">Un projet de librairie avec 2 contextes "catalogue" et "lending" et un _shared kernel_.</div>
+<div class="caption">Un projet de librairie avec 2 contextes "catalogue" et "lending" et un shared kernel.</div>
 
 ### Types de **Modules** en DDD
 
@@ -651,6 +759,11 @@ class OrderFactory:
         order_id = uuid.uuid4()  # Génération d'un ID unique
         order = Order(order_id, customer_id, shipping_address)
         return order
+
+# Sans factory, le constructeur est illisible et risque de créer des objets invalides :
+order = Order(None, "", [], True, 12, "CREATED", True, None, False)
+# Avec Factory :
+order = OrderFactory.create_order(customer_id=42, shipping_address="mon addresse")
 ```
 
 Dans cet exemple :
@@ -769,6 +882,18 @@ class PricingService:
 
 4. **Respectez le langage ubiquitaire** :
    - Définissez les Domain Services en termes métier compréhensibles par les experts métier.
+
+### ❌ Anti-pattern : "God Service" (logique trop générale ou multipurpose)
+
+```python
+class OrderDomainService:
+    def place_order(...): ...
+    def cancel_payment(...): ...
+    def calculate_shipping(...): ...
+```
+
+- 🔴 Problème : ce service contient plusieurs responsabilités métier non cohérentes → non-respect du _Single Responsibility Principle_ (SRP).
+- ✅ À faire : scinder en services métier spécifiques et nommés selon leur rôle : `OrderPlacer`, `ShippingCalculator`, `RefundProcessor`.
 
 ---
 
@@ -893,6 +1018,20 @@ print(f"Order created with ID: {order_id}")
 | Responsable de l'orchestration.  | Responsable de la logique métier complexe qui n'appartient pas à une entité. |
 | Interagit avec les API et l'infrastructure. | Agit uniquement au niveau du domaine. |
 | Se situe dans la couche application. | Se situe dans la couche domaine.     |
+
+
+### ❌ Anti-pattern : logique métier dans l'Application Service
+
+```python
+class OrderAppService:
+    def place_order(cmd):
+        if len(cmd.items) == 0:
+            raise Exception("Commande vide interdite")
+        # ...
+```
+
+- 🔴 Problème : la règle métier est au mauvais endroit (logique dans l'orchestration).
+- ✅ À faire : valider dans l’agrégat ou la factory, pas dans le service applicatif.
 
 # Patterns tactiques avancés
 
@@ -1141,6 +1280,17 @@ class ReservationPolicy:
 
 Ici, `ReservationPolicy` encapsule une règle métier et peut être utilisée par d'autres composants du système pour valider les actions.
 
+### ❌ Anti-pattern : if/else hardcodé au lieu d’une Policy interchangeable
+
+```python
+if user.type == "premium":
+    can_cancel = True
+else:
+    can_cancel = False
+```
+
+- ✅ À faire : définir une interface `CancellationPolicy` et injecter la stratégie.
+
 ---
 
 ## 🔐 Invariant (métier protégé dans l'aggrégat)
@@ -1251,6 +1401,18 @@ except ValueError as e:
 ```
 
 Dans cet exemple, la méthode `validate_invariant` vérifie que le montant total de la commande n'est pas négatif avant de passer la commande. Si l'invariant est violé, une exception est levée.
+
+### ❌ Anti-pattern : laisser violer les règles métier par modification directe
+
+```python
+account.balance = -100  # oups
+```
+
+- 🔴 Problème :
+  - L'invariant `balance >= 0` est violé.
+- ✅ À faire :
+  - Encapsuler l'état
+  - Faire les mutations via méthodes contrôlées : `withdraw(amount)`.
 
 ---
 
@@ -1383,6 +1545,18 @@ Avec le **Specification Pattern**, cela pourrait être implémenté comme suit :
    customer = Customer(purchase_amount=150, loyal=True)
    print(loyal_and_high_spending.is_satisfied_by(customer))  # True
    ```
+
+### ❌ Anti-pattern : Règle codée dans tous les appels
+
+```python
+if customer.status == "active" and not customer.is_blacklisted():
+```
+
+- 🛑 Problème :
+  - Duplications partout.
+  - Aucun test unitaire sur cette règle.
+- ✅ À faire :
+  - Créer une `IsEligibleCustomerSpecification`.
 
 ---
 
@@ -1577,6 +1751,16 @@ class OrderEventHandler:
 
 4. **Versionnement des événements** :
    - Si les exigences changent, gérez les différentes versions des événements.
+
+### ❌ Anti-pattern : Domain Event utilisé comme message technique
+
+```python
+class OrderInsertedToDbEvent:
+	    # ...
+```
+
+- 🔴 Problème : ce n'est pas un fait métier, mais une opération technique → confusion avec Event technique ou audit.
+- ✅ À faire : un _DomainEvent_ doit refléter un changement métier : `OrderPlacedEvent`, `UserRegisteredEvent`.
 
 ---
 
