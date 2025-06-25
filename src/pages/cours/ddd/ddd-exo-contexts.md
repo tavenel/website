@@ -97,7 +97,7 @@ P --> S : permet\nremboursement
 
 | Terme                | Définition                                                  |
 | -------------------- | ----------------------------------------------------------- |
-| **Demande de cours** | Un __Apprenant_ **envoie** une _Demande_ à un _Enseignant_            |
+| **Demande de cours** | Un _Apprenant_ **envoie** une _Demande_ à un _Enseignant_            |
 | **Créneau**          | Une _Plage Horaire_ est **proposée** pour un _Cours_                        |
 | **Réservation**      | Un _Apprenant_ et un _Enseignant_ **s'accordent** sur un _Créneau_  |
 | **Acceptation**      | L'_Enseignant_ **valide** une _Demande_ |
