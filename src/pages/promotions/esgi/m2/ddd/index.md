@@ -42,5 +42,6 @@ Module de 30H
 - [📝 Exercice : Trouver les bounded context et leurs relations en analysant les interfaces d'Amazon et de Youtube](/cours/ddd/ddd-exo-youtube-amazon)
 - [📝 Exercice : Écrire le langage ubiquitaire & trouver les bounded context et leurs relations depuis des spécifications fonctionnelles](/cours/ddd/ddd-exo-contexts)
 - [📝 Exercice : Refactoring d'un modèle anémique vers un modèle riche](/cours/ddd/ddd-exo-modele)
+- [📝 Exercice : Aligner deux descriptions métier contradictoires](/cours/ddd/ddd-exo-langage)
 - [🏆 Projet : Logiciel de devis et facturation](/cours/ddd/ddd-projet)
 

@@ -8,7 +8,7 @@ title: 🧪 Refactoring d'un modèle anémique vers un modèle riche
 - Refactorer vers un modèle orienté métier (DDD) en encapsulant la logique métier dans les entités, VO, etc.
 - Respecter l'encapsulation et la responsabilité des objets.
 
-## 📝 Contexte – Gestion de commande e-commerce
+## 📝 Contexte - Gestion de commande e-commerce
 
 Voici une implémentation initiale du modèle de commande d’un site e-commerce. On souhaite la **refactorer selon les principes du Domain-Driven Design**.
 
