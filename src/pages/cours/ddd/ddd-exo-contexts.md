@@ -62,19 +62,36 @@ Voici les principales fonctionnalités décrites par le service produit :
 
 ### 2. **Carte de contexte (exemple)**
 
-```mermaid
-flowchart LR
-    UserProfile --> CourseBooking
-    CourseBooking --> Payment
-    CourseBooking --> PedagogicalFollowup
-    CourseBooking --> Support
-    Payment --> Support
+```plantuml
+@startuml
+skinparam rectangle {
+  BackgroundColor<<Core>> LightBlue
+  BackgroundColor<<Supporting>> LightGreen
+  BackgroundColor<<Generic>> LightGray
+  BorderColor Black
+}
+
+title Carte de contexte - LearnMate
+
+rectangle "UserProfile" <<Supporting>> as UP
+rectangle "CourseBooking" <<Core>> as CB
+rectangle "Payment" <<Supporting>> as P
+rectangle "PedagogicalFollowup" <<Supporting>> as PF
+rectangle "Support" <<Generic>> as S
+
+UP --> CB : fournit\nprofils+disponibilités
+CB --> P : déclenche\npaiement
+CB --> PF : déclenche\ncompte-rendu
+CB --> S : signale\nproblèmes
+P --> S : permet\nremboursement
+
+@enduml
 ```
 
 * `CourseBooking` est central : coordonne avec tous les autres contextes.
-* `UserProfile` est **upstream** de `CourseBooking` (fournit les disponibilités).
+* `UserProfile` est **Customer/Supplier** de `CourseBooking` (fournit les disponibilités).
 * `Payment` est **Customer/Supplier** avec `CourseBooking` (paiement des réservations).
-* `Support` interagit avec `CourseBooking` et `Payment`.
+* `Support` est **Separate Ways** avec `CourseBooking` et `Payment` : aucune connaissance du domaine, l'utilisateur doit entrer les informations dans le ticket.
 
 ### 3. **Langage ubiquitaire (CourseBooking)**
 
