@@ -46,6 +46,10 @@ It is a static website with very little JavaScript intended to be extremely fast
 - W3 analysis : <https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.avenel.pro%2F>
 - Covers come from the <https://undraw.co/> project.
 
+## Generative AI
+
+The content of this website is **not** created using a generative AI. Some _beautifying_ is however sometimes applied to the content through a generative AI to make the content more appealing (like adding emoticons or splitting long sentences). The final content is always created manually and fully endorsed by the author.
+
 ## Search
 
 A search module is implemented client-side using the <https://pagefind.app/> JS library.
