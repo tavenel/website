@@ -3,8 +3,6 @@ title: 🏆 Administration de cluster Kubernetes
 date: 2024 / 2025
 ---
 
-## Chapitres
-
 ## Objectifs
 
 Administrer un cluster Kubernetes ne se limite pas à son installation : il faut gérer les mises à jour, les maintenances, la sécurité, l'observabilité du cluster, …

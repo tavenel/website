@@ -9,8 +9,6 @@ title: Cheatsheet Kubernetes®
 - Liens utiles : <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
 :::
 
-## Chapitres
-
 ## Administration
 
 ### État du cluster

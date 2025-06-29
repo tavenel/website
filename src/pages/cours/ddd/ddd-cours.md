@@ -8,10 +8,6 @@ tags:
 - hexagonal
 - clean
 ---
-
-## Chapitres
-
----
 layout: center
 ---
 

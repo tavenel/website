@@ -3,8 +3,6 @@ title: Programmes frameworks et outils
 created: 2024-10-17
 ---
 
-## Chapitres
-
 ## Commandes utiles
 
 ### 💻 `entr` : réexécute une commande

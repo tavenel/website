@@ -3,8 +3,6 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: λ TP OpenFaaS
 ---
 
-## Chapitres
-
 ## Introduction aux Fonctions Serverless
 
 Une fonction _Serverless_ est un morceau de code exécutable à la demande, hébergé sur une plateforme cloud (AWS Lambda, Azure Functions, Google Cloud Functions, …), sans que le développeur n'ait à gérer l'infrastructure sous-jacente (serveurs, mise à l'échelle, maintenance). L'un de ses grands avantages est la simplicité : elle permet de se concentrer sur le code métier, tout en bénéficiant d'une facturation à l'usage (paiement uniquement pour le temps d'exécution) et d'une mise à l'échelle automatique. Cependant, elle présente aussi des inconvénients : la dépendance au fournisseur ("vendor lock-in"), une latence potentielle au démarrage (le _cold start_), et des limites de contrôle sur l'environnement d'exécution.

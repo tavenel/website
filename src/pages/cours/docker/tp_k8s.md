@@ -3,8 +3,6 @@ title: Kubernetes
 date: 2024 / 2025
 ---
 
-## Chapitres
-
 # Introduction à Kubernetes®
 
 Dans cette partie, nous allons utiliser l’orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l’équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
