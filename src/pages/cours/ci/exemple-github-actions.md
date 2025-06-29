@@ -7,6 +7,7 @@ Pour créer un pipeline d'intégration continue (appelé _GitHub Actions_), il f
 Voici un exemple simple de pipeline :
 
 ```yml
+#.github/mon-workflow.yml
 name: mon-workflow # nom du pipeline (peut être différent du nom de fichier)
 
 on: # quand tourner le pipeline

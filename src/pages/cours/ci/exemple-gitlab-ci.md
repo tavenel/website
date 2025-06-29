@@ -5,6 +5,8 @@ title: Exemple de Gitlab CI
 Pour créer un pipeline d'intégration continue, il faut commencer par créer un fichier `.gitlab-ci.yml` à la racine du projet.
 
 ```yaml
+#.gitlab-ci.yml
+
 # Étapes séquentielles du pipeline
 stages:
  - build # Les jobs d'un même stage tournent en parrallèle.
