@@ -3,21 +3,23 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Alternatives à la ligne de commandes
+## Alternatives à la ligne de commandes 🖱️💻
 
 ---
 
-# Interface graphiques
+### Interfaces graphiques 🖼️👁️
 
-Il existe de nombreuses interfaces graphiques pour `git` permettant de réaliser les opérations visuellement.
+- Il existe de nombreuses interfaces graphiques pour `git` permettant de réaliser les opérations visuellement 👆  
+- La présence d’un **graphe des branches** est souvent bien plus intuitive lors d’intégrations complexes 🧠🧬
 
-La présence d'un graphe des branches est souvent bien plus intuitive lors d'intégrations complexes.
+Des interfaces graphiques en ligne de commandes existent également :  
 
-Des interfaces graphiques en ligne de commandes existent également : `tig`, `lazygit`, ...
+- `tig` 🧵  
+- `lazygit` 😌📟
 
 ---
 
-# Sourcetree®
+### Sourcetree® 🌳🧰
 
 ![L'interface graphique Sourcetree®][sourcetree-ui]
 
@@ -25,7 +27,7 @@ Des interfaces graphiques en ligne de commandes existent également : `tig`, `la
 
 ---
 
-# GitKraken®
+### GitKraken® 🐙⚓
 
 ![L'interface graphique GitKraken®.][gitkraken-ui]
 
@@ -33,46 +35,52 @@ Des interfaces graphiques en ligne de commandes existent également : `tig`, `la
 
 ---
 
-# Intégration dans un IDE
+### Intégration dans un IDE 🧠🔧
 
-Il est également possible d'intégrer `git` directement dans un IDE.
+- Il est également possible d’intégrer `git` directement dans un IDE 🛠️  
+- La plupart des IDE sont capables de **détecter automatiquement** un dépôt `git` 🧲  
 
-La plupart des IDE sont capables de détecter automatiquement un dépôt `git`. Bien penser à ouvrir le répertoire principal du dépôt, celui contenant le répertoire `.git`.
-
----
-
-Intégrer `git` dans un IDE permet :
-
-- d'afficher en temps réel les changements apportés au code source
-- de trouver des informations (commit log, développeur, numéro de bug, ...) sur un changement déjà apporté dans le code
+:::tip
+👉 Bien penser à ouvrir le **répertoire principal** du dépôt, celui contenant le répertoire `.git` 📂
+:::
 
 ---
 
-# Gitignore
+Intégrer `git` dans un IDE permet : 🚀  
 
-Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier) permet de lister des chemins de fichiers à ignorer lors d'un `git checkout` : ces fichiers deviennent invisibles pour git.
-
-Voir le TP correspondant.
-
----
-
-# Hooks
-
-- Permettent d'exécuter des scripts _avant_ (`pre-*`) ou _après_ (`post-*`) des commandes ;
-  - côté _client_ : `pre-commit`, ...
-  - côté _serveur_ : `pre-receive`, ...
+- d’afficher en temps réel les changements apportés au code source 📝🔍  
+- de trouver des informations (commit log, développeur, numéro de bug, ...) sur un changement déjà apporté dans le code 🔎📖
 
 ---
 
-- À mettre dans le répertoire `.git/hooks`
-  - fichiers d'exemples `.git/hooks/*.sample`
-  - en cas d'erreur (code de retour != 0), la commande n'est pas exécutée
+## `.gitignore` 🙈📄
+
+- Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier)  permet de **lister des chemins de fichiers à ignorer** lors d’un `git checkout` 🚫📂  
+- 👉 Ces fichiers deviennent invisibles pour git 👻
+
+:::link
+🧪 Voir le TP correspondant.
+:::
 
 ---
 
-## Exemple
+## Hooks 🪝⚙️
 
-`pre-commit` pour refuser un commit si un fichier `WIP` est trouvé :
+- Permettent d’exécuter des scripts _avant_ (`pre-*`) ou _après_ (`post-*`) des commandes ⏳🖇️  
+  - côté _client_ : `pre-commit` 🖊️  
+  - côté _serveur_ : `pre-receive` 🛎️
+
+---
+
+- À mettre dans le répertoire `.git/hooks` 📁🔩  
+  - fichiers d’exemples : `.git/hooks/*.sample` 🧪  
+  - en cas d’erreur (`code de retour != 0`), la commande n’est pas exécutée ❌🚫
+
+---
+
+### Exemple 🔍
+
+`pre-commit` pour **refuser un commit** si un fichier `WIP` est trouvé ❗🛑📄 :
 
 ```sh
 !/bin/bash
@@ -82,52 +90,63 @@ Voir le TP correspondant.
 
 ---
 
-# Multi-repo vs mono-repo
+## Multi-repo vs Mono-repo 🆚📂
 
-- Multi-répo:
-  - Adapté aux équipes fonctionnelles séparées
-	- Livrables qui ont leur cycle de vie propre
-- Mono-répo:
-  - Adapté à un livrable conséquent
-	- Inclue plusieurs briques distinctes
+- **Multi-repo** 🧱 :
+  - Adapté aux équipes fonctionnelles séparées 👥🔄  
+  - Livrables ayant leur propre cycle de vie 📦⏳
 
----
-
-# Gist
-
-- Service GitHub pour partager simplement des extraits de code, de notes, de listes de tâches, ...
-- Besoin seulement d'une URL secrète : facilite l'automatisation.
-- Techniquement : vrai dépôt Git mais utilisation limitée par l'interface Web.
+- **Mono-repo** 🏗️ :
+  - Adapté à un livrable conséquent 💼  
+  - Inclut plusieurs briques distinctes 🧩
 
 ---
 
-# Submodules
+## Gist ✨📝
 
-- Permettent d'inclure un autre dépôt Git dans un dépôt principal (ex: dépendance).
-- fichier `.gitmodules`
-- `git submodule add <URL_du_dépôt_sous_module> <chemin/dossier>`
-- `git clone --recurse-submodules <URL_du_dépôt_principal>` : clone le dépôt principal et tous les sous-modules.
-- `git submodule update --remote`
+- Service GitHub pour partager simplement :
+  - extraits de code 💻  
+  - notes 🗒️  
+  - listes de tâches ✅
+
+- Besoin seulement d'une **URL secrète** 🔐 : facilite l'automatisation 🤖  
+- Techniquement : **vrai dépôt Git**, mais usage limité via l’interface Web 🌐
 
 ---
 
-# Worktree
+## Submodules 🧬📁
 
-- `git worktree` crée plusieurs répertoires de travail pour un même dépôt Git
-- Permet de travailler simultanément sur plusieurs branches.
-- Utile avec `git --bare` pour configurer un dépôt central (nu) à partir duquel on peut créer et gérer ces répertoires de travail.
-- `git worktree add ../mon-projet-feature feature-branch`
-- Chaque worktree est indépendant des autres : vous pouvez donc y effectuer des commits, … sans affecter les autres répertoires de travail.
+- Permettent d’inclure un **autre dépôt Git** dans un dépôt principal 🔗  
+  (ex : dépendance partagée)
 
+- Fichier `.gitmodules` 📄  
+- `git submodule add <URL_du_dépôt_sous_module> <chemin/dossier>` ➕
+- `git clone --recurse-submodules <URL>` : clone tout 🌳  
+- `git submodule update --remote` 🔄
+
+---
+
+## Worktree 🌲👷‍♀️
+
+- `git worktree` crée plusieurs répertoires de travail pour un même dépôt 🧰  
+- Permet de travailler **simultanément sur plusieurs branches** 🔄🧠
+
+- Utile avec `git --bare` pour créer un dépôt **central** 🏛️ (nu) à partir duquel on peut créer et gérer ces répertoires de travail. 
+- Exemple : `git worktree add ../mon-projet-feature feature-branch` 🛠️
+- Chaque worktree est **indépendant** 🔐  
+  => vous pouvez y faire des commits sans impacter les autres répertoires de travail 🧪
+
+---
+layout: section
 ---
 
 ![Résumé des commandes Git](https://www.linuxnix.com/wp-content/uploads/2017/10/Git.png)
 
-<div class="caption">Résumé des commandes Git</div>
+<div class="caption">🧠 Résumé visuel des commandes Git</div>
 
 ---
 
-# Quelques commandes avancées
+## Quelques commandes avancées ⚙️💡
 
 - `git checkout <other-branch-name> -- path/to/your/folder/or/file`
 - `git log --oneline --decorate --graph` => log minimal
@@ -176,7 +195,7 @@ Voir le TP correspondant.
 
 ---
 
-# Résumé
+## Résumé
 
 ```plantuml
 @startditaa
@@ -256,10 +275,12 @@ Voir le TP correspondant.
 26. `git archive` : crée une archive contenant les fichiers d'un commit ou d'une branche sans inclure l'historique Git
 
 ---
-
-<!-- class: liens -->
+layout: section
+---
 
 # Liens
+
+---
 
 ## Cours
 
