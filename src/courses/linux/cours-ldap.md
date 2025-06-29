@@ -62,7 +62,7 @@ dc=example,dc=com
 
 📄 Exemple de fichier LDIF (LDAP Data Interchange Format) pour ajouter un `ou` :
 
-```ldif
+```
 dn: ou=people,dc=example,dc=com
 objectClass: top
 objectClass: organizationalUnit
@@ -71,7 +71,7 @@ ou: people
 
 📄 Exemple de fichier LDIF pour ajouter un `uid` d'un utilisateur applicatif :
 
-```ldif
+```
 dn: uid=alice,ou=people,dc=example,dc=com
 objectClass: top
 objectClass: person
