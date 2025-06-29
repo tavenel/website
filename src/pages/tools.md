@@ -141,11 +141,11 @@ created: 2024-10-17
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
-	- <https://k8slens.dev/> : un IDE orienté k8s
-	- <https://github.com/stern/stern> : logs multi-pods
-	- <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
-	- <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
-	- <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
+  - <https://k8slens.dev/> : un IDE orienté k8s
+  - <https://github.com/stern/stern> : logs multi-pods
+  - <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
+  - <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
+  - <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
   - <https://www.tigera.io/> : Unified Network Security & Observability for Kubernetes
   - <https://www.kuboscore.io/> : vérification de clusters
 - 🚀 CD
@@ -157,11 +157,11 @@ created: 2024-10-17
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - 🪫 Consommation d'énergie et pricing :
   - `kepler` : monitor Pod energy consumption
-	- `kube-green` : k8s operator for energy-saving actions. [tuto](https://blog.octo.com/arreter-ses-environnements-avec-kubernetes)
+  - `kube-green` : k8s operator for energy-saving actions. [tuto](https://blog.octo.com/arreter-ses-environnements-avec-kubernetes)
   - [Keda](https://keda.sh/) : Event-driven autoscaling
   - `sablier` scaling depuis requêtes sur _Ingress_
-	- `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
-	- <https://karpenter.sh/> : démarrage / arrêt automatique de noeuds sur le cluster
+  - `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
+  - <https://karpenter.sh/> : démarrage / arrêt automatique de noeuds sur le cluster
   - <https://www.kubecost.com> : gestion des coûts des clusters (on-premise + cloud)
 - 🔄 Upgrade :
   - `WatchTower`
@@ -179,6 +179,7 @@ created: 2024-10-17
   - [Tigera](https://github.com/tigera/operator) : gestion du _CNI_ Calico dans le cluster
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 - Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html), <https://submariner.io/>
+- [Spegel](https://github.com/spegel-org/spegel) : Miroir qui récupère les images Docker sur les Nodes où elles sont en cache
 
 ### 💾 Backups
 
