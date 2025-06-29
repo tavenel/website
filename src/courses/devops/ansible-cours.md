@@ -4,46 +4,46 @@ title: Ansible
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Objectifs
- 
-- Gérer un parc de machine simplement par Infrastructure-as-Code grâce à Ansible.
+## 🎯 Objectifs
+
+- Gérer un parc de machines simplement par Infrastructure-as-Code grâce à Ansible. 🛠️
 
 ---
 
-# Présentation d'Ansible
+## 🛠️ Présentation d'Ansible
 
-- Automatise des opérations sur un parc de machines
-- **Agentless** : SSH depuis un poste de travail
-  - autres protocoles disponibles
-- **Stateless** : pas d'état du cluster
-- **Idempotent** : décrit un but (et non l'action à effectuer)
-- Outil d'IaC très populaire
-  - fichiers `playbook` en `yaml`
-- Simple d'utilisation dans un cadre standard
-- Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html)
-
----
-
-# Architecture
+- Automatise des opérations sur un parc de machines 🏗️
+- **Agentless** : SSH depuis un poste de travail 🔑
+  - Autres protocoles disponibles 🌐
+- **Stateless** : pas d'état du cluster 🔄
+- **Idempotent** : décrit un but (et non l'action à effectuer) 🎯
+- Outil d'IaC très populaire 🌟
+  - Fichiers `playbook` en `yaml` 📄
+- Simple d'utilisation dans un cadre standard 🛠️
+- Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html) 🔗
 
 ---
 
-# Playbook
-
-- Fichier `yaml` décrivant les opérations à effectuer
-- Liste de `task`
-- Supporte quelques opérateurs logiques et paramètres
+## 🏗️ Architecture
 
 ---
 
-# Inventory
+### 📄 Playbook
 
-- Collection de machines et de paramètres à fournir au(x) playbook(s) pour gérer les cibles d'exécution
-- Possibilité d'inventaire dynamique par des plugins : `aws`, `VirtualBox`, …
+- Fichier `yaml` décrivant les opérations à effectuer 📄
+- Liste de `task` 📋
+- Supporte quelques opérateurs logiques et paramètres 🔄
 
 ---
 
-# Exemple d'inventaire
+### 📋 Inventory
+
+- Collection de machines et de paramètres à fournir au(x) playbook(s) pour gérer les cibles d'exécution 📋
+- Possibilité d'inventaire dynamique par des plugins : `aws`, `VirtualBox`, … 🌐
+
+---
+
+### Exemple d'inventaire
 
 ```ini
 #Fichier hosts
@@ -67,7 +67,7 @@ ansible web -m ping -i hosts # exécute ping sur le groupe web de l'inventaire h
 
 ---
 
-# Exemple de playbook
+### Exemple de playbook
 
 Inspiré de : [ansible documentation](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html)
 
@@ -114,7 +114,7 @@ ansible-playbook -v […]
 
 ---
 
-# Tags
+## Tags
 
 Permet d'exécuter (ou ignorer) seulement certaines parties du playbook.
 
@@ -137,7 +137,7 @@ ansible-playbook […] --skip-tags suppression
 
 ---
 
-# Variables
+## Variables
 
 Ansible peut utiliser une variable définie (inventaire, playbook, ligne de commande) et créer une variable dynamiquement dans le playbook.
 
@@ -170,7 +170,7 @@ Ansible peut utiliser une variable définie (inventaire, playbook, ligne de comm
 
 ---
 
-# Rôles
+## Rôles
 
 - Collection de playbooks, variables, … pouvant être importés (idem plugin)
 - 1 répertoire dédié par rôle et fichier `main.yml`
@@ -190,7 +190,7 @@ ansible-galaxy init mon_role
 
 ---
 
-# Secrets : Vault
+## Secrets : Vault
 
 - `Vault` : Stocke les informations sensibles : mot de passe, variables, (fichiers sensibles)
 - Local ou Cloud provider : `AWS Key Management`, `Azure Key Vault`, …
@@ -226,19 +226,19 @@ ansible-playbook --ask-vault-pass vault_playbook.yml
 
 ---
 
-# Ansible linter
+## Ansible linter
 
 [ansible-lint](https://docs.ansible.com/ansible-lint/index.html) est un _linter_ permettant de trouver des erreurs dans les fichiers playbook.
 
 ---
 
-# 🧰 Modules Ansible les plus courants
+## 🧰 Modules Ansible les plus courants
 
 Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 📦 Gestion des paquets
+### 📦 Gestion des paquets
 
 | Module      | Description                                           |
 |-------------|-------------------------------------------------------|
@@ -249,7 +249,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 📁 Fichiers & répertoires
+### 📁 Fichiers & répertoires
 
 | Module         | Description                                         |
 |----------------|-----------------------------------------------------|
@@ -263,7 +263,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## ⚙️ Services & processus
+### ⚙️ Services & processus
 
 | Module      | Description                                         |
 |-------------|-----------------------------------------------------|
@@ -275,7 +275,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 👥 Utilisateurs & groupes
+### 👥 Utilisateurs & groupes
 
 | Module            | Description                            |
 |-------------------|----------------------------------------|
@@ -285,7 +285,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 🔒 Sécurité & accès
+### 🔒 Sécurité & accès
 
 | Module        | Description                              |
 |---------------|------------------------------------------|
@@ -297,7 +297,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 🌐 Réseau & connectivité
+### 🌐 Réseau & connectivité
 
 | Module       | Description                                  |
 |--------------|----------------------------------------------|
@@ -308,7 +308,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 🧪 Autres modules utiles
+### 🧪 Autres modules utiles
 
 | Module           | Description                                  |
 |------------------|----------------------------------------------|
@@ -320,11 +320,11 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-# Exemples de playbook simples
+## Exemples de playbook simples
 
 ---
 
-## 1. Ping toutes les machines _hosts_
+### 1. Ping toutes les machines _hosts_
 
 ```yaml
 - name: Ping all hosts
@@ -336,7 +336,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 2. Installer NGINX sur Ubuntu
+### 2. Installer NGINX sur Ubuntu
 
 ```yaml
 ---
@@ -356,7 +356,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 3. Créer un fichier
+### 3. Créer un fichier
 
 ```yaml
 ---
@@ -371,7 +371,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 4. Démarrer et Installer un Service
+### 4. Démarrer et Installer un Service
 
 ```yaml
 ---
@@ -389,7 +389,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 5. Copier un fichier local à distance
+### 5. Copier un fichier local à distance
 
 ```yaml
 ---
@@ -406,7 +406,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 6. Créer un utilisateur
+### 6. Créer un utilisateur
 
 ```yaml
 ---
@@ -424,7 +424,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-## 7. Redémarrer les machines distantes
+### 7. Redémarrer les machines distantes
 
 ```yaml
 ---
@@ -438,8 +438,9 @@ Une sélection des modules les plus utilisés, classés par catégories :
 ```
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
 # Liens
 
 - Documentation Ansible : <https://docs.ansible.com/ansible/latest/index.html>

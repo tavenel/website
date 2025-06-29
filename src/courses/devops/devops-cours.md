@@ -4,43 +4,41 @@ title: Le DevOps
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Objectifs
- 
-- Gérer ses projets tant en développement qu'en infrastructure en adoptant une approche Devops / Sysops
+## 🎯 Objectifs
+
+- Gérer ses projets tant en développement qu'en infrastructure en adoptant une approche DevOps / SysOps 🛠️
 
 ---
 
-# Problèmes courants
+## ⚠️ Problèmes courants
 
-- Silos entre les équipes Dev et Ops
-  - Manque de collaboration
-  - Problèmes de gouvernance, frictions
-  - Pas de visibilité sur les process
-
----
-
-# Problèmes courants
-
-- Absence d'automatisation
-  - Tâches manuelles répétitives sur de gros systèmes
-  - Délais de livraison importants
-  - Problèmes lors de la mise en production (erreurs, pannes)
-  - Tests au dernier moment
-  - Interruptions de service
+- Silos entre les équipes Dev et Ops 🏗️
+  - Manque de collaboration 🤝
+  - Problèmes de gouvernance, frictions ⚠️
+  - Pas de visibilité sur les processus 👀
 
 ---
 
-# Devops
-
-> Le DevOps est un ensemble de pratiques, de philosophies et d'outils visant à combiner les pratiques de développement (Dev) et les pratiques opérationnelles (Ops).
-
-- Objectif : développement et déploiement d'applications / services en un temps record.
-- RH déploiement et maintenance réduites par la mutualisation des compétences.
-- Réconcilier 2 mondes : ops = stabilité, dev = vitesse
+- Absence d'automatisation 🤖
+  - Tâches manuelles répétitives sur de gros systèmes 🔄
+  - Délais de livraison importants ⏳
+  - Problèmes lors de la mise en production (erreurs, pannes) ⚠️
+  - Tests au dernier moment ⏳
+  - Interruptions de service ❌
 
 ---
 
-# Les 5 piliers CALMS du DevOps
+## 🔄 Définition
+
+> Le DevOps est un ensemble de pratiques, de philosophies et d'outils visant à combiner les pratiques de développement (Dev) et les pratiques opérationnelles (Ops). 🔄
+
+- Objectif : développement et déploiement d'applications / services en un temps record. ⏱️
+- RH déploiement et maintenance réduites par la mutualisation des compétences. 🤝
+- Réconcilier 2 mondes : ops = stabilité, dev = vitesse 🏗️
+
+---
+
+## 🏗️ Les 5 piliers CALMS du DevOps
 
 - **Culture** :
 	- Équipes transverses orientées produit
@@ -59,72 +57,63 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Culture DevOps
+## 🤝 Culture DevOps
 
-- But commun : la réussite du projet
-- Collaboration étroite entre les équipes : dev, ops, QA, marketing, …
-- Gestion de projet itérative
-- Livraisons fréquentes
-- Focus sur la continuité du service et la résolution rapide des problèmes
-
----
-
-# Infrastructure as Code (IaC)
-
-> Coder (scripts, fichiers de configuration) une infrastructure informatique virtuelle.
+- But commun : la réussite du projet 🎯
+- Collaboration étroite entre les équipes : dev, ops, QA, marketing, … 🤝
+- Gestion de projet itérative 🔄
+- Livraisons fréquentes 📦
+- Focus sur la continuité du service et la résolution rapide des problèmes 🛠️
 
 ---
 
-- Automatise le déploiement intégral d'applications :
-  + de la couche infrastructure (généralement un Cloud privé)
-  + à la couche logicielle.
+## 🏗️ Infrastructure as Code (IaC)
+
+> Coder (scripts, fichiers de configuration) une infrastructure informatique virtuelle. 🏗️
 
 ---
 
-- Déploiement facile et rapide des environnements de test
-  + Facilite CI/CD
+- Automatise le déploiement intégral d'applications : 🔄
+  - De la couche infrastructure (généralement un Cloud privé) ☁️
+  - À la couche logicielle. 💻
+- Déploiement facile et rapide des environnements de test 🧪
+  - Facilite CI/CD 🔄
+- Exemples d'outils IaC : Ansible® / Terraform / Puppet 🛠️
+- Souvent : fichiers `Yaml` 📄
 
 ---
 
-- Exemples d'outils IaC : Ansible® / Terraform / Puppet
-- Souvent : fichiers `Yaml`
+## 🔄 Gestion des versions
 
----
+- Objectif : segmenter tout changement et gérer un historique : 📜
+  - Dans le code ; 💻
+  - Sur la plateforme. 🏗️
 
-# Gestion des versions
-
-- Objectif : segmenter tout changement et gérer un historique :
-  + Dans le code ;
-  + Sur la plateforme.
-
+:::link
 Voir le [cours sur les gestionnaires de versions (Git)][site-perso].
-
----
-layout: section
----
-
-# Intégration continue
-
-> Ensemble de pratiques permettant de réduire la feedback loop.
-
-Voir le [cours d'introduction sur l'intégration continue][site-perso].
+:::
 
 ---
 
-# Les outils de l'intégration continue
+## 🔄 Intégration continue
 
-Voir le [cours sur les outils de l'intégration continue][site-perso].
+> Ensemble de pratiques permettant de réduire la feedback loop. 🔄
+
+:::link
+- Voir le [cours d'introduction sur l'intégration continue][site-perso].
+- Voir le [cours sur les outils de l'intégration continue][site-perso].
+:::
 
 ---
 
-# Isolation par conteneurs
+## 🐳 Isolation par conteneurs
 
 - Base de la culture DevOps
-  + Docker
+- Docker, Kubernetes 🐳
 
 ---
 
-## Avantages
+### 🌟 Avantages
 
 - \+ Immutabilité image de production :
   * Instances des applications générées depuis une image figée ;
@@ -141,75 +130,85 @@ Voir le [cours sur les outils de l'intégration continue][site-perso].
 
 ---
 
-# Pet vs Cattle
+## 🐄 Pet vs Cattle
 
-- _Pet_ : approche traditionnelle : quelques grosses VM
+- **Pet** : approche traditionnelle : quelques grosses VM
   - backup de la VM
   - opérations manuelles dans la VM
   - modification de la VM au cours du temps
-- _Cattle_ : approche DevOps : des 100aines de conteneurs
+- **Cattle** : approche DevOps : des centaines de conteneurs
   - conteneurs anonymes, immuables, jetables
   - fichiers de config (templates)
   - changement de besoin => destruction, reconstruction
 
 ---
 
-# Orchestration CI/CD
-
-- Infrastructures dev et prod DevOps complexes => Serveurs CI
-  + `Jenkins`, `Gitlab`
-  + Code source -> image Docker -> pipeline CI : analyse statique, tests unitaires / intégration, livraison **images** Docker
+## 🏗️ Orchestration
 
 ---
 
-# Orchestration production (technique)
+### Orchestration CI/CD
 
-- Orchestrateur `Docker` (`Kubernetes`, `Swarm`, ...)
-  + Création automatique des instances des applications ;
-  + Redondance, résilience, équilibre de charge, routage, ...
-
----
-
-# Orchestration production (métier)
-
-`Kubernetes` => orchestration technique != orchestration liée au code métier (microservices, ...).
-  + Souvent orchestrateur _business_ supplémentaire : _registry_ `Spring Cloud`, _load balancer_ `NginX`, ...
+- Infrastructures dev et prod DevOps complexes => Serveurs CI 🏗️
+  - `Jenkins`, `Gitlab` 🛠️
+  - Code source -> image Docker -> pipeline CI : analyse statique, tests unitaires / intégration, livraison **images** Docker 🐳
 
 ---
 
-# Observabilité
+### 🏗️ Orchestration production (technique)
 
-- Déploiements complexes => suivi **minutieux** et **automatisé** :
-  + Observabilité plateforme Cloud et conteneurs : `Prometheus®` / `Grafana®` ;
-  + Observabilité du métier applicatif : corrélation logs, …
+- Orchestrateur `Docker` (`Kubernetes`, `Swarm`, ...) 🐳
+  - Création automatique des instances des applications ; 🏗️
+  - Redondance, résilience, équilibre de charge, routage, ... 🔄
 
 ---
 
-## Types d'observabilité
+### 🏗️ Orchestration production (métier)
+
+- orchestration technique != orchestration liée au code métier (microservices, …) ⚠️
+- Souvent également un orchestrateur _business_ supplémentaire : _registry_ `Spring Cloud`, _load balancer_ `NginX`, ... 🛠️
+
+---
+
+## 👀 Observabilité
+
+- Déploiements complexes => suivi **minutieux** et **automatisé** : 👀
+  - Observabilité plateforme Cloud et conteneurs : `Prometheus®` / `Grafana®` ; 📊
+  - Observabilité du métier applicatif : corrélation logs, … 📜
+
+---
+
+### 📊 Types d'observabilité
 
 - **logs** : messages des applications, à centraliser : `Loki`, `ELK`, `fluentd`, …
 - **métriques** (sondes) : indicateurs sur la santé des composants : CPU, latence réseau, mémoire, … : `prometheus`
 - **traces** : suivi d'un utilisateur / une requête à travers tout le système : `zipkin`, `OpenTelemetry`, …
 
+:::warn
 Cette observabilité doit se coupler à des **alertes** en cas de souci !
+:::
 
 ---
 
-# Chaos Engineering
+## 💥 Chaos Engineering
 
-- Idée : "casser" les systèmes volontairement pour tester l'observabilité et la reprise sur erreur
-  - ex: scripts faisant tomber un service, …
-- Populaire en sécurité : DevSecOps et SRE
+- Idée : "casser" les systèmes volontairement pour tester l'observabilité et la reprise sur erreur 💥
+  - Ex: scripts faisant tomber un service, … 🛠️
+- Populaire en sécurité : DevSecOps et SRE 🔒
+
+:::link
+- Voir une introduction à la _Simian Army_ dans le [cours sur les tests][site-perso].
+:::
 
 ---
 
-# Liens avec l'agilité
+## 🔄 Liens avec l'agilité
 
-- Nombreux outils provenant des pratiques des méthodes agiles :
-  + Automatisation des compilations et des tests ;
-  + Intégration continue ;
-  + Déploiement continu ;
-  + Gestion de projet agile particulièrement indiquée.
+- Nombreux outils provenant des pratiques des méthodes agiles : 🔄
+  - Automatisation des compilations et des tests ; 🤖
+  - Intégration continue ; 🔄
+  - Déploiement continu ; 🏗️
+  - Gestion de projet agile particulièrement indiquée. 🔄
 
 ---
 
@@ -217,21 +216,21 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
-# Lien avec les micro-services
+## 🔄 Lien avec les micro-services
 
-- Devops très adapté micro-services
-  + Facilite CI/CD d'une partie métier de l'application.
-
----
-
-## 12 factor apps
-
-- Micro-services ~= SaaS
-  + <https://12factor.net/fr/>
+- DevOps très adapté micro-services 🔄
+  - Facilite CI/CD d'une partie métier de l'application. 🏗️
 
 ---
 
-# Inconvénients du DevOps
+### 🔄 12 factor apps
+
+- Micro-services ~= SaaS 🔄
+  - <https://12factor.net/fr/> 🌐
+
+---
+
+## ⚠️ Inconvénients du DevOps
 
 - Infrastructure plus complexe
   - Outils supplémentaires : CI/CD, orchestration, monitoring, …
@@ -244,49 +243,54 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
-# Gitlab Devops Platform
+## 🛠️ Exemple de solution DevSecOps complète : **Gitlab DevOps Platform**
 
-- Exemple de solution DevSecOps complète :
-- **Gestion de Code Source** : Git, branches, _merge request_
-- **Gestion de Projet** : tableaux Kanban, listes de tâches, Gantt, Wikis, …
-- **Collaboration d'Équipe** : plateforme commune, code review, …
-- **Suivi des Problèmes** : suivi des bugs et des demandes de fonctionnalités
-- **Gestion des Vulnérabilités** : analyse statique du code (SAST), analyse des dépendances (DAST)
-- **Pipelines CI/CD** : tests, builds, déploiements
-- **Registry de Conteneurs** Docker
-- **Intégration Cloud** pour le déploiement et la gestion des infrastructures
-- **Gestion des Incidents** : gestion des alertes
-- **Intégration** avec de nombreux autres outils
-- Voir aussi : <https://about.gitlab.com/platform/>
+| Fonctionnalité | Description |
+| --- | --- |
+| **Gestion de Code Source** | Git, branches, merge request |
+| **Gestion de Projet** | Tableaux Kanban, listes de tâches, Gantt, Wikis |
+| **Collaboration d'Équipe** | Plateforme commune, code review |
+| **Suivi des Problèmes** | Suivi des bugs et des demandes de fonctionnalités |
+| **Gestion des Vulnérabilités** | Analyse statique du code (SAST), analyse des dépendances (DAST) |
+| **Pipelines CI/CD** | Tests, builds, déploiements |
+| **Registry de Conteneurs** | Docker |
+| **Intégration Cloud** | Déploiement et gestion des infrastructures |
+| **Gestion des Incidents** | Gestion des alertes |
+| **Intégration** | Avec de nombreux autres outils |
 
----
-
-# Du Devops au Devops/Sysops
-
-- Objectif DevOps == une équipe Dev et Ops mais :
-  + Architectures SaaS très complexes ;
-  + Besoin de compétences variées ;
-  + Métier spécialisé dans **la gestion de l'infrastructure SaaS** : _SysOps_.
+:::link
+Voir aussi : <https://about.gitlab.com/platform/>
+:::
 
 ---
 
-> Le _SysOps_ gère l'ensemble de l'infrastructure physique et logicielle permettant le déploiement de conteneurs applicatifs (stack réseau, gestion des données, kubernetes, ...).
-> Le métier de _DevOps_ consiste alors à développer et déployer des applications métier dans des conteneurs applicatifs sur cette plateforme.
+## 🔄 Du DevOps au DevOps/SysOps
+
+- Objectif DevOps == une équipe Dev et Ops mais : 🔄
+  - Architectures SaaS très complexes ; 🏗️
+  - Besoin de compétences variées ; 🛠️
+  - Métier spécialisé dans **la gestion de l'infrastructure SaaS** : _SysOps_. 🏗️
 
 ---
 
-# Variations du Devops
-
-- Nombreuses variations adaptées à des contextes particuliers :
-  + `DataOps` : adaptation au contexte très spécifique du Big Data (variation la plus courante) ;
-  + `ArchOps` : réflexions d'architecture dans la boucle DevOps ;
-  + `TestOps` : focus tests ;
-  + `DevSecOps` : focus sécurité, ...
-  + `GitOps` : Automatisation et Gestion des Infrastructures par Git
+> Le _SysOps_ gère l'ensemble de l'infrastructure physique et logicielle permettant le déploiement de conteneurs applicatifs (stack réseau, gestion des données, Kubernetes, ...). 🏗️
+> Le métier de _DevOps_ consiste alors à développer et déployer des applications métier dans des conteneurs applicatifs sur cette plateforme. 🛠️
 
 ---
 
-# GitOps
+## 🔄 Variations du DevOps
+
+| Variation | Description |
+| --- | --- |
+| **DataOps** | Adaptation au contexte très spécifique du Big Data |
+| **ArchOps** | Réflexions d'architecture dans la boucle DevOps |
+| **TestOps** | Focus tests |
+| **DevSecOps** | Focus sécurité |
+| **GitOps** | Automatisation et Gestion des Infrastructures par Git |
+
+---
+
+## 🔄 GitOps
 
 - `Git` == source de vérité pour code et déploiement applications et infrastructure
 - Tous les changements (infrastructure et configurations) sont gérés et versionnés dans un dépôt Git (IaC).
@@ -295,33 +299,31 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
-# Métiers
+## 🛠️ Métiers
 
-- Même si l'on trouve de nombreux postes estampillés _devops_, ce n'est pas un métier mais une philosophie !
-- Quelques métiers où l'on pratique quotidiennement le DevOps : _SRE_ (_Site Reliability Engineer_), _Platform engineer_
-
----
-
-# Glossaire
-
-- _DevOps_ : ensemble de pratiques, de philosophies et d'outils visant à combiner les pratiques de développement (Dev) et les pratiques opérationnelles (Ops).
-- _SysOps_ : gère l'ensemble de l'infrastructure physique et logicielle permettant le déploiement de conteneurs applicatifs (stack réseau, gestion des données, kubernetes, ...).
+- Même si l'on trouve de nombreux postes estampillés _DevOps_, ce n'est pas un métier mais une philosophie ! 🛠️
+- Quelques métiers où l'on pratique quotidiennement le DevOps : _SRE_ (_Site Reliability Engineer_), _Platform engineer_ 🛠️
 
 ---
 
-- _IaC_ : Infrastructure-as-Code : Coder (scripts, fichiers de configuration) une infrastructure informatique virtuelle.
-- _CI_ : Continuous Integration (Intégration Continu). Ensemble de pratiques permettant de réduire la feedback loop.
-- _CD_ : Continuous Delivery/Deployment (Déploiement Continu). Mise en production automatique des artéfacts générés par la CI.
-- _SaaS_ : Software-as-a-Service. Application hébergée sur le cloud et accessible directement à l'utilisateur final.
+## 📚 Glossaire
 
-Voir aussi : <https://blog.stephane-robert.info/docs/glossaire/>
+- **DevOps** : ensemble de pratiques, de philosophies et d'outils visant à combiner les pratiques de développement (Dev) et les pratiques opérationnelles (Ops).
+- **SysOps** : gère l'ensemble de l'infrastructure physique et logicielle permettant le déploiement de conteneurs applicatifs (stack réseau, gestion des données, kubernetes, ...).
+- **IaC** : Infrastructure-as-Code : Coder (scripts, fichiers de configuration) une infrastructure informatique virtuelle.
+- **CI** : Continuous Integration (Intégration Continu). Ensemble de pratiques permettant de réduire la feedback loop.
+- **CD** : Continuous Delivery/Deployment (Déploiement Continu). Mise en production automatique des artéfacts générés par la CI.
+- **SaaS** : Software-as-a-Service. Application hébergée sur le cloud et accessible directement à l'utilisateur final.
+
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
 # Liens
 
 - Voir une sélection d'outils DevOps sur le [site web][site-perso]
+- Glossaire DevOps : <https://blog.stephane-robert.info/docs/glossaire/>
 - Un [résumé de Docker et du CI/CD](https://cours.brosseau.ovh/tp/devops/support-docker-cicd.html)
 - <https://roadmap.sh/devops>
 - <https://www.damyr.fr/glossaire/>

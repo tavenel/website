@@ -4,34 +4,34 @@ title: Terraform
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Objectifs
- 
-- Gérer des ressources dans un cluster Cloud avec une notion d'état grâce à Terraform.
+## 🎯 Objectifs
+
+- Gérer des ressources dans un cluster Cloud avec une notion d'état grâce à Terraform. ☁️
 
 ---
 
-# Présentation de Terraform
+## 🛠️ Présentation de Terraform
 
-- Outil IaC de déploiement et mise à jour d'infrastructures hétérogènes
-- Déclaratif
-- Statefull (vs Ansible : stateless)
-- Majoritairement pour le Cloud (multi-provider)
-  - fournisseur CRUD de _ressources_ (modifiables) et _data source_ (immuable) par API <https://registry.terraform.io>
-- Séparation plan vs application : `refresh`, `plan`, `apply`, `destroy`, …
-- Modules partagés pour les infrastructures courantes
-
----
-
-# Fonctionnement
-
-1. Fichiers IaC pour lancer Terraform : `*.tf`
-1. Compare l'état actuel (`terraform.tfstate` ou remote state) au plan => changements / créations
-1. Utilise les API des providers pour effectuer les changements
-1. Stocke l'état des changements
+- Outil IaC de déploiement et mise à jour d'infrastructures hétérogènes 🏗️
+- Déclaratif 📜
+- Statefull (vs Ansible : stateless) 🔄
+- Majoritairement pour le Cloud (multi-provider) ☁️
+  - Fournisseur CRUD de _ressources_ (modifiables) et _data source_ (immuable) par API [Terraform Registry](https://registry.terraform.io) 🔗
+- Séparation plan vs application : `refresh`, `plan`, `apply`, `destroy`, … 🔄
+- Modules partagés pour les infrastructures courantes 🧩
 
 ---
 
-# Étapes
+## 🔄 Fonctionnement
+
+1. Fichiers IaC pour lancer Terraform : `*.tf` 📄
+2. Compare l'état actuel (`terraform.tfstate` ou remote state) au plan => changements / créations 🔄
+3. Utilise les API des providers pour effectuer les changements 🌐
+4. Stocke l'état des changements 💾
+
+---
+
+## 📋 Étapes
 
 1. `terraform init` => Initialise Terraform et installe les plugins
 1. `terraform plan` => Plannifie l'exécution des changements (`terraform graph`)
@@ -40,16 +40,18 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Fichiers
+## 📄 Fichiers
 
-- `main.tf` : configuration de l'infrastructure
-- `variables.tf` : déclaration des variables
-- `terraform.tfvars` : valeurs des variables
-- `modules` : groupes logiques de ressources dans fichiers `.tf` dédiés (~= _role_ Ansible)
+| Fichier | Description |
+| --- | --- |
+| `main.tf` | Configuration de l'infrastructure 🏗️ |
+| `variables.tf` | Déclaration des variables 📝 |
+| `terraform.tfvars` | Valeurs des variables 📝 |
+| `modules` | Groupes logiques de ressources dans fichiers `.tf` dédiés (~= _role_ Ansible) 🧩 |
 
 ---
 
-# Exemple de fichier Terraform
+### 📄 Exemple de fichier Terraform
 
 ```tf
 provider "kubernetes" {
@@ -70,11 +72,11 @@ data "aws_ami" "ubuntu" {
 
 ---
 
-# Variables
+## Variables
 
 ---
 
-## Variable string
+### Variable string
 
 ```tf
 # accès par `var.mon_ip`
@@ -90,7 +92,7 @@ output "affiche_mon_ip" {
 
 ---
 
-## Variable list
+### Variable list
 
 ```tf
 # pour les types multiples : `count` et `for-each`
@@ -108,7 +110,7 @@ resource "null_resource" "mes_hosts" {
 
 ---
 
-## Variable map (objet)
+### Variable map (objet)
 
 ```tf
 variable "mes_distributions" {
@@ -129,15 +131,15 @@ resource "aws_instance" "mes_serveurs" {
 
 ---
 
-# Secrets
+## 🔒 Secrets
 
-1. Marquer la variable "sensible" (pas d'historique)
-1. Utiliser `Vault` pour sécuriser le fichier de variables
-1. Déplacer l'état `terraform.tfstate` vers un état sécurisé par un Cloud provider
+1. Marquer la variable "sensible" (pas d'historique) 🔒
+2. Utiliser `Vault` pour sécuriser le fichier de variables 🗄️
+3. Déplacer l'état `terraform.tfstate` vers un état sécurisé par un Cloud provider ☁️
 
 ---
 
-## Variable sensible
+### Variable sensible
 
 ```tf
 # variables.tf
@@ -152,8 +154,9 @@ mon_password = "P@ssw0rd"
 ```
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
 # Liens
 
 - [Documentation Terraform](https://developer.hashicorp.com/terraform?product_intent=terraform)
