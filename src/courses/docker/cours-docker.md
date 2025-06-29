@@ -6,72 +6,72 @@ tags:
 - docker
 ---
 
-# Introduction: Problèmes courants
+## 🚀 Introduction: Problèmes courants
 
 ---
 
-## Incohérences entre environnements
+### ⚠️ Incohérences entre environnements
 
-- **"Ça marche sur ma machine" :**
-  - Environnements de dev / test / production différents
-  - Bugs spécifiques à chaque environnement : OS, dépendances, configurations, …
-  - Difficile de reproduire des environnements proches de la production : Tests d'intégration et de performance faussés
-
----
-
-## Problèmes de compatibilité
-
-- Grand nombre de dépendances : bibliothèques, versions de logiciels difficiles à maintenir.
-- Conflits entre différentes versions de dépendances
+- **"Ça marche sur ma machine"** 💻
+  - Environnements de dev / test / production différents 🏗️
+  - Bugs spécifiques à chaque environnement : OS, dépendances, configurations, … 🐛
+  - Difficile de reproduire des environnements proches de la production : Tests d'intégration et de performance faussés 🧪
 
 ---
 
-## Difficulté de déploiement
+### ⚠️ Problèmes de compatibilité
 
-- Scripts complexes et configurations spécifiques à chaque environnement
-- Processus de déploiement manuel :
-  - erreurs humaines
-  - long
+- Grand nombre de dépendances : bibliothèques, versions de logiciels difficiles à maintenir. 📚
+- Conflits entre différentes versions de dépendances ⚠️
 
 ---
 
-## Problèmes de portabilité
+### ⚠️ Difficulté de déploiement
 
-- Difficile de déplacer une application : 
-  - d'un serveur à un autre
-  - d'un environnement de développement à la production
-
----
-
-## Environnements lourds
-
-- Machines virtuelles pour isoler les environnements :
-  - Consomment beaucoup de ressources
-  - Gestion et maintenance coûteuses
-  - VM lente à démarrer
+- Scripts complexes et configurations spécifiques à chaque environnement 📜
+- Processus de déploiement manuel : 🛠️
+  - Erreurs humaines ❌
+  - Long ⏳
 
 ---
 
-## Difficulté à évoluer
+### ⚠️ Problèmes de portabilité
 
-- Scalabilité limitée : environnements traditionnels mal adaptés aux architectures modernes nécessitant une scalabilité rapide et fluide.
-- Mise à l’échelle : configurations manuelles complexes.
+- Difficile de déplacer une application : 📦
+  - D'un serveur à un autre 🖥️
+  - D'un environnement de développement à la production 🏗️
+
+---
+
+### ⚠️ Environnements lourds
+
+- Machines virtuelles pour isoler les environnements : 🖥️
+  - Consomment beaucoup de ressources 💾
+  - Gestion et maintenance coûteuses 💸
+  - VM lente à démarrer ⏳
+
+---
+
+### ⚠️ Difficulté à évoluer
+
+- Scalabilité limitée : environnements traditionnels mal adaptés aux architectures modernes nécessitant une scalabilité rapide et fluide. 📈
+- Mise à l’échelle : configurations manuelles complexes. 🛠️
 
 ---
 
 > Develop faster. Run anywhere.
 
-_Docker®_
+_Docker®_ 🐳
 
 ---
 layout: section
 ---
 
-# Introduction aux conteneurs
+## 🐳 Introduction aux conteneurs
 
 ---
 
-# Architecture d'une machine virtuelle
+### Architecture d'une machine virtuelle
 
 ```plantuml
 @startditaa
@@ -97,7 +97,7 @@ layout: section
 
 ---
 
-# Architecture d'un conteneur
+### Architecture d'un conteneur
 
 ```plantuml
 @startditaa
@@ -119,216 +119,206 @@ layout: section
 
 ---
 
-# Virtualisation forte
+### 🏗️ Virtualisation forte
 
-* `+` Grande indépendance par rapport à l'hyperviseur
-* `+` Isolation forte voir totale
-* `+` Ressources dédiées
-* `-` Consomme beaucoup de ressources
-* `-` Performances réduites : temps de démarrage, virtualisation des appels systèmes, ...
+| Avantages | Inconvénients |
+| --- | --- |
+| Grande indépendance par rapport à l'hyperviseur | Consomme beaucoup de ressources |
+| Isolation forte voire totale | Performances réduites : temps de démarrage, virtualisation des appels systèmes, ... |
+| Ressources dédiées | |
 
 ---
 
-# Paravirtualisation (conteneurs)
+### 🐳 Paravirtualisation (conteneurs)
 
-* `-` Proche du système d'exploitation hôte
-* `-` Isolation faible
-* `+`/`-` Partage un maximum de ressources
-* `+` Impact quasi nul sur les performances
+| Avantages | Inconvénients |
+| --- | --- |
+| Impact quasi nul sur les performances | Proche du système d'exploitation hôte |
+| | Isolation faible |
+| Partage un maximum de ressources | |
 
 ---
 layout: section
 ---
 
-# Présentation de Docker®
+## 🐳 Présentation de Docker®
+
+Docker® est un outil de création, gestion et hébergement de conteneurs applicatifs 🐳
+
+- Compatible Windows, Linux et MacOS 🖥️
+- Utilise des images figées pour générer des conteneurs (version dynamique des images) 📦
+- La création d'une image est décrite dans un fichier `Dockerfile` 📄
 
 ---
 
-Docker® est un outil de création, gestion et hébergement de conteneurs applicatifs
+Un conteneur ne tourne qu'un seul processus 🏗️
 
-* Compatible Windows, Linux et MacOS
-* Utilise des images figées pour générer des conteneurs (version dynamique des images)
-* La création d'une image est décrite dans un ficher `Dockerfile`
-
----
-
-Un conteneur ne tourne qu'un seul processus
-
-* Une stack applicative va être découpée en plusieurs conteneurs
-* exemple `LAMP` : 1 `Apache`, 1 `MySQL`
+- Une stack applicative va être découpée en plusieurs conteneurs 🧩
+- Exemple `LAMP` : 1 `Apache`, 1 `MySQL` 🏗️
 
 ---
 
-## Conteneur
+## 🐳 Conteneur
 
-Un conteneur est donc un **processus en isolation** du reste du système, il a :
+Un conteneur est donc un **processus en isolation** du reste du système, il a : 🐳
 
-- son propre **namespace** applicatif : ne voit pas les autres processus
-- son propre **système de fichiers** (provient de l'_image_)
-- sa propre **stack réseau** : en principe, _bridge_ simulé par un _namespace_ réseau
-- il récupère les **logs de la console** écrits par les applications : `println`, …
-
----
-
-## Cycle de vie
-
-Un conteneur peut donc ressembler un peu à une VM mais :
-
-- on ne "démarre" / "arrête" pas un conteneur mais seulement le processus qui tourne en isolation
-- la vision `running`, `stopped`, … de Docker est donc une abstraction
-- **arrêt du processus principal (PID=1, provenant de l'image ou de `docker run …`) == _"arrêt"_ du conteneur**
+- Son propre **namespace** applicatif : ne voit pas les autres processus 🔒
+- Son propre **système de fichiers** (provient de l'_image_) 📁
+- Sa propre **stack réseau** : en principe, _bridge_ simulé par un _namespace_ réseau 🌐
+- Il récupère les **logs de la console** écrits par les applications : `println`, … 📜
 
 ---
 
-# Registry
+## 🔄 Cycle de vie
 
-Docker® utilise des caches locaux et distants pour stocker les images des conteneurs
+Un conteneur peut donc ressembler un peu à une VM mais : 🐳
 
-* Lors de la création d'un conteneur, Docker® cherche si l'image est disponible en local, sinon celle-ci est récupérée depuis un répertoire distant
-* Par défaut, Docker utilise le _Docker Hub_ : <https://hub.docker.com>
-
----
-
-Les images sont versionnées par un tag
-
-* Exemple : `mysql:5.3`
-* Si aucun tag ajouté, le tag `latest` est utilisé
-* Attention : `latest` est juste un nom de tag (pas la dernière image)
+- On ne "démarre" / "arrête" pas un conteneur mais seulement le processus qui tourne en isolation 🔄
+- La vision `running`, `stopped`, … de Docker est donc une abstraction 🔄
+- **Arrêt du processus principal (PID=1, provenant de l'image ou de `docker run …`) == _"arrêt"_ du conteneur** ⏹️
 
 ---
 
-Il est possible d'utiliser d'autres registry que le hub par défaut comme :
+## 📦 Registry
 
-- Hub Github : <https://ghcr.io/>
-- Hub d'images temporaires <https://ttl.sh/>
-- Registry interne à l'entreprise : `gitea`, <https://hub.docker.com/_/registry> 
+Docker® utilise des caches locaux et distants pour stocker les images des conteneurs 📦
 
----
-
-# Avantages de Docker®
-
- Même environnement d'exécution dans toutes les étapes du pipeline d'intégration : ordinateur personnel, test, production, pré-production, ...
-
-* Windows, Linux, MacOS
-* Assure l'utilisation des mêmes versions de librairies, outils, ...
-* CI/CD
+- Lors de la création d'un conteneur, Docker® cherche si l'image est disponible en local, sinon celle-ci est récupérée depuis un répertoire distant 🌐
+- Par défaut, Docker utilise le _Docker Hub_ : <https://hub.docker.com> 🔗
 
 ---
 
-# Avantages de Docker®
+Les images sont versionnées par un tag 🏷️
 
-Architecture immuable
+- Exemple : `mysql:5.3`
+- Si aucun tag ajouté, le tag `latest` est utilisé
+- Attention : `latest` est juste un nom de tag (pas la dernière image) ⚠️
+
+---
+
+:::tip
+Il est possible d'utiliser d'autres registries que le hub par défaut comme :
+
+- Hub Github : <https://ghcr.io/> 🔗
+- Hub d'images temporaires <https://ttl.sh/> 🔗
+- Registry interne à l'entreprise : `gitea`, <https://hub.docker.com/_/registry> 🔗
+:::
+
+---
+
+## 🌟 Avantages de Docker®
+
+- Même environnement d'exécution dans toutes les étapes du pipeline d'intégration : ordinateur personnel, test, production, pré-production, ... 🏗️
+  - Windows, Linux, MacOS 🖥️
+  - Assure l'utilisation des mêmes versions de librairies, outils, ... 🔧
+
+---
+
+- Architecture immuable 🏗️
 
 > Build once, run everywhere
 
-* Une image Docker® est par design immuable et sans état (stateless)
-  * Ce n'est pas le cas d'un conteneur (exécution d'une image)
- 
----
-
-# Avantages de Docker®
-
-Répertoire centralisé d'images
-
-* Docker® Hub accessible publiquement
-* Assure la véracité et l'intégrité des images utilisées
+- Une image Docker® est par design immuable et sans état (stateless) 📦
+  - Ce n'est pas le cas d'un conteneur (exécution d'une image) 🐳
 
 ---
 
-# Architecture de Docker® : les namespaces et les cgroups
-
-Docker utilise massivement deux technologies du noyau Linux pour isoler et associer des ressources aux conteneurs : les `namespaces` et les `cgroups`.
-
----
-
-## Namespaces
-
-- Fonctionnalité native du noyau Linux.
-- Aspect fondamental des conteneurs : permet d'isoler des ressources du système hôte.
-- 5 types de `namespace` :
-  + `Process ID`
-  + `Mount`
-  + `IPC` (Interprocess communication)
-  + `User` (expérimental)
-  + `Network`
+- Répertoire centralisé d'images 📦
+  - Docker® Hub accessible publiquement 🌐
+  - Assure la véracité et l'intégrité des images utilisées 🔒
 
 ---
 
-## Cgroups
+## 🏗️ Architecture de Docker® : les namespaces et les cgroups
 
-- Extension du noyau Linux.
-- Les `control groups` permettent de contrôler finement les ressources à allouer aux conteneurs.
-  + limitations mémoire
-  + utilisation et temps CPU
-  + accès aux disques
-  + ...
+Docker utilise massivement deux technologies du noyau Linux pour isoler et associer des ressources aux conteneurs : les `namespaces` et les `cgroups`. 🏗️
 
 ---
 
-- Exemples de `cgroups` classiques :
-  + `CPU`
-  + `Memory`
-  + `Network Bandwidth`
-  + `Disk`
-  + `Priority`
+### 🔒 Namespaces
+
+- Fonctionnalité native du noyau Linux. 🔒
+- Aspect fondamental des conteneurs : permet d'isoler des ressources du système hôte. 🔒
+- 5 types de `namespace` : 🔒
+  - `Process ID`
+  - `Mount`
+  - `IPC` (Interprocess communication)
+  - `User` (expérimental)
+  - `Network`
+
+---
+
+### 🏗️ Cgroups
+
+- Extension du noyau Linux. 🏗️
+- Les `control groups` permettent de contrôler finement les ressources à allouer aux conteneurs. 🏗️
+  - Limitations mémoire 💾
+  - Utilisation et temps CPU ⏱️
+  - Accès aux disques 💾
+  - …
+
+---
+
+Exemples de `cgroups` classiques : 🏗️
+
+- `CPU`
+- `Memory`
+- `Network Bandwidth`
+- `Disk`
+- `Priority`
 
 ---
 
 ![Architecture de Docker](https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png)
-
 <div class="caption">Architecture de Docker®</div>
 
 ---
 
-# Commandes de base de Docker® 
+## 🛠️ Commandes de base de Docker®
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
 
 ---
 layout: section
 ---
 
-# Persistance des données
+## 💾 Persistance des données
+
+- Possibilité de stocker les données en dehors des conteneurs. 💾
+- Permet de dissocier le cycle de vie des données / cycle de vie du conteneur. 🔄
+- Données non critiques et temporaires : dans le conteneur. 📦
+- Données liées au métier (base de données, ...) : hors du conteneur. 💾
 
 ---
 
-# Persistance des données
+### 📦 Volume Docker®
 
-- Possibilité de stocker les données en dehors des conteneurs.
-- Permet de dissocier cycle de vie des données / cycle de vie du conteneur .
-- Données non critiques et temporaires : dans le conteneur.
-- Données liées au métier (base de données, ...) : hors du conteneur.
-
----
-
-## Volume Docker® 
-
-- Mécanisme de persistance de données.
-- Permet l'échange de données avec l'hôte ou un autre conteneur.
-- Initialisé lors de la création du conteneur.
-- Non détruit à l'arrêt ou à la destruction du conteneur.
+- Mécanisme de persistance de données. 📦
+- Permet l'échange de données avec l'hôte ou un autre conteneur. 🔄
+- Initialisé lors de la création du conteneur. 📦
+- Non détruit à l'arrêt ou à la destruction du conteneur. 🔄
 
 ---
 
-## Bind mount
+### 📁 Bind mount
 
-- Volume virtuel lié et monté dans le conteneur : `bind mount`
-- Monte un dossier de l'hôte directement dans le conteneur
-- Facile d'utilisation
-- Dépendant du système hôte : performances, robustesse, portabilité, ...
-- Surtout utilisé pour partager des fichiers de configuration, avec peu de changements / accès dans le conteneur
-
----
-
-## Data volume dédié
-
-- Utilisation d'un vrai volume de stockage partagé : `iSCSI`, `FC` ou `NFS` comme `data volume`.
-- Utilise un vrai cluster de stockage
-- Beaucoup plus robuste
+- Volume virtuel lié et monté dans le conteneur : `bind mount` 📁
+- Monte un dossier de l'hôte directement dans le conteneur 📁
+- Facile d'utilisation 🛠️
+- Dépendant du système hôte : performances, robustesse, portabilité, ... ⚠️
+- Surtout utilisé pour partager des fichiers de configuration, avec peu de changements / accès dans le conteneur 📄
 
 ---
 
-## Partage de données entre conteneurs
+### 💾 Data volume dédié
+
+- Utilisation d'un vrai volume de stockage partagé : `iSCSI`, `FC` ou `NFS` comme `data volume`. 💾
+- Utilise un vrai cluster de stockage 💾
+- Beaucoup plus robuste 🛡️
+
+---
+
+### 🔄 Partage de données entre conteneurs
 
 Pour partager des données entre conteneurs, il suffit de monter le même volume nommé dans différents conteneurs :
 
@@ -340,283 +330,274 @@ docker run -v mon_volume:/pont_de_montage_conteneur_2 conteneur_image
 
 ---
 
-# Utilisation des volumes depuis les commandes Docker® 
+### 📦 Utilisation des volumes depuis les commandes Docker®
 
-Voir la section sur les volumes de la [cheatsheet sur Docker®][docker-cheatsheet].
-
----
-layout: section
----
-
-# Gestion et configuration du réseau
-
----
-
-# Réseau
-
-- Pour interconnecter les conteneurs et pour communiquer avec l'extérieur, Docker® gère une abstraction du réseau : le _CNM_ (_Container Network Model_).
-- Le comportement par défaut décrit est celui d'un système Linux (installation classique). Celui-ci peut varier dans des installations plus exotiques (`Oracle® VirtualBox` sur Windows, ...).
-- La configuration du réseau est gérée par des pilotes (driver) différents décrits ci-après.
-
----
-
-- Sauf pour `macvlan`, l'adresse `mac` du conteneur est la même que celle de l'hôte.
-- Docker intègre un serveur `DNS` pour les réseaux créés par l'utilisateur - en cas d'échec, le service `DNS` configuré dans le conteneur est utilisé (peut provenir de l'hôte).
-
----
-
-## Driver `bridge`
-
-- À l'installation, création d'un réseau de type pont nommé `bridge` connecté à l'interface `docker0`.
-- Réseau par défaut si non spécifié à la création du conteneur.
-- Permet l'interconnexion des conteneurs, mais pas d'accès depuis l'extérieur.
-
----
-
-## Driver `null` - réseau `none`
-
-- Aucune connexion entre conteneurs ou avec l'extérieur.
-- Connexion à l'interface locale `loopback` uniquement.
-- À l'installation, création d'un réseau de type `null` nommé `none`.
-
----
-
-## Driver `host`
-
-- Supprimer l'isolation du réseau.
-- Connexion directe à une interface de l'hôte.
-- À l'installation, création d'un réseau de type `null` nommé `host`.
-- Pas de mapping de port (option `-p`).
-
----
-
-## Driver `overlay`
-
-- Permet de gérer un réseau multi-hôtes distribué entre plusieurs `Docker Engine`.
-- Routage automatique du paquet vers le bon couple : hôte/conteneur.
-
----
-
-## Driver `macvlan`
-
-- Attribue une adresse `mac` dédiée à un conteneur.
-- Simule un système physique différent sur le réseau.
-- Proche d'une vraie machine virtuelle.
-
----
-
-## Driver `ipvlan`
-
-- Similaire `macvlan`, mais partage une interface réseau avec l'hôte et son adresse MAC. Chaque conteneur a sa propre adresse IP.
-- Très performant (pas de _bridge_)
-- Layer 2 VLAN tagging (couche de liaison) : partage de la même interface physique, adresses IP distinctes.
-- IPvlan L3 : agit comme un routeur : routage en couche 3 ("réseau") automatique dans le réseau, à gérer manuellement à l'extérieur.
-
----
-
-# Configuration du réseau depuis les commandes Docker® 
-
-- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
-- Voir la documentation officielle : <https://docs.docker.com/network/drivers/>
+Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet). 🔗
 
 ---
 layout: section
 ---
 
-# Le `Dockerfile`
+## 🌐 Gestion et configuration du réseau
 
 ---
 
-# `Dockerfile`
+### 🌐 Réseau Docker
 
-- Fichier texte qui décrit comment créer une nouvelle image Docker®.
-- Décrit une suite d'instructions à exécuter les unes à la suite des autres pour générer l'image.
-- N'est plus utilisé une fois l'image créée.
-
----
-
-# Layers
-
-- Les instructions du `Dockerfile` (`ADD`, …) créent chacun une mini-image (_layer_)
-- L'image finale est l'empilement de tous les _layer_
-- En cas de modification, seuls les nouveaux _layers_ sont modifiés !
-- Les images utilisent _UnionFS_ : chaque layer **ajoute** les changements du filesystem (nouveau fichier, suppression, …) au layer précédent => **un layer ne supprime jamais de données dans l'image finale**
+- Pour interconnecter les conteneurs et pour communiquer avec l'extérieur, Docker® gère une abstraction du réseau : le _CNM_ (_Container Network Model_). 🌐
+- Le comportement par défaut décrit est celui d'un système Linux (installation classique). Celui-ci peut varier dans des installations plus exotiques (`Oracle® VirtualBox` sur Windows, ...). ⚠️
+- La configuration du réseau est gérée par des pilotes (driver) différents décrits ci-après. 🛠️
+- Sauf pour `macvlan`, l'adresse `mac` du conteneur est la même que celle de l'hôte. 🔒
+- Docker intègre un serveur `DNS` pour les réseaux créés par l'utilisateur - en cas d'échec, le service `DNS` configuré dans le conteneur est utilisé (peut provenir de l'hôte). 🌐
 
 ---
 
-# Build multistage
+### 🌉 Driver `bridge`
 
-- Il est possible d'utiliser plusieurs `FROM … AS etapeX`
-- On récupère des fichiers du layer précédent par `COPY --from=etapeX …` 
-  - tout le reste du layer est détruit à la fin
-  - il ne reste que les instructions après le dernier `FROM …`
-- Très utile pour séparer une partie _dev_ ou _build_ de la _prod_
+- À l'installation, création d'un réseau de type pont nommé `bridge` connecté à l'interface `docker0`. 🌉
+- Réseau par défaut si non spécifié à la création du conteneur. 🌉
+- Permet l'interconnexion des conteneurs, mais pas d'accès depuis l'extérieur. 🌐
 
 ---
 
-# Instructions standards Dockerfile
+### 🚫 Driver `null` - réseau `none`
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
+- Aucune connexion entre conteneurs ou avec l'extérieur. 🚫
+- Connexion à l'interface locale `loopback` uniquement. 🔄
+- À l'installation, création d'un réseau de type `null` nommé `none`. 🚫
+
+---
+
+### 🌐 Driver `host`
+
+- Supprime l'isolation du réseau. 🌐
+- Connexion directe à une interface de l'hôte. 🌐
+- À l'installation, création d'un réseau de type `null` nommé `host`. 🌐
+- Pas de mapping de port (option `-p`). 🌐
+
+---
+
+### 🌐 Driver `overlay`
+
+- Permet de gérer un réseau multi-hôtes distribué entre plusieurs `Docker Engine`. 🌐
+- Routage automatique du paquet vers le bon couple : hôte/conteneur. 🌐
+
+---
+
+### 🌐 Driver `macvlan`
+
+- Attribue une adresse `mac` dédiée à un conteneur. 🌐
+- Simule un système physique différent sur le réseau. 🌐
+- Proche d'une vraie machine virtuelle. 🖥️
+
+---
+
+### 🌐 Driver `ipvlan`
+
+- Similaire `macvlan`, mais partage une interface réseau avec l'hôte et son adresse MAC. Chaque conteneur a sa propre adresse IP. 🌐
+- Très performant (pas de _bridge_) 🌐
+- Layer 2 VLAN tagging (couche de liaison) : partage de la même interface physique, adresses IP distinctes. 🌐
+- IPvlan L3 : agit comme un routeur : routage en couche 3 ("réseau") automatique dans le réseau, à gérer manuellement à l'extérieur. 🌐
+
+---
+
+### 🛠️ Configuration du réseau depuis les commandes Docker®
+
+- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
+- Voir la documentation officielle : <https://docs.docker.com/network/drivers/> 🔗
 
 ---
 layout: section
 ---
 
-# Présentation de Docker Compose
+## 📄 Le `Dockerfile`
+
+- Fichier texte qui décrit comment créer une nouvelle image Docker®. 📄
+- Décrit une suite d'instructions à exécuter les unes à la suite des autres pour générer l'image. 📜
+- N'est plus utilisé une fois l'image créée. 📦
 
 ---
 
-# Orchestrateurs de conteneurs
+### 🧩 Layers
 
-- Principe de Docker : 1 conteneur pour 1 seul service : BDD, backend, frontend, …
-- Une application est composée d'une stack de plusieurs services
-- Comment gérer une stack de manière homogène ?
-  - orchestrateurs de conteneurs : `Docker Compose`, `Swarm`, `DC/OS / Mesos`, `Kubernetes`, `OpenShift`, …
+- Les instructions du `Dockerfile` (`ADD`, …) créent chacun une mini-image (_layer_) 🧩
+- L'image finale est l'empilement de tous les _layers_ 🧩
+- En cas de modification, seuls les nouveaux _layers_ sont modifiés ! 🔄
+- Les images utilisent _UnionFS_ : chaque layer **ajoute** les changements du filesystem (nouveau fichier, suppression, …) au layer précédent => **un layer ne supprime jamais de données dans l'image finale** 🧩
 
 ---
 
-# Docker Compose
+### 🏗️ Build multistage
 
-`Docker compose` est un outil de définition et de management d'applications multi-conteneurs :
+- Il est possible d'utiliser plusieurs `FROM … AS etapeX` 🏗️
+- On récupère des fichiers du layer précédent par `COPY --from=etapeX …` 📦
+  - Tout le reste du layer est détruit à la fin 🗑️
+  - Il ne reste que les instructions après le dernier `FROM …` 🏗️
+- Très utile pour séparer une partie _dev_ ou _build_ de la _prod_ 🏗️
 
-* Un fichier `Yaml` configure les différents services (conteneurs) au sein d'une stack
-* `Docker compose` gère les dépendances entre services : `depends_on`
-* `Docker compose` configure également l'infrastructure Docker® basique : `network`, `volumes`, environnement, …
+---
+
+### 🛠️ Instructions standards Dockerfile
+
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
+
+---
+layout: section
+---
+
+# 🏗️ Présentation de Docker Compose
+
+---
+
+## 🏗️ Orchestrateurs de conteneurs
+
+- Principe de Docker : 1 conteneur pour 1 seul service : BDD, backend, frontend, … 🏗️
+- Une application est composée d'une stack de plusieurs services 🏗️
+- Comment gérer une stack de manière homogène ? 🏗️
+  - Orchestrateurs de conteneurs : `Docker Compose`, `Swarm`, `DC/OS / Mesos`, `Kubernetes`, `OpenShift`, … 🏗️
+
+---
+
+## 🏗️ Docker Compose
+
+`Docker compose` est un outil de définition et de management d'applications multi-conteneurs : 🏗️
+
+- Un fichier `Yaml` configure les différents services (conteneurs) au sein d'une stack 📄
+- `Docker compose` gère les dépendances entre services : `depends_on` 🏗️
+- `Docker compose` configure également l'infrastructure Docker® basique : `network`, `volumes`, environnement, … 🏗️
 
 La stack complète est gérée depuis la CLI `docker compose` : création, démarrage des conteneurs, ...
 
 ---
 
-# Philosophie des conteneurs
+## 🏗️ Philosophie des conteneurs
 
-- Un conteneur isole un service applicatif minimal
-- En théorie : 1 conteneur pour 1 processus
-- Utile pour créer une architecture de micro-services
-- `Docker compose` permet une gestion unifiée de l'application globale
+- Un conteneur isole un service applicatif minimal 🏗️
+- En théorie : 1 conteneur pour 1 processus 🏗️
+- Utile pour créer une architecture de micro-services 🏗️
+- `Docker compose` permet une gestion unifiée de l'application globale 🏗️
 
 ---
 
 En pratique, on utilise Docker pour séparer à la fois :
 
-- des micro-services applicatifs : unités métier indépendantes
-  + service de paiement
-  + service de gestion des utilisateurs
-- des services techniques séparés : séparent les couches d'architecture en services distincts
-  + base de données
-  + backend
-  + UI
+- Des micro-services applicatifs : unités métier indépendantes 🏗️
+  - Service de paiement 💳
+  - Service de gestion des utilisateurs 👥
+- Des services techniques séparés : séparent les couches d'architecture en services distincts 🏗️
+  - Base de données 🗃️
+  - Backend 🏗️
+  - UI 🖥️
 
 ---
 
-Google, 2014 : 2 milliards conteneurs lancés par semaine
+Google, 2014 : 2 milliards de conteneurs lancés par semaine 📊
 
 ---
 
-# Commandes de base de Docker compose® 
+## 🛠️ Commandes de base de Docker compose®
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet)
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
 
 ---
 layout: section
 ---
 
-# Quelques bonnes pratiques
+# 🛠️ Quelques bonnes pratiques
 
 ---
 
-# Bonnes pratiques
-
-- Vérifier l'**image de base** `FROM` :
-    - image **officielle** ? **reconnue** ?
-    - attention aux **registry** utilisées
-    - **layers optimisés** ?
-    - failles de **sécurité** ? Image **maintenue** ?
-    - ne pas utiliser le tag `latest` mais **préciser un tag** avec numéro de version ou (mieux) directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE` et l'outil `dive`.
+- Vérifier l'**image de base** `FROM` : 🛠️
+  - Image **officielle** ? **Reconnue** ? ✅
+  - Attention aux **registries** utilisées ⚠️
+  - **Layers optimisés** ? ✅
+  - Failles de **sécurité** ? Image **maintenue** ? 🔒
+  - Ne pas utiliser le tag `latest` mais **préciser un tag** avec numéro de version ou (mieux) directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE` et l'outil `dive`. 🔍
 
 ---
 
-- Installation de paquets : `apt`, `apk`, `pip`, … :
-    - **versionner** les éléments à installer
-    - **vider les caches** ( et `/var/cache`, …)
-    - **supprimer** tout paquet ou outil inutile
-    - éviter les outils de débug
-    - **mettre à jour** les images
+- Installation de paquets : `apt`, `apk`, `pip`, … : 📦
+  - **Versionner** les éléments à installer 🏷️
+  - **Vider les caches** (et `/var/cache`, …) 🗑️
+  - **Supprimer** tout paquet ou outil inutile 🗑️
+  - Éviter les outils de debug 🛠️
+  - **Mettre à jour** les images 🔄
 
 ---
 
-- Fichiers :
-  - utiliser le `.dockerignore`
-  - utiliser `COPY` (obligatoirement local) plutôt que `ADD` (sécurité)
-  - éviter le `COPY . .`
-  - utiliser un `WORKDIR`
+- Fichiers : 📄
+  - Utiliser le `.dockerignore` 📄
+  - Utiliser `COPY` (obligatoirement local) plutôt que `ADD` (sécurité) 📦
+  - Éviter le `COPY . .` 📦
+  - Utiliser un `WORKDIR` 📁
 
 ---
 
-- Créer un **utilisateur par défaut** et utiliser l'instruction `USER` (au moins pour le `CMD`)
-- Push de l'image : registry _publique_ ou _privée_ ?
-- **Éviter les monolithes** : séparer BDD, backend, frontend, …
-- utiliser un multi-stage build si besoin
+- Créer un **utilisateur par défaut** et utiliser l'instruction `USER` (au moins pour le `CMD`) 👤
+- Push de l'image : registry _publique_ ou _privée_ ? 🌐
+- **Éviter les monolithes** : séparer BDD, backend, frontend, … 🏗️
+- Utiliser un multi-stage build si besoin 🏗️
 
 ---
 
-- Utiliser un **linter** : `docker run --rm -i hadolint/hadolint < Dockerfile`
-- Attention aux **informations sensibles** (secrets, certificats, …)
-  - utiliser des **variables**
-  - faire des scans de **vulnérabilités** : `Clair`, `Falco`, …
+- Utiliser un **linter** : `docker run --rm -i hadolint/hadolint < Dockerfile` 🛠️
+- Attention aux **informations sensibles** (secrets, certificats, …) 🔒
+  - Utiliser des **variables** 📝
+  - Faire des scans de **vulnérabilités** : `Clair`, `Falco`, … 🔍
 
 ---
 
-- Monter les filesystem en **lecture seule** au maximum
-- **Limiter les ressources** d'un conteneur (mémoire, CPU, taille des logs, …)
-- Configurer les **logs** : compression, rotation (`max-size`) : [voir doc][doc-logs]
-  - par conteneur : `--log-opt`
-  - globalement par config. du serveur : `daemon.json`
-  - les applications doivent écrire leurs logs sur la **console** (`stdout`, `stderr`).
-- Ne pas tourner le serveur Docker en `root` (_expérimental_)
+- Monter les filesystems en **lecture seule** au maximum 📖
+- **Limiter les ressources** d'un conteneur (mémoire, CPU, taille des logs, …) 📏
+- Configurer les **logs** : compression, rotation (`max-size`) : [voir doc](https://docs.docker.com/config/containers/logging/) 📜
+  - Par conteneur : `--log-opt` 📜
+  - Globalement par config. du serveur : `daemon.json` 📜
+  - Les applications doivent écrire leurs logs sur la **console** (`stdout`, `stderr`). 📜
+- Ne pas tourner le serveur Docker en `root` (_expérimental_) ⚠️
 
 ---
 
-## Optimiser la taille des images Docker
+## 📦 Optimiser la taille des images Docker
 
-- Limiter le **nombre de couches** : chaque instruction `RUN`, `COPY` ou `ADD` ajoute un layer supplémentaire, combiner les commandes si possible :
-  - `apt-get update && apt-get install -y … && rm -rf …`
-- `apt-get` :
-  - L'option `--no-install-recommends` de `apt-get install` permet de ne pas installer les dépendances optionnelles.
-  - Supprimer `/var/lib/apt/lists/*` après avoir installé un package **dans le même layer**
-- `apk` :
-  - L'option `--no-cache` évite le cache de packets
-- **Analysez** vos images, par exemple avec <https://github.com/wagoodman/dive>
-- Docker utilise _UnionFS_ : ~retirer un fichier d'un layer précédent n'a **aucune influence** sur la taille de l'image~.
-
----
-
-# Inconvénients de Docker
-
-- Sécurité : **isolation limitée** (conteneur vs VM)
-- Performance : surcharge (faible) vs exécution native (assez négligeable)
-- Changement de paradigme : conteneurs "jetables", gestion du stockage, abstraction supplémentaire, …
-- Complexité des réseaux : overlay networks, multi-host networking, …
-- Infrastructures des orchestrateurs complexes : Kubernetes, …
+- Limiter le **nombre de couches** : chaque instruction `RUN`, `COPY` ou `ADD` ajoute un layer supplémentaire, combiner les commandes si possible : 📦
+  - `apt-get update && apt-get install -y … && rm -rf …` 📦
+- `apt-get` : 📦
+  - L'option `--no-install-recommends` de `apt-get install` permet de ne pas installer les dépendances optionnelles. 📦
+  - Supprimer `/var/lib/apt/lists/*` après avoir installé un package **dans le même layer** 📦
+- `apk` : 📦
+  - L'option `--no-cache` évite le cache de packets 📦
+- **Analysez** vos images, par exemple avec [dive](https://github.com/wagoodman/dive) 🔍
+- Docker utilise _UnionFS_ : ~retirer un fichier d'un layer précédent n'a **aucune influence** sur la taille de l'image~. 📦
 
 ---
 
-# Exemples d'usages
+## ⚠️ Inconvénients de Docker
 
-- Isolation (simple) d'applications :
-  - Plusieurs versions de `NodeJS`
-  - _Microservices_
-- _CI/CD_ : même environnement de _build_ et de _test_
-- Environnements de développement reproductibles
-- Sandbox pour expérimentation
-- Scalabilité et gestion des ressources
-  - réplication rapide
-  - ressources fortement partagées
-- Déploiement simple et rapide dans un cluster Cloud hébergé
-- Plus besoin de configurer le port de l'application mais seulement le binding de port Docker : plusieurs serveurs Web sur leurs ports 80 respectifs (dans les conteneurs), …
+- Sécurité : **isolation limitée** (conteneur vs VM) 🔒
+- Performance : surcharge (faible) vs exécution native (assez négligeable) ⚡
+- Changement de paradigme : conteneurs "jetables", gestion du stockage, abstraction supplémentaire, … 🔄
+- Complexité des réseaux : overlay networks, multi-host networking, … 🌐
+- Infrastructures des orchestrateurs complexes : Kubernetes, … 🏗️
 
 ---
 
-<!-- class: liens -->
+## 🏗️ Exemples d'usages
+
+- Isolation (simple) d'applications : 🏗️
+  - Plusieurs versions de `NodeJS` 🏗️
+  - _Microservices_ 🏗️
+- _CI/CD_ : même environnement de _build_ et de _test_ 🏗️
+- Environnements de développement reproductibles 🏗️
+- Sandbox pour expérimentation 🏗️
+- Scalabilité et gestion des ressources 🏗️
+  - Réplication rapide 🏗️
+  - Ressources fortement partagées 🏗️
+- Déploiement simple et rapide dans un cluster Cloud hébergé 🏗️
+- Plus besoin de configurer le port de l'application mais seulement le binding de port Docker : plusieurs serveurs Web sur leurs ports 80 respectifs (dans les conteneurs), … 🏗️
+
+---
+layout: section
+---
 
 # Liens
 
