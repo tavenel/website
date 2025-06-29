@@ -19,6 +19,8 @@ import rehypeSanitize from 'rehype-sanitize'
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 
+import expressiveCode from 'astro-expressive-code';
+
 // Set default Layout for Markdown files
 const defaultLayout = () => {
 	return function (_, file) {
@@ -88,33 +90,31 @@ export default defineConfig({
 			// rehypeSanitize, // sanitize and cleanup HTML
 			rehypeKatex,
 		],
-		shikiConfig: { // code highlighter
-			// https://shiki.style/themes
-			themes: {
-				// light
-				github: 'github-light', // default
-				everforest: 'everforest-light',
-				one: 'one-light',
-				// dark
-				houston: 'houston', // default if dark
-				aurora: 'aurora-x',
-				ayu: 'ayu-dark',
-				catppuccin: 'catppuccin-mocha',
-				darkp: 'dark-plus',
-				dracula: 'dracula',
-				kanagawa: 'kanagawa-dragon',
-				laserwave: 'laserwave',
-				nord: 'nord',
-				rose: 'rose-pine',
-				synthwave: 'synthwave-84',
-				tokyonight: 'tokyo-night',
-				vesper: 'vesper',
-			},
-			defaultColor: false, // no default theme
-		},
 	},
 
 	integrations: [
+		expressiveCode({
+			themes: [
+				// light
+				'github-light',
+				'everforest-light',
+				'one-light',
+				// dark
+				'houston',
+				'aurora-x',
+				'ayu-dark',
+				'catppuccin-mocha',
+				'dark-plus',
+				'dracula',
+				'kanagawa-dragon',
+				'laserwave',
+				'nord',
+				'rose-pine',
+				'synthwave-84',
+				'tokyo-night',
+				'vesper',
+			],
+		}),
 		sitemap(),
 		pagefind() // must be last to search in fully bundled
 	],

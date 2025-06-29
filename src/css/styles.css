@@ -509,7 +509,7 @@ aside.callout-correction { display: none; }
 	--blockquote: revert;
 }
 
-[data-theme="github"] {
+[data-theme="github-light"] {
 	/* 
 * Github Light - default theme.
 * code colorscheme is Github Light
@@ -564,7 +564,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="everforest"] {
+[data-theme="everforest-light"] {
 	/* Light theme inspired by : https://github.com/sainnhe/everforest/blob/master/palette.md */
 	--background: #FDF6E3;
 	--text: #5C6A72;
@@ -612,7 +612,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="one"] {
+[data-theme="one-light"] {
 	/* Light theme inspired by : https://github.com/nathanbuchar/atom-one-dark-terminal/blob/master/COLORS */
 	--background: #F9F9F9;
 	--text: #383A42;
@@ -719,7 +719,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="ayu"] {
+[data-theme="ayu-dark"] {
 	/* Theme inspired by : https://github.com/ayu-theme/ayu-colors */
 	--background: #0B0E14;
 	--text: #BFBDB6;
@@ -774,7 +774,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="catppuccin"] {
+[data-theme="catppuccin-mocha"] {
 	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
 	--background: #1e1e2e;
 	--text: #cdd6f4;
@@ -881,7 +881,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="kanagawa"] {
+[data-theme="kanagawa-dragon"] {
 	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.yml */
 	--background: #181616;
 	--text: #c5c9c5;
@@ -1044,7 +1044,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="rose"] {
+[data-theme="rose-pine"] {
 	/* TODO */
 	--background: var(--dark-main);
 	--text: var(--light-main);
@@ -1099,7 +1099,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="synthwave"] {
+[data-theme="synthwave-84"] {
 	/* Theme inspired by : https://github.com/robb0wen/synthwave-vscode */
 	--background: #262335;
 	--text: #f97e72;
@@ -1269,7 +1269,7 @@ aside.callout-correction { display: none; }
 	}
 }
 
-[data-theme="tokyonight"] {
+[data-theme="tokyo-night"] {
 	/* TODO */
 	--background: var(--dark-main);
 	--text: var(--light-main);

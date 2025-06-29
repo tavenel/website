@@ -19,6 +19,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.8.0",
+    "astro-expressive-code": "^0.41.2",
     "astro-pagefind": "^1.8.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",

@@ -3,20 +3,20 @@
   <select name="themeSwitch" id="themeSwitchSelect">
   	<option value="none">Aucun</option>
   	<option value="system">Automatique</option>
-  	<option value="github">Github Light (défaut clair)</option>
-  	<option value="everforest">Everforest Light</option>
-  	<option value="one">One Light</option>
-  	<option value="ayu">Ayu Dark</option>
-  	<option value="catppuccin">Catppuccin</option>
+  	<option value="github-light">Github Light (défaut clair)</option>
+  	<option value="everforest-light">Everforest Light</option>
+  	<option value="one-light">One Light</option>
+  	<option value="ayu-dark">Ayu Dark</option>
+  	<option value="catppuccin-mocha">Catppuccin</option>
   	<option value="dracula">Dracula</option>
-  	<option value="kanagawa">Kanagawa</option>
+  	<option value="kanagawa-dragon">Kanagawa</option>
   	<!--<option value="laserwave">Laserwave</option>-->
   	<option value="houston">Houston (défaut sombre)</option>
   	<option value="nord">Nord</option>
-  	<!--<option value="rose">Rosé Pine</option>-->
-  	<option value="synthwave">Synthwave'84</option>
+  	<!--<option value="rose-pine">Rosé Pine</option>-->
+  	<option value="synthwave-84">Synthwave'84</option>
   	<option value="the-unnamed">The Unnamed</option>
-  	<!--<option value="tokyonight">Tokyonight</option>-->
+  	<!--<option value="tokyo-night">Tokyonight</option>-->
   	<!--<option value="vesper">Vesper</option>-->
   </select>
 </div>
@@ -25,7 +25,7 @@
 const select = document.getElementById("themeSwitch") as HTMLSelectElement;
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
 	? "houston"
-	: "github";
+	: "github-light";
 
 function setTheme(value: string) {
 	const theme = value === "system" ? systemTheme : value;
