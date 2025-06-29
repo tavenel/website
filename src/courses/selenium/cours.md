@@ -7,11 +7,7 @@ tags:
 - tests
 ---
 
-# Sélénium
-
----
-
-# Sélénium
+## Présentation
 
 - Outil d'automatisation des actions utilisateur dans un navigateur web et de récupérer les résultats de ces actions :
   + visiter une page
@@ -19,20 +15,14 @@ tags:
   + remplir un formulaire, etc.
 
 ---
-layout: section
----
 
-# Présentation des composants
+## Composants
 
 ---
 
-# Selenium IDE
+### Selenium IDE
 
----
-
-# Selenium IDE 
-
-## Enregistrer, éditer et débugger les tests
+> Enregistrer, éditer et débugger les tests
 
 - Manière la plus simple de créer des scripts `Selenium`.
 - Enregistre via un plugin pour `Firefox` / `Chrome` les actions de l'utilisateur pendant la navigation sur le site et les affiche dans une interface.
@@ -51,13 +41,9 @@ layout: section
 
 ---
 
-# Selenium RC et WebDriver
+### WebDriver
 
----
-
-# SELENIUM RC ET WEBDRIVER 
-
-## Écriture des tests automatisés
+> Écriture des tests automatisés
 
 - Les API de `Selenium` : permettent en écrivant du code de test d'automatiser le navigateur et les vérifications associées.
 - `Selenium WebDriver` est la nouvelle implémentation de `Selenium` et est souvent choisi pour les nouveaux projets.
@@ -87,13 +73,9 @@ class TestSearch(unittest.TestCase):
 
 ---
 
-# Selenium Grid
+### Selenium Grid
 
----
-
-# SELENIUM  GRID
-
-## Accélération des tests fonctionnels
+> Accélération des tests fonctionnels
 
 - Exécute des scripts `WebDriver` sur des machines distantes physiques ou virtuelles.
 - Permettre l'exécution de tests en parrallèle sur des machines dédiées ayant la puissance nécessaire à l'exécution de tests d'interface graphique
@@ -146,7 +128,7 @@ class TestSearch(unittest.TestCase):
 
 ---
 
-# Quelques bonnes pratiques
+## Quelques bonnes pratiques
 
 - L'identification des éléments d'une page se fait en utilisant des sélecteurs `CSS`. De nombreux frameworks frontend génèrent du code (et donc des attributs `CSS`) à chaque exécution du code, il est donc très risqué d'utiliser des attributs internes au framework !
 - On essaiera donc d'utiliser au maximum des attributs `CSS` ajoutés manuellement dans le code. De même, pour éviter tout soucis de duplication, on utilisera plutôt des `classes` `CSS` que des `ID`.
@@ -180,10 +162,10 @@ Exemple de test utilisant les `PageObject` `LoginPage` et `HomePage` encapsulant
 ```
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Références
+# Liens
 
 - [Extraits de code pour la manipulation des navigateurs](https://www.selenium.dev/documentation/en/webdriver/browser_manipulation/)
 - [Localisation d'éléments (sélecteurs `CSS`)](https://www.selenium.dev/documentation/en/webdriver/locating_elements/)
@@ -196,8 +178,6 @@ Exemple de test utilisant les `PageObject` `LoginPage` et `HomePage` encapsulant
 - Voir aussi :
   - [Playright, une alternative à Selenium avec support de Mocks et tracing des tests](https://playwright.dev/)
   - [Cypress](https://www.cypress.io/)
-
-
 
 ---
 
