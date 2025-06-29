@@ -12,7 +12,6 @@ import remarkEmoji from 'remark-emoji';
 import remarkMath from 'remark-math';
 import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
 import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
-import remarkToc from 'remark-toc';
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -66,7 +65,6 @@ export default defineConfig({
 		// remark: Markdown processing
 		remarkPlugins: [
 			defaultLayout,
-			[remarkToc, { heading: 'Chapitres', maxDepth: 3 }],
 			remarkDiagram,
 			remarkEmoji,
 			remarkMath,
@@ -118,7 +116,7 @@ export default defineConfig({
 
 	integrations: [
 		sitemap(),
-		pagefind(), // must be last to search in fully bundled
+		pagefind() // must be last to search in fully bundled
 	],
 
 	vite: {
