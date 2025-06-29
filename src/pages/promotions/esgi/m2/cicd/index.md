@@ -43,7 +43,8 @@ Module de 18H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](./cicd/cours)
+- [🤓 Cours sur l'intégration continue ](/cours/ci/cours-full)
+- [🤓 Cours  Jenkins](/cours/jenkins/cours)
 
 ### Exercices
 

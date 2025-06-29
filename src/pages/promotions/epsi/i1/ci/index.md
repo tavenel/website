@@ -51,7 +51,8 @@ Module de 10H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](./ci/cours)
+- [🤓 Cours sur l'intégration continue ](/cours/ci/cours-full)
+- [🤓 Cours  Jenkins](/cours/jenkins/cours)
 - [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
 - [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)

@@ -4,7 +4,17 @@ title: Outils d'intégration continue
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# ⚙️ La compilation
+## 🎯 Objectifs
+
+- Comprendre et utiliser les différents outils de l'intégration continue 🧠
+- Automatiser les processus de build, de test et de déploiement 🤖
+- Améliorer la collaboration entre les équipes de développement et d'exploitation 🤝
+- Réduire les erreurs humaines et les temps de feedback ⏳
+- Utiliser des gestionnaires de versions pour centraliser le code source 💾
+
+---
+
+## ⚙️ La compilation
 
 - 🏗️ Génère le binaire à livrer en production depuis le code source.
 - ✅ Dans le cas d'un langage compilé, la compilation est le premier garant du respect de la norme du langage. Le compilateur permet, au moment de générer le binaire, de vérifier à la fois la syntaxe et (dans une moindre mesure) la sémantique du code, et d'apporter des explications et conseils sur les changements à opérer.
@@ -19,7 +29,7 @@ _💡 Par exemple, le respect de la norme Java est garanti par le compilateur qu
 
 ---
 
-## 🔁 Transpilation et compilation croisée
+### 🔁 Transpilation et compilation croisée
 
 - 🔐 Pour pallier à un manque d'analyse dynamique dans le binaire de destination on pourra utiliser des langages moins permissifs, transpilés vers le langage de destination.
 - 🧠 Ces langages, par une grammaire plus stricte et une analyse statique du code source, garantissent que les problèmes non vérifiés à l'exécution ne peuvent pas survenir (ou moins) au vue de la qualité du code source.
@@ -32,7 +42,7 @@ _🔄 À l'inverse, il est possible d'exécuter du code directement dans les mac
 
 ---
 
-# 🛠️ Les outils de build
+## 🛠️ Les outils de build
 
 `Makefile`, `Apache Maven`, `Gradle`, `npm`, `Webpack®`
 
@@ -49,7 +59,7 @@ _🔄 À l'inverse, il est possible d'exécuter du code directement dans les mac
 
 ---
 
-# 🧪 Les tests unitaires
+## 🧪 Les tests unitaires
 
 `Junit`, `phpUnit`, `TestNG`
 
@@ -67,7 +77,7 @@ Voir le [🧪 cours sur les tests unitaires][site-perso].
 
 ---
 
-# 🗂️ Les outils de versionning
+## 🗂️ Les outils de versionning
 
 Versionner son code source permet :
 
@@ -83,7 +93,7 @@ Voir le [📘 cours sur le gestionnaire de versions Git][site-perso].
 
 ---
 
-# 🧹 Les outils d'inspection du code
+## 🧹 Les outils d'inspection du code
 
 - 📊 Génèrent des rapports sur la qualité du code et les points à revoir : couverture de tests, anti-pattern, ...
 - 🛠️ Peuvent proposer des corrections de code : bugs, erreur classiques
@@ -96,7 +106,7 @@ Voir le [📘 cours sur le gestionnaire de versions Git][site-perso].
 
 ---
 
-## ✨ Vérification de style
+### ✨ Vérification de style
 
 `Checkstyle`
 
@@ -111,7 +121,7 @@ Voir le [📘 cours sur le gestionnaire de versions Git][site-perso].
 
 ---
 
-### 🧾 Exemple 1
+#### 🧾 Exemple 1
 
 _En `Java`, il est d'usage d'écrire les constantes en majuscule, même si ce n'est pas une contrainte de la norme (le code compile quand même)._
 
@@ -127,7 +137,7 @@ public static int coeffAddition = 2; // ❌
 
 ---
 
-### 🧾 Exemple 2
+#### 🧾 Exemple 2
 
 Les 2 extraits de code suivants sont équivalents, mais si les développeurs n'utilisent pas le même standard de code, le merge du code source risque d'être beaucoup plus compliqué :
 
@@ -146,7 +156,7 @@ int addition( int i )
 
 ---
 
-### 💡 Utilisation dans un IDE
+#### 💡 Utilisation dans un IDE
 
 _Il peut être très utile de mettre en place un outil de vérification de style dans l'IDE. On pourra par exemple utiliser le plugin Checkstyle de QAPlug et utiliser le coding-style de Google qui est l'un des plus utilisés dans la communauté._
 
@@ -193,7 +203,7 @@ Pour s'assurer de la qualité du code produit, on peut procéder à une analyse 
 
 ---
 
-# 🚦 Analyse dynamique de binaire : les interpréteurs, la JVM
+## 🚦 Analyse dynamique de binaire : les interpréteurs, la JVM
 
 - 💻 Certains langages ne sont pas exécutés directement en langage machine (assembleur), mais sont interprétés (ou compilés puis exécutés) dans des machines virtuelles.
 - 🔁 Par exemple, `Python` ou `EcmaScript` sont interprétés dans des machines virtuelles exécutant les instructions du code source directement, alors que le code source `Java` est compilé en bytecode, ensuite exécuté dans une machine virtuelle (`JVM`).
@@ -223,7 +233,7 @@ Pour s'assurer de la qualité du code produit, on peut procéder à une analyse 
 
 ---
 
-# 🧰 Les autres outils : quelques exemples
+## 🧰 Les autres outils : quelques exemples
 
 - 📚 Documentation du code
 - 🔍 Revue de code
@@ -232,31 +242,31 @@ Pour s'assurer de la qualité du code produit, on peut procéder à une analyse 
 
 ---
 
-## 📚 Documentation du code
+### 📚 Documentation du code
 
 La documentation du code (`Javadoc`, ...) permet de décrire les contrats utilisés dans le code.
 
 ---
 
-## 🔍 Revue de code
+### 🔍 Revue de code
 
 Les outils de revue de code (`Reviewboard`, outils natifs des hébergeurs de code source `Bitbucket`, `Gitlab`, `Github`, ...) permettent aux développeurs de partager leurs modifications et d'en discuter ensemble, avant leur intégration dans le tronc commun
 
 ---
 
-## 🛠️ Serveurs d'intégration continue
+### 🛠️ Serveurs d'intégration continue
 
 Les serveurs d'intégration continue permettant le respect de pipelines d'intégration : `Bitbucket`, ...
 
 ---
 
-## 📈 Serveurs d'analyse de la qualité
+### 📈 Serveurs d'analyse de la qualité
 
 Les serveurs d'analyse continue de qualité (`SonarQube`, `Jenkins`, ...) permettant l'analyse et le suivi de la qualité globale d'un projet.
 
 ---
 
-# 🚀 Déploiement des outils
+## 🚀 Déploiement des outils
 
 Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on essaiera de déployer au maximum dans les différents environnements :
 
@@ -266,11 +276,11 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-# Bonnes pratiques & Optimisations
+## Bonnes pratiques & Optimisations
 
 ---
 
-## 🎯 Objectifs
+### 🎯 Objectifs
 
 - Augmenter la **fiabilité** des livraisons
 - Réduire le **temps de cycle**
@@ -279,7 +289,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 🏗️ Structuration des pipelines
+### 🏗️ Structuration des pipelines
 
 - **Diviser par étapes** (build, test, analyse, déploiement)
 - **Utiliser des jobs parallèles** pour les tests ou validations
@@ -287,7 +297,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 🧹 Qualité et sécurité du code
+### 🧹 Qualité et sécurité du code
 
 - Lancer automatiquement :
   - ✅ **Analyse statique** (SonarQube, eslint, etc.)
@@ -299,7 +309,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## ⚡ Performance des pipelines
+### ⚡ Performance des pipelines
 
 - Utiliser des **stratégies de cache**
 - Réutiliser les artefacts entre jobs
@@ -308,7 +318,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 📦 Gestion des artefacts
+### 📦 Gestion des artefacts
 
 - Versionner les artefacts de build
 - Publier dans des registres privés/publics :
@@ -318,7 +328,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 🔒 Sécurité de la chaîne CI/CD
+### 🔒 Sécurité de la chaîne CI/CD
 
 - Ne **jamais stocker de secrets en clair**
   * Utiliser des secrets managers (_Vault_, GitHub/GitLab secrets, etc.)
@@ -328,7 +338,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 🧪 Tests et validation
+### 🧪 Tests et validation
 
 - Tester **toutes les branches** de travail si possible
 - Intégrer des **tests end-to-end (E2E)** si pertinent
@@ -337,7 +347,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 🚀 Déploiement
+### 🚀 Déploiement
 
 - Déployer automatiquement sur :
   - un environnement de staging
@@ -349,7 +359,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 🧭 Observabilité & suivi
+### 🧭 Observabilité & suivi
 
 - Intégrer des outils de monitoring/logging :
   - _Prometheus_ / _Grafana_ / _Loki_
@@ -360,7 +370,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## 📘 Documentation et maintenance
+### 📘 Documentation et maintenance
 
 - Documenter la structure du pipeline CI/CD :
   - Schéma global si le pipeline cumule plusieurs outils (_Github_ + _Jenkins_, …)
@@ -371,9 +381,9 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-## Focus sur le caching
+### Focus sur le caching
 
-### 🎯 Objectifs
+#### 🎯 Objectifs
 
 - 🚀 Réduction du temps des builds
 - 📦 Éviter le téléchargement répétitif des dépendances
@@ -382,7 +392,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 ---
 
-### Exemple: Caching NuGet
+#### Exemple: Caching NuGet
 
 ```yaml
 #.github/pipeline.yml
