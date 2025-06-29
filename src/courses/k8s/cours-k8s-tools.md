@@ -8,21 +8,21 @@ tags:
 - devops
 ---
 
-# Helm : déploiement applicatif
+# 📦 Helm : déploiement applicatif
 
-- Gestionnaire de "paquets" k8s
-  - en fait des fichiers Yaml
-  - ajout du versionning
-- `chart` : ensemble de fichiers manifests, `templates`, … avec paramètres
-- Stockés dans des `repositories` : <https://hub.helm.sh/>, …
-- `values.yaml` : valeurs par défaut
-- `template` : manifest Kubernetes avec _templates Go_.
-- `release` : un déploiement de `chart` (versionnée : upgrade, rollback, uninstall)
-- trouver des `chart` : <https://artifacthub.io/>
+- Gestionnaire de "paquets" k8s 📦
+  - En fait des fichiers Yaml 📄
+  - Ajout du versioning 🔄
+- `chart` : ensemble de fichiers manifests, `templates`, … avec paramètres 📋
+- Stockés dans des `repositories` : <https://hub.helm.sh/>, … 🌐
+- `values.yaml` : valeurs par défaut 📝
+- `template` : manifest Kubernetes avec _templates Go_. 📜
+- `release` : un déploiement de `chart` (versionnée : upgrade, rollback, uninstall) 🔄
+- Trouver des `chart` : <https://artifacthub.io/> 🔍
 
 ---
 
-## Charts Helm populaires
+## 🌟 Charts Helm populaires
 
 ---
 
@@ -116,66 +116,66 @@ tags:
 
 ---
 
-# GitOps : FluxCD, ArgoCD, Jenkins X
+# 🔄 GitOps : FluxCD, ArgoCD, Jenkins X
 
-- Outils Gitops pour k8s
-    - scrute un dépôt Git distant
-    - mise à jour automatique des ressources k8s
-    - plus de CLI `kubectl`
-    - Utilise des `Kustomizations` de `Kustomize` (outil intégré à k8s)
-- intégrations Helm et Terraform
-- CLI `fluxctl` (pas de GUI)
-- Interface Web _Argo CD_, _Jenkins X_
+- Outils GitOps pour k8s 🔄
+  - Scrute un dépôt Git distant 🌐
+  - Mise à jour automatique des ressources k8s 🔄
+  - Plus de CLI `kubectl` ❌
+  - Utilise des `Kustomizations` de `Kustomize` (outil intégré à k8s) 🛠️
+- Intégrations Helm et Terraform 🔄
+- CLI `fluxctl` (pas de GUI) 🖥️
+- Interface Web _Argo CD_, _Jenkins X_ 🌐
 
 ---
 
 ![Architecture de FluxCD](https://raw.githubusercontent.com/fluxcd/flux2/main/docs/diagrams/fluxcd-controllers.png)
-
 <div class="caption">Architecture de FluxCD (source: documentation FluxCD)</div>
 
 ---
 
 ![Architecture d'ArgoCD](https://argo-cd.readthedocs.io/en/stable/assets/argocd_architecture.png)
-
 <div class="caption">Architecture d'ArgoCD (source: documentation ArgoCD)</div>
 
 ---
 
-# Kyverno
+# 🔒 Kyverno
 
 - Limitations des permissions standard Kubernetes - comment :
-  - Interdire l’utilisation du tag `:latest`
-  - Obliger chaque _Deployment_, _Service_, … à avoir un label `owner`
-  - Obliger chaque conteneur à avoir un `readinessProbe`
-  - Obliger chaque `Namespace` à avoir des quotas et des limites
-- Solution : utiliser un `AdmissionController`
+  - Interdire l’utilisation du tag `:latest` ❌
+  - Obliger chaque _Deployment_, _Service_, … à avoir un label `owner` 🏷️
+  - Obliger chaque conteneur à avoir un `readinessProbe` 🔍
+  - Obliger chaque `Namespace` à avoir des quotas et des limites 📏
+- Solution : utiliser un `AdmissionController` 🔄
 
 ---
 
-## [Kyverno](https://github.com/kyverno/kyverno/) : moteur de politiques pour k8s
+## [Kyverno](https://github.com/kyverno/kyverno/) : moteur de politiques pour k8s 🔒
 
-- Gère des règles de sécurité, de conformité et de gestion (fichiers Yaml)
+- Gère des règles de sécurité, de conformité et de gestion (fichiers Yaml) 📜
   - _Controller_ ou _Operator_ Kubernetes, _Webhooks_ et _CRDs_ de politiques, principalement :
-	- `Policy` ou `ClusterPolicy` (par _Namespace_ ou global au Cluster)
-	- `PolicyReport` ou `ClusterPolicyReport` (audit)
-- Autres solutions : [Open Policy Agent](https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/) ou [Validation des politiques d'admission](https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/)
----
-
-## Fonctionnalités
-
-- *Accepter / Refuser* les manifestes de ressources
-- *Modifier* les ressources lors de leur création ou de leur mise à jour
-- *Générer* des ressources supplémentaires lors de leur création
-- *Auditer* les ressources existantes
-- Voir [une introduction à Kyverno](https://2021-05-enix.container.training/4.yml.html#399)
+    - `Policy` ou `ClusterPolicy` (par _Namespace_ ou global au Cluster) 📋
+    - `PolicyReport` ou `ClusterPolicyReport` (audit) 🔍
+- Autres solutions : [Open Policy Agent](https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/) ou [Validation des politiques d'admission](https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/) 🔒
 
 ---
 
-## Mises en garde
+## 🛠️ Fonctionnalités
 
-- L'écriture et la validation de politiques peuvent être difficiles
-- Le contexte `{{ request }}` est puissant, mais difficile à valider (Kyverno ne peut pas savoir à l'avance comment il sera rempli)
-- Les politiques avancées (avec conditions) ont une syntaxe unique et exotique :
+- *Accepter / Refuser* les manifestes de ressources ✅❌
+- *Modifier* les ressources lors de leur création ou de leur mise à jour 🔄
+- *Générer* des ressources supplémentaires lors de leur création 🔄
+- *Auditer* les ressources existantes 🔍
+- Voir [une introduction à Kyverno](https://2021-05-enix.container.training/4.yml.html#399) 📚
+
+---
+
+## ⚠️ Mises en garde
+
+- L'écriture et la validation de politiques peuvent être difficiles ⚠️
+- Le contexte `{{ request }}` est puissant, mais difficile à valider (Kyverno ne peut pas savoir à l'avance comment il sera rempli) ⚠️
+- Les politiques avancées (avec conditions) ont une syntaxe unique et exotique :
+
 ```yaml
 spec:
 =(volumes):
@@ -185,11 +185,11 @@ path: "!/var/run/docker.sock"
 
 ---
 
-# Kubeseal
+# 🔐 Kubeseal
 
-- Transforme un `Secret` Kubernetes en `SealedSecret` chiffré (clé privée dans le cluster, clé publique pour générer les secrets, contrôleur `SealedSecrets`).
-- Seul le cluster peut déchiffrer un `SealedSecret`
-- Il devient possible de laisser les _Secret_ chiffrés dans _Git_.
+- Transforme un `Secret` Kubernetes en `SealedSecret` chiffré (clé privée dans le cluster, clé publique pour générer les secrets, contrôleur `SealedSecrets`). 🔒
+- Seul le cluster peut déchiffrer un `SealedSecret` 🔒
+- Il devient possible de laisser les _Secret_ chiffrés dans _Git_. 🔐
 
 ---
 
