@@ -9,11 +9,11 @@ tags:
 - security
 ---
 
-# 🔐 Authentification et autorisation
+## 🔐 Authentification et autorisation
 
 ---
 
-## 📋 Généralités
+### 📋 Généralités
 
 - L'authentification (_authn_, vérification de l'identité) s'effectue par _TLS mutuel_ 🔄
   - Le client et le serveur doivent tous deux détenir un certificat valide 📜
@@ -24,14 +24,14 @@ tags:
 
 ---
 
-# 🔐 Authentification (authn)
+## 🔐 Authentification (authn)
 
 - Nombreuses méthodes _authn_ lors d'une requête _api-server_ (génère username, identifiant, groupes) 📋
 - L'_api-server_ ne les interprète pas : tâche des _autorizers_ (_authz_). 🔄
 
 ---
 
-## 🔑 Méthodes authn
+### 🔑 Méthodes authn
 
 - Certificats clients TLS (clusters `kubeadm`) 🔒
 - Bearer tokens (header HTTP) 🔑
@@ -50,7 +50,7 @@ tags:
 
 ---
 
-## 🔒 authn par certificats TLS
+### 🔒 authn par certificats TLS
 
 - Dans presque tous les déploiements 🌐
 - _username_ : `CN` du certificat client 👤
@@ -70,7 +70,7 @@ tags:
 
 ---
 
-## 🔑 authn par token
+### 🔑 authn par token
 
 - Transmis par en-têtes HTTP : `Authorization: Bearer …` 🔑
 - Validés de différentes manières :
@@ -81,14 +81,14 @@ tags:
 
 ---
 
-## 🔑 Autres méthodes authn
+### 🔑 Autres méthodes authn
 
 - Autres types de tokens 🔑
 - Clés d'API externes : _AWS EKS_, … 🔑
 
 ---
 
-# 🔐 Autorisations (authz)
+## 🔐 Autorisations (authz)
 
 - Plusieurs méthodes appelées [authorizers](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules), notamment :
   - [Webhook](https://kubernetes.io/docs/reference/access-authn-authz/webhook/) (chaque requête API est soumise à un service externe pour approbation) 🌐
@@ -96,14 +96,14 @@ tags:
 
 ---
 
-## 🔄 Pods et ServiceAccount
+### 🔄 Pods et ServiceAccount
 
 - Un _Pod_ est associé à un _ServiceAccount_ (par défaut : `default`, sans droits) 🔄
 - Le token associé est dans le Pod : `/var/run/secrets/kubernetes.io/serviceaccount/token` 🔑
 
 ---
 
-# 🛡️ Sécurisation du _Control Plane_
+## 🛡️ Sécurisation du _Control Plane_
 
 ---
 
@@ -117,7 +117,7 @@ tags:
 
 ---
 
-## 📂 etcd
+### 📂 etcd
 
 - Stocke toute l'information du Cluster (`Secret`, …) et souvent **non chiffrée** (performances) 📂
 - Client : port `2379` 🌐
@@ -128,7 +128,7 @@ tags:
 
 ---
 
-## 🔄 Kubelet et api-server
+### 🔄 Kubelet et api-server
 
 - Communication bidirectionnelle _Kubelet_ <-> _api-server_ 🔄
 - Enregistrement _Kubelet_ -> _api-server_ : le Kubelet demande les pods à démarrer/arrêter. 🔄
@@ -136,7 +136,7 @@ tags:
 
 ---
 
-## 🌐 Clients _api-server_
+### 🌐 Clients _api-server_
 
 - Depuis le _Control Plane_ :
   - _authn_ : certificats (`subject` ou `CN`) 🔒
@@ -149,7 +149,7 @@ tags:
 
 ---
 
-## 🔄 api-server -> Kubelet
+### 🔄 api-server -> Kubelet
 
 - _Kubelet_ démarré avec `--client-ca-file` (généralement même CA que l'_api-server_) 🔒
 - L'_api-server_ utilise une paire de clés dédiée pour contacter le _Kubelet_ : `--kubelet-client-certificate` et `--kubelet-client-key` 🔑
@@ -158,14 +158,14 @@ tags:
 
 ---
 
-## 🔄 Controller manager
+### 🔄 Controller manager
 
 - Pour utiliser l'API `CertificateSigningRequest` le _Controller Manager_ a besoin du certificat et de la clé du CA (transmis avec `--cluster-signing-cert-file` et `--cluster-signing-key-file`) 🔒
 - Le _Controller Manager_ génère aussi les tokens pour les `ServiceAccount` 🔑
 
 ---
 
-### 🔑 ServiceAccount tokens
+#### 🔑 ServiceAccount tokens
 
 - _authn_ à l'_api-server_ : un token _JWT_ par `ServiceAccount` 🔑
 - Signé par une paire de clés:
@@ -175,7 +175,7 @@ tags:
 
 ---
 
-## 🔐 Authentification par jeton en pratique
+### 🔐 Authentification par jeton en pratique
 
 ```console
 $ API=$(kubectl get svc kubernetes -o json | jq -r .spec.clusterIP)
@@ -218,13 +218,13 @@ $ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0Ro
 
 ---
 
-## 🌐 Webhooks
+### 🌐 Webhooks
 - Ressources (`kind:`) spécifiques pour les autorisations, dont les `SubjectAccessReview`. 📋
 - _authz_ par webhooks : envoi d'un `SubjectAccessReview` à l'_api-server_ pour autoriser chaque requête (réponse `allow` ou `deny`). 🔄
 
 ---
 
-### SubjectAccessReview
+#### SubjectAccessReview
 
 Ex: vérifier si `jean.doe` peut `get pods -n kube-system`:
 
@@ -248,11 +248,11 @@ EOF
 
 ---
 
-# 🔒 Sécurité dans le Cluster
+## 🔒 Sécurité dans le Cluster
 
 ---
 
-## 🔐 Role-Based Access Control (RBAC)
+### 🔐 Role-Based Access Control (RBAC)
 
 - _authz_ par règles d'autorisation : [verbes](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb) (`create`, `get`, `list`, `update`, `delete`, …) / [ressources](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#referring-to-resources) (`Pod`, `Service`, …) / nom de ressource 📋
 - `Role` : profil permettant des accès / actions / ressources dans un namespace (`ClusterRole` : dans tout le cluster) 🔑
@@ -286,7 +286,7 @@ EOF
 
 ---
 
-## 🌐 NetworkPolicies
+### 🌐 NetworkPolicies
 
 - Par défaut :
   - Un `Pod` peut communiquer avec tout autre `Pod`, y compris d'autres `Namespace` 🔄
@@ -302,7 +302,7 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-## 🔄 AdmissionController Statiques
+### 🔄 AdmissionController Statiques
 
 - **Acceptent / refusent** ou **modifient** la création de ressources 🔄
 - Ex : valeurs par défaut (image pull secret, sidecars, env var), interdire les tag `latest`, exiger `request` et `limits`, … 🔄
@@ -311,7 +311,7 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-## 🌐 AdmissionController Dynamiques
+### 🌐 AdmissionController Dynamiques
 
 - _Webhooks_ **dynamiques** (ajoutables/supprimables à la volée) 🌐
 - **Dans** (`service.name` & `service.namespace`) ou **en-dehors** (`https://…`) du cluster 🌐
@@ -360,7 +360,7 @@ ValidatingWebhook --> Validate #blue : <color:blue>Validation Decision</color>
 
 ---
 
-## 🔍 ValidatingAdmissionPolicy
+### 🔍 ValidatingAdmissionPolicy
 
 - Nouvelle alternative simple aux _Validating Admission Webhook_ 🌐
 - Utilisent le _Common Expression Language_ (`CEL`) 📜

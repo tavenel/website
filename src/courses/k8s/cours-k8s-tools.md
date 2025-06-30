@@ -8,7 +8,7 @@ tags:
 - devops
 ---
 
-# 📦 Helm : déploiement applicatif
+## 📦 Helm : déploiement applicatif
 
 - Gestionnaire de "paquets" k8s 📦
   - En fait des fichiers Yaml 📄
@@ -22,7 +22,7 @@ tags:
 
 ---
 
-## 🌟 Charts Helm populaires
+### 🌟 Charts Helm populaires
 
 ---
 
@@ -116,7 +116,7 @@ tags:
 
 ---
 
-# 🔄 GitOps : FluxCD, ArgoCD, Jenkins X
+## 🔄 GitOps : FluxCD, ArgoCD, Jenkins X
 
 - Outils GitOps pour k8s 🔄
   - Scrute un dépôt Git distant 🌐
@@ -139,7 +139,7 @@ tags:
 
 ---
 
-# 🔒 Kyverno
+## 🔒 Kyverno
 
 - Limitations des permissions standard Kubernetes - comment :
   - Interdire l’utilisation du tag `:latest` ❌
@@ -150,7 +150,7 @@ tags:
 
 ---
 
-## [Kyverno](https://github.com/kyverno/kyverno/) : moteur de politiques pour k8s 🔒
+### [Kyverno](https://github.com/kyverno/kyverno/) : moteur de politiques pour k8s 🔒
 
 - Gère des règles de sécurité, de conformité et de gestion (fichiers Yaml) 📜
   - _Controller_ ou _Operator_ Kubernetes, _Webhooks_ et _CRDs_ de politiques, principalement :
@@ -160,7 +160,7 @@ tags:
 
 ---
 
-## 🛠️ Fonctionnalités
+### 🛠️ Fonctionnalités
 
 - *Accepter / Refuser* les manifestes de ressources ✅❌
 - *Modifier* les ressources lors de leur création ou de leur mise à jour 🔄
@@ -170,7 +170,7 @@ tags:
 
 ---
 
-## ⚠️ Mises en garde
+### ⚠️ Mises en garde
 
 - L'écriture et la validation de politiques peuvent être difficiles ⚠️
 - Le contexte `{{ request }}` est puissant, mais difficile à valider (Kyverno ne peut pas savoir à l'avance comment il sera rempli) ⚠️
@@ -185,7 +185,7 @@ path: "!/var/run/docker.sock"
 
 ---
 
-# 🔐 Kubeseal
+## 🔐 Kubeseal
 
 - Transforme un `Secret` Kubernetes en `SealedSecret` chiffré (clé privée dans le cluster, clé publique pour générer les secrets, contrôleur `SealedSecrets`). 🔒
 - Seul le cluster peut déchiffrer un `SealedSecret` 🔒

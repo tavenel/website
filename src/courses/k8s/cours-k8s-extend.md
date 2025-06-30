@@ -12,7 +12,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 
 ---
 
-# 🎛 Controller
+## 🎛 Controller
 
 > Controllers are control loops that watch the state of your cluster, then make or request changes where needed. Each controller tries to move the current cluster state closer to the desired state. 🔄
 > <https://kubernetes.io/docs/concepts/architecture/controller/>
@@ -25,7 +25,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 
 ---
 
-# 🔧 CRD
+## 🔧 CRD
 
 - Kubernetes permet d'ajouter des types de `Ressource` personnalisés 🛠️
 - Nouveau `kind: …` 🏷️
@@ -37,7 +37,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 
 ---
 
-# 🔄 Aggregation Layer
+## 🔄 Aggregation Layer
 - Ressources [APIServer](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/) : lien `kind: …` à un service externe 🔗
 - Délègue des parties de l'`API Server` à des API externes 🔄
 - Exemple : `metrics-server` 📊
@@ -46,7 +46,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 
 ---
 
-# 🤖 Operators
+## 🤖 Operators
 
 > An operator represents human operational knowledge in software, to reliably manage an application. - [CoreOS](https://coreos.com/blog/introducing-operators.html) 🤖
 
@@ -64,7 +64,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 
 ---
 
-# 🛠️ Kustomize
+## 🛠️ Kustomize
 
 - Permet d'ajouter / modifier des ressources Kubernetes par `Kustomization` (fichier YAML) 📝
 - Intégré dans `kubectl` : `apply -k …` 🔧
@@ -79,7 +79,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 
 ---
 
-## Vocabulaire Kustomize
+### Vocabulaire Kustomize
 
 - **kustomization** : une **base** ou un **overlay** 📂
 - **base** : _kustomization_ **référencée par** d'autres _kustomization_ 🔗

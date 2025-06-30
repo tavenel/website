@@ -1,6 +1,6 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Cours Kubernetes
+title: Kubernetes
 layout: '@layouts/CoursePartLayout.astro'
 tags:
 - docker
@@ -8,7 +8,89 @@ tags:
 - devops
 ---
 
-# 🎭 Présentation de Kubernetes
+## 🚀 Comparaison des Plateformes de Conteneurs
+
+---
+
+### 🌟 Introduction
+
+> Une plateforme de conteneurs est un ensemble d'outils et de services qui permettent de gérer le cycle de vie des applications conteneurisées. 📦
+
+- **Orchestration** : Gestion automatisée du déploiement, de la mise à l'échelle, et de la mise en réseau des conteneurs. 🔄
+- **Évolutivité** : Capacité à ajuster les ressources et les services en fonction de la demande. 📈
+- **Isolation** : Exécution sécurisée et isolée des applications pour éviter les conflits. 🔒
+- **Portabilité** : Exécution cohérente des applications sur différents environnements (développement, test, production ; on-premise et multi-cloud). 🌍
+
+---
+
+### 🧩 Kubernetes
+
+- **Description** : Plateforme open-source pour l'automatisation du déploiement, la mise à l'échelle et la gestion des applications conteneurisées. 🌐
+- De loin l'orchestrateur **le plus utilisé avec Docker®** 🏆
+- **Avantages** :
+  - Grande communauté et écosystème 👥
+  - Hautement extensible avec de nombreux outils et extensions 🛠️
+  - Prise en charge de charges de travail complexes 🏋️
+- **Inconvénients** :
+  - Courbe d'apprentissage abrupte 📚
+  - Configuration complexe ⚙️
+- Pour les **déploiements complexes et évolutifs** 🌐
+
+---
+
+### 🚀 OpenShift
+
+- **Description** : Plateforme de conteneurs de Red Hat, basée sur Kubernetes, avec des fonctionnalités supplémentaires pour les entreprises. 🏢
+- **Avantages** :
+  - Intégration facile avec d'autres produits Red Hat 🔄
+  - Interface utilisateur intuitive 🖥️
+  - Sécurité et conformité renforcées 🔒
+- **Inconvénients** :
+  - Coût élevé pour les fonctionnalités d'entreprise 💰
+  - Moins flexible que Kubernetes seul 🤸
+- Pour les **solutions d'entreprise avec support** 🏢
+
+---
+
+### 🐳 Docker Swarm
+
+- **Description** : Solution d'orchestration de conteneurs intégrée à Docker, simple et facile à utiliser. 🐋
+- **Avantages** :
+  - Intégration transparente avec Docker 🔄
+  - Facile à configurer et à utiliser 🛠️
+  - Idéal pour les petits déploiements 🏠
+- **Inconvénients** :
+  - Manque de fonctionnalités avancées 🛑
+  - Communauté et écosystème plus petits 👥
+- Pour les **environnements simples et rapides** 🏡
+
+---
+
+### 🏗️ Apache Mesos
+
+- **Description** : Projet open-source pour la gestion des ressources dans les centres de données, prenant en charge les conteneurs et les charges de travail non conteneurisées. 🏢
+- **Avantages** :
+  - Flexibilité pour gérer divers types de charges de travail 🔄
+  - Évolutivité et robustesse 📈
+- **Inconvénients** :
+  - Complexité de configuration et de gestion ⚙️
+  - Moins axé sur les conteneurs que les autres solutions 🎯
+- Pour les **environnements hybrides et complexes** 🏗️
+
+---
+
+### 📊 Comparaison
+
+| Plateforme | Facilité d'utilisation | Évolutivité | Écosystème | Coût |
+|------------|-----------------------|-------------|------------|------|
+| Kubernetes | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | 🆓 |
+| OpenShift | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | 💰 |
+| Swarm | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | 🆓 |
+| Mesos | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | 🆓 |
+
+---
+
+## 🎭 Présentation de Kubernetes
 
 ---
 
@@ -16,20 +98,12 @@ tags:
 
 * Indépendant de Docker® mais même runtime `containerd` => peut tourner les mêmes images 🐳
 * Configure et gère un cluster applicatif complexe : nœuds du cluster, réseau, stockage, ... 🌐
-
----
-
-* De loin l'orchestrateur le plus utilisé avec Docker® 🏆
-* D'autres orchestrateurs existent : `OpenShift`, `Swarm`, `Apache Mesos`, … 🛠️
-
----
-
 * Possibilité de gérer tout le cluster via API `kubectl` 🔧
 * Mais configuration recommandée via `Yaml` / `Json` pour audit 📝
 
 ---
 
-# 💡 Recommandations
+## 💡 Recommandations
 
 * `Docker®` seul / `docker compose` pour CI/CD et outils internes 🛠️
 * `k8s®` pour gestion applicative de l'environnement de production 🏗️
@@ -37,7 +111,7 @@ tags:
 
 ---
 
-# 📦 Technologies de conteneurs supportées
+## 📦 Technologies de conteneurs supportées
 
 1. `containerd` : projet open-source créé pour Kubernetes (runtime de `Docker` : _Docker sans la CLI_) 🐳
 2. `Docker Engine` : _Docker avec la CLI_ 🐳
@@ -93,7 +167,7 @@ tags:
 
 ---
 
-# 🌐 Plugin réseau (CNI)
+## 🌐 Plugin réseau (CNI)
 
 - **Container Networking Interface** (_CNI_) : 🌍
   - Permet la communication réseau au sein du cluster 🌐
@@ -103,7 +177,7 @@ tags:
 
 ---
 
-## 🔄 CNI (Kubernetes) vs CNM (Docker)
+### 🔄 CNI (Kubernetes) vs CNM (Docker)
 
 - **Docker** : 🐳
   - Réseaux **multiples** et **isolés** 🌐
@@ -117,7 +191,7 @@ tags:
 
 ---
 
-## 🌐 Flannel
+### 🌐 Flannel
 
 - Est un réseau de sous-réseaux pour Kubernetes 🌐
 - Fonctionne avec divers backends (VXLAN, UDP, etc.) 🔄
@@ -127,7 +201,7 @@ tags:
 
 ---
 
-## 🛡️ Calico
+### 🛡️ Calico
 
 - Supporte plusieurs modes de réseau : BGP, IPIP, VXLAN 🌐
 - Propose une isolation réseau granulaire (par pod) 🔒
@@ -139,7 +213,7 @@ tags:
 
 ---
 
-## 🕸️ Weave
+### 🕸️ Weave
 
 - Crée un réseau virtuel entre tous les conteneurs 🌐
 - Utilise le DNS intégré de Docker 📡
@@ -148,7 +222,7 @@ tags:
 
 ---
 
-## ⚡ Cilium
+### ⚡ Cilium
 
 - Utilise _eBPF_ (_Berkeley Packet Filter_) ⚡
   - (Très) performant, débit élevé et latence réduite ⚡
@@ -174,7 +248,7 @@ tags:
 layout: section
 ---
 
-# 📦 Distributions Kubernetes
+## 📦 Distributions Kubernetes
 
 ---
 
@@ -263,7 +337,7 @@ layout: section
 
 ---
 
-# ☁️ Plateformes managées
+### ☁️ Plateformes managées
 
 - Amazon Elastic Kubernetes Service (EKS) 🌐
 - Google Kubernetes Engine (GKE) 🌐
@@ -276,11 +350,11 @@ layout: section
 layout: section
 ---
 
-# 🏗️ Architecture
+## 🏗️ Architecture
 
 ---
 
-# 🛠️ Installation
+### 🛠️ Installation
 
 - `kubeadm` : l'outil officiel (installation de chaque composant séparément) 🛠️
 - Intégré dans la distribution : `k3s`, `minikube`, `microk8s`, … 📦
@@ -288,7 +362,7 @@ layout: section
 
 ---
 
-# 📂 Modèle
+### 📂 Modèle
 
 - Un cluster k8s est composé de plusieurs `Node` 🌐
 - Chaque `Node` fait tourner des `Pod` (ensemble de conteneurs - c'est l'unité atomique de k8s !) 📦
@@ -298,14 +372,14 @@ layout: section
 
 ---
 
-## 🏷️ Types de Nodes
+### 🏷️ Types de Nodes
 
 - Node de rôle `master` : le `control pane`, gère le cluster (orchestration, API server, …) 🏢
 - Node de type `worker` (sans rôle) : exécute les pods et leur fournit les ressources 🛠️
 
 ---
 
-# ⚠️ Limites
+### ⚠️ Limites
 
 - k8s est fait pour gérer de gros clusters : 🏗️
 - Limitations Kubernetes v1.31 :
@@ -343,8 +417,10 @@ layout: section
 <div class="caption">Architecture d'un Pod</div> 
 
 ---
+layout: section
+---
 
-# 🧩 Composants
+## 🧩 Composants
 
 - `APIServer` : API de gestion du cluster 🌐
 - `etcd` : Stockage de la configuration du cluster 📂
@@ -355,7 +431,7 @@ layout: section
 
 ---
 
-# 📂 etcd
+### 📂 etcd
 
 - Backend k8s : État du cluster (le reste est stateless) 📂
   - Store clé=valeur 🔑
@@ -370,7 +446,7 @@ layout: section
 
 ---
 
-# 🔄 ControllerManager
+### 🔄 ControllerManager
 
 - Compare l'état désiré (déclaratif) à l'état actuel 🔄
 - En déduit (et applique) les actions nécessaires (`APIServer`) 🛠️
@@ -398,7 +474,7 @@ act --> observe
 
 ---
 
-# 📅 Scheduler
+### 📅 Scheduler
 
 - Assigne les `Pod` (en state: `Pending`) aux `Node` 📅
   - Techniquement : crée un `Binding` et change le `nodeName` du `Pod` 🔧
@@ -409,7 +485,7 @@ act --> observe
 
 ---
 
-# 📦 Kubelet
+### 📦 Kubelet
 
 - 1 `Kubelet` par `Node` 📦
   - Un `kubelet` est souvent installé sur le `MasterNode` pour y gérer ses composants dans des pods (optionnel) 🏢
@@ -423,7 +499,7 @@ act --> observe
 
 ---
 
-# 🌐 Kube-proxy
+### 🌐 Kube-proxy
 
 - Gère le réseau sur chaque `Node` (entre Pods et vers extérieur) 🌍
 - Plusieurs modes : 🔄
@@ -443,7 +519,7 @@ Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple d
 
 ---
 
-# 🛠️ Gestion du cluster
+## 🛠️ Gestion du cluster
 
 - Fichiers de configuration `yml` (à privilégier autant que possible !) 📄
 - Interface en ligne de commande `kubectl` (surtout pour lancer les fichiers de config) 🖥️
@@ -453,11 +529,11 @@ Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple d
 layout: section
 ---
 
-# 📂 Ressources basiques du cluster
+## 📂 Ressources basiques du cluster
 
 ---
 
-## 🔄 Interactions entre ressources
+### 🔄 Interactions entre ressources
 
 - Les `Pod` exécutent les microservices. 📦
 - Les `Service` exposent ces pods pour permettre leur communication et leur accès. 🌐
@@ -468,7 +544,7 @@ layout: section
 
 ---
 
-## 📦 Gestion des applications
+### 📦 Gestion des applications
 
 - `Deployment` : Gère le déploiement d'un `ReplicaSet` 📦
   - Et la mise à jour des applications (rolling update, rollback, scaling) 🔄
@@ -504,7 +580,7 @@ layout: section
 
 ---
 
-## 🏷️ Labels
+### 🏷️ Labels
 
 - Attributs clé=valeur des objets du cluster 🏷️
 - Utilisé par Kubernetes 🛠️
@@ -515,7 +591,7 @@ layout: section
 
 ---
 
-### 🐛 Labels et debug
+#### 🐛 Labels et debug
 
 - Beaucoup de ressources utilisent les labels pour sélectionner les ressources (`Pod`, …) à manager 🏷️
 - Pour debugger un `Pod` fautif, on peut changer son `Label` : 🐛
@@ -525,7 +601,7 @@ layout: section
 
 ---
 
-## 🌐 Service
+### 🌐 Service
 
 - Service DNS permettant d'accéder à 1 (ou plusieurs) Pods 🌐
   - Nom DNS court (dans le namespace) : `<service_name>.<namespace>` (ou `<service_name>` si dans le même `namespace`) 📡
@@ -818,7 +894,7 @@ User -[bold,dashed]-> pod2_2 #red : <color:red>2 => pod-orange-1:8282</color>
 
 ---
 
-## 🌍 Ingress
+### 🌍 Ingress
 
 - Point d'accès publique HTTP/HTTPS unique pour l'accès aux différentes Pods (différent d'un Service) 🌍
 - Agit comme un _Reverse-proxy_ qui redirige la requête vers le `Service` 🔄
@@ -937,7 +1013,7 @@ graph LR;
 
 ---
 
-### 🌐 CIDRs
+## 🌐 CIDRs
 
 - Kubernetes utilise uniquement 3 réseaux : 🌐
   - Un CIDR pour faire communiquer les _Nodes_ 🌐
@@ -957,6 +1033,8 @@ graph LR;
   - [Chiffrement possible](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/) des accès _REST_ mais l'_API Server_ ne peut plus démarrer automatiquement (si très fort besoin de sécurité uniquement) 🔒
 - `ConfigMap` et `Secret` peuvent être _immuable_ 🔒
 
+---
+layout: section
 ---
 
 ## 💾 Stockage
@@ -1092,12 +1170,14 @@ pv -> db
 Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) 📚
 
 ---
+layout: section
+---
 
-# 🛠️ Ressources avancées
+## 🛠️ Ressources avancées
 
 ---
 
-## 🛡️ DaemonSet
+### 🛡️ DaemonSet
 
 - Assure que des pods tournent sur tous les nœuds du cluster 🛠️
 - Utile pour monitoring & logs 📊
@@ -1105,7 +1185,7 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ---
 
-## 💾 StatefulSet
+### 💾 StatefulSet
 
 - Déploie des applications avec état : BDD, … 💾
 - Ressources **ordonnées** (ordre de lancement) 📜
@@ -1118,7 +1198,7 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ---
 
-## ⏳ Job et CronJob
+### ⏳ Job et CronJob
 
 - Pour travaux "longs" (> minutes / heures) ⏳
 - `Job` : Démarre un `Pod`, en cas d'échec, relance jusqu'au _backoff limit_ (default=6) 🔄
@@ -1141,13 +1221,13 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ---
 
-# 📚 Commandes de base de Kubernetes®
+## 📚 Commandes de base de Kubernetes®
 
 Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/cours/docker/kubernetes-cheatsheet) 📚
 
 ---
 
-# Structure d'un fichier k8s
+## Structure d'un fichier k8s
 
 ```yaml
 apiVersion: v1 # Version de l'APIServer k8s
