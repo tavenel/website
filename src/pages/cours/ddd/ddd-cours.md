@@ -8,20 +8,12 @@ tags:
 - hexagonal
 - clean
 ---
-layout: center
----
 
-# Problèmes communs aux projets informatiques
-
----
-layout: section
----
-
-# MVC comme architecture
+## Problèmes communs aux projets informatiques
 
 ---
 
-# MVC comme architecture
+### MVC comme architecture
 
 ```plantuml
 @startuml
@@ -55,14 +47,8 @@ folder ticket
 _Quel est le **but** de cette application django ?_ 💡
 
 ---
-layout: section
----
 
-# Application _CRUD_
-
----
-
-# Application _CRUD_
+### Application _CRUD_
 
 1. Entité (`getter`/`setter`) + BDD auto-générée
 2. ??? 🙈
@@ -71,14 +57,8 @@ layout: section
 _Quelle est la **logique métier** derrière ces entités ?_
 
 ---
-layout: section
----
 
-# Modèle anémique
-
----
-
-# Modèle anémique
+### Modèle anémique
 
 ````md magic-move
 ```java
@@ -109,14 +89,8 @@ public class User {
 - _Contexte de validité d'une instance ?_
 
 ---
-layout: section
----
 
-# Domaine incohérent
-
----
-
-# Domaine incohérent
+### Domaine incohérent
 
 ```plantuml
 @startuml
@@ -170,7 +144,7 @@ Et des **rustines** partout dans le code… 🙈
 
 ---
 
-# Un bon design ?
+## Un bon design ?
 
 - Des cas d'utilisation **clairs** 🧑‍💼
 - Facile à **maintenir** 🧰
@@ -181,7 +155,7 @@ Et des **rustines** partout dans le code… 🙈
 
 ---
 
-# Un bon design ! 🤓
+### Un bon design ! 🤓
 
 ```java
 private static final boolean WILL_IT_RAIN_IN_LONDON = true;
@@ -190,7 +164,7 @@ private static final boolean WILL_IT_RAIN_IN_LONDON = true;
 - Le métier s'apprend en **lisant le code !**
 
 ---
-layout: center 
+layout: section 
 ---
 
 # Le Domain-Driven Design (DDD)
@@ -225,7 +199,7 @@ _Eric Evans_, 2003
 
 ---
 
-# Principes
+## Principes
 
 - **Modéliser** les conceptions complexes (`UML`, …)
 - Mettre en avant le **domaine** et la **logique métier** associée plutôt que la technologie
@@ -293,17 +267,13 @@ layout: center
 
 # Stratégie vs tactique
 
----
-
-# Stratégie vs tactique
-
 - ****Stratégie**** : **définition** de l'objectif
 - **Tactique** : comment _atteindre_ l'objectif (organisation du code)
 - `DDD` est avant tout **stratégique**
 
 ---
 
-# Méthodologie
+## Méthodologie
 
 - 🎯 Commencer par un **design stratégique**
 - 💬 Définir le **langage ubiquitaire**
@@ -311,20 +281,14 @@ layout: center
 - 🔃 **Itérer**
 
 ---
-layout: center
----
-
-# Domaine, Modèle, Bounded Context, Language ubiquitaire
-
----
 layout: section
 ---
 
-# Domaine 🏢
+## Domaine, Modèle, Bounded Context, Language ubiquitaire
 
 ---
 
-# Domaine 🏢
+### Domaine 🏢
 
 - _Domaine_ : ce que fait une organisation (et comment)
   - un **langage dédié**
@@ -333,26 +297,14 @@ layout: section
 > La sphère d'un métier ou activité pour lequel on développe l'application. (wikipedia)
 
 ---
-layout: section
----
 
-# Modèle
-
----
-
-# Modèle
+### Modèle
 
 - _Modèle_ : une **abstraction** qui représente une **partie d'un domaine**.
 
 ---
-layout: section
----
 
-# Bounded Context 🧑‍💼
-
----
-
-# Bounded Context 🧑‍💼
+### Bounded Context 🧑‍💼
 
 - _Bounded Context_ : limite de **validité** d'un modèle **(frontière linguistique)**
 - Concept **métier** précis qui répond à une **problématique**.
@@ -361,11 +313,7 @@ layout: section
 layout: section
 ---
 
-# Architecture 🏗️
-
----
-
-# Architecture 🏗️
+## Architecture 🏗️
 
 - Suit les _Bounded Context_
   - Pas de partage de code mais des **interactions** entre _Bounded Context_
@@ -415,11 +363,12 @@ Un _Domaine_ peut englober plusieurs _Bounded Context_.
 ---
 layout: section
 ---
-# D'un langage ubiquitaire au modèle
+
+## D'un langage ubiquitaire au modèle
 
 ---
 
-# D'un langage ubiquitaire… 💬
+### D'un langage ubiquitaire… 💬
 
 - Pas uniquement un glossaire, des _phrases entières (simples)_
 - Provient du **métier**
@@ -428,14 +377,12 @@ layout: section
   - …ou s'accorder sur les **traductions** !
 
 ---
-layout: quote
----
 
 > Si vous ne pouvez expliquer un concept à un enfant de six ans, c'est que vous ne le comprenez pas complètement. (Albert Einstein)
 
 ---
 
-# …Au modèle 🗂️
+### …Au modèle 🗂️
 
 - **Le langage est le modèle**
   - langage => modèle (puis => langage)
@@ -451,21 +398,21 @@ layout: quote
 <div class="caption">Un exemple de fonction mal nommée. Source: programmerhumor.io</div>
 
 ---
-layout: center
+layout: section
 ---
 
-# Définir le langage 💬
+## Définir le langage 💬
 
 ---
 
-## Objectifs 🎯
+### Objectifs 🎯
 
 1. Clarifier le **besoin métier** entre les différents experts du domaine
 2. **Simplifier** les définitions
 
 ---
 
-## L'atelier d'Event Storming
+### L'atelier d'Event Storming
 
 - Réunit les parties prenantes 👥
   - **inclus les développeurs** 🧑‍💻
@@ -482,7 +429,7 @@ layout: center
 
 ---
 
-## Brainstorming
+### Brainstorming
 
 1. Trouver les **idées** 💡 (penser _objectifs_ 🎯 )
 2. **Regrouper** les idées 🖇️
@@ -492,7 +439,7 @@ layout: center
 
 ---
 
-## Formalisation
+### Formalisation
 
 1. Identifier les **acteurs** 🙋 et les **prioriser** 🔢
 2. Identifier les **cas d'utilisation** 🤹
@@ -502,7 +449,7 @@ layout: center
 
 ---
 
-## Diagramme de cas d'utilisation
+### Diagramme de cas d'utilisation
 
 ```plantuml
 @startuml
@@ -539,7 +486,7 @@ nabo --> (Demande d'abonnement)
 
 ---
 
-## Diagramme de classe
+### Diagramme de classe
 
 ```plantuml
 @startuml
@@ -591,7 +538,7 @@ Book "1" -- "0..*" BookInstance
 
 ---
 
-## Loi de Brandolini
+### Loi de Brandolini
 
 > La quantité d'énergie nécessaire pour réfuter des sottises […] est supérieure d'un ordre de grandeur à celle nécessaire pour les produire.
 >
@@ -601,20 +548,16 @@ Book "1" -- "0..*" BookInstance
   - à **découper** (meilleure acceptation) 🪚
 
 ---
-layout: center
+layout: section
 ---
 
-# Patterns stratégiques
-
----
-
-# Patterns stratégiques
+## Patterns stratégiques
 
 - Comment définir et découper le domaine ?
 
 ---
 
-# Distillation du Core Domain
+### Distillation du Core Domain
 
 La **distillation du Core Domain** permet de se concentrer sur les éléments les plus importants du modèle du domaine.
 
@@ -682,7 +625,7 @@ f -- b
 
 ---
 
-# Découpage
+### Découpage
 
 - ⭐ un **core domain** : le _problème principal_
   - c'est la **raison d'exister** de l'organisation
@@ -712,7 +655,7 @@ f -- b
 
 ---
 
-## Comparaison des domaines
+### Comparaison des domaines
 
 | Type de domaine | Complexité du modèle | Différenciant business |
 |-----------------|----------------------|------------------------|
@@ -734,7 +677,7 @@ flowchart TD
 
 ---
 
-# Exemple d'un dentiste
+### Exemple d'un dentiste
 
 - Le **core domain** 🦷 : **soigner** les dents du patient
   - Notion de `patient` 🤕 (historique des soins, …)
@@ -752,20 +695,15 @@ La frontière entre domaines peut être floue !
 > All models are wrong, but some are useful. (George Box)
 
 ---
-layout: center
----
-# Propagation du domaine
 
----
-
-# Propagation du domaine
+## Propagation du domaine
 
 - Quelles relations entre domaines ?
 - Comment faire interagir différents domaines ?
 
 ---
 
-# Carte de contexte
+### Carte de contexte
 
 - Document représentant les **relations** entre Bounded Context
 - Diagramme ou document écrit
@@ -796,11 +734,11 @@ Bounded Context                                   Bounded Context
 layout: section
 ---
 
-# Patterns de collaboration
+## Patterns de collaboration
 
 ---
 
-## Shared Kernel (Noyau partagé)
+### Shared Kernel (Noyau partagé)
 
 - Relation entre 2+ _Bounded Context_ qui partagent du code, des données, …
 - Création d'un **contexte partagé** (en dépendance) :
@@ -809,7 +747,7 @@ layout: section
 
 ---
 
-### Exemple de noyau partagé
+#### Exemple de noyau partagé
 
 - Plateforme de commerce électronique :
   - une boutique en ligne
@@ -858,7 +796,7 @@ shared_schedule -[dotted]- search_schedule
 
 ---
 
-## Partnership
+### Partnership
 
 - Deux équipes co-conçoivent un processus critique (ex. : paiement + facturation)
 - **Coopération étroite** avec **responsabilité partagée**.
@@ -868,7 +806,7 @@ shared_schedule -[dotted]- search_schedule
 
 ---
 
-### Exemple de Partnership
+#### Exemple de Partnership
 
 - Contexte métier : Billetterie en ligne
 - Deux Bounded Context : _Réservations_ et _Paiement_ qui doivent travailler ensemble de façon étroite car :
@@ -882,7 +820,7 @@ shared_schedule -[dotted]- search_schedule
 
 ---
 
-## Customer / Supplier (Client / Fournisseur)
+### Customer / Supplier (Client / Fournisseur)
 
 - Relation : un _Bounded Context_ **expose un service** (ou des données) à un autre.
 - Aussi appelé : _Downstream_ (Client) / _Upstream_ (Supplier)
@@ -895,7 +833,7 @@ shared_schedule -[dotted]- search_schedule
 
 ---
 
-### Exemple de Customer / Supplier
+#### Exemple de Customer / Supplier
 
 Un système de gestion d'inventaire (_downstream_) consomme les définitions de produits d'un système de catalogue produits (_upstream_), mais ne peut pas modifier ce modèle.
 
@@ -929,7 +867,7 @@ Products -down-> Reservation : Fournit\n(Modèle produit,\nÉvénements,\nAPI pu
 
 ---
 
-## Conformiste
+### Conformiste
 
 - Relation subie ou acceptée : le client **adhère pleinement** au modèle (et conventions, règles, …) de l'équipe fournisseur
 - Pas de séparation stricte : le client reprend **tel quel** le modèle, les règles métier, voire les implémentations.
@@ -940,7 +878,7 @@ Introduit un **fort couplage** et réduit la flexibilité du client.
 
 ---
 
-### Exemple de Conformiste
+#### Exemple de Conformiste
 
 - Équipe chargée de gérer l'inventaire des produits dans un entrepôt.
   - même modèle que dans le contexte responsable de la gestion des commandes, des clients et des produits.
@@ -994,12 +932,11 @@ rectangle "MONNAIE (LIB)" #LightPink {
 amount -[dotted]- amount2
 currency -[dotted]- currency2
 @enduml
-
 ```
 
 ---
 
-## Open Host Services (Services Hôtes)
+### Open Host Services (Services Hôtes)
 
 - Rend disponible **explicitement** des systèmes / services **communs** à différents _Bounded Context_
   - _RESTful API_, …
@@ -1013,7 +950,7 @@ C'est un point d'entrée standardisé, conçu pour l'interopérabilité.
 
 ---
 
-### Exemple de pattern Open Host Service
+#### Exemple de pattern Open Host Service
 
 - _Open Host Service_ de paiement à distance (possède sa propre logique)
 - À intégrer dans différents contextes de l'application
@@ -1053,14 +990,14 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-## Published Language (Langage publié)
+### Published Language (Langage publié)
 
 - Version formelle des service hôtes : **publication du modèle (et donc langage) commun**
   - `JSON`, `XML`, …
 
 ---
 
-## Couche Anticorruption (ACL)
+### Couche Anticorruption (ACL)
 
 - **Protège** un _Bounded Context_ des complexités et incohérences d'un autre modèle
 - **Traducteur** et **validateur** entre deux modèles
@@ -1069,7 +1006,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-### Exemple de pattern ACL
+#### Exemple de pattern ACL
 
 - Système e-commerce s'intégrant à un ancien système de gestion des stocks (ancien modèle de données)
 - L'_ACL_ traduit les concepts, données et messages entre les 2 systèmes
@@ -1110,7 +1047,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-## Separate Ways (Chemins Séparés)
+### Separate Ways (Chemins Séparés)
 
 - Contextes très **indépendants** les uns des autres (_y compris technologiquement_)
 - Évoluent **séparément**
@@ -1118,7 +1055,7 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-### Exemple de Chemins Séparés
+#### Exemple de Chemins Séparés
 
 1. Application principale de e-commerce
 2. Système de gestion des stocks indépendant (propre domaine et logique métier)
@@ -1154,7 +1091,7 @@ client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
 
 ---
 
-## 📊 Tableau comparatif
+### 📊 Tableau comparatif
 
 | Pattern                         | Type de relation        | Couplage            | Autonomie du client | Collaboration entre équipes | Cas typique                                                 |
 | ------------------------------- | ----------------------- | ------------------- | ------------------- | --------------------------- | ----------------------------------------------------------- |
@@ -1169,7 +1106,7 @@ client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
 
 ---
 
-## 📌 Résumé mnémotechnique
+### 📌 Résumé mnémotechnique
 
 | Besoin                                | Pattern recommandé        |
 | ------------------------------------- | ------------------------- |
@@ -1183,20 +1120,14 @@ client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
 
 
 ---
-layout: section
----
 
-# Context Map
-
----
-
-## Carte de contexte
+### Context Map
 
 - **Carte de contexte** : formalise les relations entre les _Bounded Context_.
 
 ---
 
-## Exemple de context map
+#### Exemple de context map
 
 ```plantuml
 @startuml
@@ -1245,7 +1176,7 @@ pmc -- rmc : "Partnership"
 layout: section
 ---
 
-# Relations entre équipes
+## Relations entre équipes
 
 ---
 
@@ -1257,7 +1188,7 @@ layout: section
 
 ---
 
-# Loi de Conway
+### Loi de Conway
 
 > Les organisations produisent des systèmes qui reflètent leur structure de communication
 
@@ -1268,7 +1199,7 @@ layout: section
 
 ---
 
-# Team topologies
+### Team topologies
 
 - Idée : refléter le découpage en composants dans le découpage des équipes
 - **Team Topologies** : pattern d'organisation complémentaire au DDD
@@ -1276,7 +1207,7 @@ layout: section
 
 ---
 
-## Dépendance mutuelle
+### Dépendance mutuelle
 
 - Dépendance mutuelle (Shared Kernel)
 - Relation **succès/échec partagée**
@@ -1285,7 +1216,7 @@ layout: section
 
 ---
 
-## Dépendance Upstream / Downstream 
+### Dépendance Upstream / Downstream 
 
 - **Upstream impacte le succès Downstream**
 - Downstream n'impacte pas le succès Upstream
@@ -1339,17 +1270,17 @@ left side
 
 ---
 
-## Objectifs
+### Objectifs
 
 - Limiter la complexité du système à la charge cognitive de l'équipe
 - Collaboration a minima (complexe)
   - sinon : envisager la creation d'un nouveau composant au milieu pour limiter les impacts
 
 ---
-layout: center
+layout: section
 ---
 
-# Patterns tactiques
+## Patterns tactiques
 
 ---
 
@@ -1410,27 +1341,27 @@ layout: center
 
 ---
 
-# Intégration continue
+## Intégration continue
 
 - 🔃 Le DDD est **itératif** (=> CI)
 - 🤔 **Repenser** régulièrement les `Bounded Context` et **changer le type de propagation** au besoin
 
 ---
 
-# XP, Agilité, BDD
+## XP, Agilité, BDD
 
 - `DDD` s'associe particulièrement bien avec les méthodes agiles (`XP`, …)
 - Le `BDD` (Behavior-Driven Development) permet de faire le lien par le langage des spécifications (**par l'exemple**) au code
 
 ---
-layout: section
+layout: 
 ---
 
-# Architecture
+## Architecture
 
 ---
 
-# Patterns spécifiques d'architecture
+### Patterns spécifiques d'architecture
 
 - DDD ne définit pas d'architecture spécifique
 - Candidats intéressants :
@@ -1440,7 +1371,7 @@ layout: section
 
 ---
 
-# Architecture à Grande Échelle
+### Architecture à Grande Échelle
 
 DDD utilise les concepts d'**architecture à grande échelle** pour organiser le système au niveau des composants ou des couches. Cette organisation guide les développeurs sur la l'endroit où trouver ou ajouter une fonctionnalité dans le code.
 
@@ -1462,7 +1393,7 @@ DDD utilise les concepts d'**architecture à grande échelle** pour organiser le
 
 ---
 
-# Design Souple (Supple Design)
+### Design Souple (Supple Design)
 
 Idée : concevoir le logiciel de manière intuitive pour le développement et la maintenance.
 
@@ -1489,24 +1420,18 @@ Voici des **patterns** qui favorisent un design souple :
    - Utiliser un style de programmation déclaratif si possible.
 
 ---
-layout: center
+layout: section
 ---
 
-# Résumé
-
----
-
-# Résumé
+## Résumé
 
 ![Résumé du Domain Driven Design](@assets/ddd/DomainDrivenDesignReference.png)
 
 <div class="caption">Résumé du Domain Driven Design. CC By: Eric Evans. https://www.domainlanguage.com/ddd/reference/</div>
 
 ---
-layout: section
----
 
-# Conseils et points de vigilance
+## Conseils et points de vigilance
 
 ---
 
@@ -1664,10 +1589,9 @@ courseService.createRecurringCourseRequest(user);
 :::
 
 ---
-layout: two-cols
+layout: section
 ---
 
-<!-- class: liens -->
 # Liens
 
 - [Articles sur le DDD (opus.ch)](https://opus.ch/en/category/ddd-en/)
@@ -1701,7 +1625,7 @@ layout: two-cols
 
 ---
 
-# Livres
+## Livres
 
 - _Domain-Driven Design, Tackling Complexity in the Heart of Software, Eric Evans, 2003._
 - _Implementing Domain-Driven Design, Vaughn Vernon, 2013._
@@ -1709,7 +1633,7 @@ layout: two-cols
 
 ---
 
-# Vidéos
+## Vidéos
 
 - [Domain-Driven Design pour de vrai (Cyrille Martraire)](https://www.canal-u.tv/chaines/cemu/printemps-agile-2017/06-atelier-2-domain-driven-design-pour-de-vrai-pa2017)
 - [Aggregates, Entities & Value Objects (Amichai Mantinband)](https://www.youtube.com/watch?v=UEtmOW8uZZY)
