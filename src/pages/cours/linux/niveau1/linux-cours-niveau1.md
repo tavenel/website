@@ -7,19 +7,19 @@ tags:
   - devops
 ---
 
-# Partie I : Aperçu d'un système Linux
+# 📌 Partie I : Aperçu d'un système Linux
 
-- _Qu'est-ce qu'un système d'exploitation ?_
-- _Qu'est-ce que Linux ?_
-- _Quelles sont ses caractéristiques principales ?_
-
----
-
-# Le système d'exploitation Linux
+- 🤔 _Qu'est-ce qu'un système d'exploitation ?_
+- 🐧 _Qu'est-ce que Linux ?_
+- ⚙️ _Quelles sont ses caractéristiques principales ?_
 
 ---
 
-## Le système d'exploitation
+# 💻 Le système d'exploitation Linux
+
+---
+
+## 🖥️ Le système d'exploitation
 
 ```plantuml
 @startditaa
@@ -108,7 +108,7 @@ Linux est un noyau de système d'exploitation :
   - Gratuit tant pour une utilisation personnelle que commerciale
   - Libre : le code source est disponible
   - Comme tout noyau, il ne gère que les entrées/sorties matérielles (clavier, souris, écran, …) et l'orchestration des applications (exécution du programme sur des cycles CPU, gestion de la RAM, …)
-  - oyau n'est pas suffisant pour tourner des applications : il faut un système d'exploitation complet avec des librairies, des logiciels, …
+  - Un noyau n'est pas suffisant pour tourner des applications : il faut un système d'exploitation complet avec des librairies, des logiciels, …
   - Au-dessus du noyau Linux, les distributions ajoutent des outils, logiciels et librairies open-source (partagés sous le terme GNU/Linux ) et des outils dédiés (libres ou non-libres)
   - Ces distributions patchent souvent le noyau Linux standard pour fournir leur propre version légèrement modifiée
 
@@ -144,34 +144,36 @@ Il existe de nombreux autres OS : _Android_, _iOS_, …
 
 ---
 
-## Système GNU/Linux
+## Système GNU/Linux 🐧
 
 Un système GNU/Linux est donc un ensemble de plusieurs composants :
 
-- Le noyau Linux :
+- 🔧 **Le noyau Linux** :
   - Responsable des activités principales de l'OS
   - Composé de plusieurs modules qui interagissent avec le matériel
   - Gère la sécurité (droits d'accès, …)
-- Les librairies système :
+- 📚 **Les librairies système** :
   - Elles fournissent aux applications les APIs des opérations courantes de l'OS : opérations d'entrée/sortie (I/O), droits d'accès, création de processus, …
-- Les outils système :
+- 🛠️ **Les outils système** :
   - Ce sont des applications dédiées qui fournissent une gestion de haut-niveau de l'OS en créant une abstraction sur des tâches complexes : gestion du réseau, …
 
 ---
 
+## Fonctions principales
+
 Quelques fonctions principales d'un système Linux :
 
-- Portable
-- Open-source
-- Multi-utilisateur
-- Multi-programmes
-- Système de fichiers hiérarchique
-- Invité de commandes (shell)
-- Sécurité
+- 🚀 Portable
+- 🔓 Open-source
+- 👥 Multi-utilisateur
+- 📂 Multi-programmes
+- 📁 Système de fichiers hiérarchique
+- 💻 Invité de commandes (shell)
+- 🔒 Sécurité
 
 ---
 
-## Architecture d'un système Linux
+## Architecture d'un système Linux 🏗️
 
 ![Architecture d'un système Linux](@assets/linux/archi_1.png)
 
@@ -181,31 +183,33 @@ Quelques fonctions principales d'un système Linux :
 
 ---
 
+### Noyau Linux
+
 Quelques caractéristiques principales du noyau Linux :
 
-  - C'est un noyau monolithique (avec des modules chargeables dynamiquement : LKM)
-  - Supporte le "live patching”
-  - Le noyau Linux sépare l'environnement d'exécution en deux espaces : l'espace noyau et l'espace utilisateur
-  - Focus important sur la sécurité : droits d'accès des utilisateurs, module noyau SELinux pour une gestion très poussée des autorisations
+- 🔧 C'est un noyau monolithique (avec des modules chargeables dynamiquement : LKM)
+- 🔄 Supporte le "live patching"
+- 🔒 Le noyau Linux sépare l'environnement d'exécution en deux espaces : l'espace noyau et l'espace utilisateur
+- 🛡️ Focus important sur la sécurité : droits d'accès des utilisateurs, module noyau SELinux pour une gestion très poussée des autorisations
 
 ---
 layout: section
 ---
 
-# Gestion des processus
+# Gestion des processus 📊
 
 ---
 
-A chaque fois qu'une commande est exécutée ou qu'un programme est lancé, ceux-ci créent un nouveau processus comprenant :
+🔄 A chaque fois qu'une commande est exécutée ou qu'un programme est lancé, ceux-ci créent un nouveau processus comprenant :
 
-- Un identifiant unique à 5 chiffres : `PID`
-- Tous les services et/ou ressources nécessaires au processus pendant son exécution (mémoire, accès disque, …)
-- Un répertoire de travail
+- 🆔 Un identifiant unique à 5 chiffres : `PID`
+- 📂 Tous les services et/ou ressources nécessaires au processus pendant son exécution (mémoire, accès disque, …)
+- 📁 Un répertoire de travail
 
 Un processus peut créer des sous-processus (processus fils) :
 
-- L'identifiant de processus parent ( `ppid` ) identifie le processus ayant créé ce nouveau sous-processus
-- Tous les processus ont un parent, à l'exception du processus racine (`init`, `pid=1`) qui initialise l'espace utilisateur.
+- 👨‍👦 L'identifiant de processus parent (`ppid`) identifie le processus ayant créé ce nouveau sous-processus
+- 🌳 Tous les processus ont un parent, à l'exception du processus racine (`init`, `pid=1`) qui initialise l'espace utilisateur.
 
 ---
 
@@ -227,23 +231,21 @@ Il n'existe pas d'autre moyen de créer un processus !
 
 Il existe 2 types de processus :
 
-- Les processus de **premier plan** (_foreground_) :
-	- Ils sont initialisés et contrôlés à travers une session de terminal (_shell_)
-	- Ils nécessitent un utilisateur "véritable" pour les démarrer et interagir avec
-- Les processus d' **arrière-plan** (_background_) :
-	- Ces processus ne sont pas liés à un terminal
-	- Ils n'attendent aucune interaction utilisateur
+- 👨‍💻 **Les processus de premier plan** (_foreground_) :
+  - Ils sont initialisés et contrôlés à travers une session de terminal (_shell_)
+  - Ils nécessitent un utilisateur "véritable" pour les démarrer et interagir avec
+- 👨‍💼 **Les processus d'arrière-plan** (_background_) :
+  - Ces processus ne sont pas liés à un terminal
+  - Ils n'attendent aucune interaction utilisateur
 
 ---
 
-## Les _daemon_
-
-Le cas particulier des processus _daemon_
+## Cas particulier des processus _daemon_ 👹
 
 ![Le logo Tux pour un daemon](@assets/linux/daemon.png)
 
-- Un processus _daemon_ est un sous-type de processus d'arrière-plan qui fournit des services système
-- En général, ils sont lancés au démarrage du système et ne sont jamais arrêtés.
+- 👹 Un processus _daemon_ est un sous-type de processus d'arrière-plan qui fournit des services système
+- 🔄 En général, ils sont lancés au démarrage du système et ne sont jamais arrêtés.
 
 Exemples de daemons : serveur Web, service réseau, …
 
@@ -255,31 +257,31 @@ La gestion des daemons est une des principales incohérences entre les différen
 
 L'état d'un processus est défini par l'une des quatre valeurs suivantes :
 
-- `Running` :
-	- Le processus est en cours d'exécution sur le CPU…
-	- …ou en attente d'un cycle CPU libre pour s'exécuter
-- `Waiting` :
-	- Le processus est en attente d'un événement : signal du noyau, condition matérielle (appui sur une touche du clavier, …)
-- `Stopped` :
-	- Le processus est en pause, généralement pour une opération de maintenance
-- `Zombie` :
-	- Le processus est mort mais toujours enregistré dans la table des processus (bug)
+- 🏃‍♂️ **`Running`** :
+  - Le processus est en cours d'exécution sur le CPU…
+  - …ou en attente d'un cycle CPU libre pour s'exécuter
+- ⏳ **`Waiting`** :
+  - Le processus est en attente d'un événement : signal du noyau, condition matérielle (appui sur une touche du clavier, …)
+- ⏸️ **`Stopped`** :
+  - Le processus est en pause, généralement pour une opération de maintenance
+- 🧟 **`Zombie`** :
+  - Le processus est mort mais toujours enregistré dans la table des processus (bug)
 
 ---
 layout: section
 ---
 
-# Utilisateurs et accès système
+# Utilisateurs et accès système 👥
 
 ---
 
 ## Administration des utilisateurs
 
-- Linux identifie les utilisateurs par un identifiant unique : _User ID_ ( `UID` )
-	- L' `UID=0` est un utilisateur spécial appelé "_super-utilisateur" (ou `root` ). Cet utilisateur peut outrepasser toutes les vérifications de droits d'accès (dans l'espace utilisateur).
-	- Le processus `init`, les threads du noyau et la plupart des processus système appartiennent à l'utilisateur `root`
+- 🆔 Linux identifie les utilisateurs par un identifiant unique : _User ID_ (`UID`)
+  - L'`UID=0` est un utilisateur spécial appelé "_super-utilisateur" (ou `root`). Cet utilisateur peut outrepasser toutes les vérifications de droits d'accès (dans l'espace utilisateur).
+  - Le processus `init`, les threads du noyau et la plupart des processus système appartiennent à l'utilisateur `root`
 
-Pour faciliter les vérifications de sécurité, les rôles des utilisateurs sont réunis en groupes identifiés par un _ID_ de groupe ( `GID` ). Un utilisateur peut faire partie de plusieurs groupes.
+Pour faciliter les vérifications de sécurité, les rôles des utilisateurs sont réunis en groupes identifiés par un _ID_ de groupe (`GID`). Un utilisateur peut faire partie de plusieurs groupes.
 
 Linux est un système multi-utilisateur : plusieurs utilisateurs peuvent utiliser le système en parallèle.
 
@@ -287,7 +289,7 @@ Linux est un système multi-utilisateur : plusieurs utilisateurs peuvent utilise
 layout: section
 ---
 
-# Gestion des fichiers
+# Gestion des fichiers 📂
 
 ---
 
@@ -301,14 +303,15 @@ Linux utilise des fichiers pour décrire chaque partie du système : matériel, 
 
 Caractéristiques des noms de fichiers :
 
-- Les fichiers portent souvent une extension en suffixe pour faciliter leur identification (_mon_document.pdf_, …). Cette extension est purement descriptive (aucun impact sur le fichier lui-même).
-- Linux supporte mal les espaces et accents dans les noms de fichiers
-- En Linux, tous les noms de fichier et tous les chemins sont sensibles à la casse ! (majuscule / minuscule)
-- Par convention, un nom de fichier commençant par un point est un fichier caché
-    ```sh
-    mon_programme_visible.bin # fichier visible
-    .ma_config_cachee.bin # fichier caché
-		```
+- 📄 Les fichiers portent souvent une extension en suffixe pour faciliter leur identification (_mon_document.pdf_, …). Cette extension est purement descriptive (aucun impact sur le fichier lui-même).
+- 🚫 Linux supporte mal les espaces et accents dans les noms de fichiers
+- 🔤 En Linux, tous les noms de fichier et tous les chemins sont sensibles à la casse ! (majuscule / minuscule)
+- 👁️ Par convention, un nom de fichier commençant par un point est un fichier caché
+
+```sh
+mon_programme_visible.bin # fichier visible
+.ma_config_cachee.bin # fichier caché
+```
 
 ---
 
