@@ -199,6 +199,49 @@ menu > li {
 
 }
 
+/**********/
+/* TABLES */
+/**********/
+
+table {
+  width: 80%; /* minimum width */
+	border-collapse: collapse; /* remove default borders */
+}
+
+th {
+	color: var(--h1);
+}
+
+th, td {
+	padding: 1em;
+	border-bottom: 1px dashed var(--hr);
+}
+
+tr {
+	&:hover {
+		font-weight: bold;
+		color: var(--link-hover);
+	}
+
+	&:nth-child(even) {
+		background-color: var(--background2);
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	tr {
+		margin-bottom: 1em;
+		border: 1px solid var(--hr);
+	}
+
+}
+
 /***********/
 /* BUTTONS */
 /***********/
