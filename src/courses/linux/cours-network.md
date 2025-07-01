@@ -4,11 +4,7 @@ title: Le réseau sous Linux
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Notions élémentaires sur les protocoles Internet
-
----
-
-## Rappels
+## Notions élémentaires sur les protocoles Internet
 
 ---
 
@@ -41,12 +37,8 @@ layout: '@layouts/CoursePartLayout.astro'
 - `/etc/services` : principaux services
 
 ---
- 
-# Configuration réseau persistante, DNS, résolution de problèmes réseaux simples
 
----
-
-## net-tools vs iproute2
+### net-tools vs iproute2
 
 - `net-tools` : anciennes commandes Unix
   - `ifconfig`, `route`, `arp`, `netstat`, `nameif`
@@ -57,11 +49,11 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Noms des interfaces
+### Noms des interfaces
 
 ---
 
-### Ancien nommage d'interfaces
+#### Ancien nommage d'interfaces
 
 - `eth0`, `eth1`, … : réseau filaire
 - `wlan0`, `wlan1`, … : réseau sans fil
@@ -69,7 +61,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Nommage `systemd`
+#### Nommage `systemd`
 
 - `en` : Ethernet
 - `ib` : InfiniBand
@@ -79,7 +71,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Algo de nommage `systemd`
+#### Algo de nommage `systemd`
 
 1. Index du BIOS du firmware : `eno1`
 1. PCI express slot : `ens1`
@@ -88,8 +80,14 @@ layout: '@layouts/CoursePartLayout.astro'
 1. Legacy : `eth0`
 
 ---
+layout: section
+---
 
-## Gestion des interfaces
+## Configuration du réseau
+
+---
+
+### Gestion des interfaces
 
 - `ifconfig` : ancienne commande
 - `ip` : plus puissante, et sépare les couches et services
@@ -122,7 +120,7 @@ iface enp3s6 inet static
 
 ---
 
-## Hostname
+### Hostname
 
 - commande: `hostname`
 - `/etc/hostname`
@@ -132,7 +130,7 @@ iface enp3s6 inet static
 
 ---
 
-## DNS
+### DNS
 
 - _Name Service Switch_ configuration file: `/etc/nsswitch.conf`
 - décrit l'ordre de priorité des résolutions
@@ -145,7 +143,7 @@ hosts: files dns
 
 ---
 
-### Résolution locale
+#### Résolution locale
 
 - Fichier `/etc/hosts`
 
@@ -157,7 +155,7 @@ hosts: files dns
 
 ---
 
-### Configuration DNS
+#### Configuration DNS
 
 - Fichier `/etc/resolv.conf`
 
@@ -172,7 +170,7 @@ search mydomain.net mydomain.com
 
 ---
 
-### Résolution DNS
+#### Résolution DNS
 
 - `resolvectl query www.wikipedia.fr` : résolution DNS par `systemd-resolved`
 - `nslookup www.wikipedia.fr` : résolution DNS
@@ -182,7 +180,7 @@ search mydomain.net mydomain.com
 
 ---
 
-### systemd-resolved
+#### systemd-resolved
 
 - Résolution DNS via `systemd`
 - caching, espaces de noms de routage spécifiques (`scope`), DNS via VPN, …
@@ -192,7 +190,7 @@ search mydomain.net mydomain.com
 
 ---
 
-## Routage
+### Routage
 
 - `route` : ancienne commande `net-tools`
 - `ip route` : configuration du routage via `iproute2`
@@ -201,14 +199,14 @@ search mydomain.net mydomain.com
 
 ---
 
-## ICMP
+### ICMP
 
 - `ping -4 www.google.fr`
 - `ping -6 www.google.fr`
 
 ---
 
-## systemd
+### systemd
 
 - `systemd-resolved` : DNS
 - `systemd-networkd` : config réseau
@@ -217,7 +215,7 @@ search mydomain.net mydomain.com
 
 ---
 
-### Exemple
+#### Exemple
 
 ```
 [Match]
@@ -234,7 +232,7 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-## NetworkManager
+### NetworkManager
 
 - Configuration centrale du réseau : 1 seul outil
 - commandes `nmcli` et `nmtui`
@@ -243,7 +241,7 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-## Vérifier le réseau
+### Vérifier le réseau
 
 1. `ip addr show` : Adresse IP ?
 2. `ping www.google.fr` : connectivité ?
@@ -252,14 +250,14 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-## Statistiques
+### Statistiques
 
 - `ss` (socket statistics) : informations sockets réseau et connexions actives
 - `netstat` (network statistics) : idem mais ancienne commande
 
 ---
 
-## NetworkCat
+### NetworkCat
 
 - `netcat` (`nc`) : lis / écris des données sur des sockets réseau.
   - ouverture de connexions TCP / UDP
@@ -268,8 +266,10 @@ DHCP=yes # ou IPv4 ou IPv6
   - débug : écoute de ports, …
 
 ---
+layout: section
+---
 
-# Pare-feu : Netfilter/IpTables
+## Pare-feu : Netfilter/IpTables
 
 - `Netfilter` : module noyau pare-feu, traduction d'adresse (NAT) et historique réseau
 - Intercepte et manipule les paquets IP **avant** et **après** le routage.
@@ -282,7 +282,7 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
-## Modèle
+### Modèle
 
 - Les paquets passent à travers des chaînes qui vont déterminer ce que le système doit en faire
   - bloquer le paquet
@@ -292,7 +292,7 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
-## Politiques principales
+### Politiques principales
 
 - Politiques principales (option `-j`) :
 - **bloqué** en avertissant l'émetteur : `REJECT`
@@ -302,7 +302,7 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
-## Chaînes iptables
+### Chaînes iptables
 
 - chaîne : ensemble de règles qui indiquent ce qu'il faut faire des paquets qui la traversent.
   - règle : combinaison de critères de matching et une cible du paquet.
@@ -313,7 +313,7 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
-## Algorithme
+### Algorithme
 
 - `Netfilter` applique la 1e règle qui match le paquet
 - …jusqu'à trouver une règle
@@ -321,44 +321,26 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
-## Tables principales
+### Tables principales
 
 - `filter` : table principale pour intervenir sur les paquets et analyser leur contenu : `DROP`, `ACCEPT`, `FORWARD`, …
 - `nat` : table dont le but est de faire de la _translation_ d'adresses (uniquement pour les nouvelles connexions)
 - `conntrack` : composant et table rendant `Netfilter` _stateful_ (suit le cycle de vie de la connexion).
 
 ---
+layout: section
+---
+
+# Liens
 
 - Pour des exemples de base de `iptables`, voir [la documentation Ubuntu](https://doc.ubuntu-fr.org/iptables)
 - Voir aussi la [wikiversité](https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter)
 - Tutoriel complet : <https://www.inetdoc.net/guides/iptables-tutorial/>
 - Tutoriel sur `Conntrack` : <https://www.malekal.com/conntrack-sur-linux-comment-ca-marche/>
-
----
-
 - Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
 - Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 
----
-
-<!-- Annexe : liste des TPs -->
-
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
-[tp-cron]: tp-cron.md
-[tp-lang]: tp-lang.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
-[tp-syslog]: tp-syslog.md
 [tp-network]: tp-network.md
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
+
+---
 

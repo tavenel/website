@@ -4,7 +4,7 @@ title: Disques, systèmes de fichiers Linux, arborescence de fichiers standard (
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Création des partitions et des systèmes de fichiers
+## Création des partitions et des systèmes de fichiers
 
 - Partition : morceau de disque physique
   - vu comme "disque" virtuel dans un OS.
@@ -82,7 +82,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Maintenance de l'intégrité des systèmes de fichiers
+## Maintenance de l'intégrité des systèmes de fichiers
 
 - Voir cours LPIC-1 section _104.2 Maintain the integrity of filesystems_ p.439
 - `du` : taille de fichiers
@@ -93,7 +93,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Montage et démontage des systèmes de fichiers
+## Montage et démontage des systèmes de fichiers
 
 - Windows : disques `C:`, `D:`, ...
 - Unix : une partition se **monte** dans un **répertoire** (vide) quelconque
@@ -116,26 +116,7 @@ layout: '@layouts/CoursePartLayout.astro'
   - `mnt-donnees.mount` pour `/mnt/donnees`
 - Voir cours LPIC-1 section _104.3 Control mounting and unmounting of filesystems_ section _systemd_ p.470
 
----
-
-<!-- Annexe : liste des TPs -->
-
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
 [tp-partitions]: tp-partitions.md
-[tp-cron]: tp-cron.md
-[tp-lang]: tp-lang.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
-[tp-syslog]: tp-syslog.md
-[tp-network]: tp-network.md
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
+
+---
 

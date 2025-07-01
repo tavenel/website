@@ -4,7 +4,7 @@ title: Problèmes courants
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Types de pannes courantes sous Linux
+## Types de pannes courantes sous Linux
 
 ---
 
@@ -29,7 +29,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Méthode de diagnostic
+## Méthode de diagnostic
 
 1. 🧭 **Observer** : messages d'erreur à l'écran, LED, bruit disque
 2. 📜 **Lire les logs** : `journalctl -xe`, `/var/log/syslog`, `dmesg`
@@ -40,7 +40,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# ⚠️ Crash Recovery
+## ⚠️ Crash Recovery
 
 - Problème de démarrage, mot de passe root oublié :
   - Accéder au mode "recovery" (`single-user`)
@@ -48,3 +48,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - Si besoin, démarrer un système avec un Live CD
   - Voir le [TP Rescue](tp-rescue.md)
 
+[tp-grub]: tp-grub.md
+[tp-rescue]: tp-rescue.md
+
+---

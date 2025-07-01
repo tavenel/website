@@ -4,11 +4,11 @@ title: Gestion des Droits
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés
+## Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés
 
 ---
 
-## Utilisateurs
+### Utilisateurs
 
 - `useradd` : crée un utilisateur
 - `userdel` : supprime un utilisateur
@@ -19,7 +19,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Mots de passe
+### Mots de passe
 
 - `/etc/shadow` : fichier mots de passe (comptes locaux)
 - `passwd` : changer un mot de passe
@@ -27,7 +27,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Groupes
+### Groupes
 
 - `/etc/group` : fichier groupes et utilisateurs rattachés
 - `groupadd` : crée un groupe
@@ -36,14 +36,16 @@ layout: '@layouts/CoursePartLayout.astro'
   - `groupmod --new-name new_group group_name`
 
 ---
+layout: section
+---
 
-# Gestion des permissions et de la propriété sur les fichiers
+## Gestion des permissions et de la propriété sur les fichiers
 
 - Voir cours LPIC-1 section _104.5 Manage file permissions and ownership_ p.481
 
 ---
 
-## Les utilisateurs
+### Les utilisateurs
 
 - Un fichier appartient à un utilisateur et à un groupe
 - trois types d'utilisateurs ayant des droits :
@@ -53,7 +55,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
  
-## Les droits
+### Les droits
 
 - `r` (`read`) : lire le fichier/dossier
 - `w` (`write`) : modifier le fichier/dossier
@@ -62,7 +64,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Permissions des répertoires
+### Permissions des répertoires
 
 Les permissions sur un répertoire ont un sens légèrement différent :
 
@@ -72,8 +74,7 @@ Les permissions sur un répertoire ont un sens légèrement différent :
 
 ---
 
-
-## Affichage des droits
+### Affichage des droits
 
 ```console
 $ ls -l
@@ -87,7 +88,7 @@ drwxr-xrw- [...]
 
 ---
 
-## Modifier les droits
+### Modifier les droits
 
 - `chmod u+x mon_fichier`
 - `chmod g-r mon_fichier`
@@ -111,11 +112,11 @@ drwxr-xrw- [...]
 
 ---
 
-## Droits spéciaux
+### Droits spéciaux
 
 ---
 
-### SUID et SGID
+#### SUID et SGID
 
 - `SUID`, `SGID` (_Set User/Group ID_) : lance la commande avec l'`UID` de l'utilisateur / du groupe
   - Droit `+s` ou 1er bit à 1 (user) ou 2e bit à 1 (group)
@@ -125,7 +126,7 @@ drwxr-xrw- [...]
 
 ---
 
-### Sticky bit
+#### Sticky bit
 
 - `Sticky bit` (dossier) : seul le propriétaire d'un fichier contenu dans ce dossier pourra le supprimer ou le renommer (`/tmp`, ...).
   - Droit `+t` ou 3e bit à 1
@@ -133,7 +134,7 @@ drwxr-xrw- [...]
 
 ---
 
-## Lister les groupes
+### Lister les groupes
 
 - `getent group` : tous les groupes du système
 - `groups tom` : groupes de l'utilisateur `tom`
@@ -142,7 +143,7 @@ drwxr-xrw- [...]
 
 ---
 
-## Permissions par défaut
+### Permissions par défaut
 
 - `umask`, `umask -S`
 - masque des permissions retirées par défaut
@@ -150,7 +151,7 @@ drwxr-xrw- [...]
 
 ---
 
-## Access Control List (ACL)
+### Access Control List (ACL)
 
 - Permissions `rwx` spécifiques par utilisateur / groupe
   - possibles pour tout utilisateur et/ou groupe
@@ -172,25 +173,4 @@ setfacl -b <fichier>
 ```
 
 ---
-
-<!-- Annexe : liste des TPs -->
-
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
-[tp-cron]: tp-cron.md
-[tp-lang]: tp-lang.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
-[tp-syslog]: tp-syslog.md
-[tp-network]: tp-network.md
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
 

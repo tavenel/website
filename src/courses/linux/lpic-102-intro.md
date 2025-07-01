@@ -4,35 +4,30 @@ title: Introduction à la certification LPIC-102
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Objectifs - 1/2
+## Objectifs
 
 - Paramétrer le shell et écrire des scripts simples en `Bash`
 - Installer et configurer l'interface graphique
 - Connaître les outils d'accessibilité
 - Effectuer les tâches d'administration de base : gérer les utilisateurs, utiliser les tâches automatiques, …
-
----
-
-# Objectifs - 2/2
-
 - Installer et paramétrer les services essentiels : messagerie, impression, horloge système, journaux système
 - Avoir les notions de réseau essentielles à l’administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
 - Savoir mettre en place un niveau de sécurité sur les postes : services en écoute et ports ouverts, limitations d'accès, et chiffrement des données
 
 ---
 
-# Plan de cours
+## Plan de cours
 
 ---
 
-## Sujet 105 : Shells et scripts Shell [8]
+### Sujet 105 : Shells et scripts Shell [8]
 
 - 105.1 Personnalisation et utilisation de l’environnement du shell [4]
 - 105.2 Personnalisation ou écriture de scripts simples [4]
 
 ---
 
-## Sujet 106 : Interfaces et bureaux utilisateur [4]
+### Sujet 106 : Interfaces et bureaux utilisateur [4]
 
 - 106.1 Installation et configuration de X11 [2]
 - 106.2 Bureaux graphiques [1]
@@ -40,7 +35,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Sujet 107 : Tâches d’administration [12]
+### Sujet 107 : Tâches d’administration [12]
 
 - 107.1 Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés [5]
 - 107.2 Automatisation des tâches d’administration par la planification des travaux [4]
@@ -48,7 +43,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Sujet 108 : Services systèmes essentiels [12]
+### Sujet 108 : Services systèmes essentiels [12]
 
 - 108.1 Gestion de l’horloge système [3]
 - 108.2 Journaux systèmes [4]
@@ -57,7 +52,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Sujet 109 : Notions élémentaires sur les réseaux [14]
+### Sujet 109 : Notions élémentaires sur les réseaux [14]
 
 - 109.1 Notions élémentaires sur les protocoles Internet [4]
 - 109.2 Configuration réseau persistante [4]
@@ -66,7 +61,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Sujet 110 : Securité [10]
+### Sujet 110 : Securité [10]
 
 - 110.1 Tâches d’administration de sécurité [3]
 - 110.2 Configuration de la sécurité du système [3]
@@ -74,7 +69,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Ressources utiles
+## Ressources utiles
 
 - [Support de cours](https://learning.lpi.org/en/learning-materials/102-500/)
 - [Objectifs détaillés de la certification LPIC-102](https://www.lpi.org/fr/our-certifications/exam-102-objectives)

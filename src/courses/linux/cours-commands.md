@@ -4,11 +4,7 @@ title: Commandes GNU et Unix
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-Voir les rappels de cours sur les commandes de base d'un système Linux.
-
----
-
-# Travail en ligne de commande
+## Travail en ligne de commande
 
 - Échapper les caractères spéciaux avec `"` et `'`
 - Wildcards `*`, `?`, `[a-zA-Z]`, `{toto,titi}`
@@ -19,15 +15,13 @@ Voir les rappels de cours sur les commandes de base d'un système Linux.
 
 ---
 
-# Traitement de flux de type texte avec des filtres
+## Traitement de flux de type texte avec des filtres
 
 Voir le TP dédié [tp-texte][tp-texte].
 
-### Démo
-
 ---
 
-# Gestion élémentaire des fichiers
+## Gestion élémentaire des fichiers
 
 ---
 
@@ -36,7 +30,7 @@ Voir le TP dédié [tp-texte][tp-texte].
 
 ---
 
-# Types de fichiers
+## Types de fichiers
 
 - Fichier standard : majorité des fichiers : données, configurations, binaires, ...
 - Répertoires : fichier spécial contenant d'autres fichiers
@@ -44,7 +38,7 @@ Voir le TP dédié [tp-texte][tp-texte].
 
 ---
 
-# Commandes utiles
+## Commandes utiles
 
 - `touch`, `ls`
 - `mkdir`, `rmdir`
@@ -53,11 +47,11 @@ Voir le TP dédié [tp-texte][tp-texte].
 - `dd`, `tar`, `cpio`, `gzip`, `gunzip`, `bzip2`, `bunzip2`
 - Voir le TP dédié [tp-fichiers][tp-fichiers].
 
-### Démo
-
+---
+layout: section
 ---
 
-# Utilisation des flux, des pipes et des redirections
+## Utilisation des flux, des pipes et des redirections
 
 ---
 
@@ -68,7 +62,7 @@ Concepts fondamentaux dans les systèmes Unix/Linux, permettant de gérer effica
 
 ---
 
-## Les Trois Flux Standard
+### Les Trois Flux Standard
 
 Les commandes reçoivent et envoient des données via trois flux standard :
 
@@ -78,7 +72,7 @@ Les commandes reçoivent et envoient des données via trois flux standard :
 
 ---
 
-## Redirections
+### Redirections
 
 Les redirections permettent de gérer les flux standard :
 
@@ -88,11 +82,9 @@ Les redirections permettent de gérer les flux standard :
 - `2>>` : Ajoute la sortie d'erreur à la fin d'un fichier (`commande 2>> fichier`).
 - `<` : Redirige l'entrée standard depuis un fichier (`commande < fichier`).
 
-### Démo
-
 ---
 
-## Pipes
+### Pipes
 
 - Permettent de connecter la sortie d'une commande à l'entrée d'une autre :
 
@@ -102,7 +94,7 @@ commande1 | commande2
 
 ---
 
-## Exemples
+#### Exemples
 
 - `ls | grep keyword` : Recherche un mot clé dans la liste des fichiers.
 - `cat fichier.txt | grep pattern` : Recherche un motif dans le contenu d'un fichier. (équivalent `grep pattern fichier.txt`)
@@ -111,16 +103,14 @@ commande1 | commande2
 - Voir le TP dédié [tp-redirections][tp-redirections].
 
 ---
+layout: section
+---
 
-# Création, contrôle et interruption des processus
+## Création, contrôle et interruption des processus
 
 ---
 
-Voir rappels de cours sur les processus.
-
----
-
-# Modification des priorités des processus
+### Modification des priorités des processus
 
 - priorité demandée par l'utilisateur : `nice` (-20 à 20)
   - champ `NI` de `ps`
@@ -129,7 +119,7 @@ Voir rappels de cours sur les processus.
 
 ---
 
-# Commandes utiles
+### Commandes utiles
 
 - `ps` (`ps aux`), `top`, `pgrep`, `watch`
 - `kill`, `pkill`, `killall`
@@ -138,18 +128,14 @@ Voir rappels de cours sur les processus.
 
 Voir cours LPIC-1 section _Process Monitoring_, 103.5 Lesson 1 p.295
 
-### Démo
-
 ---
 
-# Jobs
+### Jobs
 
 - Processus démarré interactivement dont l'exécution continue en arrière-plan
 - `jobs`, `fg`, `bg`, `&`, `nohup`
 
 Voir cours LPIC-1 section _Job Control_, 103.5 Lesson 1 p.290
-
-### Démo
 
 ---
 
@@ -157,7 +143,7 @@ Voir le TP dédié [tp-process][tp-process].
 
 ---
 
-# Multiplexers de terminal
+## Multiplexers de terminal
 
 - `tmux` (le plus utilisé)
 - `screen`  
@@ -170,12 +156,14 @@ Voir le TP dédié [tp-process][tp-process].
 Voir cours LPIC-1 section _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.318
 
 ---
+layout: section
+---
 
-# Recherche dans des fichiers texte avec les expressions rationnelles
+## Recherche dans des fichiers texte avec les expressions rationnelles
 
 ---
 
-# Quelques caractères spéciaux
+### Quelques caractères spéciaux
 
 - `.` : n'importe quel caractère
 - `^` : début de ligne
@@ -194,22 +182,18 @@ Voir cours LPIC-1 section _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.
 
 ---
 
-# Commandes utiles
+### Commandes utiles
 
 - `grep`, `egrep`, `fgrep` : recherche avec regex simples, avec regex étendues (idem `grep -E`), sans regex
 - `sed` : modifications de flux de texte
 
 Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 
-### Démo
-
+---
+layout: section
 ---
 
-# Édition de fichier simple (vi)
-
----
-
-# vi
+## vi
 
 - `vi` : éditeur de texte en mode console
 - plusieurs _modes_ : `normal`, `insertion`, `command`
@@ -222,23 +206,10 @@ Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 <!-- Annexe : liste des TPs -->
 
 [tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-rpm-apt]: tp-rpm-apt.md
 [tp-texte]: tp-texte.md
 [tp-fichiers]: tp-fichiers.md
 [tp-redirections]: tp-redirections.md
 [tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
-[tp-cron]: tp-cron.md
-[tp-lang]: tp-lang.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
-[tp-syslog]: tp-syslog.md
-[tp-network]: tp-network.md
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
 
 ---
 

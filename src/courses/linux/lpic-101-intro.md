@@ -4,7 +4,7 @@ title: Introduction à la certification LPIC-101
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Objectifs
+## Objectifs
 
 - Reconnaître le matériel : ports PCI / USB, paramétrage du BIOS / UEFI
 - Savoir installer et configurer un système GNU/Linux sur un poste de type PC
@@ -17,7 +17,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Ressources utiles
+## Ressources utiles
 
 - [Support de cours](https://learning.lpi.org/fr/learning-materials/101-500/)
 - [Support de cours (PDF)](https://learning.lpi.org/pdfstore/LPI-Learning-Material-101-500-en.pdf)
@@ -38,9 +38,9 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Plan de cours
+## Plan de cours
 
-## 1.1 - Sujet 101 : Architecture système [8]
+### 1.1 - Sujet 101 : Architecture système [8]
 
 - 101.1 Détermination et configuration des paramètres du matériel [2]
   - TP : affichage de la configuration du système et des périphériques
@@ -52,7 +52,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 1.2 - Sujet 102 : Installation de Linux et gestion de paquetages [12]
+### 1.2 - Sujet 102 : Installation de Linux et gestion de paquetages [12]
 
 - 102.1 Conception du schéma de partitionnement [2]
 - 102.2 Installation d'un gestionnaire d'amorçage [2]
@@ -65,7 +65,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 1.3 - Sujet 103 : Commandes GNU et Unix [26]
+### 1.3 - Sujet 103 : Commandes GNU et Unix [26]
 
 - 103.1 Travail en ligne de commande [4]
   - TP : Utilisation de la ligne de commande
@@ -75,9 +75,6 @@ layout: '@layouts/CoursePartLayout.astro'
   - TP : Gestion des fichiers
 - 103.4 Utilisation des flux, des pipes et des redirections [4]
   - TP : Utilisation des flux, des pipes et des redirections 
-
----
-
 - 103.5 Création, contrôle et interruption des processus [4]
 - 103.6 Modification des priorités des processus [2]
   - TP : Gestion des processus et de leur priorité
@@ -87,7 +84,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 1.4 - Sujet 104 : Disques, systèmes de fichiers Linux, arborescence de fichiers standard (FHS) [14]
+### 1.4 - Sujet 104 : Disques, systèmes de fichiers Linux, arborescence de fichiers standard (FHS) [14]
 
 - 104.1 Création des partitions et des systèmes de fichiers [2]
 - 104.2 Maintenance de l'intégrité des systèmes de fichiers [2]

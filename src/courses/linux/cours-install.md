@@ -4,11 +4,11 @@ title: Installation de Linux et gestion de paquetages
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Conception du schéma de partitionnement
+## Conception du schéma de partitionnement
 
 ---
 
-# Architecture des disques
+### Architecture des disques
 
 - Disque -> Partition -> Filesystem -> Mount point
 - Montage dans n'importe quel répertoire vide mais par convention :
@@ -24,7 +24,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# LVM : Logical Volume Manager
+## LVM : Logical Volume Manager
 
 - `Physical Volume PV` : disque physique (gère `RAID`, ...)
 - `Volume Group VG` : pool de `PV`
@@ -35,7 +35,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Partitionnement
+## Partitionnement
 
 - Bonne pratique : **séparer le système en plusieurs partitions**
 - `/` : partition `root`, obligatoire, système principal
@@ -49,17 +49,19 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Installation d'un gestionnaire d'amorçage
+## Installation d'un gestionnaire d'amorçage
 
 Voir le TP [tp-grub][tp-grub] déjà réalisé.
 
 ---
+layout: section
+---
 
-# Gestion des bibliothèques partagées
+## Gestion des bibliothèques partagées
 
 ---
 
-## Bibliothèque partagée
+### Bibliothèque partagée
 
 - `Shared Objects`
 - _Ensemble de fonctions que les programmes peuvent réutiliser pour implémenter leurs fonctionnalités_.
@@ -70,7 +72,7 @@ Voir le TP [tp-grub][tp-grub] déjà réalisé.
 
 ---
 
-## Répertoires standards
+### Répertoires standards
 
 - `/lib`
 - `/lib32`
@@ -80,7 +82,7 @@ Voir le TP [tp-grub][tp-grub] déjà réalisé.
 
 ---
 
-## Répertoires additionnels et cache
+### Répertoires additionnels et cache
 
 - `/etc/ld.so.conf` (ou `/etc/ld.so.conf.d/`) : indique les autres librairies à utiliser, puis...
 - `ldconfig` : crée les liens symboliques vers les librairies et met à jour le cache...
@@ -89,7 +91,7 @@ Voir le TP [tp-grub][tp-grub] déjà réalisé.
 
 ---
 
-## Afficher les dépendances
+### Afficher les dépendances
 
 - `ldd <executable>` : affiche les librairies dépendantes
 - `ldd -u <executable>` : affiche les librairies dépendantes _unused_
@@ -101,18 +103,20 @@ Voir le TP [tp-grub][tp-grub] déjà réalisé.
 - Voir le TP dédié [tp-shared-lib][tp-shared-lib].
 
 ---
+layout: section
+---
 
-# Utilisation des gestionnaires de paquetage Debian (apt, dpkg) et RHEL (dnf, rpm, yum)
+## Utilisation des gestionnaires de paquetage Debian (apt, dpkg) et RHEL (dnf, rpm, yum)
 
 ---
 
-# Gestionnaires de Paquets
+### Gestionnaires de Paquets
 
 Outils essentiels pour gérer l'installation, la mise à jour et la suppression de logiciels depuis une plateforme centrale vérifiée.
 
 ---
 
-## Avantages
+### Avantages
 
 - Installation facile : Un simple commande installe le logiciel et ses dépendances.
 - Mises à jour centralisées : Facilité de maintenir les logiciels à jour.
@@ -124,7 +128,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## Principaux gestionnaires de paquets
+### Principaux gestionnaires de paquets
 
 - APT (Advanced Package Tool) : Utilisé par Debian et dérivés (Ubuntu).
 - RPM (Red Hat Package Manager) : Utilisé par Red Hat, Fedora, CentOS.
@@ -132,12 +136,14 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 - Voir aussi cet article sur les différents types de paquets : <https://blog.garambrogne.net/packageless.html>
 
 ---
+layout: section
+---
 
-# Linux en tant que système virtuel hébergé
+## Linux en tant que système virtuel hébergé
 
 ---
 
-## Technologies de Virtualisation : Hyperviseurs
+### Technologies de Virtualisation : Hyperviseurs
 
 - Hyperviseur de Type 1 : Exécuté directement sur le matériel, ex. `Xen`, `KVM`
 - Hyperviseur de Type 2 : Exécuté au-dessus d'un système d'exploitation, ex. `KVM`, `Oracle VirtualBox`.
@@ -145,7 +151,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## Architecture d'une machine virtuelle (fully-virtualized)
+### Architecture d'une machine virtuelle (fully-virtualized)
 
 ```plantuml
 @startditaa
@@ -173,7 +179,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## Architecture d'un conteneur
+### Architecture d'un conteneur
 
 ```plantuml
 @startditaa
@@ -197,14 +203,14 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## Commandes
+### Commandes
 
 - `virt-host-validate` : informations sur le support de la virtualisation par l'hyperviseur
 - `virsh` : créer et gérer des machines virtuelles (KVM, …)
 
 ---
 
-## Principaux types de disques virtuels
+### Principaux types de disques virtuels
 
 - `RAW` : la taille totale du disque virtuel est réquisitionnée à la création
 - `COW` : quota de taille maximale, espace réquisitionné à l'usage
@@ -212,7 +218,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## UUID
+### UUID
 
 - Besoin d'identifiants uniques de machines virtuelles : _d-bus machine id_
 - `dbus-uuidgen --ensure`, `dbus-uuidgen --get`
@@ -220,7 +226,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## SSH [TCP 22]
+### SSH [TCP 22]
 
 - `ssh` (Secure SHell) : protocole de communication sécurisé :
   - Utilisé majoritairement pour ouvrir un shell sur un ordinateur distant Unix.
@@ -248,7 +254,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-## Cloud-init
+### Cloud-init
 
 - Génère des machines virtuelles ou conteneurs dans un environnement de Cloud
 - Fichier de configuration `YAML`

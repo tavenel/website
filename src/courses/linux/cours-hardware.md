@@ -4,17 +4,13 @@ title: Architecture matérielle et gestion des périphériques
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Détermination et configuration des paramètres du matériel
+## Détermination et configuration des paramètres du matériel
 
 ---
 
-# Architecture PC de base
+### Architecture PC de base
 
 _Quels sont les composants principaux d'une architecture PC ?_
-
----
-
-# Architecture PC de base
 
 - Central Processing Unit (CPU)
 - Random Access Memory (RAM) and Read-Only Memory (ROM)
@@ -42,11 +38,11 @@ _Quels sont les composants principaux d'une architecture PC ?_
 
 ---
 
-# Gestion des périphériques
+### Gestion des périphériques
 
 ---
 
-## Les bus
+#### Les bus
 
 - [ISA (obsolète)](https://www.materiel-informatique.be/isa.php)
 - [PIC (obsolète)](https://www.materiel-informatique.be/pci.php)
@@ -55,27 +51,23 @@ _Quels sont les composants principaux d'une architecture PC ?_
 
 ---
 
-## Allocation de ressources
+#### Allocation de ressources
 
 - Communication par CPU : _Interrupt Request Number (IRQ 0-15)_ `/proc/interrupts`
 - Transfert direct de données par RAM : _Direct Memory Access (DMA)_ `/proc/dma`
 - Adresses Entrées/Sorties (I/O ports) pour lecture / écriture `/proc/ioports`
 
-### Démo
-
 ---
 
-## /proc et /sysfs
+### /proc et /sysfs
 
 - `/proc` : système de fichiers virtuel en mémoire, gère l'état du système et les processus
   + `/proc/cpuinfo`, `/proc/<PID>/status`, ...
 - `/sys` (ou `sysfs`) : gestion des périphériques & config du noyau
 
-### Démo
-
 ---
 
-## Userspace Dev (udev)
+### Userspace Dev (udev)
 
 - Gère les fichiers de `/dev` pouvant être gérés sans droits d'administration (clé USB, ...)
 - Gère les événements _userspace_ en cas d'ajout/suppression d'un périphérique matériel (clé USB, ...)
@@ -83,7 +75,7 @@ _Quels sont les composants principaux d'une architecture PC ?_
 
 ---
 
-## Commandes utiles
+### Commandes utiles
 
 - `dmesg` : kernel ring buffer (messages du noyau)
 - `lspci` (fichier `/proc/bus/pci`)
@@ -94,17 +86,17 @@ _Quels sont les composants principaux d'une architecture PC ?_
 - fichiers de logs : `/var/log/`
 - Voir le TP dédié [tp-systeme][tp-systeme].
 
-### Démo
-
+---
+layout: section
 ---
 
-# Modules Noyau (Kernel Modules)
+## Modules Noyau (Kernel Modules)
 
 Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 
 ---
 
-## Avantages
+### Avantages
 
 - Flexibilité : Possibilité d'ajouter/supprimer des fonctionnalités au noyau sans redémarrage.
 - Sécurité : Permet de maintenir la taille du noyau initial plus petite.
@@ -113,7 +105,7 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 
 ---
 
-## Commandes utiles
+### Commandes utiles
 
 - Chargement d'un module : `modprobe <nom_du_module>`
 - Déchargement d'un module : `modprobe -r <nom_du_module>`
@@ -123,8 +115,10 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 - Voir la partie sur les modules du TP [tp-systeme][tp-systeme].
 
 ---
+layout: section
+---
 
-# `/dev`
+## `/dev`
 
 - Fichiers spéciaux (_fichiers de périphérique_) représentant les périphériques matériels et les ressources système.
 - Facilite la communication avec les périphériques matériels et virtuels.
@@ -134,7 +128,7 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 
 ---
 
-## Nomenclature
+### Nomenclature
 
 - Périphériques numérotés et nommés conventionnellement :
   - Disques IDE : `/dev/hda`, `/dev/hdb`, ...
@@ -142,21 +136,21 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
   - `/dev/hda`, `/dev/hdb` : 1er disque dur, 2e disque dur.
   - `/dev/sdb1`, `/dev/hda3` : 1e partition du 2e disque, 3e partition du 1er disque.
 
-### Démo
+---
+layout: section
+---
+
+## Démarrage du système
 
 ---
 
-# Démarrage du système
-
----
-
-# `BIOS` (Basic Input/Output System) vs `UEFI` (Unified Extensible Firmware Interface)
+### `BIOS` (Basic Input/Output System) vs `UEFI` (Unified Extensible Firmware Interface)
 
 Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# BIOS (ancien)
+#### BIOS (ancien)
 
 1. `POST` (Power-on Self Test)
 2. Le BIOS charge les composants principaux : clavier, disques, écran, ...
@@ -166,7 +160,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# UEFI (récent)
+#### UEFI (récent)
 
 1. `POST` (Power-on Self Test)
 2. L'UEFI charge les composants principaux : clavier, disques, écran, ...
@@ -176,13 +170,13 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# Secure Boot
+#### Secure Boot
 
 `UEFI` supporte le `Secure Boot` pour charger uniquement des applications `EFI` autorisées par le constructeur.
 
 ---
 
-# GRUB
+#### GRUB
 
 - Grand Unified Bootloader (`GRUB`) est (de loin) le bootloader principal pour un PC Linux.
 - Un bootloader charge le noyau en lui fournissant des paramètres : _init_, _runlevel_, partition _root_, ...
@@ -192,7 +186,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# Démarrage
+#### Démarrage
 
 - Beaucoup de possibilités différentes : scripts, ...
 - En principe :
@@ -201,11 +195,9 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
   - Démarrage du programme `init`
   - Démontage de l'`initramfs`
 
-### Démo fstab
-
 ---
 
-# Init
+### Init
 
 - Différents programmes `init` : `/bin/bash`, script dédié, ...
   + Presque toujours `SysV`, `systemd` (très majoritaire) ou `upstart`
@@ -214,14 +206,14 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-## SysV
+#### SysV
 
 - Service init historique et très majoritaire avant `systemd`
 - Démarre des daemons par `runlevel`
 
 ---
 
-## systemd
+#### systemd
 
 - Manager de services modernes (2010) : parallélisme, démarrage par dépendances, ...
 - Compatible `SysV` et `runlevels`
@@ -231,7 +223,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-## Upstart (obsolète)
+#### Upstart (obsolète)
 
 - Autre modernisation de `SysV` pour accélérer le démarrage (parallélisme).
 - Popularisé par `Ubuntu` avant son abandon pour `systemd`.
@@ -239,11 +231,11 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# Changement de runlevels, arrêt et redémarrage.
+### Changement de runlevels, arrêt et redémarrage.
 
 ---
 
-# Runlevel (SysV init)
+#### Runlevel (SysV init)
 
 - Runlevel **0** : System shutdown.
 - Runlevel **1**, **s** ou **single** : Single user mode, without network and other non-essential capabilities (maintenance mode).
@@ -256,7 +248,7 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 ---
 
-# init
+#### init
 
 Le programme `/sbin/init` gère le `runlevel` :
 
@@ -268,11 +260,9 @@ Le programme `/sbin/init` gère le `runlevel` :
 
 Voir le cours de la certification LPIC-1 pour le format du fichier `/etc/inittab`, 101.3 Lesson 1 p.37
 
-### Démo
-
 ---
 
-# Résumé du boot - traditionnel vs moderne
+### Résumé du boot - traditionnel vs moderne
 
 - POST -> BIOS -> MBR (DOS) -> Grub -> Kernel -> Init -> Runlevel (SysV)
 - POST -> UEFI -> EFI (GPT) -> direct ou Grub -> Kernel -> Init -> Runlevel (systemd) 
@@ -280,7 +270,7 @@ Voir le cours de la certification LPIC-1 pour le format du fichier `/etc/inittab
 
 ---
 
-# Commandes utiles pour le matériel
+## Commandes utiles pour le matériel
 
 - `lshw`, `lsusb`, `lspci`, `lscpu`, `lsblk`, `lsscsi` : informations générales hardware, usb, PCI port, CPU, block devices (partitions disques durs), disques physiques
 - `lsmod` : liste les modules noyau chargés

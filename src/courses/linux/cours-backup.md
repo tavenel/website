@@ -68,7 +68,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Continuité de service et SLA
+## Continuité de service et SLA
 
 **SLA** (Service Level Agreement) : engagement contractuel de disponibilité (en %) de service sur un an.
 

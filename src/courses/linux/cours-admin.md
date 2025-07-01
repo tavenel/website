@@ -4,11 +4,7 @@ title: Administration système Linux
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Sujet 107 : Tâches d’administration
-
----
-
-## 107.1 Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés [5]
+## Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés
 
 ---
 
@@ -48,8 +44,10 @@ layout: '@layouts/CoursePartLayout.astro'
   - `getent group docker`
 
 ---
+layout: section
+---
  
-## 107.2 Automatisation des tâches d’administration par la planification des travaux [4]
+## Automatisation des tâches d’administration par la planification des travaux
 
 ---
 
@@ -82,8 +80,10 @@ layout: '@layouts/CoursePartLayout.astro'
 Voir le [tp sur les tâches planifiées (cron)][tp-cron]
 
 ---
+layout: section
+---
 
-## 107.3 Paramètres régionaux et langues [3]
+## Paramètres régionaux et langues
 
 ---
 
@@ -121,16 +121,18 @@ Voir le [tp sur les tâches planifiées (cron)][tp-cron]
 Voir le [tp dédié aux langues][tp-lang].
 
 ---
+layout: section
+---
  
-# Sujet 108 : Services systèmes essentiels
+## Services systèmes essentiels
 
 ---
 
-## 108.1 Gestion de l’horloge système [3]
+### Gestion de l’horloge système
 
 ---
 
-### Temps universel
+#### Temps universel
 
 - `date` : affichage / gestion date et heure
 - Heure _UNIX_ : nombre de secondes écoulées depuis le 1er janvier 1970
@@ -138,7 +140,7 @@ Voir le [tp dédié aux langues][tp-lang].
 
 ---
 
-### Timezone
+#### Timezone
 
 - Modifie l'heure affichée par un fuseau horaire : `Europe/Paris`, …
 - `/etc/timezone` ou `/etc/localtime`
@@ -149,14 +151,14 @@ Voir le [tp dédié aux langues][tp-lang].
 
 ---
 
-### Hardware clock
+#### Hardware clock
 
 - `hwclock` : affichage / gestion horloge matérielle
 - `hwclock --systohc` : synchronisation horloge système vers matérielle
 
 ---
 
-### Synchronisation réseau
+#### Synchronisation réseau
 
 - Réseau => besoin de cohérence des horloges (journalisation, sécurité, …)
 - `Network Time Protocol` (`NTP`) : synchronisation des horloges depuis des serveurs de temps fiables
@@ -168,7 +170,7 @@ Voir le [tp dédié aux langues][tp-lang].
 
 ---
 
-### Serveurs de temps de référence
+#### Serveurs de temps de référence
 
 - Europe Time Servers : <europe.pool.ntp.org> : pool communautaire Europe
 - Stratum-1 servers : <pool.ntp.org> : pool communautaire monde
@@ -177,7 +179,7 @@ Voir le [tp dédié aux langues][tp-lang].
 
 ---
 
-### systemd : timedatectl
+#### systemd : timedatectl
 
 - `timedatectl` : affichage date et heure
 - `timedatectl set-timezone Europe/Paris`
@@ -186,8 +188,10 @@ Voir le [tp dédié aux langues][tp-lang].
 - `timedatectl set-time`
 
 ---
+layout: section
+---
  
-## 108.2 Journaux systèmes [4]
+## Journaux systèmes
 
 ---
 
@@ -220,8 +224,10 @@ Voir le [tp dédié aux langues][tp-lang].
 Voir le [TP sur les journaux][tp-syslog].
 
 ---
+layout: section
+---
  
-## 108.3 Bases sur l’agent de transfert de courrier (MTA) [3]
+## Bases sur l’agent de transfert de courrier (MTA)
 
 ---
 
@@ -264,8 +270,10 @@ emma@lab1.campus
 Voir le [TP sur SMTP][tp-smtp].
 
 ---
+layout: section
+---
  
-## 108.4 Gestion des imprimantes et de l’impression [2]
+## Gestion des imprimantes et de l’impression
 
 ---
 
@@ -279,28 +287,12 @@ Voir le [TP sur SMTP][tp-smtp].
 - `/etc/cups/cupsd.conf`
 - Interface héritée de `lpd` (`lpadmin`, `lpinfo`, `lpoptions`, `lpr`, `lpstat`, `lp`, …)
 
----
-
-<!-- Annexe : liste des TPs -->
-
-[tp-systemd]: tp-systemd.md
-
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-rpm-apt]: tp-rpm-apt.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
-[tp-fichiers-avance]: tp-fichiers-avance.md
-[tp-partitions]: tp-partitions.md
 [tp-cron]: tp-cron.md
 [tp-lang]: tp-lang.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
+[tp-systeme]: tp-systeme.md
+[tp-systemd]: tp-systemd.md
 [tp-syslog]: tp-syslog.md
-[tp-network]: tp-network.md
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
+[tp-smtp]: /cours/cloud/exo-smtp.md
+
+---
 

@@ -1,10 +1,9 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Sécurité
+title: Tâches d’administration de sécurité et configuration de la sécurité du système
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Tâches d’administration de sécurité et configuration de la sécurité du système
 
 ![Run as an admin…](@assets/linux/run_as_admin.jpg)
 
@@ -102,12 +101,14 @@ tty6::respawn:/sbin/getty 38400 tty6
 Voir le [TP sur la sécurité d'un système Linux][tp-security]
 
 ---
+layout: section
+---
  
-# Sécurisation des données avec le chiffrement
+## Sécurisation des données avec le chiffrement
 
 ---
 
-## SSH
+### SSH
 
 - Chiffrement symétrique ou (mieux) asymétrique (clé privée / clé publique)
 - Peut encapsuler un autre protocole dans un tunnel (y compris `X11`)
@@ -120,7 +121,7 @@ Voir le [TP sur la sécurité d'un système Linux][tp-security]
 
 ---
 
-## GNU Privacy Guard (GPG)
+### GNU Privacy Guard (GPG)
 
 - Sécurise les fichiers, les communications et les e-mails : protocole `OpenPGP`
   - Asymétrique
@@ -132,10 +133,13 @@ Voir le [TP sur la sécurité d'un système Linux][tp-security]
 Voir le [TP sur SSH et GPG][tp-ssh-gpg]
 
 ---
+layout: section
+---
+
+# Liens
 
 - Voir aussi [GTF0bins : exploits classiques sur Linux (tuto)](https://blog.stephane-robert.info/docs/securiser/menaces/gtfobins/)
 
-<!-- Annexe : liste des TPs -->
 [tp-security]: tp-security.md
 [tp-ssh-gpg]: tp-ssh-gpg.md
 
