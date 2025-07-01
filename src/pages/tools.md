@@ -437,6 +437,7 @@ created: 2024-10-17
 - Layouts et composants tout faits : <https://pagedone.io/>, <https://www.preline.co/>, <https://flowbite.com/>
 - Affichage de messages et d'alertes : <https://alertifyjs.com/>
 - <https://www.happyhues.co/> : palettes de couleurs
+- Tables complexes : <https://www.ag-grid.com/>
 
 ## 📊 Data science, data mining, machine learning
 
