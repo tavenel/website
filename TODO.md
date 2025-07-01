@@ -1,5 +1,7 @@
 ## P1
 
+- dedicated font with UTF-8 emojis
+
 - W3C
 
 - slides => <bug> fullscreen style fix CSS</bug>
@@ -26,8 +28,6 @@ h1 {
 }
 ```
 
----
-
 ## P2
 
 ```css
@@ -38,9 +38,7 @@ main {
 }
 ```
 
-- 404 style
 - style: tables
-- copy button for code blocks
 
 - diagrams
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
@@ -56,32 +54,6 @@ main {
 - Head.astro => ClientRouter transitions
 - JS slide => <https://www.geeksforgeeks.org/simple-swipe-with-vanilla-javascript/>
 - slides => X/N slide number
-- TPs => RM Legal and generate it
-- slides => generate legal
-- slides => marp => color / backgroundColor
-- code block => copy icon
-- marp => class: liens
-```md
-# TITLE
-
-_Tom Avenel_
-
-<https://www.avenel.pro/>
-
----
-
-# Legal
-
-| [![󰵫  License: CC BY-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/) | CC BY-SA 4.0 |
-| ---------------------------------------------------------------- | ------------------------------------------ |
-| ![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg) | Attribution : vous devez créditer l'auteur |
-| ![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg) | Partage dans les mêmes conditions          |
-
-- Ce fichier est mis à disposition selon les termes de la Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International. Pour plus d'informations : <http://creativecommons.org/licenses/by-sa/4.0/>
-- Le code source au format `Markdown` de ce document est disponible sur le [site web][site-perso]
-
-[site-perso]: https://www.avenel.pro/
-```
 
 ## P3
 
@@ -99,14 +71,8 @@ _Tom Avenel_
   - slides => **bold** and _emphasis_
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
   - Callouts themes : https://github.com/Microflash/remark-callout-directives
-  - Callouts => correction : svg in astro.config.mjs
-  - h2#chapitres => floating (right ?<- only if @media landscape), always visible, collapsible
   - ability to zoom images
   - styles.css => !important ?
-  - laserwave: 'laserwave', => neon violet
-  - rose: 'rose-pine',
-  - tokyonight: 'tokyo-night',
-  - vesper: 'vesper', => mono orange
   - better light themes
   - selected text : `::selection` => color and backgroundColor at least
 
@@ -118,47 +84,22 @@ _Tom Avenel_
   - import remarkLint from 'remark-lint';
   - import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
   - import remarkLintNoDeadUrls from 'remark-lint-no-dead-urls';
+  - https://github.com/remarkjs/remark-validate-links
   - remarkPlugins: [ // remarkLint, // remarkPresetLintRecommended, // remarkLintNoDeadUrls, ]
 
 ## P4
 
 - <whoami.avenel.pro>
-- <h2>Chapitres</h2>
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
-- analytics
 - Cours : liens outils et transverses => 2 cards
-- https://adamsimpson.net/writing/openring
-- "latest" page
-  ```js
-  fetch('https://example.com/feed.rss') // Replace with your RSS feed URL
-  .then(response => response.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-  .then(data => {
-    const items = data.querySelectorAll("item");
-    let html = "<ul>";
-    items.forEach(item => {
-      html += `<li><a href="${item.querySelector("link").textContent}">${item.querySelector("title").textContent}</a></li>`;
-    });
-    html += "</ul>";
-    document.getElementById("rss-feed").innerHTML = html; // Replace "rss-feed" with the ID of your target element
-  });
-  ```
-- merge "links" page (?) => "links" and "tools" idem ?
-- merge "liens" ?
-
-- remark-lint
-  - https://github.com/remarkjs/remark-validate-links
+- "latest" page => git history ?
+- <https://adamsimpson.net/writing/openring>
 
 - test responsive slides with : https://github.com/sindresorhus/pageres
 - https://github.com/astefanutti/decktape
 - https://markdalgleish.com/projects/bespoke.js/
 - https://github.com/gnab/remark/issues/50#issuecomment-223887379
-
-- move HTML emojis to web icons
-
-- <https://adamsimpson.net/writing/openring>
-- <https://linuxfr.org/news/photos-et-traces-gps-dans-un-blog-statique>
 
 ---
 
@@ -242,112 +183,6 @@ body.dark {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-}
-```
-
----
-
-- plantuml 
-
-```
-!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
-
-!includeurl KubernetesPuml/kubernetes_Context.puml
-!includeurl KubernetesPuml/kubernetes_Simplified.puml
-
-!includeurl KubernetesPuml/OSS/KubernetesApi.puml
-!includeurl KubernetesPuml/OSS/KubernetesIng.puml
-!includeurl KubernetesPuml/OSS/KubernetesPod.puml
-```
-
-
----
-
-# Java
-
-Latest Java versions (> 17) introduced :
-
-- `Records`
-- `Sealed` classes
-- `switch` instructions with patterns
-
-Examples below :
-
-```java
-package java17;
-
-public class RecordsAndSealedClasses {
-
-    record MyRecord(int x) implements MySealedClass {
-
-        MyRecord() {
-            this(42); // must call canonical constructor
-        }
-
-        MyRecord {
-            // canonical constructor
-            assert x > 0;
-        }
-    }
-
-    sealed interface MySealedClass
-    permits MyRecord, SealedSubclass, UnsealedClass
-    {}
-
-    sealed static class SealedSubclass
-        implements MySealedClass
-        permits MyFinalClass
-    {}
-
-    non-sealed static class UnsealedClass
-        implements MySealedClass
-    {}
-
-    static final class MyFinalClass
-        extends SealedSubclass
-    {}
-
-}
-```
-
-```java
-package java17;
-
-import java17.RecordsAndSealedClasses.*;
-
-import java.util.List;
-import java.util.Random;
-
-public class SwitchWithPattern {
-
-    static String test(MySealedClass instance) {
-
-        return switch (instance) {
-            case null -> "NULL";
-            case MyFinalClass __ -> "FinalClass";
-            case SealedSubclass __ -> "SealedSubclass";
-            case UnsealedClass __ -> "UnsealedClass";
-            case MyRecord record && record.x() == 42 -> "Default Record";
-            // JDK18 ? case MyRecord(43) -> "Record with 43";
-            case MyRecord record -> "Another Record with : " + record.x();
-        };
-    }
-
-    public static void main(String[] args) {
-        var instances = List.of(
-                new MyFinalClass(),
-                new SealedSubclass(),
-                new UnsealedClass(),
-                new MyRecord(),
-                new MyRecord(11),
-                new MyRecord(43)
-                // NPE in List.of null
-        );
-        var rand = new Random().nextInt(instances.size());
-        System.out.println(
-                SwitchWithPattern.test(instances.get(rand))
-        );
-    }
 }
 ```
 
