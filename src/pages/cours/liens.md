@@ -21,9 +21,14 @@ Quelques références utiles en informatique.
 - Un livre génial sur le refactoring de code : comment restructurer un code existant
 - Explique aussi comment gérer le code _legacy_ et s'en protéger pour créer des évolutions stables
 
-## Développement
+### Développement
 
 - [Bootstrapping Microservices, Second Edition With Docker, Kubernetes, GitHub Actions, and Terraform (Ashley Davis)](https://www.manning.com/books/bootstrapping-microservices-second-edition)
+
+## Podcasts
+
+- Cybersécurité : "_True stories from the dark side of the Internet_" : <https://darknetdiaries.com/>
+- Développement : "_Developer Voices_" : <https://www.developervoices.com/>
 
 ## Informations transverses
 
