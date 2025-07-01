@@ -516,6 +516,7 @@ aside.callout-correction { display: none; }
 [data-theme="none"] {
 	/* A theme with default browser styling. */
 	--background: revert;
+	--background2: revert;
 	--text: revert;
 	--link: LinkText;
 	--link-hover: LinkText;
@@ -559,6 +560,7 @@ aside.callout-correction { display: none; }
 * but the rest of the website is another light theme
 */
 	--background: var(--light-main);
+	--background2: var(--light-second);
 	--text: var(--dark-main);
 	--link: inherit;
 	--link-hover: inherit;
@@ -610,6 +612,7 @@ aside.callout-correction { display: none; }
 [data-theme="everforest-light"] {
 	/* Light theme inspired by : https://github.com/sainnhe/everforest/blob/master/palette.md */
 	--background: #FDF6E3;
+	--background2: #EAEDC8;
 	--text: #5C6A72;
 	--link: inherit;
 	--link-hover: inherit;
@@ -658,6 +661,7 @@ aside.callout-correction { display: none; }
 [data-theme="one-light"] {
 	/* Light theme inspired by : https://github.com/nathanbuchar/atom-one-dark-terminal/blob/master/COLORS */
 	--background: #F9F9F9;
+	--background2: inherit;
 	--text: #383A42;
 	--link: inherit;
 	--link-hover: inherit;
@@ -710,6 +714,7 @@ aside.callout-correction { display: none; }
 * is a dedicated dark theme.
 */
 	--background: var(--dark-main);
+	--background2: var(--dark-second);
 	--text: var(--light-main);
 	--link: var(--dark-link);
 	--link-hover: var(--light-red);
@@ -765,6 +770,7 @@ aside.callout-correction { display: none; }
 [data-theme="ayu-dark"] {
 	/* Theme inspired by : https://github.com/ayu-theme/ayu-colors */
 	--background: #0B0E14;
+	--background2: inherit;
 	--text: #BFBDB6;
 	--link: #39BAE6;
 	--link-hover: #F07178;
@@ -820,6 +826,7 @@ aside.callout-correction { display: none; }
 [data-theme="catppuccin-mocha"] {
 	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
 	--background: #1e1e2e;
+	--background2: #11111b;
 	--text: #cdd6f4;
 	--link: #89dceb;
 	--link-hover: #f2cdcd;
@@ -874,6 +881,7 @@ aside.callout-correction { display: none; }
 [data-theme="dracula"] {
 	/* Theme inspired by : https://en.wikipedia.org/wiki/Dracula_(color_scheme) */
 	--background: #282a36;
+	--background2: #44475a;
 	--text: #f8f8f2;
 	--link: #8be9fd;
 	--link-hover: #8be9fd;
@@ -927,6 +935,7 @@ aside.callout-correction { display: none; }
 [data-theme="kanagawa-dragon"] {
 	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.yml */
 	--background: #181616;
+	--background2: var(--dark-main);
 	--text: #c5c9c5;
 	--link: #8ba4b0;
 	--link-hover: #8ba4b0;
@@ -981,6 +990,7 @@ aside.callout-correction { display: none; }
 [data-theme="laserwave"] {
 	/* TODO */
 	--background: var(--dark-main);
+	--background2: var(--dark-main);
 	--text: var(--light-main);
 	--link: var(--dark-link);
 	--link-hover: var(--light-red);
@@ -1036,6 +1046,7 @@ aside.callout-correction { display: none; }
 [data-theme="nord"] {
 	/* Based on the Nord Theme : https://www.nordtheme.com/docs/colors-and-palettes */
 	--background: #2e3440;
+	--background2: inherit;
 	--text: #eceff4;
 	--link: #88c0d0;
 	--link-hover: #88c0d0;
@@ -1090,6 +1101,7 @@ aside.callout-correction { display: none; }
 [data-theme="rose-pine"] {
 	/* TODO */
 	--background: var(--dark-main);
+	--background2: var(--dark-main);
 	--text: var(--light-main);
 	--link: var(--dark-link);
 	--link-hover: var(--light-red);
@@ -1145,6 +1157,7 @@ aside.callout-correction { display: none; }
 [data-theme="synthwave-84"] {
 	/* Theme inspired by : https://github.com/robb0wen/synthwave-vscode */
 	--background: #262335;
+	--background2: var(--dark-main);
 	--text: #f97e72;
 	--link: #03edf9;
 	--link-hover: #fede5d;
@@ -1234,6 +1247,7 @@ aside.callout-correction { display: none; }
 [data-theme='the-unnamed'] {
 	/* From : https://github.com/estruyf/slidev-theme-the-unnamed */
 	--background: #161c2c;
+	--background2: inherit;
 	--text: #f3eff5;
 	--link: #15c2cb;
 	--link-hover: #15c2cb;
@@ -1315,6 +1329,7 @@ aside.callout-correction { display: none; }
 [data-theme="tokyo-night"] {
 	/* TODO */
 	--background: var(--dark-main);
+	--background2: var(--dark-main);
 	--text: var(--light-main);
 	--link: var(--dark-link);
 	--link-hover: var(--light-red);
@@ -1370,6 +1385,7 @@ aside.callout-correction { display: none; }
 [data-theme="vesper"] {
 	/* TODO */
 	--background: var(--dark-main);
+	--background2: var(--dark-main);
 	--text: var(--light-main);
 	--link: var(--dark-link);
 	--link-hover: var(--light-red);
