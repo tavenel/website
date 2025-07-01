@@ -1,18 +1,14 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/CoursePartLayout.astro'
-title: Tests unitaires Python
+title: Tests unitaires Python avec unittest
 tags:
 - python
 - tests
 - unit
 ---
 
-# Tests unitaires Python avec unittest
-
----
-
-# Unittest
+## Unittest
 
 - Framework de test intégré dans la bibliothèque standard Python.
 
@@ -40,11 +36,11 @@ class UneClasseDeTest(unittest.TestCase):
 
 ---
 
-# Exécution
+## Exécution
 
 ---
 
-## Exécution de la classe de test
+### Exécution de la classe de test
 
 ```python
 if __name__ == '__main__':
@@ -79,14 +75,14 @@ if __name__ == '__main__':
 
 ---
 
-# Vérifications
+## Vérifications
 
 - Vérifications par _assertions_ héritées de `unittest.TestCase`
 - Acceptent toutes le paramètre optionnel `msg` (message si échec).
 
 ---
 
-## Principales assertions
+### Principales assertions
 
 - `assertEqual(a, b)` et `assertNotEqual(a, b)`
 - `assertTrue(x)` et `assertFalse(x)`
@@ -97,7 +93,7 @@ if __name__ == '__main__':
 
 ---
 
-# Exécution des tests
+## Exécution des tests
 
 ```python
 import unittest
@@ -122,7 +118,7 @@ if __name__ == '__main__':
 
 ---
 
-## Exécution du fichier de test
+### Exécution du fichier de test
 
 ```
 $ python3 test_str.py
@@ -136,7 +132,7 @@ OK
 
 ---
 
-## Exécution comme module
+### Exécution comme module
 
 ```
 $ python3 -m unittest test_str
@@ -150,7 +146,7 @@ OK
 
 ---
 
-# Tester des exceptions : `assertRaises`
+## Tester des exceptions : `assertRaises`
 
 ```python
 import unittest
@@ -178,35 +174,35 @@ OK
 
 ---
 
-# Utilisation de doublure
+## Utilisation de doublure
 
 - Substituent des objets réels par de _faux_ objets de test ;
 - Permet de contrôler l'environnement du SUT à tester (non changé) en isolation en remplaçant des dépendances d'intégration inutiles par des doublures.
 
 ---
 
-## Simulateur
+### Simulateur
 
 - Implémentation alternative d’un sous-système non disponible pour l'environnement de test.
 - ex : BDD en mémoire (`H2`)
 
 ---
 
-## Stub
+### Stub
 
 - Remplace une dépendance problématique par une doublure de test au comportement déterministe.
 - ex : objet simulant une dépendance à une API Web par une réponse codée en dur et utilisée dans le SUT dans la suite du test.
 
 ---
 
-## Mock
+### Mock
 
 - Remplace une dépendance par une doublure de test vérifiant les appels faits à cette dépendance.
 - ex : objet simulant une dépendance à une API Web en vérifiant la bonne requête demandée par le SUT à la dépendance.
 
 ---
 
-### Utilisation d’un mock
+#### Utilisation d’un mock
 
 SUT à tester - `is_sourcefile()` utilise la dépendance `path` gérant le chemin d'un fichier sur le système.
 
@@ -348,8 +344,8 @@ class TestCalendar(unittest.TestCase):
 ```
 
 ---
-
-<!-- class: liens -->
+layout: section
+---
 
 # Liens
 
