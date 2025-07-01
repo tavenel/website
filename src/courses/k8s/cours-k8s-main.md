@@ -231,6 +231,11 @@ tags:
 - Conçu pour gérer des clusters de grande taille 🏗️
 - Inconvénients : Complexe (eBPF et concepts réseau avancés), eBPF doit être activé dans le noyau Linux ⚠️
 
+:::tip
+- Cilium fournit un outil de monitoring (_Hubble_) avec une CLI et UI permettant de visualiser les communications au sein du cluster.
+- Cilium fournit un "_Cluster Mesh_" (⚠️ à ne pas confondre avec un _Service Mesh_ k8s) permettant une communication entre _Service_ de différents clusters.
+:::
+
 ---
 
 | **Critère** | **Calico** | **Flannel** | **Weave Net** | **Cilium** |
