@@ -11,10 +11,23 @@
 
 .hidden { display: none !important ; }
 
+/* header { */
+/* 	position: fixed; */
+/*   height: 150px; */
+/* } */
+
 main {
 	max-width: 90vw; /* 90 % full page */
 	margin: auto;
 }
+/* 	padding: 1rem; */
+/* 	margin-left: 250px; */           /* match sidebar width */
+/* 	margin-top: 150px;  */        /* match header height */
+/* } */
+
+/* #base { */
+/* 	display: flex; */
+/* } */
 
 a {
 	text-decoration: none;
@@ -408,12 +421,55 @@ a.add-bookmark {
 	h1 { text-align:center; }
 }
 
+/********/
+/* TOC */
+/*******/
+
+#toc a {
+	transition: color .5s;
+}
+
+#toc a.active {
+	color: var(--link-visited);
+	font-weight: bold;
+}
+
+/* TODO => reactive to size of window */
+
+/* #toc { */
+/* 	position: fixed; */
+/*   border-right: 1px solid #ddd; */
+/* 	width: 250px; */
+/* 	margin-top: 150px; */          /* match header height */
+/* } */
+
+/* #toc.collapsed { */
+/*   width: 0; */
+/*   padding-left: 0; */
+/*   padding-right: 0; */
+/*   overflow: hidden; */
+/* } */
+/**/
+/* push content when collapsed */
+/* #toc:not(.collapsed) ~ main { */
+/* 	margin-left: 250px; */
+/* } */
+/* #toc.collapsed ~ main { */
+/* 	margin-left: 0; */
+/* } */
+/**/
+/* #toc ul { */
+/* 	list-style: none; */
+/* 	padding: 0; */
+/* } */
+
 /******************************************************************************/
 /*                                    CALLOUTS                                */
 /******************************************************************************/
 
 aside.callout {
-	margin-bottom: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 aside.callout-correction {
