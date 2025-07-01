@@ -412,7 +412,13 @@ a.add-bookmark {
 /*                                    CALLOUTS                                */
 /******************************************************************************/
 
-aside.callout-correction { display: none; }
+aside.callout {
+	margin-bottom: 1em;
+}
+
+aside.callout-correction {
+	display: none;
+}
 
 :root {
 	--callout-bg-info: hsl(223, 14%, 61%, 0.14);
