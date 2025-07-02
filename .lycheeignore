@@ -1,0 +1,3 @@
+# kube-prometheus stack
+^http://prometheus-kube-prometheus-prometheus.monitoring.svc:9090/
+^http://gateway.openfaas:8080/
