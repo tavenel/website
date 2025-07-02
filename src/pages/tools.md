@@ -446,6 +446,7 @@ created: 2024-10-17
 - ETL open-source : `airflow`
 - Local LLM : `ollama`, <https://terminaltrove.com/parllama/> (TUI)
 - SQL queries on a CSV, Json, Excel file : <https://terminaltrove.com/sqly/>
+- MCP : `FastMCP` (idem FastAPI pour MCP)
 
 ## Project management
 
