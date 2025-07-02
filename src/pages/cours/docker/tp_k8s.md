@@ -147,8 +147,10 @@ Un `Service` permet d'exposer les ports d'un pod. Nous allons voir comment expos
 :::
 
 :::correction
+
+- 1. Port Forward
+
 ```sh
-# 1. Port Forward
 kubectl port-forward web 8181:8080
 # Ou (plus propre)
 kubectl expose web --type="NodePort" --target-port 8080
@@ -165,8 +167,9 @@ kubectl get nodes -o wide
 # Dans un navigateur ou wget/curl : 172.18.0.3:31674 => Welcome to nginx!
 ```
 
+- 2. Ajout du label
+
 ```yaml
-# 2. Ajout du label
 #web-pod-label.yml 
 # Configuration du Pod web
 apiVersion: v1
@@ -192,11 +195,9 @@ kubectl describe po/web
 #…
 #Labels:           app=web-app
 ```
-:::
+- 3. ClusterIP
 
-:::correction
 ```yaml
-# 3. ClusterIP
 #web-cluster-ip.yml
 apiVersion: v1
 kind: Service
@@ -224,11 +225,10 @@ wget web-clusterip:8182
 #index.html           100% |******************************************************************************|   615  0:00:00 ETA
 #'index.html' saved
 ```
-:::
 
-:::correction
+- 4. NodePort
+
 ```yaml
-# 4. NodePort
 #web-node-port.yml
 apiVersion: v1
 kind: Service
@@ -277,8 +277,9 @@ Dans Minikube, il n'y a qu'1 seul `Node`, mais sur un vrai cluster on peut séle
 :::
 
 :::correction
+- 1. Ajout de label
+
 ```sh
-# 1. Ajout de label
 kubectl get nodes              
 #NAME       STATUS   ROLES           AGE   VERSION
 #minikube   Ready    control-plane   11d   v1.31.0
@@ -290,8 +291,9 @@ kubectl get nodes --show-labels
 #minikube   Ready    control-plane   11d   v1.31.0   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=minikube,kubernetes.io/os=linux,minikube.k8s.io/commit=210b148df93a80eb872ecbeb7e35281b3c582c61,minikube.k8s.io/name=minikube,minikube.k8s.io/primary=true,minikube.k8s.io/updated_at=2024_10_12T00_40_48_0700,minikube.k8s.io/version=v1.34.0,mon-app=web,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
 ```
 
+- 2. Configuration du Pod avec affinité
+
 ```yaml
-# 2. Configuration du Pod avec affinité
 #web-pod-affinity.yml 
 apiVersion: v1
 kind: Pod
@@ -317,8 +319,11 @@ spec:
 ```sh
 # Création du Pod avec affinité
 kubectl -f web-pod-affinity.yml apply
+```
 
-# 3. Vérification : NODE==minikube
+- 3. Vérification : NODE==minikube
+
+```sh
 kubectl get po/web-affinity-node -o wide
 #NAME                READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
 #web-affinity-node   1/1     Running   0          29s   10.244.0.38   minikube   <none>           <none>
@@ -336,8 +341,9 @@ En Kubernetes, vous pouvez définir des affinités inter-pods pour lier deux pod
 :::
 
 :::correction
+- 1. Ajout du label
+
 ```yaml
-# 1. Ajout du label
 #web-pod-label.yml 
 # Configuration du Pod web
 apiVersion: v1
@@ -363,11 +369,10 @@ kubectl describe po/web
 #…
 #Labels:           app=web-app
 ```
-:::
 
-:::correction
+- 2. Créer un Pod `cache` avec une affinité pour le Pod `web`.
+
 ```yaml
-# 2. Créer un Pod `cache` avec une affinité pour le Pod `web`.
 #web-pod-cache-affinity.yml 
 apiVersion: v1
 kind: Pod
@@ -395,11 +400,10 @@ kubectl get po
 #cache                             0/1     ContainerCreating   0             5s
 #web                               1/1     Running             0             48m
 ```
-:::
 
-:::correction
+- 3. Créer un Pod `antagoniste` avec une anti-affinité pour le Pod `web`.
+
 ```yaml
-# 3. Créer un Pod `antagoniste` avec une anti-affinité pour le Pod `web`.
 #web-pod-antagoniste-affinity.yml 
 apiVersion: v1
 kind: Pod
@@ -519,9 +523,7 @@ spec:
   selector:
     app: web-app
 ```
-:::
 
-:::correction
 ```sh
 # Utilisation d'un Deployment
 kubectl -f web-deployment.yml apply        
@@ -570,8 +572,9 @@ La commande `kubectl rollout` est utilisée pour gérer et surveiller les déplo
 :::
 
 :::correction
+- 1. Modifier le Deployment :
+
 ```yaml
-#1.
 #…
         image: nginx:stable-perl
 #…
@@ -602,11 +605,10 @@ kubectl rollout status deploy/web-deploy
 
 # Un nouveau Pod est créé, puis le Pod précédent est supprimé.
 ```
-:::
 
-:::correction
+- 2. Rollback :
+
 ```sh
-#2. rollback
 kubectl rollout history deploy/web-deploy
 #deployment.apps/web-deploy 
 #REVISION  CHANGE-CAUSE
@@ -653,11 +655,19 @@ spec:
 
 ### LoadBalancer
 
-Un `LoadBalancer` distribue le trafic entrant entre plusieurs pods, ce qui permet d'optimiser l'utilisation des ressources et de prévenir la surcharge d'un seul pod. Cela aide à assurer une réponse rapide même sous des charges élevées.
+Un `LoadBalancer` distribue le trafic **entrant** entre plusieurs pods, ce qui permet d'optimiser l'utilisation des ressources et de prévenir la surcharge d'un seul pod. Cela aide à assurer une réponse rapide même sous des charges élevées.
 
 En cas de défaillance d'un pod, le `LoadBalancer` redirige automatiquement le trafic vers les autres pods sains. Cela augmente donc également la disponibilité de l'application, car le service reste accessible même si certains composants échouent.
 
 Le type `LoadBalancer` est souvent utilisé dans des environnements cloud (comme AWS, GCP, Azure) qui prennent en charge la création automatique de load balancers, ce qui offre une intégration transparente avec d'autres services (comme la gestion de certificats SSL, les groupes de sécurité, etc.).
+
+:::tip
+À l'intérieur du Cluster, tous les _Service_ sont _load balancés_ vers l'ensemble des _Pods_ qu'ils visent. Le `LoadBalancer` n'a donc qu'un intérêt pour le trafic **externe** (géré par un fournisseur de Cloud par exemple) !
+:::
+
+:::warn
+Utiliser des `LoadBalancer` peut vite coûter très cher (en principe, paiement à l'usage par le fournisseur de Cloud) - on lui préfère donc parfois un `Ingress` pour créer un point d'accès externe unique et gérer soi-même l'équilibre de charge **dans** le cluster.
+:::
 
 ## Gestion de la persistance
 
@@ -673,7 +683,7 @@ Cependant, l'utilisation de `hostPath` peut présenter des risques de sécurité
 :::
 
 :::correction
-```yaml
+```yaml {9,12}
 apiVersion: v1
 kind: Pod
 […]
@@ -830,9 +840,7 @@ spec:
     configMap: # ConfigMap déjà créée
       name: ma-conf-test # où récupérer la configuration ?
 ```
-:::
 
-:::correction
 ```sh
 kubectl -f pod-with-conf-volume.yml apply
 #pod/config-map created
@@ -1062,9 +1070,7 @@ spec:
     nodePort: 30002    # Port sur lequel le service sera accessible depuis l'extérieur du cluster
   selector:
 ```
-:::
 
-:::correction
 ```yaml
 #hpa-reel.yml
 apiVersion: autoscaling/v2
@@ -1144,9 +1150,7 @@ kubectl get pods -n kubernetes-dashboard
 # dashboard-metrics-scraper-c5db448b4-gkbll   1/1     Running   0          94m
 # kubernetes-dashboard-695b96c756-7kddw       1/1     Running   0          94m
 ```
-:::
 
-:::correction
 ```sh
 kubectl create namespace my-namespace
 ```
@@ -1202,9 +1206,7 @@ kubectl get pods -n kube-system
 # metrics-server-84c5f94fbc-bhfvm    1/1     Running   0             81m
 # storage-provisioner                1/1     Running   1 (13h ago)   13h
 ```
-:::
 
-:::correction
 ```sh
 kubectl config view
 
@@ -1242,7 +1244,6 @@ kubectl config view
 #     client-key: /home/tom/.minikube/profiles/minikube/client.key
 ```
 :::
-
 
 # Legal
 

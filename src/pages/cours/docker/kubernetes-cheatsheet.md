@@ -466,7 +466,7 @@ spec:
 
 ### Exemple avancé de fichier de description d'un Pod
 
-```yaml
+```yaml {"base": 10-20} {"env":22-34} {"ressources":36-43} {"probe":45-59} {"volumes":64-71} {"autre conteneur":73-79} {"init container":81-94} {"affinity":96-121}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -476,6 +476,7 @@ metadata:
   namespace: mon-namespace # optionnel - dans un namespace dédié
 spec:
   containers:
+
   - name: main-container # nom du conteneur
     image: nginx # image Docker
     imagePullPolicy: Always # re-pull la dernière version d'image à la (re)création du Pod
@@ -484,6 +485,10 @@ spec:
     restartPolicy: Always # restart toujours si stoppé
     restartPolicy: OnFailure # restart seulement si erreur
     restartPolicy: Never
+    ports: # Ports à exposer
+    - containerPort: 80 # port dans le conteneur
+
+
     env: # Variables d'environnement à injecter dans le conteneur
     - name: MA_VAR # variable $MA_VAR
       value: "42" # MA_VAR=42 ⚠️ une string (échapper nombres, …)
@@ -496,8 +501,8 @@ spec:
       valueFrom:
         fieldRef:
           fieldPath: metadata.namespace # https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/
-    ports: # Ports à exposer
-    - containerPort: 80 # port dans le conteneur
+
+
     resources:
       requests: # ressources minimum
         memory: 50Mi # éviter OOMkilled (Out of Memory-Killed)
@@ -505,6 +510,8 @@ spec:
       limits: # ressources maximum
         memory: 250Mi
         cpu: 0.5
+
+
     readinessProbe: # check du démarrage
       httpGet:
         path: /monitor/status
@@ -519,8 +526,11 @@ spec:
         scheme: HTTPS
       initialDelaySeconds: 20
       periodSeconds: 10
+
     securityContext:
       readOnlyRootFilesystem: true
+
+
     volumeMounts: # montage de volume
     - name: mon-volume # on monte une configuration de volume appelée 'mon-volume'
       mountPath: "/mon/montage/dans/le/conteneur" # point de montage à l'intérieur du conteneur
@@ -528,12 +538,16 @@ spec:
       mountPath: "/log"
     - name: tmpfs-volume
       mountPath: "/tmp"
+
+
   - name: sidecar-container
     image: busybox
     command: ["sh", "-c", "tail -f /logs/app.log"]
     volumeMounts:
     - name: log-volume
       mountPath: "/log"
+
+
   initContainers:
   - name: wait-for-myservice
     image: busybox:1.28
@@ -547,6 +561,8 @@ spec:
   - name: tmpfs-volume
     emptyDir:
       medium: "Memory"
+
+
   affinity: # Affinité : Pod / Node
     nodeAffinity: # Affinité de Node
       # [1] affinité "hard" : requis sinon échec
@@ -628,7 +644,7 @@ Il existe 3 classes de QoS :
 
 ##### Exemple de QoS Guaranteed
 
-```yaml
+```yaml {9,12} {10,13}
 apiVersion: v1
 kind: Pod
 spec:
@@ -769,7 +785,7 @@ kubectl describe resourcequota my-resource-quota
 
 ### Exemple de montage d'un volume hostPath
 
-```yaml
+```yaml {9,12}
 apiVersion: v1
 kind: Pod
 […]
@@ -866,7 +882,7 @@ helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/cs
 helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace nfs --create-namespace --version v4.10.0
 ```
 
-```yml
+```yml {4,27}
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -882,9 +898,7 @@ volumeBindingMode: WaitForFirstConsumer # volume créé uniquement quand un Pod 
 allowVolumeExpansion: true # agrandir le volume après création ?
 mountOptions:
   - nfsvers=4.1
-```
-
-```yml
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -940,7 +954,7 @@ local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsu
 
 ### Faire un snapshot de volume
 
-```yaml
+```yaml {4,14}
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshotClass
 metadata:
@@ -948,9 +962,7 @@ metadata:
 driver: hostpath.csi.k8s.io
 deletionPolicy: Delete
 parameters:
-```
-
-```yaml
+---
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshot
 metadata:
@@ -993,7 +1005,7 @@ mount -t nfs "<NFS_SERVER_ADDRESS>:<NFS_SHARE_PATH>" /mnt
 
 ### Exemple de fichier de ClusterIP
 
-```yaml
+```yaml {6,10}
 apiVersion: v1
 kind: Service
 metadata:
@@ -1019,7 +1031,7 @@ spec:
 
 ### Exemple de fichier de NodePort
 
-```yaml
+```yaml {6,10} ins={14}
 apiVersion: v1
 kind: Service
 metadata:
@@ -1040,7 +1052,7 @@ spec:
 
 ### Exemple de fichier LoadBalancer
 
-```yaml
+```yaml {6,10}
 apiVersion: v1
 kind: Service
 metadata:
@@ -1069,7 +1081,7 @@ helm install metallb metallb/metallb
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.11/config/manifests/metallb-native.yaml
 ```
 
-```yaml
+```yaml {4,17}
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool # Pool d'adresses utilisables par le LB
 metadata:
@@ -1144,12 +1156,13 @@ Pour accéder à un `Ingress` d'un cluster local :
 - Dans le cas général : `kubectl port-forward 8888:80` vers l'ingress controller puis <http://localhost:8888>
 :::
 
-```yaml
+```yaml {"nginx specific":6-17} {24}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
  name: api-ingress
  annotations:
+
     nginx.ingress.kubernetes.io/rewrite-target: /
 
     # Load Balancing strategy
@@ -1273,7 +1286,7 @@ spec:
 
 ### Gateway
 
-```yaml
+```yaml {4,13} {11,25}
 apiVersion: gateway.networking.k8s.io/v1
 kind: GatewayClass
 metadata:
@@ -1347,42 +1360,33 @@ foo-service-5b4kb   IPv4          8080    10.244.0.17   47h
 
 ### Exemple de fichier de Déploiement et de Service
 
-```yaml
-# From: https://raw.githubusercontent.com/kubernetes/website/main/content/en/examples/application/php-apache.yaml
-
+```yaml {8,12,26}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: php-apache
 spec:
-  selector:
+  selector: # Pods gérés par le Deployment
     matchLabels:
-      run: php-apache
+      app: php-apache
   template:
     metadata:
-      labels:
-        run: php-apache
+      labels: # Labels ajoutés aux Pods créés par ce Deployment
+        app: php-apache
     spec:
       containers:
-      - name: php-apache # Requis
-        image: registry.k8s.io/hpa-example # Requis
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
         ports:
         - containerPort: 80
-        startupProbe: […] # sonde de démarrage
-        livenessProbe: […] # sonde de healthcheck - conteneur killed si échec
-        readinessProbe: […] # sonde d'état "Ready" - par exemple dépendance externe
-        resources: # limitation de ressources pour auto-scaling
-          limits:
-            cpu: 500m # 0.5 unités CPU
-          requests:
-            cpu: 200m # 0.2 unités CPU
+        […]
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: php-apache
+  name: php-apache-svc # Nom du service
   labels:
-    run: php-apache
+    app: php-apache # Sélectionne les Pods avec ce label
 spec:
   ports:
   - port: 80
@@ -1390,9 +1394,14 @@ spec:
     run: php-apache
 ```
 
+:::tip
+- `spec.selector.matchLabels` définis les _Pod_ managés par le _Deployment_
+- `template.metadata.labels` applique le label aux _Pods_ créés par le _Deployment_.
+:::
+
 ### Exemple de stratégie
 
-```yaml
+```yaml ins={7-11}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1427,7 +1436,7 @@ kind: ReplicaSet
 metadata:
   name: my-replicaset
   labels:
-    app: my-app
+    app: my-app # Label du ReplicaSet lui-même
 spec:
   replicas: 3  # Nombre de réplicas (pods) à maintenir
   selector: # Le ReplicaSet doit surveiller les pods avec le label app: my-app.
@@ -1607,6 +1616,10 @@ spec:
         - containerPort: 80
 ```
 
+:::tip
+Le _DaemonSet_ est assez proche dans la configuration d'un _Deployment_ : voir celui-ci pour les paramètres.
+:::
+
 ## StatefulSet
 
 3 réplicas MySQL avec des volumes persistants individuels pour chaque réplica :
@@ -1663,6 +1676,10 @@ spec:
         requests:
           storage: 5Gi
 ```
+
+:::tip
+Le _StatefulSet_ est assez proche dans la configuration d'un _Deployment_ : voir celui-ci pour les paramètres.
+:::
 
 ## NetworkPolicy
 
