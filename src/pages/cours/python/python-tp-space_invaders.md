@@ -172,8 +172,6 @@ Il faudra auparavant installer ce module :
 pip install keyboard
 ```
 
-[Exemple d'utilisation](https://newbedev.com/python-keyboard-on-press-python-code-example)
-
 [Documentation complète](https://github.com/boppreh/keyboard#api)
 
 Nous n'utiliserons que la fonction `keyboard.read_key()` de la manière suivante :

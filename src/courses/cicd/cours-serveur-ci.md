@@ -284,11 +284,6 @@ Ce nouveau plugin rend obsolète la plupart des plugins de la suite d'analyse st
 
 ---
 
-![Sonarqube UI](https://www.sonarsource.com/exports/2019/04/sq-ui.png)
-<div class="caption">Exemples de rapports SonarQube™ (source: SonarSource).</div>
-
----
-
 #### 📊 Dette technique
 
 > **Dette technique** : temps nécessaire dans le futur pour faire évoluer le code (correction de bugs, refactor, …) ⏳

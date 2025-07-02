@@ -17,7 +17,7 @@ Afin de rationaliser les données de ses employés depuis la création de l'entr
 
 ## Récupération des données de production
 
-Afin de simplifier ce cas pratique, les différentes données des employés ont été récupérées sur les différents sites au format `XML` et sont disponibles dans une archive : <https://cloud.leviia.com/s/ZnIx.faPETT7DDxcoBAC> (_données de test fictives générées par Fusheng Wang and Carlo Zaniolo at Siemens Corporate Research_).
+Afin de simplifier ce cas pratique, les différentes données des employés ont été récupérées sur les différents sites au format `XML` et sont disponibles dans une archive (_données de test fictives générées par Fusheng Wang and Carlo Zaniolo at Siemens Corporate Research_).
 
 Cette archive contient :
 

@@ -101,11 +101,8 @@ Le but de ce projet est de créer une application en ligne de commande qui perme
 - <https://www.codedex.io/python> Jeux Python
 - <https://checkio.org/> exos ludiques
 - <https://zestedesavoir.com/tutoriels/2514/un-zeste-de-python/2-manipulations/6-tp/> Exercice débutant : jeu de style Pokémon (toutes les sections 'TP' se suivent)
-- <https://python.sdv.univ-paris-diderot.fr/22_mini_projets_site/> Pendule en Tkinter (avec correction) - dur
 - <https://www.youtube.com/watch?v=gVEWaOtEASM> Algorithme génétique déplacement dans l'eau
-- <http://introtopython.org/visualization_earthquakes.html> Projet visual earthquakes Python et liens utiles datasets pour python science
 - <https://python.developpez.com/cours/apprendre-python-3/?page=exercices-corriges>
-- [Pendule en Tkinter (avec correction) - dur](https://python.sdv.univ-paris-diderot.fr/22_mini_projets_site/)
 - <https://www.dil.univ-mrs.fr/~regis/algo/exercices-tkinter.html>
 - <https://github.com/attreyabhatt/Space-Invaders-Pygame>
 

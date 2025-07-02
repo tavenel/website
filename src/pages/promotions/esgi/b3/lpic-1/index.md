@@ -62,18 +62,10 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 #### 📄 Supports de cours
 
-- [Les principaux mots-clés à connaître](https://www.linuxcertif.com/doc/keyword_category/)
-- [LA référence - Support officiel : LPIC-1 Exam 101, PDF, English](https://learning.lpi.org/en/learning-materials/learning-materials/)
-- [Support officiel FR en cours de rédaction](https://learning.lpi.org/fr/learning-materials/learning-materials/)
-- [Programme du LPI 101](https://wiki.lpi.org/wiki/LPIC-1_Objectives_V5.0)
-- [Objectifs détaillés de la certification LPIC-102](https://www.lpi.org/fr/our-certifications/exam-102-objectives)
-- [Support de cours LPIC-102](https://learning.lpi.org/en/learning-materials/102-500/)
-
+- [LA référence - Support officiel : LPIC-1 Exam 101, PDF, English](https://www.lpi.org/fr/our-certifications/lpic-1-overview/)
 #### 📝 Bibliographie
 
 - [Bouziri, N. H. Andriambelo, A. Boyanov, N. Larrousse 2010. Préparation à l’examen 101 pour la certification de l’Institut professionnel de Linux, niveau junior LPIC-1. Agence universitaire de la Francophonie, Paris.](https://graal.ens-lyon.fr/~ycaniou/Teaching/CertificationLPI/Support_LPIC-101.pdf)
-- [Préparation à la certification LPIC-1 examens LPI 101 et LPI 102, Sébastien ROHAUT, éditions ENI](https://www.editions-eni.fr/livre/linux-preparation-a-la-certification-lpic-1-examens-lpi-101-et-lpi-102-6e-edition-9782409024962)
-- [Supports recommandés par le LPI](https://lpi-fr.net/ressources/supports-de-formation/)
 - [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
 
 #### 📄 Examens blancs
@@ -88,7 +80,6 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Aide simple sur les commandes : <https://cheat.sh/>
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - [Créer une distribution "Live" (qui reste en mémoire) - tuto complet, reprend les principes de base, du boot à un système minimal](https://zestedesavoir.com/tutoriels/268/creer-son-premier-rim-linux/)
-- [Supports recommandés par le LPI](https://lpi-fr.net/ressources/supports-de-formation/)
 - <https://www.antoinefi.net/index.php/2024/12/19/linux-lpic-1-101-500-1/>
 - <https://www.antoinefi.net/index.php/2024/12/30/linux-lpic-1-101-500-2/>
 - <https://www.antoinefi.net/index.php/2025/01/13/linux-lpic-1-101-500-3/>

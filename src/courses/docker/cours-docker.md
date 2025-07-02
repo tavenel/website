@@ -404,7 +404,7 @@ layout: section
 ### 🛠️ Configuration du réseau depuis les commandes Docker®
 
 - Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
-- Voir la documentation officielle : <https://docs.docker.com/network/drivers/> 🔗
+- Voir la documentation officielle : <https://docs.docker.com/engine/network/drivers/> 🔗
 
 ---
 layout: section

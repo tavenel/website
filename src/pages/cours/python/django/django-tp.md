@@ -394,7 +394,7 @@ Tester le démarrage du serveur de développement et aller sur l'URL principale 
 
 Le serveur doit nous rediriger vers l'URL `/catalog/` puis une page d'erreur 404 doit apparaître, ce qui est normal car cette URL n'est pas encore gérée. Si la redirection n'a pas eu lieu ou si une autre erreur qu'un 404 apparaît, vérifier la configuration du routage.
 
-![](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website/django_404_debug_page.png)
+![](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/skeleton_website/django_404_debug_page.png)
 
 _La redirection s'est bien effectuée vers l'URL `/catalog/` mais aucune route ne sait pour l'instant gérer cette URL._
 
@@ -1271,7 +1271,7 @@ repeat
 @enduml
 ```
 
-_Les étapes de gestion de requêtes de formulaires en `Django`. (Source et crédits : [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms/form_handling_-_standard.png) )_
+_Les étapes de gestion de requêtes de formulaires en `Django`. (Source et crédits : [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Forms/form_handling_-_standard.png) )_
 
 Nous allons créer un formulaire de renouvellement d'emprunt d'un livre et y ajouter des conditions de validation.
 
@@ -1586,5 +1586,5 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 - Django is a registered trademark of the Django Software Foundation. 
 - PyCharm is a trademark or registered trademark of JetBrains, s.r.o.
 - SQLite is in the [Public Domain](https://www.sqlite.org/copyright.html)
-- Ce sujet de TP est fortement inspiré du [tutoriel de Mozilla](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Tutorial_local_library_website) by  [Mozilla Contributors](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Tutorial_local_library_website/contributors.txt) sous license CC-BY-SA 2.5
+- Ce sujet de TP est fortement inspiré du [tutoriel de Mozilla](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Tutorial_local_library_website) sous license CC-BY-SA 2.5
 

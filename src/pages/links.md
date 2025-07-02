@@ -73,9 +73,8 @@ title: Liens externes
 - <https://tlk.io/> instant chatrooms
 - remote clipboards :
   - <https://pastebin.com> : share code lines
-  - <http://codepad.org> : runs code
   - <http://www.olissea.com/PP/PP.php> : also sends mail
-- <https://videolink2.me> // <https://framatalk.org> : video conference without account
+- <https://framatalk.org> : video conference without account
 - <http://framadate.org/> // <https://polls.fr/> (anonyme et liens directs vers choix - utile pour chat) : sondages
 - DNS :
   - `9.9.9.9` (Quad9)
@@ -103,5 +102,5 @@ title: Liens externes
 
 ## Frugal
 
-- Got to the <https://www.avenel.pro/tech/tech-footprint.html> page.
+- Got to the </tech/tech-footprint> page.
 

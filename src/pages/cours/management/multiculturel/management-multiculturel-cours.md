@@ -275,7 +275,7 @@ Voir notamment les techniques dérivées des pratiques agiles : bâtons de parol
 
 - [Tableau synoptique des études empiriques portant sur l'impact de la diversité culturelle sur les processus interpersonnels, in Le fonctionnement des équipes interculturelles, Désiré Loth, Management & Avenir 2009/8](https://www.cairn.info/loadimg.php?FILE=MAV/MAV_028/MAV_028_0326/MAV_idPAS_D_ISBN_pu2009-08s_sa22_art22_img003.jpg)
 - [Tableau synoptique des études empiriques portant sur l'impact de la diversité culturelle sur les processus de la réalisation des taches, in Le fonctionnement des équipes interculturelles, Désiré Loth, Management & Avenir 2009/8](https://www.cairn.info/loadimg.php?FILE=MAV/MAV_028/MAV_028_0326/MAV_idPAS_D_ISBN_pu2009-08s_sa22_art22_img002.jpg)
-- [Vivre dans un monde multiculturel, Geert HOFSTEDE, 1994](https://mip-ms.cnam.fr/servlet/com.univ.collaboratif.utils.LectureFichiergw?ID_FICHIER=1295877018033)
+- Vivre dans un monde multiculturel, Geert HOFSTEDE, 1994
 
 ---
 

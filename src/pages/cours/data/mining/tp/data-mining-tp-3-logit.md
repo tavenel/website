@@ -193,10 +193,6 @@ X = scaler.transform(X)
   - Les données d'apprentissage sont fournies uniquement en entrée de l'algorithme et permettent à celui-ci de générer un modèle.
   - Les données de test permettent de valider la bonne exécution du modèle.
 
-![Processus _train and test_](https://cdn-coiao.nitrocdn.com/CYHudqJZsSxQpAPzLkHFOkuzFKDpEHGF/assets/static/optimized/rev-85bf93c/wp-content/uploads/2022/05/machine-learning-process_train-and-test.png)
-
-<div class="caption">Processus train and test</div>
-
 ```python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state = 27)

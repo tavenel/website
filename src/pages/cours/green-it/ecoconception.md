@@ -68,7 +68,7 @@ tags:
 
 - Permet d'éviter d'appeler encore et encore des composants en erreur.
 - À déployer dans le backend et le frontend, surtout pour les services non critiques.
-- Voir [la règle dédiée des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/chapters/BP_4032_fr.md)
+- Voir [la règle dédiée (4032) des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_4032-mettre-en-place-un-circuit-breaker.mdx)
 
 ---
 layout: section
@@ -211,7 +211,7 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 ## Images
 
 - Voir le [cours sur l'accessibilité][site-perso].
-- [Préférer les CSS aux images (voir règle du référentiel 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/chapters/BP_023_fr.md)
+- [Préférer les CSS aux images (voir règle 23 du référentiel 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0023-preferer-les-css-aux-images.mdx)
 
 ---
 
@@ -260,13 +260,13 @@ layout: section
 
 ## Compression les données échangées
 
-- Voir [la règle dédiée des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/chapters/BP_078_fr.md)
+- Voir [la règle dédiée (78) des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0078-compresser-les-fichiers-css-javascript-html-et-svg.mdx)
 
 ---
 
 ## Désactiver les logs binaires en BDD
 
-- Voir [la règle dédiée des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/chapters/BP_106_fr.md)
+- Voir [la règle dédiée (106) des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0106-desactiver-les-logs-binaires.mdx)
 
 ---
 
@@ -347,7 +347,7 @@ layout: section
 
 ## Intelligence Artificielle
 
-- Entraînement d'IA : calculs x300 000 depuis 2012 [source : OpenAI](https://openai.com/blog/ai-and-compute/)
+- Entraînement d'IA : calculs x300 000 depuis 2012 [source : OpenAI](https://openai.com/index/ai-and-compute/)
 - 1 version de `BERT` (modèle de langage de `Google`) : 652 kg CO2e. Modèle complet : 300t CO2. [source : Timnit Gebru (google)](https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-paper-forced-out-timnit-gebru/)
 - Solutions :
   - apprentissage par transfert (réutiliser modèle existant)
@@ -427,7 +427,6 @@ layout: section
 - [W3 : Web Sustainability Guidelines](https://www.w3.org/community/sustyweb/2023/09/07/web-sustainability-guidelines/)
 - <https://github.com/cnumr/best-practices-mobile>
 - [Cours Numérique Responsable : Écoconception d'applications mobiles (enseignerleclimat.org)](https://enseignerleclimat.org/resource/82)
-- [Conseils de sobriété numérique Web (blog awebsome)](https://awebsome.fr/blog-awebsome/)
 - [Empreinte carbone d'un site Web (blog dannybankooten)](https://dannyvankooten.com/website-carbon-emissions/)
 - [Cas d'étude de youtube.com (blog temesis.com)](https://www.temesis.com/blog/youtube-com-un-modele-de-performance-web-environnementale/)
 - [Impact écologique du numérique : que faire en tant que professionnel du web ?](https://www.24joursdeweb.fr/2018/impact-ecologique-du-numerique/)

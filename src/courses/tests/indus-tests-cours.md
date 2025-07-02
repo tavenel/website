@@ -232,7 +232,7 @@ Des références pour automatiser les tests dans différents langages :
 - [Junit pour Java][zds-junit]
 - [Phpsec pour PHP][zds-phpsec]
 - [Outils de test open-source](https://www.guru99.com/best-open-source-testing-tools.html)
-- [Outil d'automatisation de tests d'acceptance FitNesse et intégratoin avec Junit](http://fitnesse.org/FitNesse.UserGuide.WritingAcceptanceTests.RunningFromJunit)
+  - [Outil d'automatisation de tests d'acceptance FitNesse et intégration avec Junit](https://fitnesse.org/FitNesse/UserGuide/WritingAcceptanceTests/RunningFromJunit.html)
 - [Tutoriel sur les tests en Java](https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite)
 - [Vidéo tests sur Android](https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite)
 - <https://laravel-france.com/posts/phpunit-conseils-astuces-qui-nous-ont-vraiment-aid%C3%A9s>

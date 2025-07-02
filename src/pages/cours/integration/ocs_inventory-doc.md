@@ -1,5 +1,6 @@
 ﻿---
 title: L'outil de gestion d'inventaire OCSInventory (Open Computer and Software Inventory)
+date: 2022-2023
 ---
 
 # Présentation du produit
@@ -98,7 +99,7 @@ Les paquets à installer sont les suivants :
 - ocsinventory-server - Hardware and software inventory tool (Communication Server)
 - libxml-parser-perl : ce paquet n’a pas été pris en compte dans les dépendances, il est pourtant indispensable à la remontée d’inventaire (il y a sinon un "internal error" à ce moment-là)
 
-Il est nécessaire de finaliser l'installation via l'interface Web : <http://@IPserveur/ocsreports/>
+Il est nécessaire de finaliser l'installation via l'interface Web : <http://localhost/ocsreports/>
 
 Cliquez sur « send » et vous devez voir apparaître l'écran page suivante (ne pas faire attention aux warning).
 

@@ -131,7 +131,6 @@ created: 2024-10-17
   - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
   - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
-  - <https://kamus.soluto.io/> : 0-trust de secrets Git (connus seulement par l'application)
 	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
   - `polaris` : détection de problèmes de sécurité dans un cluster
@@ -163,13 +162,14 @@ created: 2024-10-17
   - `krr` : CLI to compute pod requests / limits from existing Prometheus metrics
   - <https://karpenter.sh/> : démarrage / arrêt automatique de noeuds sur le cluster
   - <https://www.kubecost.com> : gestion des coûts des clusters (on-premise + cloud)
+  - `ZeroPod` : snapshot et arrêt de Pod lorsque pas d'usage [tuto](https://blog.zwindler.fr/2025/06/20/zeropod-scale-to-zero-kubernetes-checkpointing/)
 - 🔄 Upgrade :
   - `WatchTower`
   - `Keel` (avec triggers)
   - `Pluto` : gestion des dépréciations d'API : [tuto](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/pluto/)
 - Administration :
   - [auger](https://github.com/etcd-io/auger?tab=readme-ov-file#use-cases) : décode la data d'`etcd`
-  - [Stash](https://appscode.com/products/stash/) : backup PV
+  - <https://stash.run/> : backup PV
   - [ReShifter](https://github.com/mhausenblas/reshifter) : cluster state management
   - [Velero](https://github.com/heptio/velero) : full cluster backup
   - [kube-backup](https://github.com/pieterlange/kube-backup) : backup YAML dans répo Git
@@ -380,7 +380,7 @@ created: 2024-10-17
 	- [Vegeta](https://github.com/tsenart/vegeta)
 	- `k6` : [exemple](https://github.com/grafana/quickpizza)
 - Tests e2e (interface Web principalement) : `Selenium`, `Selenide`, `Geb`, `Testing library`, `Playwright`, `Cypress`
-  - [Outil d'automatisation de tests d'acceptance FitNesse et intégration avec Junit](http://fitnesse.org/FitNesse.UserGuide.WritingAcceptanceTests.RunningFromJunit)
+  - [Outil d'automatisation de tests d'acceptance FitNesse et intégration avec Junit](https://fitnesse.org/FitNesse/UserGuide/WritingAcceptanceTests/RunningFromJunit.html)
 - BDD : `Cucumber`, `Spock`, `JBehave`
 - Tests d'infrastructure : <https://une-tasse-de.cafe/blog/testinfra/>
 - <https://testcontainers.com>

@@ -42,7 +42,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 - Délègue des parties de l'`API Server` à des API externes 🔄
 - Exemple : `metrics-server` 📊
 - `kubectl get apiservices` 📋
-- (Autre option: [Service catalog](https://kubernetes.io/docs/concepts/extend-kubernetes/service-catalog/) utilisant l'_Open Service Broker API_) 📂
+- (Autre option: [Service catalog](https://kubernetes.io/id/docs/concepts/extend-kubernetes/service-catalog/) utilisant l'_Open Service Broker API_) 📂
 
 ---
 

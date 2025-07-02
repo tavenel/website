@@ -75,7 +75,7 @@ _Ajouter un fichier `README.md` pour afficher le badge de statut sur la page d'a
 - Documentation Ansible Lint : <https://ansible-lint.readthedocs.io/>
 - [GitHub Action pour Ansible Lint][ansible-lint-action]
 
-[ansible-lint-action]: https://github.com/ansible/ansible-lint-action
+[ansible-lint-action]: https://github.com/ansible/ansible-lint
 
 # Legal
 

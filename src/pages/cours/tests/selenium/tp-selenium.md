@@ -178,7 +178,6 @@ Exécuter les tests précédents et vérifier leur bon fonctionnement :
 - La console de la `Grid` affiche des informations sur l’exécution des tests
 - L’API de la `Grid` permet de vérifier la bonne exécution des tests : <http://localhost:4444/status>
 
-
 ## Démarrer la Grid en mode Hub / Node(s)
 
 Nous allons maintenant séparer le `Node` (moteur d’exécution du test) du `Hub` (contrôleur du test).

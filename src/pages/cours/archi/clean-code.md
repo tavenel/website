@@ -50,7 +50,6 @@ layout: section
 - Keep it simple stupid :
   + simple : noms de variables, héritage faible, ...
   + non complexe => utiliser des abstractions
-  + Voir [cet article](https://www.lilobase.me/la-complexite-une-histoire-de-charge-cognitive/).
 
 ---
 

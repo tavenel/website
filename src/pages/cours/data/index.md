@@ -109,8 +109,6 @@ Voir la [🧪 page de cours sur les tests](/cours/tests)
 - <https://zestedesavoir.com/tutoriels/1760/un-peu-de-machine-learning-avec-les-svm/>
 - <https://www.analyticsvidhya.com/blog/2018/08/k-nearest-neighbor-introduction-regression-python/>
 - <https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761?gi=30e3802077d7>
-- <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_clustering_correction.html>
-- <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_solution_cluster_start.html>
 - <https://www.isnbreizh.fr/nsi/activity/patisserie/index.html>
 - <https://certis.enpc.fr/~audibert/Exos1.pdf>
 - <https://larmarange.github.io/analyse-R/classification-ascendante-hierarchique.html>
@@ -122,7 +120,7 @@ Voir la [🧪 page de cours sur les tests](/cours/tests)
 - <https://zestedesavoir.com/tutoriels/3790/modeliser-une-epidemie/> Modéliser une épidémie (probabilités)
 - <https://fermin.perso.math.cnrs.fr/enseignementM2SESIESQuali.html>
 - <https://fermin.perso.math.cnrs.fr/enseignementM2SESIESAtelier.html>
-- <https://yewtu.be/watch?v=2iF9PRriA7w>
+- <https://youtube.com/watch?v=2iF9PRriA7w>
 - <https://www.webdepot.umontreal.ca/Usagers/p0706916/MonDepotPublic/> cours Montreal criminalité
 - <https://www.webdepot.umontreal.ca/Usagers/p0706916/MonDepotPublic/CRI%201600G/Arbre%20d%C3%A9cisionnel%20-%20v2.pdf>
 - <https://web.archive.org/web/20200728072326/http://eric.univ-lyon2.fr/~ricco/cours/supports_data_mining.html>

@@ -14,7 +14,7 @@ created: 2024-12-17
 ## Frugal aternates
 
 - How-to self-host Web and Internet services : <https://landchad.net/>
-- Solutions de sobriété numérique - CMS, hébergement de documents, conseils Web (FR) : <https://awebsome.fr/blog-awebsome/>
+- Solutions de sobriété numérique - CMS, hébergement de documents, conseils Web (FR) : <https://awebsome.fr/>
 - Dropbox alternate : <http://projet.eu.org/pedago/sin/project/QDRep/>
 - Minimal Kanban : <https://kanboard.org/>
 - Minimal interface for projet hosting (no JS) : Git, Mercurial, Web pages (hosts this website) : <https://sr.ht>

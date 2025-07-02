@@ -22,11 +22,9 @@ created: 2024-12-17
 - [Use Responsive images if dealing with big images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Avoid unnecessary data transfers](https://github.com/fireship-io/flamethrower)
 - [Content-first web](https://speakerdeck.com/brad_frost/for-a-future-friendly-web)
-- [Hardcore : use Gemini or Gopher instead of the Web](https://gemini.circumlunar.space/)
 
 # Ressources
 
-- [Conseils de sobriété numérique Web (FR)](https://awebsome.fr/blog-awebsome/)
 - [The Web obesity](https://idlewords.com/talks/website_obesity.htm)
 - [An history of Web bloat](https://danluu.com/web-bloat/)
 - [Compute your website bloat score](https://www.webbloatscore.com/)

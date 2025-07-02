@@ -379,7 +379,7 @@ To change every occurrence of a character string between two lines,
 - `curl -s -m 3 https://vtip.43z.one` => random Vim tip
 - Another Vim cheatsheet : <https://quickref.me/vim>
 - [Neovim - Getting started](https://www.reddit.com/r/neovim/wiki/index/getting-started/)
-- [Demo Vim expert](https://invidious.namazso.eu/watch?v=MquaityA1SM)
+- [Demo Vim expert](https://youtube.com/watch?v=MquaityA1SM)
 - [Vimcasts - Special registers & advanced C-r paste](http://vimcasts.org/episodes/pasting-from-insert-mode/)
 - [Vimcasts - Ugly registers behaviors](http://vimcasts.org/blog/2013/11/registers-the-good-the-bad-and-the-ugly-parts/)
 - [Vimcasts - Vim profiling](http://vimcasts.org/episodes/profiling-vimscript-performance/)

@@ -41,55 +41,26 @@ De nombreux services `AWS` (`EC2`, `S3`, …) ont bénéficié récemment d’un
 
 Dans ce premier TP Amazon Web Services, nous allons découvrir ce qu'est concrètement un fournisseur de services Cloud, comment `AWS` modélise le Cloud et les services qu'il fournit pour mettre en place une infrastructure distante permettant l'hébergement d’un site Web.
 
-Pour réaliser l'ensemble de cette partie pratique, on utilisera comme support le (très bon) [tutoriel OpenClassrooms][intro-aws].
-
+Pour réaliser l'ensemble de cette partie pratique, on utilisera comme support le (très bon) [tutoriel OpenClassrooms](https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/4819941-premiers-pas-dans-la-console-aws)
 Note : Dans l'ensemble de ce TP, on utilise comme exemple une application `PHP` fourni en exemple. On pourra remplacer cet exemple par une autre application de notre choix.
-
-## Partie 1 :  Introduction aux services `AWS`
-
-Le but de cette première partie est de se familiariser avec le Cloud et la console `AWS`.
-
-- Réaliser les étapes du tutoriel OpenClassrooms: [Premiers pas dans la console `AWS`][premiers-pas] à [Créer un serveur facilement avec Elastic Beanstal][beanstal-quizz]. Répondre et s'arrêter au quizz.
 
 Note : Pour les apprenants utilisant le compte commun, il n’est pas nécessaire de définir un budget (celui-ci est déjà défini au niveau du compte).
 
-## Partie 2 :  EC2 : Infrastructure-as-a-Service (IaaS)
+**Note : Au lancement de l'instance de la VM (Etape 7 d'EC2), vérifier que le coût de l'instance est nul**
 
-Le but de cette partie est de d’utiliser les principaux services d’IaaS d’Amazon (`EC2` notamment)
+Note : Pour vérifier le bon lancement de la stack `LAMP` dans le serveur, on peut essayer d'atteindre l'URL du `DNS` publique du serveur dans un navigateur (ce nom `DNS` peut être récupéré depuis l’instance du serveur qui héberge la stack `LAMP`, dans `EC2`).
 
-- Commencer par supprimer le service `BeanStalk` créé lors de la première partie
-- Réaliser les étapes : [Introduction aux services d'Amazon EC2](https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/4871326-introduction-aux-services-damazon-ec2) à [Sauvegarder et restaurer une instance](https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/exercises/2269). Répondre et s'arrêter au quizz.
-
-**Note 1 : Au lancement de l'instance de la VM (Etape 7 d'EC2), vérifier que le coût de l'instance est nul**
-
-Note 2 : Pour vérifier le bon lancement de la stack `LAMP` dans le serveur, on peut essayer d’atteindre l'URL du `DNS` publique du serveur dans un navigateur (ce nom `DNS` peut être récupéré depuis l’instance du serveur qui héberge la stack `LAMP`, dans `EC2`).
-
-Par exemple : <http://ec2-35-181-153-53.eu-west-3.compute.amazonaws.com/>
+Par exemple : `http://ec2-35-181-153-53.eu-west-3.compute.amazonaws.com/`
 
 ![La page d'accueil du serveur LAMP](@assets/apps/lamp.png)
 
 <div class="caption">La page d'accueil du serveur LAMP.</div>
 
-Note 3 : Contrairement à ce qui est annoncé dans le sujet du TP, l'utilisateur à utiliser pour la connexion `SSH` n’est pas `ubuntu` mais `bitnami`.
-
-## ` `Partie 3 : Intégrer des services Cloud (1) : `RDS`, le `DBaaS` d'`AWS`
-
-Réaliser les étapes : [Pourquoi utiliser RDS](https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/5017546-pourquoi-utiliser-rds) à [Utiliser RDS depuis son serveur web EC2](https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/exercises/2272). Répondre et s'arrêter au quizz.
-
-
-## Partie 4 : Intégrer des services Cloud (2) : `S3`, le service de stockage d'`AWS`
-
-- Finir les dernières étapes du TP depuis l’étape : [Qu’est-ce que Simple Storage Service (S3)](https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/5038626-quest-ce-que-simple-storage-service-s3).
-
+:::tip
 Note : Les noms des buckets `S3` sont très sensibles à la casse et aux caractères spéciaux : préférer un nom entièrement en minuscule et sans caractère spécial !
-
-[intro-aws]: https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/4819941-premiers-pas-dans-la-console-aws
-[premier-pas]: http://ttps://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/4819941-premiers-pas-dans-la-console-aws
-[beanstal-quizz]: https://openclassrooms.com/fr/courses/4810836-decouvrez-le-cloud-avec-amazon-web-services/exercises/2087
-
----
+:::
 
 # Legal
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
-- “Amazon Web Services", the “Powered by Amazon Web Services” logo, Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage Service (Amazon S3), Amazon Relational Database Service (Amazon RDS) are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries
+- "Amazon Web Services", the "Powered by Amazon Web Services" logo, Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage Service (Amazon S3), Amazon Relational Database Service (Amazon RDS) are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries
