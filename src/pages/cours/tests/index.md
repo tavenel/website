@@ -6,18 +6,8 @@ title: 🧪 Tests logiciels
 
 ## Méthodologie des tests
 
-- [🤓 Cours d'introduction aux tests logiciels](/cours/tests/methodo/cours-introduction-tests)
-- [🤓 Cours de méthodologie des tests](/cours/tests/methodo/cours-methodo-tests)
-- [🤓 Cours : impact des tests sur l'intégration](/cours/tests/methodo/cours-impact-tests-integration)
-- [🤓 Cours sur les tests statiques](/cours/tests/methodo/test-statique)
-- [🤓 Cours sur la recette fonctionnelle](/cours/tests/methodo/cours-recette)
-- [🤓 Cours sur les stratégies de tests](/cours/tests/methodo/cours-strategies-tests)
-- [🤓 Cours sur les techniques de tests](/cours/tests/methodo/techniques-tests)
-- [🤓 Cours : Test-Driven Development (TDD)](/cours/tests/methodo/cours-tdd)
-- [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd)
-- [🤓 Cours sur l'industrialisation des tests](/cours/tests/methodo/indus-tests-cours)
-- [🤓 Cours sur les design patterns de test](/cours/tests/methodo/patterns-cours)
-- [🤓 Cours : écrire du code testable](/cours/tests/methodo/ecrire-code-testable-cours)
+- [🤓 Cours de méthodologie des tests](/cours/tests/cours-methodo)
+- [🤓 Cours sur l'industrialisation des tests](/cours/tests/cours-indus)
 - [📖 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
 - [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
 - [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
@@ -70,14 +60,14 @@ title: 🧪 Tests logiciels
 
 ## ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
-- [🤓 Cours Selenium](/cours/tests/selenium/selenium-cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium/tp-selenium)
+- [🤓 Cours Selenium](/cours/tests/selenium-cours)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium-tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-- [🏆 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium/projet-selenium)
+- [🏆 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium-projet)
 
 ## 🐇 Jmeter - tests de performance
 
-- [💻 TP Jmeter : tests de performance d'une API Web](/cours/tests/jmeter/tp-jmeter-api)
+- [💻 TP Jmeter : tests de performance d'une API Web](/cours/tests/jmeter-tp-api)
 
 ## Projets
 
