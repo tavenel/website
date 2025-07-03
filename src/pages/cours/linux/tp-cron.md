@@ -201,7 +201,7 @@ crontab -e
 
 Ajoutez la ligne suivante :
 
-```crontab
+```
 */2 * * * * /chemin/vers/le/script.sh
 ```
 
@@ -262,7 +262,7 @@ crontab -e
 
 Ajouter la ligne suivante pour une vérification toutes les heures :
 
-```crontab
+```
 0 * * * * /chemin/vers/le/script.sh
 ```
 

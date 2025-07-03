@@ -829,7 +829,7 @@ template/
     function/ # contenu par défaut des nouvelles fonctions (optionel)
 ```
 
-```Dockerfile
+```dockerfile
 # Dockerfile
 FROM python:3.12-slim
 

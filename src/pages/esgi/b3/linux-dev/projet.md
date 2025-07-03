@@ -69,7 +69,7 @@ L'objectif est de montrer votre **maîtrise de l’administration système Linux
 
 Exemple de LDIF Samba :
 
-```ldif
+```
 # smbuser.ldif
 
 dn: uid=smbuser,ou=people,dc=example,dc=com
