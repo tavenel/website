@@ -43,49 +43,49 @@ title: 🐧 Linux
 
 ## Découverte de Linux
 
-- [🤓 Cours découverte de Linux](/cours/linux/niveau1/linux-cours-niveau1)
-- [  TP - Utilisation des commandes Linux](/cours/linux/niveau1/tp-commandes_linux)
-- [  TP - Utilisation des commandes avancées](/cours/linux/niveau1/tp-commandes_avancees)
-- [📜 TP - Création de scripts Bash](/cours/linux/niveau1/tp-scripts_bash)
-- [📜 TP Bash - Gestion des fichiers et des utilisateurs](/cours/linux/niveau2/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
-- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/niveau1/tp-trash)
-- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/cours/linux/niveau1/projet_lamp)
+- [🤓 Cours découverte de Linux](/cours/linux/linux-cours-niveau1)
+- [  TP - Utilisation des commandes Linux](/cours/linux/tp-commandes_linux)
+- [  TP - Utilisation des commandes avancées](/cours/linux/tp-commandes_avancees)
+- [📜 TP - Création de scripts Bash](/cours/linux/tp-scripts_bash)
+- [📜 TP Bash - Gestion des fichiers et des utilisateurs](/cours/linux/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
+- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/tp-trash)
+- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/cours/linux/projet_lamp)
 
 ## Niveau 2
 
-- [🤓 Cours Linux intégral](/cours/linux/niveau2/cours-full)
-- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/niveau2/cours-shell)
-- [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/niveau2/tp-systeme)
-- [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/niveau2/tp-grub)
-- [📀 TP : utiliser un Live CD/USB pour une restauration système](/cours/linux/niveau2/tp-rescue)
-- [▶️ TP : SysV init](/cours/linux/niveau2/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
-- [▶️ TP : Systemd init](/cours/linux/niveau2/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
-- [🗃️ TP : librairies partagées](/cours/linux/niveau2/tp-shared-lib)
-- [📦 TP : Gestion de paquetages](/cours/linux/niveau2/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
-- [  TP : Utilisation efficace de la ligne de commande](/cours/linux/niveau2/tp-ligne-commande)
-- [📃 TP : Traitement de flux de type texte](/cours/linux/niveau2/tp-texte)
-- [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/cours/linux/niveau2/tp-fichiers)
-- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/niveau2/tp-redirections)
-- [⚙️ TP : Gestion des processus et de leur priorité](/cours/linux/niveau2/tp-process)
-- [💽 TP : Gestion des partitions et des systèmes de fichiers](/cours/linux/niveau2/tp-partitions)
-- [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/cours/linux/niveau2/tp-lvm)
-- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/niveau2/tp-fichiers-avance)
-- [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/cours/linux/niveau2/tp-droits-avance)
-- [👥 TP : Gestion des utilisateurs et de la sécurité](/cours/linux/niveau2/tp-utilisateurs)
-- [🕗 TP : Planification de tâches avec `at`, `cron` et `systemd`](/cours/linux/niveau2/tp-cron)
-- [📨 TP : Langue et encodage](/cours/linux/niveau2/tp-lang) : gérer l'utilisation d'encodages différents (`ASCII`, `UTF-8`, …), de formats de fichiers différents (`Unix`/Linux vs `Dos`/Windows) et de langues différentes par l'utilisation de _locales_.
-- [📜 TP : Journalisation avec Syslog](/cours/linux/niveau2/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng`.
-- [📡 TP : Configuration réseau](/cours/linux/niveau2/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
-- [🔒 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/niveau2/tp-security)
-- [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/niveau2/tp-ssh-gpg)
-- [🌐 TP : Installation d'un service VPN](/cours/linux/niveau2/tp-vpn)
-- [💾 TP Sauvegarde et Restauration sous Linux](/cours/linux/niveau2/tp-backup)
+- [🤓 Cours Linux intégral](/cours/linux/cours-full)
+- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/cours-shell)
+- [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/tp-systeme)
+- [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/tp-grub)
+- [📀 TP : utiliser un Live CD/USB pour une restauration système](/cours/linux/tp-rescue)
+- [▶️ TP : SysV init](/cours/linux/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
+- [▶️ TP : Systemd init](/cours/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
+- [🗃️ TP : librairies partagées](/cours/linux/tp-shared-lib)
+- [📦 TP : Gestion de paquetages](/cours/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
+- [  TP : Utilisation efficace de la ligne de commande](/cours/linux/tp-ligne-commande)
+- [📃 TP : Traitement de flux de type texte](/cours/linux/tp-texte)
+- [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/cours/linux/tp-fichiers)
+- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/tp-redirections)
+- [⚙️ TP : Gestion des processus et de leur priorité](/cours/linux/tp-process)
+- [💽 TP : Gestion des partitions et des systèmes de fichiers](/cours/linux/tp-partitions)
+- [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/cours/linux/tp-lvm)
+- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/tp-fichiers-avance)
+- [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/cours/linux/tp-droits-avance)
+- [👥 TP : Gestion des utilisateurs et de la sécurité](/cours/linux/tp-utilisateurs)
+- [🕗 TP : Planification de tâches avec `at`, `cron` et `systemd`](/cours/linux/tp-cron)
+- [📨 TP : Langue et encodage](/cours/linux/tp-lang) : gérer l'utilisation d'encodages différents (`ASCII`, `UTF-8`, …), de formats de fichiers différents (`Unix`/Linux vs `Dos`/Windows) et de langues différentes par l'utilisation de _locales_.
+- [📜 TP : Journalisation avec Syslog](/cours/linux/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng`.
+- [📡 TP : Configuration réseau](/cours/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
+- [🔒 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/tp-security)
+- [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/tp-ssh-gpg)
+- [🌐 TP : Installation d'un service VPN](/cours/linux/tp-vpn)
+- [💾 TP Sauvegarde et Restauration sous Linux](/cours/linux/tp-backup)
 - [🛠️ TP : Administration d'un système Linux](/cours/linux/tp-admin-technova) : Cas fictif pour mettre en pratique les commandes shell sous Linux, en se concentrant sur la gestion des droits des utilisateurs et des groupes et la configuration de l'élévation de privilèges.
 - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/cours/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 
 ## 🔗 LPIC-1
 
-Voir le [cours dédié](/promotions/esgi/esgi-b3-src-linux-lpic-1)
+Voir le [cours dédié](/esgi/b3/lpic-1)
 
 ## Liens
 
