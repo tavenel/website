@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import astroBrokenLinksChecker from 'astro-broken-link-checker';
+
 import sitemap from '@astrojs/sitemap';
 import pagefind from "astro-pagefind";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -93,6 +95,9 @@ export default defineConfig({
 	},
 
 	integrations: [
+		astroBrokenLinksChecker({
+			checkExternalLinks: false
+		}),
 		expressiveCode({
 			themes: [
 				// light
