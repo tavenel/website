@@ -37,5 +37,4 @@ title:   Docker® et 󱃾 Kubernetes®
 ## λ OpenFaaS
 
 - [λ TP serverless : Fonctions-as-a-Service dans Kubernetes avec OpenFaaS](/cours/docker/openfaas-tp)
-- [🏆 Projet OpenFaaS dans Kubernetes](/cours/docker/openfaas-projet)
 

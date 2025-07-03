@@ -8,8 +8,6 @@ title: 📅 Gestion de projet
 
 - [La checklist - Création de Projet](/cours/gestion-projet/checklist-creation-projet)
 - [🤓 Cours - Introduction à la gestion de projet](/cours/gestion-projet/intro-gestion-projet)
-- [🤓 Cours sur la recette fonctionnelle](/cours/tests/methodo/cours-recette)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/uml/use-case)
 - [🤓 Diagramme de Kano](/cours/gestion-projet/cours-kano)
 - [🤓 Modèles et cycles de développement (cours)](/cours/gestion-projet/modeles_dev)
 - [🤓 Le pilotage de projet (cours)](/cours/gestion-projet/pilotage_projet-cours)

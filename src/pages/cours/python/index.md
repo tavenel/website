@@ -22,32 +22,10 @@ title: 󰌠  Python et Django
 
 ### 💻  Exercices
 
-#### 💻 Exercices - niveau 1
-
-Sélection de problèmes pour s'initier au langage Python.
-Une notion différente par exercice.
-
-- [📄 Sujet](/cours/python/python-exos-niv1)
-- [✅ Correction .py](/cours/python/python-exos-niv1_correction.py)
-
-#### 💻 Exercices chiffrement
-
-Des exercices autour du chiffrement de Cesar et de Vernam et calcul d'une fonction de hachage.
-
-- [📄 Sujet](/cours/python/python-exos-chiffrement)
-- [✅ Correction .py](/cours/python/python-exos-chiffrement_corrige.py)
-
-#### 💻 Exercices librairie standard
-
-- [📄 Sujet](/cours/python/python-exos-stdlib)
-
-#### 💻 Exercices avancés
-
-Exercices avancés, une fois à l'aise avec la syntaxe de base. Nécessitent l'utilisation de plusieurs notions en même temps.
-
-- [📄 Sujet](/cours/python/python-exos-avance)
-- [✅ Correction exercice robot .py](/cours/python/python-exos-avance_correction_robot.py)
-- [✅ Correction exercice plus ou moins avec triche .py](/cours/python/python-exos-avance_correction_tricheur.py)
+- 💻 Exercices - niveau 1 : Sélection de problèmes pour s'initier au langage Python. Une notion différente par exercice. [📄 Sujet](/cours/python/python-exos-niv1)
+- 💻 Exercices chiffrement : Des exercices autour du chiffrement de Cesar et de Vernam et calcul d'une fonction de hachage. [📄 Sujet](/cours/python/python-exos-chiffrement)
+- 💻 Exercices librairie standard. [📄 Sujet](/cours/python/python-exos-stdlib)
+- 💻 Exercices avancés : Une fois à l'aise avec la syntaxe de base. Nécessitent l'utilisation de plusieurs notions en même temps. [📄 Sujet](/cours/python/python-exos-avance)
 
 #### 💻 TP - Intégration au langage
 
@@ -58,7 +36,6 @@ Ces exercices permettent d'apprivoiser un concept puissant de Python - le Python
 #### 💻 TP - Space Invaders
 
 - [📄 Sujet](/cours/python/python-tp-space_invaders)
-- [✅ Correction .py](/cours/python/python-tp-space_invaders-correction.py)
 
 #### 💻 TP - Jeu du moulin
 
@@ -75,7 +52,6 @@ Le but de cet exercice est de réaliser une simulation d'un estimateur de Kanpla
 #### 💻 Exercices TCL/TK
 
 - [📄 Sujet](/cours/python/python-exos-tk)
-- [✅ Correction .py](/cours/python/python-exos-tk_correction.py)
 
 ### 🏆 Projet transversal 1e année - Thésée et le minotaure
 

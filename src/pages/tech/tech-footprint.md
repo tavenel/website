@@ -26,4 +26,4 @@ created: 2024-12-17
 - [page: Carbon footprint of the Web](/tech/web-bloat)
 - Carbon footprint of an email : <https://carbonliteracy.com/the-carbon-cost-of-an-email/>
 - BBC smart guide to climate change : <https://www.bbc.com/future/smart-guide-to-climate-change>
-- [page: Cours Green IT](/cours/rse)
+- [page: Cours Green IT](/cours/green-it)

@@ -5,7 +5,7 @@ date: 2023 / 2024
 
 # Remarques importantes sur l’utilisation des services `AWS` dans ce module de formation :
 
-[Voir la remarque dans le TP précédent](./tp_aws-1.md)
+[Voir la remarque dans le TP précédent](/cours/cloud/tp_aws-1)
 
 # TP 2 : Développement d’une application moderne en utilisant les services avancés d’`AWS`
 
