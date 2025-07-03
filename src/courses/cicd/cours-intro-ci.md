@@ -372,7 +372,7 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 layout: section
 ---
 
-# Liens
+# Ressources
 
 - Le site de référence de [Martin Fowler sur l'intégration continue](https://martinfowler.com/delivery.html)
 - La [traduction en français du site précédent](https://skalp.developpez.com/traductions/martin-fowler-integration-continue/)

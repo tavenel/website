@@ -4,7 +4,7 @@ title: Workflows Git - travailler en équipe
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-# Workflow 🧩🔄
+## Workflow 🧩🔄
 
 - Workflow Git : processus cohérent d'utilisation de Git pour réaliser une tâche, généralement Devops 👨‍💻🔧
 - Rationalise l'utilisation du ou des dépôt(s) distant(s) ☁️📦
@@ -12,7 +12,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Workflow centralisé 🏛️
+## Workflow centralisé 🏛️
 
 ```plantuml
 @startditaa
@@ -82,7 +82,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Workflow branche de fonctionnalité 🌿🔧
+## Workflow branche de fonctionnalité 🌿🔧
 
 - Un dépôt centralisé de référence 📍  
 - Tout nouveau développement (fonctionnalité, bug, ...) dans une **nouvelle branche dédiée** depuis `main` 🌱  
@@ -149,7 +149,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Pull-request 🔄📥
+## Pull-request 🔄📥
 
 - Popularisé par GitHub, la `pull-request` ou `merge-request` est aujourd’hui largement répandue en gestion de projet 🌍  
 - En théorie, simple demande de relecture de code avant l’intégration (`merge`) d’une branche dans une autre 👀✅  
@@ -157,7 +157,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-# Process de pull-request 🛠️🔀
+### Process de pull-request 🛠️🔀
 
 Étape optionnelle avant d’intégrer la branche de fonctionnalité au `main` du dépôt central :  
 
@@ -191,7 +191,7 @@ style B2 fill:#98fb98;
 
 ---
 
-# Workflow Gitflow 🌳⚙️
+## Workflow Gitflow 🌳⚙️
 
 - Branches de fonctionnalité mais plusieurs branches stables d'intégration :  
   - `main` pour les versions principales (livrables) 🎁  
@@ -246,7 +246,7 @@ merge livraison-1.0 tag:"v1.0"
 
 ---
 
-# Workflow développement basé sur le tronc (trunk) 🌳➡️
+## Workflow développement basé sur le tronc (trunk) 🌳➡️
 
 - Successeur très simplifié de Gitflow ⚡  
 - Développement par branches de fonctionnalité 🌿  
@@ -256,7 +256,7 @@ merge livraison-1.0 tag:"v1.0"
 
 ---
 
-# Workflow de duplication (fork) 🍴🔀
+## Workflow de duplication (fork) 🍴🔀
 
 - Workflow orienté dépôts 📂  
   - Un dépôt _officiel_ suivant un process Gitflow 🏛️  

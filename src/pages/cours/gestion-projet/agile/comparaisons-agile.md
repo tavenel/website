@@ -7,11 +7,11 @@ tags:
 - agile
 ---
 
-# Scrum
+## Scrum
 
 ---
 
-## Principes de Scrum
+### Principes de Scrum
 
 - Cadence itérative et incrémentale : Sprints, généralement de 1 à 4 semaines
 - Rôles clés :
@@ -23,7 +23,7 @@ tags:
 
 ---
 
-## Avantages de Scrum
+### Avantages de Scrum
 
 - Clarté des responsabilités et des attentes
 - Adaptabilité aux changements de priorités
@@ -31,18 +31,18 @@ tags:
 
 ---
 
-## Contexte d'utilisation
+### Contexte d'utilisation
 
 - Projets complexes nécessitant une bonne visibilité et un contrôle fréquent des priorités
 - Équipes de taille moyenne avec des rôles bien définis
 
 ---
 
-# Kanban
+## Kanban
 
 ---
 
-## Les 6 règles Kanban
+### Les 6 règles Kanban
 
 1. Visualiser le flux 
 2. Limiter le travail en cours 
@@ -53,7 +53,7 @@ tags:
 
 ---
 
-## Indicateurs utiles
+### Indicateurs utiles
 
 - _Cycle time_ : temps moyen du temps d'exécution d'une tâche à sa complétion (classique : "In Progress" à "Done")
 - _Lead Time_ : temps moyen du temps total de passage d'une tâche à travers tout le processus
@@ -62,7 +62,7 @@ Exemple : ajouter un point sur le post-it chaque jour
 
 ---
 
-## Diagramme de flux cumulés
+### Diagramme de flux cumulés
 
 ![Diagramme de flux cumulés](https://blog.myagilepartner.fr/wp-content/uploads/2019/04/diagramme-de-flux-cumules.png)
 
@@ -70,7 +70,7 @@ Exemple : ajouter un point sur le post-it chaque jour
 
 ---
 
-## Résumé Kanban 
+### Résumé Kanban 
 
 - Flux de travail visuel : Tableau Kanban avec colonnes (À faire, En cours, Terminé, etc.)
 - Limites de travail en cours : Contrôle du nombre de tâches dans chaque colonne
@@ -80,7 +80,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-## Avantages de Kanban
+### Avantages de Kanban
 
 - Simplicité et flexibilité : S'adapte facilement aux workflows existants
 - Adapté aux changements continus : Pas de cadence fixe, le travail est livré de manière continue
@@ -88,7 +88,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-## Contexte d'utilisation
+### Contexte d'utilisation
 
 - Environnements de support et maintenance : besoin de traitement continu des tâches
 - Petites équipes ou équipes avec des priorités qui changent fréquemment
@@ -96,11 +96,11 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-# Extreme Programming (XP)
+## Extreme Programming (XP)
 
 ---
 
-## Principes de XP
+### Principes de XP
 
 - Pratiques techniques rigoureuses : Pair Programming, Test-Driven Development (TDD)
 - Amélioration de la qualité : Tests automatisés, refactoring continu
@@ -108,7 +108,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-## Avantages de XP
+### Avantages de XP
 
 - Code de haute qualité : pratique de TDD et refactoring fréquent
 - Adaptabilité technique : mise à jour du code en fonction des besoins
@@ -116,7 +116,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-## Contexte d'utilisation
+### Contexte d'utilisation
 
 - Projets à forte exigence technique nécessitant une grande qualité de code
 - Équipes de développement expérimentées capables de gérer des pratiques avancées
@@ -124,7 +124,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-# Comparaison des Méthodologies
+## Comparaison des Méthodologies
 
 | **Méthodologie** | **Cadence**             | **Focus**                | **Avantages principaux**          | **Idéal pour**                   |
 |------------------|-------------------------|--------------------------|-----------------------------------|-----------------------------------|
@@ -134,7 +134,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-## Choisir la bonne méthodologie
+### Choisir la bonne méthodologie
 
 - Scrum : Cadre structuré avec sprints et rôles définis. Idéal pour la gestion de projets.
   - projets avec besoin de structuration et de suivi précis.
@@ -142,4 +142,6 @@ Le flux généré par un système est limité par au moins un processus
   - environnements réactifs avec besoins de livraison continue.
 - XP : Favorise la qualité de code et les pratiques techniques avancées.
   - projets où la qualité technique est essentielle et le client très impliqué.
+
+---
 

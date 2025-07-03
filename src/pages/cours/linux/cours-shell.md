@@ -181,14 +181,14 @@ On place en général les alias dans le fichier de configuration du shell : `~/.
 :::
 
 
-# Fichiers de script
+## Fichiers de script
 
 Un script est un fichier texte contenant une liste de commandes qui seront exécutées, comme si elles étaient tapées par l'utilisateur.
 Chaque ligne représente une entrée de l'utilisateur.
 
 Un fichier de script commence toujours par un _shebang_.
 
-## Shebang
+### Shebang
 
 Le shebang, représenté par `#!`, est un en-tête d'un fichier texte qui indique au système d’exploitation que ce fichier n’est pas un fichier binaire mais un script (ensemble de commandes) ; sur la même ligne est précisé l’interpréteur permettant d’exécuter ce script. Pour indiquer au système qu’il s’agit d’un script qui sera interprété par `bash` on placera le shebang sur la première ligne :
 
@@ -201,7 +201,7 @@ Le shebang, représenté par `#!`, est un en-tête d'un fichier texte qui indiqu
 - Un autre shebang classique est le shebang Python : `#!/usr/bin/env python3`
 :::
 
-## Droits d'exécution
+### Droits d'exécution
 
 Pour pouvoir être exécuté facilement, on ajoute les droits d'exécution à un fichier de script :
 
@@ -215,7 +215,7 @@ chmod +ux mon_script.sh
 ./mon_script.sh
 ```
 
-## Variables prépositionnées
+### Variables prépositionnées
 
 Certaines variables ont une signification spéciale réservée. Ces variables sont très utilisées lors la création de scripts :
 
@@ -236,7 +236,7 @@ Liste de variables prépositionnées
 - `$!` : PID du dernier processus lancé en arrière-plan
 - `$_` : dernier argument de la commande précédente
 
-### Exemple
+#### Exemple
 
 ```sh
 #!/usr/bin/env bash
@@ -261,7 +261,7 @@ On peut aussi utiliser la commande `getopts` plus puissante pour gérer des argu
 À partir du 10e argument, attention à utiliser l'écriture `${10}`, `${11}`, … Tester la différence entre `$10` et `${10}`.
 :::
 
-## Interaction utilisateur
+### Interaction utilisateur
 
 La commande `echo` pose une question à l’utilisateur.
 
@@ -282,7 +282,7 @@ echo $reponse
 
 La fonction `readline` permet également de lire un input utilisateur. Très utilse, la commande `readline -e` permet d'utiliser le mode `readline` du terminal (auto-complétion des noms de fichiers, …)
 
-## Fonctions
+### Fonctions
 
 Une fonction est un bloc d’instructions que l’on peut appeller ailleurs dans le script. Pour déclarer une fonction, on utilise la syntaxe suivante :
 
@@ -301,7 +301,7 @@ function ma_fonction {
 
 La déclaration d’une fonction doit toujours se situer avant son appel. On mettra donc les fonctions en début de script.
 
-### Exemple
+#### Exemple
 
 ```sh
 #!/usr/bin/env bash
@@ -316,7 +316,7 @@ reponse
 exit
 ```
 
-### Variables locales
+#### Variables locales
 
 Le mot clé `local` permet de définir une variable dans un scope local à la fonction en cours d'exécution.
 
@@ -340,7 +340,7 @@ declare -a asdf   # indexed type
 declare -A asdf   # associative type
 ```
 
-## Déboggage de script
+### Déboggage de script
 
 On peut débogguer l’exécution du script en le lançant avec `bash -x`. Par exemple :
 
@@ -348,9 +348,9 @@ On peut débogguer l’exécution du script en le lançant avec `bash -x`. Par e
 $ bash -x mon_script.sh
 ```
 
-# Structures conditionnelles
+## Structures conditionnelles
 
-## `if` / `then` / `else`
+### `if` / `then` / `else`
 
 ```sh
 if condition
@@ -369,7 +369,7 @@ else
 fi
 ```
 
-## Tests
+### Tests
 
 La condition pourra contenir un _test_. Deux manières de réaliser un test (avec une préférence pour la première) :
 
@@ -393,7 +393,7 @@ On peut aussi utiliser la version étendue de la commande test :
 
 Il y a beaucoup d’opérateurs disponibles pour réaliser des tests sur les fichiers, sur du texte ou sur des valeurs arithmétiques. La commande `man test` donnera une documentation à lire avec attention : tout s’y trouve.
 
-### Exemple
+#### Exemple
 
 ```sh
 #!/usr/bin/env bash
@@ -410,7 +410,7 @@ checkdir
 exit
 ```
 
-### Variante
+#### Variante
 
 On reprend la fonction `checkdir` qui lit la valeur de la variable donnée par l’utilisateur :
 
@@ -429,7 +429,7 @@ checkdir
 exit
 ```
 
-### Autres exemples
+#### Autres exemples
 
 ```sh
 #! /bin/sh
@@ -456,7 +456,7 @@ mkdir ${dir}
 echo "Le dossier de travail ${dir} est créé"
 ```
 
-## Résumé : Structure de base d’un script
+## Résumé : Structure de base d'un script
 
 Quel serait la structure de base d’un script Bash ?
 
@@ -494,9 +494,9 @@ fi
 exit
 ```
 
-# Boucles
+## Boucles
 
-## Boucle `for`
+### Boucle `for`
 
 Dans la boucle `for-do-done`, la variable prendra successivement les valeurs dans la liste et les commandes à l’intérieur du `do-done` seront répétées pour chacune de ces valeurs.
 
@@ -511,7 +511,7 @@ done
 Par défaut, `for` utilise la liste `in $@` si on omet ce mot-clé.
 :::
 
-### Exemple - créer 10 fichiers
+#### Exemple - créer 10 fichiers
 
 ```sh
 for num in 0 1 2 3 4 5 6 7 8 9 ; do touch fichier$num.tar.gz ; done
@@ -521,7 +521,7 @@ for num in 0 1 2 3 4 5 6 7 8 9 ; do touch fichier$num.tar.gz ; done
 for num in {0..9} ; do touch fichier$num.tar.gz ; done
 ```
 
-### Exemple - renommer des fichiers
+#### Exemple - renommer des fichiers
 
 Renomme tous les fichiers `*.tar.gz` en `*.tar.gz.old` :
 
@@ -538,7 +538,7 @@ done
 exit
 ```
 
-## `while` et `until`
+### `while` et `until`
 
 `while-do` répète les commandes tant que la condition est vérifiée.
 
@@ -563,7 +563,7 @@ Comment rompre ou reprendre une boucle ?
 - Reprise avec `continue`.
 :::
 
-### Exemple
+#### Exemple
 
 Supposons, par exemple que vous souhaitiez afficher les 100 premiers nombres :
 
@@ -591,7 +591,7 @@ done
 exit
 ```
 
-## Boucle `case-esac`
+### Boucle `case-esac`
 
 L’instruction `case-esac` permet de modifier le déroulement du script selon la valeur d’un paramètre ou d’une variable. On l’utilise le plus souvent quand les valeurs possibles sont en nombre restreint et peuvent être prévues. Les imprévus peuvent alors être représentés par le signe `*`.
 
@@ -616,7 +616,7 @@ esac
 exit
 ```
 
-## Trouver des erreurs dans ses scripts
+### Trouver des erreurs dans ses scripts
 
 Bash est un langage peu permissif sur la syntaxe et les erreurs sont fréquentes.
 
@@ -625,7 +625,7 @@ On pourra :
 - utiliser un IDE avec un plugin de développement adapté
 - utiliser l'outil en ligne <https://www.shellcheck.net/>
 
-## Ajouter de la sécurité
+### Ajouter de la sécurité
 
 Bash est un langage extrêmement permissif, ce qui peut poser de nombreux problèmes de sécurité.
 
@@ -635,7 +635,7 @@ On sera donc vigilant à :
 - Éviter de mettre des secrets dans un script (utiliser une variable d'environnement, un fichier de secrets, ou un outil dédié tel `Vault`) ;
 - Vérifier et nettoyer les entrées utilisateur (il est très facile de corrompre un script avec des catactères spéciaux).
 
-### Vérifications automatiques
+#### Vérifications automatiques
 
 Il est possible de modifier le comportement par défaut de Bash en lui ajoutant des options spéciales. Il est recommandé d'ajouter ces options au début de chaque script :
 
@@ -646,7 +646,7 @@ set -o pipefail # quitter le script si n'importe quelle commande d'un pipeline �
 set -euo pipefail # options combinées
 ```
 
-# Liens
+## Ressources
 
 - Comprendre l'héritage d'environnement dans les scripts, sous-process, pipes : [Bash and the process tree](https://flokoe.github.io/bash-hackers-wiki/scripting/processtree/)
 - <https://tech.gamuza.fr/Recapitulatif-sur-les-array-en-bash.html>

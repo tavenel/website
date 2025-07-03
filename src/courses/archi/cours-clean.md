@@ -1,8 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-theme: the-unnamed # slidev
 title: Clean Architecture
-layout: '@layouts/SlideLayout.astro'
+layout: '@layouts/CoursePartLayout.astro'
 tags:
 - ddd
 - archi
@@ -96,7 +95,7 @@ tags:
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - [Uncle Bob : clean architecture (2012-08-13)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - [Uncle Bob : clean architecture (2016-01-04)](https://blog.cleancoder.com/uncle-bob/2016/01/04/ALittleArchitecture.html)

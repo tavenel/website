@@ -6,14 +6,14 @@ tags:
 - projet
 ---
 
-# Rappel - Cycle de vie du projet
+## Rappel - Cycle de vie du projet
 
 - Représente les différentes étapes par lesquelles passe un projet depuis sa conception jusqu'à sa clôture. 
 - Essentiel pour positionner le cahier des charges de manière appropriée.
 
 ---
 
-## 1. Initiation
+### 1. Initiation
 
 - Marque le début du projet. 
 - C'est le moment où le besoin ou l'opportunité est identifié.
@@ -21,7 +21,7 @@ tags:
 
 ---
 
-## 2. Planification
+### 2. Planification
 
 - Le projet est détaillé et structuré.
 - Le cahier des charges commence à prendre forme en identifiant les besoins et les exigences. 
@@ -29,7 +29,7 @@ tags:
 
 ---
 
-## 3. Exécution
+### 3. Exécution
 
 - Cœur du projet. 
 - Les activités décrites dans le cahier des charges sont mises en œuvre. 
@@ -37,14 +37,14 @@ tags:
 
 ---
 
-## 4. Surveillance et contrôle
+### 4. Surveillance et contrôle
 
 - Les performances du projet sont surveillées par rapport au cahier des charges. 
 - Les ajustements sont faits si nécessaire pour garantir que le projet reste sur la bonne voie.
 
 ---
 
-## 5. Clôture
+### 5. Clôture
 
 - Marque la fin du projet. 
 - Le cahier des charges est revu pour s'assurer que tous les objectifs ont été atteints. 
@@ -52,7 +52,7 @@ tags:
 
 ---
 
-## Recette fonctionnelle
+### Recette fonctionnelle
 
 - Vérifie que les engagements du prestataire sont en adéquation avec les besoins spécifiés dans le cahier des charges.
 - Conduit à l’acceptation ou au rejet de la solution.
@@ -62,18 +62,18 @@ tags:
 
 ---
 
-# Enjeux du CDC
+## Enjeux du CDC
 
 ---
 
-## Clarification des attentes
+### Clarification des attentes
 
 - Définit les besoins et les attentes du projet de manière détaillée. 
 - Permet d'éviter les malentendus entre les parties prenantes et garantit une compréhension commune des objectifs.
 
 ---
 
-## Communication transparente
+### Communication transparente
 
 - Permet la communication entre la MOA et la MOE.
 - Les rôles, les responsabilités et les attentes de chaque partie sont clairement définis, ce qui réduit les risques de conflits.
@@ -86,49 +86,49 @@ Les cahiers des charges sont des documents de référence :
 
 ---
 
-## Évaluation des coûts et des délais
+### Évaluation des coûts et des délais
 
 - Fournit les détails nécessaires pour estimer les ressources, les coûts et les délais du projet. 
 - Aide à planifier de manière réaliste et à éviter les dépassements budgétaires et les retards.
 
 ---
 
-## Gestion des risques
+### Gestion des risques
 
 - Contribue à la gestion des risques en identifiant les besoins et les contraintes dès le départ
 - Les risques potentiels peuvent être anticipés et des stratégies d'atténuation appropriées mises en place.
 
 ---
 
-## Orientation de la conception
+### Orientation de la conception
 
 - Oriente la conception des solutions. 
 - Les spécifications fonctionnelles et techniques servent de base pour le développement, garantissant que les produits finaux répondent aux exigences.
 
 ---
 
-## Cadre pour l'évaluation
+### Cadre pour l'évaluation
 
 - Sert de base pour évaluer si le projet est achevé conformément aux spécifications.
 - Évite les litiges ultérieurs et garantit que le résultat final est conforme aux attentes initiales.
 
 ---
 
-## Support pour les Appels d'Offres
+### Support pour les Appels d'Offres
 
 - Lorsque le projet implique une externalisation ou une soumission à des fournisseurs, un cahier des charges bien défini est essentiel. 
 - Il fournit aux soumissionnaires les informations nécessaires pour proposer des solutions précises.
 
 ---
 
-## Orientation stratégique
+### Orientation stratégique
 
 - Aligne le projet sur les objectifs globaux de l'organisation.
 - Garantit que le projet contribue aux priorités et aux résultats souhaités.
 
 ---
 
-# Différents types de cahier des charges
+## Différents types de cahier des charges
 
 Le cahier des charges est un document qui décrit les fonctions que devra remplir la solution à l’issue du projet, ainsi que ses spécifications techniques et les besoins auxquels elle devra répondre.
 
@@ -161,17 +161,17 @@ Le cahier des charges techniques peut toutefois n’être que la partie techniqu
 layout: section
 ---
 
-# Méthodes Agiles et CDC
+## Méthodes Agiles et CDC
 
 ---
 
-## Méthodes Agile
+### Rappel : Méthodes Agile
 
 - Approches de gestion de projet flexibles qui mettent l'accent sur la collaboration, l'adaptabilité et la livraison itérative.
 
 ---
 
-## Réponse au changement
+### Réponse au changement
 
 Les méthodes agiles reconnaissent que les besoins évoluent pendant le projet et le cahier des charges est conçu pour être ajusté en conséquence :
 
@@ -181,7 +181,7 @@ Les méthodes agiles reconnaissent que les besoins évoluent pendant le projet e
 
 ---
 
-## User Stories
+### User Stories
 
 Les besoins sont exprimés sous forme de courtes "User Stories", ce qui permet une compréhension rapide et une implémentation itérative.
 
@@ -189,11 +189,11 @@ Les besoins sont exprimés sous forme de courtes "User Stories", ce qui permet u
 layout: section
 ---
 
-# Cahier des charges fonctionnel
+## Cahier des charges fonctionnel
 
 ---
 
-## Le CCF
+### Le CCF
 
 Rédiger un CCF c’est **exprimer et formaliser le besoin**.
 
@@ -203,7 +203,7 @@ C’est aussi un outil d’évaluation capital en fin de projet : il permet de m
 
 ---
 
-## Contenu du CCF
+### Contenu du CCF
 
 - **Description générale** : Présentation du projet, de son contexte et de ses objectifs.
 - **Fonctionnalités** : Détaillées de manière exhaustive, chaque fonctionnalité est décrite avec précision.
@@ -276,25 +276,25 @@ Autre variable déterminante, le délai de réalisation et la date de livraison.
 
 ---
 
-# Cadrage du projet
+## Cadrage du projet
 
 ---
 
-## Délimitation du Périmètre
+### Délimitation du Périmètre
 
 - Définir les limites et les frontières du projet, ainsi que les fonctionnalités et les exigences incluses dans le cahier des charges. 
 - Évite les déviations et garantit la focalisation sur les besoins essentiels.
 
 ---
 
-## Identification des Parties Prenantes et des Responsabilités
+### Identification des Parties Prenantes et des Responsabilités
 
 - Clarifier les parties prenantes impliquées dans le projet et définir leurs rôles et responsabilités. 
 - Favorise la communication et la collaboration en établissant des lignes directrices claires pour la participation de chacun.
 
 ---
 
-## Évaluation des Contraintes et des Limitations
+### Évaluation des Contraintes et des Limitations
 
 - Toutes les contraintes et limitations liées au projet, telles que les contraintes budgétaires, les contraintes de temps et les contraintes techniques, doivent être évaluées lors du cadrage de la demande. 
 - Cette évaluation préliminaire permet d'ajuster les attentes en conséquence.
@@ -302,7 +302,7 @@ Autre variable déterminante, le délai de réalisation et la date de livraison.
 
 ---
 
-## Création d'un Document de Référence
+### Création d'un Document de Référence
 
 Le résultat du cadrage de la demande est généralement formalisé dans un document de référence, qui peut être appelé "_charte de projet_" ou "_note de cadrage_".
 
@@ -318,18 +318,18 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-# Outils pour l'analyse des besoins
+## Outils pour l'analyse des besoins
 
 ---
 
-## Fiches de Fonctionnalités
+### Fiches de Fonctionnalités
 
 - Ces documents détaillent les fonctionnalités attendues du système ou de l'application. 
 - Chaque fiche décrit en quoi consiste la fonction, son objectif et son importance.
 
 ---
 
-## Questionnaires , Enquêtes et Ateliers
+### Questionnaires , Enquêtes et Ateliers
 
 - Les questionnaires permettent de recueillir les informations auprès des parties prenantes de manière structurée.
 - Les enquêtes permettent d'obtenir des informations externes concernant tout ce qui a trait à l’expérience client (questions ouvertes).
@@ -337,11 +337,11 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-### Exemples de questions pour l’analyse des besoins
+#### Exemples de questions pour l’analyse des besoins
 
 ---
 
-#### Questions liées au taux de réussite
+##### Questions liées au taux de réussite
 
 - Quelles sont les activités nécessaires à l’atteinte de nos objectifs ?
 - Quelle est la probabilité pour que notre solution fonctionne ?
@@ -349,7 +349,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-#### Questions liées aux performances
+##### Questions liées aux performances
 
 - Quels sont les KPI utilisés pour évaluer nos performances ?
 - Dans quels cas considère-t-on les performances comme excellentes ?
@@ -357,7 +357,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-#### Questions d’ordre opérationnel
+##### Questions d’ordre opérationnel
 
 - Quelles sont les parties prenantes concernées ?
 - À quel moment du processus le besoin se fait-il sentir ?
@@ -365,7 +365,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-## Matrice de Traçabilité des Exigences (IEEE 380)
+### Matrice de Traçabilité des Exigences (IEEE 380)
 
 - Cette matrice lie chaque exigence ou fonctionnalité aux parties prenantes, aux objectifs du projet et aux tests de validation.
 - Elle permet de suivre la couverture des besoins tout au long du projet.
@@ -378,7 +378,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-## Diagrammes de Cas d'Utilisation
+### Diagrammes de Cas d'Utilisation
 
 - Ces diagrammes décrivent comment les utilisateurs interagissent avec le système.
 - Ils permettent d'identifier les scénarios d'utilisation et les fonctionnalités nécessaires.
@@ -386,7 +386,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-### Exemple de Diagramme de Cas d'Utilisation
+#### Exemple de Diagramme de Cas d'Utilisation
 
 Système de gestion de bibliothèque :
 
@@ -408,17 +408,17 @@ user --> (S'inscrire à la bibliothèque)
 
 ---
 
-## Analyse des Données Existantes
+### Analyse des Données Existantes
 
 L'examen des données existantes, comme les rapports d'activité ou les retours des utilisateurs, peut fournir des informations précieuses sur les besoins à prendre en compte.
 
 ---
 
-# Hiérarchisation des besoins
+## Hiérarchisation des besoins
 
 ---
 
-## Recensement et hiérarchisation
+### Recensement et hiérarchisation
 
 - Identifiez toutes les fonctionnalités nécessaires pour atteindre les objectifs du projet. 
 - Chaque fonctionnalité représente une action ou une caractéristique que le système doit fournir.
@@ -426,7 +426,7 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 
 ---
 
-## Matrice de priorisation
+### Matrice de priorisation
 
 - Utilisez une matrice de priorisation pour organiser les fonctionnalités en fonction de leur impact et de leur complexité. 
 - Organisez des ateliers avec les parties prenantes pour discuter et définir la priorité des fonctionnalités. 
@@ -439,30 +439,30 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 
 ---
 
-## Diagramme de Kano
+### Diagramme de Kano
 
 Voir le cours de gestion de projet sur le diagramme de Kano.
 
 ---
 
-## Analyse fonctionnelle
+### Analyse fonctionnelle
 
 - Vise à décomposer le système ou le projet en sous-systèmes, composants et fonctionnalités pour en comprendre le fonctionnement global et les interactions entre les différentes parties.
 - Permet d'assurer que toutes les exigences sont correctement prises en compte et de garantir la cohérence du cahier des charges.
 
 ---
 
-# Méthodologie d'écriture du CCF
+## Méthodologie d'écriture du CCF
 
 ---
 
-## Contexte et présentation du projet
+### Contexte et présentation du projet
 
 Décrire le contexte et la démarche, et dresser un éventuel historique des précédents projets similaires.
 
 ---
 
-### Exemple : 
+#### Exemple : 
 
 « Développement d’une nouvelle application mobile »
 
@@ -474,7 +474,7 @@ Historique : réalisation d’une première version de l’application (`V1`) il
  
 ---
 
-## Besoins et contraintes liés au projet
+### Besoins et contraintes liés au projet
 
 Décrire la solution à travers :
 
@@ -484,7 +484,7 @@ Décrire la solution à travers :
 
 ---
 
-### Exemple :
+#### Exemple :
 
 Besoins fonctionnels : accéder aux fonctionnalités de <https://www.monsite.com> à partir de l’application mobile (consultation de profils, lecture d’articles), utiliser une messagerie instantanée pour fluidifier la communication entre les membres du site…
 
@@ -492,7 +492,7 @@ Contraintes : développement en `Java` et en `Objective C`, application destiné
 
 ---
 
-## Diagramme bête à corne
+### Diagramme bête à corne
 
 On pourra modéliser le besoin à l'aide d'un diagramme _bête à corne_ :
 
@@ -522,7 +522,7 @@ Exigences : livraison des fichiers `PSD` / `Sketch`, respect de la charte graphi
 
 ---
 
-# Recommandations sur la forme
+## Recommandations sur la forme
 
 Pour être opérationnel, le cahier des charges fonctionnel doit être :
 
@@ -533,7 +533,7 @@ Pour être opérationnel, le cahier des charges fonctionnel doit être :
 
 ---
 
-# Recommandations sur le fond
+## Recommandations sur le fond
 
 Pour réaliser le cahier des charges fonctionnel, on pourra se poser les questions suivantes en lien avec chacune des parties :
 
@@ -545,11 +545,11 @@ Pour réaliser le cahier des charges fonctionnel, on pourra se poser les questio
 layout: section
 ---
 
-# Cahier des charges technique
+## Cahier des charges technique
 
 ---
 
-# Le cahier des charges technique
+### Le cahier des charges technique
 
 Le cahier des charges technique est LE document de référence pour la **MOE**.
 
@@ -565,7 +565,7 @@ _En cas de sous-traitance, votre sous-traitant est donc tenu à une obligation d
 
 ---
 
-## Format du cahier des charges technique
+### Format du cahier des charges technique
 
 Globalement, il y a deux approches :
 
@@ -574,7 +574,7 @@ Globalement, il y a deux approches :
 
 ---
 
-## Méthodologie
+### Méthodologie
 
 Il est possible d'écrire le cahier des charges technique soit :
 
@@ -583,9 +583,9 @@ Il est possible d'écrire le cahier des charges technique soit :
 
 ---
 
-## Contenu
+### Contenu
 
-### Rappel du contexte et des objectifs
+#### Rappel du contexte et des objectifs
 
 Basée sur le contexte général du projet, cette section est reformulée pour s’adapter à la partie traitée.
 
@@ -593,7 +593,7 @@ Les objectifs sont également repris de notre cahier des charges fonctionnel et 
 
 ---
 
-### Exemple :
+#### Exemple :
 
 Préciser la nécessité d’initier une connexion avec le serveur de base de données de l’application de suivi des flux afin d’alimenter la table “Transaction” que nous avons définie lors de la définition de la base de données de notre solution.
 
@@ -677,7 +677,7 @@ N’hésitez pas à vous entourer d’experts sur le sujet afin de vous aider à
 
 ---
 
-## Recommandations sur la forme
+### Recommandations sur la forme
 
 Encore plus que le cahier des charges fonctionnel, le cahier des charges technique est un document amené à évoluer régulièrement au cours de l'avancée du projet.
 
@@ -685,7 +685,7 @@ Il est donc important de pouvoir l’identifier clairement par un en-tête, de t
 
 ---
 
-### Exemple d’en-tête :
+#### Exemple d’en-tête :
 
 La page de garde contient a minima :
 
@@ -697,7 +697,7 @@ La page de garde contient a minima :
 
 ---
 
-### Exemple de cartouche de versioning :
+#### Exemple de cartouche de versioning :
 
 Ce cartouche contient a minima :
 
@@ -710,7 +710,7 @@ Ce cartouche contient a minima :
 
 ---
 
-### Exemple de liste de diffusion
+#### Exemple de liste de diffusion
 
 Cette liste contient a minima :
 
@@ -720,7 +720,7 @@ Cette liste contient a minima :
 
 ---
 
-# Qu'est-ce qu'un bon cahier des charges ?
+## Qu'est-ce qu'un bon cahier des charges ?
 
 ---
 
@@ -730,14 +730,17 @@ Cette liste contient a minima :
 - Réaliste : Ne pas imaginer un système "qui fait tout"  mais rester réaliste par rapport aux besoins réels et à la faisabilité technique et financière.
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Lectures recommandées
+# Ressources
 
 - Exemples simples de projets avec mini cahiers des charges structurés sur [https://management-datascience.org](https://management-datascience.org/projects/).
 - Les [marchés publics](https://www.marches-publics.gouv.fr/entreprise) possèdent des cahiers des charges très formels.
 - [Granger, Laurent. Cahier des charges, exemple simple à utiliser [en ligne], Manager Go !. 13/01/2021](https://www.manager-go.com/gestion-de-projet/dossiers-methodes/elaborer-un-cdc)
 - [Quelle est la différence entre un cahier des charges technique et fonctionnel ? [en ligne]. USSC plus. 15/11/2019.](https://www.usscplus.com/quelle-est-la-difference-entre-un-cahier-des-charges-technique-et-un-cahier-des-charges-fonctionnel/)
 - [Vrossault, Bénédicte. Comment faire un cahiers des charges fonctionnel ?. Hubspot.](https://blog.hubspot.fr/marketing/cahier-des-charges-fonctionnels)
+
+---
+
 

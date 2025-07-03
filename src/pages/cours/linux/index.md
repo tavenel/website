@@ -87,7 +87,7 @@ title: 🐧 Linux
 
 Voir le [cours dédié](/esgi/b3/lpic-1)
 
-## Liens
+## Ressources
 
 - [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
 - Aide simple sur les commandes : <https://cheat.sh/>

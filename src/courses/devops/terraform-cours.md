@@ -157,7 +157,7 @@ mon_password = "P@ssw0rd"
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - [Documentation Terraform](https://developer.hashicorp.com/terraform?product_intent=terraform)
 - <https://lafor.ge/blue-green/>
@@ -168,7 +168,7 @@ layout: section
 
 ---
 
-# Legal 
+## Legal 
 
 - Terraform is a trademark and brand of HashiCorp, Inc.
 - Other names may be trademarks of their respective owners

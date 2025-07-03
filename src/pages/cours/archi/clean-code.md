@@ -7,7 +7,7 @@ tags:
 - dette-technique
 ---
 
-# Pourquoi un Clean Code ?
+## Pourquoi un Clean Code ?
 
 ---
 
@@ -33,11 +33,11 @@ tags:
 layout: section
 ---
 
-# Règles générales
+## Règles générales
 
 ---
 
-## Normes et conventions
+### Normes et conventions
 
 - Suivez des conventions reconnues :
   + Constantes en majuscules
@@ -45,7 +45,7 @@ layout: section
 
 ---
 
-## KISS
+### KISS
 
 - Keep it simple stupid :
   + simple : noms de variables, héritage faible, ...
@@ -65,7 +65,7 @@ for student_no in range(total_students):
 
 ---
 
-## Boy Scout
+### Boy Scout
 
 - Laissez le code plus propre que l'état dans lequel vous l'avez trouvé.
   + Refactoring permanent
@@ -73,7 +73,7 @@ for student_no in range(total_students):
 
 ---
 
-## Root cause
+### Root cause
 
 - Lors de résolution d'un problème, toujours chercher et trouver la cause racine.
   + Éviter les "rustines"
@@ -98,7 +98,7 @@ for student in students:
 
 ---
 
-## Least Astonishment (POLA) ou Least Surprise (POLS)
+### Least Astonishment (POLA) ou Least Surprise (POLS)
 
 - Éviter à un utilisateur toutes les (mauvaises) surprises :
   + Suivre les conventions d'IHM, de nommage, ...
@@ -108,7 +108,7 @@ for student in students:
 
 ---
 
-## DRY
+### DRY
 
 - Do Not Repeat Yourself :
   + Éviter les copier-coller ;
@@ -116,7 +116,7 @@ for student in students:
 
 ---
 
-## Single-Source of Trust (SSoT)
+### Single-Source of Trust (SSoT)
 
 - Source de vérité unique
 - Éviter les duplications de code métier (voir _Domain-Driven Development_) ;
@@ -124,7 +124,7 @@ for student in students:
 
 ---
 
-## Les erreurs arrivent
+### Les erreurs arrivent
 
 - Partir du principe que les erreurs se produiront :
   + éviter les bugs (bien)
@@ -133,7 +133,7 @@ for student in students:
 
 ---
 
-## Surveillance utilisateur
+### Surveillance utilisateur
 
 - Monitorer les erreurs côté utilisateur.
 - Mettre en place des alertes pour le développeur (analyse des logs, API, ...).
@@ -143,17 +143,17 @@ for student in students:
 layout: section
 ---
 
-# Design
+## Design
 
 ---
 
-## Configurations
+### Configurations
 
 - Toutes les constantes doivent être configurables à haut niveau.
 
 ---
 
-## Polymorphisme
+### Polymorphisme
 
 - Partir d'un type et le modifier
 - Évite les `if/else` ou `switch/case`.
@@ -183,7 +183,7 @@ class Cercle(Forme):
 
 ---
 
-## YAGNI : You Ain’t Gonna Neet It
+### YAGNI : You Ain’t Gonna Neet It
 
 - Évitez la sur-configurabilité et le _au cas où_.
 - Résoudre le vrai problème plutôt que de futurs potentiels problèmes.
@@ -192,7 +192,7 @@ class Cercle(Forme):
 
 ---
 
-## Injection de dépendances
+### Injection de dépendances
 
 - Une classe déclare ses dépendances : `délégation`.
 - Un objet n'instancie pas d'autres objets à sa création ou après.
@@ -201,7 +201,7 @@ class Cercle(Forme):
 
 ---
 
-## Loi de Déméter
+### Loi de Déméter
 
 - Une classe devrait faire aussi peu d’hypothèses que possible à propos de la structure de quoi que ce soit d’autre, y compris ses propres sous-composants.
 - Voir [l'article Wikipedia sur le sujet](https://fr.wikipedia.org/wiki/Loi_de_D%C3%A9m%C3%A9ter).
@@ -216,7 +216,7 @@ auto.isRunning();
 
 ---
 
-## Contraintes en amont
+### Contraintes en amont
 
 - ex `Google Chrome™` : test automatisé de performances dans CI dès le début du projet
 
@@ -224,11 +224,11 @@ auto.isRunning();
 layout: section
 ---
 
-# Compréhension
+## Compréhension
 
 ---
 
-## Explicite > Implicite
+### Explicite > Implicite
 
 - Noms de variables explicites.
 
@@ -251,7 +251,7 @@ const searchUserByPhoneNo = (phone) => {
 
 ---
 
-## Cohérence
+### Cohérence
 
 - Si vous faites quelque chose d'une certaines manière, toutes les choses similaires devraient être faites de la même manière.
 
@@ -277,7 +277,7 @@ const searchUserByUsername = (username) => {
 
 ---
 
-## Déclaratif > Impératif
+### Déclaratif > Impératif
 
 - Déclaratif => intention du code (proche du métier, voir BDD).
 - Impératif => suite d'actions et comment les exécuter
@@ -297,7 +297,7 @@ $prenom = array_values($Listeparticipants);
 
 ---
 
-## Encapsuler les conditions limites
+### Encapsuler les conditions limites
 
 - Conditions limites compliquées : créer fonction dédiée au test
 
@@ -337,7 +337,7 @@ private static boolean usernameInvalid(String username) {
 
 ---
 
-## Value Objects
+### Value Objects
 
 - `Value Objects` > types primitifs.
   + ajoute du sens
@@ -351,7 +351,7 @@ type Username = String
 
 ---
 
-## Conditions positives
+### Conditions positives
 
 - Évitez les négations, surtout les doubles
 
@@ -367,7 +367,7 @@ if (isValid(...)):
 layout: section
 ---
 
-# Noms
+## Noms
 
 ---
 
@@ -379,7 +379,7 @@ layout: section
 
 ---
 
-## Nombres magiques
+### Nombres magiques
 
 - Remplacez les nombres magiques par des constantes bien nommées.
 
@@ -397,7 +397,7 @@ for i in range(NUMBER_OF_STUDENTS):
 layout: section
 ---
 
-# Fonctions
+## Fonctions
 
 ---
 
@@ -409,7 +409,7 @@ layout: section
 
 ---
 
-## Retour au plus tôt
+### Retour au plus tôt
 
 ```java
 // Bad
@@ -464,7 +464,7 @@ public int lessConfusingFonction(String name, int value, AuthenticationInfo perm
 
 ---
 
-## Flag
+### Flag
 
 - Pas de _flag_ booléen - écrire plusieurs fonctions
 
@@ -480,7 +480,7 @@ widget.repaintLater();
 layout: section
 ---
 
-# Commentaires
+## Commentaires
 
 ---
 
@@ -499,18 +499,18 @@ layout: section
 layout: section
 ---
 
-# Structure du code source
+## Structure du code source
 
 ---
 
-## Style
+### Style
 
 - Respecter l'indentation.
 - Lignes courtes.
 
 ---
 
-## Proximité géographique
+### Proximité géographique
 
 - Déclarez les variables à proximité de leurs usages.
 - Les fonctions dépendantes les unes des autres devraient être à proximité.
@@ -518,7 +518,7 @@ layout: section
 
 ---
 
-## Espaces
+### Espaces
 
 - Espaces et sauts de lignes :
   + Peu d'espaces, code dense : liens forts
@@ -528,7 +528,7 @@ layout: section
 layout: section
 ---
 
-# Objets et structures de données
+## Objets et structures de données
 
 ---
 
@@ -546,7 +546,7 @@ layout: section
 layout: section
 ---
 
-# Tests
+## Tests
 
 ---
 
@@ -565,7 +565,7 @@ layout: section
 layout: section
 ---
 
-# Code smells
+## Code smells
 
 ---
 
@@ -575,14 +575,14 @@ layout: section
 
 ---
 
-## Rigidité
+### Rigidité
 
 - Logiciel difficile à faire évoluer.
 - Une petite modification peut causer une cascade de changements.
 
 ---
 
-## Immobilité
+### Immobilité
 
 - Code non réutilisable dans d'autres projets :
   + trop risqué
@@ -590,13 +590,13 @@ layout: section
 
 ---
 
-## Fragilité
+### Fragilité
 
 - Erreurs à plusieurs endroits après un unique changement.
 
 ---
 
-## Niveaux d'imbrication
+### Niveaux d'imbrication
 
 - Limiter la profondeur d'héritage
   + Implémentation d'interface uniquement
@@ -622,15 +622,17 @@ def enumerate_array(my_array):
 
 ---
 
-## Voir aussi
+### Voir aussi
 
+:::link
 - Voir [cet article de CodeGuru](https://refactoring.guru/refactoring/smells) pour des exemples de _code smell_.
+:::
 
 ---
 layout: section
 ---
 
-# Gestion des erreurs
+## Gestion des erreurs
 
 ---
 
@@ -641,7 +643,7 @@ layout: section
 
 ---
 
-## Null pointer
+### Null pointer
 
 - Jamais de `null` (surtout pas en `return null`).
 - Bonne pratique : programmation défensive sur les interfaces aux limites (API, ...) pour empêcher la propagation d'un objet null.
@@ -691,10 +693,10 @@ private User checkCredentialsInDatabase(String username, String password) {
 ```
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens
+## Ressources
 
 - 60 principes essentiels du Clean Code : <https://www.getnobullshit.com/>
 - Référentiel de qualité du Web : <https://checklists.opquast.com/fr/assurance-qualite-web/>
@@ -705,7 +707,10 @@ private User checkCredentialsInDatabase(String username, String password) {
 
 ---
 
-# Legal
+## Legal
 
 - Google Chrome™ is a trademark of Google LLC
 - Other names may be trademarks of their respective owners
+
+---
+

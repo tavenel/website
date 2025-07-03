@@ -8,7 +8,7 @@ tags:
 - web
 ---
 
-# http://
+## http://
 
 - `Hypertext Transfer Protocol (HTTP)` : protocole de communication client-serveur pour le Web.
 - Protocole de la couche applicative : n'impose pas de couche de transport (en pratique, `TCP`).
@@ -28,7 +28,7 @@ En général l'action concerne une ressource identifiée par l'URL qui suit le n
 
 ---
 
-## Liste des méthodes `HTTP` :
+### Liste des méthodes `HTTP` :
 
 - `GET` : C'est la méthode la plus courante pour demander une ressource. Une requête `GET` est sans effet sur la ressource, il doit être possible de répéter la requête sans effet.
 - `HEAD` : Cette méthode ne demande que des informations sur la ressource, sans demander la ressource elle-même.
@@ -65,7 +65,7 @@ Les codes de statut sont regroupés en 5 catégories :
 
 ---
 
-# https://
+## https://
 
 - `HTTPS` (S = secured) : variante sécurisée de `HTTP`.
 - Utilise le protocole sécurisé Transport Layer Security (`TLS`) ou `SSL` encapsulant le protocole `HTTP` dans les données qui transitent.
@@ -82,7 +82,7 @@ Ainsi, le client peut connaître une liste limitée de signataires de confiance,
 
 ---
 
-# ws://
+## ws://
 
 Le protocole `WebSocket` (`ws`) permet d'établir sur les ports web standards une connexion **permanente** et **bidirectionnelle** entre le client et le serveur distant.
 
@@ -99,7 +99,7 @@ Comme `HTTP` et `FTP`, on utilise  le protocole `TCP` pour la couche de transpor
 
 ---
 
-# Le Web
+## Le Web
 
 Le Web est un ensemble de liens exprimés sous forme d'`URIs` (généralement des `URLs`) identifiant des ressources `HTML` obtenues via le protocole `HTTP`.
 
@@ -128,7 +128,7 @@ Exemple de code `HTML` :
 
 ---
 
-# Serveur web
+## Serveur web
 
 Fonction principale : diffuser des contenus Web sur Internet (ou un Intranet).
 
@@ -195,7 +195,7 @@ Différentes manières de mettre à disposition un contenu web :
 
 ---
 
-# Architectures des clients
+## Architectures des clients
 
 On classe généralement les clients selon l'importance des services qu'ils proposent par rapport au serveur.
 
@@ -214,7 +214,7 @@ Après l'effervescence des applications lourdes (années 80 - 2000), la tendance
 
 ---
 
-# Architecture client des terminaux mobiles
+### Architecture client des terminaux mobiles
 
 Le choix d'un client léger ou d'un client lourd a notamment un fort impact sur l'architecture web des applications visant des terminaux mobiles (smartphone, tablette, ...)
 
@@ -226,7 +226,7 @@ On distingue 3 familles d'applications mobiles liés à ce choix :
 
 ---
 
-## La WebApp
+### La WebApp
 
 - Développée à partir de technologies web.
 - Peut être utilisée directement via le navigateur du mobile.
@@ -244,7 +244,7 @@ Ces applications sont également directement disponibles sur tous les clients "c
 
 ---
 
-## L’application hybride
+#### L'application hybride
 
 
 - Développée avec des technologies utilisant les capacités `EcmaScript` des mobiles.
@@ -254,7 +254,7 @@ Ces applications sont également directement disponibles sur tous les clients "c
 
 ---
 
-## L’application native
+#### L'application native
 
 - Développement dans un environnement propre à chaque terminal
   + `Swift/Objective-C` pour `iOS`.
@@ -269,7 +269,7 @@ En alternative à ce double développement, certaines solutions (`Xamarin`, ...)
 
 ---
 
-# Applications modernes
+## Applications modernes
 
 _Application qui supporte des clients multiples : site web, application mobile, et/ou autre application cliente qui utilise les données et services de l'application à travers son API._
 
@@ -290,10 +290,10 @@ L'utilisation d'une API (unique) permet de limiter l'intégration avec les inter
 <div class="caption">Schéma d'architecture d'une application moderne.</div>
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Références
+## Ressources
 
 - [Présentation sur l'intérêt des standards dans le Web](https://speakerdeck.com/notwaldorf/how-to-train-your-dragon-web-standard)
 - [Applications modernes](https://www.nginx.com/blog/principles-of-modern-application-development)
@@ -302,7 +302,7 @@ L'utilisation d'une API (unique) permet de limiter l'intégration avec les inter
 
 ---
 
-# Legal
+## Legal
 
 - Apache, Apache Maven, and Maven are trademarks of the Apache Software Foundation.
 - Oracle, Java and Java EE are registered trademarks of Oracle and/or its affiliates.
@@ -314,4 +314,6 @@ L'utilisation d'une API (unique) permet de limiter l'intégration avec les inter
 - GraphQL is a trademark of the GraphQL Foundation.
 - Jetty is a trademark of Eclipse Foundation, Inc.
 - Other names may be trademarks of their respective owners
+
+---
 

@@ -81,3 +81,5 @@ C --> A : problème suivant
 	- 🤖 Génération du code par IA
 	- 🔄 Refactoring assisté par IA
 
+---
+

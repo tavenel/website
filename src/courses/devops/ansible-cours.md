@@ -441,7 +441,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - Documentation Ansible : <https://docs.ansible.com/ansible/latest/index.html>
 - Tutoriel Ansible débutant : <https://alemorvan.frama.io/formatux.fr-support/SupportLinux-Automatismes-DevOPS.pdf>
@@ -464,7 +464,7 @@ layout: section
 
 ---
 
-# Legal 
+## Legal 
 
 - Ansible® is a registered trademark of RED HAT, INC.
 - Vault is a trademark and brand of HashiCorp, Inc.

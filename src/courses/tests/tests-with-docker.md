@@ -83,7 +83,7 @@ jobs:
 
 ---
 
-## Liens
+## Ressources
 
 * [Testcontainers](https://www.testcontainers.org/): librairie Java pour créer des conteneurs de test à la volée.
 * [Dockertest (Go)](https://github.com/ory/dockertest)

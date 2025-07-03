@@ -1,20 +1,20 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/SlideLayout.astro'
-title: Héritage de classes polymorphisme et délégation
+title: Héritage de classes, polymorphisme et délégation
 tags:
 - architecture
 - poo
 - heritage
 ---
 
-# 📋 Prérequis
+## 📋 Prérequis
 
 Le vocabulaire basique de programmation objet doit être maîtrisé : voir le [cours d'introduction aux langages objet][site-perso] si besoin.
 
 ---
 
-# Héritage
+## Héritage
 
 - Une classe peut hériter d’une autre pour étendre ses fonctionnalités.
   + Permet d’ordonner des objets proches pour s’y retrouver.
@@ -23,19 +23,19 @@ Le vocabulaire basique de programmation objet doit être maîtrisé : voir le [c
 
 ---
 
-## Exemple
+### Exemple
 
 Les cercles, les carrés et les étoiles sont trois types de figures géométriques ayant toutes un centre, une couleur et une épaisseur utilisés pour le dessin. On peut les déplacer et calculer leur aire.
 
 ---
 
-# Interface et classe abstraite
+## Interface et classe abstraite
 
 En programmation orientée objet, on parle d'interface et de classe abstraite pour différencier des classes particulières dans un modèle d'héritage.
 
 ---
 
-## Interface
+### Interface
 
 Classes ne possédant ni donnée (pas d'attribut de classe) ni implémentation de méthode : les méthodes sont présentes mais ne contiennent pas de code.
 
@@ -46,7 +46,7 @@ En pratique : très utiles pour utiliser un contrat sans connaître l'abstractio
 
 ---
 
-## Classe abstraite
+### Classe abstraite
 
 - Classe qui ne va pas pouvoir être instanciée directement.
 - Contient des méthodes abstraites (sans implémentation), similaires à une interface...
@@ -59,14 +59,14 @@ En pratique : très utiles pour utiliser un contrat sans connaître l'abstractio
 
 ---
 
-## Implémentation
+### Implémentation
 
 - Les langages objet de programmation par contrat (Java) implémentent en général ces notions directement dans le langage : `interface MonInterface`, `abstract class MaClasseAbstraite`.
 - Dans les langages suivant un concept de _Duck Typing_ (Python, EcmaScript : c'est au développeur de suivre ou non le contrat) ces types sont généralement implicites : `class MonInterface`, `class MaClasseAbstraite`.
 
 ---
 
-## Exemple d'interface en Java
+### Exemple d'interface en Java
 
 ```java
 interface FigureGeometrique {
@@ -115,7 +115,7 @@ for (FigureGeometrique figure : figures) {
 
 ---
 
-## Exemple de classe abstraite en Python
+### Exemple de classe abstraite en Python
 
 ```python
 class FigureGeometrique:
@@ -159,7 +159,7 @@ for figure in figures:
 
 ---
 
-# Polymorphisme
+## Polymorphisme
 
 Dans les exemples, on utilise les objets `figure` sans connaître réellement la classe utilisée `Cercle` ou `Carre`.
 
@@ -169,7 +169,7 @@ _Polymorphisme_ : utilisation uniforme d'objets différents en utilisant leur co
 
 ---
 
-# Exercice
+### Exercice
 
 Réécrire les exemples précédents sans utiliser d'héritage (avec un enchaînement de conditions `if`).
 
@@ -177,7 +177,7 @@ Cet exemple illustre l'intérêt de la factorisation par polymorphisme.
 
 ---
 
-# Exercice
+### Exercice
 
 Le polymorphisme peut parfois être implicite, comme en Python si l'on sait que des classes sans lien d'héritage suivent quand même le même contrat.
 
@@ -187,7 +187,7 @@ Quel est l'inconvénient de cette écriture ?
 
 ---
 
-# Délégation
+## Délégation
 
 - Design pattern qui permet par composition d'objets la même factorisation que l'héritage (sans ses inconvénients).
 - Principe : appeler un autre objet qui contient l'implémentation à exécuter
@@ -253,4 +253,6 @@ La délégation est certainement le design pattern le plus utile apporté par le
   + verbeux si programmation par contrat : `Java`
 
 => À utiliser massivement !
+
+---
 

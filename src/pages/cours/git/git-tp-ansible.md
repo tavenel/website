@@ -59,7 +59,7 @@ Maintenant, toutes les modifications de la machine virtuelle seront réalisées 
 1. Tester l'ajout d'un nouveau fichier sur la machine cible grâce au module [copy][ansible-copy].
 2. Déployer un serveur Web `Apache` depuis le playbook. On pourra notamment utiliser les modules du gestionnaire de paquets de la machine cible.
 
-# Liens
+# Ressources
 
 - documentation Ansible : <https://docs.ansible.com/ansible/latest/index.html>
   + [Module copy][ansible-copy]

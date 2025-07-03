@@ -172,7 +172,7 @@ Pour une utilisation plus poussée, il est recommandé d'utiliser un environneme
 
 ---
 
-# Liens
+# Ressources
 
 - [Développement Python sous Visual Studio Code][vscode-python]
 - [Développement Python sous PyCharm][pycharm-python]

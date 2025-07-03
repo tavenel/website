@@ -347,7 +347,9 @@ class TestCalendar(unittest.TestCase):
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - [Vidéo Python Mock Testing](https://www.youtube.com/watch?v=-F6wVOlsEAM)
+
+---
 

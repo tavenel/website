@@ -1,27 +1,27 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/SlideLayout.astro'
-title: Cours sur le framework Django
+title: Django
 tags:
 - python
 - web
 - django
 ---
 
-# Présentation de Django
+## Présentation
 
 Framework Python gratuit et open-source de haut niveau pour développer une application Web
 
 ---
 
-## Complet
+### Complet
 
 - Framework pour application Web complète : backend, frontend, persistance, sécurité, administration, ...
 - écosystème complet : documentation, tests, ...
 
 ---
 
-## Polyvalent
+### Polyvalent
 
 - Développement possible de tout type de site Web ;
 - Nombreuses infrastructures client ;
@@ -30,7 +30,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-## ORM puissant
+### ORM puissant
 
 - Abstraction de la couche de persistance ;
 - Nombreuses bases de données : nativement `PostgreSQL`, `MySQL`, `Oracle`, `SQLite` ;
@@ -38,7 +38,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-## Sécurisé
+### Sécurisé
 
 - "Security by design" ;
 - Gestion sécurisée des utilisateurs ;
@@ -46,7 +46,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-## Scalable
+### Scalable
 
 - Architecture composite "shared-nothing" : composants indépendants et remplaçables
 - Scalabilité à tous les niveaux : serveurs cache, bases de données, serveurs d'application
@@ -54,7 +54,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-## Maintenable
+### Maintenable
 
 - Design favorisant un code simple et réutilisable : template, … 
 - DRY : interfaces d'administration, …
@@ -63,14 +63,14 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-## Portable
+### Portable
 
 - Python : presque toutes plateformes
 - Disponible sur beaucoup d'hébergeurs PaaS
 
 ---
 
-# Installation
+## Installation
 
 - Nombreuses distributions : package de distribution, `virtualenv`, ...
 - Le plus simple (dernière version officielle) :
@@ -82,7 +82,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-# Environnement de développement
+## Environnement de développement
 
 - Scripts Python pour créer et travailler avec des projets `Django` :
   + `django-admin` pour créer un nouveau projet
@@ -92,7 +92,7 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-# Projet vs applications
+## Projet vs applications
 
 - **Projet** : capsule vide gérant le site en entier
 - **Application** : élément réutilisable du site (login, recherche, ...)
@@ -136,17 +136,17 @@ Model *-- "*" Champ
 
 ---
 
-# Cheatsheet
+## Cheatsheet
 
 - Créer un nouveau projet : `django-admin startproject <mon_projet>`
 - Démarrer le serveur Web : `python manage.py runserver`
 - Réaliser une migration : `python manage.py makemigrations && python manage.py migrate`
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens
+## Ressources
 
 - [Tutoriel première application Django][tuto-django]
 - [Génération de diagrammes de classe UML depuis un projet Django][uml]
@@ -156,8 +156,10 @@ Model *-- "*" Champ
 
 ---
 
-# Legal
+## Legal
 
 - Django and the Django logo are registered trademarks of the Django Software Foundation.
 - Other names may be trademarks of their respective owners
+
+---
 

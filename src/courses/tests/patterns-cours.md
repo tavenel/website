@@ -7,7 +7,7 @@ tags:
 - architecture
 ---
 
-# AAA
+## AAA
 
 Un test suit un pattern **AAA** pour **Arrange**, **Act**, **Assert** :
 
@@ -31,7 +31,7 @@ def test_addition():
 
 ---
 
-## BDD
+### BDD
 
 En _BDD_, on utilise le pattern **Given**, **When**, **Then** qui suit le même formalisme :
 
@@ -41,7 +41,7 @@ En _BDD_, on utilise le pattern **Given**, **When**, **Then** qui suit le même 
 
 ---
 
-# Page Object
+## Page Object
 
 ```plantuml
 @startuml
@@ -114,7 +114,7 @@ public class LoginTest extends BaseTest {
 
 ---
 
-# Tree
+## Tree
 
 Le design pattern d'arbre (Tree) est un pattern composite dont le but est de représenter et d'utiliser de la même manière un élément unique ou une collection d'éléments. En test automatique, la feuille est soit une simple méthode de test, soit un objet de type `PageObject`.
 
@@ -160,7 +160,7 @@ Client --> TreeItem
 
 ---
 
-# Facade
+## Facade
 
 La façade est un design pattern permettant de limiter les interactions avec un système complexe à une interface offrant des actions limitées.
 
@@ -234,7 +234,7 @@ public class LoginFacade {
 
 ---
 
-# Decorateur
+## Decorateur
 
 Le décorateur permet d'ajouter dynamiquement un nouveau comportement à certains objets en les encapsulant dans une classe abstraite ou une interface délégant ses appels au décorateur.
 
@@ -309,7 +309,7 @@ public class MyTestDriverWithLog implements TestDriver {
 
 ---
 
-# Factory/Builder
+## Factory/Builder
 
 La `Factory` ou les créateurs (`Builder`) permettent de créer des objets en injectant leurs dépendances par rapport au contexte courant.
 
@@ -346,7 +346,7 @@ test.persist() // calls FakeDriver instance
 
 ---
 
-# Fluent PageObject
+## Fluent PageObject
 
 Un pattern très apprécié en écriture de tests est l'association d'un `PageObject` avec le pattern `Fluent` qui retourne le `PageObject` à utiliser après l'action (instance courante de l'objet ou nouvel objet).
 
@@ -379,4 +379,6 @@ loginPO
     .setUsernameTextField(username)
     .tapOnLoginButton();
 ```
+
+---
 

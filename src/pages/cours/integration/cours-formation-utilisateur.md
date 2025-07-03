@@ -7,7 +7,7 @@ tags:
 - production
 ---
 
-# But de la formation
+## But de la formation
 
 Comment former les utilisateurs au nouveau service ?
 
@@ -22,7 +22,7 @@ La réalisation d'une formation se fait donc toujours en deux temps :
 
 ---
 
-# Phase 1 : Analyse des besoins
+## Phase 1 : Analyse des besoins
 
 La formation doit se limiter aux besoins du client et passer sous silence les autres fonctionnalités du produit.
 
@@ -55,7 +55,7 @@ On analyse ensuite le contexte de la formation :
 
 ---
 
-# Phase 2 : Réalisation de la formation
+## Phase 2 : Réalisation de la formation
 
 Une fois les besoins analysés, il est temps de créer la formation qui sera dispensée aux clients.
 
@@ -106,4 +106,6 @@ La création de supports de formation est coûteux en ressources humaines : il e
 Une formation doit toujours avoir comme fil directeur les besoins du client en s’appuyant sur son expérience utilisateur.
 
 Elle ne doit en aucun cas être une description de l’interface utilisateur !
+
+---
 

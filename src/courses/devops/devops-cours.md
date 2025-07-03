@@ -320,7 +320,7 @@ Voir aussi : <https://about.gitlab.com/platform/>
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - Voir une sélection d'outils DevOps sur le [site web][site-perso]
 - Glossaire DevOps : <https://blog.stephane-robert.info/docs/glossaire/>

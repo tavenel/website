@@ -27,11 +27,11 @@ layout: section
 ---
 
 
-# 🏛️ Qualité de la conception objet
+## 🏛️ Qualité de la conception objet
 
 ---
 
-## 🔄 Abstraction et responsabilité
+### 🔄 Abstraction et responsabilité
 
 - 🏗️ Programmation Objet = responsabilité unique : une et une seule raison de modifier une classe/un module.
   - ✅ Bon indicateur : nom simple de classe (sinon : trop de responsabilités)
@@ -53,7 +53,7 @@ layout: section
 
 ---
 
-## 🏗️ Classes abstraites
+### 🏗️ Classes abstraites
 
 - 🔄 Permet de factoriser un comportement commun à plusieurs classes...
 - ...En laissant des spécificités dans chaque héritage.
@@ -71,7 +71,7 @@ layout: section
 
 ---
 
-## 🏷️ KISS : Keep it simple stupid
+### 🏷️ KISS : Keep it simple stupid
 
 - 🎯 Ligne directrice : toute complexité non indispensable doit être évitée.
 - 📉 Complexité = coûts de conception et de maintenance et source potentielle d'erreurs.
@@ -84,7 +84,7 @@ layout: section
 
 ---
 
-## 🔄 Interfaces
+### 🔄 Interfaces
 
 - 🌟 Une des fonctionnalités les plus intéressantes des langages objets.
 - 📜 Programmation par contrat : l'objet qui en hérite s'engage à suivre le comportement qu'elle décrit.
@@ -97,11 +97,11 @@ layout: section
 ---
 
 
-# 🤖 Les Mocks
+## 🤖 Les Mocks
 
 ---
 
-## 🤖 Les mocks
+### 🤖 Les mocks
 
 - 🏗️ Une bonne conception objet permet de séparer la logique métier des dépendances techniques.
   - ✅ Par exemple par usage massif de délégation
@@ -116,7 +116,7 @@ layout: section
 
 ---
 
-## 🤖 Mocks vs stubs
+### 🤖 Mocks vs stubs
 
 On sépare parfois les objets de type Mock en deux types distincts :
 
@@ -134,11 +134,11 @@ layout: section
 ---
 
 
-# ⚠️ Exceptions et gestion des erreurs
+## ⚠️ Exceptions et gestion des erreurs
 
 ---
 
-## ⚠️ Utilisation des exceptions
+### ⚠️ Utilisation des exceptions
 
 - 🔌 Coupe-circuit permettant de gérer des erreurs… exceptionnelles.
 - 📜 Permettent d'obtenir un type d'erreur spécifique au problème et d'ajouter du contexte à l'erreur
@@ -155,7 +155,7 @@ layout: section
 ---
 
 
-# 🔗 Liens
+## 🔗 Liens
 
 - 🌐 Pour aller plus loin : [Lien vers Developpez.com](https://java.developpez.com/tutoriels/programmation-orientee-objet/principes-avances/)
 ---

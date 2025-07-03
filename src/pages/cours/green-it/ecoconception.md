@@ -7,11 +7,11 @@ tags:
 - dette-technique
 ---
 
-# Bonnes pratiques générales
+## Bonnes pratiques générales
 
 ---
 
-## Gestion de projet
+### Gestion de projet
 
 - Penser l'écoconception dès le début du projet
 - À suivre et faire évoluer pendant tout le cycle de vie du projet et du produit
@@ -20,7 +20,7 @@ tags:
 
 ---
 
-## Ne pas ajouter de fonctionnalités inutiles
+### Ne pas ajouter de fonctionnalités inutiles
 
 - Éliminer les fonctionnalités non essentielles ;
 - Quantifier précisément le besoin ;
@@ -33,7 +33,7 @@ tags:
 
 ---
 
-## Mettre en place un plan de “fin de vie”
+### Mettre en place un plan de “fin de vie”
 
 - Prévoir la fin de vie :
   - du code
@@ -44,7 +44,7 @@ tags:
 
 ---
 
-## Limiter la vidéo
+### Limiter la vidéo
 
 - 2023 : streaming vidéo => 300Mt de CO2/an (1% des émissions mondiales)
 - 1/2 de l'impact du trafic aérien civil
@@ -56,7 +56,7 @@ tags:
 
 ---
 
-## Utiliser des patterns performants et efficients
+### Utiliser des patterns performants et efficients
 
 - I/O non bloquants : `NodeJS`, `Vert.x`, ...
 - Programmation réactive : `Spring Boot 2`, ...
@@ -64,7 +64,7 @@ tags:
 
 ---
 
-## Utiliser des "circuit breakers"
+### Utiliser des "circuit breakers"
 
 - Permet d'éviter d'appeler encore et encore des composants en erreur.
 - À déployer dans le backend et le frontend, surtout pour les services non critiques.
@@ -74,11 +74,11 @@ tags:
 layout: section
 ---
 
-# Frontend
+## Frontend
 
 ---
 
-## Frontend >> Backend
+### Frontend >> Backend
 
 - Le frontend est utilisé par tous les clients :
   - impact sur le renouvellement des terminaux clients (smartphone, PC, ...)
@@ -87,7 +87,7 @@ layout: section
 
 ---
 
-## Dépendances
+### Dépendances
 
 - Attention à la gestion des dépendances :
   - Frontend : tous les clients doivent les télécharger
@@ -95,7 +95,7 @@ layout: section
 
 ---
 
-## Site statique
+### Site statique
 
 - Utiliser un site statique pour les sites d'information sans input utilisateur
   - ex : <https://gohugo.io/>
@@ -103,14 +103,14 @@ layout: section
 
 ---
 
-## Lazy-loading
+### Lazy-loading
 
 - Utiliser le chargement paresseux (lazy-loading)
 - La ressource ne sera peut-être jamais téléchargée
 
 ---
 
-## UX fluide
+### UX fluide
 
 ![Screenshot application capitaine train](https://jaimelesstartups.b-cdn.net/wp-content/uploads/2011/07/bar.jpg.webp)
 
@@ -118,7 +118,7 @@ layout: section
 
 ---
 
-## Alternative texte
+### Alternative texte
 
 - Fournir une alternative texte brut à la vidéo ou aux formats binaires
   - Accessibilité
@@ -127,14 +127,14 @@ layout: section
 
 ---
 
-## Autoplay, autoload
+### Autoplay, autoload
 
 - Éviter de lancer automatiquement des contenus (vidéo, ...) sauf à la demande de l'utilisateur
 - Ne pas charger tout le site / toute la page tant que l'utilisateur n'accède pas au contenu
 
 ---
 
-## Limiter les clients lourds
+### Limiter les clients lourds
 
 - Utiliser du code `JavaScript` avec parcimonie
 - Utiliser du code peu gourmand en ressources
@@ -144,7 +144,7 @@ layout: section
 
 ---
 
-## Supporter d'anciens modèles clients
+### Supporter d'anciens modèles clients
 
 - Formats de fichiers non supportés
 - Technologies récentes imposées
@@ -153,7 +153,7 @@ layout: section
 
 ---
 
-## HTTP/2
+### HTTP/2
 
 - 1 connexion pour plusieurs requêtes
   - Plus économe en bande passante
@@ -186,14 +186,14 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 
 ---
 
-## CDN
+### CDN
 
 - Utiliser des _Content delivery network_
 - Mets à disposition le contenu du frontend depuis un serveur proche du client
 
 ---
 
-## Cache du navigateur
+### Cache du navigateur
 
 - headers `Expires` et `CacheControl`
 - `ETags`
@@ -202,20 +202,20 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 
 ---
 
-## Polices
+### Polices
 
 - Utiliser des polices standard installées par défaut sur tous les terminaux
 
 ---
 
-## Images
+### Images
 
 - Voir le [cours sur l'accessibilité][site-perso].
 - [Préférer les CSS aux images (voir règle 23 du référentiel 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0023-preferer-les-css-aux-images.mdx)
 
 ---
 
-## Éviter les transferts inutiles
+### Éviter les transferts inutiles
 
 - La librairie [flamethrower](https://github.com/fireship-io/flamethrower) permet recharger uniquement les parties changeant d'une page à l'autre.
   - transforme un site statique en Single Page Application (SPA).
@@ -224,18 +224,18 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 layout: section
 ---
 
-# Backend
+## Backend
 
 ---
 
-## Choisir son langage
+### Choisir son langage
 
 - Éviter `Python` : 76x plus d'énergie que le `C`…
 - …mais au final peu impactant
 
 ---
 
-## Gérer le cache des données côté Backend
+### Gérer le cache des données côté Backend
 
 - Données de session utilisateur
 - Requêtes à la base de données
@@ -243,7 +243,7 @@ layout: section
 
 ---
 
-## Mutualisation
+### Mutualisation
 
 - Machine virtuelle / Docker pour déploiements mutualisés
 - Attention : cloud == green n'est pas automatique
@@ -251,26 +251,26 @@ layout: section
 
 ---
 
-## Mise à jour
+### Mise à jour
 
 - Les langages et framework deviennent de plus en plus performants et frugaux en énergie
 - Passer à la dernière version de `Node.js`, `Java`, ...
 
 ---
 
-## Compression les données échangées
+### Compression les données échangées
 
 - Voir [la règle dédiée (78) des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0078-compresser-les-fichiers-css-javascript-html-et-svg.mdx)
 
 ---
 
-## Désactiver les logs binaires en BDD
+### Désactiver les logs binaires en BDD
 
 - Voir [la règle dédiée (106) des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0106-desactiver-les-logs-binaires.mdx)
 
 ---
 
-## Proximité géographique
+### Proximité géographique
 
 - `CDN` pour frontend
 - Utiliser également un backend proche des clients :
@@ -279,7 +279,7 @@ layout: section
 
 ---
 
-## Choisir son hébergeur
+### Choisir son hébergeur
 
 - `ISO 14001` : prise en compte des problématiques écologiques
 - `ISO 50001` : Bonne gestion de l'énergie
@@ -293,11 +293,11 @@ layout: section
 layout: section
 ---
 
-# Gains transverses
+## Gains transverses
 
 ---
 
-## Accessibilité
+### Accessibilité
 
 - _Mobile-first_
 - Limite la fracture numérique
@@ -307,21 +307,21 @@ layout: section
 
 ---
 
-## Performance
+### Performance
 
 - Application légère
 - Consommation de ressources limitées
 
 ---
 
-## Maintenance
+### Maintenance
 
 - Limiter les fonctionnalités
 - Code clean facile à maintenir
 
 ---
 
-## Sécurité
+### Sécurité
 
 - Pas de dépendances inutiles
 - Limite la couverture d'attaques
@@ -330,11 +330,11 @@ layout: section
 layout: section
 ---
 
-# Points à surveiller
+## Points à surveiller
 
 ---
 
-## Cryptomonnaies
+### Cryptomonnaies
 
 - Gros impact : très énergivore et beaucoup de matériel performant.
 - Grosses différences d'impact suivant : type de cryptomonnaies et pays d'émission de l'électricité.
@@ -345,7 +345,7 @@ layout: section
 
 ---
 
-## Intelligence Artificielle
+### Intelligence Artificielle
 
 - Entraînement d'IA : calculs x300 000 depuis 2012 [source : OpenAI](https://openai.com/index/ai-and-compute/)
 - 1 version de `BERT` (modèle de langage de `Google`) : 652 kg CO2e. Modèle complet : 300t CO2. [source : Timnit Gebru (google)](https://www.technologyreview.com/2020/12/04/1013294/google-ai-ethics-research-paper-forced-out-timnit-gebru/)
@@ -355,14 +355,14 @@ layout: section
 
 ---
 
-## Bloquer la publicité
+### Bloquer la publicité
 
 - Génératrice de nombreux flux vidéo
 - Exemple : utiliser des filtres `DNS` [comme dans ce wiki (sebsauvage.net)](https://sebsauvage.net/wiki/doku.php?id=dns-blocklist)
 
 ---
 
-## E-Mails
+### E-Mails
 
 - Limiter la taille des pièces jointes
   - sinon souvent téléchargé automatiquement
@@ -374,7 +374,7 @@ layout: section
 
 ---
 
-## Stockage de documents
+### Stockage de documents
 
 - Privilégier des serveurs de stockage proches géographiquement
 - Ne pas archiver ce qui est inutile
@@ -382,7 +382,7 @@ layout: section
 
 ---
 
-## Exemples à ne pas reproduire
+### Exemples à ne pas reproduire
 
 - Ancienne page d'accueil airbnb : 170 requêtes au backend
 - Microsoft Word :
@@ -391,7 +391,7 @@ layout: section
 
 ---
 
-## Exemples à reproduire
+### Exemples à reproduire
 
 - Voyage sur la Lune : 72Ko RAM et Stockage
 - `Bing` : -20% d'éléments affichés => -80% de charge serveur
@@ -408,13 +408,11 @@ layout: section
 layout: section
 ---
 
-# Ressources utiles
+## Ressources
 
 ---
 
-<!-- class: liens -->
-
-## Éco-conception (général)
+### Éco-conception (général)
 
 - <https://github.com/you-dont-need/You-Dont-Need>
 - [Conférence GreenIT, Agile & Craftsmanship, M. GUILLIOT & R. LEMAIRE, Agile Tour Montpellier 2022 (vidéo youtube)](https://www.youtube.com/watch?v=FCLi5pJXiJA)
@@ -422,7 +420,7 @@ layout: section
 
 ---
 
-## Développement Web et mobile
+### Développement Web et mobile
 
 - [W3 : Web Sustainability Guidelines](https://www.w3.org/community/sustyweb/2023/09/07/web-sustainability-guidelines/)
 - <https://github.com/cnumr/best-practices-mobile>
@@ -436,14 +434,14 @@ layout: section
 
 ---
 
-## Outils
+### Outils
 
 - <https://ecoresponsable.numerique.gouv.fr/publications/boite-outils/>
 - [NumEcoDiag : Outil et extension navigateur d'évaluation d'écoconception (ecoresponsable.numerique.gouv.fr)](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/numecodiag/)
 
 ---
 
-### Outils Backend
+#### Outils Backend
 
 - Librairies Python `Carbontracker` et `Experiment impact tracker` (consommation serveurs)
 - <https://www.green-algorithms.org/>
@@ -455,7 +453,7 @@ layout: section
 
 ---
 
-### Outils Frontend
+#### Outils Frontend
 
 - `Lighthouse` (`Chrome dev tools`)
 - `Android Studio` (compatibilité anciens terminaux)
@@ -466,4 +464,6 @@ layout: section
   - <https://kastor.green/>
 - Calculer le "bloat score" d'un site web : <https://www.webbloatscore.com/>
 - Calcul de performance d'un site web : <https://gtmetrix.com/>
+
+---
 

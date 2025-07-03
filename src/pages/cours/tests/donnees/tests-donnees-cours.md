@@ -1,14 +1,12 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/SlideLayout.astro'
-title: Cours de Tests de données
+title: Tests de données
 tags:
 - integration
 - data
 - tests
 ---
-
-# Tests de données
 
 - Comment tester l'intégration de données ?
 - Comment réussir sa migration de données ?
@@ -16,11 +14,7 @@ tags:
 
 ---
 
-# Tests d'intégration des données
-
----
-
-# Intégration de données
+## Intégration de données
 
 L'intégration des données consiste à combiner les données résidant sur différentes sources afin que les utilisateurs puissent en obtenir une vue unifiée.
 
@@ -28,7 +22,7 @@ Les tests d'intégration de données correspondent donc à l'ensemble des scéna
 
 ---
 
-# Automatisation des tests d'intégration de données
+## Automatisation des tests d'intégration de données
 
 Afin d'augmenter la qualité des données testées, il est intéressant d'automatiser ces tests, (voir les avantages et risques décrits précédemment)
 
@@ -39,7 +33,7 @@ La stratégie d'automatisation peut suivre:
 
 ---
 
-# Utiliser des données de production
+### Utiliser des données de production
 
 Cette approche a l'avantage de demander peu d'investissement quand on peut s'appuyer sur les outils de sauvegarde et de rechargement déjà en place. Elle présente cependant certains inconvénients :
 Confidentialité : utiliser des données client est risqué, voir interdit par la réglementation (`GDPR`, ...)
@@ -47,7 +41,7 @@ Les données peuvent ne pas exister encore (nouvelle fonctionnalité, changement
 
 ---
 
-# Utiliser des données de référence
+### Utiliser des données de référence
 
 Les tests d'intégration ont vocation à être exécutés lors de chaque modification du système. Pour certifier leur répétabilité et faciliter leur cohérence, on utilise un jeu réduit de données communes, proches de données réelles en production.
 
@@ -74,7 +68,7 @@ Exemple de générateur : <https://gitlab.com/healthdatahub/synthetic-generator>
 
 ---
 
-# Gestion des données de tests
+### Gestion des données de tests
 
 Maintenir ces données présente un coût. Il peut être pertinent de développer des outils permettant d'extraire des données de la production et de les anonymiser afin d'en faire des données de référence.
 
@@ -82,11 +76,11 @@ Le processus de réinitialisation des données  : il est nécessaire de pouvoir 
 
 ---
 
-# Tests de migration des données
+## Tests de migration des données
 
 ---
 
-# Migration de données
+### Migration de données
 
 La migration des données consiste à :
 
@@ -112,7 +106,7 @@ Une migration peut être initiale (à la mise en production) ou quotidienne (mig
 
 ---
 
-# Réaliser la migration
+### Réaliser la migration
 
 Exemple de processus de migration :
 
@@ -129,7 +123,7 @@ Exemple de processus de migration :
 
 ---
 
-# Définir les échéances
+### Définir les échéances
 
 Une fois la migration définie, l'étape suivante consiste à définir les échanges :
 
@@ -144,7 +138,7 @@ Ainsi que la temporalité :
 
 ---
 
-# Tableau de mapping
+### Tableau de mapping
 
 On pourra représenter la migration à l'aide d'un tableau de mapping source et données.
 
@@ -153,7 +147,7 @@ Il peut s'agir d'un document simple dans le cas de données simples et/ou maîtr
 
 ---
 
-# Suivi de l'intégrité
+### Suivi de l'intégrité
 
 Pour réaliser le suivi de l'intégrité de la migration, on pourra s'aider de la section correspondante dans le manuel d'exploitation.
 
@@ -169,7 +163,7 @@ Voir le [cours sur le document d'exploitation][site-perso].
 
 ---
 
-# Importance des tests de migration et de validation
+### Importance des tests de migration et de validation
 
 Les tests de migration et de validation sont primordiaux : comme tous les tests, ceux-ci doivent donc être budgétisés, et inclure une gestion des risques associés.
 
@@ -177,7 +171,7 @@ Les scénarios de migration ne doivent pas décrire la migration de manière abs
 
 ---
 
-# Les points à surveiller
+### Les points à surveiller
 
 - Absence d'informations : informer les parties prenantes, expliquer les raisons de la migration et son impact.
 - Absence de communication : Maintenir les parties prenantes informées de l'avancement des opérations : rapport d'état hebdomadaire à jour fixe, ...
@@ -193,11 +187,11 @@ Les scénarios de migration ne doivent pas décrire la migration de manière abs
 
 ---
 
-# Tests de reprise de données
+## Tests de reprise de données
 
 ---
 
-# La reprise de données
+### La reprise de données
 
 La reprise des données est la phase qui consiste à récupérer un ensemble de données existantes pour les importer dans un nouveau logiciel.
 
@@ -210,7 +204,7 @@ La reprise de données peut s'exécuter :
 
 ---
 
-# Préparation de la reprise de données
+### Préparation de la reprise de données
 
 Avant de pouvoir exécuter la reprise de données, il est nécessaire de la préparer :
 
@@ -220,7 +214,7 @@ Avant de pouvoir exécuter la reprise de données, il est nécessaire de la pré
 
 ---
 
-# Les outils ETL
+### Les outils ETL
 
 Un `ETL` est un middleware permettant d'effectuer des synchronisations de données entre différents systèmes.
 
@@ -236,7 +230,7 @@ La technologie `ETL` repose sur :
 
 ---
 
-# Avantages d'un ETL
+### Avantages d'un ETL
 
 - Dispose de connecteurs bdd, webservices et fichiers plats prêts à l'emploi.
 - Permet de structurer et rassembler l'ensemble des morceaux de code nécessaires aux transferts et aux transformations des données.
@@ -255,14 +249,14 @@ La technologie `ETL` repose sur :
 
 ---
 
-# Inconvénients d'un ETL
+### Inconvénients d'un ETL
 
 - Nécessite un ou plusieurs développeurs avec des connaissances sur l'outil d'`ETL` utilisé ou nécessite un temps d'apprentissage.
 - Est difficilement intégrable à un outil de gestion de versions.
 
 ---
 
-# Approche scriptée
+### Approche scriptée
 
 L'approche scriptée consiste à développer le ou les outils nécessaires à la mise en place d'un traitement `ETL`, à l'aide d'un ou plusieurs langages de programmation.
 
@@ -272,7 +266,7 @@ Il peut aussi s'agir d'un outil technique lié au langage de l'application.
 
 ---
 
-# Avantages de l'approche scriptée
+#### Avantages de l'approche scriptée
 
 - Homogénéité technologique avec les solutions déjà en place au niveau du SI.
 - Utiliser les langages que les équipes maîtrisent déjà, sans apprentissage et médiation d'un outil tiers.
@@ -281,7 +275,7 @@ Il peut aussi s'agir d'un outil technique lié au langage de l'application.
 
 ---
 
-# Inconvénients de l'approche scriptée
+#### Inconvénients de l'approche scriptée
 
 - Nécessite de tout développer.
 - Impose de nombreuses modifications lors d'une modification au niveau de la source, du contenu ou de la destination.
@@ -289,4 +283,6 @@ Il peut aussi s'agir d'un outil technique lié au langage de l'application.
 - Nécessite l'utilisation d'un planificateur de tâches externe.
 - Nécessite de tout documenter, au risque de se perdre dans le code produit.
 - Peut être éparpillé sur plusieurs serveurs.
+
+---
 

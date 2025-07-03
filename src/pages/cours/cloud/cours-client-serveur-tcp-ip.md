@@ -7,7 +7,7 @@ tags:
 - client-server
 ---
 
-# Compétences à acquérir
+## Compétences à acquérir
 
 - Connaître le modèle Client/Serveur
 - Avoir des notions de conception d'applications Client/Serveur
@@ -15,20 +15,12 @@ tags:
 - Savoir mettre en place les services associés sous Linux et sous Windows
 
 ---
-layout: section
----
 
-# Partie I : Architecture Client/Serveur
-
----
-layout: section
----
-
-# Partie II : Les modes de communication entre processus
+## Les modes de communication entre processus
 
 ---
 
-# Communication entre processus : `IPC`
+### Communication entre processus : `IPC`
 
 Dans un système d'exploitation moderne :
 
@@ -47,7 +39,7 @@ Les mécanismes de communication inter-processus peuvent être classés en trois
 
 ---
 
-# Echange de données
+### Echange de données
 
 Les données peuvent être échangées :
 
@@ -59,11 +51,11 @@ Problème des sections critiques : **non concurrence des modifications** ! (inco
 
 ---
 
-# Exemple d'échange de données père/fils (voir annexe)
+### Exemple d'échange de données père/fils (voir annexe)
 
 ---
 
-# Synchronisation
+### Synchronisation
 
 Permet de résoudre les problèmes de sections critiques en bloquant / débloquant les accès :
 
@@ -85,7 +77,7 @@ Utiliser des algorithmes éprouvés :
 
 ---
 
-# Échange de données et synchronisation
+### Échange de données et synchronisation
 
 Meilleur des deux mondes, plus simples à utiliser (mais coûteux).
 
@@ -96,7 +88,7 @@ Les opérations d'écriture et de lecture dans la file sont **bloquantes** et pe
 
 ---
 
-# Exemple de transfert de valeur père/fils
+### Exemple de transfert de valeur père/fils
 
 Exemple de programme qui saisit une valeur x au clavier dans le processus père, et transmet le sinus de ce nombre, en tant que double au processus fils.
 
@@ -148,7 +140,7 @@ D'une manière générale, l'adresse d'une variable peut toujours être considé
 
 ---
 
-# Exemple d'utilisation de pipe anonyme
+### Exemple d'utilisation de pipe anonyme
 
 ```c
 #include <stdio.h>
@@ -197,7 +189,7 @@ int main(void)
 
 ---
 
-# Exemple de pipe nommé
+### Exemple de pipe nommé
 
 Exemple de pipe nommé (passe par un fichier sur disque) pour transmettre le mot `coucou` : les processus n'ont pas besoin de lien de parenté.
 
@@ -252,7 +244,7 @@ int main()
 
 ---
 
-# Les socket `TCP/IP`
+### Les socket `TCP/IP`
 
 Une socket est un flux de communication entre deux objets `Client` et `Serveur`.
 
@@ -321,7 +313,7 @@ print repr(data), 'Reçue'
 
 ---
 
-# Les serveurs multi-protocoles 
+### Les serveurs multi-protocoles 
 
 Un serveur peut fournir le même service sur plusieurs protocoles.
 
@@ -331,7 +323,7 @@ Permet de ne pas rationaliser les ressources du code métier : un seul déploiem
 
 ---
 
-# Les serveurs multi-services
+### Les serveurs multi-services
 
 Un serveur peut fournir plusieurs services sur des socket séparées.
 
@@ -343,7 +335,7 @@ Par exemple : serveur mail `POP` + `IMAP`
 
 ---
 
-# Les appels de procédures distantes : `RPC`
+### Les appels de procédures distantes : `RPC`
 
 `RPC` (remote procedure call) est un protocole réseau permettant de faire des appels de procédures sur un ordinateur distant à l'aide d'un serveur d'applications.
 
@@ -365,11 +357,11 @@ Il existe beaucoup d'implémentations (incompatibles) de `RPC`.
 layout: section
 ---
 
-# Applications client/serveur sur `TCP/IP`
+## Applications client/serveur sur `TCP/IP`
 
 ---
 
-# Généralités
+### Généralités
 
 La plupart des protocoles applicatifs sur `TCP/IP` sont des protocoles apparus au début d'Internet.
 Les besoins de sécurité ayant évolué, beaucoup de ces services sont aujourd'hui disponibles en version sécurisée, la plupart du temps encapsulés dans une connexion `SSL` (Secure Socket Layer) ou `TLS` (Transport Layer Security).
@@ -378,11 +370,11 @@ Lorsqu'une version sécurisée est disponible, un `S` est ajouté à la fin du n
 
 ---
 
-# Connexions à distance
+### Connexions à distance
 
 ---
 
-## telnet [TCP]
+#### telnet [TCP]
 
 `telnet` (terminal network ou telecommunication network ou teletype network) :
 
@@ -395,7 +387,7 @@ Permet d'établir une connexion `TCP` interactive avec d'autres services tels qu
 
 ---
 
-## rlogin [TCP 513]
+#### rlogin [TCP 513]
 
 - Commande Unix permettant d'ouvrir une session en ligne de commandes sur une machine distante.
 - idem `telnet` : préférer `ssh` plus sécurisé et ayant plus de fonctionnalités
@@ -406,7 +398,7 @@ $ rlogin <machine distante> -l <nom de l'utilisateur>
 
 ---
 
-## ssh [TCP 22]
+#### ssh [TCP 22]
 
 `ssh` (Secure SHell) est un protocole de communication sécurisé conçu pour remplacer les différents protocoles non chiffrés comme `rlogin`, `telnet`, `rcp` et `rsh`.
 
@@ -421,7 +413,7 @@ $ rlogin <machine distante> -l <nom de l'utilisateur>
 
 ---
 
-## X11
+#### X11
 
 `X`, `X Window`, `X11` est un protocole de système de fenêtrage qui permet de tourner des applications graphiques et gère les périphériques d'entrée (clavier, souris, ...).
 
@@ -438,11 +430,11 @@ Le client est simplement l'application logicielle (jeu, traitement de texte, cal
 
 ---
 
-# Transfert de fichiers
+### Transfert de fichiers
 
 ---
 
-## SCP
+#### SCP
 
 `scp` (Secure copy) :
 
@@ -459,7 +451,7 @@ $ scp utilisateur@serveur:Repertoire/FichierSource FichierCible # Download
 
 ---
 
-## FTP [TCP commandes:21 / données:20(actif) ou aléatoire (passif)]
+#### FTP [TCP commandes:21 / données:20(actif) ou aléatoire (passif)]
 
 FTP (File Transfer Protocol) est un protocole de communication client-serveur destiné au partage de fichiers sur un réseau `TCP/IP`.
 
@@ -473,7 +465,7 @@ Le protocole utilise deux types de connexions `TCP` :
 
 ---
 
-## FTPS [explicite:21 / implicite:990+989]
+#### FTPS [explicite:21 / implicite:990+989]
 
 `ftps` est la version sécurisée du protocole FTP qui peut utiliser un chiffrement explicite ou implicite :
 
@@ -482,7 +474,7 @@ Le protocole utilise deux types de connexions `TCP` :
 
  ---
 
-## SFTP [TCP 22]
+#### SFTP [TCP 22]
 
 `sftp` (SSH FTP ou Secured FTP) est une autre version sécurisée de `FTP` qui utilise une encapsulation `ssh`.
 
@@ -490,7 +482,7 @@ Le protocole utilise deux types de connexions `TCP` :
 
 ---
 
-## TFTP [UDP 69 (transport)]
+#### TFTP [UDP 69 (transport)]
 
 `TFTP` (Trivial File Transfer Protocol) est une simplification du protocole `FTP` :
 
@@ -507,7 +499,7 @@ Aucune notion de droits de lecture/écriture n'est disponible en standard.
 
 ---
 
-## NFS [UDP <= NFSv3 / `TCP` ou autres >= NFSv4]
+#### NFS [UDP <= NFSv3 / `TCP` ou autres >= NFSv4]
 
 `NFS` (Network File System) est un protocole qui permet à un ordinateur d'accéder via un réseau à des fichiers distants en montant localement sur un client le système de fichiers distants du serveur.
 
@@ -519,7 +511,7 @@ Les dernières versions de `NFS` proposent des opérations puissantes de gestion
 
 ---
 
-## SMB [TCP 445 / NetBIOS 139]
+#### SMB [TCP 445 / NetBIOS 139]
 
 Le protocole `SMB` (Server Message Block), autrefois `CIFS`, est un protocole permettant le partage de ressources (fichiers et imprimantes) sous Windows. Une implémentation libre `Samba` existe pour la plupart des OS.
 
@@ -535,11 +527,11 @@ Les ressources partagées sont accessibles à partir d'une adresse utilisant la 
 
 ---
 
-# Gestion d'utilisateurs distants
+### Gestion d'utilisateurs distants
 
 ---
 
-## NIS
+#### NIS
 
 `NIS` (Network Information Service), ou `Yellow Pages` est un protocole client serveur permettant la centralisation d'informations sur un réseau UNIX.
 
@@ -554,11 +546,11 @@ Le client récupère les informations en interrogeant le serveur à partir d'app
 
 ---
 
-# Le courrier électronique
+### Le courrier électronique
 
 ---
 
-## POP(S) [TCP 110 / S:995]
+#### POP(S) [TCP 110 / S:995]
 
 Le protocole `POP3` (Post Office Protocol), permet de récupérer les mails situés sur un serveur de messagerie électronique.
 
@@ -574,7 +566,7 @@ L'envoi de mails se fait en général en utilisant `SMTP`.
 
 ---
 
-## IMAP(S) [TCP 143 / S:993]
+#### IMAP(S) [TCP 143 / S:993]
 
 `IMAP` (Internet Message Access Protocol), est un protocole qui permet d'accéder à ses courriers électroniques directement sur les serveurs de messagerie.
 
@@ -590,7 +582,7 @@ L'envoi de mails se fait en général en utilisant `SMTP`.
 
 ---
 
-## SMTP(S) [TCP 25 / implicite:465  / explicite:587]
+#### SMTP(S) [TCP 25 / implicite:465  / explicite:587]
 
 `SMTP` (Simple Mail Transfer Protocol) est un protocole de communication utilisé pour envoyer un courrier électronique d'un client vers les serveurs de messagerie électronique.
 
@@ -600,7 +592,7 @@ Le protocole assez simple : on commence par spécifier l'expéditeur du message,
 
 ---
 
-## Webmail
+#### Webmail
 
 Une messagerie Web (Webmail) est une interface web rendant possible l’émission, la consultation et la manipulation de courriers électroniques directement sur le Web depuis un navigateur.
 
@@ -614,11 +606,11 @@ Cependant, les courriers électroniques ne sont alors plus accessibles en local.
 
 ---
 
-# Un annuaire fédérateur
+### Un annuaire fédérateur
 
 ---
 
-## LDAP(S) [TCP 389 / S:636]
+#### LDAP(S) [TCP 389 / S:636]
 
 `LDAP` (Lightweight Directory Access Protocol) est une norme pour les systèmes d'annuaires, incluant un modèle de données, un modèle de nommage, un protocole, un modèle de sécurité et un modèle de réplication.
 
@@ -650,11 +642,11 @@ cn=ordinateur       cn=Jean
 
 ---
 
-# L'administration de réseaux
+### L'administration de réseaux
 
 ---
 
-## SNMP [UDP 161 / 162]
+#### SNMP [UDP 161 / 162]
 
 `SNMP` (Simple Network Management Protocol) est un protocole de communication qui permet de gérer les équipements du réseau, de superviser et de diagnostiquer des problèmes réseaux et matériels à distance : commutateurs, concentrateurs, routeurs, postes de travail, serveurs physiques ou virtuels, ...
 
@@ -667,14 +659,16 @@ Les objets `SNMP` contenus dans les nœuds peuvent être des informations matér
 `SNMP` est très utilisé et de nombreux outils l'intègrent pour effectuer de la surveillance et maintenance applicative et matérielle : `Zabix`, `Nagios`, ...
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens
+## Ressources
 
 - [Programmation de sockets][developpez-sockets]
 - [Synchronisation de processus - cours sur les moniteurs (_Samia Bouzefrane, CNAM_)][cours-moniteurs]
 
 [developpez-sockets]: https://laissus.developpez.com/tutoriels/cours-introduction-tcp-ip/?page=page_13
 [cours-moniteurs]: http://deptinfo.cnam.fr/new/spip.php?pdoc4762
+
+---
 

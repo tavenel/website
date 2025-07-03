@@ -18,7 +18,7 @@ Module de 21H
 
 ## 📑 Documents
 
-## Liens
+## Ressources
 
 - Voir les autres ressources du [cours sur le devops](/cours/devops).
 - Intégration continue et déploiement continu : voir le [cours CI/CD](/cours/ci)

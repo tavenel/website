@@ -7,7 +7,7 @@ tags:
 - gestion_projet
 ---
 
-# Un avantage ou un inconvénient
+## Un avantage ou un inconvénient
 
 - équipes monoculturelles :
   + efficacité moyenne
@@ -19,7 +19,7 @@ tags:
 layout: section
 ---
 
-# Partie I : Différentes cultures
+## Différentes cultures
 
 ---
 
@@ -38,8 +38,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-
-# Invididu != culture
+### Invididu != culture
 
 - Notre culture nous apporte un cadre de valeurs, de préjugés et des codes sociaux...
 - ...mais attention à l'amalgame individu == culture !
@@ -47,7 +46,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-# Problème de maîtrise de la langue (vocabulaire, ...)
+### Problème de maîtrise de la langue (vocabulaire, ...)
 
 - difficulté à se comprendre sur les points techniques
 - difficulté à créer des relations professionnelles
@@ -57,7 +56,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-# Différentes manières de communiquer
+### Différentes manières de communiquer
 
 - Dire "non" est très différent d'une culture à une autre !
   + frontal dans certaines cultures
@@ -66,7 +65,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-# Différents modèles positifs
+### Différents modèles positifs
 
 - L'âge ou l'ancienneté est parfois un statut.
 - Un même comportement peut être compris très différemment :
@@ -75,7 +74,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-# Différentes cultures dans une même nation
+### Différentes cultures dans une même nation
 
 - Une nation mélange souvent beaucoup de cultures différentes :
   + culture liée à la région ;
@@ -85,13 +84,13 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-# Biais culturel de compréhension
+### Biais culturel de compréhension
 
 - Visions multiples d'une même réalité ou situation dues aux préjugés culturels
 
 ---
 
-# Différents contextes
+### Différents contextes
 
 - Cultures haut contexte :
   + Relations sociales étroitement liées avec un rôle prédéfini par la société ;
@@ -115,7 +114,7 @@ La culture est partagée par un groupe de personnes et apprise dans la société
 
 ---
 
-# Différentes visions du temps
+### Différentes visions du temps
 
 - Cultures monochroniques :
   + Temps compté, valorisé et segmenté ;
@@ -147,7 +146,7 @@ _D'après Chevrier, 2003; Hall & Hall, 1990_
 
 ---
 
-# Chacun sa place
+### Chacun sa place
 
 - Cultures latines : toute personne peut entrer dans l'espace personnel (poignée de main, ...).
 - Cultures Sud-Est asiatique : espace intime toléré.
@@ -155,14 +154,14 @@ _D'après Chevrier, 2003; Hall & Hall, 1990_
 
 ---
 
-# Équipe biculturelle vs multiculturelle
+### Équipe biculturelle vs multiculturelle
 
 - Équipe biculturelle : une des parties finit par imposer sa langue, ses modes de travail, et ses idées.
 - Privilégier un cadre multiculturel plus complexe.
 
 ---
 
-# Rappel : individu != culture
+### Rappel : individu != culture
 
 - Un individu est la somme de nombreuses cultures et expériences de vie
 - Comprendre la culture pour comprendre les codes sociaux est important
@@ -171,11 +170,11 @@ _D'après Chevrier, 2003; Hall & Hall, 1990_
 layout: section
 ---
 
-# Partie II : Gérer une équipe multiculturelle
+## Gérer une équipe multiculturelle
 
 ---
 
-# Des enjeux spécifiques
+### Des enjeux spécifiques
 
 _Joseph Aoun (2004)_ :
 
@@ -188,7 +187,7 @@ _Joseph Aoun (2004)_ :
 
 ---
 
-# Mettre en place une vraie politique RH de gestion de la diversité
+### Mettre en place une vraie politique RH de gestion de la diversité
 
 - Faire en sorte que les salariés ou futurs employés aient eu les mêmes opportunités et ont été traités de la même manière en se basant **uniquement sur leurs compétences**.
 - Cadre légal pouvant amener à des sanctions :
@@ -196,7 +195,7 @@ _Joseph Aoun (2004)_ :
 
 ---
 
-# Etablir des valeurs communes
+### Etablir des valeurs communes
 
 - Questionner, écouter et reconnaître chacun des membres de l'équipe pour comprendre quel est son cadre de perception, ses repères, ses normes et ses valeurs.
   + Comment aborder et comprendre les situations, les enjeux, les priorités, les relations ?
@@ -204,7 +203,7 @@ _Joseph Aoun (2004)_ :
 
 ---
 
-# Fixer des objectifs
+### Fixer des objectifs
 
 - Des objectifs partagés, compris de tous, formellement acceptés et cohérents avec les valeurs et objectifs individuels.
   + Ne pas demander à quelqu'un de s'engager dans une action qui va à l'encontre de ses croyances ou de ses convictions profondes.
@@ -212,7 +211,7 @@ _Joseph Aoun (2004)_ :
 
 ---
 
-# Poser des accords fondamentaux
+### Poser des accords fondamentaux
 
 Équipe multiculturelle :
 
@@ -222,7 +221,7 @@ _Joseph Aoun (2004)_ :
 
 ---
 
-# Insister pour que chacun s'exprime
+### Insister pour que chacun s'exprime
 
 - Sans peur d'être jugé ;
 - Sans se fondre dans l'avis du plus grand nombre.
@@ -231,7 +230,7 @@ Voir notamment les techniques dérivées des pratiques agiles : bâtons de parol
 
 ---
 
-# Se former aux compétences nécessaires
+### Se former aux compétences nécessaires
 
 [_Les défis du gestionnaire de projet en équipe multiculturelle, Sanaa Achaibi_](https://semaphore.uqar.ca/id/eprint/872/1/Sanaa_Achaibi_mai2012.pdf) :
 
@@ -259,7 +258,7 @@ Voir notamment les techniques dérivées des pratiques agiles : bâtons de parol
 
 ---
 
-# Différents styles culturels 
+### Différents styles culturels 
 
 - Nord-Américain
 - Latino-Américain
@@ -271,17 +270,19 @@ Voir notamment les techniques dérivées des pratiques agiles : bâtons de parol
 
 ---
 
-# Quelques retours d'études
+### Quelques retours d'études
 
 - [Tableau synoptique des études empiriques portant sur l'impact de la diversité culturelle sur les processus interpersonnels, in Le fonctionnement des équipes interculturelles, Désiré Loth, Management & Avenir 2009/8](https://www.cairn.info/loadimg.php?FILE=MAV/MAV_028/MAV_028_0326/MAV_idPAS_D_ISBN_pu2009-08s_sa22_art22_img003.jpg)
 - [Tableau synoptique des études empiriques portant sur l'impact de la diversité culturelle sur les processus de la réalisation des taches, in Le fonctionnement des équipes interculturelles, Désiré Loth, Management & Avenir 2009/8](https://www.cairn.info/loadimg.php?FILE=MAV/MAV_028/MAV_028_0326/MAV_idPAS_D_ISBN_pu2009-08s_sa22_art22_img002.jpg)
 - Vivre dans un monde multiculturel, Geert HOFSTEDE, 1994
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens
+## Ressources
 
 Pour toute question légale ou besoin d'aide : <https://www.defenseurdesdroits.fr/>
+
+---
 

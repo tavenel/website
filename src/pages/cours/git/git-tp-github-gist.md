@@ -45,12 +45,12 @@ Les _Gist_ sont très facilement intégrables dans des scripts puisqu'il suffit 
 
 Créer un script permettant de cloner le Gist précédent (par exemple en utilisant `curl`).
 
-## Liens
+## Ressources
 
 - [Documentation Gist](https://docs.github.com/fr/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
 - Pour parcourir les Gist publiques : <https://gist.github.com>
 
-# Legal
+## Legal
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

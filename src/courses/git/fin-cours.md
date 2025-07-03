@@ -278,11 +278,11 @@ layout: section
 layout: section
 ---
 
-# Liens
+## Ressources
 
 ---
 
-## Cours
+### Cours
 
 - Livre officiel et gratuit : <https://git-scm.com/book/>
 - [Exercices interactifs en ligne][learn-git-branch]
@@ -298,7 +298,7 @@ layout: section
 
 ---
 
-## Merge et Rebase
+### Merge et Rebase
 
 - Exemple de repo avec un conflit de merge à gérer : <https://github.com/redguardtoo/test-git-mergetool>
 - <https://alchemists.io/articles/git_rebase>
@@ -308,7 +308,7 @@ layout: section
 
 ---
 
-## Workflows
+### Workflows
 
 - [Tutoriels en ligne Git et workflows tous niveaux][atlassian-tutos]
 - [Comparaisons des principaux workflows Git][atlassian-workflows]
@@ -316,7 +316,7 @@ layout: section
 
 ---
 
-## Versioning sémantique, conventions et bonnes pratiques
+### Versioning sémantique, conventions et bonnes pratiques
 
 - <https://semver.org/> et <https://calver.org/> : Versioning Sémantique
 - <https://www.conventionalcommits.org/en/v1.0.0/> : Convention commune d'écriture de commits
@@ -325,7 +325,7 @@ layout: section
 
 ---
 
-## Git avancé
+### Git avancé
 
 - <https://alchemists.io/articles/git_commit_anatomy>
 - <https://alchemists.io/articles/git_for_each_ref>
@@ -338,7 +338,7 @@ layout: section
 
 ---
 
-## Autres
+### Autres
 
 - <https://blog.gitbutler.com/git-tips-and-tricks/>
 - [Exemple de création d'un nouveau dépôt depuis un dépôt existant][zds-nouveau-depot-existant]
@@ -370,7 +370,7 @@ layout: section
 
 ---
 
-# Legal
+## Legal
 
 - [Git Logo](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg) by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

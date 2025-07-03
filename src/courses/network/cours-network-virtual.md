@@ -1,11 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Technologies de réseaux virtuels
+title: Comparaison des Technologies de Réseau Virtuel - VLAN, SDN, VXLAN, BGP, IPIP
 layout: '@layouts/CoursePartLayout.astro'
----
-
-# Comparaison des Technologies Réseau : VLAN, SDN, VXLAN, BGP, IPIP
-
 ---
 
 ## 1. VLAN (Virtual Local Area Network)

@@ -7,7 +7,7 @@ tags:
 - management
 ---
 
-# Un peu d'histoire... 
+## Un peu d'histoire... 
 
 - Apparition du _taylorisme_ : organisation scientifique du travail
 - Management scientifique pour séparer les tâches et trouver le bon geste pour être le plus efficace possible
@@ -23,7 +23,7 @@ tags:
 
 ---
 
-# Les TC et le travail collaboratif
+## Les TC et le travail collaboratif
 
 - Internet a été créé pour la collaboration
 - Apparition des outils collaboratifs en 80 : mails en interne, agendas partagés..
@@ -33,13 +33,11 @@ tags:
 
 ---
 
-# La dynamique d'action collective
+## La dynamique d'action collective
 
 > Chacun d'eux par lui-même ne peut pas être de bonne qualité ; mais quand ils viennent tous ensemble, il est possible qu'ils puissent surpasser - collectivement et en tant qu'ensemble, mais pas individuellement - la qualité des quelques meilleurs. _Aristote, La Politique. Livre III_
 
 ---
-
-# La dynamique d'action collective
 
 > Se réunir est un début ; rester ensemble est un progrès ; travailler ensemble est la réussite. _Henri Ford_
 
@@ -47,11 +45,11 @@ tags:
 layout: section
 ---
 
-# La gestion et le travail en équipe
+## La gestion et le travail en équipe
 
 ---
 
-## Le partage
+### Le partage
 
 Le partage est la valeur clé du travail collaboratif. Ensemble, les membres de l'équipe partagent :
 
@@ -63,7 +61,7 @@ Le partage est la valeur clé du travail collaboratif. Ensemble, les membres de 
 
 ---
 
-## L'organisation horizontale
+### L'organisation horizontale
 
 Une structure de travail horizontale prend le contrepied du modèle hiérarchique traditionnel, qui repose sur une verticalité dans les rapports de travail, où ce sont la direction et les managers qui prennent les décisions.
 Ces décisions sont ensuite suivies par les collaborateurs dont le niveau hiérarchique est inférieur.
@@ -80,7 +78,7 @@ Cette nouvelle approche de management s'applique bien à de petites structures, 
 
 ---
 
-### Avantages
+#### Avantages
 
 - La **flexiblité** est bien supérieure : plus besoin de remonter tous les paliers pour faire changer les choses
 - La **cohésion** est renforcée grâce à la communication entre tous les acteurs
@@ -88,14 +86,12 @@ Cette nouvelle approche de management s'applique bien à de petites structures, 
 
 ---
 
-### Avantages
-
 - Permet une meilleure **transparence** auprès des équipes
 - Très performant pour les **projets transversaux**, où un plus grand nombre d'expertises est mis à contribution que dans un modèle vertical
 
 ---
 
-### Limites
+#### Limites
 
 - Attention à toujours fixer un **cadre de travail** (organisation, règles morales et éthiques) : la disparition de hiérarchie n'est pas synonyme d'anarchie !
 - Les instances autrefois dirigeantes (manager, chef de projet, ...) doivent être **formées** au métier de facilitateur
@@ -104,7 +100,7 @@ Cette nouvelle approche de management s'applique bien à de petites structures, 
 
 ---
 
-### L'interaction pour la coopération, la productivité et l'innovation
+#### L'interaction pour la coopération, la productivité et l'innovation
 
 Dans une gestion de projet classique :
 
@@ -148,10 +144,6 @@ Dans un projet collaboratif, l'organisation est radicalement différente :
 layout: section
 ---
 
-# Les outils de collaboration à distance
-
----
-
 ## Les outils informatiques de gestion de projet collaboratif
 
 ---
@@ -169,7 +161,7 @@ C'est la base de connaissances commune à toute l'équipe (voir plus).
 
 ---
 
-### Exemple :
+#### Exemple :
 
 À l'aide d'un tableau partagé de type Kanban , chacun pourra suivre l'évolution des tâches qui lui sont attribuées, mais également de celles des autres membres de l'équipe.
 
@@ -191,7 +183,7 @@ L'utilisation d'outils tels que les réseaux sociaux, les messageries instantan�
 
 ---
 
-# Comment choisir un outil collaboratif ? 
+### Comment choisir un outil collaboratif ? 
 
 Le choix des outils utilisés dans le cadre d'un travail collaboratif peut grandement modifier la productivité et la motivation de l'équipe projet : ces outils sont donc à choisir avec soin.
 
@@ -206,7 +198,7 @@ Pour cela, on étudiera les différents paramètres de l'équipe et du projet :
 
 ---
 
-# Outil unique complet vs multiplication d'outils spécialisés
+### Outil unique complet vs multiplication d'outils spécialisés
 
 Il existe 2 grands types d'outils collaboratifs :
 
@@ -220,7 +212,7 @@ Les seconds ont l'avantage de se focaliser sur un besoin précis et de l'optimis
 
 ---
 
-# Outil spécifique au projet vs outil commun pour l'entreprise
+### Outil spécifique au projet vs outil commun pour l'entreprise
 
 Il existe également 2 visions différentes pour le choix des outils :
 
@@ -234,7 +226,7 @@ Cependant, les méthodes agiles pronnant plus de liberté dans l'équipe, la sec
 
 ---
 
-# SPOC : Single Point of Contact
+### SPOC : Single Point of Contact
 
 Dans une gestion collaborative de projet, l'information peut être fortement distribuée entre différentes personnes, différents outils, ...
 
@@ -245,7 +237,7 @@ Généraliser au maximum la stratégie du `Single Point of Contact` ou de la _ga
 
 ---
 
-# Exemples d'outils collaboratifs
+### Exemples d'outils collaboratifs
 
 Quelques exemples d'outils collaboratifs les plus utilisés :
 
@@ -265,7 +257,7 @@ Quelques exemples d'outils collaboratifs les plus utilisés :
 
 ---
 
-## En résumé :
+### En résumé :
 
 - Prendre le temps d'étudier les besoins de l'équipe et du projet, être force de proposition pour améliorer les processus de communication
 - Dans une méthodologie horizontale, l'équipe projet doit être autonome et choisir ses outils collaborativement (en respectant les contraintes de l'entreprise)
@@ -283,7 +275,7 @@ _Les projets informatiques open source sont souvent de bons exemples d'utilisati
 layout: section
 ---
 
-# Processus de partage d'informations
+## Processus de partage d'informations
 
 ---
 
@@ -291,7 +283,7 @@ Comment concevoir un processus de partage d'informations pour faciliter la colla
 
 ---
 
-# Choisissez un outil de gestion de projet
+### Choisissez un outil de gestion de projet
 
 - `Asana`, `Trello` ou `Basecamp`, ...
 - Gère les tâches du projet ;
@@ -300,21 +292,21 @@ Comment concevoir un processus de partage d'informations pour faciliter la colla
 
 ---
 
-# Créez un espace de travail en ligne
+### Créez un espace de travail en ligne
 
 - Utiliser l'outil précédent pour créer un espace de travail en ligne **pour chaque projet ou équipe**  ;
 - Hub central pour toutes les informations et les communications liées au projet.
 
 ---
 
-# Définissez les rôles et les responsabilités
+### Définissez les rôles et les responsabilités
 
 - Chaque membre de l'équipe doit comprendre clairement son rôle et ses responsabilités dans le projet ;
 - Impact supérieur en distanciel : peu de "small talks".
 
 ---
 
-# Établissez des procédures de communication
+### Établissez des procédures de communication
 
 - Définir des protocoles pour la communication en ligne, par exemple :
   + messagerie intégrée à l'outil de gestion de projet pour les communications urgentes
@@ -322,7 +314,7 @@ Comment concevoir un processus de partage d'informations pour faciliter la colla
 
 ---
 
-# Soyez proactif
+### Soyez proactif
 
 - Partager les informations de manière proactive avec les membres de l'équipe ;
 - Utiliser l'outil de gestion de projet pour partager des documents et des fichiers ;
@@ -330,7 +322,7 @@ Comment concevoir un processus de partage d'informations pour faciliter la colla
 
 ---
 
-# Soyez flexible
+### Soyez flexible
 
 - Garder à l'esprit que les gens ont des horaires et des situations différentes ;
 - Soyez ouvert aux différentes façons de travailler qui peuvent être nécessaires pour s'adapter à ces situations.
@@ -339,32 +331,32 @@ Comment concevoir un processus de partage d'informations pour faciliter la colla
 layout: section
 ---
 
-# Animer un atelier de collaboration à distance
+## Animer un atelier de collaboration à distance
 
 ---
 
-# Choisissez un outil collaboratif
+### Choisissez un outil collaboratif
 
 - Facile à utiliser ;
 - Qui répond à vos besoins en termes de fonctionnalités.
 
 ---
 
-# Invitez vos participants
+### Invitez vos participants
 
 - Invitation : date et heure de l'atelier ;
 - Instructions pour se connecter à l'outil collaboratif.
 
 ---
 
-# Préparez votre présentation
+### Préparez votre présentation
 
 - PowerPoint, documents et fichiers partagés pouvant appuyer le discours, ...
 - À envoyer à l'avance aux participants afin qu'ils puissent se préparer.
 
 ---
 
-# Organisez votre atelier
+### Organisez votre atelier
 
 - Définir un ordre de présentation ;
 - Temps alloué pour chaque intervenant ;
@@ -372,16 +364,18 @@ layout: section
 
 ---
 
-# Tenez l'atelier
+### Tenez l'atelier
 
 - Se connecter en avance ;
 - Utiliser les fonctionnalités de l'outil pour partager votre présentation, discuter en temps réel et travailler en équipe.
 
 ---
 
-# Follow-up après l'atelier
+### Follow-up après l'atelier
 
 - Envoyer un résumé des conclusions et des prochaines étapes aux participants ;
 - Aide à maintenir le momentum ;
 - Permet de s'assurer que tout le monde est sur la même longueur d'onde.
+
+---
 

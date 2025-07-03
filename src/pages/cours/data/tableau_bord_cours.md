@@ -7,11 +7,11 @@ tags:
   - data
 ---
 
-# Rappel : Découpage en Couches du SI
+## Rappel : Découpage en Couches du SI
 
 ---
 
-# Pourquoi un Découpage en Couches ?
+### Pourquoi un Découpage en Couches ?
 
 - **Indépendance fonctionnelle** : Chaque couche remplit un rôle spécifique.
 - **Modularité** : Facilite les mises à jour et le remplacement d'une couche.
@@ -22,7 +22,7 @@ tags:
 
 ---
 
-# Les Principales Couches d'un SI
+### Les Principales Couches d'un SI
 
 - Couche _Présentation_ (Front-end)
 - Couche _Applicative_ (Back-end)
@@ -30,7 +30,7 @@ tags:
 
 ---
 
-# Couche Présentation
+### Couche Présentation
 
 - **Rôle** :
   Fournir une interface pour **interagir** avec le système.
@@ -45,7 +45,7 @@ tags:
 
 ---
 
-# Couche Applicative
+### Couche Applicative
 
 - **Rôle** :
   Traiter les données et appliquer la **logique métier**.
@@ -60,7 +60,7 @@ tags:
 
 ---
 
-# Couche Données
+### Couche Données
 
 - **Rôle** :
   Stocker, structurer et sécuriser les **informations**.
@@ -77,7 +77,7 @@ tags:
 
 ---
 
-# Relation entre les Couches
+### Relation entre les Couches
 
 1. **Flux descendant** :
    - L’utilisateur interagit avec la couche présentation.
@@ -88,7 +88,7 @@ tags:
 
 ---
 
-# Exemple 1 : Application Web
+### Exemple 1 : Application Web
 
 - **Couche Présentation** : Site web interactif (HTML, CSS, JavaScript).
 - **Couche Applicative** : API REST pour gérer les utilisateurs.
@@ -96,7 +96,7 @@ tags:
 
 ---
 
-# Exemple 2 : Système de Reporting
+### Exemple 2 : Système de Reporting
 
 - **Couche Présentation** : Tableau de bord (Power BI).
 - **Couche Applicative** : Calculs analytiques (Python).
@@ -106,11 +106,11 @@ tags:
 layout: section
 ---
 
-# Introduction aux Tableaux de Bord
+## Introduction aux Tableaux de Bord
 
 ---
 
-# 🎯 Objectifs de cette partie
+### 🎯 Objectifs de cette partie
 
 - Comprendre ce qu'est un tableau de bord.
 - Identifier ses avantages et ses limites.
@@ -119,7 +119,7 @@ layout: section
 
 ---
 
-# Tableau de bord
+### Tableau de bord
 
 > Outil _visuel_ permettant de **suivre** les performances, **analyser** les données et aider à la prise de **décision**.
 
@@ -129,7 +129,7 @@ layout: section
 
 ---
 
-# Avantages
+### Avantages
 
 - Visualisation en temps réel des métriques clés.
 - Accès aux données critiques à tout moment : prise de décision rapide
@@ -138,14 +138,14 @@ layout: section
 
 ---
 
-# Limites
+### Limites
 
 - Difficulté du choix et de la récupération des données
 - Illisible si trop de données affichées
 
 ---
 
-# Types de Tableaux de Bord
+### Types de Tableaux de Bord
 
 - **Stratégique** : Suivi des objectifs à long terme
   - _Exemple : Analyse des coûts globaux du parc applicatif._
@@ -156,7 +156,7 @@ layout: section
 
 ---
 
-# Cas d'Utilisation dans le SI
+### Cas d'Utilisation dans le SI
 
 1. **Surveillance des Applications** :
    - Disponibilité, performance, et utilisation des applications.
@@ -169,7 +169,7 @@ layout: section
 
 ---
 
-# Bonnes pratiques
+### Bonnes pratiques
 
 - Sélectionner uniquement les indicateurs **principaux**
 - Faire le lien avec les **activités de l'entreprise**
@@ -181,7 +181,7 @@ layout: section
 
 ---
 
-# À éviter
+### À éviter
 
 - Présenter des chiffres sans **contexte ou objectif** : stratégie, organisation, personnes
 - Utiliser des données disparates sans **consolidation**
@@ -192,11 +192,11 @@ layout: section
 layout: section
 ---
 
-# Indicateurs de Performance et Métriques du Parc Applicatif
+## Indicateurs de Performance et Métriques du Parc Applicatif
 
 ---
 
-# 🎯 Objectifs de cette partie
+### 🎯 Objectifs de cette partie
 
 - Comprendre le **rôle des indicateurs** de performance (KPI) dans la gestion du SI.
 - **Identifier** les métriques clés selon différents axes.
@@ -204,7 +204,7 @@ layout: section
 
 ---
 
-# Pourquoi des Indicateurs de Performance ?
+### Pourquoi des Indicateurs de Performance ?
 
 - Évaluer la **performance** des applications dans le SI.
 - Identifier rapidement les **points critiques** et **prioriser** les actions.
@@ -214,11 +214,11 @@ layout: section
 
 ---
 
-# Axes d'Analyse des Indicateurs
+### Axes d'Analyse des Indicateurs
 
 ---
 
-# 1. 💵 **Axe Financier**
+#### 1. 💵 Axe Financier
 
 - **Exemples** :
 
@@ -230,7 +230,7 @@ layout: section
 
 ---
 
-# 2. 📈 **Axe Technique & Données**
+#### 2. 📈 Axe Technique & Données
 
 - **Exemples** :
 
@@ -243,7 +243,7 @@ layout: section
 
 ---
 
-# 3. 🔐 **Axe Sécurité**
+#### 3. 🔐 Axe Sécurité
 
 - **Exemples** :
 
@@ -255,7 +255,7 @@ layout: section
 
 ---
 
-# 4. 🙎 **Axe Utilisateur / Fonctionnel**
+#### 4. 🙎 Axe Utilisateur / Fonctionnel
 
 - **Exemples** :
 
@@ -268,7 +268,7 @@ layout: section
 
 ---
 
-# 5. 🏛 **Axe Légal / Réglementaire**
+#### 5. 🏛 Axe Légal / Réglementaire
 
 - **Exemples** :
 
@@ -280,7 +280,7 @@ layout: section
 
 ---
 
-# Exemple d'Indicateurs Clés pour une Application
+### Exemple d'Indicateurs Clés pour une Application
 
 | Axe 🗃           | Indicateur 📊📈                  | Objectif 🎯            |
 | --------------- | ---------------------------- | -------------------- |
@@ -292,7 +292,7 @@ layout: section
 
 ---
 
-# Autres exemples d'indicateurs
+### Autres exemples d'indicateurs
 
 - Taux de disponibilité des systèmes informatiques
 - Temps moyen de réponse aux incidents
@@ -310,7 +310,7 @@ layout: section
 
 ---
 
-# Bonnes Pratiques pour Choisir un Indicateur
+### Bonnes Pratiques pour Choisir un Indicateur
 
 1. **Pertinence** :
 	L'indicateur doit répondre à un objectif précis.
@@ -326,7 +326,7 @@ layout: section
 
 ---
 
-# SLA
+### SLA
 
 - Accord de niveau de service (SLA) : engagement contractuel avec le client sur une métrique
 - Indicateur à suivre par excellence
@@ -335,11 +335,11 @@ layout: section
 layout: section
 ---
 
-# Construction d'un Tableau de Bord
+## Construction d'un Tableau de Bord
 
 ---
 
-# 🎯 Objectifs de cette partie
+### 🎯 Objectifs de cette partie
 
 - Comprendre les étapes nécessaires pour concevoir un tableau de bord.
 - Découvrir les bonnes pratiques de conception.
@@ -347,7 +347,7 @@ layout: section
 
 ---
 
-# 1. Définir les Objectifs 🎯
+### 1. Définir les Objectifs 🎯
 
 - Que voulez-vous mesurer ?
 - À qui s'adresse le tableau de bord ?
@@ -355,7 +355,7 @@ layout: section
 
 ---
 
-# 2. Sélectionner les Indicateurs Clés (KPI) 🗂
+### 2. Sélectionner les Indicateurs Clés (KPI) 🗂
 
 - Priorisez les métriques en fonction des besoins.
 - Assurez-vous qu'ils soient pertinents, mesurables et exploitables.
@@ -363,7 +363,7 @@ layout: section
 
 ---
 
-# 3. Concevoir la Structure 📑
+### 3. Concevoir la Structure 📑
 
 - **Types de visualisations** :
 - Graphiques à barres, lignes ou secteurs.
@@ -374,7 +374,7 @@ layout: section
 
 ---
 
-# 4. Collecter et Connecter les Données 🗃
+### 4. Collecter et Connecter les Données 🗃
 
 - Utilisez des outils adaptés pour centraliser les données :
 - Bases de données.
@@ -383,7 +383,7 @@ layout: section
 
 ---
 
-# 5. Tester et Valider 🧪
+### 5. Tester et Valider 🧪
 
 - Vérifiez :
 - La fiabilité des données.
@@ -394,7 +394,7 @@ layout: section
 
 ---
 
-# Exemples de Tableaux de Bord
+### Exemples de Tableaux de Bord
 
 ![Exemple de tableau de bord de support utilisateur](https://www.geckoboard.com/uploads/Live-customer-support-dashboard-example.png)
 
@@ -416,11 +416,11 @@ layout: section
 layout: section
 ---
 
-# Introduction à PowerBI
+## Introduction à PowerBI
 
 ---
 
-# Types d'applications
+### Types d'applications
 
 - Power BI **Service** <https://app.powerbi.com> : focus sur la création de _dashboard_
 - Power BI **Desktop** (à installer) : focus sur la _transformation_ de données et la création de rapports complexes
@@ -428,7 +428,7 @@ layout: section
 
 ---
 
-# Glossaire Power BI
+### Glossaire Power BI
 
 - Les données servant au suivi des indicateurs sont regroupées dans un ou plusieurs **modèles sémantiques**.
 - Un **rapport** est une visualisation graphique d'un (et un seul) **modèle sémantique**.
@@ -436,81 +436,81 @@ layout: section
 
 ---
 
-# Principales Visualisations Power BI  
+### Principales Visualisations Power BI  
 
 ---
 
-# Graphique à Barres / Colonnes
+### Graphique à Barres / Colonnes
 
 ![Exemple de graphique à barres](@assets/bi/visual-bar-chart.png)
 
 - **Comparer des valeurs** entre différentes catégories.
 - Mettre en évidence les **différences** importantes.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Comparaison des coûts mensuels des applications._
 - _**Visualisation** : Barres verticales pour les coûts par application (janvier à décembre)._
 
 ---
 
-# Graphique en Secteurs
+### Graphique en Secteurs
 
 ![Exemple de graphique en secteurs](@assets/bi/visual-pie-chart.png)
 
 - Montrer la **répartition** d'une valeur totale en pourcentages.
 - Analyser les parts relatives.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Répartition du budget SI entre les catégories (applications, matériel, personnel)._
 - _**Visualisation** : Diagramme circulaire avec des segments pour chaque catégorie._
 
 ---
 
-# Graphique en courbes
+### Graphique en courbes
 
 ![Exemple de courbe](@assets/bi/visual-line-chart.png)
 
 - Suivre l'**évolution** d'une valeur dans le temps.
 - Identifier des **tendances** ou des **variations**.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Suivi du taux de disponibilité des applications mois par mois._
 - _**Visualisation** : Ligne représentant l'évolution du pourcentage de disponibilité._
 
 ---
 
-# Graphique en Aire
+### Graphique en Aire
 
 ![Exemple de graphique en aire](@assets/bi/basic-area-map-small.png)
 
 - Montrer une **évolution** et l'**accumulation** de valeurs.
 - Mettre en évidence les **proportions** dans une série temporelle.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Volume de données générées par trois applications sur une année._
 - _**Visualisation** : Aires empilées montrant les contributions cumulatives._
 
 ---
 
-# Jauge
+### Jauge
 
 ![Exemple de jauge](@assets/bi/gauge-m.png)
 
 - Suivre une valeur par rapport à un **objectif** ou un **seuil**.
 - Idéal pour des KPI simples.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Suivi du taux d'incidents résolus par rapport à l'objectif de 95 %._
 - _**Visualisation** : Une jauge montrant la progression vers l'objectif._
 
 ---
 
-# Carte de Chaleur (Heatmap)
+### Carte de Chaleur (Heatmap)
 
 ![Exemple de graphique à barres](@assets/bi/7-power-bi-matrix-with-heatmap-1.png)
 
@@ -524,28 +524,28 @@ layout: section
 
 ---
 
-# Carte Géographique
+### Carte Géographique
 
 ![Exemple de carte](@assets/bi/visual-map.png)
 
 - Visualiser des données **géolocalisées**.
 - Identifier des modèles géographiques.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Répartition des utilisateurs d'une application par région._
 - _**Visualisation** : Carte avec des points ou des zones colorées selon le nombre d’utilisateurs._
 
 ---
 
-# Tableau Croisé Dynamique (Matrice)
+### Tableau Croisé Dynamique (Matrice)
 
 ![Exemple de matrice](@assets/bi/matrix.png)
 
 - Présenter des données **multi-dimensionnelles** sous forme de tableau interactif.
 - Explorer des hiérarchies.
 
-## Exemple
+#### Exemple
 
 - _**Cas pratique** : Analyse des coûts par département et par catégorie._
 - _**Visualisation** : Tableau croisé dynamique avec lignes et colonnes imbriquées._
@@ -554,11 +554,11 @@ layout: section
 layout: section
 ---
 
-# Élaboration d'une Feuille de Route (Roadmap)
+## Élaboration d'une Feuille de Route (Roadmap)
 
 ---
 
-# 🎯 Objectifs de cette partie
+### 🎯 Objectifs de cette partie
 
 - Comprendre l'utilité d'une feuille de route.
 - Identifier les éléments clés d'une roadmap.
@@ -567,7 +567,7 @@ layout: section
 
 ---
 
-# Roadmap
+### Roadmap
 
 > Représentation **visuelle** et **structurée** des étapes, ressources et échéances nécessaires pour atteindre des objectifs stratégiques.
 
@@ -576,7 +576,7 @@ layout: section
 
 ---
 
-# Pourquoi une Roadmap pour le SI ?
+### Pourquoi une Roadmap pour le SI ?
 
 - **Planification stratégique** : définir des **priorités** pour l'évolution des applications.
 - Aligner les parties prenantes sur une **vision commune**.
@@ -586,7 +586,7 @@ layout: section
 
 ---
 
-# Éléments Clés d'une Roadmap
+### Éléments Clés d'une Roadmap
 
 1. **Objectifs** :
    Quels sont les résultats attendus ?
@@ -610,7 +610,7 @@ layout: section
 
 ---
 
-# Bonnes Pratiques pour Construire une Roadmap
+### Bonnes Pratiques pour Construire une Roadmap
 
 - **Clarté et simplicité** : Définissez des étapes atteignables dans le temps imparti.
 - **Évolutivité** : Prévoyez des ajustements en cas d'imprévus.
@@ -618,7 +618,7 @@ layout: section
 
 ---
 
-# Outils pour Créer une Roadmap
+### Outils pour Créer une Roadmap
 
 - **[Lucidchart](https://www.lucidchart.com)** : Création intuitive de diagrammes et roadmaps.
 - **[Miro](https://miro.com/)** : Plateforme collaborative pour brainstorming et planification.
@@ -627,7 +627,7 @@ layout: section
 
 ---
 
-# Exemple de Roadmap
+### Exemple de Roadmap
 
 - **Objectif principal** : Migration d'une application vers le cloud.
 
@@ -653,11 +653,11 @@ layout: section
 layout: section
 ---
 
-# Ressources
+## Ressources
 
 ---
 
-## Livres
+### Livres
 
 - [Pocket CIO](https://univ.scholarvox.com/catalog/book/docid/88856824)
 - [Microsoft Power BI Complete Reference](https://univ.scholarvox.com/catalog/book/docid/88865488)
@@ -665,7 +665,7 @@ layout: section
 
 ---
 
-## Liens
+### Webographie
 
 - [MTBF, MTTR, MTTA et MTTF : Maîtriser quelques-unes des métriques d'incident les plus courantes](https://www.atlassian.com/fr/incident-management/kpis/common-metrics)
 - [Atlassian - Indicateurs de performance SI](https://www.atlassian.com/fr/itsm/service-request-management/it-metrics-and-reporting)
@@ -681,4 +681,6 @@ layout: section
 - [Lucidchart - Roadmap technologique](https://www.lucidchart.com/blog/fr/fonction-d-une-roadmap-technologique)
 
 [exemples-tableaux]: https://www.journaldunet.com/solutions/dsi/1002623-12-tableaux-de-bord-pour-piloter-ses-activites-informatiques/
+
+---
 

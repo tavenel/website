@@ -1,12 +1,12 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/CoursePartLayout.astro'
-title: Stratégies de tests
+title: 📋 Stratégies de tests
 tags:
 - tests
 ---
 
-# 📋 Stratégie de test
+## Stratégie de test
 
 - 📄 Description **générale** du processus de test :
   - 📦 Au niveau produit ;

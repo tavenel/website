@@ -27,7 +27,7 @@ Module de 13H
 - [🤓 Cours d'introduction au Devops](/epsi/b3/devops/cours)
 - [🏆 Projet Devops/Sysops](/epsi/b3/devops/projet)
 
-## Liens
+## Ressources
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
 - [💻 Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)

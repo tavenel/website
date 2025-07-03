@@ -6,11 +6,11 @@ tags:
 - python
 ---
 
-# Installation de l'environnement de développement
+## Installation de l'environnement de développement
 
 ---
 
-# Installer Python et gérer les dépendances
+### Installer Python et gérer les dépendances
 
 - Suivre les sections "Installer Python" et "Installation de Visual Studio Code" de la [documentation Microsoft][doc-install-microsoft].
 - Pour une procédure plus détaillée, voir la [documentation officielle][doc-install-win].
@@ -20,7 +20,7 @@ tags:
 
 ---
 
-# Erreurs courantes
+### Erreurs courantes
 
 - Installations parallèles de Python : la commande `py` ou `python` n'exécute pas le bon programme python avec la bonne version :
   - Gérer la variable d'environnement `$PATH` : voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
@@ -39,11 +39,11 @@ tags:
 layout: section
 ---
 
-# Présentation du langage
+## Présentation du langage
 
 ---
 
-# Présentation du langage Python
+### Présentation du langage Python
 
 Python est un langage **interprété** utilisant un **typage dynamique**.
 
@@ -59,7 +59,7 @@ Le langage Python est utilisé principalement pour le développement :
 
 ---
 
-# Les versions de Python
+### Les versions de Python
 
 Python 3 a été une réécriture importante du langage et de ses paradigmes, avec des changements incompatibles avec la version 2.
 Il est donc courant de déployer à la fois un interpréteur Python 2 et Python 3 sur sa machine personnelle, voir sur un serveur.
@@ -69,11 +69,11 @@ Ce cours se concentre sur la dernière version de **Python 3**.
 layout: section
 ---
 
-# Eléments principaux de syntaxe
+## Eléments principaux de syntaxe
 
 ---
 
-# Affichage
+### Affichage
 
 ```python
 print(3)
@@ -83,9 +83,9 @@ print('Ma valeur suivante est :', 5)
 
 ---
 
-# Variable
+### Variable
 
-## Variable simple
+#### Variable simple
 
 ```python
 ma_variable = 42
@@ -95,7 +95,7 @@ print('ma_variable :', ma_variable)
 
 ---
 
-## Typage dynamique
+### Typage dynamique
 
 ```python
 ma_variable = 42
@@ -104,7 +104,7 @@ print( type(ma_variable) )
 ```
 ---
 
-## Documentation de types
+### Documentation de types
 
 ```python
 ma_variable_entier: int = 42
@@ -125,7 +125,7 @@ print( type(ma_variable_entier) ) # str
 ```
 ---
 
-## Double assignation
+### Double assignation
 
 ```python
 ma_variable1, ma_variable2 = 4, 8
@@ -135,7 +135,7 @@ print('ma_variable1 :', ma_variable1, ' et ma_variable2 : ', ma_variable2)
 
 ---
 
-# Commentaires
+### Commentaires
 
 ```python
 # Une ligne de commentaires
@@ -151,9 +151,9 @@ print('ma_variable :', ma_variable)
 
 ---
 
-# Chaînes de caractères (type : str)
+### Chaînes de caractères (type : str)
 
-## Ligne simple
+#### Ligne simple
 
 ```python
 mon_texte1 = "Hello, World !"
@@ -170,7 +170,7 @@ print( type(mon_texte3) ) # str
 
 ---
 
-## Multi-ligne
+#### Multi-ligne
 
 ```python
 mon_texte4 = """Hello
@@ -186,7 +186,7 @@ print( type(mon_texte5) ) # str
 
 ---
 
-# f-string : chaîne de caractères avec variables
+#### f-string : chaîne de caractères avec variables
 
 ```python
 ma_var = 42
@@ -198,9 +198,9 @@ print( type(mon_texte6) ) # str
 
 ---
 
-# Arithmétique
+### Arithmétique
 
-## Support des opérations artihmétiques standard (type: int)
+#### Support des opérations artihmétiques standard (type: int)
 
 ```python
 ma_var = 42
@@ -212,7 +212,7 @@ print( type(resultat) ) # float
 
 ---
 
-## Précision des float
+#### Précision des float
 
 Que retourne le code suivant ?
 
@@ -222,15 +222,15 @@ Que retourne le code suivant ?
 
 ---
 
-# Exercice : multiplication
+#### Exercice : multiplication
 
 Dans le shell Python, définir et initialiser deux variables numériques x et y (on choisira la valeur de x et de y). Calculer et afficher : "Le résultat de la multiplication de x par y est : z" en remplaçant z par sa valeur.
 
 ---
 
-# Opérations logiques (type: bool)
+### Opérations logiques (type: bool)
 
-## and
+#### and
 
 ```python
 x1 = True
@@ -246,7 +246,7 @@ print( x2 and y2 ) # False
 
 ---
 
-## or
+#### or
 
 ```python
 x1 = True
@@ -262,7 +262,7 @@ print( x2 or y2 ) # False
 
 ---
 
-## not
+#### not
 
 ```python
 x1 = True
@@ -274,7 +274,7 @@ print( not x2 )
 
 ---
 
-# Tests
+### Tests
 
 ```python
 print( 1 < 2 )
@@ -288,8 +288,6 @@ print( 3 >= 4 )
 
 ---
 
-# Tests - suite
-
 ```python
 print( [1, 2] == [3, 4] )
 
@@ -300,7 +298,7 @@ print( [1, 2] == [1, 2] ) # True
 
 ---
 
-# Ensemble
+### Ensemble
 
 ```python
 mon_ensemble = { 'Cat', 'Dog' } # Pas d'élément dupliqué
@@ -311,11 +309,11 @@ print( type(mon_ensemble) ) # set
 
 ---
 
-# **Séquence**
+## Séquence
 
 ---
 
-## Liste
+### Liste
 
 ```python
 ma_liste = [ 1, 2, 4, 8, 16 ]
@@ -328,7 +326,7 @@ print( type(ma_liste[0]) ) # int
 
 ---
 
-### Assignation
+#### Assignation
 
 ```python
 ma_liste :list = [ 1, 2, 4, 8, 16 ]
@@ -339,7 +337,7 @@ print( ma_liste ) #  [1, 3, 4, 8, 16]
 
 ---
 
-### Extraction - slices
+#### Extraction - slices
 
 ```python
 ma_liste :list = [ 1, 2, 4, 8, 16 ]
@@ -354,7 +352,7 @@ Pour plus d'information sur les slices, voir [ce cours][zds-slices].
 
 ---
 
-## Construction de liste par expression
+#### Construction de liste par expression
 
 Une liste peut se construire avec l'expression `[ expression for element in ... ]`
 ```python
@@ -367,7 +365,7 @@ print( liste2 ) # [2, 4, 8]
 
 ---
 
-## Range
+### Range
 
 ```python
 my_range = range(5)
@@ -378,7 +376,7 @@ print( type(my_range) ) # range
 
 ---
 
-## Tuple (n-uplet)
+### Tuple (n-uplet)
 
 ```python
 mon_tuple = 1, 'Hello' # Tuple (1, 'Hello')
@@ -393,7 +391,7 @@ print( type(mon_tuple) ) # tuple
 
 ---
 
-# Dictionnaires
+### Dictionnaires
 
 ```python
 mon_tel = {'jack': 4098, 'sape': 4139}
@@ -418,11 +416,7 @@ print( 'Hello, ' + "World !" )
 
 ---
 
-# **Boucles**
-
----
-
-# If
+## If
 
 ---
 
@@ -462,15 +456,15 @@ else:
 
 ---
 
-# Exercice : Test de résultat
+### Exercice : Test de résultat
 
 Reprendre l'exercice de la multiplication de deux variables numériques x et y. Si le résultat est supérieur à 50, afficher : 'Le résultat de la multiplication z est supérieur à 50' en remplaçant z par sa valeur. Sinon, afficher 'le résultat z est inférieur à 50.'
 
 ---
 
-# For : itérations sur une séquence
+## For : itérations sur une séquence
 
-## Liste
+### Liste
 
 ```python
 ma_sequence = ['Cat', 'Dog', 'Bird']
@@ -480,7 +474,7 @@ for w in ma_sequence:
 
 ---
 
-## Set
+### Set
 
 ```python
 ma_sequence = {'Cat', 'Dog', 'Bird'}
@@ -490,7 +484,7 @@ for w in ma_sequence:
 
 ---
 
-## Itération sur les éléments d'un dictionnaire
+### Itération sur les éléments d'un dictionnaire
 
 ```python
 mon_dict = {'firstname': 'John', 'lastname': 'Doe'}
@@ -500,7 +494,7 @@ for (k,v) in mon_dict.items():
 
 ---
 
-## Itération sur les valeurs d'un dictionnaire
+### Itération sur les valeurs d'un dictionnaire
 
 ```python
 mon_dict = {'firstname': 'John', 'lastname': 'Doe'}
@@ -509,7 +503,7 @@ for v in mon_dict.values():
 ```
 ---
 
-## Itération sur les clés d'un dictionnaire
+### Itération sur les clés d'un dictionnaire
 
 ```python
 mon_dict = {'firstname': 'John', 'lastname': 'Doe'}
@@ -568,13 +562,13 @@ Carrés générés au fur et à mesure : économise de la mémoire, temps d'exé
 
 ---
 
-# Exercice : somme
+## Exercice : somme
 
 Calculer la somme : `1+3+5+...+99`
 
 ---
 
-# Exercice : intersection d'ensembles
+## Exercice : intersection d'ensembles
 
 Renvoyer l'ensemble des éléments en commun dans les 2 ensembles suivants :
 
@@ -585,7 +579,7 @@ Renvoyer l'ensemble des éléments en commun dans les 2 ensembles suivants :
 
 ---
 
-# Case
+## Case
 
 ```python
 def http_error(status):
@@ -604,7 +598,7 @@ def http_error(status):
 
 ---
 
-# Pattern matching utilisant une structure
+### Pattern matching utilisant une structure
 
 ```python
 class Point:
@@ -627,7 +621,7 @@ def where_is(point):
 
 ---
 
-# Fonctions
+## Fonctions
 
 ```python
 def ma_fonction_carre(n):
@@ -641,7 +635,7 @@ ma_fonction_carre(3)
 
 ---
 
-## `return`
+### `return`
 
 ```python
 def ma_fonction_carre(n):
@@ -657,7 +651,7 @@ print( type(resultat) )
 
 ---
 
-## Avec documentation des types
+### Avec documentation des types
 
 ```python
 def ma_fonction_carre(n: int) -> int:
@@ -673,7 +667,7 @@ print( type(resultat) ) # int
 
 ---
 
-## Procédure
+### Procédure
 
 ```python
 def afficher_text(msg:str):
@@ -686,7 +680,7 @@ print( type(resultat) ) # NoneType
 
 ---
 
-## Non modification des paramètres (passage par valeur)
+### Non modification des paramètres (passage par valeur)
 
 ```python
 x = 2
@@ -700,13 +694,13 @@ print(f'Après appel, x vaut : {x}')
 
 ---
 
-# Exercice : multiplication avec fonction
+### Exercice : multiplication avec fonction
 
 Reprendre l'exercice de multiplication de deux variables numériques x et y. Définir une fonction `multiplie` réalisant l'opération de multiplication et appeler cette fonction avant de réaliser le test sur l'affichage du résultat.
 
 ---
 
-# Valeurs par défaut
+### Valeurs par défaut
 
 Les fonctions Python permettent de ne pas passer de valeur à un paramètre afin d'utiliser une valeur par défaut :
 
@@ -720,7 +714,7 @@ ma_func('valeur 2') # valeur 2
 
 ---
 
-# Exercice: Visibilité des variables
+### Exercice: Visibilité des variables
 
 ```python
 def scope_test():
@@ -751,7 +745,7 @@ Quelle est la visibilité de chaque variable ?
 
 ---
 
-# `*args` et `**kwargs`
+## `*args` et `**kwargs`
 
 - Permet de fournir une liste ou un dict d'arguments d'un coup (_unpacking_)
 - `*args` : ensemble des arguments non nommés (liste)
@@ -828,10 +822,12 @@ if __name__ == '__main__':
 ```
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
+## Ressources
 
-# Liens utiles - généralités
+### Généralités
 
 - [Installer Python sous Windows][doc-install-win]
 - [Installation de modules Python][doc-python-modules]
@@ -848,7 +844,7 @@ if __name__ == '__main__':
 
 ---
 
-# Liens utiles - exercices
+### Exercices
 
 - [Visualisation graphique d'exécution de code][python-tutor]
 - [Python Challenges][python-challenge]
@@ -876,9 +872,11 @@ if __name__ == '__main__':
 
 ---
 
-# Legal
+## Legal
 
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well.
 - PYPI is a trademark of Python Software Foundation.
 - Other names may be trademarks of their respective owners
+
+---
 

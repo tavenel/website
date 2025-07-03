@@ -7,11 +7,11 @@ tags:
 - rse
 ---
 
-# Introduction
+## Introduction
 
 ---
 
-# Un service numérique, c'est quoi ?
+### Un service numérique, c'est quoi ?
 
 > Un service qui répond à un besoin spécifique, avec une ou plusieurs fonctionnalités et des utilisateurs. (AGIT, 2017)
 
@@ -28,18 +28,18 @@ C'est une association :
 
 ---
 
-# Le $CO_2e$
+### Le $CO_2e$
 
 - L'expression "équivalent en dioxyde de carbone" (abrégé : équivalent $CO_2$ ou $_{eq}CO_2$ ou $CO_2e$) est définie comme la "masse de dioxyde de carbone qui aurait le même potentiel de réchauffement climatique qu'une quantité donnée d'un autre gaz à effet de serre".
 - Pour calculer le $CO_2e$ total on additionne tous les $CO_2e$ de tous les gaz à effet de serre (GES).
 
 ---
 
-# Pourquoi renforcer son engagement écologique ?
+## Pourquoi renforcer son engagement écologique ?
 
 ---
 
-## Pour limiter la pollution et la consommation de l'entreprise
+### Pour limiter la pollution et la consommation de l'entreprise
 
 - Numérique : croissance 10% / an, 7% de la consommation mondiale d’électricité, 3.5% des GES en 2021, prévisions x2 GES en 2025.
 - L'efficacité énergétique grâce au progrès technologique ne compense pas l'augmentation des usages :
@@ -60,7 +60,7 @@ C'est une association :
 
 ---
 
-## Pour anticiper le cadre réglementaire
+### Pour anticiper le cadre réglementaire
 
 - **Stratégie Nationale Bas Carbone (`SNBC`) : diviser nos émissions par 5 d'ici 2050** 
 - Loi `REEN`, ...
@@ -68,14 +68,14 @@ C'est une association :
 
 ---
 
-## Pour attirer de nouveaux talents
+### Pour attirer de nouveaux talents
 
 > 51% des travailleurs refusent un travail dans une entreprise qui ne s’engage pas en faveur de l’environnement ou qui ne s'engage pas pour des actions responsables : [étude Cone Communication](https://conecomm.com/2016-millennial-employee-engagement-study/).
 > Aux revendications historiques sur les salaires et le temps de travail (par l’âge de départ à la retraite dans les débats actuels) s’ajoutent dorénavant des revendications relatives à la transition écologique et sociale. _Le Monde, Anthony Hussenot_ 
 
 ---
 
-## Pour construire une entreprise plus résiliente
+### Pour construire une entreprise plus résiliente
 
 - Permet d’anticiper les enjeux environnementaux futurs et les défis qui l'accompagnent.
   - < 10-15 ans : tensions ressources (terres rares OK car réparties, mais raréfaction des métaux).
@@ -84,7 +84,7 @@ C'est une association :
 
 ---
 
-## Pour répondre aux attentes des clients 
+### Pour répondre aux attentes des clients 
 
 - Consommateurs + en + sensibles et attentifs aux engagements : 2/3 des Français prêts à renoncer à une marque de vêtements non responsable. [OpinionWay pour _Les Echos_, 03/2022](https://www.lesechos.fr/thema/articles/deux-francais-sur-trois-prets-a-renoncer-a-une-marque-non-responsable-1397351)
 - Luter contre la _fracture numérique_ : pas de réseau haut débit, pas à l'aise avec une ux compliquée, ...
@@ -99,7 +99,7 @@ C'est une association :
 
 ---
 
-## Lutter contre les réticences
+### Lutter contre les réticences
 
 - "ça va être moche", "ça va coûter cher"
 - Management parfois difficile à convaincre
@@ -110,7 +110,7 @@ C'est une association :
 
 ---
 
-## Exemple awebsome.fr
+### Exemple awebsome.fr
 
 > Préserver l'environnement, c'est aussi soigner son image de marque ;
 > Faciliter l'accès à un service, c'est aussi toucher une audience plus large ;
@@ -160,27 +160,27 @@ C'est une association :
 layout: section
 ---
 
-# Référentiels, normes et textes de loi
+## Référentiels, normes et textes de loi
 
 ---
 
-# Cadre réglementaire
+### Cadre réglementaire
 
 ---
 
-## Liens
+#### Liens
 
 - Page gouvernementale résumant les principales lois liées au numérique responsable : <https://www.ecologie.gouv.fr/numerique-responsable>
 
 ---
 
-## Loi sur la rationnalisation de l'énergie
+#### Loi sur la rationnalisation de l'énergie
 
 - "Est légalement interdit, toute incitation à avoir une utilisation non rationnelle de l’énergie" (Code de l’environnement - loi 2006)
 
 ---
 
-## Loi PACTE et Entreprise à Mission
+#### Loi PACTE et Entreprise à Mission
 
 - La Loi PACTE (22/05/2019) renforce la RSE et crée la "société à mission" :
 - l'entreprise inscrit dans ses **statut juridiques** une "**raison d'être**" profitant à l’intérêt commun et ayant un impact sur la qualité de l'environnement, du social et sur l'empreinte carbone.
@@ -192,7 +192,7 @@ layout: section
 
 ---
 
-## Loi REEN
+#### Loi REEN
 
 ---
 
@@ -201,14 +201,14 @@ layout: section
 
 ---
 
-### Enseigner la sobriété numérique
+#### Enseigner la sobriété numérique
 
 - Impact environnemental des outils numériques et sobriété numérique de la primaire au supérieur.
 - Cycles d'ingénierie : un module spécifique sur l'écoconception des services numériques. (ce cours)
 
 ---
 
-### Orienter les pratiques commerciales
+#### Orienter les pratiques commerciales
 
 - "limiter le renouvellement des terminaux"
 - Obsolescence programmée :  "fraudes" et "tromperies" (comprend l'obsolescence logicielle).
@@ -216,7 +216,7 @@ layout: section
 
 ---
 
-### Contrats du numérique
+#### Contrats du numérique
 
 - Transposition des directives européennes sur la vente de biens et de contenus et services numériques (directives 2019/770 et 2019/771) :
 - "garantie de conformité" (Europe), "obligation de délivrance conforme" et "garantie des vices cachés" (France) appliqués au numérique
@@ -225,7 +225,7 @@ layout: section
 
 ---
 
-### Reconditionner et réemploi
+#### Reconditionner et réemploi
 
 - Information des consommateurs de l'existence de reconditionné lors d'un achat ;
 - Interdiction de limiter l'accès "aux pièces détachées, modes d’emploi, informations techniques ou à tout autre instrument, équipement ou logiciel permettant la réparation des produits" ;
@@ -233,14 +233,14 @@ layout: section
 
 ---
 
-### Écoconception des services numériques
+#### Écoconception des services numériques
 
 - Référentiel général de l’écoconception des services numériques (ARCOM et ADEME) au 1er janvier 2024
   - notamment "stratégies de captation de l’attention des utilisateurs "
 
 ---
 
-### Obligations environnementales pour les entreprises du numérique
+#### Obligations environnementales pour les entreprises du numérique
 
 - Publication des indicateurs clés sur leurs politiques de réduction de leur empreinte environnementale
 - TICFE (contribution au service public de l’électricité) réduit pour les centres de données économes en ressources.
@@ -248,11 +248,11 @@ layout: section
 
 ---
 
-# Les référentiels
+### Les référentiels
 
 ---
 
-# Référentiel GreenIT.fr
+#### Référentiel GreenIT.fr
 
 - Référentiel de 74 bonnes pratiques Green IT générales pour le numérique
 - Document PDF expliquant les pratiques et checklist d'auto-évaluation
@@ -261,14 +261,14 @@ layout: section
 
 ---
 
-# RGESN : référentiel général d'écoconception de services numériques
+#### RGESN : référentiel général d'écoconception de services numériques
 
 - <https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/>
 - Document de référence mené dans le cadre de la Mission interministérielle Green Tech (Direction interministérielle du numérique, Ministère de la Transition Ecologique, ADEME, Institut du Numérique Responsable) suite à la loi REEN.
 
 ---
 
-## Objectifs
+##### Objectifs
 
 - Réduire la consommation globale des ressources informatiques et énergétiques ;
 - Réduire la consommation globale des équipements (utilisateurs, réseau ou serveur) ;
@@ -277,7 +277,7 @@ layout: section
 
 ---
 
-## Contenu
+##### Contenu
 
 - Concerne tous les services numériques : les logiciels à installer ou en SAAS, API, sites Web, ...
 - Concepts généraux
@@ -298,7 +298,7 @@ layout: section
 
 ---
 
-# Écoconception Web : les 115 bonnes pratiques
+#### Écoconception Web : les 115 bonnes pratiques
 
 - https://raphael-lemaire.com/2018/05/22/resume-de-livre-eco-conception-web-les-115-bonnes-pratiques/
 - Fiches en licence CC : <https://github.com/cnumr/best-practices>
@@ -306,7 +306,7 @@ layout: section
 
 ---
 
-# GR491 (European Institutes for Sustainable IT)
+#### GR491 (European Institutes for Sustainable IT)
 
 - <https://gr491.isit-europe.org/>
 - Le plus exhaustif (500 critères)
@@ -314,7 +314,7 @@ layout: section
 
 ---
 
-## Autres référentiels intéressants
+#### Autres référentiels intéressants
 
 - `RGPD` : protection des données personnelles ;
 - `RGAA` : accessibilité (obligatoire pour les administrations, intéressant pour tous) ;
@@ -324,11 +324,11 @@ layout: section
 
 ---
 
-# Normes vertes
+### Normes vertes
 
 ---
 
-## ISO 14001
+#### ISO 14001
 
 - Objectif : utilisation plus rationnelle des ressources de l'entreprise et réduction des déchets. 
 - Commun à toutes les entreprises
@@ -336,7 +336,7 @@ layout: section
 
 ---
 
-## ISO 50001
+#### ISO 50001
 
 - Objectif : manager efficacement l'énergie pour réduire les émissions de gaz à effet de serre.
 - Commun à toutes les entreprises
@@ -344,7 +344,7 @@ layout: section
 
 ---
 
-## RSE et ISO26000
+#### RSE et ISO26000
 
 - **Responsabilité Sociétale des Entreprises** à mettre en place globalement (pas uniquement du code).
 - Indicateurs **SMART** de critères **ESG** (Environnementaux, Sociaux et de Gouvernance).
@@ -354,7 +354,7 @@ layout: section
 
 ---
 
-## TCO Certified
+#### TCO Certified
 
 - Label privé (1992).
 - Analyse le cycle de vie des équipements technologiques (de la consommation d’énergie au recyclage en passant par les substances utilisées telles que les métaux lourds). 
@@ -362,15 +362,11 @@ layout: section
 
 ---
 
-# Un enjeu global pour l'entreprise
+## Un enjeu global pour l'entreprise
 
 ---
 
-## Déployer une politique numérique durable
-
----
-
-## La motivation : élaborer et lancer une stratégie informatique durable
+### La motivation : élaborer et lancer une stratégie informatique durable
 
 - Définir la stratégie
 - Identifier un acteur et une équipe responsables
@@ -380,14 +376,14 @@ layout: section
 
 ---
 
-## Développer une culture numérique durable
+### Développer une culture numérique durable
 
 - **Formation** et **sensibilisation** de tous les acteurs (développeurs, clients, utilisateurs, ...)
 - **Transparence** : communiquer les objectifs et indicateurs concrets
 
 ---
 
-## Mesurer l'impact environnemental du Système d'Information de bout en bout
+### Mesurer l'impact environnemental du Système d'Information de bout en bout
 
 - **Mesurer** pour piloter la stratégie quantitative.
 - La dette environnementale est inévitable.
@@ -395,36 +391,36 @@ layout: section
 
 ---
 
-## Fabriquer un Système d'Information durable
+### Fabriquer un Système d'Information durable
 
 - Suivre la stratégie, les réglementations et normes, les bonnes pratiques
 
 ---
 
-## Engagement
+### Engagement
 
 - S'engager avec les fournisseurs, les partenaires, les institutions.
 
 ---
 
-## Lien
+### Lien
 
 - [Voir le rapport "Déployer la sobriété numérique" du Shift Project](https://theshiftproject.org/article/deployer-la-sobriete-numerique-rapport-shift/).
 
 ---
 
-# Définir des contraintes
+## Définir des contraintes
 
 ---
 
-## 2 axes majeurs
+### 2 axes majeurs
 
 - Économiser l'énergie
 - Éviter de renouveler les terminaux
 
 ---
 
-## Contraintes sur les usages
+### Contraintes sur les usages
 
 - Restreindre l'accès à certains sites (vidéos, streaming…)
 - Restreindre au strict nécessaire les utilisateurs autorisés à accéder à une application donnée
@@ -432,7 +428,7 @@ layout: section
 
 ---
 
-## Contraintes sur les applications & développements
+### Contraintes sur les applications & développements
 
 - Restreindre l’utilisation de certains framework / certaines librairies
 - Éviter les "dark patterns" (UX)
@@ -440,7 +436,7 @@ layout: section
 
 ---
 
-## Contraintes sur les données
+### Contraintes sur les données
 
 - Dates maximales d'archivage
 - Seuil maximal de volumes de données pour l’entreprise
@@ -449,7 +445,7 @@ layout: section
 
 ---
 
-## Contraintes sur les infrastructures
+### Contraintes sur les infrastructures
 
 - Restreindre les types de matériels achetés
 - Restreindre le volume de serveurs, le volume de machines virtuelles
@@ -457,7 +453,7 @@ layout: section
 
 ---
 
-# Un outil : matrice de matérialité
+### Un outil : matrice de matérialité
 
 - Matrice : "Importance pour les parties prenantes" vs "Impact sur l'activité de l'entreprise"
 - Permet de mettre une priorité sur les objectifs (au plus haut sur les 2 axes)
@@ -471,11 +467,11 @@ Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strat
 layout: section
 ---
 
-# Déchets d'équipements électriques et électroniques (DEEE)
+## Déchets d'équipements électriques et électroniques (DEEE)
 
 ---
 
-# Les DEEE
+### Les DEEE
 
 - Les matériels électroniques et informatiques génèrent des déchets (DEEE) :
   - 70kg de matières premières pour produire, utiliser et éliminer un smartphone
@@ -487,7 +483,7 @@ layout: section
 
 ---
 
-# Enjeux
+### Enjeux
 
 - Imaginaire collectif : 40% à 50% des DEEE recyclés
 - Réalité : 17.4% des DEEE dépollués et recyclés en 2019
@@ -496,14 +492,14 @@ layout: section
 
 ---
 
-# Revaloriser
+### Revaloriser
 
 - Réutiliser les ressources dormantes (lorsque possible) évite d'en extraire de nouvelles
 - 1 tonne de DEEE recyclée => 2 tonnes de CO2e évitées
 
 ---
 
-# Allonger la durée de vie de ses appareils
+### Allonger la durée de vie de ses appareils
 
 1. Entretenir
 2. Réparer (indice de réparabilité depuis 01/2021)
@@ -511,7 +507,7 @@ layout: section
 
 ---
 
-# Liens utiles
+### Ressources utiles
 
 - Source sur les données DEEE du cours : [site ecosystem.eco](https://www.ecosystem.eco/comprendre/journee-internationale-deee)
 - [100 millions de téléphones portables usagés : l'urgence d'une stratégie (senat.fr)](https://www.senat.fr/rap/r15-850/r15-850.html)
@@ -524,13 +520,11 @@ layout: section
 layout: section
 ---
 
-# Ressources utiles
+## Ressources
 
 ---
 
-<!-- class: liens -->
-
-## Green IT
+### Green IT
 
 - [Étude : Empreinte environnementale du numérique mondial. (greenit.fr, mis à jour 2025)](https://greenit.eco/nos-etudes-et-essais/impacts-environnementaux-du-numerique-dans-le-monde-2025/)
 - [Pierre Boulet, Sylvain Bouveret, Aurélie Bugeau, Frenoux Emmanuelle, Julien Lefevre, et al.. Référentiel de connaissances pour un numérique éco-responsable. EcoInfo. 2020.](https://hal.science/hal-02954188)
@@ -550,7 +544,7 @@ layout: section
 
 ---
 
-## RSE et Green IT en entreprise
+### RSE et Green IT en entreprise
 
 - [Une charte environnementale entreprise, c'est quoi ? (hellocarbo.com)](https://www.hellocarbo.com/blog/calculer/charte-environnementale-entreprise/)
 - [Calcul du bilan carbone d'une PME (hellocarbo.com)](https://www.hellocarbo.com/blog/calculer/bilan-carbone-pme/)
@@ -559,7 +553,7 @@ layout: section
 
 ---
 
-# Bibliographie
+### Bibliographie
 
 - [F. Bordage. Sobriété numérique : les clés pour agir. Buchet-Chatel](https://www.buchetchastel.fr/catalogue/sobriete-numerique/)
 - [F. Bordage., M. Morelle, Tendre vers la sobriété numérique. Actes Sud](https://www.actes-sud.fr/catalogue/essais/tendre-vers-la-sobriete-numerique)
@@ -568,8 +562,10 @@ layout: section
 
 ---
 
-# IA
+### IA
 
 - <https://ia-frugale.org/> : ressources pour une IA frugale
 - [Graphique : Consommation électrique de l'IA (2024)](https://www.standblog.org/dc-blog/public/2025/Consommation_e_lectrique_de_l_IA_et_approvisionnement.jpg)
+
+---
 

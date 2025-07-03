@@ -6,7 +6,7 @@ tags:
 - python
 ---
 
-# Classes
+## Classes
 
 Une déclaration de classe est un morceau de code standard et est **exécutée**.
 - La déclaration de classe peut être faite n'importe où
@@ -16,7 +16,7 @@ Un _objet classe_ est créé lors de la lecture de la déclaration de classe.
 
 ---
 
-# Exemple de classe simple
+### Exemple de classe simple
 
 ```python
 class MaClasse:
@@ -32,7 +32,7 @@ class MaClasse:
 
 ---
 
-# Instanciation de classe sans constructeur
+### Instanciation de classe sans constructeur
 
 ```python
 class MaClasse:
@@ -78,7 +78,7 @@ mon_instance2.ma_methode()
 
 ---
 
-# Utilisation de constructeur
+### Utilisation de constructeur
 
 ```python
 class MaClasseAvecConstructeur:
@@ -101,7 +101,7 @@ print( mon_instance.mon_attribut_de_classe )
 
 ---
 
-# Instanciation de classe avec constructeur
+### Instanciation de classe avec constructeur
 
 ```python
 class MaClasseAvecConstructeur:
@@ -121,7 +121,7 @@ print( mon_instance1.__class__ ) # MaClasseAvecConstructeur
 
 ---
 
-# Héritage de classe
+## Héritage de classe
 
 ```python
 class MaClasseParente:
@@ -145,7 +145,7 @@ mon_instance.verif_heritage() # True True True
 
 ---
 
-# Héritage multiple
+### Héritage multiple
 
 ```python
 class MonHeritageMultiple(ClasseParente1, ClasseParente2, ClasseParente3):
@@ -154,7 +154,8 @@ class MonHeritageMultiple(ClasseParente1, ClasseParente2, ClasseParente3):
 
 ---
 
-# Variables privées
+## Variables privées
+
 En Python, il est toujours possible d'accéder/modifier un attribut de l'héritage (pas de vérouillage ou de masquage d'attributs 'privés').
 
 ---
@@ -235,7 +236,7 @@ o.affiche2()
 
 ---
 
-# Destructeurs
+## Destructeurs
 
 ```python
 del mon_objet
@@ -243,7 +244,7 @@ del mon_objet
 
 ---
 
-# Accès à la classe parente
+## Accès à la classe parente
 
 ```python
 class A:
@@ -266,7 +267,7 @@ b.g() # A
 
 ---
 
-# Dataclasses
+## Dataclasses
 
 Permettent de créer rapidement une classe servant juste à transporter de la donnée :
 
@@ -286,14 +287,14 @@ print( john.salary ) # 1000
 
 ---
 
-# **Interfaces**
+## Interfaces
 
 En Python, les interfaces ne sont pas directement implémentées par le langage.
 Il est cependant possible d'utiliser les concepts d'une interface pour s'en approcher.
 
 ---
 
-# Interface informelle (Duck Typing)
+### Interface informelle (Duck Typing)
 
 Classe standard décrivant le contrat d'une interface (aucune vérification).
 
@@ -348,7 +349,7 @@ print( c.cri() ) # NotImplementedError(...)
 
 ---
 
-# Python ABC
+### Python ABC
 
 Il existe d'autres méthodes plus complexes pour implémenter des interfaces plus formellement :
 - l'utilisation de classes abstraites via la librairie _Abstract Base Class (ABC)_
@@ -356,7 +357,7 @@ Il existe d'autres méthodes plus complexes pour implémenter des interfaces plu
 
 ---
 
-# Exercice : héritage multiple
+### Exercice : héritage multiple
 
 - Écrire une classe `Mouette` héritant de deux classes parentes : une classe `Oiseau` et une classe `Vol`.
 - La classe `Oiseau` possède une fonction booléenne `ovipare`. La classe `Vol` implémente la fonction `deplacement` d'une interface `Locomotion` en renvoyant : `deplacement() => "vol"`
@@ -366,7 +367,7 @@ Il existe d'autres méthodes plus complexes pour implémenter des interfaces plu
 
 ---
 
-# Attributs et méthodes statiques
+## Attributs et méthodes statiques
 
 - Le prototype d'une classe (`class MaClasse ...`) est un objet.
 - Tout le code dans la classe est exécuté à la lecture du mot-clef `class`.
@@ -375,7 +376,7 @@ Il existe d'autres méthodes plus complexes pour implémenter des interfaces plu
 
 ---
 
-## Exemple d'attribut statique
+### Exemple d'attribut statique
 
 ```python
 class MaClasse:
@@ -394,7 +395,7 @@ print( MaClasse.nb_instances )
 
 ---
 
-## Exemple de méthode statique
+### Exemple de méthode statique
 
 On pourra utiliser le décorateur `@staticmethod` :
 
@@ -415,7 +416,7 @@ print(MaClasse.nb_instances) # 0
 
 ---
 
-# À retenir sur l'héritage
+## À retenir sur l'héritage
 
 - `class MonImplem(MonParent)` fais hériter `MonImplem` de `MonParent`.
 - Utiliser `self` dans toutes les méthodes (y compris le constructeur).
@@ -427,11 +428,11 @@ print(MaClasse.nb_instances) # 0
 
 ---
 
-# Exceptions
+## Exceptions
 
 [Liste des exceptions natives][doc-exceptions]
 
-## Lever une exception
+### Lever une exception
 
 ```python
 raise RuntimeError('Une erreur ici')
@@ -440,7 +441,7 @@ On préfèrera utiliser une classe spécifique d'exception : `ValueError`, `OSEr
 
 ---
 
-## Récupération d'exceptions
+### Récupération d'exceptions
 
 ```python
 try:
@@ -457,7 +458,7 @@ except Exception as exc:
 
 ---
 
-# try/finally
+### try/finally
 
 Un bloc `try/finally` permet d'exécuter un bloc de code `finally` dans tous les cas (exception ou comportement normal).
 
@@ -476,20 +477,15 @@ finally:
 ```
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens utiles - notions avancées
+## Ressources
 
 - [Cours Python orienté data science][scipy]
 - [La bibliothèque NumPy et création de graphiques Matplotlib][numpy-matplotlib]
 - [Concurrence et asynchronisme en Python][async]
 - [Les décorateurs][decorator]
-
----
-
-# Liens utiles - exercices
-
 - [Visualisation graphique d'exécution de code][python-tutor]
 - [Python Challenges][python-challenge]
 
@@ -513,9 +509,11 @@ finally:
 
 ---
 
-# Legal
+## Legal
 
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well.
 - PYPI is a trademark of Python Software Foundation.
 - Other names may be trademarks of their respective owners
+
+---
 

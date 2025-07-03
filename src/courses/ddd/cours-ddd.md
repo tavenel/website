@@ -1592,7 +1592,7 @@ courseService.createRecurringCourseRequest(user);
 layout: section
 ---
 
-# Liens
+# Ressources
 
 - [Articles sur le DDD (opus.ch)](https://opus.ch/en/category/ddd-en/)
 - [Présentation du DDD (dieuxducode.com)](https://lesdieuxducode.com/blog/2019/7/introduction-au-domain-driven-design)

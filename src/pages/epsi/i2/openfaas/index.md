@@ -35,7 +35,7 @@ Module de 12H
 - [λ TP serverless : Fonctions-as-a-Service dans Kubernetes avec OpenFaaS](/cours/docker/openfaas-tp)
 - [🏆 Projet OpenFaaS dans Kubernetes](/epsi/i2/openfaas/projet)
 
-### Liens
+### Ressources
 
 - [OpenFaas Lab : Create a GitHub bot](https://github.com/openfaas/workshop/blob/master/lab5.md)
 - [How to build a Serverless Single Page App](https://www.openfaas.com/blog/serverless-single-page-app/)

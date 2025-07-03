@@ -266,7 +266,7 @@ IRequestVerses poetryReader = new PoetryReader(mockFileAdapter);
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - [Architecture hexagonale : 3 principes et un exemple (blog.octo.com)](https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation)
 - [Alistair Cockburn : hexagonal architecture](https://alistair.cockburn.us/hexagonal-architecture/)

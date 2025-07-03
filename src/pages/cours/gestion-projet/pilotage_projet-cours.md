@@ -10,7 +10,7 @@ tags:
 
 ---
 
-# Le tableau de bord
+## Le tableau de bord
 
 Pour piloter avec efficacité, le tableau de bord est l'outil indispensable.
 
@@ -23,7 +23,7 @@ Il permet en outre une communication avec l'équipe et les parties prenantes à 
 
 ---
 
-# Les indicateurs clés de pilotage
+## Les indicateurs clés de pilotage
 
 Pour concevoir un tableau performant et opérationnel, il convient de choisir des indicateurs pertinents (`KPI`), représentatifs de l'avancée des travaux et du niveau de performance atteint en cohérence avec les objectifs fixés.
 
@@ -38,7 +38,7 @@ _Les indicateurs sont définis lors de la phase de conception._
 
 ---
 
-# Le planning
+## Le planning
 
 Une planification de type `diagramme de Gantt` est une aide précieuse pour suivre l'avancement du projet.
 Un tel outil offre une vue détaillée des différentes activités, tâches, travaux menés sur un horizon temporel.
@@ -50,7 +50,7 @@ Les décisions sont alors plus faciles à prendre, la répartition des tâches p
 
 ---
 
-# Les tableaux individuels
+## Les tableaux individuels
 
 Les tableaux d'informations spécifiques à une personne (planification individuelle, tâches assignées, ...) permettent de suivre la bonne répartition de la charge et d'adapter celle-ci si besoin.
 
@@ -66,13 +66,13 @@ Le widget `Suivi des délais` permet de créer des fiches de temps, qui vérifie
 
 ---
 
-# Tableau des risques
+## Tableau des risques
 
 Cet outil de synthèse de gestion des risques est utile pour garder sous surveillance les vulnérabilités probables et mettre en oeuvre les actions de prévention. Ce tableau est issu de la matrice des risques définie lors de la phase de conception.
 
 ---
 
-# Les rapports d’avancement
+## Les rapports d’avancement
 
 Le rapport d’avancement de projet est une mise à jour sur la progression du projet.
 Très concis, il présente des informations générales sur cette progression afin que les membres de l’équipe sachent en un coup d’oeil ce qu’il se passe au sein du projet (délais, freins prochaines étapes, ...). 
@@ -82,12 +82,16 @@ La fréquence de publication dépend de la chronologie de projet : hebdomadaire,
 Ces rapports d’avancement ne sont pas destinés à pointer du doigt ce qui se passe mal, mais à tenir l'équipe informée de la progression du projet au cours des dernières semaines par un savant mélange de résumés généraux et d’indicateurs importants.
 
 ---
+layout: section
+---
 
-# Liens
+## Ressources
 
 Différents outils de pilotage de projets :
 
 - [Jira](https://www.atlassian.com/fr/software/jira) : la référence de gestion de projet, très configurable et intégrable avec beaucoup de technologies, complexe à utiliser
 - [Monday](https://monday.com/) : une plateforme moderne de pilotage de projet très configurable
 - [Plane](https://github.com/makeplane/plane/) : une alternative simple à Jira
+
+---
 

@@ -1,7 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/CoursePartLayout.astro'
-title: Cours BDD
+title: Behavior-Driven Development (BDD)
 tags:
 - ddd
 - bdd
@@ -222,9 +222,10 @@ def "events are published to all subscribers"() {
 > BDD is building the right thing.
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-# Liens
+## Ressources
 
 - <https://alexsoyes.com/bdd-behavior-driven-development/>
 - <https://cucumber.io/docs/bdd/>

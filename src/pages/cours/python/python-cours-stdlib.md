@@ -1,16 +1,12 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/SlideLayout.astro'
-title: Cours sur la librairie standard Python
+title: La librairie standard Python (stdlib)
 tags:
 - python
 ---
 
-# La librairie standard StdLib
-
----
-
-# Introduction aux modules
+## Introduction aux modules
 
 _fichier mon_module.py_
 
@@ -30,7 +26,7 @@ def fun1():
 
 ---
 
-# Fichier `__init__.py`
+### Fichier `__init__.py`
 
 ```
 mypkg/
@@ -43,7 +39,7 @@ L'instruction python `import mypkg` va exécuter le fichier `__init__.py` (si pr
 
 ---
 
-# Aide sur les modules
+### Aide sur les modules
 
 ```python
 import os
@@ -61,7 +57,7 @@ help(os) # Page de manuel du module 'os'
 
 ---
 
-# Modules utiles
+### Modules utiles
 
 - [Principaux modules de la bibliothèque standard][doc-stdlib]
 - [Documentation complète de la bibliothèque standard][doc-full]
@@ -84,7 +80,7 @@ shutil.copyfile('data.db', 'archive.db')
 
 ---
 
-# Gestion simple des arguments
+## Gestion simple des arguments
 
 ```python
 import sys
@@ -95,13 +91,13 @@ print(sys.argv)
 
 ---
 
-# Exercice : récupération des arguments
+### Exercice : récupération des arguments
 
 Écrire un script Python affichant le résultat de la multiplication de tous les nombres passés en paramètres. On utilisera une boucle d'itération sur les arguments du script.
 
 ---
 
-# Gestion poussée des arguments
+## Gestion poussée des arguments
 
 ```python
 import argparse
@@ -116,7 +112,7 @@ print(args)
 
 ---
 
-# Fonction input : récupération des entrées utilisateur
+## Fonction input : récupération des entrées utilisateur
 
 ```python
 print('Veuillez entrer un nombre positif quelconque : ')
@@ -126,7 +122,7 @@ print('Le carré de', nn, 'vaut', nn**2)
 
 ---
 
-# Random
+## Random
 
 ```python
 import random
@@ -138,7 +134,7 @@ print( random.randrange(6) )    # random integer chosen from range(6)
 
 ---
 
-# Logging
+## Logging
 
 ```python
 import logging
@@ -151,7 +147,7 @@ logging.critical('Critical error -- shutting down')
 
 ---
 
-# Fichiers
+## Fichiers
 
 ```python
 with open('mon_fichier', 'r+') as f: # Utiliser un bloc 'with' permet de fermer le fichier automatiquement, sinon f.close()
@@ -175,7 +171,7 @@ with open('mon_fichier', 'r+') as f: # Utiliser un bloc 'with' permet de fermer 
 
 ---
 
-# (Dé)Sérialisation JSON
+## (Dé)Sérialisation JSON
 
 ```python
 import json
@@ -194,7 +190,7 @@ print( type(mon_objet2) )
 
 ---
 
-# Stockage d'objets JSON
+## Stockage d'objets JSON
 
 ```python
 import json
@@ -208,7 +204,7 @@ with open('/tmp/cours-stdlib.json', 'r+') as f:
 
 ---
 
-# Empaquetage et installation d'une bibliothèque Python
+## Empaquetage et installation d'une bibliothèque Python
 
 `pip` est un programme permettant d'installer une bibliothèque Python depuis le [Python Package Index][site-pypi] :
 
@@ -220,13 +216,13 @@ Pour plus d'information : [documentation venv][doc-venv].
 
 ---
 
-# **Accès aux bases de données**
+## Accès aux bases de données
 
 ---
 
-# SQLite : inclus dans le langage
+### SQLite : inclus dans le langage
 
-## Connection à la base de données et création d'une table
+#### Connection à la base de données et création d'une table
 
 ```python
 import sqlite3 as sl
@@ -244,7 +240,7 @@ with con:
 
 ---
 
-## Insertion d'entrées dans la table
+#### Insertion d'entrées dans la table
 
 ```python
 sql = 'INSERT INTO USER (id, name, age) values(?, ?, ?)'
@@ -259,7 +255,7 @@ with con:
 
 ---
 
-## Query sur la table
+#### Query sur la table
 
 ```python
 with con:
@@ -270,7 +266,7 @@ with con:
 
 ---
 
-# MySQL
+### MySQL
 
 `MySQL` n'est pas disponible directement dans le langage.
 
@@ -282,7 +278,7 @@ $ pip install mysql-connector-python
 
 ---
 
-## Connexion à la base de données et création d'une base
+#### Connexion à la base de données et création d'une base
 
 ```python
 from getpass import getpass
@@ -303,7 +299,7 @@ except Error as e:
 
 ---
 
-## Création d'une table et insertion d'entrées
+#### Création d'une table et insertion d'entrées
 
 ```python
 from getpass import getpass
@@ -328,7 +324,7 @@ except Error as e:
 
 ---
 
-## Insertion d'entrées en utilisant des objets Python
+#### Insertion d'entrées en utilisant des objets Python
 
 ```python
 insert_reviewers_query = """ INSERT INTO reviewers (first_name, last_name) VALUES ( %s, %s ) """
@@ -344,7 +340,7 @@ with connection.cursor() as cursor:
 
 ---
 
-## Query
+#### Query
 
 ```python
 select_movies_query = "SELECT * FROM movies LIMIT 5"
@@ -355,10 +351,11 @@ with connection.cursor() as cursor:
         print(row)
 ```
 
----
 
 [doc-stdlib]: https://docs.python.org/fr/3/tutorial/stdlib.html
 [doc-full]: https://docs.python.org/fr/3/library/index.html#library-index
 [doc-venv]: https://docs.python.org/3/tutorial/venv.html
 [site-pypi]: https://pypi.org 
+
+---
 

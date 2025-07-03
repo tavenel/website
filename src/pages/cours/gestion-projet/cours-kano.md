@@ -58,3 +58,5 @@ Imaginons un projet de développement d'une application de livraison de repas :
 
 <div class="caption">Exemple de diagramme de Kano</div>
 
+---
+

@@ -8,7 +8,7 @@ tags:
 - programmation
 ---
 
-# Introduction
+## Introduction
 
 > Programmation orientée objet (POO) : modèle de programmation utilisant une conception basée sur les **objets**.
 
@@ -18,7 +18,7 @@ tags:
 
 ---
 
-# Historique
+## Historique
 
 - Émergence dans les années 1970 : `Simula`, `Smalltalk` ;
 - Années 1980 : effervescence des langages objets : `Eiffel`, `C++`, `Objective C` ;
@@ -30,7 +30,7 @@ tags:
 
 ---
 
-# Différents types de langages POO
+## Différents types de langages POO
 
 - Langages de POO « purs » où tout est objet : `Ruby`, `Scala`, ...
 - Langages principalement POO mais avec quelques éléments procéduraux : `Java`, `Python`, `C++`, `C#`, `.NET`, ...
@@ -39,7 +39,7 @@ tags:
 
 ---
 
-# Avantages du paradigme objet
+## Avantages du paradigme objet
 
 - **Modularité** :  les objets regroupent des données et un ensemble d’opérations.
 - **Abstraction** : les objets sont proches du monde réel.
@@ -48,7 +48,7 @@ tags:
 
 ---
 
-# Concepts de base
+## Concepts de base
 
 La programmation orientée objet repose sur 5 concepts fondamentaux :
 
@@ -62,11 +62,7 @@ La programmation orientée objet repose sur 5 concepts fondamentaux :
 layout: section
 ---
 
-# La classe
-
----
-
-# La classe
+## La classe
 
 **Une classe regroupe des fonctions et des attributs qui définissent un objet.**
 
@@ -74,7 +70,7 @@ On appelle les fonctions d'une classe des _méthodes_.
 
 ---
 
-## Exemple de classe
+### Exemple de classe
 
 ```python
 class Voiture:
@@ -91,11 +87,7 @@ class Voiture:
 layout: section
 ---
 
-# L'objet
-
----
-
-## Les objets
+## L'objet
 
 **Un objet est une instance d'une classe**.
 
@@ -112,14 +104,14 @@ _Note_ : `Voiture()` est un raccourci pour appeler la méthode `__init__()` de `
 
 ---
 
-## Cycle de vie
+### Cycle de vie
 
 - L'appel au constructeur permet de créer l'objet (attribue l'espace mémoire dédié) ;
 - Suppression : automatique par la machine virtuelle ou par `del(mon_objet)`
 
 ---
 
-## Les attributs
+### Les attributs
 
 - **Ils permettent de stocker des informations à l'intérieur d'un objet**.
 - Similaires aux variables mais propres à chaque instance de l'objet.
@@ -153,7 +145,7 @@ AttributeError: 'Voiture' object has no attribute 'modele'
 
 ---
 
-## Les méthodes
+### Les méthodes
 
 - **Les méthodes sont des fonctions définies dans une classe.**
 - Elles ont accès aux attributs de la classe.
@@ -184,7 +176,7 @@ Utilisation de cette méthode:
 
 ---
 
-## `dir()` et `__dict__`
+### `dir()` et `__dict__`
 
 - Dans des langages POO "stricts" (`Java`), l'objet est toujours lié à la classe qui l'a généré :
   + toutes les instances de `Voiture` ont les mêmes méthodes et noms d'attributs.
@@ -198,7 +190,7 @@ Utilisation de cette méthode:
 
 ---
 
-## Résumé d'un objet
+### Résumé d'un objet
 
 Techniquement, un objet est caractérisé par 3 choses :
 
@@ -253,10 +245,6 @@ Par convention :
 layout: section
 ---
 
-# L'encapsulation
-
----
-
 ## L'encapsulation
 
 **Les propriétés des objets ne peuvent être accédées que par ses méthodes.**
@@ -278,7 +266,7 @@ class Voiture:
 
 ---
 
-## Les propriétés
+### Les propriétés
 
 - En POO "pure" => un attribut n'est pas accessible en dehors de la classe.
   + Pour récupérer / changer la valeur d'un attribut (appelé alors _propriété_) on utilise des `getter` et `setter`
@@ -322,7 +310,7 @@ Récupération du nombre de roues
 
 ---
 
-## Portée (publique / privée)
+### Portée (publique / privée)
 
 La portée (ou visibilité) définit les droits d'accès d'un attribut/méthode :
 
@@ -366,7 +354,7 @@ ma_voiture._methode_privee() # interdit (hors de la classe)
 layout: section
 ---
 
-# L'héritage
+## L'héritage
 
 ---
 
@@ -444,7 +432,7 @@ L'héritage présente 2 avantages principaux en POO :
 
 ---
 
-# Polymorphisme
+## Polymorphisme
 
 Le polymorphisme permet de redéfinir dans une classe fille un attribut / méthode dont le contrat est définit dans une classe parente (ici `_type_mouvement`) :
 
@@ -513,4 +501,6 @@ Le véhicule se déplace en : roulant
 ```
 
 Polymorphisme simple en _duck typing_.
+
+---
 

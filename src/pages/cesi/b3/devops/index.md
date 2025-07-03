@@ -35,7 +35,7 @@ Module de 2 journées
 - [🤓 Cours : introduction au Devops, CI/CD, Docker, Ansible & Terraform](/cesi/b3/devops/cours)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cesi/b3/devops/projet)
 
-## Liens
+## Ressources
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
 - [💻 Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)

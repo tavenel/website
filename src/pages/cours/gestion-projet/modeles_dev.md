@@ -7,11 +7,7 @@ tags:
 - architecture
 ---
 
-# Modèle en cascade (waterfall)
-
----
-
-# Modèle en cascade (waterfall)
+## Modèle en cascade (waterfall)
 
 Le modèle en cascade est une organisation des activités d'un projet sous forme de phases **linéaires** et **séquentielles** où :
 - chaque phase correspond à une **spécialisation** des tâches
@@ -19,7 +15,7 @@ Le modèle en cascade est une organisation des activités d'un projet sous forme
 
 ---
 
-## Origine
+### Origine
 
 Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur les hypothèses suivantes :
 
@@ -63,7 +59,7 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
 
 ---
 
-## Phases et livrables
+### Phases et livrables
 
 - Exigences : les exigences font l'objet d'une expression des besoins
 - Analyse : les exigences sont analysées pour établir un cahier des charges fonctionnel
@@ -109,7 +105,7 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
 
 ---
 
-## En pratique
+### En pratique
 
 Ce modèle n'est plus très utilisé en pratique car peu réaliste mais il est à la base des modèles que nous allons aborder.
 
@@ -117,7 +113,7 @@ Ce modèle n'est plus très utilisé en pratique car peu réaliste mais il est �
 layout: section
 ---
 
-# Cycle en V
+## Cycle en V
 
 ---
 
@@ -177,7 +173,7 @@ détails
 
 ---
 
-## Origine
+### Origine
 
 Issu de l'industrie, c'est une alternative plus réaliste au modèle en cascade. Il en reprend une approche **séquentielle et linéaire** des phases mais l'enrichit avec :
 
@@ -186,7 +182,7 @@ Issu de l'industrie, c'est une alternative plus réaliste au modèle en cascade.
 
 ---
 
-## Flux descendant
+### Flux descendant
 
 Une première série d'étapes, le flux descendant, vise à détailler le produit jusqu'à sa réalisation. Il comprend l'expression des besoins, l'analyse, la conception, puis la mise en œuvre.
 
@@ -194,13 +190,13 @@ _Pour un logiciel, la mise en œuvre correspond essentiellement à la programmat
 
 ---
 
-## Flux ascendant
+### Flux ascendant
 
 Une deuxième série d'étapes, le flux ascendant, vise à valider le produit jusqu'à sa recette, c'est-à-dire son acceptation par le client. Il comprend principalement une série de tests jusqu'à pouvoir valider que le produit répond au besoin et aux exigences.
 
 ---
 
-## Les étapes du modèle :
+### Les étapes du modèle :
 
 - Exigences : les exigences font l'objet d'une expression des besoins. Le cas échéant, une étude de faisabilité peut être conduite avant d'engager les travaux.
 - Analyse : il s'agit à partir de l'expression de besoin d'établir le cahier des charges fonctionnel ou les spécification fonctionnelle
@@ -217,7 +213,7 @@ Une deuxième série d'étapes, le flux ascendant, vise à valider le produit ju
 
 ---
 
-## En pratique
+### En pratique
 
 L'idée est donc de découper la validation pour distinguer les tests unitaires, les tests d'intégration et les tests systèmes qui correspondent aux différents niveaux d'intégration (assemblage) du système, ce qui s'avère plus adaptés aux systèmes complexes faits de plusieurs composants.
 
@@ -225,7 +221,7 @@ Le cycle en V est un des standards de l'industrie du logiciel et certainement le
 
 ---
 
-## Risques
+### Risques
 
 Ce modèle est bien adapté pour des projet aux besoins et spécifications stables, claires et bien comprises.
 
@@ -237,11 +233,7 @@ Une solution consiste à travailler en versions (itérations) successives du cyc
 layout: section
 ---
 
-# Cycle en W
-
----
-
-# Cycle en W
+## Cycle en W
 
 Le cycle en W est un double cycle en V.
 Il reprend totalement le principe de ce dernier en ajoutant la création d'un **prototype** (1er V) avant la réalisation réelle du produit (2e V).
@@ -301,11 +293,7 @@ La réalisation du prototype induit cependant un coût et une durée de réalisa
 layout: section
 ---
 
-# Cycle en spirale
-
----
-
-# Cycle en spirale
+## Cycle en spirale
 
 ![Le cycle en spirale](https://upload.wikimedia.org/wikipedia/commons/e/ec/Spiral_model_%28Boehm%2C_1988%29.svg)
 
@@ -315,7 +303,7 @@ Le développement reprend les différentes étapes du cycle en V. Par l'impléme
 
 ---
 
-## Description
+### Description
 
 Le cycle en spirale se déroule en quatre phases :
 
@@ -326,7 +314,7 @@ Le cycle en spirale se déroule en quatre phases :
 
 ---
 
-## En pratique
+### En pratique
 
 Le cycle en spirale met plus l'accent sur la **gestion des risques** que le cycle en V. En effet, le début de chaque itération comprend une phase d'analyse des risques. Celle-ci est rendue nécessaire par le fait que, lors d'un développement cyclique, il y a plus de risques de défaire, au cours de l'itération, ce qui a été fait au cours de l'itération précédente.
 
@@ -334,11 +322,7 @@ Le cycle en spirale met plus l'accent sur la **gestion des risques** que le cycl
 layout: section
 ---
 
-# Cycle en Y
-
----
-
-# Cycle en Y (Two Tracks Unified Process)
+## Cycle en Y (Two Tracks Unified Process)
 
 Le 2TUP propose un cycle de développement en Y, qui **dissocie les aspects techniques des aspects fonctionnels**.
 
@@ -376,27 +360,27 @@ Le 2TUP propose un cycle de développement en Y, qui **dissocie les aspects tech
 
 ---
 
-## Processus UP
+### Processus UP
 
 Comme tous les processus UP (Unified Process), celui-ci est _itératif_ et _incrémental_, centré sur l’_architecture_, conduit par les exigences des _utilisateurs_, piloté par les _risques_ et orienté _composants_.
 
 ---
 
-## Découpage
+### Découpage
 
 Le terme _2 Tracks_ est explicite : le processus suit deux branches d'**étude** *technique* et *fonctionnelle* qui correspondent à 2 axes de changements imposés au projet.
 Ces deux branches fusionnent pour la **conception** du système, créant la forme d'un Y.
 
 ---
 
-## La branche fonctionnelle comporte :
+### La branche fonctionnelle comporte :
 
 - La capture des **besoins fonctionnels** focalisés sur le métier des utilisateurs. La maîtrise d’œuvre consolide les spécifications et en vérifie la cohérence et l’exhaustivité
 - L’**analyse** utilisant la spécification fonctionnelle pour dégager une idée du système en termes de métier sans dépendre d’aucune technologie particulière.
 
 ---
 
-## La branche d'architecture technique comporte :
+### La branche d'architecture technique comporte :
 
 - La capture des **besoins techniques** : contraintes, choix, outils, matériels sélectionnés, contraintes d'intégration avec l'existant
 - La **conception générique** : composants nécessaires à l’architecture technique, complètement indépendante des aspects fonctionnels. Elle a pour objectif **d’uniformiser et de réutiliser** les mêmes mécanismes pour tout un système.
@@ -405,7 +389,7 @@ L’architecture technique construit le squelette du système informatique et é
 
 ---
 
-## La branche de conception comporte :
+### La branche de conception comporte :
 
 - La conception préliminaire, délicate car intègre le modèle d’analyse dans l’architecture technique
 - La conception détaillée : comment réaliser chaque composant
@@ -416,13 +400,9 @@ L’architecture technique construit le squelette du système informatique et é
 layout: section
 ---
 
-# Développement rapide d'applications : RUP
+## Développement rapide d'applications : RUP
 
----
-
-# Développement rapide d'applications : RUP (classique)
-
-## Origine
+### Origine
 
 Rational Unified Process (RUP) est à l'origine du processus unifié et est à ce titre l'implémentation la plus connue.
 
@@ -430,7 +410,7 @@ Il s'agit d'une méthode livrée clés en main et elle est accompagnée d'outils
 
 ---
 
-## Principes
+### Principes
 
 Le cadre au développement logiciel proposé par RUP répond aux caractéristiques du processus unifié :
 - une méthode de développement guidée par les **besoins des utilisateurs**
@@ -442,7 +422,7 @@ Le processus unifié prône une approche pilotée par les risques, en cherchant 
 
 ---
 
-## Utilisation
+### Utilisation
 
 Le processus unifié est cyclique : il vise par une succession de projets à fournir d'abord une version viable d'un produit puis des versions publiables successives ("release").
 
@@ -500,7 +480,7 @@ Itérations               |       E1        |    ...   --> Version interne (incr
 
 ---
 
-## Enchaînement d'activités
+### Enchaînement d'activités
 
 Le processus unifié propose les enchainements d'activités suivants, qui peuvent être configurés selon les besoins du projet:
 
@@ -517,7 +497,7 @@ Le processus unifié propose les enchainements d'activités suivants, qui peuven
 
 ---
 
-## Comparaison
+### Comparaison
 
 Le processus unifié (PU) utilise des phases séquentielles comme les projets en cascade. Tout comme le cycle en V, il est centré sur l'intégration de systèmes faits de composants.
 
@@ -531,7 +511,7 @@ A la différence des méthodes agiles, la définition des exigences et l'archite
 
 ---
 
-## Critiques
+### Critiques
 
 Les méthodes PU (et particulièrement RUP) sont des méthodes puissantes, combinant des aspects itératifs et adaptatifs proches des méthodes agiles et la rigueur de méthodes plus traditionnelles (conception poussée et rigoureuse basée sur UML). Le projet est structuré en phases mais laisse beaucoup de flexibilité sur les itérations.
 
@@ -541,11 +521,11 @@ Ces méthodes imposent cependant une certaine lourdeur à l'exécution et demand
 layout: section
 ---
 
-# Développement rapide d'applications : RAD
+## Développement rapide d'applications : RAD
 
 ---
 
-## Origine
+### Origine
 
 Pensée pour des projets simples, la méthode RAD est la première méthode de développement où le cycle de développement n'est pas inspiré de la cascade.
 
@@ -553,7 +533,7 @@ C'est un cycle _itératif_, _incrémental_ et _adaptatif_ qui se retrouve dans t
 
 ---
 
-## Principe
+### Principe
 
 La méthode RAD formalise techniquement le 1er postulat agile : _pour qu'une planification de projet puisse être raisonnablement prédictive, il faut que certains aspects du pilotage soient fixes et que d'autres soient variables_.
 
@@ -563,7 +543,7 @@ Pour cela, on fixe au moins une des variables, en fonction du besoin immédiat d
 
 ---
 
-## Stratégies
+### Stratégies
 
 - Délais : la plus stratégique (_time boxing_)
 - Ressources : la moins risquée (_SWAT_)
@@ -572,7 +552,7 @@ Pour cela, on fixe au moins une des variables, en fonction du besoin immédiat d
 
 ---
 
-## Utilisation
+### Utilisation
 
 La méthode RAD, après deux courtes phases de formalisation structurée de l'expression des besoins (CADRAGE) et de définition globale de l'architecture technique (DESIGN), inclut dans sa phase principale (CONSTRUCTION) la réalisation, la validation immédiate et les tests d'une application en mode itératif-incrémental-adaptatif.
 
@@ -580,7 +560,7 @@ L'objectif de la méthode, qui implique activement l'utilisateur final dans un p
 
 ---
 
-## En pratique
+### En pratique
 
 Le RAD utilise une équipe de développement particulière : le SWAT.
 
@@ -590,7 +570,7 @@ Elle se compose essentiellement d'un profil unique de concepteurs-développeurs 
 
 ---
 
-## Réalisation
+### Réalisation
 
 Pour une mise en opération, le RAD impose :
 
@@ -644,8 +624,12 @@ Pour une mise en opération, le RAD impose :
 <div class="caption">Développement RAD semi-itératif. Source : https://commons.wikimedia.org/wiki/File:SemiIteratif.jpg?uselang=fr</div>
 
 ---
+layout: section
+---
 
-# Liens
+## Ressources
 
 - [Introduction à différentes méthodes de conduite de projet informatique](https://www.teotimepacreau.fr/blog/methodes-gestion-de-projet-informatique/)
+
+---
 

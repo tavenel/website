@@ -73,7 +73,7 @@ git reset --hard HEAD@{n}
 
 Cela fait revenir votre branche (et l’index si vous utilisez `--hard`) à un point spécifique de l’historique.
 
-### Liens
+### Ressources
 
 :::link
 Voir aussi :

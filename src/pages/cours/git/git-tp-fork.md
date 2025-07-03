@@ -95,7 +95,7 @@ Dans le dépôt `fork2`, cliquer sur `Sync fork` pour synchroniser le fork depui
 
 Publier la branche `modification` du fork vers le dépôt officiel en utilisant une [pull-request de fork (voir la documentation)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork)
 
-# Liens
+# Ressources
 
 Voir aussi le [tutoriel Atlassian sur le workflow de fork](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/forking-workflow)
 

@@ -6,18 +6,16 @@ tags:
 - hibernate
 ---
 
-# Compétences à acquérir
+## Compétences à acquérir
 
 - Définir et utiliser la persistance des données
 - Traiter la conservation de l'état des applications d'une exécution à une autre
 
 ---
 
-# Hibernate : un outil de mapping objet-relationnel
+## Hibernate : mapping objet-relationnel
 
 ---
-
-# Hibernate
 
 Hibernate est une solution open source de type `ORM` (Object Relational Mapping) qui permet de faciliter le développement de la couche persistance d'une application.
 
@@ -29,7 +27,7 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 ---
 
-# Composants
+## Composants
 
 ```plantuml
 @startditaa
@@ -52,7 +50,7 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 ---
 
-# Persistent Objects
+## Persistent Objects
 
 - Objets mono-threadés à vie courte
 - Contenant :
@@ -63,8 +61,6 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 - Dès que la Session est fermée, ils sont détachés et libres d'être utilisés par n'importe quelle couche de l'application (par exemple de et vers la présentation).
 
 ---
-
-# Persistent Objects
 
 ```plantuml
 @startditaa
@@ -92,7 +88,7 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 ---
 
-# Exemple de POJO 
+## Exemple de POJO 
 
 ```java
 public class MyEntity {
@@ -112,7 +108,7 @@ public class MyEntity {
 
 ---
 
-# Architecture modulaire
+## Architecture modulaire
 
 ![](https://docs.jboss.org/hibernate/orm/3.2/reference/fr/shared/images/lite.gif)
 
@@ -124,7 +120,7 @@ public class MyEntity {
 
 ---
 
-# Session
+## Session
 
 - objet mono-threadé, à durée de vie courte
 - représente une conversation entre l'application et l'entrepôt de persistance
@@ -134,7 +130,7 @@ public class MyEntity {
  
 ---
 
-# Unité de travail
+## Unité de travail
 
 - Séquences de requêtes à la BD pour effectuer une opération atomique dans l’application
   + => 1 session par opération métier, et pas 1 session par requête BD !
@@ -145,7 +141,7 @@ public class MyEntity {
 
 ---
 
-# SessionFactory
+## SessionFactory
 
 - Responsable du cycle de vie des sessions
 - Objet complexe, coûteux et thread-safe
@@ -153,14 +149,14 @@ public class MyEntity {
 
 ---
 
-# Au contraire, la Session
+## Au contraire, la Session
 
 - N'est pas coûteuse, non-threadsafe
 - Ne devrait être utilisé qu'une seule fois pour une requête unique, une conversation, une unité de travail unique et devrait être relâché ensuite.
 
 ---
 
-# Résumé
+## Résumé
 
 - La `SessionFactory` génère des `Session`
   + Par exemple : `SessionFactory.getCurrentSession()`
@@ -172,7 +168,7 @@ public class MyEntity {
  
 ---
 
-# Configuration
+## Configuration
 
 Hibernate supporte de nombreux modes de configuration (programmatique, fichier `hibernate.properties`, fichier `hibernate.cfg.xml`, …)
 
@@ -203,7 +199,7 @@ Hibernate fournit également de nombreuses possiblités d’intégration dans un
 
 ---
 
-# Classe de persistance
+## Classe de persistance
 
 Les classes persistées par Hibernate sont des entitées décrites par des POJO (Plain Old Java Object) :
 
@@ -215,7 +211,7 @@ Les classes persistées par Hibernate sont des entitées décrites par des POJO 
 
 ---
 
-# ORM
+## ORM
 
 Bases du Mapping Objet-Relationel (ORM) :
 - Les entitées persistées sont en principe enregistrées en BD selon un schéma très proche :
@@ -225,7 +221,7 @@ Bases du Mapping Objet-Relationel (ORM) :
 
 ---
 
-# POJO à persister
+## POJO à persister
 
 ```java
 public class MyEntity {
@@ -244,7 +240,7 @@ public class MyEntity {
 
 ---
 
-# Exemple de mapping `MyEntity.hbm.xml`
+## Exemple de mapping `MyEntity.hbm.xml`
 
 ```xml
 <hibernate-mapping>
@@ -259,7 +255,7 @@ public class MyEntity {
 
 ---
 
-# Exemple d'annotation Java
+## Exemple d'annotation Java
 
 ```java
 @Entity // il s’agit d’une classe à persister
@@ -282,17 +278,17 @@ public class MyEntity {
 
 ---
 
-# Utilisation d’Hibernate ORM
+## Utilisation d’Hibernate ORM
 
 - L’ORM permet de directement sauver / éditer / supprimer / lister les entités persistées sans avoir à écrire de requête SQL (ou à utiliser JDBC).
 - L’objet Session possède un ensemble de méthodes (`save()`, `delete()`, `update()`, …) qui prennent directement un object en paramètre et réalisent le mapping et la persistance en BD
   + Exemple : `currentSession.save(myEntity)`
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Références
+## Ressources
 
 - Tutoriel Hibernate de J.M.Doudoux : https://www.jmdoudoux.fr/java/dej/chap-hibernate.htm
 - Architecture Hibernate : https://docs.jboss.org/hibernate/orm/3.5/reference/fr-FR/html/architecture.html
@@ -300,8 +296,10 @@ public class MyEntity {
 
 ---
 
-# Legal
+## Legal
 
 - Oracle and Java are registered trademarks of Oracle and/or its affiliates.
 - Other names may be trademarks of their respective owners
+
+---
 

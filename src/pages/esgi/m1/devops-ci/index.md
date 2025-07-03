@@ -27,7 +27,7 @@ Module de 18H
 - [🤓 Cours sur le Devops](/esgi/m1/devops-ci/cours)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet-devops)
 
-## Liens
+## Ressources
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
 - [💻 Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)

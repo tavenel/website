@@ -7,11 +7,7 @@ tags:
 - rse
 ---
 
-# Accessibilité
-
----
-
-# Format texte
+## Format texte
 
 - Utiliser un format texte (pas de formats propriétaires type `Microsoft Word` ou `PDF`).
 
@@ -19,11 +15,11 @@ tags:
 layout: section
 ---
 
-# Web
+## Web
 
 ---
 
-## CSS
+### CSS
 
 - Utiliser des polices d'écriture standards
 - Voir [le lien W3schools sur les Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.php)
@@ -32,7 +28,7 @@ layout: section
 
 ---
 
-## Navigation
+### Navigation
 
 - Toute interface utilisateur doit être navigable au clavier
 - Ajouter un feedback sur le focus actif
@@ -42,7 +38,7 @@ layout: section
 
 ---
 
-## Semantic Web
+### Semantic Web
 
 - Utiliser du Web sémantique : `<header>`, `<main>`, `<footer>`, `<h1>`, ...
 - Les `<div>` et `<span>` ne servent qu'à la mise en page (pas à donner du sens au contenu) !
@@ -52,14 +48,14 @@ layout: section
 
 ---
 
-## Contraste
+### Contraste
 
 - Utiliser un contraste élevé
 - Dupliquer les changements de contexte : par exemple, texte important en gras et couleur.
 
 ---
 
-## Images
+### Images
 
 - Compresser les images et réduire leur taille
 - Images lourdes : utiliser des [images responsive (developer.mozilla.org)](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
@@ -68,10 +64,9 @@ layout: section
 - <https://kurtextrem.de/posts/modern-way-of-img>
 - Voir [la page des développeurs Mozilla sur les rôles](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/img_role)
 
-
 ---
 
-## Limiter JS
+### Limiter JS
 
 - Limiter la complexité du code JS (généralement peu accessible).
 - Pour les sites très simples, utiliser un framework de site statique comme <https://gohugo.io/>
@@ -81,24 +76,24 @@ layout: section
 layout: section
 ---
 
-# Application mobile
+## Application mobile
 
 ---
 
-## Mobile-first
+### Mobile-first
 
 - Faire un site responsive en visant en priorité les interfaces les plus limitées
 
 ---
 
-## Gestes complexes
+### Gestes complexes
 
 - Prévoir une alternative aux gestes complexes (swipe, zoom à 2 doigts, ...)
 - Laisser assez d'espace entre les différents éléments cliquables : [voir la norme WCAG](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html)
 
 ---
 
-## Portrait vs paysage
+### Portrait vs paysage
 
 - Supporter les interfaces **portrait** et paysage
 
@@ -106,11 +101,11 @@ layout: section
 layout: section
 ---
 
-# Tests
+## Tests
 
 ---
 
-## Navigateur Web
+### Navigateur Web
 
 - Utiliser les `devtools` pour simuler des situations de handicap :
   - liées aux couleurs;
@@ -118,24 +113,24 @@ layout: section
 
 ---
 
-## Outils CI
+### Outils CI
 
 - Ajouter un outil de test automatique (`a11y`) dans le pipeline d'intégration continue
 - Reprendre tests end-to-end (exemple : `Selenium`) et automatiser en utilisant le clavier plutôt que les sélecteurs CSS.
 
 ---
 
-## Tests manuels
+### Tests manuels
 
 - Ajouter des tests manuels :
   - revues des balises `alt`, `role`, `aria-*`, ...
   - "vrai" test utilisateur
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens
+## Ressources
 
 - Outil de vérification d'accessibilité (permet aussi d'enlever le CSS) : <https://wave.webaim.org>
 - <https://www.a11yproject.com/>
@@ -150,4 +145,6 @@ layout: section
 - <https://drewdevault.com/2019/01/23/Why-I-use-old-hardware.html>
 - Bon exemple : application mobile "Uber Drive" [App Store](https://apps.apple.com/fr/app/uber-commander-une-course/id368677368) et [Google Store](https://play.google.com/store/apps/details?id=com.ubercab&hl=fr&gl=US)
 - Exemple de pire interface utilisateur (compilation de mauvaises pratiques) : <https://userinyerface.com/>
+
+---
 

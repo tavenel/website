@@ -7,9 +7,9 @@ tags:
 - production
 ---
 
-# Manuel utilisateur
+## Manuel utilisateur
 
-Le guide d’utilisation est le support qui accompagne un produit afin de montrer aux clients comment s’en servir et/ou comment l’assembler. C'est un support marketing que l'on partage pour arriver à la meilleure expérience client possible.
+Le guide d'utilisation est le support qui accompagne un produit afin de montrer aux clients comment s’en servir et/ou comment l’assembler. C'est un support marketing que l'on partage pour arriver à la meilleure expérience client possible.
 
 ---
 
@@ -62,7 +62,7 @@ Un excellent exemple de document utilisateur Ikea. Avec un minimum de texte, ce 
 
 ---
 
-# Lien avec le document d'exploitation
+## Lien avec le document d'exploitation
 
 Le manuel utilisateur est une des sources à réutiliser lors de l'écriture du document d'exploitation (et réciproquement). Cependant, leur destination est très différente : le manuel utilisateur est un document marketing à destination des utilisateurs finaux et doit abstraire la complexité de l'implémentation. Au contraire, le document d'exploitation est un document technique à destination des opérateurs du système.
 
@@ -80,10 +80,12 @@ On doit trouver en plus dans le manuel d'exploitation :
 - L’armoire de rangement des supports de sauvegarde
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens
+## Ressources
 
 - Créer le guide d'utilisateur parfait : <https://www.techsmith.fr/blog/creer-le-guide-d-utilisation-parfait/>
+
+---
 

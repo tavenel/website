@@ -32,7 +32,7 @@ Module de 21H
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk) : le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet-devops)
 
-## Liens
+## Ressources
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
 - [💻 Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)

@@ -1,14 +1,14 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/SlideLayout.astro'
-title: Cours Spring
+title: Spring®
 tags:
 - spring
 - architecture
 - objet
 ---
 
-# Présentation de Spring®
+## Présentation
 
 > Fundamentally, what is Spring? We think of it as a Platform for your Java code _(docs.spring.io)_
 
@@ -21,11 +21,9 @@ tags:
 layout: section
 ---
 
-# Modules
+## Modules
 
 ---
-
-# Modules
 
 Les modules de Spring® :
 
@@ -38,7 +36,7 @@ Les modules de Spring® :
 
 ---
 
-# Spring core
+### Spring core
 
 Le noyau, qui contient à la fois :
 
@@ -47,7 +45,7 @@ Le noyau, qui contient à la fois :
 
 ---
 
-# Spring Context
+### Spring Context
 
 Ce module supporte :
 
@@ -58,7 +56,7 @@ Ce module supporte :
 
 ---
 
-# Spring DAO
+### Spring DAO
 
 Constitue le socle de l'accès aux dépôts de données :
 
@@ -68,7 +66,7 @@ Constitue le socle de l'accès aux dépôts de données :
 
 ---
 
-# Spring ORM
+### Spring ORM
 
 Propose une intégration avec des outils populaires de mapping objet-relationnel :
 
@@ -80,7 +78,7 @@ Propose une intégration avec des outils populaires de mapping objet-relationnel
 
 ---
 
-# Spring WEB
+### Spring WEB
 
 Le module comprenant le support de Spring® pour les applications Web :
 
@@ -90,7 +88,7 @@ Le module comprenant le support de Spring® pour les applications Web :
 
 ---
 
-# Spring Web MVC
+### Spring Web MVC
 
 Implémentation Model-Vue-Controller (`MVC`) pour applications Spring Web
 
@@ -99,11 +97,11 @@ Implémentation Model-Vue-Controller (`MVC`) pour applications Spring Web
 layout: section
 ---
 
-# Design patterns
+## Design patterns
 
 ---
 
-# SOLID
+### SOLID
 
 Rappel : la programmation orientée objet est basée sur les principes _SOLID_
 
@@ -117,21 +115,21 @@ Spring® utilise massivement les principes de _Single Responsibility_ et _Depend
 
 ---
 
-## Open / Closed
+#### Open / Closed
 
 Ouvert à l'extension, fermé à la modification
 
-## Liskov Substitution
+#### Liskov Substitution
 
 L'héritage ne doit pas changer le comportement
 
-## Interface Segregation
+#### Interface Segregation
 
 Interfaces minimalistes
 
 ---
 
-## Single Responsibility
+#### Single Responsibility
 
 - 1 classe ou 1 méthode => 1 responsabilité
 - Spring® utilise des interfaces simples ayant peu de fonctionnalités
@@ -139,7 +137,7 @@ Interfaces minimalistes
 
 ---
 
-## Dependency injection
+#### Dependency injection
 
 - Les liens de dépendances sont résolus dynamiquement en injectant les dépendances dans les classes à l'exécution (et non pas statiquement à la compilation)
 - Spring® utilise massivement l'injection pour fournir une implémentation des interfaces lorsque nécessaire
@@ -155,7 +153,7 @@ Le framework Spring® utilise principalement les design pattern suivants :
 
 ---
 
-# Inversion de contrôle
+#### Inversion de contrôle
 
 > Le flot d'exécution d'un logiciel n'est plus sous le contrôle direct de l'application elle-même mais du framework ou de la couche logicielle sous-jacente. (Wikipédia)
 
@@ -163,7 +161,7 @@ Spring® implémente une inversion de contrôle par le principe d'injection de d
 
 ---
 
-# Exemple
+##### Exemple
 
 Exemple d'injection de dépendance : `maDependance` est instanciée par Spring®
 
@@ -183,7 +181,7 @@ public class MaClasseAvecDependance {
 
 ---
 
-# Singleton
+### Singleton
 
 > Design pattern dont l'objectif est de restreindre l'instanciation d'une classe à un seul objet (Wikipédia)
 
@@ -210,7 +208,7 @@ class Singleton {
 ```
 ---
 
-# Programmation par template
+### Programmation par template
 
 En Programmation orientée objet, design pattern qui laisse libre l'implémentation d'une partie de l'algorithme à l'héritage, sans changer la structure de cet algorithme.
 
@@ -247,13 +245,16 @@ _Le design pattern de template._
 layout: section
 ---
 
-# Pattern MVC : Modèle / Vue / Contrôleur
+## Pattern MVC : Modèle / Vue / Contrôleur
 
 Voir le [cours sur le pattern MVC][site-perso].
 
 ---
 
-# Legal
+## Legal
 
 - Spring® is a trademark of Pivotal Software, Inc. in the U.S. and other countries.
 - Other names may be trademarks of their respective owners
+
+---
+

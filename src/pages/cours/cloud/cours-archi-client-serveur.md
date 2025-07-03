@@ -7,7 +7,7 @@ tags:
 - client-server
 ---
 
-# Client/serveur vs peer-to-peer
+## Client/serveur vs peer-to-peer
 
 Les applications (partie visible pour l'utilisateur) sont la raison d'être des réseaux informatiques.
 
@@ -65,7 +65,7 @@ package "Peer-to-Peer Architecture" {
 
 ---
 
-# Architecture client serveur
+## Architecture client serveur
 
 Mode de communication à travers un réseau entre plusieurs programmes :
 
@@ -83,7 +83,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-# Le serveur
+## Le serveur
 
 - Tourne en permanence, attendant des requêtes.
 - Peut répondre à plusieurs clients en même temps.
@@ -93,7 +93,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-# Exemples de serveurs
+### Exemples de serveurs
 
 - Base de données
 - Serveur d'impression
@@ -101,7 +101,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-# Le client
+## Le client
 
 - Son instance est dédiée à la machine de l'utilisateur...
 - ...mais peut être partagée par plusieurs comptes ou profils !
@@ -112,7 +112,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-# Exemples de clients
+### Exemples de clients
 
 - Navigateur Web
 - Client `Android`
@@ -120,7 +120,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-# Avantages de l'architecture client/serveur
+## Avantages de l'architecture client/serveur
 
 - Ressources centralisées : le serveur gère les ressources communes à tous les utilisateurs (base de données, ...)
   + la cohérence des données est aisée
@@ -130,7 +130,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-# Inconvénients de l'architecture client/serveur
+## Inconvénients de l'architecture client/serveur
 
 - Maillon faible : tout le réseau est architecturé autour du serveur
 celui-ci doit avoir une forte tolérance aux pannes
@@ -142,10 +142,12 @@ celui-ci doit avoir une forte tolérance aux pannes
 Le serveur est donc le seul élément critique mais sa maintenance est compliquée et coûteuse.
 
 ---
+layout: section
+---
 
-# Différentes architectures client/serveur
+## Différentes architectures client/serveur
 
-## Client léger vs client lourd
+### Client léger vs client lourd
 
 Possibilité de déléguer plus ou moins de traitements au serveur :
 
@@ -154,7 +156,7 @@ Possibilité de déléguer plus ou moins de traitements au serveur :
 
 ---
 
-## Serveur N niveaux
+### Serveur N niveaux
 
 - Architecture à N niveaux délégant des traitements à des serveurs secondaires masqués au client.
 - Permet de segmenter l'utilisation de ressources ou services et leur administration.
@@ -191,7 +193,7 @@ AppServer --> C2 : Response
 
 ---
 
-# Middleware
+## Middleware
 
 - Logiciel qui inter-connecte un ensemble d'applications en leur fournissant des fonctionnalités et services communs.
 - Se situe entre les requêtes du client et le serveur :
@@ -237,7 +239,7 @@ layout: section
 
 ---
 
-# Des conventions aux protocoles
+## Des conventions aux protocoles
 
 Exemple de l'envoi d'un courrier postal :
 
@@ -256,7 +258,7 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 ---
 
-# Internet
+## Internet
 
 - Réseau mondial regroupant un ensemble de sous-réseaux non homogènes d'architectures et de technologies différentes.
 - C'est donc un réseau de réseaux : `Inter-network` !
@@ -264,9 +266,9 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 ---
 
-# Le modèle OSI
+## Le modèle OSI
 
-## Séparer les couches réseau
+### Séparer les couches réseau
 
 - Norme précisant comment les machines doivent communiquer entre elles.
 - Modèle de 7 couches indépendantes ayant chacune un rôle particulier.
@@ -306,7 +308,7 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 ---
 
-# Le modèle TCP/IP
+## Le modèle TCP/IP
 
 - OSI: modèle théorique utile pour segmenter les couches réseau.
 - En pratique : modèle TCP/IP de 4 couches fusionnant certaines des couches OSI.
@@ -314,7 +316,7 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 ---
 
-## Couche application
+### Couche application
 
 Ces protocoles gèrent l'accès applicatif aux services réseau :
   + Gestion des noms de domaines `DNS`.
@@ -325,7 +327,7 @@ Ces protocoles gèrent l'accès applicatif aux services réseau :
 
 ---
 
-## Couche transport
+### Couche transport
 
 Ces protocoles établissent les communications :
 
@@ -341,7 +343,7 @@ Ces protocoles établissent les communications :
 
 ---
 
-## Couche internet
+### Couche internet
 
 Ces protocoles gèrent :
 
@@ -351,7 +353,7 @@ Ces protocoles gèrent :
 
 ---
 
-## Couche réseau
+### Couche réseau
 
 Ces protocoles font transiter les frames de données sur le réseau :
 
@@ -394,7 +396,7 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 
 ---
 
-# IP
+## IP
 
 - Pour envoyer un courrier postal, l'expéditeur inscrit l'adresse du destinataire dans un format prédéfini (rue, code postal, ville).
 - De la même manière, il est nécessaire de définir un format pour identifier une entité sur le réseau.
@@ -402,7 +404,7 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 
 ---
 
-## Addresses IP
+### Addresses IP
 
 - Adresses logiques sur 32 bits (4 octets) de la forme `w.x.y.z`
 - Partitionnées en 2 segments grâce à un _masque de sous-réseau_ (`subnet mask`) :
@@ -440,7 +442,7 @@ Par exemple, pour le réseau `25.116.8.0/24` :
 
 ---
 
-## IPv6
+### IPv6
 
 - Les adresses `w.x.y.z` sont en réalité des adresses de la version IPv4 sur 32 bits.
 - Version majoritaire dans les déploiements actuels mais en cours d'épuisement.
@@ -451,7 +453,7 @@ Par exemple, pour le réseau `25.116.8.0/24` :
 
 ---
 
-# Nom de domaine
+## Nom de domaine
 
 `FQDN` (Fully Qualified Domain Name) : noms alphanumériques de la forme `nom_de_machine.nom_de_domaine` où `nom_de_domaine` est un nom `DNS` (système de nom hiérarchique mondialisé).
 
@@ -461,7 +463,7 @@ Le nom de domaine `en.wikipedia.org` représente la machine `en` qui appartient 
 
 ---
 
-# DNS : Domain Name System
+## DNS : Domain Name System
 
 - Service informatique distribué utilisé pour traduire les noms de domaine Internet en adresse IP ou autres enregistrements.
 - Humain = noms de domaine : plus simples à retenir et plus parlant (logs, ...)
@@ -470,8 +472,11 @@ Le nom de domaine `en.wikipedia.org` représente la machine `en` qui appartient 
 
 ---
 
-# Legal
+## Legal
 
 - ANDROID is a trademark of GOOGLE LLC
 - iPhone® is a trademark of Apple Inc., registered in the U.S. and other countries and regions.
 - Other names may be trademarks of their respective owners
+
+---
+

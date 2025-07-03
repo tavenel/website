@@ -6,15 +6,11 @@ tags:
 - projet
 ---
 
-# Introduction à la gestion de projet
-
 ## Pourquoi le Génie Logiciel ?
 
 ---
 
-# Pourquoi le Génie Logiciel ?
-
-## Grosses erreurs :
+### Grosses erreurs :
 
 - Les sondes perdues (Mars Climate Orbiter, Mars Pathfinder)
 - Les missiles Patriotes
@@ -27,9 +23,7 @@ tags:
 
 ---
 
-# Pourquoi le Génie Logiciel ?
-
-## Les projets logiciels :
+### Les projets logiciels :
 
 - ne livrent pas le produit dans les temps
 - coûtent beaucoup plus chers que prévu.
@@ -39,7 +33,7 @@ tags:
 
 ---
 
-# Pourquoi ne pas construire un logiciel comme un pont ?
+### Pourquoi ne pas construire un logiciel comme un pont ?
 
 - Échecs très nombreux
 - Crash système considéré comme habituel
@@ -52,15 +46,13 @@ tags:
 
 ---
 
-# Les mythes de la gestion de projet
+### Les mythes de la gestion de projet
 
 _Les outils sont la solution..._
 
 => Un outil est inutile sans méthodologie !
 
 ---
-
-# Les mythes de la gestion de projet
 
 _En cas de retard, on ajoutera des ressources humaines_
 
@@ -69,8 +61,6 @@ _En cas de retard, on ajoutera des ressources humaines_
 
 ---
 
-# Les mythes de la gestion de projet
-
 _Le logiciel est flexible, il est facile d'ajouter des changements_
 
 => Les besoins de changement sont inévitables dans la "vraie vie"
@@ -78,23 +68,17 @@ _Le logiciel est flexible, il est facile d'ajouter des changements_
 
 ---
 
-# Les mythes de la gestion de projet
-
 _Une fois que le programme est écrit et qu’il tourne, le travail est terminé_
 
 => 50-70% de l’effort est réalisé après la livraison
 
 ---
 
-# Les mythes de la gestion de projet
-
 _Jusqu'à ce que le programme tourne, il n’y a aucun moyen d’évaluer sa qualité_
 
 => Inspections & revues
 
 ---
-
-# Les mythes de la gestion de projet
 
 _La seule chose à livrer pour un projet réussi est un programme qui marche_
 
@@ -113,7 +97,7 @@ En management de projet, il n’y a pas une méthodologie de conduite de projet 
 
 ---
 
-# Quels sont les enjeux d’une méthodologie de projet ?
+### Quels sont les enjeux d’une méthodologie de projet ?
 
 Elle permet :
 
@@ -130,17 +114,14 @@ Elle permet :
 - de mobiliser une équipe performante et autonome
 
 ---
+layout: section
+---
 
-# **Partie I**
-# **Les différents paramètres du projet**
+## Les différents paramètres du projet
 
 ---
 
-# Pourquoi réaliser un projet ?
-
----
-
-# Les attentes et besoins
+### Pourquoi réaliser un projet ? Les attentes et besoins
 
 Définition des besoins à différents niveaux d’abstraction :
 
@@ -158,11 +139,11 @@ Définition du système à réaliser avec le point de vue de l’utilisateur et/
 
 ---
 
-# Les intervenants
+### Les intervenants
 
 ---
 
-## Parties prenantes
+#### Parties prenantes
 
 On appelle **parties prenantes** toutes les personnes qui ont un intérêt dans le projet : les clients, les utilisateurs, les membres de l'équipe de projet, la direction, etc.
 
@@ -170,7 +151,7 @@ L'ensemble des personnes intervenant sur le projet est séparée en 2 groupes : 
 
 ---
 
-## La maîtrise d’ouvrage
+#### La maîtrise d’ouvrage
 
 - Entité responsable de l’expression du besoin
 - Souvent non informaticien
@@ -179,7 +160,7 @@ L'ensemble des personnes intervenant sur le projet est séparée en 2 groupes : 
 
 ---
 
-## La maîtrise d’œuvre
+#### La maîtrise d’œuvre
 
 - Entité responsable de la concrétisation de l’idée en outil informatique
 - Pas de connaissance fonctionnelle
@@ -216,7 +197,7 @@ note bottom of MOE: Partenaires (sous-traitants, fournisseurs, ..)
 
 ---
 
-# Qu'est-ce qu'un projet ?
+## Qu'est-ce qu'un projet ?
 
 ---
 
@@ -228,9 +209,9 @@ Un projet, c'est :
 
 ---
 
-# Coûts et recettes
+## Coûts et recettes
 
-## Pourquoi suivre les coûts du projet ?
+### Pourquoi suivre les coûts du projet ?
 
 - Pour suivre de façon régulière l'avancement physique du projet
     + Contrôler l'avancement et mettre à jour le tableau de suivi des coûts
@@ -242,9 +223,9 @@ Un projet, c'est :
 
 ---
 
-# Délais et planifications
+## Délais et planifications
 
-## Pourquoi suivre les délais du projet ?
+### Pourquoi suivre les délais du projet ?
 
 - Pour suivre de façon régulière l'avancement physique du projet
     + Contrôler l'avancement et mettre à jour le planning
@@ -256,7 +237,7 @@ Un projet, c'est :
 
 ---
 
-# Diagramme de GANTT
+## Diagramme de GANTT
 
 Diagramme de Gantt : graphe d'ordonnancement représentant les différentes tâches à réaliser, leur durée et leurs dépendances.
 
@@ -272,7 +253,7 @@ Diagramme de Gantt : graphe d'ordonnancement représentant les différentes tâc
 
 ---
 
-## Chemin critique
+### Chemin critique
 
 Le diagramme de Gantt est une des méthodes permettant de calculer le **chemin critique** d'un projet, ie la séquence de tâches qui détermine la durée totale d’un projet.
 
@@ -280,11 +261,11 @@ Si une tâche sur ce chemin est retardée, cela retarde l’ensemble du projet.
 
 ---
 
-# Des objectifs spécifiques
+## Des objectifs spécifiques
 
 ---
 
-# Objectifs SMART
+### Objectifs SMART
 
 Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs efficaces :
 
@@ -296,9 +277,9 @@ Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs effic
 
 ---
 
-# Exemples d'indicateurs
+## Exemples d'indicateurs
 
-## Indicateurs de coûts
+### Indicateurs de coûts
 
 - Coût réel
 - Coûts non planifiés
@@ -307,7 +288,8 @@ Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs effic
 
 ---
 
-## Indicateurs de délais
+### Indicateurs de délais
+
 - Taux de retard : (tâches non réalisées / prévues) X 100 (%) 
 - Durée d’une tâche
 - Écart de durée : (durée réelle – initiale) / initiale
@@ -315,7 +297,7 @@ Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs effic
 
 ---
 
-## Indicateurs de qualité
+### Indicateurs de qualité
 
 - Satisfaction client
 - Nombre d’erreurs
@@ -323,9 +305,11 @@ Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs effic
 
 ---
 
-## Indicateurs d’efficacité et d’avancement du projet
+### Indicateurs d’efficacité et d’avancement du projet
 
 - Taux d’avancement : (tâches accomplies / tâches prévues) X 100 (%)
 - Nombre de tâches / jalons réalisés
 - Temps passé sur le projet
+
+---
 

@@ -7,11 +7,7 @@ tags:
 - uml
 ---
 
-# Diagrammes de Cas d'Utilisation (Use Case)
-
----
-
-## Diagrammes de Cas d'Utilisation
+## Diagrammes de Cas d'Utilisation (Use Case)
 
 - Représentation graphique des interactions entre les acteurs et le système.
 - Capture les exigences fonctionnelles d'un système.
@@ -19,7 +15,7 @@ tags:
 
 ---
 
-## Avantages
+### Avantages
 
 - Aide à comprendre le comportement attendu du système.
 - Permet d'identifier les rôles et les responsabilités dans un système.
@@ -27,7 +23,7 @@ tags:
 
 ---
 
-## Composants
+### Composants
 
 1. **Acteurs** : entités externes qui interagissent avec le système.
 2. **Cas d'Utilisation** : actions ou scénarios que le système peut effectuer pour les acteurs.
@@ -39,7 +35,7 @@ tags:
 
 ---
 
-## Exemple de Diagramme de Cas d'Utilisation
+### Exemple de Diagramme de Cas d'Utilisation
 
 Système de gestion de bibliothèque :
 
@@ -61,12 +57,12 @@ user --> (S'inscrire à la bibliothèque)
 ```
 
 ---
-
-# Diagrammes de Séquence
-
+layout: section
 ---
 
-## Diagramme de Séquence
+## Diagrammes de Séquence
+
+---
 
 - Représentation graphique des interactions entre les objets dans un système.
 - Met l'accent sur l'ordre des messages échangés.
@@ -77,7 +73,7 @@ user --> (S'inscrire à la bibliothèque)
 
 ---
 
-## Élément de Base
+### Élément de Base
 
 - **Lifeline (ligne de vie)** : représentation d'un objet ou d'une classe.
 - **Message** : communication entre les objets.
@@ -87,7 +83,7 @@ user --> (S'inscrire à la bibliothèque)
 
 ---
 
-## Exemple
+### Exemple
 
 ```plantuml
 @startuml
@@ -117,15 +113,17 @@ deactivate Sys
 
 ---
 
-## Avantages
+### Avantages
 
 - Décris le flux d'interactions d'un cas d'utilisation.
 - Clarifie les dépendances entre les composants.
 
 ---
 
-## Limitations
+### Limitations
 
 - Complexe pour de grands systèmes.
 - Pas de détails structurels du système.
+
+---
 

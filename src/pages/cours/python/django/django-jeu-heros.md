@@ -26,7 +26,7 @@ Déposer une archive contenant l'ensemble du code source de l'application.
 
 **Ajouter un fichier `README` contenant le nom des membres de l'équipe et les éventuelles instructions d'installation / utilisation du produit.**
 
-## Liens
+## Ressources
 
 - Le principe du [livre dont vous êtes le héros][livre-heros]
 - Un exemple d'implémentation en ligne : <https://heros.ws/>

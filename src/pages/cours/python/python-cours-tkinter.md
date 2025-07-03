@@ -1,16 +1,12 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/SlideLayout.astro'
-title: Cours Programmation des interfaces graphiques - Tkinter
+title: Programmation des interfaces graphiques - Tkinter
 tags:
 - python
 ---
 
-# La bibliothèque Tkinter
-
----
-
-# Tcl
+## Tcl
 
 `Tcl` est un langage de programmation interprété dynamiquement (comme `Python`).
 
@@ -18,7 +14,7 @@ Il est généralement utilisé comme langage de script pour `Tk` et embarqué da
 
 ---
 
-# Tk
+## Tk
 
 `Tk` est un package de `Tcl` écrit en `C` permettant de manipuler des widgets d'interface graphique (GUI).
 
@@ -26,7 +22,7 @@ Il utilise les librairies graphiques disponibles sur le système d'exploitation 
 
 ---
 
-# Ttk
+## Ttk
 
 `Themed Tk` (`Ttk`) est très similaire à `Tk` mais propose des widgets plus 'modernes' et utilise le style global du système d'exploitation pour une expérience utilisateur cohérente.
 
@@ -34,7 +30,7 @@ Lorsqu'elle est disponible, on préfèrera utiliser `Ttk` plutôt que `Tk`.
 
 ---
 
-# Tkinter
+## Tkinter
 
 `Tkinter` est une abstraction de `Tcl/Tk` pour `Python`.
 
@@ -46,7 +42,7 @@ On veillera notamment à utiliser une instance unique de `Tk`.
 
 ---
 
-# Principaux conteneurs
+## Principaux conteneurs
 
 ```python
 class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=1)
@@ -68,7 +64,7 @@ root = Tk() # Initialise Tk et retourne l'interpréteur Tcl (ici stocké dans la
 
 ---
 
-# Concepts de Tk
+## Concepts de Tk
 
 Une interface graphique `Tkinter` est composée de widgets indépendants représentés par des objets Python.
 
@@ -92,23 +88,23 @@ Pour cela, il est nécessaire d'utiliser des boucles d'événements (event loop)
 
 ---
 
-# Principaux widgets et composants
+## Principaux widgets et composants
 
 > Voir liens `Tkinter` dans la section Documentation
 
 ---
 
-# Exemple : Hello World
+### Exemple : Hello World
 
 ---
 
-# **Gestion des événements**
+## Gestion des événements
 
 ---
 
-# Command binding
+### Command binding
 
-## Binding de fonction sans argument : référence de fonction
+#### Binding de fonction sans argument : référence de fonction
 
 ```python
 def button_clicked():
@@ -119,7 +115,7 @@ ttk.Button(root, text='Click Me',command=button_clicked)
 
 ---
 
-## Binding de fonction avec argument : utilisation de lambda
+#### Binding de fonction avec argument : utilisation de lambda
 
 ```python
 def button_clicked(arg):
@@ -130,7 +126,7 @@ ttk.Button(root, text='Pierre',command=lambda: button_clicked('Rock'))
 
 ---
 
-# Event binding
+### Event binding
 
 Le binding de commande est simple mais très limité : on préfèrera la plupart du temps utiliser un binding d'événements :
 
@@ -162,7 +158,7 @@ Pour plus d'informations, voir le [cours zestedesavoir.com sur la programmation 
 
 ---
 
-# Exemples
+### Exemples
 
 - binding simple
 - binding avec paramètres
@@ -172,22 +168,23 @@ Pour plus d'informations, voir le [cours zestedesavoir.com sur la programmation 
 
 ---
 
-# Applications multifenêtres
+## Applications multifenêtres
+
 > Voir liens Tkinter dans la section Documentation
 
 ---
 
-# Pattern MVC
+## Pattern MVC
 
 Tkinter supporte le [pattern MVC][doc-tkinter-mvc]
 
 Voir le [cours sur le pattern MVC][site-perso].
 
 ---
+layout: section
+---
 
-<!-- class: liens -->
-
-# Liens utiles - Tkinter
+## Ressources
 
 - [Documentation et tutoriels Tkinter][doc-tkinter]
 - [Documentation pattern MVC dans Tkinter][doc-tkinter-mvc]
@@ -200,3 +197,6 @@ Voir le [cours sur le pattern MVC][site-perso].
 [doc-tkinter-mvc]: https://www.pythontutorial.net/tkinter/tkinter-mvc/
 [doc-tkinter-event-binding]: https://www.pythontutorial.net/tkinter/tkinter-event-binding/
 [zds-tkinter-events]: https://zestedesavoir.com/tutoriels/1729/programmation-avec-tkinter/
+
+---
+

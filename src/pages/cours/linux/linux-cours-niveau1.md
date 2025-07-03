@@ -7,7 +7,7 @@ tags:
   - devops
 ---
 
-# 📌 Partie I : Aperçu d'un système Linux
+## 📌 Aperçu d'un système Linux
 
 - 🤔 _Qu'est-ce qu'un système d'exploitation ?_
 - 🐧 _Qu'est-ce que Linux ?_
@@ -15,11 +15,9 @@ tags:
 
 ---
 
-# 💻 Le système d'exploitation Linux
+### 💻 Le système d'exploitation Linux
 
 ---
-
-## 🖥️ Le système d'exploitation
 
 ```plantuml
 @startditaa
@@ -56,7 +54,7 @@ Il existe de nombreux autres OS : Android, iOS, …
 
 ---
 
-## Pourquoi linux ?
+### Pourquoi linux ?
 
 ![The Solaris logo](@assets/linux/solaris.png)
 
@@ -78,7 +76,7 @@ En 1991, Linux Torvalds libère la première version du noyau Linux écrit en la
 
 ---
 
-## Qu'est-ce que linux ?
+### Qu'est-ce que linux ?
 
 ```plantuml
 @startditaa
@@ -144,7 +142,7 @@ Il existe de nombreux autres OS : _Android_, _iOS_, …
 
 ---
 
-## Système GNU/Linux 🐧
+### Système GNU/Linux 🐧
 
 Un système GNU/Linux est donc un ensemble de plusieurs composants :
 
@@ -159,7 +157,7 @@ Un système GNU/Linux est donc un ensemble de plusieurs composants :
 
 ---
 
-## Fonctions principales
+### Fonctions principales
 
 Quelques fonctions principales d'un système Linux :
 
@@ -173,7 +171,7 @@ Quelques fonctions principales d'un système Linux :
 
 ---
 
-## Architecture d'un système Linux 🏗️
+### Architecture d'un système Linux 🏗️
 
 ![Architecture d'un système Linux](@assets/linux/archi_1.png)
 
@@ -183,7 +181,7 @@ Quelques fonctions principales d'un système Linux :
 
 ---
 
-### Noyau Linux
+#### Noyau Linux
 
 Quelques caractéristiques principales du noyau Linux :
 
@@ -196,7 +194,7 @@ Quelques caractéristiques principales du noyau Linux :
 layout: section
 ---
 
-# Gestion des processus 📊
+## Gestion des processus 📊
 
 ---
 
@@ -227,7 +225,7 @@ Il n'existe pas d'autre moyen de créer un processus !
 
 ---
 
-## Les types de processus
+### Les types de processus
 
 Il existe 2 types de processus :
 
@@ -240,7 +238,7 @@ Il existe 2 types de processus :
 
 ---
 
-## Cas particulier des processus _daemon_ 👹
+### Cas particulier des processus _daemon_ 👹
 
 ![Le logo Tux pour un daemon](@assets/linux/daemon.png)
 
@@ -253,7 +251,7 @@ La gestion des daemons est une des principales incohérences entre les différen
 
 ---
 
-## États des processus
+### États des processus
 
 L'état d'un processus est défini par l'une des quatre valeurs suivantes :
 
@@ -271,11 +269,11 @@ L'état d'un processus est défini par l'une des quatre valeurs suivantes :
 layout: section
 ---
 
-# Utilisateurs et accès système 👥
+## Utilisateurs et accès système 👥
 
 ---
 
-## Administration des utilisateurs
+### Administration des utilisateurs
 
 - 🆔 Linux identifie les utilisateurs par un identifiant unique : _User ID_ (`UID`)
   - L'`UID=0` est un utilisateur spécial appelé "_super-utilisateur" (ou `root`). Cet utilisateur peut outrepasser toutes les vérifications de droits d'accès (dans l'espace utilisateur).
@@ -289,15 +287,13 @@ Linux est un système multi-utilisateur : plusieurs utilisateurs peuvent utilise
 layout: section
 ---
 
-# Gestion des fichiers 📂
+## Gestion des fichiers 📂
 
 ---
 
 En Linux, **TOUT EST FICHIER** !
 
 ---
-
-## Gestion des fichiers
 
 Linux utilise des fichiers pour décrire chaque partie du système : matériel, processus, documents, programmes, …
 
@@ -315,7 +311,7 @@ mon_programme_visible.bin # fichier visible
 
 ---
 
-## Les types de fichiers
+### Les types de fichiers
 
 Linux utilise plusieurs types de fichiers différents :
 
@@ -335,7 +331,7 @@ Linux utilise plusieurs types de fichiers différents :
 
 ---
 
-## Hiérarchie et chemins d'accès
+### Hiérarchie et chemins d'accès
 
 Les fichiers sont stockés dans des répertoires , organisés selon un système de fichiers hiérarchique et accessibles en utilisant un chemin ( _path_ ).
 
@@ -354,7 +350,7 @@ Un _path_ peut décrire un chemin de deux façons, suivant qu'il commence ou non
 
 ---
 
-## Chemins particuliers
+### Chemins particuliers
 
 Il existe des chemins particuliers :
 
@@ -373,7 +369,7 @@ Il existe des chemins particuliers :
 
 ---
 
-## Répertoire utilisateur
+### Répertoire utilisateur
 
 - Comme dans la majorité des systèmes d'exploitation, chaque utilisateur possède son propre répertoire de travail, appelé _home directory_ . C'est dans ce répertoire que sont stockés ses documents personnels, ses configurations propres, et c'est dans ce répertoire que l'utilisateur attérit après s'être connecté au système.
 - Le répertoire de travail du super-utilisateur (`root`) est `/root`
@@ -390,11 +386,11 @@ Les répertoires de travail des utilisateurs (_home_) sont accessibles uniquemen
 layout: section
 ---
 
-# Les outils Linux
+## Les outils Linux
 
 ---
 
-## Le shell
+### Le shell
 
 Les systèmes GNU/Linux sont des systèmes fortement orientés à l'utilisation principale d'interfaces texte.
 
@@ -408,7 +404,7 @@ Même si un shell utilise en général un langage de script complet (utilisatoin
 
 ---
 
-## L'invité de commandes (_prompt_)
+### L'invité de commandes (_prompt_)
 
 ![Un exemple de prompt](@assets/linux/prompt.jpg)
 
@@ -423,7 +419,7 @@ This is the sample text file created in the linux terminal.
 by wikihow.com
 ```
 
-### Script
+#### Script
 
 Linux étant un système fortement orienté fichiers, il est possible d'utiliser un fichier pour enregistrer la liste des commandes à lancer. Un tel fichier, contenant la liste des commandes qui seront exécutées dans le _shell_, est appelé un **script** .
 
@@ -439,7 +435,7 @@ Les postes de travail récents possèdent un véritable écran plutôt qu'un ter
 
 ---
 
-## Les arguments des commandes
+### Les arguments des commandes
 
 Les commandes à exécuter nécessitent souvent des arguments à utiliser comme paramètres lors de leur exécution (nom de l'utilisateur, chemin vers le fichier, adresse IP, …).
 
@@ -468,7 +464,7 @@ maCommande monArgument # Ceci est un commentaire
 
 ---
 
-## Le prompt du shell
+### Le prompt du shell
 
 Par convention, la documentation d'une commande à exécuter dans le shell est précédée du caractère `$` afin de la mettre en évidence. Ce caractère représente le _prompt_ par défaut, c'est-à-dire l'endroit où l'utilisateur entre sa commande.
 
@@ -513,11 +509,11 @@ La plupart des distributions GNU/Linux sont également livrées avec un ou plusi
 layout: section
 ---
 
-# Partie II : Commandes principales
+## Commandes principales
 
 ---
 
-# Les commandes de gestion de fichiers
+### Les commandes de gestion de fichiers
 
 - _Qu'est-ce qu'un fichier sous Linux ?_
 - _Quelle est leur utilité ?_
@@ -525,7 +521,7 @@ layout: section
 
 ---
 
-## ls : lister les fichiers
+### ls : lister les fichiers
 
 La commande `ls` (_list_) affiche tous les répertoires et fichiers principaux dans le chemin fourni en paramètre (ou dans le répertoire courant sans paramètre).
 
@@ -537,7 +533,7 @@ $ ls /etc
 
 ---
 
-## cd : changer de répertoire
+### cd : changer de répertoire
 
 La commande `cd` (_change directory_) permet de changer le répertoire courant vers un nouveau répertoire.
 
@@ -549,7 +545,7 @@ $ cd ~/monDossierPerso
 
 ---
 
-## mv : déplacer un fichier
+### mv : déplacer un fichier
 
 La commande `mv` (_move_) permet de déplacer un fichier de son emplacement courant vers un nouveau chemin.
 
@@ -565,7 +561,7 @@ $ mv ./monFichier ../monRepertoireVoisin/monNouveauFichier
 
 ---
 
-## rm : supprimer des fichiers
+### rm : supprimer des fichiers
 
 La commande `rm` (_remove_) permet de supprimer les fichiers dont le chemin est donné en paramètre.
 
@@ -577,7 +573,7 @@ $ rm monFichier
 
 ---
 
-## touch : créer / atteindre un fichier
+### touch : créer / atteindre un fichier
 
 La commande `touch` permet d'atteindre le fichier fournit en paramètre. Cela met à jour sa date d'accès, et c'est également un moyen de créer un nouveau fichier vide.
 
@@ -589,7 +585,7 @@ $ touch ~/monNouveauFichier
 
 ---
 
-## mkdir / rmdir : créer / supprimer un répertoire
+### mkdir / rmdir : créer / supprimer un répertoire
 
 Les commandes `mkdir` (_make directory_) et `rmdir` (_remove directory_) permettent créer un dossier vide et de supprimer un dossier vide .
 
@@ -605,7 +601,7 @@ Un dossier est un fichier - il est donc possible d'utiliser la commande `rm` (av
 
 ---
 
-## find : chercher des fichiers
+### find : chercher des fichiers
 
 La commande `find` permet de chercher le chemin vers des fichiers dont le nom suit un pattern donné dans un chemin donné (récursivement).
 
@@ -619,7 +615,7 @@ La commande `find` est très puissante et possède de nombreux paramètres, il e
 
 ---
 
-## cat : afficher le contenu d'un fichier
+### cat : afficher le contenu d'un fichier
 
 La commande `cat` (_concatenate_) permet de concaténer des fichiers vers la sortie standard.
 
@@ -633,7 +629,7 @@ $ cat ./monFichier
 
 ---
 
-## more, less, head, tail : affichages partiels
+### more, less, head, tail : affichages partiels
 
 Les commandes `more`, `less`, `head` et `tail` permettent de couper ou de paginer un contenu qui leur est fourni en entrée avant d'afficher ce contenu à l'écran.
 
@@ -651,11 +647,11 @@ $ tail ./monFichier
 layout: section
 ---
 
-# Autres commandes utiles
+## Autres commandes utiles
 
 ---
 
-## man : la page de manuel
+### man : la page de manuel
 
 La commande `man` (_manual_) permet d'afficher la documentation d'une commande ou d'un service fourni en paramètre.
 
@@ -671,7 +667,7 @@ $ man find
 
 ---
 
-## echo : afficher du texte
+### echo : afficher du texte
 
 `echo` : affiche un message sur la sortie standard (par défaut la _console_).
 
@@ -681,7 +677,7 @@ $ echo "Hello, World”
 
 ---
 
-## clear : effacer la sortie du terminal.
+### clear : effacer la sortie du terminal.
 
 ```sh
 $ clear
@@ -689,7 +685,7 @@ $ clear
 
 ---
 
-## alias
+### alias
 
 `alias` : crée une nouvelle commande qui, lorsqu'elle est appelée, exécutera l'instruction enregistrée.
 
@@ -701,7 +697,7 @@ $ maCommandeLs
 
 ---
 
-## history
+### history
 
 `history` : affiche l'historique des commandes entrées par l'utilisateur.
 
@@ -711,7 +707,7 @@ $ history
 
 ---
 
-## grep : recherche de texte
+### grep : recherche de texte
 
 `grep` : cherche une ligne suivant un pattern donné dans l'entrée de la commande.
 
@@ -721,7 +717,7 @@ $ grep monPattern monDossier/monFichier
 
 ---
 
-## sudo : élévation de privilèges
+### sudo : élévation de privilèges
 
 `sudo` : exécute une commande en utilisant le rôle de super-utilisateur (_root_).
 
@@ -735,7 +731,7 @@ Les deux commandes précédentes font la même chose mais on utilisera toujours 
 
 ---
 
-## arrêt et redémarrage
+### arrêt et redémarrage
 
 `shutdown`, `halt`, `reboot` : gèrent le cycle de vie du système.
 
@@ -749,7 +745,7 @@ $ shutdown -h now
 
 ---
 
-## Commandes réseau
+### Commandes réseau
 
 `ping` : appelle (_ping_) un système pour vérifier si cet hôte peut être joint.
 
@@ -773,15 +769,16 @@ $ netstat -rn
 layout: section
 ---
 
-# Enchaîner les commandes
+## Commandes avancées
 
 - Rediriger les entrées/sorties
 - Filtres shell
 - Variables
+- Enchaîner les commandes
 
 ---
 
-## Les filtres du shell
+### Les filtres du shell
 
 Le _shell_ fournit des filtres permettant de réaliser des opérations avancées sur les commandes. Ces filtres s'utilisent principalement pour omettre de préciser un ou plusieurs caractères dans un nom de fichier.
 
@@ -803,7 +800,7 @@ monFichier1.txt monFichier2.txt
 
 ---
 
-## Les variables du shell
+### Les variables du shell
 
 Il est possible de définir ou modifier une variable dans le _shell_ courant (**et uniquement dans celui-ci**) en utilisant la syntaxe :
 
@@ -838,11 +835,11 @@ Certaines variables spéciales prédéfinies gèrent l'exécution des commandes 
 
 ---
 
-## Caractères d'échappement
+### Caractères d'échappement
 
 Pour éviter d'évaluer un filtre, il est possible de l'entourer de caractères d'échappement. Cela permet d'utiliser un caractère spécial (`*`, `?`, `$`) comme un caractère standard dans un nom.
 
-### Guillement simple
+#### Guillement simple
 
 Le guillemet simple `'` permet une _protection forte_ d'une chaîne de caractères : aucun caractère à l'intérieur ne sera évalué : la chaîne de caractères est utilisée telle qu'elle :
 
@@ -854,7 +851,7 @@ $ ls '*'
 
 Cet échappement est très utile par exemple avec la commande `find` : cela permet de passer des patterns de noms de fichiers avec des caractères spéciaux sans les évaluer.
 
-#### Sans échappement
+##### Sans échappement
 
 ```sh
 find ~ -name *.txt
@@ -866,7 +863,7 @@ Cette commande va remplacer `*.txt` par les noms de tous les fichiers `.txt` dan
 find . -name fichier1.txt fichier2.txt
 ```
 
-#### Avec échappement
+##### Avec échappement
 
 ```sh
 find ~ -name '*.txt'
@@ -880,7 +877,7 @@ find . -name *.txt
 
 Les échappements sont souvent utilisés dans les _scripts_, par exemple pour stocker des commandes avec des caractères spéciaux dans des variables et les évaluer plus tard.
 
-### Guillemets doubles
+#### Guillemets doubles
 
 Le guillemet double `"` permet une _protection faible_ d'une chaîne de caractères. Son intérêt principal est d'utiliser plusieurs mots (avec des espaces) comme un seul argument. Les caractères spéciaux sont cependant évalués.
 
@@ -897,7 +894,7 @@ echo 'Le contenu de argument1 est $1'
 
 ---
 
-## Enchaînement de commandes
+### Enchaînement de commandes
 
 Il est possible d'enchaîner 2 commandes à la suite sur une même ligne en utilisant un `;`
 
@@ -919,7 +916,7 @@ commande1 || commande2
 
 ---
 
-## Streams
+### Streams
 
 Tout processus Linux possède des _streams_ qu'il utilise pour dialoguer avec le reste du système. Ces streams possèdent tous une implémentation par défaut :
 
@@ -949,7 +946,7 @@ Il est possible de rediriger :
 
 ---
 
-## Pipe
+### Pipe
 
 Une autre fonction de redirection très utile est le _pipe_, noté `|` : il permet de **rediriger** directement la **sortie standard** d'une première commande **dans l'entrée** de la seconde. C'est une fonctionnalité très utile pour enchaîner des commandes… comme si l'on utilisait réellement un pipe !
 
@@ -971,11 +968,11 @@ find ~ -name '*.txt' | xargs grep -i "ma recherche"
 layout: section
 ---
 
-# Partie III : Gestion des processus
+## Gestion des processus
 
 ---
 
-## ps : lister les processus
+### ps : lister les processus
 
 La commande `ps` (_process status_) permet d'afficher la table des processus.
 
@@ -991,7 +988,7 @@ La liste des processus affichés dépend des droits de l'utilisateur : pour avoi
 
 ---
 
-## pstree : afficher la hiérarchie des processus
+### pstree : afficher la hiérarchie des processus
 
 La commande `pstree` (_arbre des processus_) permet d'afficher la hiérarchie de la table des processus sous la forme d'un arbre.
 
@@ -1005,7 +1002,7 @@ $ pstree
 
 ---
 
-## kill : changer l'état d'un processus
+### kill : changer l'état d'un processus
 
 La commande `kill` permet d'envoyer un signal à un processus.
 
@@ -1039,7 +1036,7 @@ La plupart des distributions Linux fournissent une commande `xkill` qui permet d
 
 ---
 
-## top : informations système
+### top : informations système
 
 La commande `top` permet de surveiller des informations sur le système.
 
@@ -1057,7 +1054,7 @@ top
 
 ---
 
-## w : activité utilisateur
+### w : activité utilisateur
 
 La commande `w` permet de surveiller l'activité des utilisateurs.
 
@@ -1071,7 +1068,7 @@ w
 
 ---
 
-## (re)nice : prioritiser les activités
+### (re)nice : prioritiser les activités
 
 Les commandes `nice` et `renice` permettent d'appliquer et de changer une priorité à une commande.
 
@@ -1091,7 +1088,7 @@ renice MaPriorite MonIDdeProcessus
 layout: section
 ---
 
-# Partie IV - Système de fichiers
+## Système de fichiers
 
 - Qu'est-ce qu'un fichier sous Linux ?
 - Quelle est leur utilité ?
@@ -1099,7 +1096,7 @@ layout: section
 
 ---
 
-## Hiérarchie de fichiers
+### Hiérarchie de fichiers
 
 Les fichiers et dossiers d'un système Linux sont ordonnés dans un unique système de fichiers hiérarchisé :
 
@@ -1113,7 +1110,7 @@ Dans un système _GNU/Linux_, on utilisera des répertoires, généralement `/mn
 
 ---
 
-## mount : monter une partition
+### mount : monter une partition
 
 La commande `mount` permet de monter une partition, c'est-à-dire de lui assigner un point de montage (répertoire où le système de fichiers de la partition sera accessible), ainsi qu'un type et/ou une technologie pour accéder à ces fichiers.
 
@@ -1127,7 +1124,7 @@ Le fichier de configuration `/etc/fstab` contient la liste des partitions à mon
 
 ---
 
-## pwd : répertoire courant
+### pwd : répertoire courant
 
 La commande `pwd` (_print working directory_) permet d'afficher le répertoire de travail courant, c'est-à-dire le dossier dans lequel est actuellement le shell.
 
@@ -1139,7 +1136,7 @@ pwd
 
 ---
 
-## La variable `$PATH`
+### La variable `$PATH`
 
 Jusqu'ici, nous avons toujours fait référence à des commandes en utilisant uniquement leur nom : `ls`, `top`, …
 
@@ -1157,7 +1154,7 @@ $ export PATH=$PATH
 
 ---
 
-## which : localisation de commande
+### which : localisation de commande
 
 La commande `which` permet de remonter le _PATH_, pour retrouver le chemin d'accès complet d'une commande depuis son nom.
 
@@ -1169,7 +1166,7 @@ which java
 
 ---
 
-## du : utilisation disque
+### du : utilisation disque
 
 La commande `du` (_disk usage_) permet de calculer l'utilisation disque.
 
@@ -1187,7 +1184,7 @@ du -sh MonRepertoire
 
 ---
 
-## Gestion des droits d'accès
+### Gestion des droits d'accès
 
 Linux sécurise tous les fichiers avec 3 permissions : **lecture** (read), **écriture** (write), **exécution**.
 
@@ -1207,7 +1204,7 @@ Dans cet exemple, le propriétaire (`tavenel`) peut lire et écrire dans ce fich
 
 ---
 
-## chmod : changer les permissions
+### chmod : changer les permissions
 
 La commande `chmod` permet de changer les permissions d'un fichier.
 
@@ -1231,7 +1228,7 @@ $ ls -l test.txt
 
 ---
 
-## Permissions des répertoires
+### Permissions des répertoires
 
 Les permissions sur un répertoire ont un sens légèrement différent :
 
@@ -1241,7 +1238,7 @@ Les permissions sur un répertoire ont un sens légèrement différent :
 
 ---
 
-## chown / chgrp : changer le propriétaire
+### chown / chgrp : changer le propriétaire
 
 Les commandes `chown` (_change owner_) et `chgrp` (_change group_) permettent de changer le propriétaire d'un fichier et le groupe auquel il appartient.
 
@@ -1254,8 +1251,10 @@ chgrp NouveauGroupe MonFichier2
 ```
 
 ---
+layout: section
+---
 
-# Gestion des utilisateurs
+## Gestion des utilisateurs
 
 Les systèmes _GNU/Linux_ sont des systèmes multi-utilisateurs : plusieurs utilisateurs peuvent se connecter sur le système en même temps.
 
@@ -1269,7 +1268,7 @@ Certains patchs du noyau et certains modules ajoutent un gestion beaucoup plus f
 
 ---
 
-## adduser / useradd : ajouter un utilisateur
+### adduser / useradd : ajouter un utilisateur
 
 Les commandes `adduser` et `useradd` permettent d'ajouter un nouvel utilisateur sur le système.
 
@@ -1293,7 +1292,7 @@ addgroup NouveauGroupe
 
 ---
 
-## id, usermod, passwd : gestion utilisateur
+### id, usermod, passwd : gestion utilisateur
 
 La commande `id` permet d'obtenir des informations sur un utilisateur et son groupe
 
@@ -1317,7 +1316,7 @@ passwd UtilisateurExistant
 
 ---
 
-## su : connexion en tant qu'autre utilisateur
+### su : connexion en tant qu'autre utilisateur
 
 La commande `su` (_switch user_) permet de lancer une nouvelle session de shell en se connectant avec un autre compte utilisateur (par défaut le super-utilisateur _root_).
 
@@ -1338,7 +1337,7 @@ $ su - AutreUtilisateur
 
 ---
 
-## sudo : délégation à un autre utilisateur
+### sudo : délégation à un autre utilisateur
 
 La commande `sudo` (_switch user and do_) permet de lancer une nouvelle commande (et **uniquement une commande**) en délégant son exécution à un autre utilisateur (par défaut le super-utilisateur _root_).
 
@@ -1357,8 +1356,10 @@ sudo su
 Cette méthode est bien meilleure car l'utilisateur ayant augmenté ses droits au moment du `login root` est enregistré.
 
 ---
+layout: section
+---
 
-# Fichiers de configuration
+## Fichiers de configuration
 
 Rappel : en Linux, **tout est fichier**… y compris les configurations !
 
@@ -1367,3 +1368,6 @@ Les utilisateurs et leur configuration (_groupes_, répertoire _home_, _shell_ p
 Les informations sur les groupes sont stockées dans le fichier `/etc/groups`
 
 La configuration des utilisateurs pouvant passer _root_ en exécutant la commande `sudo` est stockée dans le fichier `/etc/sudoers`
+
+---
+

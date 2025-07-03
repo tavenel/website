@@ -165,7 +165,7 @@ Exemple de test utilisant les `PageObject` `LoginPage` et `HomePage` encapsulant
 layout: section
 ---
 
-# Liens
+## Ressources
 
 - [Extraits de code pour la manipulation des navigateurs](https://www.selenium.dev/documentation/en/webdriver/browser_manipulation/)
 - [Localisation d'éléments (sélecteurs `CSS`)](https://www.selenium.dev/documentation/en/webdriver/locating_elements/)
@@ -181,7 +181,7 @@ layout: section
 
 ---
 
-# Legal
+## Legal
 
 - Oracle and Java are registered trademarks of Oracle and/or its affiliates.
 - Linux is a registered trademark of Linus Torvalds.

@@ -7,7 +7,7 @@ tags:
 - mvc
 ---
 
-# Modèle/Vue/Contrôleur (`MVC`)
+## Modèle/Vue/Contrôleur (`MVC`)
 
 Design pattern populaire dans les applications web, permettant :
 
@@ -16,7 +16,7 @@ Design pattern populaire dans les applications web, permettant :
 
 ---
 
-# Composants 
+## Composants 
 
 MVC est composé de 3 modules :
 
@@ -90,8 +90,10 @@ BiRel(controller, model, " ")
 <div class="caption">Une implémentation MVC : Spring MVC Request Lifecycle (source : terasolunaorg.github.io).</div>
 
 ---
+layout: section
+---
 
-# Legal
+## Legal
 
 - Spring® is a trademark of Pivotal Software, Inc. in the U.S. and other countries.
 - Other names may be trademarks of their respective owners

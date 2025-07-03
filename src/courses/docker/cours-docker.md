@@ -599,7 +599,7 @@ layout: section
 layout: section
 ---
 
-# Liens
+# Ressources
 
 - [Documentation / Tutoriels officiels Docker][doc-docker]
 - [Documentation officielle sur le sécurité][doc-docker-secu]

@@ -136,7 +136,7 @@ Voir le [TP sur SSH et GPG][tp-ssh-gpg]
 layout: section
 ---
 
-# Liens
+# Ressources
 
 - Voir aussi [GTF0bins : exploits classiques sur Linux (tuto)](https://blog.stephane-robert.info/docs/securiser/menaces/gtfobins/)
 

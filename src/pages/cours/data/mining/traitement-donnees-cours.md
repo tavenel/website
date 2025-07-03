@@ -2136,9 +2136,7 @@ Si nous devions regrouper les clients potentiels interrogés en fonction de ces 
 
 <div class="caption">Classement des prospects. Source : https://www.qualtrics.com/m/assets/fr/wp-content/uploads/2020/04/cluster-factuer.png</div>
 
-<!-- class: liens -->
-
-# Liens
+# Ressources
 
 - [Cours statistique descriptive à une dimension][zds-stat-desc-1d]
 - [Moyenne (Wikipedia)][wiki-moyenne]

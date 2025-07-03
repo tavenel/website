@@ -225,7 +225,7 @@ $mock->expects($this->once())->method('someMethod');
 layout: section
 ---
 
-# Liens
+## Ressources
 
 Des références pour automatiser les tests dans différents langages :
 
