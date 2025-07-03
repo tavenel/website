@@ -1,12 +1,24 @@
 ﻿---
-import Layout from '@layouts/CoursePartLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
 import { Content as Hexagonal } from '@courses/archi/cours-hexagonal.md';
 import { Content as Clean } from '@courses/archi/cours-clean.md';
----
 
-<Layout title="Architectures Hexagonales et Clean Architecture">
-  <Hexagonal />
-  <Clean />
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title:"Architectures Hexagonales et Clean Architecture",
+  tags: [
+    "test",
+		"ddd",
+		"archi"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+  <Chapter> <Hexagonal /> </Chapter>
+  <Chapter> <Clean /> </Chapter>
 </Layout>
 ---
 

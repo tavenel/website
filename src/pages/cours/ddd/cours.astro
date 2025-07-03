@@ -1,18 +1,28 @@
 ﻿---
-import Layout from '@layouts/CoursePartLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
 import { Content as DDD } from '@courses/ddd/cours-ddd.md';
 import { Content as BDD } from '@courses/tests/cours-bdd.md';
 import { Content as Hexagonal } from '@courses/archi/cours-hexagonal.md';
 import { Content as Clean } from '@courses/archi/cours-clean.md';
 import { Content as Tactiques } from '@courses/ddd/cours-tactiques.md';
----
 
-<Layout title="DDD">
-  <DDD />
-  <BDD />
-  <Hexagonal />
-  <Clean />
-  <Tactiques />
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "DDD",
+  tags: [
+    "ddd",
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+ <Chapter> <DDD /> </Chapter>
+ <Chapter> <BDD /> </Chapter>
+ <Chapter> <Hexagonal /> </Chapter>
+ <Chapter> <Clean /> </Chapter>
+ <Chapter> <Tactiques /> </Chapter>
 </Layout>
 ---
 
