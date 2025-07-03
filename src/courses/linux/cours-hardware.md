@@ -278,10 +278,10 @@ Voir le cours de la certification LPIC-1 pour le format du fichier `/etc/inittab
 - `inxi`, `neofetch`, `fastfetch` (non-POSIX) : résumés d'informations sur le système
 
 <!-- Annexe : liste des TPs -->
-[tp-systeme]: tp-systeme.md
-[tp-grub]: tp-grub.md
-[tp-sysv]: tp-sysv.md
-[tp-systemd]: tp-systemd.md
+[tp-systeme]: /cours/linux/tp-systeme
+[tp-grub]: /cours/linux/tp-grub
+[tp-sysv]: /cours/linux/tp-sysv
+[tp-systemd]: /cours/linux/tp-systemd
 
 ---
 

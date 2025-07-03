@@ -287,12 +287,12 @@ layout: section
 - `/etc/cups/cupsd.conf`
 - Interface héritée de `lpd` (`lpadmin`, `lpinfo`, `lpoptions`, `lpr`, `lpstat`, `lp`, …)
 
-[tp-cron]: tp-cron.md
-[tp-lang]: tp-lang.md
-[tp-systeme]: tp-systeme.md
-[tp-systemd]: tp-systemd.md
-[tp-syslog]: tp-syslog.md
-[tp-smtp]: /cours/cloud/exo-smtp.md
+[tp-cron]: /cours/linux/tp-cron
+[tp-lang]: /cours/linux/tp-lang
+[tp-systeme]: /cours/linux/tp-systeme
+[tp-systemd]: /cours/linux/tp-systemd
+[tp-syslog]: /cours/linux/tp-syslog
+[tp-smtp]: /cours/cloud/exo-smtp
 
 ---
 

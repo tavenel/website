@@ -205,11 +205,11 @@ layout: section
 
 <!-- Annexe : liste des TPs -->
 
-[tp-ligne-commande]: tp-ligne-commande.md
-[tp-texte]: tp-texte.md
-[tp-fichiers]: tp-fichiers.md
-[tp-redirections]: tp-redirections.md
-[tp-process]: tp-process.md
+[tp-ligne-commande]: /cours/linux/tp-ligne-commande
+[tp-texte]: /cours/linux/tp-texte
+[tp-fichiers]: /cours/linux/tp-fichiers
+[tp-redirections]: /cours/linux/tp-redirections
+[tp-process]: /cours/linux/tp-process
 
 ---
 

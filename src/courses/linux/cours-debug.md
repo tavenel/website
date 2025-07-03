@@ -44,11 +44,11 @@ layout: '@layouts/CoursePartLayout.astro'
 
 - Problème de démarrage, mot de passe root oublié :
   - Accéder au mode "recovery" (`single-user`)
-  - Voir le [TP Grub](tp-grub.md)
+  - Voir le [TP Grub][tp-grub]
 - Si besoin, démarrer un système avec un Live CD
-  - Voir le [TP Rescue](tp-rescue.md)
+  - Voir le [TP Rescue][tp-rescue]
 
-[tp-grub]: tp-grub.md
-[tp-rescue]: tp-rescue.md
+[tp-grub]: /cours/linux/tp-grub
+[tp-rescue]: /cours/linux/tp-rescue
 
 ---

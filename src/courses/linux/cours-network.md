@@ -340,7 +340,7 @@ layout: section
 - Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
 - Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 
-[tp-network]: tp-network.md
+[tp-network]: /cours/linux/tp-network
 
 ---
 

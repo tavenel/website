@@ -140,8 +140,8 @@ layout: section
 
 - Voir aussi [GTF0bins : exploits classiques sur Linux (tuto)](https://blog.stephane-robert.info/docs/securiser/menaces/gtfobins/)
 
-[tp-security]: tp-security.md
-[tp-ssh-gpg]: tp-ssh-gpg.md
+[tp-security]: /cours/linux/tp-security
+[tp-ssh-gpg]: /cours/linux/tp-ssh-gpg
 
 ---
 

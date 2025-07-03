@@ -260,9 +260,9 @@ layout: section
 - Fichier de configuration `YAML`
 
 <!-- Annexe : liste des TPs -->
-[tp-grub]: tp-grub.md
-[tp-shared-lib]: tp-shared-lib.md
-[tp-rpm-apt]: tp-rpm-apt.md
+[tp-grub]: /cours/linux/tp-grub
+[tp-shared-lib]: /cours/linux/tp-shared-lib
+[tp-rpm-apt]: /cours/linux/tp-rpm-apt
 
 ---
 
