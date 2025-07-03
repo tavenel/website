@@ -1,5 +1,7 @@
 ﻿---
 import Layout from '@layouts/CoursTestLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
 import { Content as Intro } from '@courses/tests/cours-introduction-tests.md';
 import { Content as Methodo } from '@courses/tests/cours-methodo-tests.md';
 import { Content as Static } from '@courses/tests/test-statique.md';
@@ -16,19 +18,19 @@ import { Content as Selenium } from '@courses/selenium/cours.md';
 ---
 
 <Layout title="">
-  <Intro />
-  <Methodo />
-  <Static />
-  <Recette />
-  <TDD />
-  <BDD />
-  <Strategies />
-  <Techniques />
-  <Indus />
-  <Patterns />
-  <CodeTestable />
-  <Unittest />
-  <Selenium />
+  <Chapter> Intro /> </Chapter>
+  <Chapter> Methodo /> </Chapter>
+  <Chapter> Static /> </Chapter>
+  <Chapter> Recette /> </Chapter>
+  <Chapter> TDD /> </Chapter>
+  <Chapter> BDD /> </Chapter>
+  <Chapter> Strategies /> </Chapter>
+  <Chapter> Techniques /> </Chapter>
+  <Chapter> Indus /> </Chapter>
+  <Chapter> Patterns /> </Chapter>
+  <Chapter> CodeTestable /> </Chapter>
+  <Chapter> Unittest /> </Chapter>
+  <Chapter> Selenium /> </Chapter>
 </Layout>
 ---
 

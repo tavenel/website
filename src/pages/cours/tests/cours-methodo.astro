@@ -1,5 +1,7 @@
 ﻿---
 import Layout from '@layouts/CoursTestLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
 import { Content as Intro } from '@courses/tests/cours-introduction-tests.md';
 import { Content as Methodo } from '@courses/tests/cours-methodo-tests.md';
 import { Content as Static } from '@courses/tests/test-statique.md';
@@ -11,14 +13,14 @@ import { Content as Techniques } from '@courses/tests/techniques-tests.md';
 ---
 
 <Layout title="Méthodologie des tests">
-  <Intro />
-  <Methodo />
-  <Static />
-  <Recette />
-  <TDD />
-  <BDD />
-  <Strategies />
-  <Techniques />
+ <Chapter> <Intro /> </Chapter>
+ <Chapter> <Methodo /> </Chapter
+ <Chapter> <Static /> </Chapter
+ <Chapter> <Recette /> </Chapter
+ <Chapter> <TDD /> </Chapter
+ <Chapter> <BDD /> </Chapter
+ <Chapter> <Strategies /> </Chapter
+ <Chapter> <Techniques /> </Chapter
 </Layout>
 ---
 
