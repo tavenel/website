@@ -1,14 +1,17 @@
 ---
-title: Domain-Driven Design en pratique - Patterns Tactiques
-date: 2024 / 2025
-toc: true
+title: Patterns Tactiques
+layout: '@layouts/CoursePartLayout.astro'
 tags:
 - ddd
+- archi
+- poo
 ---
 
-# Patterns tactiques de base
+## Patterns tactiques de base
 
-## 🎯 Entity
+---
+
+### 🎯 Entity
 
 Une entité représente un **objet métier** dans le **domaine** qui possède une **identité unique** et qui évolue au fil du temps. Il a un ID et est mutable.
 
@@ -25,7 +28,7 @@ class Customer {
 @enduml
 ```
 
-### Caractéristiques principales d'une **Entity**
+#### Caractéristiques principales d'une **Entity**
 
 1. **Identité unique** :
    - Chaque entité a une **identité** (ID) qui la distingue des autres entités, même si leurs attributs sont identiques.
@@ -43,11 +46,11 @@ class Customer {
 5. (Souvent) **partie intégrante d'un agrégat** :
    - Les entités sont souvent groupées sous un **Aggregate** pour gérer leurs relations et leurs règles métier de cohérence.
 
-### Exemple dans le Domaine : Système de gestion des commandes
+#### Exemple dans le Domaine : Système de gestion des commandes
 
 Une **commande (`Order`)** est un concept central du domaine.
 
-#### Définition d'une entité `Order`
+##### Définition d'une entité `Order`
 
 ```python
 class Order:
@@ -66,7 +69,7 @@ class Order:
         self.status = new_status
 ```
 
-### Exemple dans le Domaine : Banque
+#### Exemple dans le Domaine : Banque
 
 Une entité **Compte bancaire** (`BankAccount`) peut être définie comme suit :
 
@@ -90,7 +93,7 @@ class BankAccount:
         self.balance -= amount
 ```
 
-### Bonnes pratiques pour les entités
+#### Bonnes pratiques pour les entités
 
 1. **Responsabilités claires** :
    - L'entité ne doit gérer que sa propre logique métier.
@@ -107,7 +110,7 @@ class BankAccount:
 
 ---
 
-## 🧩 Value Object
+### 🧩 Value Object
 
 Contrairement aux **entités**, les `Value Objects` n'ont pas d'**identité unique**. Ils sont définis uniquement par leurs **valeurs** et sont souvent **immuables**.
 
@@ -124,7 +127,7 @@ class Money {
 @enduml
 ```
 
-### Caractéristiques principales d'un **Value Object**
+#### Caractéristiques principales d'un **Value Object**
 
 1. **Pas d'identité unique** :
    - Deux Value Objects sont considérés comme égaux si leurs **valeurs** sont identiques.
@@ -143,7 +146,7 @@ class Money {
 5. **Réutilisabilité** :
    - Les Value Objects peuvent être réutilisés dans plusieurs parties du domaine, ce qui réduit la duplication.
 
-### Exemple d'utilisation : Domaine : Adresse dans un système de commande
+#### Exemple d'utilisation : Domaine : Adresse dans un système de commande
 
 Un **Value Object** `Address` pourrait être défini comme suit :
 
@@ -170,7 +173,7 @@ class Address:
         return f"{self.street}, {self.city}, {self.postal_code}"
 ```
 
-### Exemples de cas où utiliser des **Value Objects**
+#### Exemples de cas où utiliser des **Value Objects**
 
 1. **Monnaie et montant** :
    - Représentation d'un montant avec une devise (ex. : `Money` avec des opérations comme addition ou conversion).
@@ -184,7 +187,7 @@ class Address:
 4. **Unité de mesure** :
    - Ex. : `Weight`, `Length`, `Temperature` avec des conversions ou des comparaisons intégrées.
 
-### Différence entre **Value Object** et **Entity**
+#### Différence entre **Value Object** et **Entity**
 
 | **Aspect**               | **Value Object**                                 | **Entity**                                   |
 |--------------------------|--------------------------------------------------|----------------------------------------------|
@@ -193,7 +196,7 @@ class Address:
 | **Représente**           | Une caractéristique ou un attribut réutilisable. | Un concept métier central avec une identité. |
 | **Exemple**              | Adresse, Monnaie, Coordonnée géographique.       | Commande, Client, Produit.                   |
 
-### Bonnes pratiques avec les **Value Objects**
+#### Bonnes pratiques avec les **Value Objects**
 
 1. **Favorisez les Value Objects lorsque c'est possible** :
    - Si un concept n'a pas besoin d'une identité unique, préférez un `Value Object` à une `Entity`.
@@ -209,7 +212,7 @@ class Address:
 
 ---
 
-## 📦 Aggregate
+### 📦 Aggregate
 
 Regroupe des `Entity` et des `Value Objects` qui forment une unité cohérente pour la logique métier et la cohérence des données. 
 
@@ -234,7 +237,7 @@ Order *-- "1..*" OrderItem
 @enduml
 ```
 
-### Caractéristiques principales d'un **Aggregate**
+#### Caractéristiques principales d'un **Aggregate**
 
 1. **Unité de cohérence** :
    - Toutes les règles métier d'un `Aggregate` doivent être respectées à l'intérieur de ses limites.
@@ -253,9 +256,9 @@ Order *-- "1..*" OrderItem
 5. **Cohérence transactionnelle** :
    - Les modifications dans un `Aggregate` sont cohérentes et complètes dans une seule transaction. 
 
-### Exemple d'Aggregate
+#### Exemple d'Aggregate
 
-#### Domaine : Système de commande
+##### Domaine : Système de commande
 
 Un agrégat `Order` (commande) pourrait inclure :
 
@@ -263,7 +266,7 @@ Un agrégat `Order` (commande) pourrait inclure :
 - **Entités internes** : `OrderItem` (article de commande).
 - **Value Objects** : `Address` (adresse de livraison).
 
-#### Représentation en code :
+##### Représentation en code :
 
 ```python
 class Order:
@@ -303,7 +306,7 @@ Dans cet exemple :
 - `Order` est l'`Aggregate Root`.
 - Les interactions avec les `OrderItem` passent exclusivement par `Order`.
 
-### Différence entre un **Aggregate** et une simple entité
+#### Différence entre un **Aggregate** et une simple entité
 
 | **Aspect**               | **Aggregate**                                | **Entity**                                |
 |--------------------------|----------------------------------------------|------------------------------------------|
@@ -312,7 +315,7 @@ Dans cet exemple :
 | **Point d'entrée**       | Une seule racine d'agrégat.                  | N'a pas de restrictions sur son accès.   |
 | **Transaction**          | Cohérence transactionnelle garantie.         | Gère uniquement ses propres changements. |
 
-### Bonnes pratiques pour les **Aggregates**
+#### Bonnes pratiques pour les **Aggregates**
 
 1. **Petits agrégats** :
    - Chaque agrégat doit rester simple et concentré sur une seule responsabilité métier.
@@ -329,7 +332,7 @@ Dans cet exemple :
 5. **Favorisez l'encapsulation** :
    - Les objets internes à l’agrégat (`Entity`, `Value Objects`) doivent être accessibles uniquement via la racine.
 
-### Exemple pratique : Banque
+#### Exemple pratique : Banque
 
 Dans un système bancaire, un agrégat **Compte bancaire (BankAccount)** pourrait inclure :
 
@@ -337,7 +340,7 @@ Dans un système bancaire, un agrégat **Compte bancaire (BankAccount)** pourrai
 - **Entités internes** : `Transaction`.
 - **Value Objects** : `Money`.
 
-#### Représentation :
+##### Représentation :
 
 ```python
 class BankAccount:
@@ -367,7 +370,7 @@ class Transaction:
         self.amount = amount
 ```
 
-### ❌ Anti-pattern : violation de la cohérence par modification directe d'un membre interne
+#### ❌ Anti-pattern : violation de la cohérence par modification directe d'un membre interne
 
 ```python
 class Order:
@@ -381,7 +384,7 @@ order.items.append({"product": "book", "qty": 0})  # Invalide
 
 ---
 
-## 🗃️ Repository
+### 🗃️ Repository
 
 Pattern utilisé pour gérer la persistance des `Aggregate` et des `Entity` (par exemple dans une base de données). Il agit comme une interface entre le domaine métier et la couche de persistance, permettant au code métier d'interagir avec les objets du domaine sans se soucier des détails de leur stockage.
 
@@ -400,11 +403,11 @@ OrderRepository <|.. InMemoryOrderRepository
 @enduml
 ```
 
-### Exemple d'utilisation d'un **Repository**
+#### Exemple d'utilisation d'un **Repository**
 
 Imaginons un domaine de **gestion des commandes** où nous avons un agrégat `Order` (commande). Un `Repository` pour cet agrégat peut offrir des méthodes pour récupérer, ajouter ou modifier des commandes.
 
-#### Code avec un **Repository**
+##### Code avec un **Repository**
 
 ```python
 import uuid
@@ -464,7 +467,7 @@ retrieved_order = repository.get(order_id)
 print(f"Total de la commande : {retrieved_order.calculate_total()}")
 ```
 
-### Différence entre **Repository** et **DAO (Data Access Object)**
+#### Différence entre **Repository** et **DAO (Data Access Object)**
 
 | **Aspect**                | **Repository**                                       | **DAO**                                          |
 |---------------------------|-----------------------------------------------------|--------------------------------------------------|
@@ -473,7 +476,7 @@ print(f"Total de la commande : {retrieved_order.calculate_total()}")
 | **Interaction avec le domaine** | Le Repository interagit avec le domaine via des objets métiers (entités, agrégats, value objects). | Le DAO est plus focalisé sur l'accès aux données sous forme brute. |
 | **Niveau d'abstraction**   | Plus haut niveau d'abstraction (logique métier + persistance). | Plus bas niveau d'abstraction (accès direct aux données). |
 
-### Bonnes pratiques pour les **Repositories**
+#### Bonnes pratiques pour les **Repositories**
 
 1. **Utilisez un Repository pour chaque agrégat** :
    - Créez un Repository spécifique pour chaque agrégat (par exemple, `OrderRepository`, `CustomerRepository`) afin de garder les responsabilités bien définies.
@@ -487,7 +490,7 @@ print(f"Total de la commande : {retrieved_order.calculate_total()}")
 4. **Evitez les dépendances directes aux frameworks de persistance dans le domaine** :
    - Le Repository doit être découplé des frameworks de persistance spécifiques. Par exemple, utilisez une interface pour le Repository, et l'implémentation du Repository peut utiliser des outils comme des ORM ou des bibliothèques de persistance.
 
-### ❌ Anti-pattern : Repository qui retourne des DTOs ou des tuples
+#### ❌ Anti-pattern : Repository qui retourne des DTOs ou des tuples
 
 ```python
 def get_order(order_id):
@@ -497,7 +500,7 @@ def get_order(order_id):
 - 🔴 Problème : la couche domaine est court-circuitée, aucun modèle métier n'est reconstruit.
 - ✅ À faire : retourner des entités/agrégats riches, pas des structures plates.
 
-### ❌ Anti-pattern : Repository couplé à l'ORM
+#### ❌ Anti-pattern : Repository couplé à l'ORM
 
 ```python
 # Couche domaine
@@ -519,7 +522,7 @@ class OrderRepository:
   - Utiliser une interface abstraite dans le domaine
 	- Injecter l'implémentation.
 
-#### Étape 1 — Interface métier (`order_repository.py`)
+##### Étape 1 — Interface métier (`order_repository.py`)
 
 ```python
 # Domaine (indépendant)
@@ -528,7 +531,7 @@ class OrderRepository:
     def get_by_id(self, order_id): raise NotImplementedError
 ```
 
-#### Étape 2 — Implémentation dans l'infrastructure (`sqlalchemy_order_repository.py`)
+##### Étape 2 — Implémentation dans l'infrastructure (`sqlalchemy_order_repository.py`)
 
 ```python
 # ORM infrastructure
@@ -550,7 +553,7 @@ class SqlAlchemyOrderRepository(OrderRepository):
         return orm_model.to_domain()
 ```
 
-#### Étape 3 — Mapping entre ORM et domaine (`orm_entities.py`)
+##### Étape 3 — Mapping entre ORM et domaine (`orm_entities.py`)
 
 ```python
 class OrderModel(Base):
@@ -571,7 +574,7 @@ class OrderModel(Base):
         )
 ```
 
-#### Étape 4 — Utilisation dans l'Application Service
+##### Étape 4 — Utilisation dans l'Application Service
 
 ```python
 class OrderApplicationService:
@@ -583,18 +586,18 @@ class OrderApplicationService:
         self.repository.save(order)
 ```
 
-### Cas d'utilisation avancé : Repository dans CQRS et Event Sourcing
+#### Cas d'utilisation avancé : Repository dans CQRS et Event Sourcing
 
 Dans une architecture **CQRS (Command Query Responsibility Segregation)**, les **Repositories** peuvent être utilisés différemment pour la **Command Side** (écriture) et la **Query Side** (lecture). De plus, dans une architecture **Event Sourcing**, les Repositorys ne manipulent pas directement les entités ou agrégats, mais peuvent utiliser des événements pour reconstituer l'état des objets métier. Voir les sections _CQRS_ et _Event Sourcing_.
 
-#### Exemples :
+##### Exemples :
 
 - **Command Side** : Utilisation de Repository pour stocker des événements ou agrégats dans un système de persistance événementielle.
 - **Query Side** : Utilisation de Repository pour récupérer des vues de lecture optimisées, souvent dans des bases de données dédiées aux requêtes.
 
 ---
 
-## 🧩 Module
+### 🧩 Module
 
 En DDD, un **module** fait référence à une structure qui est un regroupement logique de fonctionnalités qui partagent une même responsabilité métier.
 
@@ -628,7 +631,7 @@ En DDD, un **module** fait référence à une structure qui est un regroupement 
 
 <div class="caption">Un projet de librairie avec 2 contextes "catalogue" et "lending" et un shared kernel.</div>
 
-### Types de **Modules** en DDD
+#### Types de **Modules** en DDD
 
 1. **Modules dans un Bounded Context** :
    - Un **Bounded Context** peut être considéré comme un type de module dans DDD. Il définit un domaine ou une sous-partie d'un système où un modèle de domaine particulier est appliqué, avec ses propres termes et règles métiers.
@@ -640,7 +643,7 @@ En DDD, un **module** fait référence à une structure qui est un regroupement 
 3. **Modules de Service** :
    - En DDD, un module peut également être représenté par un **service** (par exemple, un **domain service**), qui contient des règles de logique métier complexes qui ne s'intègrent pas facilement dans une entité ou un agrégat.
 
-### Exemple d'un **Module** en DDD
+#### Exemple d'un **Module** en DDD
 
 Imaginons que nous avons un système de gestion de commandes où chaque module gère une fonctionnalité spécifique. Voici un exemple de structure de module dans un tel système :
 
@@ -650,7 +653,7 @@ Imaginons que nous avons un système de gestion de commandes où chaque module g
 2. **Module Paiement (Payment Module)** :
    - Gère les interactions liées aux paiements, avec des entités comme `Payment`, des services de paiement, des événements de domaine comme `PaymentProcessedEvent`, etc.
 
-#### Exemple de structure de fichiers d'un système avec des modules :
+##### Exemple de structure de fichiers d'un système avec des modules :
 ```
 src/
   +-- order/
@@ -675,7 +678,7 @@ Dans cette structure :
 - Les modules `order` et `payment` ont leurs propres composants métier, comme les **agrégats** (`Order`, `Payment`), les **services** (`OrderService`, `PaymentService`), et les **événements de domaine**.
 - Le module `shared` contient des composants qui peuvent être utilisés par plusieurs autres modules, comme le `Logger`.
 
-### Bonnes pratiques pour l'organisation des **Modules**
+#### Bonnes pratiques pour l'organisation des **Modules**
 
 1. **Définir une responsabilité claire pour chaque module** :
    - Un module doit avoir une seule responsabilité bien définie. Cela aide à maintenir une bonne cohésion et une faible dépendance.
@@ -691,7 +694,7 @@ Dans cette structure :
 
 ---
 
-## 🏭 Factory
+### 🏭 Factory
 
 Design pattern permettant de créer des objets complexes, généralement des entités ou des agrégats. Elle permet de centraliser et d'encapsuler la logique de création d'objets, afin que celle-ci ne soit pas dispersée dans tout le code. Cela simplifie la gestion de la création des objets et garantit que des règles métier et des invariants sont respectés lors de leur instantiation.
 
@@ -713,7 +716,7 @@ OrderFactory --> Order
 @enduml
 ```
 
-### Avantages d'une **Factory** :
+#### Avantages d'une **Factory** :
 
 1. **Séparation des préoccupations** :
    - La création d'objets est séparée de la logique métier, ce qui permet de garder les classes et les services plus clairs et moins responsables.
@@ -721,13 +724,13 @@ OrderFactory --> Order
 2. **Simplification des tests** :
    - La Factory rend les tests unitaires plus faciles, car la création d'objets est centralisée, ce qui permet de mieux contrôler l'instanciation des objets dans les tests.
 
-### Exemple d'utilisation d'une **Factory**
+#### Exemple d'utilisation d'une **Factory**
 
-#### Domaine : Système de commande
+##### Domaine : Système de commande
 
 Imaginons que nous souhaitons créer des objets `Order` (commande), et que la création de l'objet implique des vérifications de l'état de la commande, de la validation des articles, et de l'attribution d'un identifiant unique.
 
-#### Code avec une Factory
+##### Code avec une Factory
 
 ```python
 import uuid
@@ -771,7 +774,7 @@ Dans cet exemple :
 - La logique de création inclut la génération d'un identifiant unique : `uuid.uuid4()`.
 - Les **invariants** (par exemple, une commande ne peut être créée sans adresse de livraison ou client) peuvent être ajoutés dans la `Factory`.
 
-### Types de **Factory**
+#### Types de **Factory**
 
 1. **Factory Method** :
    - Il s'agit d'une méthode dans une classe qui crée un objet. Cela permet de personnaliser la façon dont l'objet est créé tout en déléguant la logique de création.
@@ -797,7 +800,7 @@ Dans cet exemple :
    - Exemple : Un `OrderBuilder` pourrait être utilisé pour construire des commandes étape par étape (ajouter des articles, définir l'adresse de livraison, etc.).
    - On utilise un pattern _Fluent_ : chaque méthode du `Builder` retourne l'instance courante pour pouvoir enchaîner les étapes : `OrderBuilder().add_item(…).add_shipping_address(…)`
 
-### Différence entre **Factory** et **Constructeur**
+#### Différence entre **Factory** et **Constructeur**
 
 | **Aspect**               | **Factory**                                      | **Constructeur**                       |
 |--------------------------|--------------------------------------------------|-----------------------------------------------------|
@@ -808,7 +811,7 @@ Dans cet exemple :
 
 ---
 
-## ⚙️ Domain Service
+### ⚙️ Domain Service
 
 Objet sans état qui encapsule une logique compliquée du domaine.
 
@@ -828,20 +831,20 @@ PricingService --> Money
 @enduml
 ```
 
-### Caractéristiques d'un Domain Service
+#### Caractéristiques d'un Domain Service
 
 - **Logique métier transversale** : le `Domain Service` est utile lorsque la logique métier implique plusieurs `Entity` ou `Aggregate` et qu'elle ne peut être placée naturellement dans une seule `Entity` ou `Aggregate`.
 - **Focus sur une responsabilité spécifique** : Conçu pour exécuter une tâche clairement définie.
 - **Opérations stateless** : le `Domain Service` ne conserve pas d'état. Il utilise des `Entity` ou des `Values` pour exécuter sa logique.
 
-### Exemple de Domain Service
+#### Exemple de Domain Service
 
-#### Cas : Calcul du prix total d'une commande avec des règles métier
+##### Cas : Calcul du prix total d'une commande avec des règles métier
 
 1. Une entité `Order` contient une liste d'articles, mais le calcul du prix total dépend de règles complexes (réduction, taxes, etc.).
 2. Un `Domain Service` est utilisé pour encapsuler cette logique.
 
-#### Modèle de domaine
+##### Modèle de domaine
 
 ```python
 class OrderItem:
@@ -855,7 +858,7 @@ class Order:
         self.items = items  # Liste d'OrderItem
 ```
 
-#### Domain Service : Calculateur de prix
+##### Domain Service : Calculateur de prix
 
 ```python
 class PricingService:
@@ -869,7 +872,7 @@ class PricingService:
         return total
 ```
 
-### Bonnes pratiques
+#### Bonnes pratiques
 
 1. **Limitez les Domain Services à la logique métier transversale** :
    - Si une logique peut être attribuée naturellement à une entité ou un agrégat, placez-la dans celui-ci.
@@ -883,7 +886,7 @@ class PricingService:
 4. **Respectez le langage ubiquitaire** :
    - Définissez les Domain Services en termes métier compréhensibles par les experts métier.
 
-### ❌ Anti-pattern : "God Service" (logique trop générale ou multipurpose)
+#### ❌ Anti-pattern : "God Service" (logique trop générale ou multipurpose)
 
 ```python
 class OrderDomainService:
@@ -897,7 +900,7 @@ class OrderDomainService:
 
 ---
 
-## 🧭 Application Service
+### 🧭 Application Service
 
 **Orchestrateur** entre le monde extérieur (interface utilisateur, API, etc.) et le domaine métier. Il est responsable de coordonner les opérations, de valider les entrées, et d'exécuter les commandes tout en laissant la logique métier au domaine.
 
@@ -923,7 +926,7 @@ OrderApplicationService --> PlaceOrderCommand
 @enduml
 ```
 
-### Rôles d'un Application Service
+#### Rôles d'un Application Service
 
 1. **Orchestration** :
    - Coordonne les appels aux `Entity`, aux `Aggregate` et aux `ServiceDomain`.
@@ -943,9 +946,9 @@ OrderApplicationService --> PlaceOrderCommand
 5. **Isolation du domaine** :
    - Protège le domaine des détails techniques ou des dépendances externes.
 
-### Exemple de flux avec un Application Service
+#### Exemple de flux avec un Application Service
 
-#### Cas d'usage : Créer une commande
+##### Cas d'usage : Créer une commande
 
 1. **Entrée** :
    - L'utilisateur soumet une requête via une API ou une interface utilisateur.
@@ -959,9 +962,9 @@ OrderApplicationService --> PlaceOrderCommand
 3. **Sortie** :
    - Retourne une confirmation, un identifiant, ou un résultat au client.
 
-### Exemple pratique en Python
+#### Exemple pratique en Python
 
-#### Commande (entrée de l'utilisateur)
+##### Commande (entrée de l'utilisateur)
 
 ```python
 class CreateOrderCommand:
@@ -970,7 +973,7 @@ class CreateOrderCommand:
         self.items = items
 ```
 
-#### Application Service
+##### Application Service
 
 ```python
 class OrderApplicationService:
@@ -991,7 +994,7 @@ class OrderApplicationService:
         return order.order_id
 ```
 
-#### Interaction avec le domaine
+##### Interaction avec le domaine
 
 ```python
 class Order:
@@ -1001,7 +1004,7 @@ class Order:
         self.status = "created"
 ```
 
-#### Appel du service
+##### Appel du service
 
 ```python
 # Exemple d'utilisation
@@ -1011,7 +1014,7 @@ order_id = order_service.create_order(command)
 print(f"Order created with ID: {order_id}")
 ```
 
-### Différences entre Application Service et Domain Service
+#### Différences entre Application Service et Domain Service
 
 | **Application Service**          | **Domain Service**                    |
 |----------------------------------|---------------------------------------|
@@ -1020,7 +1023,7 @@ print(f"Order created with ID: {order_id}")
 | Se situe dans la couche application. | Se situe dans la couche domaine.     |
 
 
-### ❌ Anti-pattern : logique métier dans l'Application Service
+#### ❌ Anti-pattern : logique métier dans l'Application Service
 
 ```python
 class OrderAppService:
@@ -1033,9 +1036,13 @@ class OrderAppService:
 - 🔴 Problème : la règle métier est au mauvais endroit (logique dans l'orchestration).
 - ✅ À faire : valider dans l’agrégat ou la factory, pas dans le service applicatif.
 
-# Patterns tactiques avancés
+---
+layout: section
+---
 
-## 🔌 Dependency Injection
+## Patterns tactiques avancés
+
+### 🔌 Dependency Injection
 
 La **Dependency Injection (DI)** (ou injection de dépendances) est un modèle de conception qui permet d'injecter les dépendances nécessaires à un objet depuis l'extérieur, plutôt que de laisser l'objet créer ou rechercher lui-même ses dépendances. Cela favorise la modularité, la testabilité et la séparation des préoccupations.
 
@@ -1060,7 +1067,7 @@ Service --> OrderRepository : injected
 @enduml
 ```
 
-### Principes de base :
+#### Principes de base :
 
 1. **Dépendances explicites** :  
    - Une classe ne gère pas elle-même la création ou la localisation des objets dont elle dépend. Ces dépendances sont injectées, généralement via un constructeur, une méthode ou un champ.
@@ -1071,7 +1078,7 @@ Service --> OrderRepository : injected
 3. **Configuration externe** :  
    - Les dépendances peuvent être configurées depuis une source externe (par exemple, un fichier de configuration, un conteneur IoC ou un framework).
 
-### Types d'injection :
+#### Types d'injection :
 
 1. **Injection par constructeur** :  
    - Les dépendances sont fournies à une classe via son constructeur.  
@@ -1112,7 +1119,7 @@ Service --> OrderRepository : injected
    }
    ```
 
-### Lien avec le Domain-Driven Design (DDD) :
+#### Lien avec le Domain-Driven Design (DDD) :
 
 Dans un contexte **DDD**, l'injection de dépendances est particulièrement utile dans les contextes de :
 
@@ -1125,7 +1132,7 @@ Dans un contexte **DDD**, l'injection de dépendances est particulièrement util
 3. **Packaging des Bounded Context** :  
    - Dans une architecture avec plusieurs **Bounded Contexts**, chaque contexte peut avoir son propre conteneur IoC pour gérer les dépendances spécifiques.
 
-### Inconvénients :
+#### Inconvénients :
 
 1. **Complexité initiale** :  
    - L'utilisation de frameworks IoC ou de conteneurs peut introduire une courbe d'apprentissage.
@@ -1136,9 +1143,9 @@ Dans un contexte **DDD**, l'injection de dépendances est particulièrement util
 3. **Difficulté de débogage** :  
    - Dans les systèmes complexes, il peut être difficile de suivre quelles dépendances sont injectées et d'où elles proviennent.
 
-### Exemple avec un conteneur IoC :
+#### Exemple avec un conteneur IoC :
 
-#### Exemple Spring (Java)
+##### Exemple Spring (Java)
 
 Ici, le framework **Spring** se charge d'injecter l'implémentation de `OrderRepository` dans `OrderService`.
 
@@ -1154,7 +1161,7 @@ public class OrderService {
 }
 ```
 
-#### Exemple Dependency Injector (Python)
+##### Exemple Dependency Injector (Python)
 
 Dans Python, on peut utiliser des frameworks comme `Dependency Injector` pour gérer les dépendances de manière formelle :
 
@@ -1188,7 +1195,7 @@ service = container.service()
 print(service.process())
 ```
 
-## 🧍‍♂️🔀 Split Entities (ou Entitées Séparées par Bounded Context)
+### 🧍‍♂️🔀 Split Entities (ou Entitées Séparées par Bounded Context)
 
 Concept : **diviser une `Entity` en plusieurs entités distinctes dans différents contextes limités (_Bounded Contexts_)**, afin de mieux répondre aux exigences spécifiques de chaque contexte.
 
@@ -1212,7 +1219,7 @@ package "Context: CRM" {
 @enduml
 ```
 
-### Pourquoi utiliser Split Entities ?
+#### Pourquoi utiliser Split Entities ?
 
 Une `Entity` peut représenter différentes choses en fonction du contexte dans lequel elle est utilisée. Si vous essayez de répondre à tous les besoins dans une seule entité, vous risquez de créer une complexité inutile ou d'introduire des contradictions.
 
@@ -1220,7 +1227,7 @@ Une `Entity` peut représenter différentes choses en fonction du contexte dans 
   - Dans le **Bounded Context** de _Gestion des utilisateurs_, un utilisateur peut inclure des champs comme le mot de passe, les rôles, et les informations personnelles.
   - Dans le **Bounded Context** de _Support client_, l'utilisateur pourrait être représenté par un ensemble minimal d'informations comme le nom, l'adresse e-mail et un historique de tickets.
 
-### Comment gérer les Split Entities ?
+#### Comment gérer les Split Entities ?
 
 1. **Ubiquitous Language** : Les entités devraient être nommées et définies en fonction du langage ubiquitaire propre à chaque contexte.
 2. **Mapping et synchronisation** : Si une entité dans un contexte dépend d'une entité dans un autre, vous pouvez utiliser des mécanismes comme des événements de domaine pour synchroniser les informations.
@@ -1233,7 +1240,7 @@ Si les besoins des différents contextes se chevauchent significativement, il n'
 
 ---
 
-## ⚖️ Policy (Décision métier encapsulée)
+### ⚖️ Policy (Décision métier encapsulée)
 
 Règle métier qui décrit un **comportement** ou une **contrainte métier** applicable à un contexte spécifique (_Bounded Context_). Elle est **déclarative** : elle exprime *quoi* faire plutôt que *comment* le faire.
 
@@ -1253,14 +1260,14 @@ CancellationPolicy <|.. NoCancellationPolicy
 @enduml
 ```
 
-### Où place-t-on une policy ?
+#### Où place-t-on une policy ?
 
 Dans l'implémentation d'un modèle DDD, une policy peut :
 
 - Être codée comme une méthode ou une fonction métier dans un `Aggregate`, une `Entity` ou un `Domain Service`.
 - Être représentée en tant qu'objet indépendant si elle est complexe, sous la forme d'une `Policy Object`.
 
-### Exemple de **policy**
+#### Exemple de **policy**
 
 > Un utilisateur ne peut réserver qu'une seule fois pour le même créneau horaire.
   
@@ -1280,7 +1287,7 @@ class ReservationPolicy:
 
 Ici, `ReservationPolicy` encapsule une règle métier et peut être utilisée par d'autres composants du système pour valider les actions.
 
-### ❌ Anti-pattern : if/else hardcodé au lieu d’une Policy interchangeable
+#### ❌ Anti-pattern : if/else hardcodé au lieu d’une Policy interchangeable
 
 ```python
 if user.type == "premium":
@@ -1293,7 +1300,7 @@ else:
 
 ---
 
-## 🔐 Invariant (métier protégé dans l'aggrégat)
+### 🔐 Invariant (métier protégé dans l'aggrégat)
 
 Un **invariant** fait référence à une **règle métier** ou une **contrainte** qui doit toujours être vraie pour garantir la cohérence et l'intégrité du modèle de domaine, indépendamment des actions effectuées dans le système. Ces règles sont cruciales pour maintenir l'intégrité du domaine tout au long du cycle de vie des entités et agrégats.
 
@@ -1310,7 +1317,7 @@ note right of BankAccount : Ne pas autoriser un retrait\nsi balance < montant
 @enduml
 ```
 
-### Caractéristiques d'un **Invariant**
+#### Caractéristiques d'un **Invariant**
 
 1. **Immuabilité** :
    - Les invariants doivent toujours être respectés. Ils ne peuvent être violés ou modifiés en cours d'exécution sans compromettre la validité du système.
@@ -1324,7 +1331,7 @@ note right of BankAccount : Ne pas autoriser un retrait\nsi balance < montant
 4. **Contrôles au moment de l'exécution** :
    - Les invariants sont souvent vérifiés par des méthodes dans les entités ou agrégats pour s'assurer qu'ils ne sont pas violés lorsqu'une opération est effectuée.
 
-### Exemples d'**Invariants** en DDD
+#### Exemples d'**Invariants** en DDD
 
 1. **Invariant de l'agrégat `Order`** :
    - Une commande (`Order`) ne peut être validée que si **tous** les articles sont disponibles en stock et que le paiement a été effectué.
@@ -1338,7 +1345,7 @@ note right of BankAccount : Ne pas autoriser un retrait\nsi balance < montant
    - Une personne doit avoir une date de naissance antérieure à la date actuelle.
    - **Règle** : `Person.birthdate <= today`.
 
-### Types d'**Invariants**
+#### Types d'**Invariants**
 
 1. **Invariants d'entité** :
    - Ces invariants sont propres aux entités et garantissent que leur état interne est valide. Par exemple, un **Produit** ne peut pas avoir un prix négatif.
@@ -1349,7 +1356,7 @@ note right of BankAccount : Ne pas autoriser un retrait\nsi balance < montant
 3. **Invariants de domaine** :
    - Ces invariants concernent l'ensemble du modèle de domaine. Par exemple, dans une application de gestion de bibliothèque, un **livre ne peut être emprunté que si un membre est inscrit**.
 
-### Mise en œuvre des **Invariants** en DDD
+#### Mise en œuvre des **Invariants** en DDD
 
 Dans DDD, les invariants sont souvent vérifiés à des points clés du cycle de vie des objets métier (par exemple, lors de la création, de la mise à jour ou de la suppression). Voici quelques bonnes pratiques pour les gérer efficacement :
 
@@ -1365,7 +1372,7 @@ Dans DDD, les invariants sont souvent vérifiés à des points clés du cycle de
 4. **Validation au moment de la commande (avant persistance)** :
    - Dans les architectures **CQRS** ou **Event Sourcing**, les invariants doivent être validés au moment où la commande est émise, avant qu'elle ne soit persistée.
 
-### Exemple de gestion d'invariant
+#### Exemple de gestion d'invariant
 
 Imaginons un système où un agrégat `Order` possède un invariant qui garantit que le montant total de la commande ne peut pas être inférieur à zéro.
 
@@ -1402,7 +1409,7 @@ except ValueError as e:
 
 Dans cet exemple, la méthode `validate_invariant` vérifie que le montant total de la commande n'est pas négatif avant de passer la commande. Si l'invariant est violé, une exception est levée.
 
-### ❌ Anti-pattern : laisser violer les règles métier par modification directe
+#### ❌ Anti-pattern : laisser violer les règles métier par modification directe
 
 ```python
 account.balance = -100  # oups
@@ -1416,7 +1423,7 @@ account.balance = -100  # oups
 
 ---
 
-##  📜 Specification Pattern
+###  📜 Specification Pattern
 
 Modèle de conception utilisé pour encapsuler des règles ou des critères métier dans un objet réutilisable, combinable et testable. Ce modèle permet de définir des spécifications sous forme d'objets, qui peuvent être utilisés pour valider, filtrer ou décider si un objet ou une entité satisfait à un ensemble de conditions. 
 
@@ -1436,7 +1443,7 @@ ActiveCustomerSpecification --> Customer
 @enduml
 ```
 
-### Caractéristiques principales du **Specification Pattern** :
+#### Caractéristiques principales du **Specification Pattern** :
 
 1. **Encapsulation des règles métier** :  
    - Les règles métier, qui pourraient autrement être dispersées dans le code, sont regroupées dans des objets spécifiques. Cela facilite leur gestion, leur compréhension et leur modification.
@@ -1450,7 +1457,7 @@ ActiveCustomerSpecification --> Customer
 4. **Testabilité** :  
    - Les spécifications étant des objets isolés, elles peuvent être facilement testées de manière unitaire pour s'assurer que leurs règles sont correctement implémentées.
 
-### Structure typique :
+#### Structure typique :
 
 Le **Specification Pattern** comprend généralement :
 
@@ -1506,7 +1513,7 @@ Le **Specification Pattern** comprend généralement :
            return not self.spec.is_satisfied_by(entity)
    ```
 
-### Exemple dans le domaine DDD :
+#### Exemple dans le domaine DDD :
 
 Supposons un domaine où l'on gère des **commandes**. Une règle métier pourrait être de valider qu'une commande est éligible pour une promotion uniquement si :
 
@@ -1546,7 +1553,7 @@ Avec le **Specification Pattern**, cela pourrait être implémenté comme suit :
    print(loyal_and_high_spending.is_satisfied_by(customer))  # True
    ```
 
-### ❌ Anti-pattern : Règle codée dans tous les appels
+#### ❌ Anti-pattern : Règle codée dans tous les appels
 
 ```python
 if customer.status == "active" and not customer.is_blacklisted():
@@ -1560,7 +1567,7 @@ if customer.status == "active" and not customer.is_blacklisted():
 
 ---
 
-## 🔁 CQRS : Command Query Responsibility Segregation
+### 🔁 CQRS : Command Query Responsibility Segregation
 
 Modèle architectural utilisé pour séparer les responsabilités de lecture (`Query`) et d'écriture (`Command`) dans un système.
 
@@ -1589,7 +1596,7 @@ OrderQueryService --> OrderDTO
 @enduml
 ```
 
-### Principe du CQRS
+#### Principe du CQRS
 
 Le modèle repose sur l'idée que les **commandes** (modifications de l'état du système) et les **requêtes** (lecture des données) sont des préoccupations fondamentalement différentes et qu'elles peuvent être gérées par des modèles distincts :
 
@@ -1601,7 +1608,7 @@ Le modèle repose sur l'idée que les **commandes** (modifications de l'état du
    - Exemple : "Afficher la liste des commandes passées".
    - Elle se concentre uniquement sur la récupération des données optimisée pour la consommation.
 
-### Architecture CQRS
+#### Architecture CQRS
 
 Dans une architecture CQRS typique, on distingue deux modèles :
 
@@ -1615,7 +1622,7 @@ Dans une architecture CQRS typique, on distingue deux modèles :
    - Peut utiliser des bases de données ou des structures de données différentes pour répondre efficacement aux besoins des requêtes.
    - Exemple : Une base indexée pour des recherches rapides.
 
-### Avantages du CQRS
+#### Avantages du CQRS
 
 1. **Scalabilité** :
    - Les lectures et les écritures peuvent être mises à l'échelle indépendamment, répondant ainsi aux différents besoins de performance.
@@ -1632,7 +1639,7 @@ Dans une architecture CQRS typique, on distingue deux modèles :
 
    - Le CQRS s'intègre bien avec l'**Event Sourcing**, où chaque changement d'état est représenté par un événement immuable.
 
-### Inconvénients du CQRS
+#### Inconvénients du CQRS
 
 1. **Complexité accrue** :
 
@@ -1643,9 +1650,9 @@ Dans une architecture CQRS typique, on distingue deux modèles :
 
    - Les mises à jour sur le modèle d'écriture doivent être propagées au modèle de lecture, introduisant une éventuelle latence.
 
-### Exemple de CQRS en pratique
+#### Exemple de CQRS en pratique
 
-#### Commande (écriture)
+##### Commande (écriture)
 ```python
 class CreateOrderCommand:
     def __init__(self, order_id, customer_id, items):
@@ -1660,7 +1667,7 @@ class OrderCommandHandler:
         order_repository.save(order)
 ```
 
-#### Requête (lecture)
+##### Requête (lecture)
 ```python
 class OrderQueryService:
     def __init__(self, query_database):
@@ -1673,7 +1680,7 @@ class OrderQueryService:
 
 ---
 
-## 📣 Domain Event
+### 📣 Domain Event
 
 Représente un événement **immuable** et **significatif** qui s'est produit dans le domaine métier, et il est généralement utilisé pour signaler qu'un changement d'état ou une action importante a eu lieu.
 
@@ -1696,9 +1703,9 @@ Order ..> OrderPlacedEvent : déclenche
 @enduml
 ```
 
-### Exemple de Domain Event
+#### Exemple de Domain Event
 
-#### Définition de l'événement
+##### Définition de l'événement
 
 ```python
 class OrderCreatedEvent:
@@ -1709,7 +1716,7 @@ class OrderCreatedEvent:
         self.occurred_on = datetime.utcnow()  # Date de l'événement
 ```
 
-#### Émission de l'événement depuis un Aggregate
+##### Émission de l'événement depuis un Aggregate
 
 ```python
 class Order:
@@ -1727,7 +1734,7 @@ class Order:
         )
 ```
 
-#### Réaction à l'événement
+##### Réaction à l'événement
 
 Un service ou un listener peut réagir à cet événement :
 
@@ -1738,7 +1745,7 @@ class OrderEventHandler:
         # Autres actions comme envoyer un e-mail ou mettre à jour un modèle de lecture
 ```
 
-### Bonnes pratiques
+#### Bonnes pratiques
 
 1. **Ne pas abuser des Domain Events** :
    - N'émettez pas d'événements pour chaque petite action, concentrez-vous sur les événements significatifs.
@@ -1752,7 +1759,7 @@ class OrderEventHandler:
 4. **Versionnement des événements** :
    - Si les exigences changent, gérez les différentes versions des événements.
 
-### ❌ Anti-pattern : Domain Event utilisé comme message technique
+#### ❌ Anti-pattern : Domain Event utilisé comme message technique
 
 ```python
 class OrderInsertedToDbEvent:
@@ -1764,7 +1771,7 @@ class OrderInsertedToDbEvent:
 
 ---
 
-## 🕰️ Cohérence Éventuelle (Eventual Consistency)
+### 🕰️ Cohérence Éventuelle (Eventual Consistency)
 
 Principe utilisé dans les systèmes distribués où il est acceptable que les différentes parties du système ne soient pas immédiatement synchronisées, tant qu'elles finissent par atteindre un état cohérent après un certain délai. Cela contraste avec la cohérence forte, où toutes les parties du système doivent être synchronisées immédiatement.
 
@@ -1786,7 +1793,7 @@ note bottom of BillingService : Réagit plus tard\nModèle mis à jour\naprès r
 @enduml
 ```
 
-### Caractéristiques principales :
+#### Caractéristiques principales :
 
 1. **Délais de propagation** :  
    - Les mises à jour ou les changements effectués sur une partie du système sont propagés de manière asynchrone aux autres parties. Cela peut entraîner un laps de temps pendant lequel différentes parties ont des états incohérents.
@@ -1799,7 +1806,7 @@ note bottom of BillingService : Réagit plus tard\nModèle mis à jour\naprès r
 
 ---
 
-### Exemple pratique : 
+#### Exemple pratique : 
 
 Supposons un système de commerce électronique avec deux contextes limités :
 
@@ -1814,7 +1821,7 @@ Pendant un court moment, l'état de la commande et l'état du stock peuvent ne p
 
 ---
 
-## 🧾 Event Sourcing
+### 🧾 Event Sourcing
 
 Modèle architectural où l'état d'une application ou d'un domaine n'est pas stocké directement, mais reconstruit à partir d'une série d'événements immuables. Ces événements représentent chaque changement survenu dans le système.
 
@@ -1835,7 +1842,7 @@ Order ..> DomainEvent : reconstruit depuis événements
 @enduml
 ```
 
-### Principe de l'Event Sourcing
+#### Principe de l'Event Sourcing
 
 1. **Événements immuables** : 
    - Chaque modification d'état est capturée sous forme d'un événement spécifique (par exemple : "Commande créée", "Article ajouté au panier").
@@ -1847,9 +1854,9 @@ Order ..> DomainEvent : reconstruit depuis événements
 3. **Source unique de vérité** : 
    - Les événements sont la seule source de vérité et permettent une traçabilité complète des modifications.
 
-### Exemple simplifié d'Event Sourcing
+#### Exemple simplifié d'Event Sourcing
 
-#### Enregistrement d'un événement :
+##### Enregistrement d'un événement :
 
 ```python
 event_store.append("order-123", {
@@ -1859,13 +1866,13 @@ event_store.append("order-123", {
 )
 ```
 
-#### Relecture des événements pour reconstruire un état :
+##### Relecture des événements pour reconstruire un état :
 ```python
 events = event_store.get_events("order-123")
 order = replay(events)  # Recrée l'état de la commande à partir des événements
 ```
 
-### Avantages de l'Event Sourcing
+#### Avantages de l'Event Sourcing
 
 1. **Traçabilité complète** :
    - Chaque événement étant enregistré, il est facile de comprendre ce qui s'est passé dans le passé.
@@ -1879,7 +1886,7 @@ order = replay(events)  # Recrée l'état de la commande à partir des événeme
 4. **Support des systèmes réactifs** :
    - Les événements sont des déclencheurs naturels pour d'autres processus ou services.
 
-### Défis de l'Event Sourcing
+#### Défis de l'Event Sourcing
 
 1. **Complexité accrue** :
    - Rejouer les événements pour reconstruire l'état peut être coûteux sans optimisations (comme des _snapshots_).
@@ -1890,7 +1897,7 @@ order = replay(events)  # Recrée l'état de la commande à partir des événeme
 3. **Latence** :
    - Reconstituer l'état à partir de nombreux événements peut introduire des retards.
 
-### Lien entre Event Sourcing et CQRS
+#### Lien entre Event Sourcing et CQRS
 
 **Event Sourcing et CQRS se complètent bien**, mais ils sont indépendants. Voici leur relation :
 
@@ -1905,9 +1912,9 @@ order = replay(events)  # Recrée l'état de la commande à partir des événeme
 3. **Découplage naturel** :
    - Les événements servent de pont entre le modèle d'écriture et le modèle de lecture, facilitant leur découplage.
 
-### Exemple intégrant Event Sourcing et CQRS
+#### Exemple intégrant Event Sourcing et CQRS
 
-#### Modèle d'écriture (Command -> Event)
+##### Modèle d'écriture (Command -> Event)
 
 ```python
 class CreateOrderCommandHandler:
@@ -1919,7 +1926,7 @@ class CreateOrderCommandHandler:
         event_store.append(event)
 ```
 
-#### Propagation vers le modèle de lecture (Event -> Projection)
+##### Propagation vers le modèle de lecture (Event -> Projection)
 
 ```python
 class OrderProjectionUpdater:
@@ -1933,7 +1940,7 @@ class OrderProjectionUpdater:
 
 ---
 
-## 🧩 Saga
+### 🧩 Saga
 
 Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats.
 
@@ -1958,7 +1965,7 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
 @enduml
 ```
 
-### Caractéristiques clés d'une **Saga** :
+#### Caractéristiques clés d'une **Saga** :
 
 1. **Processus de longue durée** :  
    - Une Saga représente un processus métier complexe et de longue durée qui ne peut pas être complété en une seule transaction. Elle implique plusieurs étapes qui peuvent s'étendre sur différents services, agrégats ou systèmes externes.
@@ -1977,7 +1984,7 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
    - Les Sagas sont souvent basées sur des événements. Chaque service participant émet des événements, et la Saga réagit à ces événements pour déterminer l'action suivante.  
    - Les Sagas peuvent être **chorégraphiées** (chaque service connaît l'étape suivante et déclenche l'action suivante) ou **orchestrées** (un composant central ou orchestrateur gère la séquence des actions).
 
-### Types de **Sagas** :
+#### Types de **Sagas** :
 
 1. **Saga chorégraphiée** :  
    - Dans une Saga chorégraphiée, chaque service ou composant impliqué dans le processus connaît la prochaine étape à suivre. Chaque service écoute les événements et déclenche des actions basées sur ces événements.  
@@ -1987,7 +1994,7 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
    - Dans une Saga orchestrée, un **orchestrateur** central contrôle le déroulement du processus. L'orchestrateur envoie des commandes aux services et attend des réponses ou des événements avant de passer à l'étape suivante.  
    - L'orchestrateur est responsable de la gestion de l'ensemble du processus et s'assure que les étapes sont exécutées dans le bon ordre.
 
-### Cas d'utilisation typiques des **Sagas** :
+#### Cas d'utilisation typiques des **Sagas** :
 
 1. **Traitement des commandes** :  
    - Dans un système de commerce électronique, lorsqu'une commande est passée, le système doit :  
@@ -2011,7 +2018,7 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
      3. Finalisation du contrat de prêt.  
    - Si une vérification échoue, la Saga peut annuler les approbations précédentes ou informer le demandeur.
 
-### Défis du modèle **Saga** :
+#### Défis du modèle **Saga** :
 
 1. **Complexité** :
    - Mettre en œuvre et gérer des Sagas peut être complexe, notamment pour gérer les compensations et s'assurer que toutes les étapes sont correctement coordonnées entre les services.
@@ -2025,9 +2032,9 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
 4. **Gestion des états** :
    - Gérer l'état d'une Saga, en particulier entre plusieurs services, peut être un défi. Assurer que l'état est correctement stocké et synchronisé ajoute de la complexité, notamment lorsque la Saga s'étend sur de longues périodes.
 
-### Exemple d'une Saga en action :
+#### Exemple d'une Saga en action :
 
-#### Traitement des commandes dans un système de commerce électronique :
+##### Traitement des commandes dans un système de commerce électronique :
 
 1. **Commande passée** (Événement) → La Saga commence.
 2. **Réservation du stock** (Action) : Le service réserve les produits en entrepôt.
@@ -2041,7 +2048,7 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
 
 ---
 
-## 🔄 Process Manager
+### 🔄 Process Manager
 
 Modèle de conception utilisé pour coordonner des processus métier complexes qui impliquent plusieurs services ou agrégats. Il agit comme un orchestrateur central qui gère le déroulement d'un workflow en envoyant des commandes et en réagissant aux événements.
 
@@ -2073,7 +2080,7 @@ enum ProcessState {
 @enduml
 ```
 
-### Caractéristiques principales du **Process Manager** :
+#### Caractéristiques principales du **Process Manager** :
 
 1. **Orchestration centralisée** :  
    - Contrairement à une approche décentralisée où chaque service ou composant sait ce qu'il doit faire, le Process Manager centralise la logique du workflow.  
@@ -2082,7 +2089,7 @@ enum ProcessState {
 2. **Coordination de multiples services** :  
    - Il est souvent utilisé dans des systèmes distribués pour coordonner des actions entre plusieurs services ou agrégats, garantissant que le processus global respecte les règles métier. Par exemple dans des architectures de microservices, où chaque service est responsable d'une partie du workflow, le Process Manager coordonne les services pour garantir un processus global cohérent.
 
-### Structure d'un **Process Manager** :
+#### Structure d'un **Process Manager** :
 
 Un Process Manager est généralement structuré en plusieurs parties clés :
 
@@ -2104,7 +2111,7 @@ Un Process Manager est généralement structuré en plusieurs parties clés :
 6. **Journalisation et audit** :  
    - Les actions et les transitions d'état sont souvent journalisées pour permettre un suivi et une traçabilité des processus métier.
 
-### Exemple de fonctionnement :
+#### Exemple de fonctionnement :
 
 Prenons l'exemple d'un système de commande dans un site e-commerce. Le processus métier pour traiter une commande peut inclure plusieurs étapes :  
 
@@ -2115,7 +2122,7 @@ Prenons l'exemple d'un système de commande dans un site e-commerce. Le processu
 
 Le Process Manager pourrait fonctionner ainsi :  
 
-#### Flux du Process Manager :
+##### Flux du Process Manager :
 
 Le flux typique d'un **Process Manager** fonctionne comme suit :
 
@@ -2128,7 +2135,7 @@ Le flux typique d'un **Process Manager** fonctionne comme suit :
 
 Si une étape échoue, comme un paiement refusé, le Process Manager peut entreprendre des actions de compensation, comme libérer le stock réservé.
 
-### Avantages du **Process Manager** :
+#### Avantages du **Process Manager** :
 
 1. **Centralisation de la logique métier** :  
    - La logique du workflow est centralisée dans un composant unique, ce qui la rend plus facile à comprendre, à tester et à modifier.
@@ -2142,7 +2149,7 @@ Si une étape échoue, comme un paiement refusé, le Process Manager peut entrep
 4. **Cohérence** :  
    - Le Process Manager s'assure que toutes les étapes du processus sont exécutées correctement et dans le bon ordre.
 
-### Défis et inconvénients :
+#### Défis et inconvénients :
 
 1. **Composant critique** :
    - Le Process Manager est un élément centralisé qui peut devenir un point unique de défaillance.
@@ -2156,7 +2163,7 @@ Si une étape échoue, comme un paiement refusé, le Process Manager peut entrep
 4. **Dépendance vis-à-vis d'événements** :  
    - Le Process Manager repose sur une communication fiable par événements et commandes. Toute perte ou délai dans le traitement des événements peut affecter le fonctionnement du workflow.
 
-### Différence entre **Process Manager** et **Saga** :
+#### Différence entre **Process Manager** et **Saga** :
 
 Bien que les deux soient utilisés pour coordonner des workflows ou des transactions distribuées, ils diffèrent dans leur approche :  
 

@@ -4,15 +4,9 @@ title: 🧑‍💼 DDD Domain-driven Design
 
 ![](@assets/undraw/undraw_customer-survey_2l89.svg)
 
-## Cours
+## Documents
 
-- [🤓 Cours : Le Domain-Driven Design](/cours/ddd/ddd-cours)
-- [🤓 Cours : Les patterns tactiques en DDD](/cours/ddd/ddd-tactiques)
-- [🤓 Cours : Les architectures hexagonales et Clean Architecture](/cours/archi/hexagonal)
-- [🤓 Cours : Behavior-Driven Development (BDD)](/cours/tests/methodo/cours-bdd)
-
-## Exercices
-
+- [🤓 Cours : Le Domain-Driven Design](/cours/ddd/cours)
 - [📝 Exercice : Trouver les bounded context et leurs relations en analysant les interfaces d'Amazon et de Youtube](/cours/ddd/ddd-exo-youtube-amazon)
 - [📝 Exercice : Écrire le langage ubiquitaire & trouver les bounded context et leurs relations depuis des spécifications fonctionnelles](/cours/ddd/ddd-exo-contexts)
 - [📝 Exercice : Refactoring d'un modèle anémique vers un modèle riche](/cours/ddd/ddd-exo-modele)
