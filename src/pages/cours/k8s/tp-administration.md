@@ -183,7 +183,7 @@ kubectl uncordon "<node-name>" # fin du drainage
 
 ## Supervision
 
-Un cluster Kubernetes doit bien sûr être supervisé. On utilise très majoritairement le couple _Prometheus_ / _Grafana_ : voir [le TP dédié pour l'installation de Prometheus & Grafana via Helm](/cours/docker/tp_prometheus_grafana_k8s).
+Un cluster Kubernetes doit bien sûr être supervisé. On utilise très majoritairement le couple _Prometheus_ / _Grafana_ : voir [le TP dédié pour l'installation de Prometheus & Grafana via Helm](/cours/k8s/tp-prometheus-grafana).
 
 ### Endpoints
 
@@ -313,7 +313,7 @@ Par défaut, les secrets Kubernetes ne sont pas chiffrés mais seulement encodé
 Des outils externes permettent d'ajouter du chiffrement, on pourra par exemple utiliser _Kubeseal_ pour que seul le cluster soit capable de déchiffrer un secret.
 
 :::link
-- Voir la [cheatsheet Kubernetes sur Kubeseal](/cours/docker/kubernetes-cheatsheet#kubeseal)
+- Voir la [cheatsheet Kubernetes sur Kubeseal](/cours/k8s/cheatsheet#kubeseal)
 - Sur K3s, on peut aussi utiliser la capacité de chiffrage des secrets intégrée à k3s : <https://docs.k3s.io/security/secrets-encryption>
 :::
 
@@ -351,7 +351,7 @@ kubectl create secret tls example-tls \
 :::link
 Voir aussi :
 
-- La [cheatsheet Kubernetes](/cours/docker/kubernetes-cheatsheet/#tls--clusterissuer-lets-encrypt)
+- La [cheatsheet Kubernetes](/cours/k8s/cheatsheet#tls--clusterissuer-lets-encrypt)
 - [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/user-guide/tls/)
 - [Documentation Cert-Manager](https://cert-manager.io/docs/)
 :::

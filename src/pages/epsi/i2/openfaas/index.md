@@ -30,9 +30,9 @@ Module de 12H
 
 ### 📑 Documents
 
-- [🤓 Rappels : cours Kubernetes (initiation)](/cours/docker/kubernetes-cours-mini)
-- [🤓 Rappels : Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
-- [λ TP serverless : Fonctions-as-a-Service dans Kubernetes avec OpenFaaS](/cours/docker/openfaas-tp)
+- [🤓 Rappels : cours Kubernetes (initiation)](/cours/k8s/cours-mini)
+- [🤓 Rappels : Cheatsheet Kubernetes®](/cours/k8s/cheatsheet)
+- [λ TP serverless : Fonctions-as-a-Service dans Kubernetes avec OpenFaaS](/cours/k8s/openfaas-tp)
 - [🏆 Projet OpenFaaS dans Kubernetes](/epsi/i2/openfaas/projet)
 
 ### Ressources

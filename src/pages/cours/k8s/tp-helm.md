@@ -19,8 +19,8 @@ Attention : tout comme les images Docker, une chart Helm permet de récupérer d
 :::
 
 :::link
-- Voir la [cheatsheet Kubernetes](/cours/docker/kubernetes-cheatsheet) pour les commandes.
-- Voir aussi le [TP Prometheus & Grafana](/cours/docker/tp_prometheus_grafana_k8s) pour apprendre à déployer Prometheus et Grafana en utilisant Helm.
+- Voir la [cheatsheet Kubernetes](/cours/k8s/cheatsheet) pour les commandes.
+- Voir aussi le [TP Prometheus & Grafana](/cours/k8s/tp-prometheus-grafana) pour apprendre à déployer Prometheus et Grafana en utilisant Helm.
 - Voir le lien suivant pour un tutoriel : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/helm/>
 :::
 

@@ -62,21 +62,21 @@ A partir d'un cahier des charges :
 
 ## 📑 Documents
 
-- [🤓 Cours - Introduction à la gestion de projet](/cours/gestion-projet/intro-gestion-projet)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/gestion-projet/uml/use-case)
+- [🤓 Cours - Introduction à la gestion de projet](/cours/gestion-projet/intro)
+- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/gestion-projet/use-case)
 - [🤓 Modèles et cycles de développement (cours)](/cours/gestion-projet/modeles_dev)
-- [🤓 Le pilotage de projet (cours)](/cours/gestion-projet/pilotage_projet-cours)
+- [🤓 Le pilotage de projet (cours)](/cours/gestion-projet/pilotage-projet)
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
-- [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges/cahier_charges-cours)
+- [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges)
 - Exemples de cahier des charges :
   - Devis vers facture, CDC fonctionnel : [pdf](/cours/cahier-charges/dvf_fonctionnel.pdf)
   - Devis vers facture, CDC technique  : [pdf](/cours/cahier-charges/dvf_technique.pdf)
   - Cahier des charges technique : [pdf](/cours/cahier-charges/ex_t1.pdf)
   - Cahier des charges : [Hotel Paradis](https://docs.google.com/document/d/1k1kHGk7QgoY3-hMCi0CURhRDo0zMawqyDluuXvYmq5E)
-- [📝 Exercice Pur Beurre : définir le contexte](/cours/gestion-projet/exos/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos/exos-cas-utilisation-cas-sequence)
-- [📝 Exercice : plannification par diagramme de Gantt](/cours/gestion-projet/exos/exo-gantt)
-- [🏆 Projet fil rouge](/cours/gestion-projet/exos/projet_fil_rouge) : un projet fil rouge servant d'introduction globale à la Gestion de Projet : définition du contexte, des besoins, cahier des charges, choix du cycles de développement, réalisation technique, ...
+- [📝 Exercice Pur Beurre : définir le contexte](/cours/gestion-projet/exo-pur-beurre)
+- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos-cas-utilisation-cas-sequence)
+- [📝 Exercice : plannification par diagramme de Gantt](/cours/gestion-projet/exo-gantt)
+- [🏆 Projet fil rouge](/cours/gestion-projet/projet-fil-rouge) : un projet fil rouge servant d'introduction globale à la Gestion de Projet : définition du contexte, des besoins, cahier des charges, choix du cycles de développement, réalisation technique, ...
 
 ## 🚀 Pour aller plus loin
 

@@ -4,7 +4,7 @@ title: 🔄 CI/CD et  Jenkins
 
 ## Cours
 
-- [🤓 Cours sur l'intégration continue ](/cours/ci/cours-full)
+- [🤓 Cours sur l'intégration continue ](/cours/ci/cours)
 
 ## Exercices
 
@@ -14,9 +14,9 @@ title: 🔄 CI/CD et  Jenkins
 ## TP
 
 - [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
-- [ TP Jenkins niveau 1](/cours/jenkins/tp-jenkins-mini) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
+- [ TP Jenkins niveau 1](/cours/jenkins/tp-mini) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins-b3>
-- [ TP Jenkins niveau 2](/cours/jenkins/tp-jenkins-full) : Un TP plus poussé que le précédent.
+- [ TP Jenkins niveau 2](/cours/jenkins/tp-full) : Un TP plus poussé que le précédent.
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
 - [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
 - [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)

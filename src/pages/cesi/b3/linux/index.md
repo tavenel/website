@@ -47,8 +47,8 @@ Module de 3 journées
 
 ## 📑 Documents
 
-- [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
-- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
+- [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-fedora-workstation)
+- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
 - [🤓 Cours Linux administration avancée](/cesi/b3/linux/cours)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/tp-grub)
 - [📀 TP : utiliser un Live CD/USB pour une restauration système](/cours/linux/tp-rescue)

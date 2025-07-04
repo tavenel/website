@@ -6,17 +6,14 @@ title: 🏗️ Architecture
 
 ## Programmation Orientée Objet (POO)
 
-- [🤓 Cours d'introduction à la POO](/cours/archi/poo/poo-cours)
+- [🤓 Cours d'introduction à la POO](/cours/archi/poo/)
+- [💻 Exercices de POO](/cours/archi/poo-exos)
 - [🤓 Héritage, polymorphisme, délégation (cours)](/cours/archi/heritage)
-- [💻 Exercices de base POO](/cours/archi/poo/exos-poo)
-- [💻 Exercice liste d'étudiants](/cours/archi/poo/exo-poo-etudiants)
-- [💻 Introduction à l'héritage et à la délégation : Exercice figures colorées](/cours/archi/poo/exo-poo-figures-colorees)
-- [💻 Exercice gestion d'une pharmacie](/cours/archi/poo/exo-poo-pharmacie)
 
 ## Patterns d'architecture
 
-- [🤓 Introduction à l'utilisation de framework (cours)](/cours/archi/choix-framework-cours)
-- [🤓 MVC : Modèle Vue Contrôleur (cours)](/cours/archi/mvc-cours)
+- [🤓 Introduction à l'utilisation de framework (cours)](/cours/archi/framework)
+- [🤓 MVC : Modèle Vue Contrôleur (cours)](/cours/archi/mvc)
 - [🧑‍💼 Le Domain-driven Design (DDD)](/cours/ddd/)
 - <https://yekta.dev/posts/dont-microservice-do-module/>
 

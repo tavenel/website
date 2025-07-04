@@ -24,7 +24,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
-- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
+- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
 - [🤓 Cours Linux B3 ASRBD](/epsi/b3/linux-asrbd/cours)
 - [👥 TP : Gestion des utilisateurs et de la sécurité](/cours/linux/tp-utilisateurs)
 - [🏆 Projet : Administration d'un système Linux](/cours/linux/tp-admin-technova) : Cas fictif pour mettre en pratique les commandes shell sous Linux, en se concentrant sur la gestion des droits des utilisateurs et des groupes et la configuration de l'élévation de privilèges.

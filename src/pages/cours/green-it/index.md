@@ -6,7 +6,7 @@ title: 💚 Green IT
 
 - 1er quizz d'introduction : <https://quizanthropocene.fr/quiz/fresque-du-numerique>
 - 2ème quizz d'introduction : <https://quizanthropocene.fr/quiz/le-numerique-est-il-ecologique>
-- [🤓 Informatique responsable GreenIT (cours)](/cours/green-it/green-it) : une introduction à l'informatique responsable : enjeux, cadre légal, référentiels, bonnes pratiques de conception et de développement.
+- [🤓 Informatique responsable GreenIT (cours)](/cours/green-it/cours) : une introduction à l'informatique responsable : enjeux, cadre légal, référentiels, bonnes pratiques de conception et de développement.
 - [🤓 Écoconception de services numériques (cours)](/cours/green-it/ecoconception) : ensemble de bonnes pratiques d'écoconception pour les services numériques.
 - [✍️ Atelier fresque du numérique](/cours/green-it/atelier-fresque-numerique) : recréer les liens de dépendances entre les différentes cartes fournies par le formateur représentant des conditions, actions, conséquences et solutions en lien avec le numérique.
 - [🏆 Projet "réaliser un projet écoconçu"](/cours/green-it/projet) : écrire une politique RSE sur les enjeux environnementaux du numérique et réaliser un projet écoconçu

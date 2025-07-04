@@ -76,15 +76,15 @@ Module de 12H
 ## 📑 Documents
 
 - [🤓 Cours](/cours/git/cours)
-- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
-- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/git-tp-gitignore)
-- [💻 TP - Intégrer Git dans un IDE](/cours/git/git-tp-ide)
-- [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)
-- [💻 TP - Github® et dépôts distants](/cours/git/git-tp-github)
-- [💻 TP - Les branches Git™](/cours/git/git-tp-branches)
-- [💻 TP - Recherche dans un dépôt Git™](/cours/git/git-tp-grep)
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : _à réaliser en binôme._
-- [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/git-tp-fork)
+- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/tp-commit)
+- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/tp-gitignore)
+- [💻 TP - Intégrer Git dans un IDE](/cours/git/tp-ide)
+- [💻 TP - Utiliser l'historique de Git™](/cours/git/tp-historique)
+- [💻 TP - Github® et dépôts distants](/cours/git/tp-github)
+- [💻 TP - Les branches Git™](/cours/git/tp-branches)
+- [💻 TP - Recherche dans un dépôt Git™](/cours/git/tp-grep)
+- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr) : _à réaliser en binôme._
+- [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/tp-fork)
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Git](/cours/git).

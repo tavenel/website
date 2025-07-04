@@ -276,7 +276,7 @@ Exemples de `cgroups` classiques : 🏗️
 
 ## 🛠️ Commandes de base de Docker®
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 
 ---
 layout: section
@@ -332,7 +332,7 @@ docker run -v mon_volume:/pont_de_montage_conteneur_2 conteneur_image
 
 ### 📦 Utilisation des volumes depuis les commandes Docker®
 
-Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet). 🔗
+Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet). 🔗
 
 ---
 layout: section
@@ -403,7 +403,7 @@ layout: section
 
 ### 🛠️ Configuration du réseau depuis les commandes Docker®
 
-- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
+- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 - Voir la documentation officielle : <https://docs.docker.com/engine/network/drivers/> 🔗
 
 ---
@@ -439,7 +439,7 @@ layout: section
 
 ### 🛠️ Instructions standards Dockerfile
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 
 ---
 layout: section
@@ -497,7 +497,7 @@ Google, 2014 : 2 milliards de conteneurs lancés par semaine 📊
 
 ## 🛠️ Commandes de base de Docker compose®
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/docker-cheatsheet) 🔗
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 
 ---
 layout: section

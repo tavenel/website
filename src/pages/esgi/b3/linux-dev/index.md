@@ -27,9 +27,9 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
-- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
-- [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
-- [🤓 Rappels de cours : découverte de Linux](/cours/linux/linux-cours-niveau1)
+- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
+- [✨ Configuration d'un poste de travail Linux](/cours/linux/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
+- [🤓 Rappels de cours : découverte de Linux](/cours/linux/cours-1)
 - [🤓 Cours Linux de niveau 2 orienté Développeurs](/esgi/b3/linux-dev/cours)
 - [  TP : Utilisation efficace de la ligne de commande](/cours/linux/tp-ligne-commande)
 - [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/cours/linux/tp-fichiers)

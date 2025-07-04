@@ -28,10 +28,10 @@ Module de 2x18H
 
 ### 📑 Documents
 
-- [🤓 Cours Kubernetes orienté Administrateur Système](/cours/docker/kubernetes-cours-admin)
-- [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
-- [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
-- [🏆 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/docker/projet_install_kubernetes)
+- [🤓 Cours Kubernetes orienté Administrateur Système](/cours/k8s/cours-admin)
+- [🤓 Cheatsheet Kubernetes®](/cours/k8s/cheatsheet)
+- [󱃾  TP : Premiers pas avec Kubernetes](/cours/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [🏆 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/cours/k8s/projet-install)
 
 ## Partie 2
 
@@ -44,9 +44,9 @@ Module de 2x18H
 
 ### 📑 Documents
 
-- [🏆 Projet Administration d'un Cluster Kubernetes](/cours/docker/tp_administration_kubernetes)
-- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
-- [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk) : le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.
+- [🏆 Projet Administration d'un Cluster Kubernetes](/cours/k8s/tp-administration)
+- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/k8s/tp-prometheus-grafana) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
+- [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/k8s/tp-elk) : le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.
 
 ## 🚀 Pour aller plus loin
 

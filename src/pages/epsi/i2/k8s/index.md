@@ -37,11 +37,11 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
-- [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
-- [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
-- [󱃾  TP : Premiers pas avec Kubernetes](/cours/docker/tp_k8s) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
-- [󱃾  TP : Déploiement applicatif avec Helm](/cours/docker/tp_helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.
-- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
+- [🤓 Cours Kubernetes orienté Développeur](/cours/k8s/cours-dev)
+- [🤓 Cheatsheet Kubernetes®](/cours/k8s/cheatsheet)
+- [󱃾  TP : Premiers pas avec Kubernetes](/cours/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP : Déploiement applicatif avec Helm](/cours/k8s/tp-helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.
+- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/k8s/tp-prometheus-grafana) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
 - [🏆 Projet Déploiement applicatif dans Kubernetes](/epsi/i2/k8s/projet)
 
 ## 🚀 Pour aller plus loin

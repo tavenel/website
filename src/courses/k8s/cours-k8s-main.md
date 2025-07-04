@@ -1228,7 +1228,7 @@ layout: section
 
 ## 📚 Commandes de base de Kubernetes®
 
-Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/cours/docker/kubernetes-cheatsheet) 📚
+Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/cours/k8s/cheatsheet) 📚
 
 ---
 

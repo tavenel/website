@@ -43,7 +43,7 @@ Module de 18H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](/cours/ci/cours-full)
+- [🤓 Cours sur l'intégration continue ](/cours/ci/cours)
 
 ### Exercices
 
@@ -52,11 +52,11 @@ Module de 18H
 
 ### TPs
 
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr)
+- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr)
   - L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
 - [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
-- [ TP Jenkins](/cours/jenkins/tp-jenkins-full)
+- [ TP Jenkins](/cours/jenkins/tp-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
 - [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
 - [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)

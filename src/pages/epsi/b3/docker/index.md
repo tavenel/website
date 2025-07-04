@@ -24,22 +24,22 @@ Module de 10H
 
 ### Docker
 
-- [🤓 Cours - introduction à Docker](/cours/docker/docker-cours)
-- [🤓 Cheatsheet commandes Docker®, Dockerfile & Docker Compose](/cours/docker/docker-cheatsheet)
-- [  TP Docker® : Introduction à l'usage de conteneurs](/cours/docker/tp_docker)
-- [  TP Docker Compose : Gestion de services applicatifs](/cours/docker/tp_docker-compose)
+- [🤓 Cours - introduction à Docker](/cours/docker/cours)
+- [🤓 Cheatsheet commandes Docker®, Dockerfile & Docker Compose](/cours/docker/cheatsheet)
+- [  TP Docker® : Introduction à l'usage de conteneurs](/cours/docker/tp)
+- [  TP Docker Compose : Gestion de services applicatifs](/cours/docker/tp-docker_compose)
 
 ### Kubernetes
 
-- [🤓 Cours Kubernetes orienté Développeur](/cours/docker/kubernetes-cours-dev)
-- [🤓 Cheatsheet Kubernetes®](/cours/docker/kubernetes-cheatsheet)
-- [󱃾  TP Kubernetes : Premiers pas avec k8s](/cours/docker/tp_k8s)
-- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/docker/tp_prometheus_grafana_k8s)
-- [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/docker/tp_k8s_elk)
+- [🤓 Cours Kubernetes orienté Développeur](/cours/k8s/cours-dev)
+- [🤓 Cheatsheet Kubernetes®](/cours/k8s/cheatsheet)
+- [󱃾  TP Kubernetes : Premiers pas avec k8s](/cours/k8s/tp)
+- [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/cours/k8s/tp-prometheus-grafana)
+- [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/cours/k8s/tp-elk)
 
 ### 🏆 Projet Docker et Kubernetes : application de vote
 
-- 📄 [Sujet du projet](/cours/docker/projet_vote_k8s)
+- 📄 [Sujet du projet](/cours/k8s/projet-vote)
 -  Sources git : <https://git.sr.ht/~toma/docker-vote>
 
 ## 🚀 Pour aller plus loin

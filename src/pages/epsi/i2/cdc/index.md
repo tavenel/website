@@ -24,12 +24,12 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 
 ## 📑 Documents
 
-- [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges/cahier_charges-cours)
-- [🤓 Diagramme de Kano](/cours/gestion-projet/cours-kano)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/gestion-projet/uml/use-case)
-- [📝 Exercice Pur Beurre : définir le contexte](/cours/gestion-projet/exos/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos/exos-cas-utilisation-cas-sequence)
-- [🏆 Projet - écrire un cahier des charges](/cours/gestion-projet/cahier-charges/projet-cdc)
+- [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges)
+- [🤓 Diagramme de Kano](/cours/gestion-projet/kano)
+- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/gestion-projet/use-case)
+- [📝 Exercice Pur Beurre : définir le contexte](/cours/gestion-projet/exo-pur-beurre)
+- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos-cas-utilisation-cas-sequence)
+- [🏆 Projet - écrire un cahier des charges](/cours/gestion-projet/projet-cahier-charges)
 - Exemples de cahier des charges :
   - Devis vers facture, CDC fonctionnel : [pdf](/cours/cahier-charges/dvf_fonctionnel.pdf)
   - Devis vers facture, CDC technique  : [pdf](/cours/cahier-charges/dvf_technique.pdf)

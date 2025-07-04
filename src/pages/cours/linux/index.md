@@ -35,15 +35,15 @@ title: 🐧 Linux
 
 ## Installation
 
-- [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
-- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
-- [󰣚  Machine virtuelle Debian serveur dans VirtualBox](/cours/linux/installation/tp-installation-vbox-debian-server)
+- [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-fedora-workstation)
+- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
+- [󰣚  Machine virtuelle Debian serveur dans VirtualBox](/cours/linux/tp-installation-vbox-debian-server)
 
-- [✨ Configuration d'un poste de travail Linux](/cours/linux/installation/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
+- [✨ Configuration d'un poste de travail Linux](/cours/linux/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
 
 ## Découverte de Linux
 
-- [🤓 Cours découverte de Linux](/cours/linux/linux-cours-niveau1)
+- [🤓 Cours découverte de Linux](/cours/linux/cours-1)
 - [  TP - Utilisation des commandes Linux](/cours/linux/tp-commandes_linux)
 - [  TP - Utilisation des commandes avancées](/cours/linux/tp-commandes_avancees)
 - [📜 TP - Création de scripts Bash](/cours/linux/tp-scripts_bash)

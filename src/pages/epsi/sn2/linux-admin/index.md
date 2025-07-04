@@ -46,7 +46,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
-- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
+- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
 - [🤓 Cours Linux : les permissions, les droits, le shell, administration réseau](/epsi/sn2/linux-admin/cours)
 - [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/cours-shell)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/tp-fichiers-avance)

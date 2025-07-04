@@ -121,8 +121,8 @@ La certification LPIC est conséquente et les questions très précises, il faut
 ### 📑 Documents LPIC-101
 
 - Les deux environnements suivants doivent être installés :
-  - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-fedora-workstation)
-  - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/installation/tp-installation-vbox-ubuntu-workstation)
+  - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-fedora-workstation)
+  - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
 - 🤓 [Slides de cours LPIC-101](/cours/linux/cours-lpic-101)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/tp-grub)

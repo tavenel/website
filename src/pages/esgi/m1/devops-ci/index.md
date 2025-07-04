@@ -25,13 +25,13 @@ Module de 18H
 ## 📑 Documents
 
 - [🤓 Cours sur le Devops](/esgi/m1/devops-ci/cours)
-- [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet-devops)
+- [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/cours/devops/projet)
 
 ## Ressources
 
 - Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
 - [💻 Configuration des clés SSH pour un accès sécurisé](/cours/devops/tp_ssh)
-- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/cours/git/git-tp-ansible)
+- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/cours/git/tp-ansible)
 - Voir les autres ressources du [cours sur le devops](/cours/devops).
 - Intégration continue et déploiement continu : voir le [cours CI/CD](/cours/ci)
 - Conteneurs Docker & Kubernetes : voir le [cours Docker](/cours/docker)

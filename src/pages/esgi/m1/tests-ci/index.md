@@ -38,8 +38,8 @@ Module de 18H
 - [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
 - [📝 TD Processus d'intégration continue](/cours/ci/td_process_ci) : une étude de cas d'intégration continue.
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
-- [ TP Jenkins](/cours/jenkins/tp-jenkins-full)
+- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
+- [ TP Jenkins](/cours/jenkins/tp-full)
 - [💻 TP Intégration continue avancée](/cours/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
 
 ### 💻 Exemples

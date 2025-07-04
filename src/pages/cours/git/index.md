@@ -70,20 +70,20 @@ title:   Git™
 ## 📑 Documents
 
 - [🤓 Cours](/cours/git/cours)
-- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/git-tp-commit)
-- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/git-tp-gitignore)
-- [💻 TP - Utiliser l'historique de Git™](/cours/git/git-tp-historique)
-- [💻 TP - Github® et dépôts distants](/cours/git/git-tp-github)
-- [💻 TP - Les branches Git™](/cours/git/git-tp-branches)
-- [💻 TP - Recherche dans un dépôt Git™](/cours/git/git-tp-grep)
-- [💻 TP - Les tags](/cours/git/git-tp-tags)
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/git-tp-workflows-pr) : _à réaliser en binôme._
-- [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/git-tp-fork)
-- [💻 TP - Git™ Bisect pour trouver un commit par dichotomie](/cours/git/git-tp-bisect)
-- [💻 TP Github - Utiliser les Gist](/cours/git/git-tp-github-gist)
-- [💻 TP Github - Les actions (introduction à la CI)](/cours/git/git-tp-github-actions)
-- [💻 TP - Git pour un Projet XAMPP](/cours/git/git-tp-xampp) : Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
-- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/cours/git/git-tp-ansible)
-- [💻 TP - Intégrer Git dans un IDE](/cours/git/git-tp-ide)
-- [💻 TP - Manipulations avancées de la HEAD](/cours/git/git-tp-deplacer-head-avance)
-- [💻 TP Neovim - gérer ses configurations avec Git](/cours/git/git-tp-iac-nvim)
+- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/tp-commit)
+- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/tp-gitignore)
+- [💻 TP - Utiliser l'historique de Git™](/cours/git/tp-historique)
+- [💻 TP - Github® et dépôts distants](/cours/git/tp-github)
+- [💻 TP - Les branches Git™](/cours/git/tp-branches)
+- [💻 TP - Recherche dans un dépôt Git™](/cours/git/tp-grep)
+- [💻 TP - Les tags](/cours/git/tp-tags)
+- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr) : _à réaliser en binôme._
+- [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/cours/git/tp-fork)
+- [💻 TP - Git™ Bisect pour trouver un commit par dichotomie](/cours/git/tp-bisect)
+- [💻 TP Github - Utiliser les Gist](/cours/git/tp-github-gist)
+- [💻 TP Github - Les actions (introduction à la CI)](/cours/git/tp-github-actions)
+- [💻 TP - Git pour un Projet XAMPP](/cours/git/tp-xampp) : Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
+- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/cours/git/tp-ansible)
+- [💻 TP - Intégrer Git dans un IDE](/cours/git/tp-ide)
+- [💻 TP - Manipulations avancées de la HEAD](/cours/git/tp-deplacer-head-avance)
+- [💻 TP Neovim - gérer ses configurations avec Git](/cours/git/tp-iac-nvim)
