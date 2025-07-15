@@ -73,7 +73,7 @@ tags:
 
 ---
 
-## Mise en œuvre - 1/2
+## Mise en œuvre
 
 - 💡 Analyse et Conception initiales : comprendre le domaine, identifier les entités, les règles métier, les cas d'usage
 - ✂️ Définir des frontières entre les couches
@@ -82,8 +82,6 @@ tags:
 - 🏗️ Conception des Adaptateurs
 
 ---
-
-## Mise en œuvre - 2/2
 
 - ➡️ Développement et intégration des composants externes : UI, BDD, Service Web, …
 - 🧪 Tests Rigoureux :
