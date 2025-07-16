@@ -79,9 +79,10 @@ footer {
 	font-size: x-small;
 }
 
-figcaption {
+figcaption,  .caption {
+	color: var(--blockquote);
 	font-style: italic;
-	font-size: small;
+	font-size: x-small;
 }
 
 blockquote {
