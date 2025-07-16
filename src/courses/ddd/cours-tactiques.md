@@ -13,7 +13,9 @@ tags:
 
 ### 🎯 Entity
 
+:::tip
 Une entité représente un **objet métier** dans le **domaine** qui possède une **identité unique** et qui évolue au fil du temps. Il a un ID et est mutable.
+:::
 
 ```plantuml
 @startuml
@@ -25,6 +27,7 @@ class Customer {
   +email: String
   +changeEmail(newEmail: String): void
 }
+
 @enduml
 ```
 
@@ -112,7 +115,9 @@ class BankAccount:
 
 ### 🧩 Value Object
 
+:::tip
 Contrairement aux **entités**, les `Value Objects` n'ont pas d'**identité unique**. Ils sont définis uniquement par leurs **valeurs** et sont souvent **immuables**.
+:::
 
 ```plantuml
 @startuml
@@ -214,7 +219,9 @@ class Address:
 
 ### 📦 Aggregate
 
+:::tip
 Regroupe des `Entity` et des `Value Objects` qui forment une unité cohérente pour la logique métier et la cohérence des données. 
+:::
 
 ```plantuml
 @startuml
@@ -386,7 +393,9 @@ order.items.append({"product": "book", "qty": 0})  # Invalide
 
 ### 🗃️ Repository
 
+:::tip
 Pattern utilisé pour gérer la persistance des `Aggregate` et des `Entity` (par exemple dans une base de données). Il agit comme une interface entre le domaine métier et la couche de persistance, permettant au code métier d'interagir avec les objets du domaine sans se soucier des détails de leur stockage.
+:::
 
 ```plantuml
 @startuml
@@ -599,7 +608,9 @@ Dans une architecture **CQRS (Command Query Responsibility Segregation)**, les *
 
 ### 🧩 Module
 
+:::tip
 En DDD, un **module** fait référence à une structure qui est un regroupement logique de fonctionnalités qui partagent une même responsabilité métier.
+:::
 
 ```
 └── library
@@ -696,7 +707,9 @@ Dans cette structure :
 
 ### 🏭 Factory
 
+:::tip
 Design pattern permettant de créer des objets complexes, généralement des entités ou des agrégats. Elle permet de centraliser et d'encapsuler la logique de création d'objets, afin que celle-ci ne soit pas dispersée dans tout le code. Cela simplifie la gestion de la création des objets et garantit que des règles métier et des invariants sont respectés lors de leur instantiation.
+:::
 
 ```plantuml
 @startuml
@@ -783,7 +796,7 @@ Dans cet exemple :
 2. **Abstract Factory** :
    - Il s'agit d'une **interface** ou **classe abstraite** qui déclare des méthodes pour créer une famille d'objets sans spécifier leur classe concrète.
    - Utilisée lorsque le processus de création nécessite plusieurs objets différents mais liés.
-   
+
    Exemple :
    ```python
    class AbstractOrderFactory:
@@ -813,7 +826,9 @@ Dans cet exemple :
 
 ### ⚙️ Domain Service
 
+:::tip
 Objet sans état qui encapsule une logique compliquée du domaine.
+:::
 
 ```plantuml
 @startuml
@@ -902,7 +917,9 @@ class OrderDomainService:
 
 ### 🧭 Application Service
 
+:::tip
 **Orchestrateur** entre le monde extérieur (interface utilisateur, API, etc.) et le domaine métier. Il est responsable de coordonner les opérations, de valider les entrées, et d'exécuter les commandes tout en laissant la logique métier au domaine.
+:::
 
 ```plantuml
 @startuml
@@ -1044,9 +1061,11 @@ layout: section
 
 ### 🔌 Dependency Injection
 
-La **Dependency Injection (DI)** (ou injection de dépendances) est un modèle de conception qui permet d'injecter les dépendances nécessaires à un objet depuis l'extérieur, plutôt que de laisser l'objet créer ou rechercher lui-même ses dépendances. Cela favorise la modularité, la testabilité et la séparation des préoccupations.
-
 :::tip
+La **Dependency Injection (DI)** (ou injection de dépendances) est un modèle de conception qui permet d'injecter les dépendances nécessaires à un objet depuis l'extérieur, plutôt que de laisser l'objet créer ou rechercher lui-même ses dépendances. Cela favorise la modularité, la testabilité et la séparation des préoccupations.
+:::
+
+:::warn
 L'injection de dépendance permet d'utiliser massivement des design patterns de _Delegation_ : c'est l'une des techniques les plus utiles pour séparer le code métier des dépendances externes (souvent techniques), par exemple en _Clean Architecture_ et en _Architecture Hexagonale_ mais pas uniquement. **À utiliser massivement !**
 :::
 
@@ -1197,7 +1216,9 @@ print(service.process())
 
 ### 🧍‍♂️🔀 Split Entities (ou Entitées Séparées par Bounded Context)
 
+:::tip
 Concept : **diviser une `Entity` en plusieurs entités distinctes dans différents contextes limités (_Bounded Contexts_)**, afin de mieux répondre aux exigences spécifiques de chaque contexte.
+:::
 
 ```plantuml
 @startuml
@@ -1242,7 +1263,9 @@ Si les besoins des différents contextes se chevauchent significativement, il n'
 
 ### ⚖️ Policy (Décision métier encapsulée)
 
+:::tip
 Règle métier qui décrit un **comportement** ou une **contrainte métier** applicable à un contexte spécifique (_Bounded Context_). Elle est **déclarative** : elle exprime *quoi* faire plutôt que *comment* le faire.
+:::
 
 ```plantuml
 @startuml
@@ -1302,7 +1325,9 @@ else:
 
 ### 🔐 Invariant (métier protégé dans l'aggrégat)
 
+:::tip
 Un **invariant** fait référence à une **règle métier** ou une **contrainte** qui doit toujours être vraie pour garantir la cohérence et l'intégrité du modèle de domaine, indépendamment des actions effectuées dans le système. Ces règles sont cruciales pour maintenir l'intégrité du domaine tout au long du cycle de vie des entités et agrégats.
+:::
 
 ```plantuml
 @startuml
@@ -1425,7 +1450,9 @@ account.balance = -100  # oups
 
 ###  📜 Specification Pattern
 
+:::tip
 Modèle de conception utilisé pour encapsuler des règles ou des critères métier dans un objet réutilisable, combinable et testable. Ce modèle permet de définir des spécifications sous forme d'objets, qui peuvent être utilisés pour valider, filtrer ou décider si un objet ou une entité satisfait à un ensemble de conditions. 
+:::
 
 ```plantuml
 @startuml
@@ -1569,9 +1596,8 @@ if customer.status == "active" and not customer.is_blacklisted():
 
 ### 🔁 CQRS : Command Query Responsibility Segregation
 
-Modèle architectural utilisé pour séparer les responsabilités de lecture (`Query`) et d'écriture (`Command`) dans un système.
-
 :::tip
+Modèle architectural utilisé pour séparer les responsabilités de lecture (`Query`) et d'écriture (`Command`) dans un système.
 Cette séparation améliore la flexibilité, la scalabilité et parfois la simplicité des systèmes complexes, notamment ceux avec de fortes contraintes métier.
 :::
 
@@ -1682,7 +1708,9 @@ class OrderQueryService:
 
 ### 📣 Domain Event
 
+:::tip
 Représente un événement **immuable** et **significatif** qui s'est produit dans le domaine métier, et il est généralement utilisé pour signaler qu'un changement d'état ou une action importante a eu lieu.
+:::
 
 Les `Domain Events` sont généralement générés par des `Entity`, des `Aggregate` ou des `Domain Service` en réponse à des actions ou à des commandes.
 
@@ -1773,9 +1801,11 @@ class OrderInsertedToDbEvent:
 
 ### 🕰️ Cohérence Éventuelle (Eventual Consistency)
 
-Principe utilisé dans les systèmes distribués où il est acceptable que les différentes parties du système ne soient pas immédiatement synchronisées, tant qu'elles finissent par atteindre un état cohérent après un certain délai. Cela contraste avec la cohérence forte, où toutes les parties du système doivent être synchronisées immédiatement.
-
 :::tip
+Principe utilisé dans les systèmes distribués où il est acceptable que les différentes parties du système ne soient pas immédiatement synchronisées, tant qu'elles finissent par atteindre un état cohérent après un certain délai. Cela contraste avec la cohérence forte, où toutes les parties du système doivent être synchronisées immédiatement.
+:::
+
+:::warn
 Dans le contexte du DDD, la cohérence éventuelle est particulièrement pertinente lorsque les différents _Bounded Context_ d'un système ont leurs propres modèles et bases de données. La cohérence éventuelle permet à ces contextes de communiquer via des événements, sans nécessiter une synchronisation immédiate.
 :::
 
@@ -1823,7 +1853,9 @@ Pendant un court moment, l'état de la commande et l'état du stock peuvent ne p
 
 ### 🧾 Event Sourcing
 
+:::tip
 Modèle architectural où l'état d'une application ou d'un domaine n'est pas stocké directement, mais reconstruit à partir d'une série d'événements immuables. Ces événements représentent chaque changement survenu dans le système.
+:::
 
 ```plantuml
 @startuml
@@ -1942,9 +1974,11 @@ class OrderProjectionUpdater:
 
 ### 🧩 Saga
 
-Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats.
-
 :::tip
+Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats.
+:::
+
+:::warn
 Le pattern Saga est particulièrement utile dans les systèmes distribués et pour garantir la **cohérence éventuelle**, lorsque plusieurs services ou composants doivent participer à un processus métier sans pouvoir s'appuyer sur des transactions _ACID_ traditionnelles à l'échelle du système.
 :::
 
@@ -2050,7 +2084,9 @@ note right of SagaManager : Coordonne une série d'étapes distribuées
 
 ### 🔄 Process Manager
 
+:::tip
 Modèle de conception utilisé pour coordonner des processus métier complexes qui impliquent plusieurs services ou agrégats. Il agit comme un orchestrateur central qui gère le déroulement d'un workflow en envoyant des commandes et en réagissant aux événements.
+:::
 
 ```plantuml
 @startuml
