@@ -635,7 +635,7 @@ created: 2024-10-17
 
 - `dropbox`, `google drive`, `one drive` => `nextcloud`
 - `airtable` => `NocoDB`
-- `notion` => `appflowy`
+- `notion` => `appflowy`, <https://affine.pro/>
 - `salesforce CRM` => `ERPNext`
 - `slack` => `mattermost`
 - `zoom`, `teams` => `jitsi`
