@@ -340,13 +340,14 @@ Le _path_ décrit la progression dans des répertoires séparés par un `/` jusq
 Un _path_ peut décrire un chemin de deux façons, suivant qu'il commence ou non par un `/` :
 
 - Soit relatif au répertoire courant :
-    ```sh
-    mon_sous_repertoire_dans_le_repertoire_courant/mon_fichier.txt
-		```
+```
+mon_sous_repertoire_dans_le_repertoire_courant/mon_fichier.txt
+```
+
 - Soit absolu en partant du répertoire à la racine, noté `/` :
-    ```sh
-    /mon_repertoire_sous_la_racine/mon_fichier.txt
-		```
+```
+/mon_repertoire_sous_la_racine/mon_fichier.txt
+```
 
 ---
 
