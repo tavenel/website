@@ -77,7 +77,7 @@ jobs:
 
 - **Isoler** les données de test (bases dédiées, volumes temporaires).
 - *Nettoyer** après les tests (`--rm`, volumes temporaires).
-- Utiliser des **images légères** (`alpine`).
+- Utiliser des **images légères** (`alpine`, `distroless`).
 - **Taguer** les images de test pour traçabilité.
 - Intégrer dans le pipeline CI/CD avec les **mêmes images** que la prod.
 

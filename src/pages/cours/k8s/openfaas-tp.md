@@ -863,7 +863,7 @@ fprocess: "python index.py"
 :::
 
 :::tip
-Pour **accélérer les cold start**, utiliser des images légères (`slim`, `alpine`) si possible.
+Pour **accélérer les cold start**, utiliser des images légères (`slim`, `alpine`, `distroless`) si possible.
 :::
 
 
