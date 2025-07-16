@@ -158,6 +158,33 @@ menu > li {
 #wis { color: var(--wis); }
 #poec { color: var(--poec); }
 
+ /* TODO */
+#links-cat {
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+	-moz-column-gap: 5%;
+	-webkit-column-gap: 5%;
+	column-gap: 5%;
+	text-align: center;
+	margin-bottom: 10%;
+
+	& li {
+		font-size: 1.3em;
+		list-style:none;
+		border-radius: 30px;
+		padding: 20px;
+		background: var(--cours-cat-li);
+	}
+
+	& a {
+		color: var(--cours-link-text);
+		border-bottom: 2px var(--cours-link-border) dashed;
+		&:hover { border: none; }
+	}
+
+}
+
 #cours-cat {
 	-moz-column-count: 3;
 	-webkit-column-count: 3;
@@ -185,6 +212,9 @@ menu > li {
 }
 
 @media screen and (max-width: 1200px) {
+#links-cat {
+} /* TODO */
+
 	#cours-cat {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
@@ -192,6 +222,9 @@ menu > li {
 	}
 }
 @media screen and (max-width: 800px) {
+#links-cat {
+} /* TODO */
+
 	#cours-cat {
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
@@ -608,6 +641,7 @@ aside.callout-correction {
 	--wis-li: revert;
 	--poec: revert;
 	--poec-li: revert;
+	--links-cat-li: revert;
 	--cours-cat-li: revert;
 	--cours-link-text: revert;
 	--cours-link-border: revert;
@@ -653,6 +687,7 @@ aside.callout-correction {
 	--wis-li: inherit;
 	--poec: var(--middle-orange);
 	--poec-li: inherit;
+	--links-cat-li: var(--x-light-green);
 	--cours-cat-li: var(--x-light-green);
 	--cours-link-text: var(--dark-main);
 	--cours-link-border: var(--light-grey);
@@ -705,6 +740,7 @@ aside.callout-correction {
 	--wis-li: inherit;
 	--poec: #DFA000;
 	--poec-li: inherit;
+	--links-cat-li: #EAEDC8;
 	--cours-cat-li: #EAEDC8;
 	--cours-link-text: #5C6A72;
 	--cours-link-border: #A6B0A0;
@@ -754,6 +790,7 @@ aside.callout-correction {
 	--wis-li: inherit;
 	--poec: #986801;
 	--poec-li: inherit;
+	--links-cat-li: inherit;
 	--cours-cat-li: inherit;
 	--cours-link-text: #383A42;
 	--cours-link-border: #3A3F4B;
@@ -807,6 +844,7 @@ aside.callout-correction {
 	--wis-li: var(--light-second);
 	--poec: var(--light-orange);
 	--poec-li: var(--light-orange);
+	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
@@ -863,6 +901,7 @@ aside.callout-correction {
 	--wis-li: #E6B673;
 	--poec: #FF8F40;
 	--poec-li: #FF8F40;
+	--links-cat-li: #95E6CB;
 	--cours-cat-li: #95E6CB;
 	--cours-link-text: #0B0E14;
 	--cours-link-border: #6C7380;
@@ -919,6 +958,7 @@ aside.callout-correction {
 	--wis-li: #bac2de;
 	--poec: #fab387;
 	--poec-li: #fab387;
+	--links-cat-li: #94e2d5;
 	--cours-cat-li: #94e2d5;
 	--cours-link-text: #1e1e2e;
 	--cours-link-border: #7f849c;
@@ -973,6 +1013,7 @@ aside.callout-correction {
 	--wis-li: #bac2de;
 	--poec: #ff79c6;
 	--poec-li: #ff79c6;
+	--links-cat-li: #bd93f9;
 	--cours-cat-li: #bd93f9;
 	--cours-link-text: #44475a;
 	--cours-link-border: #44475a;
@@ -1027,6 +1068,7 @@ aside.callout-correction {
 	--wis-li: #c4746e;
 	--poec: #a292a3;
 	--poec-li: #a292a3;
+	--links-cat-li: inherit;
 	--cours-cat-li: inherit;
 	--cours-link-text: #c5c9c5;
 	--cours-link-border: #c5c9c5;
@@ -1083,6 +1125,7 @@ aside.callout-correction {
 	--wis-li: var(--light-second);
 	--poec: var(--light-orange);
 	--poec-li: var(--light-orange);
+	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
@@ -1139,6 +1182,7 @@ aside.callout-correction {
 	--wis-li: #88c0d0;
 	--poec: #88c0d0;
 	--poec-li: #88c0d0;
+	--links-cat-li: #eceff4;
 	--cours-cat-li: #eceff4;
 	--cours-link-text: #2e3440;
 	--cours-link-border: #2e3440;
@@ -1194,6 +1238,7 @@ aside.callout-correction {
 	--wis-li: var(--light-second);
 	--poec: var(--light-orange);
 	--poec-li: var(--light-orange);
+	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
@@ -1250,6 +1295,7 @@ aside.callout-correction {
 	--wis-li: #fe4450;
 	--poec: #ff7edb;
 	--poec-li: #ff7edb;
+	--links-cat-li: #463465;
 	--cours-cat-li: #463465;
 	--cours-link-text: #ffffff;
 	--cours-link-border: #f97e72;
@@ -1339,6 +1385,7 @@ aside.callout-correction {
 	--wis-li: #5eadf2;
 	--poec: #fe4a49;
 	--poec-li: #fe4a49;
+	--links-cat-li: #ffe45e;
 	--cours-cat-li: #ffe45e;
 	--cours-link-text: var(--background);
 	--cours-link-border: var(--background);
@@ -1422,6 +1469,7 @@ aside.callout-correction {
 	--wis-li: var(--light-second);
 	--poec: var(--light-orange);
 	--poec-li: var(--light-orange);
+	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
@@ -1478,6 +1526,7 @@ aside.callout-correction {
 	--wis-li: var(--light-second);
 	--poec: var(--light-orange);
 	--poec-li: var(--light-orange);
+	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
