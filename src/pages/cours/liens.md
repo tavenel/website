@@ -4,8 +4,6 @@ created: 2024-10-17
 checked: 2025-01-27
 ---
 
-Quelques références utiles en informatique.
-
 ## Livres
 
 ### Living Documentation
@@ -95,7 +93,6 @@ Quelques références utiles en informatique.
 - Les méta-lois en informatique : <https://github.com/StephaneTrebel/presentations/tree/main/meta-lois>
 - [CERISE : Conseils aux Etudiants en Recherche d'InformationS Efficace](https://callisto-formation.fr/course/view.php?id=263)
 - Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
-- Bonnes pratiques de documentation technique : <https://www.writethedocs.org/guide/>
 - Gérer la variable d'environnement `$PATH` :
   - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
   - sous Linux, voir le TP sur la ligne de commandes [du cours Linux](/cours/linux)

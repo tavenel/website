@@ -1,8 +1,6 @@
 ---
 import RSS from '@components/RSS.astro';
 import Layout from '@layouts/BaseLayout.astro'
-import { Picture } from 'astro:assets';
-import persoImg from '@assets/undraw/undraw_programming_65t2.svg'
 
 const title = '/home/tavenel';
 const { url } = Astro.props;
@@ -11,10 +9,44 @@ const { url } = Astro.props;
 <Layout title={title} url={url}>
 	<h1>/home/tavenel</h1>
 
-<Picture src={persoImg} alt="An image of a person coding" />
-	<div>
-		<p>Welcome to my personal website. More information <a href="/website">here</a>.</p>
-		<p>You can subscribe to updates using RSS <RSS width={20} height={20}/></p>
+	<div id="links-cat">
+  	<ul>
+  		<li><a href="/tools">🛠 Outils</a></li>
+  		<li><a href="/cours/liens">✏️ Références</a></li>
+  		<li><a href="/links">🔗 Liens</a></li>
+  	</ul>
 	</div>
+
+	<div id="cours-cat">
+		<ul>
+			<li><a href="/cours/archi">🏗️ Architecture logicielle</a></li>
+			<li><a href="/cours/ci">🔄 CI/CD &  Jenkins</a></li>
+			<li><a href="/cours/cloud">🌐 Cloud & Web</a></li>
+			<li><a href="/cours/data">📊  Data</a></li>
+			<li><a href="/cours/ddd">🧑‍💼 DDD : Domain-Driven Design</a></li>
+			<li><a href="/cours/devops">󱃾  Devops - Sysops</a></li>
+			<li><a href="/cours/docker">  Docker®</a></li>
+			<li><a href="/cours/gestion-projet">📅 Gestion de projet</a></li>
+			<li><a href="/cours/git"> Git</a></li>
+			<li><a href="/cours/green-it">💚 Green IT</a></li>
+			<li><a href="/cours/integration">☎️  Intégration</a></li>
+			<li><a href="/cours/k8s">󱃾 Kubernetes®</a></li>
+			<li><a href="/cours/linux">🐧 Linux</a></li>
+			<li><a href="/cours/management">💬 Management</a></li>
+			<li><a href="/cours/python">󰌠  Python &   Django</a></li>
+			<li><a href="/cours/spring">  Spring & 󱘻 Hibernate</a></li>
+			<li><a href="/cours/tests">🧪 Tests</a></li>
+		</ul>
+	</div>
+
+	<h2>À propos</h2> 
+
+  <div>
+  	<p>J'interviens à la fois en écoles supérieures d'informatique et en milieu professionnel pour du consulting ou de la formation en DevOps : <a href="/about">🧑 About</a>.</p>
+  	<p>Une suggestion, une idée, une coquille à corriger ? <a href="/website">🌐 Website</a>.</p>
+  	<p>You can subscribe to updates using RSS <RSS width={20} height={20}/></p>
+  	<em>Les documents de ce site sont mis à disposition selon les termes de la Licence <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution</a> - Partage dans les Mêmes Conditions 4.0 International. En cas de réutilisation, vous devez créditer le créateur du contenu.</em>
+	</div>
+
 </Layout>
 

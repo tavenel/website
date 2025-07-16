@@ -55,10 +55,6 @@ title: Liens externes
 - Comparaison de librairies générant des diagrammes depuis Markdown : <https://support.typora.io/Draw-Diagrams-With-Markdown/>
 - Fonds de cartes Open-Street Map : <http://maps.stamen.com>
 
-## Liens de cours hors catégories
-
-- Voir la [page liens utiles des cours](/cours/liens)
-
 ## Online services (Cloud, SaaS)
 
 - <https://openfeedback.io/> : Get feedback (free)
