@@ -1,7 +1,7 @@
 <div id="toc">
   <h2>
   	Chapitres
-		<button id="toc-toggle">Collapse</button>
+		<!-- <button id="toc-toggle">Collapse</button> -->
 	</h2>
 	<nav>
 		<ul/>
@@ -11,7 +11,7 @@
 <script>
 	import { TOC } from "@ts/toc";
 	document.addEventListener('DOMContentLoaded', () => {
-			const toc = new TOC('#toc ul', '#course', 4);
+			const toc = new TOC('#toc ul', '#course', 3);
 			toc.init();
 	});
 

@@ -1,13 +1,13 @@
 ---
 import Layout from '@layouts/CourseLayout.astro';
 import Slides from '@components/Slides.astro';
-import ShowSlides from '@components/ShowSlides.astro';
+// import ShowSlides from '@components/ShowSlides.astro';
 
 const { frontmatter, url } = Astro.props;
 ---
 
 <Layout frontmatter={frontmatter} url={url}>
-  <ShowSlides slot="end-header" />
+  <!-- <ShowSlides slot="end-header" /> -->
 	<slot />
   <Slides slot="after-course" />
 </Layout>

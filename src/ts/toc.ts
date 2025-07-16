@@ -35,25 +35,27 @@ export class TOC {
 		// reset stack
 		this.stack = new Array(this.maxLevel + 1).fill(null);
 
-		this.headings.forEach(heading => {
-			const level = this.getLevel(heading.tagName);
-			if (!level || level > this.maxLevel) return;
+		this.headings
+			.slice(1) // 1st element is the 'Chapitres' heading
+			.forEach(heading => {
+				const level = this.getLevel(heading.tagName);
+				if (!level || level > this.maxLevel) return;
 
-			// ensure ID
-			if (!heading.id) heading.id = this.slugify(heading.textContent || '');
+				// ensure ID
+				if (!heading.id) heading.id = this.slugify(heading.textContent || '');
 
-			const li = this.createListItem(heading.id, heading.textContent || '');
+				const li = this.createListItem(heading.id, heading.textContent || '');
 
-			// find parent <ul> for this level
-			const parentUl = this.getParentListForLevel(level);
-			parentUl.appendChild(li);
+				// find parent <ul> for this level
+				const parentUl = this.getParentListForLevel(level);
+				parentUl.appendChild(li);
 
-			// update stack: this level gets this li, deeper levels reset
-			this.stack[level] = li;
-			for (let l = level + 1; l <= this.maxLevel; l++) {
-				this.stack[l] = null;
-			}
-		});
+				// update stack: this level gets this li, deeper levels reset
+				this.stack[level] = li;
+				for (let l = level + 1; l <= this.maxLevel; l++) {
+					this.stack[l] = null;
+				}
+			});
 	}
 
 	private setupScrollSpy(): void {
