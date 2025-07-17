@@ -133,6 +133,7 @@ layout: section
 - [Vertical Pod Autoscaler (VPA): A Deep Dive - Part 1](https://erikzilinsky.com/posts/vpa1.html) 📈
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838) 🛡️
 - <https://openai.com/index/scaling-kubernetes-to-7500-nodes/> 📈
+- [Kubernetes Pod Scheduling: Tutorial and Best Practices](https://www.cloudbolt.io/kubernetes-pod-scheduling/)
 
 ---
 
@@ -148,11 +149,13 @@ layout: section
 - [Blue-Green deployment in k8s](https://developer.harness.io/docs/continuous-delivery/deploy-srv-diff-platforms/kubernetes/kubernetes-executions/create-a-kubernetes-blue-green-deployment/) 🔄
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml) 🐦
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes> 🛡️
+- [Upgrading Stateful Kubernetes Clusters with near-zero downtime](https://medium.com/freshworks-engineering-blog/fast-k8s-upgrades-9cb60be7f93e)
 
 ---
 
 ### Réseau et Service
 
+- "_The Kubernetes Networking Guide_" : <https://www.tkng.io/>
 - Tutoriels sur la communication entre pods :
   - [Utiliser un service](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/) 🌐
   - [Tutoriel complet](https://medium.com/@extio/mastering-kubernetes-pod-to-pod-communication-a-comprehensive-guide-46832b30556b) 🌐
