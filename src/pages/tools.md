@@ -104,8 +104,6 @@ created: 2024-10-17
 
 - Liste d'opérateurs : <https://operatorhub.io/>
 - 🔎 linter (vérification fichiers) => `kubeconform`, `kube-score`
-- 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
-	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
 - 📦 package manager (sur-couche) => `helm` (et secrets : <https://github.com/jkroepke/helm-secrets>)
 - ingress & service mesh :
   - `traefik` : reverse-proxy automatique
@@ -177,10 +175,18 @@ created: 2024-10-17
   - [kube-backup](https://github.com/pieterlange/kube-backup) : backup YAML dans répo Git
   - [bivac](https://github.com/camptocamp/bivac) : Backup Interface for Volumes Attached to Containers 
   - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/) : [snapshots par annotations](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/snaps-annotations/#taking-periodic-snapshots-on-a-running-pod)
+
+##### Installation de cluster
+
+- 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
+	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
 - CNI :
   - [Tigera](https://github.com/tigera/operator) : gestion du _CNI_ Calico dans le cluster
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
-- Multi-clusters : [K0rdent](https://blog.alterway.fr/k0rdent.html), <https://submariner.io/>
+- Multi-clusters :
+  - <https://blog.alterway.fr/k0rdent.html>
+  - <https://submariner.io/>
+  - <https://liqo.io/>
 - [Spegel](https://github.com/spegel-org/spegel) : Miroir qui récupère les images Docker sur les Nodes où elles sont en cache
 
 ### 💾 Backups
