@@ -58,10 +58,27 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 ---
 
 :::warn
-💸 Limiter les ressources CPU peut être coûteux (_throttling_). Certaines personnes [1](https://medium.com/@carlosalbertoalvesscorreia/would-the-kubernetes-cpu-limit-be-an-anti-pattern-2b07d92d7bd8) [2](https://www.perfectscale.io/blog/kubernetes-cpu-limits) [3](https://home.robusta.dev/blog/stop-using-cpu-limits) [4](https://medium.com/directeam/kubernetes-resources-under-the-hood-part-3-6ee7d6015965) recommandent :
-- `memory limits == requests`
-- Toujours configurer des _CPU requests_ (avec précision pour éviter la surconsommation)
-- Ne **jamais** configurer de ~_CPU limits_~
+### Attention aux limits
+
+- Les **requests** CPU/mémoire sont indispensables pour garantir un minimum de ressources et éviter l'éviction.
+- Les **limits** sont plus polémiques et plusieurs écoles s’affrontent.
+  - **CPU : souvent pas de limits** :
+		- Limiter le CPU peut causer du **throttling** inutile, surtout pour les apps multithread.
+		- Pourtant, dans certains cas (ex : apps sensibles à la latence ou I/O-bound), un contrôle via limit permet d'isoler les workloads et garantir des performances prévisibles.
+  - **Mémoire : limites généralement conseillées**
+    - La mémoire est **non compressible** : dépasser un `limit` implique un *OOM kill*, ce qui peut protéger le _Node_ entier.
+    - Fixer `memory limit == request` permet d’éviter la surconsommation par certains pods, et d’alerter quand il faut ajuster les allocations via monitoring + OOM kills
+💸 Sources : [1](https://medium.com/@carlosalbertoalvesscorreia/would-the-kubernetes-cpu-limit-be-an-anti-pattern-2b07d92d7bd8) [2](https://www.perfectscale.io/blog/kubernetes-cpu-limits) [3](https://home.robusta.dev/blog/stop-using-cpu-limits) [4](https://medium.com/directeam/kubernetes-resources-under-the-hood-part-3-6ee7d6015965) [5](https://stormforge.io/blog/flexibility-matters-when-setting-kubernetes-resource-limits/?utm_campaign=FY25_Q3_Learnk8s&utm_medium=newsletter&utm_source=Learnk8s)
+:::
+
+---
+
+:::warn
+### Workloads dynamiques
+
+- Certains workloads (ex. _JVM_) ont des besoins variables : pic au démarrage, heap lié à memory limit, etc.
+- Des limits statiques peuvent soit **empêcher le démarrage**, soit surprovisionner. Ex: pour le CPU, certaines versions de Java utilisent tous les cœurs du _Node_ à moins de définir `XX:ActiveProcessorCount`, ce qui peut provoquer du throttling.
+- Privilégier donc une **limitation dynamique** en fonction du cycle de vie et des caractéristiques de l'application.
 :::
 
 ---
