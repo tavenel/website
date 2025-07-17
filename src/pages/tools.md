@@ -233,6 +233,8 @@ created: 2024-10-17
 - `woodpecker CI` : léger, intègre Docker
 - `tekton`, `drone` : déployer sa CI/CD dans k8s
 - <https://werf.io/> : lier CI/CD et k8s
+- <https://www.shipfox.io/> : GitHub runners rapides et moins cher
+- <https://www.usemergeable.dev/> : Inbox pour les Pull Requests depuis GitHub
 
 #### Outils CI
 
@@ -410,6 +412,7 @@ created: 2024-10-17
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
 	- Backend dans 1 seul fichier : `PocketBase`, <https://manifest.build/>
+  - <https://kottster.app/> : UI sur la database
 - Gestion d'erreurs : `Sentry`
 - APIs : `OpenAPI`
 - Paiement en ligne : `Stripe`
