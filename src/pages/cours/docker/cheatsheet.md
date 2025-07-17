@@ -542,6 +542,17 @@ docker compose watch
 - `environment` : permet de définir les variables d’environnement
 - `depends_on ` permet de dire que le conteneur dépend d'un autre conteneur
 - `ports` : permet de définir les ports disponibles entre la machine host et le conteneur
+- `provider` : utilise un _Provider_ et non une image Docker pour ce service. Voir : <https://docs.docker.com/compose/how-tos/provider-services/>
+
+## Convertir un Docker Compose en manifest Kubernetes
+
+```sh
+docker compose bridge convert
+```
+
+:::link
+Voir : <https://docs.docker.com/compose/bridge/usage/>
+:::
 
 # Legal
 
