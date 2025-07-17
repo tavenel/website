@@ -179,6 +179,7 @@ layout: section
 - [Threat Matrix for Kubernetes (Microsoft)](https://www.microsoft.com/en-us/security/blog/2020/04/02/attack-matrix-kubernetes/) 🔐
 - <https://www.parseable.com/blog/track-privilege-escalations-with-ebpf> 🔐
 - [SPIFFE et mTLS avec cert-manager](https://une-tasse-de.cafe/blog/spiffe/) 🔐
+- Déployer un Pod _honeypot_ pour détecter les mouvements latéraux suspects : <https://beelzebub-honeypot.com/blog/deploy-beelzebub-honeypot-on-kubernetes/>
 
 ---
 
