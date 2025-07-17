@@ -23,7 +23,7 @@ tags:
  |------|------------------|------|
  | Versioning | Git (GitHub, GitLab, etc.) | Suivi du code source 📜 |
  | Build & Test | GitLab CI / Jenkins / GitHub Actions | Construction d'images et tests 🧪 |
- | Packaging | Docker, Buildah, Kaniko | Création d'images de conteneur 📦 |
+ | Packaging | Docker, Buildah | Création d'images de conteneur 📦 |
  | Déploiement | Helm / Kustomize / Argo CD | Déploiement déclaratif 📝 |
  | Monitoring | Prometheus / Grafana | Supervision du déploiement 📊 |
 

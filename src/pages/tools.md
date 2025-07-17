@@ -103,7 +103,6 @@ created: 2024-10-17
 #### 󱃾 Kubernetes-specific
 
 - Liste d'opérateurs : <https://operatorhub.io/>
-- 📦 Build d'images => <https://github.com/GoogleContainerTools/kaniko>
 - 🔎 linter (vérification fichiers) => `kubeconform`, `kube-score`
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
 	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
