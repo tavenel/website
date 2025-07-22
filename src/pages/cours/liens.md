@@ -88,6 +88,10 @@ checked: 2025-01-27
 
 > Avec un escalier prévu pour la montée, on réussit souvent à monter plus bas qu’on ne serait descendu avec un escalier prévu pour la descente. (Proverbe Shadok)
 
+> Programs must be written for people to read, and only incidentally for machines to execute. (Abelson & Sussman, SICP, preface to the first edition)
+
+> Dealing with failure is easy: Work hard to improve. Success is also easy to handle: You've solved the wrong problem. Work hard to improve. (Alan Perlis)
+
 ## Liens transverses
 
 - Les méta-lois en informatique : <https://github.com/StephaneTrebel/presentations/tree/main/meta-lois>
