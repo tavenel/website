@@ -124,6 +124,7 @@ checked: 2025-01-27
 - <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
 - [Une architecture open-source qui ne déraille pas (Julien Cognet, Snowcamp 2025)](https://www.slideshare.net/slideshow/snowcamp-2025-une-architecture-qui-ne-deraille-pas/275103626)
 - [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
+- Histoire de Java : <https://codegym.cc/fr/groups/posts/fr.594.histoire-de-java-une-histoire-complete-du-developpement-java-de-1991-a-2021>
 
 ## Gamification
 
