@@ -2138,6 +2138,9 @@ Si nous devions regrouper les clients potentiels interrogés en fonction de ces 
 
 # Ressources
 
+- [Vidéo : Pâte à tartiner et variable continue (La statistique expliquée à mon chat)](https://www.youtube.com/watch?v=THk2GBxkg4o)
+- [Vidéo : Pourquoi gagnez-vous moins que le salaire moyen ? (La statistique expliquée à mon chat)](https://www.youtube.com/watch?v=uIx2xvdwIIo)
+- [Vidéo :  P-valeur ou je fais un malheur ! (La statistique expliquée à mon chat)](https://www.youtube.com/watch?v=xVIt51ybvu0)
 - [Cours statistique descriptive à une dimension][zds-stat-desc-1d]
 - [Moyenne (Wikipedia)][wiki-moyenne]
 - [Moyenne d'ordre p (Wikipedia)][wiki-moyenne-holder]
