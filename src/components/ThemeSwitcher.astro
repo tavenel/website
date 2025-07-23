@@ -1,6 +1,6 @@
 <div id="themeSwitch">
-  <label for="themeSwitchSelect">Theme:</label>
-  <select name="themeSwitch" id="themeSwitchSelect">
+  <label for="themeSwitchSelect" id="themeSwitchButton"><button class="link" title="Switch Style">🎨</button></label>
+  <select name="themeSwitch" id="themeSwitchSelect" class="hidden">
   	<option value="none">Aucun</option>
   	<option value="system">Automatique</option>
   	<option value="github-light">Github Light</option>
@@ -23,9 +23,19 @@
 
 <script>
 const select = document.getElementById("themeSwitch") as HTMLSelectElement;
+const themeSwitcherButton = document.getElementById("themeSwitchButton") as HTMLSelectElement;
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
 	? "houston"
 	: "github-light";
+
+	function selectThemeButton() {
+		var selectClass = document.getElementById("themeSwitchSelect").classList;
+		if (selectClass.contains('hidden')) {
+			selectClass.remove('hidden');
+		} else {
+			selectClass.add('hidden');
+		}
+	}
 
 function setTheme(value: string) {
 	const theme = value === "system" ? systemTheme : value;
@@ -56,5 +66,9 @@ select.addEventListener("change", (event: Event) => {
 
 // Runs on view transitions navigation
 document.addEventListener('astro:after-swap', updateTheme);
+
+themeSwitchButton.addEventListener("click", function() {
+	selectThemeButton();
+});
 </script>
 
