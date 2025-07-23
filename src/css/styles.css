@@ -661,6 +661,11 @@ aside.callout-correction {
 	--versioning: revert;
 	--select-color: revert;
 	--blockquote: revert;
+
+	& a {
+		text-decoration: revert;
+	}
+
 }
 
 [data-theme="github-light"] {
