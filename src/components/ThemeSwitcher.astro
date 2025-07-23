@@ -25,17 +25,17 @@
 const select = document.getElementById("themeSwitch") as HTMLSelectElement;
 const themeSwitcherButton = document.getElementById("themeSwitchButton") as HTMLSelectElement;
 const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-	? "houston"
-	: "github-light";
+? "houston"
+: "github-light";
 
-	function selectThemeButton() {
-		var selectClass = document.getElementById("themeSwitchSelect").classList;
-		if (selectClass.contains('hidden')) {
-			selectClass.remove('hidden');
-		} else {
-			selectClass.add('hidden');
-		}
+function selectThemeButton() {
+	var selectClass = document.getElementById("themeSwitchSelect").classList;
+	if (selectClass.contains('hidden')) {
+		selectClass.remove('hidden');
+	} else {
+		selectClass.add('hidden');
 	}
+}
 
 function setTheme(value: string) {
 	const theme = value === "system" ? systemTheme : value;
@@ -60,15 +60,15 @@ function updateTheme() {
 updateTheme();
 
 select.addEventListener("change", (event: Event) => {
-	const select = event.target as HTMLSelectElement;
-	setTheme(select.value);
-});
+		const select = event.target as HTMLSelectElement;
+		setTheme(select.value);
+		});
 
 // Runs on view transitions navigation
 document.addEventListener('astro:after-swap', updateTheme);
 
 themeSwitchButton.addEventListener("click", function() {
-	selectThemeButton();
-});
+		selectThemeButton();
+		});
 </script>
 
