@@ -222,14 +222,22 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 ---
 
+### Limitations et erreurs
+
+- [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE) 🎯
+- [Gitpod: We are leaving Kubernetes](https://www.gitpod.io/blog/we-are-leaving-kubernetes) 🏃
+- [Article: "Pourquoi le DNS de Kubernetes est claqué au sol (notamment avec kube-proxy en iptables)"](https://mcorbin.fr/posts/2025-06-24-dns-k8s-sol/) 📝
+- Kubernetes Failure Stories : compilation de problèmes : <https://k8s.af/>
+
+---
+
 ### Autres
 
 - Roadmap k8s <https://roadmap.sh/kubernetes> et roadmap orientée cybersécurité : <https://kubesec-diagram.github.io/> 🗺️
 - Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources> 🌟
 - [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/) 📖
+- [A journey of writing my own Kubernetes](https://medium.com/@jonatan5524/a-journey-of-writing-my-own-kubernetes-ef45839a769d) 📝
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc) 🎮
-- [10 Ways to Shoot Yourself in the Foot with Kubernetes, #9 Will Surprise You (Youtube)](https://www.youtube.com/watch?v=QKI-JRs2RIE) 🎯
-- [Gitpod: We are leaving Kubernetes](https://www.gitpod.io/blog/we-are-leaving-kubernetes) 🏃
 - [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler) 📅
 - Exemples :
   - de projets : voir la [page des liens](/cours/liens#kubernetes) 🔗
@@ -237,9 +245,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾
 - <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.📝
-- [A journey of writing my own Kubernetes](https://medium.com/@jonatan5524/a-journey-of-writing-my-own-kubernetes-ef45839a769d) 📝
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
-- [Article: "Pourquoi le DNS de Kubernetes est claqué au sol (notamment avec kube-proxy en iptables)"](https://mcorbin.fr/posts/2025-06-24-dns-k8s-sol/) 📝
 - [Balancing Capacity and Cost for Kubernetes Clusters](https://dnastacio.medium.com/kubernetes-cluster-capacity-d96d0d82b380) ⚖️
 
 ---
