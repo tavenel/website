@@ -459,13 +459,26 @@ a.add-bookmark {
 /* TOC */
 /*******/
 
-#toc a {
-	transition: color .5s;
-}
+#toc {
+	& a {
+		transition: color .5s;
 
-#toc a.active {
-	color: var(--link-visited);
-	font-weight: bold;
+		& .active {
+			color: var(--link-visited);
+		}
+	}
+
+	& li {
+		list-style:none;
+	}
+
+	& .toc-h1 {
+		font-weight: bold;
+	}
+
+	& .toc-h3, .toc-h4, .toc-h5, .toc-h6 {
+		font-style: italic;
+	}
 }
 
 /* TODO => reactive to size of window */

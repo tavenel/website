@@ -44,7 +44,7 @@ export class TOC {
 				// ensure ID
 				if (!heading.id) heading.id = this.slugify(heading.textContent || '');
 
-				const li = this.createListItem(heading.id, heading.textContent || '');
+				const li = this.createListItem(heading.id, heading.textContent || '', level);
 
 				// find parent <ul> for this level
 				const parentUl = this.getParentListForLevel(level);
@@ -92,10 +92,14 @@ export class TOC {
 	}
 
 	/** Create <li><a href=...>text</a></li>, also tracks links for scroll-spy */
-	private createListItem(id: string, text: string): HTMLLIElement {
+	private createListItem(id: string, text: string, level: number): HTMLLIElement {
+
 		const link = document.createElement('a');
 		link.href = `#${id}`;
 		link.textContent = text;
+		// Add class h1, h2, ... to each heading
+		link.classList.add(`toc-h${level}`);
+
 		const li = document.createElement('li');
 		li.appendChild(link);
 		this.tocLinks.push(link);
