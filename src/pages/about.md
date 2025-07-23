@@ -1,12 +1,13 @@
 ---
+layout: '@layouts/BaseLayout.astro'
 title: About me
 ---
 
 ![](@assets/undraw/undraw_personal-info_yzls.svg)
 
-I am a freelance software developper and I teach computer science in graduate schools.
+J'interviens à la fois en écoles supérieures d'informatique et en milieu professionnel pour du consulting ou de la formation en DevOps.
 
-You can contact me at contact [at] avenel [dot] pro or on [LinkedIn](https://www.linkedin.com/in/tom-avenel/).
+[LinkedIn](https://www.linkedin.com/in/tom-avenel/).
 
 ## Resume
 
