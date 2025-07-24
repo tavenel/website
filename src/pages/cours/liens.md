@@ -158,6 +158,7 @@ checked: 2025-01-27
   - <https://www.securecodewarrior.com/> : apprendre à développer du code robuste
   - <https://hackropole.fr/fr/> : rejouer les épreuves du France Cybersecurity Challenge
 - <https://github.com/apsdehal/awesome-ctf>
+- <https://sploitus.com/> : recherche de vulnérabilités
 
 ## Exemples de projets
 
