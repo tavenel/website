@@ -196,16 +196,23 @@ menu > li {
 	margin-bottom: 10%;
 
 	& li {
-		font-size: 1.3em;
+		font-size: 1.5em;
 		list-style:none;
 		border-radius: 30px;
-		padding: 20px;
+		padding: 50px;
+		margin-bottom: 80px;
 		background: var(--cours-cat-li);
+
+		&:hover {
+			font-size: 2em;
+			background: var(--cours-cat-li-hover-bg);
+		}
 	}
 
 	& a {
 		color: var(--cours-link-text);
 		border-bottom: 2px var(--cours-link-border) dashed;
+
 		&:hover { border: none; }
 	}
 
@@ -546,7 +553,6 @@ aside.callout-correction {
 	background-color: var(--calloutBackgroundColor);
 	border-radius: 8px;
 	padding: 16px;
-}
 
 	.callout-indicator {
 		display: flex;
@@ -685,11 +691,13 @@ aside.callout-correction {
 	--poec-li: revert;
 	--links-cat-li: revert;
 	--cours-cat-li: revert;
+	--cours-cat-li-hover: revert;
 	--cours-link-text: revert;
 	--cours-link-border: revert;
 	--versioning: revert;
 	--select-color: revert;
 	--blockquote: revert;
+	--exo-ul-border: revert;
 
 	& a {
 		text-decoration: revert;
@@ -736,13 +744,13 @@ aside.callout-correction {
 	--poec-li: inherit;
 	--links-cat-li: var(--x-light-green);
 	--cours-cat-li: var(--x-light-green);
-	--cours-cat-li-hover: var(--light-blue);
-	--exo-ul-border: var(--hr);
+	--cours-cat-li-hover-bg: var(--light-blue);
 	--cours-link-text: var(--dark-main);
 	--cours-link-border: var(--light-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--dark-grey);
 	--blockquote: var(--middle-orange);
+	--exo-ul-border: var(--hr);
 
 	& .astro-code, & .astro-code span {
 		/* https://docs.astro.build/en/guides/syntax-highlighting/ */
@@ -791,11 +799,13 @@ aside.callout-correction {
 	--poec-li: inherit;
 	--links-cat-li: #EAEDC8;
 	--cours-cat-li: #EAEDC8;
+	--cours-cat-li-hover-bg: #A6B0A0;
 	--cours-link-text: #5C6A72;
 	--cours-link-border: #A6B0A0;
 	--versioning: #A6B0A0;
 	--select-color: #829181;
 	--blockquote: #DFA000;
+	--exo-ul-border: var(--hr);
 
 	& .astro-code, & .astro-code span {
 		background-color: var(--shiki-everforest-bg);
@@ -841,11 +851,13 @@ aside.callout-correction {
 	--poec-li: inherit;
 	--links-cat-li: inherit;
 	--cours-cat-li: inherit;
+	--cours-cat-li-hover-bg: #3A3F4B;
 	--cours-link-text: #383A42;
 	--cours-link-border: #3A3F4B;
 	--versioning: #3A3F4B;
 	--select-color: #3A3F4B;
 	--blockquote: #A626A4;
+	--exo-ul-border: var(--hr);
 
 	& .astro-code, & .astro-code span {
 		background-color: var(--shiki-one-bg);
@@ -895,11 +907,13 @@ aside.callout-correction {
 	--poec-li: var(--light-orange);
 	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
+	--cours-cat-li-hover-bg: var(--dark-green);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
+	--exo-ul-border: var(--hr);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -952,11 +966,13 @@ aside.callout-correction {
 	--poec-li: #FF8F40;
 	--links-cat-li: #95E6CB;
 	--cours-cat-li: #95E6CB;
+	--cours-cat-li-hover-bg: #FF8F40;
 	--cours-link-text: #0B0E14;
 	--cours-link-border: #6C7380;
 	--versioning: #6C7380;
 	--select-color: #BFBDB6;
 	--blockquote: #D2A6FF;
+	--exo-ul-border: #6C7380;
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1009,11 +1025,13 @@ aside.callout-correction {
 	--poec-li: #fab387;
 	--links-cat-li: #94e2d5;
 	--cours-cat-li: #94e2d5;
+	--cours-cat-li-hover-bg: #f5c2e7;
 	--cours-link-text: #1e1e2e;
 	--cours-link-border: #7f849c;
 	--versioning: #a6adc8;
 	--select-color: #89b4fa;
 	--blockquote: #f9e2af;
+	--exo-ul-border: #a6adc8;
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
 	#esgi li { background: var(--esgi-li); }
@@ -1064,11 +1082,13 @@ aside.callout-correction {
 	--poec-li: #ff79c6;
 	--links-cat-li: #bd93f9;
 	--cours-cat-li: #bd93f9;
+	--cours-cat-li-hover-bg: #ff79c6;
 	--cours-link-text: #44475a;
 	--cours-link-border: #44475a;
 	--versioning: #44475a;
 	--select-color: #bd93f9;
 	--blockquote: #bd93f9;
+	--exo-ul-border: #44475a;
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
 	#esgi li { background: var(--esgi-li); }
@@ -1119,11 +1139,13 @@ aside.callout-correction {
 	--poec-li: #a292a3;
 	--links-cat-li: inherit;
 	--cours-cat-li: inherit;
+	--cours-cat-li-hover-bg: inherit;
 	--cours-link-text: #c5c9c5;
 	--cours-link-border: #c5c9c5;
 	--versioning: #c5c9c5;
 	--select-color: #c4b28a;
 	--blockquote: #c4b28a;
+	--exo-ul-border: #c5c9c5;
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1176,11 +1198,13 @@ aside.callout-correction {
 	--poec-li: var(--light-orange);
 	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
+	--cours-cat-li-hover-bg: var(--light-blue);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
+	--exo-ul-border: var(--hr);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1233,11 +1257,13 @@ aside.callout-correction {
 	--poec-li: #88c0d0;
 	--links-cat-li: #eceff4;
 	--cours-cat-li: #eceff4;
+	--cours-cat-li-hover-bg: #88c0d0;
 	--cours-link-text: #2e3440;
 	--cours-link-border: #2e3440;
 	--versioning: #b48ead;
 	--select-color: #88c0d0;
 	--blockquote: #e5e9f0;
+	--exo-ul-border: #b48ead;
 	/* li is not set on light mode to avoir breaking inheritance */
 	#epsi li { background: var(--epsi-li); }
 	#esgi li { background: var(--esgi-li); }
@@ -1289,11 +1315,13 @@ aside.callout-correction {
 	--poec-li: var(--light-orange);
 	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
+	--cours-cat-li-hover-bg: var(--light-blue);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
+	--exo-ul-border: var(--hr);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1346,11 +1374,13 @@ aside.callout-correction {
 	--poec-li: #ff7edb;
 	--links-cat-li: #463465;
 	--cours-cat-li: #463465;
+	--cours-cat-li-hover-bg: #fede5d;
 	--cours-link-text: #ffffff;
 	--cours-link-border: #f97e72;
 	--versioning: #ffffff80;
 	--select-color: #f97e72;
 	--blockquote: #ff7edb;
+	--exo-ul-border: #ffffff80;
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1436,11 +1466,13 @@ aside.callout-correction {
 	--poec-li: #fe4a49;
 	--links-cat-li: #ffe45e;
 	--cours-cat-li: #ffe45e;
+	--cours-cat-li-hover-bg: #44ffd2;
 	--cours-link-text: var(--background);
 	--cours-link-border: var(--background);
 	--versioning: #fe4a49;
 	--select-color: var(--text);
 	--blockquote: #f141a8;
+	--exo-ul-border: #f141a8;
   --header-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 	h1 { &::before { background: #44ffd2; } }
@@ -1520,11 +1552,13 @@ aside.callout-correction {
 	--poec-li: var(--light-orange);
 	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
+	--cours-cat-li-hover-bg: var(--light-blue);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
+	--exo-ul-border: var(--hr);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
@@ -1577,11 +1611,13 @@ aside.callout-correction {
 	--poec-li: var(--light-orange);
 	--links-cat-li: var(--middle-green);
 	--cours-cat-li: var(--middle-green);
+	--cours-cat-li-hover-bg: var(--light-blue);
 	--cours-link-text: var(--light-main);
 	--cours-link-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
+	--exo-ul-border: var(--hr);
 	/* li is not set on light mode to avoir breaking inheritance */
 	/* TODO => !important ? */
 	#epsi li { background: var(--epsi-li); }
