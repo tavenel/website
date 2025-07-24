@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
 
 import astroBrokenLinksChecker from 'astro-broken-link-checker';
 
@@ -129,5 +129,29 @@ export default defineConfig({
 			emitFile: true,
 			filename: "stats.html",
 		})]
+	},
+
+	experimental: {
+		fonts: [
+			{
+				name: "Inter",
+				cssVariable: "--font-main",
+				provider: fontProviders.fontsource(),
+				// Download only font files for characters used on the page
+				subsets: ["latin"],
+				// Use a fallback font family matching the intended appearance
+				fallbacks: ["monospace"],
+			},
+			{
+				name: "Abril Fatface",
+				cssVariable: "--abril-fatface",
+				provider: fontProviders.fontsource(),
+				// Download only font files for characters used on the page
+				subsets: ["latin"],
+				// Use a fallback font family matching the intended appearance
+				fallbacks: ["monospace"],
+			},
+		]
 	}
+
 })

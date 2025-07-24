@@ -3,6 +3,7 @@ import '@css/styles.css'
 
 // ClientRouter transforms the website into an SPA
 // import { ClientRouter } from 'astro:transitions'; // TODO
+import { Font } from 'astro:assets';
 
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
@@ -32,6 +33,12 @@ type Props = {
 	<meta name="description" content="Tom Avenel personal website. Tech articles, teachings, and more." />
 	<meta name="theme-color" content="#000000" />
 	<meta name="pwa-capable" content="yes" />
+
+	<Font cssVariable='--font-main' preload />
+	<style>
+	  body { font-family: var(--font-main); }
+	</style>
+
 	<script>
 	// PWA
 	if ('serviceWorker' in navigator) {
