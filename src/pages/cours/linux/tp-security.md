@@ -9,9 +9,9 @@ correction: false
 :::exo
 En utilisant les commandes `passwd` et `chage` :
 
-  - changer le mote de passe de l'utilisateur depuis le compte `root`
-  - mettre au point une politique de sécurité avec une expiration des mots de passe
-  - vérifier que la poliitque est bien implémentée
+  1. changer le mote de passe de l'utilisateur depuis le compte `root`
+  2. mettre au point une politique de sécurité avec une expiration des mots de passe
+  3. vérifier que la poliitque est bien implémentée
 :::
 
 :::correction

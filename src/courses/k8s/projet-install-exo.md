@@ -68,11 +68,11 @@ Le but de cette partie est de déployer dans le cluster un projet personnel exis
 :::exo
 On testera la partie H/A du `control-plane` et du déploiement applicatif :
 
-- Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
-- Tester la suppression d'un conteneur / Pod
-- Tester la déconnexion d'un _worker node_
-- Vérifier la réconciliation des ressources
-- Vérifier le _scaling_ automatique en cas de pic de charge
+1. Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
+2. Tester la suppression d'un conteneur / Pod
+3. Tester la déconnexion d'un _worker node_
+4. Vérifier la réconciliation des ressources
+5. Vérifier le _scaling_ automatique en cas de pic de charge
 :::
 
 ## 📜 Livrables

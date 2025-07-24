@@ -183,8 +183,8 @@ Pour s'aider à écrire les `crontab` et les vérifier, on pourra utiliser l'exc
   - `crontab -l` : affiche les jobs programmés
 
 :::exo
-- Copier le script suivant et le faire exécuter toutes les 2 minutes.
-- Que fait ce script ?
+1. Copier le script suivant et le faire exécuter toutes les 2 minutes.
+2. Que fait ce script ?
 
 ```sh
 #!/usr/bin/env bash

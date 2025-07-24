@@ -281,12 +281,10 @@ En utilisant `Selenium`, implémenter les scénarios de tests suivants. Pensez �
 ## Plan de tests end-to-end
 
 :::exo
-Décrire un plan de tests complet permettant de valider le fonctionnement du programme d'un point de vue utilisateur (il s'agira donc de réaliser la recette fonctionnelle du projet).
-
-Implémenter une automatisation de cette recette fonctionnelle en utilisant le framework d'automatisation de navigateurs `Selenium`.
-
-- On utilisera un design pattern de `PageObject`, c'est-à-dire que les pages et les éléments de l'interface graphique seront décrits dans des classes de tests dédiées (voir cours).
-- On pourra également lancer l'application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
+1. Décrire un plan de tests complet permettant de valider le fonctionnement du programme d'un point de vue utilisateur (il s'agira donc de réaliser la recette fonctionnelle du projet).
+2. Implémenter une automatisation de cette recette fonctionnelle en utilisant le framework d'automatisation de navigateurs `Selenium`.
+  - On utilisera un design pattern de `PageObject`, c'est-à-dire que les pages et les éléments de l'interface graphique seront décrits dans des classes de tests dédiées (voir cours).
+  - On pourra également lancer l'application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
 :::
 
 # Legal

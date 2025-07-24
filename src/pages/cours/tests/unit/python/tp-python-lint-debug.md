@@ -152,10 +152,10 @@ Attention pour le débug de variables privées en Python : les noms de variables
 :::exo
 Utiliser `pdb` pour interagir avec les exemples (répertoire pdb) :
 
-- Modifier la valeur des variables `firstVar` et `secondVar` dans le fichier `ex1.py`
-- Modifier l'expression result pour afficher `firstVar – secondVar`
-- Débugger le fichier `index_error.py` pour le corriger
-- Débugger le fichier `to_debug.py` :
+1. Modifier la valeur des variables `firstVar` et `secondVar` dans le fichier `ex1.py`
+2. Modifier l'expression result pour afficher `firstVar – secondVar`
+3. Débugger le fichier `index_error.py` pour le corriger
+4. Débugger le fichier `to_debug.py` :
 	+ Installer les dépendances du code : `python -m pip install numpy scipy`
 	+ Débugger le programme - le résultat attendu est de la forme suivante. Pensez notamment à vérifier que l'on itère bien pour chaque `optimizer` !
 

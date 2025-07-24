@@ -62,8 +62,8 @@ $ python -m unittest discover répertoire_projet “exemple*.py”
 
 
 :::exo
-- Exécuter les tests fournis en exemple (répertoire `unittest`) et vérifier leur bonne exécution
-- En s'inspirant des exemples fournis, ajouter un ensemble de tests unitaires permettant de vérifier le bon fonctionnement des classes et fonctions du programme.
+1. Exécuter les tests fournis en exemple (répertoire `unittest`) et vérifier leur bonne exécution
+2. En s'inspirant des exemples fournis, ajouter un ensemble de tests unitaires permettant de vérifier le bon fonctionnement des classes et fonctions du programme.
 
 On essaiera de suivre un patron _Arrange Act Assert_ (voir cours) pour l'écriture du code de test.
 :::

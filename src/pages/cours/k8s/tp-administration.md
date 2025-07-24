@@ -121,8 +121,8 @@ Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restorin
 ### Exercice
 
 :::exo
-- Assurer la sauvegarde et la résilience : Mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
-- Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
+1. Assurer la sauvegarde et la résilience : Mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
+2. Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
 :::
 
 ## Upgrade
@@ -177,8 +177,8 @@ kubectl uncordon "<node-name>" # fin du drainage
 ### Exercice
 
 :::exo
-- Décrire une procédure de mise à jour pour votre cluster.
-- Tester la procédure en mettant à jour votre cluster.
+1. Décrire une procédure de mise à jour pour votre cluster.
+2. Tester la procédure en mettant à jour votre cluster.
 :::
 
 ## Supervision
@@ -240,10 +240,10 @@ helm install --generate-name deliveryhero/node-problem-detector
 ### Exercice
 
 :::exo
-- Mettre en place la supervision du cluster en installant une stack _Prometheus_ / _Grafana_.
-- Créer un (ou plusieurs) tableau(x) de bord dans Grafana de supervision de votre cluster et de votre application.
-- Déployer un _node-problem-detector_ sur chaque _Node_ du cluster
-- (Bonus) mettre en place des systèmes de correction en cas de problème sur un _Node_.
+1. Mettre en place la supervision du cluster en installant une stack _Prometheus_ / _Grafana_.
+2. Créer un (ou plusieurs) tableau(x) de bord dans Grafana de supervision de votre cluster et de votre application.
+3. Déployer un _node-problem-detector_ sur chaque _Node_ du cluster
+4. (Bonus) mettre en place des systèmes de correction en cas de problème sur un _Node_.
 :::
 
 ## Sécurité
@@ -359,14 +359,14 @@ Voir aussi :
 ### Exercice
 
 :::exo
-- Sécuriser les control-plane en mettant en place une communication sécurisée entre composants.
-- Mettre en place et tester une procédure de renouvellement des certificats.
-- Mettre en place et tester des rôles de sécurité (RBAC) pour :
+1. Sécuriser les control-plane en mettant en place une communication sécurisée entre composants.
+2. Mettre en place et tester une procédure de renouvellement des certificats.
+3. Mettre en place et tester des rôles de sécurité (RBAC) pour :
   - sécuriser votre application ;
   - créer un compte de support pouvant lister les ressources principales du cluster sans pouvoir y apporter de modification.
-- Mettre en place des NetworkPolicies pour votre application.
-- Mettre en place un audit des droits sur le cluster.
-- Chiffrer les secrets avec _Kubeseal_.
-- (Bonus) Configurer un Ingress en HTTPS pour accéder à votre application.
+4. Mettre en place des NetworkPolicies pour votre application.
+5. Mettre en place un audit des droits sur le cluster.
+6. Chiffrer les secrets avec _Kubeseal_.
+7. (Bonus) Configurer un Ingress en HTTPS pour accéder à votre application.
 :::
 

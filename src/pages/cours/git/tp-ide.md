@@ -13,13 +13,13 @@ Utiliser la documentation suivante pour apprendre à intégrer `git` directement
 :::exo
 En utilisant la documentation précédente :
 
-- Créer un dépôt Git en ligne sur Github.
-- Clone ce dépôt sur votre machine locale grâce à votre IDE.
-- Créer un nouveau fichier et ajouter ce fichier dans un commit directement dans l'IDE.
-- Publier ce commit sur Github.
-- Refaire le même exercice dans une branche différente.
-- Refaire le même exercice en ajoutant uniquement une partie des changements effectués dans le fichier.
-- Utiliser votre IDE pour afficher le dernier commit ayant modifié la ligne du fichier sur lequel vous travaillez. Cette fonctionnalité est l'une des plus utiles une fois Git intégré dans notre IDE.
+1. Créer un dépôt Git en ligne sur Github.
+2. Clone ce dépôt sur votre machine locale grâce à votre IDE.
+3. Créer un nouveau fichier et ajouter ce fichier dans un commit directement dans l'IDE.
+4. Publier ce commit sur Github.
+5. Refaire le même exercice dans une branche différente.
+6. Refaire le même exercice en ajoutant uniquement une partie des changements effectués dans le fichier.
+7. Utiliser votre IDE pour afficher le dernier commit ayant modifié la ligne du fichier sur lequel vous travaillez. Cette fonctionnalité est l'une des plus utiles une fois Git intégré dans notre IDE.
 :::
 
 :::exo
