@@ -914,7 +914,65 @@ aside.callout-correction {
 }
 
 [data-theme="rose-pine"] {
-	/* TODO */
+	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
+	--warning: #f6c177;
+	--background: #191724;
+	--background2: #26233a;
+	--text: #e0def4;
+	--link: #e0def4;
+	--link-hover: inherit;
+	--link-visited: #c4a7e7;
+	--link-border: #e0def4;
+	--h1: #ebbcba;
+	--h2: #9ccfd8;
+	--h3: inherit;
+	--h4: inherit;
+	--hr: #6e6a86;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #6e6a86;
+	--card-text: #e0def4;
+	--versioning: #6e6a86;
+	--select-color: inherit;
+	--blockquote: #f6c177;
+	--exo-ul-border: #6e6a86;
+}
+
+[data-theme="rose-pine-dawn"] {
+	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
+	--warning: #f6c177;
+	--background: #faf4ed;
+	--background2: #f2e9e1;
+	--text: #575279;
+	--link: #575279;
+	--link-hover: inherit;
+	--link-visited: #907aa9;
+	--link-border: #575279;
+	--h1: #286983;
+	--h2: inherit;
+	--h3: inherit;
+	--h4: inherit;
+	--hr: #9893a5;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: #fffaf3;
+	--card-item-global-bg: #fffaf3;
+	--card-item-hover-bg: #f2e9e1;
+	--card-text: #575279;
+	--versioning: #9893a5;
+	--select-color: inherit;
+	--blockquote: #ea9d34;
+	--exo-ul-border: #9893a5;
 }
 
 [data-theme="synthwave-84"] {
@@ -940,6 +998,7 @@ aside.callout-correction {
 	--menu-about: #ffffff;
 	--card-item-bg: #463465;
 	--card-item-global-bg: #463465;
+	--card-item-hover: var(--text); /*TODO*/
 	--card-item-hover-bg: #fede5d;
 	--card-text: #ffffff;
 	--versioning: #ffffff80;
@@ -1048,10 +1107,155 @@ aside.callout-correction {
 }
 
 [data-theme="tokyo-night"] {
-	/* TODO */
+	/* Based on the Tokyo Night Theme : https://github.com/tokyo-night/tokyo-night-vscode-theme */
+	--warning: #f7768e;
+	--background: #1a1b26;
+	--background2: #24283b;
+	--text: #a9b1d6;
+	--link: #7dcfff;
+	--link-hover: #7dcfff;
+	--link-visited: #bb9af7;
+	--link-border: #7dcfff;
+	--h1: #73daca;
+	--h2: #e0af68;
+	--h3: #c0caf5;
+	--h4: #9ece6a;
+	--hr: #cfc9c2;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: inherit; 
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #414868;
+	--card-text: inherit;
+	--versioning: ;
+	--select-color: inherit;
+	--blockquote: #9ece6a;
+	--exo-ul-border: #e0af68;
 }
 
-[data-theme="vesper"] {
-	/* TODO */
+[data-theme="poimandres"] {
+	--warning: #d0679d;
+	--background: #1b1e28;
+	--background2: ;
+	--text: #a6accd;
+	--link: #89ddff;
+	--link-hover: #5de4c7;
+	--link-visited: #fcc5e9;
+	--link-border: #89ddff;
+	--h1: #d0679d;
+	--h2: #5de4c7;
+	--h3: #ffffff;
+	--h4: inherit;
+	--hr: #a6accd;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: #28344a;
+	--card-item-global-bg: #28344a;
+	--card-item-hover-bg: #5de4c7;
+	--card-text: inherit;
+	--versioning: #a6accd;
+	--select-color: inherit;
+	--blockquote: #fffac2;
+	--exo-ul-border: #5de4c7;
 }
 
+[data-theme="gruvbox-dark-medium"] {
+/* Gruvbox theme from : https://github.com/morhetz/gruvbox */
+	--warning: #fabd2f;
+	--background: #3c3836;
+	--background2: #504945;
+	--text: #fbf1c7;
+	--link: #83a598;
+	--link-hover: #458588;
+	--link-visited: #d3869b;
+	--link-border: #83a598;
+	--h1: #d65d0e;
+	--h2: #8ec07c;
+	--h3: #98971a;
+	--h4: #ebdbb2;
+	--hr: #504945;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: #504945;
+	--card-item-global-bg: #665c54;
+	--card-item-hover-bg: #7c6f64;
+	--card-text: #fbf1c7;
+	--versioning: #a89984;
+	--select-color: inherit;
+	--blockquote: #fe8019;
+	--exo-ul-border: #fbf1c7;
+}
+
+[data-theme="gruvbox-light-medium"] {
+/* Gruvbox theme from : https://github.com/morhetz/gruvbox */
+	--warning: #b57614;
+	--background: #ebdbb2;
+	--background2: #d5c4a1;
+	--text: #282828;
+	--link: #076678;
+	--link-hover: #427b58;
+	--link-visited: #8f3f71;
+	--link-border: #076678;
+	--h1: #3c3836;
+	--h2: #79740e;
+	--h3: #427b58;
+	--h4: #504945;
+	--hr: #7c6f64;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #bdae93;
+	--card-text: #3c3836;
+	--versioning: #7c6f64;
+	--select-color: inherit;
+	--blockquote: #8f3f71;
+	--exo-ul-border: #7c6f64;
+}
+
+[data-theme="andromeeda"] {
+	/* Andromeeda theme inspired from : https://github.com/EliverLara/Andromeda */
+	--warning: #ff00aa;
+	--background: #23262E;
+	--background2: #3D4352;
+	--text: #D5CED9;
+	--link: #7cb7ff;
+	--link-hover: #FFE66D;
+	--link-visited: #ff00aa;
+	--link-border: #7cb7ff;
+	--h1: #FFE66D;
+	--h2: #96E072;
+	--h3: #f39c12;
+	--h4: inherit;
+	--hr: #ff00aa;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #07d4b5b0;
+	--card-text: inherit;
+	--versioning: #96E072;
+	--select-color: inherit;
+	--blockquote: #ff00aa;
+	--exo-ul-border: #ff00aa;
+}
