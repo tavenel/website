@@ -242,6 +242,11 @@ menu > li {
 .versioning {
 	font-style: italic;
 	color: var(--versioning);
+
+	& .outdated {
+		font-weight: bold;
+		color: var(--warning);
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -659,6 +664,7 @@ aside.callout-correction {
 
 [data-theme="none"] {
 	/* A theme with default browser styling. */
+	--warning: revert;
 	--background: revert;
 	--background2: revert;
 	--text: revert;
@@ -711,6 +717,7 @@ aside.callout-correction {
 * code colorscheme is Github Light
 * but the rest of the website is another light theme
 */
+	--warning: var(--dark-red);
 	--background: var(--light-main);
 	--background2: var(--light-second);
 	--text: var(--dark-main);
@@ -766,6 +773,7 @@ aside.callout-correction {
 
 [data-theme="everforest-light"] {
 	/* Light theme inspired by : https://github.com/sainnhe/everforest/blob/master/palette.md */
+	--warning: #E66868;;
 	--background: #FDF6E3;
 	--background2: #EAEDC8;
 	--text: #5C6A72;
@@ -818,6 +826,7 @@ aside.callout-correction {
 
 [data-theme="one-light"] {
 	/* Light theme inspired by : https://github.com/nathanbuchar/atom-one-dark-terminal/blob/master/COLORS */
+	--warning: #E45649;
 	--background: #F9F9F9;
 	--background2: inherit;
 	--text: #383A42;
@@ -874,6 +883,7 @@ aside.callout-correction {
 * Code is `houston` but the rest of the website
 * is a dedicated dark theme.
 */
+	--warning: var(--salmon);
 	--background: var(--dark-main);
 	--background2: var(--dark-second);
 	--text: var(--light-main);
@@ -933,6 +943,7 @@ aside.callout-correction {
 
 [data-theme="ayu-dark"] {
 	/* Theme inspired by : https://github.com/ayu-theme/ayu-colors */
+	--warning: #F07178;
 	--background: #0B0E14;
 	--background2: inherit;
 	--text: #BFBDB6;
@@ -992,6 +1003,7 @@ aside.callout-correction {
 
 [data-theme="catppuccin-mocha"] {
 	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
+	--warning: #f38ba8;
 	--background: #1e1e2e;
 	--background2: #11111b;
 	--text: #cdd6f4;
@@ -1050,6 +1062,7 @@ aside.callout-correction {
 
 [data-theme="dracula"] {
 	/* Theme inspired by : https://en.wikipedia.org/wiki/Dracula_(color_scheme) */
+	--warning: #ffb86c;
 	--background: #282a36;
 	--background2: #44475a;
 	--text: #f8f8f2;
@@ -1107,6 +1120,7 @@ aside.callout-correction {
 
 [data-theme="kanagawa-dragon"] {
 	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.yml */
+	--warning: #c4746e;
 	--background: #181616;
 	--background2: var(--dark-main);
 	--text: #c5c9c5;
@@ -1224,6 +1238,7 @@ aside.callout-correction {
 
 [data-theme="nord"] {
 	/* Based on the Nord Theme : https://www.nordtheme.com/docs/colors-and-palettes */
+	--warning: #b48ead;
 	--background: #2e3440;
 	--background2: inherit;
 	--text: #eceff4;
@@ -1260,7 +1275,7 @@ aside.callout-correction {
 	--cours-cat-li-hover-bg: #88c0d0;
 	--cours-link-text: #2e3440;
 	--cours-link-border: #2e3440;
-	--versioning: #b48ead;
+	--versioning: #d8dee9;
 	--select-color: #88c0d0;
 	--blockquote: #e5e9f0;
 	--exo-ul-border: #b48ead;
@@ -1341,6 +1356,7 @@ aside.callout-correction {
 
 [data-theme="synthwave-84"] {
 	/* Theme inspired by : https://github.com/robb0wen/synthwave-vscode */
+	--warning: #fe4450;
 	--background: #262335;
 	--background2: var(--dark-main);
 	--text: #f97e72;
@@ -1434,6 +1450,7 @@ aside.callout-correction {
 
 [data-theme='the-unnamed'] {
 	/* From : https://github.com/estruyf/slidev-theme-the-unnamed */
+	--warning: #fe4a49;
 	--background: #161c2c;
 	--background2: inherit;
 	--text: #f3eff5;
@@ -1469,7 +1486,7 @@ aside.callout-correction {
 	--cours-cat-li-hover-bg: #44ffd2;
 	--cours-link-text: var(--background);
 	--cours-link-border: var(--background);
-	--versioning: #fe4a49;
+	--versioning: #f3eff5;
 	--select-color: var(--text);
 	--blockquote: #f141a8;
 	--exo-ul-border: #f141a8;
@@ -1519,6 +1536,7 @@ aside.callout-correction {
 
 [data-theme="tokyo-night"] {
 	/* TODO */
+	--warning: ;
 	--background: var(--dark-main);
 	--background2: var(--dark-main);
 	--text: var(--light-main);
@@ -1578,6 +1596,7 @@ aside.callout-correction {
 
 [data-theme="vesper"] {
 	/* TODO */
+	--warning: ;
 	--background: var(--dark-main);
 	--background2: var(--dark-main);
 	--text: var(--light-main);

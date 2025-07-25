@@ -11,11 +11,48 @@ interface Props {
 const initialDate = created ? new Date(created).toLocaleDateString() : undefined;
 const lastModified = modified ? new Date(modified).toLocaleDateString() : undefined;
 const checkedDate = checked ? new Date(checked).toLocaleDateString() : undefined;
+
+function compareDates(date1, date2) {
+
+	if (date1 > date2) {
+		return false;
+	}
+
+	const diffInYears = date2.getFullYear() - date1.getFullYear();
+
+	if (diffInYears > 1) {
+		// Calculate the remaining days after accounting for full years
+		const remainingDays = Math.floor( (date2 - date1) / (1000 * 60 * 60 * 24)) - (diffInYears * 365);
+		return [diffInYears, remainingDays];
+	} else {
+		return false;
+	}
+}
+
+const lastDate = checked ? new Date(checked)
+	: modified ? new Date(modified)
+	: created ? new Date(created)
+	: date ? new Date(date)
+	: undefined;
+
+var isOld = false;
+var diffInYears = 0;
+var remainingDays = 0;
+if (lastDate) {
+	const diffDates = compareDates(lastDate, new Date());
+	if (diffDates) {
+		isOld = true;
+		[diffInYears, remainingDays] = diffDates;
+	}
+}
+
 ---
 <div class="versioning">
-	{date && <div class="version-first">Date : {date}</div>}
-	{created && <div class="version-first">Publié le : {initialDate}</div>}
-	{modified && <div class="version-update">Mis à jour : {lastModified}</div>}
-	{checked && <div class="version-checked">Contenu vérifé le : {checkedDate}</div>}
+	{date && <div class="first">Date : {date}</div>}
+	{created && <div class="first">Publié le : {initialDate}</div>}
+	{modified && <div class="update">Mis à jour : {lastModified}</div>}
+	{checked && <div class="checked">Contenu vérifé le : {checkedDate}</div>}
+	{isOld && <div class="outdated">Ce contenu a plus de {diffInYears} ans et {remainingDays} jours.</div>}
 </div>
+
 
