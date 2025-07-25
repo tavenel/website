@@ -204,7 +204,6 @@ menu > li {
 		background: var(--cours-cat-li);
 
 		&:hover {
-			font-size: 2em;
 			background: var(--cours-cat-li-hover-bg);
 		}
 	}
