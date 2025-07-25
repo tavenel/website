@@ -29,11 +29,8 @@ function compareDates(date1, date2) {
 	}
 }
 
-const lastDate = checked ? new Date(checked)
-	: modified ? new Date(modified)
-	: created ? new Date(created)
-	: date ? new Date(date)
-	: undefined;
+const lastDateInMs = checked ?? modified ?? created ?? date;
+const lastDate = lastDateInMs ? new Date(lastDateInMs) : undefined;
 
 var isOld = false;
 var diffInYears = 0;
