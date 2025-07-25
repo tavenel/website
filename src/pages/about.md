@@ -7,7 +7,7 @@ title: About me
 
 J'interviens à la fois en écoles supérieures d'informatique et en milieu professionnel pour du consulting ou de la formation en DevOps.
 
-[LinkedIn](https://www.linkedin.com/in/tom-avenel/).
+[ ![](../icons/linkedin.svg) LinkedIn ](https://www.linkedin.com/in/tom-avenel/).
 
 ## Resume
 
