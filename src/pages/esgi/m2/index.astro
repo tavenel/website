@@ -1,8 +1,9 @@
 ---
-import Layout from '@layouts/EsgiLayout.astro';
+import Layout from '@layouts/PromoLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout promo="M2" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/zmxjBNSD6sCJApGX">
+<Layout title="Modules ESGI M2" mail="tavenel@myges.fr" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/zmxjBNSD6sCJApGX">
 
 <h2>Filière AL</h2>
 
@@ -13,20 +14,20 @@ import Layout from '@layouts/EsgiLayout.astro';
 <h2>Filière IW</h2>
 
 	<ul>
-		<li><a href="/esgi/m2/k8s-dev">󱃾  Clusterisation de conteneurs</a></li>
+		<li><a href="/esgi/m2/k8s-dev"><Icon name="kubernetes" /> Clusterisation de conteneurs</a></li>
 	</ul>
 
 <h2>Filière SRC</h2>
 
 	<ul>
-		<li><a href="/esgi/m2/k8s-admin">󱃾  Kubernetes pour l'administrateur système (modules 1, 2 et 3)</a></li>
+		<li><a href="/esgi/m2/k8s-admin"><Icon name="kubernetes" /> Kubernetes pour l'administrateur système (modules 1, 2 et 3)</a></li>
 	</ul>
 
 <h2>Anciens Modules</h2>
 
 	<ul>
-		<li><a href="/esgi/m2/cicd"> Solutions de déploiements continus CI/CD</a></li>
-		<li><a href="/esgi/m2/devops">󱃾 Ingénierie DevOps (Gestion d'infrastructure de production)</a></li>
+		<li><a href="/esgi/m2/cicd"><Icon name="jenkins" /> Solutions de déploiements continus CI/CD</a></li>
+		<li><a href="/esgi/m2/devops"><Icon name="kubernetes" /> Ingénierie DevOps (Gestion d'infrastructure de production)</a></li>
 	</ul>
 
 </Layout>

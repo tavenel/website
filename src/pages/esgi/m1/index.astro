@@ -1,26 +1,27 @@
 ---
-import Layout from '@layouts/EpsiLayout.astro';
+import Layout from '@layouts/PromoLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout promo="M1" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/x5PQaEqx48942tcy">
+<Layout title="Modules ESGI M1" mail="tavenel@myges.fr" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/x5PQaEqx48942tcy">
 
 	<h2>Filière SRC</h2> 
 
 	<ul>
-		<li><a href="/esgi/m1/devops-src">󱃾  Conteneurs et Devops</a></li>
+		<li><a href="/esgi/m1/devops-src"><Icon name="kubernetes" /> Conteneurs et Devops</a></li>
 	</ul>
 
 	<h2>Filière AL</h2> 
 
 	<ul>
-		<li><a href="/esgi/m1/devops-ci">󱃾  Devops - Orchestration de conteneurs et intégration continue</a></li>
+		<li><a href="/esgi/m1/devops-ci"><Icon name="kubernetes" /> Devops - Orchestration de conteneurs et intégration continue</a></li>
 	</ul>
 
 	<h2>Filière IW</h2> 
 
 	<ul>
 		<li><a href="/esgi/m1/tests-ci">🧪 Tests et Automatisations</a></li>
-		<li><a href="/esgi/m1/cicd">Intégration et Déploiement Continu</a></li>
+		<li><a href="/esgi/m1/cicd"><Icon name="jenkins" /> Intégration et Déploiement Continu</a></li>
 	</ul>
 
 </Layout>

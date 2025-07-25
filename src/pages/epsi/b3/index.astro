@@ -1,28 +1,29 @@
 ---
-import Layout from '@layouts/EpsiLayout.astro';
+import Layout from '@layouts/PromoLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout promo="B3" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/MCkczwFrwNgqcR9N">
+<Layout title="Modules EPSI B3" mail="tom.avenel@mail-formateur.net" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/MCkczwFrwNgqcR9N">
 
 	<h2>Cours communs</h2> 
 
 	<ul>
-		<li><a href="/epsi/b3/devops">󱃾  Devops et Sysops</a></li>
+		<li><a href="/epsi/b3/devops"><Icon name="kubernetes" /> Devops et Sysops</a></li>
 	</ul>
 
 	<h2>Filière DevIA FS</h2> 
 
 	<ul>
 		<li><a href="/epsi/b3/methodo-tests">🧪 Tests unitaires</a></li>
-		<li><a href="/epsi/b3/indus-tests">⚛️ Industrialisation des tests logiciels</a></li>
+		<li><a href="/epsi/b3/indus-tests"><Icon name="kubernetes" /> Industrialisation des tests logiciels</a></li>
 	</ul>
 
 	<h2>Anciens Modules</h2> 
 
 	<ul>
-		<li><a href="/epsi/b3/docker">  Docker : introduction aux conteneurs</a></li>
-		<li><a href="/epsi/b3/linux-asrbd">🐧 Atelier Environnement Linux</a></li>
-		<li><a href="/epsi/b3/python">󰌠  Python</a></li>
+		<li><a href="/epsi/b3/docker"><Icon name="docker" /> Docker : introduction aux conteneurs</a></li>
+		<li><a href="/epsi/b3/linux-asrbd"><Icon name="linux" /> Atelier Environnement Linux</a></li>
+		<li><a href="/epsi/b3/python"><Icon name="python" /> Python</a></li>
 		<li><a href="/epsi/b3/django">  Le framework Django</a></li>
 		<li><a href="/epsi/b3/scrum">🤼 Méthodologie agile Scrum</a></li>
 	</ul>

@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
 
 const { title, mail, agenda, url } = Astro.props;
 ---
@@ -7,8 +8,8 @@ const { title, mail, agenda, url } = Astro.props;
 	<h1>{title}</h1>
 	<h2>Informations</h2>
 	<ul>
-		<li>📧 contact : <a href=mailto:{mail}>mailto:{mail}</a></li>
-		<li><a href={agenda}>📅 Agenda des rendus</a></li>
+		<li><Icon name="envelope-at" /> contact : <a href=mailto:{mail}>mailto:{mail}</a></li>
+		<li><a href={agenda}><Icon name="calendar-date" /> Agenda des rendus</a></li>
 	</ul>
 	<slot />
 </Layout>

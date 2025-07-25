@@ -1,22 +1,23 @@
 ---
-import Layout from '@layouts/EsgiLayout.astro';
+import Layout from '@layouts/PromoLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<Layout promo="B3" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/ZHd7sgWTNbAnpa5A">
+<Layout title="Modules ESGI B3" mail="tavenel@myges.fr" agenda="https://acloud5.zaclys.com/index.php/apps/calendar/p/ZHd7sgWTNbAnpa5A">
 
 <h2>Filières Architecture Logicielle (AL) et Ingénieurie Web (IW)</h2> 
 
 	<ul>
 		<li><a href="/esgi/b3/tests">🧪 Tests unitaires et logiciels</a></li>
-		<li><a href="/esgi/b3/docker">  Docker avancé</a></li>
+		<li><a href="/esgi/b3/docker"><Icon name="docker" /> Docker avancé</a></li>
 	</ul>
 
 <h2>Anciens Modules</h2> 
 
 	<ul>
-		<li><a href="/esgi/b3/git-admin"> Versioning Git pour l'administrateur</a></li>
-		<li><a href="/esgi/b3/linux-dev">🐧 Linux orienté développeurs</a></li>
-		<li><a href="/esgi/b3/lpic-1">🐧 Linux administration avancée LPIC-1</a></li>
+		<li><a href="/esgi/b3/git-admin"><Icon name="git" /> Versioning Git pour l'administrateur</a></li>
+		<li><a href="/esgi/b3/linux-dev"><Icon name="linux" /> Linux orienté développeurs</a></li>
+		<li><a href="/esgi/b3/lpic-1"><Icon name="linux" /> Linux administration avancée LPIC-1</a></li>
 	</ul>
 
 </Layout>
