@@ -5,6 +5,12 @@ extra:
 - math
 ---
 
+# H1 title
+## H2 title
+### H3 title
+#### H4 title
+##### H5 title
+
 :::correction
 Une correction
 :::
@@ -26,12 +32,19 @@ Une balise strong
 :::
 
 :::exo
-Un exercice
+Un exercice avec :
+
+1. Première question
+   - étape 1
+   - étape 2
+2. Deuxième question
 :::
 
 ## Subsection
 
 <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd>
+
+> Une citation
 
 ### Subsubsection
 
@@ -103,3 +116,12 @@ equation.
 $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
+
+```python
+class A:
+	def __init__(self, x):
+		self.x = x
+	
+	def f(self, y)
+			 return self.x + y
+```
