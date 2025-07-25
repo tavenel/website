@@ -23,6 +23,8 @@ import rehypeSlug from 'rehype-slug';
 
 import expressiveCode from 'astro-expressive-code';
 
+import icon from 'astro-icon';
+
 // Set default Layout for Markdown files
 const defaultLayout = () => {
 	return function (_, file) {
@@ -94,35 +96,31 @@ export default defineConfig({
 		],
 	},
 
-	integrations: [
-		astroBrokenLinksChecker({
-			checkExternalLinks: false
-		}),
-		expressiveCode({
-			themes: [
-				'andromeeda',
-				'aurora-x',
-				'ayu-dark',
-				'catppuccin-mocha',
-				'dark-plus',
-				'dracula',
-				'everforest-light',
-				'github-light',
-				'gruvbox-dark-medium',
-				'gruvbox-light-medium',
-				'houston',
-				'kanagawa-dragon',
-				'nord',
-				'one-light',
-				'poimandres',
-				'rose-pine',
-				'synthwave-84',
-				'tokyo-night',
-			],
-		}),
-		sitemap(),
-		pagefind() // must be last to search in fully bundled
-	],
+	integrations: [astroBrokenLinksChecker({
+		checkExternalLinks: false
+	}), expressiveCode({
+		themes: [
+			'andromeeda',
+			'aurora-x',
+			'ayu-dark',
+			'catppuccin-mocha',
+			'dark-plus',
+			'dracula',
+			'everforest-light',
+			'github-light',
+			'gruvbox-dark-medium',
+			'gruvbox-light-medium',
+			'houston',
+			'kanagawa-dragon',
+			'nord',
+			'one-light',
+			'poimandres',
+			'rose-pine',
+			'synthwave-84',
+			'tokyo-night',
+		],
+	}), sitemap(), // must be last to search in fully bundled
+	pagefind(), icon()],
 
 	vite: {
 		plugins: [visualizer({ // analyse bundle size

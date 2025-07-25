@@ -1,5 +1,15 @@
+---
+
+import { Icon } from 'astro-icon/components'
+
+---
+
 <div id="themeSwitch">
-  <label for="themeSwitchSelect" id="themeSwitchButton"><button class="link" title="Switch Style">🎨</button></label>
+  <label for="themeSwitchSelect" id="themeSwitchButton">
+	  <button class="link" title="Switch Style">
+      <Icon name="material-symbols--invert-colors" />
+	  </button>
+	</label>
   <select name="themeSwitch" id="themeSwitchSelect" class="hidden">
 		<optgroup label="Default">
   	  <option value="none">Aucun</option>

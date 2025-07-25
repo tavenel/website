@@ -21,6 +21,7 @@
 		"astro": "^5.8.0",
 		"astro-broken-link-checker": "imazen/astro-broken-link-checker",
 		"astro-expressive-code": "^0.41.2",
+		"astro-icon": "^1.1.5",
 		"astro-pagefind": "^1.8.0",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-external-links": "^3.0.0",

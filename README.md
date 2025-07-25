@@ -20,6 +20,7 @@ This is the repository for my website : <https://www.avenel.pro/>. Feel free to 
 - <https://docs.astro.build> and an example : <https://github.com/hellotham/hello-astro/>
 - Markdown to HTML : [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
 - HTML tranforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
+- Icons from : <https://www.astroicon.dev/>
 
 ## Licenses
 

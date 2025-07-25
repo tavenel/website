@@ -1,12 +1,14 @@
 ---
 import PageFind from "./PageFind.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
-// <li id="menu-search"><a href="/search">🔍 Search</a></li>
+
+import { Icon } from 'astro-icon/components'
+
 ---
 <menu>
-	<li id="menu-home"><a href="/">🏠 Home</a></li>
+	<li id="menu-home"><a href="/"><Icon name="material-symbols--home-outline-rounded"/> Home</a></li>
 	<!--<li id="menu-favorites"><a href="/favorites">🌟 Favorites</a></li>-->
-	<li id="menu-about"><a href="/about">🧑 Contact</a></li>
+	<li id="menu-about"><a href="/about"><Icon name="material-symbols--article-person-outline"/> About me</a></li>
 	<li><PageFind/></li>
 	<li><ThemeSwitcher/></li>
 </menu>

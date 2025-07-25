@@ -25,6 +25,9 @@
 			"@courses/*": [
 				"src/courses/*"
 			],
+			"@icons/*": [
+				"src/icons/*"
+			],
 			"@layouts/*": [
 				"src/layouts/*"
 			],
