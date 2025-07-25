@@ -4,6 +4,7 @@ import Chapter from '@components/Chapter.astro';
 
 import { Content as Devops } from '@courses/devops/devops-cours.md';
 import { Content as LegalDevops } from '@courses/devops/legal.md';
+import { Content as MethodesAgile } from '@courses/agile/comparaison-methodes.md';
 import { Content as Ansible } from '@courses/devops/ansible-cours.md';
 import { Content as Terraform } from '@courses/devops/terraform-cours.md';
 import { Content as CIIntro } from '@courses/cicd/cours-intro-ci.md';
@@ -20,13 +21,15 @@ const frontmatter = {
 		"ansible",
 		"terraform",
 		"jenkins",
-		"ci/cd"
+		"ci/cd",
+		"agile"
   ],
 }
 
 ---
 <Layout frontmatter={frontmatter} >
 	<Chapter> <Devops />  </Chapter>
+	<Chapter> <MethodesAgile />  </Chapter>
 	<Chapter> <Ansible />  </Chapter>
 	<Chapter> <Terraform />  </Chapter>
 	<Chapter> <CIIntro />  </Chapter>

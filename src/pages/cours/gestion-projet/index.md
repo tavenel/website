@@ -31,7 +31,7 @@ title: 📅 Gestion de projet
 ## Agilité
 
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
-- [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaisons-agile)
+- [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaison-methodes)
 - [🏆 Projet Scrum dans Jira - écriture de scénario itératif](/cours/gestion-projet/agile/projet_jira)
 - [🏆 Projet Scrum dans Jira - développement en méthodes agiles](/cours/gestion-projet/agile/projet-scrum)
 - [🏆 Projet Scrum dans Jira - développement d'un jeu de rôles en méthodes agiles](/cours/gestion-projet/agile/projet_jeu_role)
