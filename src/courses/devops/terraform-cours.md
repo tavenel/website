@@ -164,7 +164,6 @@ layout: section
 - <https://blog.stephane-robert.info/post/ansible-vs-terraform/>
 - <https://blog.stephane-robert.info/docs/infra-as-code/provisionnement/terraform/introduction/>
 - Livre : "_L'infrastructure as code avec Terraform_ (Julien Wittouck, éditions eni)"
-- Voir aussi le cours DevOps sur le [site web][site-perso]
 
 ---
 
