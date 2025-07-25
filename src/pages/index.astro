@@ -9,35 +9,27 @@ const { url } = Astro.props;
 <Layout title={title} url={url}>
 	<h1>/home/tavenel</h1>
 
-	<div id="links-cat">
-  	<ul>
-  		<li><a href="/tools">🛠 Outils</a></li>
-  		<li><a href="/cours/liens">✏️ Références</a></li>
-  		<li><a href="/links">🔗 Liens</a></li>
-  	</ul>
-	</div>
-
-	<div id="cours-cat">
-		<ul>
-			<li><a href="/cours/devops">󱃾  Devops - Sysops</a></li>
-			<li><a href="/cours/docker">  Docker®</a></li>
-			<li><a href="/cours/k8s">󱃾 Kubernetes®</a></li>
-			<li><a href="/cours/linux">🐧 Linux</a></li>
-			<li><a href="/cours/ci">🔄 CI/CD &  Jenkins</a></li>
-			<li><a href="/cours/git"> Git</a></li>
-			<li><a href="/cours/tests">🧪 Tests</a></li>
-			<li><a href="/cours/python">󰌠  Python &   Django</a></li>
-			<li><a href="/cours/ddd">🧑‍💼 DDD : Domain-Driven Design</a></li>
-
-			<li><a href="/cours/archi">🏗️ Architecture logicielle</a></li>
-			<li><a href="/cours/gestion-projet">📅 Gestion de projet</a></li>
-			<li><a href="/cours/cloud">🌐 Cloud & Web</a></li>
-			<li><a href="/cours/data">📊  Data</a></li>
-			<li><a href="/cours/green-it">💚 Green IT</a></li>
-			<li><a href="/cours/integration">☎️  Intégration</a></li>
-			<li><a href="/cours/management">💬 Management</a></li>
-			<li><a href="/cours/spring">  Spring & 󱘻 Hibernate</a></li>
-		</ul>
+	<div id="cours-cards">
+  	<div class="item global-item"><a href="/tools">🛠 Outils</a></div>
+  	<div class="item global-item"><a href="/cours/liens">✏️ Références</a></div>
+  	<div class="item global-item"><a href="/links">🔗 Liens</a></div>
+		<div class="item"><a href="/cours/docker">  Docker®</a></div>
+		<div class="item"><a href="/cours/k8s">󱃾 Kubernetes®</a></div>
+		<div class="item"><a href="/cours/linux">🐧 Linux</a></div>
+		<div class="item"><a href="/cours/devops">󱃾  Devops - Sysops</a></div>
+		<div class="item"><a href="/cours/ci">🔄 CI/CD &  Jenkins</a></div>
+		<div class="item"><a href="/cours/git"> Git</a></div>
+		<div class="item"><a href="/cours/tests">🧪 Tests</a></div>
+		<div class="item"><a href="/cours/python">󰌠  Python &   Django</a></div>
+		<div class="item"><a href="/cours/ddd">🧑‍💼 DDD : Domain-Driven Design</a></div>
+		<div class="item"><a href="/cours/archi">🏗️ Architecture logicielle</a></div>
+		<div class="item"><a href="/cours/gestion-projet">📅 Gestion de projet</a></div>
+		<div class="item"><a href="/cours/cloud">🌐 Cloud & Web</a></div>
+		<div class="item"><a href="/cours/data">📊  Data</a></div>
+		<div class="item"><a href="/cours/green-it">💚 Green IT</a></div>
+		<div class="item"><a href="/cours/integration">☎️  Intégration</a></div>
+		<div class="item"><a href="/cours/management">💬 Management</a></div>
+		<div class="item"><a href="/cours/spring">  Spring & 󱘻 Hibernate</a></div>
 	</div>
 
 </Layout>

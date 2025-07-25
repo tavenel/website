@@ -113,128 +113,43 @@ menu > li {
 #menu-about > a { color: var(--menu-about); }
 /* #menu-search > a { color: var(--menu-search); } */
 
-#promos {
-	text-align: center;
-	margin-bottom: 5%;
-}
+#cours-cards {
 
-#promos:after {
-	content: "";
-	display: table;
-	clear: both;
-}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 
-.column-promo {
-	font-size: 1.5em;
-	float: left;
-	width: 23%;
-	margin: 5%;
-	text-align: center;
-}
-@media screen and (max-width: 800px) {
-	.column-promo {
-		width: 100%;
-		display: block;
-	}
-}
-
-.column-promo {
-	& h3 { color: inherit; }
-	& a {
-		color: var(--promo-link);
-		&:hover { border: none; }
-	}
-	& li {
-		list-style:none;
-		border-radius: 15px 40px;
-		padding: 20px;
-		background: var(--promo-background);
-	}
-}
-
-#epsi { color: var(--epsi); }
-#esgi { color: var(--esgi); }
-#cesi { color: var(--cesi); }
-#wis { color: var(--wis); }
-#poec { color: var(--poec); }
-
- /* TODO */
-#links-cat {
-	-moz-column-count: 3;
-	-webkit-column-count: 3;
-	column-count: 3;
-	-moz-column-gap: 5%;
-	-webkit-column-gap: 5%;
-	column-gap: 5%;
-	text-align: center;
-	margin-bottom: 10%;
-
-	& li {
-		font-size: 1.3em;
-		list-style:none;
-		border-radius: 30px;
-		padding: 20px;
-		background: var(--cours-cat-li);
-	}
-
-	& a {
-		color: var(--cours-link-text);
-		border-bottom: 2px var(--cours-link-border) dashed;
-		&:hover { border: none; }
-	}
-
-}
-
-#cours-cat {
-	-moz-column-count: 3;
-	-webkit-column-count: 3;
-	column-count: 3;
-	-moz-column-gap: 5%;
-	-webkit-column-gap: 5%;
-	column-gap: 5%;
-	text-align: center;
-	margin-bottom: 10%;
-
-	& li {
+	& .item {
 		font-size: 1.5em;
 		list-style:none;
 		border-radius: 30px;
 		padding: 50px;
-		margin-bottom: 80px;
-		background: var(--cours-cat-li);
+		margin: 40px;
+		background: var(--card-item-bg);
+
+		&.global-item {
+			background: var(--card-item-global-bg);
+		}
 
 		&:hover {
-			background: var(--cours-cat-li-hover-bg);
+			color: var(--card-item-hover);
+			background: var(--card-item-hover-bg);
 		}
 	}
 
 	& a {
-		color: var(--cours-link-text);
-		border-bottom: 2px var(--cours-link-border) dashed;
+		color: var(--card-text);
+		border-bottom: 2px var(--card-border) dashed;
 
 		&:hover { border: none; }
 	}
 
 }
 
-@media screen and (max-width: 1200px) {
-#links-cat {
-} /* TODO */
-
-	#cours-cat {
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		column-count: 2;
-	}
-}
 @media screen and (max-width: 800px) {
-#links-cat {
-} /* TODO */
 
-	#cours-cat {
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		column-count: 1;
+	#cours-cards {
+		flex-direction: column; /* all in 1 column */
 	}
 }
 
@@ -287,7 +202,7 @@ tr {
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
 	table, thead, tbody, th, td, tr {
 		display: block;
@@ -682,23 +597,11 @@ aside.callout-correction {
 	--menu-favorites: revert;
 	--menu-links: revert;
 	--menu-about: revert;
-	--promo-link: revert;
-	--promo-background: revert;
-	--epsi: revert;
-	--epsi-li: revert;
-	--esgi: revert;
-	--esgi-li: revert;
-	--cesi: revert;
-	--cesi-li: revert;
-	--wis: revert;
-	--wis-li: revert;
-	--poec: revert;
-	--poec-li: revert;
-	--links-cat-li: revert;
-	--cours-cat-li: revert;
-	--cours-cat-li-hover: revert;
-	--cours-link-text: revert;
-	--cours-link-border: revert;
+	--card-item-bg: revert;
+	--card-item-global-bg: revert;
+	--card-item-hover: revert;
+	--card-text: revert;
+	--card-border: revert;
 	--versioning: revert;
 	--select-color: revert;
 	--blockquote: revert;
@@ -735,24 +638,11 @@ aside.callout-correction {
 	--menu-favorites: var(--light-green);
 	--menu-links: var(--middle-red);
 	--menu-about: var(--middle-orange);
-	/* --menu-search: var(--dark-green); */
-	--promo-link: inherit;
-	--promo-background: var(--light-second);
-	--epsi: var(--dark-blue);
-	--epsi-li: inherit;
-	--esgi: var(--light-green);
-	--esgi-li: inherit;
-	--cesi: var(--middle-red);
-	--cesi-li: inherit;
-	--wis: var(--dark-second);
-	--wis-li: inherit;
-	--poec: var(--middle-orange);
-	--poec-li: inherit;
-	--links-cat-li: var(--x-light-green);
-	--cours-cat-li: var(--x-light-green);
-	--cours-cat-li-hover-bg: var(--light-blue);
-	--cours-link-text: var(--dark-main);
-	--cours-link-border: var(--light-grey);
+	--card-item-bg: var(--x-light-green);
+	--card-item-global-bg: var(--light-second);
+	--card-item-hover-bg: var(--light-blue);
+	--card-text: var(--dark-main);
+	--card-border: var(--light-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--dark-grey);
 	--blockquote: var(--middle-orange);
@@ -781,24 +671,11 @@ aside.callout-correction {
 	--menu-favorites: #35A77C;
 	--menu-links: #DF69BA;
 	--menu-about: #93B259;
-	/* --menu-search: var(--dark-green); */
-	--promo-link: inherit;
-	--promo-background: #EAEDC8;
-	--epsi: #3A94C5;
-	--epsi-li: inherit;
-	--esgi: #35A77C;
-	--esgi-li: inherit;
-	--cesi: #F85552;
-	--cesi-li: inherit;
-	--wis: #829181;
-	--wis-li: inherit;
-	--poec: #DFA000;
-	--poec-li: inherit;
-	--links-cat-li: #EAEDC8;
-	--cours-cat-li: #EAEDC8;
-	--cours-cat-li-hover-bg: #A6B0A0;
-	--cours-link-text: #5C6A72;
-	--cours-link-border: #A6B0A0;
+	--card-item-bg: #EAEDC8;
+	--card-item-global-bg: #EAEDC8;
+	--card-item-hover-bg: #A6B0A0;
+	--card-text: #5C6A72;
+	--card-border: #A6B0A0;
 	--versioning: #A6B0A0;
 	--select-color: #829181;
 	--blockquote: #DFA000;
@@ -826,24 +703,11 @@ aside.callout-correction {
 	--menu-favorites: #50A14F;
 	--menu-links: #A626A4;
 	--menu-about: #986801;
-	/* --menu-search: var(--dark-green); */
-	--promo-link: inherit;
-	--promo-background: inherit;
-	--epsi: #4078F2;
-	--epsi-li: inherit;
-	--esgi: #50A14F;
-	--esgi-li: inherit;
-	--cesi: #E45649;
-	--cesi-li: inherit;
-	--wis: #383A42;
-	--wis-li: inherit;
-	--poec: #986801;
-	--poec-li: inherit;
-	--links-cat-li: inherit;
-	--cours-cat-li: inherit;
-	--cours-cat-li-hover-bg: #3A3F4B;
-	--cours-link-text: #383A42;
-	--cours-link-border: #3A3F4B;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #3A3F4B;
+	--card-text: #383A42;
+	--card-border: #3A3F4B;
 	--versioning: #3A3F4B;
 	--select-color: #3A3F4B;
 	--blockquote: #A626A4;
@@ -875,35 +739,15 @@ aside.callout-correction {
 	--menu-favorites: var(--middle-green);
 	--menu-links: var(--light-red);
 	--menu-about: var(--light-orange);
-	/* --menu-search: var(--bright-green); */
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: var(--light-blue);
-	--epsi-li: var(--light-blue);
-	--esgi: var(--bright-green);
-	--esgi-li: var(--bright-green);
-	--cesi: var(--light-red);
-	--cesi-li: var(--light-red);
-	--wis: var(--light-second);
-	--wis-li: var(--light-second);
-	--poec: var(--light-orange);
-	--poec-li: var(--light-orange);
-	--links-cat-li: var(--middle-green);
-	--cours-cat-li: var(--middle-green);
-	--cours-cat-li-hover-bg: var(--dark-green);
-	--cours-link-text: var(--light-main);
-	--cours-link-border: var(--dark-grey);
+	--card-item-bg: var(--middle-green);
+	--card-item-global-bg: var(--middle-grey);
+	--card-item-hover-bg: var(--dark-green);
+	--card-text: var(--light-main);
+	--card-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
 	--exo-ul-border: var(--hr);
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 }
 
 [data-theme="ayu-dark"] {
@@ -927,35 +771,15 @@ aside.callout-correction {
 	--menu-favorites: #7FD962;
 	--menu-links: #D2A6FF;
 	--menu-about: #E6B673;
-	/* --menu-search: var(--bright-green); */
-	--promo-link: #0B0E14;
-	--promo-background: inherit;
-	--epsi: #39BAE6;
-	--epsi-li: #39BAE6;
-	--esgi: #7FD962;
-	--esgi-li: #7FD962;
-	--cesi: #F07178;
-	--cesi-li: #F07178;
-	--wis: #E6B673;
-	--wis-li: #E6B673;
-	--poec: #FF8F40;
-	--poec-li: #FF8F40;
-	--links-cat-li: #95E6CB;
-	--cours-cat-li: #95E6CB;
-	--cours-cat-li-hover-bg: #FF8F40;
-	--cours-link-text: #0B0E14;
-	--cours-link-border: #6C7380;
+	--card-item-bg: #95E6CB;
+	--card-item-global-bg: #E6B673;
+	--card-item-hover-bg: #FF8F40;
+	--card-text: #0B0E14;
+	--card-border: #6C7380;
 	--versioning: #6C7380;
 	--select-color: #BFBDB6;
 	--blockquote: #D2A6FF;
 	--exo-ul-border: #6C7380;
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 }
 
 [data-theme="catppuccin-mocha"] {
@@ -979,34 +803,15 @@ aside.callout-correction {
 	--menu-favorites: #a6e3a1;
 	--menu-links: #f38ba8;
 	--menu-about: #fab387;
-	/* --menu-search: #94e2d5; */
-	--promo-link: #11111b;
-	--promo-background: #bac2de;
-	--epsi: #89b4fa;
-	--epsi-li: #89b4fa;
-	--esgi: #a6e3a1;
-	--esgi-li: #a6e3a1;
-	--cesi: #f38ba8;
-	--cesi-li: #f38ba8;
-	--wis: #bac2de;
-	--wis-li: #bac2de;
-	--poec: #fab387;
-	--poec-li: #fab387;
-	--links-cat-li: #94e2d5;
-	--cours-cat-li: #94e2d5;
-	--cours-cat-li-hover-bg: #f5c2e7;
-	--cours-link-text: #1e1e2e;
-	--cours-link-border: #7f849c;
+	--card-item-bg: #94e2d5;
+	--card-item-global-bg: #89dceb;
+	--card-item-hover-bg: #f5c2e7;
+	--card-text: #1e1e2e;
+	--card-border: #7f849c;
 	--versioning: #a6adc8;
 	--select-color: #89b4fa;
 	--blockquote: #f9e2af;
 	--exo-ul-border: #a6adc8;
-	/* li is not set on light mode to avoir breaking inheritance */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 }
 
 [data-theme="dracula"] {
@@ -1030,33 +835,15 @@ aside.callout-correction {
 	--menu-favorites: #50fa7b;
 	--menu-links: #ffb86c;
 	--menu-about: #f1fa8c;
-	--promo-link: #44475a;
-	--promo-background: inherit;
-	--epsi: #8be9fd;
-	--epsi-li: #8be9fd;
-	--esgi: #bd93f9;
-	--esgi-li: #bd93f9;
-	--cesi: #ffb86c;
-	--cesi-li: #ffb86c;
-	--wis: #bac2de;
-	--wis-li: #bac2de;
-	--poec: #ff79c6;
-	--poec-li: #ff79c6;
-	--links-cat-li: #bd93f9;
-	--cours-cat-li: #bd93f9;
-	--cours-cat-li-hover-bg: #ff79c6;
-	--cours-link-text: #44475a;
-	--cours-link-border: #44475a;
+	--card-item-bg: #bd93f9;
+	--card-item-global-bg: #f8f8f2;
+	--card-item-hover-bg: #ff79c6;
+	--card-text: #44475a;
+	--card-border: #44475a;
 	--versioning: #44475a;
 	--select-color: #bd93f9;
 	--blockquote: #bd93f9;
 	--exo-ul-border: #44475a;
-	/* li is not set on light mode to avoir breaking inheritance */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 }
 
 [data-theme="kanagawa-dragon"] {
@@ -1080,34 +867,15 @@ aside.callout-correction {
 	--menu-favorites: #c4b28a;
 	--menu-links: #c4b28a;
 	--menu-about: #c4b28a;
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: #c4b28a;
-	--epsi-li: #c4b28a;
-	--esgi: #8a9a7b;
-	--esgi-li: #8a9a7b;
-	--cesi: #8ba4b0;
-	--cesi-li: #8ba4b0;
-	--wis: #c4746e;
-	--wis-li: #c4746e;
-	--poec: #a292a3;
-	--poec-li: #a292a3;
-	--links-cat-li: inherit;
-	--cours-cat-li: inherit;
-	--cours-cat-li-hover-bg: inherit;
-	--cours-link-text: #c5c9c5;
-	--cours-link-border: #c5c9c5;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: inherit;
+	--card-text: #c5c9c5;
+	--card-border: #c5c9c5;
 	--versioning: #c5c9c5;
 	--select-color: #c4b28a;
 	--blockquote: #c4b28a;
 	--exo-ul-border: #c5c9c5;
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 }
 
 [data-theme="laserwave"] {
@@ -1135,34 +903,15 @@ aside.callout-correction {
 	--menu-favorites: #88c0d0;
 	--menu-links: #88c0d0;
 	--menu-about: #88c0d0;
-	/* --menu-search: #88c0d0; */
-	--promo-link: #2e3440;
-	--promo-background: #d8dee9;
-	--epsi: #88c0d0;
-	--epsi-li: #88c0d0;
-	--esgi: #88c0d0;
-	--esgi-li: #88c0d0;
-	--cesi: #88c0d0;
-	--cesi-li: #88c0d0;
-	--wis: #88c0d0;
-	--wis-li: #88c0d0;
-	--poec: #88c0d0;
-	--poec-li: #88c0d0;
-	--links-cat-li: #eceff4;
-	--cours-cat-li: #eceff4;
-	--cours-cat-li-hover-bg: #88c0d0;
-	--cours-link-text: #2e3440;
-	--cours-link-border: #2e3440;
+	--card-item-bg: #eceff4;
+	--card-item-global-bg: #eceff4;
+	--card-item-hover-bg: #88c0d0;
+	--card-text: #2e3440;
+	--card-border: #2e3440;
 	--versioning: #d8dee9;
 	--select-color: #88c0d0;
 	--blockquote: #e5e9f0;
 	--exo-ul-border: #b48ead;
-	/* li is not set on light mode to avoir breaking inheritance */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 }
 
 [data-theme="rose-pine"] {
@@ -1190,35 +939,15 @@ aside.callout-correction {
 	--menu-favorites: #fede5d;
 	--menu-links: #ff7edb;
 	--menu-about: #ffffff;
-	/* --menu-search: var(--bright-green); */
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: #03edf9;
-	--epsi-li: #03edf9;
-	--esgi: #72f1b8;
-	--esgi-li: #72f1b8;
-	--cesi: #fede5d;
-	--cesi-li: #fede5d;
-	--wis: #fe4450;
-	--wis-li: #fe4450;
-	--poec: #ff7edb;
-	--poec-li: #ff7edb;
-	--links-cat-li: #463465;
-	--cours-cat-li: #463465;
-	--cours-cat-li-hover-bg: #fede5d;
-	--cours-link-text: #ffffff;
-	--cours-link-border: #f97e72;
+	--card-item-bg: #463465;
+	--card-item-global-bg: #463465;
+	--card-item-hover-bg: #fede5d;
+	--card-text: #ffffff;
+	--card-border: #f97e72;
 	--versioning: #ffffff80;
 	--select-color: #f97e72;
 	--blockquote: #ff7edb;
 	--exo-ul-border: #ffffff80;
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
 
 	& h1 {
 		text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
@@ -1276,23 +1005,11 @@ aside.callout-correction {
 	--menu-favorites: #fe4a49;
 	--menu-links: #f141a8;
 	--menu-about: #f3eff5;
-	--promo-link: inherit;
-	--promo-background: inherit;
-	--epsi: #15c2cb;
-	--epsi-li: #15c2cb;
-	--esgi: #ffe45e;
-	--esgi-li: #ffe45e;
-	--cesi: #f141a8;
-	--cesi-li: #f141a8;
-	--wis: #5eadf2;
-	--wis-li: #5eadf2;
-	--poec: #fe4a49;
-	--poec-li: #fe4a49;
-	--links-cat-li: #ffe45e;
-	--cours-cat-li: #ffe45e;
-	--cours-cat-li-hover-bg: #44ffd2;
-	--cours-link-text: var(--background);
-	--cours-link-border: var(--background);
+	--card-item-bg: #ffe45e;
+	--card-item-global-bg: #f3eff5;
+	--card-item-hover-bg: #44ffd2;
+	--card-text: var(--background);
+	--card-border: var(--background);
 	--versioning: #f3eff5;
 	--select-color: var(--text);
 	--blockquote: #f141a8;
