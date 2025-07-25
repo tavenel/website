@@ -11,11 +11,6 @@
 
 .hidden { display: none !important ; }
 
-/* header { */
-/* 	position: fixed; */
-/*   height: 150px; */
-/* } */
-
 main {
 	max-width: 90vw; /* 90 % full page */
 	margin: auto;
@@ -23,14 +18,6 @@ img, video {
 	max-width: 100%;
 	height: auto;
 }
-/* 	padding: 1rem; */
-/* 	margin-left: 250px; */           /* match sidebar width */
-/* 	margin-top: 150px;  */        /* match header height */
-/* } */
-
-/* #base { */
-/* 	display: flex; */
-/* } */
 
 a {
 	text-decoration: none;
@@ -116,6 +103,20 @@ menu > li {
 #menu-about > a { color: var(--menu-about); }
 /* #menu-search > a { color: var(--menu-search); } */
 
+.versioning {
+	font-style: italic;
+	color: var(--versioning);
+
+	& .outdated {
+		font-weight: bold;
+		color: var(--warning);
+	}
+}
+
+#formats .source-markdown {
+	color: var(--versioning);
+}
+
 #cours-cards {
 
 	display: flex;
@@ -142,37 +143,48 @@ menu > li {
 
 	& a {
 		color: var(--card-text);
-		border-bottom: 2px var(--card-border) dashed;
+		border-bottom: 2px dashed;
 
 		&:hover { border: none; }
 	}
 
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 
-	#cours-cards {
+	#cours-cards, menu, main {
 		flex-direction: column; /* all in 1 column */
 	}
+
+	#course-header { display: none !important ; }
 }
 
-.versioning {
-	font-style: italic;
-	color: var(--versioning);
-
-	& .outdated {
-		font-weight: bold;
-		color: var(--warning);
-	}
+@media only screen and (orientation: portrait) {
+/*TODO*/
 }
 
-@media (prefers-color-scheme: dark) {
 
-	a:link {
-		border-bottom: 2px dashed;
-		&:hover, &:active { border: 2px solid; }
+/**********/
+/* SELECT */
+/**********/
+
+select {
+	color: var(--select-color);
+	background-color: var(--background);
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+
+	@media (min-width: 768px) { width: 70%; }
+	@media (min-width: 992px) { width: 50%; }
+	@media (min-width: 1200px) { width: 30%; }
+
+	& option {
+		color: var(--select-color);
+		background: var(--background);
 	}
-
 }
 
 /**********/
@@ -278,20 +290,6 @@ button.link {
 /* SEARCH */
 /**********/
 
-select {
-	color: var(--select-color);
-	background-color: var(--background);
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	cursor: inherit;
-	line-height: inherit;
-
-	@media (min-width: 768px) { width: 70%; }
-	@media (min-width: 992px) { width: 50%; }
-	@media (min-width: 1200px) { width: 30%; }
-}
-
 #themeSwitchSelect { width: min-content; }
 
 /*************/
@@ -377,7 +375,6 @@ a.add-bookmark {
 	#course-header,
 	#chapters,
 	#chapitres {
-		/* TODO RM chapitres not working */
     display: none !important;
   }
 
@@ -552,6 +549,15 @@ aside.callout-correction {
 /*                                   THEMES                                   */
 /******************************************************************************/
 
+@media (prefers-color-scheme: dark) {
+
+	a:link {
+		border-bottom: 2px dashed;
+		&:hover, &:active { border: 2px solid; }
+	}
+
+}
+
 :root {
 	color-scheme: light dark;
 	--light-main: #fff;
@@ -604,7 +610,6 @@ aside.callout-correction {
 	--card-item-global-bg: revert;
 	--card-item-hover: revert;
 	--card-text: revert;
-	--card-border: revert;
 	--versioning: revert;
 	--select-color: revert;
 	--blockquote: revert;
@@ -645,7 +650,6 @@ aside.callout-correction {
 	--card-item-global-bg: var(--light-second);
 	--card-item-hover-bg: var(--light-blue);
 	--card-text: var(--dark-main);
-	--card-border: var(--light-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--dark-grey);
 	--blockquote: var(--middle-orange);
@@ -678,7 +682,6 @@ aside.callout-correction {
 	--card-item-global-bg: #EAEDC8;
 	--card-item-hover-bg: #A6B0A0;
 	--card-text: #5C6A72;
-	--card-border: #A6B0A0;
 	--versioning: #A6B0A0;
 	--select-color: #829181;
 	--blockquote: #DFA000;
@@ -710,7 +713,6 @@ aside.callout-correction {
 	--card-item-global-bg: inherit;
 	--card-item-hover-bg: #3A3F4B;
 	--card-text: #383A42;
-	--card-border: #3A3F4B;
 	--versioning: #3A3F4B;
 	--select-color: #3A3F4B;
 	--blockquote: #A626A4;
@@ -746,7 +748,6 @@ aside.callout-correction {
 	--card-item-global-bg: var(--middle-grey);
 	--card-item-hover-bg: var(--dark-green);
 	--card-text: var(--light-main);
-	--card-border: var(--dark-grey);
 	--versioning: var(--light-grey);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
@@ -778,7 +779,6 @@ aside.callout-correction {
 	--card-item-global-bg: #E6B673;
 	--card-item-hover-bg: #FF8F40;
 	--card-text: #0B0E14;
-	--card-border: #6C7380;
 	--versioning: #6C7380;
 	--select-color: #BFBDB6;
 	--blockquote: #D2A6FF;
@@ -810,7 +810,6 @@ aside.callout-correction {
 	--card-item-global-bg: #89dceb;
 	--card-item-hover-bg: #f5c2e7;
 	--card-text: #1e1e2e;
-	--card-border: #7f849c;
 	--versioning: #a6adc8;
 	--select-color: #89b4fa;
 	--blockquote: #f9e2af;
@@ -842,7 +841,6 @@ aside.callout-correction {
 	--card-item-global-bg: #f8f8f2;
 	--card-item-hover-bg: #ff79c6;
 	--card-text: #44475a;
-	--card-border: #44475a;
 	--versioning: #44475a;
 	--select-color: #bd93f9;
 	--blockquote: #bd93f9;
@@ -874,7 +872,6 @@ aside.callout-correction {
 	--card-item-global-bg: inherit;
 	--card-item-hover-bg: inherit;
 	--card-text: #c5c9c5;
-	--card-border: #c5c9c5;
 	--versioning: #c5c9c5;
 	--select-color: #c4b28a;
 	--blockquote: #c4b28a;
@@ -910,7 +907,6 @@ aside.callout-correction {
 	--card-item-global-bg: #eceff4;
 	--card-item-hover-bg: #88c0d0;
 	--card-text: #2e3440;
-	--card-border: #2e3440;
 	--versioning: #d8dee9;
 	--select-color: #88c0d0;
 	--blockquote: #e5e9f0;
@@ -946,7 +942,6 @@ aside.callout-correction {
 	--card-item-global-bg: #463465;
 	--card-item-hover-bg: #fede5d;
 	--card-text: #ffffff;
-	--card-border: #f97e72;
 	--versioning: #ffffff80;
 	--select-color: #f97e72;
 	--blockquote: #ff7edb;
@@ -1012,7 +1007,6 @@ aside.callout-correction {
 	--card-item-global-bg: #f3eff5;
 	--card-item-hover-bg: #44ffd2;
 	--card-text: var(--background);
-	--card-border: var(--background);
 	--versioning: #f3eff5;
 	--select-color: var(--text);
 	--blockquote: #f141a8;
