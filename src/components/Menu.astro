@@ -1,5 +1,6 @@
 ---
 import PageFind from "./PageFind.astro";
+import Promotions from "./Promotions.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 
 import { Icon } from 'astro-icon/components'
@@ -7,6 +8,7 @@ import { Icon } from 'astro-icon/components'
 ---
 <menu>
 	<li id="menu-home"><a href="/"><Icon name="material-symbols--home-outline-rounded"/> Home</a></li>
+	<li id="menu-promos"><Promotions/></li>
 	<!--<li id="menu-favorites"><a href="/favorites">🌟 Favorites</a></li>-->
 	<li id="menu-about"><a href="/about"><Icon name="material-symbols--article-person-outline"/> About me</a></li>
 	<li><PageFind/></li>

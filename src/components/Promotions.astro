@@ -1,0 +1,48 @@
+<div id="promos">
+  <div id="currentPromo"></div>
+  <label for="promoSelect" id="promoButton"><button class="link" title="Changer de promotion">Promotion</button></label>
+  <select name="promoSelect" id="promoSelect" class="hidden">
+		<optgroup label="EPSI">
+  	  <option value="/epsi/b3">B3</option>
+  	  <option value="/epsi/i1">I1</option>
+  	  <option value="/epsi/i2">I2</option>
+		</optgroup>
+		<optgroup label="ESGI">
+  	  <option value="/esgi/b2">B2</option>
+  	  <option value="/esgi/b3">B3</option>
+  	  <option value="/esgi/m1">M1</option>
+  	  <option value="/esgi/m2">M2</option>
+		</optgroup>
+		<optgroup label="CESI">
+  	  <option value="/cesi/b2">B2</option>
+		</optgroup>
+  </select>
+</div>
+
+<script>
+
+import { getCookie, setCookie } from '@ts/cookies';
+import { HiddenSelect } from '@ts/select';
+
+function setPromo(value: string) {
+	setCookie('promo', value);
+	// window.location.href = value;
+	retrieveCurrentPromo();
+}
+
+function retrieveCurrentPromo() {
+	const currentPromo = getCookie('promo');
+	if (currentPromo) {
+		select.setDefault(currentPromo);
+	}
+	document.getElementById('currentPromo').innerHTML = `<a href=${currentPromo} >${currentPromo}</a>`;
+}
+
+const select = new HiddenSelect('promoSelect', 'promoButton');
+select.addShowButtonListener();
+select.addChangeListener(setPromo);
+
+retrieveCurrentPromo();
+
+</script>
+
