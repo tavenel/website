@@ -758,16 +758,6 @@ aside.callout-correction {
 	--blockquote: var(--middle-orange);
 	--exo-ul-border: var(--hr);
 
-	& .astro-code, & .astro-code span {
-		/* https://docs.astro.build/en/guides/syntax-highlighting/ */
-		/* https://shiki.style/guide/dual-themes */
-		/* Shiki theme related to `github` is in `astro.config.mjs` */
-		background-color: var(--shiki-github-bg);
-		color: var(--shiki-github);
-		font-style: var(--shiki-github-font-style);
-		font-weight: var(--shiki-github-font-weight);
-		text-decoration: var(--shiki-github-text-decoration);
-	}
 }
 
 [data-theme="everforest-light"] {
@@ -813,14 +803,6 @@ aside.callout-correction {
 	--select-color: #829181;
 	--blockquote: #DFA000;
 	--exo-ul-border: var(--hr);
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-everforest-bg);
-		color: var(--shiki-everforest);
-		font-style: var(--shiki-everforest-font-style);
-		font-weight: var(--shiki-everforest-font-weight);
-		text-decoration: var(--shiki-everforest-text-decoration);
-	}
 }
 
 [data-theme="one-light"] {
@@ -866,18 +848,10 @@ aside.callout-correction {
 	--select-color: #3A3F4B;
 	--blockquote: #A626A4;
 	--exo-ul-border: var(--hr);
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-one-bg);
-		color: var(--shiki-one);
-		font-style: var(--shiki-one-font-style);
-		font-weight: var(--shiki-one-font-weight);
-		text-decoration: var(--shiki-one-text-decoration);
-	}
 }
 
 [data-theme="houston"] {
-	/*
+/*
 * Main dark theme.
 * Code is `houston` but the rest of the website
 * is a dedicated dark theme.
@@ -930,14 +904,6 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-houston-bg);
-		color: var(--shiki-houston);
-		font-style: var(--shiki-houston-font-style);
-		font-weight: var(--shiki-houston-font-weight);
-		text-decoration: var(--shiki-houston-text-decoration);
-	}
 }
 
 [data-theme="ayu-dark"] {
@@ -990,14 +956,6 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-ayu-bg);
-		color: var(--shiki-ayu);
-		font-style: var(--shiki-ayu-font-style);
-		font-weight: var(--shiki-ayu-font-weight);
-		text-decoration: var(--shiki-ayu-text-decoration);
-	}
 }
 
 [data-theme="catppuccin-mocha"] {
@@ -1049,14 +1007,6 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-catppuccin-bg);
-		color: var(--shiki-catppuccin);
-		font-style: var(--shiki-catppuccin-font-style);
-		font-weight: var(--shiki-catppuccin-font-weight);
-		text-decoration: var(--shiki-catppuccin-text-decoration);
-	}
 }
 
 [data-theme="dracula"] {
@@ -1107,14 +1057,6 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-dracula-bg);
-		color: var(--shiki-dracula);
-		font-style: var(--shiki-dracula-font-style);
-		font-weight: var(--shiki-dracula-font-weight);
-		text-decoration: var(--shiki-dracula-text-decoration);
-	}
 }
 
 [data-theme="kanagawa-dragon"] {
@@ -1166,73 +1108,10 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-kanagawa-bg);
-		color: var(--shiki-kanagawa);
-		font-style: var(--shiki-kanagawa-font-style);
-		font-weight: var(--shiki-kanagawa-font-weight);
-		text-decoration: var(--shiki-kanagawa-text-decoration);
-	}
 }
 
 [data-theme="laserwave"] {
 	/* TODO */
-	--background: var(--dark-main);
-	--background2: var(--dark-main);
-	--text: var(--light-main);
-	--link: var(--dark-link);
-	--link-hover: var(--light-red);
-	--link-visited: TODO;
-	--link-border: inherit;
-	--h1: var(--middle-grey);
-	--h2: var(--light-yellow);
-	--h3: var(--middle-green);
-	--h4: var(--light-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--salmon);
-	--menu-tech: var(--light-blue);
-	--menu-cours: var(--light-yellow);
-	--menu-favorites: var(--middle-green);
-	--menu-links: var(--light-red);
-	--menu-about: var(--light-orange);
-	/* --menu-search: var(--bright-green); */
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: var(--light-blue);
-	--epsi-li: var(--light-blue);
-	--esgi: var(--bright-green);
-	--esgi-li: var(--bright-green);
-	--cesi: var(--light-red);
-	--cesi-li: var(--light-red);
-	--wis: var(--light-second);
-	--wis-li: var(--light-second);
-	--poec: var(--light-orange);
-	--poec-li: var(--light-orange);
-	--links-cat-li: var(--middle-green);
-	--cours-cat-li: var(--middle-green);
-	--cours-cat-li-hover-bg: var(--light-blue);
-	--cours-link-text: var(--light-main);
-	--cours-link-border: var(--dark-grey);
-	--versioning: var(--light-grey);
-	--select-color: var(--light-main);
-	--blockquote: var(--light-yellow);
-	--exo-ul-border: var(--hr);
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-laserwave-bg);
-		color: var(--shiki-laserwave);
-		font-style: var(--shiki-laserwave-font-style);
-		font-weight: var(--shiki-laserwave-font-weight);
-		text-decoration: var(--shiki-laserwave-text-decoration);
-	}
 }
 
 [data-theme="nord"] {
@@ -1284,73 +1163,10 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-nord-bg);
-		color: var(--shiki-nord);
-		font-style: var(--shiki-nord-font-style);
-		font-weight: var(--shiki-nord-font-weight);
-		text-decoration: var(--shiki-nord-text-decoration);
-	}
 }
 
 [data-theme="rose-pine"] {
 	/* TODO */
-	--background: var(--dark-main);
-	--background2: var(--dark-main);
-	--text: var(--light-main);
-	--link: var(--dark-link);
-	--link-hover: var(--light-red);
-	--link-visited: TODO;
-	--link-border: inherit;
-	--h1: var(--middle-grey);
-	--h2: var(--light-yellow);
-	--h3: var(--middle-green);
-	--h4: var(--light-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--salmon);
-	--menu-tech: var(--light-blue);
-	--menu-cours: var(--light-yellow);
-	--menu-favorites: var(--middle-green);
-	--menu-links: var(--light-red);
-	--menu-about: var(--light-orange);
-	/* --menu-search: var(--bright-green); */
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: var(--light-blue);
-	--epsi-li: var(--light-blue);
-	--esgi: var(--bright-green);
-	--esgi-li: var(--bright-green);
-	--cesi: var(--light-red);
-	--cesi-li: var(--light-red);
-	--wis: var(--light-second);
-	--wis-li: var(--light-second);
-	--poec: var(--light-orange);
-	--poec-li: var(--light-orange);
-	--links-cat-li: var(--middle-green);
-	--cours-cat-li: var(--middle-green);
-	--cours-cat-li-hover-bg: var(--light-blue);
-	--cours-link-text: var(--light-main);
-	--cours-link-border: var(--dark-grey);
-	--versioning: var(--light-grey);
-	--select-color: var(--light-main);
-	--blockquote: var(--light-yellow);
-	--exo-ul-border: var(--hr);
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-rose-bg);
-		color: var(--shiki-rose);
-		font-style: var(--shiki-rose-font-style);
-		font-weight: var(--shiki-rose-font-weight);
-		text-decoration: var(--shiki-rose-text-decoration);
-	}
 }
 
 [data-theme="synthwave-84"] {
@@ -1403,14 +1219,6 @@ aside.callout-correction {
 	#cesi li { background: var(--cesi-li); }
 	#wis li { background: var(--wis-li); }
 	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-synthwave-bg);
-		color: var(--shiki-synthwave);
-		font-style: var(--shiki-synthwave-font-style);
-		font-weight: var(--shiki-synthwave-font-weight);
-		text-decoration: var(--shiki-synthwave-text-decoration);
-	}
 
 	& h1 {
 		text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
@@ -1523,133 +1331,13 @@ aside.callout-correction {
 			text-decoration: underline yellow wavy;
 		}
 	}
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-darkp-bg);
-		color: var(--shiki-darkp);
-		font-style: var(--shiki-darkp-font-style);
-		font-weight: var(--shiki-darkp-font-weight);
-		text-decoration: var(--shiki-darkp-text-decoration);
-	}
 }
 
 [data-theme="tokyo-night"] {
 	/* TODO */
-	--warning: ;
-	--background: var(--dark-main);
-	--background2: var(--dark-main);
-	--text: var(--light-main);
-	--link: var(--dark-link);
-	--link-hover: var(--light-red);
-	--link-visited: TODO;
-	--link-border: inherit;
-	--h1: var(--middle-grey);
-	--h2: var(--light-yellow);
-	--h3: var(--middle-green);
-	--h4: var(--light-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--salmon);
-	--menu-tech: var(--light-blue);
-	--menu-cours: var(--light-yellow);
-	--menu-favorites: var(--middle-green);
-	--menu-links: var(--light-red);
-	--menu-about: var(--light-orange);
-	/* --menu-search: var(--bright-green); */
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: var(--light-blue);
-	--epsi-li: var(--light-blue);
-	--esgi: var(--bright-green);
-	--esgi-li: var(--bright-green);
-	--cesi: var(--light-red);
-	--cesi-li: var(--light-red);
-	--wis: var(--light-second);
-	--wis-li: var(--light-second);
-	--poec: var(--light-orange);
-	--poec-li: var(--light-orange);
-	--links-cat-li: var(--middle-green);
-	--cours-cat-li: var(--middle-green);
-	--cours-cat-li-hover-bg: var(--light-blue);
-	--cours-link-text: var(--light-main);
-	--cours-link-border: var(--dark-grey);
-	--versioning: var(--light-grey);
-	--select-color: var(--light-main);
-	--blockquote: var(--light-yellow);
-	--exo-ul-border: var(--hr);
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-tokyonight-bg);
-		color: var(--shiki-tokyonight);
-		font-style: var(--shiki-tokyonight-font-style);
-		font-weight: var(--shiki-tokyonight-font-weight);
-		text-decoration: var(--shiki-tokyonight-text-decoration);
-	}
 }
 
 [data-theme="vesper"] {
 	/* TODO */
-	--warning: ;
-	--background: var(--dark-main);
-	--background2: var(--dark-main);
-	--text: var(--light-main);
-	--link: var(--dark-link);
-	--link-hover: var(--light-red);
-	--link-visited: TODO;
-	--link-border: inherit;
-	--h1: var(--middle-grey);
-	--h2: var(--light-yellow);
-	--h3: var(--middle-green);
-	--h4: var(--light-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--salmon);
-	--menu-tech: var(--light-blue);
-	--menu-cours: var(--light-yellow);
-	--menu-favorites: var(--middle-green);
-	--menu-links: var(--light-red);
-	--menu-about: var(--light-orange);
-	/* --menu-search: var(--bright-green); */
-	--promo-link: var(--dark-main);
-	--promo-background: var(--light-second);
-	--epsi: var(--light-blue);
-	--epsi-li: var(--light-blue);
-	--esgi: var(--bright-green);
-	--esgi-li: var(--bright-green);
-	--cesi: var(--light-red);
-	--cesi-li: var(--light-red);
-	--wis: var(--light-second);
-	--wis-li: var(--light-second);
-	--poec: var(--light-orange);
-	--poec-li: var(--light-orange);
-	--links-cat-li: var(--middle-green);
-	--cours-cat-li: var(--middle-green);
-	--cours-cat-li-hover-bg: var(--light-blue);
-	--cours-link-text: var(--light-main);
-	--cours-link-border: var(--dark-grey);
-	--versioning: var(--light-grey);
-	--select-color: var(--light-main);
-	--blockquote: var(--light-yellow);
-	--exo-ul-border: var(--hr);
-	/* li is not set on light mode to avoir breaking inheritance */
-	/* TODO => !important ? */
-	#epsi li { background: var(--epsi-li); }
-	#esgi li { background: var(--esgi-li); }
-	#cesi li { background: var(--cesi-li); }
-	#wis li { background: var(--wis-li); }
-	#poec li { background: var(--poec-li); }
-
-	& .astro-code, & .astro-code span {
-		background-color: var(--shiki-vesper-bg);
-		color: var(--shiki-vesper);
-		font-style: var(--shiki-vesper-font-style);
-		font-weight: var(--shiki-vesper-font-weight);
-		text-decoration: var(--shiki-vesper-text-decoration);
-	}
 }
 
