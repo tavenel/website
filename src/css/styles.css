@@ -177,10 +177,6 @@ select {
 	cursor: inherit;
 	line-height: inherit;
 
-	@media (min-width: 768px) { width: 70%; }
-	@media (min-width: 992px) { width: 50%; }
-	@media (min-width: 1200px) { width: 30%; }
-
 	& option {
 		color: var(--select-color);
 		background: var(--background);
