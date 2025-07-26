@@ -1,6 +1,10 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
 <div id="promos">
-  <div id="currentPromo"></div>
-  <label for="promoSelect" id="promoButton"><button class="link" title="Changer de promotion">Promotion</button></label>
+  <span id="currentPromo">Aucune Promotion</span>
+  <label for="promoSelect" id="promoButton"><button class="link" title="Changer de promotion"><Icon name="caret-down" /> </button></label>
   <select name="promoSelect" id="promoSelect" class="hidden">
 		<optgroup label="EPSI">
   	  <option value="/epsi/b3">B3</option>
@@ -21,21 +25,20 @@
 
 <script>
 
-import { getCookie, setCookie } from '@ts/cookies';
 import { HiddenSelect } from '@ts/select';
 
 function setPromo(value: string) {
-	setCookie('promo', value);
-	// window.location.href = value;
+	localStorage.setItem("promo", value);
 	retrieveCurrentPromo();
+	window.location.href = value;
 }
 
 function retrieveCurrentPromo() {
-	const currentPromo = getCookie('promo');
+	const currentPromo = localStorage.getItem("promo");
 	if (currentPromo) {
 		select.setDefault(currentPromo);
+		document.getElementById('currentPromo').innerHTML = `<a href=${currentPromo} >${currentPromo}</a>`;
 	}
-	document.getElementById('currentPromo').innerHTML = `<a href=${currentPromo} >${currentPromo}</a>`;
 }
 
 const select = new HiddenSelect('promoSelect', 'promoButton');
