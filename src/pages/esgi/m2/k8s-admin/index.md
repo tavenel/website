@@ -7,7 +7,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 📅 Déroulé des séances
 
-Module de 2x18H
+Module de 3*12H
 
 Évaluation : CC et TP machine
 
