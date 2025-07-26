@@ -1,42 +1,9 @@
 ## P1
 
-- dedicated font with UTF-8 emojis
-
+- dedicated font with UTF-8 emojis => openmoji ? (branch)
 - W3C
 
-- slides => <bug> fullscreen style fix CSS</bug>
-
-- slides KO from sub-courses (Linux index ~> .astro, lpic, …)
-
-```css
-.chapter .slide-mode.slide-elt:first-child {
-/* Section */
-
-padding-left: 3.5rem;
-padding-right: 3.5rem;
-padding-top: 2.5rem;
-padding-bottom: 2.5rem;
-
-h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 5rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: relative;
-}
-```
-
 ## P2
-
-```css
-main {
-  /* max-width: 1024px; */ /* TODO (breaks line below and breaks slides) */
-  max-width: 90vw; /* 90 % full page */
-  margin: auto;
-}
-```
 
 - diagrams
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
@@ -50,8 +17,6 @@ main {
 ```
 
 - Head.astro => ClientRouter transitions
-- JS slide => <https://www.geeksforgeeks.org/simple-swipe-with-vanilla-javascript/>
-- slides => X/N slide number
 
 ## P3
 
@@ -64,14 +29,10 @@ main {
   - Favorites.astro => fix TODO
 
 - styles :
-  - cleanup CSS "TODO"
   - fix diagram style : .flowchartTitleText
   - slides => **bold** and _emphasis_
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
-  - Callouts themes : https://github.com/Microflash/remark-callout-directives
   - ability to zoom images
-  - styles.css => !important ?
-  - better light themes
   - selected text : `::selection` => color and backgroundColor at least
 
 - seo
@@ -90,14 +51,8 @@ main {
 - <whoami.avenel.pro>
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
-- Cours : liens outils et transverses => 2 cards
 - "latest" page => git history ?
 - <https://adamsimpson.net/writing/openring>
-
-- test responsive slides with : https://github.com/sindresorhus/pageres
-- https://github.com/astefanutti/decktape
-- https://markdalgleish.com/projects/bespoke.js/
-- https://github.com/gnab/remark/issues/50#issuecomment-223887379
 
 ---
 
