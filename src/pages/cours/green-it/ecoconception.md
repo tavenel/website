@@ -71,8 +71,6 @@ tags:
 - Voir [la règle dédiée (4032) des 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_4032-mettre-en-place-un-circuit-breaker.mdx)
 
 ---
-layout: section
----
 
 ## Frontend
 
@@ -221,8 +219,6 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
   - transforme un site statique en Single Page Application (SPA).
 
 ---
-layout: section
----
 
 ## Backend
 
@@ -290,8 +286,6 @@ layout: section
 - Bonus : Sécurité des donnés : `ISO 27001`
 
 ---
-layout: section
----
 
 ## Gains transverses
 
@@ -326,8 +320,6 @@ layout: section
 - Pas de dépendances inutiles
 - Limite la couverture d'attaques
 
----
-layout: section
 ---
 
 ## Points à surveiller
@@ -404,8 +396,6 @@ layout: section
 - <https://www.kairos-jourdain.com/>
 - <https://www.ademe.fr/une-logique-d-ecoconception/>
 
----
-layout: section
 ---
 
 ## Ressources

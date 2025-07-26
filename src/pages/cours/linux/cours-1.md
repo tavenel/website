@@ -191,8 +191,6 @@ Quelques caractéristiques principales du noyau Linux :
 - 🛡️ Focus important sur la sécurité : droits d'accès des utilisateurs, module noyau SELinux pour une gestion très poussée des autorisations
 
 ---
-layout: section
----
 
 ## Gestion des processus 📊
 
@@ -266,8 +264,6 @@ L'état d'un processus est défini par l'une des quatre valeurs suivantes :
   - Le processus est mort mais toujours enregistré dans la table des processus (bug)
 
 ---
-layout: section
----
 
 ## Utilisateurs et accès système 👥
 
@@ -283,8 +279,6 @@ Pour faciliter les vérifications de sécurité, les rôles des utilisateurs son
 
 Linux est un système multi-utilisateur : plusieurs utilisateurs peuvent utiliser le système en parallèle.
 
----
-layout: section
 ---
 
 ## Gestion des fichiers 📂
@@ -383,8 +377,6 @@ Les répertoires de travail (_home_) des utilisateurs standards sont en généra
 
 Les répertoires de travail des utilisateurs (_home_) sont accessibles uniquement à leurs utilisateurs respectifs (à l'exception du super-utilisateur `root` ayant les pleins pouvoirs sur le système).
 
----
-layout: section
 ---
 
 ## Les outils Linux
@@ -506,8 +498,6 @@ La plupart des distributions GNU/Linux sont également livrées avec un ou plusi
 - `vi` (ou sa version améliorée `vim`) est un éditeur extrêmement puissant mais plutôt complexe à prendre en main, disponible dans presque toutes les distributions car compatible avec la norme _POSIX_.
 - `emacs`, `nano`, … sont d'autres exemples souvent disponibles
 
----
-layout: section
 ---
 
 ## Commandes principales
@@ -645,8 +635,6 @@ $ tail ./monFichier
 ```
 
 ---
-layout: section
----
 
 ## Autres commandes utiles
 
@@ -766,8 +754,6 @@ $ traceroute www.google.fr
 $ netstat -rn
 ```
 
----
-layout: section
 ---
 
 ## Commandes avancées
@@ -966,8 +952,6 @@ find ~ -name '*.txt' | xargs grep -i "ma recherche"
 <div class="caption">Exemple de redirection complexe</div>
 
 ---
-layout: section
----
 
 ## Gestion des processus
 
@@ -1085,8 +1069,6 @@ La commande `renice` modifie la priorité d'un processus :
 renice MaPriorite MonIDdeProcessus
 ```
 
----
-layout: section
 ---
 
 ## Système de fichiers
@@ -1252,8 +1234,6 @@ chgrp NouveauGroupe MonFichier2
 ```
 
 ---
-layout: section
----
 
 ## Gestion des utilisateurs
 
@@ -1356,8 +1336,6 @@ sudo su
 
 Cette méthode est bien meilleure car l'utilisateur ayant augmenté ses droits au moment du `login root` est enregistré.
 
----
-layout: section
 ---
 
 ## Fichiers de configuration

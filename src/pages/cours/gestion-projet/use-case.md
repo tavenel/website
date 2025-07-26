@@ -57,8 +57,6 @@ user --> (S'inscrire à la bibliothèque)
 ```
 
 ---
-layout: section
----
 
 ## Diagrammes de Séquence
 

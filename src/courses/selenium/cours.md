@@ -162,8 +162,6 @@ Exemple de test utilisant les `PageObject` `LoginPage` et `HomePage` encapsulant
 ```
 
 ---
-layout: section
----
 
 ## Ressources
 

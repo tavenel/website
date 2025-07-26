@@ -222,8 +222,6 @@ $mock->expects($this->once())->method('someMethod');
 > L'IA peut ne pas comprendre pleinement le contexte métier ou les subtilités des exigences, ce qui peut conduire à des tests inadéquats ou incomplets. L'idéal est souvent une combinaison des deux approches, où l'IA aide à automatiser les tâches répétitives et les développeurs se concentrent sur les aspects plus complexes et nuancés des tests. (réponse de Mistral AI).
 
 ---
-layout: section
----
 
 ## Ressources
 

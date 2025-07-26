@@ -90,8 +90,6 @@ BiRel(controller, model, " ")
 <div class="caption">Une implémentation MVC : Spring MVC Request Lifecycle (source : terasolunaorg.github.io).</div>
 
 ---
-layout: section
----
 
 ## Legal
 

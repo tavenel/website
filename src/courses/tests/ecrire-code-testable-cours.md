@@ -23,9 +23,6 @@ tags:
 - 📝 Donnez à vos variables, fonctions et modules des noms explicites (pas des noms mathématiques).
 
 ---
-layout: section
----
-
 
 ## 🏛️ Qualité de la conception objet
 
@@ -93,9 +90,6 @@ layout: section
   - 🔄 Test plus robuste au changement d'implémentation.
 
 ---
-layout: section
----
-
 
 ## 🤖 Les Mocks
 
@@ -130,9 +124,6 @@ On sépare parfois les objets de type Mock en deux types distincts :
   - 📌 Exemple : Mock simulant une base de données pour stocker en mémoire les données ajoutées pour retourner une liste à jour en cas de listing.
 
 ---
-layout: section
----
-
 
 ## ⚠️ Exceptions et gestion des erreurs
 
@@ -151,9 +142,6 @@ layout: section
 On sera particulièrement attentif au code métier remonté, pour faciliter le débuggage et l'écriture de logs en production.
 
 ---
-layout: section
----
-
 
 ## 🔗 Liens
 

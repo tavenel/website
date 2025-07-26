@@ -129,9 +129,6 @@ Tests conçus, implémentés et exécutés immédiatement **à partir des résul
 - 🚫 Non automatisable.
 
 ---
-layout: section
----
-
 
 # 📊 Métriques de tests
 
@@ -183,8 +180,6 @@ Principe : avoir une équipe **dédiée** au test **indépendante** des autres �
 - 🏢 Petites structures (startups) et/ou projet peu critiques : cercles de travail pluridisciplinaires ;
 - 🏭 Projet critique et/ou organisation très formelle et/ou beaucoup de ressources : équipe(s) dédiée(s) au test.
 
----
-layout: section
 ---
 
 # 📚 Liens

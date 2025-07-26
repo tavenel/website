@@ -477,8 +477,6 @@ finally:
 ```
 
 ---
-layout: section
----
 
 ## Ressources
 

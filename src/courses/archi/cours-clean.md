@@ -90,8 +90,6 @@ tags:
 - 🔄 Révision et Refactorisation
 
 ---
-layout: section
----
 
 ## Ressources
 

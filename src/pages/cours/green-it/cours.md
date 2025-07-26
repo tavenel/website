@@ -157,8 +157,6 @@ C'est une association :
 - Charbon : 1060g C02eq /kWh
 
 ---
-layout: section
----
 
 ## Référentiels, normes et textes de loi
 
@@ -464,8 +462,6 @@ layout: section
 Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strategie-et-durabilite/strategie-globale-rse/>
 
 ---
-layout: section
----
 
 ## Déchets d'équipements électriques et électroniques (DEEE)
 
@@ -516,8 +512,6 @@ layout: section
 - Particulier : [Gestion de déchets électriques et électroniques (service-public.fr)](https://www.service-public.fr/particuliers/vosdroits/F31955)
 - Cadre légal : [site e-dechet.com](https://www.e-dechet.com/outils/telecharger-documentation)
 
----
-layout: section
 ---
 
 ## Ressources

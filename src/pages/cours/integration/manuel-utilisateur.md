@@ -80,8 +80,6 @@ On doit trouver en plus dans le manuel d'exploitation :
 - L’armoire de rangement des supports de sauvegarde
 
 ---
-layout: section
----
 
 ## Ressources
 

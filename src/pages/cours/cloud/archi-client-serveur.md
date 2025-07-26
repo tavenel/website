@@ -142,8 +142,6 @@ celui-ci doit avoir une forte tolérance aux pannes
 Le serveur est donc le seul élément critique mais sa maintenance est compliquée et coûteuse.
 
 ---
-layout: section
----
 
 ## Différentes architectures client/serveur
 
@@ -231,8 +229,6 @@ AppServer --> C2 : Response
 @endditaa
 ```
 
----
-layout: section
 ---
 
 # Internet et TCP/IP

@@ -36,8 +36,6 @@ tags:
   - anciennes versions : désinstaller et réinstaller Python
 
 ---
-layout: section
----
 
 ## Présentation du langage
 
@@ -65,8 +63,6 @@ Python 3 a été une réécriture importante du langage et de ses paradigmes, av
 Il est donc courant de déployer à la fois un interpréteur Python 2 et Python 3 sur sa machine personnelle, voir sur un serveur.
 Ce cours se concentre sur la dernière version de **Python 3**.
 
----
-layout: section
 ---
 
 ## Eléments principaux de syntaxe
@@ -821,8 +817,6 @@ if __name__ == '__main__':
     print_my_list('liste 0', 'dict 0', *l1, **d1)
 ```
 
----
-layout: section
 ---
 
 ## Ressources

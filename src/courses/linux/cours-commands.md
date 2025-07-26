@@ -48,8 +48,6 @@ Voir le TP dédié [tp-texte][tp-texte].
 - Voir le TP dédié [tp-fichiers][tp-fichiers].
 
 ---
-layout: section
----
 
 ## Utilisation des flux, des pipes et des redirections
 
@@ -103,8 +101,6 @@ commande1 | commande2
 - Voir le TP dédié [tp-redirections][tp-redirections].
 
 ---
-layout: section
----
 
 ## Création, contrôle et interruption des processus
 
@@ -156,8 +152,6 @@ Voir le TP dédié [tp-process][tp-process].
 Voir cours LPIC-1 section _Features of Terminal Multiplexers_, 103.5 Lesson 2 p.318
 
 ---
-layout: section
----
 
 ## Recherche dans des fichiers texte avec les expressions rationnelles
 
@@ -189,8 +183,6 @@ layout: section
 
 Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 
----
-layout: section
 ---
 
 ## vi

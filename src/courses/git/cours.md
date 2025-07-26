@@ -61,8 +61,6 @@ Versionner son code source permet : 🔄
 Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the-planet> 🔗
 
 ---
-layout: section
----
 
 ## 📌 Présentation de Git
 
@@ -170,8 +168,6 @@ Date:   Mon Nov 27 12:47:48 2023 +0100
 ```
 
 ---
-layout: section
----
 
 ## Comment utiliser Git ? 🚀
 
@@ -218,9 +214,6 @@ il ne doit donc contenir que des données **universelles** 🌐 :
 - Format commun de messages de commit (par exemple [BUG], [FEATURE], ... ) 🏷️  
   👉 <https://www.conventionalcommits.org/fr/>
 
----
-layout: section
----
 ---
 
 ## Les branches 🌿

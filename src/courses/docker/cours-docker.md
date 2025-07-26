@@ -64,8 +64,6 @@ tags:
 _Docker®_ 🐳
 
 ---
-layout: section
----
 
 ## 🐳 Introduction aux conteneurs
 
@@ -137,8 +135,6 @@ layout: section
 | | Isolation faible |
 | Partage un maximum de ressources | |
 
----
-layout: section
 ---
 
 ## 🐳 Présentation de Docker®
@@ -279,8 +275,6 @@ Exemples de `cgroups` classiques : 🏗️
 Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 
 ---
-layout: section
----
 
 ## 💾 Persistance des données
 
@@ -334,8 +328,6 @@ docker run -v mon_volume:/pont_de_montage_conteneur_2 conteneur_image
 
 Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet). 🔗
 
----
-layout: section
 ---
 
 ## 🌐 Gestion et configuration du réseau
@@ -407,8 +399,6 @@ layout: section
 - Voir la documentation officielle : <https://docs.docker.com/engine/network/drivers/> 🔗
 
 ---
-layout: section
----
 
 ## 📄 Le `Dockerfile`
 
@@ -441,8 +431,6 @@ layout: section
 
 Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 
----
-layout: section
 ---
 
 # 🏗️ Présentation de Docker Compose
@@ -499,8 +487,6 @@ Google, 2014 : 2 milliards de conteneurs lancés par semaine 📊
 
 Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
 
----
-layout: section
 ---
 
 # 🛠️ Quelques bonnes pratiques
@@ -595,8 +581,6 @@ layout: section
 - Déploiement simple et rapide dans un cluster Cloud hébergé 🏗️
 - Plus besoin de configurer le port de l'application mais seulement le binding de port Docker : plusieurs serveurs Web sur leurs ports 80 respectifs (dans les conteneurs), … 🏗️
 
----
-layout: section
 ---
 
 # Ressources

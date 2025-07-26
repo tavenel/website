@@ -181,8 +181,6 @@ Tkinter supporte le [pattern MVC][doc-tkinter-mvc]
 Voir le [cours sur le pattern MVC][site-perso].
 
 ---
-layout: section
----
 
 ## Ressources
 

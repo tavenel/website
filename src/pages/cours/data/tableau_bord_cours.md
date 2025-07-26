@@ -103,8 +103,6 @@ tags:
 - **Couche Données** : Entrepôt de données (Snowflake).
 
 ---
-layout: section
----
 
 ## Introduction aux Tableaux de Bord
 
@@ -188,8 +186,6 @@ layout: section
 - Penser à l'automatisation des **mises à jour**
 - Saisir manuellement les données
 
----
-layout: section
 ---
 
 ## Indicateurs de Performance et Métriques du Parc Applicatif
@@ -332,8 +328,6 @@ layout: section
 - Indicateur à suivre par excellence
 
 ---
-layout: section
----
 
 ## Construction d'un Tableau de Bord
 
@@ -412,8 +406,6 @@ layout: section
 
 <div class="caption">Exemple de tableau de bord de durabilité environnementale</div>
 
----
-layout: section
 ---
 
 ## Introduction à PowerBI
@@ -551,8 +543,6 @@ layout: section
 - _**Visualisation** : Tableau croisé dynamique avec lignes et colonnes imbriquées._
 
 ---
-layout: section
----
 
 ## Élaboration d'une Feuille de Route (Roadmap)
 
@@ -649,8 +639,6 @@ layout: section
 
 <div class="caption">Exemple de roadmap d'architecture IT. Source: https://www.productplan.com/templates/it-architecture-roadmap/</div>
 
----
-layout: section
 ---
 
 ## Ressources

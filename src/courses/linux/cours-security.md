@@ -101,8 +101,6 @@ tty6::respawn:/sbin/getty 38400 tty6
 Voir le [TP sur la sécurité d'un système Linux][tp-security]
 
 ---
-layout: section
----
  
 ## Sécurisation des données avec le chiffrement
 
@@ -132,8 +130,6 @@ layout: section
 
 Voir le [TP sur SSH et GPG][tp-ssh-gpg]
 
----
-layout: section
 ---
 
 # Ressources

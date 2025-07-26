@@ -344,8 +344,6 @@ class TestCalendar(unittest.TestCase):
 ```
 
 ---
-layout: section
----
 
 ## Ressources
 

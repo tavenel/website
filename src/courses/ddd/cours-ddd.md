@@ -164,8 +164,6 @@ private static final boolean WILL_IT_RAIN_IN_LONDON = true;
 - Le métier s'apprend en **lisant le code !**
 
 ---
-layout: section 
----
 
 # Le Domain-Driven Design (DDD)
 
@@ -281,8 +279,6 @@ layout: center
 - 🔃 **Itérer**
 
 ---
-layout: section
----
 
 ## Domaine, Modèle, Bounded Context, Language ubiquitaire
 
@@ -309,8 +305,6 @@ layout: section
 - _Bounded Context_ : limite de **validité** d'un modèle **(frontière linguistique)**
 - Concept **métier** précis qui répond à une **problématique**.
 
----
-layout: section
 ---
 
 ## Architecture 🏗️
@@ -361,8 +355,6 @@ Un _Domaine_ peut englober plusieurs _Bounded Context_.
 :::
 
 ---
-layout: section
----
 
 ## D'un langage ubiquitaire au modèle
 
@@ -397,8 +389,6 @@ layout: section
 
 <div class="caption">Un exemple de fonction mal nommée. Source: programmerhumor.io</div>
 
----
-layout: section
 ---
 
 ## Définir le langage 💬
@@ -547,8 +537,6 @@ Book "1" -- "0..*" BookInstance
 - Event storming (très) long (~3 jours) 💤
   - à **découper** (meilleure acceptation) 🪚
 
----
-layout: section
 ---
 
 ## Patterns stratégiques
@@ -730,8 +718,6 @@ Bounded Context                                   Bounded Context
 @endditaa
 ```
 
----
-layout: section
 ---
 
 ## Patterns de collaboration
@@ -1173,8 +1159,6 @@ pmc -- rmc : "Partnership"
 ```
 
 ---
-layout: section
----
 
 ## Relations entre équipes
 
@@ -1276,8 +1260,6 @@ left side
 - Collaboration a minima (complexe)
   - sinon : envisager la creation d'un nouveau composant au milieu pour limiter les impacts
 
----
-layout: section
 ---
 
 ## Patterns tactiques
@@ -1419,8 +1401,6 @@ Voici des **patterns** qui favorisent un design souple :
 7. **Design déclaratif**  
    - Utiliser un style de programmation déclaratif si possible.
 
----
-layout: section
 ---
 
 ## Résumé
@@ -1588,8 +1568,6 @@ courseService.createRecurringCourseRequest(user);
 **Amélioration** : expression claire, alignée avec les termes métier ("Recurring Course Request").
 :::
 
----
-layout: section
 ---
 
 # Ressources

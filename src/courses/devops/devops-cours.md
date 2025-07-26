@@ -317,8 +317,6 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 
 ---
-layout: section
----
 
 ## Ressources
 

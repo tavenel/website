@@ -290,8 +290,6 @@ L'utilisation d'une API (unique) permet de limiter l'intégration avec les inter
 <div class="caption">Schéma d'architecture d'une application moderne.</div>
 
 ---
-layout: section
----
 
 ## Ressources
 

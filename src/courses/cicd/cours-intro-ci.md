@@ -79,8 +79,6 @@ Les changements concurrents sont validés contre une éventuelle régression �
 - Le principal défaut est souvent humain ! 👥
 
 ---
-layout:section
----
 
 # 🔄 Pipelines d'intégration continue
 
@@ -200,8 +198,6 @@ style B1 fill:#f9f;
 style B2 fill:#98fb98;
 ```
 
----
-layout: section
 ---
 
 # 📌 Grands principes de l'intégration continue
@@ -368,8 +364,6 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 | Medium performers  | 1/semaine - 1/mois  | 1/semaine - 1/mois  | < 1 jour            | 0 - 15%            |
 | Low performers     | 1/mois - 1/6 mois   | 1/mois - 1/6 mois   | 1 semaine - 1 mois  | 46 - 60%           |
 
----
-layout: section
 ---
 
 # Ressources

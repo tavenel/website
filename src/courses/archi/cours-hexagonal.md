@@ -58,8 +58,6 @@ _Quel est le **but** de [cette application django](https://github.com/johnnncode
 - Retirer la technologie du métier pour pérenniser sa valeur
 
 ---
-layout: section
----
 
 # Architecture Hexagonale
 
@@ -262,8 +260,6 @@ IObtainPoems mockFileAdapter = new IObtainPoems { … } ;
 IRequestVerses poetryReader = new PoetryReader(mockFileAdapter);
 ```
 
----
-layout: section
 ---
 
 ## Ressources

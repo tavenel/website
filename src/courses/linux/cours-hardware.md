@@ -87,8 +87,6 @@ _Quels sont les composants principaux d'une architecture PC ?_
 - Voir le TP dédié [tp-systeme][tp-systeme].
 
 ---
-layout: section
----
 
 ## Modules Noyau (Kernel Modules)
 
@@ -115,8 +113,6 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 - Voir la partie sur les modules du TP [tp-systeme][tp-systeme].
 
 ---
-layout: section
----
 
 ## `/dev`
 
@@ -136,8 +132,6 @@ layout: section
   - `/dev/hda`, `/dev/hdb` : 1er disque dur, 2e disque dur.
   - `/dev/sdb1`, `/dev/hda3` : 1e partition du 2e disque, 3e partition du 1er disque.
 
----
-layout: section
 ---
 
 ## Démarrage du système

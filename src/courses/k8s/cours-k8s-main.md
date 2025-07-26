@@ -250,8 +250,6 @@ tags:
 | **Résilience** | Élevée | Moyenne | Élevée | Élevée |
 
 ---
-layout: section
----
 
 ## 📦 Distributions Kubernetes
 
@@ -352,8 +350,6 @@ layout: section
 - OVHCloud K8s 🌐
 
 ---
-layout: section
----
 
 ## 🏗️ Architecture
 
@@ -421,8 +417,6 @@ layout: section
 
 <div class="caption">Architecture d'un Pod</div> 
 
----
-layout: section
 ---
 
 ## 🧩 Composants
@@ -530,8 +524,6 @@ Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple d
 - Interface en ligne de commande `kubectl` (surtout pour lancer les fichiers de config) 🖥️
 - Interface web (peu utilisée) 🌐
 
----
-layout: section
 ---
 
 ## 📂 Ressources basiques du cluster
@@ -1039,8 +1031,6 @@ graph LR;
 - `ConfigMap` et `Secret` peuvent être _immuable_ 🔒
 
 ---
-layout: section
----
 
 ## 💾 Stockage
 
@@ -1174,8 +1164,6 @@ pv -> db
 
 Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) 📚
 
----
-layout: section
 ---
 
 ## 🛠️ Ressources avancées

@@ -34,9 +34,6 @@ tags:
 - 🗣️ Amélioration de la **communication** dans l'équipe : _revues_.
 
 ---
-layout: section
----
-
 
 ## 📜 La revue de code
 

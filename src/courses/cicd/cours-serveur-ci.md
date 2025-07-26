@@ -135,8 +135,6 @@ L'utilisation d'un serveur d'intégration dédié est une ressource supplémenta
 - Plus les intégrations sont fréquentes, plus la feedback loop devra être rapide. 🔄
 
 ---
-layout: section
----
 
 # 🔄 Jenkins
 

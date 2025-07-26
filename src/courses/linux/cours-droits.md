@@ -36,8 +36,6 @@ layout: '@layouts/CoursePartLayout.astro'
   - `groupmod --new-name new_group group_name`
 
 ---
-layout: section
----
 
 ## Gestion des permissions et de la propriété sur les fichiers
 

@@ -354,8 +354,6 @@ De nombreuses applications utilisent `(Secure)RPC` : `NFS`, `NIS`, ...
 Il existe beaucoup d'implémentations (incompatibles) de `RPC`.
 
 ---
-layout: section
----
 
 ## Applications client/serveur sur `TCP/IP`
 
@@ -658,8 +656,6 @@ Les objets `SNMP` contenus dans les nœuds peuvent être des informations matér
 
 `SNMP` est très utilisé et de nombreux outils l'intègrent pour effectuer de la surveillance et maintenance applicative et matérielle : `Zabix`, `Nagios`, ...
 
----
-layout: section
 ---
 
 ## Ressources

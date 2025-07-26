@@ -70,9 +70,6 @@ Soit `1<=n<=5` avec `n` un entier positif :
 - 📌 _Les interactions peuvent être représentées graphiquement par des flux de travail, des diagrammes d'activités ou des modèles de processus métier._
 
 ---
-layout: section
----
-
 
 ## 🛠️ Techniques de test boîte-blanche
 
@@ -94,9 +91,6 @@ layout: section
 - 🎯 Aide à trouver des **conditions pas totalement testées**.
 
 ---
-layout: section
----
-
 
 ## 🧪 Techniques de test basées sur l'expérience
 
@@ -132,9 +126,6 @@ layout: section
 - 📌 _Utile si base de test existante peu formelle_.
 
 ---
-layout: section
----
-
 
 ## 🎯 Choix des techniques de test
 

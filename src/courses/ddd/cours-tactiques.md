@@ -1054,8 +1054,6 @@ class OrderAppService:
 - ✅ À faire : valider dans l’agrégat ou la factory, pas dans le service applicatif.
 
 ---
-layout: section
----
 
 ## Patterns tactiques avancés
 

@@ -154,8 +154,6 @@ mon_password = "P@ssw0rd"
 ```
 
 ---
-layout: section
----
 
 ## Ressources
 

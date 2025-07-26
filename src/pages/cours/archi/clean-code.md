@@ -30,8 +30,6 @@ tags:
 - Poser un cadre mais pas de limites : **votre responsabilité**
 
 ---
-layout: section
----
 
 ## Règles générales
 
@@ -140,8 +138,6 @@ for student in students:
 - À utiliser pendant les tests fonctionnels.
 
 ---
-layout: section
----
 
 ## Design
 
@@ -220,8 +216,6 @@ auto.isRunning();
 
 - ex `Google Chrome™` : test automatisé de performances dans CI dès le début du projet
 
----
-layout: section
 ---
 
 ## Compréhension
@@ -364,8 +358,6 @@ if (isValid(...)):
 ```
 
 ---
-layout: section
----
 
 ## Noms
 
@@ -393,8 +385,6 @@ for i in range(NUMBER_OF_STUDENTS):
 ...
 ```
 
----
-layout: section
 ---
 
 ## Fonctions
@@ -477,8 +467,6 @@ widget.repaintLater();
 ```
 
 ---
-layout: section
----
 
 ## Commentaires
 
@@ -495,8 +483,6 @@ layout: section
 
 > Code never lies, comments sometimes do. _Ron Jeffries_
 
----
-layout: section
 ---
 
 ## Structure du code source
@@ -525,8 +511,6 @@ layout: section
   + Beaucoup d'espaces : liens faibles
 
 ---
-layout: section
----
 
 ## Objets et structures de données
 
@@ -542,8 +526,6 @@ layout: section
 - Éviter le code statique (partagé entre les objets)
 - Voir le [cours sur la Programmation Orientée Objet et les principes SOLID][site-perso].
 
----
-layout: section
 ---
 
 ## Tests
@@ -561,8 +543,6 @@ layout: section
 - Couverture de code (automatique).
 - Voir le [cours sur la méthodologie des tests][site-perso].
 
----
-layout: section
 ---
 
 ## Code smells
@@ -629,8 +609,6 @@ def enumerate_array(my_array):
 :::
 
 ---
-layout: section
----
 
 ## Gestion des erreurs
 
@@ -692,8 +670,6 @@ private User checkCredentialsInDatabase(String username, String password) {
 }
 ```
 
----
-layout: section
 ---
 
 ## Ressources

@@ -12,8 +12,6 @@ tags:
 - Utiliser un format texte (pas de formats propriétaires type `Microsoft Word` ou `PDF`).
 
 ---
-layout: section
----
 
 ## Web
 
@@ -73,8 +71,6 @@ layout: section
 - [Lien Anybrowser : make your website work for everyone](https://anybrowser.org/campaign/)
 
 ---
-layout: section
----
 
 ## Application mobile
 
@@ -97,8 +93,6 @@ layout: section
 
 - Supporter les interfaces **portrait** et paysage
 
----
-layout: section
 ---
 
 ## Tests
@@ -126,8 +120,6 @@ layout: section
   - revues des balises `alt`, `role`, `aria-*`, ...
   - "vrai" test utilisateur
 
----
-layout: section
 ---
 
 ## Ressources

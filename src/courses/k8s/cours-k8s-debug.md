@@ -427,8 +427,6 @@ kubectl get endpoints my-service
 - 🐌 Désactivez temporairement la `readinessProbe` pour identifier si elle est responsable
 
 ---
-layout: section
----
 
 ## 🐙 Problèmes réseau
 

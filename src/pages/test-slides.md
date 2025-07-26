@@ -50,12 +50,6 @@ Un exercice
 :::
 
 ---
-layout: section
----
-
-# Une section
-
----
 
 # Titre
 

@@ -438,8 +438,6 @@ Une sélection des modules les plus utilisés, classés par catégories :
 ```
 
 ---
-layout: section
----
 
 ## Ressources
 

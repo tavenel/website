@@ -80,8 +80,6 @@ layout: '@layouts/CoursePartLayout.astro'
 1. Legacy : `eth0`
 
 ---
-layout: section
----
 
 ## Configuration du réseau
 
@@ -266,8 +264,6 @@ DHCP=yes # ou IPv4 ou IPv6
   - débug : écoute de ports, …
 
 ---
-layout: section
----
 
 ## Pare-feu : Netfilter/IpTables
 
@@ -327,8 +323,6 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 - `nat` : table dont le but est de faire de la _translation_ d'adresses (uniquement pour les nouvelles connexions)
 - `conntrack` : composant et table rendant `Netfilter` _stateful_ (suit le cycle de vie de la connexion).
 
----
-layout: section
 ---
 
 # Ressources

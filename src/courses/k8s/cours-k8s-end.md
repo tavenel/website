@@ -81,8 +81,6 @@ tags:
 Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) 📚
 
 ---
-layout: section
----
 
 ## 🔗 Liens
 

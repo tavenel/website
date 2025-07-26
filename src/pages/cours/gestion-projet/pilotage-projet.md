@@ -82,8 +82,6 @@ La fréquence de publication dépend de la chronologie de projet : hebdomadaire,
 Ces rapports d’avancement ne sont pas destinés à pointer du doigt ce qui se passe mal, mais à tenir l'équipe informée de la progression du projet au cours des dernières semaines par un savant mélange de résumés généraux et d’indicateurs importants.
 
 ---
-layout: section
----
 
 ## Ressources
 

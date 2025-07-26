@@ -143,8 +143,6 @@ Model *-- "*" Champ
 - Réaliser une migration : `python manage.py makemigrations && python manage.py migrate`
 
 ---
-layout: section
----
 
 ## Ressources
 

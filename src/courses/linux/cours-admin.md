@@ -44,8 +44,6 @@ layout: '@layouts/CoursePartLayout.astro'
   - `getent group docker`
 
 ---
-layout: section
----
  
 ## Automatisation des tâches d’administration par la planification des travaux
 
@@ -79,8 +77,6 @@ layout: section
 
 Voir le [tp sur les tâches planifiées (cron)][tp-cron]
 
----
-layout: section
 ---
 
 ## Paramètres régionaux et langues
@@ -120,8 +116,6 @@ layout: section
 
 Voir le [tp dédié aux langues][tp-lang].
 
----
-layout: section
 ---
  
 ## Services systèmes essentiels
@@ -188,8 +182,6 @@ layout: section
 - `timedatectl set-time`
 
 ---
-layout: section
----
  
 ## Journaux systèmes
 
@@ -223,8 +215,6 @@ layout: section
 
 Voir le [TP sur les journaux][tp-syslog].
 
----
-layout: section
 ---
  
 ## Bases sur l’agent de transfert de courrier (MTA)
@@ -269,8 +259,6 @@ emma@lab1.campus
 
 Voir le [TP sur SMTP][tp-smtp].
 
----
-layout: section
 ---
  
 ## Gestion des imprimantes et de l’impression

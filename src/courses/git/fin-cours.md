@@ -137,8 +137,6 @@ Intégrer `git` dans un IDE permet : 🚀
   => vous pouvez y faire des commits sans impacter les autres répertoires de travail 🧪
 
 ---
-layout: section
----
 
 ![Résumé des commandes Git](https://www.linuxnix.com/wp-content/uploads/2017/10/Git.png)
 
@@ -274,8 +272,6 @@ layout: section
 25. `git show <commit-hash>` : Affichez les détails complets d'un commit spécifique.
 26. `git archive` : crée une archive contenant les fichiers d'un commit ou d'une branche sans inclure l'historique Git
 
----
-layout: section
 ---
 
 ## Ressources

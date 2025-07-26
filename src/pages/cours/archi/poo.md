@@ -59,8 +59,6 @@ La programmation orientée objet repose sur 5 concepts fondamentaux :
 - Le polymorphisme
 
 ---
-layout: section
----
 
 ## La classe
 
@@ -83,8 +81,6 @@ class Voiture:
 - **Constructeur** : la méthode `__init__()` est appelée lors de la création d'un objet.
 - **Attribut** : `self.nom` est une manière de stocker une information dans la classe.
 
----
-layout: section
 ---
 
 ## L'objet
@@ -242,8 +238,6 @@ Par convention :
 - Les noms d'instances, d'attributs et de méthodes en `SnakeCase` (mots séparés par un espace, par exemple : `ma_voiture.mon_nom`.
 
 ---
-layout: section
----
 
 ## L'encapsulation
 
@@ -350,8 +344,6 @@ ma_voiture.getNom() # autorisé
 ma_voiture._methode_privee() # interdit (hors de la classe)
 ```
 
----
-layout: section
 ---
 
 ## L'héritage

@@ -285,8 +285,6 @@ public class MyEntity {
   + Exemple : `currentSession.save(myEntity)`
 
 ---
-layout: section
----
 
 ## Ressources
 

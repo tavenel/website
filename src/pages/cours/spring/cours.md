@@ -18,8 +18,6 @@ tags:
 - Le design pattern d'injection de dépendances utilisé dans toutes les couches du framework permet d'ajouter des services à des POJOs de manière non invasive
 
 ---
-layout: section
----
 
 ## Modules
 
@@ -93,8 +91,6 @@ Le module comprenant le support de Spring® pour les applications Web :
 Implémentation Model-Vue-Controller (`MVC`) pour applications Spring Web
 
 
----
-layout: section
 ---
 
 ## Design patterns
@@ -241,8 +237,6 @@ classDiagram
 
 _Le design pattern de template._
 
----
-layout: section
 ---
 
 ## Pattern MVC : Modèle / Vue / Contrôleur

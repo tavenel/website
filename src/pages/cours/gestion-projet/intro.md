@@ -114,8 +114,6 @@ Elle permet :
 - de mobiliser une équipe performante et autonome
 
 ---
-layout: section
----
 
 ## Les différents paramètres du projet
 

@@ -54,8 +54,6 @@ layout: '@layouts/CoursePartLayout.astro'
 Voir le TP [tp-grub][tp-grub] déjà réalisé.
 
 ---
-layout: section
----
 
 ## Gestion des bibliothèques partagées
 
@@ -103,8 +101,6 @@ layout: section
 - Voir le TP dédié [tp-shared-lib][tp-shared-lib].
 
 ---
-layout: section
----
 
 ## Utilisation des gestionnaires de paquetage Debian (apt, dpkg) et RHEL (dnf, rpm, yum)
 
@@ -135,8 +131,6 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 - Voir le TP dédié [tp-rpm-apt][tp-rpm-apt].
 - Voir aussi cet article sur les différents types de paquets : <https://blog.garambrogne.net/packageless.html>
 
----
-layout: section
 ---
 
 ## Linux en tant que système virtuel hébergé

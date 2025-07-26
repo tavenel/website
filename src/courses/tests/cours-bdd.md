@@ -222,8 +222,6 @@ def "events are published to all subscribers"() {
 > BDD is building the right thing.
 
 ---
-layout: section
----
 
 ## Ressources
 
