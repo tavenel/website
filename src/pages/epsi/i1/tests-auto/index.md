@@ -29,11 +29,11 @@ Module de 14H
 ## 📑 Documents
 
 - [🤓 Cours sur les tests logiciels](/epsi/i1/tests-auto/cours)
-- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
-- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
-- [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
-- [💻 TP Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium-tp)
+- [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
+- [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
+- [💻 TP : Tests unitaires en Jest](/tests/unit/jest/tp-jest)
+- [💻 TP Facadia](/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
 
 ### 💻 Exemples
 
@@ -51,8 +51,8 @@ Le projet consiste à développer une application Web permettant à un joueur de
 
 _Après étude des besoins du client, vous décidez de développer cette application suivant un processus d'intégration continue, afin d'accélérer le développement du projet et pour garantir la qualité des fonctionnalités implémentées._
 
-- [📄 Lien vers le sujet](/cours/tests/projet_jeu_roles_tests_et_ci)
+- [📄 Lien vers le sujet](/tests/projet_jeu_roles_tests_et_ci)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
+- Voir les autres ressources du [🧪 cours sur les tests](/tests).

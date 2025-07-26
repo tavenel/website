@@ -30,23 +30,23 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🤓 Cours
 
-- [🤓 Cours d'introduction à Python](/cours/python/cours-niveau1)
-- [🤓 Cours sur la librairies standard `stdlib`](/cours/python/cours-stdlib)
+- [🤓 Cours d'introduction à Python](/python/cours-niveau1)
+- [🤓 Cours sur la librairies standard `stdlib`](/python/cours-stdlib)
   - [📄 Annexe : fichier mots.txt](/cours/python/mots.txt)
-- [🤓 Cours de programmation orientée objet en Python](/cours/python/cours-poo)
-- [💻 Corrigé des exercices des supports de cours](/cours/python/exos-cours-corrige)
+- [🤓 Cours de programmation orientée objet en Python](/python/cours-poo)
+- [💻 Corrigé des exercices des supports de cours](/python/exos-cours-corrige)
 
 ### 🏆 Filière CDA : Projet Bomberman
 
 Bienvenue dans ce projet où vous allez coder votre propre jeu en Python ! Le but de ce projet est de vous initier à la programmation tout en développant un petit jeu. Vous allez créer un jeu inspiré de Bomberman : [Wikipedia](https://en.wikipedia.org/wiki/Bomberman) . Le jeu consiste en un plateau de jeu parsemé d'ennemis à éliminer en déposant des bombes stratégiquement.
 
-- [📄 Sujet](/cours/python/projet-bomberman)
+- [📄 Sujet](/python/projet-bomberman)
 
 ### 🏆 Filière ASRBD : Projet Gestionnaire de Configuration des Serveurs
 
 Le but de ce projet est de créer une application en ligne de commande qui permet aux administrateurs système de gérer la configuration de plusieurs serveurs. L'application devra permettre d'ajouter, de modifier et de supprimer des configurations, ainsi que de les sauvegarder et de les restaurer.
 
-- [📄 Sujet](/cours/python/projet-gestion_configs)
+- [📄 Sujet](/python/projet-gestion_configs)
 
 ### 💻 Liens utiles d'exercices
 
@@ -60,4 +60,4 @@ Le but de ce projet est de créer une application en ligne de commande qui perme
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur Python](/cours/python).
+- Voir les autres ressources du [cours sur Python](/python).

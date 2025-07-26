@@ -106,25 +106,25 @@ La certification LPIC est conséquente et les questions très précises, il faut
 ### 📑 Documents LPIC-101
 
 - Les deux environnements suivants doivent être installés :
-  - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-fedora-workstation)
-  - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
-- 🤓 [Slides de cours LPIC-101](/cours/linux/cours-lpic-101)
-- [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/cours/linux/tp-systeme)
-- [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/tp-grub)
-- [📀 TP : utiliser un live-CD pour une restauration système](/cours/linux/tp-rescue)
-- [▶️ TP : SysV init](/cours/linux/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
-- [▶️ TP : Systemd init](/cours/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
-- [🗃️ TP : librairies partagées](/cours/linux/tp-shared-lib)
-- [📦 TP : Gestion de paquetages](/cours/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
-- [  TP : Utilisation efficace de la ligne de commande](/cours/linux/tp-ligne-commande)
-- [📃 TP : Traitement de flux de type texte](/cours/linux/tp-texte)
-- [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/cours/linux/tp-fichiers)
-- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/cours/linux/tp-redirections)
-- [⚙️ TP : Gestion des processus et de leur priorité](/cours/linux/tp-process)
-- [💽 TP : Gestion des partitions et des systèmes de fichiers](/cours/linux/tp-partitions)
-- [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/cours/linux/tp-lvm)
-- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/cours/linux/tp-fichiers-avance)
-- [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/cours/linux/tp-droits-avance)
+  - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/linux/tp-installation-vbox-fedora-workstation)
+  - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/linux/tp-installation-vbox-ubuntu-workstation)
+- 🤓 [Slides de cours LPIC-101](/linux/cours-lpic-101)
+- [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/linux/tp-systeme)
+- [📀 TP : utiliser GRUB pour une restauration système](/linux/tp-grub)
+- [📀 TP : utiliser un live-CD pour une restauration système](/linux/tp-rescue)
+- [▶️ TP : SysV init](/linux/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
+- [▶️ TP : Systemd init](/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
+- [🗃️ TP : librairies partagées](/linux/tp-shared-lib)
+- [📦 TP : Gestion de paquetages](/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
+- [  TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
+- [📃 TP : Traitement de flux de type texte](/linux/tp-texte)
+- [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/linux/tp-fichiers)
+- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/linux/tp-redirections)
+- [⚙️ TP : Gestion des processus et de leur priorité](/linux/tp-process)
+- [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
+- [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
+- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
+- [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/linux/tp-droits-avance)
 - ✍️ TP : Introduction à `vi` : exécuter la commande `vimtutor`.
 
 
@@ -147,20 +147,20 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 ### 📑 Documents LPIC-102
 
-- 🤓 [Slides de cours LPIC-102](/cours/linux/cours-lpic-102)
-- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/cours/linux/cours-shell)
-- [📜 TP - Création de scripts Bash](/cours/linux/tp-scripts_bash)
-- [📜 TP Bash - Gestion des fichiers et des utilisateurs](/cours/linux/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
-- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/tp-trash)
-- [👥 TP : Gestion des utilisateurs et de la sécurité](/cours/linux/tp-utilisateurs)
-- [🕗 TP : Planification de tâches avec `at`, `cron` et `systemd`](/cours/linux/tp-cron)
-- [📨 TP : Langue et encodage](/cours/linux/tp-lang) : gérer l'utilisation d'encodages différents (`ASCII`, `UTF-8`, …), de formats de fichiers différents (`Unix`/Linux vs `Dos`/Windows) et de langues différentes par l'utilisation de _locales_.
-- [📜 TP : Journalisation avec Syslog](/cours/linux/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng`.
-  - Rappel - TP : [journaux de logs avec systemd-journald](/cours/linux/tp-systemd)
-- [📡 TP : Configuration réseau](/cours/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
-- [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/tp-security)
-- [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/tp-ssh-gpg)
+- 🤓 [Slides de cours LPIC-102](/linux/cours-lpic-102)
+- [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/linux/cours-shell)
+- [📜 TP - Création de scripts Bash](/linux/tp-scripts_bash)
+- [📜 TP Bash - Gestion des fichiers et des utilisateurs](/linux/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
+- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/linux/tp-trash)
+- [👥 TP : Gestion des utilisateurs et de la sécurité](/linux/tp-utilisateurs)
+- [🕗 TP : Planification de tâches avec `at`, `cron` et `systemd`](/linux/tp-cron)
+- [📨 TP : Langue et encodage](/linux/tp-lang) : gérer l'utilisation d'encodages différents (`ASCII`, `UTF-8`, …), de formats de fichiers différents (`Unix`/Linux vs `Dos`/Windows) et de langues différentes par l'utilisation de _locales_.
+- [📜 TP : Journalisation avec Syslog](/linux/tp-syslog) : gérer les journaux (logs) système et utilisateur, en local ou vers un serveur centralisé, notamment par le biais de `syslog` et ses différentes implémentations : `syslog`, `rsyslog` et `syslog-ng`.
+  - Rappel - TP : [journaux de logs avec systemd-journald](/linux/tp-systemd)
+- [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
+- [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
+- [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur Linux](/cours/linux).
+- Voir les autres ressources du [cours sur Linux](/linux).

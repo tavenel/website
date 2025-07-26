@@ -12,7 +12,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 - Rappels sur l'adressage IPv4/IPv6 :
   - [Cours LPI](https://learning.lpi.org/en/learning-materials/102-500/109/109.1/109.1_01/)
-  - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d’applications mobiles"](/cours/cloud)
+  - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d’applications mobiles"](/cloud)
   - [Cours TCP/IP de François Goffinet](https://linux.goffinet.org/administration/configuration-du-reseau/introduction-a-tcp-ip/)
 
 ---
@@ -33,7 +33,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ### Ports par défaut
 
-- Principaux services et ports par défaut sur TCP/IP : [voir le cours "Communication entre processus et applications client/serveur sur TCP/IP"](/cours/cloud)
+- Principaux services et ports par défaut sur TCP/IP : [voir le cours "Communication entre processus et applications client/serveur sur TCP/IP"](/cloud)
 - `/etc/services` : principaux services
 
 ---
@@ -334,7 +334,7 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 - Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
 - Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 
-[tp-network]: /cours/linux/tp-network
+[tp-network]: /linux/tp-network
 
 ---
 

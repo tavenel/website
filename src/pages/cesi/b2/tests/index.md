@@ -25,7 +25,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 ## 📑 Documents
 
 - [🤓 Cours sur les tests logiciels](/cesi/b2/tests/cours)
-- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
+- [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
 -  Dépôts d'exemples de tests :
   - 󰌠 Python : <https://git.sr.ht/~toma/python-unit>
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>
@@ -41,8 +41,8 @@ title: INFAL34 - Tests et recette d’un projet de développement
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
-- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
+- Voir les autres ressources du [🧪 cours sur les tests](/tests).
+- [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
 - [livre: Pratique des tests logiciels : améliorer la qualité par les tests, gérer une campagne de test, préparer la certification ISTQB](https://univ.scholarvox.com/catalog/book/docid/88913275)
 - [MOOC OpenClassrooms](https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite)
 

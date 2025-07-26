@@ -43,8 +43,8 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - LPIC vise des concepts généraux, pas vraiment de distribution de choix...
 - ...mais vise principalement les dérivés Debian (Ubuntu, ...) et RedHat (RHEL, CentOS, ...)
 - Installer par exemple les deux environnements suivants :
-  - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-fedora-workstation)
-  - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
+  - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/linux/tp-installation-vbox-fedora-workstation)
+  - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/linux/tp-installation-vbox-ubuntu-workstation)
 
 ### Niveau requis
 
@@ -146,4 +146,4 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur Linux](/cours/linux).
+- Voir les autres ressources du [cours sur Linux](/linux).

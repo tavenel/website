@@ -20,10 +20,10 @@ Module de 15H
 
 ## 📑 Documents
 
-- [🤓 Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/cours/devops/terraform)
-- [![](@icons/terraform.svg) Projet Terraform](/cours/devops/terraform-projet) TODO
+- [🤓 Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
+- [![](@icons/terraform.svg) Projet Terraform](/devops/terraform-projet)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur le Devops](/cours/devops).
+- Voir les autres ressources du [cours sur le Devops](/devops).
 

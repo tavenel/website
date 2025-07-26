@@ -238,7 +238,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc) 🎮
 - [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler) 📅
 - Exemples :
-  - de projets : voir la [page des liens](/cours/liens#kubernetes) 🔗
+  - de projets : voir la [page des liens](/liens#kubernetes) 🔗
   - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples> 📄
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾

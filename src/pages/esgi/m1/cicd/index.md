@@ -43,28 +43,28 @@ Module de 21H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](/cours/ci/cours)
-- [📝 TD Processus d'intégration continue](/cours/ci/td_process_ci) : une étude de cas d'intégration continue.
+- [🤓 Cours sur l'intégration continue ](/ci/cours)
+- [📝 TD Processus d'intégration continue](/ci/td_process_ci) : une étude de cas d'intégration continue.
 
 ### TPs
 
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr)
+- [💻 TP - Workflows Git™ et Pull Request](/git/tp-workflows-pr)
   - L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
-- [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes)
+- [💻 TP Workflow : support de versions concurrentes](/ci/td_workflow_versions_concurrentes)
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
-- [ TP Jenkins](/cours/jenkins/tp-full)
+- [ TP Jenkins](/jenkins/tp-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
+- [Exemple de pipeline Jenkinsfile](/ci/exemple-jenkinsfile)
+- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
 ### 🏆 Projet intégration et déploiement continus d'une application de groupes de travail
 
 Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 
-- [📄 Lien vers le sujet](/cours/ci/projet_groupes_utilisateurs_ci)
+- [📄 Lien vers le sujet](/ci/projet_groupes_utilisateurs_ci)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur l'intégration continue](/cours/ci).
+- Voir les autres ressources du [cours sur l'intégration continue](/ci).
 

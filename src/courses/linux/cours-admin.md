@@ -275,12 +275,12 @@ Voir le [TP sur SMTP][tp-smtp].
 - `/etc/cups/cupsd.conf`
 - Interface héritée de `lpd` (`lpadmin`, `lpinfo`, `lpoptions`, `lpr`, `lpstat`, `lp`, …)
 
-[tp-cron]: /cours/linux/tp-cron
-[tp-lang]: /cours/linux/tp-lang
-[tp-systeme]: /cours/linux/tp-systeme
-[tp-systemd]: /cours/linux/tp-systemd
-[tp-syslog]: /cours/linux/tp-syslog
-[tp-smtp]: /cours/cloud/exo-smtp
+[tp-cron]: /linux/tp-cron
+[tp-lang]: /linux/tp-lang
+[tp-systeme]: /linux/tp-systeme
+[tp-systemd]: /linux/tp-systemd
+[tp-syslog]: /linux/tp-syslog
+[tp-smtp]: /cloud/exo-smtp
 
 ---
 

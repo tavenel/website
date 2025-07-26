@@ -24,12 +24,12 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 
 ## 📑 Documents
 
-- [🤓 Cours - le cahier des charges](/cours/gestion-projet/cahier-charges)
-- [🤓 Diagramme de Kano](/cours/gestion-projet/kano)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/cours/gestion-projet/use-case)
-- [📝 Exercice Pur Beurre : définir le contexte](/cours/gestion-projet/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/cours/gestion-projet/exos-cas-utilisation-cas-sequence)
-- [🏆 Projet - écrire un cahier des charges](/cours/gestion-projet/projet-cahier-charges)
+- [🤓 Cours - le cahier des charges](/gestion-projet/cahier-charges)
+- [🤓 Diagramme de Kano](/gestion-projet/kano)
+- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/gestion-projet/use-case)
+- [📝 Exercice Pur Beurre : définir le contexte](/gestion-projet/exo-pur-beurre)
+- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/gestion-projet/exos-cas-utilisation-cas-sequence)
+- [🏆 Projet - écrire un cahier des charges](/gestion-projet/projet-cahier-charges)
 - Exemples de cahier des charges :
   - Devis vers facture, CDC fonctionnel : [pdf](/cours/cahier-charges/dvf_fonctionnel.pdf)
   - Devis vers facture, CDC technique  : [pdf](/cours/cahier-charges/dvf_technique.pdf)
@@ -38,4 +38,4 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).
+- Voir les autres ressources du [cours sur la gestion de projet](/gestion-projet).

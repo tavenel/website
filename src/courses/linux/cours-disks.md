@@ -116,7 +116,7 @@ layout: '@layouts/CoursePartLayout.astro'
   - `mnt-donnees.mount` pour `/mnt/donnees`
 - Voir cours LPIC-1 section _104.3 Control mounting and unmounting of filesystems_ section _systemd_ p.470
 
-[tp-partitions]: /cours/linux/tp-partitions
+[tp-partitions]: /linux/tp-partitions
 
 ---
 

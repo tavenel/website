@@ -1216,7 +1216,7 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ## 📚 Commandes de base de Kubernetes®
 
-Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/cours/k8s/cheatsheet) 📚
+Voir la [cheatsheet sur Kubernetes®](https://www.avenel.pro/k8s/cheatsheet) 📚
 
 ---
 

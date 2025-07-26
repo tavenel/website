@@ -14,13 +14,13 @@ date: 2024 / 2025
 :::
 
 :::link
-- Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : </cours/k8s/projet-install>
-- Voir aussi la page </cours/k8s/cheatsheet> pour l'installation des dépendances.
+- Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : </k8s/projet-install>
+- Voir aussi la page </k8s/cheatsheet> pour l'installation des dépendances.
 :::
 
 ### Installation des StorageClass
 
-En s'aidant de la [cheatsheet Kubernetes](/cours/k8s/cheatsheet), installer :
+En s'aidant de la [cheatsheet Kubernetes](/k8s/cheatsheet), installer :
 
 - Le [NFS CSI driver for Kubernetes](https://github.com/kubernetes-csi/csi-driver-nfs) pour créer automatiquement des `PersistentVolume` depuis un serveur _NFS_
 - Le [local-path-provisionner de Rancher](https://github.com/rancher/local-path-provisioner) pour créer automatiquement des `PersistentVolume` basés sur `hostPath` (répertoires locaux aux _Node_ : perte du _Node_ = perte de la donnée !).
@@ -112,6 +112,6 @@ Le monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des m
 :::
 
 :::link
-Se référer au TP sur Prometheus et Grafana : <https://www.avenel.pro/cours/k8s/tp-prometheus-grafana>
+Se référer au TP sur Prometheus et Grafana : <https://www.avenel.pro/k8s/tp-prometheus-grafana>
 :::
 

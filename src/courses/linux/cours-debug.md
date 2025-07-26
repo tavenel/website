@@ -48,7 +48,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - Si besoin, démarrer un système avec un Live CD
   - Voir le [TP Rescue][tp-rescue]
 
-[tp-grub]: /cours/linux/tp-grub
-[tp-rescue]: /cours/linux/tp-rescue
+[tp-grub]: /linux/tp-grub
+[tp-rescue]: /linux/tp-rescue
 
 ---

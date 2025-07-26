@@ -52,7 +52,7 @@ created: 2024-10-17
 
 -   `docker`
   - 🔒 sécurité :
-    - _Docker Scout_ (inclus dans _Docker desktop_) : voir la [cheatsheet Docker](/cours/docker/cheatsheet)
+    - _Docker Scout_ (inclus dans _Docker desktop_) : voir la [cheatsheet Docker](/docker/cheatsheet)
     - <https://github.com/docker/docker-bench-security>
     - <https://github.com/aquasecurity/trivy> (inclus k8s)
     - <https://une-tasse-de.cafe/expresso/cosign/> : signer ses images Docker
@@ -370,7 +370,7 @@ created: 2024-10-17
 
 ## 🧪 Tests
 
-- 🔗 Voir la [🧪 page de cours sur les tests](/cours/tests)
+- 🔗 Voir la [🧪 page de cours sur les tests](/tests)
 - Tests unitaires :
   - Java : `Junit`, `TestNG`, `Mockito` (mocks)
   - Python : `Pyunit`, `Pytest`

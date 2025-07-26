@@ -272,7 +272,7 @@ Exemples de `cgroups` classiques : 🏗️
 
 ## 🛠️ Commandes de base de Docker®
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
@@ -326,7 +326,7 @@ docker run -v mon_volume:/pont_de_montage_conteneur_2 conteneur_image
 
 ### 📦 Utilisation des volumes depuis les commandes Docker®
 
-Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet). 🔗
+Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet). 🔗
 
 ---
 
@@ -395,7 +395,7 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.aven
 
 ### 🛠️ Configuration du réseau depuis les commandes Docker®
 
-- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
+- Voir la section sur le réseau de la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 - Voir la documentation officielle : <https://docs.docker.com/engine/network/drivers/> 🔗
 
 ---
@@ -429,7 +429,7 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.aven
 
 ### 🛠️ Instructions standards Dockerfile
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
@@ -485,7 +485,7 @@ Google, 2014 : 2 milliards de conteneurs lancés par semaine 📊
 
 ## 🛠️ Commandes de base de Docker compose®
 
-Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet) 🔗
+Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
@@ -636,7 +636,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/cours/docker/cheatsheet
 - [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
 - [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
 - [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
-- Exemples de projets : voir la [page des liens](/cours/liens#docker)
+- Exemples de projets : voir la [page des liens](/liens#docker)
 
 ---
 

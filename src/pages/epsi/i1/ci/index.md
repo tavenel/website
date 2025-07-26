@@ -51,21 +51,21 @@ Module de 10H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](/cours/ci/cours)
-- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
+- [🤓 Cours sur l'intégration continue ](/ci/cours)
+- [Exemple de pipeline Jenkinsfile](/ci/exemple-jenkinsfile)
+- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
 ### Exercices
 
-- [📝 TD Processus d'intégration continue](/cours/ci/td_process_ci) : une étude de cas d'intégration continue.
+- [📝 TD Processus d'intégration continue](/ci/td_process_ci) : une étude de cas d'intégration continue.
 
 ### TPs
 
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
-- [ TP Jenkins](/cours/jenkins/tp-full)
+- [💻 TP - Workflows Git™ et Pull Request](/git/tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
+- [ TP Jenkins](/jenkins/tp-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [💻 TP Intégration continue avancée](/cours/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
+- [💻 TP Intégration continue avancée](/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
 
 ### 🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle
 
@@ -73,9 +73,9 @@ Le projet consiste à développer une application Web permettant à un joueur de
 
 _Après étude des besoins du client, vous décidez de développer cette application suivant un processus d'intégration continue, afin d'accélérer le développement du projet et pour garantir la qualité des fonctionnalités implémentées._
 
-- [📄 Lien vers le sujet](/cours/tests/projet_jeu_roles_tests_et_ci)
+- [📄 Lien vers le sujet](/tests/projet_jeu_roles_tests_et_ci)
 
 ## 🚀 Pour aller plus loin
 
-- [💻 TP Workflow : support de versions concurrentes](/cours/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
-- Voir les autres ressources du [cours sur l'intégration continue](/cours/ci).
+- [💻 TP Workflow : support de versions concurrentes](/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
+- Voir les autres ressources du [cours sur l'intégration continue](/ci).

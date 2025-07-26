@@ -32,5 +32,5 @@ title: Tableaux de bord et pilotage des applications du SI
 
 ## 📑 Documents
 
-- [🤓 Cours : Introduction aux tableaux de bord et feuilles de route](/cours/data/tableau_bord_cours)
-- [💻 TP Dashboard PowerBI et Feuille de route](/cours/data/tp_powerbi) : réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.
+- [🤓 Cours : Introduction aux tableaux de bord et feuilles de route](/data/tableau_bord_cours)
+- [💻 TP Dashboard PowerBI et Feuille de route](/data/tp_powerbi) : réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.

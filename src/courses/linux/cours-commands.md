@@ -197,11 +197,11 @@ Voir cours LPIC-1 section "103.7 Lesson 2" sur `grep` et `sed` p.372
 
 <!-- Annexe : liste des TPs -->
 
-[tp-ligne-commande]: /cours/linux/tp-ligne-commande
-[tp-texte]: /cours/linux/tp-texte
-[tp-fichiers]: /cours/linux/tp-fichiers
-[tp-redirections]: /cours/linux/tp-redirections
-[tp-process]: /cours/linux/tp-process
+[tp-ligne-commande]: /linux/tp-ligne-commande
+[tp-texte]: /linux/tp-texte
+[tp-fichiers]: /linux/tp-fichiers
+[tp-redirections]: /linux/tp-redirections
+[tp-process]: /linux/tp-process
 
 ---
 

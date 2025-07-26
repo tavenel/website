@@ -68,21 +68,21 @@ Module de 12H
 
 ## 📑 Documents
 
-- [🤓 Cours](/cours/git/cours)
-- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/cours/git/tp-commit)
-- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/cours/git/tp-gitignore)
-- [💻 TP - Utiliser l'historique de Git™](/cours/git/tp-historique)
-- [💻 TP - Github® et dépôts distants](/cours/git/tp-github)
-- [💻 TP - Les branches Git™](/cours/git/tp-branches)
-- [💻 TP - Recherche dans un dépôt Git™](/cours/git/tp-grep)
-- [💻 TP Github - Utiliser les Gist](/cours/git/tp-github-gist)
-- [💻 TP - Les tags](/cours/git/tp-tags)
-- [💻 TP - Git pour un Projet XAMPP](/cours/git/tp-xampp) : Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
-- [💻 TP - Manipulations avancées de la HEAD](/cours/git/tp-deplacer-head-avance)
-- [💻 TP Neovim - gérer ses configurations avec Git](/cours/git/tp-iac-nvim)
-- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/cours/git/tp-ansible)
+- [🤓 Cours](/git/cours)
+- [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/git/tp-commit)
+- [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/git/tp-gitignore)
+- [💻 TP - Utiliser l'historique de Git™](/git/tp-historique)
+- [💻 TP - Github® et dépôts distants](/git/tp-github)
+- [💻 TP - Les branches Git™](/git/tp-branches)
+- [💻 TP - Recherche dans un dépôt Git™](/git/tp-grep)
+- [💻 TP Github - Utiliser les Gist](/git/tp-github-gist)
+- [💻 TP - Les tags](/git/tp-tags)
+- [💻 TP - Git pour un Projet XAMPP](/git/tp-xampp) : Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
+- [💻 TP - Manipulations avancées de la HEAD](/git/tp-deplacer-head-avance)
+- [💻 TP Neovim - gérer ses configurations avec Git](/git/tp-iac-nvim)
+- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/git/tp-ansible)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur Git](/cours/git).
+- Voir les autres ressources du [cours sur Git](/git).
 

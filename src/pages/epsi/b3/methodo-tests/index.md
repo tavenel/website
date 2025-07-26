@@ -25,19 +25,19 @@ Module de 10H
 
 ### Méthodologie des tests
 
-- [🤓 Cours de méthodologie des tests](/cours/tests/cours-methodo)
-- [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
-- [📖 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
-- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
+- [🤓 Cours de méthodologie des tests](/tests/cours-methodo)
+- [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
+- [📖 Exemple de rapport de bug](/tests/methodo/exemple-rapport-bug)
+- [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
 
 ### Les tests unitaires
 
-- [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
-- [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
-- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
+- [🤓 Cours : le framework Unittest en Python](/tests/unit/python/cours-python-unittest)
+- [💻 TP : Analyses de code en Python et utilisation du debugger](/tests/unit/python/tp-python-lint-debug)
+- [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
   - Sources pour le TP : `git clone https://git.sr.ht/~toma/python-unit`
-- [🏆 Projet tests unitaires](/cours/tests/unit/projet_tests_unit)
+- [🏆 Projet tests unitaires](/tests/unit/projet_tests_unit)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
+- Voir les autres ressources du [🧪 cours sur les tests](/tests).

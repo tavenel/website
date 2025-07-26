@@ -142,38 +142,38 @@ Les frameworks.
 
 ### Méthodologie
 
-- [🤓 Cours : méthodologie des tests](/cours/tests/cours-methodo)
-- [📖 Exemple de rapport de bug](/cours/tests/methodo/exemple-rapport-bug)
-- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
-- [📝 Exercices sur la méthodologie de test](/cours/tests/methodo/exercices_methodo_tests)
-- [📝 Exercices sur les techniques de tests](/cours/tests/methodo/techniques-tests-exercices)
+- [🤓 Cours : méthodologie des tests](/tests/cours-methodo)
+- [📖 Exemple de rapport de bug](/tests/methodo/exemple-rapport-bug)
+- [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
+- [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
+- [📝 Exercices sur les techniques de tests](/tests/methodo/techniques-tests-exercices)
 
 ### Industrialisation des tests
 
-- [🤓 Cours sur l'industrialisation des tests](/cours/tests/cours-indus)
+- [🤓 Cours sur l'industrialisation des tests](/tests/cours-indus)
 
 ### Tests unitaires
 
-- [🤓 Cours : le framework Unittest en Python](/cours/tests/unit/python/cours-python-unittest)
+- [🤓 Cours : le framework Unittest en Python](/tests/unit/python/cours-python-unittest)
 -  Dépôts d'exemples de tests unitaires :
   - 󰌠 Python : <https://git.sr.ht/~toma/python-unit>
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>
   - 🇰 Kotlin : <https://git.sr.ht/~toma/kotlin-unit>
   - Jest : <https://git.sr.ht/~toma/unit-jest>
-- [💻 TP : Analyses de code en Python et utilisation du debugger](/cours/tests/unit/python/tp-python-lint-debug)
-- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
-- [💻 TP : Tests unitaires Frontend en Jest](/cours/tests/unit/jest/tp-jest)
+- [💻 TP : Analyses de code en Python et utilisation du debugger](/tests/unit/python/tp-python-lint-debug)
+- [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
+- [💻 TP : Tests unitaires Frontend en Jest](/tests/unit/jest/tp-jest)
 
 ### ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
-- [🤓 Cours Selenium](/cours/tests/selenium-cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium-tp)
+- [🤓 Cours Selenium](/tests/selenium-cours)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
 
 ### Projet noté
 
-- [🏆 Projet jeu de rôle](/cours/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
+- [🏆 Projet jeu de rôle](/tests/projet_jeu_roles) : développer un jeu de rôle avec un focus important sur les tests unitaires et les tests d'interface utilisateur.
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests) et du [cours sur l'intégration continue](/cours/ci).
+- Voir les autres ressources du [🧪 cours sur les tests](/tests) et du [cours sur l'intégration continue](/ci).

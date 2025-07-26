@@ -21,12 +21,12 @@ Module de 10H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'industrialisation des tests](/cours/tests/cours-indus)
-- [🤓 Cours Selenium](/cours/tests/selenium-cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium-tp)
+- [🤓 Cours sur l'industrialisation des tests](/tests/cours-indus)
+- [🤓 Cours Selenium](/tests/selenium-cours)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-- [🏆 Projet tests automatisés d'interface utilisateur](/cours/tests/selenium-projet)
+- [🏆 Projet tests automatisés d'interface utilisateur](/tests/selenium-projet)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
+- Voir les autres ressources du [🧪 cours sur les tests](/tests).

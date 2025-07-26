@@ -26,21 +26,21 @@ Module de 18H
 
 ### Tests logiciels
 
-- [📖 Exemple de template de plan de tests](/cours/tests/methodo/exemple-template-plan-tests)
-- [💻 TP : Tests automatisés en Python](/cours/tests/unit/python/tp-python-tests)
-- [💻 TP : Tests unitaires en Jest](/cours/tests/unit/jest/tp-jest)
-- [💻 TP Facadia](/cours/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/cours/tests/selenium-tp)
+- [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
+- [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
+- [💻 TP : Tests unitaires en Jest](/tests/unit/jest/tp-jest)
+- [💻 TP Facadia](/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
 
 ### Intégration continue
 
-- [Exemple de pipeline Jenkinsfile](/cours/ci/exemple-jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/cours/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/cours/ci/exemple-gitlab-ci)
-- [📝 TD Processus d'intégration continue](/cours/ci/td_process_ci) : une étude de cas d'intégration continue.
-- [💻 TP - Workflows Git™ et Pull Request](/cours/git/tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
-- [ TP Jenkins](/cours/jenkins/tp-full)
-- [💻 TP Intégration continue avancée](/cours/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
+- [Exemple de pipeline Jenkinsfile](/ci/exemple-jenkinsfile)
+- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
+- [📝 TD Processus d'intégration continue](/ci/td_process_ci) : une étude de cas d'intégration continue.
+- [💻 TP - Workflows Git™ et Pull Request](/git/tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
+- [ TP Jenkins](/jenkins/tp-full)
+- [💻 TP Intégration continue avancée](/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
 
 ### 💻 Exemples
 
@@ -59,9 +59,9 @@ Le projet consiste à développer une application Web permettant à un joueur de
 
 _Après étude des besoins du client, vous décidez de développer cette application suivant un processus d'intégration continue, afin d'accélérer le développement du projet et pour garantir la qualité des fonctionnalités implémentées._
 
-- [📄 Lien vers le sujet](/cours/tests/projet_jeu_roles_tests_et_ci)
+- [📄 Lien vers le sujet](/tests/projet_jeu_roles_tests_et_ci)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [🧪 cours sur les tests](/cours/tests).
+- Voir les autres ressources du [🧪 cours sur les tests](/tests).
 

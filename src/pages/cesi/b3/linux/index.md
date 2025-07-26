@@ -47,20 +47,20 @@ Module de 3 journées
 
 ## 📑 Documents
 
-- [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-fedora-workstation)
-- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
+- [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/linux/tp-installation-vbox-fedora-workstation)
+- [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/linux/tp-installation-vbox-ubuntu-workstation)
 - [🤓 Cours Linux administration avancée](/cesi/b3/linux/cours)
-- [📀 TP : utiliser GRUB pour une restauration système](/cours/linux/tp-grub)
-- [📀 TP : utiliser un Live CD/USB pour une restauration système](/cours/linux/tp-rescue)
-- [📦 TP : Gestion de paquetages](/cours/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
-- [📡 TP : Configuration réseau](/cours/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
-- [🌐 TP : Installation d'un service VPN](/cours/linux/tp-vpn)
-- [🔐 TP : Sécurité des échanges avec SSH et GPG](/cours/linux/tp-ssh-gpg)
-- [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/cours/linux/tp-security)
-- [💾 TP Sauvegarde et Restauration sous Linux](/cours/linux/tp-backup)
-- [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/cours/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
+- [📀 TP : utiliser GRUB pour une restauration système](/linux/tp-grub)
+- [📀 TP : utiliser un Live CD/USB pour une restauration système](/linux/tp-rescue)
+- [📦 TP : Gestion de paquetages](/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
+- [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
+- [🌐 TP : Installation d'un service VPN](/linux/tp-vpn)
+- [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
+- [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
+- [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
+- [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur Linux](/cours/linux).
+- Voir les autres ressources du [cours sur Linux](/linux).
 

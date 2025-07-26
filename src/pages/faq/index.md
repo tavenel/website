@@ -24,7 +24,7 @@ Un shell (le programme qui exécute les commandes dans le terminal) utilise la v
 Pour apprendre à gérer la variable d'environnement `$PATH` :
 
 - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
-- sous Linux (ou MacOS), voir le TP sur la ligne de commandes [du cours Linux](/cours/linux)
+- sous Linux (ou MacOS), voir le TP sur la ligne de commandes [du cours Linux](/linux)
 :::
 
 ### Qu'est-ce qu'un Makefile ?
@@ -90,7 +90,7 @@ To have this happen automatically for branches without a tracking
 upstream, see 'push.autoSetupRemote' in 'git help config'.
 ```
 
-Git refuse d'envoyer les commits de la branche locale vers un dépôt distant car il ne sait pas vers quelle branche l'envoyer. Pour rappel Git est un modèle distribué, chaque dépôt est indépendant ! Voir [le cours Git](/cours/git)
+Git refuse d'envoyer les commits de la branche locale vers un dépôt distant car il ne sait pas vers quelle branche l'envoyer. Pour rappel Git est un modèle distribué, chaque dépôt est indépendant ! Voir [le cours Git](/git)
 
 Il faut donc expliquer à Git à quelle branche distante lier la branche locale (elle sera créée si besoin sur le dépôt distant). Si le `remote` s'appelle `origin` (cas par défaut après un `clone`) :
 

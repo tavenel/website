@@ -31,17 +31,17 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
-- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/cours/linux/tp-installation-vbox-ubuntu-workstation)
-- [✨ Configuration d'un poste de travail Linux](/cours/linux/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
-- [🤓 Cours découverte de Linux](/cours/linux/cours-1)
-- [  TP - Utilisation des commandes Linux](/cours/linux/tp-commandes_linux)
-- [  TP : Utilisation efficace de la ligne de commande](/cours/linux/tp-ligne-commande)
-- [  TP - Utilisation des commandes avancées](/cours/linux/tp-commandes_avancees)
-- [📜 TP - Création de scripts Bash](/cours/linux/tp-scripts_bash)
-- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/cours/linux/tp-trash)
-- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/cours/linux/projet_lamp)
+- [󰕈 Environnement de travail : Machine virtuelle Ubuntu Desktop dans VirtualBox](/linux/tp-installation-vbox-ubuntu-workstation)
+- [✨ Configuration d'un poste de travail Linux](/linux/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
+- [🤓 Cours découverte de Linux](/linux/cours-1)
+- [  TP - Utilisation des commandes Linux](/linux/tp-commandes_linux)
+- [  TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
+- [  TP - Utilisation des commandes avancées](/linux/tp-commandes_avancees)
+- [📜 TP - Création de scripts Bash](/linux/tp-scripts_bash)
+- [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/linux/tp-trash)
+- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/linux/projet_lamp)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur Linux](/cours/linux).
+- Voir les autres ressources du [cours sur Linux](/linux).
 

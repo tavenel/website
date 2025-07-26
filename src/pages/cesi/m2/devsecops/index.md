@@ -33,8 +33,8 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 
 ## 🚀 Pour aller plus loin
 
-- Gestionnaire de versions : voir les rappels du [cours Git](/cours/git)
-- Voir les autres ressources du [cours sur le devops](/cours/devops).
-- Intégration continue et déploiement continu : voir le [cours CI/CD](/cours/ci)
-- Conteneurs Docker & Kubernetes : voir le [cours Docker](/cours/docker)
+- Gestionnaire de versions : voir les rappels du [cours Git](/git)
+- Voir les autres ressources du [cours sur le devops](/devops).
+- Intégration continue et déploiement continu : voir le [cours CI/CD](/ci)
+- Conteneurs Docker & Kubernetes : voir le [cours Docker](/docker)
 

@@ -53,7 +53,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
   - `limits` : maximum par `Pod`
     - Pour la santé des Pod (`Kubelet`)
 - ⚙️ Requirement: installer un `MetricsServer` dans le cluster
-- 📚 Utilise les fonctionnalités de Docker : voir le [cours Docker sur le site](https://www.avenel.pro/cours/docker)
+- 📚 Utilise les fonctionnalités de Docker : voir le [cours Docker sur le site](https://www.avenel.pro/docker)
 
 ---
 

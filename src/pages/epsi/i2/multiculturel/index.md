@@ -20,6 +20,6 @@ Module de 7H.
 
 ## 📑 Documents
 
-- [🤓 Manager une équipe multiculturelle (cours)](/cours/management/multiculturel)
-- [🏆 Projet accompagner une équipe multiculturelle à distance](/cours/management/projet-multiculturel)
+- [🤓 Manager une équipe multiculturelle (cours)](/management/multiculturel)
+- [🏆 Projet accompagner une équipe multiculturelle à distance](/management/projet-multiculturel)
 

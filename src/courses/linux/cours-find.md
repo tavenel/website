@@ -62,7 +62,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 <div class="caption">Les différents répertoires de la Filesystem Hierarchy Standard (FHS)</div>
 
-[tp-fichiers-avance]: /cours/linux/tp-fichiers-avance
+[tp-fichiers-avance]: /linux/tp-fichiers-avance
 
 ---
 

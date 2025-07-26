@@ -254,9 +254,9 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 - Fichier de configuration `YAML`
 
 <!-- Annexe : liste des TPs -->
-[tp-grub]: /cours/linux/tp-grub
-[tp-shared-lib]: /cours/linux/tp-shared-lib
-[tp-rpm-apt]: /cours/linux/tp-rpm-apt
+[tp-grub]: /linux/tp-grub
+[tp-shared-lib]: /linux/tp-shared-lib
+[tp-rpm-apt]: /linux/tp-rpm-apt
 
 ---
 

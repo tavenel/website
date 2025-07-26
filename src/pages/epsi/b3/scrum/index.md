@@ -26,10 +26,10 @@ Module de 7H
 ## 📑 Documents
 
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
-- [🤓 Comparaison des méthodes agiles classiques (cours)](/cours/gestion-projet/agile/comparaison-methodes)
-- [🏆 Projet DevIA FS : Campus TaskForce](/cours/gestion-projet/agile/projet_scrum_dev_campus)
-- [🏆 Projet Sysops : InfraCampus](/cours/gestion-projet/agile/projet_scrum_sysops_campus)
+- [🤓 Comparaison des méthodes agiles classiques (cours)](/gestion-projet/agile/comparaison-methodes)
+- [🏆 Projet DevIA FS : Campus TaskForce](/gestion-projet/agile/projet_scrum_dev_campus)
+- [🏆 Projet Sysops : InfraCampus](/gestion-projet/agile/projet_scrum_sysops_campus)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur la gestion de projet](/cours/gestion-projet).
+- Voir les autres ressources du [cours sur la gestion de projet](/gestion-projet).
