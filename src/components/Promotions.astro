@@ -3,9 +3,9 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div id="promos">
-  <span id="currentPromo">Aucune Promotion</span>
-  <label for="promoSelect" id="promoButton"><button class="link" title="Changer de promotion"><Icon name="caret-down" /> </button></label>
-  <select name="promoSelect" id="promoSelect" class="hidden">
+  <select name="promoSelect" id="promoSelect">
+		<optgroup label="Aucune">
+  	  <option value="/">Promo</option>
 		<optgroup label="EPSI">
   	  <option value="/epsi/b3">B3</option>
   	  <option value="/epsi/i1">I1</option>
@@ -18,34 +18,27 @@ import { Icon } from 'astro-icon/components'
   	  <option value="/esgi/m2">M2</option>
 		</optgroup>
 		<optgroup label="CESI">
-  	  <option value="/cesi/b2">B2</option>
+  	  <option value="/cesi/b3/tests">CDA25</option>
+  	  <option value="/cesi/b3/linux">B3 ASR</option>
+  	  <option value="/cesi/m1/dashboard">MAALSI25</option>
+  	  <option value="/cesi/m2">MAALSI24</option>
 		</optgroup>
   </select>
 </div>
 
 <script>
 
-import { HiddenSelect } from '@ts/select';
+const selectElt = document.getElementById('promoSelect') as HTMLSelectElement;
 
-function setPromo(value: string) {
-	localStorage.setItem("promo", value);
-	retrieveCurrentPromo();
-	window.location.href = value;
-}
+selectElt.addEventListener("change", (event: Event) => {
+		const value = (event.target as HTMLSelectElement).value;
+		localStorage.setItem("promo", value);
+		window.location.href = value;
+});
 
-function retrieveCurrentPromo() {
-	const currentPromo = localStorage.getItem("promo");
-	if (currentPromo) {
-		select.setDefault(currentPromo);
-		document.getElementById('currentPromo').innerHTML = `<a href=${currentPromo} >${currentPromo}</a>`;
-	}
-}
-
-const select = new HiddenSelect('promoSelect', 'promoButton');
-select.addShowButtonListener();
-select.addChangeListener(setPromo);
-
-retrieveCurrentPromo();
+// retrieveCurrentPromo
+const currentPromo = localStorage.getItem("promo");
+if (currentPromo) { selectElt.value = currentPromo; }
 
 </script>
 
