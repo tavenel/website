@@ -20,52 +20,72 @@ tags:
 
 ### 🧱 1. **Infrastructure applicative** : Pod → ReplicaSet → Deployment (ou autre)
 
+#### Pod
+
+```sh
+kubectl logs pod
+kubectl describe pod
+kubectl exec -it pod -- /bin/sh
 ```
-🔽 POD
-  ↳ kubectl logs pod
-  ↳ kubectl describe pod
-  ↳ kubectl exec -it pod -- /bin/sh
 
-🔽 ReplicaSet
-  ↳ kubectl describe rs
-  ↳ kubectl get rs -o wide
+#### ReplicaSet
 
-🔽 Deployment / CronJob / StatefulSet
-  ↳ kubectl describe deployment my-app
-  ↳ kubectl get deploy/statefulset/cronjob
+```sh
+kubectl describe rs
+kubectl get rs -o wide
+```
+
+#### Deployment / CronJob / StatefulSet
+
+```sh
+kubectl describe deployment my-app
+kubectl get deploy/statefulset/cronjob
 ```
 
 ---
 
 ### 🌐 2. **Exposition réseau** : Pod → Service → Ingress
 
+#### Pod
+
+```sh
+curl localhost:port
+# Vérifier les ports exposés
 ```
-🔽 POD
-  ↳ curl localhost:port
-  ↳ Vérifier les ports exposés
 
-🔽 SERVICE
-  ↳ kubectl get svc
-  ↳ kubectl get endpoints
-  ↳ kubectl describe svc my-service
-  ↳ curl my-service:port depuis un autre pod
+#### Service
 
-🔽 INGRESS
-  ↳ kubectl describe ingress
-  ↳ kubectl logs ingress-controller
-  ↳ Tester le nom de domaine + vérification DNS
+```sh
+kubectl get svc
+kubectl get endpoints
+kubectl describe svc my-service
+curl my-service:port # depuis un autre pod
+```
+
+#### Ingress
+
+```sh
+kubectl describe ingress
+kubectl logs ingress-controller
+
+# Tester le nom de domaine + vérification DNS
 ```
 
 ---
 
-### 🧰 3. **Outils utiles** (à tous les niveaux)
+### 🧰 3. **Outils** utiles à tous les niveaux
 
-* 🧪 `kubectl get all`
-* 🧪 `kubectl describe`
-* 📜 `kubectl logs`
-* 🐚 `kubectl exec`
-* 🌐 `nslookup`, `curl`, `ping` depuis un pod
-* 🔍 `kubectl get events --sort-by=.metadata.creationTimestamp`
+```sh
+kubectl get all
+kubectl describe
+kubectl logs
+kubectl exec
+kubectl get events --sort-by=.metadata.creationTimestamp`
+
+# Depuis un Pod
+nslookupcurl
+ping
+```
 
 ---
 
@@ -74,33 +94,43 @@ tags:
 ---
 
 1. 🔍 **Inspecter l’état du pod**
-   - `kubectl get pod my-pod`
-   - Rechercher les états : `CrashLoopBackOff`, `Error`, `Pending`.
+
+```sh
+kubectl get pod my-pod
+```
+
+:::tip
+Rechercher les états : `CrashLoopBackOff`, `Error`, `Pending`.
+:::
 
 ---
 
 2. 📜 **Examiner les événements du pod**
-   - `kubectl describe pod my-pod`
-   - Vérifier les erreurs d'ordonnancement ou d'image.
+
+```sh
+kubectl describe pod my-pod
+# Vérifier les erreurs d'ordonnancement ou d'image.
+```
 
 ---
 
 3. 📦 **Consulter les logs**
-   - `kubectl logs my-pod`
-   - Avec plusieurs conteneurs :
 
-     ```bash
-     kubectl logs my-pod -c my-container
-     ```
+```sh
+kubectl logs my-pod
+
+# Avec plusieurs conteneurs :
+kubectl logs my-pod -c my-container
+```
 
 ---
 
 4. 🐚 **Redémarrer un pod en mode interactif**
-  - Afin d'ouvrir un terminal sur le Pod :
 
-   ```bash
-   kubectl run -it --rm debug --image=busybox -- sh
-   ```
+```sh
+# Ouvrir un terminal sur le Pod :
+kubectl run -it --rm debug --image=busybox -- sh
+```
 
 ---
 
