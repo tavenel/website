@@ -1201,7 +1201,7 @@ aside.callout-correction {
 [data-theme="gruvbox-light-medium"] {
 /* Gruvbox theme from : https://github.com/morhetz/gruvbox */
 	--warning: #b57614;
-	--background: #ebdbb2;
+	--background: #f9f5d7;
 	--background2: #d5c4a1;
 	--text: #282828;
 	--link: #076678;
