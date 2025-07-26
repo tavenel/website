@@ -1,15 +1,15 @@
 ---
-title: 🐧 Tom Avenel - B3 LPIC-1
+title: 🐧 LPIC-1
 layout: '@layouts/BaseLayout.astro'
 ---
 
-# 🐧 Linux administration avancée LPIC-1 v5.0
+# 🐧 Linux LPIC-1
 
 _Préparation à la certification LPIC-1 v5.0_
 
-## Présentation de la certification LPIC-1 v5.0
+## Présentation de la certification
 
-- 2 parties : LPIC-101 et LPIC-102 pour obtenir le LPIC-1
+- 2 examens : LPIC-101 **puis** LPIC-102 pour obtenir le LPIC-1
 - 2 modules : LPIC-101 (1er semestre) et LPIC-102 (2nd semestre)
 - Examens en anglais
 - 1H30
@@ -47,7 +47,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 ### Quelle distribution ?
 
-- LPIC-1 vise des concepts généraux, pas vraiment de distribution de choix...
+- LPIC vise des concepts généraux, pas vraiment de distribution de choix...
 - ...mais vise principalement les dérivés Debian (Ubuntu, ...) et RedHat (RHEL, CentOS, ...)
 
 ### Niveau requis
@@ -63,6 +63,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 #### 📄 Supports de cours
 
 - [LA référence - Support officiel : LPIC-1 Exam 101, PDF, English](https://www.lpi.org/fr/our-certifications/lpic-1-overview/)
+
 #### 📝 Bibliographie
 
 - [Bouziri, N. H. Andriambelo, A. Boyanov, N. Larrousse 2010. Préparation à l’examen 101 pour la certification de l’Institut professionnel de Linux, niveau junior LPIC-1. Agence universitaire de la Francophonie, Paris.](https://graal.ens-lyon.fr/~ycaniou/Teaching/CertificationLPI/Support_LPIC-101.pdf)
@@ -101,22 +102,6 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 - Module de 18H
 - Évaluation : QCM et Examen blanc
-- Comment préparer la certification ?
-  * Les concepts principaux sont dans ces slides
-  * Le support détaillé reprend et complète les explications données en cours
-  * Pendant le cours :
-    * prendre des notes, notamment sur les options
-    * reproduire les exercices pendant le cours
-  * En autonomie :
-    * reproduire les exercices
-    * s'exercer aux examens blancs
-- La certification LPIC est conséquente et les questions très précises, il faut donc :
-  * bien apprendre **par coeur les commandes et les options à utiliser**
-  * **apprendre et pratiquer le vocabulaire (conséquent)**
-  * **s'entraîner régulièrement**
-- Quelle distribution ?
-  * LPIC-1 vise des concepts généraux, pas vraiment de distribution de choix...
-  * ...mais vise principalement les dérivés Debian (Ubuntu, ...) et RedHat (RHEL, CentOS, ...)
 
 ### 📑 Documents LPIC-101
 
