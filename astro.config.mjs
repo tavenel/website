@@ -137,8 +137,6 @@ export default defineConfig({
 				provider: fontProviders.fontsource(),
 				// Download only font files for characters used on the page
 				subsets: ["latin"],
-				// Use a fallback font family matching the intended appearance
-				fallbacks: ["monospace"],
 			},
 			{
 				name: "Abril Fatface",

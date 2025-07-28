@@ -45,7 +45,7 @@ It is a static website with very little JavaScript intended to be extremely fast
 - PageSpeed Insights (2023-10-13) [Details of analysis](https://pagespeed.web.dev/analysis/https-www-avenel-pro-promotions-esgi-esgi-b3-src-linux-lpic-1-html/g9fuj8pwm7?form_factor=desktop) : <span class="green">Performance:100%, Accessibility:100%, Best Practices:100%,SEO:100% (Mobile & Desktop)</span>
 - W3 analysis : <https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.avenel.pro%2F>
 - Covers come from the <https://undraw.co/> project.
-- Icons from : <https://icons.getbootstrap.com/icons/> and <https://dashboardicons.com/> and <https://www.astroicon.dev/>
+- Icons from : <https://icons.getbootstrap.com/> and <https://dashboardicons.com/> and <https://www.astroicon.dev/>
 - Markdown to HTML : [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
 - HTML tranforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
 - Lazy-load `Mermaid` (diagrams) JS librairies if needed.

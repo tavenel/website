@@ -1,6 +1,7 @@
 ---
 import RSS from '@components/RSS.astro';
 import Layout from '@layouts/BaseLayout.astro'
+import { Icon } from 'astro-icon/components';
 
 const title = '/home/tavenel';
 const { url } = Astro.props;
@@ -13,23 +14,23 @@ const { url } = Astro.props;
   	<div class="item global-item"><a href="/tools">🛠 Outils</a></div>
   	<div class="item global-item"><a href="/liens">✏️ Références</a></div>
   	<div class="item global-item"><a href="/links">🔗 Liens</a></div>
-		<div class="item"><a href="/docker">  Docker®</a></div>
-		<div class="item"><a href="/k8s">󱃾 Kubernetes®</a></div>
-		<div class="item"><a href="/linux">🐧 Linux</a></div>
-		<div class="item"><a href="/devops">󱃾  Devops - Sysops</a></div>
-		<div class="item"><a href="/ci">🔄 CI/CD &  Jenkins</a></div>
-		<div class="item"><a href="/git"> Git</a></div>
-		<div class="item"><a href="/tests">🧪 Tests</a></div>
-		<div class="item"><a href="/python">󰌠  Python &   Django</a></div>
-		<div class="item"><a href="/ddd">🧑‍💼 DDD : Domain-Driven Design</a></div>
-		<div class="item"><a href="/archi">🏗️ Architecture logicielle</a></div>
-		<div class="item"><a href="/projet">📅 Gestion de projet</a></div>
-		<div class="item"><a href="/cloud">🌐 Cloud & Web</a></div>
-		<div class="item"><a href="/data">📊  Data</a></div>
-		<div class="item"><a href="/green-it">💚 Green IT</a></div>
-		<div class="item"><a href="/integration">☎️  Intégration</a></div>
-		<div class="item"><a href="/management">💬 Management</a></div>
-		<div class="item"><a href="/spring">  Spring & 󱘻 Hibernate</a></div>
+		<div class="item"><a href="/docker"><Icon name="docker" /> Docker®</a></div>
+		<div class="item"><a href="/k8s"><Icon name="kubernetes" /> Kubernetes®</a></div>
+		<div class="item"><a href="/linux"><Icon name="linux" /> Linux</a></div>
+		<div class="item"><a href="/devops"><Icon name="gitlab" /> Devops - Sysops</a></div>
+		<div class="item"><a href="/ci"><Icon name="infinity" /> CI/CD & <Icon name="jenkins" /> Jenkins</a></div>
+		<div class="item"><a href="/git"><Icon name="git" /> Git</a></div>
+		<div class="item"><a href="/tests"><Icon name="test-tube-solid" /> Tests</a></div>
+		<div class="item"><a href="/python"><Icon name="python" /> Python & <Icon name="django" /> Django</a></div>
+		<div class="item"><a href="/ddd"><Icon name="briefcase" /> DDD : Domain-Driven Design</a></div>
+		<div class="item"><a href="/archi"><Icon name="inboxes" /> Architecture logicielle</a></div>
+		<div class="item"><a href="/projet"><Icon name="calendar-date" /> Gestion de projet</a></div>
+		<div class="item"><a href="/cloud"><Icon name="cloud" /> Cloud & Web</a></div>
+		<div class="item"><a href="/data"><Icon name="bar-chart" /> Data</a></div>
+		<div class="item"><a href="/green-it"><Icon name="globe-americas" /> Green IT</a></div>
+		<div class="item"><a href="/integration"><Icon name="headset" /> Intégration</a></div>
+		<div class="item"><a href="/management"><Icon name="people" /> Management</a></div>
+		<div class="item"><a href="/spring"><Icon name="leaf" /> Spring & <Icon name="database" /> Hibernate</a></div>
 	</div>
 
 </Layout>
