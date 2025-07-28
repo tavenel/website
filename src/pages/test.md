@@ -48,6 +48,37 @@ Un exercice avec :
 
 > Une citation
 
+### 🧩 Emojis
+
+- **Description** : Plateforme open-source pour l'automatisation du déploiement, la mise à l'échelle et la gestion des applications conteneurisées. 🌐
+- De loin l'orchestrateur **le plus utilisé avec _Docker®_** 🏆
+- **Avantages** 🌟 :
+  - Grande communauté et écosystème 👥
+  - Hautement extensible avec de nombreux outils et extensions 🛠️
+  - Prise en charge de charges de travail complexes 🏋️
+- **Inconvénients** ❌:
+  - Courbe d'apprentissage abrupte 📚
+  - Configuration complexe ⚙️
+- Pour les **déploiements complexes et évolutifs** 🌐
+
+-   Docker®
+- 󱃾 Kubernetes®
+- 🐧 Linux
+- 󱃾  Devops - Sysops
+- 🔄 CI/CD &  Jenkins
+-  Git
+- 🧪 Tests
+- 󰌠  Python &   Django
+- 🧑‍💼 DDD : Domain-Driven Design
+- 🏗️ Architecture logicielle
+- 📅 Gestion de projet
+- 🌐 Cloud & Web
+- 📊  Data
+- 💚 Green IT
+- ☎️  Intégration
+- 💬 Management
+-   Spring & 󱘻 Hibernate
+
 ### Subsubsection
 
 <mark>Highlight</mark> some text
