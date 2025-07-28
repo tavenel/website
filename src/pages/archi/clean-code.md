@@ -193,7 +193,7 @@ class Cercle(Forme):
 - Une classe déclare ses dépendances : `délégation`.
 - Un objet n'instancie pas d'autres objets à sa création ou après.
 - Utiliser des `Factory` ou un framework.
-- Voir le [cours sur l'héritage, le polymorphisme et la délégation][site-perso].
+- Voir le [cours sur l'héritage, le polymorphisme et la délégation](/archi/heritage).
 
 ---
 
@@ -524,7 +524,7 @@ widget.repaintLater();
 - Principe de Liskov :
   + une classe de base ne devrait rien connaître de ses classes dérivées.
 - Éviter le code statique (partagé entre les objets)
-- Voir le [cours sur la Programmation Orientée Objet et les principes SOLID][site-perso].
+- Voir le [cours sur la Programmation Orientée Objet et les principes SOLID](/archi/poo).
 
 ---
 
@@ -541,7 +541,7 @@ widget.repaintLater();
 - Lisibles.
 - Faciles à lancer.
 - Couverture de code (automatique).
-- Voir le [cours sur la méthodologie des tests][site-perso].
+- Voir le [cours sur la méthodologie des tests](/tests/cours-methodo).
 
 ---
 

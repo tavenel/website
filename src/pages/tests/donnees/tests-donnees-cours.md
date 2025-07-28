@@ -159,7 +159,7 @@ Cette section mentionne également les procédures à suivre pour réagir en cas
 
 Les procédures d'exploitation ne contiennent pas uniquement des opérations techniques ! Dans le cas du suivi de l'intégrité notamment, on prendra soin de préciser le processus administratif à suivre (personne à prévenir, ...) en cas de fuite des données.
 
-Voir le [cours sur le document d'exploitation][site-perso].
+Voir le [cours sur le document d'exploitation](/integration/document-exploitation).
 
 ---
 

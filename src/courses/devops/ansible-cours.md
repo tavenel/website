@@ -458,7 +458,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - Exemples de Playbooks :
   - <https://github.com/ansible/ansible-examples>
 	- <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
-- Voir aussi le cours DevOps sur le [site web][site-perso]
+- Voir aussi le [cours sur les pratiques DevOps](/devops)
 
 ---
 

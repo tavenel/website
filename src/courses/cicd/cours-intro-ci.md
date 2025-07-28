@@ -131,7 +131,7 @@ On pourra utiliser plusieurs profils (_pipelines_) d’intégration suivant les 
 Les pipelines d'intégration continue sont fortement liés aux workflows de gestion du code source qui conditionnent les process de développement.
 
 :::link
-Voir le [cours sur le gestionnaire de versions Git][site-perso].
+Voir le [cours sur le gestionnaire de versions Git](/git/).
 :::
 
 ---
@@ -376,7 +376,7 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 - [Exemple de pipeline Jenkins YAML en Infrastructure-as-Code][gist-jenkins-pipeline-yaml]
 - [CD : Gestionnaires d'artéfacts - attaques supply chain](https://blog.wescale.fr/supply-chain-attack-proxies-gestionnaires-dartefacts-et-cartographie)
 - [CD : attaques supply chain - livrables de confiance](https://blog.wescale.fr/supply-chain-attack-des-livrables-de-confiance)
-- 🚀 Pour aller plus loin : le [cours sur les pratiques DevOps][site-perso].
+- 🚀 Pour aller plus loin : le [cours sur les pratiques DevOps](/devops).
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 

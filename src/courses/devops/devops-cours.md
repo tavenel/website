@@ -90,7 +90,7 @@ layout: '@layouts/CoursePartLayout.astro'
   - Sur la plateforme. 🏗️
 
 :::link
-Voir le [cours sur les gestionnaires de versions (Git)][site-perso].
+Voir le [cours sur les gestionnaires de versions (Git)](/git).
 :::
 
 ---
@@ -100,8 +100,7 @@ Voir le [cours sur les gestionnaires de versions (Git)][site-perso].
 > Ensemble de pratiques permettant de réduire la feedback loop. 🔄
 
 :::link
-- Voir le [cours d'introduction sur l'intégration continue][site-perso].
-- Voir le [cours sur les outils de l'intégration continue][site-perso].
+- Voir le [cours sur l'intégration continue](/ci/cours).
 :::
 
 ---
@@ -197,7 +196,7 @@ Cette observabilité doit se coupler à des **alertes** en cas de souci !
 - Populaire en sécurité : DevSecOps et SRE 🔒
 
 :::link
-- Voir une introduction à la _Simian Army_ dans le [cours sur les tests][site-perso].
+- Voir une introduction à la _Simian Army_ dans le [cours sur les tests](/tests/cours-indus#-simian-army).
 :::
 
 ---
@@ -320,7 +319,7 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 ## Ressources
 
-- Voir une sélection d'outils DevOps sur le [site web][site-perso]
+- Voir une [sélection d'outils DevOps sur le site web](/tools)
 - Glossaire DevOps : <https://blog.stephane-robert.info/docs/glossaire/>
 - Un [résumé de Docker et du CI/CD](https://cours.brosseau.ovh/tp/devops/support-docker-cicd.html)
 - <https://roadmap.sh/devops>

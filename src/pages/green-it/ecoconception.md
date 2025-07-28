@@ -208,7 +208,7 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 
 ### Images
 
-- Voir le [cours sur l'accessibilité][site-perso].
+- Voir le [cours sur l'accessibilité](/archi/accessibilite).
 - [Préférer les CSS aux images (voir règle 23 du référentiel 115 bonnes pratiques](https://github.com/cnumr/best-practices/blob/main/src/content/fiches/fr/RWEB_0023-preferer-les-css-aux-images.mdx)
 
 ---
@@ -297,7 +297,7 @@ Serveur -> Navigateur: Fichiers HTML, CSS, IMG
 - Limite la fracture numérique
 - Design et implémentation pour états dégradés en priorité :
   - limite la consommation de ressources
-- Voir le [cours sur l'accessibilité][site-perso]
+- Voir le [cours sur l'accessibilité](/archi/accessibilite).
 
 ---
 

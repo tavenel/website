@@ -10,7 +10,7 @@ tags:
 
 ## 📋 Prérequis
 
-Le vocabulaire basique de programmation objet doit être maîtrisé : voir le [cours d'introduction aux langages objet][site-perso] si besoin.
+Le vocabulaire basique de programmation objet doit être maîtrisé : voir le [cours d'introduction aux langages objet](/archi/poo) si besoin.
 
 ---
 

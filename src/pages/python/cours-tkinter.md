@@ -178,7 +178,7 @@ Pour plus d'informations, voir le [cours zestedesavoir.com sur la programmation 
 
 Tkinter supporte le [pattern MVC][doc-tkinter-mvc]
 
-Voir le [cours sur le pattern MVC][site-perso].
+Voir le [cours sur le pattern MVC](/archi/mvc).
 
 ---
 
