@@ -190,7 +190,7 @@ public class MaClasseAvecDependance {
 @startuml
 
 caption
-= Le Design Pattern Singleton
+= Singleton
 
 endcaption
 
@@ -202,6 +202,9 @@ class Singleton {
 
 @enduml
 ```
+
+<div class="caption">Le Design Pattern Singleton</div>
+
 ---
 
 ### Programmation par template
@@ -214,34 +217,35 @@ En Programmation orientée objet, design pattern qui laisse libre l'implémentat
 
 ---
 
-```mermaid
----
-title: Design Pattern de Template
----
+```plantuml
+@startuml
+title Design Pattern de Template
 
-classDiagram
-    ClasseAbstraite <|-- SousClasse1 : Implémente
-    ClasseAbstraite <|-- SousClasse2 : Implémente
-    class ClasseAbstraite {
-        <<Abstract>>
-        +methodeTemplate()
-        #codeVariant()
-    }
-    class SousClasse1{
-        #codeVariant()
-    }
-    class SousClasse2{
-        #codeVariant()
-    }
+abstract class ClasseAbstraite {
+    +methodeTemplate()
+    #codeVariant()
+}
+
+class SousClasse1 {
+    #codeVariant()
+}
+
+class SousClasse2 {
+    #codeVariant()
+}
+
+ClasseAbstraite <|-- SousClasse1 : Implémente
+ClasseAbstraite <|-- SousClasse2 : Implémente
+@enduml
 ```
 
-_Le design pattern de template._
+<div class="caption">Le design pattern de template.</div>
 
 ---
 
 ## Pattern MVC : Modèle / Vue / Contrôleur
 
-Voir le [cours sur le pattern MVC][site-perso].
+Voir le [cours sur le pattern MVC](/archi/mvc)
 
 ---
 
