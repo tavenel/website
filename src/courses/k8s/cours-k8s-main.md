@@ -238,7 +238,7 @@ tags:
 
 ---
 
-| **Critère** | **Calico** | **Flannel** | **Weave Net** | **Cilium** |
+| Critère | Calico | Flannel | Weave Net | Cilium |
 |-------------|------------|-------------|---------------|------------|
 | **Type de Réseau** | Couche 3 (IPIP, BGP, VXLAN) | Couche 3 (VXLAN, UDP) | Couche 2 (Overlay) | Couche 3 (eBPF) |
 | **Sécurité** | Politiques de réseau granulaires | Politiques de réseau basiques | Politiques de réseau basiques | Politiques de réseau granulaires |
