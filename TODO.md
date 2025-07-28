@@ -1,12 +1,24 @@
 ## P1
 
-- dedicated font with UTF-8 emojis => openmoji ? (branch)
 - W3C
+- transform plantuml to mermaid diagrams
+- search => "Ctrl / K"
 
 ## P2
 
+- CSS layout
+  - global layout <https://www.w3schools.com/csS/css_grid.asp>
+  - right-hand size : chapters
+  	- TOC hidden
+	- better pagefind position ?
+  - portrait
+- styles :
+  - fix diagram style : .flowchartTitleText
+  - PageFind results theme : https://pagefind.app/docs/ui-usage/
+  - ability to zoom images (?)
 - diagrams
   - mermaid => render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/>
+  - static generate plantuml, … (not on page load)
   - fix `@startdot`
 ```css
 @media (prefers-color-scheme: dark) {
@@ -16,26 +28,18 @@
 }
 ```
 
-- Head.astro => ClientRouter transitions
 
 ## P3
 
-- tags:[] word cloud and links
+- URL checker
+	- break on broken local link
+	- improve external links checks
 
 - "favorites" :
   - link in Menu/
   - delete
   - fix favorites navigation (after astro hydration ?)
   - Favorites.astro => fix TODO
-
-- styles :
-  - fix diagram style : .flowchartTitleText
-  - PageFind results theme : https://pagefind.app/docs/ui-usage/
-  - ability to zoom images
-
-- seo
-  - https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
-  - https://code.juliancataldo.com/component/astro-seo-metadata/
 
 - linter `astro.config.mjs`
   - import remarkLint from 'remark-lint';
@@ -46,11 +50,17 @@
 
 ## P4
 
+- seo
+  - https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
+  - https://code.juliancataldo.com/component/astro-seo-metadata/
+
+- Head.astro => ClientRouter transitions
 - <whoami.avenel.pro>
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
 - "latest" page => git history ?
 - <https://adamsimpson.net/writing/openring>
+- tags:[] word cloud and links
 
 ---
 
