@@ -114,6 +114,11 @@ menu > li {
 	color: var(--versioning);
 }
 
+.tag {
+	margin-right: 5px;
+	font-style: italic;
+}
+
 /**********/
 /* LAYOUT */
 /**********/

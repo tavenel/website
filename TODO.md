@@ -20,7 +20,7 @@
 
 ## P3
 
-- tags:[] in files and word cloud
+- tags:[] word cloud and links
 
 - "favorites" :
   - link in Menu/

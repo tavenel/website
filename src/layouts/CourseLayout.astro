@@ -2,6 +2,7 @@
 import Layout from '@layouts/BaseLayout.astro';
 import Diagrams from '@components/Diagrams.astro';
 import Versioning from '@components/Versioning.astro';
+import Tags from '@components/Tags.astro';
 import Formats from '@components/Formats.astro';
 import ShowCorrection from '@components/ShowCorrection.astro';
 import TOC from '@components/TOC.astro';
@@ -14,6 +15,7 @@ type Props = MarkdownLayoutProps<{
 	created: string;
 	lastModified: string;
 	checked: string;
+  tags: string[];
 	extra: string[];
 }>;
 
@@ -30,6 +32,7 @@ const { frontmatter, url } = Astro.props;
 		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
 		<Formats url={url} />
 		<ShowCorrection />
+		<Tags tags={ frontmatter.tags } />
 		<TOC />
 		<slot name="end-header">
 	</div>
