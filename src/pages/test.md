@@ -11,6 +11,8 @@ extra:
 #### H4 title
 ##### H5 title
 
+**bold** and _emphasis_.
+
 :::correction
 Une correction
 :::
