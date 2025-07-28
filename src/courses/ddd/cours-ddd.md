@@ -138,7 +138,7 @@ Et des **rustines** partout dans le code… 🙈
 
 ---
 
-![Ce que le client voulait vraiment](@assets/gestion-projet/balancoire.jpg)
+![Ce que le client voulait vraiment](@assets/projet/balancoire.jpg)
 
 <div class="caption">Ce que le client voulait vraiment</div>
 

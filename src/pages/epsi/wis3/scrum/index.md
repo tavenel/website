@@ -26,9 +26,9 @@ Module de 20H
 ## 📑 Documents
 
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
-- [🤓 Comparaison des méthodes agiles classiques (cours)](/gestion-projet/agile/comparaison-methodes)
-- [🏆 Projet Scrum dans Jira - écriture de scénario itératif](/gestion-projet/agile/projet_jira)
+- [🤓 Comparaison des méthodes agiles classiques (cours)](/projet/agile/comparaison-methodes)
+- [🏆 Projet Scrum dans Jira - écriture de scénario itératif](/projet/agile/projet_jira)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur la gestion de projet](/gestion-projet).
+- Voir les autres ressources du [cours sur la gestion de projet](/projet).

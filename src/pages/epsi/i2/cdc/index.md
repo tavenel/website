@@ -24,18 +24,18 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 
 ## 📑 Documents
 
-- [🤓 Cours - le cahier des charges](/gestion-projet/cahier-charges)
-- [🤓 Diagramme de Kano](/gestion-projet/kano)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/gestion-projet/use-case)
-- [📝 Exercice Pur Beurre : définir le contexte](/gestion-projet/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/gestion-projet/exos-cas-utilisation-cas-sequence)
-- [🏆 Projet - écrire un cahier des charges](/gestion-projet/projet-cahier-charges)
+- [🤓 Cours - le cahier des charges](/projet/cdc)
+- [🤓 Diagramme de Kano](/projet/kano)
+- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/projet/use-case)
+- [📝 Exercice Pur Beurre : définir le contexte](/projet/exo-pur-beurre)
+- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/projet/exos-cas-utilisation-cas-sequence)
+- [🏆 Projet - écrire un cahier des charges](/projet/projet-cdc)
 - Exemples de cahier des charges :
-  - Devis vers facture, CDC fonctionnel : [pdf](/cours/cahier-charges/dvf_fonctionnel.pdf)
-  - Devis vers facture, CDC technique  : [pdf](/cours/cahier-charges/dvf_technique.pdf)
-  - Cahier des charges technique : [pdf](/cours/cahier-charges/ex_t1.pdf)
+  - Devis vers facture, CDC fonctionnel : [pdf](/cours/cdc/dvf_fonctionnel.pdf)
+  - Devis vers facture, CDC technique  : [pdf](/cours/cdc/dvf_technique.pdf)
+  - Cahier des charges technique : [pdf](/cours/cdc/ex_t1.pdf)
   - Cahier des charges : [Hotel Paradis](https://docs.google.com/document/d/1k1kHGk7QgoY3-hMCi0CURhRDo0zMawqyDluuXvYmq5E)
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [cours sur la gestion de projet](/gestion-projet).
+- Voir les autres ressources du [cours sur la gestion de projet](/projet).

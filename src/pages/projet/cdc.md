@@ -362,7 +362,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-![Exemple de matrice des exigences](@assets/gestion-projet/matrice-exigences.jpg)
+![Exemple de matrice des exigences](@assets/projet/matrice-exigences.jpg)
 
 <div class="caption">Exemple de matrice des exigences</div>
 
@@ -423,7 +423,7 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 
 ---
 
-![Exemple de matrice de priorisation](@assets/gestion-projet/matrice-priorite.jpg)
+![Exemple de matrice de priorisation](@assets/projet/matrice-priorite.jpg)
 
 <div class="caption">Exemple de matrice de priorisation</div>
 
@@ -431,7 +431,7 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 
 ### 📊 Diagramme de Kano
 
-Voir le [cours de gestion de projet sur le diagramme de Kano](/gestion-projet/kano). 📚
+Voir le [cours de gestion de projet sur le diagramme de Kano](/projet/kano). 📚
 
 ---
 
@@ -481,13 +481,13 @@ Contraintes : développement en `Java` et en `Objective C`, application destiné
 
 On pourra modéliser le besoin à l'aide d'un diagramme _bête à corne_ :
 
-![Le diagramme bête à cornes](@assets/gestion-projet/bete-a-cornes.png)
+![Le diagramme bête à cornes](@assets/projet/bete-a-cornes.png)
 
 <div class="caption">Le diagramme bête à cornes</div>
 
 ---
 
-![Exemple de diagramme bête à cornes](@assets/gestion-projet/bete-a-cornes-exemple.png)
+![Exemple de diagramme bête à cornes](@assets/projet/bete-a-cornes-exemple.png)
 
 <div class="caption">Exemple de diagramme bête à cornes</div>
 

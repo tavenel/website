@@ -189,7 +189,7 @@ note bottom of MOE: Partenaires (sous-traitants, fournisseurs, ..)
 
 ---
 
-![Ce que voulait le client](@assets/gestion-projet/balancoire.jpg)
+![Ce que voulait le client](@assets/projet/balancoire.jpg)
 
 <div class="caption">Ce que voulait le client</div>
 
@@ -245,7 +245,7 @@ Diagramme de Gantt : graphe d'ordonnancement représentant les différentes tâc
 
 ---
 
-![Exemple de diagramme de Gantt](@assets/gestion-projet/gantt.png)
+![Exemple de diagramme de Gantt](@assets/projet/gantt.png)
 
 <div class="caption">Exemple de diagramme de Gantt</div>
 

@@ -53,7 +53,7 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-![Ce que voulait le client](@assets/gestion-projet/balancoire.jpg)
+![Ce que voulait le client](@assets/projet/balancoire.jpg)
 
 <div class="caption">Ce que voulait le client.</div>
 
