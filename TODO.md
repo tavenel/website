@@ -30,10 +30,8 @@
 
 - styles :
   - fix diagram style : .flowchartTitleText
-  - slides => **bold** and _emphasis_
   - PageFind results theme : https://pagefind.app/docs/ui-usage/
   - ability to zoom images
-  - selected text : `::selection` => color and backgroundColor at least
 
 - seo
   - https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro

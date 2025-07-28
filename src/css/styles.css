@@ -9,6 +9,14 @@
   box-sizing: border-box;
 }
 
+strong {
+	border-bottom: 3px solid var(--strong);
+}
+
+em {
+	border: 1px solid var(--em);
+}
+
 .hidden { display: none !important ; }
 
 img, video {
@@ -632,6 +640,8 @@ aside.callout-correction {
 [data-theme="none"] {
 	/* A theme with default browser styling. */
 	--warning: revert;
+  --strong: revert;
+  --em: revert;
 	--background: revert;
 	--background2: revert;
 	--text: revert;
@@ -672,6 +682,8 @@ aside.callout-correction {
 * but the rest of the website is another light theme
 */
 	--warning: var(--dark-red);
+  --strong: var(--light-yellow);
+  --em: var(--hr);
 	--background: var(--light-main);
 	--background2: var(--light-second);
 	--text: var(--dark-main);
@@ -704,6 +716,8 @@ aside.callout-correction {
 [data-theme="everforest-light"] {
 	/* Light theme inspired by : https://github.com/sainnhe/everforest/blob/master/palette.md */
 	--warning: #E66868;;
+  --strong: #E66868;
+  --em: var(--hr);
 	--background: #FDF6E3;
 	--background2: #EAEDC8;
 	--text: #5C6A72;
@@ -735,6 +749,8 @@ aside.callout-correction {
 [data-theme="one-light"] {
 	/* Light theme inspired by : https://github.com/nathanbuchar/atom-one-dark-terminal/blob/master/COLORS */
 	--warning: #E45649;
+  --strong: var(--light-yellow);
+  --em: #986801;
 	--background: #F9F9F9;
 	--background2: inherit;
 	--text: #383A42;
@@ -766,11 +782,12 @@ aside.callout-correction {
 
 [data-theme="houston"] {
 /*
-* Main dark theme.
 * Code is `houston` but the rest of the website
 * is a dedicated dark theme.
 */
 	--warning: var(--salmon);
+  --strong: var(--middle-grey);
+  --em: var(--middle-grey);
 	--background: var(--dark-main);
 	--background2: var(--dark-second);
 	--text: var(--light-main);
@@ -802,6 +819,8 @@ aside.callout-correction {
 [data-theme="ayu-dark"] {
 	/* Theme inspired by : https://github.com/ayu-theme/ayu-colors */
 	--warning: #F07178;
+  --strong: #FFFFFF;
+  --em: #FF8F40;
 	--background: #0B0E14;
 	--background2: inherit;
 	--text: #BFBDB6;
@@ -828,11 +847,14 @@ aside.callout-correction {
 	--select-color: #BFBDB6;
 	--blockquote: #D2A6FF;
 	--exo-ul-border: #6C7380;
+
 }
 
 [data-theme="catppuccin-mocha"] {
 	/* Based on the Catpuccin Mocha flavor : https://catppuccin.com/palette */
 	--warning: #f38ba8;
+  --strong: #f38ba8;
+  --em: #f9e2af;
 	--background: #1e1e2e;
 	--background2: #11111b;
 	--text: #cdd6f4;
@@ -859,11 +881,17 @@ aside.callout-correction {
 	--select-color: #89b4fa;
 	--blockquote: #f9e2af;
 	--exo-ul-border: #a6adc8;
+
+  & strong {
+    border-left: 3px solid var(--strong);
+  }
 }
 
 [data-theme="dracula"] {
 	/* Theme inspired by : https://en.wikipedia.org/wiki/Dracula_(color_scheme) */
 	--warning: #ffb86c;
+  --strong: #ff79c6;
+  --em: #ffb86c;
 	--background: #282a36;
 	--background2: #44475a;
 	--text: #f8f8f2;
@@ -890,11 +918,17 @@ aside.callout-correction {
 	--select-color: #bd93f9;
 	--blockquote: #bd93f9;
 	--exo-ul-border: #44475a;
+
+  & strong {
+    border-left: 3px solid var(--strong);
+  }
 }
 
 [data-theme="kanagawa-dragon"] {
 	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.yml */
 	--warning: #c4746e;
+  --strong: revert;
+  --em: revert;
 	--background: #181616;
 	--background2: var(--dark-main);
 	--text: #c5c9c5;
@@ -926,6 +960,8 @@ aside.callout-correction {
 [data-theme="nord"] {
 	/* Based on the Nord Theme : https://www.nordtheme.com/docs/colors-and-palettes */
 	--warning: #b48ead;
+  --strong: revert;
+  --em: #eceff4;
 	--background: #2e3440;
 	--background2: inherit;
 	--text: #eceff4;
@@ -957,6 +993,8 @@ aside.callout-correction {
 [data-theme="rose-pine"] {
 	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
 	--warning: #f6c177;
+  --strong: #ebbcba;
+  --em: #ebbcba;
 	--background: #191724;
 	--background2: #26233a;
 	--text: #e0def4;
@@ -988,6 +1026,8 @@ aside.callout-correction {
 [data-theme="rose-pine-dawn"] {
 	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
 	--warning: #f6c177;
+  --strong: #b4637a;
+  --em: #9893a5;
 	--background: #faf4ed;
 	--background2: #f2e9e1;
 	--text: #575279;
@@ -1014,11 +1054,17 @@ aside.callout-correction {
 	--select-color: inherit;
 	--blockquote: #ea9d34;
 	--exo-ul-border: #9893a5;
+
+  & strong {
+    border-bottom: 1px solid var(--strong);
+  }
 }
 
 [data-theme="synthwave-84"] {
 	/* Theme inspired by : https://github.com/robb0wen/synthwave-vscode */
 	--warning: #fe4450;
+  --strong: #ff7edb;
+  --em: #fede5d;
 	--background: #262335;
 	--background2: var(--dark-main);
 	--text: #f97e72;
@@ -1047,6 +1093,9 @@ aside.callout-correction {
 	--blockquote: #ff7edb;
 	--exo-ul-border: #ffffff80;
 
+  & strong {
+    color: var(--strong);
+  }
 	& h1 {
 		text-shadow: 0 0 2px #000, 0 0 10px #fede5d, 0 0 5px #fede5d, 0 0 25px #fede5d;
 	}
@@ -1085,6 +1134,8 @@ aside.callout-correction {
 [data-theme='the-unnamed'] {
 	/* From : https://github.com/estruyf/slidev-theme-the-unnamed */
 	--warning: #fe4a49;
+  --strong: #ffe45e;
+  --em: #f141a8;
 	--background: #161c2c;
 	--background2: inherit;
 	--text: #f3eff5;
@@ -1150,6 +1201,8 @@ aside.callout-correction {
 [data-theme="tokyo-night"] {
 	/* Based on the Tokyo Night Theme : https://github.com/tokyo-night/tokyo-night-vscode-theme */
 	--warning: #f7768e;
+  --strong: #e0af68;
+  --em: #9ece6a;
 	--background: #1a1b26;
 	--background2: #24283b;
 	--text: #a9b1d6;
@@ -1176,10 +1229,16 @@ aside.callout-correction {
 	--select-color: inherit;
 	--blockquote: #9ece6a;
 	--exo-ul-border: #e0af68;
+
+  & strong {
+    border-bottom: 2px solid var(--strong);
+  }
 }
 
 [data-theme="poimandres"] {
 	--warning: #d0679d;
+  --strong: #5de4c7;
+  --em: #fffac2;
 	--background: #1b1e28;
 	--background2: ;
 	--text: #a6accd;
@@ -1206,11 +1265,17 @@ aside.callout-correction {
 	--select-color: inherit;
 	--blockquote: #fffac2;
 	--exo-ul-border: #5de4c7;
+
+  & strong {
+    border-bottom: 2px solid var(--strong);
+  }
 }
 
 [data-theme="gruvbox-dark-medium"] {
 /* Gruvbox theme from : https://github.com/morhetz/gruvbox */
 	--warning: #fabd2f;
+  --strong: #a89984;
+  --em: #a89984;
 	--background: #3c3836;
 	--background2: #504945;
 	--text: #fbf1c7;
@@ -1242,6 +1307,8 @@ aside.callout-correction {
 [data-theme="gruvbox-light-medium"] {
 /* Gruvbox theme from : https://github.com/morhetz/gruvbox */
 	--warning: #b57614;
+  --strong: #7c6f64;
+  --em: #7c6f64;
 	--background: #f9f5d7;
 	--background2: #d5c4a1;
 	--text: #282828;
@@ -1273,6 +1340,8 @@ aside.callout-correction {
 [data-theme="andromeeda"] {
 	/* Andromeeda theme inspired from : https://github.com/EliverLara/Andromeda */
 	--warning: #ff00aa;
+  --strong: #FFE66D;
+  --em: #FFE66D;
 	--background: #23262E;
 	--background2: #3D4352;
 	--text: #D5CED9;
