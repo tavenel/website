@@ -7,7 +7,7 @@ title: 󱃾 Kubernetes®
 ## 󱃾 Kubernetes® 
 
 - [🤓 Cours Kubernetes : initiation basique](/k8s/cours-mini)
-- [🤓 Cours Kubernetes : l'intégral](/k8s/cours-full)
+- [🤓 Cours Kubernetes : l'intégral](/k8s/cours)
 - [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
 - [🤓 Cours Kubernetes orienté Administrateur Système](/k8s/cours-admin)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)

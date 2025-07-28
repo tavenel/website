@@ -53,7 +53,7 @@ title: 🐧 Linux
 
 ## Niveau 2
 
-- [🤓 Cours Linux intégral](/linux/cours-full)
+- [🤓 Cours Linux intégral](/linux/cours)
 - [🤓 Cours complet sur le shell Bash : fonctions, boucles, tests, …](/linux/cours-shell)
 - [⌨️ TP : affichage de la configuration du système et des périphériques, gestion des modules noyau](/linux/tp-systeme)
 - [📀 TP : utiliser GRUB pour une restauration système](/linux/tp-grub)
