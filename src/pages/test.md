@@ -283,6 +283,10 @@ left side
 ```
 
 ```mermaid
+---
+config:
+  theme: 'base'
+---
 flowchart TD
     A["La solution peut-elle être achetée/intégrée?"] -->|Oui| B["Cela mettra-t-il en péril l’entreprise ?"]
     A -->|Non| C["Complexité de la logique métier?"]
@@ -308,7 +312,7 @@ graph LR
 ```
 
 ```mermaid
-%%{init: { 'theme': 'default', 'gitGraph': {'mainBranchName': 'dev-v2'}} }%%
+%%{init: { 'theme': 'base', 'gitGraph': {'mainBranchName': 'dev-v2'}} }%%
 gitGraph
 commit
 commit
@@ -341,3 +345,37 @@ graph TD
 ```
 
 
+```mermaid
+---
+title: Le workflow Gitflow.
+---
+
+%%{init: { 'theme': 'base', 'gitGraph': {'showCommitLabel': false}} }%%
+gitGraph
+commit
+commit tag: "v0.1"
+branch hotfix
+ commit
+ commit
+checkout main
+branch dev
+ commit
+ commit
+ branch fonctionnalite-A
+  commit
+  commit
+  commit
+  commit
+checkout main
+merge hotfix tag:"v0.2"
+checkout dev
+ merge hotfix
+ merge fonctionnalite-A
+ commit
+ commit
+ branch livraison-1.0
+  commit
+  commit
+checkout main
+merge livraison-1.0 tag:"v1.0"
+```

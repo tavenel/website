@@ -184,9 +184,6 @@ graph LR
     B3-->|Non|A1
   end
 
-style A1 fill:#f96;
-style B1 fill:#f9f;
-style B2 fill:#98fb98;
 ```
 
 ---

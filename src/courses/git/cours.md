@@ -268,7 +268,7 @@ Une fois le travail terminé, la branche peut être **fusionnée** (`merge`) dan
 ---
 
 ```mermaid
-%%{init: { 'theme': 'default', 'gitGraph': {'mainBranchName': 'dev-v2'}} }%%
+%%{init: { 'theme': 'base', 'gitGraph': {'mainBranchName': 'dev-v2'}} }%%
 gitGraph
 commit
 commit
@@ -303,6 +303,7 @@ Ce comportement permet par exemple d'isoler une branche de développement avant 
 title: Une branche `dev` isolée de la branche `main` avant stablilisation.
 ---
 
+%%{init: { 'theme': 'base' } }%%
 gitGraph
 commit
 commit
@@ -319,6 +320,7 @@ commit
 title: Fusion de la branche `dev` dans la branche `main`.
 ---
 
+%%{init: { 'theme': 'base' } }%%
 gitGraph
 commit
 commit
@@ -349,6 +351,7 @@ Cette opération est **non-destructive** 🛡️ et permet de repérer quand les
 title: Merge des changements de `main` dans la branche `dev` par un nouveau commit.
 ---
 
+%%{init: { 'theme': 'base' } }%%
 gitGraph
 commit
 commit
@@ -388,6 +391,7 @@ Elle supprime cependant la vision explicite de la fusion 👀❌et est potentiel
 title: Rebase de la branche `dev` depuis la branche `main`.
 ---
 
+%%{init: { 'theme': 'base' } }%%
 gitGraph
 commit
 commit
