@@ -128,7 +128,7 @@ Utilisation d'OpenFaaS pour automatiser le traitement d'images, comme le redimen
 
 - **Déclencheur** : Téléchargement d'une nouvelle image dans un bucket S3.
 - **Action** : Une fonction OpenFaaS est déclenchée pour redimensionner l'image et la sauvegarder dans un autre bucket.
-- **Avantages** : Évolutivité automatique et traitement rapide des images sans avoir à gérer l'infrastructure sous-jacente.
+- **Avantages** : Évolutivité automatique et traitement rapide des images sans avoir à gérer l'infrastructure sous-jacente. 🌟
 
 #### Analyse de sentiments
 
@@ -136,7 +136,7 @@ Déploiement d'un modèle de machine learning pour analyser les sentiments dans 
 
 - **Déclencheur** : Nouveau commentaire posté sur une plateforme de médias sociaux.
 - **Action** : Une fonction OpenFaaS analyse le texte pour déterminer si le sentiment est positif, négatif ou neutre.
-- **Avantages** : Réactivité en temps réel et capacité à traiter de grands volumes de données textuelles.
+- **Avantages** 🌟 : Réactivité en temps réel et capacité à traiter de grands volumes de données textuelles.
 
 #### Intégration de données
 
@@ -144,7 +144,7 @@ Utilisation d'OpenFaaS pour intégrer des données provenant de différentes sou
 
 - **Déclencheur** : Nouvelle entrée dans une base de données SQL.
 - **Action** : Une fonction OpenFaaS extrait les données, les transforme et les charge dans un entrepôt de données.
-- **Avantages** : Automatisation des flux de travail ETL (Extract, Transform, Load) et réduction des erreurs manuelles.
+- **Avantages** 🌟 : Automatisation des flux de travail ETL (Extract, Transform, Load) et réduction des erreurs manuelles.
 
 #### Notifications en temps réel
 
@@ -152,7 +152,7 @@ Envoi de notifications en temps réel aux utilisateurs en fonction de certains �
 
 - **Déclencheur** : Changement de statut d'une commande dans un système de gestion des commandes.
 - **Action** : Une fonction OpenFaaS envoie une notification par email ou SMS au client.
-- **Avantages** : Amélioration de l'expérience utilisateur grâce à des mises à jour instantanées.
+- **Avantages** 🌟 : Amélioration de l'expérience utilisateur grâce à des mises à jour instantanées.
 
 #### Automatisation des tâches DevOps
 
@@ -160,7 +160,7 @@ Automatisation des tâches répétitives dans le cycle de développement et de d
 
 - **Déclencheur** : Nouveau commit dans un dépôt Git.
 - **Action** : Une fonction OpenFaaS lance une série de tests automatisés et déploie le code si les tests réussissent.
-- **Avantages** : Accélération du cycle de développement et réduction des erreurs humaines.
+- **Avantages** 🌟 : Accélération du cycle de développement et réduction des erreurs humaines.
 
 ## Installation d'OpenFaaS dans Kubernetes
 
@@ -412,7 +412,7 @@ def get_secret(secret_name):
 password = get_secret("mon-password")
 ```
 
-✅ **Avantage** : Le secret **n'est jamais visible** dans le YAML, ni injecté comme variable d’environnement.
+**Avantage** 🌟 : Le secret **n'est jamais visible** dans le YAML, ni injecté comme variable d’environnement.
 
 ### ⚙️ Configurations externes simples
 

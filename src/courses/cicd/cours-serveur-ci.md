@@ -108,7 +108,7 @@ Mutualise les ressources entre plusieurs développeurs et/ou plusieurs équipes 
 
 ---
 
-## ⚠️ Inconvénients d'un serveur d'intégration
+## ❌Inconvénients d'un serveur d'intégration
 
 ---
 

@@ -310,7 +310,7 @@ Attention : l'écart-type calculé directement avec la formule mathématique peu
 Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-computing-solution] pour ce besoin.
 :::
 
-### Avantages et inconvénients
+### 🌟 Avantages et inconvénients
 
 :::tip
 +  Mesures particulièrement représentatives de la réalité lorsque la distribution est normale.
@@ -919,7 +919,7 @@ Ces valeurs ne sont donc pas exactes - nous verrons dans la suite du cours comme
 Pour un calcul de $grad(\chi^2) = 0$ dans le cas général, voir la [page Wikipedia de la méthode des moindres carrés][wiki-moindres-carres].
 :::
 
-#### Limites
+#### ❌Limites
 
 Attention, la méthode des moindres carrés gère mal les valeurs aberrantes. Plusieurs méthodes existent pour éviter une influence trop forte de ces valeurs :
 
@@ -1214,7 +1214,7 @@ Par exemple, pour une régression logistique, on a :
 
 $$f_\beta(X_{i,.},y_i)=\frac{1}{N} \sum_{i=1}^N y_i (\beta_0 + X_{i,.}^T \beta) - \log (1+e^{(\beta_0+X_{i,.}^T \beta)})$$
 
-#### Avantages et limites
+#### 🌟 Avantages et limites ❌
 
 Les principaux avantages du lasso sont :
 
@@ -1400,7 +1400,7 @@ Il existe deux principaux types d'arbre de décision en fouille de données :
 - Les _arbres de classification_ (_Classification Tree_) permettent de prédire à quelle classe la variable cible $Y$ qualitative appartient, dans ce cas la prédiction est une étiquette de classe,
 - Les _arbres de régression_ (_Regression Tree_) permettent de prédire une quantité réelle $Y$ quantitative (par exemple, le prix d'une maison ou la durée de séjour d'un patient dans un hôpital), dans ce cas la prédiction est une valeur numérique.
 
-#### Avantages / Inconvénients
+#### 🌟 Avantages / Inconvénients
 
 :::tip
 + Solutions sous formes graphiques simples à interpréter.
@@ -1955,7 +1955,7 @@ Lorsque le nombre d'individus est très grands et qu'il est alors difficile de c
 
 :::tip
 - Au-delà de ces 3 catégories d'algorithmes, beaucoup d'autres méthodes moins intuitives existent comme la maximisation de l'espérance, qui repose sur des outils mathématiques probabilistes ou des réseaux de neurones.
-- Chaque méthode présente ses avantages mais aussi ses limites, selon le type de données à traiter :
+- Chaque méthode présente ses avantages mais aussi ses limites, selon le type de données à traiter ❌:
   + Les méthodes hiérarchiques peuvent être gourmandes en calculs.
   + La méthode des k-moyennes donne des groupes à la forme uniquement convexe.
   + Pour chaque méthode les paramètres d'initialisation ne sont pas forcément optimaux.
@@ -1977,7 +1977,7 @@ Lorsque le nombre d'individus est très grands et qu'il est alors difficile de c
 Pour une approche mathématique de l'analyse factorielle, voir le très bon [cours de Rodolphe Palm][cours-analyse-facto-maths] (attention, il faut être à l'aise avec le calcul matriciel avancé : vecteurs propres, déterminants, ...).
 :::
 
-#### Avantages
+#### 🌟 Avantages
 
 :::tip
 - Condenser des variables.
@@ -2033,7 +2033,7 @@ Exemples de situations où une telle méthode peut être intéressante :
 
 La méthode est également utilisée sans que l'on ait un objectif de prédiction; on souhaite seulement déterminer les prédicteurs les plus liés au groupe d'appartenance.
 
-Précautions et limites de la méthode :
+Précautions et limites de la méthode ❌:
 
 - Suppose que les variables prédictrices possèdent des propriétés de régularité satisfaisantes : distribution normale (voire multinormale) des variables $X_i$ dans les différentes populations.
 - Peut conduire à des résultats incorrects si les variables $X_i$ sont trop fortement corrélées entre elles.
@@ -2085,7 +2085,7 @@ L'analyse discriminante peut également être prédictive (apprentissage supervi
 
 - Analyse factorielle la plus courante
 - Transforme des variables corrélées statistiquement (liées entre elles) en nouvelles variables décorrélées les unes des autres : les _composantes principales_.
-- Avantages :
+- Avantages 🌟 :
   + Réduit le nombre de variables.
   + Simplifie une analyse.
   + Identifie le facteur qui provoque le plus de variance.

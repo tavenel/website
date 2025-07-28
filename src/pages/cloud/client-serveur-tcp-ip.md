@@ -599,7 +599,7 @@ Le serveur Web effectue alors les requêtes locales ou distantes vers le serveur
 
 ---
 
-L'avantage principal d'un Webmail est d'éviter la configuration du client de messagerie et l'ouverture de ports dédiés sur le client.
+L'avantage principal d'un Webmail est d'éviter la configuration du client de messagerie et l'ouverture de ports dédiés sur le client. 🌟
 Cependant, les courriers électroniques ne sont alors plus accessibles en local.
 
 ---

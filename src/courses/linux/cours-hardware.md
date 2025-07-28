@@ -94,7 +94,7 @@ Composants logiciels chargés et déchargés dynamiquement dans le noyau Linux
 
 ---
 
-### Avantages
+### 🌟 Avantages
 
 - Flexibilité : Possibilité d'ajouter/supprimer des fonctionnalités au noyau sans redémarrage.
 - Sécurité : Permet de maintenir la taille du noyau initial plus petite.

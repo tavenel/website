@@ -230,7 +230,7 @@ La technologie `ETL` repose sur :
 
 ---
 
-### Avantages d'un ETL
+### 🌟 Avantages d'un ETL
 
 - Dispose de connecteurs bdd, webservices et fichiers plats prêts à l'emploi.
 - Permet de structurer et rassembler l'ensemble des morceaux de code nécessaires aux transferts et aux transformations des données.
@@ -266,7 +266,7 @@ Il peut aussi s'agir d'un outil technique lié au langage de l'application.
 
 ---
 
-#### Avantages de l'approche scriptée
+#### 🌟 Avantages de l'approche scriptée
 
 - Homogénéité technologique avec les solutions déjà en place au niveau du SI.
 - Utiliser les langages que les équipes maîtrisent déjà, sans apprentissage et médiation d'un outil tiers.
@@ -275,7 +275,7 @@ Il peut aussi s'agir d'un outil technique lié au langage de l'application.
 
 ---
 
-#### Inconvénients de l'approche scriptée
+#### ❌Inconvénients de l'approche scriptée
 
 - Nécessite de tout développer.
 - Impose de nombreuses modifications lors d'une modification au niveau de la source, du contenu ou de la destination.

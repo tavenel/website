@@ -119,7 +119,7 @@ _Docker®_ 🐳
 
 ### 🏗️ Virtualisation forte
 
-| Avantages | Inconvénients |
+| 🌟 Avantages | Inconvénients ❌|
 | --- | --- |
 | Grande indépendance par rapport à l'hyperviseur | Consomme beaucoup de ressources |
 | Isolation forte voire totale | Performances réduites : temps de démarrage, virtualisation des appels systèmes, ... |
@@ -129,7 +129,7 @@ _Docker®_ 🐳
 
 ### 🐳 Paravirtualisation (conteneurs)
 
-| Avantages | Inconvénients |
+| 🌟 Avantages | Inconvénients ❌|
 | --- | --- |
 | Impact quasi nul sur les performances | Proche du système d'exploitation hôte |
 | | Isolation faible |
@@ -557,7 +557,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
-## ⚠️ Inconvénients de Docker
+## ❌Inconvénients de Docker
 
 - Sécurité : **isolation limitée** (conteneur vs VM) 🔒
 - Performance : surcharge (faible) vs exécution native (assez négligeable) ⚡

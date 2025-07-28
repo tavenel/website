@@ -33,7 +33,7 @@ Tests conçus (manuellement ou automatiquement) à partir d'un **modèle abstrai
 
 ---
 
-### 👍 Avantages
+### 🌟 Avantages
 
 - 📊 Tests proches du SUT grâce au modèle :
   - ✅ Tests **robustes et bien conçus** ;
@@ -45,7 +45,7 @@ Tests conçus (manuellement ou automatiquement) à partir d'un **modèle abstrai
 
 ---
 
-### 👎 Inconvénients
+### ❌Inconvénients
 
 - 🔗 Adhérence forte au modèle :
   - ✅ Nécessite un modèle bien fait
@@ -91,7 +91,7 @@ Objectif : **éviter les régressions** :
 
 ---
 
-### 👍 Avantages
+### 🌟 Avantages
 
 - ✅ Si produit en production mais aucune stratégie existante ;
 - 💰 Effort limité ;
@@ -99,7 +99,7 @@ Objectif : **éviter les régressions** :
 
 ---
 
-### 👎 Inconvénients
+### ❌Inconvénients
 
 - ❓ Qualité des intégrations ?
 - 🚫 Pas d'amélioration de la qualité.
@@ -114,14 +114,14 @@ Tests conçus, implémentés et exécutés immédiatement **à partir des résul
 
 ---
 
-### 👍 Avantages
+### 🌟 Avantages
 
 - 🔄 Tests adaptables si spécifications floues ou changeantes ;
 - 💰 Coût de spécification de test faible.
 
 ---
 
-### 👎 Inconvénients
+### ❌Inconvénients
 
 - 📜 Peu de processus :
   - ⚠️ Fort risque d'oublier des tests ;
@@ -158,14 +158,14 @@ Principe : avoir une équipe **dédiée** au test **indépendante** des autres �
 
 ---
 
-### 👍 Avantages
+### 🌟 Avantages
 
 - 🐛 Détecter des erreurs différentes par rapport aux développeurs ;
 - ✅ Vérifier et contester les spécifications et l'implémentation du système.
 
 ---
 
-### 👎 Inconvénients
+### ❌Inconvénients
 
 - 🚫 Manque de collaboration :
   - 📜 Manque d'information pour le testeur ;

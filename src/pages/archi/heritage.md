@@ -245,7 +245,7 @@ class Window(private val bounds: ClosedShape) : ClosedShape by bounds
 
 La délégation est certainement le design pattern le plus utile apporté par les langages objets.
 
-- Avantages :
+- Avantages 🌟 :
   + Très propre : aucun impact sur l'architecture globale.
   + Aucune dépendance inutile.
   + Factorisation évidente de comportements communs.

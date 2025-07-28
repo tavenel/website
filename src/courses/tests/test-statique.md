@@ -22,7 +22,7 @@ tags:
 
 ---
 
-## 👍 Avantages
+## 🌟 Avantages
 
 - 🛡️ **Prévention** des défauts de conception ou de codage ;
   - 🔍 **Difficulté** à trouver les défauts **dynamiquement** ;

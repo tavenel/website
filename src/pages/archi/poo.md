@@ -39,7 +39,7 @@ tags:
 
 ---
 
-## Avantages du paradigme objet
+## Avantages du paradigme objet 🌟
 
 - **Modularité** :  les objets regroupent des données et un ensemble d’opérations.
 - **Abstraction** : les objets sont proches du monde réel.
@@ -415,7 +415,7 @@ Je me déplace
 
 ---
 
-L'héritage présente 2 avantages principaux en POO :
+L'héritage présente 2 avantages principaux en POO 🌟 :
 
 - **réutilisation** : pas besoin de recréer à chaque fois la même classe ;
 - **spécialisation** : réutilise les attributs et les méthodes d’une classe en y ajoutant des opérations particulières à la nouvelle classe.

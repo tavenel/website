@@ -261,7 +261,7 @@ merge livraison-1.0 tag:"v1.0"
 - Workflow orienté dépôts 📂  
   - Un dépôt _officiel_ suivant un process Gitflow 🏛️  
   - Chaque développeur copie (`fork`) le dépôt officiel pour créer un nouveau dépôt distant 📋➡️📤  
-- Avantage : intégration de changements sans altérer le dépôt officiel 🔒  
+- 🌟 Avantage : intégration de changements sans altérer le dépôt officiel 🔒  
 - Très utilisé en open-source 🌐🐙
 
 ---

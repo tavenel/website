@@ -76,7 +76,7 @@ Cette nouvelle approche de management s'applique bien à de petites structures, 
 
 ---
 
-#### Avantages
+#### 🌟 Avantages
 
 - La **flexiblité** est bien supérieure : plus besoin de remonter tous les paliers pour faire changer les choses
 - La **cohésion** est renforcée grâce à la communication entre tous les acteurs
@@ -89,7 +89,7 @@ Cette nouvelle approche de management s'applique bien à de petites structures, 
 
 ---
 
-#### Limites
+#### ❌Limites
 
 - Attention à toujours fixer un **cadre de travail** (organisation, règles morales et éthiques) : la disparition de hiérarchie n'est pas synonyme d'anarchie !
 - Les instances autrefois dirigeantes (manager, chef de projet, ...) doivent être **formées** au métier de facilitateur

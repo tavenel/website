@@ -431,7 +431,7 @@ Nous n'avons pas encore ajouté de modèle métier dans notre projet mais à la 
 Pour disposer de ces modèles dans le SGBD, effectuer une première migration à l'aide des commandes décrites ci-dessus.
 
 :::tip
-Un avantage non négligeable de ce principe est la possibilité de stocker les scripts de migration dans le gestionnaire de versions (Git).
+Un avantage non négligeable de ce principe est la possibilité de stocker les scripts de migration dans le gestionnaire de versions (Git). 🌟
 
 Cela permet de revoir et de gérer l'historique des changements dans le SGBD, et participe au principe d'_Infrastructure as Code_ très important en DevOps.
 :::

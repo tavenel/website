@@ -230,7 +230,7 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
-## ⚠️ Inconvénients du DevOps
+## ❌Inconvénients du DevOps
 
 - Infrastructure plus complexe
   - Outils supplémentaires : CI/CD, orchestration, monitoring, …

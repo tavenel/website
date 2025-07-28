@@ -729,7 +729,7 @@ OrderFactory --> Order
 @enduml
 ```
 
-#### Avantages d'une **Factory** :
+#### 🌟 Avantages d'une **Factory** :
 
 1. **Séparation des préoccupations** :
    - La création d'objets est séparée de la logique métier, ce qui permet de garder les classes et les services plus clairs et moins responsables.
@@ -1099,7 +1099,7 @@ Service --> OrderRepository : injected
 
 1. **Injection par constructeur** :  
    - Les dépendances sont fournies à une classe via son constructeur.  
-   - Avantage : garantit que l'objet ne peut pas être créé sans ses dépendances.
+   - Avantage : garantit que l'objet ne peut pas être créé sans ses dépendances. 🌟
 
    ```java
    public class Service {
@@ -1113,7 +1113,7 @@ Service --> OrderRepository : injected
 
 2. **Injection par méthode (ou setter)** :  
    - Les dépendances sont définies via une méthode publique après la création de l'objet.  
-   - Avantage : permet une flexibilité dans la configuration après l'instanciation.
+   - Avantage : permet une flexibilité dans la configuration après l'instanciation. 🌟
 
    ```java
    public class Service {
@@ -1127,7 +1127,7 @@ Service --> OrderRepository : injected
 
 3. **Injection par champ** :  
    - Les dépendances sont directement injectées dans un champ, souvent via des annotations ou un conteneur IoC.  
-   - Avantage : réduit le code boilerplate.
+   - Avantage : réduit le code boilerplate. 🌟
 
    ```java
    public class Service {
@@ -1149,7 +1149,7 @@ Dans un contexte **DDD**, l'injection de dépendances est particulièrement util
 3. **Packaging des Bounded Context** :  
    - Dans une architecture avec plusieurs **Bounded Contexts**, chaque contexte peut avoir son propre conteneur IoC pour gérer les dépendances spécifiques.
 
-#### Inconvénients :
+#### Inconvénients ❌:
 
 1. **Complexité initiale** :  
    - L'utilisation de frameworks IoC ou de conteneurs peut introduire une courbe d'apprentissage.
@@ -1646,7 +1646,7 @@ Dans une architecture CQRS typique, on distingue deux modèles :
    - Peut utiliser des bases de données ou des structures de données différentes pour répondre efficacement aux besoins des requêtes.
    - Exemple : Une base indexée pour des recherches rapides.
 
-#### Avantages du CQRS
+#### 🌟 Avantages du CQRS
 
 1. **Scalabilité** :
    - Les lectures et les écritures peuvent être mises à l'échelle indépendamment, répondant ainsi aux différents besoins de performance.
@@ -1663,7 +1663,7 @@ Dans une architecture CQRS typique, on distingue deux modèles :
 
    - Le CQRS s'intègre bien avec l'**Event Sourcing**, où chaque changement d'état est représenté par un événement immuable.
 
-#### Inconvénients du CQRS
+#### ❌Inconvénients du CQRS
 
 1. **Complexité accrue** :
 
@@ -2169,7 +2169,7 @@ Le flux typique d'un **Process Manager** fonctionne comme suit :
 
 Si une étape échoue, comme un paiement refusé, le Process Manager peut entreprendre des actions de compensation, comme libérer le stock réservé.
 
-#### Avantages du **Process Manager** :
+#### 🌟 Avantages du **Process Manager** :
 
 1. **Centralisation de la logique métier** :  
    - La logique du workflow est centralisée dans un composant unique, ce qui la rend plus facile à comprendre, à tester et à modifier.
@@ -2183,7 +2183,7 @@ Si une étape échoue, comme un paiement refusé, le Process Manager peut entrep
 4. **Cohérence** :  
    - Le Process Manager s'assure que toutes les étapes du processus sont exécutées correctement et dans le bon ordre.
 
-#### Défis et inconvénients :
+#### Défis et inconvénients ❌:
 
 1. **Composant critique** :
    - Le Process Manager est un élément centralisé qui peut devenir un point unique de défaillance.

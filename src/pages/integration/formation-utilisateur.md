@@ -74,7 +74,7 @@ On notera toutefois quelques règles absolues :
 
 Les interfaces graphiques intègrent également de plus en plus souvent des éléments de formation directement dans le produit.
 
-Cela offre plusieurs avantages :
+Cela offre plusieurs avantages 🌟 :
 
 - La formation est réalisée directement sur le même support : pas de différence de version, etc ...
 - La formation est beaucoup plus intuitive

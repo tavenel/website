@@ -23,7 +23,7 @@ tags:
 
 ---
 
-### Avantages de Scrum
+### 🌟 Avantages de Scrum
 
 - Clarté des responsabilités et des attentes
 - Adaptabilité aux changements de priorités
@@ -80,7 +80,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-### Avantages de Kanban
+### 🌟 Avantages de Kanban
 
 - Simplicité et flexibilité : S'adapte facilement aux workflows existants
 - Adapté aux changements continus : Pas de cadence fixe, le travail est livré de manière continue
@@ -108,7 +108,7 @@ Le flux généré par un système est limité par au moins un processus
 
 ---
 
-### Avantages de XP
+### 🌟 Avantages de XP
 
 - Code de haute qualité : pratique de TDD et refactoring fréquent
 - Adaptabilité technique : mise à jour du code en fonction des besoins

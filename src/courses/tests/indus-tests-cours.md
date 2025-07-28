@@ -22,7 +22,7 @@ tags:
 
 ---
 
-### 👍 Avantages
+### 🌟 Avantages
 
 - 👥 Libère des ressources humaines (le testeur)
 - 🔄 La reproductibilité du test est simplifiée : le test automatisé vérifie toujours la même chose

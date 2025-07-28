@@ -112,7 +112,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ---
 
-### Avantages
+### 🌟 Avantages
 
 - Installation facile : Un simple commande installe le logiciel et ses dépendances.
 - Mises à jour centralisées : Facilité de maintenir les logiciels à jour.

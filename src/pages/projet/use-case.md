@@ -15,7 +15,7 @@ tags:
 
 ---
 
-### Avantages
+### 🌟 Avantages
 
 - Aide à comprendre le comportement attendu du système.
 - Permet d'identifier les rôles et les responsabilités dans un système.
@@ -111,7 +111,7 @@ deactivate Sys
 
 ---
 
-### Avantages
+### 🌟 Avantages
 
 - Décris le flux d'interactions d'un cas d'utilisation.
 - Clarifie les dépendances entre les composants.

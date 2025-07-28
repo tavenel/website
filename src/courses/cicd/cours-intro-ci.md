@@ -62,7 +62,7 @@ Les changements concurrents sont validés contre une éventuelle régression �
 
 ---
 
-## ⚠️ Inconvénients de l'intégration continue
+## ❌Inconvénients de l'intégration continue
 
 ---
 

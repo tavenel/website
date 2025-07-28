@@ -27,11 +27,11 @@ tags:
 
 - **Description** : Plateforme open-source pour l'automatisation du déploiement, la mise à l'échelle et la gestion des applications conteneurisées. 🌐
 - De loin l'orchestrateur **le plus utilisé avec Docker®** 🏆
-- **Avantages** :
+- **Avantages** 🌟 :
   - Grande communauté et écosystème 👥
   - Hautement extensible avec de nombreux outils et extensions 🛠️
   - Prise en charge de charges de travail complexes 🏋️
-- **Inconvénients** :
+- **Inconvénients** ❌:
   - Courbe d'apprentissage abrupte 📚
   - Configuration complexe ⚙️
 - Pour les **déploiements complexes et évolutifs** 🌐
@@ -41,11 +41,11 @@ tags:
 ### 🚀 OpenShift
 
 - **Description** : Plateforme de conteneurs de Red Hat, basée sur Kubernetes, avec des fonctionnalités supplémentaires pour les entreprises. 🏢
-- **Avantages** :
+- **Avantages** 🌟 :
   - Intégration facile avec d'autres produits Red Hat 🔄
   - Interface utilisateur intuitive 🖥️
   - Sécurité et conformité renforcées 🔒
-- **Inconvénients** :
+- **Inconvénients** ❌:
   - Coût élevé pour les fonctionnalités d'entreprise 💰
   - Moins flexible que Kubernetes seul 🤸
 - Pour les **solutions d'entreprise avec support** 🏢
@@ -55,11 +55,11 @@ tags:
 ### 🐳 Docker Swarm
 
 - **Description** : Solution d'orchestration de conteneurs intégrée à Docker, simple et facile à utiliser. 🐋
-- **Avantages** :
+- **Avantages** 🌟 :
   - Intégration transparente avec Docker 🔄
   - Facile à configurer et à utiliser 🛠️
   - Idéal pour les petits déploiements 🏠
-- **Inconvénients** :
+- **Inconvénients** ❌:
   - Manque de fonctionnalités avancées 🛑
   - Communauté et écosystème plus petits 👥
 - Pour les **environnements simples et rapides** 🏡
@@ -69,10 +69,10 @@ tags:
 ### 🏗️ Apache Mesos
 
 - **Description** : Projet open-source pour la gestion des ressources dans les centres de données, prenant en charge les conteneurs et les charges de travail non conteneurisées. 🏢
-- **Avantages** :
+- **Avantages** 🌟 :
   - Flexibilité pour gérer divers types de charges de travail 🔄
   - Évolutivité et robustesse 📈
-- **Inconvénients** :
+- **Inconvénients** ❌:
   - Complexité de configuration et de gestion ⚙️
   - Moins axé sur les conteneurs que les autres solutions 🎯
 - Pour les **environnements hybrides et complexes** 🏗️
@@ -380,7 +380,7 @@ tags:
 
 ---
 
-### ⚠️ Limites
+### ❌Limites
 
 - k8s est fait pour gérer de gros clusters : 🏗️
 - Limitations Kubernetes v1.31 :

@@ -81,7 +81,7 @@ Une `Page Object` doit également fournir des mécanismes pour manipuler, observ
 
 ---
 
-Les principaux avantages de ce modèle sont :
+🌟 Les principaux avantages de ce modèle sont :
 
 * la réduction de la quantité de code dupliqué
 * la réutilisabilité des classes `Page Object` pour différents tests (et parfois le code de production)

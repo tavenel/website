@@ -127,7 +127,7 @@ tags:
 
 ---
 
-### Avantages
+### 🌟 Avantages
 
 - Visualisation en temps réel des métriques clés.
 - Accès aux données critiques à tout moment : prise de décision rapide
@@ -136,7 +136,7 @@ tags:
 
 ---
 
-### Limites
+### ❌Limites
 
 - Difficulté du choix et de la récupération des données
 - Illisible si trop de données affichées

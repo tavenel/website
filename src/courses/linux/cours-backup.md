@@ -17,7 +17,7 @@ layout: '@layouts/CoursePartLayout.astro'
 ## Utilitaires
 
 
-| Outil | Type | Utilisation | Avantages |
+| Outil | Type | Utilisation | Avantages 🌟 |
 |-------|------|-------------|-----------|
 | `tar` | Archivage | Créer des archives de fichiers | Simple, combinable avec compression |
 | `rsync` | Synchronisation | Synchroniser des fichiers localement ou à distance | Efficace pour les sauvegardes incrémentielles |

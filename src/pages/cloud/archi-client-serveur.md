@@ -120,7 +120,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 
 ---
 
-## Avantages de l'architecture client/serveur
+## 🌟 Avantages de l'architecture client/serveur
 
 - Ressources centralisées : le serveur gère les ressources communes à tous les utilisateurs (base de données, ...)
   + la cohérence des données est aisée

@@ -7,7 +7,7 @@ tags:
 - gestion_projet
 ---
 
-## Un avantage ou un inconvénient
+## Un 🌟 Avantage ou un Inconvénient
 
 - équipes monoculturelles :
   + efficacité moyenne

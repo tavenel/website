@@ -371,7 +371,7 @@ merge main
 
 ### Le rebase 🔄
 
-L'opération de `merge` a un inconvénient : elle pollue l'historique avec des commits de merge 🧱🌀
+L'opération de `merge` a un inconvénient ❌: elle pollue l'historique avec des commits de merge 🧱🌀
 
 Une autre solution consiste à effectuer un `rebase` afin de **déplacer la chaîne de commit** d'une branche à la suite d'une autre 🔁📈
 

@@ -17,7 +17,7 @@ Framework : ensemble de composants qui structure une application et contraint la
 
 ---
 
-## Avantages d’un framework :
+## 🌟 Avantages d’un framework :
 
 - \+ Gain de temps et d’efficacité
 - \+ Meilleure structuration du code
