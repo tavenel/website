@@ -37,24 +37,37 @@ tags:
 
 ### Exemple de Diagramme de Cas d'Utilisation
 
-Système de gestion de bibliothèque :
+```mermaid
+---
+title: Système de gestion de bibliothèque
+---
+flowchart TD
+    %% Acteurs
+    user(["🧑 Utilisateur"])
+    librarian(["👩‍🏫 Bibliothécaire"])
 
-```plantuml
-@startuml
+    %% Cas d'utilisation
+    rechercher(["(Rechercher un livre)"])
+    emprunter(["(Emprunter un livre)"])
+    retourner(["(Retourner un livre)"])
+    inscription(["(S'inscrire à la bibliothèque)"])
+    gerer(["(Gérer les emprunts)"])
+    ajouter(["(Ajouter un nouveau livre)"])
+    supprimer(["(Supprimer un livre)"])
 
-actor "Utilisateur" as user
-actor "Bibliothécaire" as librarian
+    %% Relations utilisateur
+    user --> rechercher
+    rechercher --> emprunter
+    user --> retourner
+    user --> inscription
 
-user -> (Rechercher un livre)
-(Rechercher un livre) -> (Emprunter un livre)
-user -> (Retourner un livre)
-librarian -> (Gérer les emprunts)
-librarian -> (Ajouter un nouveau livre)
-librarian -> (Supprimer un livre)
-user --> (S'inscrire à la bibliothèque)
-
-@enduml
+    %% Relations bibliothécaire
+    librarian --> gerer
+    librarian --> ajouter
+    librarian --> supprimer
 ```
+
+<div class="caption">Exemple de diagramme de cas d'utilisation pour un système de gestion d'une librairie.</div>
 
 ---
 

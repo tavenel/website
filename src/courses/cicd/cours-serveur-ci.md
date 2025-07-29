@@ -11,51 +11,27 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-
-caption
-= Exemple d'utilisation d'un serveur d'intégration continue.
-endcaption
-
-HIDE_STEREOTYPE()
-
-Person(dev, "Développeur", $sprite="&laptopscale=3.0")
-ContainerDb(git, "Dépôt de code", "Git", $sprite="&code,scale=5.0")
-System(jenkins, "Serveur d'intégration continue", "Jenkins", $sprite="&loop,scale=5.0")
-Container(artifact, "Artefact", $sprite="&box,scale=2.0")
-Container(reports, "Rapports", $sprite="&graph,scale=2.0")
-
-Rel(dev, git, "Commit")
-Rel(git, dev, "Mise à jour")
-Rel(jenkins, jenkins, "Exécution des tests")
-Rel_R(git, jenkins, "Envoi des modifications")
-Rel(jenkins, artifact, "Création des livrables")
-Rel(jenkins, reports, "Génération des rapports")
-@enduml
-```
-
-<!-- TODO: Bug graphique
 ```mermaid
-C4Context
-title Exemple d'utilisation d'un serveur d'intégration continue
+---
+title: Exemple d'utilisation d'un serveur d'intégration continue.
+---
+flowchart TD
+    dev["Développeur (Personne)"]
+    git["Dépôt de code (Git)"]
+    jenkins["Serveur d'intégration continue (Jenkins)"]
+    artifact["Artefact"]
+    reports["Rapports"]
 
-Person(dev, "Développeur")
+    %% Relations
+    dev -.->|Commit| git
+    git -.->|Mise à jour| dev
+    git -->|Envoi des modifications| jenkins
+    jenkins e1@-->|Exécution des tests| jenkins
+    jenkins -->|Création des livrables| artifact
+    jenkins -->|Génération des rapports| reports
 
-System_Ext(git, "Dépôt de code", "Git")
-System(jenkins, "Serveur d'intégration continue", "Jenkins")
-Container(artifact, "Artefact", "Livrables générés")
-Container(reports, "Rapports", "Résultats des tests")
-
-Rel(dev, git, "Commit")
-
-Rel(jenkins, jenkins, "Exécution des tests")
-Rel(git, jenkins, "Envoi des modifications")
-Rel(jenkins, artifact, "Création des livrables")
-Rel(jenkins, reports, "Génération des rapports")
+    e1@{ animate: true }
 ```
--->
 
 ---
 

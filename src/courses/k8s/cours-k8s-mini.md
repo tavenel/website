@@ -59,79 +59,75 @@ flowchart TD
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Communication entre Pods par ClusterIP
+---
+flowchart TD
 
-title "Communication entre Pods par ClusterIP"
+    subgraph Cluster ["Cluster"]
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+        svcB["Service green<br/>clusterIP 10.0.0.7<br/>port 82"]
+        class svcB green
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
+        subgraph node1 ["Node 1"]
+            pod1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+            class pod1 blue
+        end
 
-rectangle Cluster {
+        subgraph node2 ["Node 2"]
+            pod2["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+            class pod2 green
+        end
+    end
 
-  rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
-
-  component "<$node>\nNode 1" as node1 {
-    rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1 #LightBlue
-  }
-
-  component "<$node>\nNode 2" as node2 {
-    rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod2 #Orange
-  }
-
-}
-
-' -- Liaisons entre Services et Noeuds --
-
-svcB -[bold,dashed]right-> pod2 #red
-pod1 -[bold,dashed]-> svcB #red : <color:red>http://orange:82</color>
-
-@enduml
+    svcB e1@--> |forward| pod2
+    pod1 e2@--> |"http:// green:82"| svcB
+    e1@{ animate : true }
+    e2@{ animate : true }
 ```
+
+<div class="caption">Communication interne dans le cluster par Cluster IP.</div>
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: NodePort
+---
+flowchart TD
 
-title "NodePort"
+    subgraph Cluster ["Cluster"]
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+        svcA["Service blue<br/>NodePort 10.0.0.5<br/>port 81<br/>nodePort 30001"]
+        class svcA blue
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
+        subgraph node1 ["Node 1<br/>172.10.10.1<br/>:30001"]
+            pod1["pod-green-1<br/>10.4.32.4<br/>port 8282"]
+            class pod1 green
+        end
 
-rectangle "<$svc>\nService blue\nNodePort 10.0.0.5\nport 81\nnodePort 30001" as svcA #LightBlue
-
-rectangle Cluster {
-
-  component "<$node>\nNode 1\n172.10.10.1\n:30001" as node1
-  
-  component "<$node>\nNode 2\n172.10.10.2\n:30001" as node2 {
-    rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod #LightBlue
-  }
-
-}
+        subgraph node2 ["Node 2<br/>172.10.10.2<br/>:30001"]
+            pod2["pod-blue-1<br/>10.4.32.5<br/>port 8181"]
+            class pod2 blue
+        end
+    end
 
 
-' -- Liaisons (flèches) entre Services et Noeuds --
-svcA -[dotted]up-> pod
+    %% Utilisateur externe
+    User(["User"])
+    class User actor
 
-actor User
-User -[bold,dashed]-> node1 #red : <color:red>http://127.10.10.1:30001</color>
-node1 -[bold,dashed]right-> svcA #red
+    %% Accès externe simulé
+    User e1@--> |"http:// 127.10.10.1:30001"| node1
+    node1 e2@--> |routage NodePort| svcA
+    svcA e3@--> pod2
 
-@enduml
-
+    e1@{ animate : true }
+    e2@{ animate : true }
+    e3@{ animate : true }
 ```
+<div class="caption">Communication depuis l'extérieur par NodePort.</div>
 
 ---
 
@@ -146,35 +142,32 @@ node1 -[bold,dashed]right-> svcA #red
 
 - `PersistentVolumeClaim` : associe un `PersistentVolume` (disque virtuel géré par une `StorageClass`) à un/des `Pod`
 
-```plantuml
-@startuml
+```mermaid
+---
+title: PV et PVC
+---
+flowchart TD
 
-title "PV et PVC"
+    %% Composants
+    pv["PersistentVolume"]
+    sc["StorageClass"]
+    db[(Physical Volume)]
+    class sc red
+    class db green
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+    %% Pod et PVC imbriqués
+    subgraph pod ["pod"]
+        pvc["PersistentVolumeClaim"]
+    end
+    class pod blue
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
-
-
-rectangle "<$pv>\nPersistentVolume" as pv
-rectangle "<$sc>\nStorageClass" as sc #Orange
-
-database "Physical Volume" as db #LightGreen
-
-rectangle "<$pod>\npod" as pod #LightBlue {
-  rectangle "<$pvc>\nPersistentVolumeClaim" as pvc {
-}
-
-sc -[dotted]-> pv
-sc -[dotted]up-> pvc
-pv -> db
-
-@enduml
+    %% Relations
+    sc -.-> pv
+    sc -.-> pvc
+    pv --> db
 ```
+
+<div class="caption">StorageClass, PersistentVolume, PersistentVolumeClaim et volume physique.</div>
 
 ---
 

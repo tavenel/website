@@ -94,21 +94,18 @@ classDiagram
 
 ---
 
-class red
 
 http://localhost:4321/ddd/cours#diagramme-de-cas-dutilisation => style
 http://localhost:4321/ddd/cours#exemple-de-chemins-s%C3%A9par%C3%A9s => style
 http://localhost:4321/ddd/cours#exemple-de-context-map => style (in diag)
 
 => improve .blue and .green mermaid for all color themes
+=> class red, orange
 
+- To Mermaid : http://localhost:4321/_image?href=%2F%40fs%2Fmnt%2Fdata%2Fgit%2Fastro%2Fwebsite%2Fsrc%2Fassets%2Fddd%2FDomainDrivenDesignReference.png%3ForigWidth%3D836%26origHeight%3D741%26origFormat%3Dpng&w=836&h=741&f=webp
+- To Mermaid : mvc.md => Spring
 
-To Mermaid : http://localhost:4321/_image?href=%2F%40fs%2Fmnt%2Fdata%2Fgit%2Fastro%2Fwebsite%2Fsrc%2Fassets%2Fddd%2FDomainDrivenDesignReference.png%3ForigWidth%3D836%26origHeight%3D741%26origFormat%3Dpng&w=836&h=741&f=webp
-
-
-To Mermaid : mvc.md => Spring
-
-https://agramont.net/blog/diagraming-with-mermaidjs-astro/
+- Generate build-time : https://agramont.net/blog/diagraming-with-mermaidjs-astro/
 
 ## P2
 

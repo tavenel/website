@@ -29,24 +29,33 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 ## Composants
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Architecture Hibernate simplifiée
+---
+flowchart TD
 
-+---------------------------------+
-|           Application           |
-+---------------------------------+
-| Classes encapsulant les données |
-+---------------------------------+    +---------------------+
-| cBLU                            |<---| fichiers de mapping |
-|                                 |    +---------------------+
-|          Hibernate              |    +-----------------------------+
-|                                 |<---| propriétés de configuration |
-+---------------------------------+    +-----------------------------+
-|{s}       Base de données        |
-+---------------------------------+
+    subgraph Produit
+        Application
+        data["Classes encapsulant<br/>les données"]
+        orm["Hibernate"]
+        dbms["Base de données"]
+    end
 
-@endditaa
+    mapping["fichiers de mapping"]
+    config["propriétés de configuration"]
+
+    Application --> data
+    data --> orm
+    orm --> dbms
+
+    mapping -.- orm
+    config -.- orm
+
+    class orm,mapping,config blue
 ```
+
+<div class="caption">Intégration d'Hibernate dans l'application.</div>
 
 ---
 
@@ -62,29 +71,29 @@ Ceci afin d’abstraire l’implémentation de la base de données du code (La p
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Persistent Objects et mappings
+---
+flowchart TD
+    subgraph Produit
 
-+--------------------------+
-|       Application        |
-|                          |
-|   +==================+   |
-+---|Persistent Objects|---+
-|   +==================+   |
-|                          |
-|       Hibernate          |
-|                          |
-| +==========+ +=======+   |
-| |hibernate.| |XML    |   |
-| |properties| |Mapping|   |
-| +==========+ +=======+   |
-|                          |
-+--------------------------+
-|       Database           |
-+--------------------------+
+    subgraph Application
+        po["Persistent Objects"]
+    end
 
-@endditaa
+    subgraph Hibernate
+        props["hibernate.properties"]
+        mapping["XML Mapping"]
+    end
+
+    po --> Hibernate
+    Hibernate --> Database
+
+    end
 ```
+
+<div class="caption">Place des PersistentObjects, des mappings et de la configuration.</div>
 
 ---
 

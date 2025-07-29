@@ -596,143 +596,138 @@ flowchart TD
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: ClusterIP Multi-Nodes
+---
+flowchart TD
 
-title "ClusterIP Multi-Nodes"
+  subgraph Cluster ["Cluster"]
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+    svcA["Service blue<br/>clusterIP 10.0.0.5<br/>port 81"]
+    svcB["Service green<br/>clusterIP 10.0.0.7<br/>port 82"]
+    class svcA blue
+    class svcB green
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
+    subgraph node1 ["Node 1"]
+        pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+        class pod1_1 blue
+    end
 
-' -- Services --
-rectangle "<$svc>\nService blue\nclusterIP 10.0.0.5\nport 81" as svcA #LightBlue
-rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
+    subgraph node2 ["Node 2"]
+        pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+        pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+        class pod2_1 blue
+        class pod2_2 green
+    end
 
-' -- Noeud 1 --
-component "<$node>\nNode 1" as node1 {
-  rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
-}
+    subgraph node3 ["Node 3"]
+        pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+        class pod3_1 green
+    end
 
-' -- Noeud 2 --
-component "<$node>\nNode 2" as node2 {
-  rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
-  rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
-}
+    svcA -.-> pod1_1
+    svcA -.-> pod2_1
 
-' -- Noeud 3 --
-component "<$node>\nNode 3" as node3 {
-  rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
-}
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
 
-' -- Liaisons (flèches) entre Services et Noeuds --
-svcA -[dotted]-> pod1_1
-svcA -[dotted]-> pod2_1
-
-svcB -[dotted]-> pod2_2
-svcB -[dotted]-> pod3_1
-
-@enduml
-
+  end
 ```
+
+<div class="caption">ClusterIP multi Nodes</div>
 
 ---
 
-```plantuml
-@startuml
-
-title "Communication entre Pods par ClusterIP"
-
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
-
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
-
-' -- Services --
-rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
-
-rectangle Cluster {
-
-  component "<$node>\nNode 1" as node1 {
-    rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
-  }
-
-  component "<$node>\nNode 2" as node2 {
-    rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
-    rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
-  }
-
-  component "<$node>\nNode 3" as node3 {
-    rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
-  }
-
-}
-
-' -- Liaisons entre Services et Noeuds --
-
-svcB -[dotted]-> pod2_2
-svcB -[dotted]-> pod3_1
-
-pod1_1 -[bold,dashed]right-> svcB #red : <color:red>1 => http://orange:82</color>
-svcB -[bold,dashed]-> pod2_2 #red : <color:red>2 => http://10.4.32.6:8282</color>
-
-@enduml
-
-```
-
+```mermaid
 ---
+title: Communication entre Pods par ClusterIP - par Pod 1
+---
+flowchart TD
 
-```plantuml
-@startuml
+    svcB["Service green<br/>clusterIP 10.0.0.7<br/>port 82"]
+    class svcB green
 
-title "Communication entre Pods par ClusterIP"
+    subgraph Cluster ["Cluster"]
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+        subgraph node1 ["Node 1"]
+            pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+            class pod1_1 blue
+        end
+        class node1 node
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
+        subgraph node2 ["Node 2"]
+            pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+            pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+            class pod2_1 blue
+            class pod2_2 green
+        end
+        class node2 node
 
-' -- Services --
-rectangle "<$svc>\nService orange\nclusterIP 10.0.0.7\nport 82" as svcB #Orange
+        subgraph node3 ["Node 3"]
+            pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+            class pod3_1 green
+        end
+        class node3 node
+    end
 
-rectangle Cluster {
+    %% Connexions services → pods
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
 
-  component "<$node>\nNode 1" as node1 {
-    rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
-  }
+    %% Communication entre pod et service
+    pod1_1 e1@-->|"1 - http:// green:82"| svcB
+    svcB e2@-->|"2 - http:// 10.4.32.6:8282"| pod2_2
 
-  component "<$node>\nNode 2" as node2 {
-    rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
-    rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
-  }
-
-  component "<$node>\nNode 3" as node3 {
-    rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
-  }
-
-}
-
-' -- Liaisons entre Services et Noeuds --
-
-svcB -[dotted]-> pod2_2
-svcB -[dotted]-> pod3_1
-
-pod1_1 -[bold,dashed]right-> svcB #red : <color:red>1 => http://orange:82</color>
-svcB -[bold,dashed]-> pod3_1 #red : <color:red>OU (load balancer interne) : 2 => http://10.4.32.8:8282</color>
-
-@enduml
-
+    e1@{ animate : true }
+    e2@{ animate : true }
 ```
+
+```mermaid
+---
+title: Communication entre Pods par ClusterIP - par Pod 2
+---
+flowchart TD
+
+    svcB["Service green<br/>clusterIP 10.0.0.7<br/>port 82"]
+    class svcB green
+
+    subgraph Cluster ["Cluster"]
+
+        subgraph node1 ["Node 1"]
+            pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+            class pod1_1 blue
+        end
+        class node1 node
+
+        subgraph node2 ["Node 2"]
+            pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+            pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+            class pod2_1 blue
+            class pod2_2 green
+        end
+        class node2 node
+
+        subgraph node3 ["Node 3"]
+            pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+            class pod3_1 green
+        end
+        class node3 node
+    end
+
+    %% Connexions services → pods
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
+
+    %% Communication entre pod et service
+    pod1_1 e1@-->|"1 - http:// green:82"| svcB
+    svcB e2@-->|"2 - http:// 10.4.32.8:8282"| pod3_1
+
+    e1@{ animate : true }
+    e2@{ animate : true }
+```
+
+<div class="caption">Communication entre Pods par ClusterIP. Le service Green est load-balancé sur pod-green-1 et pod-green-2.</div>
 
 ---
 
@@ -745,100 +740,99 @@ svcB -[bold,dashed]-> pod3_1 #red : <color:red>OU (load balancer interne) : 2 =>
 
 ---
 
-```plantuml
-@startuml
-
-title "NodePort"
-
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
-
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
-
-' -- Services --
-rectangle "<$svc>\nService blue\nNodePort 10.0.0.5\nport 81\nnodePort 30001" as svcA #LightBlue
-rectangle "<$svc>\nService orange\nNodePort 10.0.0.7\nport 82\nnodePort 30002" as svcB #Orange
-
-' -- Noeud 1 --
-component "<$node>\nNode 1\n172.10.10.1\n:30001\n:30002" as node1 {
-  rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
-}
-
-' -- Noeud 2 --
-component "<$node>\nNode 2\n172.10.10.2\n:30001\n:30002" as node2 {
-  rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
-  rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
-}
-
-' -- Noeud 3 --
-component "<$node>\nNode 3\n172.10.10.3\n:30001\n:30002" as node3 {
-  rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
-}
-
-' -- Liaisons (flèches) entre Services et Noeuds --
-svcA -[dotted]-> pod1_1
-svcA -[dotted]-> pod2_1
-
-svcB -[dotted]-> pod2_2
-svcB -[dotted]-> pod3_1
-
-actor User
-User -[bold,dashed]right-> node1 #red : <color:red>1 => http://127.10.10.1:30001</color>
-User -[bold,dashed]-> pod1_1 #red : <color:red>2 => pod-blue-1:8181</color>
-
-@enduml
-
-```
-
+```mermaid
 ---
+title: NodePort sur port 30001 du Node 1
+---
+flowchart TD
 
-```plantuml
-@startuml
-title "NodePort"
+    svcA["Service blue<br/>NodePort 10.0.0.5<br/>port 81<br/>nodePort 30001"]
+    svcB["Service green<br/>NodePort 10.0.0.7<br/>port 82<br/>nodePort 30002"]
+    class svcA blue
+    class svcB green
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+    subgraph node1 ["Node 1<br/>172.10.10.1<br/>:30001 :30002"]
+        pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+        class pod1_1 blue
+    end
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
+    subgraph node2 ["Node 2<br/>172.10.10.2<br/>:30001 :30002"]
+        pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+        pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+        class pod2_1 blue
+        class pod2_2 green
+    end
 
-' -- Services --
-rectangle "<$svc>\nService blue\nNodePort 10.0.0.5\nport 81\nnodePort 30001" as svcA #LightBlue
-rectangle "<$svc>\nService orange\nNodePort 10.0.0.7\nport 82\nnodePort 30002" as svcB #Orange
+    subgraph node3 ["Node 3<br/>172.10.10.3<br/>:30001 :30002"]
+        pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+        class pod3_1 green
+    end
 
-' -- Noeud 1 --
-component "<$node>\nNode 1\n172.10.10.1\n:30001\n:30002" as node1 {
-  rectangle "<$pod>\npod-blue-1\n10.4.32.2\nport 8181" as pod1_1 #LightBlue
-}
+   %% Connexions services → pods
+    svcA -.-> pod1_1
+    svcA -.-> pod2_1
 
-' -- Noeud 2 --
-component "<$node>\nNode 2\n172.10.10.2\n:30001\n:30002" as node2 {
-  rectangle "<$pod>\npod-blue-2\n10.4.32.5\nport 8181" as pod2_1 #LightBlue
-  rectangle "<$pod>\npod-orange-1\n10.4.32.6\nport 8282" as pod2_2 #Orange
-}
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
 
-' -- Noeud 3 --
-component "<$node>\nNode 3\n172.10.10.3\n:30001\n:30002" as node3 {
-  rectangle "<$pod>\npod-orange-2\n10.4.32.8\nport 8282" as pod3_1 #Orange
-}
+    %% Utilisateur externe
+    User(["User"])
 
-' -- Liaisons (flèches) entre Services et Noeuds --
-svcA -[dotted]-> pod1_1
-svcA -[dotted]-> pod2_1
+    %% Connexions externes
+    User e1@--> |"1 - http:// 127.10.10.1:30001"| node1
+    User e2@--> |"2 - http:// pod-blue-1:8181"| pod1_1
 
-svcB -[dotted]-> pod2_2
-svcB -[dotted]-> pod3_1
-
-actor User
-User -[bold,dashed]-> node1 #red : <color:red>1 => http://127.10.10.1:30002</color>
-User -[bold,dashed]-> pod2_2 #red : <color:red>2 => pod-orange-1:8282</color>
-@enduml
+    e1@{ animate : true }
+    e2@{ animate : true }
 ```
+
+```mermaid
+---
+title: NodePort sur port 30002 du Node 1
+---
+flowchart TD
+
+    svcA["Service blue<br/>NodePort 10.0.0.5<br/>port 81<br/>nodePort 30001"]
+    svcB["Service green<br/>NodePort 10.0.0.7<br/>port 82<br/>nodePort 30002"]
+    class svcA blue
+    class svcB green
+
+    subgraph node1 ["Node 1<br/>172.10.10.1<br/>:30001 :30002"]
+        pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+        class pod1_1 blue
+    end
+
+    subgraph node2 ["Node 2<br/>172.10.10.2<br/>:30001 :30002"]
+        pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+        pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+        class pod2_1 blue
+        class pod2_2 green
+    end
+
+    subgraph node3 ["Node 3<br/>172.10.10.3<br/>:30001 :30002"]
+        pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+        class pod3_1 green
+    end
+
+   %% Connexions services → pods
+    svcA -.-> pod1_1
+    svcA -.-> pod2_1
+
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
+
+    %% Utilisateur externe
+    User(["User"])
+
+    %% Connexions externes
+    User e1@--> |"1 - http:// 127.10.10.1:30002"| node1
+    User e2@--> |"2 - http:// pod-green-2:8181"| pod3_1
+
+    e1@{ animate : true }
+    e2@{ animate : true }
+```
+
+<div class="caption">Communication par NodePort. La communication vers l'adresse IP du Node est redirigée vers un Pod du Service.</div>
 
 ---
 
@@ -1037,36 +1031,32 @@ graph LR;
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: PV et PVC
+---
+flowchart TD
 
-title "PV et PVC"
+    %% Composants
+    pv["PersistentVolume"]
+    sc["StorageClass"]
+    db[(Physical Volume)]
+    class sc red
+    class db green
 
-!include <kubernetes/k8s-sprites-unlabeled-25pct>
+    %% Pod et PVC imbriqués
+    subgraph pod ["pod"]
+        pvc["PersistentVolumeClaim"]
+    end
+    class pod blue
 
-skinparam rectangle {
-  RoundCorner 15
-}
-skinparam defaultFontName "Arial"
-skinparam defaultFontSize 14
-
-
-rectangle "<$pv>\nPersistentVolume" as pv
-rectangle "<$sc>\nStorageClass" as sc #Orange
-
-database "Physical Volume" as db #LightGreen
-
-rectangle "<$pod>\npod" as pod #LightBlue {
-  rectangle "<$pvc>\nPersistentVolumeClaim" as pvc {
-}
-
-sc -[dotted]-> pv
-sc -[dotted]up-> pvc
-pv -> db
-
-@enduml
+    %% Relations
+    sc -.-> pv
+    sc -.-> pvc
+    pv --> db
 ```
 
+<div class="caption">StorageClass, PersistentVolume, PersistentVolumeClaim et volume physique.</div>
 
 ---
 
