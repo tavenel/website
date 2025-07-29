@@ -425,6 +425,12 @@ a.add-bookmark {
 				stroke: var(--diagram-green-stroke) !important;
 			}
 		}
+		&.red {
+			& .basic, rect, polygon {
+				fill: var(--diagram-red-fill) !important;
+				stroke: var(--diagram-red-stroke) !important;
+			}
+		}
 	}
 }
 
