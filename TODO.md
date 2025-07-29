@@ -4,7 +4,6 @@
 
 - W3C
 - transform plantuml to mermaid diagrams
-- search => "Ctrl / K"
 
 - Stars after h1, … => hidden, reveal on focus.
 
