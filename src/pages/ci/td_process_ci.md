@@ -43,44 +43,23 @@ _Schématiser le pipeline d’intégration continue que vous proposez pour gére
 
 Pour rappel, voici un exemple de pipeline simpliste : 
 
-```plantuml
-@startditaa
-  +------------------------+
-  | Machine du développeur |
-  |                        |
-  |  +------------------+  |
-  |  | Compilation et   |  |
-  |  | tests unitaires  |  |
-  |  +------------------+  |
-  |              :         |
-  |              :         |
-  |              v         |
-  |  +------------------+  |
-  |  | Intégration des  |  |
-  |  | changements dans |  |
-  |  | le dépôt de code |  |
-  |  +------------------+  |
-  |        :               |
-  +--------:---------------+
-           :
-  +--------:---------------+
-  |        v               |
-  |  +------------------+  |
-  |  | Compilation code |  |
-  |  | de production    |  |
-  |  +------------------+  |
-  |             :          |
-  |             :          |
-  |             v          |
-  |  +------------------+  |
-  |  | Affichage des    |  |
-  |  | résultats        |  |
-  |  +------------------+  |
-  |                        |
-  | Serveur                |
-  | d'intégration continue |
-  +------------------------+
-@endditaa
+```mermaid
+---
+title: Processus d'intégration continue.
+---
+flowchart TD
+    subgraph DevMachine["Machine du développeur"]
+        CompileUnitTests["Compilation et tests unitaires"]
+        CommitChanges["Intégration des changements dans le dépôt de code"]
+        CompileUnitTests --> CommitChanges
+    end
+
+    subgraph CI_Server["Serveur d'intégration continue"]
+        CompileProdCode["Compilation code de production"]
+        DisplayResults["Affichage des résultats"]
+        CommitChanges --> CompileProdCode
+        CompileProdCode --> DisplayResults
+    end
 ```
 
 :::correction

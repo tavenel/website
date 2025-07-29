@@ -14,26 +14,31 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Workflow centralisé 🏛️
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Le workflow centralisé
+---
+graph TD
+    subgraph Dépôt central
+        A[Git repo]
+    end
 
-         +--------+
-         |{s} cBLU|
-         |Git repo|
-         |        |
-         +--------+
-           : : :        
-   +-------+ : +-------+
-   :         :         :
-   :         :         :
-   v         v         v
-/-----+   /-----+   /-----+
-|c1FF |   |c1AB |   |c1CC |
-| Dev |   | Dev |   | Dev |
-|  1  |   |  2  |   |  3  |
-+-----+   +-----+   +-----+
+    subgraph Dev_1
+        D1[Repo Dev 1]
+    end
 
-@endditaa
+    subgraph Dev_2
+        D2[Repo Dev 2]
+    end
+
+    subgraph Dev_3
+        D3[Repo Dev 3]
+    end
+
+    A --> D1
+    A --> D2
+    A --> D3
+
 ```
 
 ---
@@ -46,38 +51,30 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-```plantuml
-@startditaa
-
-/-----\    /-----\    /-----\    /-----\
-|c888 |    |c888 |    |c888 |    |c888 |
-|C1   *----*C2   *----*C3   *----*C4   |
-|     |    |     |    |     |    |     |
-\-----/    \-----/    \-----/    \-----/
-                                    ^
-                                    |
-                                   main
-
-= Une unique branche `main` dans le dépôt distant.
-
-@endditaa
+```mermaid
+---
+title: Une unique branche `main` dans le dépôt distant.
+---
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+commit
+commit
+commit
+commit tag: "Main"
 ```
 
-```plantuml
-@startditaa
-
-/-----\    /-----\    /-----\    /-----\    /-----\    /-----\
-|c888 |    |c888 |    |c888 |    |c888 |    |cBLU |    |cBLU |
-|C1   *----*C2   *----*C3   *----*C4   *----*C5   *----*C6   |
-|     |    |     |    |     |    |     |    |     |    |     |
-\-----/    \-----/    \-----/    \-----/    \-----/    \-----/
-                                    ^                     ^
-                                    |                     |
-                                ancien main          nouveau main
-
-= Ajout de 2 commit au `main`.
-
-@endditaa
+```mermaid
+---
+title: Ajout de 2 commit au `main`.
+---
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+commit
+commit
+commit
+commit type: HIGHLIGHT tag: "Ancien Main"
+commit
+commit tag: "Nouveau Main"
 ```
 
 ---
@@ -97,54 +94,40 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-```plantuml
-@startditaa
-
-                                   main
-                                    |
-                                    v
-/-----\    /-----\    /-----\    /-----\
-|c888 |    |c888 |    |c888 |    |c888 |
-|C1   *----*C2   *----*C3   *----*C5   |
-|     |    |     |    |     |    |     |
-\-----/    \-----/    \--*--/    \-----/
-                         |
-                         |       /-----\    /-----\
-                         |       |cBLU |    |cBLU |
-                         +-------*C4   *----*C6   |
-                           ^     |     |    |     |
-                           |     \-----/    \-----/
-                   branche de fontionnalité
-
-= Travail dans la branche de fonctionnalité créée depuis `main`.
-
-@endditaa
+```mermaid
+---
+title: Travail dans la branche de fonctionnalité créée depuis `main`.
+---
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+commit
+commit
+commit
+branch F1
+commit
+checkout main
+commit
+checkout F1
+commit
 ```
 
+```mermaid
 ---
-
-```plantuml
-@startditaa
-
-                                                             main
-                                                              |
-                                                              v
-/-----\    /-----\    /-----\    /-----\                   /-----\
-|c888 |    |c888 |    |c888 |    |c888 |                   |c888 |
-|C1   *----*C2   *----*C3   *----*C5   *---------------+---*C7   |
-|     |    |     |    |     |    |     |               |   |     |
-\-----/    \-----/    \--*--/    \-----/               |   \-----/
-                         |                             |
-                         |       /-----\    /-----\    |
-                         |       |cBLU |    |cBLU |    |<---fusion dans main
-                         +-------*C4   *----*C6   *----+
-                           ^     |     |    |     |
-                           |     \-----/    \-----/
-                   branche de fontionnalité
-
-= Fusion de la branche de fonctionnalité dans `main` (tronc unique).
-
-@endditaa
+title: Fusion de la branche de fonctionnalité dans `main` (tronc unique).
+---
+%%{init: { 'theme': 'base' } }%%
+gitGraph
+commit
+commit
+commit
+branch F1
+commit
+checkout main
+commit
+checkout F1
+commit
+checkout main
+merge F1
 ```
 
 ---
@@ -263,39 +246,34 @@ merge livraison-1.0 tag:"v1.0"
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Intégration d'une branche `feature` dans un workflow `fork`
+---
+flowchart TD
+    subgraph Dépôt_Officiel
+        OfficialRepo@{ shape: cyl, label: "Dépôt officiel" }
+    end
 
-                            3. pull request `feature`
-            +-----------------------------------------------------------+
-            :                                                           :
-            v                                                           :
-+----------------+                          +-----------------------+   :
-| {s} cGRE       |------------------------->| {s} cYEL Fork A       |===+
-| Dépôt officiel |  git clone côté serveur  | Nouveau dépôt distant |
-+----------------+                          +-----------------------+
-   ^    ^                                           ^            ^
-   :    |                                           |            :
-   :    |                                           |            :
-   :    | remote  +----------------------+ remote   |            :
-   :    +-------->| {s} cBLU Clone A     |<---------+            :
-   :    `upstream`| Dépôt machine locale | `origin`              :
-   :              +--------*-------------+                       :
-   :                       |                                     :
-   :                       |                                     :
-   :                       |<==1. Nouvelle branche `feature`     :
-   :                       |                                     :
-   :                       |                                     :
-   :                       |                                     :
-   :                   /---*--+                                  :
-   :                   |{d}   |----------------------------------+
-   :                   |cPNK  | 2. push branch `feature` origin
-   +-------------------|Commit|
-    4. push branch     +------+ 
-  `feature` upstream
+    subgraph Fork_Distant
+        ForkA@{ shape: cyl, label: "Fork A\nNouveau dépôt distant" }
+    end
 
-= Intégration d'une branche `feature` dans un workflow `fork`
+    subgraph MachineLocale
+        CloneA@{ shape: cyl, label: "Clone A\nDépôt local" }
+        Commit
+    end
 
-@endditaa
+    OfficialRepo -.->|"git clone (entre serveurs)"| ForkA
+    CloneA -.-|remote 'origin'| ForkA
+    CloneA -.-|remote 'upstream'| OfficialRepo
+
+    CloneA e1@-->|1 - nouvelle branche 'feature'| Commit
+    Commit e2@-->|2 - push 'feature' vers origin| ForkA
+    ForkA e3@-->|3 - pull request 'feature'| OfficialRepo
+    Commit e4@-->|4 - push 'feature' vers upstream| OfficialRepo
+
+    e3@{ animate: true }
+    e4@{ animate: true }
 ```
 

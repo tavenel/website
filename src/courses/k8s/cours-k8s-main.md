@@ -121,48 +121,32 @@ tags:
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Architecture des technologies de conteneurs
+---
+flowchart TD
+    A["Docker (CLI)"]
+    B[Kubernetes]
+    
+    A --> ContainerD
+    B --> CRI
 
-+--------+          +-----------+
-| Docker |          | Kubernetes|
-| (CLI)  |          |           |
-+--------+          +-----------+
-    |                    |
-    |                    v
-    |      +-----------------------------------+
-    |      | Container Runtime Interface (CRI) |
-    |      |         [Kubernetes API]          |
-    |      +-----------------------------------+
-    |           |                     |
-    v           v                     v
-+---------------------+         +-------------+
-|      ContainerD     |         |   CRI-O     |
-|    (pull images,    |         |             |
-|  network, storage)  |         |             |
-+---------------------+         +-------------+
-         |                            |
-         |                            |
-         v                            v
-    +-----------------------------------------------+
-    |    Open Container Interface (OCI) spec        |
-    +-----------------------------------------------+
-                    |
-                    v
-            +---------------+
-            |     runC      |
-            | (create / run |
-            |  containers)  |
-            +---------------+
-                    |
-                    v
-              +-----------+
-              | Container |
-              +-----------+
+    CRI["Container Runtime Interface (CRI)<br/>[Kubernetes API]"]
+    CRI --> ContainerD
+    CRI --> CRIO
 
-= Architecture des technologies de conteneurs
+    ContainerD["ContainerD (pull images, network, storage)"]
+    CRIO[CRI-O]
 
-@endditaa
+    ContainerD --> OCI
+    CRIO --> OCI
+
+    OCI["Open Container Interface (OCI) spec"]
+    OCI --> runC
+
+    runC["runC (create / run containers)"]
+    runC --> Container[Container]
 ```
 
 ---
@@ -397,22 +381,19 @@ tags:
 
 ---
 
-```plantuml
-@startditaa
-+-------------------------------------------------+
-|                                                 |
-| +--------------------------------------------+  |
-| |              Pod web : 1 adresse IP        |  |
-| |  +-----------+    +-----------+            |  |
-| |  | conteneur |    | conteneur |            |  |
-| |  | docker    |    | docker    |            |  |
-| |  | logger    |    | nginx     |            |  |
-| |  +-----------+    +-----------+            |  |
-| |                                            |  |
-| +--------------------------------------------+  |
-|                      Node                       |
-+-------------------------------------------------+
-@endditaa
+```mermaid
+---
+title: Architecture d'un Pod
+---
+flowchart TD
+    subgraph Node
+        subgraph "Pod : 1 adresse IP"
+            Logger[Conteneur docker : logger]
+            Nginx[Conteneur docker : nginx]
+        end
+    end
+
+  class Logger,Nginx blue
 ```
 
 <div class="caption">Architecture d'un Pod</div> 
@@ -554,22 +535,19 @@ Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple d
 
 ---
 
-```plantuml
-@startditaa
-+-------------------------------------------------+
-|                 Deployment : replicas=2         |
-| +--------------------------------------------+  |
-| |              ReplicaSet : 2 Pods           |  |
-| |  +-----------+    +-----------+            |  |
-| |  | Pod 1     |    | Pod 2     |            |  |
-| |  | nginx     |    | nginx     |            |  |
-| |  +-----------+    +-----------+            |  |
-| |                                            |  |
-| +--------------------------------------------+  |
-|                                                 |
-+-------------------------------------------------+
+```mermaid
+---
+title: Deployment, ReplicaSet et Pods
+---
+flowchart TD
+    subgraph "Deployment : replicas = 2"
+        subgraph "ReplicaSet : 2 Pods"
+            Pod1[Pod 1 : nginx]
+            Pod2[Pod 2 : nginx]
+        end
+    end
 
-@endditaa
+    class Pod1,Pod2 green
 ```
 
 <div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div> 

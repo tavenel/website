@@ -75,38 +75,35 @@ _Quel est le **but** de [cette application django](https://github.com/johnnncode
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Architecture hexagonale
+---
+flowchart LR
+    subgraph USER_SIDE["USER-SIDE"]
+        UserAdapter
+    end
 
-+--------------------+       +---------------------+       +---------------------+
-|     USER-SIDE      |       |    BUSINESS LOGIC   |       |     SERVER-SIDE     |
-|--------------------|       |---------------------|       |---------------------|
-|                    |       |                     |       |                     |
-|     +----+         |       |   +-----+           |       |                     |
-|     |cPNK|         |       |   |cGRE |           |       |                     |
-|     |    |===================> |     |           |       |                     |
-|     |    |         |       |   |     |           |       |                     |
-|     +----+         |       |   +-----+           |       |                     |
-|                    |       |     ^               |       |                     |
-|                    |       |     :               |       |                     |
-|                    |       |     :               |       |                     |
-|                    |       | +----+      +----+  |       |  +----+             |
-|                    |       | |cBLK|      |cGRE|  |       |  |cPNK|             |
-|                    |       | |    |=====>|    |<============|    |             |
-|                    |       | |    |      |    |  |       |  |    |             |
-|                    |       | +----+      +----+  |       |  +----+             |
-|                    |       |                     |       |                     |
-+--------------------+       +---------------------+       +---------------------+
+    subgraph BUSINESS_LOGIC["BUSINESS LOGIC"]
+        port_in["Port"]
+        port_out["Port"]
+        domain --> port_in
+        domain --> port_out
+    end
 
-  Ce qu'on fournit             Le métier, les                Ce dont on dépend    
-  à l'utilisateur              règles métier                 (BDD, filesystem,    
-  final, avec quoi                                           WS externes)         
-  il interagit                                                                    
+    subgraph SERVER_SIDE["SERVER-SIDE"]
+        ServerAdapter --> port_out
+    end
 
-= Architecture hexagonale (blog.octo.com)
+    UserAdapter --> port_in
 
-@endditaa
+    class UserAdapter,ServerAdapter blue
+    class port_in,port_out green
 ```
+
+- **Business Logic** : Le métier et les règles du métier
+- **User-Side** : Ce qu'on fournit à l'utilisateur final, avec quoi il interagit
+- **Server-Side** : Ce dont on dépend : BDD, filesystem, WS externes
 
 ---
 
@@ -154,37 +151,32 @@ Type enter to exit...
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Architecture hexagonale du programme de poésie
+---
+flowchart LR
+    subgraph USER_SIDE["USER-SIDE"]
+        ConsoleAdapter["Console<br/>Adapter"]
+    end
 
-+--------------------+       +--------------------------------+       +-----------------------------+
-|     USER-SIDE      |       |    BUSINESS LOGIC              |       |     SERVER-SIDE             |
-|--------------------|       |--------------------------------|       |-----------------------------|
-|                    |       |                                |       |                             |
-|     +-------+      |       |   +--------------+             |       |                             |
-|     |cPNK   |      |       |   |cGRE          |             |       |                             |
-|     |Console|================> |IRequestVerses|             |       |                             |
-|     |Adapter|      |       |   | {interface}  |             |       |                             |
-|     +-------+      |       |   +--------------+             |       |                             |
-|                    |       |     ^                          |       |                             |
-|                    |       |     :                          |       |                             |
-|                    |       |     :                          |       |                             |
-|                    |       | +------+      +-------------+  |       |  +------------------------+ |
-|                    |       | |cBLK  |      |cGRE         |  |       |  |cPNK                    | |
-|                    |       | |Poetry|=====>|IObtainPoems |<============|PoetryLibraryFileAdapter| |
-|                    |       | |Reader|      | {interface} |  |       |  |                        | |
-|                    |       | +------+      +-------------+  |       |  +------------------------+ |
-|                    |       |                                |       |                             |
-+--------------------+       +--------------------------------+       +-----------------------------+
+    subgraph BUSINESS_LOGIC["BUSINESS LOGIC"]
+        IRequestVerses["IRequestVerses<br/>{interface}"]
+        PoetryReader["PoetryReader"]
+        IObtainPoems["IObtainPoems<br/>{interface}"]
+        PoetryReader --> IRequestVerses
+        PoetryReader --> IObtainPoems
+    end
 
-  Ce qu'on fournit                    Le métier, les                         Ce dont on dépend    
-  à l'utilisateur                     règles métier                          (BDD, filesystem,    
-  final, avec quoi                                                           WS externes)         
-  il interagit                                                                           
+    subgraph SERVER_SIDE["SERVER-SIDE"]
+        PoetryLibraryFileAdapter["PoetryLibraryFileAdapter"]
+        PoetryLibraryFileAdapter --> IObtainPoems
+    end
 
-= Architecture hexagonale du programme de poésie (blog.octo.com)
+    ConsoleAdapter --> IRequestVerses
 
-@endditaa
+    class ConsoleAdapter,PoetryLibraryFileAdapter blue
+    class IRequestVerses,IObtainPoems green
 ```
 
 ---

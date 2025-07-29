@@ -27,22 +27,19 @@ tags:
 
 ---
 
-```plantuml
-@startditaa
-+--------------------------------------------------+
-|                 Deployment : replicas=2          |
-| +---------------------------------------------+  |
-| |              ReplicaSet : 2 Pods            |  |
-| |  +-----------------+    +-----------------+ |  |
-| |  | Pod 1           |    | Pod 2           | |  |
-| |  | conteneur nginx |    | conteneur nginx | |  |
-| |  +-----------------+    +-----------------+ |  |
-| |                                             |  |
-| +---------------------------------------------+  |
-|                                                  |
-+--------------------------------------------------+
+```mermaid
+---
+title: Deployment, ReplicaSet et Pods
+---
+flowchart TD
+    subgraph "Deployment : replicas = 2"
+        subgraph "ReplicaSet : 2 Pods"
+            Pod1[Pod 1 : nginx]
+            Pod2[Pod 2 : nginx]
+        end
+    end
 
-@endditaa
+    class Pod1,Pod2 green
 ```
 
 <div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div> 

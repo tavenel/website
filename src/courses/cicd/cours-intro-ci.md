@@ -250,51 +250,26 @@ Ex : `gradle build` ou `mvn package` intègrent par défaut l'exécution des tes
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Processus d'intégration continue.
+---
+flowchart TD
+    subgraph DevMachine["Machine du développeur"]
+        CompileUnitTests["Compilation et tests unitaires"]
+        CommitChanges["Intégration des changements dans le dépôt de code"]
+        CompileUnitTests --> CommitChanges
+    end
 
-  +------------------------+
-  | cYEL                   |
-  | Machine du développeur |
-  |                        |
-  |  +------------------+  |
-  |  | Compilation et   |  |
-  |  | tests unitaires  |  |
-  |  +------------------+  |
-  |              :         |
-  |              :         |
-  |              v         |
-  |  +------------------+  |
-  |  | Intégration des  |  |
-  |  | changements dans |  |
-  |  | le dépôt de code |  |
-  |  +------------------+  |
-  |        :               |
-  +--------:---------------+
-           :
-  +--------:---------------+
-  |        v               |
-  |  +------------------+  |
-  |  | Compilation code |  |
-  |  | de production    |  |
-  |  +------------------+  |
-  |             :          |
-  |             :          |
-  |             v          |
-  |  +------------------+  |
-  |  | Affichage des    |  |
-  |  | résultats        |  |
-  |  +------------------+  |
-  |                        |
-  | cBLU                   |
-  | Serveur                |
-  | d'intégration continue |
-  +------------------------+
-
-= Exemple de processus d'intégration continue.
-
-@endditaa
+    subgraph CI_Server["Serveur d'intégration continue"]
+        CompileProdCode["Compilation code de production"]
+        DisplayResults["Affichage des résultats"]
+        CommitChanges --> CompileProdCode
+        CompileProdCode --> DisplayResults
+    end
 ```
+
+<div class="caption">Exemple de processus d'intégration continue</div>
 
 ---
 

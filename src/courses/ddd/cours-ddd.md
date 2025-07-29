@@ -317,29 +317,16 @@ layout: center
 
 ---
 
-```plantuml
-@startditaa
-+----------------------------+
-|       Domaine              |
-| +------------------------+ |
-| | Bounded Context        | |
-| |  +==================+  | |
-| |  | Contexte "Vente" |  | |
-| |  |                  |  | |
-| |  |  ^               |  | |
-| |  +==|===============+  | |
-| |     |     ^            | |
-| +-----|-----|------------+ |
-+-------|-----|--------------+
-        |     |
-        |     |
-        |     +--- Bounded Context
-        |
-        +--- Langage Ubiquitaire
-
-= Domaine, Bounded Context & Langage Ubiquitaire.
-
-@endditaa
+```mermaid
+---
+title: Domaine, Bounded Context & Langage Ubiquitaire.
+---
+graph TD
+    subgraph Domaine
+			subgraph Bounded_Context [Bounded Context]
+        Vente["Contexte Vente (langage ubiquitaire)"]
+			end
+    end
 ```
 
 :::tip
@@ -614,18 +601,17 @@ graph TD
 
 ---
 
-```plantuml
-@startditaa
-+---------------------+   +---------------------+   +---------------------+
-| Sous-domaine de     |   | Sous-domaine        |   | Sous-domaine        |
-| Support             |   | Générique           |   | Générique           |
-+---------------------+   +---------------------+   +---------------------+
-
-+---------------------+   +---------------------+   +---------------------+
-| Sous-domaine de     |   | Domaine Principal   |   | Sous-domaine        |
-| Support             |   | (Core Domain)       |   | Générique           |
-+---------------------+   +---------------------+   +---------------------+
-@endditaa
+```mermaid
+---
+title: Un découpage en sous-domaines
+---
+graph TD
+	SD1["Sous-domaine de Support"]
+	SD2["Sous-domaine Générique"]
+	SD3["Sous-domaine Générique"]
+	SD4["Sous-domaine de Support"]
+	CD["Domaine Principal (Core Domain)"]
+	SD5["Sous-domaine Générique"]
 ```
 
 ---
@@ -686,23 +672,17 @@ La frontière entre domaines peut être floue !
 
 ---
 
-```plantuml
-@startditaa
-                    Domaine
-                      |
-                      v
-+------------------------------------------------------------+
-|                                                            |
-|    +===================+                +=============+    |
-| +->| Customer Context  |----------------| Sales       |<-+ |
-| |  |                   |  ContextMap    | Context     |  | |
-| |  +===================+                +=============+  | |
-| |      Downstream                        Upstream        | |
-| |                                                        | |
-+-|--------------------------------------------------------|-+
-  |                                                        |
-Bounded Context                                   Bounded Context
-@endditaa
+```mermaid
+---
+title: Une Context Map simple.
+---
+graph TD
+  subgraph Domaine
+    BC1["Bounded Context : Customer (Downstream)"]
+    BC2["Bounded Context : Sales (Upstream)"]
+
+    BC1 -.-|Relation Upstream/Downstream| BC2
+  end
 ```
 
 ---

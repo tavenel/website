@@ -152,27 +152,20 @@ Le test permet de vérifier :
 
 ---
 
-```plantuml
-@startditaa
-+---------------------+
-| TESTS D'ACCEPTATION |
-+---------------------+
-           ^
-           |
-+---------------------+
-| TESTS SYSTÈME       |
-+---------------------+
-           ^
-           |
-+---------------------+
-| TESTS D'INTÉGRATION |
-+---------------------+
-           ^
-           |
-+---------------------+
-| TESTS UNITAIRES     |
-+---------------------+
-@endditaa
+```mermaid
+---
+title: Ordre d'exécution des tests
+---
+flowchart BT
+    TU[TESTS UNITAIRES]
+    TI[TESTS D'INTÉGRATION]
+    TS[TESTS SYSTÈME]
+    TA[TESTS D'ACCEPTATION]
+
+    TU --> TI
+    TI --> TS
+    TS --> TA
+
 ```
 
 - 🧪 **Tests unitaires** : proches de l'implémentation, faciles à automatiser, bugs faciles à corriger, vite obsolètes

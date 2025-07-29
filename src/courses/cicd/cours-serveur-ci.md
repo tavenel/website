@@ -78,28 +78,16 @@ Rel(jenkins, reports, "Génération des rapports")
 
 ## Architecture d'un serveur d'intégration continue
 
-```plantuml
-@startditaa
-
- +-------------+  +---------------+  
- | cBLU        |  | cPNK          |
- | Gestion des |  | Orchestration |
- |   sources   |  |  des builds   |
- +-------------+  +---------------+
-           /---------\
-           |{s} cBLK |
-           | Serveur |
-       	   |   CI    |
-           \---------/
- +-------------+  +--------------------+
- | cGRE        |  | cYEL               |
- | Exécution   |  | Génération des     |
- |  des tests  |  | rapports et notifs |
- +-------------+  +--------------------+
-
-= Les 4 composants d'un serveur d'intégration continue.
-
-@endditaa
+```mermaid
+---
+title: Les 4 composants d'un serveur d'intégration continue.
+---
+mindmap
+  root((Serveur d'intégration continue))
+    Gestion des sources
+    Orchestration des builds
+    Exécution des tests
+    Génération des rapports et notifs
 ```
 
 ---

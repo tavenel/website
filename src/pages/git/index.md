@@ -6,38 +6,27 @@ title:   Git™
 
 ## 💡 Résumé des bases
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Résumé de Git
+---
+sequenceDiagram
+    participant WD as Working Directory
+    participant Staging as Staging Area
+    participant Local as Dépôt local (.git)
+    participant Remote as Dépôt distant (.git)
 
-+-----------+    +---------+    +-------------+  +---------------+ 
-| cBLK      |    | cYEL    |    | {s} cBLU    |  | {s} cGRE      | 
-| Working   |    | Staging |    | Dépôt local |  | Dépôt distant | 
-| Directory |    |         |    |   .git      |  | .git          | 
-+-----------+    +---------+    +-------------+  +---------------+ 
-      |                 |               |                |
-      |<-------------------------------------------------|
-      |                          clone                   |
-      |                 |               |                |
-      |---------------->|               |                |
-      |       add       |               |                |
-      |                 |               |                |
-      |                 |-------------->|                |
-      |                 |     commit    |                |
-      |                 |               |                |
-      |                 |               |--------------->|
-      |                 |               |      push      |
-      |                 |               |                |
-      |                 |               |<---------------|
-      |                 |               |      fetch     |
-      |                 |               |                |
-      |<--------------------------------|                |
-      |        checkout / merge         |                |
-      |                 |               |                |
-      |<-------------------------------------------------|
-      |                          pull                    |
-      |                 |               |                |
+    Remote-->>WD: git clone
 
-@endditaa
+    WD->>Staging: git add
+    Staging->>Local: git commit
+    Local->>Remote: git push
+
+    Remote-->>Local: git fetch
+    Local-->>WD: checkout / merge
+
+    Remote-->>WD: git pull
+
 ```
 
 1. `git rev-parse --show-toplevel` : Vérifier le répertoire parent contenant le dossier `.git`

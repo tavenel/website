@@ -83,50 +83,28 @@ class TestSearch(unittest.TestCase):
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Architecture de Selenium Grid
+---
+flowchart TD
+    subgraph FrameworkDeTest["Framework de test"]
+      WebDriver
+    end
 
-+-------------------+
-| Framework de test |
-|                   |
-| +---------+       |
-| |cYEL     |       |
-| |WebDriver|       |
-| +---------+       |
-|  ^                |
-+--:----------------+
-   :
-   :
-   v 
-+-----------------+
-| cBLK            |
-| Selenium Server |
-| ou Grid         |
-+-----------------+
-          ^
-          :
-+---------:-------+
-|         :       |
-|         v       |
-| +----------+    |
-| |cBLU      |    |
-| |Driver du |    |
-| |navigateur|    |
-| +----------+    |
-|  ^              |
-|  : Système hôte |
-|  v              |
-| +----------+    |
-| |Navigateur|    |
-| +----------+    |
-+-----------------+
+    SeleniumServer["Selenium Server ou Grid"]
+    
+    subgraph Host["Système Hôte"]
+      Driver["Driver du navigateur"]
+      Navigateur["Navigateur"]
+      Driver <--> Navigateur
+    end
 
-= Architecture de Selenium Grid : Framework de tests avec WebDriver, Selenium Serveur ou Grid, Navigateur avec driver Sélénium lié au navigateur
-
-@endditaa
+    WebDriver --> SeleniumServer
+    SeleniumServer --> Driver
 ```
 
----
+<div class="caption">Selenium Grid : Framework de tests avec WebDriver, Selenium Serveur ou Grid, Navigateur avec driver Sélénium lié au navigateur.</div>
 
 ## Quelques bonnes pratiques
 

@@ -80,63 +80,42 @@ Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Les différentes zones de travail de git
+---
+sequenceDiagram
+    actor User
+    participant WD as Working Directory
+    participant ST as Staging Area
+    participant Repo as Dépôt Git (.git)
 
-    +-------------------+    +---------+    +------------+
-    | cBLK              |    | cYEL    |    | {s} cBLU   |
-    | Working Directory |    | Staging |    | Dépôt .git |
-    +-------------------+    +---------+    +------------+
-                 |                 |               |
-                 |                 |               |
-                 |---------------->|               |
-   /----------+  |     git add     |               |
-   |{d} cPNK  |  |                 |               |
-   |  Fichier |  |                 |               |
-   |          |  |                 |               |
-   |   AaBbC  |  |                 |               |
-   |   01234  |  |                 |-------------->|
-+--|   AaBbC  |  |                 |   git commit  |
-|  +----------+  |                 |               |
-|      ^         |                 |               |
-|      |         |<--------------------------------|
-+------+         |       git checkout / merge      |
-Changements      |                 |               |
-locaux           |                 |               |
+    User->>WD: Modifier fichier
+    User->>ST: git add fichier
+    ST->>Repo: git commit
+    Repo-->>WD: git checkout / merge
 
-= Les différentes zones de travail de git
+    Note right of WD: Zone de travail locale
+    Note right of ST: Index (staging area)
+    Note right of Repo: Historique versionné
 
-@endditaa
 ```
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Synchronisation dépôt local & distant
+---
+sequenceDiagram
+    participant Local as Dépôt local
+    participant Distant as Dépôt distant
 
-+-------------+   +---------------+
-| {s} cGRE    |   | {s} cBLU      |
-| Dépôt local |   | Dépôt distant |
-+-------------+   +---------------+
-       |                   |
-       | /------+          |
-       | |{d}   |          |
-       | |cGRE  |          |
-       | |Commit|=========>|
-       | +------+ git push |
-       |                   |
-       |                   |
-       |                   |
-       |          /------+ |
-       |          |{d}   | |
-       |          |cBLU  | |
-       |<=========|Commit| |
-       | git pull +------+ |
-       |                   |
+    Local->>Distant: git push
+    Note right of Distant: Ajout du commit au dépôt distant
 
-= Synchronisation dépôt local & distant
-
-@endditaa
+    Distant-->>Local: git pull
+    Note right of Local: Intégration du commit distant
 ```
 
 ---
