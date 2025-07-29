@@ -1113,13 +1113,6 @@ graph LR
 
   pmc ---|Shared Kernel| DCC
   pmc ---|Partnership| rmc
-
-  %% Styles
-  classDef customerSupplier stroke:#1a73e8,stroke-width:2px,stroke-dasharray: 5 2;
-  classDef conformist stroke:#fbbc04,stroke-width:2px,stroke-dasharray: 3 3;
-  classDef sharedKernel stroke:#34a853,stroke-width:3px;
-  classDef partnership stroke:#9c27b0,stroke-width:3px;
-  classDef acl stroke:#e91e63,stroke-dasharray: 2 2;
 ```
 
 ---

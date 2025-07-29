@@ -654,7 +654,6 @@ flowchart TD
             pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
             class pod1_1 blue
         end
-        class node1 node
 
         subgraph node2 ["Node 2"]
             pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
@@ -662,13 +661,11 @@ flowchart TD
             class pod2_1 blue
             class pod2_2 green
         end
-        class node2 node
 
         subgraph node3 ["Node 3"]
             pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
             class pod3_1 green
         end
-        class node3 node
     end
 
     %% Connexions services → pods
@@ -698,7 +695,6 @@ flowchart TD
             pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
             class pod1_1 blue
         end
-        class node1 node
 
         subgraph node2 ["Node 2"]
             pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
@@ -706,13 +702,11 @@ flowchart TD
             class pod2_1 blue
             class pod2_2 green
         end
-        class node2 node
 
         subgraph node3 ["Node 3"]
             pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
             class pod3_1 green
         end
-        class node3 node
     end
 
     %% Connexions services → pods
