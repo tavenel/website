@@ -1,8 +1,114 @@
 ## P1
 
+- cleanup all course categories
+
 - W3C
 - transform plantuml to mermaid diagrams
 - search => "Ctrl / K"
+
+- Stars after h1, … => hidden, reveal on focus.
+
+```
+@startditaa
+```
+
+Animate mermaid => https://mermaid.js.org/syntax/flowchart.html#turning-an-animation-on
+
+DDD exo-contexts KO
+
+```mermaid
+---
+title: Carte de contexte
+---
+flowchart TD
+
+  UP["UserProfile(Supporting)"]
+  CB["CourseBooking(Core)"]
+  P["Payment(Supporting)"]
+  PF["PedagogicalFollowup(Supporting)"]
+  S["Support(Generic)"]
+
+  UP -->|fournit profils et disponibilités| CB
+  CB -->|déclenche paiement| P
+  CB -->|déclenche compte-rendu| PF
+  CB -->|signale problèmes| S
+  P -->|permet remboursement| S
+```
+
+DDD exo-langage KO
+
+```mermaid
+---
+title: Cycle de vie d'une commande (alignement métier)
+---
+stateDiagram-v2
+  [*] --> Réservation : réservation initiée
+  Réservation --> Commande : durée expirée
+  Réservation --> Paiement : utilisateur paie
+
+  Paiement --> Billet : paiement réussi
+  Paiement --> ÉchecPaiement : paiement échoué
+
+  ÉchecPaiement --> [*]
+  Billet --> [*]
+```
+
+```mermaid
+---
+title: Modèle tactique aligné - Billetterie
+---
+classDiagram
+    class Reservation {
+        +UUID reservationId
+        +UUID eventId
+        +UUID userId
+        +datetime expiresAt
+        +toCommand() Command
+    }
+
+    class Command {
+        +UUID commandId
+        +Reservation reservation
+        +CommandStatus status
+        +pay() Billet
+        +fail() void
+    }
+
+    class Billet {
+        +UUID billetId
+        +UUID commandId
+        +UUID eventId
+        +UUID userId
+        +string qrCode
+    }
+
+    class CommandStatus {
+        PENDING
+        PAID
+        FAILED
+    }
+
+    Reservation --> Command : génère
+    Command --> Billet : produit
+```
+
+---
+
+class red
+
+http://localhost:4321/ddd/cours#diagramme-de-cas-dutilisation => style
+http://localhost:4321/ddd/cours#exemple-de-chemins-s%C3%A9par%C3%A9s => style
+http://localhost:4321/ddd/cours#exemple-de-context-map => style (in diag)
+
+=> improve .blue and .green mermaid for all color themes
+
+
+To Mermaid : http://localhost:4321/_image?href=%2F%40fs%2Fmnt%2Fdata%2Fgit%2Fastro%2Fwebsite%2Fsrc%2Fassets%2Fddd%2FDomainDrivenDesignReference.png%3ForigWidth%3D836%26origHeight%3D741%26origFormat%3Dpng&w=836&h=741&f=webp
+
+
+To Mermaid : mvc.md => Spring
+
+https://agramont.net/blog/diagraming-with-mermaidjs-astro/
 
 ## P2
 
