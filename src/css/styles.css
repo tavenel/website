@@ -412,6 +412,20 @@ a.add-bookmark {
 		font-style: italic;
 	}
 
+	& .node,.cluster {
+		&.blue {
+			& .basic, rect, polygon {
+				fill: var(--diagram-blue-fill) !important;
+				stroke: var(--diagram-blue-stroke) !important;
+			}
+		}
+		&.green {
+			& .basic, rect, polygon {
+				fill: var(--diagram-green-fill) !important;
+				stroke: var(--diagram-green-stroke) !important;
+			}
+		}
+	}
 }
 
 /**********/
@@ -716,12 +730,18 @@ aside.callout-correction {
   --edge-background: revert;
   --diagram-path: #000000;
 	--diagram-group: #ffffff;
+	--diagram-blue-fill: #ffffff;
+	--diagram-blue-stroke: #000000;
+	--diagram-green-fill: #ffffff;
+	--diagram-green-stroke: #000000;
 
 	& a {
 		text-decoration: revert;
 	}
 
 }
+
+/* LIGHT THEMES */
 
 [data-theme="github-light"] {
 	/* 
@@ -763,6 +783,10 @@ aside.callout-correction {
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #B3E5FC ;
+	--diagram-blue-stroke: #0288D1 ;
+	--diagram-green-fill: #C8E6C9;
+	--diagram-green-stroke: #388E3C;
 }
 
 [data-theme="everforest-light"] {
@@ -801,6 +825,10 @@ aside.callout-correction {
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #B3E5FC ;
+	--diagram-blue-stroke: #0288D1 ;
+	--diagram-green-fill: #C8E6C9;
+	--diagram-green-stroke: #388E3C;
 }
 
 [data-theme="one-light"] {
@@ -840,47 +868,54 @@ aside.callout-correction {
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #B3E5FC ;
+	--diagram-blue-stroke: #0288D1 ;
+	--diagram-green-fill: #C8E6C9;
+	--diagram-green-stroke: #388E3C;
 }
 
-[data-theme="houston"] {
-/*
-* Code is `houston` but the rest of the website
-* is a dedicated dark theme.
-*/
-	--warning: var(--salmon);
-  --strong: var(--middle-grey);
-  --em: var(--middle-grey);
-	--background: var(--dark-main);
-	--background2: var(--dark-second);
-	--text: var(--light-main);
-	--link: var(--dark-link);
-	--link-hover: var(--light-red);
-	--link-visited: var(--dark-link);
-	--link-border: inherit;
-	--h1: var(--middle-grey);
-	--h2: var(--light-yellow);
-	--h3: var(--middle-green);
-	--h4: var(--light-red);
-	--hr: var(--light-grey);
-	--menu-home: var(--salmon);
-	--menu-tech: var(--light-blue);
-	--menu-cours: var(--light-yellow);
-	--menu-favorites: var(--middle-green);
-	--menu-links: var(--light-red);
-	--menu-about: var(--light-orange);
-	--card-item-bg: var(--middle-green);
-	--card-item-global-bg: var(--middle-grey);
-	--card-item-hover-bg: var(--dark-green);
-	--card-text: var(--light-main);
-	--versioning: var(--light-grey);
-	--select-color: var(--light-main);
-	--blockquote: var(--light-yellow);
-	--exo-ul-border: var(--hr);
-  --diagram-background: var(--background2);
+/* DARK THEMES */
+
+[data-theme="andromeeda"] {
+	/* Andromeeda theme inspired from : https://github.com/EliverLara/Andromeda */
+	--warning: #ff00aa;
+  --strong: #FFE66D;
+  --em: #FFE66D;
+	--background: #23262E;
+	--background2: #3D4352;
+	--text: #D5CED9;
+	--link: #7cb7ff;
+	--link-hover: #FFE66D;
+	--link-visited: #ff00aa;
+	--link-border: #7cb7ff;
+	--h1: #FFE66D;
+	--h2: #96E072;
+	--h3: #f39c12;
+	--h4: inherit;
+	--hr: #ff00aa;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #07d4b5b0;
+	--card-text: inherit;
+	--versioning: #96E072;
+	--select-color: inherit;
+	--blockquote: #ff00aa;
+	--exo-ul-border: #ff00aa;
+  --diagram-background: var(--background);
   --diagram-text: var(--text);
-  --edge-background: var(--light-grey);
+  --edge-background: #96E072;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 }
 
 [data-theme="ayu-dark"] {
@@ -919,6 +954,10 @@ aside.callout-correction {
   --edge-background: var(--link-hover);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 }
 
 [data-theme="catppuccin-mocha"] {
@@ -957,6 +996,10 @@ aside.callout-correction {
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 
   & strong {
     border-left: 3px solid var(--strong);
@@ -999,10 +1042,59 @@ aside.callout-correction {
   --edge-background: #bd93f9;
   --diagram-path: #bd93f9;
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 
   & strong {
     border-left: 3px solid var(--strong);
   }
+}
+
+[data-theme="houston"] {
+/*
+* Code is `houston` but the rest of the website
+* is a dedicated dark theme.
+*/
+	--warning: var(--salmon);
+  --strong: var(--middle-grey);
+  --em: var(--middle-grey);
+	--background: var(--dark-main);
+	--background2: var(--dark-second);
+	--text: var(--light-main);
+	--link: var(--dark-link);
+	--link-hover: var(--light-red);
+	--link-visited: var(--dark-link);
+	--link-border: inherit;
+	--h1: var(--middle-grey);
+	--h2: var(--light-yellow);
+	--h3: var(--middle-green);
+	--h4: var(--light-red);
+	--hr: var(--light-grey);
+	--menu-home: var(--salmon);
+	--menu-tech: var(--light-blue);
+	--menu-cours: var(--light-yellow);
+	--menu-favorites: var(--middle-green);
+	--menu-links: var(--light-red);
+	--menu-about: var(--light-orange);
+	--card-item-bg: var(--middle-green);
+	--card-item-global-bg: var(--middle-grey);
+	--card-item-hover-bg: var(--dark-green);
+	--card-text: var(--light-main);
+	--versioning: var(--light-grey);
+	--select-color: var(--light-main);
+	--blockquote: var(--light-yellow);
+	--exo-ul-border: var(--hr);
+  --diagram-background: var(--background2);
+  --diagram-text: var(--text);
+  --edge-background: var(--light-grey);
+  --diagram-path: var(--text);
+	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 }
 
 [data-theme="kanagawa-dragon"] {
@@ -1041,6 +1133,10 @@ aside.callout-correction {
   --edge-background: #c5c9c5;
   --diagram-path: var(--text);
 	--diagram-group: var(--text);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 }
 
 [data-theme="nord"] {
@@ -1079,86 +1175,10 @@ aside.callout-correction {
   --edge-background: #88c0d0;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-}
-
-[data-theme="rose-pine"] {
-	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
-	--warning: #f6c177;
-  --strong: #ebbcba;
-  --em: #ebbcba;
-	--background: #191724;
-	--background2: #26233a;
-	--text: #e0def4;
-	--link: #e0def4;
-	--link-hover: inherit;
-	--link-visited: #c4a7e7;
-	--link-border: #e0def4;
-	--h1: #ebbcba;
-	--h2: #9ccfd8;
-	--h3: inherit;
-	--h4: inherit;
-	--hr: #6e6a86;
-	--menu-home: inherit;
-	--menu-tech: inherit;
-	--menu-cours: inherit;
-	--menu-favorites: inherit;
-	--menu-links: inherit;
-	--menu-about: inherit;
-	--card-item-bg: inherit;
-	--card-item-global-bg: inherit;
-	--card-item-hover-bg: #6e6a86;
-	--card-text: #e0def4;
-	--versioning: #6e6a86;
-	--select-color: inherit;
-	--blockquote: #f6c177;
-	--exo-ul-border: #6e6a86;
-  --diagram-background: var(--em);
-  --diagram-text: var(--background);
-  --edge-background: var(--blockquote);
-  --diagram-path: var(--text);
-	--diagram-group: #9ccfd8;
-}
-
-[data-theme="rose-pine-dawn"] {
-	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
-	--warning: #f6c177;
-  --strong: #b4637a;
-  --em: #9893a5;
-	--background: #faf4ed;
-	--background2: #f2e9e1;
-	--text: #575279;
-	--link: #575279;
-	--link-hover: inherit;
-	--link-visited: #907aa9;
-	--link-border: #575279;
-	--h1: #286983;
-	--h2: inherit;
-	--h3: inherit;
-	--h4: inherit;
-	--hr: #9893a5;
-	--menu-home: inherit;
-	--menu-tech: inherit;
-	--menu-cours: inherit;
-	--menu-favorites: inherit;
-	--menu-links: inherit;
-	--menu-about: inherit;
-	--card-item-bg: #fffaf3;
-	--card-item-global-bg: #fffaf3;
-	--card-item-hover-bg: #f2e9e1;
-	--card-text: #575279;
-	--versioning: #9893a5;
-	--select-color: inherit;
-	--blockquote: #ea9d34;
-	--exo-ul-border: #9893a5;
-  --diagram-background: var(--background);
-  --diagram-text: #403d52;
-  --edge-background: #ebbcba;
-  --diagram-path: #907aa9;
-	--diagram-group: #286983;
-
-  & strong {
-    border-bottom: 1px solid var(--strong);
-  }
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 }
 
 [data-theme="synthwave-84"] {
@@ -1198,6 +1218,10 @@ aside.callout-correction {
   --edge-background: #fede5d;
   --diagram-path: #fede5d;
 	--diagram-group: #f97e72;
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 
   & strong {
     color: var(--strong);
@@ -1273,6 +1297,11 @@ aside.callout-correction {
   --edge-background: #ffe45e;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
+
   --header-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 	h1 { &::before { background: #44ffd2; } }
@@ -1345,6 +1374,10 @@ aside.callout-correction {
   --edge-background: rgba(255,255,255,0.25);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 
   & strong {
     border-bottom: 2px solid var(--strong);
@@ -1386,9 +1419,103 @@ aside.callout-correction {
   --edge-background: #fcc5e9;
   --diagram-path: #fcc5e9;
 	--diagram-group: #89ddff;
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 
   & strong {
     border-bottom: 2px solid var(--strong);
+  }
+}
+
+/* DUAL THEMES */
+
+[data-theme="rose-pine"] {
+	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
+	--warning: #f6c177;
+  --strong: #ebbcba;
+  --em: #ebbcba;
+	--background: #191724;
+	--background2: #26233a;
+	--text: #e0def4;
+	--link: #e0def4;
+	--link-hover: inherit;
+	--link-visited: #c4a7e7;
+	--link-border: #e0def4;
+	--h1: #ebbcba;
+	--h2: #9ccfd8;
+	--h3: inherit;
+	--h4: inherit;
+	--hr: #6e6a86;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: inherit;
+	--card-item-global-bg: inherit;
+	--card-item-hover-bg: #6e6a86;
+	--card-text: #e0def4;
+	--versioning: #6e6a86;
+	--select-color: inherit;
+	--blockquote: #f6c177;
+	--exo-ul-border: #6e6a86;
+  --diagram-background: var(--em);
+  --diagram-text: var(--background);
+  --edge-background: var(--blockquote);
+  --diagram-path: var(--text);
+	--diagram-group: #9ccfd8;
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
+}
+
+[data-theme="rose-pine-dawn"] {
+	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
+	--warning: #f6c177;
+  --strong: #b4637a;
+  --em: #9893a5;
+	--background: #faf4ed;
+	--background2: #f2e9e1;
+	--text: #575279;
+	--link: #575279;
+	--link-hover: inherit;
+	--link-visited: #907aa9;
+	--link-border: #575279;
+	--h1: #286983;
+	--h2: inherit;
+	--h3: inherit;
+	--h4: inherit;
+	--hr: #9893a5;
+	--menu-home: inherit;
+	--menu-tech: inherit;
+	--menu-cours: inherit;
+	--menu-favorites: inherit;
+	--menu-links: inherit;
+	--menu-about: inherit;
+	--card-item-bg: #fffaf3;
+	--card-item-global-bg: #fffaf3;
+	--card-item-hover-bg: #f2e9e1;
+	--card-text: #575279;
+	--versioning: #9893a5;
+	--select-color: inherit;
+	--blockquote: #ea9d34;
+	--exo-ul-border: #9893a5;
+  --diagram-background: var(--background);
+  --diagram-text: #403d52;
+  --edge-background: #ebbcba;
+  --diagram-path: #907aa9;
+	--diagram-group: #286983;
+	--diagram-blue-fill: #B3E5FC ;
+	--diagram-blue-stroke: #0288D1 ;
+	--diagram-green-fill: #C8E6C9;
+	--diagram-green-stroke: #388E3C;
+
+  & strong {
+    border-bottom: 1px solid var(--strong);
   }
 }
 
@@ -1428,6 +1555,10 @@ aside.callout-correction {
   --edge-background: #a89984;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #0c4768;
+	--diagram-blue-stroke: #355d73;
+	--diagram-green-fill: #1e453e;
+	--diagram-green-stroke: #306844;
 }
 
 [data-theme="gruvbox-light-medium"] {
@@ -1466,42 +1597,9 @@ aside.callout-correction {
   --edge-background: #bdae93;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
+	--diagram-blue-fill: #B3E5FC ;
+	--diagram-blue-stroke: #0288D1 ;
+	--diagram-green-fill: #C8E6C9;
+	--diagram-green-stroke: #388E3C;
 }
 
-[data-theme="andromeeda"] {
-	/* Andromeeda theme inspired from : https://github.com/EliverLara/Andromeda */
-	--warning: #ff00aa;
-  --strong: #FFE66D;
-  --em: #FFE66D;
-	--background: #23262E;
-	--background2: #3D4352;
-	--text: #D5CED9;
-	--link: #7cb7ff;
-	--link-hover: #FFE66D;
-	--link-visited: #ff00aa;
-	--link-border: #7cb7ff;
-	--h1: #FFE66D;
-	--h2: #96E072;
-	--h3: #f39c12;
-	--h4: inherit;
-	--hr: #ff00aa;
-	--menu-home: inherit;
-	--menu-tech: inherit;
-	--menu-cours: inherit;
-	--menu-favorites: inherit;
-	--menu-links: inherit;
-	--menu-about: inherit;
-	--card-item-bg: inherit;
-	--card-item-global-bg: inherit;
-	--card-item-hover-bg: #07d4b5b0;
-	--card-text: inherit;
-	--versioning: #96E072;
-	--select-color: inherit;
-	--blockquote: #ff00aa;
-	--exo-ul-border: #ff00aa;
-  --diagram-background: var(--background);
-  --diagram-text: var(--text);
-  --edge-background: #96E072;
-  --diagram-path: var(--text);
-	--diagram-group: var(--em);
-}
