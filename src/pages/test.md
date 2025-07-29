@@ -189,36 +189,6 @@ Test3 -up-> LoginPageObject
 ```
 
 ```plantuml
-@startdot
-
-digraph supervised {
-
-node [style="filled"]
-entrées [color="indianred"]
-
-subgraph clusterSuperviseur {
-node [fillcolor="lightskyblue"]
-edge [color="royalblue"]
-label = "Superviseur"
-superviseur -> "sortie désirée" -> erreur
-}
-
-subgraph {
-node [fillcolor="aquamarine2"]
-edge [color="aquamarine4"]
-réseau -> "sortie obtenue" -> erreur
-}
-
-entrées -> superviseur, réseau
-erreur -> réseau [style="dashed", color="royalblue"]
-
-label = "Schéma d'apprentissage supervisé"
-
-@enddot
-}
-```
-
-```plantuml
 @startditaa
 
 +-------------+                                  +----------------+   +--------------+ 
@@ -254,47 +224,6 @@ label = "Schéma d'apprentissage supervisé"
 @endditaa
 ```
 
-```plantuml
-@startmindmap
-* Context Map
-
-  **_ Superposition de contextes
-    *** Shared Kernel
-
-  **_ Contextes coopérant fortement
-    *** Partnership
-
-  **_ Crée un lien de coopération
-    *** Customer/Supplier Teams
-
-  **_ Crée un lien unidirectionnel
-    *** Conformist
-
-  **_ Supporte différents clients
-    *** Open Host Service
-      ****_ Version formelle
-        ***** Published Language
-
-  **_ Libère les contraintes entre équipes
-    *** Separate Ways
-
-  **_ Traduis et isole unilatéralement
-    *** Anticorruption Layer
-
-left side
-
-  **_ Évaluation et examen des relations
-    *** Bounded Context
-
-      ****_ nommage
-        ***** Ubiquitous Language
-
-      ****_ garde le modèle unifié
-        ***** Continuous Integration
-
-@endmindmap
-```
-
 ```mermaid
 ---
 config:
@@ -322,19 +251,6 @@ graph LR
   subgraph Déploiement continu
     Test-->Deploy
   end
-```
-
-```mermaid
-%%{init: { 'theme': 'base', 'gitGraph': {'mainBranchName': 'dev-v2'}} }%%
-gitGraph
-commit
-commit
-branch stable-1
-commit
-checkout dev-v2
-commit
-checkout stable-1
-commit
 ```
 
 
@@ -507,3 +423,249 @@ flowchart TD
 ```
 :::
 
+```mermaid
+---
+title: Separate Ways
+---
+classDiagram
+    note for ClientPourFacturation "Classe dupliquée contexte Facturation"
+    class ClientPourFacturation {
+        +addresseDeFacturation
+        +récupérerDevis()
+    }
+
+    note for ClientPourMarketing "Classe dupliquée contexte Marketing (aucun lien)"
+    class ClientPourMarketing {
+        +addresseDeContact
+        +listerProduitsRécents()
+    }
+```
+
+```mermaid
+---
+title: Intégration d'une branche `feature` dans un workflow `fork`
+---
+flowchart TD
+    subgraph Dépôt_Officiel
+        OfficialRepo@{ shape: cyl, label: "Dépôt officiel" }
+    end
+
+    subgraph Fork_Distant
+        ForkA@{ shape: cyl, label: "Fork A\nNouveau dépôt distant" }
+    end
+
+    subgraph MachineLocale
+        CloneA@{ shape: cyl, label: "Clone A\nDépôt local" }
+        Commit
+    end
+
+    OfficialRepo -.->|"git clone (entre serveurs)"| ForkA
+    CloneA -.-|remote 'origin'| ForkA
+    CloneA -.-|remote 'upstream'| OfficialRepo
+
+    CloneA e1@-->|1 - nouvelle branche 'feature'| Commit
+    Commit e2@-->|2 - push 'feature' vers origin| ForkA
+    ForkA e3@-->|3 - pull request 'feature'| OfficialRepo
+    Commit e4@-->|4 - push 'feature' vers upstream| OfficialRepo
+
+    e3@{ animate: true }
+    e4@{ animate: true }
+```
+
+```mermaid
+---
+title: CQRS
+---
+classDiagram
+
+  namespace CommandSide {
+    class OrderCommandHandler {
+      +handlePlaceOrder(cmd: PlaceOrder)
+    }
+  }
+
+  namespace QuerySide {
+    class OrderQueryService {
+      +getOrdersByCustomer(id: UUID): List~OrderDTO~
+    }
+  }
+
+  OrderCommandHandler --> PlaceOrder
+  OrderQueryService --> OrderDTO
+```
+
+```mermaid
+---
+title: Saga
+---
+classDiagram
+  class OrderService
+  class PaymentService
+  class ShippingService
+  class SagaManager
+
+  OrderService --> SagaManager : placeOrder()
+  SagaManager --> PaymentService : initiatePayment()
+  SagaManager --> ShippingService : prepareShipping()
+
+  note for SagaManager "Coordonne une série d'étapes distribuées"
+```
+
+```mermaid
+---
+title: Process Manager
+---
+classDiagram
+  class OrderFulfillmentProcessManager {
+    +handleOrderPlaced(OrderPlacedEvent event)
+    +handlePaymentConfirmed(PaymentConfirmedEvent event)
+    +handleShippingStarted(ShippingStartedEvent event)
+    -ProcessStateEnum state
+  }
+
+  class OrderPlacedEvent
+  class PaymentConfirmedEvent
+  class ShippingStartedEvent
+
+  OrderFulfillmentProcessManager --> OrderPlacedEvent
+  OrderFulfillmentProcessManager --> PaymentConfirmedEvent
+  OrderFulfillmentProcessManager --> ShippingStartedEvent
+
+  enumeration ProcessStateEnum
+  class ProcessStateEnum {
+    AWAITING_PAYMENT
+    PAYMENT_CONFIRMED
+    SHIPPING_IN_PROGRESS
+    COMPLETED
+  }
+```
+
+```mermaid
+---
+title: ClusterIP Multi-Nodes
+---
+flowchart TD
+
+  subgraph Cluster ["Cluster"]
+
+    svcA["Service blue<br/>clusterIP 10.0.0.5<br/>port 81"]
+    svcB["Service green<br/>clusterIP 10.0.0.7<br/>port 82"]
+    class svcA blue
+    class svcB green
+
+    subgraph node1 ["Node 1"]
+        pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+        class pod1_1 blue
+    end
+
+    subgraph node2 ["Node 2"]
+        pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+        pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+        class pod2_1 blue
+        class pod2_2 green
+    end
+
+    subgraph node3 ["Node 3"]
+        pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+        class pod3_1 green
+    end
+
+    svcA -.-> pod1_1
+    svcA -.-> pod2_1
+
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
+
+  end
+```
+
+```mermaid
+---
+title: Communication entre Pods par ClusterIP - par Pod 2
+---
+flowchart TD
+
+    svcB["Service green<br/>clusterIP 10.0.0.7<br/>port 82"]
+    class svcB green
+
+    subgraph Cluster ["Cluster"]
+
+        subgraph node1 ["Node 1"]
+            pod1_1["pod-blue-1<br/>10.4.32.2<br/>port 8181"]
+            class pod1_1 blue
+        end
+
+        subgraph node2 ["Node 2"]
+            pod2_1["pod-blue-2<br/>10.4.32.5<br/>port 8181"]
+            pod2_2["pod-green-1<br/>10.4.32.6<br/>port 8282"]
+            class pod2_1 blue
+            class pod2_2 green
+        end
+
+        subgraph node3 ["Node 3"]
+            pod3_1["pod-green-2<br/>10.4.32.8<br/>port 8282"]
+            class pod3_1 green
+        end
+    end
+
+    %% Connexions services → pods
+    svcB -.-> pod2_2
+    svcB -.-> pod3_1
+
+    %% Communication entre pod et service
+    pod1_1 e1@-->|"1 - http:// green:82"| svcB
+    svcB e2@-->|"2 - http:// 10.4.32.8:8282"| pod3_1
+
+    e1@{ animate : true }
+    e2@{ animate : true }
+```
+
+```mermaid
+---
+title: PV et PVC
+---
+flowchart TD
+
+    %% Composants
+    pv["PersistentVolume"]
+    sc["StorageClass"]
+    db[(Physical Volume)]
+    class sc red
+    class db green
+
+    %% Pod et PVC imbriqués
+    subgraph pod ["pod"]
+        pvc["PersistentVolumeClaim"]
+    end
+    class pod blue
+
+    %% Relations
+    sc -.-> pv
+    sc -.-> pvc
+    pv --> db
+```
+
+```mermaid
+---
+title: Suppression du fichier source
+---
+flowchart TD
+    %% Données sur disque
+    DATA[("Données sur disque")]
+
+    %% Lien dur (toujours valide)
+    subgraph hard["Lien dur (hard link)"]
+        F2["F2"]
+    end
+
+    %% Fichier source supprimé
+    F1["F1 (supprimé)"]:::deleted
+
+    %% Lien symbolique devenu cassé
+    F3["Lien symbolique (F3)"] -.-> F1
+
+    %% Connexions
+    F2 --> DATA
+
+    class F1 red
+```
