@@ -26,9 +26,9 @@ Les apprenants changent régulièrement de casquette (positionnement, métier, t
 
 - [🤓 Cours - le cahier des charges](/projet/cdc)
 - [🤓 Diagramme de Kano](/projet/kano)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/projet/use-case)
+- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/archi/use-case)
 - [📝 Exercice Pur Beurre : définir le contexte](/projet/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/projet/exos-cas-utilisation-cas-sequence)
+- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/archi/exos-cas-utilisation-cas-sequence)
 - [🏆 Projet - écrire un cahier des charges](/projet/projet-cdc)
 - Exemples de cahier des charges :
   - Devis vers facture, CDC fonctionnel : [pdf](/cours/cdc/dvf_fonctionnel.pdf)

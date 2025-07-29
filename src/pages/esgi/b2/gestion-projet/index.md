@@ -63,7 +63,7 @@ A partir d'un cahier des charges :
 ## 📑 Documents
 
 - [🤓 Cours - Introduction à la gestion de projet](/projet/intro)
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/projet/use-case)
+- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/archi/use-case)
 - [🤓 Modèles et cycles de développement (cours)](/projet/modeles_dev)
 - [🤓 Le pilotage de projet (cours)](/projet/pilotage-projet)
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
@@ -74,7 +74,7 @@ A partir d'un cahier des charges :
   - Cahier des charges technique : [pdf](/cours/cdc/ex_t1.pdf)
   - Cahier des charges : [Hotel Paradis](https://docs.google.com/document/d/1k1kHGk7QgoY3-hMCi0CURhRDo0zMawqyDluuXvYmq5E)
 - [📝 Exercice Pur Beurre : définir le contexte](/projet/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/projet/exos-cas-utilisation-cas-sequence)
+- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/archi/exos-cas-utilisation-cas-sequence)
 - [📝 Exercice : plannification par diagramme de Gantt](/projet/exo-gantt)
 - [🏆 Projet fil rouge](/projet/projet-fil-rouge) : un projet fil rouge servant d'introduction globale à la Gestion de Projet : définition du contexte, des besoins, cahier des charges, choix du cycles de développement, réalisation technique, ...
 

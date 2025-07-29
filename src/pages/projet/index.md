@@ -12,7 +12,6 @@ title: 📅 Gestion de projet
 - [🤓 Modèles et cycles de développement (cours)](/projet/modeles_dev)
 - [🤓 Le pilotage de projet (cours)](/projet/pilotage-projet)
 - [📝 Exercice Pur Beurre : définir le contexte](/projet/exo-pur-beurre)
-- [📝 Exercices décrire le besoin : diagramme de cas d'utilisation et diagramme de séquence](/projet/exos-cas-utilisation-cas-sequence)
 - [📝 Exercice Osiris](/projet/exo-contexte-osiris)
 - [📝 Exercice : plannification par diagramme de Gantt](/projet/exo-gantt)
 - [🏆 Projet fil rouge](/projet/projet-fil-rouge) : un projet fil rouge servant d'introduction globale à la Gestion de Projet : définition du contexte, des besoins, cahier des charges, choix du cycles de développement, réalisation technique, ...
@@ -45,11 +44,3 @@ title: 📅 Gestion de projet
 - [🤓 Manager une équipe multiculturelle (cours)](/projet/multiculturel)
 - [🏆 Projet accompagner une équipe multiculturelle à distance](/projet/projet-multiculturel)
 
-## 🏷️ UML® 
-
-- [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/projet/use-case)
-- [🏆 Projet gestion d'une bibliothèque](/projet/tp-uml) : réaliser le développement métier d'une application informatique à partir de diagrammes de classes et de diagrammes de composants.
-- 🔗 Liens :
-  - [Online PlantUML Server](https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000)
-  - [Exemples UML](https://www.uml-diagrams.org/index-examples.html)
-  - [La modélisation fonctionnelle avec UML](https://www.teotimepacreau.fr/blog/modelisation-fonctionnelle-uml/)
