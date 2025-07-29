@@ -25,25 +25,6 @@ Le parc informatique se compose des machines suivantes :
 - Un poste de travail Windows
 - Un serveur Linux hébergeant une stack `LAMP` (`Linux Apache MySQL PHP`)
 
-```plantuml
-@startditaa
-
-    +------------------+    +------------------+
-    | Poste de travail |    | Poste de travail |
-    | Linux            |    | Windows          |
-    +------------------+    +------------------+
-            ^                         ^ 
-            |                         | 
-            |                         | 
-            |                         | 
-            |                         | 
-        +----------------------------------+
-        | Serveur OCSInventory             |
-        +----------------------------------+
-
-@endditaa
-```
-
 # Installation d’un environnement de test
 
 Nous allons commencer par installer OCSInventory (au minimum : 1 serveur et 2 agents). Cette installation nous permettra de tester l’usage du produit, on n’hésitera donc pas à utiliser les différentes fonctionnalités offertes (y compris : déploiement de nouveaux agents, leur administration, …). On pourra aussi réinstaller cet environnement si nécessaire.

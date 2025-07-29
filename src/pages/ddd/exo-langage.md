@@ -51,60 +51,59 @@ Une startup développe un service de vente de billets pour des événements. Lor
 
 ### 3. Modèle ou schéma (exemple simplifié)
 
-```plantuml
-@startuml
-title Cycle de vie d'une commande (alignement métier)
+```mermaid
+---
+title: Cycle de vie d'une commande (alignement métier)
+---
+stateDiagram-v2
+  [*] --> Réservation : réservation initiée
+  Réservation --> Commande : durée expirée
+  Réservation --> Paiement : utilisateur paie
 
-[*] --> Réservation : réservation initiée
-Réservation --> Commande : durée expirée
-Réservation --> Paiement : utilisateur paie
+  Paiement --> Billet : paiement réussi
+  Paiement --> ÉchecPaiement : paiement échoué
 
-Paiement --> Billet : paiement réussi
-Paiement --> ÉchecPaiement : paiement échoué
-
-ÉchecPaiement --> [*]
-Billet --> [*]
-
-@enduml
+  ÉchecPaiement --> [*]
+  Billet --> [*]
 ```
 
-```plantuml
-@startuml
-title Modèle tactique aligné – Billetterie
+```mermaid
+---
+title: Modèle tactique aligné - Billetterie
+---
+classDiagram
+    class Reservation {
+        +UUID reservationId
+        +UUID eventId
+        +UUID userId
+        +datetime expiresAt
+        +toCommand() Command
+    }
 
-class Reservation {
-  +reservationId: UUID
-  +eventId: UUID
-  +userId: UUID
-  +expiresAt: datetime
-  +toCommand(): Command
-}
+    class Command {
+        +UUID commandId
+        +Reservation reservation
+        +CommandStatus status
+        +pay() Billet
+        +fail() void
+    }
 
-class Command {
-  +commandId: UUID
-  +reservation: Reservation
-  +status: CommandStatus
-  +pay(): Billet
-  +fail(): void
-}
+    class Billet {
+        +UUID billetId
+        +UUID commandId
+        +UUID eventId
+        +UUID userId
+        +string qrCode
+    }
 
-enum CommandStatus {
-  PENDING
-  PAID
-  FAILED
-}
+    class CommandStatus {
+        PENDING
+        PAID
+        FAILED
+    }
 
-class Billet {
-  +billetId: UUID
-  +commandId: UUID
-  +eventId: UUID
-  +userId: UUID
-  +qrCode: string
-}
-
-Reservation --> Command : génère
-Command --> Billet : produit
-@enduml
+    Reservation --> Command : génère
+    Command --> Billet : produit
 ```
 
 ```python

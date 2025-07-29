@@ -37,23 +37,19 @@ tags:
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Le processus TDD
+---
+stateDiagram-v2
+    
+    Test : test en échec
+    Implementation : écriture du code
+    Refactoring
 
-title Le processus TDD
-
-state "1. test" as A #red
-A : test en échec
-state "2. implémentation" as B #lightgreen
-B : écriture du code
-B : succès du test
-state "refactoring" as C #cyan
-
-A --> B
-B --> C
-C --> A : problème suivant
-
-@enduml
+    Test --> Implementation : test en échec
+    Implementation --> Refactoring : succès du test
+    Refactoring --> Test : problème suivant
 ```
 
 ---

@@ -36,6 +36,27 @@ Rel(jenkins, reports, "Génération des rapports")
 @enduml
 ```
 
+<!-- TODO: Bug graphique
+```mermaid
+C4Context
+title Exemple d'utilisation d'un serveur d'intégration continue
+
+Person(dev, "Développeur")
+
+System_Ext(git, "Dépôt de code", "Git")
+System(jenkins, "Serveur d'intégration continue", "Jenkins")
+Container(artifact, "Artefact", "Livrables générés")
+Container(reports, "Rapports", "Résultats des tests")
+
+Rel(dev, git, "Commit")
+
+Rel(jenkins, jenkins, "Exécution des tests")
+Rel(git, jenkins, "Envoi des modifications")
+Rel(jenkins, artifact, "Création des livrables")
+Rel(jenkins, reports, "Génération des rapports")
+```
+-->
+
 ---
 
 ## 🌐 Types de serveurs CI

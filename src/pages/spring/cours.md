@@ -186,21 +186,16 @@ public class MaClasseAvecDependance {
 
 ---
 
-```plantuml
-@startuml
-
-caption
-= Singleton
-
-endcaption
-
-class Singleton {
- - Singleton instance
- - Singleton()
- + Singleton getInstance()
-}
-
-@enduml
+```mermaid
+---
+title: Le Design Pattern de Singleton
+---
+classDiagram
+    class Singleton {
+        - Singleton instance
+        - Singleton()
+        + getInstance()
+    }
 ```
 
 <div class="caption">Le Design Pattern Singleton</div>
@@ -217,26 +212,27 @@ En Programmation orientée objet, design pattern qui laisse libre l'implémentat
 
 ---
 
-```plantuml
-@startuml
-title Design Pattern de Template
+```mermaid
+---
+title: Design Pattern de Template
+---
+classDiagram
+    class ClasseAbstraite {
+        + methodeTemplate()
+        # codeVariant()
+    }
 
-abstract class ClasseAbstraite {
-    +methodeTemplate()
-    #codeVariant()
-}
+    class SousClasse1 {
+        # codeVariant()
+    }
 
-class SousClasse1 {
-    #codeVariant()
-}
+    class SousClasse2 {
+        # codeVariant()
+    }
 
-class SousClasse2 {
-    #codeVariant()
-}
+    ClasseAbstraite <|-- SousClasse1 : Implémente
+    ClasseAbstraite <|-- SousClasse2 : Implémente
 
-ClasseAbstraite <|-- SousClasse1 : Implémente
-ClasseAbstraite <|-- SousClasse2 : Implémente
-@enduml
 ```
 
 <div class="caption">Le design pattern de template.</div>

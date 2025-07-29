@@ -43,33 +43,30 @@ En _BDD_, on utilise le pattern **Given**, **When**, **Then** qui suit le même 
 
 ## Page Object
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Design Pattern Page Object
+---
+classDiagram
+    interface HomePageInterface
+    interface LoginPageInterface
 
-caption
-= Design Pattern Page Object
-endcaption
+    class HomePageObject
+    class LoginPageObject
 
-title Page Object
+    HomePageObject ..|> HomePageInterface
+    LoginPageObject ..|> LoginPageInterface
 
-interface HomePage
-interface LoginPage
-class HomePageObject
-class LoginPageObject
-class Test1
-class Test2
-class Test3
+    class Test1
+    class Test2
+    class Test3
 
-HomePageObject -up-|> HomePage
-LoginPageObject -up-|> LoginPage
-
-Test1 -up-> HomePageObject
-Test1 -up-> LoginPageObject
-Test2 -up-> HomePageObject
-Test2 -up-> LoginPageObject
-Test3 -up-> HomePageObject
-Test3 -up-> LoginPageObject
-@enduml
+    Test1 --> HomePageObject
+    Test1 --> LoginPageObject
+    Test2 --> HomePageObject
+    Test2 --> LoginPageObject
+    Test3 --> HomePageObject
+    Test3 --> LoginPageObject
 ```
 
 ---
@@ -122,40 +119,40 @@ En automatisation de tests, ce design pattern sert surtout à tester facilement 
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Design Pattern Composition
+---
+classDiagram
+    class TreeItem {
+        +operation()
+        +add(Component)
+        +remove(Component)
+        +getChild(int)
+    }
 
-caption
-= Design Pattern Composition
-endcaption
+    class TreeLeaf {
+        +operation()
+    }
 
-title Tree (Composition)
+    class TreeBranch {
+        +operation()
+        +add(TreeItem)
+        +remove(TreeItem)
+        +getChild(int)
+    }
 
-class TreeItem {
-  +operation()
-  +add(Component)
-  +remove(Component)
-  +getChild(int)
-}
+    class Client
 
-class TreeLeaf {
-  +operation()
-}
+    %% Héritage
+    TreeLeaf --|> TreeItem
+    TreeBranch --|> TreeItem
 
-class TreeBranch {
-  +operation()
-  +add(TreeItem)
-  +remove(TreeItem)
-  +getChild(int)
-}
+    %% Composition
+    TreeBranch *-- TreeItem : many
 
-class Client
-
-TreeItem <|-- TreeLeaf
-TreeItem <|-- TreeBranch
-TreeBranch *-- "many" TreeItem
-Client --> TreeItem
-@enduml
+    %% Utilisation
+    Client --> TreeItem
 ```
 
 ---
@@ -168,38 +165,36 @@ En automatisation de tests, sont but est principalement de regrouper des `PageOb
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Design Pattern Façade
+---
+classDiagram
+    class Client
+    class Facade
 
-caption
-= Design Pattern Façade
-endcaption
+    namespace SystemeComplexe {
+    class A
+    class B
+    class C
+    class D
+    class E
+    class F
+    }
 
-title Facade
+    %% Dépendances internes du système complexe
+    A --> B
+    A --> E
+    C --> E
+    D --> B
+    B --> F
+    F --> A
 
-class Client
-class Facade
+    %% Façade
+    Facade --> A
+    Facade --> C
+    Client --> Facade
 
-folder "Système complexe" {
-  class A
-  class B
-  class C
-  class D
-  class E
-  class F
-}
-
-A --> B
-A --> E
-C --> E
-D --> B
-B --> F
-F --> A
-
-Facade --> A
-Facade --> C
-Client --> Facade
-@enduml
 ```
 
 ---
@@ -244,52 +239,54 @@ En automatisation de tests, on utilise principalement les décorateurs pour :
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Design Pattern Decorateur
+---
+classDiagram
 
-caption
-= Design Pattern Decorateur
-endcaption
+    %% Interfaces
+    interface ComponentInterface
+    class ComponentInterface {
+        +methodA()
+        +methodB()
+    }
 
-title Decorator
+    interface DecoratorInterface
+    class DecoratorInterface {
+        +methodA()
+        +methodB()
+    }
 
-interface Component {
-  +methodA()
-  +methodB()
-}
+    %% Classes concrètes
+    class ConcreteComponent {
+        +methodA()
+        +methodB()
+    }
 
-class ConcreteComponent {
-  +methodA()
-  +methodB()
-}
+    class ConcreteDecoratorA {
+        -Component wrapperObj
+        +methodA()
+        +methodB()
+        -newBehavior()
+    }
 
-interface Decorator {
-  +methodA()
-  +methodB()
-}
+    class ConcreteDecoratorB {
+        -Component wrapperObj
+        -Object newState
+        +methodA()
+        +methodB()
+        -newBehavior()
+    }
 
-class ConcreteDecoratorA {
-  -Component wrapperObj
-  +methodA()
-  +methodB()
-  -newBehavior()
-}
+    %% Relations d'héritage
+    ConcreteComponent --|> ComponentInterface
+    DecoratorInterface --|> ComponentInterface
+    ConcreteDecoratorA --|> DecoratorInterface
+    ConcreteDecoratorB --|> DecoratorInterface
 
-class ConcreteDecoratorB {
-  -Component wrapperObj
-  -Object newState
-  +methodA()
-  +methodB()
-  -newBehavior()
-}
-
-ConcreteComponent --|> Component
-ConcreteDecoratorA --|> Decorator
-ConcreteDecoratorB --|> Decorator
-
-Decorator --|> Component
-Decorator *--> Component
-@enduml
+    %% Composition
+    DecoratorInterface *--> ComponentInterface
 ```
 
 ---

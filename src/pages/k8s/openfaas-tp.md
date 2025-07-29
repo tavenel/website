@@ -15,98 +15,104 @@ Ses avantages principaux sont la portabilité (pas de verrouillage cloud), la si
 
 #### Concepts
 
-```plantuml
-@startuml
-title OpenFaaS for Kubernetes
+```mermaid
+---
+title: OpenFaaS for Kubernetes
+---
+flowchart TB
+  subgraph Template_Store
+    Java["Java"]
+    Python["Python"]
+  end
 
-rectangle "Template Store" as template_store {
-  rectangle "Java"
-  rectangle "Python"
-}
+  subgraph Function_Store
+    fdd1["Function Definition"]
+    fdd2["Function Definition"]
+  end
 
-rectangle "Function Store" as function_store {
-  rectangle "Function Definition" as fdd1
-  rectangle "Function Definition" as fdd2
-}
+  subgraph Another_team_software
+    inbound_http_request1["Inbound HTTP Request"]
+    kafka_topic["Kafka Topic"]
+  end
 
-rectangle "Another team's software" as another_team {
-  rectangle "Inbound HTTP Request"
-  rectangle "Kafka Topic"
-}
+  subgraph Your_team_software
+    custom_ui["Custom UI"]
+    custom_api["Custom API"]
+  end
 
-rectangle "Your team's software" as your_team {
-  rectangle "Custom UI"
-  rectangle "Custom API"
-}
+  subgraph Customer_or_Partner
+    inbound_http_request2["Inbound HTTP Request"]
+    s3_bucket_put["S3 Bucket PUT"]
+  end
 
-rectangle "Customer or Partner" as customer_partner {
-  rectangle "Inbound HTTP Request"
-  rectangle "S3 Bucket PUT"
-}
+  subgraph OpenFaaS_Installation
+    fdp1["Function Deployment"]
+    fdp2["Function Deployment"]
+    fdp3["Function Deployment"]
 
-rectangle "OpenFaaS Installation" as openfaas_installation {
-  rectangle "Function Deployment" as fdp1 #LightGreen
-  rectangle "Function Deployment" as fdp2 #LightGreen
-  rectangle "Function Deployment" as fdp3 #LightGreen
+    openfaas["OpenFaaS"]
+    autoscaler["Autoscaler"]
+    prometheus["Prometheus"]
+    queue_worker["Queue-Worker"]
+    cron_connector["Cron-Connector"]
+    kafka_connector["Kafka-Connector"]
 
-  rectangle "OpenFaaS" as openfaas #LightBlue
-  rectangle "Autoscaler" #LightBlue
-  rectangle "Prometheus" #LightBlue
-  rectangle "Queue-Worker" #LightBlue
-  rectangle "Cron-Connector" #LightBlue
-  rectangle "Kafka-Connector" #LightBlue
+    fdp1 --> openfaas
+    fdp2 --> openfaas
+    fdp3 --> openfaas
+  end
 
-  fdp1 -- openfaas
-  fdp2 -- openfaas
-  fdp3 -- openfaas
-}
+  Template_Store -.-> OpenFaaS_Installation
+  Function_Store -.-> OpenFaaS_Installation
+  Another_team_software -.-> OpenFaaS_Installation
+  Your_team_software -.-> OpenFaaS_Installation
+  Customer_or_Partner -.-> OpenFaaS_Installation
 
-template_store -[dashed]- openfaas_installation
-function_store -[dashed]- openfaas_installation
-another_team -[dashed]-> openfaas_installation
-your_team -[dashed]-> openfaas_installation
-customer_partner -[dashed]-> openfaas_installation
-@enduml
+  class fdp1,fdp2,fdp3 green
+  class openfaas,autoscaler,prometheus,queue_worker,cron_connector,kafka_connector blue
 ```
 
 <div class="caption">Concepts OpenFaaS. Source: https://www.openfaas.com/blog/integrate-with-openfaas/</div>
 
 #### Appel de fonction serverless en HTTP
 
-```plantuml
-@startuml
-title OpenFaaS for Kubernetes
+```mermaid
+---
+title: OpenFaaS for Kubernetes
+---
+flowchart TB
+  subgraph Registry
+    registry_content["ghcr.io/openfaas/sleep:0.1.0"]
+  end
 
-rectangle "Registry" as registry {
-  rectangle "ghcr.io/openfaas/sleep:0.1.0" as registry_content #LightYellow
-}
+  subgraph OpenFaaS_Installation
+    function_sleep["Function 'sleep'"]
+    deployment["Deployment"]
+    pod1["Pod"]
+    pod2["Pod"]
+    openfaas_gateway["OpenFaaS Gateway"]
+    service["Service TCP/8080"]
+    ingress["Ingress 80, 443"]
+  end
 
-rectangle "OpenFaaS Installation" as openfaas_installation {
-  rectangle "Function 'sleep'" as function_sleep #LightGreen
-  rectangle "Deployment" as deployment #LightGreen
-  rectangle "Pod" as pod1 #LightGreen
-  rectangle "Pod" as pod2 #LightGreen
-  rectangle "OpenFaaS Gateway" as openfaas_gateway #LightBlue
-  rectangle "Service TCP/8080" as service #LightGreen
-  rectangle "Ingress\n80, 443" as ingress
-}
+  User(("User"))
 
-actor User
+  User -->|HTTP GET /function/sleep| ingress
+  function_sleep -.-> deployment
+  function_sleep -.-> service
+  deployment -.-> pod1
+  deployment -.-> pod2
 
-User -> ingress : "HTTP GET /function/sleep"
-function_sleep .. deployment
-function_sleep .. service
-deployment .. pod1
-deployment .. pod2
+  openfaas_gateway --- function_sleep
+  ingress --> openfaas_gateway
+  openfaas_gateway --> service
+  service --> pod1
+  service --> pod2
 
-openfaas_gateway -- function_sleep
-ingress --> openfaas_gateway
-openfaas_gateway --> service
-service --> pod1
-service --> pod2
+  registry_content -.-> function_sleep
 
-registry -[dashed]-> function_sleep
-@enduml
+  class function_sleep,deployment,service,pod1,pod2 green
+  class openfaas_gateway blue
 ```
 
 <div class="caption">Appel HTTP via Ingress OpenFaaS. Source: https://www.openfaas.com/blog/integrate-with-openfaas/</div>
@@ -884,27 +890,21 @@ faas-cli new ma-fonction --lang mon-python-custom
 
 ## ⚙️ Architecture du flux
 
-```plantuml
-@startuml
-skinparam style strict
-skinparam rectangle {
-    BackgroundColor White
-    BorderColor Navy
-    BorderThickness 2
-    RoundCorner 20
-}
-skinparam ArrowColor LightBlue
-skinparam defaultFontName "Arial"
+```mermaid
+---
+title: Diagramme de séquence
+---
+sequenceDiagram
+    actor Client
+    participant "Upload Image"
+    participant "Resize Image"
+    participant "Add Watermark"
+    participant "Save Image"
 
-actor Client
-
-Client -> "Upload Image" : Upload
-"Upload Image" -> "Resize Image" : Event: Uploaded
-"Resize Image" -> "Add Watermark" : Event: Resized
-"Add Watermark" -> "Save Image" : Event: Watermarked
-
-@enduml
-
+    Client->>"Upload Image": Upload
+    "Upload Image"->>"Resize Image": Event: Uploaded
+    "Resize Image"->>"Add Watermark": Event: Resized
+    "Add Watermark"->>"Save Image": Event: Watermarked
 ```
 
 Chaque étape est totalement découplée et utilise un **appel HTTP** ou un **publish-event** (au choix) pour interconnecter les fonctions.

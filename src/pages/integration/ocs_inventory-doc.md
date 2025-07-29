@@ -16,50 +16,49 @@ OCSInventory est un outil de collecte automatisée d'éléments d'un parc inform
 
 Voici une vue synthétique des principales fonctionnalités d'OCS Inventory :
 
-```plantuml
-@startmindmap
-
-title Fonctionnalités d'OCS Inventory
-
-* Server OCSInventory
-** Collecte des informations
-*** Installation de l'agent sur les postes
-*** Forcer le premier inventaire
-*** Détection des équipements réseau : "IP Discovery"
-**** Requêtes ARP
-**** Création de types
-**** Répartition des équipements selon leur type
-** Administration du serveur d'inventaire
-*** Présentation de l'inventaire
-*** Importation de clés de registre
-*** Détection et gestion des doublons
-*** Gestion des utilisateurs du serveur
-*** Principaux paramètres de configuration
-**** Activations
-***** Inventaire
-***** Déploiement d'applications
-***** IP Discovery
-**** Fréquence inventaire
-**** Fréquence de téléchargement
-**** Fréquence IP discovery
-*** Création d'un label
-*** Importation d'un fichier clé client
-** Déploiement d'applications à distance
-*** Création d'un paquet
-**** Préparation ZIP
-**** Définition d'une priorité
-**** 3 étapes d'actions
-***** Lancer
-***** Exécuter
-***** Sélectionner
-**** Fragmentation du paquet
-*** Activation d'un paquet (envoi vers les serveurs)
-**** Téléchargement sécurisé des fichiers d'instruction (https)
-**** Téléchargement des parties du fichier (http)
-*** Affectation d'un paquet à une ou plusieurs machines
-*** Télé-distribution d'un paquet (modèle via le client)
-
-@endmindmap
+```mermaid
+---
+title: Fonctionnalités d'OCS Inventory
+---
+mindmap
+  root((Fonctionnalités d'OCS Inventory))
+    Server_OCSInventory
+      Collecte_des_informations
+        Installation_de_l_agent_sur_les_postes
+        Forcer_le_premier_inventaire
+        Detection_des_equipements_reseau_IP_Discovery
+          Requetes_ARP
+          Creation_de_types
+          Repartition_des_equipements_selon_leur_type
+      Administration_du_serveur_d_inventaire
+        Presentation_de_l_inventaire
+        Importation_de_cles_de_registre
+        Detection_et_gestion_des_doublons
+        Gestion_des_utilisateurs_du_serveur
+        Principaux_parametres_de_configuration
+          Activations
+            Inventaire
+            Deploiement_d_applications
+            IP_Discovery
+          Frequence_inventaire
+          Frequence_de_telechargement
+          Frequence_IP_discovery
+        Creation_d_un_label
+        Importation_d_un_fichier_cle_client
+      Deploiement_d_applications_a_distance
+        Creation_d_un_paquet
+          Preparation_ZIP
+          Definition_d_une_priorite
+          Trois_etapes_d_actions
+            Lancer
+            Executer
+            Selectionner
+          Fragmentation_du_paquet
+        Activation_d_un_paquet_envoi_vers_les_serveurs
+          Telechargement_securise_des_fichiers_d_instruction_https
+          Telechargement_des_parties_du_fichier_http
+        Affectation_d_un_paquet_a_une_ou_plusieurs_machines
+        Tele_distribution_d_un_paquet_modele_via_le_client
 ```
 
 ## Architecture
@@ -235,54 +234,53 @@ Une fois les inventaires transmis au serveur par les agents et intégrés à la 
 
 Des requêtes de restrictions pourront également être effectuées permettant ainsi d'avoir une vue précise et ciblée des éléments informatiques présents dans l'entreprise.
 
-```plantuml
-
-@startmindmap
-title Informations collectées par OCS Inventory
-
-* Présentation de l'inventaire
-** Les différentes vues
-*** L'ensemble des machines
-*** Segmentation grâce aux 'tags'
-*** Segmentation grâce aux groupes
-**** Groupes dynamiques
-**** Groupes statiques
-*** L'ensemble des logiciels
-*** Recherches multi-critères
-** Éléments inventoriés
-*** BIOS
-*** Composants matériels
-**** Processeurs
-**** Cartes
-***** Réseau
-***** Contrôleur
-***** Graphique
-***** Son
-**** Mémoires
-***** RAM
-***** Cache
-**** Périphériques
-***** Imprimantes
-***** Scanners
-***** Clavier/Souris
-***** Moniteurs
-***** Modems
-***** Stockage
-****** CD/DVD/Graveur
-****** Disquettes
-****** Cartes mémoires
-****** Disque dur
-*** Composant Logiciels
-**** Système d'exploitation
-**** Applicatifs
-**** Mises à jour
-*** Paramétrages
-**** Paramètres réseau
-**** Clés de registre
-*** Informations administratives
-
-@endmindmap
+```mermaid
+---
+title: Informations collectées par OCS Inventory
+---
+mindmap
+  root((Informations collectées par OCS Inventory))
+    Présentation de l'inventaire
+      Les differentes vues
+        L'ensemble des machines
+        Segmentation grâce aux tags
+        Segmentation grâce aux groupes
+          Groupes dynamiques
+          Groupes statiques
+        L'ensemble des logiciels
+        Recherches multi criteres
+      Elements inventoriés
+        BIOS
+        Composants materiels
+          Processeurs
+          Cartes
+            Reseau
+            Controleur
+            Graphique
+            Son
+          Memoires
+            RAM
+            Cache
+          Peripheriques
+            Imprimantes
+            Scanners
+            Clavier Souris
+            Moniteurs
+            Modems
+            Stockage
+              CD DVD Graveur
+              Cartes memoires
+              Disque dur
+        Composant Logiciels
+          Systeme d'exploitation
+          Applicatifs
+          Mises à jour
+        Parametrages
+          Paramètres réseau
+          Clés de registre
+        Informations administratives
 ```
+
 ## Récupération des clés de registre
 
 *Une des fonctionnalités intéressantes de la gestion d'un parc est de permettre la gestion des licences logicielles ; pour cela certaines clés de registres (sur les systèmes Windows uniquement) doivent être récupérées.*

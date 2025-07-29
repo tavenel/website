@@ -26,25 +26,29 @@ MVC est composé de 3 modules :
 
 ---
 
-```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+```mermaid
+---
+title: Le pattern MVC.
+---
+flowchart LR
+    %% Définition des composants
+    subgraph Modele
+        model["Modèle<br/>ex: Mettre à jour l'application<br/>pour représenter l'ajout d'un élément<br/><i>Définit les structures de données</i>"]
+    end
 
-caption
-= Le pattern MVC.
-endcaption
+    subgraph Vue
+        view["Vue<br/>ex: L'utilisateur clique sur 'Ajouter au panier'<br/><i>Définit l'affichage (UI)</i>"]
+    end
 
-HIDE_STEREOTYPE()
+    subgraph Controleur
+        controller["Contrôleur<br/>ex: Reçoit une mise à jour de la vue<br/>et notifie le modèle d'un 'ajout d'élément'"]
+    end
 
-Container(model, "Modèle", "ex: Mettre à jour l'application pour représenter l'ajout d'un élément", "Définit les structures de données")
-Container(view, "Vue", "ex: L'utilisateur clique sur 'Ajouter au panier'", "Définit l'affichage (UI)")
-Container(controller, "Contrôleur", "ex: Reçois une mise à jour de la vue et notifies le modèle d'un 'ajout d'élément'")
-
-Rel_D(model, view, "Met à jour")
-Rel_R(view, controller, "Notifie des interactions utilisateur")
-Rel_L(controller, view, "Peut mettre à jour directement")
-Rel_U(controller, model, "Manipule")
-@enduml
+    %% Relations
+    model -- "Met à jour" --> view
+    view -- "Notifie des interactions utilisateur" --> controller
+    controller -- "Peut mettre à jour directement" --> view
+    controller -- "Manipule" --> model
 ```
 
 ---
@@ -60,27 +64,20 @@ Rel_U(controller, model, "Manipule")
 
 ---
 
-```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+```mermaid
+---
+title: Anti-pattern MVC
+---
+flowchart LR
+    user(["Utilisateur"])
+    model[["Modèle<br/>(Base de données)"]]
+    view["Vue<br/>(HTML)"]
+    controller["Contrôleur"]
 
-caption
-= Anti-pattern MVC
-endcaption
-
-HIDE_STEREOTYPE()
-
-Person(user, "Utilisateur")
-
-ContainerDb(model, "Modèle", "Base de données", $sprite="&folder,scale=2.0")
-Container(view, "Vue", "HTML")
-System(controller, "Contrôleur")
-
-Rel(user, controller, "Affiche la page dans son navigateur")
-Rel(view, user, "Retourne la page HTML demandée")
-Rel(controller, view, " ")
-BiRel(controller, model, " ")
-@enduml
+    user --> |Affiche la page dans son navigateur| controller
+    view --> |Retourne la page HTML demandée| user
+    controller --> view
+    controller <--> model
 ```
 
 ---

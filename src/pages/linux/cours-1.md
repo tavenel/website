@@ -19,31 +19,15 @@ tags:
 
 ---
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Utilisation d'un système d'exploitation
+---
+flowchart TD
+    Utilisateur -->|Interagit avec| Application
+    Application -->|S'appuie sur| Systeme
+    Systeme -->|Pilote| Materiel
 
-+------------------------+
-|       Utilisateur      |
-+------------------------+
-     ^            |
-     |            v
-+------------------------+
-|      Application       |
-+------------------------+
-     ^            |
-     |            v
-+------------------------+
-| Système d'exploitation |
-+------------------------+
-     ^            |
-     |            v
-+------------------------+
-|        Matériel        |
-+------------------------+
-
-=
-
-@endditaa
 ```
 
 Un système d'exploitation (Operating System - OS) est un logiciel gérant l'exécution des applications et leurs interactions avec le matériel .
@@ -78,27 +62,15 @@ En 1991, Linux Torvalds libère la première version du noyau Linux écrit en la
 
 ### Qu'est-ce que linux ?
 
-```plantuml
-@startditaa
-
-+-------------------+
-|   Applications    |
-+-------------------+
-         ^
-         |
-         v
-+---------------------+
-|      Kernel         |
-|     (Noyau)         |
-+---------------------+
-   ^         ^       ^
-   |         |       |
-   v         v       v
-+-----+ +--------+ +-------+
-| CPU | | Mémoire| |Devices|
-+-----+ +--------+ +-------+
-
-@endditaa
+```mermaid
+---
+title: Vue logique d'un système d'exploitation
+---
+flowchart TD
+    Applications --> Kernel
+    Kernel --> CPU
+    Kernel --> Memoire
+    Kernel --> Devices
 ```
 
 Linux est un noyau de système d'exploitation :

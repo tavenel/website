@@ -166,18 +166,25 @@ L'ensemble des personnes intervenant sur le projet est séparée en 2 groupes : 
 
 ---
 
-```plantuml
-@startuml
-skinparam componentStyle rectangle
-(Maître d'ouvrage : porteur du projet, client, commanditaire) as MOA
-(Maître d'oeuvre : chef de projet, chargé de réalisation) as MOE
-MOA ==> MOE
-MOE ==> (Équipe projet)
-(Commité de pilotage) ..> MOE
-(Experts internes ou externes) ..> MOE
-(Supérieurs hiérarchiques) ..> (Équipe projet)
-note bottom of MOE: Partenaires (sous-traitants, fournisseurs, ..)
-@enduml
+```mermaid
+---
+title: La MOA et la MOE
+---
+graph TD
+  MOA["Maître d'ouvrage : porteur du projet, client, commanditaire"]
+  MOE["Maître d'oeuvre : chef de projet, chargé de réalisation"]
+  Equipe["Équipe projet"]
+  Pilotage["Comité de pilotage"]
+  Experts["Experts internes ou externes"]
+  Superieurs["Supérieurs hiérarchiques"]
+  Partenaires["Partenaires (sous-traitants, fournisseurs, ..)"]
+
+  MOA --> MOE
+  MOE --> Equipe
+  Pilotage -.-> MOE
+  Experts -.-> MOE
+  Superieurs -.-> Equipe
+  Partenaires -.-> MOE
 ```
 
 ---

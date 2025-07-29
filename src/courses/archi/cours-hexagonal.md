@@ -19,33 +19,28 @@ tags:
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+graph TD
+  subgraph my_app
+    View
+    Controller
+    Model[(Model)]
+  end
 
-folder my_app {
-  component View
-  component Controller
-  database Model
-  
   View --> Controller
   Controller --> Model
-}
-
-@enduml
 ```
 
 _Quel est le **but** de cette application ?_ 🤔
 
 ---
 
-```plantuml
-@startuml
-folder customer
-folder helpbase
-folder message
-folder staffer
-folder ticket
-@enduml
+```
+📁 customer  
+📁 helpbase  
+📁 message  
+📁 staffer  
+📁 ticket
 ```
 
 _Quel est le **but** de [cette application django](https://github.com/johnnncodes/ddd-python-django) ?_ 💡

@@ -60,33 +60,32 @@ note right of (Approvisionnement en cassettes) : Scénarios : Location cassettes
 :::
 
 :::correction
-```plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de séquence de location de cassettes
+---
+sequenceDiagram
+    actor A as Adherent
+    participant S as Systeme
 
-caption
-= Diagramme de séquence de location de cassettes
-endcaption
+    A->>S: Demande de location (film)
+    S->>S: Vérification disponibilité cassette
 
-actor Adherent as A
-participant Systeme as S
-
-A -> S : Demande de location (film)
-S -> S : Vérification disponibilité cassette
-
-S -[#green]> A : [Cassette disponible] Demande d'authentification
-A -> S : Carte d'adhérent
-
-S -> S : Abonné ?
-
-S -[#red]> A : [Non abonné] Plein tarif
-S -[#green]> A : [Abonné] Tarif réduit abonnement
-
-A -> S : Paiement
-S -> A : Cassette + Reçu
-
-S -> S : Enregistrement location\n (association Cassette / Client)
-
-@enduml
+    alt Cassette disponible
+        S-->>A: Demande d'authentification
+        A->>S: Carte d'adhérent
+        S->>S: Abonné ?
+        alt Non abonné
+            S--x A: Plein tarif
+        else Abonné
+            S--x A: Tarif réduit abonnement
+        end
+        A->>S: Paiement
+        S->>A: Cassette + Reçu
+        S->>S: Enregistrement location (association Cassette / Client)
+    else Cassette non disponible
+        S-->>A: Indisponible
+    end
 ```
 :::
 

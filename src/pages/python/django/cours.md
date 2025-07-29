@@ -99,39 +99,47 @@ Framework Python gratuit et open-source de haut niveau pour développer une appl
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Un projet est une aggrégation d'applications
+---
+classDiagram
+    direction LR
 
-caption
-= Un projet est une aggrégation d'applications
-endcaption
+    class Projet {
+      +nom
+      +configuration
+      +contrôleur_frontral
+    }
 
-left to right direction
+    class Application {
+      +nom
+      +configuration
+      +contrôleur_frontral
+    }
 
-class Projet {
-  nom
-  configuration
-  contrôleur frontal
-}
-class Application {
-  nom
-  configuration
-  contrôleur frontal
-}
-Model : nom
-Vue : nom
-Template : fichier
-class Champ {
-  nom
-  type
-}
+    class Model {
+      +nom
+    }
 
-Projet o-- "*" Application
-Application *-- "*" Model
-Application *-- "*" Vue
-Application *-- "*" Template
-Model *-- "*" Champ
-@enduml
+    class Vue {
+      +nom
+    }
+
+    class Template {
+      +fichier
+    }
+
+    class Champ {
+      +nom
+      +type
+    }
+
+    Projet "1" o-- "*" Application : contient
+    Application "1" *-- "*" Model : contient
+    Application "1" *-- "*" Vue : contient
+    Application "1" *-- "*" Template : contient
+    Model "1" *-- "*" Champ : contient
 ```
 
 ---

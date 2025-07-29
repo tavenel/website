@@ -379,3 +379,95 @@ checkout dev
 checkout main
 merge livraison-1.0 tag:"v1.0"
 ```
+
+
+```mermaid
+graph LR
+  subgraph ReservationContext["RÉSERVATION"]
+    subgraph selection[«Sélection»]
+      getter("getSelection() : SPI")
+    end
+  end
+
+  subgraph RechercheContext["RECHERCHE"]
+    subgraph selection2[«Sélection»]
+      getter2("getSelection() : API")
+    end
+  end
+
+  getter2 -->|Conformiste| getter
+
+  class selection2,getter,getter2 blue
+```
+
+```mermaid
+---
+config:
+  theme: redux-color
+---
+mindmap
+  root((Context Map))
+
+    Superposition de contextes
+      Shared Kernel
+
+    Contextes coopérant fortement
+      Partnership
+
+    Crée un lien de coopération
+      Customer/Supplier Teams
+
+    Crée un lien unidirectionnel
+      Conformist
+
+    Supporte différents clients
+      Open Host Service
+        Version formelle
+          Published Language
+
+    Libère les contraintes entre équipes
+      Separate Ways
+
+    Traduis et isole unilatéralement
+      Anticorruption Layer
+
+    Évaluation et examen des relations
+      Bounded Context
+        nommage
+          Ubiquitous Language
+        garde le modèle unifié
+          Continuous Integration
+```
+
+```mermaid
+---
+title: Le processus TDD
+---
+stateDiagram-v2
+    
+    Test : test en échec
+    Implementation : écriture du code
+    Refactoring
+
+    Test --> Implementation : test en échec
+    Implementation --> Refactoring : succès du test
+    Refactoring --> Test : problème suivant
+```
+
+
+```mermaid
+---
+title: Diagramme de séquence
+---
+sequenceDiagram
+    actor Client
+    participant "Upload Image"
+    participant "Resize Image"
+    participant "Add Watermark"
+    participant "Save Image"
+
+    Client->>"Upload Image": Upload
+    "Upload Image"->>"Resize Image": Event: Uploaded
+    "Resize Image"->>"Add Watermark": Event: Resized
+    "Add Watermark"->>"Save Image": Event: Watermarked
+```

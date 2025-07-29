@@ -62,30 +62,23 @@ Voici les principales fonctionnalités décrites par le service produit :
 
 ### 2. **Carte de contexte (exemple)**
 
-```plantuml
-@startuml
-skinparam rectangle {
-  BackgroundColor<<Core>> LightBlue
-  BackgroundColor<<Supporting>> LightGreen
-  BackgroundColor<<Generic>> LightGray
-  BorderColor Black
-}
+```mermaid
+---
+title: Carte de contexte
+---
+flowchart TD
 
-title Carte de contexte - LearnMate
+  UP["UserProfile(Supporting)"]
+  CB["CourseBooking(Core)"]
+  P["Payment(Supporting)"]
+  PF["PedagogicalFollowup(Supporting)"]
+  S["Support(Generic)"]
 
-rectangle "UserProfile" <<Supporting>> as UP
-rectangle "CourseBooking" <<Core>> as CB
-rectangle "Payment" <<Supporting>> as P
-rectangle "PedagogicalFollowup" <<Supporting>> as PF
-rectangle "Support" <<Generic>> as S
-
-UP --> CB : fournit\nprofils+disponibilités
-CB --> P : déclenche\npaiement
-CB --> PF : déclenche\ncompte-rendu
-CB --> S : signale\nproblèmes
-P --> S : permet\nremboursement
-
-@enduml
+  UP -->|fournit profils et disponibilités| CB
+  CB -->|déclenche paiement| P
+  CB -->|déclenche compte-rendu| PF
+  CB -->|signale problèmes| S
+  P -->|permet remboursement| S
 ```
 
 * `CourseBooking` est central : coordonne avec tous les autres contextes.

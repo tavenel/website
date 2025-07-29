@@ -204,22 +204,18 @@ Techniquement, un objet est caractérisé par 3 choses :
 
 ---
 
-```plantuml
-@startuml
-
+```mermaid
+---
 title: Exemple d'objet
-
-class MaVoiture {
-  blanche
-  1500 Kg
-  7800 euros
-  ---
-  demarrer()
-  accelerer()
-}
-
-
-@enduml
+---
+classDiagram
+    class MaVoiture {
+        +couleur: String = "blanche"
+        +poids: int = 1500
+        +prix: float = 7800.00
+        +demarrer()
+        +accelerer()
+    }
 ```
 
 <div class="caption">Un exemple d'objet</div>
@@ -352,36 +348,31 @@ ma_voiture._methode_privee() # interdit (hors de la classe)
 
 En POO une classe peut **hériter** des caractéristiques (attributs, méthodes) d’une autre classe.
 
-```plantuml
-@startuml
-
+```mermaid
+---
 title: Exemple d'héritage
+---
+classDiagram
+    class Vehicule {
+        #String nom
+        #double poids
+        #double prix
+        #double vitesse
+        +accelerer() void
+    }
 
-class Vehicule {
-    # nom: String
-    # poids: double
-    # prix: double
-    # vitesse: double
-    ---
-    + accelerer() : void
-}
+    class Voiture {
+        -int nombre_portes
+        +accelerer() void
+    }
 
-class Voiture {
-    - nombre_portes: int
-    --
-    + accelerer() : void
-}
+    class Avion {
+        -double capacite_soute
+        +accelerer() void
+    }
 
-class Avion {
-    - capacite_soute : double
-    --
-    + accelerer() : void
-}
-
-Vehicule <|-- Voiture : Extends
-Vehicule <|-- Avion : Extends
-
-@enduml
+    Vehicule <|-- Voiture : Extends
+    Vehicule <|-- Avion : Extends
 ```
 
 <div class="caption">Un exemple d'héritage.</div>

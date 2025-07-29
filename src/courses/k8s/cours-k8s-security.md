@@ -321,41 +321,42 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-```plantuml
-@startuml
-left to right direction
-' skinparam linetype ortho
-
+```mermaid
+---
 title: Kubernetes API request lifecycle
+---
+flowchart LR
+    %% Étapes principales
+    A["API Handler"]
+    B["Authentication"]
+    C["Mutating Admission<br/>(Webhook Callout)"]
+    D["Schema Validation"]
+    E["Validating Admission<br/>(Webhook Callout)"]
+    F["Persist to etcd"]
 
-rectangle {
-  rectangle "API Handler" as API
-  rectangle "Auth" as Auth
-  rectangle "Mutating\nAdmission" as Mutate
-  rectangle "Object Schema\nValidation" as Schema
-  rectangle "Validating\nAdmission" as Validate
-  rectangle "ETCD\nPersistence" as ETCD
-}
+    %% Webhooks séparés
+    subgraph "Mutating Webhook"
+        MW["Webhook Code<br/>Implementation"]
+    end
 
-' Webhooks with different color
-rectangle "Webhook Code\nImplementation" as MutatingWebhook #cyan
-rectangle "Webhook Code\nImplementation" as ValidatingWebhook #cyan
+    subgraph "Validating Webhook"
+        VW["Webhook Code<br/>Implementation"]
+    end
 
-' Main flow
-API --> Auth
-Auth --> Mutate
-Mutate --> Schema
-Schema --> Validate
-Validate --> ETCD
+    %% Flux principal
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 
-' Webhook interactions
-Mutate --> MutatingWebhook #blue : <color:blue>Registered Webhook</color>
-MutatingWebhook --> Mutate #blue : <color:blue>ModifiedRequest</color>
+    %% Webhook Mutating
+    C -->|"Call registered webhook"| MW
+    MW -->|"Modified object"| C
 
-Validate --> ValidatingWebhook #blue : <color:blue>Registered Webhook</color>
-ValidatingWebhook --> Validate #blue : <color:blue>Validation Decision</color>
-
-@enduml
+    %% Webhook Validating
+    E -->|"Call registered webhook"| VW
+    VW -->|"Validation response"| E
 ```
 
 ---

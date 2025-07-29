@@ -7,49 +7,53 @@ date: 2023 / 2024
 
 Un système de carte météo (`CM`) doit générer des cartes avec la météo de chaque région en se basant sur les données collectées à partir des stations météo (`SM`) ou autres sources comme les ballons-sondes ou satellites. Les `SM` transmettent leurs données à un central de région (`CR`) en réponse à une requête de celui-ci. Un `CR` valide les données collectées des `SM` et les intègrent avec les données des autres sources. Les données intégrées sont archivées. En utilisant les données de cette archive et une BD de cartes numériques, le `CR` génère toutes les heures un ensemble de cartes météo locales. Ces cartes peuvent être imprimées ou affichées en différents formats.
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Architecture logicielle d'un système de cartes météo
+---
+flowchart LR
+  subgraph DataCollection
+    Comms[Comms]
+    Observateur[Observateur]
+    Satellite[Satellite]
+    StationMeteo[Station météo]
+    Ballon[Ballon]
 
-caption
-= Figure 1 : Architecture logicielle d'un système de cartes météo
-endcaption
+    Comms --- Observateur
+    Comms --- StationMeteo
+    Comms --- Satellite
+    Comms --- Ballon
+  end
 
-package DataCollection {
-  rectangle Comms
-  rectangle Observateur
-  rectangle Satellite
-  rectangle "Station météo"
-  rectangle Ballon
-  Comms -left- Observateur
-  Comms -down- "Station météo"
-  Comms -up- Satellite
-  Comms -right- Ballon
-}
-package DataProcessing {
-  rectangle "Vérification de données"
-  rectangle "Intégration de données"
-  "Vérification de données" - "Intégration de données"
-}
-package DataArchiving {
-  rectangle "Map store"
-  rectangle "Data store"
-  rectangle "Data storage"
-  "Data storage" -left- "Map store"
-  "Data store" -right- "Data store"
-}
-package DataDisplay {
-  rectangle "Interface utilisateur"
-  rectangle Carte
-  rectangle "Affichage de la carte"
-  rectangle "Impression de carte"
-  "Affichage de la carte" -left- "Interface utilisateur"
-  "Affichage de la carte" -down- Carte
-  Carte -right- "Impression de carte"
-}
-DataProcessing -left- DataCollection
-DataProcessing -right- DataArchiving
-DataArchiving -right- DataDisplay
-@enduml
+  subgraph DataProcessing
+    Verification["Vérification de données"]
+    Integration["Intégration de données"]
+    Verification --- Integration
+  end
+
+  subgraph DataArchiving
+    MapStore["Map store"]
+    DataStore1["Data store"]
+    DataStorage["Data storage"]
+
+    DataStorage --- MapStore
+    DataStore1 --- DataStore1
+  end
+
+  subgraph DataDisplay
+    InterfaceUtilisateur["Interface utilisateur"]
+    Carte["Carte"]
+    AffichageCarte["Affichage de la carte"]
+    ImpressionCarte["Impression de carte"]
+
+    AffichageCarte --- InterfaceUtilisateur
+    AffichageCarte --- Carte
+    Carte --- ImpressionCarte
+  end
+
+  DataProcessing --- DataCollection
+  DataProcessing --- DataArchiving
+  DataArchiving --- DataDisplay
 ```
 
 ## Exercice 1 : Plan de test
@@ -79,112 +83,102 @@ Dans la suite, nous allons nous intéresser plus particulièrement au sous-syst�
 
 Les figures ci-dessous décrivent les architectures de haut niveau et détaillée du sous-système `SM`.
 
-```plantuml
-@startuml
-
-caption
+```mermaid
+---
 = Architecture haut niveau du sous-système SM
-endcaption
+---
+graph TD
+  subgraph "Station météo"
+    C1["Interface (Gère les communications externes)"]
+    C2["Data collection (Collecte et résume les données météo)"]
+    C3["Instruments (Package d'instruments pour la collecte de données brutes)"]
 
-package "Station météo" {
-  [<<subsystem>> Interface] as C1
-  note right of C1
-    Gère les communications externes
-  end note
-  [<<subsystem>> Data collection] as C2
-  note right of C2
-    Collecte et résume les données météo
-  end note
-  [<<subsystem>> Data collection] as C3
-  note right of C3
-    Package d'instruments pour la collecte de données brutes
-  end note
-  C1 -- C2
-  C2 -- C3
-}
-@enduml
+    C1 --- C2
+    C2 --- C3
+  end
 ```
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Architecture détaillée du sous-système SM
+---
+graph TD
 
-caption
-= Architecture détaillée du sous-système SM
-endcaption
+  subgraph "Interface"
+    CC[CommsController]
+    WS[WeatherStation]
+    CC --- WS
+  end
 
-package "<<subsystem>> Interface" {
-  [CommsController] as CC
-  [WeatherStation] as WS
-  CC -- WS
-}
+  subgraph DC["Data collection"]
+    WD[WeatherData]
+    IS[Instrument Status]
+    IS --- WD
+  end
 
-package "<<subsystem>> Data collection" as DC {
-  [WeatherData] as WD
-  [Instrument Status] as IS
-  WD -- IS
-  WS -- DC
-}
+  subgraph "Instruments"
+    INS1[Air thermometer]
+    INS2[RainGauge]
+    INS3[Anemometer]
+    INS4[Ground thermometer]
+    INS5[Barometer]
+    INS6[WindVane]
+  end
 
-package "<<subsystem>> Instruments" as INS {
-  [Air thermometer] as INS1
-  [RainGauge] as INS2
-  [Anemometer] as INS3
-  [Ground thermometer] as INS4
-  [Barometer] as INS5
-  [WindVane] as INS6
-  WD --- INS
-  IS --- INS
-}
-@enduml
+  WS --- DC
+  WD --- Instruments
+  IS --- Instruments
 ```
 
 Les cas d'utilisation de ce sous-système ainsi que le diagramme de flot des services du `SM` sont donnés dans les figures ci-dessous.
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Cas d'utilisation du sous-système
+---
+graph TD
+    A[Utilisateur]
 
-caption
-= Architecture détaillée du sous-système SM
-endcaption
+    UC1((Startup))
+    UC2((Shutdown))
+    UC3((Report))
+    UC4((Calibrate))
+    UC5((Test))
 
-utilisateur as A
-A --> (Startup)
-A --> (Shutdown)
-A --> (Report)
-A --> (Calibrate)
-A --> (Test)
-@enduml
+    A --> UC1
+    A --> UC2
+    A --> UC3
+    A --> UC4
+    A --> UC5
 ```
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Diagramme d'activité du sous-système SM
+---
+stateDiagram-v2
 
-caption
-= Diagramme d'activité du sous-système SM
-endcaption
+    [*] --> Shutdown
+    Shutdown --> Waiting: startup()
 
-[*] --> Shutdown
+    state Operation {
 
-state "Operation" as Operation {
+        Waiting --> Calibrating: calibrate()
+        Calibrating --> Testing: calibration OK
 
-    Shutdown --> Waiting : startup()
+        Waiting --> Testing: test()
 
-    Waiting --> Calibrating : calibrate()
-    Calibrating --> Testing : calibration OK
+        Waiting --> Collecting: clock
+        Collecting --> Waiting: collection done
 
-    Waiting --> Testing : test()
+        Waiting --> Summarising: reportWeather()
 
-    Waiting --> Collecting : clock
-    Collecting --> Waiting : collection done
+        Testing --> Transmitting: test complete
+        Summarising --> Transmitting: weather summary complete
+        Transmitting --> Waiting: transmission done
+    }
 
-    Waiting --> Summarising : reportWeather()
-
-    Testing --> Transmitting : test complete
-    Summarising --> Transmitting : weather summary complete
-    Transmitting --> Waiting : transmission done
-}
-Waiting --> Shutdown : shutdown()
-@enduml
+    Waiting --> Shutdown: shutdown()
 ```
 
 ## Exercice 5 : Test de système : test de fonctionnement
@@ -206,79 +200,75 @@ Dans le cahier des charges, le cas d'utilisation Report est spécifié à l'aide
 
 En utilisant le diagramme de flot et le diagramme de classe, proposez une suite de tests pour tester la classe `WeatherStation`. Pourquoi s'agit-il de tests en boîte noire ?
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de flot
+---
+sequenceDiagram
 
-caption
-= Diagramme de flot
-endcaption
+    actor User
+    participant CC as CommsController
+    participant WS as WeatherStation
+    participant WD as WeatherData
 
-actor User
-participant "CommsController" as CC
-participant "WeatherStation" as WS
-participant "WeatherData" as WD
-
-User -> CC : request(report)
-CC -> User : acknowledge()
-CC -> WS : report()
-WS -> WD : summarise()
-WS --> CC : send(report)
-CC -> User : reply(report)
-User -> CC : acknowledge()
-@enduml
+    User ->> CC : request(report)
+    CC -->> User : acknowledge()
+    CC ->> WS : report()
+    WS ->> WD : summarise()
+    WS -->> CC : send(report)
+    CC ->> User : reply(report)
+    User ->> CC : acknowledge()
 ```
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de classe
+---
+classDiagram
 
-caption
-= Diagramme de classe
-endcaption
+    class WeatherStation {
+        identifier
+        reportWeather()
+        calibrate(instruments)
+        test()
+        startup(instruments)
+        shutdown(instruments)
+    }
 
-class WeatherStation {
-  identifier
-  reportWeather()
-  calibrate(instruments)
-  test()
-  startup(instruments)
-  shutdown(instruments)
-}
+    class WeatherData {
+        airTemperatures
+        groundTemperatures
+        windSpeeds
+        windDirections
+        pressures
+        rainfall
+        collect()
+        summarise()
+    }
 
-class WeatherData {
-  airTemperatures
-  groundTemperatures
-  windSpeeds
-  windDirections
-  pressures
-  rainfall
-  collect()
-  summarise()
-}
+    class GroundThermometer {
+        temperature
+        test()
+        calibrate()
+    }
 
-class GroundThermometer {
-  temperature
-  test()
-  calibrate()
-}
+    class Anemometer {
+        windSpeed
+        windDirection
+        test()
+    }
 
-class Anemometer {
-  windSpeed
-  windDirection
-  test()
-}
+    class Barometer {
+        pressure
+        height
+        test()
+        calibrate()
+    }
 
-class Barometer {
-  pressure
-  height
-  test()
-  calibrate()
-}
-
-WeatherStation --> WeatherData
-WeatherStation ..> GroundThermometer : uses
-WeatherStation ..> Anemometer : uses
-WeatherStation ..> Barometer : uses
-@enduml
+    WeatherStation --> WeatherData
+    WeatherStation ..> GroundThermometer : uses
+    WeatherStation ..> Anemometer : uses
+    WeatherStation ..> Barometer : uses
 ```
 
 ## Exercice 7 : Test de composant : fonction Report

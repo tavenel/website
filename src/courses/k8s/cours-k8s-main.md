@@ -459,16 +459,15 @@ tags:
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
 title: "Boucle de réconciliation"
-rectangle "Observation" as observe
-rectangle "Action" as act
-rectangle "Diff" as diff
-observe --> diff
-diff --> act
-act --> observe
-@enduml
+---
+flowchart TD
+    Observation --> Diff
+    Diff --> Action
+    Action --> Observation
+
 ```
 
 ---
@@ -911,7 +910,7 @@ title: Schema d'un Ingress basé path.
 ---
 
 graph LR;
-  client([client])-. Ingress-managed <br> load balancer .->ingress[Ingress, 178.91.123.132];
+  client([client])-. Ingress-managed load balancer .->ingress[Ingress, 178.91.123.132];
   ingress-->|/foo|service1[Service service1:4200];
   ingress-->|/bar|service2[Service service2:8080];
   subgraph cluster
@@ -921,12 +920,6 @@ graph LR;
   service2-->pod3[Pod];
   service2-->pod4[Pod];
   end
-  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
-  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
-  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
-  class ingress,service1,service2,pod1,pod2,pod3,pod4 k8s;
-  class client plain;
-  class cluster cluster;
 ```
 
 ```mermaid
@@ -935,7 +928,7 @@ title: Schema d'un Ingress basé hostname.
 ---
 
 graph LR;
-  client([client])-. Ingress-managed <br> load balancer .->ingress[Ingress, 178.91.123.132];
+  client([client])-. Ingress-managed load balancer .->ingress[Ingress, 178.91.123.132];
   ingress-->|Host: foo.bar.com|service1[Service service1:80];
   ingress-->|Host: bar.foo.com|service2[Service service2:80];
   subgraph cluster
@@ -945,13 +938,6 @@ graph LR;
   service2-->pod3[Pod];
   service2-->pod4[Pod];
   end
-  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
-  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
-  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
-  class ingress,service1,service2,pod1,pod2,pod3,pod4 k8s;
-  class client plain;
-  class cluster cluster;
-
 ```
 
 <div class="caption">Source: <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">https://kubernetes.io/docs/concepts/services-networking/ingress/</a></div>
@@ -995,17 +981,11 @@ title: Gateway API
 ---
 
 graph LR;
-  client([client])-. requête <br> HTTP .->gateway[Gateway];
+  client([client])-. requête HTTP .->gateway[Gateway];
   gateway-->httpRoute[HTTPRoute];
   httpRoute-->|Règle de routage|service[Service];
   service-->pod1[Pod];
   service-->pod2[Pod];
-  classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
-  classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
-  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
-  class gateway,httpRoute,service,pod1,pod2, k8s;
-  class client plain;
-  class cluster cluster;
 ```
 
 ---

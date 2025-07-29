@@ -15,36 +15,31 @@ tags:
 
 ### MVC comme architecture
 
-```plantuml
-@startuml
+```mermaid
+graph TD
+  subgraph my_app
+    View
+    Controller
+    Model[(Model)]
+  end
 
-folder my_app {
-  component View
-  component Controller
-  database Model
-  
   View --> Controller
   Controller --> Model
-}
-
-@enduml
 ```
 
-_Quel est le **but** de cette application ?_ 🤔
+_Quel est le **but** de cette application ?_ 
 
 ---
 
-```plantuml
-@startuml
-folder customer
-folder helpbase
-folder message
-folder staffer
-folder ticket
-@enduml
+```
+📁 customer  
+📁 helpbase  
+📁 message  
+📁 staffer  
+📁 ticket
 ```
 
-_Quel est le **but** de cette application django ?_ 💡
+_Quel est le **but** de [cette application django](https://github.com/johnnncodes/ddd-python-django) ?_ 💡
 
 ---
 
@@ -92,14 +87,11 @@ public class User {
 
 ### Domaine incohérent
 
-```plantuml
-@startuml
-
-class UserAccount {
-  + address: String
-}
-
-@enduml
+```mermaid
+classDiagram
+  class UserAccount {
+    +String address
+  }
 ```
 
 Problème : addresse de livraison différente ?
@@ -478,52 +470,50 @@ nabo --> (Demande d'abonnement)
 
 ### Diagramme de classe
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Exemple de diagramme de classes pour le modèle d'une librairie
+---
 
-caption
-= Exemple de diagramme de classes pour le modèle d'une librairie.
-endcaption
+classDiagram
 
-class Book {
-  +title: String
-  +author: Author[1]
-  +summary: String
-  +ISBN: String
-  +genre: Genre[1..*]
-  +language: Language[1]
-}
+  class Book {
+    +String title
+    +Author author
+    +String summary
+    +String ISBN
+    +List~Genre~ genre
+    +Language language
+  }
 
-class Genre {
-  +name: String
-}
+  class Genre {
+    +String name
+  }
 
-class Language {
-  +name: String
-}
+  class Language {
+    +String name
+  }
 
-class BookInstance {
-  +uniqueId: String
-  +due_back: DateField
-  +status: LOAN_STATUS
-  +book: Book[1]
-  +imprint: String
-  +borrower: User[1]
-}
+  class BookInstance {
+    +String uniqueId
+    +DateField due_back
+    +LOAN_STATUS status
+    +Book book
+    +String imprint
+    +User borrower
+  }
 
-class Author {
- +name: String
-  +date_of_birth: DateField
-  +date_of_death: DateField
-  +books: Book[1..*]
-}
+  class Author {
+    +String name
+    +DateField date_of_birth
+    +DateField date_of_death
+    +List~Book~ books
+  }
 
-Book "1..*" -- "1" Author
-Book "0..*" -- "1..*" Genre
-Book "0..*" -- "1" Language
-Book "1" -- "0..*" BookInstance
-
-@enduml
+  Author "1" --> "1..*" Book
+  Book "1..*" --> "1..*" Genre
+  Book "1" --> "1" Language
+  Book "1" --> "0..*" BookInstance
 ```
 
 ---
@@ -568,47 +558,44 @@ Plusieurs stratégies permettent d'y parvenir :
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
 title: Exemple de Domaine
-
-rectangle "Domain" {
-
-  rectangle "Trading Room"
-  rectangle "Risk"
-  rectangle "Information Technology"
-  rectangle "Financial"
-  rectangle "Human Ressources"
-  rectangle "Account"
-}
-@enduml
+---
+graph TD
+  subgraph Domain
+    TR[Trading Room]
+    Risk[Risk]
+    IT[Information Technology]
+    Financial[Financial]
+    HR[Human Ressources]
+    Account[Account]
+  end
 ```
 
-```plantuml
-@startuml
+```mermaid
+---
 title: Exemple de Domaine distillé
+---
+graph TD
+  subgraph Domain
+    tr[Trading Room]
+    r[Risk]
+    subgraph b[" "]
+      HR[Human Ressources]
+      IT[Information Technology]
+    end
+    f[Financial]
+    a[Account]
+  end
 
-rectangle "Domain" {
-
-  rectangle "Trading Room" as tr
-  rectangle "Risk" as r
-  rectangle " " as b {
-    rectangle "Human Ressources"
-    rectangle "Information Technology"
-  }
-  rectangle "Financial" as f
-  rectangle "Account" as a
-}
-
-tr -- r
-tr -- f
-tr -- b
-r -- b
-r -- a
-a -- b
-f -- b
-
-@enduml
+  tr --- r
+  tr --- f
+  tr --- b
+  r --- b
+  r --- a
+  a --- b
+  f --- b
 ```
 
 ---
@@ -744,40 +731,34 @@ Bounded Context                                   Bounded Context
 
 ---
 
-```plantuml
-@startuml
-title: SHARED-KERNEL (LIB)
-left to right direction
+```mermaid
+---
+title: Shared Kernel (LIB)
+---
+flowchart LR
+ subgraph s1["RÉSERVATION"]
+        booking[["Réservation"]]
+        comfort_class["Classe"]
+        schedule["Horaires"]
+  end
+ subgraph subGraph1["SHARED-KERNEL (LIB)"]
+        shared_comfort_class["Classe<br>(économique, business, …)"]
+        shared_schedule["Horaires"]
+  end
+ subgraph RECHERCHE["RECHERCHE"]
+        search[["Recherche"]]
+        search_comfort_class["Classe"]
+        search_schedule["Horaires"]
+  end
+    booking --> comfort_class & schedule
+    comfort_class -.-> shared_comfort_class
+    schedule -.-> shared_schedule
+    search --> search_comfort_class & search_schedule
+    shared_comfort_class -.-> search_comfort_class
+    shared_schedule -.-> search_schedule
 
-package "RÉSERVATION" #LightGreen {
-	[Réservation] as booking #LightGreen
-	rectangle "Classe" as comfort_class #LightPink
-	rectangle "Horaires" as schedule #LightPink
-
-	booking --> comfort_class
-	booking --> schedule
-}
-
-rectangle "SHARED-KERNEL (LIB)" #LightPink {
-	rectangle "Classe\n(économique, business, …)" as shared_comfort_class #LightPink
-	rectangle "Horaires" as shared_schedule #LightPink
-
-	comfort_class -[dotted]- shared_comfort_class
-	schedule -[dotted]- shared_schedule
-}
-
-package "RECHERCHE" #LightBlue {
-	[Recherche] as search #LightBlue
-	rectangle "Classe" as search_comfort_class #LightPink
-	rectangle "Horaires" as search_schedule #LightPink
-
-	search_comfort_class <-- search
-	search_schedule <-- search
-}
-
-shared_comfort_class -[dotted]- search_comfort_class
-shared_schedule -[dotted]- search_schedule
-@enduml
+    class comfort_class,shared_comfort_class,search_comfort_class blue
+    class schedule,shared_schedule,search_schedule green
 ```
 
 ---
@@ -835,20 +816,17 @@ Un système de gestion d'inventaire (_downstream_) consomme les définitions de 
   - Consomme les mêmes interfaces publiques pour proposer des réservations cohérentes avec les produits disponibles.
   - Peut enrichir localement le modèle sans influencer le fournisseur.
 
-```plantuml
-@startuml
+```mermaid
+---
 title: Exemple de relation Client/Fournisseur
-left to right direction
+---
+graph LR
+  Products["Gestion des Produits<br/>(et des Clients)"]
+  Inventory["Gestion de l’Inventaire"]
+  Reservation["Réservation"]
 
-rectangle "Gestion des Produits\n(et des Clients)" as Products
-
-rectangle "Gestion de l’Inventaire" as Inventory
-rectangle "Réservation" as Reservation
-
-Products -down-> Inventory : Fournit\n(Modèle produit,\nÉvénements,\nAPI publique)
-Products -down-> Reservation : Fournit\n(Modèle produit,\nÉvénements,\nAPI publique)
-
-@enduml
+  Products -->|"Fournit<br/>(Modèle produit,<br/>Événements,<br/>API publique)"| Inventory
+  Products -->|"Fournit<br/>(Modèle produit,<br/>Événements,<br/>API publique)"| Reservation
 ```
 
 ---
@@ -872,52 +850,57 @@ Introduit un **fort couplage** et réduit la flexibilité du client.
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
 title: CONFORMISTE (COMPOSANTS)
-left to right direction
+---
+graph LR
+  subgraph ReservationContext["RÉSERVATION"]
+    subgraph selection[«Sélection»]
+      getter("getSelection() : SPI")
+    end
+  end
 
-package "RÉSERVATION" #LightGreen {
-    [Sélection] as selection #LightBlue
-    () "getSelection() : SPI" as getter #LightGreen
-}
+  subgraph RechercheContext["RECHERCHE"]
+    subgraph selection2[«Sélection»]
+      getter2("getSelection() : API")
+    end
+  end
 
-package "RECHERCHE" #LightBlue {
-    [Sélection] as selection2 #LightBlue
-    () "getSelection() : API" as getter2 #LightBlue
-}
+  getter2 -->|Conformiste| getter
 
-getter2 ..> getter
-@enduml
+  class selection2,getter,getter2 blue
 ```
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
 title: CONFORMISTE (LIB)
-left to right direction
+---
+graph LR
+  subgraph ReservationContext["RÉSERVATION"]
+    price[«Component» Prix]
+    discount[«Component» Discount]
+    amount[Quantité]
+    currency[Devise]
 
-package "RÉSERVATION" #LightGreen {
-	[Prix] as price #LightGreen
-	[Discount] as discount #LightGreen
-	rectangle "Quantité" as amount #LightPink
-	rectangle "Devise" as currency #LightPink
+    price --> amount
+    price --> currency
+    discount --> amount
+    discount --> currency
+  end
 
-	price --> amount
-	price --> currency
-	discount --> amount
-	discount --> currency
-}
+  subgraph MonnaieLib["MONNAIE (LIB)"]
+    amount2[Quantité]
+    currency2[Devise]
+  end
 
-rectangle "MONNAIE (LIB)" #LightPink {
-	rectangle "Quantité" as amount2 #LightPink
-	rectangle "Devise" as currency2 #LightPink
-}
+  amount -.-|Conformist| amount2
+  currency -.-|Conformist| currency2
 
-amount -[dotted]- amount2
-currency -[dotted]- currency2
-@enduml
+  class ReservationContext,price,discount blue
+  class MonnaieLib,amount,amount2,currency,currency2 green
 ```
 
 ---
@@ -943,35 +926,35 @@ C'est un point d'entrée standardisé, conçu pour l'interopérabilité.
 
 ---
 
-```plantuml
-@startuml
-title: OPEN HOST
-left to right direction
+```mermaid
+graph LR
+  subgraph ReservationContext["RÉSERVATION"]
+    subgraph domain1["Domain"]
+      train[«Entity» Train]
+      getTrainsToBook["getTrainsToBook()<br/>(SPI)"]
+    end
+  end
 
-package "RÉSERVATION" #LightGreen {
-  package "DOMAIN" as domain1 {
-    [Train] as train #LightGreen
-    () "getTrainsToBook()\n(SPI)" as getTrainsToBook #LightGreen
-  }
-}
+  subgraph RechercheContext["RECHERCHE"]
+    subgraph domain2["Domain"]
+      domain_selection[«Entity» Selection]
+      getSelection["getSelection()<br/>(API)"]
+    end
 
-package "RECHERCHE" #LightBlue {
-  package "DOMAIN" as domain2 {
-    [Selection] as domain_selection #LightBlue
-    () "getSelection()\n(API)" as getSelection #LightBlue
-  }
+    subgraph infra["Infrastructure"]
+      inproc_train["«Entity» Train<br/>(copie locale)"]
+      selection[«Adapter» Sélection]
+      getTrainsToBookImpl["getTrainsToBook()<br/>(implémentation)"]
 
-  package "INFRASTRUCTURE" #LightGreen {
-    [Train] as inproc_train #LightGreen
-    [Sélection] as selection #LightBlue
-    selection --> inproc_train : OpenHost
-    () "getTrainsToBook()\n(implémentation)" as getTrainsToBookImpl #LightGreen
-  }
-}
+      selection -->|Open Host| inproc_train
+    end
+  end
 
-getSelection --> getTrainsToBookImpl
-getTrainsToBookImpl --> getTrainsToBook
-@enduml
+  getSelection --> getTrainsToBookImpl
+  getTrainsToBookImpl --> getTrainsToBook
+
+  class domain1,train,inproc_train,getTrainsToBook,getTrainsToBookImpl blue
+  class domain2,domain_selection,selection,getSelection green
 ```
 
 ---
@@ -999,36 +982,36 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-```plantuml
-@startuml
-title: COUCHE ANTICORRUPTION
-left to right direction
+```mermaid
+---
+title: Couche Anticorruption
+---
+graph LR
+  subgraph ReservationContext["RÉSERVATION"]
+    subgraph domain1["Domain"]
+      train[«Entity» Train]
+      getTrainsToBook["getTrainsToBook()<br/>(SPI)"]
+    end
 
-package "RÉSERVATION" #LightGreen {
-  package "DOMAIN" as domain1 {
-    [Train] as train #LightGreen
-    () "getTrainsToBook()\n(SPI)" as getTrainsToBook #LightGreen
-  }
+    subgraph infra1["Infrastructure"]
+      selection[«ACL Adapter» Sélection]
+      getTrainsToBookImpl["getTrainsToBook()<br/>(implémentation)"]
+      selection -->|ACL| train
+    end
+  end
 
-  package "INFRASTRUCTURE" {
-    [Train] as inproc_train #LightGreen
-    [Sélection] as selection #LightBlue
-    selection --> inproc_train : ACL
-    () "getTrainsToBook()\n(implémentation)" as getTrainsToBookImpl #LightGreen
-  }
-}
+  subgraph RechercheContext["RECHERCHE"]
+    subgraph domain2["Domain"]
+      domain_selection[«Entity» Selection]
+      getSelection["getSelection()<br/>(API)"]
+    end
+  end
 
-package "RECHERCHE" #LightBlue {
-  package "DOMAIN" as domain2 {
-    [Selection] as domain_selection #LightBlue
-    () "getSelection()\n(API)" as getSelection #LightBlue
-  }
+  getSelection --> getTrainsToBookImpl
+  getTrainsToBookImpl --> getTrainsToBook
 
-}
-
-getSelection --> getTrainsToBookImpl
-getTrainsToBookImpl --> getTrainsToBook
-@enduml
+  class domain1,train,infra1,getTrainsToBook,getTrainsToBookImpl blue
+  class domain2,domain_selection,selection,getSelection green
 ```
 
 ---
@@ -1050,29 +1033,22 @@ getTrainsToBookImpl --> getTrainsToBook
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
 title: Separate Ways
-left to right direction
+---
+classDiagram
+    note for ClientPourFacturation "Classe dupliquée contexte Facturation"
+    class ClientPourFacturation {
+        +addresseDeFacturation
+        +récupérerDevis()
+    }
 
-package "Facturation" {
-  class "ClientPourFacturation" as client1 {
-    +addresseDeFacturation
-    +récupérerDevis()
-  }
-
-}
-
-package "Marketing" {
-  class "ClientPourMarketing" as client2 {
-    +addresseDeContact
-    +listerProduitsRécents()
-  } 
-
-}
-
-client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
-@enduml
+    note for ClientPourMarketing "Classe dupliquée contexte Marketing (aucun lien)"
+    class ClientPourMarketing {
+        +addresseDeContact
+        +listerProduitsRécents()
+    }
 ```
 
 ---
@@ -1115,47 +1091,55 @@ client2 .. client1  #red : "<color:red>Aucun lien (duplication)</color>"
 
 #### Exemple de context map
 
-```plantuml
-@startuml
+```mermaid
+---
 title: Exemple de Context Map d'une compagnie d'assurance
+---
+graph LR
+  %% Bounded Contexts
+  subgraph CSSC["Customer Self-Service"]
+    cssc_d[D]
+  end
 
-' Contexts
-package "Customer Self-Service Context" as cssc {
-  rectangle D as cssc_d
-}
+  subgraph PC["Printing"]
+    pc_u["OHS ou PL<br/>U"]
+  end
 
-package "Printing Context" as pc {
-  rectangle "OHS ou PL\nU" as pc_u
-}
+  subgraph CMC["Customer Management"]
+    cmc_u[U]
+    cmc_d["ACL<br/>D"]
+    cmc_u2["OHS ou PL</br/>U"]
+  end
 
-package "Customer Management Context" as cmc {
-  rectangle U as cmc_u
-  rectangle "ACL\nD" as cmc_d
-  rectangle "OHS ou PL\nU" as cmc_u2
-}
+  subgraph DCC["Debt Collection"]
+    dcc_d["ACL<br/>D"]
+  end
 
-package "Debt Collection Context" as dcc {
-  rectangle "ACL\nD" as dcc_d
-}
+  subgraph rmc["Risk Management"]
+  end
 
-rectangle "Risk Management Context" as rmc
+  subgraph PMC["Policy Management"]
+    pmc_d["ACL<br/>D"]
+    pmc_d2["CONFORMIST<br/>D"]
+  end
 
-package "Policy Management Context" as pmc {
-  rectangle "ACL\nD" as pmc_d
-  rectangle "CONFORMIST\nD" as pmc_d2
-}
+  %% Relations
+  cmc_u -->|Upstream/Downstream| cssc_d
+  cmc_u2 -->|Conformist| pmc_d2
 
-' Relationships
-cmc_u -- cssc_d : "Customer/Supplier"
-cmc_u2 -- pmc_d2
+  pc_u -->|ACL| cmc_d
+  pc_u -->|ACL| pmc_d
+  pc_u -->|ACL| dcc_d
 
-pc_u -- cmc_d
-pc_u -- pmc_d
-pc_u -- dcc_d
+  pmc ---|Shared Kernel| DCC
+  pmc ---|Partnership| rmc
 
-pmc -- dcc : "Shared Kernel"
-pmc -- rmc : "Partnership"
-@enduml
+  %% Styles
+  classDef customerSupplier stroke:#1a73e8,stroke-width:2px,stroke-dasharray: 5 2;
+  classDef conformist stroke:#fbbc04,stroke-width:2px,stroke-dasharray: 3 3;
+  classDef sharedKernel stroke:#34a853,stroke-width:3px;
+  classDef partnership stroke:#9c27b0,stroke-width:3px;
+  classDef acl stroke:#e91e63,stroke-dasharray: 2 2;
 ```
 
 ---
@@ -1209,45 +1193,39 @@ pmc -- rmc : "Partnership"
 
 ---
 
-```plantuml
-@startmindmap
-* Context Map
+```mermaid
+mindmap
+  root((Context Map))
 
-  **_ Superposition de contextes
-    *** Shared Kernel
+    Superposition de contextes
+      Shared Kernel
 
-  **_ Contextes coopérant fortement
-    *** Partnership
+    Contextes coopérant fortement
+      Partnership
 
-  **_ Crée un lien de coopération
-    *** Customer/Supplier Teams
+    Crée un lien de coopération
+      Customer/Supplier Teams
 
-  **_ Crée un lien unidirectionnel
-    *** Conformist
+    Crée un lien unidirectionnel
+      Conformist
 
-  **_ Supporte différents clients
-    *** Open Host Service
-      ****_ Version formelle
-        ***** Published Language
+    Supporte différents clients
+      Open Host Service
+        Version formelle
+          Published Language
 
-  **_ Libère les contraintes entre équipes
-    *** Separate Ways
+    Libère les contraintes entre équipes
+      Separate Ways
 
-  **_ Traduis et isole unilatéralement
-    *** Anticorruption Layer
+    Traduis et isole unilatéralement
+      Anticorruption Layer
 
-left side
-
-  **_ Évaluation et examen des relations
-    *** Bounded Context
-
-      ****_ nommage
-        ***** Ubiquitous Language
-
-      ****_ garde le modèle unifié
-        ***** Continuous Integration
-
-@endmindmap
+    Évaluation et examen des relations
+      Bounded Context
+        nommage
+          Ubiquitous Language
+        garde le modèle unifié
+          Continuous Integration
 ```
 
 <div class="caption">Résumé des patterns stratégiques.</div>
@@ -1301,22 +1279,22 @@ left side
 
 ---
 
-```plantuml
-@startmindmap
-* Domain-Driven Design
-  **[#lightgreen] expression du modèle
-    ***[#lightgreen] Services
-    ***[#lightgreen] Value Objects
-    ***[#lightgreen] Entities
-      ****[#FFBBCC] Propriété, frontières et intégrité des objets
-        *****[#FFBBCC] Aggregates
+```mermaid
+mindmap
+  root((Domain-Driven Design))
 
-  **[#lightblue] Accès aux données, ignore la persistance
-    ***[#lightblue] Repositories
+    expression du modèle
+      Services
+      Value Objects
+      Entities
+        Propriété, frontières et intégrité des objets
+          Aggregates
 
-  **[#Orange] Création des objets
-    ***[#Orange] Factories
-@endmindmap
+    Accès aux données, ignore la persistance
+      Repositories
+
+    Création des objets
+      Factories
 ```
 
 <div class="caption">Patterns tactiques de base.</div>

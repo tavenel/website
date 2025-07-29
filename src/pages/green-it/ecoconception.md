@@ -160,26 +160,30 @@ tags:
 
 ---
 
-```plantuml
-@startuml
-Navigateur -> Serveur: Ouverture de connexion
-Navigateur --> Serveur: Requête #1
-Serveur --> Navigateur: Data #1
-Serveur --> Navigateur: Data #2
-Navigateur --> Serveur: Requête #2
-Serveur --> Navigateur: Data #3
-Serveur --> Navigateur: Data #4
-Serveur --> Navigateur: Data #5
-@enduml
+```mermaid
+sequenceDiagram
+    participant Navigateur
+    participant Serveur
+
+    Navigateur->>Serveur: Ouverture de connexion
+    Navigateur->>Serveur: Requête #1
+    Serveur->>Navigateur: Data #1
+    Serveur->>Navigateur: Data #2
+    Navigateur->>Serveur: Requête #2
+    Serveur->>Navigateur: Data #3
+    Serveur->>Navigateur: Data #4
+    Serveur->>Navigateur: Data #5
 ```
 
 ---
 
-```plantuml
-@startuml
-Navigateur -> Serveur: Demande de fichier HTML
-Serveur -> Navigateur: Fichiers HTML, CSS, IMG
-@enduml
+```mermaid
+sequenceDiagram
+    participant Navigateur
+    participant Serveur
+
+    Navigateur->>Serveur: Demande de fichier HTML
+    Serveur-->>Navigateur: Fichiers HTML, CSS, IMG
 ```
 
 ---

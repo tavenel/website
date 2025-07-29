@@ -157,42 +157,7 @@ Dans la suite du projet, nous allons utiliser `Django` pour développer le site 
 - Utiliser les moyens de sécurité de `Django`.
 - Déployer en production vote application.
 
-Pour rappel, un projet `Django` est un aggrégat d'applications réutilisables, elles-mêmes composées de _Modèles_, de _Vues_ et de _Templates_ :
-
-```plantuml
-@startuml
-
-caption
-= Diagramme UML Projet aggrégation d'Applications
-endcaption
-
-left to right direction
-
-class Projet {
-  nom
-  configuration
-  contrôleur frontal
-}
-class Application {
-  nom
-  configuration
-  contrôleur frontal
-}
-Model : nom
-Vue : nom
-Template : fichier
-class Champ {
-  nom
-  type
-}
-
-Projet o-- "*" Application
-Application *-- "*" Model
-Application *-- "*" Vue
-Application *-- "*" Template
-Model *-- "*" Champ
-@enduml
-```
+Pour rappel, un projet `Django` est un aggrégat d'applications réutilisables, elles-mêmes composées de _Modèles_, de _Vues_ et de _Templates_ : [voir cours](/python/django/cours#projet-vs-applications)
 
 Le projet contiendra une application unique servant la fonctionnalité de catalogue.
 
@@ -200,52 +165,50 @@ Ce sujet de TP est fortement inspiré du [tutoriel de Mozilla](https://developer
 
 Le modèle de notre application sera le suivant :
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de classe UML du modèle de l'application
+---
 
-caption
-= Diagramme de classe UML du modèle de l'application
-endcaption
+classDiagram
 
-class Book {
-  +title: String
-  +autho: Author[1]
-  +summary: String
-  +ISBN: String
-  +genre: Genre[1..*]
-  +language: Language[1]
-}
+  class Book {
+    +String title
+    +Author author
+    +String summary
+    +String ISBN
+    +List~Genre~ genre
+    +Language language
+  }
 
-class Genre {
-  +name: String
-}
+  class Genre {
+    +String name
+  }
 
-class Language {
-  +name: String
-}
+  class Language {
+    +String name
+  }
 
-class BookInstance {
-  +uniqueId: String
-  +due_back: DateField
-  +status: LOAN_STATUS
-  +book: Book[1]
-  +imprint: String
-  +borrower: User[1]
-}
+  class BookInstance {
+    +String uniqueId
+    +DateField due_back
+    +LOAN_STATUS status
+    +Book book
+    +String imprint
+    +User borrower
+  }
 
-class Author {
- +name: String
-  +date_of_birth: DateField
-  +date_of_death: DateField
-  +books: Book[1..*]
-}
+  class Author {
+    +String name
+    +DateField date_of_birth
+    +DateField date_of_death
+    +List~Book~ books
+  }
 
-Book "1..*" -- "1" Author
-Book "0..*" -- "1..*" Genre
-Book "0..*" -- "1" Language
-Book "1" -- "0..*" BookInstance
-
-@enduml
+  Author "1" --> "1..*" Book
+  Book "1..*" --> "1..*" Genre
+  Book "1" --> "1" Language
+  Book "1" --> "0..*" BookInstance
 ```
 
 _Le diagramme de classes du modèle. Source et crédits : <https://github.com/mdn/django-locallibrary-tutorial>_
@@ -800,34 +763,27 @@ Cette section est importante - elle décrit la base du fonctionnement de `Django
 
 ## Architecture globale
 
-```plantuml
-@startditaa
+```mermaid
+---
+title: Architecture globale de Django
+---
+flowchart TD
+    URLs["URLs (urls.py)"]
+    Views["Vues (views.py)"]
+    Model["Modèle (models.py)"]
+    Template["Template (filename...html)"]
+    Client(("Client"))
 
-                          +-----------+
-             requête HTTP | URLs      |
-             ------------>| (urls.py) |
-                          +-----------+
-                               |Transfert la requête
-                               |à la vue correspondante
-                               v
-+-------------+  read/write  +------------+ réponse HTTP
-| Modèle      |     data     | Vues       | (HTML)
-| (models.py) |<------------>| (views.py) |-------------->
-+-------------+              +------------+
-                                   ^
-                                   |
-                                   |
-                         +-------------------+
-                         | Template          |
-                         | (filename...html) |
-                         +-------------------+
-
-= Architecture globale de Django : requête HTTP vers urls.py vers views.py read/write models.py utilise template.html retourne réponse HTTP
-
-@endditaa
+    Client -->|requête HTTP| URLs
+    URLs -->|Transfert la requête à la vue correspondante| Views
+    Views -->|read/write data| Model
+    Model -->|read/write data| Views
+    Views -->|utilise template| Template
+    Views -->|"réponse HTTP (HTML)"| Client
 ```
 
 Le diagramme ci-dessus modélise l'architecture basique de `Django`.
+
 Nous avons travaillé le modèle de données (à gauche du diagramme), nous allons désormais nous atteler à :
 
 - Configurer le routage des URL pour associer les vues adaptées aux requêtes `HTTP` que le site devra traiter (y compris avec des informations encodées dans les URL) ;
@@ -1246,29 +1202,19 @@ Pour plus d'information sur les vues génériques, [voir la page dédiée de la 
 
 ## Les étapes de gestion d'un formulaire
 
-```plantuml
-@startuml
-
-caption
-= Diagramme d'activité des étapes de gestion d'un formulaire
-endcaption
-
-|Web browser|
-start
-:Browser requests page with form;
-repeat
-  repeat :User populate or update form;
-    |Server|
-    backward:<color:blue>Create "unbound" default form;
-    repeat while (<color:blue><b>First request to URL) is (Yes) not (No)
-  :<color:darkgreen>Validate data;
-  backward:<color:darkred>Create form with user-data and error messages\nSend bound form to user;
-  repeat while (<color:darkgreen><b>Is data valid) is (<color:darkred>No) not (<color:darkgreen>Yes)
-  #palegreen:Perform action on (valid) data;
-  #palegreen:Redirect browser to success URL;
-  |Web browser|
-  stop
-@enduml
+```mermaid
+---
+title: Diagramme d'activité des étapes de gestion d'un formulaire
+---
+stateDiagram-v2
+    [*] --> PageDemandee : Browser requests page with form
+    PageDemandee --> FormulaireNonLie : Create "unbound" default form
+    FormulaireNonLie --> ValidationDonnees : User populate or update form
+    ValidationDonnees --> FormulaireLie : Données invalides. Création formulaire avec user_data et messages d'erreur
+    ValidationDonnees --> ActionValide : Données valides
+    FormulaireLie --> ValidationDonnees : User resoumet le formulaire corrigé
+    ActionValide --> Redirection : Perform action on (valid) data
+    Redirection --> [*] : Redirect browser to success URL
 ```
 
 _Les étapes de gestion de requêtes de formulaires en `Django`. (Source et crédits : [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Forms/form_handling_-_standard.png) )_

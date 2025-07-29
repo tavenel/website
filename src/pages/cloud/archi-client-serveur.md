@@ -25,42 +25,35 @@ Ces applications communiquent en utilisant l'un des deux modèles d'architecture
 
 ---
 
-```plantuml
-@startuml
-skinparam rectangle {
-  BackgroundColor white
-  BorderColor black
-}
+```mermaid
+---
+title: Architectures Client-Serveur vs Peer-To-Peer
+---
+graph TD
+  subgraph Client-Server
+    C1[Client 1]
+    C2[Client 2]
+    C3[Client 3]
+    S[Server]
+    
+    C1 -->|Request/Response| S
+    C2 -->|Request/Response| S
+    C3 -->|Request/Response| S
+  end
 
-package "Client-Server Architecture" {
-  rectangle Server {
-    rectangle "Server" as S
-  }
-
-  rectangle "Client 1" as C1
-  rectangle "Client 2" as C2
-  rectangle "Client 3" as C3
-
-  C1 --> S : Request/Response
-  C2 --> S : Request/Response
-  C3 --> S : Request/Response
-}
-
-package "Peer-to-Peer Architecture" {
-  rectangle "Peer A" as PA
-  rectangle "Peer B" as PB
-  rectangle "Peer C" as PC
-  rectangle "Peer D" as PD
-
-  PA <--> PB : Communication
-  PA <--> PC : Communication
-  PA <--> PD : Communication
-  PB <--> PC : Communication
-  PB <--> PD : Communication
-  PC <--> PD : Communication
-}
-
-@enduml
+  subgraph Peer-to-Peer
+    PA[Peer A]
+    PB[Peer B]
+    PC[Peer C]
+    PD[Peer D]
+    
+    PA <--> PB
+    PA <--> PC
+    PA <--> PD
+    PB <--> PC
+    PB <--> PD
+    PC <--> PD
+  end
 ```
 
 ---
@@ -159,34 +152,30 @@ Possibilité de déléguer plus ou moins de traitements au serveur :
 - Architecture à N niveaux délégant des traitements à des serveurs secondaires masqués au client.
 - Permet de segmenter l'utilisation de ressources ou services et leur administration.
 
-```plantuml
-@startuml
-skinparam rectangle {
-  BackgroundColor white
-  BorderColor black
-}
+```mermaid
+---
+title: Serveur N niveaux
+---
+flowchart TD
+  subgraph Presentation_Layer["Presentation Layer (Client)"]
+    C1[Client 1]
+    C2[Client 2]
+  end
 
-rectangle "Presentation Layer (Client)" as Presentation {
-  rectangle "Client 1" as C1
-  rectangle "Client 2" as C2
-}
+  subgraph Application_Layer["Application Layer (Application Server)"]
+    AppServer[Application Server]
+  end
 
-rectangle "Application Layer (Application Server)" as Application {
-  rectangle "Application Server" as AppServer
-}
+  subgraph Data_Layer["Data Layer (Database Server)"]
+    DBServer[Database Server]
+  end
 
-rectangle "Data Layer (Database Server)" as Data {
-  rectangle "Database Server" as DBServer
-}
-
-C1 --> AppServer : Request
-C2 --> AppServer : Request
-AppServer --> DBServer : Query/Response
-DBServer --> AppServer : Data
-AppServer --> C1 : Response
-AppServer --> C2 : Response
-
-@enduml
+  C1 -->|Request| AppServer
+  C2 -->|Request| AppServer
+  AppServer -->|Query/Response| DBServer
+  DBServer -->|Data| AppServer
+  AppServer -->|Response| C1
+  AppServer -->|Response| C2
 ```
 
 ---
@@ -202,31 +191,22 @@ AppServer --> C2 : Response
 
 ---
 
-```plantuml
-@startditaa
-        +----------+
-        |          |
-        |  Client  |
-        |          |
-        +----------+
-          |     ^
-  Requete |     |
-          v     |
-  +----------+  |
-  |Middleware|  |
-  +----------+  |
-          |     |
-          |     | Reponse HTTP
-          v     |
-  +--------------+
-  |              |
-  |    Serveur   |
-  |              |
-  +--------------+
+```mermaid
+---
+title: Architecture d'un middleware
+---
+flowchart TD
+    Client[Client]
+    Middleware[Middleware]
+    Serveur[Serveur]
 
-= Architecture d'un middleware : intercepte la requête du client avant envoie au serveur, le serveur répond directement au client.
+    Client -->|Requête| Middleware
+    Middleware --> Serveur
+    Serveur -->|Réponse HTTP| Client
 
-@endditaa
+    Note@{ shape: comment, label: "Le middleware intercepte la requête du client avant envoi au serveur,<br>le serveur répond directement au client."}
+
+    Middleware -.- Note
 ```
 
 ---

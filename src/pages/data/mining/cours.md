@@ -729,34 +729,37 @@ Cadre classique :
 - _Régression_ : Méthodes d'analyse statistique permettant d'approcher une variable à partir d'autres qui lui sont corrélées. Généralement $Y$ est continue ou est une fonction (variables _quantitatives_).
 - Règle de classification : à partir de l'échantillon d'apprentissage, construire $f_n : X \rightarrow Y$ associant à chaque entrée possible $x$ la classe $y$ prédite pour elle.
 
-```plantuml
-@startdot
+```mermaid
+---
+title: Schéma d'apprentissage supervisé
+---
+flowchart TD
+  subgraph Superviseur
+    superviseur["superviseur"]
+    sortie_desiree["sortie désirée"]
+    erreur["erreur"]
 
-digraph supervised {
+    superviseur --> sortie_desiree --> erreur
+  end
 
-node [style="filled"]
-entrées [color="indianred"]
+  subgraph Réseau
+    réseau["réseau"]
+    sortie_obtenue["sortie obtenue"]
 
-subgraph clusterSuperviseur {
-node [fillcolor="lightskyblue"]
-edge [color="royalblue"]
-label = "Superviseur"
-superviseur -> "sortie désirée" -> erreur
-}
+    réseau --> sortie_obtenue --> erreur
+  end
 
-subgraph {
-node [fillcolor="aquamarine2"]
-edge [color="aquamarine4"]
-réseau -> "sortie obtenue" -> erreur
-}
+  entrées["entrées"]
+  entrées --> superviseur
+  entrées --> réseau
+  erreur -.-> réseau
 
-entrées -> superviseur, réseau
-erreur -> réseau [style="dashed", color="royalblue"]
+  %% Label as a note below
+  classDef labelStyle fill:#fff,stroke:none,color:#666,font-style:italic,font-size:12px;
+  label["Schéma d'apprentissage supervisé"]:::labelStyle
 
-label = "Schéma d'apprentissage supervisé"
-
-@enddot
-}
+  class Superviseur blue
+  class Réseau green
 ```
 
 ## Méthodes de régression
@@ -1129,10 +1132,8 @@ Pour calculer l'amélioration du modèle on utilise donc plutôt la méthode du 
 
 La perte logarithmique pour le point $j$ est :
 
-$$\begin{cases}
--\ln p(x_j) & \text{ si } y_j = 1, \\
--\ln (1 - p(x_j)) & \text{ si } y_j = 0.
-\end{cases}$$
+- $\ln p(x_j)$ si $y_j = 1$
+- $\ln (1 - p(x_j))$ si $y_j = 0$
 
 :::correction
 log loss == "surprise" de $y_j$ sachant $x_j$ ($=0$ si prédiction parfaite, $\rightarrow \infty$ si prédiction fausse et $p_j \rightarrow \{0,1\}$).
@@ -1274,41 +1275,43 @@ Pour estimer la sortie associée à une nouvelle entrée $x$, on prend en compte
 - En classification k-NN, on retiendra la classe la plus représentée parmi les $k$ sorties associées aux $k$ entrées les plus proches de la nouvelle entrée $x$.
 - En régression k-NN, le résultat est la moyenne des valeurs des $k$ plus proches voisins.
 
-```plantuml
-@startdot
+```mermaid
+---
+title: Classification pour k=3 plus proches voisins
+---
+flowchart TD
+  subgraph Classe1
+    x1["x1"]
+    x4["x4"]
+    x5["x5"]
+    x7["x7"]
+    class x1,x4,x5,x7 blue;
+  end
 
-digraph kNN {
-node[style="filled"]
+  subgraph ClasseMajoritaire["Classe majoritaire"]
+    x8["x8"]
+    
+    subgraph Classe2["Classe 2"]
+      x2["x2"]
+      x3["x3"]
+      x6["x6"]
+      class x2,x3,x6 green;
+    end
+  end
 
-subgraph cluster1 {
-  label="Classe 1"
-  node[fillcolor="indianred"]
-  x1 x4 x5 x7
-}
+  %% Arcs depuis x8
+  x8 -.-> x1
+  x8 -.-> x4
+  x8 -.-> x5
+  x8 -.-> x6
 
-subgraph cluster3 {
-  style=dashed
-  color=royalblue
-  label="Classe majoritaire"
+  x8 ==> x7
+  x8 ==> x2
+  x8 ==> x3
 
-  x8 [fillcolor="royalblue"]
-  subgraph cluster2 {
-    style=solid
-    color=black
-    label="Classe 2"
-    node[fillcolor="yellow"]
-    x2 x3 x6
-  }
-}
-
-x8 -> x1,x4,x5,x6 [style="dashed" color="gray"]
-x8 -> x7,x2,x3 [style="bold" color="royalblue"]
-
-label="Classification pour k=3 plus proches voisins"
-}
-
-@enddot
+  class x8 green;
 ```
+
 
 #### Algorithme de classification
 
@@ -1657,20 +1660,18 @@ Afin de résumer, détecter des régularités, comprendre...
 - Repèrent des similarités dans les données pour pouvoir ensuite les structurer.
 - Exemple : similarités entre individus pour les partitionner en différents groupes (clustering).
 
-```plantuml
-@startdot
+```mermaid
+---
+title: Schéma d'apprentissage non supervisé
+---
+stateDiagram-v2
+  [*] --> Network : entrées
+  state Network {
+    algorithme
+  }
+  algorithme --> sortie
+  sortie --> algorithme
 
-digraph non-supervise {
-
-subgraph {
-réseau "sortie obtenue" x[shape=point]
-}
-entrées -> réseau -> x -> "sortie obtenue", réseau
-
-label="Schéma d'apprentissage non supervisé"
-}
-
-@enddot
 ```
 
 ## Classification automatique (_Clustering_)

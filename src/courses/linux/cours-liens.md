@@ -23,48 +23,57 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-```plantuml
+```mermaid
+---
 title: Lien réel vs lien symbolique
+---
+flowchart LR
+    subgraph source
+        F1["F1"]
+    end
 
-@startuml
-folder "source" {
-  [F1]
-}
+    subgraph hard["Lien réel (hard link)"]
+        F2["F2"]
+    end
 
-folder "Lien réel (hard link)" {
-  [F2]
-}
+    F3["Lien symbolique (F3)"]
 
-[Lien symbolique] as F3
+    DATA[("Données sur disque")]
 
-database "Données" as data {
-}
+    %% Lien réel (hard link)
+    F1 --> DATA
+    F2 --> DATA
 
-[F1] -> data
-[F2] -> data
-[F3] ..> F1
-@enduml
+    %% Lien symbolique
+    F3 -.-> F1
+
 ```
 
 ---
 
-```plantuml
-@startuml
+```mermaid
+---
 title: Suppression du fichier source
+---
+flowchart TD
+    %% Données sur disque
+    DATA[("Données sur disque")]
 
-folder "Lien dur (hard link)" {
-  [F2]
-}
+    %% Lien dur (toujours valide)
+    subgraph hard["Lien dur (hard link)"]
+        F2["F2"]
+    end
 
-[Lien symbolique] as F3
+    %% Fichier source supprimé
+    F1["F1 (supprimé)"]:::deleted
 
-database "Données" as data {
-}
+    %% Lien symbolique devenu cassé
+    F3["Lien symbolique (F3)"] -.-> F1
 
-[F2] -> data
-[F1] #red
-[F3] ..> F1 #red
-@enduml
+    %% Connexions
+    F2 --> DATA
+
+    class F1 red
 ```
 
 ---

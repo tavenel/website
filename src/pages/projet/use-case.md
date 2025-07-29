@@ -83,30 +83,30 @@ user --> (S'inscrire à la bibliothèque)
 
 ### Exemple
 
-```plantuml
-@startuml
-!theme sketchy-outline
+```mermaid
+---
+title: Exemple de diagramme de séquence
+---
+sequenceDiagram
+    actor Utilisateur
+    participant Sys as Système
+    participant DB as Base de données
 
-actor Utilisateur
-participant "Système" as Sys
-participant "Base de données" as DB
+    Utilisateur ->> Sys: Se connecter
+    activate Sys
 
-Utilisateur -> Sys : Se connecter
-activate Sys
+    Sys ->> DB: Vérifier les identifiants
+    activate DB
+    DB -->> Sys: Résultat de la vérification
+    deactivate DB
 
-Sys -> DB : Vérifier les identifiants
-activate DB
-DB --> Sys : Résultat de la vérification
-deactivate DB
+    alt Authentification réussie
+        Sys ->> Utilisateur: Afficher page d'accueil
+    else Authentification échouée
+        Sys ->> Utilisateur: Afficher erreur
+    end
 
-alt Authentification réussie
-  Sys -> Utilisateur : Afficher page d'accueil
-else Authentification échouée
-  Sys -> Utilisateur : Afficher erreur
-end
-
-deactivate Sys
-@enduml
+    deactivate Sys
 ```
 
 ---
