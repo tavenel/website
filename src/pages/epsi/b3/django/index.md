@@ -28,9 +28,9 @@ Module de 14H
 
 - [🤓 Introduction à l'utilisation de framework (cours)](/archi/framework)
 - [🤓 MVC : Modèle Vue Contrôleur (cours)](/archi/mvc)
-- [🤓 Cours : introduction à Django, framework Python gratuit et open-source de haut niveau pour développer une application Web simplement](/python/django/cours)
-- [💻 TP bibliothèque : utiliser Django pour générer un petit projet Web de gestion d'une bibliothèque locale.](/python/django/tp)
-- [🏆 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/python/django/jeu-heros)
+- [🤓 Cours : introduction à Django, framework Python gratuit et open-source de haut niveau pour développer une application Web simplement](/django/cours)
+- [💻 TP bibliothèque : utiliser Django pour générer un petit projet Web de gestion d'une bibliothèque locale.](/django/tp)
+- [🏆 Projet : coder un site Web sur le principe "un jeu dont vous êtes le héros"](/django/jeu-heros)
 
 ## 🚀 Pour aller plus loin
 

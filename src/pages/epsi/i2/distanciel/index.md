@@ -21,6 +21,6 @@ Module de 7H.
 
 ## 📑 Documents
 
-- [🤓 Partage d'informations et collaboration à distance (cours)](/management/presentation-distance-outils-collab)
-- [🏆 Atelier pratique - Présentation en distanciel](/management/atelier-presentation_distanciel)
+- [🤓 Partage d'informations et collaboration à distance (cours)](/projet/presentation-distance-outils-collab)
+- [🏆 Atelier pratique - Présentation en distanciel](/projet/atelier-presentation_distanciel)
 

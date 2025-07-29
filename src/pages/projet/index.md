@@ -38,6 +38,13 @@ title: 📅 Gestion de projet
 - [🏆 Projet Scrum dans Jira - gestion de projet de développement Campus TaskForce en méthodes agiles](/projet/agile/projet_scrum_dev_campus)
 - [🏆 Projet Scrum dans Jira - gestion de projet d'infrastructure système InfraCampus en méthodes agiles](/projet/agile/projet_scrum_sysops_campus)
 
+## Travailler en équipe
+
+- [🤓 Partage d'informations et collaboration à distance (cours)](/projet/presentation-distance-outils-collab)
+- [🏆 Atelier pratique - Présentation en distanciel](/projet/atelier-presentation_distanciel)
+- [🤓 Manager une équipe multiculturelle (cours)](/projet/multiculturel)
+- [🏆 Projet accompagner une équipe multiculturelle à distance](/projet/projet-multiculturel)
+
 ## 🏷️ UML® 
 
 - [🤓 Cours - Diagrammes de cas d'utilisation et diagrammes de séquence](/projet/use-case)

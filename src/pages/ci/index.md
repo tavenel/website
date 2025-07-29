@@ -18,7 +18,7 @@ title: 🔄 CI/CD et  Jenkins
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins-b3>
 - [ TP Jenkins niveau 2](/jenkins/tp-full) : Un TP plus poussé que le précédent.
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [Exemple de pipeline Jenkinsfile](/ci/exemple-jenkinsfile)
+- [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
 - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 

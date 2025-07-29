@@ -157,7 +157,7 @@ Dans la suite du projet, nous allons utiliser `Django` pour développer le site 
 - Utiliser les moyens de sécurité de `Django`.
 - Déployer en production vote application.
 
-Pour rappel, un projet `Django` est un aggrégat d'applications réutilisables, elles-mêmes composées de _Modèles_, de _Vues_ et de _Templates_ : [voir cours](/python/django/cours#projet-vs-applications)
+Pour rappel, un projet `Django` est un aggrégat d'applications réutilisables, elles-mêmes composées de _Modèles_, de _Vues_ et de _Templates_ : [voir cours](/django/cours#projet-vs-applications)
 
 Le projet contiendra une application unique servant la fonctionnalité de catalogue.
 

@@ -58,13 +58,6 @@ title: 🧪 Tests logiciels
 - <https://sgbd.developpez.com/tutoriels/cours-complet-bases-de-donnees/?page=integrite-et-bd-actives>
 - <https://arodrigues.developpez.com/livres/jmeter/maitriser-jmeter/tester-serveur-base-donnees/>
 
-## ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
-
-- [🤓 Cours Selenium](/tests/selenium-cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
-  -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
-- [🏆 Projet tests automatisés d'interface utilisateur](/tests/selenium-projet)
-
 ## 🐇 Jmeter - tests de performance
 
 - [💻 TP Jmeter : tests de performance d'une API Web](/tests/jmeter-tp-api)
@@ -90,6 +83,8 @@ title: 🧪 Tests logiciels
   - [Testez fonctionnellement votre application PHP Symfony](https://openclassrooms.com/fr/courses/4087076-testez-fonctionnellement-votre-application-php-symfony)
 - Livre [A Frontend Web Developer's Guide to Testing](https://univ.scholarvox.com/catalog/book/docid/88929017)
 
-## ⚒️ Outils
+## 🚀 Autres ressources
 
-- Voir la [⚒️ page sur les outils](/tools)
+- Voir la page sur [⚒️ les outils](/tools)
+- Voir la page [⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web](/selenium).
+

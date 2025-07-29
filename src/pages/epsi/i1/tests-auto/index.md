@@ -33,7 +33,7 @@ Module de 14H
 - [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests unitaires en Jest](/tests/unit/jest/tp-jest)
 - [💻 TP Facadia](/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)
 
 ### 💻 Exemples
 

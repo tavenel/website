@@ -40,7 +40,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 - [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)
 - [💻 TP : Tests frontend en Jest](/tests/unit/jest/tp-jest)
 - [💻 TP Facadia](/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
-- [💻 TP Selenium - automatiser le test d'interface Web](/tests/selenium-tp)
+- [💻 TP Selenium - automatiser le test d'interface Web](/selenium/tp)
 -  Dépôts d'exemples de tests :
   - 󰌠 Python : <https://git.sr.ht/~toma/python-unit>
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>

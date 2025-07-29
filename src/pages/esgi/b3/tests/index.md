@@ -166,8 +166,8 @@ Les frameworks.
 
 ### ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
-- [🤓 Cours Selenium](/tests/selenium-cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
+- [🤓 Cours Selenium](/selenium/cours)
+- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
 
 ### Projet noté

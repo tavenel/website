@@ -41,7 +41,7 @@ title: INF243 - Stratégie de tests
 
 - [🤓 Cours sur les tests logiciels](/cesi/m2/tests/cours)
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
-- [⚛️ TP Selenium - industrialiser le test d’interface utilisateur](/tests/selenium-tp)
+- [⚛️ TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)
 - [🐇 TP Jmeter : tests de performance d'une API Web](/tests/jmeter-tp-api)
 - [🏆 Projet Développement et Tests Complets d'une Application Web](/cesi/m2/tests/projet)
 -  Dépôts d'exemples de tests :
