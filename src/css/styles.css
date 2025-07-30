@@ -370,66 +370,120 @@ a.add-bookmark {
 
 .mermaid {
 
-	& .flowchart {
+	/* Flow chart & State diagrams */
+	.flowchart, .statediagram, .classDiagram {
 
 		.cluster {
+
 			rect {
 				fill: var(--background) !important;
 				stroke: var(--diagram-group) !important;
 			}
 
-			& .cluster-label .nodeLabel {
+			.cluster-label .nodeLabel {
 				color: var(--diagram-group) !important;
 			}
 
 		}
 
 		.node {
-			& .basic, polygon {
+			.basic, polygon {
 				fill: var(--diagram-background) !important;
 				stroke: var(--diagram-text) !important;
 			}
 
-			& .nodeLabel {
+			.nodeLabel {
 				color: var(--diagram-text) !important;
 			}
+
+			/* class diagram content */
+			.label-container path {
+				fill: var(--diagram-background) !important;
+				stroke: var(--diagram-text) !important;
+			}
+
 		}
 
 		/* Links */
-		& .edgeLabel p {
+		.edgeLabel p {
 			background-color: var(--edge-background) !important;
 		}
 
-		& path {
+		path {
 			stroke: var(--diagram-path) !important;
 		}
 
 	}
 
 	/* Diagrams titles */
-	& .flowchartTitleText,.gitTitleText {
+	.flowchartTitleText,.gitTitleText {
 		fill: var(--blockquote) !important;
 		font-style: italic;
 	}
 
-	& .node,.cluster {
+	.node,.cluster {
 		&.blue {
-			& .basic, rect, polygon {
+			.basic, rect, polygon {
 				fill: var(--diagram-blue-fill) !important;
-				stroke: var(--diagram-blue-stroke) !important;
+				stroke: var(--text) !important;
+			}
+			.nodeLabel {
+				color: var(--text) !important;
 			}
 		}
 		&.green {
-			& .basic, rect, polygon {
+			.basic, rect, polygon {
 				fill: var(--diagram-green-fill) !important;
-				stroke: var(--diagram-green-stroke) !important;
+				stroke: var(--text) !important;
+			}
+			.nodeLabel {
+				color: var(--text) !important;
 			}
 		}
 		&.red {
-			& .basic, rect, polygon {
+			.basic, rect, polygon {
 				fill: var(--diagram-red-fill) !important;
-				stroke: var(--diagram-red-stroke) !important;
+				stroke: var(--text) !important;
 			}
+			.nodeLabel {
+				color: var(--text) !important;
+			}
+		}
+	}
+
+	/* Sequence diagram */
+	svg[aria-roledescription="sequence"] {
+
+		.actor,
+		.messageLine0, .messageText /* horizontal line */,
+		{
+			fill: var(--diagram-background) !important;
+			stroke: var(--diagram-text) !important;
+
+			tspan {
+				fill: var(--diagram-text) !important;
+			}
+		}
+
+		#sequencenumber, #filled-head, #crosshead, #arrowhead, #clock, #database, #computer /* symbols */ {
+			path {
+				fill: var(--diagram-background) !important;
+				stroke: var(--diagram-text) !important;
+			}
+		}
+
+		.actor-man {
+			line, tspan { /* simple line */
+				stroke: var(--diagram-text) !important;
+			}
+			circle { /* object to fill */
+				fill: var(--diagram-background) !important;
+				stroke: var(--diagram-text) !important;
+			}
+		}
+
+		.actor-line /* vertical line */ {
+			stroke: var(--diagram-group) !important;
 		}
 	}
 }
