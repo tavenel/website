@@ -24,8 +24,7 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
 
 ---
 
-```plantuml
-@startditaa
+```
 +-----------+
 | Exigences |
 +-------+---+
@@ -54,7 +53,6 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
                   +-----------------+
                   | Mise en service |
                   +-----------------+
-@endditaa
 ```
 
 ---
@@ -70,8 +68,7 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
 
 ---
 
-```plantuml
-@startditaa
+```
 +-----------+
 | Exigences +===============================> Expression des besoins
 +----+------+
@@ -100,7 +97,6 @@ Le modèle en cascade est hérité de l'industrie du BTP. Ce modèle repose sur 
                +-----------------+
                | Mise en service |
                +-----------------+
-@endditaa
 ```
 
 ---
@@ -122,8 +118,7 @@ Basé sur le modèle en cascade, le cycle en V est :
 
 ---
 
-```plantuml
-@startditaa
+```
 +------------------------------------------------------------------> temps
 | 
 | +---------------------+                       +------------+
@@ -165,8 +160,6 @@ Basé sur le modèle en cascade, le cycle en V est :
 |                       +---------+
 v
 détails
-
-@endditaa
 ```
 
 ---
@@ -240,9 +233,7 @@ La réalisation du prototype induit cependant un coût et une durée de réalisa
 
 ---
 
-```plantuml
-@startditaa
-
+```
 +---------------------+                                                                                    +------------+ 
 |                     |                                                                                    |            |
 | Analyse des besoins |                                                                                    | Recette    |
@@ -281,8 +272,6 @@ La réalisation du prototype induit cependant un coût et une durée de réalisa
                       |prototype|                                                  | produit |
                       |         |                                                  | final   |
                       +---------+                                                  +---------+
-
-@endditaa
 ```
 
 ---
@@ -425,9 +414,7 @@ Chaque projet a un cycle de vie en quatre phases, chacune subdivisée en plusieu
 
 ---
 
-```plantuml
-@startditaa
-
+```
             +-----------+  +-----------+       +-----------+
             |           |  |           |       |           |
 Projets     |  Projet 1 |  |  Projet 2 |  ...  |  Projet p |
@@ -464,8 +451,6 @@ Itérations               |       E1        |    ...   --> Version interne (incr
                          | o Activité n    |
                          | o Évaluation    |
                          +-----------------+
-
-@endditaa
 ```
 
 ---
@@ -569,9 +554,7 @@ Pour une mise en opération, le RAD impose :
 
 ---
 
-```plantuml
-@startditaa
-
+```
 +-------------+                                  +----------------+   +--------------+ 
 |             |                                  |                |   |              |
 |             |                       +--------->|  Construction  |   |              |
@@ -601,8 +584,6 @@ Pour une mise en opération, le RAD impose :
 |             |                       +--------->|  Construction  |   |              |
 |             |                                  |                |   |              |
 +-------------+                                  +----------------+   +--------------+
-
-@endditaa
 ```
 
 ---

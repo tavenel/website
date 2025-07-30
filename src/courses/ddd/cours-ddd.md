@@ -420,37 +420,41 @@ Un _Domaine_ peut englober plusieurs _Bounded Context_.
 
 ### Diagramme de cas d'utilisation
 
-```plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de cas d'utilisation d'un vidéoclub 
+---
+flowchart LR
+    %% Acteurs
+    Client["🧑 Client"]
+    adherent["🧑 Adhérent"]
+    nadherent["🧑 Non adhérent"]
+    abo["🧑 Abonné"]
+    nabo["🧑 Non abonné"]
 
-caption
-= Exemple : diagramme de cas d'utilisation d'un vidéoclub
-endcaption
+    %% Cas d'utilisation
+    adhesion["(Demande d'adhésion)"]
+    location["(Location cassettes)"]
+    retour["(Retour Cassette)"]
+    abonnement["(Demande d'abonnement)"]
+    auth["(Authentification)"]
 
-left to right direction
-skinparam actorStyle awesome
+    %% Hiérarchie des acteurs
+    Client --> adherent
+    Client --> nadherent
+    adherent --> abo
+    adherent --> nabo
 
-actor Adhérent as adherent
-actor "Non adhérent" as nadherent
-Client <|-- adherent
-Client <|-- nadherent
+    %% Relations acteur → cas d'utilisation
+    nadherent --> adhesion
+    adherent --> location
+    adherent --> retour
+    nabo --> abonnement
 
-actor "Abonné" as abo
-actor "Non abonné" as nabo
-adherent <|-- abo
-adherent <|-- nabo
-
-nadherent --> (Demande d'adhésion)
-adherent --> (Location cassettes)
-adherent --> (Retour Cassette)
-nabo --> (Demande d'abonnement)
-
-(Demande d'adhésion) --> (Authentification) : <<utilise>>
-(Location cassettes) --> (Authentification) : <<utilise>>
-(Retour Cassette) --> (Authentification) : <<utilise>>
-(Demande d'abonnement) --> (Authentification) : <<utilise>>
-
-@enduml
+    adhesion -->|utilise| auth
+    location -->|utilise| auth
+    retour -->|utilise| auth
+    abonnement -->|utilise| auth
 ```
 
 ---

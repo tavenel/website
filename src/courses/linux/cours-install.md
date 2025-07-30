@@ -147,39 +147,31 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 ### Architecture d'une machine virtuelle (fully-virtualized)
 
-```plantuml
-@startditaa
-
+```
 +--------------+--------------+
-| cGRE VM A    | cGRE VM B    |
+|     VM A     |     VM B     |
 | +----------+ | +----------+ |
 | |   App1   | | |   App2   | |
 | +----------+ | +----------+ |
 | | bin/libs | | | bin/libs | |
 | +----------+ | +----------+ |
-| | cYEL     | | | cYEL     | |
 | | Guest OS | | | Guest OS | |
 | +----------+ | +----------+ |
 +--------------+--------------+
-| cRED    Hyperviseur         |
+|         Hyperviseur         |
 +-----------------------------+
 |           OS hôte           |
 +-----------------------------+
-| cBLK   Infrastructure       |
+|        Infrastructure       |
 +-----------------------------+
-
-@endditaa
 ```
 
 ---
 
 ### Architecture d'un conteneur
 
-```plantuml
-@startditaa
-
+```
 +--------------+--------------+
-| cPNK         | cPNK         |
 | Conteneur A  | Conteneur B  |
 | +----------+ | +----------+ |
 | |   App1   | | |   App2   | |
@@ -187,12 +179,10 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 | | bin/libs | | | bin/libs | |
 | +----------+ | +----------+ |
 +--------------+--------------+
-| cBLU  OS hôte + Docker      |
+|       OS hôte + Docker      |
 +-----------------------------+
-| cBLK   Infrastructure       |
+|        Infrastructure       |
 +-----------------------------+
-
-@endditaa
 ```
 
 ---

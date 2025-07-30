@@ -21,6 +21,43 @@ Le but est de décrire la vue des besoins (_use case view_) de ce système.
 2. Décrire le scénario _Location Cassettes_ par un diagramme de séquence.
 
 :::correction
+```mermaid
+---
+title: Diagramme de cas d'utilisation d'un vidéoclub 
+---
+flowchart LR
+    %% Acteurs
+    Client["🧑 Client"]
+    adherent["🧑 Adhérent"]
+    nadherent["🧑 Non adhérent"]
+    abo["🧑 Abonné"]
+    nabo["🧑 Non abonné"]
+
+    %% Cas d'utilisation
+    adhesion["(Demande d'adhésion)"]
+    location["(Location cassettes)"]
+    retour["(Retour Cassette)"]
+    abonnement["(Demande d'abonnement)"]
+    auth["(Authentification)"]
+
+    %% Hiérarchie des acteurs
+    Client --> adherent
+    Client --> nadherent
+    adherent --> abo
+    adherent --> nabo
+
+    %% Relations acteur → cas d'utilisation
+    nadherent --> adhesion
+    adherent --> location
+    adherent --> retour
+    nabo --> abonnement
+
+    adhesion -->|utilise| auth
+    location -->|utilise| auth
+    retour -->|utilise| auth
+    abonnement -->|utilise| auth
+```
+
 ```plantuml
 @startuml
 

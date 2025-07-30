@@ -71,36 +71,31 @@ _Docker®_ 🐳
 
 ### Architecture d'une machine virtuelle
 
-```plantuml
-@startditaa
+```
 +--------------+--------------+
-| cGRE VM A    | cGRE VM B    |
+|     VM A     |     VM B     |
 | +----------+ | +----------+ |
 | |   App1   | | |   App2   | |
 | +----------+ | +----------+ |
 | | bin/libs | | | bin/libs | |
 | +----------+ | +----------+ |
-| | cYEL     | | | cYEL     | |
 | | Guest OS | | | Guest OS | |
 | +----------+ | +----------+ |
 +--------------+--------------+
-| cRED    Hyperviseur         |
+|         Hyperviseur         |
 +-----------------------------+
 |           OS hôte           |
 +-----------------------------+
-| cBLK   Infrastructure       |
+|        Infrastructure       |
 +-----------------------------+
-@endditaa
 ```
 
 ---
 
 ### Architecture d'un conteneur
 
-```plantuml
-@startditaa
+```
 +--------------+--------------+
-| cPNK         | cPNK         |
 | Conteneur A  | Conteneur B  |
 | +----------+ | +----------+ |
 | |   App1   | | |   App2   | |
@@ -108,11 +103,10 @@ _Docker®_ 🐳
 | | bin/libs | | | bin/libs | |
 | +----------+ | +----------+ |
 +--------------+--------------+
-| cBLU  OS hôte + Docker      |
+|       OS hôte + Docker      |
 +-----------------------------+
-| cBLK   Infrastructure       |
+|        Infrastructure       |
 +-----------------------------+
-@endditaa
 ```
 
 ---

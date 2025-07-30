@@ -252,8 +252,7 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 ---
 
-```plantuml
-@startditaa
+```
 +----------------------------+
 |        Modèle OSI          |
 +----------------------------+
@@ -279,7 +278,6 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 |  Couche 1 : Physique       |
 |  Ex: Câbles, Radio         |
 +----------------------------+
-@endditaa
 ```
 
 ---
@@ -340,8 +338,7 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 
 ---
 
-```plantuml
-@startditaa
+```
 +----------------------------+          +----------------------------+
 |        Modèle OSI          |          |        Modèle TCP/IP       |
 +----------------------------+          +----------------------------+
@@ -367,7 +364,6 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 |  Couche 1 : Physique       |          |                            |
 |  Ex: Câbles, Radio         |          |                            |
 +----------------------------+          +----------------------------+
-@endditaa
 ```
 
 ---
