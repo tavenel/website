@@ -592,6 +592,7 @@ created: 2024-10-17
 - `termshark` => packet sniffer using `wireshark` in terminal
 - `iftop -i wlan0` => idem `top` mais pour interface réseau
 - `iptraf-ng`
+- [netshow](https://github.com/taylorwilsdon/netshow) : TUI de monitoring réseau
 
 #### Disk
 
