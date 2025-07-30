@@ -1,6 +1,9 @@
 ---
 title:   Git™
+layout: '@layouts/BaseLayout.astro'
 ---
+
+#   Git™
 
 ![](@assets/undraw/undraw_version-control_eiam.svg)
 

@@ -1,8 +1,9 @@
 ---
 title:  Spring
+layout: '@layouts/BaseLayout.astro'
 ---
 
-##  Le Framework Spring
+#  Le Framework Spring
 
 - [🤓 Cours](/spring/cours)
 

@@ -1,6 +1,9 @@
 ---
 title: 💚 Green IT
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 💚 Green IT
 
 ![](@assets/undraw/undraw_eco-conscious_oqny.svg)
 

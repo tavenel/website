@@ -1,8 +1,11 @@
 ---
 title: ☎️ Accompagnement à l'intégration
+layout: '@layouts/BaseLayout.astro'
 ---
 
-![](@assets/undraw/undraw_circuit_92r1.svg)
+# ☎️ Accompagnement à l'intégration
+
+![](@assets/undraw/undraw_deliveries_qutl.svg)
 
 - [🤓 Cours sur le manuel utilisateur](/integration/manuel-utilisateur)
 - [🤓 Cours sur la formation des utilisateurs](/integration/formation-utilisateur)

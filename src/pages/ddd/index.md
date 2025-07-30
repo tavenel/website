@@ -1,6 +1,9 @@
 ---
 title: 🧑‍💼 DDD Domain-driven Design
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🧑‍💼 DDD Domain-driven Design
 
 ![](@assets/undraw/undraw_customer-survey_2l89.svg)
 

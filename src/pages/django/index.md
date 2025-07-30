@@ -1,6 +1,9 @@
 ---
 title:   Django
+layout: '@layouts/BaseLayout.astro'
 ---
+
+#   Django
 
 ##   Le framework Django
 

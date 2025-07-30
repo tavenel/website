@@ -1,6 +1,9 @@
 ---
 title: 🔄 CI/CD et  Jenkins
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🔄 CI/CD et  Jenkins
 
 ## Cours
 

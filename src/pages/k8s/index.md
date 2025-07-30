@@ -1,6 +1,9 @@
 ---
 title: 󱃾 Kubernetes® 
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 󱃾 Kubernetes® 
 
 ![](@assets/undraw/undraw_container-ship_t6yx.svg)
 

@@ -1,6 +1,11 @@
 ---
 title: 🧑‍💻 Devops - Sysops
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🧑‍💻 Devops - Sysops
+
+![](@assets/undraw/undraw_algorithm-execution_rksm.svg)
 
 ## Cours
 

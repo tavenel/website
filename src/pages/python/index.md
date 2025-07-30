@@ -1,6 +1,9 @@
 ---
 title: 󰌠  Python
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 󰌠  Python
 
 ## 󰌠 Abrégés Python
 

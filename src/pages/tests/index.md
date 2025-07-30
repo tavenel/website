@@ -1,6 +1,9 @@
 ---
 title: 🧪 Tests logiciels
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🧪 Tests logiciels
 
 ![](@assets/undraw/undraw_scientist_5td0.svg)
 

@@ -1,6 +1,9 @@
 ---
 title: 📅 Gestion de projet
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 📅 Gestion de projet
 
 ![](@assets/undraw/undraw_scrum-board_uqku.svg)
 

@@ -1,6 +1,9 @@
 ---
 title: 🏗️ Architecture
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🏗️ Architecture
 
 ![](@assets/undraw/undraw_design-components_529l.svg)
 

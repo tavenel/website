@@ -1,6 +1,9 @@
 ---
 title: 🐧 Linux
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🐧 Linux
 
 ## Conventions de notation
 

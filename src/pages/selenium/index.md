@@ -1,8 +1,9 @@
 ---
 title: ⚛️ Selenium
+layout: '@layouts/BaseLayout.astro'
 ---
 
-## ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
+# ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
 - [🤓 Cours Selenium](/selenium/cours)
 - [💻 TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)

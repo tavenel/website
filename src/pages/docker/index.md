@@ -1,6 +1,9 @@
 ---
 title:   Docker®
+layout: '@layouts/BaseLayout.astro'
 ---
+
+#   Docker®
 
 ![](@assets/undraw/undraw_container-ship_t6yx.svg)
 

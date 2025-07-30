@@ -1,6 +1,9 @@
 ---
 title: 📊 Formations Data
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 📊 Formations Data
 
 ![](@assets/undraw/undraw_data_0ml2.svg)
 

@@ -1,6 +1,9 @@
 ---
 title: 🌐 HTTP, Web et Cloud
+layout: '@layouts/BaseLayout.astro'
 ---
+
+# 🌐 HTTP, Web et Cloud
 
 ![](@assets/undraw/undraw_cloud-hosting_tfeh.svg)
 
