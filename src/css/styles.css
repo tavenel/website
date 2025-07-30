@@ -791,9 +791,8 @@ aside.callout-correction {
   --diagram-path: #000000;
 	--diagram-group: #ffffff;
 	--diagram-blue-fill: #ffffff;
-	--diagram-blue-stroke: #000000;
 	--diagram-green-fill: #ffffff;
-	--diagram-green-stroke: #000000;
+	--diagram-red-fill: #ffffff;
 
 	& a {
 		text-decoration: revert;
@@ -844,9 +843,8 @@ aside.callout-correction {
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
 	--diagram-blue-fill: #B3E5FC ;
-	--diagram-blue-stroke: #0288D1 ;
 	--diagram-green-fill: #C8E6C9;
-	--diagram-green-stroke: #388E3C;
+	--diagram-red-fill: #ffcbcb;
 }
 
 [data-theme="everforest-light"] {
@@ -886,9 +884,8 @@ aside.callout-correction {
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
 	--diagram-blue-fill: #B3E5FC ;
-	--diagram-blue-stroke: #0288D1 ;
 	--diagram-green-fill: #C8E6C9;
-	--diagram-green-stroke: #388E3C;
+	--diagram-red-fill: #ffcbcb;
 }
 
 [data-theme="one-light"] {
@@ -929,9 +926,8 @@ aside.callout-correction {
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
 	--diagram-blue-fill: #B3E5FC ;
-	--diagram-blue-stroke: #0288D1 ;
 	--diagram-green-fill: #C8E6C9;
-	--diagram-green-stroke: #388E3C;
+	--diagram-red-fill: #ffcbcb;
 }
 
 /* DARK THEMES */
@@ -972,10 +968,9 @@ aside.callout-correction {
   --edge-background: #96E072;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #3A6395;
+	--diagram-green-fill: #4F4355;
+	--diagram-red-fill: #c74ded;
 }
 
 [data-theme="ayu-dark"] {
@@ -1014,10 +1009,9 @@ aside.callout-correction {
   --edge-background: var(--link-hover);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #2E5882;
+	--diagram-green-fill: #376222;
+	--diagram-red-fill: #A34A54;
 }
 
 [data-theme="catppuccin-mocha"] {
@@ -1053,13 +1047,12 @@ aside.callout-correction {
 	--exo-ul-border: #a6adc8;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
-  --edge-background: revert;
+  --edge-background: var(--text);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #7287fd;
+	--diagram-green-fill: #6A9267;
+	--diagram-red-fill: #e64553;
 
   & strong {
     border-left: 3px solid var(--strong);
@@ -1067,7 +1060,7 @@ aside.callout-correction {
 }
 
 [data-theme="dracula"] {
-	/* Theme inspired by : https://en.wikipedia.org/wiki/Dracula_(color_scheme) */
+	/* Theme inspired by : https://github.com/dracula/dracula-theme */
 	--warning: #ffb86c;
   --strong: #ff79c6;
   --em: #ffb86c;
@@ -1102,10 +1095,9 @@ aside.callout-correction {
   --edge-background: #bd93f9;
   --diagram-path: #bd93f9;
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #5995A2;
+	--diagram-green-fill: #40C862;
+	--diagram-red-fill: #A37645;
 
   & strong {
     border-left: 3px solid var(--strong);
@@ -1152,13 +1144,12 @@ aside.callout-correction {
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
 	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
 	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-red-fill: var(--middle-grey);
 }
 
 [data-theme="kanagawa-dragon"] {
-	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.yml */
+	/* Theme inspired by : https://github.com/rebelot/kanagawa.nvim/blame/master/extras/alacritty/kanagawa_dragon.toml */
 	--warning: #c4746e;
   --strong: revert;
   --em: revert;
@@ -1193,10 +1184,9 @@ aside.callout-correction {
   --edge-background: #c5c9c5;
   --diagram-path: var(--text);
 	--diagram-group: var(--text);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #8ba4b0;
+	--diagram-green-fill: #8a9a7b;
+	--diagram-red-fill: #C4746E;
 }
 
 [data-theme="nord"] {
@@ -1235,10 +1225,9 @@ aside.callout-correction {
   --edge-background: #88c0d0;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #4c566a;
+	--diagram-green-fill: #687A5A;
+	--diagram-red-fill: #bf616a;
 }
 
 [data-theme="synthwave-84"] {
@@ -1278,10 +1267,9 @@ aside.callout-correction {
   --edge-background: #fede5d;
   --diagram-path: #fede5d;
 	--diagram-group: #f97e72;
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #03edf9;
+	--diagram-green-fill: #72f1b8;
+	--diagram-red-fill: #fede5d;
 
   & strong {
     color: var(--strong);
@@ -1357,10 +1345,9 @@ aside.callout-correction {
   --edge-background: #ffe45e;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #4B8AC2;
+	--diagram-green-fill: #2BA386;
+	--diagram-red-fill: #f141a8;
 
   --header-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
@@ -1431,13 +1418,12 @@ aside.callout-correction {
 	--exo-ul-border: #e0af68;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
-  --edge-background: rgba(255,255,255,0.25);
+  --edge-background: rgba(255,255,255,0.5);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #2959aa;
+	--diagram-green-fill: #385f0d;
+	--diagram-red-fill: #8c4351;
 
   & strong {
     border-bottom: 2px solid var(--strong);
@@ -1445,6 +1431,7 @@ aside.callout-correction {
 }
 
 [data-theme="poimandres"] {
+  /* Inspired from : https://github.com/drcmda/poimandres-theme/blob/main/themes/poimandres-color-theme.json */
 	--warning: #d0679d;
   --strong: #5de4c7;
   --em: #fffac2;
@@ -1480,9 +1467,8 @@ aside.callout-correction {
   --diagram-path: #fcc5e9;
 	--diagram-group: #89ddff;
 	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
 	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-red-fill: #854265;
 
   & strong {
     border-bottom: 2px solid var(--strong);
@@ -1492,7 +1478,7 @@ aside.callout-correction {
 /* DUAL THEMES */
 
 [data-theme="rose-pine"] {
-	/* Based on the Rose Pine Theme : https://rosepinetheme.com/ */
+	/* Based on the Rose Pine Dark Theme : https://rosepinetheme.com/ */
 	--warning: #f6c177;
   --strong: #ebbcba;
   --em: #ebbcba;
@@ -1527,10 +1513,9 @@ aside.callout-correction {
   --edge-background: var(--blockquote);
   --diagram-path: var(--text);
 	--diagram-group: #9ccfd8;
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #286983;
+	--diagram-green-fill: #56949f;
+	--diagram-red-fill: #b4637a;
 }
 
 [data-theme="rose-pine-dawn"] {
@@ -1569,10 +1554,9 @@ aside.callout-correction {
   --edge-background: #ebbcba;
   --diagram-path: #907aa9;
 	--diagram-group: #286983;
-	--diagram-blue-fill: #B3E5FC ;
-	--diagram-blue-stroke: #0288D1 ;
-	--diagram-green-fill: #C8E6C9;
-	--diagram-green-stroke: #388E3C;
+	--diagram-blue-fill: #9ccfd8;
+	--diagram-green-fill: #c4a7e7;
+	--diagram-red-fill: #f6c177;
 
   & strong {
     border-bottom: 1px solid var(--strong);
@@ -1615,10 +1599,9 @@ aside.callout-correction {
   --edge-background: #a89984;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
-	--diagram-blue-fill: #0c4768;
-	--diagram-blue-stroke: #355d73;
-	--diagram-green-fill: #1e453e;
-	--diagram-green-stroke: #306844;
+	--diagram-blue-fill: #458588;
+	--diagram-green-fill: #98971a;
+	--diagram-red-fill: #b16286;
 }
 
 [data-theme="gruvbox-light-medium"] {
@@ -1656,10 +1639,9 @@ aside.callout-correction {
   --diagram-text: var(--text);
   --edge-background: #bdae93;
   --diagram-path: var(--text);
-	--diagram-group: var(--em);
-	--diagram-blue-fill: #B3E5FC ;
-	--diagram-blue-stroke: #0288D1 ;
-	--diagram-green-fill: #C8E6C9;
-	--diagram-green-stroke: #388E3C;
+	--diagram-group: var(--text);
+	--diagram-blue-fill: #458588 ;
+	--diagram-green-fill: #98971a;
+	--diagram-red-fill: #b16286;
 }
 
