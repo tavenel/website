@@ -69,11 +69,6 @@ hr {
 	border-top:1px solid var(--hr);
 }
 
-footer {
-	font-style: italic;
-	font-size: x-small;
-}
-
 figcaption, .caption {
 	color: var(--blockquote);
 	font-style: italic;
@@ -94,48 +89,12 @@ blockquote {
 	font-size: medium;
 }
 
-menu > li {
-	display: inline-block;
-	padding-left: 1em;
-	font-size: x-large;
-}
-
-#menu-home > a { color: var(--menu-home); }
-#menu-tech > a { color: var(--menu-tech); }
-#menu-cours > a { color: var(--menu-cours); }
-#menu-favorites> a { color: var(--menu-favorites); }
-#menu-links > a { color: var(--menu-links); }
-#menu-about > a { color: var(--menu-about); }
-/* #menu-search > a { color: var(--menu-search); } */
-
-.versioning {
-	font-style: italic;
-	color: var(--versioning);
-
-	& .outdated {
-		font-weight: bold;
-		color: var(--warning);
-	}
-}
-
-#formats .source-markdown {
-	color: var(--versioning);
-}
-
-.tag {
-	margin-right: 5px;
-	font-style: italic;
-}
-
 /**********/
 /* LAYOUT */
 /**********/
 
-/* TODO */
-
 menu {
   /* display: flex; */
-  /* background-color: #333; */
 }
 
 /* Sidebar/left column */
@@ -212,13 +171,12 @@ main {
 		flex-direction: column; /* all in 1 column */
 	}
 
-	#course-header { display: none !important ; }
 }
 
-@media only screen and (orientation: portrait) {
-/*TODO*/
+#course-content {
+	/* Hide `---` delimiters in MD except the real footer of the website */
+	hr:not(.footer) { display: none; }
 }
-
 
 /**********/
 /* SELECT */
@@ -305,44 +263,9 @@ button.link {
 
 }
 
-/* From : https://www.w3schools.com/howto/howto_js_slideshow.asp */
-/* Next & previous buttons */
-.prev, .next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
-	width: auto;
-	margin-top: -22px;
-	padding: 16px;
-	font-weight: bold;
-	font-size: 18px;
-	transition: 0.6s ease;
-	border-radius: 0 3px 3px 0;
-	user-select: none;
-
-	/* remove button style */
-	border: none;
-	background-color: inherit;
-	text-decoration: none;
-	color: var(--link);
-}
-
-/* Position the "next button" to the right */
-.next {
-	right: 0;
-	border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-	background-color: rgba(0,0,0,0.8);
-}
-
 /**********/
 /* SEARCH */
 /**********/
-
-#themeSwitchSelect { width: min-content; }
 
 .pagefind-ui {
 --pagefind-ui-primary: var(--link);
@@ -496,50 +419,6 @@ a.add-bookmark {
 	}
 }
 
-/**********/
-/* SLIDES */
-/**********/
-
-[id^=layout] {
-	/* Slidev uses frontmatter `layout:…` that are computed as `id=layout-section-1`, … */
-	/* Hide these elements */
-	display: none !important;
-}
-
-#course {
-	/* Hide `---` delimiters in MD except the real footer of the website */
-	hr:not(.footer) { display: none; }
-}
-
-#slides-content {
-
-	display: none; /* By default, slide mode is not active */
-
-	min-height: 90vh;
-	min-width: 90vw;
-	overflow: auto;
-	position: relative;
-	margin: auto;
-
-	.slide-mode {
-		font-size: 2em;
-
-		position: absolute;
-		min-height: 100%;
-		min-width: 100%;
-
-		display: none;
-		margin: auto;
-		padding: 20px;
-		border: 1px solid var(--hr);
-		border-radius: 10px;
-	}
-
-	hr {
-		border:0px;
-	}
-}
-
 /*********/
 /* PRINT */
 /*********/
@@ -551,67 +430,13 @@ a.add-bookmark {
   nav,
 	#course-header,
 	#chapters,
-	#chapitres {
+	#toc-caret-show, #toc-caret-hide
+	{
     display: none !important;
   }
 
 	h1 { text-align:center; }
 }
-
-/********/
-/* TOC */
-/*******/
-
-#toc {
-	& a {
-		transition: color .5s;
-
-		& .active {
-			color: var(--link-visited);
-		}
-	}
-
-	& li {
-		list-style:none;
-	}
-
-	& .toc-h1 {
-		font-weight: bold;
-	}
-
-	& .toc-h3, .toc-h4, .toc-h5, .toc-h6 {
-		font-style: italic;
-	}
-}
-
-/* TODO => reactive to size of window */
-
-/* #toc { */
-/* 	position: fixed; */
-/*   border-right: 1px solid #ddd; */
-/* 	width: 250px; */
-/* 	margin-top: 150px; */          /* match header height */
-/* } */
-
-/* #toc.collapsed { */
-/*   width: 0; */
-/*   padding-left: 0; */
-/*   padding-right: 0; */
-/*   overflow: hidden; */
-/* } */
-/**/
-/* push content when collapsed */
-/* #toc:not(.collapsed) ~ main { */
-/* 	margin-left: 250px; */
-/* } */
-/* #toc.collapsed ~ main { */
-/* 	margin-left: 0; */
-/* } */
-/**/
-/* #toc ul { */
-/* 	list-style: none; */
-/* 	padding: 0; */
-/* } */
 
 /******************************************************************************/
 /*                                    CALLOUTS                                */

@@ -45,3 +45,38 @@ const { frontmatter, url } = Astro.props;
 		mermaid={ frontmatter.extra?.includes('mermaid') }
 	/>
 </Layout>
+
+<style>
+#course {
+	display: grid;
+	grid-template-areas:
+		'content toc';
+	padding: 10px;
+
+	& > #course-content {
+		grid-area: content;
+		margin: 30px;
+		max-width: 80%; /* TODO */
+	}
+
+	& > #course-header {
+		font-size: x-small;
+		background-color: var(--background2);
+		grid-area: toc;
+		padding : min(20px, 10%);
+		/* TODO : always visible */
+		/* position: sticky; */
+		/* top: 0; */
+		/* height: 100vh; */
+		/* box-sizing: border-box; */
+		/* padding-top: 20px; */
+		/* padding-bottom: 20px; */
+		/* border-left: 1px solid var(--hr); */
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	#course-header, #toc-caret-hide, #toc-caret-show { display: none ; }
+}
+
+</style>

@@ -52,4 +52,16 @@ if (lastDate) {
 	{isOld && <div class="outdated">Ce contenu a plus de {diffInYears} ans et {remainingDays} jours.</div>}
 </div>
 
+<style>
 
+.versioning {
+	font-style: italic;
+	color: var(--versioning);
+
+	& .outdated {
+		font-weight: bold;
+		color: var(--warning);
+	}
+}
+
+</style>
