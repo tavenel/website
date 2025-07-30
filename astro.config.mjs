@@ -138,15 +138,6 @@ export default defineConfig({
 				// Download only font files for characters used on the page
 				subsets: ["latin"],
 			},
-			{
-				name: "Abril Fatface",
-				cssVariable: "--abril-fatface",
-				provider: fontProviders.fontsource(),
-				// Download only font files for characters used on the page
-				subsets: ["latin"],
-				// Use a fallback font family matching the intended appearance
-				fallbacks: ["monospace"],
-			},
 		]
 	}
 
