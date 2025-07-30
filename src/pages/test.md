@@ -401,28 +401,6 @@ sequenceDiagram
     "Add Watermark"->>"Save Image": Event: Watermarked
 ```
 
-:::correction
-```mermaid
----
-title: Plan d'adressage IP
----
-flowchart TD
-
-    internet["Internet<br/>IP publique<br/>202.60.23.2"]
-    router["Passerelle / Routeur<br/>Adresse locale<br/>192.168.10.1"]
-    printer["Printer<br/>192.168.10.3"]
-    mobile["Mobile<br/>192.168.10.7"]
-    serveur["Serveur Web<br/>192.168.10.2"]
-    pcs["3x PC<br/>192.168.10.4<br/>192.168.10.5<br/>192.168.10.6"]
-
-    internet --- router
-    mobile --- router
-    printer --- router
-    serveur --- router
-    pcs --- router
-```
-:::
-
 ```mermaid
 ---
 title: Separate Ways
@@ -669,3 +647,46 @@ flowchart TD
 
     class F1 red
 ```
+
+:::correction
+```mermaid
+---
+title: Plan d'adressage IP
+---
+flowchart TD
+
+    internet["Internet<br/>IP publique<br/>202.60.23.2"]
+    router["Passerelle / Routeur<br/>Adresse locale<br/>192.168.10.1"]
+    printer["Printer<br/>192.168.10.3"]
+    mobile["Mobile<br/>192.168.10.7"]
+    serveur["Serveur Web<br/>192.168.10.2"]
+    pcs["3x PC<br/>192.168.10.4<br/>192.168.10.5<br/>192.168.10.6"]
+
+    internet --- router
+    mobile --- router
+    printer --- router
+    serveur --- router
+    pcs --- router
+```
+
+```mermaid
+---
+title: Carte de contexte
+---
+flowchart TD
+
+  UP["UserProfile(Supporting)"]
+  CB["CourseBooking(Core)"]
+  P["Payment(Supporting)"]
+  PF["PedagogicalFollowup(Supporting)"]
+  S["Support(Generic)"]
+
+  UP -->|fournit profils et disponibilités| CB
+  CB -->|déclenche paiement| P
+  CB -->|déclenche compte-rendu| PF
+  CB -->|signale problèmes| S
+  P -->|permet remboursement| S
+```
+
+:::
+
