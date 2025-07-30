@@ -1,7 +1,6 @@
 <div id="toc">
   <h2>
   	Chapitres
-		<!-- <button id="toc-toggle">Collapse</button> -->
 	</h2>
 	<nav>
 		<ul/>
@@ -11,15 +10,45 @@
 <script>
 	import { TOC } from "@ts/toc";
 	document.addEventListener('DOMContentLoaded', () => {
-			const toc = new TOC('#toc ul', '#course', 3);
+			const toc = new TOC('#toc ul', '#course-content', 3);
 			toc.init();
 	});
 
   // toggle button
 	const btn = document.getElementById('toc-toggle');
-	const nav = document.getElementById('toc');
+	const caret_hide = document.getElementById('toc-caret-hide');
+	const caret_show = document.getElementById('toc-caret-show');
+	const header = document.getElementById('course-header');
 	btn.addEventListener('click', () => {
-			nav.classList.toggle('collapsed');
+			caret_hide.classList.toggle('hidden');
+			caret_show.classList.toggle('hidden');
+			header.classList.toggle('hidden');
 	});
 </script>
+
+<style>
+
+#toc {
+	& a {
+		transition: color .5s;
+
+		& .active {
+			color: var(--link-visited);
+		}
+	}
+
+	& li {
+		list-style:none;
+	}
+
+	& .toc-h1 {
+		font-weight: bold;
+	}
+
+	& .toc-h3, .toc-h4, .toc-h5, .toc-h6 {
+		font-style: italic;
+	}
+}
+
+</style>
 

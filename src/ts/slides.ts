@@ -83,7 +83,7 @@ function _generateSlides() {
 
 	let slidesNumber = 0;
 
-	const course = document.getElementById('course') as HTMLElement;
+	const course = document.getElementById('course-content') as HTMLElement;
 	const slidesContainer = document.getElementById('slides-content') as HTMLElement;
 
 	let currentChapter = createChapter(slidesContainer);

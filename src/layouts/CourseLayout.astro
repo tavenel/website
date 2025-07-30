@@ -7,6 +7,8 @@ import Formats from '@components/Formats.astro';
 import ShowCorrection from '@components/ShowCorrection.astro';
 import TOC from '@components/TOC.astro';
 
+import { Icon } from 'astro-icon/components';
+
 import type { MarkdownLayoutProps } from 'astro';
 type Props = MarkdownLayoutProps<{
 	// Define frontmatter props here
@@ -27,17 +29,23 @@ const { frontmatter, url } = Astro.props;
 	  <a tabindex="-1" class="add-bookmark" href="#">
 		  <span class="icon icon-link"></span>
 	  </a>
+	  <button class="link" id="toc-toggle">
+		  <Icon name="caret-right" id="toc-caret-hide" />
+		  <Icon name="caret-left" id="toc-caret-show" class="hidden" />
+		</button>
   </h1>
-	<div id="course-header">
-		<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
-		<Formats url={url} />
-		<ShowCorrection />
-		<Tags tags={ frontmatter.tags } />
-		<TOC />
-		<slot name="end-header">
-	</div>
 	<div id="course">
-	  <slot />
+		<div id="course-header">
+			<Versioning date={frontmatter.date} created={frontmatter.created} modified={frontmatter.lastModified} checkedDate={frontmatter.checked} />
+			<Formats url={url} />
+			<ShowCorrection />
+			<Tags tags={ frontmatter.tags } />
+			<TOC />
+			<slot name="end-header">
+		</div>
+		<div id="course-content">
+			<slot />
+		</div>
 	</div>
 	<slot name="after-course" />
 	<Diagrams
