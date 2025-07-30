@@ -545,7 +545,7 @@ created: 2024-10-17
 - `Docker` :
   - `lazydocker` => TUI pour gérer des conteneurs Docker
   - `dry` => manage Docker containers and Swarm cluster
-  - `ctop` => like `top` for containers
+  - `ctop`, [dtop](https://github.com/StakeSquid/dtop) => like `top` for containers
 - `Kubernetes` :
   - `kubectx` : change context
   - `kubens` : change namespace
