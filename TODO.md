@@ -19,9 +19,9 @@ tests
 
 - CSS layout
   - global layout <https://www.w3schools.com/csS/css_grid.asp>
-  - right-hand size : chapters
-  	- TOC hidden
-  - portrait
+	- menu layout
+	- chapitres always visible
+	- main content not too big (/k8s/cours)
 - diagrams mermaid
   - KO IN :::correction !!!
   - render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/> =>  NO ? (themes ! or OK if SVG ?)
@@ -54,6 +54,7 @@ tests
   - https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
   - https://code.juliancataldo.com/component/astro-seo-metadata/
 
+- CSS => split themes in files and load only on-demand
 - Head.astro => ClientRouter transitions
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`

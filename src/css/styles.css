@@ -57,6 +57,7 @@ li:has(> a) {
 body {
 	background: var(--background);
 	color: var(--text);
+	margin: 20px;
 }
 
 h1 { color: var(--h1); }
@@ -95,41 +96,7 @@ blockquote {
 
 menu {
   /* display: flex; */
-}
-
-/* Sidebar/left column */
-#course-header {
-  /* flex: 30%; */
-  /* background-color: #f1f1f1; */
-  /* padding: 20px; */
-}
-
-/* Main column */
-#course {
-  /* flex: 70%; */
-  /* padding: 20px; */
-}
-
-main {
-  /* display: grid; */
-	  /* grid-template-columns: auto 400px; */
-	
-  grid-template-areas:
-    'header header header header header'
-    'main main main main right'
-    'footer footer footer footer footer';
-    gap: 10px;
-    padding: 10px;
-  /* flex-wrap: wrap; */
-
-	/* max-width: 90vw; */
-	/* 90 % full page */
-
-	/* margin: auto; */
-
-/* 	padding: 10rem; */
-/* 	margin-left: 250px; */           /* match sidebar width */
-/* 	margin-top: 150px;  */        /* match header height */
+	/* TODO */
 }
 
 #cours-cards {
@@ -139,7 +106,7 @@ main {
 	justify-content: space-evenly;
 
 	& .item {
-		font-size: 1.5em;
+		font-size: x-large;
 		list-style:none;
 		border-radius: 30px;
 		padding: 50px;
