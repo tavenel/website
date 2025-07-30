@@ -280,7 +280,7 @@ Voir le [TP sur SMTP][tp-smtp].
 [tp-systeme]: /linux/tp-systeme
 [tp-systemd]: /linux/tp-systemd
 [tp-syslog]: /linux/tp-syslog
-[tp-smtp]: /cloud/exo-smtp
+[tp-smtp]: /web/exo-smtp
 
 ---
 

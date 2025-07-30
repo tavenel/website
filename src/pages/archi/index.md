@@ -37,6 +37,5 @@ title: 🏗️ Architecture
 
 - Voir la page sur le [🧑‍💼 Le Domain-driven Design (DDD)](/ddd/)
 - Voir la page sur les [🧪 Tests logiciels](/tests)
-- Voir la page sur les [🧪 Tests logiciels](/tests)
 - Voir la page [󰌠  Python](/python).
 
