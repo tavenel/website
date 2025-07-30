@@ -344,6 +344,13 @@ button.link {
 
 #themeSwitchSelect { width: min-content; }
 
+.pagefind-ui {
+--pagefind-ui-primary: var(--link);
+--pagefind-ui-text: var(--text);
+--pagefind-ui-border: var(--hr);
+--pagefind-ui-background: var(--background);
+}
+
 /*************/
 /* BOOKMARKS */
 /*************/
