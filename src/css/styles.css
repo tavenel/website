@@ -759,9 +759,9 @@ aside.callout-correction {
 	--warning: revert;
   --strong: revert;
   --em: revert;
-	--background: revert;
+	--background: #ffffff;
 	--background2: revert;
-	--text: revert;
+	--text: #000000;
 	--link: LinkText;
 	--link-hover: LinkText;
 	--link-visited: VisitedText;
@@ -785,19 +785,19 @@ aside.callout-correction {
 	--select-color: revert;
 	--blockquote: revert;
 	--exo-ul-border: revert;
-  --diagram-background: #ffffff;
-  --diagram-text: #000000;
-  --edge-background: revert;
-  --diagram-path: #000000;
-	--diagram-group: #ffffff;
-	--diagram-blue-fill: #ffffff;
-	--diagram-green-fill: #ffffff;
-	--diagram-red-fill: #ffffff;
+  --diagram-background: var(--background);
+  --diagram-text: var(--text);
+  --edge-background: var(--background);
+  --diagram-path: var(--text);
+	--diagram-group: var(--text);
+	--diagram-blue-fill: var(--background);
+	--diagram-green-fill: var(--background);
+	--diagram-red-fill: var(--background);
 
 	& a {
 		text-decoration: revert;
 	}
-
+	
 }
 
 /* LIGHT THEMES */
