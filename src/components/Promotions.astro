@@ -3,7 +3,13 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div id="promos">
-  <select name="promoSelect" id="promoSelect">
+  <label for="promoSelect" id="promoLabel">
+    <span id="promoName" />
+	  <button class="link" title="Changer de promotion">
+      <Icon name="caret-down" />
+	  </button>
+	</label>
+  <select name="promoSelect" id="promoSelect" class="hidden">
 		<optgroup label="Aucune">
   	  <option value="/">Promo</option>
 		<optgroup label="EPSI">
@@ -28,17 +34,29 @@ import { Icon } from 'astro-icon/components'
 
 <script>
 
-const selectElt = document.getElementById('promoSelect') as HTMLSelectElement;
+function setPromo() {
+	const value = (event.target as HTMLSelectElement).value;
+	localStorage.setItem('promo', value);
+	window.location.href = value;
+}
 
-selectElt.addEventListener("change", (event: Event) => {
-		const value = (event.target as HTMLSelectElement).value;
-		localStorage.setItem("promo", value);
-		window.location.href = value;
-});
+function retrieveCurrentPromo() {
+	const currentPromo = localStorage.getItem('promo');
+	console.log("Current promo", currentPromo);
+	if (currentPromo) {
+		const promoNameElt = document.getElementById('promoName') as HTMLSelectElement;
+		promoName.innerHTML = `<a href="${currentPromo}">${currentPromo}</a>`
+	}
+}
 
-// retrieveCurrentPromo
-const currentPromo = localStorage.getItem("promo");
-if (currentPromo) { selectElt.value = currentPromo; }
+import { HiddenSelect } from '@ts/select';
+const select = new HiddenSelect('promoSelect', 'promoLabel');
+select.addShowButtonListener();
+select.addChangeListener(setPromo);
+
+// Runs on view transitions navigation
+document.addEventListener('astro:after-swap', retrieveCurrentPromo);
+
+retrieveCurrentPromo();
 
 </script>
-
