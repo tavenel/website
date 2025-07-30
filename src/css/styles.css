@@ -358,6 +358,7 @@ button.link {
 a.add-bookmark {
 	text-decoration: none;
 	border: none;
+	display: none;
 }
 
 .icon-link{
