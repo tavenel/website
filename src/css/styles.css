@@ -292,7 +292,7 @@ a.add-bookmark {
 		.node {
 			.basic, polygon {
 				fill: var(--diagram-background) !important;
-				stroke: var(--diagram-text) !important;
+				stroke: var(--diagram-line) !important;
 			}
 
 			.nodeLabel {
@@ -319,7 +319,7 @@ a.add-bookmark {
 	}
 
 	/* Diagrams titles */
-	.flowchartTitleText,.gitTitleText {
+	.flowchartTitleText, .gitTitleText, .statediagramTitleText {
 		fill: var(--blockquote) !important;
 		font-style: italic;
 	}
@@ -328,28 +328,28 @@ a.add-bookmark {
 		&.blue {
 			.basic, rect, polygon {
 				fill: var(--diagram-blue-fill) !important;
-				stroke: var(--text) !important;
+				stroke: var(--diagram-text) !important;
 			}
 			.nodeLabel {
-				color: var(--text) !important;
+				color: var(--diagram-text) !important;
 			}
 		}
 		&.green {
 			.basic, rect, polygon {
 				fill: var(--diagram-green-fill) !important;
-				stroke: var(--text) !important;
+				stroke: var(--diagram-text) !important;
 			}
 			.nodeLabel {
-				color: var(--text) !important;
+				color: var(--diagram-text) !important;
 			}
 		}
 		&.red {
 			.basic, rect, polygon {
 				fill: var(--diagram-red-fill) !important;
-				stroke: var(--text) !important;
+				stroke: var(--diagram-text) !important;
 			}
 			.nodeLabel {
-				color: var(--text) !important;
+				color: var(--diagram-text) !important;
 			}
 		}
 	}
@@ -357,11 +357,17 @@ a.add-bookmark {
 	/* Sequence diagram */
 	svg[aria-roledescription="sequence"] {
 
+		/* title */
+		&:last-child {
+			fill: var(--blockquote) !important;
+			font-style: italic;
+		}
+
 		.actor,
-		.messageLine0, .messageText /* horizontal line */,
+		.messageLine0, .messageText /* horizontal line */
 		{
 			fill: var(--diagram-background) !important;
-			stroke: var(--diagram-text) !important;
+			stroke: var(--diagram-line) !important;
 
 			tspan {
 				fill: var(--diagram-text) !important;
@@ -371,17 +377,17 @@ a.add-bookmark {
 		#sequencenumber, #filled-head, #crosshead, #arrowhead, #clock, #database, #computer /* symbols */ {
 			path {
 				fill: var(--diagram-background) !important;
-				stroke: var(--diagram-text) !important;
+				stroke: var(--diagram-line) !important;
 			}
 		}
 
 		.actor-man {
 			line, tspan { /* simple line */
-				stroke: var(--diagram-text) !important;
+				stroke: var(--diagram-line) !important;
 			}
 			circle { /* object to fill */
 				fill: var(--diagram-background) !important;
-				stroke: var(--diagram-text) !important;
+				stroke: var(--diagram-line) !important;
 			}
 		}
 
@@ -593,6 +599,7 @@ aside.callout-correction {
 	--exo-ul-border: revert;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: var(--background);
   --diagram-path: var(--text);
 	--diagram-group: var(--text);
@@ -646,6 +653,7 @@ aside.callout-correction {
 	--exo-ul-border: var(--hr);
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -688,6 +696,7 @@ aside.callout-correction {
 	--exo-ul-border: var(--hr);
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -731,6 +740,7 @@ aside.callout-correction {
 	--exo-ul-border: var(--hr);
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: revert;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -775,6 +785,7 @@ aside.callout-correction {
 	--exo-ul-border: #ff00aa;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: #96E072;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -789,7 +800,7 @@ aside.callout-correction {
   --strong: #FFFFFF;
   --em: #FF8F40;
 	--background: #0B0E14;
-	--background2: inherit;
+	--background2: #0B0E14;
 	--text: #BFBDB6;
 	--link: #39BAE6;
 	--link-hover: #F07178;
@@ -817,6 +828,7 @@ aside.callout-correction {
 	--exo-ul-border: #6C7380;
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: var(--link-hover);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -859,6 +871,7 @@ aside.callout-correction {
 	--exo-ul-border: #a6adc8;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: var(--text);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -905,6 +918,7 @@ aside.callout-correction {
 	--exo-ul-border: #44475a;
   --diagram-background: var(--background);
   --diagram-text: #ff79c6;
+  --diagram-line: var(--diagram-text);
   --edge-background: #bd93f9;
   --diagram-path: #bd93f9;
 	--diagram-group: var(--em);
@@ -954,6 +968,7 @@ aside.callout-correction {
 	--exo-ul-border: var(--hr);
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: var(--light-grey);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -996,6 +1011,7 @@ aside.callout-correction {
 	--exo-ul-border: #c5c9c5;
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: #c5c9c5;
   --diagram-path: var(--text);
 	--diagram-group: var(--text);
@@ -1038,6 +1054,7 @@ aside.callout-correction {
 	--exo-ul-border: #b48ead;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: #88c0d0;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -1081,6 +1098,7 @@ aside.callout-correction {
 	--exo-ul-border: #ffffff80;
   --diagram-background: #ff7edb;
   --diagram-text: #262335;
+  --diagram-line: var(--diagram-background);
   --edge-background: #fede5d;
   --diagram-path: #fede5d;
 	--diagram-group: #f97e72;
@@ -1160,6 +1178,7 @@ aside.callout-correction {
 	--exo-ul-border: #f141a8;
   --diagram-background: #44ffd2;
   --diagram-text: #161c2c;
+  --diagram-line: var(--diagram-background);
   --edge-background: #ffe45e;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -1237,6 +1256,7 @@ aside.callout-correction {
 	--exo-ul-border: #e0af68;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: rgba(255,255,255,0.5);
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -1283,6 +1303,7 @@ aside.callout-correction {
 	--exo-ul-border: #5de4c7;
   --diagram-background: var(--background);
   --diagram-text: #5de4c7;
+  --diagram-line: var(--diagram-text);
   --edge-background: #fcc5e9;
   --diagram-path: #fcc5e9;
 	--diagram-group: #89ddff;
@@ -1331,6 +1352,7 @@ aside.callout-correction {
 	--exo-ul-border: #6e6a86;
   --diagram-background: var(--em);
   --diagram-text: var(--background);
+  --diagram-line: var(--diagram-background);
   --edge-background: var(--blockquote);
   --diagram-path: var(--text);
 	--diagram-group: #9ccfd8;
@@ -1373,6 +1395,7 @@ aside.callout-correction {
 	--exo-ul-border: #9893a5;
   --diagram-background: var(--background);
   --diagram-text: #403d52;
+  --diagram-line: var(--diagram-text);
   --edge-background: #ebbcba;
   --diagram-path: #907aa9;
 	--diagram-group: #286983;
@@ -1419,6 +1442,7 @@ aside.callout-correction {
 	--exo-ul-border: #fbf1c7;
   --diagram-background: var(--background);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: #a89984;
   --diagram-path: var(--text);
 	--diagram-group: var(--em);
@@ -1461,6 +1485,7 @@ aside.callout-correction {
 	--exo-ul-border: #7c6f64;
   --diagram-background: var(--background2);
   --diagram-text: var(--text);
+  --diagram-line: var(--diagram-text);
   --edge-background: #bdae93;
   --diagram-path: var(--text);
 	--diagram-group: var(--text);
