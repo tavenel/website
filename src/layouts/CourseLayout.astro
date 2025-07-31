@@ -55,31 +55,26 @@ const { frontmatter, url } = Astro.props;
 </Layout>
 
 <style>
+
 #course {
 	display: grid;
-	grid-template-areas:
-		'content toc';
-	padding: 10px;
+	grid-template-areas: 'content toc';
 
 	& > #course-content {
 		grid-area: content;
-		margin: 30px;
-		max-width: 80%; /* TODO */
+		max-width: 80vw; /* changed by TOC hidding */
+		padding-left: min(5vw, 100px);
+		padding-right: min(5vw, 100px);
+		overflow-x: auto; /* scrollbar si le contenu déborde */
 	}
 
 	& > #course-header {
 		font-size: x-small;
 		background-color: var(--background2);
 		grid-area: toc;
-		padding : min(20px, 10%);
-		/* TODO : always visible */
-		/* position: sticky; */
-		/* top: 0; */
-		/* height: 100vh; */
-		/* box-sizing: border-box; */
-		/* padding-top: 20px; */
-		/* padding-bottom: 20px; */
-		/* border-left: 1px solid var(--hr); */
+		max-width: 17vw;
+		padding : min(1vw, 30px);
+		overflow-x: auto; /* scrollbar si le contenu déborde */
 	}
 }
 

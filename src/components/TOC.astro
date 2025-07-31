@@ -19,10 +19,19 @@
 	const caret_hide = document.getElementById('toc-caret-hide');
 	const caret_show = document.getElementById('toc-caret-show');
 	const header = document.getElementById('course-header');
+	const content = document.getElementById('course-content');
 	btn.addEventListener('click', () => {
+			header.classList.toggle('hidden');
+			// Hide buttons
 			caret_hide.classList.toggle('hidden');
 			caret_show.classList.toggle('hidden');
-			header.classList.toggle('hidden');
+
+			// No more TOC - Back to 100% of the viewport
+			if ( header.classList.contains('hidden') ) {
+				content.style.maxWidth = '100vw';
+			} else {
+				content.style.maxWidth = '80vw';
+			}
 	});
 </script>
 

@@ -169,7 +169,7 @@ select {
 /**********/
 
 table {
-  width: 80%; /* minimum width */
+  width: 100%; /* minimum width */
 	border-collapse: collapse; /* remove default borders */
 }
 
