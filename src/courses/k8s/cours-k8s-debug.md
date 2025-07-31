@@ -202,7 +202,7 @@ kubectl describe pod my-pod
 
 ---
 
-## 🔁 Erreur `CrashLoopBackOff` 🔄💥
+### 🔁 Erreur `CrashLoopBackOff` 🔄💥
 
 #### 🛑 Diagnostic :
 
