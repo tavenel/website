@@ -101,6 +101,47 @@ a = A()
 f(2)
 ```
 
+:::correction
+```console
+$ API=$(kubectl get svc kubernetes -o json | jq -r .spec.clusterIP)
+
+$ curl -k https://$API # Connexion anonyme 
+
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "forbidden: User \"system:anonymous\" cannot get path \"/\"",
+  "reason": "Forbidden",
+  "details": {},
+  "code": 403
+}
+
+$ kubectl get ServiceAccount
+NAME      SECRETS   AGE
+default   0         7h33m
+
+$ kubectl create token default
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0RoVURfVjdWdjNSeEtTMVZsdk5qUFR3Q1U5eldUanlxcWcifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzQzNjE3Nzk2LCJpYXQiOjE3NDM2MTQxOTYsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiMmViMDNjYTYtYWY4MC00YTNjLWI3OTMtYWVkYjZlM2YyYmEyIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRlZmF1bHQiLCJ1aWQiOiJkYTY4ODVhMC1jZGE1LTRhNmUtYThmZC1iZTdjMzZkNzIwMGUifX0sIm5iZiI6MTc0MzYxNDE5Niwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6ZGVmYXVsdCJ9.BjaXxdFx-w5cclykMycsEh-WbgSHwWl5z3fkm-StWkARa2MLRjTwjsT1LM1RGqutmPv4qMy9PXoua1VW4rNs8BeEy0rppG9txDKjMr1utXCgnlYJLnW80B9rTJIl_VfyVWJnvuaBnilZEyrS1_NuT1irC0GVAPexhTd6D7bHyCpB63xq1_3DjSHjoY0pK9R8VYGCa6aYR8ByyqFj5vSs-mJ7EImHEV2RqyyrQBKX3FlezZvt9q9E-ouB0I45oA1galGmOX3v7wHSHUas9qdB1FO7bEaNppud2JHXXKUUzGhkhB57IBSBuIO1sTcDQg9JXbHbaLYbC1DiBd9XL9IOoQ
+
+$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0RoVURfVjdWdjNSeEtTMVZsdk5qUFR3Q1U5eldUanlxcWcifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzQzNjE3Nzk2LCJpYXQiOjE3NDM2MTQxOTYsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiMmViMDNjYTYtYWY4MC00YTNjLWI3OTMtYWVkYjZlM2YyYmEyIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRlZmF1bHQiLCJ1aWQiOiJkYTY4ODVhMC1jZGE1LTRhNmUtYThmZC1iZTdjMzZkNzIwMGUifX0sIm5iZiI6MTc0MzYxNDE5Niwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6ZGVmYXVsdCJ9.BjaXxdFx-w5cclykMycsEh-WbgSHwWl5z3fkm-StWkARa2MLRjTwjsT1LM1RGqutmPv4qMy9PXoua1VW4rNs8BeEy0rppG9txDKjMr1utXCgnlYJLnW80B9rTJIl_VfyVWJnvuaBnilZEyrS1_NuT1irC0GVAPexhTd6D7bHyCpB63xq1_3DjSHjoY0pK9R8VYGCa6aYR8ByyqFj5vSs-mJ7EImHEV2RqyyrQBKX3FlezZvt9q9E-ouB0I45oA1galGmOX3v7wHSHUas9qdB1FO7bEaNppud2JHXXKUUzGhkhB57IBSBuIO1sTcDQg9JXbHbaLYbC1DiBd9XL9IOoQ" https://$API
+
+{
+  "kind": "Status",
+  "apiVersion": "v1",
+  "metadata": {},
+  "status": "Failure",
+  "message": "forbidden: User \"system:serviceaccount:default:default\" cannot get path \"/\"",
+  "reason": "Forbidden",
+  "details": {},
+  "code": 403
+
+## Accès encore refusé (authz) mais l'utilisateur est authentifié (authn).
+```
+:::
+
 # gfm
 
 ## Autolink literals
