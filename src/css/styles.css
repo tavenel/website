@@ -582,6 +582,7 @@ aside.callout-correction {
 	--card-item-hover: revert;
 	--card-text: revert;
 	--versioning: revert;
+	--tags: var(--versioning);
 	--select-color: revert;
 	--blockquote: revert;
 	--exo-ul-border: revert;
@@ -634,6 +635,7 @@ aside.callout-correction {
 	--card-item-hover-bg: var(--light-blue);
 	--card-text: var(--dark-main);
 	--versioning: var(--light-grey);
+	--tags: var(--versioning);
 	--select-color: var(--dark-grey);
 	--blockquote: var(--middle-orange);
 	--exo-ul-border: var(--hr);
@@ -675,6 +677,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #A6B0A0;
 	--card-text: #5C6A72;
 	--versioning: #A6B0A0;
+	--tags: var(--versioning);
 	--select-color: #829181;
 	--blockquote: #DFA000;
 	--exo-ul-border: var(--hr);
@@ -717,6 +720,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #3A3F4B;
 	--card-text: #383A42;
 	--versioning: #3A3F4B;
+	--tags: var(--versioning);
 	--select-color: #3A3F4B;
 	--blockquote: #A626A4;
 	--exo-ul-border: var(--hr);
@@ -760,6 +764,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #07d4b5b0;
 	--card-text: inherit;
 	--versioning: #96E072;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #ff00aa;
 	--exo-ul-border: #ff00aa;
@@ -801,6 +806,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #FF8F40;
 	--card-text: #0B0E14;
 	--versioning: #6C7380;
+	--tags: var(--versioning);
 	--select-color: #BFBDB6;
 	--blockquote: #D2A6FF;
 	--exo-ul-border: #6C7380;
@@ -842,6 +848,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #f5c2e7;
 	--card-text: #1e1e2e;
 	--versioning: #a6adc8;
+	--tags: var(--versioning);
 	--select-color: #89b4fa;
 	--blockquote: #f9e2af;
 	--exo-ul-border: #a6adc8;
@@ -886,7 +893,8 @@ aside.callout-correction {
 	--card-item-global-bg: #f8f8f2;
 	--card-item-hover-bg: #ff79c6;
 	--card-text: #44475a;
-	--versioning: #44475a;
+	--versioning: #ff79c6;
+	--tags: var(--versioning);
 	--select-color: #bd93f9;
 	--blockquote: #bd93f9;
 	--exo-ul-border: #44475a;
@@ -935,6 +943,7 @@ aside.callout-correction {
 	--card-item-hover-bg: var(--dark-green);
 	--card-text: var(--light-main);
 	--versioning: var(--light-grey);
+	--tags: var(--versioning);
 	--select-color: var(--light-main);
 	--blockquote: var(--light-yellow);
 	--exo-ul-border: var(--hr);
@@ -976,6 +985,7 @@ aside.callout-correction {
 	--card-item-hover-bg: inherit;
 	--card-text: #c5c9c5;
 	--versioning: #c5c9c5;
+	--tags: var(--versioning);
 	--select-color: #c4b28a;
 	--blockquote: #c4b28a;
 	--exo-ul-border: #c5c9c5;
@@ -1017,6 +1027,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #88c0d0;
 	--card-text: #2e3440;
 	--versioning: #d8dee9;
+	--tags: var(--versioning);
 	--select-color: #88c0d0;
 	--blockquote: #e5e9f0;
 	--exo-ul-border: #b48ead;
@@ -1059,6 +1070,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #fede5d;
 	--card-text: #ffffff;
 	--versioning: #ffffff80;
+	--tags: var(--versioning);
 	--select-color: #f97e72;
 	--blockquote: #ff7edb;
 	--exo-ul-border: #ffffff80;
@@ -1137,6 +1149,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #44ffd2;
 	--card-text: var(--background);
 	--versioning: #f3eff5;
+	--tags: var(--versioning);
 	--select-color: var(--text);
 	--blockquote: #f141a8;
 	--exo-ul-border: #f141a8;
@@ -1212,7 +1225,8 @@ aside.callout-correction {
 	--card-item-global-bg: inherit;
 	--card-item-hover-bg: #414868;
 	--card-text: inherit;
-	--versioning: ;
+	--versioning: #cfc9c2;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #9ece6a;
 	--exo-ul-border: #e0af68;
@@ -1258,6 +1272,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #5de4c7;
 	--card-text: inherit;
 	--versioning: #a6accd;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #fffac2;
 	--exo-ul-border: #5de4c7;
@@ -1305,6 +1320,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #6e6a86;
 	--card-text: #e0def4;
 	--versioning: #6e6a86;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #f6c177;
 	--exo-ul-border: #6e6a86;
@@ -1346,6 +1362,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #f2e9e1;
 	--card-text: #575279;
 	--versioning: #9893a5;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #ea9d34;
 	--exo-ul-border: #9893a5;
@@ -1391,6 +1408,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #7c6f64;
 	--card-text: #fbf1c7;
 	--versioning: #a89984;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #fe8019;
 	--exo-ul-border: #fbf1c7;
@@ -1432,6 +1450,7 @@ aside.callout-correction {
 	--card-item-hover-bg: #bdae93;
 	--card-text: #3c3836;
 	--versioning: #7c6f64;
+	--tags: var(--versioning);
 	--select-color: inherit;
 	--blockquote: #8f3f71;
 	--exo-ul-border: #7c6f64;
