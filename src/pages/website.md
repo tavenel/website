@@ -9,7 +9,8 @@ layout: '@layouts/CourseLayout.astro'
 
 - This website targets primarily students from my teaching. It is also available for everyone else who has at least some basic computer science skills and wants to improve them.
 - This website can be reached on a desktop or mobile device. It aims to be as accessible as possible, and usable on almost all Web client devices, including old smartphones or old computers.
-- This website is optimized for a low-bandwith network. If not specified, each downloadable document is under 1M. PDF files are compressed and HTML and Markdown versions are shown first.
+- This website is optimized for a low-bandwith network. If not specified, each downloadable document is under 1M.
+- This website supports up to a 300% zoom level.
 - Tested with <https://wave.webaim.org>.
 - For more information, have a look to the [Accessibility][cours-rse] course.
 
@@ -17,7 +18,8 @@ layout: '@layouts/CourseLayout.astro'
 
 - Ce site web vise principalement les apprenants de mes formations. Il est aussi disponible pour toute personne ayant des compétences de base en informatique et voulant améliorer ces dernières.
 - Ce site web peut être utilisé depuis un PC de bureau ou un téléphone mobile (smartphone). Il est conçu dans le but d'être utilisable sur tout client Web, y compris d'anciens ordinateurs ou téléphones portables.
-- Ce site web est optimisé pour une connexion bas débit. En absence d'indication, le document à télécharger fait moins de 1M. Les fichiers PDF sont compressés et les versions HTML et Markdown affichées en premier.
+- Ce site web est optimisé pour une connexion bas débit. En absence d'indication, le document à télécharger fait moins de 1M.
+- Ce site web est capable d'afficher des pages avec un niveau de zoom atteignant 300%.
 - Pour plus d'information sur l'accessibilité, voir le [cours sur l'accessibilité][cours-rse].
 
 [cours-rse]: /green-it/
