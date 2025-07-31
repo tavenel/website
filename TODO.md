@@ -1,34 +1,17 @@
-ci => ???
-jenkins => ??
-
-devops
-
-tests
-
----
-
 ## P1
 
-- To Mermaid : http://localhost:4321/_image?href=%2F%40fs%2Fmnt%2Fdata%2Fgit%2Fastro%2Fwebsite%2Fsrc%2Fassets%2Fddd%2FDomainDrivenDesignReference.png%3ForigWidth%3D836%26origHeight%3D741%26origFormat%3Dpng&w=836&h=741&f=webp
-
-- mermaid :
-  - BUG : note class diag.
-  - BUG : diag. seq.
+- check accessiblility : https://wave.webaim.org (/k8s/cours)
 
 ## P2
 
-- CSS layout
-  - global layout <https://www.w3schools.com/csS/css_grid.asp>
-	- menu layout
-	- chapitres always visible
-	- main content not too big (/k8s/cours)
 - diagrams mermaid
   - KO IN :::correction !!!
+  - BUG : note class diag (see /test).
   - render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/> =>  NO ? (themes ! or OK if SVG ?)
 
 ## P3
 
-- blog tech.
+- blog tech. => /wrote/
 - W3C
 - URL checker
 	- break on broken local link
@@ -55,6 +38,7 @@ tests
   - https://code.juliancataldo.com/component/astro-seo-metadata/
 
 - CSS => split themes in files and load only on-demand
+- "Fix typo" link in footer (or in versioning ?)
 - Head.astro => ClientRouter transitions
 - tsconfig.json :	"verbatimModuleSyntax": true,
 - better `date:`
