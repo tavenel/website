@@ -1,6 +1,8 @@
+
 ## P1
 
 - check accessiblility : https://wave.webaim.org (/k8s/cours)
+- ShowCorrection => in :::exo
 
 ## P2
 
@@ -10,6 +12,11 @@
 
 - eco-index
 - blog tech. => /wrote/
+  - fusion links, liens
+  - tech/
+    - /fun
+	  - /vim
+  - faq/
 - W3C
 - URL checker
 	- break on broken local link
@@ -29,11 +36,14 @@
   - https://github.com/remarkjs/remark-validate-links
   - remarkPlugins: [ // remarkLint, // remarkPresetLintRecommended, // remarkLintNoDeadUrls, ]
 
-## P4
+- sanitize
+  - rss.xml.js
+  - package.json & astro.config
+    - "@types/sanitize-html": "^2.13.0",
+    - "rehype-sanitize": "^6.0.0",
+    - "sanitize-html": "^2.14.0"
 
-- seo
-  - https://github.com/hellotham/hello-astro/blob/main/src/components/seo.astro
-  - https://code.juliancataldo.com/component/astro-seo-metadata/
+## P4
 
 - CSS => split themes in files and load only on-demand
 - "Fix typo" link in footer (or in versioning ?)
@@ -43,5 +53,4 @@
 - "latest" page => git history ?
 - <https://adamsimpson.net/writing/openring>
 - tags:[] word cloud and links
-- Diagrams => RM plantuml library
 
