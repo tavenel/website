@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/CoursLinuxLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Intro } from '@courses/linux/lpic-102-intro.md';
@@ -9,8 +9,17 @@ import { Content as Admin } from '@courses/linux/cours-admin.md';
 import { Content as Network } from '@courses/linux/cours-network.md';
 import { Content as Security } from '@courses/linux/cours-security.md';
 import { Content as Debug } from '@courses/linux/cours-debug.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Formation LPIC 102",
+  tags: [
+    "linux",
+  ],
+}
+
 ---
-<Layout title="Formation LPIC 102">
+<Layout frontmatter={frontmatter} >
   <Chapter> <Intro />    </Chapter>
 	<Chapter> <Shell />    </Chapter>
 	<Chapter> <Desktop />  </Chapter>

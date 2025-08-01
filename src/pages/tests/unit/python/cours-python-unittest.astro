@@ -1,11 +1,20 @@
 ﻿---
-import Layout from '@layouts/CoursTestLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import Content from '@courses/tests/cours-unittest.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Unittest",
+  tags: [
+    "test",
+  ],
+}
+
 ---
-<Layout title="Unittest">
+
+<Layout frontmatter={frontmatter} >
   <Chapter> <Content /> </Chapter>
 </Layout>
----
 

@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/CoursTestLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as IntroTest } from '@courses/tests/cours-introduction-tests.md';
@@ -20,9 +20,18 @@ import { Content as Server } from '@courses/cicd/cours-serveur-ci.md';
 import { Content as Outils } from '@courses/cicd/cours-outils-ci.md';
 import { Content as GITWorkflows } from '@courses/git/workflows-cours.md';
 import { Content as CDModeles } from '@courses/cicd/modeles-cd-cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Tests et Automatisations",
+  tags: [
+    "test",
+  ],
+}
+
 ---
 
-<Layout title="Tests et Automatisations">
+<Layout frontmatter={frontmatter} >
   <Chapter> <IntroTest /> </Chapter>
   <Chapter> <Methodo /> </Chapter>
   <Chapter> <TDD /> </Chapter>

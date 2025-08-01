@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/CoursLinuxLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Hardware } from '@courses/linux/cours-hardware.md';
@@ -13,8 +13,17 @@ import { Content as LDAP } from '@courses/linux/cours-ldap.md';
 import { Content as Backup } from '@courses/linux/cours-backup.md';
 import { Content as Debug } from '@courses/linux/cours-debug.md';
 
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Linux administration avancée",
+  tags: [
+    "linux",
+  ],
+}
+
 ---
-<Layout title="Linux administration avancée">
+
+<Layout frontmatter={frontmatter} >
 	<Chapter> <Hardware />  </Chapter>
 	<Chapter> <Install />  </Chapter>
 	<Chapter> <Disks />     </Chapter>
