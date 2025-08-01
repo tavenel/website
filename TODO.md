@@ -4,13 +4,11 @@
 
 ## P2
 
-- diagrams mermaid
-  - KO IN :::correction !!!
-  - BUG : note class diag (see /test).
-  - render images at build time with playwright : <https://agramont.net/blog/diagraming-with-mermaidjs-astro/> =>  NO ? (themes ! or OK if SVG ?)
+- diagrams mermaid BUG : note class diag (see /test).
 
 ## P3
 
+- eco-index
 - blog tech. => /wrote/
 - W3C
 - URL checker

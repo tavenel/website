@@ -49,20 +49,16 @@ It is a static website with very little JavaScript intended to be extremely fast
 - Covers come from the <https://undraw.co/> project.
 - Icons from : <https://icons.getbootstrap.com/> and <https://dashboardicons.com/> and <https://www.astroicon.dev/>
 - Markdown to HTML : [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
-- HTML tranforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
+- HTML transforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
 - `Mermaid` diagrams are rendered at build-time using <https://github.com/remcohaszing/rehype-mermaid>
 - Math formulas are rendered in the browser using `Katex` (only loaded if needed) : https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex>
 - Search using `PageFind` integrated by <https://github.com/shishkin/astro-pagefind/>
 - Callouts : `:::tip`, `:::link`, `:::warn`, `:::strong`, `:::exo`, `:::correction` using <https://github.com/Microflash/remark-callout-directives>
+- Internal links checked by <https://github.com/imazen/astro-broken-link-checker>
 
 ## Generative AI
 
 The content of this website is **not** created using a generative AI. Some _beautifying_ is however sometimes applied to the content through a generative AI to make the content more appealing (like adding emoticons or splitting long sentences). The final content is always created manually and fully endorsed by the author.
-
-## Search
-
-A search module is implemented client-side using the <https://pagefind.app/> JS library.
-This library is only loaded on the search page.
 
 ## Personal data
 
@@ -70,14 +66,14 @@ Anonymous analytics is collected from _Vercel_ : <https://vercel.com/docs/analyt
 
 ## Eco-developped
 
-- This website is developped with ecological principles in mind. It intends to be as frugal as possible and usable on old terminals like old mobile phone or old computers.
+- This website is developed with ecological principles in mind. It intends to be as frugal as possible and usable on old terminals like old mobile phone or old computers.
 - Éco-index (2023-10-13) [Détails sur ecoindex.fr](https://www.ecoindex.fr/resultat/?id=0cba402f-cc0f-4b2d-ad7a-1495a1ccb6d2#score-details) : <span class="green">A (94/100)</span>
 - For more information, have a look to the [Green IT course](/green-it).
 
 ## Lobbying et partenariats
 
 - Ce site est ouvert à partenariats **uniquement pour des services éthiques**. Les autres sollicitations sont ignorées.
-- <https://sr.ht/> : forge de code source et micro hébergeur Web. Héberge ce site Web (service <https://srht.site/>) et la plupart de mes dépôts de code dans la forge `git`. Service éthique proche des philosophies <https://suckless.org/>. Serveurs aux États-Unis, en cours de transfert vers les Pays-Bas.
+- <https://sr.ht/> : forge de code source et micro hébergeur Web. Ancien hébergeur de ce site Web (service <https://srht.site/>), héberge la plupart de mes dépôts de code dans la forge `git`. Service éthique proche des philosophies <https://suckless.org/>. Serveurs principalement à Amsterdam (07/2025).
 - <https://www.zaclys.com/> : hébergeur Software-as-a-Service (SaaS) français éthique. J'utilise à titre personnel le déploiement Nextcloud pour y stocker des fichiers, gérer mes agendas personnels et professionnels (y compris ceux référencés sur ce site), leur gestionnaire de flux RSS (synchronisés en local par `newsboat`) et parfois d'autres services. Comme tout client Zaclys, je dispose d'une offre de parrainage (3 mois offerts pour le parrain et 3 mois offerts pour le parrainé) : me contacter depuis la page [about me](/about).
 - <https://www.leviia.com/> : autre fournisseur d'hébergement Nextcloud, les données sont stockées chez OVH. Compte OnlyOffice inclus dans l'offre. Utilisé pour les données liées à mon activité professionnelle, y compris les rendus des apprenants.
 
