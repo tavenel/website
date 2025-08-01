@@ -4,9 +4,11 @@ This is the repository for my website : <https://www.avenel.pro/>. Feel free to 
 
 ## 🧞 Commands
 
-- The main build uses a <https://taskfile.dev> here : <./Taskfile.yml>. Use `task …` 
-- `task dev` or `bun run dev` => <http://localhost:4321>
+- The build and packaging is managed by <https://bun.com/>
+- `bun run dev` => <http://localhost:4321>
+- `bun run build` & `bun run preview` for production
 - `bun run astro --help`
+- Upgrade : `npx @astrojs/upgrade`
 
 ## 🔗 Links
 
