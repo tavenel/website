@@ -10,9 +10,10 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 import remarkDirective from 'remark-directive'; // required for CalloutDirectives
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
-import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 import remarkMath from 'remark-math'; // with rehype-katex
-import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
+
+import { remarkDiagram } from './remark-plugins/mermaid.mjs'; // Custom plugin -- Force loading Mermaid
+import { remarkModifiedTime } from './remark-plugins/modified-time.mjs'; // Custom plugin -- last time file was modified
 
 import rehypeSlug from 'rehype-slug'; // dependency of AutoLinkHeadings
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';

@@ -1,8 +1,6 @@
 ---
 title: Un test
 date: 2025
-extra:
-- math
 ---
 
 # H1 title
