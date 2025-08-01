@@ -12,7 +12,7 @@ import remarkDirective from 'remark-directive'; // required for CalloutDirective
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 import remarkMath from 'remark-math'; // with rehype-katex
 
-import { remarkDiagram } from './remark-plugins/mermaid.mjs'; // Custom plugin -- Force loading Mermaid
+// import { remarkDiagram } from './remark-plugins/mermaid.mjs'; // Custom plugin -- Force loading Mermaid client-side
 import { remarkModifiedTime } from './remark-plugins/modified-time.mjs'; // Custom plugin -- last time file was modified
 
 import rehypeSlug from 'rehype-slug'; // dependency of AutoLinkHeadings
@@ -20,6 +20,9 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSanitize from 'rehype-sanitize' // TODO
 import rehypeKatex from 'rehype-katex'; // with remark-math
+
+import rehypeMermaid from 'rehype-mermaid';
+// import remarkMermaid from 'remark-mermaidjs'
 
 
 
@@ -68,11 +71,12 @@ export default defineConfig({
 		// remark: Markdown processing
 		remarkPlugins: [
 			defaultLayout,
-			remarkDiagram, // TODO
+			// remarkDiagram, // TODO
 			remarkMath,
 			remarkModifiedTime,
 			remarkDirective, // required for remarkCalloutDirectives - must be before
 			[remarkCalloutDirectives, remarkCalloutConfig],
+			// remarkMermaid,
 		],
 		// rehype: HTML processing (uses remark)
 		rehypePlugins: [
@@ -88,6 +92,7 @@ export default defineConfig({
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // external links have this symbol
 			// rehypeSanitize, // sanitize and cleanup HTML // TODO
 			rehypeKatex, // latex and math. Lazy-loaded, only if needed.
+			[rehypeMermaid, { strategy: 'inline-svg' }],
 		],
 	},
 
