@@ -2,7 +2,7 @@
 import Search from "astro-pagefind/components/Search";
 ---
 
-<Search id="menu-search" className="pagefind-ui" uiOptions={{ showImages: true, showSubResults: true, translations: { placeholder: "Rechercher (CTRL/K)" } }} />
+<Search id="menu-search" className="pagefind-ui" uiOptions={{ showImages: true, showSubResults: true, translations: { placeholder: "Rechercher (CTRL/K)" } }} data-testid="menu-search"/>
 
 <script>
 function handleShortcut(event) {

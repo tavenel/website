@@ -4,12 +4,12 @@ import { Icon } from 'astro-icon/components';
 
 <div id="promos">
   <label for="promoSelect" id="promoLabel">
-    <span id="promoName">Promotion</span>
-	  <button class="link" title="Changer de promotion">
+    <span id="promoName" data-testid="menu-promo-name">Promotion</span>
+	  <button class="link" title="Changer de promotion" data-testid="menu-promo-link">
       <Icon name="caret-down" />
 	  </button>
 	</label>
-  <select name="promoSelect" id="promoSelect" class="hidden">
+  <select name="promoSelect" id="promoSelect" class="hidden" data-testid="menu-promo-select">
 		<optgroup label="Aucune">
   	  <option value="/">Promo</option>
 		<optgroup label="EPSI">
