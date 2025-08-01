@@ -8,18 +8,18 @@ import pagefind from "astro-pagefind";
 import sitemap from '@astrojs/sitemap';
 import { visualizer } from "rollup-plugin-visualizer";
 
+import remarkDirective from 'remark-directive'; // required for CalloutDirectives
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
-import remarkDirective from 'remark-directive';
-import remarkMath from 'remark-math';
+import remarkMath from 'remark-math'; // with rehype-katex
 import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
-import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
+import remarkPlantUML from '@akebifiky/remark-simple-plantuml'; // TODO
 
+import rehypeSlug from 'rehype-slug'; // dependency of AutoLinkHeadings
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
-import rehypeSanitize from 'rehype-sanitize'
-import rehypeKatex from 'rehype-katex';
-import rehypeSlug from 'rehype-slug';
+import rehypeSanitize from 'rehype-sanitize' // TODO
+import rehypeKatex from 'rehype-katex'; // with remark-math
 
 
 
@@ -68,10 +68,10 @@ export default defineConfig({
 		// remark: Markdown processing
 		remarkPlugins: [
 			defaultLayout,
-			remarkDiagram,
+			remarkDiagram, // TODO
 			remarkMath,
 			remarkModifiedTime,
-			remarkPlantUML,
+			remarkPlantUML, // TODO
 			remarkDirective, // required for remarkCalloutDirectives - must be before
 			[remarkCalloutDirectives, remarkCalloutConfig],
 		],
@@ -87,8 +87,8 @@ export default defineConfig({
 				}
 			],
 			[rehypeExternalLinks, { content: { type: 'text', value: ' 🌎' } }], // external links have this symbol
-			// rehypeSanitize, // sanitize and cleanup HTML
-			rehypeKatex,
+			// rehypeSanitize, // sanitize and cleanup HTML // TODO
+			rehypeKatex, // latex and math. Lazy-loaded, only if needed.
 		],
 	},
 
