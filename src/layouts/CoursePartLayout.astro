@@ -9,7 +9,6 @@ const { frontmatter, url } = Astro.props;
 	) }
 	<slot />
 	<Diagrams
-		math={ frontmatter.extra?.includes('math') }
 		mermaid={ frontmatter.extra?.includes('mermaid') }
 	/>
 </div>

@@ -49,7 +49,6 @@ const { frontmatter, url } = Astro.props;
 	</div>
 	<slot name="after-course" />
 	<Diagrams
-		math={ frontmatter.extra?.includes('math') }
 		mermaid={ frontmatter.extra?.includes('mermaid') }
 	/>
 </Layout>

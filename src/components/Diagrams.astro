@@ -1,19 +1,9 @@
 ---
-const { math, mermaid } = Astro.props;
+const { mermaid } = Astro.props;
 type Props = {
-	math: boolean,
 	mermaid: boolean
 };
 ---
-
-{ math && (
-<link
-  rel="stylesheet"
-	href="/katex/katex.min.css"
-	integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
-	crossorigin="anonymous"
-/>
-) }
 
 { mermaid && (
 <script is:inline data-astro-rerun type='module'>

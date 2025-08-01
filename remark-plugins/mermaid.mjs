@@ -1,5 +1,5 @@
 // From : https://github.com/hellotham/hello-astro
-// Add tags to force loading mermaid or katex math librairies
+// Add tags to force loading mermaid
 
 import { visit } from 'unist-util-visit'
 
@@ -8,12 +8,6 @@ export function remarkDiagram() {
 		if (!data.astro.frontmatter['extra']) {
 			data.astro.frontmatter.extra = []
 		}
-		visit(tree, 'inlineMath', node => {
-			if (!data.astro.frontmatter.extra.includes('math')) {
-				data.astro.frontmatter.extra.push('math')
-				node
-			}
-		})
 		visit(tree, 'code', node => {
 			if (node.lang == 'mermaid') {
 				node.type = 'html'
