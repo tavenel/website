@@ -4,7 +4,6 @@
     "": {
       "name": "website",
       "dependencies": {
-        "@akebifiky/remark-simple-plantuml": "^1.0.2",
         "@astrojs/rss": "^4.0.11",
         "@astrojs/sitemap": "^3.4.0",
         "@microflash/remark-callout-directives": "^4.3.2",

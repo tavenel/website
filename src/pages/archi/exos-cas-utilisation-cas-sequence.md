@@ -57,43 +57,6 @@ flowchart LR
     retour -->|utilise| auth
     abonnement -->|utilise| auth
 ```
-
-```plantuml
-@startuml
-
-caption
-= Diagramme de Cas d'utilisation d'un VideoClub
-endcaption
-
-actor Adhérent as adherent
-actor "Non adhérent" as nadherent
-Client <|-- adherent
-Client <|-- nadherent
-
-actor "Abonné" as abo
-actor "Non abonné" as nabo
-adherent <|-- abo
-adherent <|-- nabo
-
-nadherent --> (Demande d'adhésion)
-adherent --> (Location cassettes)
-adherent --> (Retour Cassette)
-nabo --> (Demande d'abonnement)
-
-(Demande d'adhésion) --> (Authentification) : <<utilise>>
-(Location cassettes) --> (Authentification) : <<utilise>>
-(Retour Cassette) --> (Authentification) : <<utilise>>
-(Demande d'abonnement) --> (Authentification) : <<utilise>>
-
-
-:Editeur: --> (Approvisionnement en cassettes)
-(Approvisionnement en cassettes) --> :Exploitant:
-note right of (Approvisionnement en cassettes) : Scénarios : Location cassettes (environ 6 mois)\nVente cassettes
-:Exploitant: --> (Vente cassettes usagées)
-(Vente cassettes usagées) -- :Grossiste: : secondaire
-
-@enduml
-```
 :::
 
 :::correction

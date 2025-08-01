@@ -13,7 +13,6 @@ import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 import remarkMath from 'remark-math'; // with rehype-katex
 import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
-import remarkPlantUML from '@akebifiky/remark-simple-plantuml'; // TODO
 
 import rehypeSlug from 'rehype-slug'; // dependency of AutoLinkHeadings
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -71,7 +70,6 @@ export default defineConfig({
 			remarkDiagram, // TODO
 			remarkMath,
 			remarkModifiedTime,
-			remarkPlantUML, // TODO
 			remarkDirective, // required for remarkCalloutDirectives - must be before
 			[remarkCalloutDirectives, remarkCalloutConfig],
 		],
