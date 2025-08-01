@@ -235,6 +235,23 @@ button.link {
 
 }
 
+/*******/
+/* TOC */
+/*******/
+
+h1, h2, h3, h4, h5 {
+	/* when scrolling, keep a margin on top */
+	scroll-margin-top: min(5vh, 50px);
+}
+
+/* Safari-only */
+@supports (-webkit-hyphens:none) {
+	h1, h2, h3, h4, h5 {
+		/* Bug in Safari -- no margin */
+		scroll-margin-top: 0;
+	}
+}
+
 /**********/
 /* SEARCH */
 /**********/
