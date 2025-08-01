@@ -118,7 +118,7 @@ export default defineConfig({
 				'tokyo-night',
 			],
 		}),
-		icon(),
+		icon(), // load ions from `src/icons` in <Icon /> component
 		sitemap(),
 		// must be last to search in fully bundled
 		pagefind()
