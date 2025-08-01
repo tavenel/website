@@ -50,9 +50,10 @@ It is a static website with very little JavaScript intended to be extremely fast
 - Icons from : <https://icons.getbootstrap.com/> and <https://dashboardicons.com/> and <https://www.astroicon.dev/>
 - Markdown to HTML : [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
 - HTML tranforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
-- Lazy-load `Mermaid` (diagrams) JS librairies if needed.
-- Search using `PageFind` integrated by [astro-pagefind](https://github.com/shishkin/astro-pagefind/)
-- Callouts : `:::tip`, `:::link`, `:::warn`, `:::strong`, `:::exo`, `:::correction` using [remark-callout-directives](https://github.com/Microflash/remark-callout-directives)
+- `Mermaid` diagrams are rendered at build-time using <https://github.com/remcohaszing/rehype-mermaid>
+- Math formulas are rendered in the browser using `Katex` (only loaded if needed) : https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex>
+- Search using `PageFind` integrated by <https://github.com/shishkin/astro-pagefind/>
+- Callouts : `:::tip`, `:::link`, `:::warn`, `:::strong`, `:::exo`, `:::correction` using <https://github.com/Microflash/remark-callout-directives>
 
 ## Generative AI
 
