@@ -12,7 +12,6 @@ import remarkDirective from 'remark-directive'; // required for CalloutDirective
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 import remarkMath from 'remark-math'; // with rehype-katex
 
-// import { remarkDiagram } from './remark-plugins/mermaid.mjs'; // Custom plugin -- Force loading Mermaid client-side
 import { remarkModifiedTime } from './remark-plugins/modified-time.mjs'; // Custom plugin -- last time file was modified
 
 import rehypeSlug from 'rehype-slug'; // dependency of AutoLinkHeadings
@@ -22,8 +21,6 @@ import rehypeSanitize from 'rehype-sanitize' // TODO
 import rehypeKatex from 'rehype-katex'; // with remark-math
 
 import rehypeMermaid from 'rehype-mermaid';
-// import remarkMermaid from 'remark-mermaidjs'
-
 
 
 // Set default Layout for Markdown files
@@ -76,7 +73,6 @@ export default defineConfig({
 			remarkModifiedTime,
 			remarkDirective, // required for remarkCalloutDirectives - must be before
 			[remarkCalloutDirectives, remarkCalloutConfig],
-			// remarkMermaid,
 		],
 		// rehype: HTML processing (uses remark)
 		rehypePlugins: [
