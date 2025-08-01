@@ -45,7 +45,7 @@ Versionner son code source permet : 🔄
 - De plus en plus utilisé en administration système : _DevOps_, _CI/CD_, ... 🏗️
 
 :::tip
-À titre personnel, je gère même mes fichiers de configuration système (dotfiles) sous git 📂
+À titre personnel, je gère même mes fichiers de configuration système [dotfiles](https://git.sr.ht/~toma/dotfiles) sous git 📂
 :::
 
 ---
