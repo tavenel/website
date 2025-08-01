@@ -1,6 +1,37 @@
 
 ## P1
 
+- playwright
+  - https://status.avenel.pro/
+
+- eslint
+
+[![Super-Linter](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE_NAME>/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
+```sh
+# Run playwright server in a Docker container
+docker run -p 3000:3000 --rm --init -it mcr.microsoft.com/playwright:v1.54.2 /bin/sh -c "cd /home/pwuser && npx -y playwright@1.54.2 run-server --port 3000 --host 0.0.0.0"
+```
+
+```js
+// playwright.config.ts
+
+export default defineConfig({
+
+	use: {
+
+		connectOptions: {
+			wsEndpoint: 'ws://localhost:3000',
+		},
+
+	},
+})
+```
+
+- https://www.emgoto.com/react-table-of-contents/#making-your-anchor-links-update
+- https://github.com/futuraprime/rehype-figure-title
+- https://web.dev/articles/browser-level-image-lazy-loading?hl=fr
+
 - check accessiblility : https://wave.webaim.org (/k8s/cours)
 - ShowCorrection => in :::exo
 
