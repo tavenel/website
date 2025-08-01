@@ -205,7 +205,6 @@ _Eric Evans_, 2003
       stroke-width: 2;
     }
     .text-label {
-      font-family: Arial, sans-serif;
       font-size: 14px;
       text-anchor: middle;
     }
