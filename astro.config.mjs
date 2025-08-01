@@ -2,9 +2,10 @@
 import { defineConfig, fontProviders } from "astro/config";
 
 import astroBrokenLinksChecker from 'astro-broken-link-checker';
-
-import sitemap from '@astrojs/sitemap';
+import expressiveCode from 'astro-expressive-code';
+import icon from 'astro-icon';
 import pagefind from "astro-pagefind";
+import sitemap from '@astrojs/sitemap';
 import { visualizer } from "rollup-plugin-visualizer";
 
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
@@ -20,9 +21,7 @@ import rehypeSanitize from 'rehype-sanitize'
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 
-import expressiveCode from 'astro-expressive-code';
 
-import icon from 'astro-icon';
 
 // Set default Layout for Markdown files
 const defaultLayout = () => {
@@ -93,40 +92,45 @@ export default defineConfig({
 		],
 	},
 
-	integrations: [astroBrokenLinksChecker({
-		checkExternalLinks: false
-	}), expressiveCode({
-		themes: [
-			'andromeeda',
-			'aurora-x',
-			'ayu-dark',
-			'catppuccin-mocha',
-			'dark-plus',
-			'dracula',
-			'everforest-light',
-			'github-light',
-			'gruvbox-dark-medium',
-			'gruvbox-light-medium',
-			'houston',
-			'kanagawa-dragon',
-			'nord',
-			'one-light',
-			'poimandres',
-			'rose-pine',
-			'synthwave-84',
-			'tokyo-night',
-		],
-	}),
-	icon(),
-	sitemap(),
-	// must be last to search in fully bundled
-	pagefind()],
+	integrations: [
+		astroBrokenLinksChecker({
+			checkExternalLinks: false
+		}),
+		expressiveCode({
+			themes: [
+				'andromeeda',
+				'aurora-x',
+				'ayu-dark',
+				'catppuccin-mocha',
+				'dark-plus',
+				'dracula',
+				'everforest-light',
+				'github-light',
+				'gruvbox-dark-medium',
+				'gruvbox-light-medium',
+				'houston',
+				'kanagawa-dragon',
+				'nord',
+				'one-light',
+				'poimandres',
+				'rose-pine',
+				'synthwave-84',
+				'tokyo-night',
+			],
+		}),
+		icon(),
+		sitemap(),
+		// must be last to search in fully bundled
+		pagefind()
+	],
 
 	vite: {
-		plugins: [visualizer({ // analyse bundle size
-			emitFile: true,
-			filename: "stats.html",
-		})]
+		plugins: [
+			visualizer({ // analyse bundle size
+				emitFile: true,
+				filename: "stats.html",
+			})
+		]
 	},
 
 	experimental: {
