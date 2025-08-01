@@ -6,12 +6,12 @@ import { Icon } from 'astro-icon/components'
 
 <div id="themeSwitch">
   <label for="themeSwitchSelect" id="themeSwitchButton">
-	  <button class="link" title="Changer de style">
+	  <button class="link" title="Changer de style" data-testid="menu-theme-link">
       <Icon name="material-symbols--invert-colors" />
       <span>Thème</span>
 	  </button>
 	</label>
-  <select name="themeSwitch" id="themeSwitchSelect" class="hidden">
+  <select name="themeSwitch" id="themeSwitchSelect" class="hidden" data-testid="menu-theme-select">
 		<optgroup label="Default">
   	  <option value="none">Aucun</option>
   	  <option value="system">Automatique</option>
