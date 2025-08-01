@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import rssIcon from '@assets/website/rss.png';
+import { Icon } from 'astro-icon/components';
 
 const { width, height } = Astro.props;
 type Props = {
@@ -9,4 +9,4 @@ type Props = {
 };
 ---
 
-<a href="/rss.xml"><Picture src={rssIcon} alt="The RSS logo icon." width={width} height={height} /></a>
+<a href="/rss.xml"><Icon name="rss" alt="The RSS logo icon." width={width} height={height} /></a>
