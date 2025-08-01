@@ -11,13 +11,13 @@
 		"test": "vitest"
 	},
 	"dependencies": {
-		"@astrojs/rss": "^4.0.11",
-		"@astrojs/sitemap": "^3.4.0",
+		"@astrojs/rss": "4.0.12",
+		"@astrojs/sitemap": "3.4.2",
 		"@microflash/remark-callout-directives": "^4.3.2",
 		"@types/sanitize-html": "^2.13.0",
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",
-		"astro": "^5.8.0",
+		"astro": "5.12.7",
 		"astro-broken-link-checker": "imazen/astro-broken-link-checker",
 		"astro-expressive-code": "^0.41.2",
 		"astro-icon": "^1.1.5",
