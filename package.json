@@ -34,13 +34,11 @@
 		"sanitize-html": "^2.14.0"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.50.1",
 		"@types/node": "^22.13.1",
 		"remark-lint": "^10.0.1",
 		"remark-lint-no-dead-urls": "^2.0.1",
 		"remark-preset-lint-recommended": "^7.0.1",
-		"undici": ">=6.21.3",
-		"vitest": "^3.0.5"
+		"undici": ">=6.21.3"
 	},
 	"trustedDependencies": [
 		"@vercel/speed-insights"
