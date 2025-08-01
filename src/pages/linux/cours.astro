@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/CoursLinuxLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Backup } from '@courses/linux/cours-backup.md';
@@ -21,8 +21,17 @@ import { Content as Security } from '@courses/linux/cours-security.md';
 import { Content as Shell } from '@courses/linux/cours-shell.md';
 import { Content as VPN } from '@courses/linux/cours-vpn.md';
 import { Content as Admin } from '@courses/linux/cours-admin.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours Linux",
+  tags: [
+    "linux",
+  ],
+}
+
 ---
-<Layout title="Cours Linux">
+<Layout frontmatter={frontmatter} >
 	<Chapter> <Hardware />  </Chapter>
 	<Chapter> <Install />   </Chapter>
 	<Chapter> <Commands />  </Chapter>

@@ -1,5 +1,5 @@
 ﻿---
-import Layout from '@layouts/CoursTestLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Indus } from '@courses/tests/indus-tests-cours.md';
@@ -9,9 +9,18 @@ import { Content as Unittest } from '@courses/tests/cours-unittest.md';
 import { Content as Selenium } from '@courses/selenium/cours.md';
 import { Content as Postman } from '@courses/postman/cours.md';
 import { Content as SimianArmy } from '@courses/simian-army/cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Industrialisation des tests",
+  tags: [
+    "test",
+  ],
+}
+
 ---
 
-<Layout title="Industrialisation des tests">
+<Layout frontmatter={frontmatter} >
  <Chapter> <Indus /> </Chapter>
  <Chapter> <Patterns /> </Chapter>
  <Chapter> <CodeTestable /> </Chapter>

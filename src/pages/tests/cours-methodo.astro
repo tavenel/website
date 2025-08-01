@@ -1,5 +1,5 @@
 ﻿---
-import Layout from '@layouts/CoursTestLayout.astro';
+import Layout from '@layouts/SlideLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Intro } from '@courses/tests/cours-introduction-tests.md';
@@ -10,9 +10,18 @@ import { Content as TDD } from '@courses/tests/cours-tdd.md';
 import { Content as BDD } from '@courses/tests/cours-bdd.md';
 import { Content as Strategies } from '@courses/tests/cours-strategies-tests.md';
 import { Content as Techniques } from '@courses/tests/techniques-tests.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Méthodologie des tests",
+  tags: [
+    "test",
+  ],
+}
+
 ---
 
-<Layout title="Méthodologie des tests">
+<Layout frontmatter={frontmatter} >
  <Chapter> <Intro /> </Chapter>
  <Chapter> <Methodo /> </Chapter
  <Chapter> <Static /> </Chapter
