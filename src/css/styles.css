@@ -287,8 +287,6 @@ a.add-bookmark {
 /* DIAGRAMS */
 /************/
 
-.mermaid {
-
 	/* Flow chart & State diagrams */
 	.flowchart, .statediagram, .classDiagram {
 
@@ -411,7 +409,6 @@ a.add-bookmark {
 			stroke: var(--diagram-group) !important;
 		}
 	}
-}
 
 /*********/
 /* PRINT */
