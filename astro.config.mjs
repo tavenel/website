@@ -10,7 +10,6 @@ import { visualizer } from "rollup-plugin-visualizer";
 import remarkCalloutDirectives from '@microflash/remark-callout-directives';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 import remarkDirective from 'remark-directive';
-import remarkEmoji from 'remark-emoji';
 import remarkMath from 'remark-math';
 import { remarkModifiedTime } from './remark-plugins/remark-modified-time.mjs';
 import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
@@ -67,12 +66,10 @@ export default defineConfig({
 	output: 'static',
 
 	markdown: {
-		// extendDefaultPlugins: true,
 		// remark: Markdown processing
 		remarkPlugins: [
 			defaultLayout,
 			remarkDiagram,
-			remarkEmoji,
 			remarkMath,
 			remarkModifiedTime,
 			remarkPlantUML,
