@@ -731,3 +731,4 @@ flowchart TD
 
 :::
 
+![An alt text](@assets/apps/lamp.png "An image caption")

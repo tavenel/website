@@ -4,7 +4,7 @@ title: Comparaison des Technologies de Réseau Virtuel - VLAN, SDN, VXLAN, BGP, 
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-## 1. VLAN (Virtual Local Area Network) 🌐
+## VLAN (Virtual Local Area Network) 🌐
 
 - Définition : Un VLAN est un réseau local virtuel qui permet de segmenter un réseau physique en plusieurs réseaux logiques.
 - Fonctionnement : Les VLAN utilisent des tags (étiquettes) pour identifier et séparer le trafic réseau au niveau de la couche 2 (liaison de données) du modèle OSI.
@@ -18,7 +18,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 2. SDN (Software-Defined Networking) 🧠💻
+## SDN (Software-Defined Networking) 🧠💻
 
 - Définition : Le SDN est une approche de gestion réseau qui sépare le plan de contrôle du plan de données, permettant une gestion centralisée et programmable du réseau.
 - Fonctionnement : Utilise des contrôleurs SDN pour gérer les règles de flux et les politiques réseau via des API 🔧
@@ -32,7 +32,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 3. VXLAN (Virtual Extensible LAN) 🧳🌍
+## VXLAN (Virtual Extensible LAN) 🧳🌍
 
 - Définition : VXLAN est une technologie d'encapsulation qui permet de créer des réseaux virtuels extensibles sur des réseaux physiques.
 - Fonctionnement : Utilise l'encapsulation des trames Ethernet dans des paquets UDP/IP, permettant de créer des réseaux virtuels sur des infrastructures IP existantes (Layer 2) 📦➡️📨
@@ -50,7 +50,7 @@ ip link show type vxlan
 
 ---
 
-## 4. BGP (Border Gateway Protocol) 🌍📡
+## BGP (Border Gateway Protocol) 🌍📡
 
 - Définition : BGP est un protocole de routage externe (gateway extérieures) utilisé pour échanger des informations de routage entre différents _systèmes autonomes_ (AS) sur Internet.
 - Fonctionnement : Utilise des tables de routage pour déterminer les meilleurs chemins pour acheminer le trafic entre les réseaux.
@@ -68,7 +68,7 @@ ip link show type vxlan
 
 ---
 
-## 5. IPinIP (IP in IP Encapsulation) 🎁📦
+## IPinIP (IP in IP Encapsulation) 🎁📦
 
 - Définition : _IPinIP_ ou _IPIP_ est une technique d'encapsulation où un paquet IP est encapsulé dans un autre paquet IP. Cela permet de transporter des paquets IP sur un réseau IP sans modifier les paquets originaux (Layer 3).
 - Fonctionnement : Un paquet IP est encapsulé dans un autre paquet IP avec un nouvel en-tête IP, permettant de créer des tunnels virtuels à travers des réseaux IP existants 🕳️➡️📨
@@ -82,7 +82,7 @@ ip link show type vxlan
 
 ---
 
-## 6. eBPF (extended Berkeley Packet Filter) 🧬🐧
+## eBPF (extended Berkeley Packet Filter) 🧬🐧
 
 ### Description
 

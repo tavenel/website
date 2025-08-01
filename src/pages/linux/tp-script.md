@@ -228,7 +228,7 @@ echo "Logs contenant des erreurs sauvegardés dans $OUTPUT_FILE."
 
 ## Exercices supplémentaires
 
-### 1. Sauvegarde et restauration automatisées
+### Sauvegarde et restauration automatisées
 
 #### But
 
@@ -248,7 +248,7 @@ Ajouter une fonctionnalité de sauvegarde et de restauration pour les répertoir
 3. Quitter
 ```
 
-### 2. Surveillance de l'espace disque
+### Surveillance de l'espace disque
 
 #### But
 
@@ -266,7 +266,7 @@ Créer un script qui surveille l'espace disque et alerte si l'utilisation dépas
 Alerte : La partition /dev/sda1 utilise 85 % de l'espace disque.
 ```
 
-### 3. Gestion des processus
+### Gestion des processus
 
 #### But
 
@@ -287,7 +287,7 @@ Alerte : La partition /dev/sda1 utilise 85 % de l'espace disque.
 4. Quitter
 ```
 
-### 4. Journalisation avancée
+### Journalisation avancée
 
 #### But
 
@@ -306,7 +306,7 @@ Ajouter un système de journalisation dans tous les scripts.
 [2024-11-19 10:32:10] Erreur : Impossible de créer l'utilisateur "bob".
 ```
 
-### 5. Interface graphique simple (Zenity ou Whiptail)
+### Interface graphique simple (Zenity ou Whiptail)
 
 #### But
 
@@ -325,7 +325,7 @@ zenity --question --text="Voulez-vous supprimer /home/user/temp/test1.tmp ?"
 
 ---
 
-### 6. Gestion des sauvegardes incrémentales
+### Gestion des sauvegardes incrémentales
 
 #### But
 
@@ -336,7 +336,7 @@ Implémenter un système de sauvegardes incrémentales.
 - Comparez les fichiers d'un répertoire avec leur dernière sauvegarde et copiez uniquement les fichiers modifiés.  
 - Utilisez des outils comme `rsync` ou des commandes Bash natives (comparaison avec `diff` ou `find -mtime`).  
 
-### 7. Notification via Slack, Telegram ou e-mail
+### Notification via Slack, Telegram ou e-mail
 
 #### But
 

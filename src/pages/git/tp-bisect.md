@@ -15,13 +15,13 @@ date: 2024 / 2025
 
 ## Étapes du TP
 
-### 1. Préparation
+### Préparation
 
 1. Créez un nouveau dépôt Git ou utilisez un existant
 2. Ajoutez quelques commits avec des modifications aléatoires
 3. Introduisez un bug dans l'un des derniers commits
 
-### 2. Lancement de Git Bisect
+### Lancement de Git Bisect
 
 1. Dans votre terminal, naviguez vers le répertoire du projet
 2. Lancez la commande suivante :
@@ -32,19 +32,19 @@ date: 2024 / 2025
    - Quel est l'état actuel du projet ? (good/bad)
    - Quelle est le dernièr commit connu où le problème n'était pas présent ?
 
-### 3. Test et analyse
+### Test et analyse
 
 1. Git Bisect va maintenant vous guider à travers les commits
 2. Pour chaque commit testé, vérifiez si le problème est présent ou non
 3. Si le problème est présent, tapez `git bisect bad`
 4. Sinon, tapez `git bisect good`
 
-### 4. Résolution
+### Résolution
 
 1. Une fois que Git Bisect a terminé, il affichera la commit coupable
 2. Vérifiez manuellement ce commit pour confirmer qu'il contient bien le bug
 
-### 5. Nettoyage
+### Nettoyage
 
 1. Pour terminer Git Bisect, utilisez la commande :
    ```

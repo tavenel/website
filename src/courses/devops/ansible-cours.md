@@ -324,7 +324,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 1. Ping toutes les machines _hosts_
+### Ping toutes les machines _hosts_
 
 ```yaml
 - name: Ping all hosts
@@ -336,7 +336,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 2. Installer NGINX sur Ubuntu
+### Installer NGINX sur Ubuntu
 
 ```yaml
 ---
@@ -356,7 +356,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 3. Créer un fichier
+### Créer un fichier
 
 ```yaml
 ---
@@ -371,7 +371,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 4. Démarrer et Installer un Service
+### Démarrer et Installer un Service
 
 ```yaml
 ---
@@ -389,7 +389,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 5. Copier un fichier local à distance
+### Copier un fichier local à distance
 
 ```yaml
 ---
@@ -406,7 +406,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 6. Créer un utilisateur
+### Créer un utilisateur
 
 ```yaml
 ---
@@ -424,7 +424,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 
 ---
 
-### 7. Redémarrer les machines distantes
+### Redémarrer les machines distantes
 
 ```yaml
 ---

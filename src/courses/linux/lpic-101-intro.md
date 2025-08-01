@@ -40,7 +40,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Plan de cours
 
-### 1.1 - Sujet 101 : Architecture système [8]
+### Sujet 101 : Architecture système [8]
 
 - 101.1 Détermination et configuration des paramètres du matériel [2]
   - TP : affichage de la configuration du système et des périphériques
@@ -52,7 +52,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### 1.2 - Sujet 102 : Installation de Linux et gestion de paquetages [12]
+### Sujet 102 : Installation de Linux et gestion de paquetages [12]
 
 - 102.1 Conception du schéma de partitionnement [2]
 - 102.2 Installation d'un gestionnaire d'amorçage [2]
@@ -65,7 +65,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### 1.3 - Sujet 103 : Commandes GNU et Unix [26]
+### Sujet 103 : Commandes GNU et Unix [26]
 
 - 103.1 Travail en ligne de commande [4]
   - TP : Utilisation de la ligne de commande
@@ -84,7 +84,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### 1.4 - Sujet 104 : Disques, systèmes de fichiers Linux, arborescence de fichiers standard (FHS) [14]
+### Sujet 104 : Disques, systèmes de fichiers Linux, arborescence de fichiers standard (FHS) [14]
 
 - 104.1 Création des partitions et des systèmes de fichiers [2]
 - 104.2 Maintenance de l'intégrité des systèmes de fichiers [2]

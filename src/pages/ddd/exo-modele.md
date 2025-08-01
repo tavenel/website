@@ -41,14 +41,14 @@ class Order:
 :::correction
 ## ✅ Correction
 
-### 1. Problèmes identifiés :
+### Problèmes identifiés :
 
 * `items` est une liste de dictionnaires : structure fragile, non typée.
 * `total` est un champ redondant, sujet à incohérence.
 * `Order` est une **structure de données passive** (pas de logique métier).
 * Aucune **encapsulation** ni validation métier.
 
-### 2. Refactoring proposé
+### Refactoring proposé
 
 ```python
 from uuid import uuid4

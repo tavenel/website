@@ -24,14 +24,14 @@ L'objectif est de montrer votre **maîtrise de l’administration système Linux
 
 ## 🔧 Travaux à réaliser
 
-### 1. **Préparation du système**
+### Préparation du système
 
 * Installer un serveur Linux (par exemple Ubuntu Server 22.04)
 * Configuration réseau manuelle (adresse IP statique)
 * Activation de l'accès SSH avec clé uniquement
 * Création d'un ou plusieurs utilisateurs non-root avec droits adaptés (`sudo`, `groupadd`, etc.)
 
-### 2. **Déploiement de l'application**
+### Déploiement de l'application
 
 * L'application (simple CRUD en Python/Flask, Node.js, PHP ou autre) doit être déployée **manuellement sans Docker**.
 * Mise en place d'un serveur web natif : `Apache2` ou `Nginx` par exemple.
@@ -39,20 +39,20 @@ L'objectif est de montrer votre **maîtrise de l’administration système Linux
 * Base de données installée et configurée localement (ex : `MySQL`, `PostgreSQL`, `SQLite`).
 * Permissions fichiers et accès restreints selon les bonnes pratiques.
 
-### 3. **Services Linux**
+### Services Linux
 
 * Mise en place d’un **serveur DNS local** ou redirection DNS avec `/etc/hosts`
 * Installation et configuration de **Samba** pour l'accès distant aux fichiers partagés
 * Déploiement d’un service **LDAP** et configuration d'un service local s'appuyant dessus (authentification utilisateur, ou autre)
 * Configuration des logs applicatifs et système (`journald`, `rsyslog`, `logrotate`)
 
-### 4. **Supervision et planification**
+### Supervision et planification
 
 * Planification automatique de tâches via `cron` (sauvegarde de la BDD, redémarrage de service, etc.)
 * Mise en place d’un outil de supervision natif ou léger (ex : `glances`, `htop`, `monit`)
 * Alertes simples par mail ou fichier journal en cas d’échec de service
 
-### 5. **Résilience et dépannage**
+### Résilience et dépannage
 
 * Procédure de réinitialisation du mot de passe root (documentée et testée)
 * Scénario de "crash recovery" à simuler et documenter

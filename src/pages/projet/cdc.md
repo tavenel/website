@@ -12,7 +12,7 @@ tags:
 
 ---
 
-### 1. Initiation
+### Initiation
 
 - Marque le début du projet. 🚀
 - C'est le moment où le besoin ou l'opportunité est identifié. 💡
@@ -20,7 +20,7 @@ tags:
 
 ---
 
-### 2. Planification
+### Planification
 
 - Le projet est détaillé et structuré. 📝
 - Le cahier des charges commence à prendre forme en identifiant les besoins et les exigences. 📋
@@ -28,7 +28,7 @@ tags:
 
 ---
 
-### 3. Exécution
+### Exécution
 
 - Cœur du projet. ❤️
 - Les activités décrites dans le cahier des charges sont mises en œuvre. 🛠️
@@ -36,14 +36,14 @@ tags:
 
 ---
 
-### 4. Surveillance et contrôle
+### Surveillance et contrôle
 
 - Les performances du projet sont surveillées par rapport au cahier des charges. 🔍
 - Les ajustements sont faits si nécessaire pour garantir que le projet reste sur la bonne voie. 🛤️
 
 ---
 
-### 5. Clôture
+### Clôture
 
 - Marque la fin du projet. 🏁
 - Le cahier des charges est revu pour s'assurer que tous les objectifs ont été atteints. ✅
