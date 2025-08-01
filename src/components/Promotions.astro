@@ -42,7 +42,6 @@ function setPromo() {
 
 function retrieveCurrentPromo() {
 	const currentPromo = localStorage.getItem('promo');
-	console.log("Current promo", currentPromo);
 	if (currentPromo) {
 		const promoNameElt = document.getElementById('promoName') as HTMLSelectElement;
 		promoName.innerHTML = `<a href="${currentPromo}">${currentPromo}</a>`

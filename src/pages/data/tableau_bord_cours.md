@@ -214,7 +214,7 @@ tags:
 
 ---
 
-#### 1. 💵 Axe Financier
+#### 💵 Axe Financier
 
 - **Exemples** :
 
@@ -226,7 +226,7 @@ tags:
 
 ---
 
-#### 2. 📈 Axe Technique & Données
+#### 📈 Axe Technique & Données
 
 - **Exemples** :
 
@@ -239,7 +239,7 @@ tags:
 
 ---
 
-#### 3. 🔐 Axe Sécurité
+#### 🔐 Axe Sécurité
 
 - **Exemples** :
 
@@ -251,7 +251,7 @@ tags:
 
 ---
 
-#### 4. 🙎 Axe Utilisateur / Fonctionnel
+#### 🙎 Axe Utilisateur / Fonctionnel
 
 - **Exemples** :
 
@@ -264,7 +264,7 @@ tags:
 
 ---
 
-#### 5. 🏛 Axe Légal / Réglementaire
+#### 🏛 Axe Légal / Réglementaire
 
 - **Exemples** :
 
@@ -341,7 +341,7 @@ tags:
 
 ---
 
-### 1. Définir les Objectifs 🎯
+### Définir les Objectifs 🎯
 
 - Que voulez-vous mesurer ?
 - À qui s'adresse le tableau de bord ?
@@ -349,7 +349,7 @@ tags:
 
 ---
 
-### 2. Sélectionner les Indicateurs Clés (KPI) 🗂
+### Sélectionner les Indicateurs Clés (KPI) 🗂
 
 - Priorisez les métriques en fonction des besoins.
 - Assurez-vous qu'ils soient pertinents, mesurables et exploitables.
@@ -357,7 +357,7 @@ tags:
 
 ---
 
-### 3. Concevoir la Structure 📑
+### Concevoir la Structure 📑
 
 - **Types de visualisations** :
 - Graphiques à barres, lignes ou secteurs.
@@ -368,7 +368,7 @@ tags:
 
 ---
 
-### 4. Collecter et Connecter les Données 🗃
+### Collecter et Connecter les Données 🗃
 
 - Utilisez des outils adaptés pour centraliser les données :
 - Bases de données.
@@ -377,7 +377,7 @@ tags:
 
 ---
 
-### 5. Tester et Valider 🧪
+### Tester et Valider 🧪
 
 - Vérifiez :
 - La fiabilité des données.

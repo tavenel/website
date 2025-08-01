@@ -340,7 +340,7 @@ CMD ["./main"]
   + Que remarquez-vous ?
 
 :::correction
-### 1.
+### Question 1.
 ```sh
 # Ajouter un fichier dans C:\mon_repertoire_partage_windows
 # Créer le conteneur avec le répertoire partagé. On utilise le mode interactif ( `-it` ) pour rester dans le conteneur
@@ -349,7 +349,7 @@ docker run -it -v C:\mon_repertoire_partage_windows:/mon_repertoire_partage_linu
 ls /mon_repertoire_partage_linux
 ```
 
-### 2.
+### Question 2.
 ```sh
 docker volume create mon_volume
 # Créer les 2 conteneurs utilisant le volume
@@ -380,7 +380,7 @@ cat /mon_repertoire_partage_2/mon_fichier
   + Vérifier que le service du conteneur est accessible depuis l'hôte à l'adresse : `http://localhost:8181`
 
 :::correction
-### 1.
+### Question 1.
 
 ```sh
 docker run -it --network none bash
@@ -406,7 +406,7 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 $ ping compassionate_neumann
 ```
 
-### 2.
+### Question 2.
 
 ```console
 $ docker run -it --network host bash
@@ -452,7 +452,7 @@ PING google.fr (172.217.20.163): 56 data bytes
 64 bytes from 172.217.20.163: seq=1 ttl=114 time=13.752 ms
 ```
 
-### 3. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
+### Question 3. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
 
 ```sh
 # On crée un bridge privé :
@@ -473,7 +473,7 @@ ping conteneur1 # OK
 ping google.fr # KO
 ```
 
-### 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
+### Question 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
 
 ```sh
 docker run -p 8181:80 nginx

@@ -29,7 +29,7 @@ Une startup développe un service de vente de billets pour des événements. Lor
 :::correction
 ## ✅ Correction
 
-### 1. Contradictions identifiées
+### Contradictions identifiées
 
 | Concept           | Produit                                 | Support                         | Conflit                              |
 | ----------------- | --------------------------------------- | ------------------------------- | ------------------------------------ |
@@ -38,7 +38,7 @@ Une startup développe un service de vente de billets pour des événements. Lor
 | **Billet échoué** | La place est libérée automatiquement    | Le billet existe, mais échoué   | Existence même du billet en question |
 
 
-### 2. Langage ubiquitaire aligné (exemple proposé)
+### Langage ubiquitaire aligné (exemple proposé)
 
 | Terme                | Définition métier consensuelle                                        |
 | -------------------- | --------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ Une startup développe un service de vente de billets pour des événements. Lor
 | **Commande échouée** | Commande dont le paiement a échoué, sans billet généré                |
 
 
-### 3. Modèle ou schéma (exemple simplifié)
+### Modèle ou schéma (exemple simplifié)
 
 ```mermaid
 ---

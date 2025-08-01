@@ -23,13 +23,13 @@ Votre système Linux ne démarre plus correctement, par exemple :
 
 Pour pouvoir accéder au système endommagé, nous utiliserons un _bind mount_ qui est une fonctionnalité du système de fichiers Linux qui permet de monter un répertoire existant à un autre endroit du système de fichiers (en le _liant_) tout en partageant exactement le même contenu, ainsi qu'un `chroot` (_change root_) qui est une commande Unix qui permet de changer le répertoire racine `/` pour un processus donné et ses processus enfants.
 
-### 1. Démarrage sur Live CD/USB
+### Démarrage sur Live CD/USB
 
 1. Insérez l'ISO de la distribution Live dans la VM (ou l'ordinateur physique).
 2. Démarrez la machine et bootez depuis le Live CD (ou la clé USB).
 3. Choisissez **"Try Ubuntu"** ou équivalent pour accéder à un terminal.
 
-### 2. Identifier les partitions du système endommagé
+### Identifier les partitions du système endommagé
 
 Dans le terminal Live :
 
@@ -39,7 +39,7 @@ lsblk
 
 Repérez la partition principale (généralement /dev/sda1, /dev/vda1, etc.).
 
-### 3. Monter la partition racine
+### Monter la partition racine
 
 ```sh
 sudo mount /dev/sdXn /mnt
@@ -60,7 +60,7 @@ sudo mount --bind /sys /mnt/sys
 Un _bind mount_ crée un alias d'un répertoire dans un autre chemin. Ce n'est pas une copie, mais une autre vue du même contenu.
 :::
 
-### 4. Entrer dans l’environnement chrooté
+### Entrer dans l’environnement chrooté
 
 ```sh
 sudo chroot /mnt
@@ -76,7 +76,7 @@ sudo chroot /mnt
 Exécuter les opérations de récupération nécessaires.
 :::
 
-### 5. Quitter et démonter
+### Quitter et démonter
 
 ```sh
 exit

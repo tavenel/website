@@ -17,7 +17,6 @@ const CACHE_NAME = APP_PREFIX + VERSION
 self.addEventListener('install', function (e) {
 	e.waitUntil(
 		caches.open(CACHE_NAME).then(function (cache) {
-			//console.log('Installing cache : ' + CACHE_NAME);
 			return cache.addAll(URLS_INSTALLED)
 		})
 	)
@@ -32,7 +31,6 @@ self.addEventListener('activate', function (e) {
 			cacheWhitelist.push(CACHE_NAME);
 			return Promise.all(keyList.map(function (key, i) {
 				if (cacheWhitelist.indexOf(key) === -1) {
-					//console.log('Deleting cache : ' + keyList[i]);
 					return caches.delete(keyList[i])
 				}
 			}))

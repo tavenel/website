@@ -10,31 +10,31 @@ La société **LearnMate** propose un service de mise en relation entre enseigna
 
 Voici les principales fonctionnalités décrites par le service produit :
 
-#### 1. Gestion des utilisateurs
+#### Gestion des utilisateurs
 
 * Chaque utilisateur a un **profil** : nom, email, rôle (apprenant ou enseignant), photo, biographie.
 * Les utilisateurs peuvent **mettre à jour leur profil** et choisir leurs **disponibilités horaires** (enseignants).
 
-#### 2. Recherche et réservation de cours
+#### Recherche et réservation de cours
 
 * Un apprenant peut **rechercher un enseignant** par matière, niveau, prix ou langue parlée.
 * Il peut **envoyer une demande de cours** pour un créneau horaire donné.
 * L’enseignant peut **accepter ou refuser** la demande.
 * Une fois acceptée, le cours est **réservé et planifié**.
 
-#### 3. Paiement
+#### Paiement
 
 * Les cours sont payés **à la réservation**.
 * L’apprenant peut payer par carte ou portefeuille préchargé.
 * L’enseignant est **rémunéré** chaque semaine selon ses cours validés.
 
-#### 4. Cours et suivi pédagogique
+#### Cours et suivi pédagogique
 
 * Les cours sont tenus en **visioconférence intégrée**.
 * À la fin du cours, l’enseignant **rédige un compte-rendu** visible par l’apprenant.
 * Un **historique des cours** est conservé pour chaque utilisateur.
 
-#### 5. Support client
+#### Support client
 
 * Les utilisateurs peuvent **signaler un problème** sur une réservation.
 * L’équipe support peut **émettre un remboursement** ou trancher un litige.
@@ -49,7 +49,7 @@ Voici les principales fonctionnalités décrites par le service produit :
 :::correction
 ## ✅ Correction
 
-### 1. **Bounded Context identifiés**
+### **Bounded Context identifiés**
 
 | Nom                       | Rôle                                                      |
 | ------------------------- | --------------------------------------------------------- |
@@ -60,7 +60,7 @@ Voici les principales fonctionnalités décrites par le service produit :
 | **Support**               | Gestion des litiges et problèmes utilisateurs             |
 
 
-### 2. **Carte de contexte (exemple)**
+### **Carte de contexte (exemple)**
 
 ```mermaid
 ---
@@ -86,7 +86,7 @@ flowchart TD
 * `Payment` est **Customer/Supplier** avec `CourseBooking` (paiement des réservations).
 * `Support` est **Separate Ways** avec `CourseBooking` et `Payment` : aucune connaissance du domaine, l'utilisateur doit entrer les informations dans le ticket.
 
-### 3. **Langage ubiquitaire (CourseBooking)**
+### **Langage ubiquitaire (CourseBooking)**
 
 | Terme                | Définition                                                  |
 | -------------------- | ----------------------------------------------------------- |

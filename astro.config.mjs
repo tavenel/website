@@ -119,8 +119,11 @@ export default defineConfig({
 			'synthwave-84',
 			'tokyo-night',
 		],
-	}), sitemap(), // must be last to search in fully bundled
-	pagefind(), icon()],
+	}),
+	icon(),
+	sitemap(),
+	// must be last to search in fully bundled
+	pagefind()],
 
 	vite: {
 		plugins: [visualizer({ // analyse bundle size
