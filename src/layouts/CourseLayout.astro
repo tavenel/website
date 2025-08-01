@@ -72,9 +72,12 @@ const { frontmatter, url } = Astro.props;
 		font-size: x-small;
 		background-color: var(--background2);
 		grid-area: toc;
+		position: sticky;
 		max-width: 17vw;
+		max-height: calc(100vh - 40px);
 		padding : min(1vw, 30px);
-		overflow-x: auto; /* scrollbar si le contenu déborde */
+		top: 10px;
+		overflow: auto; /* scrollbar si le contenu déborde */
 	}
 }
 
