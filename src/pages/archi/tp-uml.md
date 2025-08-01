@@ -17,20 +17,20 @@ Le projet a été spécifié grâce à un ensemble de diagrammes de classes et d
 
 ## Diagramme de cas d'utilisation
 
-``` plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de cas d'utilisation
+---
+flowchart LR
+    Patron["🧑 Patron"]
+    Librarian["🧑 Librarian"]
 
-caption
-= Diagramme de cas d'utilisation
-endcaption
+    Patron --> Login
+    Patron --> Search
+    Librarian --> Login
+    Librarian --> Search
+    Librarian --> Manage_subscriptions
 
-"Search in the application" as (Search)
-:Patron: --> (Login)
-:Patron: --> (Search)
-:Librarian: --> (Login)
-:Librarian: --> (Search)
-:Librarian: --> (Manage subscriptions)
-@enduml
 ```
 
 L'application décrit trois cas d'utilisation :
@@ -45,35 +45,35 @@ Les deux interfaces correspondent à deux vues différentes dans l'application W
 
 ## Diagrammes de composants
 
-``` plantuml
-@startuml
+```mermaid
+---
+title: Diagramme de composants
+---
 
-caption
-= Diagramme de composants
-endcaption
+graph TD
 
-database "Persistence"
+subgraph Persistence
+  PersistenceDB[Database: Persistence]
+end
 
-package "Backend" {
-  frame "Web API" {
-    [:Authentication]
-    [:Library]
-  }
-}
+subgraph Backend
+  subgraph Web_API
+    Authentication[Component: Authentication]
+    Library[Component: Library]
+  end
+end
 
-package "Frontend" {
-  [:Login]
-  [:Search]
-  [:Manage]
-}
+subgraph Frontend
+  Login[Component: Login]
+  Search[Component: Search]
+  Manage[Component: Manage]
+end
 
-[:Login] --> [:Authentication] : Web Login
-[:Search] --> [:Library] : Search inventory
-[:Manage] --> [:Library] : Add/Update/Delete inventory
-[:Library] --> [Persistence] : Load/Persist
-[:Authentication] --> [Persistence] : Load/Persist
-
-@enduml
+Login -->|Web Login| Authentication
+Search -->|Search inventory| Library
+Manage -->|Add/Update/Delete inventory| Library
+Library -->|Load/Persist| PersistenceDB
+Authentication -->|Load/Persist| PersistenceDB
 ```
 
 L'application est composée de trois composants principaux :
@@ -84,9 +84,135 @@ L'application est composée de trois composants principaux :
 
 ## Diagrammes de classes du Domain Model de la bibliothèque
 
-![Exemple de diagramme de classe pour le domaine d'une librairie](https://www.uml-diagrams.org/examples/class-example-library-domain.png)
+```mermaid
+---
+title: Diagramme de classe pour le domaine d'une librairie
+---
+classDiagram
+    class Library {
+      String name
+      Address address
+    }
 
-<div class="caption">Exemple de diagramme de classe pour le domaine d'une librairie. Source et crédit: https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html</div>
+    class Catalog {
+    }
+
+    class Search {
+      <<interface>>
+    }
+
+    class Manage {
+      <<interface>>
+    }
+
+    class Librarian {
+      FullName name
+      Address address
+      String position
+    }
+
+    class Patron {
+      FullName name
+      Address address
+    }
+
+    class Account {
+        <<entity>>
+        int number : id
+        List~History~ history
+        Date opened
+        AccountState state
+    }
+
+    class Book {
+        String ISBN : id 0..1
+        String name
+        String subject
+        String overview
+        String publisher
+        Date publicationDate
+        String lang
+    }
+
+    class BookItem {
+        <<entity>>
+        String barcode : id 0..1
+        RFID tag : id 0..1
+        String ISBN : 0..1
+        String subject
+        String title : redefines name
+        Boolean isReferenceOnly = false
+        Language lang : redefines lang
+        Integer numberOfPages
+        Format format
+        Date borrowed
+        Integer loanPeriod : readOnly
+        Date dueDate : readOnly
+        Boolean isOverdue = false        
+    }
+
+    class Author {
+      String name : id
+      String biography
+      Date birthDate
+    }
+
+    class Language {
+        <<enum>>
+        English
+        French
+        German
+        Spanish
+        Italian
+    }
+
+    class AccountState {
+        <<enum>>
+        Active
+        Frozen
+        Closed
+    }
+
+    class Format {
+        <<enum>>
+        Paperback
+        Hardcover
+        Audiobook
+        Audio_CD
+        MP3_CD
+        PDF
+    }
+
+    class Address {
+      <<dataType>>
+    }
+
+    class FullName {
+      <<dataType>>
+    }   
+
+    %% Associations
+    Search <|.. Catalog
+    Manage <|.. Catalog
+    
+    Catalog "1" -- "*" BookItem : records
+    Book <|-- BookItem
+    Book "1..*" -- "1..*" Author : wrote
+
+    Librarian ..> Manage : uses
+    Librarian ..> Search : uses
+    Patron ..> Search : uses
+
+    Patron o-- "account" Account
+    Library o-- "*" BookItem
+    Library "1" o-- "* accounts" Account
+    Library *-- Catalog
+
+    BookItem "0..3" -- Account : reserved
+    BookItem "0..12" -- Account : borrowed
+```
+
+<div class="caption">Exemple de diagramme de classe pour le domaine d'une librairie. <a href="https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html">Source et crédit</a></div>
 
 Ce diagramme représente le domain model de la bibliothèque, c'est-à-dire les classes comportant et interagissant avec la donnée de l'application dans le composant `Backend`.
 
@@ -123,3 +249,4 @@ Les liens suivants peuvent servir de rappels de cours concernant la modélisatio
 
 - UML is either a registered trademark or a trademark of Object Management Group, Inc. in the United States and/or other countries.
 - [Source et crédit](https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html) du diagramme de classe UML pour le modèle.
+

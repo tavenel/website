@@ -51,7 +51,6 @@ It is a static website with very little JavaScript intended to be extremely fast
 - Markdown to HTML : [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
 - HTML tranforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
 - Lazy-load `Mermaid` (diagrams) JS librairies if needed.
-- Transform `PlantUML` diagrams into images at build-time using [remark-simple-plantuml](https://github.com/akebifiky/remark-simple-plantuml)
 - Search using `PageFind` integrated by [astro-pagefind](https://github.com/shishkin/astro-pagefind/)
 - Callouts : `:::tip`, `:::link`, `:::warn`, `:::strong`, `:::exo`, `:::correction` using [remark-callout-directives](https://github.com/Microflash/remark-callout-directives)
 
