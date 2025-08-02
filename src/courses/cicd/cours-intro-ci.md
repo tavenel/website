@@ -4,6 +4,49 @@ title: Introduction à l'intégration continue
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
+```mermaid
+mindmap
+  root((Intégration Continue))
+
+    Principes
+      Développement itératif
+      Intégration fréquente du code
+      Tests automatisés à chaque changement
+
+    Objectifs
+      Détection rapide des erreurs
+      Qualité du code
+      Réduction du coût de correction
+      Déploiement plus rapide
+
+    Étapes Clés
+      Commit du code
+      Déclenchement du pipeline
+      Compilation
+      Exécution des tests
+      Analyse statique
+      Packaging
+      Notification des résultats
+
+    Outils Populaires
+      Jenkins
+      GitLab CI
+      GitHub Actions
+
+    Tests
+      Unitaires
+      Intégration
+      Fonctionnels
+      End-to-end
+
+    Qualité du Code
+      Analyse statique - SonarQube
+      Linting
+      Couverture de code
+```
+
+---
+
 ## ⚠️ Problèmes courants
 
 - Lenteur des déploiements manuels ⏳

@@ -4,6 +4,56 @@ title: Modèles de déploiements continus
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
+```mermaid
+mindmap
+  root((Déploiement Continu))
+
+    Objectifs
+      Livraison rapide de valeur
+      Réduction du time-to-market
+      Minimisation des erreurs humaines
+      Feedback utilisateur plus rapide
+
+    Prérequis
+      Intégration Continue stable
+      Tests automatisés fiables
+      Monitoring en production
+      Rollback possible
+
+    Étapes Clés
+      Livraison automatique
+      Validation post-déploiement
+      Déploiement progressif
+      Monitoring et alerting
+
+    Bonnes Pratiques
+      Feature toggles
+      Déploiement sans interruption
+      Observabilité
+        logs
+        métriques
+        traces
+      Documentation automatisée
+
+    Outils Populaires
+      GitLab CD
+      Spinnaker
+      Argo CD
+      FluxCD
+      Jenkins
+
+    Techniques de Déploiement
+      Rolling update
+      Blue-Green
+      Canary release
+      A/B testing
+
+    Sécurité
+      Analyse des vulnérabilités
+      Validation des artefacts
+      Signatures et provenance
+```
+
 ## 🎯 Objectifs
 
 - Apprendre les principes fondamentaux des déploiements continus et leur importance dans le cycle de vie du développement logiciel. |
