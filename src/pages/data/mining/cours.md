@@ -5,6 +5,63 @@ date: 2023 / 2024
 
 # Introduction
 
+```mermaid
+mindmap
+root((Data Mining))
+
+  **Statistiques**
+    Moyenne
+    Médiane
+      Quartiles
+    Écart-type
+    Variance
+    Centre de gravité
+    Covariance
+  
+    Tests
+      Hypothèse nulle
+      p-valeur
+      Test de normalité
+      Test du Khi-2
+  
+  **Probabilités**
+    Espérance
+    Théorème de Bayes
+    Loi binomiale
+    Loi normale
+  
+  **Apprentissage automatique**
+  
+    Régression
+      Linéaire
+        simple
+        multiple
+        généralisée
+        khi-deux & moindres carrés
+      de Poisson
+      Logistique
+      Pénalisée - lasso
+      Typologique ou clusterwise
+  
+    Classification
+      k-NN proches voisins
+      Arbres de décision - CART
+  
+    Clustering
+      Inertie inter-/intra-classe
+  
+    Classification hiérarchique ascendante
+      multidimensionnel MDS
+  
+    Centres mobiles
+    Méthodes à densité - DBSCAN
+    Méthodes mixtes
+      Réduction de dimensions
+    Analyse factorielle discriminante
+    Analyse en Composantes Principales - PCA
+
+```
+
 ## Qu'est-ce que le data mining ?
 
 Une science à la frontière des mathématiques et de l'informatique (et intelligence artificielle).
@@ -1818,7 +1875,7 @@ On peut vérifier que l'écart de Ward entre deux classes est en fait égal à l
 
 Si on souhaite deux classes, on choisira $(p_0,p_1,p_2)$ et $(p_3,p_4,p_5,p_6)$. Si on souhaite des classes éloignées de plus d'une unité de mesure, on choisira $(p_0,p_1,p_2)$, $(p_3)$ et $(p_4,p_5,p_6)$.
 
-### Cas non euclidien : positionnement multidimentionnel (_MDS_)
+### Cas non euclidien : positionnement multidimensionnel (_MDS_)
 
 Il arrive souvent dans les situations concrètes que l'on dispose d'une matrice de distances entre les individus à classifier mais que cette distance ne corresponde pas à la distance euclidienne entre des points repérés par leurs coordonnées.
 
