@@ -305,6 +305,54 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 ---
 
+```mermaid
+mindmap
+root((DevOps))
+
+  **Culture**
+    Équipes produit
+    Gestion du risque
+    Agilité
+  **Automatisation**
+    IaC
+      Historique des changements
+        Git
+      Scripts/configs
+        Code & infrastructure
+      Conteneurisation
+    CI/CD
+      Build, test, déploiement images
+      Jenkins
+      GitLab
+      Github
+    Déploiements tests/prod automatisés
+      Ansible
+      Terraform
+    Orchestration
+      Pet vs Cattle
+  **Lean**
+    Amélioration continue
+    Itérations fréquentes
+    Agilité
+  **Mesure**
+    Plateforme + applicatif
+    Logs
+      Loki
+      ELK
+    Métriques
+      Prometheus
+    Traces
+      OpenTelemetry
+    Alertes
+  **Share**
+    Feedback loop
+    Collaboration
+    Agilité
+
+```
+
+---
+
 ## 📚 Glossaire
 
 - **DevOps** : ensemble de pratiques, de philosophies et d'outils visant à combiner les pratiques de développement (Dev) et les pratiques opérationnelles (Ops).
