@@ -4,6 +4,55 @@ title: Git
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
+```mermaid
+mindmap
+root((Git))
+
+  **Création du dépôt**
+    git config user.name & user.email
+    git init / clone
+    Intégration IDE
+
+  **Structure de Git**
+    Working Directory
+    Staging Area : index
+    Dépôt local .git
+    Dépôt distant GitHub, GitLab
+    La HEAD
+
+  **Commandes clés**
+    git add
+    git commit
+    git push
+    git pull / fetch
+
+  **Branches & Tags**
+    git branch / git checkout
+    git merge
+    Rebase, fast-forward
+    git tag : versionner
+ 
+  **Collaboration**
+    GitHub, GitLab, forge logicielle
+    Dépôts distants : origin, upstream
+    git remote add / git fetch / git pull / git push
+    git fork : contribution externe
+    Pull Request 
+
+  **Recherche & Débogage**
+    git log, git show
+    git diff, git grep
+    git bisect : recherche dichotomique
+
+  **DevOps**
+    CI/CD : GitHub Actions
+    Infrastructure as Code
+      Ansible
+
+```
+
+---
+
 ## 📜 Introduction
 
 - `git` : gestionnaire de versions (_Linus Torvalds, 2005_) 📜
