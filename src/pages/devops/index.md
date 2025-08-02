@@ -23,3 +23,13 @@ layout: '@layouts/BaseLayout.astro'
 
 - <https://supports.uptime-formation.fr> : cours python, docker, k8s, ansible, elastic search, linux, git
 - <https://developer.hashicorp.com/tutorials> : Tutoriels HashiCorp : terraform, vault, consul, nomad, packer, vagrant
+
+## 🚀 Autres ressources
+
+- Voir la page sur [⚒️ les outils](/tools)
+- Voir la page sur [  Git](/git)
+- Voir la page sur [  Docker](/docker)
+- Voir la page sur [󱃾  Kubernetes](/k8s)
+- Voir la page sur [🔄 l'Intégration Continue](/ci)
+- Voir la page sur [🧪 les tests](/tests)
+
