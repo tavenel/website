@@ -4,6 +4,51 @@ title: Ansible
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
+```mermaid
+mindmap
+  root((Ansible))
+
+    Principes
+      Gestion de configuration
+      Déploiement automatisé
+      Idempotence
+      Agentless
+      SSH
+
+    Concepts Clés
+      Inventaire
+        Liste & Groupes de machines
+      Module
+        Unité d'action : yum, copy, template, …
+      Playbook
+        Liste de tâches déclaratives
+        Ordre déterministe
+        Commande ansible-playbook
+      Rôle
+        Séparation modulaire & réutilisable
+      Variable
+        Surcharge par priorité
+        Types : facts, extra-vars, group_vars, host_vars
+      Handler
+        Exécuté sur "notify"
+        Pour redémarrages
+
+    Fichiers
+      hosts
+      ansible.cfg
+      playbook.yml
+      group_vars/
+      host_vars/
+      roles/
+
+    Bonnes Pratiques
+      Vault : chiffrer les secrets
+      Cloud : inventaire dynamique
+      Linter ansible-lint
+      become : droits limités
+
+```
+
 ## 🎯 Objectifs
 
 - Gérer un parc de machines simplement par Infrastructure-as-Code grâce à Ansible. 🛠️

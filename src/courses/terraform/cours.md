@@ -4,6 +4,67 @@ title: Terraform
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
+```mermaid
+mindmap
+  root((Terraform))
+
+    Principes
+      IaC
+      Provisionnement automatique
+      Multi-cloud
+
+    Concepts
+      State
+      Variable
+      Ressource : VM, DB, …
+      Module
+        Groupe de ressources réutilisable
+        Local ou distant
+      Output : IP, URL, …
+
+    Fichiers Principaux
+      main.tf
+      variables.tf
+      outputs.tf
+      terraform.tfvars
+      providers.tf
+
+    Provider
+      AWS
+      Azure
+      Google Cloud
+      Kubernetes
+
+    State
+      Fichier de suivi de l'infrastructure
+      terraform.tfstate
+      Backend : local, S3, …
+
+    Étapes Clés
+      Initialisation
+      Aperçu des modifications
+      Application du plan
+
+    Environnements
+      Workspaces
+      Variables selon l'environnement
+      terraform.tfvars
+
+    Bonnes Pratiques
+      Modules & Workspaces
+      RBAC & IAM
+      State
+        Jamais dans Git
+        Backend distant sécurisé
+        Vérouillé - DynamoDB
+      Secrets
+        Variables d'environnement
+        Vault, …
+
+```
+
+---
+
 ## 🎯 Objectifs
 
 - Gérer des ressources dans un cluster Cloud avec une notion d'état grâce à Terraform. ☁️
