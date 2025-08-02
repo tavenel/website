@@ -7,6 +7,55 @@ tags:
   - devops
 ---
 
+```mermaid
+mindmap
+  root((Découverte de Linux))
+
+    Système d'exploitation
+      Interface entre matériel et logiciels
+      Gestion des ressources : CPU, RAM, disque
+      Exécution des programmes
+      Noyau = cœur du système
+
+    Ligne de commandes
+      Terminal, shell bash
+      Commandes de base : ls, cd, mkdir
+      Aide : man, --help, tabulation
+      Redirections et pipe
+
+    Processus
+      ps, top, htop : visualiser
+      kill, nice, renice : gérer
+      PID, PPID
+      Background : & et jobs
+
+    Utilisateurs
+      root vs utilisateurs standards
+      Groupes
+      Commandes : whoami, id, su, sudo
+      Création : useradd, passwd
+
+    Le système de fichiers
+      Hiérarchie FHS : /bin, /etc, /home
+      Montage de partitions : mount
+      Types de systèmes : ext4, btrfs, vfat
+      Commandes : df, du
+
+    Les chemins de fichiers
+      Absolus : /home/user/fichier.txt
+      Relatifs : ./fichier.txt
+      Navigation : cd, pwd
+      Liens symboliques : ln -s
+
+    Les permissions sur les fichiers
+      r,w,x
+      octal 755
+      symbolique u+x
+      chown, chgrp, chmod
+```
+
+---
+
 ## 📌 Aperçu d'un système Linux
 
 - 🤔 _Qu'est-ce qu'un système d'exploitation ?_
