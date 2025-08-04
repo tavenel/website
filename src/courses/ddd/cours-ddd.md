@@ -1359,9 +1359,54 @@ Voici des **patterns** qui favorisent un design souple :
 
 ## Résumé
 
-![Résumé du Domain Driven Design](@assets/ddd/DomainDrivenDesignReference.png)
+```mermaid
+mindmap
+((Domain-Driven Design))
+  isolate domain with
+    )Layered Architecture(
+  express model with
+    {{Services}}
+    {{Domain Events}}
+    {{Entities}}
+    {{Value Objects}}
+    encapsulate with
+      {{Aggregates}}
+      {{Factories}}
+    access with
+      {{Repositories}}
+  model gives structure to
+    )Ubiquitous Language(
+      cultivate rich model with
+        Core Domain
+          avoid overinvesting in
+            Generic Subdomains
+      names enter
+        )Bounded Context(
+  define model within
+     )Bounded Context(
+       keep model unified by
+         Continuous Integration
+       assess/overview relationships with
+         )Context Map(
+           overlap allied contexts through
+             {{Shared Kernel}}
+           relate allied contexts as
+             {{Customer / Supplier}}
+           minimize translation
+             {{Conformist}}
+           support multiple clients through
+             {{Open Host Service}}
+               formalize as
+                 {{Published Language}}
+           free teams to go
+             {{Separate Ways}}
+           translate and insulate unilaterally with
+             {{Anti-Corruption Layer}}
+           segregate the conceptual messes
+             )Big Ball of Mud(
+```
 
-<div class="caption">Résumé du Domain Driven Design. CC By: Eric Evans. https://www.domainlanguage.com/ddd/reference/</div>
+<div class="caption">Résumé du Domain Driven Design. Inspiré de : <a href="https://www.domainlanguage.com/ddd/reference/">Eric Evans (CC By).</a></div>
 
 ---
 
