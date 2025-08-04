@@ -28,6 +28,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
+- [🔀 Module en classe renversée](/cesi/m2/k8s/classe-renversee)
 - [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
