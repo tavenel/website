@@ -23,6 +23,10 @@ Module de 10H
 
 ## 📑 Documents
 
+- [🔀 Module en classe renversée](/epsi/b3/methodo-tests/classe-renversee)
+
+<!--
+
 ### Méthodologie des tests
 
 - [🤓 Cours de méthodologie des tests](/tests/cours-methodo)
@@ -41,3 +45,6 @@ Module de 10H
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/tests).
+
+-->
+
