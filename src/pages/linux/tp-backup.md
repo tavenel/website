@@ -25,7 +25,7 @@ correction: false
 2. Archiver le dossier dans `/mnt/backup/testuser.tar.gz`
 
 :::correction
-```bash
+```sh
 sudo tar -czvf /mnt/backup/testuser.tar.gz /home/testuser
 ````
 :::
@@ -33,7 +33,7 @@ sudo tar -czvf /mnt/backup/testuser.tar.gz /home/testuser
 3. Supprimer le dossier, puis le restaurer depuis l'archive.
 
 :::correction
-```bash
+```sh
 sudo rm -rf /home/testuser
 sudo tar -xzvf /mnt/backup/testuser.tar.gz -C /
 ```
@@ -44,7 +44,7 @@ sudo tar -xzvf /mnt/backup/testuser.tar.gz -C /
 1. Lancer une sauvegarde incrémentale du dossier `/etc` vers `/mnt/backup/etc_bak`
 
 :::correction
-```bash
+```sh
 sudo rsync -av --delete /etc/ /mnt/backup/etc_bak/
 ```
 :::
@@ -59,14 +59,14 @@ Utilisable uniquement sur des partitions ext3/ext4
 
 1. Identifier la partition racine (ex: `/dev/sda1`) :
 
-```bash
+```sh
 df -h /
 ```
 
 2. Lancer une sauvegarde avec la commande `dump`.
 
 :::correction
-```bash
+```sh
 sudo dump -0u -f /mnt/backup/root.dump /
 ```
 :::
@@ -74,7 +74,7 @@ sudo dump -0u -f /mnt/backup/root.dump /
 3. Restaurer avec `restore` (⚠️ à faire sur un système de test ou partition montée)
 
 :::correction
-```bash
+```sh
 sudo restore -rf /mnt/backup/root.dump
 ```
 :::
@@ -85,13 +85,13 @@ sudo restore -rf /mnt/backup/root.dump
 
 1. Lister les partitions :
 
-```bash
+```sh
 sudo fdisk -l
 ```
 
 2. Lancer `partimage` en mode TUI :
 
-```bash
+```sh
 sudo partimage
 ```
 
@@ -102,13 +102,13 @@ sudo partimage
 
 1. Installer `mondo` :
 
-```bash
+```sh
 sudo apt install mondo
 ```
 
 2. Lancer l'outil graphique ou la commande :
 
-```bash
+```sh
 sudo mondoarchive
 ```
 
@@ -121,7 +121,7 @@ sudo mondoarchive
 
 1. Installation du paquet :
 
-```bash
+```sh
 sudo apt install backuppc
 ```
 

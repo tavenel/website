@@ -228,7 +228,7 @@ $ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0Ro
 
 Ex: vérifier si `jean.doe` peut `get pods -n kube-system`:
 
-```bash
+```sh
 kubectl -v9 create -f- <<EOF
 apiVersion: authorization.k8s.io/v1
 kind: SubjectAccessReview

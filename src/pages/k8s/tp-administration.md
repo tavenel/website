@@ -99,7 +99,7 @@ Il est également recommandé de redémarrer les composants Kubernetes (`kube-sc
 
 #### Procédure kubeadm
 
-```bash
+```sh
 # 1. Créer un nouveau répertoire de données à partir du snapshot :
 sudo rm -rf /var/lib/etcd
 docker run --rm -v /var/lib:/var/lib -v $PWD:/vol $IMAGE \
@@ -158,7 +158,7 @@ L'upgrade d'un cluster suit [la procédure officielle de la documentation](https
 
 Exemple simplifié de procédure d'upgrade avec `kubeadm` (pour plus d'information, suivre [la documentation officielle](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)). Voir aussi [la formation de Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-upgrade.md)
 
-```bash
+```sh
 # Upgrade kubeadm
 apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.31.x-y.y' && apt-mark hold kubeadm
 # Upgrade 1e control plane
@@ -258,7 +258,7 @@ Sécuriser les control-plane en mettant en place une communication sécurisée e
 
 Exemple de procédure pour renouveller les certificats du cluster en utilisant `kubeadm` :
 
-```bash
+```sh
 kubeadm certs check-expiration
 kubectl get csr
 # If you are running cluster with a replicated control plane, this command
