@@ -59,7 +59,7 @@ mindmap
         Vérouillé - DynamoDB
       Secrets
         Variables d'environnement
-        Vault, …
+        Vault, Sentinel, …
 
 ```
 
@@ -73,10 +73,10 @@ mindmap
 
 ## 🛠️ Présentation de Terraform
 
-- Outil IaC de déploiement et mise à jour d'infrastructures hétérogènes 🏗️
+- Outil IaC de déploiement et mise à jour d'infrastructures hétérogènes (via fichiers `.tf`) 🏗️
 - Déclaratif 📜
 - Statefull (vs Ansible : stateless) 🔄
-- Majoritairement pour le Cloud (multi-provider) ☁️
+- Majoritairement pour le Cloud (multi-provider: _Azure_, _AWS_, _GCP_, …) ☁️
   - Fournisseur CRUD de _ressources_ (modifiables) et _data source_ (immuable) par API [Terraform Registry](https://registry.terraform.io) 🔗
 - Séparation plan vs application : `refresh`, `plan`, `apply`, `destroy`, … 🔄
 - Modules partagés pour les infrastructures courantes 🧩
@@ -87,12 +87,35 @@ mindmap
 
 ---
 
+## ❓ Pourquoi Terraform ? (Problématique)
+
+### Enjeux
+
+- Reproductibilité de l’infrastructure
+- Gestion des dépendances
+- Versionnage et collaboration (avec Git)
+
+### Cas d’usage
+
+- Déploiements multi-environnement
+- Projets DevOps
+- Déploiement d'applications multi-composants
+
+### Complémentarité
+
+- Jenkins / GitLab CI (déploiements automatiques)
+- Ansible (provisioning)
+- Vault (gestion des secrets)
+- Sentinel (politiques de gouvernance)
+
+---
+
 ## 🔄 Fonctionnement
 
-1. Fichiers IaC pour lancer Terraform : `*.tf` 📄
-2. Compare l'état actuel (`terraform.tfstate` ou remote state) au plan => changements / créations 🔄
-3. Utilise les API des providers pour effectuer les changements 🌐
-4. Stocke l'état des changements 💾
+1. **Fichiers** IaC pour lancer Terraform : `*.tf` 📄
+2. Compare l'**état actuel** (`terraform.tfstate` ou remote state) au plan => changements / créations 🔄
+3. Utilise les API des **providers** pour effectuer les changements 🌐
+4. Stocke l'**état des changements** (`terraform.tfstate.backup` et nouveau `terraform.tfstate`) 💾
 
 ---
 
@@ -196,11 +219,35 @@ resource "aws_instance" "mes_serveurs" {
 
 ---
 
-## 🔒 Secrets
+### Dynamic Blocks
 
-1. Marquer la variable "sensible" (pas d'historique) 🔒
-2. Utiliser `Vault` pour sécuriser le fichier de variables 🗄️
-3. Déplacer l'état `terraform.tfstate` vers un état sécurisé par un Cloud provider ☁️
+```hcl
+dynamic "rule" {
+  for_each = var.rules
+  content {
+    name     = rule.value.name
+    priority = rule.value.priority
+    ...
+  }
+}
+```
+
+- Génération dynamique des blocs de configuration : règles NSG, disques attachés, …
+- Fonctions utiles :
+  - `count` et `for_each`
+  - _tertiaire conditionnel_ : `condition ? "valeur1" : "valeur2"`
+
+---
+
+## 🔐 Secrets
+
+1. Marquer la variable `sensitive` (pas d'historique) 🔒
+2. Utiliser _Vault_ (via provider `vault`) pour sécuriser le fichier de variables 🗄️
+  - Gestion **centralisée** des **secrets**
+  - ex : récupérer dynamiquement des identifiants pour un compte AWS
+3. Déplacer l'état `terraform.tfstate` vers un **état sécurisé** par un Cloud provider ☁️
+4. Utiliser _Sentinel_ : moteur de **politique as code** pour bloquer des opérations Terraform
+  - ex : empêcher la création de ressources dans des régions non autorisées
 
 ---
 
@@ -220,13 +267,110 @@ mon_password = "P@ssw0rd"
 
 ---
 
+### Exemple
+
+- `terraform plan` demande des credentials dynamiques à _Vault_ et propose un `t2.micro` ;
+- La policy _Sentinel_ est automatiquement évaluée avant l'`apply` et refuse le `t2.micro`.
+
+---
+
+#### 🔐 Vault : Fourniture dynamique des identifiants AWS
+
+- Pré-requis : Vault est configuré pour gérer des identifiants AWS dynamiques via le _secrets engine_ `aws`.
+
+```sh {3,4}
+vault secrets enable -path=aws aws
+vault write aws/config/root \
+    access_key=... \
+    secret_key=... \
+    region=us-east-1
+
+vault write aws/roles/my-role \
+    credential_type=iam_user \
+    policy_document=-<<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:*",
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+```
+
+---
+
+#### ☁️ Terraform : Vault provider et Déploiement d'une instance EC2
+
+```hcl {10,11}
+provider "vault" {}
+
+data "vault_aws_access_credentials" "creds" {
+  backend = "aws"
+  role    = "my-role"
+}
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = data.vault_aws_access_credentials.creds.access_key
+  secret_key = data.vault_aws_access_credentials.creds.secret_key
+}
+```
+
+```hcl {3}
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro" # À bloquer par Sentinel
+  tags = {
+    Name = "Vault-Sentinel-Test"
+  }
+}
+```
+
+---
+
+#### 🛡️ Sentinel : Interdire les instances `t2.micro`
+
+```hcl
+import "tfplan/v2" as tfplan
+
+deny["t2.micro instance type is not allowed"] {
+  some r
+  r in tfplan.resources.aws_instance
+  r.applied.instance_type is "t2.micro"
+}
+```
+
+---
+
+## 🚀 Intégration CI/CD
+
+Exemples d'utilisations :
+
+- Linter `tflint`
+- Provisioning automatique d'infrastructure de test
+- Provisioning automatique de production Cloud (blue/green)
+
+:::link
+Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cours#workflows-git-travailler-en-quipe)
+:::
+
+---
+
 ## Ressources
 
-- [Documentation Terraform](https://developer.hashicorp.com/terraform?product_intent=terraform)
+- [Documentation Terraform officielle](https://developer.hashicorp.com/terraform)
+- [Terraform Best Practices](https://www.terraform-best-practices.com/)
 - <https://lafor.ge/blue-green/>
 - <https://blog.stephane-robert.info/post/ansible-vs-terraform/>
 - <https://blog.stephane-robert.info/docs/infra-as-code/provisionnement/terraform/introduction/>
 - Livre : "_L'infrastructure as code avec Terraform_ (Julien Wittouck, éditions eni)"
+- [Vault](https://www.vaultproject.io/) & [Sentinel](https://docs.hashicorp.com/sentinel/)
+- [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [Terraform linter (tflint)](https://github.com/terraform-linters/tflint)
 
 ---
 
