@@ -6,6 +6,54 @@ tags:
 - docker
 ---
 
+```mermaid
+mindmap
+root((Docker 🐳))
+  
+  Concepts
+    Images
+      Système de fichiers figé
+      Dockerfile : build
+    Conteneurs
+      Instances d'une image
+      Éphémères, isolés, portables
+    Docker Engine : CLI + Serveur
+    Registries
+      Stockent les images
+      Docker Hub public
+      Registries privés : Harbor, GitLab
+
+  Réseaux
+    Bridge : défaut
+    Host
+    Overlay : Swarm
+    Macvlan
+
+  Volumes
+    Volumes nommés
+    Bind mounts
+
+  Orchestrateurs
+    Multi-conteneurs
+    Gère réseaux et volumes
+    Compose
+      Serveur unique : machine personnelle, CI, …
+    Swarm
+      Clustering
+      Services & stacks
+      Load balancing intégré
+    Kubernetes
+      Grands environnements
+
+  Outils
+    Portainer : UI
+    Dive : exploration d'images
+    BuildKit : builds avancés
+    Docker Slim : minification d'images
+```
+
+---
+
 ## 🚀 Introduction: Problèmes courants
 
 ---
@@ -473,7 +521,8 @@ En pratique, on utilise Docker pour séparer à la fois :
 
 ---
 
-Google, 2014 : 2 milliards de conteneurs lancés par semaine 📊
+> Google, 2014 : 2 milliards de conteneurs lancés par semaine 📊
+> En 2025, 92% des entreprises de l'IT utilisent _Docker_ (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/> ).
 
 ---
 
