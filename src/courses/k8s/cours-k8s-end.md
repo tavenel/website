@@ -245,6 +245,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.📝
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
 - [Balancing Capacity and Cost for Kubernetes Clusters](https://dnastacio.medium.com/kubernetes-cluster-capacity-d96d0d82b380) ⚖️
+- [Kubernetes the Hard Way (Kelsey Hightower) : Bootstrap Kubernetes the hard way. No scripts.](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
 ---
 
