@@ -692,6 +692,13 @@ created: 2024-10-17
 - <<https://www.trackawesomelist.com/aviaryan/awesome-no-login-web-apps/rss.xml> : awesome No-login Web apps
 - <<https://www.trackawesomelist.com/unixorn/awesome-zsh-plugins/rss.xml> : awesome ZSH Plugins
 
+## Adoption
+
+- En 2025 (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/>) :
+- CI/CD: GitHub Actions (40%), GitLab (39%), Jenkins (36%)
+- Provisioning: Terraform (39%), Ansible (35%), GCP (32%)
+- Monitoring: Grafana (40%), Prometheus (38%), Elastic (34%)
+- Containers in IT : 92%
 
 
 [ack]: https://github.com/beyondgrep/ack3

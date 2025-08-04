@@ -11,6 +11,10 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+> Serveurs CI/CD les plus utilisés (2025) : GitHub Actions (40%), GitLab (39%), Jenkins (36%) (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/> ).
+
+---
+
 ```mermaid
 ---
 title: Exemple d'utilisation d'un serveur d'intégration continue.
