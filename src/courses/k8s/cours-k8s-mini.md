@@ -8,6 +8,125 @@ tags:
 - devops
 ---
 
+## Concepts de base
+
+```mermaid
+mindmap
+root((Kubernetes))
+
+  **Concepts de base**
+    Cluster
+    Node
+    Pod
+    Container
+    Namespace
+    kubectl
+
+  **Objets principaux**
+    Pod
+    ReplicaSet
+    Deployment
+    StatefulSet
+    DaemonSet
+    Job & CronJob
+
+  **Exposition des services**
+    Service
+      ClusterIP
+      NodePort
+      LoadBalancer
+    Ingress
+      IngressController
+      Routage HTTP/HTTPS
+
+  **Configuration**
+    ConfigMap
+    Secret
+    Environment variables
+    Volumes
+      emptyDir
+      hostPath
+      PVC : PersistentVolumeClaim
+
+  **Orchestration**
+    Scheduler
+    Auto-scaling : HPA, VPA
+    Affinité/Anti-affinité
+    Taints & Tolerations
+
+  **Sécurité**
+    RBAC
+    ServiceAccount
+    PodSecurityContext
+    NetworkPolicies
+```
+
+---
+
+## Architecture
+
+```mermaid
+mindmap
+root((Architecture))
+
+  **Architecture**
+
+    _Control Plane_
+      kube-apiserver
+      etcd
+      kube-scheduler
+      kube-controller-manager
+
+    _Node Components_
+      kubelet
+      kube-proxy
+      Container runtime
+        Docker
+        containerd
+
+  **Mise en réseau**
+    CNI Plugins : Calico, Flannel…
+    DNS interne
+    Policies réseau
+
+  **Observabilité**
+    Logs : kubectl logs
+    Metrics : Prometheus
+    Dashboards : Grafana, Lens
+    Probes : readiness, liveness
+
+  **Déploiements**
+    YAML files
+    Helm charts
+    Kustomize
+    GitOps : ArgoCD, Flux
+
+```
+
+---
+
+## Utilisation
+
+```mermaid
+mindmap
+root((Utilisation))
+
+  **Cas d'usage**
+    Microservices
+    CI/CD
+    Environnements dev/staging/prod
+    Multi-tenant / multi-cloud
+
+  **Bonnes pratiques**
+    Ressources : requests/limits
+    Déploiement progressif
+    Dépendance à l'infrastructure
+    Séparation config/code
+
+```
+
+---
+
 ## Kubernetes
 
 - Cluster de `Nodes` (serveurs physiques ou VMs) :
