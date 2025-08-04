@@ -9,8 +9,11 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectifs du cours
 
-- Automatiser la création, la mise à jour et la destruction de ressources Cloud depuis Terraform
-- Mettre en place un workflow pour votre équipe en utilisant Git
+- Décrire le rôle et les bénéfices de Terraform dans une architecture cloud.
+- Utiliser Terraform pour créer, modifier et détruire des ressources cloud de manière automatisée.
+- Intégrer Terraform dans un workflow d'équipe basé sur Git.
+- Optimiser et sécuriser les configurations Terraform.
+- S'interfacer avec des outils d'orchestration ou CI/CD.
 
 ### 📅 Déroulé des séances
 
