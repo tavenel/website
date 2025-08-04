@@ -628,7 +628,7 @@ Le **Cron-Connector** est un petit service qui utilise des expressions **cron** 
 
 Déployer le cron-connector qui crée un Pod `cron-connector` dans le cluster qui écoute les planifications.
 
-```bash
+```sh
 arkade install cron-connector
 ```
 
@@ -660,7 +660,7 @@ Ici, `*/2 * * * *` signifie **toutes les 2 minutes**.
 
 Puis on redéploie la fonction :
 
-```bash
+```sh
 faas-cli up
 ```
 
@@ -702,7 +702,7 @@ Attention, certains triggers sont réservés à la licence professionnelle !
 
 **Déployer un secret :**
 
-```bash
+```sh
 echo -n "superpassword" | faas-cli secret create mysql-password
 ```
 
@@ -745,7 +745,7 @@ def handle(event, context):
 - Utiliser un client de messagerie dans la fonction.
 
 **Secrets** :
-```bash
+```sh
 echo -n "amqp://user:password@rabbitmq.svc.cluster.local" | faas-cli secret create rabbitmq-url
 ```
 
@@ -780,7 +780,7 @@ module.exports = async (event, context) => {
 
 **Secret** :
 
-```bash
+```sh
 echo -n "my_openweather_token" | faas-cli secret create openweather-token
 ```
 
@@ -924,7 +924,7 @@ Chaque étape est totalement découplée et utilise un **appel HTTP** ou un **pu
 
 Par exemple pour `resize-function` :
 
-```bash
+```sh
 faas-cli new resize-function --lang python3-http
 ```
 
@@ -1026,7 +1026,7 @@ Pour enregistrer les images transformées, nous allons déployer **MinIO** dans 
 
 #### Installation de MinIO
 
-```bash
+```sh
 # Installation du serveur
 arkade install minio
 

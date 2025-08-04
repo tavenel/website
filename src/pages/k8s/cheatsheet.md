@@ -150,19 +150,19 @@ kubectl explain [--recursive] RESOURCE_NAME # documentation
 
 - Lister tous les verbes de toutes les ressources `v1`
 
-```bash
+```sh
 kubectl get --raw /api/v1 | jq -r '.resources[].verbs[]' | sort -u
 ```
 
 - Lister toutes les ressources et sous-ressources dans `apps/v1`
 
-```bash
+```sh
 kubectl get --raw /apis/apps/v1 | jq -r '.resources[].name'
 ```
 
 - Lister les verbes disponibles sur les ressources dans `networking.k8s.io`
 
-```bash
+```sh
 kubectl get --raw /apis/networking.k8s.io/v1 | \
 jq -r '.resources[] | .name + ": " + (.verbs | join(", "))'
 ```
@@ -171,7 +171,7 @@ jq -r '.resources[] | .name + ": " + (.verbs | join(", "))'
 
 - Lister les actions kubectl disponibles :
 
-```bash
+```sh
 kubectl auth can-i --list
 ```
 

@@ -159,13 +159,13 @@ kubectl run -it --rm debug --image=busybox -- sh
 
 #### 🛑 Diagnostic :
 
-```bash
+```sh
 kubectl get pods
 # STATUS: ImagePullBackOff
 ```
 
 
-```bash
+```sh
 kubectl describe pod my-pod
 # Vérifier l’erreur exacte dans les events
 ```
@@ -180,7 +180,7 @@ kubectl describe pod my-pod
   - Le pod n'a pas accès à la registry (DockerHub, GitHub Container Registry, etc.)
   - Solution : Créer un `Secret` de type `docker-registry` :
 
-    ```bash
+    ```sh
     kubectl create secret docker-registry regcred \
       --docker-server=DOCKER_SERVER \
       --docker-username=DOCKER_USER \
@@ -196,7 +196,7 @@ kubectl describe pod my-pod
 
   - Tester le **pull manuel** :
 
-    ```bash
+    ```sh
     docker pull myregistry.com/myimage:tag
     ```
 
@@ -206,12 +206,12 @@ kubectl describe pod my-pod
 
 #### 🛑 Diagnostic :
 
-```bash
+```sh
 kubectl get pods
 # STATUS: CrashLoopBackOff
 ```
 
-```bash
+```sh
 kubectl describe pod my-pod
 kubectl logs my-pod --previous
 ```
@@ -234,7 +234,7 @@ kubectl logs my-pod --previous
 - Vérifier les variables d'environnement attendues
 - Tester l'image manuellement en local :
 
-  ```bash
+  ```sh
   docker run -it myimage:tag /bin/sh
   ```
 
@@ -244,7 +244,7 @@ kubectl logs my-pod --previous
 
 #### 🛑 Symptôme :
 
-```bash
+```sh
 kubectl get pod my-pod
 kubectl describe pod my-pod
 # State: Terminated, Reason: OOMKilled
@@ -281,12 +281,12 @@ resources:
 
 #### 🛑 Diagnostic :
 
-```bash
+```sh
 kubectl get pods
 # STATUS: RunContainerError
 ```
 
-```bash
+```sh
 kubectl describe pod my-pod
 # Événement : `Failed to start container`
 ```
@@ -323,12 +323,12 @@ kubectl describe pod my-pod
 
 - 🔍 Tester localement avec Docker :
 
-  ```bash
+  ```sh
   docker run -it myimage /bin/sh
   ```
 - 🔧 Vérifier le binaire ou script dans l’image :
 
-  ```bash
+  ```sh
   docker run myimage ls /start.sh
   ```
 - ✅ Rendre les scripts exécutables (`chmod +x`)
@@ -340,12 +340,12 @@ kubectl describe pod my-pod
 
 #### 🛑 Diagnostic :
 
-```bash
+```sh
 kubectl get pods
 # STATUS: Pending
 ```
 
-```bash
+```sh
 kubectl describe pod my-pod
 ```
 
@@ -388,13 +388,13 @@ kubectl describe pod my-pod
 
 - 🧰 Vérifier les volumes :
 
-  ```bash
+  ```sh
   kubectl get pvc
   ```
 
 - 🌐 Vérifier le plugin réseau (CNI) :
 
-  ```bash
+  ```sh
   kubectl get pods -n kube-system
   ```
 
@@ -404,13 +404,13 @@ kubectl describe pod my-pod
 
 #### 🛑 Diagnostic :
 
-```bash
+```sh
 kubectl get pods
 # STATUS: Running
 # READY: 0/1
 ```
 
-```bash
+```sh
 kubectl describe pod my-pod
 ```
 
@@ -418,7 +418,7 @@ kubectl describe pod my-pod
   - `Unhealthy` : `Readiness probe failed: connection refused`
   - `HTTP probe failed with statuscode: 500`
 
-```bash
+```sh
 kubectl get endpoints my-service
 ```
 
@@ -449,7 +449,7 @@ kubectl get endpoints my-service
 
 - 🧪 Lancez un shell dans le pod pour tester vous-même :
 
-  ```bash
+  ```sh
   kubectl exec -it my-pod -- curl http://localhost:8080/health
   ```
 
@@ -472,13 +472,13 @@ kubectl get endpoints my-service
 - 🛠️ Utiliser des outils comme `curl`, `wget`, `telnet` ou `netcat` (`nc`).
 - ✅ Exemple :
 
-  ```bash
+  ```sh
   kubectl exec -it pod-a -- curl http://pod-b:8080
   ```
 
 - 🔎 Vérifier l'IP du pod cible :
 
-  ```bash
+  ```sh
   kubectl get pod pod-b -o wide
   ```
 
@@ -488,19 +488,19 @@ kubectl get endpoints my-service
 
 - 📋 Assurez-vous que le Service cible existe :
 
-  ```bash
+  ```sh
   kubectl get svc
   ```
 
 - 🌐 Tester l'accès via le nom DNS du service :
 
-  ```bash
+  ```sh
   kubectl exec -it pod-a -- curl http://my-service.namespace.svc.cluster.local
   ```
 
 - 🧬 Vérifiez les endpoints associés :
 
-  ```bash
+  ```sh
   kubectl get endpoints my-service
   ```
 
@@ -510,13 +510,13 @@ kubectl get endpoints my-service
 
 - 🧰 Tester le DNS avec `nslookup` ou `dig` :
 
-  ```bash
+  ```sh
   kubectl exec -it pod-a -- nslookup my-service
   ```
 
 - 📡 Le DNS est géré par `CoreDNS`, vérifiez qu'il est actif :
 
-  ```bash
+  ```sh
   kubectl get pods -n kube-system -l k8s-app=kube-dns
   ```
 
@@ -526,7 +526,7 @@ kubectl get endpoints my-service
 
 - 🚀 Déployer un pod utilitaire avec des outils réseau :
 
-  ```bash
+  ```sh
   kubectl run nettools --image=busybox:1.28 --rm -it --restart=Never -- sh
   ```
 
@@ -539,13 +539,13 @@ kubectl get endpoints my-service
 - 🛡️ Des politiques réseau peuvent bloquer la communication.
 - 🔍 Vérifier s'il existe des `NetworkPolicy` :
 
-  ```bash
+  ```sh
   kubectl get networkpolicy
   ```
 
 - 📑 Inspectez leur contenu :
 
-  ```bash
+  ```sh
   kubectl describe networkpolicy my-policy
   ```
 
@@ -571,7 +571,7 @@ containerPort: 8080  # ✅ Doit correspondre au targetPort du Service
 
 - 🧪 Vérification :
 
-```bash
+```sh
 kubectl describe svc my-service
 kubectl describe pod my-pod
 ```
@@ -591,7 +591,7 @@ kubectl describe pod my-pod
 
 - ✅ Vérifier que les Pods ont les bons labels :
 
-  ```bash
+  ```sh
   kubectl get pods --show-labels
   ```
 
@@ -622,7 +622,7 @@ template:
 
 ✅ **1. Vérifier que l'Ingress Controller est bien installé :**
 
-```bash
+```sh
 kubectl get pods -n ingress-nginx
 ```
 
@@ -631,7 +631,7 @@ kubectl get pods -n ingress-nginx
 
 ✅ **2. Vérifier l'Ingress lui-même :**
 
-```bash
+```sh
 kubectl get ingress
 kubectl describe ingress my-ingress
 ```
@@ -657,20 +657,20 @@ rules:
   - Le service mentionné dans l'Ingress doit exister et être exposé sur le bon port.
   - Vérifier la cohérence de : `service.name` et `service.port.number` :
 
-```bash
+```sh
 kubectl get svc
 kubectl get endpoints my-service
 ```
 
 ✅ **4. Vérifier la résolution DNS interne :**
 
-```bash
+```sh
 kubectl exec -it some-pod -- nslookup my-service
 ```
 
 ✅ **5. Tester l'accès depuis un pod dans le cluster :**
 
-```bash
+```sh
 kubectl exec -it some-pod -- curl http://my-service:port
 ```
 
@@ -687,14 +687,14 @@ kubectl exec -it some-pod -- curl http://my-service:port
 
 - 🔧 **TLS actif ?** Si oui, vérifier le certificat :
 
-  ```bash
+  ```sh
   kubectl get secret tls-secret
   ```
 
 - 🪵 **Logs du contrôleur :**
   - Erreurs de routing ou d'accès backend (`upstream unavailable`, `host not found`, etc.)
 
-```bash
+```sh
 kubectl logs -n ingress-nginx deploy/ingress-nginx-controller
 ```
 

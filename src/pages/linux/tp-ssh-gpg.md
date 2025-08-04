@@ -63,7 +63,7 @@ Le service web sur `app-server:8080` n’est **pas exposé sur le réseau**, il 
 
    * Depuis `client`, vérifiez que vous pouvez vous connecter au `bastion` :
 
-     ```bash
+     ```sh
      ssh user@192.168.1.20
      ```
 
@@ -71,7 +71,7 @@ Le service web sur `app-server:8080` n’est **pas exposé sur le réseau**, il 
 
    * Créez un tunnel SSH local permettant d'accéder à `app-server:8080` depuis `client:8080` en passant par `bastion` :
 
-     ```bash
+     ```sh
      ssh -L 8080:192.168.1.30:8080 user@192.168.1.20
      ```
 
@@ -81,7 +81,7 @@ Le service web sur `app-server:8080` n’est **pas exposé sur le réseau**, il 
 
    * Connectez-vous à `app-server` via `bastion` et redirigez son port `8080` vers un port de `client` (par exemple `8888`) :
 
-     ```bash
+     ```sh
      ssh -R 8888:localhost:8080 user@192.168.1.10
      ```
 

@@ -83,7 +83,7 @@ kubeadm init … –pod-network-cidr=100.0.0/16
 
 ## Avec H/A
 
-```bash
+```sh
 # prérequis : Bastion =>
 # - Soit : Installation d'un HAProxy entre les OS des Control Plane
 # - Soit : Déploiement d'un kube-vip en utilisant un manifest de Pod statique pendant l'init
