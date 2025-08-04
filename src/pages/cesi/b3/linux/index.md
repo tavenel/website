@@ -45,6 +45,53 @@ Module de 3 journées
   - Produits : Partimage, MondoRescue, backuppc, …
   - Continuité de service
 
+```mermaid
+mindmap
+  root((Linux Administration avancée))
+
+    **CLI & Maintenance**
+      Boot et Restauration
+        GRUB & séquence de boot
+        initramfs, init, runlevel
+        Mode maintenance
+        Crash recovery
+      Gestion de paquets
+        RedHat/Fedora : RPM, YUM, DNF
+        Debian/Ubuntu : DPKG, APT
+
+    **Réseaux**
+      Protocoles
+        IP, TCP, UDP, ICMP
+      Interfaces
+        Configuration statique
+        DHCP client/server
+        net-tools, iproute2, systemd
+      Routage
+        Table de routage
+        Routes statiques
+      VPN
+        Serveur VPN : OpenVPN, Wireguard
+
+    **Virtualisation & Continuité**
+      Sécurité des données
+        SSH, tunneling
+        Pare-feu : iptables/Netfilter
+        Audit et monitoring réseau
+        SSH/GPG
+        Netfilter
+        Sécurité utilisateurs
+      Authentification
+        PAM, sudo
+      Sauvegardes
+        tar, rsync, dump/restore
+        Partimage, MondoRescue, backuppc
+      Scripts Shell
+        Automatisation simple
+      Continuité de service
+        Redondance, fiabilité
+
+```
+
 ## 📑 Documents
 
 - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/linux/tp-installation-vbox-fedora-workstation)
