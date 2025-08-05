@@ -90,6 +90,10 @@ layout: '@layouts/BaseLayout.astro'
 
 Voir le [cours dédié](/esgi/b3/lpic-1)
 
+## 🔗 LPIC-2
+
+Voir le [cours dédié](/esgi/m1/lpic-2)
+
 ## Ressources
 
 - [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
