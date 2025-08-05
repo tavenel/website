@@ -41,7 +41,7 @@ sudo exportfs -v           # voir les détails
 
 ### Services
 
-```bash
+```sh
 sudo systemctl enable --now nfs-server
 sudo systemctl start nfs-server
 ```
@@ -70,7 +70,7 @@ sudo mount -t nfs 192.168.1.10:/srv/nfs/data /mnt
 
 ### Vérification
 
-```bash
+```sh
 mount | grep nfs
 df -h /mnt
 ```

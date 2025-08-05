@@ -787,7 +787,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 
 - `dhcpd.conf`
 - `dhcpd.leases`
-- DHCP Log messages in `syslog` or `systemd` journal
+- Messages de log DHCP dans `syslog` ou le journal `systemd`
 - `arp`
 - `dhcpd `
 - `radvd`

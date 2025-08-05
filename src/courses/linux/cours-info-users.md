@@ -93,7 +93,7 @@ echo "Le système sera redémarré dans 5 minutes." | sudo wall
 
 - Permet de prévenir les utilisateurs d'un **arrêt programmé**, avec un **délai** et un **message personnalisé**.
 
-```bash
+```sh
 sudo shutdown -r +10 "Redémarrage pour maintenance. Veuillez sauvegarder votre travail."
 ```
 

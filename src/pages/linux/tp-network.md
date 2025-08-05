@@ -219,7 +219,7 @@ fe80::7e16:89ff:fecf:917c dev wlan0 lladdr 7c:16:89:cf:91:7c router used 0/0/0 p
 Il s'agit de la table `ARP` qui affiche les corrélations entre adresses IP et adresses MAC pour les machines connues sur le réseau ("voisins").
 :::
 
-## DNS
+## Client DNS
 
 ### Ordre de résolution
 
