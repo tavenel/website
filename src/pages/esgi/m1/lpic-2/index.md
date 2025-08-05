@@ -50,7 +50,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 
 - La certification LPIC-1 doit être maîtrisée : [Cours LPIC-1](/esgi/b3/lpic-1)
 
-### 🎯 Exam 201-450
+### 🎯 Exam 201-450 : Administration système avancée
 
 - Sujet 200 : **Planification des ressources**
   - 200.1 Mesure de l'utilisation des ressources et résolution de problèmes (valeur : 6)
@@ -80,7 +80,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
   - 206.2 Opérations de sauvegarde (valeur : 3)
   - 206.3 Information des utilisateurs (valeur : 1)
 
-### 🎯 Exam 202-450
+### 🎯 Exam 202-450 : Réseau et Services
 
 - Sujet 207 : **Serveur de nom de domaine**
   - 207.1 Configuration de base d'un serveur DNS (valeur : 3)
@@ -130,19 +130,10 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - 3 Modules de 12H
 - Évaluation : QCM et Projets
 
-### Pré-requis
+## 📑 Documents
 
-## 📑 Module Trimestre 1
-
-- TODO
-
-## 📑 Module Trimestre 2
-
-- TODO
-
-## 📑 Module Trimestre 3
-
-- TODO
+- [📝 Syllabus du contenu de la certification LPIC-2](/linux/lpic-2/contenu)
+<!-- - [🤓 Cours Linux pour la certification LPIC-2](/linux/lpic-2/cours) -->
 
 ## 🚀 Pour aller plus loin
 
