@@ -107,7 +107,7 @@ mkinitrd /boot/initrd-4.19.299.img 4.19.299
 
 * Avec dracut :
 
-```bash
+```sh
 dracut --force /boot/initramfs-4.19.299.img 4.19.299
 ```
 

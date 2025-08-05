@@ -481,7 +481,7 @@ HOST: myserver             Loss%   Snt   Last   Avg  Best  Wrst StDev
 
 ### 📤 Export d’un rapport
 
-```bash
+```sh
 mtr -rw -c 100 -o "LSDNBAW" google.com > rapport.txt
 ```
 
