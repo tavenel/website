@@ -438,3 +438,58 @@ sudo tcpdump -i enp0s3 'tcp[tcpflags] & tcp-syn != 0'
 1. Pourquoi ce type de capture est-il utile pour surveiller les tentatives de connexion ?
 2. Comment pourriez-vous utiliser ce type de filtrage pour détecter des tentatives d'attaques (ex. : scan de ports) ?
 
+## 🧭 Outil de diagnostic réseau : `mtr`
+
+`mtr` (My Traceroute) est un outil de diagnostic réseau combinant les fonctionnalités de `traceroute` et de `ping`.
+
+- Il affiche la route réseau vers une destination (IP ou nom DNS)
+- Il mesure les statistiques de latence et de perte de paquets pour chaque routeur (ou "saut")
+- Il permet une analyse continue, utile pour détecter les problèmes intermittents
+
+### ⚙️ Fonctionnement
+
+```console
+$ mtr google.com
+
+HOST: myserver             Loss%   Snt   Last   Avg  Best  Wrst StDev
+ 1. 192.168.0.1             0.0%    10    1.0   1.2   0.9   1.5   0.2
+ 2. 10.0.0.1                0.0%    10    5.4   5.5   5.2   6.0   0.3
+ 3. 172.217.22.14           0.0%    10   20.1  20.0  19.7  20.5   0.3
+```
+
+| Colonne     | Signification                          |
+|-------------|----------------------------------------|
+| `Loss%`     | Pourcentage de paquets perdus          |
+| `Snt`       | Nombre de paquets envoyés              |
+| `Last`      | Dernier temps de réponse mesuré        |
+| `Avg`       | Moyenne des temps de réponse           |
+| `Best`      | Meilleur temps de réponse              |
+| `Wrst`      | Pire temps de réponse                  |
+| `StDev`     | Écart-type des réponses (variabilité)  |
+
+
+### 📋 Options utiles
+
+| Commande                      | Description                               |
+|-------------------------------|-------------------------------------------|
+| `mtr -rw google.com`         | Mode rapport (non interactif)             |
+| `mtr -c 20 google.com`       | Envoie 20 paquets par saut                |
+| `mtr -n google.com`          | Pas de résolution DNS (plus rapide)       |
+| `mtr -b google.com`          | Affiche adresses IP + noms DNS            |
+| `mtr --tcp google.com`       | Utilise TCP au lieu d'ICMP                |
+
+
+### 📤 Export d’un rapport
+
+```bash
+mtr -rw -c 100 -o "LSDNBAW" google.com > rapport.txt
+```
+
+- `-rw` : mode rapport écrit
+- `-c` : nombre de paquets à envoyer
+- `-o` : colonnes personnalisées
+
+:::exo
+1. Utilise `mtr` pour générer un rapport de la latence des différents sauts ;
+2. Analyser le rapport.
+:::

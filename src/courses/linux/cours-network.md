@@ -94,6 +94,8 @@ layout: '@layouts/CoursePartLayout.astro'
   - `/etc/network/interfaces`
   - ⚠️ `ifup` et `ifdown` ne sont pas standardisés :
     - `CentOS` : `/etc/sysconfig/network-scripts/` (un peu différent)
+- `iw` : outil moderne pour interfaces réseau sans fil (`nl80211`) : information sur les interfaces Wi-Fi, gestion des connexions … ;
+  - À coupler avec `wpa_supplicant` pour les connexions sécurisées.
 
 ---
 
@@ -262,6 +264,22 @@ DHCP=yes # ou IPv4 ou IPv6
   - tunnels réseau
   - transfer de fichiers
   - débug : écoute de ports, …
+
+---
+
+### 🧭 mtr : diagnostic réseau
+
+`mtr` (My Traceroute) est un outil de diagnostic réseau combinant les fonctionnalités de `traceroute` et de `ping`.
+
+- Il affiche la route réseau vers une destination (IP ou nom DNS)
+- Il mesure les statistiques de latence et de perte de paquets pour chaque routeur (ou "saut")
+- Il permet une analyse continue, utile pour détecter les problèmes intermittents
+
+#### 🔍 Cas d’usage
+
+- Identifier une latence ou une perte de paquets anormale
+- Diagnostiquer des problèmes réseau intermittents
+- Vérifier la qualité du chemin réseau entre deux hôtes
 
 ---
 
