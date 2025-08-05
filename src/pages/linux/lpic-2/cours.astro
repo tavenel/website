@@ -1,0 +1,178 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Perf } from '@courses/linux/cours-perfs.md';
+import { Content as Hardware } from '@courses/linux/cours-hardware.md';
+import { Content as Kernel } from '@courses/linux/cours-kernel.md';
+import { Content as Disks } from '@courses/linux/cours-disks.md';
+import { Content as Smart } from '@courses/linux/cours-smart.md';
+import { Content as Network } from '@courses/linux/cours-network.md';
+import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
+import { Content as Backup } from '@courses/linux/cours-backup.md';
+import { Content as Samba } from '@courses/linux/cours-samba.md';
+import { Content as NFS } from '@courses/linux/cours-nfs.md';
+import { Content as PAM } from '@courses/linux/cours-pam.md';
+import { Content as LDAP } from '@courses/linux/cours-ldap.md';
+import { Content as VPN } from '@courses/linux/cours-vpn.md';
+import { Content as Security } from '@courses/linux/cours-security.md';
+import { Content as Debug } from '@courses/linux/cours-debug.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Formation LPIC 2",
+  tags: [
+    "linux",
+    "lpic"
+  ],
+}
+
+import { Content as Kernel } from '@courses/linux/cours-kernel.md';
+import { Content as Smart } from '@courses/linux/cours-smart.md';
+import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
+---
+
+<Layout frontmatter={frontmatter} >
+
+  <Chapter> <Perf />     </Chapter> <!-- 200 -->
+  <Chapter> <Hardware />     </Chapter> <!-- 201, 202 : Kernel, Grub, init, udev -->
+  <Chapter> <Kernel />     </Chapter> <!-- 201 -->
+  <Chapter> <Disks />     </Chapter> <!-- 203, 204.3 -->
+  <Chapter> <Smart />     </Chapter> <!-- 203 -->
+<!-- TODO 203.3 -->
+<!-- TODO 204.1 -->
+<!-- TODO 204.2 -->
+  <Chapter> <Network />     </Chapter> <!-- 205, 212.1 -->
+<!-- TODO 206.1 -->
+  <Chapter> <Backup />     </Chapter> <!-- 206.2 -->
+  <Chapter> <InfoUsers />     </Chapter> <!-- 206.3 -->
+<!-- TODO 207.1 -->
+<!-- TODO 207.2 -->
+<!-- TODO 207.3 -->
+<!-- TODO 208.1 -->
+<!-- TODO 208.2 -->
+<!-- TODO 208.3 -->
+<!-- TODO 208.4 -->
+  <Chapter> <Samba />     </Chapter> <!-- 209.1 -->
+  <Chapter> <NFS />     </Chapter> <!-- 209.2 -->
+<!-- TODO 210.1 -->
+  <Chapter> <PAM />     </Chapter> <!-- 210.2 -->
+  <Chapter> <LDAP />     </Chapter> <!-- 210.3 -->
+<!-- TODO 211 -->
+<!-- TODO 212.2 -->
+  <Chapter> <Security />     </Chapter> <!-- 205.3, 212.3, 212.4 -->
+  <Chapter> <VPN /> <!-- 212.5 -->
+  <Chapter> <Debug />     </Chapter> <!-- Bonus -->
+</Layout>
+
+<!--
+
+# Exam 201
+
+- Sujet 200 : Planification des ressources
+  - 200.1 Mesure de l'utilisation des ressources et résolution de problèmes (valeur : 6)
+  - 200.2 Prévision des besoins en ressources (valeur : 2)
+    - [TODO: TP perfs]
+- Sujet 201 : le noyau Linux
+  - 201.1 Composants du noyau (valeur : 2)
+  - 201.2 Compilation du noyau (valeur : 3)
+    - [TODO] TP build kernel
+  - 201.3 Gestion du noyau à chaud et résolution de problèmes (valeur : 4)
+    - [⌨️ TP de rappel : affichage de la configuration du système et des périphériques, gestion des modules noyau](/linux/tp-systeme)
+- Sujet 202 : Démarrage du système
+  - 202.1 Personnalisation du démarrage système (valeur :3)
+    - [▶️ TP de rappel : SysV init](/linux/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
+    - [▶️ TP de rappel : Systemd init](/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
+  - 202.2 Récupération du système (valeur : 4)
+    - [📀 TP de rappel : utiliser GRUB pour une restauration système](/linux/tp-grub)
+    - [📀 TP de rappel : utiliser un Live CD/USB pour une restauration système](/linux/tp-rescue)
+  - 202.3 Chargeurs d'amorçage alternatifs (valeur : 2) [TODO cours]
+- Sujet 203 : Systèmes de fichiers et périphériques
+  - 203.1 Intervention sur le système de fichiers Linux (valeur : 4)
+  - 203.2 Maintenance des systèmes de fichiers Linux (valeur : 3)
+    - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
+  - 203.3 Options de création et de configuration des systèmes de fichiers (valeur : 2) [TODO COURS]
+    - [TODO] TP autofs, dm-crypt, luks
+- Sujet 204 : Administration avancée des périphériques de stockage
+  - 204.1 Configuration du RAID logiciel (valeur : 3) [TODO COURS]
+    - [TODO] TP RAID
+  - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2) [TODO COURS]
+    - [TODO] TP ??
+  - 204.3 Gestionnaire de volumes logiques (valeur : 3)
+    - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
+- Sujet 205 : Configuration réseau
+  - 205.1 Configuration réseau de base (valeur : 3) [TODO: iw]
+  - 205.2 Configuration réseau avancée (valeur : 4)
+  - 205.3 Résolution des problèmes réseau (valeur : 4) [TODO: mtr]
+    - [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
+- Sujet 206 : Maintenance système
+  - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2) [TODO COURS]
+    - [TODO TP ??]
+  - 206.2 Opérations de sauvegarde (valeur : 3)
+    - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
+  - 206.3 Information des utilisateurs (valeur : 1)
+
+# Exam 202
+
+- Sujet 207 : Serveur de nom de domaine
+  - 207.1 Configuration de base d'un serveur DNS (valeur : 3) [TODO COURS]
+  - 207.2 Création et mise à jour des zones DNS (valeur : 3) [TODO COURS]
+  - 207.3 Sécurisation d'un serveur DNS (valeur : 2) [TODO COURS]
+    - [TODO : TP DNS]
+- Sujet 208 : HTTP Services
+  - 208.1 Configuration élémentaire d'Apache (valeur : 4) [TODO COURS]
+  - 208.2 Configuration d'Apache pour HTTPS (valeur : 3) [TODO COURS]
+  - 208.3 Mise en place du serveur mandataire squid (valeur : 2) [TODO COURS]
+  - 208.4 Mise en place de Nginx en tant que serveur Web et proxy inverse (valeur : 2) [TODO COURS]
+- Sujet 209 : Partage de fichiers
+  - 209.1 Configuration d'un serveur SAMBA (valeur : 5)
+  - 209.2 Configuration d'un serveur NFS (valeur : 3)
+- Sujet 210 : Gestion des clients réseau
+  - 210.1 Configuration DHCP (valeur : 2) [TODO ??? TP ??]
+  - 210.2 Authentification PAM (valeur : 3)
+  - 210.3 Clients LDAP (valeur : 2)
+  - 210.4 Configuration d'un serveur OpenLDAP (valeur : 4)
+- Sujet 211 : Services de courrier électronique
+  - 211.1 Utilisation des serveurs de messagerie (valeur : 4) [TODO COURS]
+  - 211.2 Gestion de la distribution des courriels (valeur : 2) [TODO COURS]
+  - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2) [TODO COURS]
+    - [TODO : TP MAIL]
+- Sujet 212 : Sécurité du système
+  - 212.1 Configuration d'un routeur (valeur : 3)
+    - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
+  - 212.2 Gestion des serveurs FTP (valeur : 2) [TODO COURS]
+  - 212.3 Shell sécurisé (SSH) (valeur : 4)
+    - [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
+  - 212.4 Tâches de sécurité (valeur : 3)
+    - [💻 TP : Utilisation du protocole HTTP avec Telnet](/web/exo-telnet_http)
+    - [🔒 TP Optionnel : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
+  - 212.5 OpenVPN (valeur : 2)
+    - [🌐 TP : Installation d'un service VPN](/linux/tp-vpn)
+
+---
+
+    - [TODO: TP perfs]
+    - [TODO] TP build kernel
+    - [TODO] TP autofs, dm-crypt, luks
+    - [TODO] TP RAID
+  - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2) [TODO ALL]
+    - [TODO] TP ??
+  - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2) [TODO ALL]
+    - [TODO TP ??]
+    - [TODO : TP DNS]
+  - 210.1 Configuration DHCP (valeur : 2) [TODO ??? TP ??]
+    - [TODO : TP MAIL]
+
+T3 => projet fil rouge :
+  - OpenVPN
+  - Serveur LDAP, config. LDIF et intégration client
+  - Serveur Samba
+  - Serveur NFS
+  - Serveur Nginx
+  - Serveur Apache
+  - Serveur Squid
+  - Serveur SSH
+  - Serveur FTP
+  - Serveur DNS
+
+-->
