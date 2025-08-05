@@ -73,6 +73,34 @@ _Quels sont les composants principaux d'une architecture PC ?_
 - Gère les événements _userspace_ en cas d'ajout/suppression d'un périphérique matériel (clé USB, ...)
 - `udevd`, `D-Bus`
 
+:::tip
+_udev_ est le gestionnaire de périphériques dans les distributions modernes.
+:::
+
+- **Outils** :
+
+```sh
+udevinfo -p /sys/class/net/eth0/ -a
+udevadm info -q all -n /dev/sda
+udevadm monitor
+```
+
+- **Règles udev personnalisées** :
+  - `/etc/udev/rules.d/`
+  - `/lib/udev/rules.d/`
+
+Exemple de règle udev :
+
+```
+ACTION=="add", KERNEL=="sdb", RUN+="/usr/local/bin/myscript.sh"
+```
+
+- Recharger udev :
+
+```sh
+udevadm control --reload-rules
+```
+
 ---
 
 ### Commandes utiles
@@ -80,8 +108,6 @@ _Quels sont les composants principaux d'une architecture PC ?_
 - `dmesg` : kernel ring buffer (messages du noyau)
 - `lspci` (fichier `/proc/bus/pci`)
 - `lsusb`
-- `udevadm info`
-  - `udevinfo -p /sys/class/net/eth0/ -a`
 - `uname -a` : informations sur le système
 - fichiers de logs : `/var/log/`
 - Voir le TP dédié [tp-systeme][tp-systeme].
