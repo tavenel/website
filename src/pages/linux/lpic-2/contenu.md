@@ -1,7 +1,6 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Contenu de la certification LPIC-2
-layout: '@layouts/CoursePartLayout.astro'
 ---
 
 ## Exam 201
