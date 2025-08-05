@@ -35,14 +35,14 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
 <Layout frontmatter={frontmatter} >
 
   <Chapter> <Perf />     </Chapter> <!-- 200 -->
-  <Chapter> <Hardware />     </Chapter> <!-- 201, 202 : Kernel, Grub, init, udev -->
+  <Chapter> <Hardware />     </Chapter> <!-- 201, 202.1, 202.2, 202.3 -->
   <Chapter> <Kernel />     </Chapter> <!-- 201 -->
   <Chapter> <Disks />     </Chapter> <!-- 203, 204.3 -->
   <Chapter> <Smart />     </Chapter> <!-- 203 -->
 <!-- TODO 203.3 -->
 <!-- TODO 204.1 -->
 <!-- TODO 204.2 -->
-  <Chapter> <Network />     </Chapter> <!-- 205, 212.1 -->
+  <Chapter> <Network />     </Chapter> <!-- 205.1, 205.2, 205.3, 212.1 -->
 <!-- TODO 206.1 -->
   <Chapter> <Backup />     </Chapter> <!-- 206.2 -->
   <Chapter> <InfoUsers />     </Chapter> <!-- 206.3 -->
@@ -86,7 +86,7 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   - 202.2 Récupération du système (valeur : 4)
     - [📀 TP de rappel : utiliser GRUB pour une restauration système](/linux/tp-grub)
     - [📀 TP de rappel : utiliser un Live CD/USB pour une restauration système](/linux/tp-rescue)
-  - 202.3 Chargeurs d'amorçage alternatifs (valeur : 2) [TODO cours]
+  - 202.3 Chargeurs d'amorçage alternatifs (valeur : 2)
 - Sujet 203 : Systèmes de fichiers et périphériques
   - 203.1 Intervention sur le système de fichiers Linux (valeur : 4)
   - 203.2 Maintenance des systèmes de fichiers Linux (valeur : 3)
@@ -101,9 +101,9 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   - 204.3 Gestionnaire de volumes logiques (valeur : 3)
     - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - Sujet 205 : Configuration réseau
-  - 205.1 Configuration réseau de base (valeur : 3) [TODO: iw]
+  - 205.1 Configuration réseau de base (valeur : 3)
   - 205.2 Configuration réseau avancée (valeur : 4)
-  - 205.3 Résolution des problèmes réseau (valeur : 4) [TODO: mtr]
+  - 205.3 Résolution des problèmes réseau (valeur : 4)
     - [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
 - Sujet 206 : Maintenance système
   - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2) [TODO COURS]
@@ -164,6 +164,7 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
     - [TODO : TP MAIL]
 
 T3 => projet fil rouge :
+  - LVM, RAID
   - OpenVPN
   - Serveur LDAP, config. LDIF et intégration client
   - Serveur Samba
