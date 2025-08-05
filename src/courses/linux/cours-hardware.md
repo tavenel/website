@@ -184,9 +184,9 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 
 1. `POST` (Power-on Self Test)
 2. L'UEFI charge les composants principaux : clavier, disques, écran, ...
-3. L'UEFI charge applications `EFI` (`bootloaders`, programmes de sélection d'OS, outils de diagnostic) depuis une partition `ESP` (EFI System Partition) dédiée (format `FAT12`, `FAT16`, `FAT32` ou `ISO-9660`).
-  - UEFI comprend le partitionnement `GPT` (GUID Partition Table) (et `MBR` mais découragé)
-4. Le `bootloader` charge le noyau (`kernel`)
+3. L'UEFI charge applications _EFI_ (_bootloaders_ : `efiboot.img`, programmes de sélection d'OS, outils de diagnostic) depuis une partition `ESP` (EFI System Partition) dédiée (format `FAT12`, `FAT16`, `FAT32` ou `ISO-9660`).
+  - UEFI comprend le partitionnement _GPT_ (GUID Partition Table) (et _MBR_ mais découragé)
+4. Le _bootloader_ charge le noyau (_kernel_)
 
 ---
 
@@ -203,6 +203,18 @@ Différents types de _firmwares_ (dans mémoire de la carte mère).
 - Le noyau prend la main
 - `/proc/cmdline` : paramètres fournis au noyau
 - Voir le TP dédié [tp-grub][tp-grub].
+
+---
+
+#### Chargeurs d'amorçage alternatifs
+
+- 🧩 SYSLINUX : léger, pour filesystem _FAT_, très utilisé en embarqué ou live-USB
+  - 🔹 ISOLINUX : variante pour images ISO bootables (CD/DVD)
+- 🖥️ PXELINUX : Démarrage réseau via _PXE (Preboot eXecution Environment)_
+  - Nécessite serveur _TFTP_ et souvent _DHCP_
+- 🖥️ BIOS PXE Boot : pour cartes réseau avec BIOS PXE
+- 🧱 systemd-boot : simple, basé sur _UEFI_ et intégré à _systemd_
+- 📦 Das U-Boot : modulaire pour systèmes embarqués (ARM, MIPS, …)
 
 ---
 
