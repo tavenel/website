@@ -15,6 +15,64 @@ layout: '@layouts/CoursePartLayout.astro'
 - Gérer les disques, partitions et systèmes de fichiers courants
 - Gestion des fichiers : permissions et propriétés, recherche et liens
 
+```mermaid
+mindmap
+LPIC-1 - 101
+
+  Architecture système
+    Détermination des paramètres matériels
+      Afficher configuration système
+      Gérer les modules du noyau
+    Démarrage du système
+      GRUB
+      SysV init & systemd
+    Niveaux d'exécution & cibles systemd
+      Redémarrage & arrêt du système
+
+  Installation & gestion des paquetages
+    Partitionnement
+    Installation du gestionnaire d'amorçage
+    Bibliothèques partagées
+      ldd, ldconfig
+    Gestion de paquets Debian
+      apt, dpkg
+    Gestion de paquets RPM/YUM
+      rpm, yum, dnf
+    Linux virtualisé
+
+  Commandes GNU & Unix
+    Ligne de commande
+      navigation, manipulation fichiers
+    Filtres texte & redirections
+      grep, cut, sed, awk
+    Gestion des fichiers
+      cp, mv, rm, touch
+    Flux & pipes
+    Processus
+      ps, top, kill
+    Priorité des processus
+      nice, renice
+    Expressions rationnelles
+      grep, egrep
+    Édition de fichiers
+      vi
+
+  Disques & systèmes de fichiers
+    Partitions & systèmes de fichiers
+      fdisk, mkfs
+    Intégrité des FS
+      fsck
+    Montage/démontage
+      mount, umount
+    Permissions & propriété
+      chmod, chown
+    Liens symboliques & physiques
+      ln, ln -s
+    Recherche & hiérarchie
+      find, locate
+      FHS : /etc, /var, /usr
+```
+
 ---
 
 ## Ressources utiles

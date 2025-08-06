@@ -14,6 +14,63 @@ layout: '@layouts/CoursePartLayout.astro'
 - Avoir les notions de réseau essentielles à l’administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
 - Savoir mettre en place un niveau de sécurité sur les postes : services en écoute et ports ouverts, limitations d'accès, et chiffrement des données
 
+```mermaid
+mindmap
+LPIC-1 - 102
+
+  Shells & scripts shell
+    Environnement du shell
+      Variables, PATH, PS1
+      .bashrc, .profile
+    Scripts Shell
+      Structures de contrôle : if, for, while
+      Permissions d'exécution
+
+  Interfaces & bureaux utilisateur
+    Installation de X11
+      xorg, xinit
+    Bureaux graphiques
+      GNOME, KDE, XFCE
+    Accessibilité
+
+  Tâches d’administration
+    Gestion des utilisateurs & groupes
+      useradd, passwd, groupadd
+    Planification des tâches
+      cron, at
+    Localisation & langues
+      locale, LANG, LC_ALL
+
+  Services systèmes essentiels
+    Horloge système
+      date, hwclock, timedatectl
+    Journaux systèmes
+      journalctl, syslog
+    MTA - Agent de transfert de courrier
+      mail, postfix, exim
+    Impression
+      CUPS, lpadmin, lpstat
+
+  Réseaux : notions de base
+    Protocoles Internet
+      IP, TCP, UDP, ICMP
+    Configuration réseau
+      ip, ifconfig, NetworkManager
+    Dépannage réseau
+      ping, traceroute, netstat, ss
+    Résolution de noms
+      /etc/hosts, resolv.conf, dig
+
+  Sécurité
+    Admin système sécurisée
+      sudo, su
+      politiques de mot de passe
+    Sécurité système
+      permissions, umask, audit
+    Chiffrement & sécurisation
+      GPG, ssh-keygen, chmod 700
+```
+
 ---
 
 ## Plan de cours
