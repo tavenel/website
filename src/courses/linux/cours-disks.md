@@ -36,6 +36,18 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+## Types de périphériques supportés
+
+| Type      | Exemple de périphérique | Chemin dans `/dev`        |
+| --------- | ----------------------- | ------------------------- |
+| IDE       | Disques anciens         | `/dev/hdX`                |
+| SATA/SCSI | HDD ou SSD modernes     | `/dev/sdX`                |
+| NVMe      | SSD M.2/PCIe            | `/dev/nvmeXnY`            |
+| iSCSI     | Stockage réseau         | `/dev/sdX` (via iscsiadm) |
+| SAN       | FibreChannel, AoE, FCoE | dépend du protocole       |
+
+---
+
 ## ext2, ext3, ext4
 
 - `ext2` est le système de fichiers historique sous Linux
@@ -118,6 +130,74 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+## 🗂️ AutoFS - Montage automatique à la demande
+
+- `/etc/auto.master` : fichier principal déclarant les points de montage.
+- `/etc/auto.misc`, `/etc/auto.nfs`, etc. : fichiers secondaires avec les règles de montage.
+- `systemctl status autofs` & `automount -v`
+
+### 📌 Exemple : montage automatique d'un partage NFS
+
+```
+# /etc/auto.master
+
+/mnt/nfs  /etc/auto.nfs
+```
+
+```
+# /etc/auto.nfs
+partage1  -fstype=nfs4  nfsserver:/srv/partage1
+```
+
+:::tip
+Le partage sera monté automatiquement au moment de l'accès à `/mnt/nfs/partage1`.
+:::
+
+---
+
+## 💿 ISO pour CD-ROM
+
+- Types de filesystem :
+  - _ISO9660_ : Format standard de CD-ROM
+  - _UDF_ : Format pour les DVD
+  - _HFS_ : Ancien format Mac
+- Extensions utiles :
+  - `-J` : _Joliet_ : compatibilité avec Windows (longs noms de fichiers).
+  - `-R` : _Rock Ridge_ : ajoute les permissions UNIX.
+  - `-b` : _El Torito_ : rend l'ISO amorçable (bootable).
+
+### 🛠️ Création d'un ISO bootable avec `mkisofs`
+
+```sh
+mkisofs -o image.iso -b isolinux/isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 \
+  -boot-info-table -R -J -v -T ./dossier_source
+```
+
+---
+
+## 🔐 dm-crypt & LUKS : Systèmes de fichiers chiffrés
+
+### Création d'un volume chiffré avec LUKS
+
+
+```sh
+# 1. Initialiser le volume et le mapper :
+cryptsetup luksFormat /dev/sdX
+cryptsetup open /dev/sdX nom_volume
+
+# 2. Système de fichiers :
+mkfs.ext4 /dev/mapper/nom_volume
+mount /dev/mapper/nom_volume /mnt/chiffre
+```
+
+```sh
+# Fermeture du volume
+umount /mnt/chiffre
+cryptsetup close nom_volume
+```
+
+---
+
 ## LVM : Logical Volume Manager
 
 - `Physical Volume PV` : disque physique (gère `RAID`, ...)
@@ -127,7 +207,119 @@ layout: '@layouts/CoursePartLayout.astro'
 - les `LVs` peuvent être distribués sur plusieurs disques, gèrent chiffrement, ...
 - `LV` accessible comme disque classique : `dev/VGNAME/LVNAME`
 
-[tp-partitions]: /linux/tp-partitions
+---
+
+## Disques réseau : SAN
+
+- Réseau dédié pour le stockage, haute performance.
+- Protocoles :
+  - **iSCSI** : basé IP, facile à déployer
+  - **AoE (ATA over Ethernet)** : bas niveau, sans IP
+  - **FCoE (Fibre Channel over Ethernet)** : haute vitesse, entreprise
+- Identifiants de disque :
+  - **WWN (World Wide Name)** : identifiant global
+  - **WWID** : identifiant unique du disque
+  - **LUN (Logical Unit Number)** : sous-unité dans un système SAN
 
 ---
+
+### iSCSI (Internet SCSI)
+
+
+| Commande      | Fonction                               |
+| ------------- | -------------------------------------- |
+| `iscsiadm`    | Gère les connexions iSCSI initiator    |
+| `iscsid`      | Service iSCSI initiator                |
+| `iscsid.conf` | Configuration (authentification, etc.) |
+| `scsi_id`     | Identifie les disques via SCSI         |
+
+
+```sh
+iscsiadm -m discovery -t sendtargets -p 192.168.1.10
+iscsiadm -m node --login
+```
+
+---
+
+## 🔧 Utilitaires de réglage
+
+### `hdparm`
+
+Utilitaire pour configurer les disques IDE/SATA :
+
+```sh
+hdparm -I /dev/sda        # Affiche les infos du disque
+hdparm -d1 /dev/sda       # Active le DMA
+hdparm -tT /dev/sda       # Test de vitesse
+```
+
+:::warn
+Les changements ne sont pas persistants. À automatiser via `/etc/hdparm.conf`.
+:::
+
+---
+
+### `sdparm`
+
+Utilitaire pour périphériques SCSI/SATA/SAS/USB :
+
+```sh
+sdparm --all /dev/sdX     # Affiche les paramètres
+sdparm --set=WCE /dev/sdX # Active le cache d'écriture
+```
+
+---
+
+### `nvme`
+
+Pour les SSD NVMe :
+
+```sh
+nvme list                      # Affiche tous les périphériques NVMe
+nvme id-ctrl /dev/nvme0        # Infos sur le contrôleur
+nvme smart-log /dev/nvme0      # Affiche les données SMART
+```
+
+---
+
+### `tune2fs`
+
+Permet d'ajuster les paramètres des systèmes de fichiers ext4 :
+
+```sh
+tune2fs -l /dev/sdX1           # Affiche les réglages du FS
+tune2fs -c 0 -i 0 /dev/sdX1    # Désactive les vérifications périodiques
+```
+
+---
+
+### `fstrim`
+
+Optimisation du TRIM pour SSD (libère les blocs inutilisés) :
+
+```sh
+fstrim -v /                   # TRIM manuel
+```
+---
+
+## 📊 Analyse des ressources et IRQ (interruptions)
+
+- Visualiser les interruptions :
+
+```sh
+cat /proc/interrupts
+lspci -v
+```
+
+- Modifier un paramètre du noyau à chaud :
+
+```sh
+sysctl -w vm.dirty_ratio=20
+```
+
+Fichier de conf persistant : `/etc/sysctl.conf`
+
+---
+
+[tp-partitions]: /linux/tp-partitions
 
