@@ -1,6 +1,9 @@
 ﻿---
 title: Introduction au Cloud Amazon Web Services
 date: 2023 / 2024
+tags:
+- aws
+- cloud
 ---
 
 # Remarques importantes sur l’utilisation des services `AWS` dans ce module de formation :
