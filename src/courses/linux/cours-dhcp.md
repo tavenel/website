@@ -28,7 +28,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 #### ✅ Déclaration globale
 
-```conf
+```
 default-lease-time 600;
 max-lease-time 7200;
 authoritative;
@@ -36,7 +36,7 @@ authoritative;
 
 #### 🧭 Configuration d'un sous-réseau
 
-```conf
+```
 subnet 192.168.1.0 netmask 255.255.255.0 {
   range 192.168.1.100 192.168.1.200;
   option routers 192.168.1.1;
@@ -47,7 +47,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 #### 📌 Attribution fixe par adresse MAC
 
-```conf
+```
 host imprimante {
   hardware ethernet 00:11:22:33:44:55;
   fixed-address 192.168.1.10;
@@ -60,7 +60,7 @@ host imprimante {
 
 BOOTP est un prédécesseur de DHCP, encore pris en charge pour compatibilité :
 
-```conf
+```
 allow bootp;
 ```
 
@@ -73,7 +73,7 @@ allow bootp;
 
 Exemple `radvd.conf` :
 
-```conf
+```
 interface eth0 {
   AdvSendAdvert on;
   prefix 2001:db8:1::/64 {
