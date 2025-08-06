@@ -7,8 +7,11 @@ import { Content as Hardware } from '@courses/linux/cours-hardware.md';
 import { Content as Kernel } from '@courses/linux/cours-kernel.md';
 import { Content as Disks } from '@courses/linux/cours-disks.md';
 import { Content as Smart } from '@courses/linux/cours-smart.md';
+import { Content as RAID } from '@courses/linux/cours-raid.md';
 import { Content as Network } from '@courses/linux/cours-network.md';
+import { Content as Make } from '@courses/linux/cours-make.md';
 import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
+import { Content as DNS } from '@courses/linux/cours-dns.md';
 import { Content as Backup } from '@courses/linux/cours-backup.md';
 import { Content as Samba } from '@courses/linux/cours-samba.md';
 import { Content as NFS } from '@courses/linux/cours-nfs.md';
@@ -38,13 +41,11 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   <Chapter> <Perf />     </Chapter> <!-- 200 -->
   <Chapter> <Hardware />     </Chapter> <!-- 201, 202.1, 202.2, 202.3 -->
   <Chapter> <Kernel />     </Chapter> <!-- 201 -->
-  <Chapter> <Disks />     </Chapter> <!-- 203, 204.3 -->
+  <Chapter> <Disks />     </Chapter> <!-- 203.1, 203.2, 203.3, 204.2, 204.3 -->
   <Chapter> <Smart />     </Chapter> <!-- 203 -->
-<!-- TODO 203.3 -->
-<!-- TODO 204.1 -->
-<!-- TODO 204.2 -->
+  <Chapter> <RAID />     </Chapter> <!-- 204.1 -->
   <Chapter> <Network />     </Chapter> <!-- 205.1, 205.2, 205.3, 212.1 -->
-<!-- TODO 206.1 -->
+  <Chapter> <Make />     </Chapter> <!-- 206.1 -->
   <Chapter> <Backup />     </Chapter> <!-- 206.2 -->
   <Chapter> <InfoUsers />     </Chapter> <!-- 206.3 -->
   <Chapter> <DNS />     </Chapter> <!-- 207.1, 207.2, 207.3 -->
@@ -58,7 +59,7 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   <Chapter> <PAM />     </Chapter> <!-- 210.2 -->
   <Chapter> <LDAP />     </Chapter> <!-- 210.3 -->
 <!-- TODO 211 -->
-<!-- TODO 212.2 -->
+<!-- SKIP 212.2 (FTP) -->
   <Chapter> <Security />     </Chapter> <!-- 205.3, 212.3, 212.4 -->
   <Chapter> <VPN /> <!-- 212.5 -->
   <Chapter> <Debug />     </Chapter> <!-- Bonus -->
@@ -90,13 +91,10 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   - 203.1 Intervention sur le système de fichiers Linux (valeur : 4)
   - 203.2 Maintenance des systèmes de fichiers Linux (valeur : 3)
     - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
-  - 203.3 Options de création et de configuration des systèmes de fichiers (valeur : 2) [TODO COURS]
-    - [TODO] TP autofs, dm-crypt, luks
+  - 203.3 Options de création et de configuration des systèmes de fichiers (valeur : 2)
 - Sujet 204 : Administration avancée des périphériques de stockage
-  - 204.1 Configuration du RAID logiciel (valeur : 3) [TODO COURS]
-    - [TODO] TP RAID
-  - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2) [TODO COURS]
-    - [TODO] TP ??
+  - 204.1 Configuration du RAID logiciel (valeur : 3)
+  - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2)
   - 204.3 Gestionnaire de volumes logiques (valeur : 3)
     - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - Sujet 205 : Configuration réseau
@@ -105,8 +103,7 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   - 205.3 Résolution des problèmes réseau (valeur : 4)
     - [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
 - Sujet 206 : Maintenance système
-  - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2) [TODO COURS]
-    - [TODO TP ??]
+  - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2)
   - 206.2 Opérations de sauvegarde (valeur : 3)
     - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
   - 206.3 Information des utilisateurs (valeur : 1)
@@ -134,11 +131,10 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   - 211.1 Utilisation des serveurs de messagerie (valeur : 4) [TODO COURS]
   - 211.2 Gestion de la distribution des courriels (valeur : 2) [TODO COURS]
   - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2) [TODO COURS]
-    - [TODO : TP MAIL]
 - Sujet 212 : Sécurité du système
   - 212.1 Configuration d'un routeur (valeur : 3)
     - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
-  - 212.2 Gestion des serveurs FTP (valeur : 2) [TODO COURS]
+  - 212.2 Gestion des serveurs FTP (valeur : 2)
   - 212.3 Shell sécurisé (SSH) (valeur : 4)
     - [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
   - 212.4 Tâches de sécurité (valeur : 3)
@@ -149,19 +145,30 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
 
 ---
 
+COURS
+
+- Sujet 208 : HTTP Services
+  - 208.1 Configuration élémentaire d'Apache (valeur : 4) [TODO COURS]
+  - 208.2 Configuration d'Apache pour HTTPS (valeur : 3) [TODO COURS]
+  - 208.3 Mise en place du serveur mandataire squid (valeur : 2) [TODO COURS]
+  - 208.4 Mise en place de Nginx en tant que serveur Web et proxy inverse (valeur : 2) [TODO COURS]
+- Sujet 211 : Services de courrier électronique
+  - 211.1 Utilisation des serveurs de messagerie (valeur : 4) [TODO COURS]
+  - 211.2 Gestion de la distribution des courriels (valeur : 2) [TODO COURS]
+  - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2) [TODO COURS]
+
+- Sujet 207 : Serveur de nom de domaine [TODO CHECK ALL]
+- 210.1 Configuration DHCP (valeur : 2) [TODO CHECK ALL]
+
+---
+
+TP
+
     - [TODO: TP perfs]
     - [TODO] TP build kernel
-    - [TODO] TP autofs, dm-crypt, luks
-    - [TODO] TP RAID
-  - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2) [TODO ALL]
-    - [TODO] TP ??
-  - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2) [TODO ALL]
-    - [TODO TP ??]
-    - [TODO : TP DNS]
-    - [TODO : TP MAIL]
 
 T3 => projet fil rouge :
-  - LVM, RAID
+  - LVM, RAID logiciel, chiffrer disque (LUKS)
   - OpenVPN
   - Serveur LDAP, config. LDIF et intégration client
   - Serveur Samba
@@ -170,8 +177,10 @@ T3 => projet fil rouge :
   - Serveur Apache
   - Serveur Squid
   - Serveur SSH
-  - Serveur FTP
   - Serveur DNS
   - Serveur DHCP
+  - Serveur Mail
+  - Monitoring, prévision charge, configuration ressources
 
 -->
+
