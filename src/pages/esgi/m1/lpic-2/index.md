@@ -58,6 +58,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - Sujet 201 : **le noyau Linux**
   - 201.1 Composants du noyau (valeur : 2)
   - 201.2 Compilation du noyau (valeur : 3)
+    - [📦 TP : Compilation, Personnalisation et Installation d'un Noyau Linux](/linux/tp-build-kernel)
   - 201.3 Gestion du noyau à chaud et résolution de problèmes (valeur : 4)
     - [⌨️ TP de rappel : affichage de la configuration du système et des périphériques, gestion des modules noyau](/linux/tp-systeme)
 - Sujet 202 : **Démarrage du système**

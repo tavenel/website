@@ -72,7 +72,7 @@ L'option `-j` permet de parralléliser le build (c'est une option héritée de `
 
 - Sur anciens systèmes, on recommande `$(nproc -1)`` pour avoir 1 CPU libre (arrêt du build, tâches système, …)
 - Sur serveurs, normalement `$(nproc)` est fiable (les _scheduler_ récents allouent des temps d'exécution aux tâches système, légère perte de réactivité).
-- Sur système peu risqué ou VM, on peut monter jusqu'à : `$(nproc * 2)` (utiliser le maximum de temps CPU pour le build, quitte à _freezer_ le système).
+- Sur système peu risqué ou VM, on peut monter jusqu'à : `nproc * 2` (utiliser le maximum de temps CPU pour le build, quitte à _freezer_ le système).
 :::
 
 :::tip
