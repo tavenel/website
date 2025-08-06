@@ -176,7 +176,7 @@ Langage déclaratif **côté serveur** conçu pour **trier automatiquement les e
 
 ---
 
-```sieve
+```
 require ["fileinto", "vacation"];
 
 if address :is "From" "newsletter@exemple.com" {
@@ -338,7 +338,7 @@ sieve_vacation_default_period = 10d
 sieve_vacation_max_period = 30d
 ```
 
-```sieve
+```
 vacation
   :days 1
   :addresses ["toto@example.com"]
