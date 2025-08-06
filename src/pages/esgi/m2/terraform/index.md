@@ -24,6 +24,7 @@ Module de 15H
 ## 📑 Documents
 
 - [🤓 Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
+- [🤓 Présentation d'Azure Cloud](/web/azure-cloud)
 - [![](@icons/terraform.svg) Projet Terraform](/devops/terraform-projet)
 
 ## 🚀 Pour aller plus loin

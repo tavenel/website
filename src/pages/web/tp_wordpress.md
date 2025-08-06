@@ -1,6 +1,8 @@
 ﻿---
 title: TP Wordpress
 date: 2023 / 2024
+tags:
+- cloud
 ---
 
 # Création d’un site utilisant des services cloud SaaS

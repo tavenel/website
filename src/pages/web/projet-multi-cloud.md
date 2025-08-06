@@ -1,6 +1,8 @@
 ---
 title: Exécution de programmes dans un environnement Cloud multi-provider
 date: 2023 / 2024
+tags:
+- cloud
 ---
 
 ## Contexte du projet

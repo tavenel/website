@@ -1,6 +1,9 @@
 ﻿---
 title: Développement d’une application moderne en utilisant les services avancés d’`AWS`
 date: 2023 / 2024
+tags:
+- aws
+- cloud
 ---
 
 # Remarques importantes sur l’utilisation des services `AWS` dans ce module de formation :

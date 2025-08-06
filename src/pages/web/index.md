@@ -19,8 +19,15 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP : Envoi de mail en utilisant le protocole SMTP](/web/exo-smtp)
 - [📝 TD Protocoles Web et adressage réseau](/web/protocoles-web-td)
 - [💻 TP Wordpress : Création d’un site utilisant des services cloud SaaS](/web/tp_wordpress)
+
+## AWS
+
 - [💻 TP AWS 1 : Amazon EC2, Amazon S3, Amazon RDS](/web/tp_aws-1)
 - [💻 TP AWS 2 : Développement d’une application Cloud moderne en utilisant des services AWS](/web/tp_aws-2)
+
+## Azure
+
+- [🤓 Présentation d'Azure Cloud](/web/azure-cloud)
 
 ## 🏆 Projet : Exécution de programmes dans un environnement Cloud multi-provider
 
