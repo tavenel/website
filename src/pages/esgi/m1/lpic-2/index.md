@@ -59,25 +59,34 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
   - 201.1 Composants du noyau (valeur : 2)
   - 201.2 Compilation du noyau (valeur : 3)
   - 201.3 Gestion du noyau à chaud et résolution de problèmes (valeur : 4)
+    - [⌨️ TP de rappel : affichage de la configuration du système et des périphériques, gestion des modules noyau](/linux/tp-systeme)
 - Sujet 202 : **Démarrage du système**
   - 202.1 Personnalisation du démarrage système (valeur :3)
+    - [▶️ TP de rappel : SysV init](/linux/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
+    - [▶️ TP de rappel : Systemd init](/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
   - 202.2 Récupération du système (valeur : 4)
+    - [📀 TP de rappel : utiliser GRUB pour une restauration système](/linux/tp-grub)
+    - [📀 TP de rappel : utiliser un Live CD/USB pour une restauration système](/linux/tp-rescue)
   - 202.3 Chargeurs d'amorçage alternatifs (valeur : 2)
 - Sujet 203 : **Systèmes de fichiers et périphériques**
   - 203.1 Intervention sur le système de fichiers Linux (valeur : 4)
   - 203.2 Maintenance des systèmes de fichiers Linux (valeur : 3)
+    - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
   - 203.3 Options de création et de configuration des systèmes de fichiers (valeur : 2)
 - Sujet 204 : **Administration avancée des périphériques de stockage**
   - 204.1 Configuration du RAID logiciel (valeur : 3)
   - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2)
   - 204.3 Gestionnaire de volumes logiques (valeur : 3)
+    - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - Sujet 205 : **Configuration réseau**
   - 205.1 Configuration réseau de base (valeur : 3)
   - 205.2 Configuration réseau avancée (valeur : 4)
   - 205.3 Résolution des problèmes réseau (valeur : 4)
+    - [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
 - Sujet 206 : **Maintenance système**
   - 206.1 Compilation et installation de programmes à partir des sources (valeur : 2)
   - 206.2 Opérations de sauvegarde (valeur : 3)
+    - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
   - 206.3 Information des utilisateurs (valeur : 1)
 
 ### 🎯 Exam 202-450 : Réseau et Services
@@ -105,10 +114,15 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
   - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2)
 - Sujet 212 : **Sécurité du système**
   - 212.1 Configuration d'un routeur (valeur : 3)
+    - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
   - 212.2 Gestion des serveurs FTP (valeur : 2)
   - 212.3 Shell sécurisé (SSH) (valeur : 4)
+    - [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
   - 212.4 Tâches de sécurité (valeur : 3)
+    - [💻 TP : Utilisation du protocole HTTP avec Telnet](/web/exo-telnet_http)
+    - [🔒 TP Optionnel : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
   - 212.5 OpenVPN (valeur : 2)
+    - [🌐 TP : Installation d'un service VPN](/linux/tp-vpn)
 
 ### 📝 Ressources utiles
 
