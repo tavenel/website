@@ -13,7 +13,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ### ⚙️ Configuration basique dans `/etc/named.conf`
 
-```conf
+```
 options {
     directory "/var/named";
     recursion yes;
@@ -62,7 +62,7 @@ zone "exemple.local" IN {
 
 Pour le domaine `exemple.com`, une zone peut contenir :
 
-```dns
+```
 $TTL 86400
 @   IN  SOA ns1.exemple.com. admin.exemple.com. (
         2025080501 ; Serial
@@ -85,7 +85,7 @@ mail IN  A   192.0.2.12
 
 ### 🧾 Exemple de fichier de zone (`exemple.local.zone`)
 
-```zone
+```
 $TTL 86400
 @   IN  SOA ns1.exemple.local. admin.exemple.local. (
         2025080501 ; Serial
@@ -102,7 +102,7 @@ www IN  A       192.168.0.20
 
 ### 🔄 Zone inverse (`0.168.192.in-addr.arpa.zone`)
 
-```zone
+```
 $TTL 86400
 @   IN  SOA ns1.exemple.local. admin.exemple.local. (
         2025080501 ; Serial
@@ -169,7 +169,7 @@ tsig-keygen transfert-securise > tsig.key
 
 - Ajouter dans `named.conf` :
 
-```conf
+```
 key transfert-securise {
     algorithm hmac-sha256;
     secret "base64clé==";
