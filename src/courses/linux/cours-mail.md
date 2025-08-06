@@ -283,10 +283,15 @@ Voir la documentation : <https://doc.dovecot.org/main/core/config/quick.html>
 Générer un certificat "self-signed" pour test :
 
 ```sh
-openssl req -new -x509 -days 365 -nodes \
-  -out /etc/ssl/certs/dovecot.pem \
-  -keyout /etc/ssl/private/dovecot.key
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout /etc/ssl/private/selfsigned.key \
+  -out /etc/ssl/certs/selfsigned.crt
 ```
+
+- `-x509` : auto-signé
+- `-nodes` : pas de passphrase ("no DES")
+- `-days` : durée de validité
+- `-newkey rsa:2048` : création de la clé RSA
 :::
 
 ---

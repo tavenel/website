@@ -685,7 +685,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/etc/ssl/`, `/etc/pki/`
 - `openssl`, _CA.pl_
 - _SSLEngine_, _SSLCertificateKeyFile_, _SSLCertificateFile_
-- _SSLCACertificateFile`, _SSLCACertificatePath_
+- _SSLCACertificateFile_, _SSLCACertificatePath_
 - _SSLProtocol_, _SSLCipherSuite_, _ServerTokens_, _ServerSignature_, _TraceEnable_
 
 #### 208.3 Mise en place du serveur mandataire squid (valeur : 2)
