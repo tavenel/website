@@ -32,4 +32,5 @@ layout: '@layouts/BaseLayout.astro'
 - Voir la page sur [󱃾  Kubernetes](/k8s)
 - Voir la page sur [🔄 l'Intégration Continue](/ci)
 - Voir la page sur [🧪 les tests](/tests)
+- Voir la page sur [ 🌐 HTTP, Web et les Clouds](/web)
 
