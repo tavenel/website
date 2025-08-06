@@ -124,6 +124,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - Aide simple sur les commandes : <https://cheat.sh/>
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - [Créer une distribution "Live" (qui reste en mémoire) - tuto complet, reprend les principes de base, du boot à un système minimal](https://zestedesavoir.com/tutoriels/268/creer-son-premier-rim-linux/)
+- [Présentation et comparaison des certifications Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/certifications/)
 
 ## 📅 Déroulé du cours
 

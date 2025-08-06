@@ -84,6 +84,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - <https://www.antoinefi.net/index.php/2024/12/19/linux-lpic-1-101-500-1/>
 - <https://www.antoinefi.net/index.php/2024/12/30/linux-lpic-1-101-500-2/>
 - <https://www.antoinefi.net/index.php/2025/01/13/linux-lpic-1-101-500-3/>
+- [Présentation et comparaison des certifications Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/certifications/)
 
 ## LPIC-101
 
