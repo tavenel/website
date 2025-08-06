@@ -9,10 +9,10 @@ layout: '@layouts/CoursePartLayout.astro'
 - **CPU inactif (%idle)** : Pourcentage de temps où le processeur est inactif et n'exécute aucune tâche.
 - **CPU système (%sys)** : Pourcentage de temps où le CPU est occupé à exécuter des tâches du noyau (kernel). Inclut la gestion des processus, du système de fichiers et du réseau.
 - **CPU utilisateur (%user)** : Pourcentage de temps passé à exécuter des applications.
-- **Attente d’E/S (%iowait)** : Proportion de temps pendant laquelle le CPU attend la fin des opérations d'entrée/sortie (lecture / écriture sur disque dur, …).
+- **Attente d'E/S (%iowait)** : Proportion de temps pendant laquelle le CPU attend la fin des opérations d'entrée/sortie (lecture / écriture sur disque dur, …).
   - Une valeur élevée peut indiquer un système qui utilise beaucoup la mémoire d'échange (swap).
 - **CPU volé (%steal)** : Pourcentage de temps où le CPU a été alloué à une autre machine virtuelle par l'hyperviseur.
-- **Load Average** : moyenne du nombre de processus qui sont en cours ou en attente d’exécution.
+- **Load Average** : moyenne du nombre de processus qui sont en cours ou en attente d'exécution.
   - Généralement présenté par trois valeurs : dernière minute, 5 minutes, 15 minutes (voir `uptime`).
   - Diviser ces valeurs par le nombre de coeurs (ratio 1 == CPU utilisé à 100%, sinon sur- ou sous-exploité).
 
@@ -32,7 +32,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## Commandes d’analyse
+## Commandes d'analyse
 
 - **top et htop** : Surveillance en temps réel du CPU, de la mémoire et des processus. htop offre une interface améliorée.
 - **iotop** : Activité disque, identife les processus gourmands en IO.
@@ -55,8 +55,23 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+## Méthode USE
+
+- Méthode **Utilization**, **Saturation**, **Errors** (Brendan Gregg)
+- Évaluation systématique de chaque ressource critique (matériel ou logiciel : processeur, mémoire, disques, interfaces réseau, bus PCI, …) selon trois axes fondamentaux :
+- **Utilization** : Quel pourcentage de la ressource est effectivement utilisé ?
+- **Saturation** : Existe-t-il une file d'attente ou un engorgement indiquant que la ressource est sollicitée au-delà de sa capacité ?
+- **Errors** : Des erreurs ou anomalies sont-elles détectées sur cette ressource ?
+- Permet de localiser rapidement les goulots d'étranglement et orienter les actions correctives.
+
+---
+
 :::link
-Voir aussi le lien : <https://www.brendangregg.com/linuxperf.html> pour plus d'information sur les performances d'un système Linux, et l'ensemble des outils disponibles.
+Voir aussi :
+
+- Le lien : <https://www.brendangregg.com/linuxperf.html> pour plus d'information sur les performances d'un système Linux, et l'ensemble des outils disponibles.
+- La page d'optimisation des performances d'un système Linux du blog de Stéphane Robert : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/performances/>.
+- Les indicateurs _USE_ de Brendan Gregg : <https://www.brendangregg.com/USEmethod/use-linux.html>
 :::
 
 ---
