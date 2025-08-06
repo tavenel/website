@@ -8,18 +8,26 @@ import { Content as Commands } from '@courses/linux/cours-commands.md';
 import { Content as Desktop } from '@courses/linux/cours-desktop.md';
 import { Content as Disks } from '@courses/linux/cours-disks.md';
 import { Content as Smart } from '@courses/linux/cours-smart.md';
+import { Content as RAID } from '@courses/linux/cours-raid.md';
 import { Content as Droits } from '@courses/linux/cours-droits.md';
 import { Content as Find } from '@courses/linux/cours-find.md';
 import { Content as Hardware } from '@courses/linux/cours-hardware.md';
+import { Content as Make } from '@courses/linux/cours-make.md';
 import { Content as Kernel } from '@courses/linux/cours-kernel.md';
 import { Content as Install } from '@courses/linux/cours-install.md';
 import { Content as LDAP } from '@courses/linux/cours-ldap.md';
 import { Content as Liens } from '@courses/linux/cours-liens.md';
 import { Content as Network } from '@courses/linux/cours-network.md';
 import { Content as PAM } from '@courses/linux/cours-pam.md';
+import { Content as DNS } from '@courses/linux/cours-dns.md';
+import { Content as DHCP } from '@courses/linux/cours-dhcp.md';
+import { Content as Mail } from '@courses/linux/cours-mail.md';
 import { Content as Perf } from '@courses/linux/cours-perfs.md';
 import { Content as Samba } from '@courses/linux/cours-samba.md';
 import { Content as NFS } from '@courses/linux/cours-nfs.md';
+import { Content as Apache } from '@courses/linux/cours-apache.md';
+import { Content as Squid } from '@courses/linux/cours-squid.md';
+import { Content as Nginx } from '@courses/linux/cours-nginx.md';
 import { Content as Security } from '@courses/linux/cours-security.md';
 import { Content as Shell } from '@courses/linux/cours-shell.md';
 import { Content as VPN } from '@courses/linux/cours-vpn.md';
@@ -37,11 +45,13 @@ const frontmatter = {
 ---
 <Layout frontmatter={frontmatter} >
 	<Chapter> <Hardware />  </Chapter>
+	<Chapter> <Make />  </Chapter>
 	<Chapter> <Kernel />  </Chapter>
 	<Chapter> <Install />   </Chapter>
 	<Chapter> <Commands />  </Chapter>
 	<Chapter> <Disks />     </Chapter>
 	<Chapter> <Smart />     </Chapter>
+	<Chapter> <RAID />     </Chapter>
 	<Chapter> <Droits />    </Chapter>
 	<Chapter> <Liens />     </Chapter>
 	<Chapter> <Find />      </Chapter>
@@ -52,10 +62,16 @@ const frontmatter = {
 	<Chapter> <Network />  </Chapter>
 	<Chapter> <Security /> </Chapter>
 	<Chapter> <PAM /> </Chapter>
+	<Chapter> <DNS /> </Chapter>
+	<Chapter> <DHCP /> </Chapter>
+	<Chapter> <Mail /> </Chapter>
 	<Chapter> <VPN /> </Chapter>
 	<Chapter> <LDAP /> </Chapter>
 	<Chapter> <Samba /> </Chapter>
 	<Chapter> <NFS /> </Chapter>
+	<Chapter> <Apache /> </Chapter>
+	<Chapter> <Squid /> </Chapter>
+	<Chapter> <Nginx /> </Chapter>
 	<Chapter> <Backup /> </Chapter>
 	<Chapter> <Debug /> </Chapter>
 	<Chapter> <Perf /> </Chapter>
