@@ -18,6 +18,7 @@ import { Content as NFS } from '@courses/linux/cours-nfs.md';
 import { Content as DHCP } from '@courses/linux/cours-dhcp.md';
 import { Content as PAM } from '@courses/linux/cours-pam.md';
 import { Content as LDAP } from '@courses/linux/cours-ldap.md';
+import { Content as Mail } from '@courses/linux/cours-mail.md';
 import { Content as VPN } from '@courses/linux/cours-vpn.md';
 import { Content as Security } from '@courses/linux/cours-security.md';
 import { Content as Debug } from '@courses/linux/cours-debug.md';
@@ -58,8 +59,8 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   <Chapter> <DHCP />     </Chapter> <!-- 210.1 -->
   <Chapter> <PAM />     </Chapter> <!-- 210.2 -->
   <Chapter> <LDAP />     </Chapter> <!-- 210.3 -->
-<!-- TODO 211 -->
-<!-- SKIP 212.2 (FTP) -->
+  <Chapter> <Mail />     </Chapter> <!-- 211.1, 211.2, 211.3 -->
+	<!-- SKIP 212.2 (FTP) -->
   <Chapter> <Security />     </Chapter> <!-- 205.3, 212.3, 212.4 -->
   <Chapter> <VPN /> <!-- 212.5 -->
   <Chapter> <Debug />     </Chapter> <!-- Bonus -->
@@ -128,9 +129,9 @@ import { Content as InfoUsers } from '@courses/linux/cours-info-users.md';
   - 210.3 Clients LDAP (valeur : 2)
   - 210.4 Configuration d'un serveur OpenLDAP (valeur : 4)
 - Sujet 211 : Services de courrier électronique
-  - 211.1 Utilisation des serveurs de messagerie (valeur : 4) [TODO COURS]
-  - 211.2 Gestion de la distribution des courriels (valeur : 2) [TODO COURS]
-  - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2) [TODO COURS]
+  - 211.1 Utilisation des serveurs de messagerie (valeur : 4)
+  - 211.2 Gestion de la distribution des courriels (valeur : 2)
+  - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2)
 - Sujet 212 : Sécurité du système
   - 212.1 Configuration d'un routeur (valeur : 3)
     - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
@@ -152,10 +153,6 @@ COURS
   - 208.2 Configuration d'Apache pour HTTPS (valeur : 3) [TODO COURS]
   - 208.3 Mise en place du serveur mandataire squid (valeur : 2) [TODO COURS]
   - 208.4 Mise en place de Nginx en tant que serveur Web et proxy inverse (valeur : 2) [TODO COURS]
-- Sujet 211 : Services de courrier électronique
-  - 211.1 Utilisation des serveurs de messagerie (valeur : 4) [TODO COURS]
-  - 211.2 Gestion de la distribution des courriels (valeur : 2) [TODO COURS]
-  - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2) [TODO COURS]
 
 - Sujet 207 : Serveur de nom de domaine [TODO CHECK ALL]
 - 210.1 Configuration DHCP (valeur : 2) [TODO CHECK ALL]
@@ -167,20 +164,7 @@ TP
     - [TODO: TP perfs]
     - [TODO] TP build kernel
 
-T3 => projet fil rouge :
-  - LVM, RAID logiciel, chiffrer disque (LUKS)
-  - OpenVPN
-  - Serveur LDAP, config. LDIF et intégration client
-  - Serveur Samba
-  - Serveur NFS
-  - Serveur Nginx
-  - Serveur Apache
-  - Serveur Squid
-  - Serveur SSH
-  - Serveur DNS
-  - Serveur DHCP
-  - Serveur Mail
-  - Monitoring, prévision charge, configuration ressources
-
 -->
+
+
 
