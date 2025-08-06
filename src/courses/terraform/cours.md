@@ -239,6 +239,106 @@ dynamic "rule" {
 
 ---
 
+## 🧩 Modules
+
+- Regroupement logique de fichiers Terraform réutilisables, qui encapsulent un ensemble de ressources.
+
+**But :**
+
+- Factoriser le code
+- Réutiliser dans plusieurs projets
+- Organiser proprement des infrastructures complexes
+
+---
+
+### 📁 Structure
+
+- `main.tf` : logique principale
+- `variables.tf` : variables d’entrée
+- `outputs.tf` : valeurs de sortie
+- …
+
+📦 Exemple pour un module `vm` :
+
+```
+modules/
+└── vm/
+    ├── main.tf
+    ├── variables.tf
+    └── outputs.tf
+```
+
+---
+
+```hcl
+# variable.tf
+variable "vm_name" {
+  description = "Nom de la VM"
+  type        = string
+}
+```
+
+```hcl
+# outputs.tf
+output "vm_id" {
+  value = azurerm_virtual_machine.vm.id
+}
+```
+
+---
+
+### 🔗 Utilisation
+
+Dans le code principal (`root module`) :
+
+```hcl
+module "vm1" {
+  source       = "./modules/vm"
+  vm_name      = "web-01"
+  vm_size      = "Standard_B2s"
+  admin_user   = var.admin_user
+  admin_pass   = var.admin_pass
+}
+
+output "id_vm1" {
+  value = module.vm1.vm_id
+}
+```
+
+- ✅ `source` peut pointer vers :
+  - un chemin local
+- un dépôt Git
+- un registre de modules (Terraform Registry)
+
+---
+
+## 📦 Workspaces
+
+- Chaque Workspace a son **propre état `terraform.tfstate`**
+* Utilisent **le même code Terraform** sans changer le répertoire ou dupliquer les fichiers
+- Utile pour séparer **plusieurs environnements** : dev, test, staging, prod
+- Possibilité d'utiliser des **variables conditionnelles** selon le workspace :
+
+```hcl
+variable "instance_type" {
+  default = terraform.workspace == "prod" ? "t3.large" : "t3.micro"
+}
+```
+
+:::warn
+Ne pas utiliser les workspaces pour des environnements **très différents** (préférez plusieurs répertoires ou modules).
+:::
+
+
+| Commande                            | Description                      |
+| ----------------------------------- | -------------------------------- |
+| `terraform workspace list`          | Liste les workspaces disponibles |
+| `terraform workspace new <name>`    | Crée un nouveau workspace        |
+| `terraform workspace select <name>` | Bascule sur un autre workspace   |
+| `terraform workspace show`          | Affiche le workspace actif       |
+
+---
+
 ## 🔐 Secrets
 
 1. Marquer la variable `sensitive` (pas d'historique) 🔒
@@ -366,7 +466,7 @@ Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cour
 - [Terraform Best Practices](https://www.terraform-best-practices.com/)
 - <https://lafor.ge/blue-green/>
 - <https://blog.stephane-robert.info/post/ansible-vs-terraform/>
-- <https://blog.stephane-robert.info/docs/infra-as-code/provisionnement/terraform/introduction/>
+- <https://blog.stephane-robert.info/docs/infra-as-code/provisionnement/terraform/>
 - Livre : "_L'infrastructure as code avec Terraform_ (Julien Wittouck, éditions eni)"
 - [Vault](https://www.vaultproject.io/) & [Sentinel](https://docs.hashicorp.com/sentinel/)
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
