@@ -28,9 +28,9 @@ Chaque groupe aura la mission de **concevoir une séquence de cours** dédiée �
 | ---------------------------------------------------------- | ------ |
 | Qualité du cours (clarté, structure, exemples)                            | 4      |
 | Qualité des exercices & TP proposés                                         | 4      |
-| Présentation orale (contenu, interactivité, maîtrise)                     | 4      |
+| Présentation orale (contenu, interactivité, maîtrise)                     | 2      |
 | Pertinence du quiz et du guide enseignant                                 | 2      |
-| Implication et collaboration au sein du groupe, difficulté de la tâche    | 6      |
+| Implication et collaboration au sein du groupe, **difficulté de la tâche**  | 8      |
 
 
 ## 💡 Conseils

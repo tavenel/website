@@ -1,0 +1,24 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Intro } from '@courses/pedagogie/classe-renversee.md';
+import { Content as Themes } from './classe-renversee-themes.md';
+import { Content as Contenu } from '@courses/linux/lpic-2.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Formation LPIC-2 en classe renversée",
+  tags: [
+    "tests",
+		"renversée",
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Intro />  </Chapter>
+	<Chapter> <Themes />  </Chapter>
+	<Chapter> <Contenu />  </Chapter>
+</Layout>
+

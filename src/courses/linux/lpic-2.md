@@ -1,6 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Contenu de la certification LPIC-2
+layout: '@layouts/CoursePartLayout.astro'
 ---
 
 ## Exam 201
@@ -986,7 +987,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `nc`
 - `iptables `
 
-#### 212.5 OpenVPN (valeur : 2) [check]
+#### 212.5 OpenVPN (valeur : 2)
 
 > Les candidats doivent être capables de configurer un VPN (réseau privé virtuel) et de créer des connexions sécurisées point à point ou site à site.
 

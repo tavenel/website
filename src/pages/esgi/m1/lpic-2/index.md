@@ -55,14 +55,14 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - Sujet 200 : **Planification des ressources**
   - 200.1 Mesure de l'utilisation des ressources et résolution de problèmes (valeur : 6)
   - 200.2 Prévision des besoins en ressources (valeur : 2)
-- Sujet 201 : **le noyau Linux**
+- Sujet 201 : **Le noyau Linux**
   - 201.1 Composants du noyau (valeur : 2)
   - 201.2 Compilation du noyau (valeur : 3)
     - [📦 TP : Compilation, Personnalisation et Installation d'un Noyau Linux](/linux/tp-build-kernel)
   - 201.3 Gestion du noyau à chaud et résolution de problèmes (valeur : 4)
     - [⌨️ TP de rappel : affichage de la configuration du système et des périphériques, gestion des modules noyau](/linux/tp-systeme)
 - Sujet 202 : **Démarrage du système**
-  - 202.1 Personnalisation du démarrage système (valeur :3)
+  - 202.1 Personnalisation du démarrage système (valeur : 3)
     - [▶️ TP de rappel : SysV init](/linux/tp-sysv) : administrer les services et changer de runlevel dans un système SysV.
     - [▶️ TP de rappel : Systemd init](/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
   - 202.2 Récupération du système (valeur : 4)
@@ -149,9 +149,12 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 
 ## 📑 Documents
 
+- [🏆 Module en classe renversée](/esgi/m1/lpic-2/classe-renversee)
+<!-- 
 - [📝 Syllabus du contenu de la certification LPIC-2](/linux/lpic-2/contenu)
-<!-- - [🤓 Cours Linux pour la certification LPIC-2](/linux/lpic-2/cours) -->
-<!-- - [🏆 Projet LPIC-2 : Mise en place d'une infrastructure système complète sécurisée et supervisée](/linux/lpic-2/projet) -->
+- [🤓 Cours Linux pour la certification LPIC-2](/linux/lpic-2/cours)
+- [🏆 Projet LPIC-2 : Mise en place d'une infrastructure système complète sécurisée et supervisée](/linux/lpic-2/projet)
+-->
 
 ## 🚀 Pour aller plus loin
 
