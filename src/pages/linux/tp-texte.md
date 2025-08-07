@@ -1,7 +1,6 @@
 ---
 title: TP - Traitement de flux de type texte
 date: 2024 / 2025
-correction: false
 ---
 
 ## Commandes utiles

@@ -5,7 +5,6 @@ tags:
 - git
 - ci
 - devops
-correction: false
 ---
 
 # TP : Manipulations avancées de la HEAD

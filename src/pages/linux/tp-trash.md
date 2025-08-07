@@ -1,7 +1,6 @@
 ---
 title: Poubelle - commande trash
 date: 2024 / 2025
-correction: false
 ---
 
 ## Objectif

@@ -1,7 +1,6 @@
 ---
 title: TP - Affichage de la configuration du système et des périphériques et modules noyau
 date: 2024 / 2025
-correction: false
 ---
 
 ## Fichiers de logs et messages du noyau

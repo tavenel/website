@@ -1,6 +1,5 @@
 ---
 title: Exercices d'identification des besoins
-correction: false
 ---
 
 # Analyse des besoins d'un vidéo club

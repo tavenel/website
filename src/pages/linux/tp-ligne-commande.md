@@ -1,7 +1,6 @@
 ---
 title: TP - La ligne de commande
 date: 2024 / 2025
-correction: false
 ---
 
 ## La ligne de commande

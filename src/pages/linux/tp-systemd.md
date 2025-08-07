@@ -1,7 +1,6 @@
 ---
 title: Systemd init
 date: 2024 / 2025
-correction: false
 ---
 
 ## Terminologie

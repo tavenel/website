@@ -1,7 +1,6 @@
 ---
 title: B2 ESGI - Examen Mathématiques pour le traitement des données (3H)
 date: 2023 / 2024
-correction: false
 ---
 
 # Exercice 1 - Questions de cours (3 pts)

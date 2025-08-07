@@ -1,7 +1,6 @@
 ---
 title: TD traitement des données - probabilités
 date: 2023 / 2024
-correction: false
 ---
 
 # Introduction

@@ -1,7 +1,6 @@
 ---
 title: TP - Gestion de paquetages
 date: 2024 / 2025
-correction: false
 ---
 
 ## RPM, Yum et DNF

@@ -1,7 +1,6 @@
 ---
 title: Configuration réseau sous Linux
 date: 2024 / 2025
-correction: false
 ---
 
 ## Commandes utiles

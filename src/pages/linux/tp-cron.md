@@ -1,7 +1,6 @@
 ---
 title: TP Cron - Planification de tâches
 date: 2024 / 2025
-correction: false
 ---
 
 Tâches planifiées

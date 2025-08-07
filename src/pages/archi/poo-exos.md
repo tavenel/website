@@ -1,7 +1,6 @@
 ---
 title: Exercices POO
 date: 2023 / 2024
-correction: false
 ---
 
 ## Création d'une classe

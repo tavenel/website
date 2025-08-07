@@ -1,7 +1,6 @@
 ---
 title: TP Sécurité des échanges - SSH et GPG
 date: 2024 / 2025
-correction: false
 ---
 
 # Secure Shell : SSH

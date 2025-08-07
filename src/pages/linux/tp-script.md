@@ -1,7 +1,6 @@
 ---
 title: TP Bash - Gestion des fichiers et des utilisateurs
 date: 2024 / 2025
-correction: false
 ---
 
 ## Présentation du TP

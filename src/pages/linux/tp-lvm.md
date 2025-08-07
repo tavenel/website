@@ -1,7 +1,6 @@
 ---
 title: TP LVM
 date: 2024 / 2025
-correction: false
 ---
 
 ## Contexte

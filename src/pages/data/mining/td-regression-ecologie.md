@@ -1,7 +1,6 @@
 ---
 title: TD traitement des données - régression linéaire
 date: 2023 / 2024
-correction: false
 ---
 
 # Nombre d'espèces par surface

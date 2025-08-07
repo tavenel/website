@@ -1,7 +1,6 @@
 ---
 title: Configuration des clés SSH pour un accès sécurisé
 date: 2024 / 2025
-correction: false
 ---
 
 # Configuration des clés SSH pour un accès sécurisé

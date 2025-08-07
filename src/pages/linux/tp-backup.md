@@ -1,7 +1,6 @@
 ---
 title: TP Sauvegarde et Restauration sous Linux
 date: 2025 / 2026
-correction: false
 ---
 
 ## 🎯 Objectifs

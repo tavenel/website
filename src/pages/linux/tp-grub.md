@@ -1,7 +1,6 @@
 ---
 title: TP - Grub
 date: 2024 / 2025
-correction: false
 ---
 
 ## Utiliser GRUB pour changer le mot de passe root

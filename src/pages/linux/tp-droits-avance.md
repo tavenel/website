@@ -1,6 +1,5 @@
 ---
 title: "TP : Gestion des permissions avancées avec SUID, SGID et ACL sous Linux"
-correction: false
 ---
 
 ## Objectif du TP

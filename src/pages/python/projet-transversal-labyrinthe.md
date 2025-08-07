@@ -1,7 +1,6 @@
 ---
 title: SN1 EPSI - Projet transversal - Labyrinthe
 date: 2023 / 2024
-correction: false
 ---
 
 # Projet transversal - le labyrinthe du Minotaure

@@ -1,7 +1,6 @@
 ---
 title: TP - Gestion des partitions et des systèmes de fichiers
 date: 2024 / 2025
-correction: false
 ---
 
 ## Schéma de partitionnement

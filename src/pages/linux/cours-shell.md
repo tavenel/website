@@ -1,7 +1,6 @@
 ---
 title: Le shell Bash
 date: 2024 / 2025
-correction: false
 ---
 
 ## Rappels

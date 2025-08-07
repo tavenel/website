@@ -1,7 +1,6 @@
 ---
 title: TD Intégration Continue
 date: 2023 / 2024
-correction: false
 ---
 
 # Amélioration d'un processus d'intégration continue

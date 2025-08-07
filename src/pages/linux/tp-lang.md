@@ -1,7 +1,6 @@
 ---
 title: TP Langue et encodage
 date: 2024 / 2025
-correction: false
 ---
 
 ## Encodage
