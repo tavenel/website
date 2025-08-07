@@ -131,7 +131,7 @@ echo ${^array}.png # one.png two.png three.png
 
 :::tip
 - Pour éviter d'ajouter une commande dans l'historique, par exemple pour des raisons de sécurité, il suffit d'ajouter un espace avant la commande.
-- La commande `history -c` efface l’historique de la session courante.
+- La commande `history -c` efface l'historique de la session courante.
 :::
 
 ## Complétion et navigation : Tabulation, touches directionnelles, raccourcis

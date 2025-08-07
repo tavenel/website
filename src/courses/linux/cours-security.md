@@ -1,6 +1,6 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Tâches d’administration de sécurité et configuration de la sécurité du système
+title: Tâches d'administration de sécurité et configuration de la sécurité du système
 layout: '@layouts/CoursePartLayout.astro'
 ---
 

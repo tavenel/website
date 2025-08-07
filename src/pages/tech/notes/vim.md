@@ -211,10 +211,10 @@ To change every occurrence of a character string between two lines,
 - `C-f` => search in history => cmds can be changed with Vim syntax !
 - `C-r <register>` => copies the content of register (works in insert-mode too)
 - `C-r %` => copies current file name
-- `C-r C-f` => Copy the filename under the buffer’s cursor.
-- `C-r C-w` => Copy the word under the buffer’s cursor.
-- `C-r C-a` => Copy the WORD under the buffer’s cursor.
-- `C-r C-l` => Copy the line under the buffer’s cursor.
+- `C-r C-f` => Copy the filename under the buffer's cursor.
+- `C-r C-w` => Copy the word under the buffer's cursor.
+- `C-r C-a` => Copy the WORD under the buffer's cursor.
+- `C-r C-l` => Copy the line under the buffer's cursor.
 
 ## Visual mode
 

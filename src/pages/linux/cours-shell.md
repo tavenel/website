@@ -30,7 +30,7 @@ La plupart des shells sont fortement compatibles car ils suivent des normes comm
 
 Le projet GNU offre des outils pour l'administration de système de type UNIX qui sont libres et qui respectent les standards UNIX.
 
-`bash` est un Shell compatible avec `sh` qui offre des améliorations fonctionnelles pour la programmation et l’utilisation interactive.
+`bash` est un Shell compatible avec `sh` qui offre des améliorations fonctionnelles pour la programmation et l'utilisation interactive.
 
 ## Fichiers utiles
 
@@ -189,7 +189,7 @@ Un fichier de script commence toujours par un _shebang_.
 
 ### Shebang
 
-Le shebang, représenté par `#!`, est un en-tête d'un fichier texte qui indique au système d’exploitation que ce fichier n’est pas un fichier binaire mais un script (ensemble de commandes) ; sur la même ligne est précisé l’interpréteur permettant d’exécuter ce script. Pour indiquer au système qu’il s’agit d’un script qui sera interprété par `bash` on placera le shebang sur la première ligne :
+Le shebang, représenté par `#!`, est un en-tête d'un fichier texte qui indique au système d'exploitation que ce fichier n'est pas un fichier binaire mais un script (ensemble de commandes) ; sur la même ligne est précisé l'interpréteur permettant d'exécuter ce script. Pour indiquer au système qu'il s'agit d'un script qui sera interprété par `bash` on placera le shebang sur la première ligne :
 
 ```sh
 #!/usr/bin/env bash
@@ -224,7 +224,7 @@ Certaines variables ont une signification spéciale réservée. Ces variables so
 
 Liste de variables prépositionnées
 
-- `$0` : nom du script. Plus précisément, il s’agit du paramètre 0 de la ligne de commande, équivalent de argv[0]
+- `$0` : nom du script. Plus précisément, il s'agit du paramètre 0 de la ligne de commande, équivalent de argv[0]
 - `${1}`, `${2}`, …, `${9}` : respectivement premier, deuxième, …, neuvième paramètre de la ligne de commande
 - `$*` : tous les paramètres vus comme un seul mot
 - `$@` : tous les paramètres vus comme des mots séparés : `$@` équivaut à `$1` `$2` …
@@ -262,7 +262,7 @@ On peut aussi utiliser la commande `getopts` plus puissante pour gérer des argu
 
 ### Interaction utilisateur
 
-La commande `echo` pose une question à l’utilisateur.
+La commande `echo` pose une question à l'utilisateur.
 
 La commande `read` lit les valeurs entrées au clavier et les stocke dans une variable à réutiliser.
 
@@ -283,7 +283,7 @@ La fonction `readline` permet également de lire un input utilisateur. Très uti
 
 ### Fonctions
 
-Une fonction est un bloc d’instructions que l’on peut appeller ailleurs dans le script. Pour déclarer une fonction, on utilise la syntaxe suivante :
+Une fonction est un bloc d'instructions que l'on peut appeller ailleurs dans le script. Pour déclarer une fonction, on utilise la syntaxe suivante :
 
 ```sh
 maFonction()
@@ -298,7 +298,7 @@ function ma_fonction {
 }
 ```
 
-La déclaration d’une fonction doit toujours se situer avant son appel. On mettra donc les fonctions en début de script.
+La déclaration d'une fonction doit toujours se situer avant son appel. On mettra donc les fonctions en début de script.
 
 #### Exemple
 
@@ -341,7 +341,7 @@ declare -A asdf   # associative type
 
 ### Déboggage de script
 
-On peut débogguer l’exécution du script en le lançant avec `bash -x`. Par exemple :
+On peut débogguer l'exécution du script en le lançant avec `bash -x`. Par exemple :
 
 ```
 $ bash -x mon_script.sh
@@ -390,7 +390,7 @@ On peut aussi utiliser la version étendue de la commande test :
 [[ expression ]]
 ```
 
-Il y a beaucoup d’opérateurs disponibles pour réaliser des tests sur les fichiers, sur du texte ou sur des valeurs arithmétiques. La commande `man test` donnera une documentation à lire avec attention : tout s’y trouve.
+Il y a beaucoup d'opérateurs disponibles pour réaliser des tests sur les fichiers, sur du texte ou sur des valeurs arithmétiques. La commande `man test` donnera une documentation à lire avec attention : tout s'y trouve.
 
 #### Exemple
 
@@ -411,7 +411,7 @@ exit
 
 #### Variante
 
-On reprend la fonction `checkdir` qui lit la valeur de la variable donnée par l’utilisateur :
+On reprend la fonction `checkdir` qui lit la valeur de la variable donnée par l'utilisateur :
 
 ```sh
 #!/usr/bin/env bash
@@ -457,7 +457,7 @@ echo "Le dossier de travail ${dir} est créé"
 
 ## Résumé : Structure de base d'un script
 
-Quel serait la structure de base d’un script Bash ?
+Quel serait la structure de base d'un script Bash ?
 
 1. Shebang
 1. Commentaires
@@ -497,7 +497,7 @@ exit
 
 ### Boucle `for`
 
-Dans la boucle `for-do-done`, la variable prendra successivement les valeurs dans la liste et les commandes à l’intérieur du `do-done` seront répétées pour chacune de ces valeurs.
+Dans la boucle `for-do-done`, la variable prendra successivement les valeurs dans la liste et les commandes à l'intérieur du `do-done` seront répétées pour chacune de ces valeurs.
 
 ```sh
 for variable in liste_de_valeur ; do
@@ -547,7 +547,7 @@ while condition ; do
 done
 ```
 
-`until-do` répète les commandes jusqu’à ce que la condition soit vraie (ou par équivalence tant qu'elle est fausse).
+`until-do` répète les commandes jusqu'à ce que la condition soit vraie (ou par équivalence tant qu'elle est fausse).
 
 ```sh
 until condition ; do
@@ -578,7 +578,7 @@ done
 exit
 ```
 
-De manière plus élégante avec l’instruction `for` :
+De manière plus élégante avec l'instruction `for` :
 
 ```sh
 #!/usr/bin/env bash
@@ -592,9 +592,9 @@ exit
 
 ### Boucle `case-esac`
 
-L’instruction `case-esac` permet de modifier le déroulement du script selon la valeur d’un paramètre ou d’une variable. On l’utilise le plus souvent quand les valeurs possibles sont en nombre restreint et peuvent être prévues. Les imprévus peuvent alors être représentés par le signe `*`.
+L'instruction `case-esac` permet de modifier le déroulement du script selon la valeur d'un paramètre ou d'une variable. On l'utilise le plus souvent quand les valeurs possibles sont en nombre restreint et peuvent être prévues. Les imprévus peuvent alors être représentés par le signe `*`.
 
-Demandons par exemple à l’utilisateur s’il souhaite afficher ou non les fichiers cachés du répertoire en cours.
+Demandons par exemple à l'utilisateur s'il souhaite afficher ou non les fichiers cachés du répertoire en cours.
 
 ```sh
 #!/bin/sh

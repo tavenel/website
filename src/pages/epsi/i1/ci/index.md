@@ -9,7 +9,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectif
  
-- Comprendre les principes et les enjeux de l'intégration et du déploiement continus dans le cadre du développement d’une application informatique.
+- Comprendre les principes et les enjeux de l'intégration et du déploiement continus dans le cadre du développement d'une application informatique.
 
 ### Compétences à acquérir
 

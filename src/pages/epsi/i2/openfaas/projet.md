@@ -19,11 +19,11 @@ date: 2025 / 2026
 
 Vous êtes développeur cloud dans une startup qui souhaite adopter une architecture **serverless** pour lancer un **MVP** rapide.
 
-Votre mission est de concevoir et déployer une application composée **d’au moins 3 fonctions** autonomes, capables d'interagir entre elles pour former un workflow cohérent.
+Votre mission est de concevoir et déployer une application composée **d'au moins 3 fonctions** autonomes, capables d'interagir entre elles pour former un workflow cohérent.
 
 ## 🗂 Sujet
 
-Le **choix du cas d’usage est libre**, mais vous devez respecter les contraintes suivantes :
+Le **choix du cas d'usage est libre**, mais vous devez respecter les contraintes suivantes :
 
 1. **Minimum 3 fonctions distinctes**, chacune avec une responsabilité claire.
 2. Les fonctions doivent **communiquer entre elles** :
@@ -56,7 +56,7 @@ Le **choix du cas d’usage est libre**, mais vous devez respecter les contraint
 
 1. **Une archive du code source** : code commenté et structuré pour chaque fonction, …
 2. **README.md** détaillant :
-   * Objectif de l’application
+   * Objectif de l'application
    * Description de chaque fonction
    * Dépendances (DB, broker, APIs)
    * Étapes de déploiement (`faas-cli deploy`)
@@ -75,7 +75,7 @@ Le **choix du cas d’usage est libre**, mais vous devez respecter les contraint
 | Scaling automatique opérationnel                        | 3 pts  | Test de montée en charge possible (ex : `hey`, `ab`, ou boucles `curl`)                    |
 | Qualité du code et organisation du dépôt                | 2 pts  | Séparation logique, documentation inline, scripts propres                                  |
 | Tests reproductibles (curl, Postman, script bash, etc.) | 2 pts  | Inclure `curl-test.sh`, `postman_collection.json`, etc.                                    |
-| README clair et complet                                 | 2 pts  | Déploiement, tests, explication de l’architecture                                            |
+| README clair et complet                                 | 2 pts  | Déploiement, tests, explication de l'architecture                                            |
 | Bonus | -      | Orchestration (faas-flow), stockage d'état, front léger, logs avancés, circuit breaker, etc. |
 
 

@@ -24,7 +24,7 @@ De même, l'utilisation d'Épics est possible mais n'est pas obligatoire.
 
 Les projets Scrum utilisent en général des sprints de 1 à 3 semaines. Pour s'entraîner à la gestion itérative d'un projet, ce projet sera réalisé en plusieurs sprints de durée arbitraire.
 
-Attention : En Scrum, chaque User Story correspond à l’ajout d’une fonctionnalité **métier** dans le projet !
+Attention : En Scrum, chaque User Story correspond à l'ajout d'une fonctionnalité **métier** dans le projet !
 
 L'ensemble des cérémonies Scrum devra être respecté pendant l'itération, notamment :
 

@@ -44,7 +44,7 @@ Attributs clés :
 
 | ID  | Nom                      | Interprétation                  |
 | --- | ------------------------ | ------------------------------- |
-| 5   | `Reallocated_SectorCt`    | Signe d’usure / erreur physique |
+| 5   | `Reallocated_SectorCt`    | Signe d'usure / erreur physique |
 | 9   | `Power_On_Hours`         | Durée de fonctionnement         |
 | 194 | `Temperature_Celsius`     | Température interne du disque   |
 | 197 | `Current_Pending_Sector` | Secteurs instables              |

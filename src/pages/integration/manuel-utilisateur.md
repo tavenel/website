@@ -9,15 +9,15 @@ tags:
 
 ## Manuel utilisateur
 
-Le guide d'utilisation est le support qui accompagne un produit afin de montrer aux clients comment s’en servir et/ou comment l’assembler. C'est un support marketing que l'on partage pour arriver à la meilleure expérience client possible.
+Le guide d'utilisation est le support qui accompagne un produit afin de montrer aux clients comment s'en servir et/ou comment l'assembler. C'est un support marketing que l'on partage pour arriver à la meilleure expérience client possible.
 
 ---
 
-Une notice d’utilisation peut prendre de nombreuses formes : les manuels d’utilisation des logiciels présentent les fonctionnalités des outils et leur application, les guides d’utilisation de tondeuses à gazon indiquent comment démarrer le moteur ou faire le plein de carburant, même les formulaires de déclarations d’impôts sont accompagnés d’instructions permettant d’éviter les erreurs.
+Une notice d'utilisation peut prendre de nombreuses formes : les manuels d'utilisation des logiciels présentent les fonctionnalités des outils et leur application, les guides d'utilisation de tondeuses à gazon indiquent comment démarrer le moteur ou faire le plein de carburant, même les formulaires de déclarations d'impôts sont accompagnés d'instructions permettant d'éviter les erreurs.
 
 ---
 
-Un guide d’utilisation ne s’adresse pas exclusivement aux nouveaux utilisateurs : il peut servir d'aide-mémoire aux utilisateurs existants, ou leur décrire les fonctionnalités de la nouvelle version.
+Un guide d'utilisation ne s'adresse pas exclusivement aux nouveaux utilisateurs : il peut servir d'aide-mémoire aux utilisateurs existants, ou leur décrire les fonctionnalités de la nouvelle version.
 Il sert aussi de référence au service client pour trouver facilement l'information.
 
 ---
@@ -54,7 +54,7 @@ Les images simplifiées sont un bon moyen de focaliser l'attention de l'utilisat
 
 ---
 
-Un excellent exemple de document utilisateur Ikea. Avec un minimum de texte, ce support marketing contient des schémas clairs et faciles à suivre, accompagnés d’instructions visuelles pour assembler le produit. ©Ikea
+Un excellent exemple de document utilisateur Ikea. Avec un minimum de texte, ce support marketing contient des schémas clairs et faciles à suivre, accompagnés d'instructions visuelles pour assembler le produit. ©Ikea
 
 ![Un exemple de plan Ikea](@assets/formation/ikea.jpg)
 
@@ -73,11 +73,11 @@ Par exemple, le manuel utilisateur décrit les outils pour réaliser l'administr
 On doit trouver en plus dans le manuel d'exploitation :
 
 - La nature de la sauvegarde (incrémentale journalier, total hebdomadaire, ...)
-- L’heure de la sauvegarde incrémentale (tous les jours à 3h00)
+- L'heure de la sauvegarde incrémentale (tous les jours à 3h00)
 - La date/heure du backup hebdomadaire (samedi à 3h00)
 - Le label des supports utilisés pour la sauvegarde journalière, hebdomadaire
 - La péridocité de recyclage des supports utilisés pour les sauvegardes
-- L’armoire de rangement des supports de sauvegarde
+- L'armoire de rangement des supports de sauvegarde
 
 ---
 

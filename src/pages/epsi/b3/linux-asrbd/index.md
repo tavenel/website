@@ -9,7 +9,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectifs
 
-- Etre capable d’administrer une infrastructure sous environnement Linux
+- Etre capable d'administrer une infrastructure sous environnement Linux
 
 ### Contenu du cours
 

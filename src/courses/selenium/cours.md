@@ -30,8 +30,8 @@ tags:
 
 ---
 
-- Les scripts sont ensuite exportables en langages de plus haut niveau : `Java`, `Python`, ... mais demanderont d’être retravaillés pour assurer une maintenabilité dans le temps.
-- Peu d’intérêt pour construire un framework d’automatisation mais pratique pour démarrer sur `Selenium` ou faire des scripts rapides pour reproduction des bug.
+- Les scripts sont ensuite exportables en langages de plus haut niveau : `Java`, `Python`, ... mais demanderont d'être retravaillés pour assurer une maintenabilité dans le temps.
+- Peu d'intérêt pour construire un framework d'automatisation mais pratique pour démarrer sur `Selenium` ou faire des scripts rapides pour reproduction des bug.
 
 ---
 

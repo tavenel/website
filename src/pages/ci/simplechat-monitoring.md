@@ -57,17 +57,17 @@ Le développement sera réalisé sur l'IDE `vsCode`.
 	b. Un framework de couverture de test (si non inclus dans le framework de tests)
 	c. Un linter (vérificateur syntaxique et sémantique)
 	d. Un outil de formatage du code source
-4.  Développer l'interface de monitoring en suivant les principes de l’intégration continue :
+4.  Développer l'interface de monitoring en suivant les principes de l'intégration continue :
 	a. Le développement devra être itératif, par exemple :
 		i. Mock du backend (liste des utilisateurs et/ou des chatrooms codées en dur dans le frontend)
 		ii. Liste des utilisateurs puis liste des chatrooms
 		iii. Requêtes sur un seul serveur puis multi-serveur
-	b. L’intégration des fonctionnalités devra contenir des tests unitaires
+	b. L'intégration des fonctionnalités devra contenir des tests unitaires
 	c. La qualité du code (coding-style, bugs, …) devra être testée et corrigée si besoin à chaque intégration grâce aux linter(s) configurés
 
 On pourra par exemple utiliser les outils suivants dans le cas d'un projet `ReactJS` : `ESLint`, `Jest` (avec couverture), `Prettier`
  
-Note 1 : Il n'est pas demandé de rendre l'accès aux différents serveurs backend configurable - la liste des serveurs à surveiller et leurs points d'accès pourront donc être stockés directement dans le code source de l’application de monitoring si besoin.
+Note 1 : Il n'est pas demandé de rendre l'accès aux différents serveurs backend configurable - la liste des serveurs à surveiller et leurs points d'accès pourront donc être stockés directement dans le code source de l'application de monitoring si besoin.
  
 Note 2 : Il n'est pas demandé de réaliser le suivi des messages dans les chatrooms.
  
@@ -96,7 +96,7 @@ Nom, Prénom 2 :
 
 La technologie frontend utilisée :
 
-Les outils d’intégration continue utilisés et leur but :
+Les outils d'intégration continue utilisés et leur but :
 
 Une explication sur le lancement des tests inclus dans le projet (commande à exécuter et/ou intégration dans l'IDE) :
 

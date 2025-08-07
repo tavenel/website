@@ -36,7 +36,7 @@ En résumé :
 - La clé privée est… **privée!!** - **on ne partage ABSOLUMENT JAMAIS une clé privée** (elle ne sort donc **JAMAIS** de la machine locale).
 :::
 
-Dans le TP, l’utilisateur `user_local` (sur la machine cliente) générera une paire de clés SSH et ajoutera la clé publique sur le serveur. Cette clé publique sera placée dans le fichier `authorized_keys` de l'utilisateur `user_remote` avec lequel on se connectera sur le serveur, ce qui autorisera la connexion sans mot de passe pour cet utilisateur.
+Dans le TP, l'utilisateur `user_local` (sur la machine cliente) générera une paire de clés SSH et ajoutera la clé publique sur le serveur. Cette clé publique sera placée dans le fichier `authorized_keys` de l'utilisateur `user_remote` avec lequel on se connectera sur le serveur, ce qui autorisera la connexion sans mot de passe pour cet utilisateur.
 
 ### Processus
 
@@ -44,7 +44,7 @@ Voici un schéma simplifié du processus :
 
 1. Génération de la clé : on génère une paire de clés (privée et publique) dans le répertoire `~user_local/.ssh` de `user_local` sur la machine cliente.
 2. Copie de la clé publique : la clé publique est copiée dans le fichier `~user_remote/.ssh/authorized_keys` de `user_remote` sur le serveur.
-3. Connexion SSH : lors de la connexion de `user_local@machine_cliente` vers `user_remote@remote_server`, `user_local` utilise sa clé pour s'authentifier sur le serveur en tant que `user_remote@machine_remote`. Le serveur vérifie la clé publique pour authentifier l’utilisateur, autorisant l'accès si la clé est correcte.
+3. Connexion SSH : lors de la connexion de `user_local@machine_cliente` vers `user_remote@remote_server`, `user_local` utilise sa clé pour s'authentifier sur le serveur en tant que `user_remote@machine_remote`. Le serveur vérifie la clé publique pour authentifier l'utilisateur, autorisant l'accès si la clé est correcte.
 
 ## Partie 1 : Création des clés SSH
 
@@ -82,7 +82,7 @@ Utilisez la commande `ssh-copy-id` pour copier la clé publique sur le serveur :
 ssh-copy-id utilisateur@adresse_du_serveur
 ```
 
-Remplacez `utilisateur` par le nom d’utilisateur sur le serveur et `adresse_du_serveur` par l'adresse IP ou le nom de domaine.
+Remplacez `utilisateur` par le nom d'utilisateur sur le serveur et `adresse_du_serveur` par l'adresse IP ou le nom de domaine.
 
 ### Alternative : Copie manuelle de la clé publique
 

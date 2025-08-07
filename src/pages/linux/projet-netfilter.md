@@ -14,7 +14,7 @@ Vous êtes administrateur système pour une petite entreprise. L'équipe réseau
 
 La configuration du pare-feu devra être persistante (et donc ne pas être effacée par un redémarrage).
 
-Vous devez également automatiser cette configuration à l’aide d’un script shell et permettre à un utilisateur **non privilégié** d'exécuter ce script.
+Vous devez également automatiser cette configuration à l'aide d'un script shell et permettre à un utilisateur **non privilégié** d'exécuter ce script.
 
 Utilisez des outils comme `ping`, `curl`, ou `nmap` depuis différentes sources pour vérifier le comportement du pare-feu.
 

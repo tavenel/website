@@ -53,16 +53,16 @@ Cela va :
 
 ### Vérifier les Pods en Exécution
 
-Utilisez `podman pod ps` pour vérifier l’état de vos pods et `podman ps` pour voir les conteneurs en cours d'exécution :
+Utilisez `podman pod ps` pour vérifier l'état de vos pods et `podman ps` pour voir les conteneurs en cours d'exécution :
 
 ```sh
 podman pod ps
 podman ps
 ```
 
-Ces commandes listent tous les pods et conteneurs, fournissant leur statut, les ports exposés, et d’autres détails utiles.
+Ces commandes listent tous les pods et conteneurs, fournissant leur statut, les ports exposés, et d'autres détails utiles.
 
-### Tester l’Application
+### Tester l'Application
 
 Accédez à votre application via le port spécifié en utilisant `localhost`. Si vous avez exposé le port 80 de Nginx comme dans l'exemple, ouvrez <http://localhost:80> dans un navigateur ou utilisez `curl` pour vérifier la réponse (dans une VM par exemple).
 
@@ -79,7 +79,7 @@ Cela stoppe et supprime le pod, y compris tous les conteneurs associés.
 
 ### Travailler avec des Volumes et ConfigMaps
 
-Si votre pod nécessite des `Volume` ou des `ConfigMap`, vous pouvez définir ces éléments dans le fichier manifest Kubernetes. Podman gère ces configurations en local pour émuler l’environnement Kubernetes autant que possible.
+Si votre pod nécessite des `Volume` ou des `ConfigMap`, vous pouvez définir ces éléments dans le fichier manifest Kubernetes. Podman gère ces configurations en local pour émuler l'environnement Kubernetes autant que possible.
 
 - Ajouter un `Volume` et une `ConfigMap` au `Pod` précédent.
 

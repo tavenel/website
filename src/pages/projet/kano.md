@@ -8,7 +8,7 @@ tags:
 
 ### 📊 Diagramme de Kano
 
-- Outil permettant de classer les fonctionnalités en fonction de leur impact sur la satisfaction des utilisateurs selon 3 types d’attentes. 🔍
+- Outil permettant de classer les fonctionnalités en fonction de leur impact sur la satisfaction des utilisateurs selon 3 types d'attentes. 🔍
 - Aide à déterminer quelles fonctionnalités sont cruciales pour la satisfaction des utilisateurs et quelles fonctionnalités peuvent être des avantages concurrentiels. 🏆
 
 ---
@@ -18,7 +18,7 @@ tags:
 Fonctionnalités de base considérée comme obligatoire par les utilisateurs. 🔧
 
 - Absence => insatisfaction importante. ❌
-- Cependant, leur présence n’entraîne pas nécessairement une grande satisfaction, car elles sont considérées comme acquises. ✅
+- Cependant, leur présence n'entraîne pas nécessairement une grande satisfaction, car elles sont considérées comme acquises. ✅
 
 ---
 
@@ -34,16 +34,16 @@ Fonctionnalité attendue des utilisateurs. 📈
 
 ### Fonctions Attractives
 
-Surprennent les utilisateurs et génèrent une grande satisfaction lorsqu’elles sont présentes. 🎁
+Surprennent les utilisateurs et génèrent une grande satisfaction lorsqu'elles sont présentes. 🎁
 
-- Pas nécessairement attendues, mais apportent un plus significatif à l’expérience utilisateur. 🌟
+- Pas nécessairement attendues, mais apportent un plus significatif à l'expérience utilisateur. 🌟
 - Leur absence ne cause pas de mécontentement. ✅
 
 ---
 
 ### Exemple de Diagramme de Kano
 
-Imaginons un projet de développement d’une application de livraison de repas : 🍔
+Imaginons un projet de développement d'une application de livraison de repas : 🍔
 
 - La possibilité de filtrer les restaurants par type de cuisine est une fonction obligatoire. 🔍
 - La rapidité de livraison en moins de 30 minutes est une fonction proportionnelle. ⏱️

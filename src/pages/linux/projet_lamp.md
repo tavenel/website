@@ -8,15 +8,15 @@ date: 2024 / 2025
 Dans cette partie, nous allons installer et configurer un serveur web Apache dans notre système.
 
 - Installer le package `apache2`.
-- Vérifiez l’état du service.
+- Vérifiez l'état du service.
 - Connectez-vous au serveur Web installé dans la machine Linux depuis votre système Windows :
   + Ouvrir votre navigateur Web préféré et entrez l'URL: <http://IP_DE_LA_MACHINE_LINUX:8080>.
-  + On remplacera `IP_DE_LA_MACHINE_LINUX` par l’adresse IP de la machine.
+  + On remplacera `IP_DE_LA_MACHINE_LINUX` par l'adresse IP de la machine.
   + Attention, cette adresse IP peut avoir changé en cas de redémarrage du système Linux ! Dans ce cas, la commande `ip addr show` permet de récupérer cette nouvelle adresse.
 
 ## Installation du plugin PHP
 
-Dans cette partie, nous allons installer et configurer les paquets php pour le serveur web Apache. Cela va nous permettre d’exécuter du code PHP dans notre serveur.
+Dans cette partie, nous allons installer et configurer les paquets php pour le serveur web Apache. Cela va nous permettre d'exécuter du code PHP dans notre serveur.
 
 - Installer les paquets : `php libapache2-mod-php php-mysql`
 - Supprimer la page d'index servie actuellement par le serveur apache : `/var/www/html/index.html`.
@@ -28,13 +28,13 @@ On pourra utiliser le contenu suivant dans le fichier `index.php` :
 <?php phpinfo(); ?>
 ```
 
-**Attention : depuis php 7, l’extension php `mysql.so` n'existe plus. Cette extension peut encore être référencée dans certaines documentations - nous utiliserons à la place l’extension `mysqli.so`.**
+**Attention : depuis php 7, l'extension php `mysql.so` n'existe plus. Cette extension peut encore être référencée dans certaines documentations - nous utiliserons à la place l'extension `mysqli.so`.**
 
 ## Installation de la base de données : MySQL
 
 Dans cette partie, nous allons installer et configurer une base de données MySQL dans notre système.
 
-- Installer les paquets du serveur et du client MySQL. Cela va installer l’implémentation par défaut de la base de données MySQL. Sur Debian, cette implémentation s’appelle `mariadb` et il faut donc remplacer le nom du **service** par `mariadb`, pas le paquet à installer. Sur Ubuntu, il s'agit bien de `mysql` :
+- Installer les paquets du serveur et du client MySQL. Cela va installer l'implémentation par défaut de la base de données MySQL. Sur Debian, cette implémentation s'appelle `mariadb` et il faut donc remplacer le nom du **service** par `mariadb`, pas le paquet à installer. Sur Ubuntu, il s'agit bien de `mysql` :
   + `$ sudo apt install default-mysql-server default-mysql-client`
 - Vérifier que le service de la base de données fonctionne correctement :
   + `$ sudo systemctl status mysql`
@@ -49,7 +49,7 @@ Dans cette partie, nous allons installer et configurer une base de données MySQ
     + `$ sudo mysqld_safe --skip-grant-tables --skip-networking &`
 - Se connecter à la base de données :
   + `$ mysql -u root`
-- Dans l’invité MySQL, taper en remplaçant `mon_password` par le mot de passe de votre choix :
+- Dans l'invité MySQL, taper en remplaçant `mon_password` par le mot de passe de votre choix :
 
   ```sh
   mysql> FLUSH PRIVILEGES;
@@ -72,12 +72,12 @@ Dans cette partie, nous allons installer et configurer une base de données MySQ
   + `$ sudo systemctl start mysql`
 - Tester la connexion à la base de données avec le nouvel utilisateur root :
   + `$ mysql -u root -p`
-- Créer et configurer un compte mysql dédié (attention : il s’agit ici d’un compte de la base de données, qui n’a aucun lien avec les utilisateurs du système d’exploitation Linux !)
+- Créer et configurer un compte mysql dédié (attention : il s'agit ici d'un compte de la base de données, qui n'a aucun lien avec les utilisateurs du système d'exploitation Linux !)
   + `mysql> CREATE USER 'mon_utilisateur'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mon_password';`
 
 ## Créer un véritable site Web en PHP pour ajouter/supprimer des entrées dans une table SQL
 
-Dans cette partie, nous allons déployer le site PHP donnée en exemple et créer une base de données pour supporter l’utilisation de ce site web.
+Dans cette partie, nous allons déployer le site PHP donnée en exemple et créer une base de données pour supporter l'utilisation de ce site web.
 
 - Créer une nouvelle base de données `test` qui sera utilisée par notre site Web et ajouter les droits à notre utilisateur de base de données :
 
@@ -95,7 +95,7 @@ Dans cette partie, nous allons déployer le site PHP donnée en exemple et crée
     $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'mot_de_passe');
     ```
 
-- Créer la table de l’application dans notre base de données test, **en se connectant avec notre nouvel utilisateur :
+- Créer la table de l'application dans notre base de données test, **en se connectant avec notre nouvel utilisateur :
   + `$ mysql -u mon_utilisateur -p`
 
   ```sh
@@ -104,9 +104,9 @@ Dans cette partie, nous allons déployer le site PHP donnée en exemple et crée
   mysql> CREATE TABLE minichat(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, pseudo VARCHAR(100), message VARCHAR(255));
   ```
 
-- Tester le déploiement de notre site web : depuis votre navigateur Web préféré sur votre machine de travail, atteindre l’URL de notre site : http://adresse_ip/minichat.php. On utilisera pour cela l’adresse IP de notre machine virtuelle.
+- Tester le déploiement de notre site web : depuis votre navigateur Web préféré sur votre machine de travail, atteindre l'URL de notre site : http://adresse_ip/minichat.php. On utilisera pour cela l'adresse IP de notre machine virtuelle.
 
-*En cas d’erreur, on pourra inspecter les logs Apache situés dans le répertoire : `/var/log/apache2*`.
+*En cas d'erreur, on pourra inspecter les logs Apache situés dans le répertoire : `/var/log/apache2*`.
 
 # Annexe : fichiers php
 

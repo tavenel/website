@@ -5,13 +5,13 @@ date: 2024 / 2025
 
 # 📋 Prérequis
 
-_L’ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle (ne pas se connecter avec le compte du super-utilisateur `root` )._
+_L'ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle (ne pas se connecter avec le compte du super-utilisateur `root` )._
 
 ## Réinitialisation du mot de passe administrateur (root)
 
 Si vous avez oublié votre mot de passe utilisateur, vous pouvez utiliser la méthode suivante :
 
-- Connectez-vous avec l’utilisateur `root` (mot de passe : osboxes.org)
+- Connectez-vous avec l'utilisateur `root` (mot de passe : osboxes.org)
 - Tapez la commande :
 
 ```sh
@@ -20,13 +20,13 @@ Si vous avez oublié votre mot de passe utilisateur, vous pouvez utiliser la mé
 
 Cette commande permet de changer le mot de passe de votre utilisateur.
 
-Tapez la commande exit pour revenir à l’écran de connexion et utilisez votre utilisateur avec son nouveau mot de passe.
+Tapez la commande exit pour revenir à l'écran de connexion et utilisez votre utilisateur avec son nouveau mot de passe.
 
 # Gestion des fichiers
 
 ## Rappel : répertoire utilisateur
 
-*Remarque : par défaut, après la connexion d’un utilisateur le système vous place dans votre répertoire de travail : `/home/NOM_DE_VOTRE_UTILISATEUR`*
+*Remarque : par défaut, après la connexion d'un utilisateur le système vous place dans votre répertoire de travail : `/home/NOM_DE_VOTRE_UTILISATEUR`*
 
 *A tout moment, on pourra revenir facilement dans ce répertoire de travail grâce à la commande cd, utilisée sans paramètre :*
 
@@ -46,7 +46,7 @@ $ cd
 - Supprimez le fichier `fichier2`.
 - Supprimez le répertoire `sousRepertoire`.
 
-## Affichage du contenu d’un fichier
+## Affichage du contenu d'un fichier
 
 - Afficher le contenu du fichier `/etc/passwd`.
 
@@ -80,7 +80,7 @@ $ cd
 - Redirigez la sortie standard de la commande `$ ls –l fichierNonExistant` dans un fichier `fichierNonExistant.out`
 - Quel est le contenu du fichier `fichierNonExistant.out` ? Pourquoi ?
 - Redirigez la sortie d'erreur de la commande `$ ls –l fichierNonExistant` dans un fichier `fichierNonExistant.err`
-- Vérifiez que l'erreur n’est plus affichée sur la console, mais stockée dans le fichier `fichierNonExistant.err`
+- Vérifiez que l'erreur n'est plus affichée sur la console, mais stockée dans le fichier `fichierNonExistant.err`
 
 # Les processus
 
@@ -96,11 +96,11 @@ $ cd
 - Lister l'ensemble des processus de tous les utilisateurs avec la commande ayant lancé le processus.
 - Tuer un processus :
   + Lancez la commande : `$ sleep 600 &`
-  + Cette commande permet d’exécuter une boucle d’attente pendant 600s en arrière-plan.
-  + Attention à bien ajouter le caractère `&` en fin de commande : c’est ce caractère qui transforme la commande d’avant plan (comportement standard) en processus d’arrière-plan.
-- En listant les processus de l’utilisateur courant, récupérez l'identifiant de processus (`pid`) de cette commande.
+  + Cette commande permet d'exécuter une boucle d'attente pendant 600s en arrière-plan.
+  + Attention à bien ajouter le caractère `&` en fin de commande : c'est ce caractère qui transforme la commande d'avant plan (comportement standard) en processus d'arrière-plan.
+- En listant les processus de l'utilisateur courant, récupérez l'identifiant de processus (`pid`) de cette commande.
 - Tuez la commande `sleep` en arrière-plan, en utilisant son identifiant de processus.
-- Listez les processus de l'utilisateur courant pour vérifier que la commande n’est plus présente.
+- Listez les processus de l'utilisateur courant pour vérifier que la commande n'est plus présente.
 
 # Chemins absolus et relatifs
 
@@ -109,7 +109,7 @@ $ cd
 Il existe 2 façons d'accéder à un fichier dans un environnement Linux :
 
 - En utilisant un chemin de fichier absolu, commençant par un `/` (le chemin du fichier depuis la racine, par exemple : `/etc/passwd`).
-- En utilisant un chemin de fichier relatif (le chemin d’accès au fichier depuis le répertoire courant, par exemple : `monSousRepertoire/monAutreRepertoire/monFichier`).
+- En utilisant un chemin de fichier relatif (le chemin d'accès au fichier depuis le répertoire courant, par exemple : `monSousRepertoire/monAutreRepertoire/monFichier`).
 
 À tout moment, on pourra afficher le répertoire de travail courant grâce à la commande :
 

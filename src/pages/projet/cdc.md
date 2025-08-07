@@ -54,9 +54,9 @@ tags:
 ### Recette fonctionnelle
 
 - Vérifie que les engagements du prestataire sont en adéquation avec les besoins spécifiés dans le cahier des charges. 🔎
-- Conduit à l’acceptation ou au rejet de la solution. ✔️❌
+- Conduit à l'acceptation ou au rejet de la solution. ✔️❌
 - Divisée en deux étapes :
-  - La vérification d’aptitude (VA) : vérifie les caractéristiques fonctionnelles du CDC (test grandeur nature). 🧪
+  - La vérification d'aptitude (VA) : vérifie les caractéristiques fonctionnelles du CDC (test grandeur nature). 🧪
   - La vérification de service régulier (VSR) : vérifie le bon fonctionnement du système en exploitation normale (utilisation réelle). 🔄
 
 ---
@@ -127,18 +127,18 @@ Les cahiers des charges sont des documents de référence :
 
 ## 📚 Différents types de cahier des charges
 
-Le cahier des charges est un document qui décrit les fonctions que devra remplir la solution à l’issue du projet, ainsi que ses spécifications techniques et les besoins auxquels elle devra répondre. 📝
-Il peut être utilisé dans différents contexte, en interne comme en externe (appels d’offre, marchés publics…) et a notamment pour but de faire gagner du temps aux différents intervenants dans la compréhension du projet. ⏳
+Le cahier des charges est un document qui décrit les fonctions que devra remplir la solution à l'issue du projet, ainsi que ses spécifications techniques et les besoins auxquels elle devra répondre. 📝
+Il peut être utilisé dans différents contexte, en interne comme en externe (appels d'offre, marchés publics…) et a notamment pour but de faire gagner du temps aux différents intervenants dans la compréhension du projet. ⏳
 
 ---
 
 On distingue le _cahier des charge technique_ du _cahier des charges fonctionnel_. 🔍
-- Le premier s’intéresse particulièrement aux **exigences et contraintes techniques** du produit 🛠️
+- Le premier s'intéresse particulièrement aux **exigences et contraintes techniques** du produit 🛠️
 - Le second se focalise sur les besoins **fonctionnels et la manière** dont la solution y répond 🎯
 
 ---
 
-Le cahier des charges techniques peut toutefois n’être que la partie technique d’un cahier des charges plus global, qui énumère les contraintes de différents types :
+Le cahier des charges techniques peut toutefois n'être que la partie technique d'un cahier des charges plus global, qui énumère les contraintes de différents types :
 - Économiques 💰
 - Industrielles 🏭
 - Environnementales 🌱
@@ -184,14 +184,14 @@ Les besoins sont exprimés sous forme de courtes "User Stories", ce qui permet u
 ### Le CCF
 
 :::strong
-Rédiger un CCF c’est **exprimer et formaliser le besoin**. 📝
+Rédiger un CCF c'est **exprimer et formaliser le besoin**. 📝
 :::
 
 C'est donc un document qui présente de manière détaillée et structurée les **attendus** d'un projet (services, produit) et ses **contraintes** (techniques, managériales, contextuelles).
 
 En principe, c'est le livrable qui sanctionne la **fin de la phase de lancement** d'un projet. 🏁
 
-C’est aussi un **outil d'évaluation** capital en **fin de projet** : il permet de mesurer les éventuels écarts entre les objectifs exprimés au cours de l’initiation du projet et les solutions proposées au final. 📏
+C'est aussi un **outil d'évaluation** capital en **fin de projet** : il permet de mesurer les éventuels écarts entre les objectifs exprimés au cours de l'initiation du projet et les solutions proposées au final. 📏
 
 ---
 
@@ -207,7 +207,7 @@ C’est aussi un **outil d'évaluation** capital en **fin de projet** : il perme
 
 ### Contexte
 
-Expliquez en quelques mots le fondement de la demande. Il ne suffit pas simplement d’exprimer l'aspect technique d’un projet, une vue générale aidera les prestataires à comprendre mieux et plus rapidement les tenants et aboutissants du projet. 🌍
+Expliquez en quelques mots le fondement de la demande. Il ne suffit pas simplement d'exprimer l'aspect technique d'un projet, une vue générale aidera les prestataires à comprendre mieux et plus rapidement les tenants et aboutissants du projet. 🌍
 
 > Exemple : Pour un site web, ne décrivez pas seulement vos attentes, parlez également des ressorts qui vous ont poussé à opérer un changement de site web ou encore la typologie de vos clients par exemple. 🌐
 
@@ -230,7 +230,7 @@ Expliquez de façon complète les différents objectifs du projet : quelle seron
 
 ### Périmètre
 
-Expliquez de façon succincte les limites de votre projet. Vous répondrez ainsi aux questions : À qui s’adresse-t-il ? À quel moment ? 🔍
+Expliquez de façon succincte les limites de votre projet. Vous répondrez ainsi aux questions : À qui s'adresse-t-il ? À quel moment ? 🔍
 
 > Exemple : Le projet implique-t-il tous les partenaires ? Tous les clients sont-ils concernés ? Tous les pays ? 🌍
 
@@ -246,9 +246,9 @@ Décrivez de manière exhaustive les différents leviers du projet à travers un
 
 ### Ressources
 
-Listez l’ensemble des ressources disponibles ainsi que les contraintes pour la réalisation du projet. 📋
+Listez l'ensemble des ressources disponibles ainsi que les contraintes pour la réalisation du projet. 📋
 
-> Exemple : Le nombre d’employés qui s’occupera de la gestion du site web ou encore leur faible connaissance des outils informatique. 👥
+> Exemple : Le nombre d'employés qui s'occupera de la gestion du site web ou encore leur faible connaissance des outils informatique. 👥
 
 ---
 
@@ -256,13 +256,13 @@ Listez l’ensemble des ressources disponibles ainsi que les contraintes pour la
 
 Établir un budget est important pour aiguiller les prestataires et éviter une déconvenue lors de la réception des premiers devis. 💰
 
-> Exemple : Donnez le budget total d’un projet de création de site avec la rédaction, l'hébergement, le webdesign et le développement. 💸
+> Exemple : Donnez le budget total d'un projet de création de site avec la rédaction, l'hébergement, le webdesign et le développement. 💸
 
 ---
 
 ### Délais
 
-Autre variable déterminante, le délai de réalisation et la date de livraison. Elle permet au prestataire d’évaluer la durée de travail et de s’organiser. Pour vous, le délai indiqué sur le cahier des charges sert de preuve. ⏳
+Autre variable déterminante, le délai de réalisation et la date de livraison. Elle permet au prestataire d'évaluer la durée de travail et de s'organiser. Pour vous, le délai indiqué sur le cahier des charges sert de preuve. ⏳
 
 > Exemple : la durée inscrite sur le cahier des charges peut être inscrite sur le devis et la facture du prestataire. 📅
 
@@ -322,18 +322,18 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 ### Questionnaires , Enquêtes et Ateliers
 
 - Les questionnaires permettent de recueillir les informations auprès des parties prenantes de manière structurée. 📋
-- Les enquêtes permettent d'obtenir des informations externes concernant tout ce qui a trait à l’expérience client (questions ouvertes). 📊
+- Les enquêtes permettent d'obtenir des informations externes concernant tout ce qui a trait à l'expérience client (questions ouvertes). 📊
 - Les ateliers, quant à eux, réunissent différentes parties prenantes pour discuter et définir collectivement les besoins. 🗣️
 
 ---
 
-#### Exemples de questions pour l’analyse des besoins
+#### Exemples de questions pour l'analyse des besoins
 
 ---
 
 ##### Questions liées au taux de réussite
 
-- Quelles sont les activités nécessaires à l’atteinte de nos objectifs ? 🎯
+- Quelles sont les activités nécessaires à l'atteinte de nos objectifs ? 🎯
 - Quelle est la probabilité pour que notre solution fonctionne ? 📊
 - Quelles sont les tâches à accomplir pour répondre à nos besoins ? 📋
 
@@ -347,7 +347,7 @@ Cette étape marque le début de la phase de réalisation, où la maîtrise d'œ
 
 ---
 
-##### Questions d’ordre opérationnel
+##### Questions d'ordre opérationnel
 
 - Quelles sont les parties prenantes concernées ? 👥
 - À quel moment du processus le besoin se fait-il sentir ? ⏳
@@ -468,17 +468,17 @@ Décrire le contexte et la démarche, et dresser un éventuel historique des pr�
 
 #### Exemple :
 
-« Développement d’une nouvelle application mobile » 📱
+« Développement d'une nouvelle application mobile » 📱
 Contexte : application mobile liée au site [monsite.com](https://www.monsite.com) et reprenant ses fonctionnalités, en y ajoutant une messagerie instantanée. 💬
 Objectif : offrir une expérience utilisateur supérieure sur mobile. 🌟
-Historique : réalisation d’une première version de l’application (V1) il y a 1 an. 📅
+Historique : réalisation d'une première version de l'application (V1) il y a 1 an. 📅
 
 ---
 
 ### Besoins et contraintes liés au projet
 
 Décrire la solution à travers :
-- L’analyse et l’expression de ses besoins fonctionnels 📋
+- L'analyse et l'expression de ses besoins fonctionnels 📋
 - Ses contraintes techniques et son architecture 🏗️
 - Toutes les exigences particulières inhérentes au projet 🔍
 
@@ -486,7 +486,7 @@ Décrire la solution à travers :
 
 #### Exemple :
 
-Besoins fonctionnels : accéder aux fonctionnalités de [monsite.com](https://www.monsite.com) à partir de l’application mobile (consultation de profils, lecture d’articles), utiliser une messagerie instantanée pour fluidifier la communication entre les membres du site… 📲
+Besoins fonctionnels : accéder aux fonctionnalités de [monsite.com](https://www.monsite.com) à partir de l'application mobile (consultation de profils, lecture d'articles), utiliser une messagerie instantanée pour fluidifier la communication entre les membres du site… 📲
 Contraintes : développement en `Java` et en `Objective C`, application destinée à `Android` et à `iOS` (deux versions), soumission et déploiement sur les app stores à la charge du prestataire. 📦
 
 ---
@@ -509,7 +509,7 @@ On pourra modéliser le besoin à l'aide d'un diagramme _bête à corne_ :
 
 ## 🎯 Résultats attendus
 
-Prestations et/ou produits effectivement attendus à l’issue du projet et les exigences particulières conditionnant leur acceptation.
+Prestations et/ou produits effectivement attendus à l'issue du projet et les exigences particulières conditionnant leur acceptation.
 
 ---
 
@@ -525,7 +525,7 @@ Exigences : livraison des fichiers `PSD` / `Sketch`, respect de la charte graphi
 Pour être opérationnel, le cahier des charges fonctionnel doit être :
 
 - **Concis** : privilégiez les phrases courtes et les tournures simples. Fixer un nombre de caractères ou de mots peut être une méthode utile pour ce faire. ✂️
-- **Simple** : n’employez des termes techniques que lorsque cela est indispensable, utilisez des mots dépourvus d’ambiguïté ou de jugement. L'intérêt du projet (technique, organisationnel, financier) doit être démontré de manière claire. 🔍
+- **Simple** : n'employez des termes techniques que lorsque cela est indispensable, utilisez des mots dépourvus d'ambiguïté ou de jugement. L'intérêt du projet (technique, organisationnel, financier) doit être démontré de manière claire. 🔍
 - **Organisé** : le document doit être structuré par un plan avec des parties équilibrées et avoir un sommaire. 📑
 - **Joli** : travailler la forme pour rendre ce document agréable à lire et motiver les destinataires à sa lecture. 🌈
 
@@ -551,9 +551,9 @@ Pour réaliser le cahier des charges fonctionnel, on pourra se poser les questio
 Le cahier des charges technique est LE document de référence pour la **MOE**. 📑
 :::
 
-Il est utile à l’ensemble des équipes qui seront en charge de développer, d’installer et de tester les composants de votre projet. 🛠️
+Il est utile à l'ensemble des équipes qui seront en charge de développer, d'installer et de tester les composants de votre projet. 🛠️
 
-C’est l'un (le ?) document le plus important de votre projet. 🏆
+C'est l'un (le ?) document le plus important de votre projet. 🏆
 
 ---
 
@@ -566,7 +566,7 @@ _En cas de sous-traitance, votre sous-traitant est donc tenu à une obligation d
 
 Globalement, il y a deux approches :
 
-- créer un seul document pour l’ensemble de votre projet 📄
+- créer un seul document pour l'ensemble de votre projet 📄
 - créer un cahier des charges technique pour chacune des briques de votre projet, le tout chapeauté par un document de synthèse montrant la vue globale du projet. 📂
 
 ---
@@ -575,28 +575,28 @@ Globalement, il y a deux approches :
 
 Il est possible d'écrire le cahier des charges technique soit :
 
-- à partir du cahier des charges fonctionnel et l’amender de vos considérations techniques 🔧
-- à partir d’un document vierge et le structurer de façon logique 📝
+- à partir du cahier des charges fonctionnel et l'amender de vos considérations techniques 🔧
+- à partir d'un document vierge et le structurer de façon logique 📝
 
 ---
 ### Contenu
 
 #### Rappel du contexte et des objectifs
 
-Basée sur le contexte général du projet, cette section est reformulée pour s’adapter à la partie traitée.
+Basée sur le contexte général du projet, cette section est reformulée pour s'adapter à la partie traitée.
 Les objectifs sont également repris de notre cahier des charges fonctionnel et sont amendés par le fruit de notre analyse. 🔍
 
 ---
 
 #### Exemple :
 
-Préciser la nécessité d’initier une connexion avec le serveur de base de données de l’application de suivi des flux afin d’alimenter la table “Transaction” que nous avons définie lors de la définition de la base de données de notre solution. 📊
+Préciser la nécessité d'initier une connexion avec le serveur de base de données de l'application de suivi des flux afin d'alimenter la table “Transaction” que nous avons définie lors de la définition de la base de données de notre solution. 📊
 
 ---
 
-### L’architecture technique
+### L'architecture technique
 
-Ce chapitre s’appuie essentiellement sur le dossier d'architecture technique et sur les règles d’architecture de l’entreprise.
+Ce chapitre s'appuie essentiellement sur le dossier d'architecture technique et sur les règles d'architecture de l'entreprise.
 
 On y trouve a minima :
 
@@ -607,18 +607,18 @@ On y trouve a minima :
 
 Et, pour chaque environnement technique (développement, intégration, tests, production, etc.) :
 
-- Le schéma d’architecture de la couche technique, par exemple sous forme de [diagramme d'architecture d'application](https://www.edrawsoft.com/fr/article/application-architecture-diagram.html) ou via le modèle C4 très utilisé en agilité : [C4 model](https://c4model.com/) 📊
+- Le schéma d'architecture de la couche technique, par exemple sous forme de [diagramme d'architecture d'application](https://www.edrawsoft.com/fr/article/application-architecture-diagram.html) ou via le modèle C4 très utilisé en agilité : [C4 model](https://c4model.com/) 📊
 - La liste des composants avec :
     - La localisation 📍
     - La zone réseau 🌐
-    - Le système d’exploitation et sa version 🖥️
+    - Le système d'exploitation et sa version 🖥️
     - Les capacités de performances (UC, mémoire) 💪
     - Les capacités de stockage : disques, `NAS`, `SAN`, … 💾
     - Les paramètres système particuliers ⚙️
     - L'adressage `IP` et le nom `DNS` 🌐
     - Les éventuels certificats 📜
     - Les middleware installés, leur version, les paramètres particuliers ⚙️
-    - Les ports d’écoute 🔌
+    - Les ports d'écoute 🔌
     - Le statut : existant, à mettre à jour, à construire 🏗️
 
 ---
@@ -640,8 +640,8 @@ Cette description vous permettra de demander l'ouverture des ports nécessaires 
 - Serveur source (initie une connexion réseau) 🖥️
 - Serveur cible 🖥️
 - Les protocoles utilisés 🔄
-- Les ports d’écoute 🔌
-- Le sens d’ouverture des ports nécessaires : simple ou bidirectionnel 🔄
+- Les ports d'écoute 🔌
+- Le sens d'ouverture des ports nécessaires : simple ou bidirectionnel 🔄
 
 ---
 
@@ -649,10 +649,10 @@ Cette description vous permettra de demander l'ouverture des ports nécessaires 
 
 Cette partie décortique le logiciel à développer et fournit aux développeurs le plus de précisions techniques possibles.
 
-**Vous n’êtes pas développeur !**
+**Vous n'êtes pas développeur !**
 
-Le but ici n’est pas d’écrire du code, mais d’expliquer clairement les attentes du projet.
-N’hésitez pas à vous entourer d’experts sur le sujet afin de vous aider à apporter toutes les précisions nécessaires. 🛠️
+Le but ici n'est pas d'écrire du code, mais d'expliquer clairement les attentes du projet.
+N'hésitez pas à vous entourer d'experts sur le sujet afin de vous aider à apporter toutes les précisions nécessaires. 🛠️
 
 ---
 
@@ -660,7 +660,7 @@ N’hésitez pas à vous entourer d’experts sur le sujet afin de vous aider à
 
 - Une introduction :
     - Le nom technique du programme : `dvf.exe` 📁
-    - Les modes d’exécution : `batch`, interactif ainsi que la méthode de lancement 🚀
+    - Les modes d'exécution : `batch`, interactif ainsi que la méthode de lancement 🚀
     - Les paramètres en entrée et en sortie 🔄
     - Les fichiers en entrée et en sortie, leur format et leur chemin 📂
 - Description des fichiers en entrée et en sortie 📄
@@ -673,11 +673,11 @@ N’hésitez pas à vous entourer d’experts sur le sujet afin de vous aider à
 
 Encore plus que le cahier des charges fonctionnel, le cahier des charges technique est un document amené à évoluer régulièrement au cours de l'avancée du projet.
 
-Il est donc important de pouvoir l’identifier clairement par un en-tête, de tracer son évolution dans un cartouche de versioning et d’identifier les acteurs intervenant sur ce document. 📝
+Il est donc important de pouvoir l'identifier clairement par un en-tête, de tracer son évolution dans un cartouche de versioning et d'identifier les acteurs intervenant sur ce document. 📝
 
 ---
 
-#### Exemple d’en-tête :
+#### Exemple d'en-tête :
 
 La page de garde contient a minima :
 
@@ -707,7 +707,7 @@ Ce cartouche contient a minima :
 Cette liste contient a minima :
 
 - Les nom et prénom de chaque acteur 👥
-- Leur rôle dans l’entreprise 🏢
+- Leur rôle dans l'entreprise 🏢
 - Leur rôle relatif au document 📄
 
 ---
@@ -717,7 +717,7 @@ Cette liste contient a minima :
 ---
 
 - **Précis** : Notamment pour les fonctionnalités émergentes, le flou peut conduire à des déconvenues. 🎯
-- **Prospectif** : Il ne s’agit pas de s’aligner sur les systèmes obsolètes mais de prendre en compte les évolutions en cours. 🔮
+- **Prospectif** : Il ne s'agit pas de s'aligner sur les systèmes obsolètes mais de prendre en compte les évolutions en cours. 🔮
 - **Concis** : Éviter un document démesurément épais et détaillé. ✂️
 - **Réaliste** : Ne pas imaginer un système "qui fait tout" mais rester réaliste par rapport aux besoins réels et à la faisabilité technique et financière. 💸
 

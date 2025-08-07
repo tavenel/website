@@ -41,9 +41,9 @@ tags:
 
 ## Avantages du paradigme objet 🌟
 
-- **Modularité** :  les objets regroupent des données et un ensemble d’opérations.
+- **Modularité** :  les objets regroupent des données et un ensemble d'opérations.
 - **Abstraction** : les objets sont proches du monde réel.
-- **Productivité** et **ré-utilisabilité** : plus l’application est complexe et plus la POO est intéressante, niveau de ré-utilisabilité supérieur au procédural.
+- **Productivité** et **ré-utilisabilité** : plus l'application est complexe et plus la POO est intéressante, niveau de ré-utilisabilité supérieur au procédural.
 - **Sûreté** : encapsulation et typage des classes.
 
 ---
@@ -192,7 +192,7 @@ Techniquement, un objet est caractérisé par 3 choses :
 
 ---
 
-- une **identité** : l'identité doit permettre d’identifier sans ambiguïté l’objet (adresse/ référence ou nom) ;
+- une **identité** : l'identité doit permettre d'identifier sans ambiguïté l'objet (adresse/ référence ou nom) ;
 
 ---
 
@@ -200,7 +200,7 @@ Techniquement, un objet est caractérisé par 3 choses :
 
 ---
 
-- des **méthodes** : chaque objet est capable d'exécuter les actions ou le comportement défini dans la classe. Ces actions sont traduites en POO concrètement sous forme de méthodes. Les actions possibles sur un objet sont déclenchées par des appels de ces méthodes ou par des messages envoyées par d’autres objets.
+- des **méthodes** : chaque objet est capable d'exécuter les actions ou le comportement défini dans la classe. Ces actions sont traduites en POO concrètement sous forme de méthodes. Les actions possibles sur un objet sont déclenchées par des appels de ces méthodes ou par des messages envoyées par d'autres objets.
 
 ---
 
@@ -346,7 +346,7 @@ ma_voiture._methode_privee() # interdit (hors de la classe)
 
 ---
 
-En POO une classe peut **hériter** des caractéristiques (attributs, méthodes) d’une autre classe.
+En POO une classe peut **hériter** des caractéristiques (attributs, méthodes) d'une autre classe.
 
 ```mermaid
 ---
@@ -409,7 +409,7 @@ Je me déplace
 L'héritage présente 2 avantages principaux en POO 🌟 :
 
 - **réutilisation** : pas besoin de recréer à chaque fois la même classe ;
-- **spécialisation** : réutilise les attributs et les méthodes d’une classe en y ajoutant des opérations particulières à la nouvelle classe.
+- **spécialisation** : réutilise les attributs et les méthodes d'une classe en y ajoutant des opérations particulières à la nouvelle classe.
 
 **Attention : l'héritage est très souvent mal utilisé en pratique et amène de nombreux problèmes de maintenabilité du code (voir principes SOLID et délégation)**
 

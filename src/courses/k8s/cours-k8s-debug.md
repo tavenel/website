@@ -13,7 +13,7 @@ tags:
 
 - Approche du **bas vers le haut** :
 	- Commencer **au niveau du pod**
-	- Puis valider chaque niveau **jusqu’à l’utilisateur final**.
+	- Puis valider chaque niveau **jusqu'à l'utilisateur final**.
 	- Permet de **remonter progressivement** vers la source du problème.
 
 ---
@@ -89,11 +89,11 @@ ping
 
 ---
 
-## 🧭 Déterminer la cause de l'échec d’un Pod 💥
+## 🧭 Déterminer la cause de l'échec d'un Pod 💥
 
 ---
 
-1. 🔍 **Inspecter l’état du pod**
+1. 🔍 **Inspecter l'état du pod**
 
 ```sh
 kubectl get pod my-pod
@@ -167,14 +167,14 @@ kubectl get pods
 
 ```sh
 kubectl describe pod my-pod
-# Vérifier l’erreur exacte dans les events
+# Vérifier l'erreur exacte dans les events
 ```
 
 ---
 
 #### 🔍 Causes fréquentes :
 
-- ❌ **Nom d’image invalide**
+- ❌ **Nom d'image invalide**
 - 🔖 **Tag inexistant ou mal orthographié**
 - 🔐 **Problème d'accès à une registry privée**
   - Le pod n'a pas accès à la registry (DockerHub, GitHub Container Registry, etc.)
@@ -301,7 +301,7 @@ kubectl describe pod my-pod
 #### 🔍 Causes fréquentes :
 
 - ❗ **Erreur dans la commande de démarrage**
-  - Commande ou binaire inexistant dans l’image :
+  - Commande ou binaire inexistant dans l'image :
 
     ```yaml
     command: ["/start.sh"]  # mais start.sh n'existe pas ?
@@ -326,7 +326,7 @@ kubectl describe pod my-pod
   ```sh
   docker run -it myimage /bin/sh
   ```
-- 🔧 Vérifier le binaire ou script dans l’image :
+- 🔧 Vérifier le binaire ou script dans l'image :
 
   ```sh
   docker run myimage ls /start.sh
@@ -428,10 +428,10 @@ kubectl get endpoints my-service
 
 #### 🔍 Causes fréquentes :
 
-- 🧪 **Probes d’état (`readinessProbe`) qui échouent**
+- 🧪 **Probes d'état (`readinessProbe`) qui échouent**
 - ⏳ **Service dépendant non encore accessible** (ex: base de données)
-- ⚠️ **Configuration manquante ou incorrecte** (ex : variables d’environnement non définies)
-- 🔐 **Problèmes d’accès réseau ou DNS**
+- ⚠️ **Configuration manquante ou incorrecte** (ex : variables d'environnement non définies)
+- 🔐 **Problèmes d'accès réseau ou DNS**
 - 📦 Attente de **volume monté** ou de service externe
 
 ---
@@ -453,7 +453,7 @@ kubectl get endpoints my-service
   kubectl exec -it my-pod -- curl http://localhost:8080/health
   ```
 
-- 📊 Activez les logs d’application pour voir si un service manque ou crashe au démarrage
+- 📊 Activez les logs d'application pour voir si un service manque ou crashe au démarrage
 - 🐌 Désactivez temporairement la `readinessProbe` pour identifier si elle est responsable
 
 ---

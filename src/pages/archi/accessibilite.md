@@ -133,7 +133,7 @@ tags:
 - [aXe extension](https://www.deque.com/axe/)
 - [aXe API pour Selenium](https://github.com/dequelabs/axe-core-npm/tree/develop/packages/webdriverjs)
 - [Liste de ressources](https://ideance.net/blog/467/accessibilite-ux-ui-design/)
-- [Conférence de Sébastien DELORME : comprendre pourquoi et comment intégrer l’accessibilité numérique (Youtube)](https://www.youtube.com/watch?v=UA_kfsvi_dg)
+- [Conférence de Sébastien DELORME : comprendre pourquoi et comment intégrer l'accessibilité numérique (Youtube)](https://www.youtube.com/watch?v=UA_kfsvi_dg)
 - <https://drewdevault.com/2019/01/23/Why-I-use-old-hardware.html>
 - Bon exemple : application mobile "Uber Drive" [App Store](https://apps.apple.com/fr/app/uber-commander-une-course/id368677368) et [Google Store](https://play.google.com/store/apps/details?id=com.ubercab&hl=fr&gl=US)
 - Exemple de pire interface utilisateur (compilation de mauvaises pratiques) : <https://userinyerface.com/>

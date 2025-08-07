@@ -52,7 +52,7 @@ cd linux-4.19.299
 
 - `make menuconfig` : interface en ncurses
 - `make xconfig`, `make gconfig` : interfaces graphiques
-- `make oldconfig` : met à jour l’ancienne config
+- `make oldconfig` : met à jour l'ancienne config
 - `make defconfig` : configuration par défaut
 
 :::link
@@ -91,7 +91,7 @@ Cela installe :
 - Le noyau dans `/boot/`
 - Les modules dans `/lib/modules/<version>/`
 
-5. **Générer l’image initramfs**
+5. **Générer l'image initramfs**
 
 * Pour Debian/Ubuntu :
 

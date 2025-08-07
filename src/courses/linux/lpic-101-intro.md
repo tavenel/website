@@ -8,7 +8,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 - Reconnaître le matériel : ports PCI / USB, paramétrage du BIOS / UEFI
 - Savoir installer et configurer un système GNU/Linux sur un poste de type PC
-- Savoir utiliser les niveaux d’exécution et cibles systemd du système
+- Savoir utiliser les niveaux d'exécution et cibles systemd du système
 - Savoir installer et désinstaller les programmes sur les distributions des familles RedHat ou Debian, et gérer les bibliothèques partagées.
 - Connaître les spécificités de Linux en tant que système virtualisé.
 - Bien utiliser la ligne de commande Linux (Bash, vi)

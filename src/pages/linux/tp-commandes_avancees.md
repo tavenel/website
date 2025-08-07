@@ -3,13 +3,13 @@ title: Utilisation des commandes avancées Linux
 date: 2024 / 2025
 ---
 
-*L’ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle - voir le prérequis du TP précédent si celui-ci a été oublié.*
+*L'ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle - voir le prérequis du TP précédent si celui-ci a été oublié.*
 
-## Gestion des droits d’accès
+## Gestion des droits d'accès
 
 - Créez un nouveau fichier `droitsParDefaut` dans votre répertoire utilisateur.
-- En utilisant la commande `ls`, listez les droits par défaut à la création d’un nouveau fichier.
-- Ajoutez le droit d’exécution pour l'utilisateur courant, retirez le droit de modification pour le reste du groupe et retirez le droit de lecture pour le reste du monde.
+- En utilisant la commande `ls`, listez les droits par défaut à la création d'un nouveau fichier.
+- Ajoutez le droit d'exécution pour l'utilisateur courant, retirez le droit de modification pour le reste du groupe et retirez le droit de lecture pour le reste du monde.
 - Changez le propriétaire du fichier pour le faire appartenir à l'utilisateur `root`.
 - Essayez de lire le contenu du fichier.
 - Supprimez le fichier.
@@ -17,8 +17,8 @@ date: 2024 / 2025
 ## Exécution de scripts
 
 - Créez un répertoire `mesBinaires` dans votre répertoire utilisateur.
-- Dans ce répertoire, créez un fichier de script nommé `mesProcessus` permettant d’afficher les processus de l’utilisateur courant.
-- Ajoutez les droits d’exécution pour le propriétaire à votre fichier de scripts.
+- Dans ce répertoire, créez un fichier de script nommé `mesProcessus` permettant d'afficher les processus de l'utilisateur courant.
+- Ajoutez les droits d'exécution pour le propriétaire à votre fichier de scripts.
 - Ajoutez le répertoire `mesBinaires` dans la variable `$PATH`.
 - Exécutez votre script en exécutant directement votre commande : `$ mesProcessus`.
 

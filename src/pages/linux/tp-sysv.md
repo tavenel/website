@@ -10,7 +10,7 @@ date: 2024 / 2025
 3. Passez à la console virtuelle 6 avec `[Alt][F6]` (ou `[Ctrl][Alt][F6]` sous environnement graphique X ou Wayland). Connectez-vous puis déconnectez-vous. Pourquoi le terminal revient-il au point de départ ?
 4. La commande `runlevel` permet d'afficher le runlevel précédent (ou `N` s'il n'a pas changé) et le runlevel courant. Afficher ces runlevels.
 5. La commande `telinit N` (avec `N` un runlevel) permet de changer de runlevel dynamiquement (sans redémarrer). Passer en mode single-user.
-6. Avec la commande `shutdown`, éteignez l’ordinateur maintenant. Quel est le niveau d’exécution activé ? 
+6. Avec la commande `shutdown`, éteignez l'ordinateur maintenant. Quel est le niveau d'exécution activé ? 
 
 :::correction
 1. Si vous démarrez en mode graphique, modifiez `/etc/inittab` pour démarrer au niveau 3. 
@@ -29,7 +29,7 @@ ls -l /etc/init.d/rc3.d/S*
 
 3. Passez à la console virtuelle 6 avec `[Alt][F6]` (ou `[Ctrl][Alt][F6]` sous environnement graphique X ou Wayland). Connectez-vous puis déconnectez-vous. Pourquoi le terminal revient-il au point de départ ?
 
-Parce que `/etc/inittab` contient la commande `respawn` qui permet au processus de se relancer s’il est terminé. 
+Parce que `/etc/inittab` contient la commande `respawn` qui permet au processus de se relancer s'il est terminé. 
 
 4. La commande `runlevel` permet d'afficher le runlevel précédent (ou `N` s'il n'a pas changé) et le runlevel courant. Afficher ces runlevels.
 
@@ -44,12 +44,12 @@ $ runlevel
 telinit 1
 ```
 
-6. Avec la commande `shutdown`, éteignez l’ordinateur maintenant. Quel est le niveau d’exécution activé ? 
+6. Avec la commande `shutdown`, éteignez l'ordinateur maintenant. Quel est le niveau d'exécution activé ? 
 
 ```sh
 shutdown -r now 
 ```
 
-C’est le niveau 0, d’arrêt, qui est activé.
+C'est le niveau 0, d'arrêt, qui est activé.
 :::
 

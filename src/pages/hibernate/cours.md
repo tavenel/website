@@ -21,7 +21,7 @@ Hibernate est une solution open source de type `ORM` (Object Relational Mapping)
 
 **Hibernate permet donc de représenter une base de données en objets Java et vice versa** 
 
-Ceci afin d’abstraire l’implémentation de la base de données du code (La plupart des BD sont supportées).
+Ceci afin d'abstraire l'implémentation de la base de données du code (La plupart des BD sont supportées).
 
 > The database is a detail (Robert Martin)
 
@@ -141,11 +141,11 @@ public class MyEntity {
 
 ## Unité de travail
 
-- Séquences de requêtes à la BD pour effectuer une opération atomique dans l’application
+- Séquences de requêtes à la BD pour effectuer une opération atomique dans l'application
   + => 1 session par opération métier, et pas 1 session par requête BD !
   + En web, souvent 1 session par requête
     * `SessionFactory.getCurrentSession()`
-- Hibernate supporte aussi d’autres patterns beaucoup plus complexes
+- Hibernate supporte aussi d'autres patterns beaucoup plus complexes
 - Toute opération (lecture et/ou modification) doit avoir lieu dans une transaction
 
 ---
@@ -170,7 +170,7 @@ public class MyEntity {
 - La `SessionFactory` génère des `Session`
   + Par exemple : `SessionFactory.getCurrentSession()`
 - Les `Session` modélisent une utilisation atomique de la base de données
-  + Par exemple : recherche d’un produit et mise à jour d’un de ses champs
+  + Par exemple : recherche d'un produit et mise à jour d'un de ses champs
 - Les `Session` génèrent des Transaction (obligatoires pour tout dialogue avec la BD)
   + Session.beginTransaction()
   + `Transaction.commit()`, `Transaction.rollback()`
@@ -184,7 +184,7 @@ Hibernate supporte de nombreux modes de configuration (programmatique, fichier `
 Il est recommandé de :
 
 - Configurer les propriétés générales (JDBC, …) dans un fichier hibernate.properties ou `hibernate.cfg.xml`
-- Déclarer les classes d’objets à persister dans le fichier `hibernate.cfg.xml`
+- Déclarer les classes d'objets à persister dans le fichier `hibernate.cfg.xml`
 - Initialiser hibernate et ses fichiers de configuration lors de la génération de la `SessionFactory`
 
 ---
@@ -198,13 +198,13 @@ Il est recommandé de :
 
 ---
 
-Initialisation d’Hibernate et génération d’une `SessionFactory` classique :
+Initialisation d'Hibernate et génération d'une `SessionFactory` classique :
 
 ```
 new Configuration().configure().buildSessionFactory()
 ```
 
-Hibernate fournit également de nombreuses possiblités d’intégration dans un serveur J2EE : réutilisation des connexions JDBC (par JNDI), binding JNDI et Java Transaction API (JTA) automatique, JMX déploiement, ...
+Hibernate fournit également de nombreuses possiblités d'intégration dans un serveur J2EE : réutilisation des connexions JDBC (par JNDI), binding JNDI et Java Transaction API (JTA) automatique, JMX déploiement, ...
 
 ---
 
@@ -267,7 +267,7 @@ public class MyEntity {
 ## Exemple d'annotation Java
 
 ```java
-@Entity // il s’agit d’une classe à persister
+@Entity // il s'agit d'une classe à persister
 @Table(name = "MY_ENTITY") // la table à utiliser en BD pour cette classe
 public class MyEntity {
 
@@ -287,10 +287,10 @@ public class MyEntity {
 
 ---
 
-## Utilisation d’Hibernate ORM
+## Utilisation d'Hibernate ORM
 
-- L’ORM permet de directement sauver / éditer / supprimer / lister les entités persistées sans avoir à écrire de requête SQL (ou à utiliser JDBC).
-- L’objet Session possède un ensemble de méthodes (`save()`, `delete()`, `update()`, …) qui prennent directement un object en paramètre et réalisent le mapping et la persistance en BD
+- L'ORM permet de directement sauver / éditer / supprimer / lister les entités persistées sans avoir à écrire de requête SQL (ou à utiliser JDBC).
+- L'objet Session possède un ensemble de méthodes (`save()`, `delete()`, `update()`, …) qui prennent directement un object en paramètre et réalisent le mapping et la persistance en BD
   + Exemple : `currentSession.save(myEntity)`
 
 ---

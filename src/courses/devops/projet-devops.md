@@ -6,21 +6,21 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Contraintes
 
-Certaines contraintes ont déjà été identifiées sur le projet. Ces contraintes sont susceptibles d’évoluer en fonction des retours des utilisateurs, et de nouvelles contraintes pourront être ajoutées par le client si besoin.
+Certaines contraintes ont déjà été identifiées sur le projet. Ces contraintes sont susceptibles d'évoluer en fonction des retours des utilisateurs, et de nouvelles contraintes pourront être ajoutées par le client si besoin.
 
-- **Déploiement au plus tôt :** le projet est très prometteur et de nombreux concurrents se sont déjà positionnés sur le marché. Il est donc absolument primordial de disposer d’une première version en production de toute urgence afin de créer un marché captif au plut tôt. Cette version sera certainement très limitée dans un premier temps, et améliorée au fur et à mesure des mises à jour.
-- **Auto-scaling** : il est difficile de prévoir le modèle d’adoption des applications proposées, cependant le service marketing prévoit déjà une montée en charge importante des utilisateurs dès les premières itérations. Il est donc nécessaire que l'infrastructure supporte un service de scaling **dès la 2e itération**
-- **Zero-downtime** : ce projet est critique pour le business du client, celui-ci insiste sur le fait qu'il n’est pas envisageable d’avoir une interruption de service lors de la mise à jour des composants applicatifs ou lors de changements dans l'infrastructure.
+- **Déploiement au plus tôt :** le projet est très prometteur et de nombreux concurrents se sont déjà positionnés sur le marché. Il est donc absolument primordial de disposer d'une première version en production de toute urgence afin de créer un marché captif au plut tôt. Cette version sera certainement très limitée dans un premier temps, et améliorée au fur et à mesure des mises à jour.
+- **Auto-scaling** : il est difficile de prévoir le modèle d'adoption des applications proposées, cependant le service marketing prévoit déjà une montée en charge importante des utilisateurs dès les premières itérations. Il est donc nécessaire que l'infrastructure supporte un service de scaling **dès la 2e itération**
+- **Zero-downtime** : ce projet est critique pour le business du client, celui-ci insiste sur le fait qu'il n'est pas envisageable d'avoir une interruption de service lors de la mise à jour des composants applicatifs ou lors de changements dans l'infrastructure.
 
 Le projet sera réalisé en suivant les préconisations des pratiques DevOps.
 
-L’ensemble des points ci-dessous sont des réflexions à avancer en parallèle pour permettre une compatibilité entre chaque point technique du projet.
+L'ensemble des points ci-dessous sont des réflexions à avancer en parallèle pour permettre une compatibilité entre chaque point technique du projet.
 
 ## Isolation par conteneurs
 
-Il est demandé d'isoler chaque composant métier dans des conteneurs applicatifs. On utilisera donc des conteneurs Docker, que l'on pourra stocker dans le répertoire d’images par défaut (_Docker Hub_) ou dans une registry privée de l’équipe déployée dans le datacenter de test/staging.
+Il est demandé d'isoler chaque composant métier dans des conteneurs applicatifs. On utilisera donc des conteneurs Docker, que l'on pourra stocker dans le répertoire d'images par défaut (_Docker Hub_) ou dans une registry privée de l'équipe déployée dans le datacenter de test/staging.
 
-Dans un véritable environnement de production, la sécurisation de ce répertoire d’images est une contrainte importante et pouvant induire des choix d'architecture spécifique. Pour le prototype, on pourra exceptionnellement omettre ces questions de sécurité pour simplifier le déploiement.
+Dans un véritable environnement de production, la sécurisation de ce répertoire d'images est une contrainte importante et pouvant induire des choix d'architecture spécifique. Pour le prototype, on pourra exceptionnellement omettre ces questions de sécurité pour simplifier le déploiement.
 
 ## Infrastructure as Code (IaC)
 
@@ -32,7 +32,7 @@ L'ensemble du code nécessaire au déploiement et à la maintenance de l'infrast
 
 ## Intégration continue (CI)
 
-Afin de garantir l’intégrité des images déployées, on mettra en place un pipeline de CI/CD contenant à la fois des étapes de contrôle de la qualité (tests automatiques, analyse statique de code, …) et la génération et publication des artéfacts de production.
+Afin de garantir l'intégrité des images déployées, on mettra en place un pipeline de CI/CD contenant à la fois des étapes de contrôle de la qualité (tests automatiques, analyse statique de code, …) et la génération et publication des artéfacts de production.
 
 Ce pipeline devra donc en priorité générer une image Docker depuis un commit du code source provenant du dépôt de code.
 
@@ -118,7 +118,7 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 ## 💡 Conseils
 
 * Répartissez les rôles (Dev, Ops, CI/CD, Observabilité) entre les membres du groupe.
-* Simplifiez l’infrastructure au début, puis améliorez-la par itérations.
+* Simplifiez l'infrastructure au début, puis améliorez-la par itérations.
 
 ## ⚙️ Résumé détaillé des environnements à déployer
 
@@ -139,10 +139,10 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 
 
 
-### Étape 1 – Choix et préparation de l’application
+### Étape 1 – Choix et préparation de l'application
 
 * Reprendre un projet existant (préféré) ou utiliser un projet exemple fourni.
-* L’application doit être **multi-composants** (ex. frontend, backend, BDD).
+* L'application doit être **multi-composants** (ex. frontend, backend, BDD).
 * Préparer une structure de dépôt Git propre :
   - soit en mono-répo : `/app`, `/infra`, `/ci`, etc.
   - soit en multi-répo : 1 dépôt `frontend`, 1 dépôt `backend`, … et 1 dépôt `devops`
@@ -153,12 +153,12 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 * Écrire un `Dockerfile` par composant.
 * Tester les conteneurs localement (par exemple dans _Docker Desktop_.
 
-### Étape 3 – Création de l’environnement de staging
+### Étape 3 – Création de l'environnement de staging
 
 * Créer une stack `docker-compose.yml` **ou** un petit cluster k8s pour staging.
 * Tester le déploiement manuel de l'application dans cet environnement.
 
-### Étape 4 – Mise en place d’Infrastructure-as-Code
+### Étape 4 – Mise en place d'Infrastructure-as-Code
 
 * Écrire des **playbooks Ansible** pour installer les outils (Docker, Kubernetes, etc.). On partira d'une VM vide (seul l'OS Linux est installé).
 * Automatiser le déploiement de la stack avec Ansible.
@@ -177,14 +177,14 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 
 * Installer un **cluster Kubernetes** dans 2 VM (il n'est pas demandé de suivre les bonnes pratiques de déploiement).
 * Déployer l'application en production à partir des **manifests Kubernetes**.
-* Garantir que l’infra soit **reproductible** (via Ansible).
+* Garantir que l'infra soit **reproductible** (via Ansible).
 * (bonus) Créer une Helm Chart pour déployer l'intégralité de la stack applicative plutôt que de devoir appliquer tous les manifests un par un.
 
 ### Étape 7 – Zéro-downtime & auto-scaling (niveau avancé)
 
 * Réfléchir au **type de déploiement** (rolling update, blue/green, canary, …).
 * Utiliser un `Deplooyment` Kubernetes pour gérer la **mise à jour** applicative.
-* Préparer l’environnement pour un **auto-scaling** Kubernetes (`HorizontalPodAutoscaler`).
+* Préparer l'environnement pour un **auto-scaling** Kubernetes (`HorizontalPodAutoscaler`).
 * Bonus : mettre en place `flagger` pour du **déploiement progressif**.
 
 ### Étape 8 – Observabilité
@@ -206,8 +206,8 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
    * Les difficultés rencontrées et les solutions proposées
    * La répartition des rôles
 2. **Dépôts Git** :
-   * Code source de l’application
-   * Scripts d’installation et de configuration Ansible
+   * Code source de l'application
+   * Scripts d'installation et de configuration Ansible
    * Fichiers de CI/CD
    * Fichiers de configuration Kubernetes / Docker
 3. **Présentation orale** lors de la soutenance finale :

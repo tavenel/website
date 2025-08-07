@@ -18,7 +18,7 @@ Une startup développe un service de vente de billets pour des événements. Lor
 
 ### 💬 Témoignage 2 - Responsable Support
 
-> Pour nous, un billet **est acheté dès qu’il est réservé**. Ensuite, si le paiement échoue, on doit **l’annuler manuellement**. Et on note dans le support que c’est un "**billet échoué**".
+> Pour nous, un billet **est acheté dès qu'il est réservé**. Ensuite, si le paiement échoue, on doit **l'annuler manuellement**. Et on note dans le support que c'est un "**billet échoué**".
 
 ## ✍️ Travail demandé
 
@@ -43,7 +43,7 @@ Une startup développe un service de vente de billets pour des événements. Lor
 | Terme                | Définition métier consensuelle                                        |
 | -------------------- | --------------------------------------------------------------------- |
 | **Réservation**      | Action de bloquer une place pendant un temps limité avant paiement    |
-| **Commande**         | Objet métier représentant l’intention d’achat (créé à la réservation) |
+| **Commande**         | Objet métier représentant l'intention d'achat (créé à la réservation) |
 | **Paiement**         | Action qui transforme une commande en achat                           |
 | **Billet**           | Délivré uniquement après paiement réussi                              |
 | **Commande échouée** | Commande dont le paiement a échoué, sans billet généré                |
@@ -167,7 +167,7 @@ if __name__ == "__main__":
 
     print("Création d'une réservation...")
     reservation = Reservation(event_id, user_id)
-    print(f"Réservation {reservation.reservation_id} valable jusqu’à {reservation.expires_at}")
+    print(f"Réservation {reservation.reservation_id} valable jusqu'à {reservation.expires_at}")
 
     try:
         print("Conversion de la réservation en commande...")
@@ -190,6 +190,6 @@ if __name__ == "__main__":
 
 - ⏳ Impossible de créer une commande à partir d'une réservation expirée.
 - 🧾 Une commande ne peut être payée ou échouée qu'une seule fois.
-- 🎟️ Un billet n’est généré que si le paiement est réussi.
+- 🎟️ Un billet n'est généré que si le paiement est réussi.
 :::
 

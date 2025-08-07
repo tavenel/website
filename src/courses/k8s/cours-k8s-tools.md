@@ -142,7 +142,7 @@ tags:
 ## 🔒 Kyverno
 
 - Limitations des permissions standard Kubernetes - comment :
-  - Interdire l’utilisation du tag `:latest` ❌
+  - Interdire l'utilisation du tag `:latest` ❌
   - Obliger chaque _Deployment_, _Service_, … à avoir un label `owner` 🏷️
   - Obliger chaque conteneur à avoir un `readinessProbe` 🔍
   - Obliger chaque `Namespace` à avoir des quotas et des limites 📏

@@ -19,7 +19,7 @@ Chaque groupe aura la mission de **concevoir une séquence de cours** dédiée �
 - Une **fiche de cours** claire et pédagogique (support synthétique, structuré, illustré)
 - Un **exposé interactif** (10 à 15 min)
 - Un **TP ou exercice corrigé**, avec niveau de difficulté adapté
-- Un **mini quiz d’autoévaluation** (5 à 10 questions)
+- Un **mini quiz d'autoévaluation** (5 à 10 questions)
 - Un **guide enseignant** (objectifs, déroulé, solutions, pièges à éviter)
 
 ## 🧑‍🏫 Évaluation (20 points)
@@ -43,5 +43,5 @@ Chaque groupe aura la mission de **concevoir une séquence de cours** dédiée �
 - Soyez **concrets** : illustrez avec du code, des schémas, des cas d'usage.
   - Pensez à vos problématiques ou expérience de stages, alternances ou futurs projets pro
 - **Testez** vos propres exercices !
-- **Variez** les formats (code, texte, vidéo, quiz) pour capter l’attention.
+- **Variez** les formats (code, texte, vidéo, quiz) pour capter l'attention.
 

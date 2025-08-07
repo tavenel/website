@@ -1,28 +1,28 @@
 ﻿---
-title: Développement d’une application moderne en utilisant les services avancés d’`AWS`
+title: Développement d'une application moderne en utilisant les services avancés d'`AWS`
 date: 2023 / 2024
 tags:
 - aws
 - cloud
 ---
 
-# Remarques importantes sur l’utilisation des services `AWS` dans ce module de formation :
+# Remarques importantes sur l'utilisation des services `AWS` dans ce module de formation :
 
 [Voir la remarque dans le TP précédent](/web/tp_aws-1)
 
-# TP 2 : Développement d’une application moderne en utilisant les services avancés d’`AWS`
+# TP 2 : Développement d'une application moderne en utilisant les services avancés d'`AWS`
 
-Dans ce deuxième TP sur les services `AWS`, nous allons voir comment utiliser des services avancés d’une plateforme Cloud pour créer une application Web moderne, en faisant abstraction au maximum de toutes les contraintes opérationnelles (build, déploiement, équilibrage de charge, …)
+Dans ce deuxième TP sur les services `AWS`, nous allons voir comment utiliser des services avancés d'une plateforme Cloud pour créer une application Web moderne, en faisant abstraction au maximum de toutes les contraintes opérationnelles (build, déploiement, équilibrage de charge, …)
 
 - Pour réaliser cette partie pratique, on suivra les cinq modules du [tutoriel Amazon](https://aws.amazon.com/fr/getting-started/hands-on/build-modern-app-fargate-lambda-dynamodb-python/).
 
 ## Note sur le langage de programmation
 
-Dans ce TP, les exemples de code sont fournis et seuls l’interconnexion avec les services `AWS` est à réaliser, il y a donc très peu de code à entrer. Cependant, il est possible d’utiliser d’autres langages que la version standard du tutoriel (utilisant le langage Python) : voir les différentes branches du projet pour plus d’information.
+Dans ce TP, les exemples de code sont fournis et seuls l'interconnexion avec les services `AWS` est à réaliser, il y a donc très peu de code à entrer. Cependant, il est possible d'utiliser d'autres langages que la version standard du tutoriel (utilisant le langage Python) : voir les différentes branches du projet pour plus d'information.
 
 ## Note sur l'identifiant de compte
 
-Dans tout le TP, l'identifiant du compte à renseigner est l'identifiant du compte `AWS`. Celui-ci est disponible en cliquant sur le nom de l’utilisateur, à côté de la rubrique : Mon Compte.
+Dans tout le TP, l'identifiant du compte à renseigner est l'identifiant du compte `AWS`. Celui-ci est disponible en cliquant sur le nom de l'utilisateur, à côté de la rubrique : Mon Compte.
 
 Pour les apprenants utilisant le compte partagé, cet ID du compte est le même pour tous les utilisateurs (demander l'identifiant au formateur).
 
@@ -40,7 +40,7 @@ On pourra notamment aller voir les logs d'erreur de l'étape de Build, depuis le
 
 ## Partie 4
 
-Dans la partie 4 du tutoriel, le `Dockerfile` utilisé n’est pas à jour avec la dernière version du container Docker Ubuntu utilisé. Le package Python ne peut pas être installé, l'image Docker ne peut donc pas être générée et la phase de build échoue dans `CodeBuild`.
+Dans la partie 4 du tutoriel, le `Dockerfile` utilisé n'est pas à jour avec la dernière version du container Docker Ubuntu utilisé. Le package Python ne peut pas être installé, l'image Docker ne peut donc pas être générée et la phase de build échoue dans `CodeBuild`.
 
 Pour résoudre ce problème, on modifiera le fichier `Dockerfile` fourni par le tutoriel par la version suivante :
 
@@ -51,7 +51,7 @@ Pour résoudre ce problème, on modifiera le fichier `Dockerfile` fourni par le 
 
 A l'étape 3.C, si vous avez exactement suivi les instructions de copie précédentes, il y a une légère typo dans le chemin du fichier de configuration dans l'exemple de commande.
 
-Ainsi, au lieu d’exécuter la commande :
+Ainsi, au lieu d'exécuter la commande :
 
 ```sh
 aws cloudformation deploy --template-file /home/ec2-user/environment/MythicalMysfitsStreamingService-Repository/cfn/transformed-streaming.yml --stack-name MythicalMysfitsStreamingStack --capabilities CAPABILITY\_IAM

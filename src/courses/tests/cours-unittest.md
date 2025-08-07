@@ -183,7 +183,7 @@ OK
 
 ### Simulateur
 
-- Implémentation alternative d’un sous-système non disponible pour l'environnement de test.
+- Implémentation alternative d'un sous-système non disponible pour l'environnement de test.
 - ex : BDD en mémoire (`H2`)
 
 ---
@@ -202,7 +202,7 @@ OK
 
 ---
 
-#### Utilisation d’un mock
+#### Utilisation d'un mock
 
 SUT à tester - `is_sourcefile()` utilise la dépendance `path` gérant le chemin d'un fichier sur le système.
 

@@ -10,7 +10,7 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 ### 🎯 Objectifs opérationnels
 
 - Promouvoir la philosophie DevSecOps dans son entreprise
-- S’intégrer dans une équipe DevSecOps
+- S'intégrer dans une équipe DevSecOps
 
 ### 🎯 Objectifs d'apprentissage
 

@@ -10,7 +10,7 @@ Un script est un fichier listant une suite de commandes à exécuter sur un syst
 Pour créer un script sous Linux, on effectue les opérations suivantes :
 
 - On crée un nouveau fichier, par exemple : `monScript.sh`
-- On ajoute au début de ce fichier un `shebang` : c’est une ligne spéciale qui décrit au système quel est le langage utilisé dans le fichier de script.
+- On ajoute au début de ce fichier un `shebang` : c'est une ligne spéciale qui décrit au système quel est le langage utilisé dans le fichier de script.
 
 Dans notre cas, nous utilisons le shell `Bash`, le `shebang` associé sera donc :
 
@@ -19,7 +19,7 @@ Dans notre cas, nous utilisons le shell `Bash`, le `shebang` associé sera donc 
 ```
 
 - On complète ensuite le script, en ajoutant une commande par ligne. Ces commandes seront exécutées l'une après l'autre.
-- On ajoute les droits d’exécution au fichier.
+- On ajoute les droits d'exécution au fichier.
 - On exécute le script :
 
 ```sh
@@ -31,7 +31,7 @@ Dans notre cas, nous utilisons le shell `Bash`, le `shebang` associé sera donc 
 Créer un premier script ayant le comportement suivant :
 
 - Créer une variable `monMessage` contenant un texte de votre choix.
-- Afficher le contenu de la variable `monMessage` à l’écran.
+- Afficher le contenu de la variable `monMessage` à l'écran.
 - Stocker le contenu de la variable `monMessage` dans un fichier `/tmp/monScript.out`.
 
 :::correction
@@ -83,7 +83,7 @@ echo "Le résultat de la multiplication est : $((nombre1*nombre2))"
 
 `Bash` supporte le passage de paramètres directement à l'exécution du script, de façon similaire à toute autre commande : `./monScript.sh <param1> <param2> ...`
 
-Pour cela, le script dispose de variable d’environnement prédéfinies :
+Pour cela, le script dispose de variable d'environnement prédéfinies :
 
 - `$#` : contient le nombre de paramètres
 - `$0` : contient le nom du script exécuté (en dehors d'un script, contient le nom du shell exécuté)
@@ -91,7 +91,7 @@ Pour cela, le script dispose de variable d’environnement prédéfinies :
 - `$2` : contient le second paramètre
 - …
 
-Modifier le script précédent pour effectuer l’addition de 3 nombres passés en paramètres.
+Modifier le script précédent pour effectuer l'addition de 3 nombres passés en paramètres.
 
 :::correction
 ```sh
@@ -104,7 +104,7 @@ exit
 
 ## Script 5
 
-La condition `if` permet d’effectuer un branchement conditionnel : si la condition à tester est vraie, on exécute la commande à la suite du `then`, sinon on exécute la commande à la suite du `else`.
+La condition `if` permet d'effectuer un branchement conditionnel : si la condition à tester est vraie, on exécute la commande à la suite du `then`, sinon on exécute la commande à la suite du `else`.
 
 La syntaxe est la suivante (attention aux espaces !) :
 
@@ -120,7 +120,7 @@ else
 fi
 ```
 
-En utilisant une condition `if`, demander à l'utilisateur d’entrer un mot et vérifier que le mot entré est bien celui attendu.
+En utilisant une condition `if`, demander à l'utilisateur d'entrer un mot et vérifier que le mot entré est bien celui attendu.
 
 :::correction
 ```sh
@@ -140,9 +140,9 @@ exit
 
 Utiliser une condition `if` pour tester le nombre de paramètres fournis dans le script 4.
 
-Si le nombre de paramètres n’est pas correct, on pourra quitter le script avec la commande `exit`.
+Si le nombre de paramètres n'est pas correct, on pourra quitter le script avec la commande `exit`.
 
-Rappel : la commande `exit` prend en paramètre le code de retour du script. Par convention, on renvoie 0 en cas de succès (c’est en fait ce que fait le shell `Bash` automatiquement pour nous), et une valeur différente de 0 en cas d’échec.
+Rappel : la commande `exit` prend en paramètre le code de retour du script. Par convention, on renvoie 0 en cas de succès (c'est en fait ce que fait le shell `Bash` automatiquement pour nous), et une valeur différente de 0 en cas d'échec.
 
 :::correction
 ```sh
@@ -168,12 +168,12 @@ exit
 
 ## Script 7
 
-Toute commande (qu'il s’agisse d’un programme du système ou d’un script utilisateur) finit son exécution par un code de retour (0 en cas de succès, valeur autre que 0 en cas d’échec).
+Toute commande (qu'il s'agisse d'un programme du système ou d'un script utilisateur) finit son exécution par un code de retour (0 en cas de succès, valeur autre que 0 en cas d'échec).
 
-Le code de retour de la commande précédente est stocké dans la variable point d’interrogation : `?`
+Le code de retour de la commande précédente est stocké dans la variable point d'interrogation : `?`
 
-- Lister les informations du fichier `/fichierNonExistant` en redirigeant la sortie standard et la sortie d’erreur vers la sortie nulle : `/dev/null`.
-- Tester le code de retour de la commande utilisée pour lister le fichier. En cas d’erreur, afficher un message d’erreur à l'utilisateur.
+- Lister les informations du fichier `/fichierNonExistant` en redirigeant la sortie standard et la sortie d'erreur vers la sortie nulle : `/dev/null`.
+- Tester le code de retour de la commande utilisée pour lister le fichier. En cas d'erreur, afficher un message d'erreur à l'utilisateur.
 
 :::correction
 ```sh
@@ -192,9 +192,9 @@ exit
 
 Comment faire lorsque l'on ne connaît pas le nombre exact de paramètres fournis en entrée du script ?
 
-Dans ce cas, la commande `shift` permet d’itérer sur chaque argument en les consommant : après chaque appel, la variable `$1` contiendra la valeur du 1er argument, puis du 2e, puis du 3e, ...
+Dans ce cas, la commande `shift` permet d'itérer sur chaque argument en les consommant : après chaque appel, la variable `$1` contiendra la valeur du 1er argument, puis du 2e, puis du 3e, ...
 
-On utilise généralement cette commande avec la fonction `while` qui permet d’exécuter une boucle tant que la condition passée en paramètre est satisfaite.
+On utilise généralement cette commande avec la fonction `while` qui permet d'exécuter une boucle tant que la condition passée en paramètre est satisfaite.
 
 En utilisant la fonction `while` et la commande `shift`, modifier le script 4 pour effectuer l'addition de tous les paramètres, quel que soit le nombre de paramètres fournis par l'utilisateur.
 

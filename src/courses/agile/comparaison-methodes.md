@@ -49,7 +49,7 @@ tags:
 3. Mesurer et Gérer le flux 
 4. Rendre les règles du processus explicites 
 5. Implémenter des boucles de feedback 
-6. S’améliorer collaborativement, Évoluer expérimentalement 
+6. S'améliorer collaborativement, Évoluer expérimentalement 
 
 ---
 

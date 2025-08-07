@@ -6,7 +6,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## 🧠 LDAP : Lightweight Directory Access Protocol
 
-- Protocole standardisé d’accès à un **annuaire centralisé**
+- Protocole standardisé d'accès à un **annuaire centralisé**
 - Structure hiérarchique (arbre DIT - _Directory Information Tree_)
 - Utilisé pour stocker des informations : utilisateurs, groupes, appareils, etc.
 - Très utilisé pour l'authentification (ex : Active Directory, SSO, Samba)
@@ -28,7 +28,7 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 sudo apt install slapd ldap-utils
 ```
 
-🧙 Suivre l’assistant pour configurer le client LDAP en utilisant dpkg : `dpkg-reconfigure slapd`
+🧙 Suivre l'assistant pour configurer le client LDAP en utilisant dpkg : `dpkg-reconfigure slapd`
 
 ---
 
@@ -53,10 +53,10 @@ dc=example,dc=com
 
 ---
 
-### 📌 Principaux types d’objets
+### 📌 Principaux types d'objets
 
 - `dc` : composant de domaine
-- `ou` : unité d’organisation
+- `ou` : unité d'organisation
   - parents des autres entités, similaire répertoires
 - `uid` : utilisateur
 - `cn` : nom commun
@@ -98,7 +98,7 @@ userPassword: {SSHA}motdepasse
 slappasswd
 ```
 
-💾 Ajouter à l’annuaire :
+💾 Ajouter à l'annuaire :
 
 ```sh
 ldapadd -x -D "cn=admin,dc=example,dc=com" -W -f alice.ldif
@@ -182,7 +182,7 @@ slapcat -n 1 -a '(objectClass=organizationalUnit)' | grep '^dn'
 sudo apt install libnss-ldap libpam-ldap nscd
 ```
 
-🧙 Suivre l’assistant pour configurer le client LDAP
+🧙 Suivre l'assistant pour configurer le client LDAP
 
 :::tip
 Il est souvent intéressant de coupler un service d'authentificatio réseau type _LDAP_ avec _Nscd_ qui cache les requêtes de service de noms (`passwd`, `group`, `host`).

@@ -9,8 +9,8 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectifs du cours
 
-- Maitriser les outils d’automatisation des processus de test fonctionnels (Sélénium). 
-- Piloter les tests d’une application avec une API fonctionnelle.
+- Maitriser les outils d'automatisation des processus de test fonctionnels (Sélénium). 
+- Piloter les tests d'une application avec une API fonctionnelle.
 - Utiliser un framework de tests unitaires et de test d'intégration
 
 ### 📅 Déroulé des séances
@@ -23,7 +23,7 @@ Module de 10H
 
 - [🤓 Cours sur l'industrialisation des tests](/tests/cours-indus)
 - [🤓 Cours Selenium](/selenium/cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)
+- [💻 TP Selenium - industrialiser le test d'interface utilisateur](/selenium/tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
 - [🏆 Projet tests automatisés d'interface utilisateur](/selenium/projet)
 

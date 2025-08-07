@@ -54,7 +54,7 @@ pvcreate /dev/sdb1
 pvcreate /dev/sdc1
 ```
 
-## Création d’un groupe de volumes
+## Création d'un groupe de volumes
 
 1. Créez un groupe de volumes nommé `vg_data` à partir des partitions initialisées.
 2. Vérifiez le groupe de volumes créé en l'affichant.
@@ -82,7 +82,7 @@ mount /dev/vg_data/lv_users /mnt/users
 echo '/dev/vg_data/lv_users /mnt/users ext4 defaults 0 2' >> /etc/fstab
 ```
 
-## Extension d’un volume logique
+## Extension d'un volume logique
 
 1. Simulez une augmentation des besoins en espace disque en ajoutant un nouveau disque `/dev/sdd`.
 2. Initialisez le disque pour LVM.
@@ -130,7 +130,7 @@ pvcreate /dev/sdb1
 pvcreate /dev/sdc1
 ```
 
-## Création d’un groupe de volumes
+## Création d'un groupe de volumes
 
 ```sh
 vgcreate vg_data /dev/sdb1 /dev/sdc1
@@ -150,7 +150,7 @@ mount /dev/vg_data/lv_users /mnt/users
 echo '/dev/vg_data/lv_users /mnt/users ext4 defaults 0 2' >> /etc/fstab
 ```
 
-## Extension d’un volume logique
+## Extension d'un volume logique
 
 ```sh
 # Voir partie 1 pour fdisk ou parted

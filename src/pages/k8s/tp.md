@@ -5,7 +5,7 @@ date: 2024 / 2025
 
 # Introduction à Kubernetes®
 
-Dans cette partie, nous allons utiliser l’orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l’équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
+Dans cette partie, nous allons utiliser l'orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l'équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Dans cette partie, nous allons utiliser l’orchestrateur de conteneurs Kubernet
 
 Le déploiement de Kubernetes dans un environnement de production est une étape complexe, nécessitant de nombreuses questions sur le paramétrage (nombre de noeuds, redondance, services de stockage distribués, …).
 
-Pour tester l’utilisation de Kubernetes, vous pouvez :
+Pour tester l'utilisation de Kubernetes, vous pouvez :
 
 - Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker). Ou `k3d` qui permet de faire la même chose avec `k3s`. Ces distributions sont utiles pour avoir plusieurs clusters en parrallèle.
 - Utiliser `Minikube` (Windows / MacOS / Linux), qui permet de déployer un noeud simple dans une instance locale. Minikube peut utiliser différents types de drivers (VirtualBox, KVM, Docker, …) et crée tout le cluster dans une VM (ou dans un conteneur). Les ressources sont donc plus limitées : <https://kubernetes.io/fr/docs/tasks/tools/install-minikube/>
@@ -30,7 +30,7 @@ minikube start --cpus 4 --memory 8192
 
 ### Installer Kubectl
 
-kubectl est l’interface en ligne de commande de configuration de Kubernetes. Installer kubectl sur la même machine que Minikube :
+kubectl est l'interface en ligne de commande de configuration de Kubernetes. Installer kubectl sur la même machine que Minikube :
 
 <https://kubernetes.io/docs/tasks/tools/>
 
@@ -66,13 +66,13 @@ En cas de souci avec l'installation du cluster, il est possible de tester l'util
 - <https://kodekloud.com/playgrounds/>
 :::
 
-## Prise en main d’un cluster Kubernetes
+## Prise en main d'un cluster Kubernetes
 
 ### Premier pod
 
-Dans ces exemples, nous allons exécuter de la manière la plus simple possible des conteneurs en utilisant l’unité de base d’un cluster kubernetes : le `pod`.
+Dans ces exemples, nous allons exécuter de la manière la plus simple possible des conteneurs en utilisant l'unité de base d'un cluster kubernetes : le `pod`.
 
-Ensuite, nous exposerons un `service` kubernetes pour pouvoir accéder à nos conteneurs et nous verrons finalement comment configurer l’équilibrage de charge sur nos pods.
+Ensuite, nous exposerons un `service` kubernetes pour pouvoir accéder à nos conteneurs et nous verrons finalement comment configurer l'équilibrage de charge sur nos pods.
 
 :::tip
 Dans la suite du TP, nous utiliserons une image de test pour simuler un serveur Web : [`inanimate/echo-server`](https://github.com/InAnimaTe/echo-server).
@@ -562,7 +562,7 @@ La politique de déploiement par défaut dans Kubernetes pour les objets de type
 Bien que `RollingUpdate` soit la stratégie par défaut, il existe une autre stratégie appelée `Recreate`, qui arrête tous les pods existants avant de créer les nouveaux. Cela peut être utile si votre application ne supporte pas l'exécution simultanée de plusieurs versions.
 
 :::tip
-La commande `kubectl rollout` est utilisée pour gérer et surveiller les déploiements progressifs (ou `rollouts`) de nouvelles versions d'une application. Elle vous permet de suivre et contrôler les mises à jour d’un `Deployment` ou d'un autre objet Kubernetes tel qu'un `DaemonSet` ou un `StatefulSet`. Cette commande est souvent utilisée pour vérifier l’état d’un déploiement, annuler une mise à jour défaillante ou observer l’évolution d’une nouvelle version.
+La commande `kubectl rollout` est utilisée pour gérer et surveiller les déploiements progressifs (ou `rollouts`) de nouvelles versions d'une application. Elle vous permet de suivre et contrôler les mises à jour d'un `Deployment` ou d'un autre objet Kubernetes tel qu'un `DaemonSet` ou un `StatefulSet`. Cette commande est souvent utilisée pour vérifier l'état d'un déploiement, annuler une mise à jour défaillante ou observer l'évolution d'une nouvelle version.
 :::
 
 :::exo
@@ -706,7 +706,7 @@ spec:
 
 Dans Kubernetes, un `PersistentVolume` (PV) est une ressource de stockage qui existe indépendamment des pods et qui peut être utilisée pour stocker des données de manière persistante. Un `PersistentVolumeClaim` (PVC) est une demande de stockage faite par un utilisateur ou une application pour utiliser un PV.
 
-Dans cet exemple, nous allons utiliser un moyen de persister les données de nos conteneurs en utilisant des `PersistantVolumes`. Nous verrons également comment créer des `PersistantVolumesClaims` pour réclamer l’utilisation de ces volumes.
+Dans cet exemple, nous allons utiliser un moyen de persister les données de nos conteneurs en utilisant des `PersistantVolumes`. Nous verrons également comment créer des `PersistantVolumesClaims` pour réclamer l'utilisation de ces volumes.
 
 :::tip
 Dans Kubernetes, les `accessModes` définissent comment un volume peut être monté et utilisé par un ou plusieurs pods. Il existe trois modes principaux d'accès à un PersistentVolume (PV) :
@@ -935,7 +935,7 @@ root@env:/# env | grep MON_SERVEUR
 
 Un réplica fait référence à une instance d'un pod qui exécute une application. Kubernetes utilise les réplicas pour assurer la haute disponibilité et la tolérance aux pannes. Plus le nombre de réplicas est élevé, plus il y a d'instances d'une application fonctionnant en parallèle. Ceci permet de gérer une charge plus élevée et d'améliorer la résilience en cas de panne d'un ou plusieurs pods.
 
-Le scaling horizontal (ou mise à l’échelle) est l'action d'augmenter ou de réduire le nombre de réplicas d'un pod en fonction de la charge de travail ou des besoins. On utilise alors un `LoadBalancer` pour accéder de manière unifiée à l'ensemble des Pods.
+Le scaling horizontal (ou mise à l'échelle) est l'action d'augmenter ou de réduire le nombre de réplicas d'un pod en fonction de la charge de travail ou des besoins. On utilise alors un `LoadBalancer` pour accéder de manière unifiée à l'ensemble des Pods.
 
 À l'inverse, le scaling vertical (ou mise à l'échelle verticale) se réfère à l'augmentation des ressources d'un seul pod ou d'un seul nœud dans un cluster Kubernetes. Contrairement au scaling horizontal, qui consiste à ajouter plus de pods pour répartir la charge, le scaling vertical implique d'augmenter la capacité d'un pod existant en lui attribuant plus de ressources (CPU, mémoire, etc.).
 

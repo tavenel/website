@@ -163,7 +163,7 @@ private static final boolean WILL_IT_RAIN_IN_LONDON = true;
 
 ## Objectif 🎯
 
-> Le Domain-Driven Design, c'est avant tout la compréhension du métier par l'ensemble de l’équipe.
+> Le Domain-Driven Design, c'est avant tout la compréhension du métier par l'ensemble de l'équipe.
 
 ### Origine
 
@@ -631,7 +631,7 @@ graph TD
 
 ```mermaid
 flowchart TD
-    A["La solution peut-elle être achetée/intégrée?"] -->|Oui| B["Cela mettra-t-il en péril l’entreprise ?"]
+    A["La solution peut-elle être achetée/intégrée?"] -->|Oui| B["Cela mettra-t-il en péril l'entreprise ?"]
     A -->|Non| C["Complexité de la logique métier?"]
     B -->|Oui| D["Domaine Principal"]
     B -->|Non| E["Sous-domaine Générique"]
@@ -805,7 +805,7 @@ title: Exemple de relation Client/Fournisseur
 ---
 graph LR
   Products["Gestion des Produits<br/>(et des Clients)"]
-  Inventory["Gestion de l’Inventaire"]
+  Inventory["Gestion de l'Inventaire"]
   Reservation["Réservation"]
 
   Products -->|"Fournit<br/>(Modèle produit,<br/>Événements,<br/>API publique)"| Inventory
@@ -1040,12 +1040,12 @@ classDiagram
 
 | Pattern                         | Type de relation        | Couplage            | Autonomie du client | Collaboration entre équipes | Cas typique                                                 |
 | ------------------------------- | ----------------------- | ------------------- | ------------------- | --------------------------- | ----------------------------------------------------------- |
-| **Conformiste**                 | Dépendance passive      | Fort            | Nulle               | Faible / subie              | L’équipe cliente reprend tel quel le modèle de l’upstream   |
+| **Conformiste**                 | Dépendance passive      | Fort            | Nulle               | Faible / subie              | L'équipe cliente reprend tel quel le modèle de l'upstream   |
 | **Upstream / Downstream**       | Dépendance déclarée     | Variable            | Moyenne à forte     | Faible ou indirecte         | Un fournisseur expose des données, un client les consomme   |
 | **Partnership**                 | Coopération symétrique  | Contrôlé            | Partagée            | Forte                   | Deux domaines fortement liés conçus ensemble                |
-| **Open Host**                   | Interface d’intégration | Faible              | Variable            | Faible                      | API ou événements publics accessibles à tout autre contexte |
+| **Open Host**                   | Interface d'intégration | Faible              | Variable            | Faible                      | API ou événements publics accessibles à tout autre contexte |
 | **Published Language**          | Langage partagé         | Moyen               | Moyenne             | Moyenne                     | JSON schema, GraphQL, ou Avro communs à plusieurs équipes   |
-| **Anti-Corruption Layer (ACL)** | Barrière d'adaptation   | Faible (localement) | Forte           | Faible / unilatérale        | Adapter un modèle externe sans l’importer tel quel          |
+| **Anti-Corruption Layer (ACL)** | Barrière d'adaptation   | Faible (localement) | Forte           | Faible / unilatérale        | Adapter un modèle externe sans l'importer tel quel          |
 | **Separate Ways**               | Aucune relation         | Aucun           | Totale          | Nulle                   | Les domaines évoluent totalement indépendamment             |
 
 
@@ -1323,7 +1323,7 @@ DDD utilise les concepts d'**architecture à grande échelle** pour organiser le
 3. **Couches de responsabilité**  
   - Organiser le modèle de domaine en plusieurs couches.
 4. **Niveau de connaissance**  
-  - Permettre la configuration des opérations principales à partir d’un niveau de connaissance.
+  - Permettre la configuration des opérations principales à partir d'un niveau de connaissance.
 5. **Cadre de composants plug-and-play**  
   - Abstraction du cœur avec une infrastructure de plugins.
 
@@ -1479,7 +1479,7 @@ userService.registerNewCustomer(user);
 
 ---
 
-### ⚠️ **Exemple 2 : Nom d’entité incohérent avec le métier**
+### ⚠️ **Exemple 2 : Nom d'entité incohérent avec le métier**
 
 #### ❌ Avant (nom générique ou erroné)
 
@@ -1490,7 +1490,7 @@ class Transaction {
 }
 ```
 
-**Problème** : en contexte métier, il s’agit de **réservations**, pas de transactions financières.
+**Problème** : en contexte métier, il s'agit de **réservations**, pas de transactions financières.
 
 :::correction
 #### ✅ Après
@@ -1511,14 +1511,14 @@ class Reservation {
 
 #### ❌ Avant (entendu en réunion technique)
 
-> "On a un `client`, c’est l'utilisateur connecté, mais aussi un `customer` dans Stripe, et parfois un `user` dans l'app mobile."
+> "On a un `client`, c'est l'utilisateur connecté, mais aussi un `customer` dans Stripe, et parfois un `user` dans l'app mobile."
 
 **Problème** : 3 termes pour désigner la même chose = confusion sur les rôles, les permissions, les données.
 
 :::correction
 #### ✅ Après (langage ubiquitaire)
 
-> "On utilise **Customer** partout pour désigner l'utilisateur qui paie, y compris dans Stripe et dans notre modèle métier. Pour les logins et tokens, on parle d’**Account**."
+> "On utilise **Customer** partout pour désigner l'utilisateur qui paie, y compris dans Stripe et dans notre modèle métier. Pour les logins et tokens, on parle d'**Account**."
 
 **Amélioration** : unification du vocabulaire métier > technique. Plus de synonymes inutiles. Le mot "Customer" devient une **pièce centrale du modèle**.
 :::
@@ -1533,7 +1533,7 @@ class Reservation {
 product.getPrice();
 ```
 
-**Problème** : le prix dépend-il d’une réduction ? D’une devise ? D’une date ? C’est flou.
+**Problème** : le prix dépend-il d'une réduction ? D'une devise ? D'une date ? C'est flou.
 
 :::correction
 #### ✅ Après

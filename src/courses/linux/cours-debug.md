@@ -24,7 +24,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 🟡 Pannes réseau :
 - DNS injoignable
-- IP incorrecte / conflit d’adresse
+- IP incorrecte / conflit d'adresse
 - Pare-feu trop restrictif
 
 ---

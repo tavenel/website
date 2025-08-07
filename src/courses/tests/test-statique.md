@@ -41,7 +41,7 @@ tags:
 
 ### 📌 Principe
 
-- 👥 Faire relire le code source par une ou plusieurs personnes autres que celles qui l’ont codé ;
+- 👥 Faire relire le code source par une ou plusieurs personnes autres que celles qui l'ont codé ;
 - 👨‍💻 Réalisées par des _développeurs_ ;
 - 👥 Éventuellement assistés de _testeurs_ des équipes _Qualité_, _Sûreté de Fonctionnement_, ... ;
 - 🛡️ Fait partie du **contrôle de la qualité**.

@@ -18,7 +18,7 @@ Le gestionnaire de versions a 2 objectifs principaux dans une intégration conti
 - Pouvoir partager les modifications de code entre les développeurs du projet de manière sûre.
 - Avoir une référence de code stable pour tester la qualité.
   
-En intégration continue, il est important d’intégrer le plus régulièrement possible ses modifications (dans un commit) afin de limiter les changements à tester / valider.
+En intégration continue, il est important d'intégrer le plus régulièrement possible ses modifications (dans un commit) afin de limiter les changements à tester / valider.
 
 - Utiliser le gestionnaire de versions `git` pour intégrer et partager les modifications du projet au sein du binôme. On pourra utiliser une version hébergée (`Github`, `Bitbucket`, `Gitlab`, ...)
 - Configurer votre environnement de développement (IDE) pour associer le versionning Git au projet.
@@ -37,9 +37,9 @@ Le livrable est généralement stocké dans un gestionnaire d'artéfacts (`Artif
 
 ### Les tests unitaires et de comportement
 
-La métrique principale dans un pipeline d’intégration continue est souvent le rapport de test.
+La métrique principale dans un pipeline d'intégration continue est souvent le rapport de test.
 
-Celui-ci permet de valider les modifications d’un commit et d’éviter les régressions.
+Celui-ci permet de valider les modifications d'un commit et d'éviter les régressions.
 
 Intégrer un framework de tests unitaires au projet - par exemple en `Java`, on pourra utiliser le framework `Junit`.
 
@@ -58,19 +58,19 @@ La qualité du code ne se limite pas aux tests !
 
 De nombreuses métriques peuvent être mises en place pour limiter les bugs et faciliter la maintenance du code.
 
-- Utiliser les outils d’analyse de l’IDE pour détecter d’éventuels problèmes dans l'application et améliorer la qualité de celle-ci.
+- Utiliser les outils d'analyse de l'IDE pour détecter d'éventuels problèmes dans l'application et améliorer la qualité de celle-ci.
 - On choisira quelles analyses paraissent pertinentes. Par exemple : < 15 lignes de code dupliquées
 
 ### Un pipeline intégré
 
 Les outils précédents, bien que très efficaces, nous ont obligé à configurer notre IDE de manière adéquate.
 
-Cela peut poser problème lorsque le projet devient conséquent, lors de l'arrivée d’un nouveau membre dans l'équipe, ou en cas de changement d’IDE : les critères de qualité risquent de diverger au sein de l'équipe.
+Cela peut poser problème lorsque le projet devient conséquent, lors de l'arrivée d'un nouveau membre dans l'équipe, ou en cas de changement d'IDE : les critères de qualité risquent de diverger au sein de l'équipe.
 
 Pour éviter cela, on peut essayer de partager au maximum ces critères de 2 manières :
 
 - En intégrant les outils de vérification de la qualité dans les sources du projet
-- En déployant un serveur d’intégration dédié
+- En déployant un serveur d'intégration dédié
 
 Ces 2 méthodes ne sont pas incompatibles.
 
@@ -90,11 +90,11 @@ Il s'agit donc :
 
 Dans le respect du cahier des charges, il est attendu :
 
-- La définition d’un pipeline d’intégration continue et de déploiement continu pour le développement d’une application respectant ce cahier des charges (tests unitaires et d’intégration, analyse de code source, création des binaires, publication des rapports, ...). On séparera clairement la partie _intégration continue_ et la partie _déploiement continu_ (génération d’artéfacts de production, livraison, déploiement, ...). On décrira également le modèle de déploiement continu mis en place.
-- La mise en place d’un serveur Jenkins correctement administré et réalisant le pipeline CI/CD défini précédemment. Les différents jobs configurés dans Jenkins devront s’interfacer avec les outils d’intégration continue et de déploiement continu.
-- Le développement de l’application en suivant ce processus d’intégration, dans un contexte de développement itératif. Le choix des technologies de développement est laissé libre.
-- La mise en place d’outils de l’intégration continue sur la machine du développeur (tests unitaires, analyse statique, formatage du code, ...) pour les technologies choisies lors du développement.
-- L’intégration des rapports des tests automatisés dans Jenkins.
+- La définition d'un pipeline d'intégration continue et de déploiement continu pour le développement d'une application respectant ce cahier des charges (tests unitaires et d'intégration, analyse de code source, création des binaires, publication des rapports, ...). On séparera clairement la partie _intégration continue_ et la partie _déploiement continu_ (génération d'artéfacts de production, livraison, déploiement, ...). On décrira également le modèle de déploiement continu mis en place.
+- La mise en place d'un serveur Jenkins correctement administré et réalisant le pipeline CI/CD défini précédemment. Les différents jobs configurés dans Jenkins devront s'interfacer avec les outils d'intégration continue et de déploiement continu.
+- Le développement de l'application en suivant ce processus d'intégration, dans un contexte de développement itératif. Le choix des technologies de développement est laissé libre.
+- La mise en place d'outils de l'intégration continue sur la machine du développeur (tests unitaires, analyse statique, formatage du code, ...) pour les technologies choisies lors du développement.
+- L'intégration des rapports des tests automatisés dans Jenkins.
 - La mise en place du déploiement continu de l'application. Il n'est **PAS** demandé de mettre en place une gestion poussée de stockage des artéfacts ni la mise en place d'une réelle infrastructure de production : on pourra se limiter à déployer localement sur sa machine personnelle hébergeant le serveur Jenkins pour simuler la partie CD du pipeline.
 
 Le projet étant réalisé en intégration continue, on sera particulièrement vigilant :
@@ -107,7 +107,7 @@ Le projet étant réalisé en intégration continue, on sera particulièrement v
 
 On fournira donc :
 
-- Un rapport sur la réalisation de l’étude de cas, notamment sur l'intégration continue mise en place. Voir la partie suivante : _rapport de votre étude_.
+- Un rapport sur la réalisation de l'étude de cas, notamment sur l'intégration continue mise en place. Voir la partie suivante : _rapport de votre étude_.
 - Un ensemble de dépôts de code source référencés dans le rapport et contenant les différentes parties du projet. Ces dépôts de code devront contenir le code de production ainsi que le code de test.
 - Les captures d'écran de revues de code effectuées pour l'intégration de changements dans le projet.
 - Les captures d'écran de la configuration de Jenkins et des différents jobs et pipelines créés.
@@ -133,7 +133,7 @@ L'équipe projet (noms, prénoms) :
 1. Quels sont les différents dépôts de code source utilisés pour l'ensemble du projet ?
 1. Quel est le workflow Git mis en place ? Pourquoi avoir fait ce choix de découpage ? 
 1. Quel(s) pipeline(s) CI/CD continue avez-vous défini(s) pour gérer votre projet ? 
-    - Insérez un schéma des grandes étapes du processus complet d’intégration continue que vous avez définies, depuis l'environnement du développeur à la validation finale des changements.
+    - Insérez un schéma des grandes étapes du processus complet d'intégration continue que vous avez définies, depuis l'environnement du développeur à la validation finale des changements.
     - Décrire également le déploiement continu de l'application et les binaires de production générés.
 1. Quels jobs et/ou pipelines avez-vous définis dans Jenkins ? Justifier ces choix. 
 1. Pour chaque job de Jenkins, fournir une capture d'écran des rapports affichés sur la page principale du job. 

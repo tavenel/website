@@ -57,10 +57,10 @@ flowchart LR
 
 ---
 
-**MVC N’EST PAS UNE ARCHITECTURE**
+**MVC N'EST PAS UNE ARCHITECTURE**
 
 - MVC est un mécanisme de livraison de données (par exemple, par le Web) : l'architecture et la logique métier de l'application sont décorrélées de ce pattern
-- Les exemples (nombreux) d’application MVC avec persistance directe de la couche _Model_ en base de données sans logique métier sont des anti-patterns !!!
+- Les exemples (nombreux) d'application MVC avec persistance directe de la couche _Model_ en base de données sans logique métier sont des anti-patterns !!!
 
 ---
 

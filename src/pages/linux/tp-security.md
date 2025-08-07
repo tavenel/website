@@ -3,7 +3,7 @@ title: Sécurité sous Linux
 date: 2024 / 2025
 ---
 
-## Définition ou modification des mots de passe utilisateur ainsi que des informations d’expiration du compte.
+## Définition ou modification des mots de passe utilisateur ainsi que des informations d'expiration du compte.
 
 :::exo
 En utilisant les commandes `passwd` et `chage` :
@@ -35,7 +35,7 @@ En utilisant les commandes `who`, `w` et `last`, déterminer les connexions util
 Utiliser le tutoriel : <https://doc.ubuntu-fr.org/sudoers> pour configurer correctement `sudo` sur votre système.
 :::
 
-## Définition des limites utilisateur pour les connexions, les processus et l’utilisation de la mémoire.
+## Définition des limites utilisateur pour les connexions, les processus et l'utilisation de la mémoire.
 
 ### `ulimit` : limiter les ressources des processus
 
@@ -360,7 +360,7 @@ TCPdump permet de :
 
 ### Capture de trafic réseau
 
-Commencez par capturer tout le trafic réseau sur votre interface par défaut (remplacez `enp0s3` par l’interface réseau de votre machine obtenue par ip addr).
+Commencez par capturer tout le trafic réseau sur votre interface par défaut (remplacez `enp0s3` par l'interface réseau de votre machine obtenue par ip addr).
 
 1. Que remarquez-vous dans la sortie ? Quelle information est affichée ?
 2. Identifiez un type de paquet (TCP, UDP, ICMP, etc.).
@@ -478,7 +478,7 @@ HOST: myserver             Loss%   Snt   Last   Avg  Best  Wrst StDev
 | `mtr --tcp google.com`       | Utilise TCP au lieu d'ICMP                |
 
 
-### 📤 Export d’un rapport
+### 📤 Export d'un rapport
 
 ```sh
 mtr -rw -c 100 -o "LSDNBAW" google.com > rapport.txt

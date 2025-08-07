@@ -12,7 +12,7 @@ date: 2024 / 2025
 
 ### Travaux Pratiques
 
-Le but de ce TP est de travailler sur la base RPM des packages déjà installés sur votre poste et d’en installer de nouveaux. Le poste, ou une machine virtuelle, doit disposer d’une distribution basée sur RPM (Red Hat, Fedora, Mandriva, openSUSE, etc.).
+Le but de ce TP est de travailler sur la base RPM des packages déjà installés sur votre poste et d'en installer de nouveaux. Le poste, ou une machine virtuelle, doit disposer d'une distribution basée sur RPM (Red Hat, Fedora, Mandriva, openSUSE, etc.).
 
 1. Déterminez le nombre de packages RPM actuellement installés sur votre poste de travail.
 
@@ -22,7 +22,7 @@ rpm -qa | wc -l
 ```
 :::
 
-2. Vérifiez que le package `coreutils` est bien présent sur votre système, puis déterminez à quoi il sert à l’aide de sa description. Pouvez-vous faire en sorte de n’obtenir que la description et rien d’autre ? Lisez la page du manuel pour en savoir plus. _Indice : Le paramètre `-q` accepte un format de sortie que vous pouvez formater avec `--queryformat` . Le format se spécifie ainsi : `%{CHAMP}` avec le champ en majuscules._
+2. Vérifiez que le package `coreutils` est bien présent sur votre système, puis déterminez à quoi il sert à l'aide de sa description. Pouvez-vous faire en sorte de n'obtenir que la description et rien d'autre ? Lisez la page du manuel pour en savoir plus. _Indice : Le paramètre `-q` accepte un format de sortie que vous pouvez formater avec `--queryformat` . Le format se spécifie ainsi : `%{CHAMP}` avec le champ en majuscules._
 
 :::correction
 Dans un premier temps interrogez la base `RPM` sur ce package pour en obtenir les informations :
@@ -31,7 +31,7 @@ Dans un premier temps interrogez la base `RPM` sur ce package pour en obtenir le
 rpm -qi coreutils
 ```
 
-En cas d’erreur, le package n’est sûrement pas installé. Sinon, lisez le contenu du champ `Description`. Dans un second temps, lisez la section du manuel de rpm consacrée au format de sortie.
+En cas d'erreur, le package n'est sûrement pas installé. Sinon, lisez le contenu du champ `Description`. Dans un second temps, lisez la section du manuel de rpm consacrée au format de sortie.
 
 ```sh
 rpm -q --queryformat=%{DESCRIPTION} coreutils
@@ -48,7 +48,7 @@ rpm -e coreutils
 
 Vous obtenez la liste de tous les packages qui empêchent sa désinstallation : plusieurs centaines !
 
-Notez l’existence du paramètre `-R` qui affiche de quoi dépend le package lui-même, et le `--provides` qui fournit le nom des éléments fournis par le package.
+Notez l'existence du paramètre `-R` qui affiche de quoi dépend le package lui-même, et le `--provides` qui fournit le nom des éléments fournis par le package.
 
 ```console
 $ rpm -q --provides coreutils
@@ -93,7 +93,7 @@ Notez que vous auriez pu installer le package directement avec `-U` :
 rpm -Uvh tuxpaint.xxxxxxx.rpm
 ```
 
-Si le package est déjà installé dans la même version cela ne marche pas. Vous pourriez avoir besoin de le faire si des fichiers de ce package ont été supprimés : leur suppression, même complète, ne supprime pas le rpm de la base locale. Ajoutez l’option `--force`.
+Si le package est déjà installé dans la même version cela ne marche pas. Vous pourriez avoir besoin de le faire si des fichiers de ce package ont été supprimés : leur suppression, même complète, ne supprime pas le rpm de la base locale. Ajoutez l'option `--force`.
 
 ```sh
 rpm -Uvh --force tuxpaint.xxxxxxx.rpm
@@ -114,9 +114,9 @@ rpm -Uvh --force tuxpaint.xxxxxxx.rpm
 
 ### Travaux Pratiques
 
-Le but de ce TP est de travailler sur la base `dpkg` des packages déjà installés sur votre poste, d’en installer de nouveaux et d’utiliser `APT`.
+Le but de ce TP est de travailler sur la base `dpkg` des packages déjà installés sur votre poste, d'en installer de nouveaux et d'utiliser `APT`.
 
-Le poste, ou une machine virtuelle, doit disposer d’une distribution de type Debian ou Ubuntu.
+Le poste, ou une machine virtuelle, doit disposer d'une distribution de type Debian ou Ubuntu.
 
 1. Répondez aux questions 1 à 4 du TP rpm, mais avec les commandes et packages `DPKG` équivalents : `coreutils` est présent sous le même nom et `tuxpaint` dispose de packages Debian sur <https://pkgs.org/search/?q=tuxpaint> (pour la version d'Ubuntu : `cat /etc/issue`). En cas de problèmes de dépendances, on ne cherchera pas à les résoudre (voir `apt` ci-dessous).
 
@@ -139,7 +139,7 @@ Il est possible que vous trouviez deux packages de ce nom, aussi vous devrez soi
 dpkg -l coreutils
 ```
 
-Pour obtenir les détails du package déjà installé, il vous faut aller dans le manuel qui vous informe qu'il est possible d’utiliser la commande `dpkg-query` et le paramètre `-W` :
+Pour obtenir les détails du package déjà installé, il vous faut aller dans le manuel qui vous informe qu'il est possible d'utiliser la commande `dpkg-query` et le paramètre `-W` :
 
 ```sh
 dpkg-query -W coreutils
@@ -151,7 +151,7 @@ Mais il manque la description. Le manuel de `dpkg-query` fournit une information
 dpkg-query -W -f='${Description}' coreutils
 ```
 
-3. Pour supprimer un package Debian, utilisez l’option `-r` :
+3. Pour supprimer un package Debian, utilisez l'option `-r` :
 
 ```sh
 dpkg -r coreutils
@@ -166,7 +166,7 @@ Errors were encountered while processing:
  coreutils
 ```
 
-C’est un paquet indispensable - il ne doit pas être supprimé.
+C'est un paquet indispensable - il ne doit pas être supprimé.
 
 4. Pour installer un package Debian, utilisez le paramètre `-i` :
  
@@ -174,7 +174,7 @@ C’est un paquet indispensable - il ne doit pas être supprimé.
 dpkg -i tuxpaint.xxxxxxx.dpkg
 ```
 
-Il n’y a pas de méthode directe équivalente à `rpm` pour la mise à jour d’un package. Si le package est déjà installé le `-i` va le mettre à jour. C’est à vous de vérifier avant si celui-ci est vraiment installé (voyez pour cela la réponse à la première question).
+Il n'y a pas de méthode directe équivalente à `rpm` pour la mise à jour d'un package. Si le package est déjà installé le `-i` va le mettre à jour. C'est à vous de vérifier avant si celui-ci est vraiment installé (voyez pour cela la réponse à la première question).
 :::
 
 2. `APT` est un gestionnaire de meta-packages : il gère les dépendances à votre place et travaille sur des dépôts et non plus sur des packages individuels. `Tuxpaint` est présent dans le dépôt des paquets Debian, notamment dans le dépôt `Universe`. Le but est d'ajouter (si besoins) ce dépôt, mettre à jour le système vers `Universe` puis d'installer le package `tuxpaint`. 

@@ -47,7 +47,7 @@ title: Analyse de Amazon et YouTube
 | Notification & Messaging          | Clients                      | Emails, SMS, notifications push          |
 | Vendor & Seller Management        | Vendeurs tiers               | Gestion des comptes vendeurs             |
 | Loyalty & Membership              | Clients                      | Amazon Prime, abonnements, avantages     |
-| Analytics & Reporting             | Internes, vendeurs           | Données d’activité, ventes, performances |
+| Analytics & Reporting             | Internes, vendeurs           | Données d'activité, ventes, performances |
 | Fraud Detection & Security        | Systèmes internes            | Sécurité des transactions et comptes     |
 
 

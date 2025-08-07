@@ -45,7 +45,7 @@ graph TD
 
 - Workflow simple : un seul dépôt distant 🔗 - une branche unique 🌿  
 - `pull` à la demande du développeur 👨‍💻⬇️  
-- `rebase` conseillé pour éviter de polluer l’historique du `main` 🧹🕰️  
+- `rebase` conseillé pour éviter de polluer l'historique du `main` 🧹🕰️  
 - `push` lorsque les changements sont matures ✅⬆️  
 - Adapté aux petites équipes 👥🔧
 
@@ -134,15 +134,15 @@ merge F1
 
 ## Pull-request 🔄📥
 
-- Popularisé par GitHub, la `pull-request` ou `merge-request` est aujourd’hui largement répandue en gestion de projet 🌍  
-- En théorie, simple demande de relecture de code avant l’intégration (`merge`) d’une branche dans une autre 👀✅  
-- En pratique : permet de prévenir l’équipe de la fin d’une partie du produit et engage le processus d’intégration d’une branche spécialisée dans une branche commune, par exemple un pipeline d’intégration continue 🚦🤝
+- Popularisé par GitHub, la `pull-request` ou `merge-request` est aujourd'hui largement répandue en gestion de projet 🌍  
+- En théorie, simple demande de relecture de code avant l'intégration (`merge`) d'une branche dans une autre 👀✅  
+- En pratique : permet de prévenir l'équipe de la fin d'une partie du produit et engage le processus d'intégration d'une branche spécialisée dans une branche commune, par exemple un pipeline d'intégration continue 🚦🤝
 
 ---
 
 ### Process de pull-request 🛠️🔀
 
-Étape optionnelle avant d’intégrer la branche de fonctionnalité au `main` du dépôt central :  
+Étape optionnelle avant d'intégrer la branche de fonctionnalité au `main` du dépôt central :  
 
 1. `push` de la branche de dev dans le dépôt central ⬆️  
 2. Validation des changements avant fusion : `pull-request` ✔️  

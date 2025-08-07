@@ -343,7 +343,7 @@ Le 2TUP propose un cycle de développement en Y, qui **dissocie les aspects tech
 
 ### Processus UP
 
-Comme tous les processus UP (Unified Process), celui-ci est _itératif_ et _incrémental_, centré sur l’_architecture_, conduit par les exigences des _utilisateurs_, piloté par les _risques_ et orienté _composants_.
+Comme tous les processus UP (Unified Process), celui-ci est _itératif_ et _incrémental_, centré sur l'_architecture_, conduit par les exigences des _utilisateurs_, piloté par les _risques_ et orienté _composants_.
 
 ---
 
@@ -356,26 +356,26 @@ Ces deux branches fusionnent pour la **conception** du système, créant la form
 
 ### La branche fonctionnelle comporte :
 
-- La capture des **besoins fonctionnels** focalisés sur le métier des utilisateurs. La maîtrise d’œuvre consolide les spécifications et en vérifie la cohérence et l’exhaustivité
-- L’**analyse** utilisant la spécification fonctionnelle pour dégager une idée du système en termes de métier sans dépendre d’aucune technologie particulière.
+- La capture des **besoins fonctionnels** focalisés sur le métier des utilisateurs. La maîtrise d'œuvre consolide les spécifications et en vérifie la cohérence et l'exhaustivité
+- L'**analyse** utilisant la spécification fonctionnelle pour dégager une idée du système en termes de métier sans dépendre d'aucune technologie particulière.
 
 ---
 
 ### La branche d'architecture technique comporte :
 
 - La capture des **besoins techniques** : contraintes, choix, outils, matériels sélectionnés, contraintes d'intégration avec l'existant
-- La **conception générique** : composants nécessaires à l’architecture technique, complètement indépendante des aspects fonctionnels. Elle a pour objectif **d’uniformiser et de réutiliser** les mêmes mécanismes pour tout un système.
+- La **conception générique** : composants nécessaires à l'architecture technique, complètement indépendante des aspects fonctionnels. Elle a pour objectif **d'uniformiser et de réutiliser** les mêmes mécanismes pour tout un système.
 
-L’architecture technique construit le squelette du système informatique et écarte la plupart des risques de niveau technique. _L’importance de sa réussite est telle qu’il est conseillé de réaliser un prototype pour assurer sa validité._
+L'architecture technique construit le squelette du système informatique et écarte la plupart des risques de niveau technique. _L'importance de sa réussite est telle qu'il est conseillé de réaliser un prototype pour assurer sa validité._
 
 ---
 
 ### La branche de conception comporte :
 
-- La conception préliminaire, délicate car intègre le modèle d’analyse dans l’architecture technique
+- La conception préliminaire, délicate car intègre le modèle d'analyse dans l'architecture technique
 - La conception détaillée : comment réaliser chaque composant
-- L’étape de codage : production et test des composants et unités de code
-- L’étape de recette : valide les fonctions du système développé
+- L'étape de codage : production et test des composants et unités de code
+- L'étape de recette : valide les fonctions du système développé
 
 ---
 
@@ -393,7 +393,7 @@ Il s'agit d'une méthode livrée clés en main et elle est accompagnée d'outils
 
 Le cadre au développement logiciel proposé par RUP répond aux caractéristiques du processus unifié :
 - une méthode de développement guidée par les **besoins des utilisateurs**
-- centrée sur l’**architecture logicielle**
+- centrée sur l'**architecture logicielle**
 - **itérative et incrémentale**
 - mettant en œuvre **UML** pour la modélisation
 

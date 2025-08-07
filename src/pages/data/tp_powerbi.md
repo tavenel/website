@@ -37,14 +37,14 @@ Il exite de nombreux concepts dans Power BI mais pour réaliser des tableaux de 
 Nous utiliserons le **service** Power BI : <https://app.powerbi.com> (et non l'application _Desktop_). Connectez-vous avec votre compte fourni par l'école.
 
 1. Commencer par se familiariser avec les concepts de base de Power BI : <https://learn.microsoft.com/fr-fr/power-bi/consumer/end-user-basic-concepts>
-2. Suivre le tutoriel _"Exemple de dépenses d’entreprise pour Power BI"_ contenant un exemple déjà réalisé de suivi des coûts réels par rapport aux prévisions pour un service informatique : <https://learn.microsoft.com/fr-fr/power-bi/create-reports/sample-corporate-spend>
+2. Suivre le tutoriel _"Exemple de dépenses d'entreprise pour Power BI"_ contenant un exemple déjà réalisé de suivi des coûts réels par rapport aux prévisions pour un service informatique : <https://learn.microsoft.com/fr-fr/power-bi/create-reports/sample-corporate-spend>
 3. Faire de même avec le tutoriel _"Exemple d'Analyse des dépenses informatiques"_ contenant un tableau de bord, un rapport et un modèle sémantique avec une représentation différente : <https://learn.microsoft.com/fr-fr/power-bi/create-reports/sample-it-spend>
 
 ### Réalisation du Tableau de bord
 
 L'objectif de cet exercice est de réaliser son propre dashboard dans PowerBI.
 
-_Le but est la création d’un tableau de bord incluant la représentation visuelle des indicateurs pertinents pour déterminer les projets (applicatifs) à mener._
+_Le but est la création d'un tableau de bord incluant la représentation visuelle des indicateurs pertinents pour déterminer les projets (applicatifs) à mener._
 
 1. Définissez les objectifs de votre tableau de bord. _Exemple : Améliorer la performance d'une application critique._
 2. Sélectionnez 3 indicateurs pertinents. _Exemple : Taux de disponibilité, temps moyen de résolution, coût mensuel._

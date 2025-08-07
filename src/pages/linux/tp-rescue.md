@@ -59,14 +59,14 @@ sudo mount --bind /sys /mnt/sys
 Un _bind mount_ crée un alias d'un répertoire dans un autre chemin. Ce n'est pas une copie, mais une autre vue du même contenu.
 :::
 
-### Entrer dans l’environnement chrooté
+### Entrer dans l'environnement chrooté
 
 ```sh
 sudo chroot /mnt
 ```
 
 :::tip
-`chroot` isole un processus dans un sous-ensemble du système de fichiers, comme s'il s’agissait de la racine `/`. Cela permet d'exécuter des commandes ou un environnement dans une "prison" système. C'est une des bases des technologies de conteneurs.
+`chroot` isole un processus dans un sous-ensemble du système de fichiers, comme s'il s'agissait de la racine `/`. Cela permet d'exécuter des commandes ou un environnement dans une "prison" système. C'est une des bases des technologies de conteneurs.
 :::
 
 :::tip

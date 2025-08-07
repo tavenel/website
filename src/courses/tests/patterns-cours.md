@@ -11,7 +11,7 @@ tags:
 
 Un test suit un pattern **AAA** pour **Arrange**, **Act**, **Assert** :
 
-- **Arrange** : Mise en place de l’environnement (_SUT_) : création et initialisation des objets nécessaires à l’exécution du test.
+- **Arrange** : Mise en place de l'environnement (_SUT_) : création et initialisation des objets nécessaires à l'exécution du test.
 - **Act** : scénario (automatisé) déroulant les étapes du test.
 - **Assert** : Vérification des résultats
 

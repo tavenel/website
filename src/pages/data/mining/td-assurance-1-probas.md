@@ -5,18 +5,18 @@ date: 2023 / 2024
 
 # Introduction
 
-Une banque souhaite vendre un produit d’assurance à ses clients. Pour mettre en place cette stratégie commerciale, le data miner envisage, à partir d’un échantillon représentatif de la base clients, de construire un modèle. Dans la première partie de ce TD, nous allons étudier un modèle probabiliste de profiling.
+Une banque souhaite vendre un produit d'assurance à ses clients. Pour mettre en place cette stratégie commerciale, le data miner envisage, à partir d'un échantillon représentatif de la base clients, de construire un modèle. Dans la première partie de ce TD, nous allons étudier un modèle probabiliste de profiling.
 
 Le data miner dispose pour cet exercice de quatre variables explicatives :
 
-- la variable binaire _Crédit_ traduisant le fait que le client possède ou non au sein de l’organisme un crédit en cours ;
+- la variable binaire _Crédit_ traduisant le fait que le client possède ou non au sein de l'organisme un crédit en cours ;
 - la variable binaire _Sexe_ représentant le sexe du client ;
 - la variable qualitative _Revenus_ indiquant la classe des revenus du client ;
 - la variable continue _Age_ indiquant l'âge du client.
 
-Et d’une variable cible :
+Et d'une variable cible :
 
-- la variable _Assurance_ traduisant le fait que le client a souscrit ou non le produit d’assurance.
+- la variable _Assurance_ traduisant le fait que le client a souscrit ou non le produit d'assurance.
 
 Les données dont le data miner dispose sont contenues dans le tableau suivant :
 
@@ -63,7 +63,7 @@ On définit l'odds par :
 
 $$Odds(Credit=Oui)=\frac{\pi(Credit=Oui)}{1-\pi(Credit=Oui)}$$
 
-3. Calculer l’odds pour la variable Assurance au sein de la population des clients ne possédant pas de crédit en cours. En déduire la valeur de l’_Odds Ratio_ OR(Oui|Non) de la variable Assurance par rapport à la variable Crédit avec la formule :
+3. Calculer l'odds pour la variable Assurance au sein de la population des clients ne possédant pas de crédit en cours. En déduire la valeur de l'_Odds Ratio_ OR(Oui|Non) de la variable Assurance par rapport à la variable Crédit avec la formule :
 
 $$OR(Oui|Non) = \frac{Odds(Credit=Oui)}{Odds(Credit=Non}$$
 
@@ -87,5 +87,5 @@ Calculer l'âge moyen pour les événements "succès" et "échec". Qu'en déduit
 ## Bilan
 
 - Quelles variables sont pertinentes ou non pertinentes ?
-- Quel est le type de clients qu'il conviendra de cibler afin d’améliorer la vente du produit ?
+- Quel est le type de clients qu'il conviendra de cibler afin d'améliorer la vente du produit ?
 

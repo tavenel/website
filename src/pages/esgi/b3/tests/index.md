@@ -13,8 +13,8 @@ layout: '@layouts/BaseLayout.astro'
 - Comprendre les différents types de tests logiciels.
 - Introduction à la validation par la recette fonctionnelle 
 - Utiliser la méthode et les outils de test adaptés au contexte et à la situation 
-- Définir un plan de test tout au long du développement de l’application 
-- Concevoir et automatiser un processus de test dans le cadre du développement d’une application informatique. 
+- Définir un plan de test tout au long du développement de l'application 
+- Concevoir et automatiser un processus de test dans le cadre du développement d'une application informatique. 
 - Comprendre les enjeux des tests unitaires et développer des tests efficacement
 - Tester une interface utilisateur automatiquement
 
@@ -57,7 +57,7 @@ Module de 15H
 ### ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
 - [🤓 Cours Selenium](/selenium/cours)
-- [💻 TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)
+- [💻 TP Selenium - industrialiser le test d'interface utilisateur](/selenium/tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
 
 ### Projet noté

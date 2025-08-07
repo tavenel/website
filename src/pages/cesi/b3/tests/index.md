@@ -1,9 +1,9 @@
 ---
 layout: '@layouts/BaseLayout.astro'
-title: INFAL34 - Tests et recette d’un projet de développement 
+title: INFAL34 - Tests et recette d'un projet de développement 
 ---
 
-# 🧪 INFAL34 - Tests et recette d’un projet de développement 
+# 🧪 INFAL34 - Tests et recette d'un projet de développement 
 
 ## Présentation du module
 
@@ -15,7 +15,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 
 - Identifier les techniques de recette dans un projet de développement informatique  
 - Appliquer une méthodologie de recettage 
-- Construire des scenarii de tests d’une application 
+- Construire des scenarii de tests d'une application 
 
 ### 📋 Prérequis
 

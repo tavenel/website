@@ -111,13 +111,13 @@ Les changements concurrents sont validés contre une éventuelle régression �
 
 - Demande de grosses ressources humaines à la mise en place et matérielles à l'usage 💼
   - Mais le gain est souvent vite compensé par les erreurs en moins à corriger ! ✅
-- Peut être compliqué sur de gros changements : la CI nécessite d’intégrer souvent les changements sur le serveur… 🔄
+- Peut être compliqué sur de gros changements : la CI nécessite d'intégrer souvent les changements sur le serveur… 🔄
   - … ce qui peut aussi être un avantage pour vérifier tôt la compatibilité ! ✅
 - Peu adapté à certains environnements où les spécifications changent souvent (Proof of Concept, Recherche, ...) ⚠️
 
 ---
 
-- Respecter une méthodologie stricte d’intégration continue demande beaucoup de rigueur 📏
+- Respecter une méthodologie stricte d'intégration continue demande beaucoup de rigueur 📏
   - Il peut être nécessaire de vérifier le respect de ces méthodes, manuellement ou automatiquement 🔍
 - Le principal défaut est souvent humain ! 👥
 
@@ -154,7 +154,7 @@ graph LR
 
 ---
 
-On pourra utiliser plusieurs profils (_pipelines_) d’intégration suivant les changements à intégrer et les ressources disponibles, par exemple :
+On pourra utiliser plusieurs profils (_pipelines_) d'intégration suivant les changements à intégrer et les ressources disponibles, par exemple :
 
 - `Daily` pour chaque intégration : tests unitaires uniquement
 - `Nightly` chaque soir : tests de fonctionnalités non parallélisables
@@ -163,8 +163,8 @@ On pourra utiliser plusieurs profils (_pipelines_) d’intégration suivant les 
 ---
 
 :::tip
-- On pourra répliquer certains éléments de la boucle d’intégration continue sur l’environnement du développeur pour améliorer les temps de réponse.
-- Cela ne dispense pas de reproduire ces étapes sur le serveur d’intégration (environnement neutre).
+- On pourra répliquer certains éléments de la boucle d'intégration continue sur l'environnement du développeur pour améliorer les temps de réponse.
+- Cela ne dispense pas de reproduire ces étapes sur le serveur d'intégration (environnement neutre).
 :::
 
 ---
@@ -253,7 +253,7 @@ graph LR
 
 - Segmente les modifications du code source en `commits` et les identifie par des ID de commit. 🏷️
 - Garantit l'intégrité : permet le partage fiable des modifications entre tous les développeurs. 🔄
-- Référence du contrôle qualité : toute métrique d’intégration continue est faite contre un commit. 🔍
+- Référence du contrôle qualité : toute métrique d'intégration continue est faite contre un commit. 🔍
 
 ---
 
@@ -282,13 +282,13 @@ Certains gestionnaires de versions permettent d'isoler du tronc commun les modif
 
 ## 🧪 Compilations auto-testantes
 
-- Les outils de build permettent l'exécution de certains outils d’intégration continue : tests, vérification syntaxique, … directement durant la phase de build 🛠️
-- Permet d’exécuter le même outil avec la même configuration à toutes les étapes du pipeline d’intégration : machine personnelle, serveur d’intégration, … 🖥️
+- Les outils de build permettent l'exécution de certains outils d'intégration continue : tests, vérification syntaxique, … directement durant la phase de build 🛠️
+- Permet d'exécuter le même outil avec la même configuration à toutes les étapes du pipeline d'intégration : machine personnelle, serveur d'intégration, … 🖥️
 - Une modification du code source ne passant pas l'étape de compilation est en général immédiatement rejetée et la boucle d'intégration continue s'arrête. ❌
 
 ---
 
-Lancement de l'outil automatiquement par l'outil de build : pas de programme externe et pas d’oubli de lancer l'outil. 🔄
+Lancement de l'outil automatiquement par l'outil de build : pas de programme externe et pas d'oubli de lancer l'outil. 🔄
 Ex : `gradle build` ou `mvn package` intègrent par défaut l'exécution des tests unitaires. 🧪
 
 ---
@@ -344,23 +344,23 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 
 - Permet une exigence qualité différente pour chaque composant. 🛠️
 - Facilite la non régression en testant les composants isolément. 🔄
-- Permet d’identifier des zones de haute qualité vs des zones à améliorer. 📊
+- Permet d'identifier des zones de haute qualité vs des zones à améliorer. 📊
 
 ---
 
 ### 🔄 Développement itératif
 
 - L'intégration a lieu bien plus tôt dans la phase de développement. 🔄
-- Les itérations facilitent l’acceptation ou le rejet des changements. 🔄
+- Les itérations facilitent l'acceptation ou le rejet des changements. 🔄
 - Très compatible avec les méthodes agiles. 🔄
 
 ---
 
 ### 🤝 Responsabilité partagée
 
-- L'intégration continue peut être mise en place à tous les niveaux du pipeline d’intégration : 🔄
+- L'intégration continue peut être mise en place à tous les niveaux du pipeline d'intégration : 🔄
   - Chez les développeurs (IDE) 💻
-  - Chez les opérationnels (serveur d’intégration) 🏗️
+  - Chez les opérationnels (serveur d'intégration) 🏗️
 
 ---
 

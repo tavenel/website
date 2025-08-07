@@ -49,7 +49,7 @@ Voir CCF DVF p.4 section _Objectifs_
   - RGPD
   - Accessibilité
   - ...
-- Voir CCT UVED p.8 _Les normes d’accessibilité_
+- Voir CCT UVED p.8 _Les normes d'accessibilité_
 
 ### Exigences particulières
 

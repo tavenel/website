@@ -3,7 +3,7 @@ title: Data mining - TP 1 - Régression linéaire
 date: 2023 / 2024
 ---
 
-L’exercice utilise des indices annuels de production agricole (2e ligne) et de production industrielle (3e ligne) relevés entre les années 1944 et 1961.
+L'exercice utilise des indices annuels de production agricole (2e ligne) et de production industrielle (3e ligne) relevés entre les années 1944 et 1961.
 
 Nous allons rechercher une éventuelle relation linéaire entre ces deux indices par la méthode des moindres carrés.
 
@@ -19,7 +19,7 @@ Nous allons rechercher une éventuelle relation linéaire entre ces deux indices
 
 ## Saisie des données et tracé des courbes
 
-1. Saisir ces deux suites d’indices sous la forme de deux listes à 18 composantes en tapant les instructions :
+1. Saisir ces deux suites d'indices sous la forme de deux listes à 18 composantes en tapant les instructions :
 
 ```python
 agri=[100,60, ...., 134,130]
@@ -74,7 +74,7 @@ ax[0].legend()
   - Utiliser l'instruction `plt.scatter()` similaire à `plt.plot()`
   - Tracer le centre de gravité dans le nuage de points.
   - Quelle position occupe le centre de gravité par rapport au nuage ?
-  - Si l’on ajoutait le centre de gravité (x, y) comme un 19e point au nuage, quel serait le centre de gravité du nouveau nuage ? Pourquoi ?
+  - Si l'on ajoutait le centre de gravité (x, y) comme un 19e point au nuage, quel serait le centre de gravité du nouveau nuage ? Pourquoi ?
 5. Quel a priori le nuage de points donne-t-il sur l'existence d'une relation linéaire entre les deux variables ?
 
 :::correction
@@ -199,7 +199,7 @@ ax[1].plot(
 
 13. Calculer puis tracer la droite de régression de agri sur indu (et non plus de indu sur agri) dans le graphique ax[1]. Utiliser un label et une couleur différente.
   - Les deux droites coincident-elles ? Pourquoi ?
-  - Quel est leur point d’intersection ?
+  - Quel est leur point d'intersection ?
 
 :::correction
 ```python
@@ -222,7 +222,7 @@ plt.show()
 ## Étude des résidus
 
 14. Définir un vecteur `res(i), i = 1, ... , 18` dont les composantes sont les résidus (écart entre les valeurs observées et les valeurs prédites).
-15. Tracer les résidus dans un troisième graphique `ax[2]`. Ajouter à cette figure, l'axe horizontal (qu’on pourra voir comme le graphe d’une fonction nulle)
+15. Tracer les résidus dans un troisième graphique `ax[2]`. Ajouter à cette figure, l'axe horizontal (qu'on pourra voir comme le graphe d'une fonction nulle)
   - Que vaut la moyenne des résidus ? Expliquez pourquoi
 16. Tracer un histogramme des résidus dans un quatrième graphique `ax[3]`, on pourra utiliser l'instruction `plt.hist()`
   - Cet histogramme valide-t-il le choix du modèle linéaire pour ces données ?
@@ -265,7 +265,7 @@ print(np.mean(resid_agri)) # ~= 0
 
 17. Calculer le carré du coefficient de corrélation linéaire : $R^2 = \rho^2$.
   - Que peut-on en déduire ?
-  - Ce coefficient permet-il de choisir parmi les deux droites de régression l’une plutôt que l’autre ?
+  - Ce coefficient permet-il de choisir parmi les deux droites de régression l'une plutôt que l'autre ?
 
 :::correction
 ```python
@@ -278,7 +278,7 @@ print('Rau2', rau ** 2)
 
 ## Etude de la dispersion du nuage
 
-18. A l’aide des formules données en cours, calculer les dispersions _SST_, _SSR_, _SSE_.
+18. A l'aide des formules données en cours, calculer les dispersions _SST_, _SSR_, _SSE_.
 19. Vérifier la formule : $R^2=\frac{SSE}{SST}$ pour ce jeu de données.
 
 :::correction
@@ -308,7 +308,7 @@ print('Rapport :', reg_indus_agri(agri[6]) / indus[6])
 
 ## Sensibilité aux valeurs extrêmes
 
-21. On dit que la position de la droite de régression est très sensible par rapport aux valeurs abérantes. Faites une expérience pour illustrer cette affirmation en changeant l’un des indices observés.
+21. On dit que la position de la droite de régression est très sensible par rapport aux valeurs abérantes. Faites une expérience pour illustrer cette affirmation en changeant l'un des indices observés.
 
 :::correction
 Changer `indus[3]` à $999$ et observer la détérioration du modèle.

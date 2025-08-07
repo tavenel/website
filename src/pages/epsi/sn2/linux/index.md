@@ -39,7 +39,7 @@ layout: '@layouts/BaseLayout.astro'
 - [  TP - Utilisation des commandes avancées](/linux/tp-commandes_avancees)
 - [📜 TP - Création de scripts Bash](/linux/tp-scripts_bash)
 - [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/linux/tp-trash)
-- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/linux/projet_lamp)
+- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d'héberger un site Web](/linux/projet_lamp)
 
 ## 🚀 Pour aller plus loin
 

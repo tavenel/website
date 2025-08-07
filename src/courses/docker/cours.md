@@ -103,7 +103,7 @@ root((Docker 🐳))
 ### ⚠️ Difficulté à évoluer
 
 - Scalabilité limitée : environnements traditionnels mal adaptés aux architectures modernes nécessitant une scalabilité rapide et fluide. 📈
-- Mise à l’échelle : configurations manuelles complexes. 🛠️
+- Mise à l'échelle : configurations manuelles complexes. 🛠️
 
 ---
 
@@ -686,7 +686,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 ## Détails techniques d'implémentation
 
 - [Documentation sur les Namespace et les Cgroups][doc-namespace-cgroups]
-- [Au final… qu’est-ce qu’un conteneur ? (blog une-tasse-de.cafe)](https://une-tasse-de.cafe/blog/conteneur/)
+- [Au final… qu'est-ce qu'un conteneur ? (blog une-tasse-de.cafe)](https://une-tasse-de.cafe/blog/conteneur/)
 - [Building a Linux container by hand using namespaces](https://www.redhat.com/en/blog/building-container-namespaces)
 - [Building a container by hand using namespaces: The mount namespace](https://www.redhat.com/en/blog/mount-namespaces)
 - [Building containers by hand: The PID namespace](https://www.redhat.com/en/blog/pid-namespace)

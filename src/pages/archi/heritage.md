@@ -16,8 +16,8 @@ Le vocabulaire basique de programmation objet doit être maîtrisé : voir le [c
 
 ## Héritage
 
-- Une classe peut hériter d’une autre pour étendre ses fonctionnalités.
-  + Permet d’ordonner des objets proches pour s’y retrouver.
+- Une classe peut hériter d'une autre pour étendre ses fonctionnalités.
+  + Permet d'ordonner des objets proches pour s'y retrouver.
 - Inversement, cela permet de regrouper plusieurs classes ayant des fonctionnalités communes.
   + Permet de factoriser du code en repérant des comportements génériques utilisés dans plusieurs contextes et en les mettant dans un parent commun.
 

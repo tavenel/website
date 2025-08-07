@@ -154,8 +154,8 @@ Le document `HTML` envoyé par le serveur peut être enregistré sur l'hébergeu
 Autres fonctions d'un serveur Web :
 
 - Sécurité : Cryptage des communications entre serveur et client Web (`HTTPS`).
-- Identification utilisateur : Authentification `HTTP` autorisant l’accès à des domaines particuliers du Web.
-- Redirections : Redirection et réécriture d’URL (`URL Rewriting`) grâce au `Rewrite-Engine`.
+- Identification utilisateur : Authentification `HTTP` autorisant l'accès à des domaines particuliers du Web.
+- Redirections : Redirection et réécriture d'URL (`URL Rewriting`) grâce au `Rewrite-Engine`.
 - Cache : Enregistrement intermédiaire de documents dynamiques pour répondre plus vite aux demandes et prévenir une surcharge du serveur Web.
 - Attribution de Cookies : Envoi et traitement de `cookies HTTP`.
 
@@ -236,7 +236,7 @@ On distingue 3 familles d'applications mobiles liés à ce choix :
 
 ---
 
-Pour des raisons liées à la visibilité de l’application, un composant navigateur peut être intégré à une application mobile (très légère) pour rendre l’application déployable dans les stores.
+Pour des raisons liées à la visibilité de l'application, un composant navigateur peut être intégré à une application mobile (très légère) pour rendre l'application déployable dans les stores.
 
 Une autre solution est d'utiliser la technologie Progressive Web Apps (`PWA`) pour "installer" l'application web sur la machine du client (il s'agit en réalité d'une fonctionnalité du navigateur simulant une application Desktop).
 
@@ -265,7 +265,7 @@ Ces applications sont également directement disponibles sur tous les clients "c
 
 ---
 
-En alternative à ce double développement, certaines solutions (`Xamarin`, ...) proposent un environnement de développement qui sera converti en code natif pour chaque système d’exploitation.
+En alternative à ce double développement, certaines solutions (`Xamarin`, ...) proposent un environnement de développement qui sera converti en code natif pour chaque système d'exploitation.
 
 ---
 

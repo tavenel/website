@@ -7,11 +7,11 @@ date: 2024 / 2025
 
 ## Objectif
 
-Ce TP vise à configurer un environnement de développement portable et reproductible à l'aide de `Docker` et des `DevContainers`. L’objectif est de maîtriser la configuration d'un environnement `DevContainer` pour une application `Node.js` et de comprendre comment `Docker` peut être intégré dans le processus de développement.
+Ce TP vise à configurer un environnement de développement portable et reproductible à l'aide de `Docker` et des `DevContainers`. L'objectif est de maîtriser la configuration d'un environnement `DevContainer` pour une application `Node.js` et de comprendre comment `Docker` peut être intégré dans le processus de développement.
 
 ## Contexte
 
-L’un des défis rencontrés par les développeurs est de garantir la cohérence de l’environnement de développement entre différents membres d’une équipe. Grâce à `Docker` et aux `DevContainers`, il est possible de partager facilement des environnements de développement configurés de manière identique.
+L'un des défis rencontrés par les développeurs est de garantir la cohérence de l'environnement de développement entre différents membres d'une équipe. Grâce à `Docker` et aux `DevContainers`, il est possible de partager facilement des environnements de développement configurés de manière identique.
 
 Un `DevContainer` est un environnement de développement personnalisé et isolé, configuré dans un conteneur `Docker`, utilisé principalement dans des éditeurs de code comme Visual Studio Code. Il permet aux développeurs de travailler dans un environnement reproductible et portable, peu importe la machine hôte.
 
@@ -23,14 +23,14 @@ Un `DevContainer` est un environnement de développement personnalisé et isolé
 
 ### Création du DevContainer
 
-**Objectif** : Configurer un DevContainer dans Visual Studio Code qui utilise Docker pour exécuter l’application dans un environnement contrôlé.
+**Objectif** : Configurer un DevContainer dans Visual Studio Code qui utilise Docker pour exécuter l'application dans un environnement contrôlé.
 
 - Créer le dossier `.devcontainer/` à la racine du projet.
 - Créer un fichier `devcontainer.json` avec les éléments suivants :
    - L'image Docker à utiliser (par exemple, `node:16`).
    - Les options de montage de volume pour synchroniser le code source avec le conteneur.
-   - Les configurations pour exécuter automatiquement l’installation des dépendances (`npm install`).
-   - Les paramètres d’ouverture de port pour accéder à l’application via localhost.
+   - Les configurations pour exécuter automatiquement l'installation des dépendances (`npm install`).
+   - Les paramètres d'ouverture de port pour accéder à l'application via localhost.
 
 Exemple de fichier `devcontainer.json` :
 ```json
@@ -108,15 +108,15 @@ Exemple de fichier `devcontainer.json` utilisant le service `app` et le `docker-
 
 ### Tests et Debugging
 
-- **Lancement de l’environnement** : Ouvrez le projet dans VS Code et démarrez le DevContainer.
-- **Vérification du fonctionnement** : Testez que l’application se lance correctement avec `npm start` dans le DevContainer.
-- **Debugging** : Ajoutez des configurations de debugging dans VS Code pour déboguer l’application Node.js dans le DevContainer.
+- **Lancement de l'environnement** : Ouvrez le projet dans VS Code et démarrez le DevContainer.
+- **Vérification du fonctionnement** : Testez que l'application se lance correctement avec `npm start` dans le DevContainer.
+- **Debugging** : Ajoutez des configurations de debugging dans VS Code pour déboguer l'application Node.js dans le DevContainer.
 
 ### Environnement complet
 
 - **Ajouter des extensions** : Ajoutez des extensions VS Code supplémentaires pour le linting et le formattage (`ESLint`, `Prettier`).
 - **Scripts de tests** : Ajoutez un script de test (par exemple, `npm test`)
-- **Environnement de développement avec Docker Compose** : Utilisez `docker-compose up` pour lancer l’environnement complet avec `MongoDB` et vérifiez la connexion entre l’application et la base de données.
+- **Environnement de développement avec Docker Compose** : Utilisez `docker-compose up` pour lancer l'environnement complet avec `MongoDB` et vérifiez la connexion entre l'application et la base de données.
 
 ## Legal
 

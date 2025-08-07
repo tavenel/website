@@ -23,20 +23,20 @@ En déduire une classification pour ce nuage de points.
 
 ## Introduction
 
-Une banque souhaite vendre un produit d’assurance à ses clients. Pour mettre en place cette stratégie commerciale, le data miner envisage, à partir d’un échantillon représentatif de la base clients, de construire un modèle.
+Une banque souhaite vendre un produit d'assurance à ses clients. Pour mettre en place cette stratégie commerciale, le data miner envisage, à partir d'un échantillon représentatif de la base clients, de construire un modèle.
 
-Dans cette seconde partie du TD, vous décidez de construire un arbre de décision afin de savoir si un client est intéressé ou non par le produit d’assurance.
+Dans cette seconde partie du TD, vous décidez de construire un arbre de décision afin de savoir si un client est intéressé ou non par le produit d'assurance.
 
 Le data miner dispose pour cet exercice de quatre variables explicatives :
 
-- la variable binaire _Crédit_ traduisant le fait que le client possède ou non au sein de l’organisme un crédit en cours ;
+- la variable binaire _Crédit_ traduisant le fait que le client possède ou non au sein de l'organisme un crédit en cours ;
 - la variable binaire _Sexe_ représentant le sexe du client ;
 - la variable qualitative _Revenus_ indiquant la classe des revenus du client ;
-- la variable continue _Age_ indiquant l’âge du client ;
+- la variable continue _Age_ indiquant l'âge du client ;
 
-Et d’une variable cible :
+Et d'une variable cible :
 
-- la variable _Assurance_ traduisant le fait que le client a souscrit ou non le produit d’assurance.
+- la variable _Assurance_ traduisant le fait que le client a souscrit ou non le produit d'assurance.
 
 Les données dont le data miner dispose sont contenues dans le tableau suivant :
 
@@ -62,7 +62,7 @@ Les données dont le data miner dispose sont contenues dans le tableau suivant :
 
 ## Division 1
 
-1. Indiquer pour chacune des variables explicatives le nombre de division(s) admissible(s) que l’on peut former.  Justifier votre réponse.
+1. Indiquer pour chacune des variables explicatives le nombre de division(s) admissible(s) que l'on peut former.  Justifier votre réponse.
 2. On rappelle que l'_indice de Gini_ associé à un segment $t$ se calcule comme suit :
 
 $$Gini(t) = 1 - p^2(0|t) - p^2(1|t)$$
@@ -79,7 +79,7 @@ Compléter alors le tableau suivant (justifier vos calculs) :
 
 **Note** : ici et dans la suite, on arrondira à trois chiffres après la virgule.
 
-3. Préciser de manière générale ce que mesure l’indice de Gini. Donner une interprétation de cet indice en terme de distribution de la variable cible.
+3. Préciser de manière générale ce que mesure l'indice de Gini. Donner une interprétation de cet indice en terme de distribution de la variable cible.
 
 4. Dans le but d'identifier la « meilleure » division globale, compléter les tableaux suivants :
 
@@ -351,11 +351,11 @@ Note : en cas de choix multiple, on choisira par défaut la variable selon l'ord
 | Gini total       |   ?       |
 +------------------+-----+-----+
 
-2. Pourquoi n’a-t-on pas besoin de continuer les calculs ? Justifier votre réponse.
+2. Pourquoi n'a-t-on pas besoin de continuer les calculs ? Justifier votre réponse.
 
 3. Représenter graphiquement cette troisième division en précisant la distribution (en effectifs) de la variable _Assurance_ à l'intérieur de chacun des segments, ainsi que l'effectif total en présence.
 
-4. Préciser pour chacun des segments résultant de cette division s'il s'agit d’un segment terminal ou intermédiaire. Justifier votre réponse.
+4. Préciser pour chacun des segments résultant de cette division s'il s'agit d'un segment terminal ou intermédiaire. Justifier votre réponse.
 
 ## Prévisions
 

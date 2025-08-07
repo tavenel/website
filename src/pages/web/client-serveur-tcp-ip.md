@@ -260,8 +260,8 @@ C'est le protocole de base pour échanger sur un réseau, les sockets sont omnip
 
 Il existe 2 types de socket :
 
-- le mode connecté (`TCP`) établit une connexion durable entre les deux processus : l’adresse de destination n’est pas nécessaire à chaque envoi de données
-- le mode non connecté (`UDP`) : nécessite l’adresse de destination à chaque envoi et aucun accusé de réception n’est donné.
+- le mode connecté (`TCP`) établit une connexion durable entre les deux processus : l'adresse de destination n'est pas nécessaire à chaque envoi de données
+- le mode non connecté (`UDP`) : nécessite l'adresse de destination à chaque envoi et aucun accusé de réception n'est donné.
 
 Les socket se situent entre la couche réseau (incluse) et les couches applicatives du modèle OSI (protocoles `UDP` ou `TCP` utilisant `IP` / `ARP`).
 
@@ -274,7 +274,7 @@ En `C++`, `C#`, `Java`, `Python`, etc… les fonctions sont quasiment identiques
 - Lancer la demande pour le client ou se mettre en `Listen` pour le serveur
 - Fermer et détruire les Socket
 
-Le mode `Listen` est le mode du Serveur qui consiste à attendre une demande de connexion d’un Client. Celle ci est souvent bloquante bien que certaines alternatives existent (`CallBack`, ...).
+Le mode `Listen` est le mode du Serveur qui consiste à attendre une demande de connexion d'un Client. Celle ci est souvent bloquante bien que certaines alternatives existent (`CallBack`, ...).
 
 ---
 
@@ -592,7 +592,7 @@ Le protocole assez simple : on commence par spécifier l'expéditeur du message,
 
 #### Webmail
 
-Une messagerie Web (Webmail) est une interface web rendant possible l’émission, la consultation et la manipulation de courriers électroniques directement sur le Web depuis un navigateur.
+Une messagerie Web (Webmail) est une interface web rendant possible l'émission, la consultation et la manipulation de courriers électroniques directement sur le Web depuis un navigateur.
 
 C'est en fait un client de messagerie qui s'exécute dans un serveur Web.
 Le serveur Web effectue alors les requêtes locales ou distantes vers le serveur de messagerie.

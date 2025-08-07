@@ -56,7 +56,7 @@ Vous disposez des 3 machines suivantes :
 | **bastion**    | `192.168.1.20` | Serveur SSH accessible                              |
 | **app-server** | `192.168.1.30` | Contient un service web en local (`localhost:8080`) |
 
-Le service web sur `app-server:8080` n’est **pas exposé sur le réseau**, il est uniquement accessible en local. Vous devez configurer un tunnel SSH **via le bastion** pour y accéder depuis votre machine `client`.
+Le service web sur `app-server:8080` n'est **pas exposé sur le réseau**, il est uniquement accessible en local. Vous devez configurer un tunnel SSH **via le bastion** pour y accéder depuis votre machine `client`.
 
 1. **Test de connectivité SSH**
 

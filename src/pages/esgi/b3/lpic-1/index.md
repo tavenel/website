@@ -66,7 +66,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 #### 📝 Bibliographie
 
-- [Bouziri, N. H. Andriambelo, A. Boyanov, N. Larrousse 2010. Préparation à l’examen 101 pour la certification de l’Institut professionnel de Linux, niveau junior LPIC-1. Agence universitaire de la Francophonie, Paris.](https://graal.ens-lyon.fr/~ycaniou/Teaching/CertificationLPI/Support_LPIC-101.pdf)
+- [Bouziri, N. H. Andriambelo, A. Boyanov, N. Larrousse 2010. Préparation à l'examen 101 pour la certification de l'Institut professionnel de Linux, niveau junior LPIC-1. Agence universitaire de la Francophonie, Paris.](https://graal.ens-lyon.fr/~ycaniou/Teaching/CertificationLPI/Support_LPIC-101.pdf)
 - [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
 
 #### 📄 Examens blancs
@@ -92,7 +92,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 
 - Reconnaître le matériel : ports PCI / USB, paramétrage du BIOS / UEFI
 - Savoir installer et configurer un système GNU/Linux sur un poste de type PC
-- Savoir utiliser les niveaux d’exécution et cibles systemd du système
+- Savoir utiliser les niveaux d'exécution et cibles systemd du système
 - Savoir installer et désinstaller les programmes sur les distributions des familles RedHat ou Debian, et gérer les bibliothèques partagées.
 - Connaître les spécificités de Linux en tant que système virtualisé.
 - Bien utiliser la ligne de commande Linux (Bash, vi)
@@ -138,7 +138,7 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - Connaître les outils d'accessibilité
 - Effectuer les tâches d'administration de base : gérer les utilisateurs, utiliser les tâches automatiques, …
 - Installer et paramétrer les services essentiels : messagerie, impression, horloge système, journaux système
-- Avoir les notions de réseau essentielles à l’administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
+- Avoir les notions de réseau essentielles à l'administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
 - Savoir mettre en place un niveau de sécurité sur les postes : services en écoute et ports ouverts, limitations d'accès, et chiffrement des données
 
 ### 📅 Déroulé du cours

@@ -91,11 +91,11 @@ mindmap
 
 ### Enjeux
 
-- Reproductibilité de l’infrastructure
+- Reproductibilité de l'infrastructure
 - Gestion des dépendances
 - Versionnage et collaboration (avec Git)
 
-### Cas d’usage
+### Cas d'usage
 
 - Déploiements multi-environnement
 - Projets DevOps
@@ -254,7 +254,7 @@ dynamic "rule" {
 ### 📁 Structure
 
 - `main.tf` : logique principale
-- `variables.tf` : variables d’entrée
+- `variables.tf` : variables d'entrée
 - `outputs.tf` : valeurs de sortie
 - …
 

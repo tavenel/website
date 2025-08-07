@@ -22,7 +22,7 @@ Module de 2 journées
 
 - Jour 1 :
   - présentation du devops : culture, principes, enjeux
-  - découverte de l’Infrastructure-as-Code (et pratique : Ansible et Terraform)
+  - découverte de l'Infrastructure-as-Code (et pratique : Ansible et Terraform)
   - initiation / rappels sur la CI dans le devops et modèles de déploiements continus (et pratique : Jenkins) 
   - introduction / rappels sur les conteneurs : Docker & enjeux des orchestrateurs (découverte docker-compose et Kubernetes). Théorie et TP
   - démarrage du projet collaboratif DevOps
