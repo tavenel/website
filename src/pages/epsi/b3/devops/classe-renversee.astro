@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Intro } from '@courses/pedagogie/classe-renversee.md';
+import { Content as Themes } from '@courses/devops/themes.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Classe renversée DevOps",
+  tags: [
+    "devops",
+		"renversée",
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Intro />  </Chapter>
+	<Chapter> <Themes />  </Chapter>
+</Layout>
+
