@@ -47,7 +47,7 @@ Le but de ce projet est de dockeriser un projet personnel existant qui se compos
 ## 🚀 Pour aller plus loin
 
 - [🤓 Cours complet Kubernetes orienté Développeur](/k8s/cours-dev)
-- [💻 TP : Environnement de Développement avec DevContainers](/docker/tp-devcontainer) : ce TP vise à configurer un environnement de développement portable et reproductible à l'aide de `Docker` et des `DevContainers`. L’objectif est de maîtriser la configuration d'un environnement `DevContainer` pour une application `Node.js` et de comprendre comment `Docker` peut être intégré dans le processus de développement.
+- [💻 TP : Environnement de Développement avec DevContainers](/docker/tp-devcontainer) : ce TP vise à configurer un environnement de développement portable et reproductible à l'aide de `Docker` et des `DevContainers`. L'objectif est de maîtriser la configuration d'un environnement `DevContainer` pour une application `Node.js` et de comprendre comment `Docker` peut être intégré dans le processus de développement.
 - [🚢 TP Podman : Conteneurs et Pods sans serveur](/docker/tp-podman) : `Podman` est un moteur de conteneur compatible avec l'API Docker conçu pour créer, exécuter et gérer des conteneurs et des pods Kubernetes sans nécessiter de démon, ce qui le rend idéal pour le développement et pour tester des pods Kubernetes en local sans nécessiter de cluster Kubernetes complet.
 - Voir les autres ressources du [  cours sur Docker & Kubernetes](/docker).
 

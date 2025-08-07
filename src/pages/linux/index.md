@@ -16,7 +16,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## Rappels
 
-### Architecture d’un système Linux
+### Architecture d'un système Linux
 
 - Kernel, Shell, FHS
 - Services système (systemd)
@@ -52,7 +52,7 @@ layout: '@layouts/BaseLayout.astro'
 - [📜 TP - Création de scripts Bash](/linux/tp-scripts_bash)
 - [📜 TP Bash - Gestion des fichiers et des utilisateurs](/linux/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
 - [🚮 TP - Commande trash simulant l'utilisation d'une poubelle](/linux/tp-trash)
-- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d’héberger un site Web](/linux/projet_lamp)
+- [🔦 Installation d'un serveur LAMP (Linux Apache MySQL PHP) permettant d'héberger un site Web](/linux/projet_lamp)
 
 ## Niveau 2
 

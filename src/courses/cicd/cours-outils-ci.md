@@ -23,7 +23,7 @@ _💡 Par exemple, le respect de la norme Java est garanti par le compilateur qu
 
 ---
 
-- 🔁 Afin d’être certain de vérifier le même objet, un commit ne devrait au mieux n’être compilé qu'une seule fois et l'artéfact généré ne pas être modifié (architecture immuable).
+- 🔁 Afin d'être certain de vérifier le même objet, un commit ne devrait au mieux n'être compilé qu'une seule fois et l'artéfact généré ne pas être modifié (architecture immuable).
 - 🐳 En principe, cette contrainte est difficile à respecter sans déployer un environnement complet : `Docker`
 - ⏱️ On limitera donc au maximum le nombre de compilations du même commit (ex : tests + packaging en 1 seul build)
 
@@ -268,9 +268,9 @@ Les serveurs d'analyse continue de qualité (`SonarQube`, `Jenkins`, ...) permet
 
 ## 🚀 Déploiement des outils
 
-Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on essaiera de déployer au maximum dans les différents environnements :
+Ces outils sont le noyau dur de l'intégration continue, et ceux que l'on essaiera de déployer au maximum dans les différents environnements :
 
-- 🛠️ Serveur d’intégration continue
+- 🛠️ Serveur d'intégration continue
 - 💻 Environnement de développement
 - 🧪 `staging` / `pre-production` / (rarement) `production`
 
@@ -301,7 +301,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
 
 - Lancer automatiquement :
   - ✅ **Analyse statique** (SonarQube, eslint, etc.)
-  - ✅ **Tests unitaires et d’intégration**
+  - ✅ **Tests unitaires et d'intégration**
   - ✅ **Scan de vulnérabilités** (Snyk, Trivy, etc.)
   - ✅ **Lint / Formatage**
 - Bloquer les fusions Git (`merge`, `rebase`) si les tests échouent
@@ -334,7 +334,7 @@ Ces outils sont le noyau dur de l’intégration continue, et ceux que l’on es
   * Utiliser des secrets managers (_Vault_, GitHub/GitLab secrets, etc.)
 - Restreindre les droits sur les runners et pipelines
 - Exécuter dans des environnements isolés
-- Utiliser des **signatures d’artefacts** (ex : _Sigstore_)
+- Utiliser des **signatures d'artefacts** (ex : _Sigstore_)
 
 ---
 

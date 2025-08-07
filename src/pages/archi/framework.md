@@ -13,22 +13,22 @@ Framework : ensemble de composants qui structure une application et contraint la
 - Lié à un langage de programmation
 - Plutôt générique (contrairement à une librairie)
 
-**=> Abstraction de fonctionnalités et d’architecture pour un langage au détriment de certaines possibilités**
+**=> Abstraction de fonctionnalités et d'architecture pour un langage au détriment de certaines possibilités**
 
 ---
 
-## 🌟 Avantages d’un framework :
+## 🌟 Avantages d'un framework :
 
-- \+ Gain de temps et d’efficacité
+- \+ Gain de temps et d'efficacité
 - \+ Meilleure structuration du code
 - \+ Maintenance / Évolution simplifiée
 
 ---
 
-## Inconvénients d’un framework :
+## Inconvénients d'un framework :
 
 - \- Limite les fonctionnalités complexes du langage
-- \- Niveau d’abstraction supplémentaire
+- \- Niveau d'abstraction supplémentaire
 - \- Nouvelle technologie à supporter / intégrer / maintenir / ...
 
 ---
@@ -43,7 +43,7 @@ Framework : ensemble de composants qui structure une application et contraint la
 
 ## Exemple de métriques techniques :
 
-- \+ Facilité d’utilisation
+- \+ Facilité d'utilisation
 - \+ fonctionnalités déjà intégrées
 - \+ Besoins client “standards” 
 - \- Utilisation de fonctionnalités avancées du langage de programmation 

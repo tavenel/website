@@ -33,8 +33,8 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - `/etc/postfix/main.cf` : Fichier principal de configuration
 - `/etc/postfix/master.cf` : Contrôle des services postfix
-- `/var/spool/postfix/` : Files d’attente de mails
-- `/etc/aliases` : Fichier d’alias utilisateur
+- `/var/spool/postfix/` : Files d'attente de mails
+- `/etc/aliases` : Fichier d'alias utilisateur
 - `/var/log/mail.log` (ou `/var/log/maillog` selon distro) : logs d'envoi, réception et erreurs.
 
 ### 🔍 Commandes utiles
@@ -43,7 +43,7 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 mailq            # Voir la file d'attente des mails
 postfix flush    # Forcer l'envoi des mails en file
 postfix reload   # Recharger la configuration
-postsuper -d ALL # Vider la file d’attente
+postsuper -d ALL # Vider la file d'attente
 ```
 
 ---
@@ -171,7 +171,7 @@ Langage déclaratif **côté serveur** conçu pour **trier automatiquement les e
 | `redirect` | Rediriger le mail vers une autre adresse        |
 | `reject`   | Refuser le mail avec une erreur                 |
 | `discard`  | Supprimer silencieusement                       |
-| `stop`     | Arrêter l’évaluation du script                  |
+| `stop`     | Arrêter l'évaluation du script                  |
 
 #### Conditions
 
@@ -362,7 +362,7 @@ Voir la documentation : <https://doc.dovecot.org/main/core/config/sieve/extensio
 
 ## 📨 Alternative : Courier
 
-* Moins utilisé aujourd’hui ;
+* Moins utilisé aujourd'hui ;
 * Utilise `imapd`, `pop3d`, fichiers séparés ;
 * Configuration dans `/etc/courier/` (ex: `imapd`, `pop3d`, `authdaemonrc`).
 

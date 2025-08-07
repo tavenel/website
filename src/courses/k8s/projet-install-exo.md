@@ -24,7 +24,7 @@ Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant êt
 :::exo
 Réaliser l'installation du cluster Kubernetes en H/A :
 
-1. **Choix de l’environnement**
+1. **Choix de l'environnement**
    - Déploiement sur des machines virtuelles (VirtualBox, VMware).
    - Déploiement sur le cloud (GCP, AWS, Azure, …). Oracle OCI propose une offre gratuite suffisante pour ce projet.
 2. **Installation des prérequis**
@@ -51,7 +51,7 @@ Attention, on demande bien d'installer un cluster **production-ready** ! Celui-c
 - Voir aussi : <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/>
 :::
 
-### Phase 2 : Déploiement d’une Application
+### Phase 2 : Déploiement d'une Application
 
 Le but de cette partie est de déployer dans le cluster un projet personnel existant qui se compose de plusieurs composants (par exemple, une application web front-end, une API back-end, une base de données, etc.). On recommande l'utilisation de fichiers de manifeste `yml` pour créer les ressources Kubernetes.
 

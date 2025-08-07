@@ -18,14 +18,14 @@ Le projet utilise pour l'instant une version simulée des données météo.
 Pour la "vraie" version de production, vous aurez besoin de créer un compte sur l'API `WeatherCast` : <https://weatherstack.com/> et de modifier le fichier `/js/utils/api/sensorsApi.js` en conséquence. Nous utiliserons pour l'instant une version simulée (Mock) de ces appels.
 :::
 
-Notre projet fil rouge permet de suivre des façades par le biais de capteurs. Ces capteurs nous donnent des informations telles que le degré d’humidité ou les coordonnées géographiques. Grâce à l'API `WeatherCast` et aux coordonnées GPS de chaque capteur, nous récupérons les données météorologiques pour chaque façade.
+Notre projet fil rouge permet de suivre des façades par le biais de capteurs. Ces capteurs nous donnent des informations telles que le degré d'humidité ou les coordonnées géographiques. Grâce à l'API `WeatherCast` et aux coordonnées GPS de chaque capteur, nous récupérons les données météorologiques pour chaque façade.
 
 Le projet comporte quatre pages :
 
 - Une page de connexion où on va devoir rentrer son adresse mail et son mot de passe ;
-- La page d’accueil, qui comprend 34 capteurs récupérés via une requête `HTTP` ;
+- La page d'accueil, qui comprend 34 capteurs récupérés via une requête `HTTP` ;
 - La page `façade`, qui donne des détails sur une façade ;
-- La page d’ajout d’une façade. Elle comprend un formulaire.
+- La page d'ajout d'une façade. Elle comprend un formulaire.
 
 :::tip
 Pour démarrer le projet, vous pouvez utiliser l'extension VSCode [live server de ritwickdey](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). L'extension ajoute un bouton `Go Live` en bas à droite de l'interface.
@@ -46,7 +46,7 @@ Cette fonction prend un paramètre : `numberOfSensors` . Cela correspond au nomb
 - Un cas de test où je lui passe 12 en paramètre. Ici, je ne vais pas tester le résultat de la fonction, mais simplement vérifier si la fonction me retourne bien quelque chose. On utilisera : `expect().toBeDefined()`
 - Un cas de test où je lui passe 0 en paramètre, soit aucun capteur. Et je teste si le nombre de pages retourné est 0.
 - Un cas de test où je lui passe 7. Le résultat retourné par la fonction devrait être de 1, car j'affiche 8 capteurs par page. Autrement dit, il n'y aura qu'une seule page.
-- Enfin, un cas où je lui passe 34, et où je teste si j’ai bien 5 pages.
+- Enfin, un cas où je lui passe 34, et où je teste si j'ai bien 5 pages.
 
 :::exo
 Écrire les tests correspondants.
@@ -133,7 +133,7 @@ describe('Sample 1 Integration Test Suites', () => {
 })
 ```
 
-- `@jest-environment jsdom` : ce commentaire est à mettre dès le début du fichier. Il permet d’indiquer à `Jest` de simuler un DOM sur lequel travailler dans l'environnement de test.
+- `@jest-environment jsdom` : ce commentaire est à mettre dès le début du fichier. Il permet d'indiquer à `Jest` de simuler un DOM sur lequel travailler dans l'environnement de test.
 - `import '@testing-library/jest-dom'` est nécessaire si vous utilisez des méthodes d'`expect()` de la `testing-library` : `toBeInDocument()`, `toHaveTextContent()`, … Ici on utilise `toEqual()` de jest standard, l'import ne serait donc pas nécessaire.
 - `<h1 data-testid=...` : ajoute un attribut `data-testid` récupéré ensuite avec `getByTestId()`
 

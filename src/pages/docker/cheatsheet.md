@@ -155,7 +155,7 @@ docker volume inspect mon_volume
 docker run -v /mon_volume mon_image …
 ```
 
-### Data volume depuis une baie externe et driver Convoy (NFS, EBS d’AWS)
+### Data volume depuis une baie externe et driver Convoy (NFS, EBS d'AWS)
 
 ```sh
 docker run --volume-driver=convoy -v mon_volume:/mon_point_de_montage_dans_conteneur …
@@ -240,7 +240,7 @@ docker network disconnect mon_reseau mon_conteneur
 
 ### Mapping de port
 
--p : lier un port du conteneur (80) à un port de l’hôte (8080)
+-p : lier un port du conteneur (80) à un port de l'hôte (8080)
 
 ```sh
 docker run -p 8080:80 mon_conteneur
@@ -399,7 +399,7 @@ docker/docker-bench-security
 
 ### WAF
 
-Un _Pare-feu d’applications Web_ (WAF) comme `ModSecurity` permet de protéger vos applications contre les attaques courantes : injections SQL, XSS, …
+Un _Pare-feu d'applications Web_ (WAF) comme `ModSecurity` permet de protéger vos applications contre les attaques courantes : injections SQL, XSS, …
 
 ```sh
 docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
@@ -412,7 +412,7 @@ docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
 - `FROM` : permet de définir l'image source
 - `ADD <SOURCE> <DESTINATION>` : permet d'ajouter / télécharger des fichiers dans l'image
   + `<SOURCE>` est un chemin sur l'hyperviseur, `<DESTINATION>` est un chemin à l'intérieur de l'image en création.
-- `RUN` : permet d’exécuter des commandes dans votre conteneur
+- `RUN` : permet d'exécuter des commandes dans votre conteneur
 - `EXPOSE <PORT>` : permet de documenter l'utilisation d'un port du conteneur.
   + Remplacer `<PORT>` par la valeur du port utilisé dans le conteneur, par exemple `80`.
 - `VOLUME <VOL>` : permet de documenter l'utilisation d'un répertoire du conteneur partageant des données avec l'hyperviseur.
@@ -533,13 +533,13 @@ docker compose watch
 - Pour un exemple, voir : <https://github.com/dockersamples/avatars>
 :::
 
-## Attributs d’un service décrit dans un `docker compose.yml` :
+## Attributs d'un service décrit dans un `docker compose.yml` :
 
 - `image` : permet de spécifier l'image source pour le conteneur
 - `build` : permet de spécifier le `Dockerfile` source pour créer l'image du conteneur
 - `volume` : permet de spécifier les points de montage entre le système hôte et les conteneurs
 - `restart` : permet de définir le comportement du conteneur en cas d'arrêt du processus
-- `environment` : permet de définir les variables d’environnement
+- `environment` : permet de définir les variables d'environnement
 - `depends_on ` permet de dire que le conteneur dépend d'un autre conteneur
 - `ports` : permet de définir les ports disponibles entre la machine host et le conteneur
 - `provider` : utilise un _Provider_ et non une image Docker pour ce service. Voir : <https://docs.docker.com/compose/how-tos/provider-services/>

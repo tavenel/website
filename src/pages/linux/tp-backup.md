@@ -124,8 +124,8 @@ sudo mondoarchive
 sudo apt install backuppc
 ```
 
-2. Accès à l’interface web, par défaut sur <http://localhost/backuppc>
+2. Accès à l'interface web, par défaut sur <http://localhost/backuppc>
 3. Configurer une machine cliente via SSH pour la sauvegarde.
-4. Lancer une sauvegarde à distance d’un répertoire `/etc`.
-5. Restaurer un fichier depuis l’interface.
+4. Lancer une sauvegarde à distance d'un répertoire `/etc`.
+5. Restaurer un fichier depuis l'interface.
 

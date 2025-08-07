@@ -250,14 +250,14 @@ classDiagram
    - Les modifications au sein d'un `Aggregate` garantissent la validité globale de celui-ci.
 
 2. **Root (racine)** :
-   - Chaque agrégat possède une **racine d'agrégat (`Aggregate Root`)**, qui est une `Entity` servant de point d’entrée unique.
-   - Toute interaction avec l’agrégat passe par cette racine.
+   - Chaque agrégat possède une **racine d'agrégat (`Aggregate Root`)**, qui est une `Entity` servant de point d'entrée unique.
+   - Toute interaction avec l'agrégat passe par cette racine.
 
 3. **Délimitation claire** :
    - Un `Aggregate` définit une frontière dans le domaine métier. Les données ou comportements en dehors de cette frontière ne doivent pas être directement accessibles ou manipulés.
 
 4. **Encapsulation** :
-   - Les `Entity` et `Value Objects` internes à un `Aggregate` sont accessibles uniquement via la racine d’agrégat.
+   - Les `Entity` et `Value Objects` internes à un `Aggregate` sont accessibles uniquement via la racine d'agrégat.
 
 5. **Cohérence transactionnelle** :
    - Les modifications dans un `Aggregate` sont cohérentes et complètes dans une seule transaction. 
@@ -336,7 +336,7 @@ Dans cet exemple :
    - Les règles métier doivent toujours être respectées dans un agrégat.
 
 5. **Favorisez l'encapsulation** :
-   - Les objets internes à l’agrégat (`Entity`, `Value Objects`) doivent être accessibles uniquement via la racine.
+   - Les objets internes à l'agrégat (`Entity`, `Value Objects`) doivent être accessibles uniquement via la racine.
 
 #### Exemple pratique : Banque
 
@@ -526,7 +526,7 @@ class OrderRepository:
 ```
 
 - 🛑 Problème :
-  - Le domaine connaît le détail d’infrastructure.
+  - Le domaine connaît le détail d'infrastructure.
   - Impossible à tester sans base de données.
 - ✅ À faire :
   - Utiliser une interface abstraite dans le domaine
@@ -1053,7 +1053,7 @@ class OrderAppService:
 ```
 
 - 🔴 Problème : la règle métier est au mauvais endroit (logique dans l'orchestration).
-- ✅ À faire : valider dans l’agrégat ou la factory, pas dans le service applicatif.
+- ✅ À faire : valider dans l'agrégat ou la factory, pas dans le service applicatif.
 
 ---
 
@@ -1253,7 +1253,7 @@ Une `Entity` peut représenter différentes choses en fonction du contexte dans 
 1. **Ubiquitous Language** : Les entités devraient être nommées et définies en fonction du langage ubiquitaire propre à chaque contexte.
 2. **Mapping et synchronisation** : Si une entité dans un contexte dépend d'une entité dans un autre, vous pouvez utiliser des mécanismes comme des événements de domaine pour synchroniser les informations.
 3. **Anti-Corruption Layer (ACL)** : Si deux contextes doivent interagir fortement, une couche d'adaptation peut être utilisée pour convertir les données entre les entités.
-4. **Pas de duplication** : Une entité n’est pas copiée : elle est redéfinie avec des attributs et comportements spécifiques au contexte.
+4. **Pas de duplication** : Une entité n'est pas copiée : elle est redéfinie avec des attributs et comportements spécifiques au contexte.
 
 :::warn
 Si les besoins des différents contextes se chevauchent significativement, il n'est souvent pas utile d'utiliser de  Split Entity.
@@ -1311,7 +1311,7 @@ class ReservationPolicy:
 
 Ici, `ReservationPolicy` encapsule une règle métier et peut être utilisée par d'autres composants du système pour valider les actions.
 
-#### ❌ Anti-pattern : if/else hardcodé au lieu d’une Policy interchangeable
+#### ❌ Anti-pattern : if/else hardcodé au lieu d'une Policy interchangeable
 
 ```python
 if user.type == "premium":
@@ -2228,7 +2228,7 @@ Bien que les deux soient utilisés pour coordonner des workflows ou des transact
 | **Value Object**     | Représente une **valeur métier sans identité**              | Immuable, égalité par valeur, règles de validation   | `Money`, `Address`, `DateRange`      |
 | **Aggregate**        | Groupe cohérent d'`Entity`/`VO` avec **règles métier fortes**| Racine unique, cohérence transactionnelle           | `Order` contenant `OrderItem`        |
 | **Repository**       | Interface pour accéder aux **agrégats**                     | Abstraction de la persistance, basé sur l'ID         | `OrderRepository`                    |
-| **Factory**          | Centralise la **création d’objets complexes**               | Crée des entités/agrégats valides dès l'instanciation| `OrderFactory.create(customer, ...)` |
+| **Factory**          | Centralise la **création d'objets complexes**               | Crée des entités/agrégats valides dès l'instanciation| `OrderFactory.create(customer, ...)` |
 | **Domain Service**   | Contient la **logique métier transversale**                 | Stateless, agit sur plusieurs entités                | `PricingService`, `TaxCalculator`    |
 | **Application Service** | Orchestration métier **hors du domaine**                 | Coordonne services, agrégats, repos. Pas de logique métier | `PlaceOrderService`, `CreateUser`    |
 | **Policy**           | Encapsule une **règle métier conditionnelle**               | Pluggable, interchangeable, injecté, testable              | `CancellationPolicy`, `DiscountPolicy` |

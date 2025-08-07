@@ -8,7 +8,7 @@ date: 2024 / 2025
 3. Rajoutez un groupe `cat` avec le `GID 530`.
 4. Ajoutez `tom` dans le groupe `cat` en éditant le fichier `/etc/group`. Pour cela rajoutez le nom `tom` à la fin de la ligne correspondante. 
 5. Modifiez les informations de changement de mot de passe de `tom` avec la commande `chage`. Le mot de passe ne peut pas être changé avant 10 jours et il est obligatoire de le changer tous les 50 jours. 
-6. Supprimez manuellement l’utilisateur `tom` du fichier `/etc/passwd` pour le retirer du système. Lancez ensuite la commande `pwck`. Rectifiez le problème. 
+6. Supprimez manuellement l'utilisateur `tom` du fichier `/etc/passwd` pour le retirer du système. Lancez ensuite la commande `pwck`. Rectifiez le problème. 
 
 :::correction
 1. Créez un utilisateur `tom` ayant comme `UID 1200`, comme groupe `users`, comme commentaire `Chasseur de Jerry` et comme shell `/bin/bash`. Créez bien entendu l'utilisateur avec son répertoire personnel.
@@ -45,9 +45,9 @@ Maximum Password Age [40] : 50
 ... 
 ```
 
-6. Supprimez manuellement l’utilisateur `tom` du fichier `/etc/passwd` pour le retirer du système. Lancez ensuite la commande `pwck`. Rectifiez le problème. 
+6. Supprimez manuellement l'utilisateur `tom` du fichier `/etc/passwd` pour le retirer du système. Lancez ensuite la commande `pwck`. Rectifiez le problème. 
 
-La commande vous informe que le groupe `cat` contient un utilisateur `tom` qui n’existe plus. 
+La commande vous informe que le groupe `cat` contient un utilisateur `tom` qui n'existe plus. 
 
 Vous devez donc retirer `tom` du groupe `cat` pour conserver la cohérence du système. 
 :::

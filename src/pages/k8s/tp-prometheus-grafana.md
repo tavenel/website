@@ -167,10 +167,10 @@ Voici quelques exemples de métriques que vous pouvez surveiller avec `Prometheu
 
 ### Métriques _Node_
 
-- Utilisation du CPU, de la RAM et du disque sur l’ensemble du _Node_
+- Utilisation du CPU, de la RAM et du disque sur l'ensemble du _Node_
 - Nombre total de processus en cours d'exécution et leurs états
 - Nombre de fichiers ouverts, sockets, et leurs états
-- Activité d’I/O (disque, réseau), par opération ou volume
+- Activité d'I/O (disque, réseau), par opération ou volume
 - Informations physiques/matérielles (si applicable) : température, vitesse des ventilateurs...
 - API Server : Latence des requêtes, nombre de requêtes par seconde.
 
@@ -180,17 +180,17 @@ Voici quelques exemples de métriques que vous pouvez surveiller avec `Prometheu
 - Différences pour la RAM :
   - Distinction entre mémoire active et inactive
   - Une partie de la mémoire est partagée entre les conteneurs et gérée spécifiquement
-- Suivi de l’activité d’I/O plus complexe :
+- Suivi de l'activité d'I/O plus complexe :
   - Les écritures asynchrones peuvent entraîner des "charges" différées
   - Certains chargements en mémoire (page-ins) sont également partagés entre les conteneurs
 - Voir : <http://jpetazzo.github.io/2013/10/08/docker-containers-metrics/>
 
 ### Métriques _applicatives_
 
-- Métriques personnalisées liées à l’application et aux besoins métiers
-- Performance système : latence des requêtes, taux d’erreur...
+- Métriques personnalisées liées à l'application et aux besoins métiers
+- Performance système : latence des requêtes, taux d'erreur...
 - Informations sur les volumes : nombre de lignes en base de données, taille des files de messages...
-- Données métier : stock disponible, articles vendus, chiffre d’affaires...
+- Données métier : stock disponible, articles vendus, chiffre d'affaires...
 
 ## Configurer des Alertes
 

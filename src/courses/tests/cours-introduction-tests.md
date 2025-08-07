@@ -10,7 +10,7 @@ tags:
 
 - 🚀 Les sondes perdues (Mars Climate Orbiter, Mars Pathfinder)
 - 🛡️ Les missiles Patriotes
-- 🌌 1er vol d’Ariane 5
+- 🌌 1er vol d'Ariane 5
 - ⚕️ Therac-25
 - 🎮 Steam sur Linux
 - 🔒 OpenSSL sur Debian (génération aléatoire suite warning Valgrind)

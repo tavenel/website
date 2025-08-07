@@ -3,7 +3,7 @@ title: TD traitement des données - classification hierarchique ascendante
 date: 2023 / 2024
 ---
 
-La succession des quatre dessins suivants correspond aux étapes successives d’une classification hiérarchique ascendantes des cinq points $M_1(2, 0)$, $M_2(0, 1)$, $M_3(0, 2)$, $M_4(3, 4)$ et $M_5(5, 4)$ progressivement regroupées en classes de deux ou trois points dont les centres de gravité sont notés $G_6$, $G_7$ et $G_8$.
+La succession des quatre dessins suivants correspond aux étapes successives d'une classification hiérarchique ascendantes des cinq points $M_1(2, 0)$, $M_2(0, 1)$, $M_3(0, 2)$, $M_4(3, 4)$ et $M_5(5, 4)$ progressivement regroupées en classes de deux ou trois points dont les centres de gravité sont notés $G_6$, $G_7$ et $G_8$.
 
 On suppose que les cinq points initiaux sont tous affectés du poids 1.
 La distance choisie pour cette classification, qui apparait dans les quatre matrices de distance, est l'écart de Ward.

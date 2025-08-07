@@ -83,10 +83,10 @@ Les modifications apportées à l'aide de `sysctl` sont généralement temporair
 
 1. Vérifiez votre version du noyau Linux, et déplacez-vous dans le répertoire de ses modules.
 2. Vérifiez la date du fichier `modules.dep`. Si elle semble ancienne, lancez une commande pour le regénérer. 
-3. Listez les modules actuellement chargés. S’il n’y est pas, chargez le module `vfat` et ses dépendances. 
+3. Listez les modules actuellement chargés. S'il n'y est pas, chargez le module `vfat` et ses dépendances. 
 4. De la même manière déchargez le module `vfat` et ses dépendances. 
-5. Le paramètre dynamique `arp_announce` du noyau permet de modifier les en-têtes ARP en fonction de l’adresse de destination du paquet. Sur une machine disposant de plusieurs cartes réseaux, la valeur par défaut peut poser des problèmes car Linux peut répondre avec l’adresse d’une carte quelconque. Il faut que la carte réponde avec une adresse du même sous-réseau que la destination. Vérifiez quels paramètres du noyau sont impactés.
-6. Modifiez dynamiquement pour l’ensemble des adaptateurs la valeur `arp_announce` à `1` (on utilisera l'option `-w` pour modifier une valeur dynamiquement). 
+5. Le paramètre dynamique `arp_announce` du noyau permet de modifier les en-têtes ARP en fonction de l'adresse de destination du paquet. Sur une machine disposant de plusieurs cartes réseaux, la valeur par défaut peut poser des problèmes car Linux peut répondre avec l'adresse d'une carte quelconque. Il faut que la carte réponde avec une adresse du même sous-réseau que la destination. Vérifiez quels paramètres du noyau sont impactés.
+6. Modifiez dynamiquement pour l'ensemble des adaptateurs la valeur `arp_announce` à `1` (on utilisera l'option `-w` pour modifier une valeur dynamiquement). 
 7. Cette modification doit être définitive. Modifiez le fichier `/etc/sysctl.conf` et rechargez-le.
 
 :::correction
@@ -113,7 +113,7 @@ $ ls -l modules.dep
 $ depmod -a 
 ```
 
-3. Listez les modules actuellement chargés. S’il n’y est pas, chargez le module `vfat` et ses dépendances. 
+3. Listez les modules actuellement chargés. S'il n'y est pas, chargez le module `vfat` et ses dépendances. 
 
 ```sh
 lsmod 
@@ -133,7 +133,7 @@ modprobe vfat
 modprobe -r vfat 
 ```
 
-5. Le paramètre dynamique `arp_announce` du noyau permet de modifier les en-têtes ARP en fonction de l’adresse de destination du paquet. Sur une machine disposant de plusieurs cartes réseaux, la valeur par défaut peut poser des problèmes car Linux peut répondre avec l’adresse d’une carte quelconque. Il faut que la carte réponde avec une adresse du même sous-réseau que la destination. Vérifiez quels paramètres du noyau sont impactés.
+5. Le paramètre dynamique `arp_announce` du noyau permet de modifier les en-têtes ARP en fonction de l'adresse de destination du paquet. Sur une machine disposant de plusieurs cartes réseaux, la valeur par défaut peut poser des problèmes car Linux peut répondre avec l'adresse d'une carte quelconque. Il faut que la carte réponde avec une adresse du même sous-réseau que la destination. Vérifiez quels paramètres du noyau sont impactés.
 
 ```console
 $ sysctl -a | grep arp_announce 
@@ -146,7 +146,7 @@ net.ipv4.conf.eth1.arp_announce = 0
 net.ipv4.conf.eth2.arp_announce = 0 
 ```
 
-6. Modifiez dynamiquement pour l’ensemble des adaptateurs la valeur `arp_announce` à `1` (on utilisera l'option `-w` pour modifier une valeur dynamiquement). 
+6. Modifiez dynamiquement pour l'ensemble des adaptateurs la valeur `arp_announce` à `1` (on utilisera l'option `-w` pour modifier une valeur dynamiquement). 
 
 ```sh
 sysctl -w net.ipv4.conf.all.arp_announce=1 
@@ -353,7 +353,7 @@ PIW:          0          0          0          0   Posted-interrupt wakeup event
 
 ## Bus PCI
 
-1. Isolez l’adresse matérielle de votre carte graphique sur le bus PCI. (Les cartes AGP et PCI Express sont vues comme un bus PCI. On cherchera un contrôleur VGA).
+1. Isolez l'adresse matérielle de votre carte graphique sur le bus PCI. (Les cartes AGP et PCI Express sont vues comme un bus PCI. On cherchera un contrôleur VGA).
 2. Obtenez plus de détails sur cette carte. Notamment, quel module la gère ? Ces informations peuvent être obtenues avec le -v et en spécifiant uniquement la carte avec le -s de `lspci`.
 
 :::correction
@@ -420,7 +420,7 @@ $ lspci -v | grep -i bridge
 ```
 :::
 
-1. Quelles sont les options de `lspci` permettant d’établir la liste des périphériques P.C.I. `Intel` ?
+1. Quelles sont les options de `lspci` permettant d'établir la liste des périphériques P.C.I. `Intel` ?
 
 :::correction
 L'information de vendeur est le 1er segment affiché par `lspci -nn`.
@@ -487,7 +487,7 @@ temperatures:	41 0 0 0 0 0 0 0
 ```
 :::
 
-1. Branchez une clé USB sur votre PC. Si vous êtes en environnement graphique, il se peut que le gestionnaire de fichiers s’ouvre. Quels sont les mécanismes mis en œuvre ? Comment trouver des informations sur le périphérique ?
+1. Branchez une clé USB sur votre PC. Si vous êtes en environnement graphique, il se peut que le gestionnaire de fichiers s'ouvre. Quels sont les mécanismes mis en œuvre ? Comment trouver des informations sur le périphérique ?
 
 :::correction
 Voici les mécanismes mis en œuvre :
@@ -495,7 +495,7 @@ Voici les mécanismes mis en œuvre :
 - Dans un premier temps, le noyau détecte la connexion et charge le module USB correspondant. 
 - Le périphérique de base est créé. Un événement est généré. 
 - Le service `udev` détecte l'événement et exécute les règles associées : modification, par exemple, des droits sur le périphérique. 
-- Pour l'interface graphique, un autre service, `hal` (hardware abstraction layer) est un bus de communication entre les divers éléments. Il intercepte aussi l'événement et exécute d’autres règles, cette fois dans l'espace utilisateur : il ouvre le gestionnaire de fichiers. 
+- Pour l'interface graphique, un autre service, `hal` (hardware abstraction layer) est un bus de communication entre les divers éléments. Il intercepte aussi l'événement et exécute d'autres règles, cette fois dans l'espace utilisateur : il ouvre le gestionnaire de fichiers. 
 
 Pour obtenir des informations :
 

@@ -14,8 +14,8 @@ tags:
 
 - Les sondes perdues (Mars Climate Orbiter, Mars Pathfinder)
 - Les missiles Patriotes
-- 1er vol d’Ariane 5
-- L’an 2000
+- 1er vol d'Ariane 5
+- L'an 2000
 - Therac-25
 - Le null pointer (_billion-dollar mistake_)
 - Steam sur Linux
@@ -68,13 +68,13 @@ _Le logiciel est flexible, il est facile d'ajouter des changements_
 
 ---
 
-_Une fois que le programme est écrit et qu’il tourne, le travail est terminé_
+_Une fois que le programme est écrit et qu'il tourne, le travail est terminé_
 
-=> 50-70% de l’effort est réalisé après la livraison
+=> 50-70% de l'effort est réalisé après la livraison
 
 ---
 
-_Jusqu'à ce que le programme tourne, il n’y a aucun moyen d’évaluer sa qualité_
+_Jusqu'à ce que le programme tourne, il n'y a aucun moyen d'évaluer sa qualité_
 
 => Inspections & revues
 
@@ -86,31 +86,31 @@ _La seule chose à livrer pour un projet réussi est un programme qui marche_
 
 ---
 
-En management de projet, il n’y a pas une méthodologie de conduite de projet mais plusieurs combinaisons de méthodes et d’outils de gestion possibles, adaptables selon :
+En management de projet, il n'y a pas une méthodologie de conduite de projet mais plusieurs combinaisons de méthodes et d'outils de gestion possibles, adaptables selon :
 
 - le type de projet (web, technique, associatif, etc.)
 - ses caractéristiques
 - ses contraintes (budget, délai, ...)
 - le contexte
-- l’expérience de l’équipe 
-- la culture d’entreprise 
+- l'expérience de l'équipe 
+- la culture d'entreprise 
 
 ---
 
-### Quels sont les enjeux d’une méthodologie de projet ?
+### Quels sont les enjeux d'une méthodologie de projet ?
 
 Elle permet :
 
-- de trouver la meilleure façon de planifier et d’exécuter vos projets
-- d’améliorer la prise de décision grâce à des rôles clairement définis
-- d’économiser du temps et de l’argent en réutilisant une méthode de gestion pour d’autres projets
-- de gérer l’étendue du projet
+- de trouver la meilleure façon de planifier et d'exécuter vos projets
+- d'améliorer la prise de décision grâce à des rôles clairement définis
+- d'économiser du temps et de l'argent en réutilisant une méthode de gestion pour d'autres projets
+- de gérer l'étendue du projet
 
 ---
 
-- de ne pas oublier d’étapes d'un projet comme celle de la gestion des risques
+- de ne pas oublier d'étapes d'un projet comme celle de la gestion des risques
 - de contrôler les dépenses du projet
-- d’identifier rapidement les projets qui posent problème
+- d'identifier rapidement les projets qui posent problème
 - de mobiliser une équipe performante et autonome
 
 ---
@@ -121,12 +121,12 @@ Elle permet :
 
 ### Pourquoi réaliser un projet ? Les attentes et besoins
 
-Définition des besoins à différents niveaux d’abstraction :
+Définition des besoins à différents niveaux d'abstraction :
 
-- Besoins de l’utilisateur
+- Besoins de l'utilisateur
 - Besoins des composants
 
-Définition du système à réaliser avec le point de vue de l’utilisateur et/ou du client
+Définition du système à réaliser avec le point de vue de l'utilisateur et/ou du client
 
 - Les utilisateurs doivent être capables de comprendre ce document
 
@@ -149,18 +149,18 @@ L'ensemble des personnes intervenant sur le projet est séparée en 2 groupes : 
 
 ---
 
-#### La maîtrise d’ouvrage
+#### La maîtrise d'ouvrage
 
-- Entité responsable de l’expression du besoin
+- Entité responsable de l'expression du besoin
 - Souvent non informaticien
 - Besoin réel / budget
-- Possibilité de maîtrise d’ouvrage déléguée
+- Possibilité de maîtrise d'ouvrage déléguée
 
 ---
 
-#### La maîtrise d’œuvre
+#### La maîtrise d'œuvre
 
-- Entité responsable de la concrétisation de l’idée en outil informatique
+- Entité responsable de la concrétisation de l'idée en outil informatique
 - Pas de connaissance fonctionnelle
 - Bons choix techniques, adéquation avec les besoins, performances...
 
@@ -260,9 +260,9 @@ Diagramme de Gantt : graphe d'ordonnancement représentant les différentes tâc
 
 ### Chemin critique
 
-Le diagramme de Gantt est une des méthodes permettant de calculer le **chemin critique** d'un projet, ie la séquence de tâches qui détermine la durée totale d’un projet.
+Le diagramme de Gantt est une des méthodes permettant de calculer le **chemin critique** d'un projet, ie la séquence de tâches qui détermine la durée totale d'un projet.
 
-Si une tâche sur ce chemin est retardée, cela retarde l’ensemble du projet.
+Si une tâche sur ce chemin est retardée, cela retarde l'ensemble du projet.
 
 ---
 
@@ -296,7 +296,7 @@ Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs effic
 ### Indicateurs de délais
 
 - Taux de retard : (tâches non réalisées / prévues) X 100 (%) 
-- Durée d’une tâche
+- Durée d'une tâche
 - Écart de durée : (durée réelle – initiale) / initiale
 - Écart de délai : temps initialement prévu – actuellement utilisé
 
@@ -305,14 +305,14 @@ Les objectifs SMART sont issus d'un acronyme pour définir des indicateurs effic
 ### Indicateurs de qualité
 
 - Satisfaction client
-- Nombre d’erreurs
+- Nombre d'erreurs
 - Nombre de plaintes client
 
 ---
 
-### Indicateurs d’efficacité et d’avancement du projet
+### Indicateurs d'efficacité et d'avancement du projet
 
-- Taux d’avancement : (tâches accomplies / tâches prévues) X 100 (%)
+- Taux d'avancement : (tâches accomplies / tâches prévues) X 100 (%)
 - Nombre de tâches / jalons réalisés
 - Temps passé sur le projet
 

@@ -37,25 +37,25 @@ touch /tmp/test/toto
 chmod g-w,o-w /tmp/test/toto 
 ```
 
-Tout le monde peut supprimer ce fichier : ses droits n’ont pas d’importance. Ce sont les droits du répertoire, notamment le droit d’écriture sur le répertoire, qui déterminent qui peut supprimer les fichiers dedans. 
+Tout le monde peut supprimer ce fichier : ses droits n'ont pas d'importance. Ce sont les droits du répertoire, notamment le droit d'écriture sur le répertoire, qui déterminent qui peut supprimer les fichiers dedans. 
 :::
 
 ### `umask` - Restreindre des droits automatiquement 
 
-Lors de la création d’un fichier ou d’un répertoire, des droits leur sont automatiquement assignés. Généralement, c’est `rw-r--r--` (644) pour un fichier et `rwxr-xr-x` (755) pour un répertoire.
+Lors de la création d'un fichier ou d'un répertoire, des droits leur sont automatiquement assignés. Généralement, c'est `rw-r--r--` (644) pour un fichier et `rwxr-xr-x` (755) pour un répertoire.
 
-Ces valeurs sont contrôlées par un masque, lui-même modifiable par la commande `umask`. La commande `umask` prend comme paramètre une valeur octale dont chaque droit individuel sera supprimé des droits d’accès maximum du fichier ou du répertoire. 
+Ces valeurs sont contrôlées par un masque, lui-même modifiable par la commande `umask`. La commande `umask` prend comme paramètre une valeur octale dont chaque droit individuel sera supprimé des droits d'accès maximum du fichier ou du répertoire. 
 
 - Par défaut, tous les fichiers sont créés avec les droits 666 (`rw-rw-rw-`). 
 - Par défaut tous les répertoires sont créés avec les droits 777 (`rwxrwxrwx`). 
 - Puis le masque est appliqué. 
-- Le masque est le même pour l’ensemble des fichiers. 
+- Le masque est le même pour l'ensemble des fichiers. 
 - Un masque ne modifie pas les droits des fichiers existants, mais seulement ceux des nouveaux fichiers. 
 
 :::tip
 Les droits par défaut (maximum) des fichiers et des répertoires ne sont pas identiques.
 
-C’est logique : `w` comme le droit `x` permet de rentrer dans un répertoire, il est normal que celui-ci en dispose par défaut. Ce même droit est inutile par défaut sur les fichiers : seule une très petite minorité des fichiers sont des scripts et des programmes binaires. 
+C'est logique : `w` comme le droit `x` permet de rentrer dans un répertoire, il est normal que celui-ci en dispose par défaut. Ce même droit est inutile par défaut sur les fichiers : seule une très petite minorité des fichiers sont des scripts et des programmes binaires. 
 :::
 
 :::tip
@@ -86,7 +86,7 @@ Reste   rwxr-xr-x (755)
 Créez un masque restrictif : vous pouvez faire ce que vous voulez, le groupe a seulement accès aux répertoires et peut lire les fichiers, mais les autres ne peuvent rien faire. 
 
 :::correction
-- Le masque doit laisser passer tous les droits de l’utilisateur : `0`. 
+- Le masque doit laisser passer tous les droits de l'utilisateur : `0`. 
 - Le masque doit laisser passer les droits `r` et `x` pour les groupes. Seul `w` est masqué : `2`. 
 - Le masque supprime tous les droits aux autres : `7`. 
 - Résultat : `# umask 027`
@@ -310,7 +310,7 @@ But : rechercher des fichiers avec `find`, `whereis` et `locate`.
 2. Affichez tous les fichiers dans votre répertoire personnel ayant une taille inférieure à 400 blocs.
 3. Listez en format long tous les fichiers du système vous appartenant modifiés il a plus de 7 jours. Utilisez les paramètres `-user` et `-mtime`.
 4. Listez et affichez en format long les fichiers dans votre répertoire personnel qui ont comme propriétaire `guest` ou qui ont une taille entre 512 et 1024 octets, inclus.
-5. Recherchez tous les fichiers vides du système n’appartenant pas à `root` et tentez de les supprimer. Utilisez les paramètres `-empty` et `-exec` pour exécuter un `rm` sur chaque fichier trouvé.
+5. Recherchez tous les fichiers vides du système n'appartenant pas à `root` et tentez de les supprimer. Utilisez les paramètres `-empty` et `-exec` pour exécuter un `rm` sur chaque fichier trouvé.
 6. Indiquez où se situe la commande binaire `ls`. Utilisez la commande `whereis` pour cela.
 7. Vous avez perdu le fichier `lettre_importante.odf`. Où est-il, sans utiliser `find` ?
 
@@ -341,7 +341,7 @@ Le petit piège réside ici dans le “inclus”. Si vous indiquez +512c, les fi
 $ find ~ -user guest -size +511c -size -1025c -ls
 ```
 
-5. Recherchez tous les fichiers vides du système n’appartenant pas à `root` et tentez de les supprimer. Utilisez les paramètres `-empty` et `-exec` pour exécuter un `rm` sur chaque fichier trouvé.
+5. Recherchez tous les fichiers vides du système n'appartenant pas à `root` et tentez de les supprimer. Utilisez les paramètres `-empty` et `-exec` pour exécuter un `rm` sur chaque fichier trouvé.
 
 ```sh
 $ find / -type f -empty -exec rm -f {} \;

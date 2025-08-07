@@ -45,7 +45,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
  
-## Automatisation des tâches d’administration par la planification des travaux
+## Automatisation des tâches d'administration par la planification des travaux
 
 ---
 
@@ -122,7 +122,7 @@ Voir le [tp dédié aux langues][tp-lang].
 
 ---
 
-### Gestion de l’horloge système
+### Gestion de l'horloge système
 
 ---
 
@@ -217,7 +217,7 @@ Voir le [TP sur les journaux][tp-syslog].
 
 ---
  
-## Bases sur l’agent de transfert de courrier (MTA)
+## Bases sur l'agent de transfert de courrier (MTA)
 
 ---
 
@@ -261,7 +261,7 @@ Voir le [TP sur SMTP][tp-smtp].
 
 ---
  
-## Gestion des imprimantes et de l’impression
+## Gestion des imprimantes et de l'impression
 
 ---
 

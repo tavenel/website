@@ -23,7 +23,7 @@ tags:
 ---
 
 - Évite les erreurs
-- Plus facile et moins cher à _maintenir_ (> 60 % du coût de l’application) : [How Software Maintenance Fees Are Siphoning Away Your IT Budget – and How to Stop It, Accenture](https://silo.tips/download/procurement-category-information-technology-how-software-maintenance-fees-are-si)
+- Plus facile et moins cher à _maintenir_ (> 60 % du coût de l'application) : [How Software Maintenance Fees Are Siphoning Away Your IT Budget – and How to Stop It, Accenture](https://silo.tips/download/procurement-category-information-technology-how-software-maintenance-fees-are-si)
 - Plus facile à tester
 - Limitent la charge mentale de l'équipe : _l'entreprise n'est qu'un des clients de son produit_
 - Impactent les performances, la consommation énergétique, ...
@@ -179,7 +179,7 @@ class Cercle(Forme):
 
 ---
 
-### YAGNI : You Ain’t Gonna Neet It
+### YAGNI : You Ain't Gonna Neet It
 
 - Évitez la sur-configurabilité et le _au cas où_.
 - Résoudre le vrai problème plutôt que de futurs potentiels problèmes.
@@ -199,7 +199,7 @@ class Cercle(Forme):
 
 ### Loi de Déméter
 
-- Une classe devrait faire aussi peu d’hypothèses que possible à propos de la structure de quoi que ce soit d’autre, y compris ses propres sous-composants.
+- Une classe devrait faire aussi peu d'hypothèses que possible à propos de la structure de quoi que ce soit d'autre, y compris ses propres sous-composants.
 - Voir [l'article Wikipedia sur le sujet](https://fr.wikipedia.org/wiki/Loi_de_D%C3%A9m%C3%A9ter).
 
 ```java

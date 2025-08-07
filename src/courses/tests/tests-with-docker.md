@@ -20,8 +20,8 @@ tags:
 ## Rappels sur Docker
 
 - **Image** : modèle de conteneur (ex. : `python:3.11`, `nginx`, etc.).
-- **Conteneur** : instance d’une image en exécution.
-- **Dockerfile** : script de construction d’image.
+- **Conteneur** : instance d'une image en exécution.
+- **Dockerfile** : script de construction d'image.
 - **docker-compose** : outil pour orchestrer plusieurs conteneurs.
 
 ---

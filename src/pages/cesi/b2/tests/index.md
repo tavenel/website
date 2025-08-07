@@ -1,6 +1,6 @@
 ---
 layout: '@layouts/BaseLayout.astro'
-title: INFAL34 - Tests et recette d’un projet de développement 
+title: INFAL34 - Tests et recette d'un projet de développement 
 ---
 
 # 🧪 INFAL126 – Tests et recette des applications
@@ -16,7 +16,7 @@ title: INFAL34 - Tests et recette d’un projet de développement
 
 ### 🎯 Objectifs d'apprentissage
 
-- Créer et automatiser des test unitaires / d’intégrations / fonctionnels
+- Créer et automatiser des test unitaires / d'intégrations / fonctionnels
 
 ### 📅 Déroulé des séances
 

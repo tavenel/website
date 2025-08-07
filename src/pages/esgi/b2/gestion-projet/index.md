@@ -14,10 +14,10 @@ layout: '@layouts/BaseLayout.astro'
 
 ### Description détaillée 
 
-- Comment travailler efficacement en équipe : règles de fonctionnement de l’équipe, répartition du travail, coopération entre les membres de l’équipe, mise en place et formalisation des réunions, notion d’indicateurs 
+- Comment travailler efficacement en équipe : règles de fonctionnement de l'équipe, répartition du travail, coopération entre les membres de l'équipe, mise en place et formalisation des réunions, notion d'indicateurs 
 - La gestion du temps : fixer des objectifs SMART, utiliser des outils pratiques, bien comprendre le besoin client. 
-- Qu’est-ce qu’un projet : différentes étapes d’un projet, parties prenantes, contraintes et risques 
-- Présentation de l’organigramme des tâches et de l’ordonnancement et la planification 
+- Qu'est-ce qu'un projet : différentes étapes d'un projet, parties prenantes, contraintes et risques 
+- Présentation de l'organigramme des tâches et de l'ordonnancement et la planification 
  
 ### 📅 Déroulé du cours
 

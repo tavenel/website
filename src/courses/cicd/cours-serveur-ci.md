@@ -78,10 +78,10 @@ mindmap
 
 ### 🏢 Environnement neutre
 
-- Serveur distant : environnement **neutre** pour s’affranchir des spécificités des postes de développeurs : 🏢
+- Serveur distant : environnement **neutre** pour s'affranchir des spécificités des postes de développeurs : 🏢
 - Librairie présente sur le poste de travail mais non déclarée dans les dépendances du projet. 📚
 - Version des outils / librairies différentes sur chaque poste de travail. 🔧
-- Permet d’obtenir des builds fiables et reproductibles. ✅
+- Permet d'obtenir des builds fiables et reproductibles. ✅
 
 ---
 
@@ -109,7 +109,7 @@ L'utilisation d'un serveur d'intégration dédié est une ressource supplémenta
 
 ### ⏳ Temps d'exécution
 
-- Augmente le temps d'exécution de la feedback loop pour le développeur (temps nécessaire avant d’avoir un retour sur la qualité des changements à intégrer). ⏳
+- Augmente le temps d'exécution de la feedback loop pour le développeur (temps nécessaire avant d'avoir un retour sur la qualité des changements à intégrer). ⏳
 - Il faut trouver un **compromis** entre une **exécution rapide** mais peu de feedback, ou **beaucoup de vérifications** mais à un coût en temps et ressources élevées. ⚖️
 - En général, une feedback loop de :
 	- `15 / 30 min` est une bonne moyenne ⏳
@@ -192,7 +192,7 @@ Afin de réduire la charge de l'orchestrateur au maximum, il est recommandé de 
 - Peut enregistrer et afficher des processus exécutés à l'extérieur de Jenkins. 🌐
 
 :::tip
-Un job multi-configuration peut être d’une grande utilité dans des projets plus sophistiqués, notamment lorsque des builds spécifiques à chaque plateforme sont nécessaires.
+Un job multi-configuration peut être d'une grande utilité dans des projets plus sophistiqués, notamment lorsque des builds spécifiques à chaque plateforme sont nécessaires.
 :::
 
 ---
@@ -218,9 +218,9 @@ Le chaînage des jobs est l'une des fonctionnalités les plus intéressantes de 
 :::tip
 En pratique, on utilise les dépendances entre jobs pour :
 
-- Appeler des jobs (publication de résultats, ...) qui peuvent être communs à un ensemble de builds d’intégration continue. 📢
-- Nettoyer le système en cas d’échec lors d’un build. 🧹
-- Séparer les étapes d’un processus d’intégration continue : compilation des sources, exécution des tests, analyse statique, ... 🛠️
+- Appeler des jobs (publication de résultats, ...) qui peuvent être communs à un ensemble de builds d'intégration continue. 📢
+- Nettoyer le système en cas d'échec lors d'un build. 🧹
+- Séparer les étapes d'un processus d'intégration continue : compilation des sources, exécution des tests, analyse statique, ... 🛠️
 :::
 
 ---
@@ -266,7 +266,7 @@ Ce nouveau plugin rend obsolète la plupart des plugins de la suite d'analyse st
 ### 🛠️ Analyse qualité avec SonarQube™
 
 - Jenkins s'intègre avec le serveur d'analyse de qualité `SonarQube` (outil de reporting sur la qualité des projets informatiques). 🛠️
-- Celui-ci centralise les rapports d’outils d’analyse de code pour afficher des informations comme la couverture de test, le respect des normes de développement, la complexité, la duplication… 📊
+- Celui-ci centralise les rapports d'outils d'analyse de code pour afficher des informations comme la couverture de test, le respect des normes de développement, la complexité, la duplication… 📊
 - `SonarQube™` supporte de nombreux langages : `Java`, `PHP`, `C++`, `.NET`, ... 🌐
 
 ---
@@ -327,7 +327,7 @@ Ne pas confondre le mode _pipeline_ de Jenkins (implémentation technique d'un e
 
 ---
 
-### 🔄 Jobs paramétrés - réutilisation d’un commit
+### 🔄 Jobs paramétrés - réutilisation d'un commit
 
 - Jenkins permet de créer des jobs paramétriques. 🔄
 - Le plugin `Parameterized Build` permet de configurer des paramètres pour les tâches de build, qui peuvent être entrés par l'utilisateur lorsque le build est déclenché ou depuis une autre tâche. 🛠️

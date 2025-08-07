@@ -13,7 +13,7 @@ layout: '@layouts/BaseLayout.astro'
 - Comprendre les différents types de tests logiciels. 
 - Utiliser la méthode et les outils de test adaptés au contexte et à la situation.
 - Développer des tests unitaires dans un projet informatique
-- Elaborer des jeux d’essais et le déroulement d’une recette fonctionnelle. 
+- Elaborer des jeux d'essais et le déroulement d'une recette fonctionnelle. 
 
 ### 📅 Déroulé des séances
 

@@ -25,7 +25,7 @@ $ git reset HEAD~2
 ### Le symbole `~`
 
 - Le symbole `~` permet de remonter linéairement dans l'historique des commits. Par exemple, la commande `HEAD~2` sélectionne le parent du parent du commit actuel (`HEAD`), remontant ainsi deux générations.
-- Graphiquement, `~` représente une remontée verticale, suivant une ligne droite dans l’historique des commits.
+- Graphiquement, `~` représente une remontée verticale, suivant une ligne droite dans l'historique des commits.
 
 ### Le symbole `^`
 
@@ -40,8 +40,8 @@ Il est possible de combiner ces opérateurs pour effectuer une navigation comple
 
 `HEAD@{}` permet d'accéder à l'historique des positions de `HEAD`, autrement dit, à toutes les positions précédentes où `HEAD` a pointé dans la branche courante ou lors des changements de branches. Cette syntaxe est couramment utilisée pour consulter l'historique des déplacements de `HEAD` et faciliter la navigation vers des états antérieurs dans le dépôt.
 
-- La syntaxe générale `HEAD@{n}` désigne le n-ième état antérieur de `HEAD`. Par exemple, `HEAD@{1}` fait référence à l’état immédiatement précédent de `HEAD`, `HEAD@{2}` à l'état d'avant, et ainsi de suite.
-- `HEAD@{}` sans un numéro affiche l’historique complet des changements de `HEAD` avec leurs dates, permettant de voir quand `HEAD` a changé de position.
+- La syntaxe générale `HEAD@{n}` désigne le n-ième état antérieur de `HEAD`. Par exemple, `HEAD@{1}` fait référence à l'état immédiatement précédent de `HEAD`, `HEAD@{2}` à l'état d'avant, et ainsi de suite.
+- `HEAD@{}` sans un numéro affiche l'historique complet des changements de `HEAD` avec leurs dates, permettant de voir quand `HEAD` a changé de position.
 
 #### Exemples 
 
@@ -70,7 +70,7 @@ Vous pouvez également utiliser cette syntaxe avec `git reset` pour remettre la 
 git reset --hard HEAD@{n}
 ```
 
-Cela fait revenir votre branche (et l’index si vous utilisez `--hard`) à un point spécifique de l’historique.
+Cela fait revenir votre branche (et l'index si vous utilisez `--hard`) à un point spécifique de l'historique.
 
 ### Ressources
 

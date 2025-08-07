@@ -9,7 +9,7 @@ date: 2023 / 2024
 
 > Dans la mythologie grecque, le Minotaure est un monstre fabuleux au corps d'un homme et à tête d'un taureau ou mi-homme et mi-taureau.
 >
-> Né des amours de Pasiphaé (épouse du roi Minos) et d'un taureau blanc envoyé par Poséidon, il est enfermé par Minos dans le labyrinthe. Situé au centre de la Crète, le labyrinthe est construit spécialement par Dédale afin que le Minotaure ne puisse s'en échapper et que nul ne découvre son existence. [...] Thésée, fils d’Égée, sera volontaire pour aller dans le labyrinthe et tuera le monstre. (source : Wikipedia)
+> Né des amours de Pasiphaé (épouse du roi Minos) et d'un taureau blanc envoyé par Poséidon, il est enfermé par Minos dans le labyrinthe. Situé au centre de la Crète, le labyrinthe est construit spécialement par Dédale afin que le Minotaure ne puisse s'en échapper et que nul ne découvre son existence. [...] Thésée, fils d'Égée, sera volontaire pour aller dans le labyrinthe et tuera le monstre. (source : Wikipedia)
 
 L'objectif de ce projet est de recréer le labyrinthe et de permettre à Thésée d'atteindre le Minotaure puis de sortir du labyrinthe.
 

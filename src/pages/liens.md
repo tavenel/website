@@ -76,17 +76,17 @@ checked: 2025-01-27
 
 ## Citations
 
-> Ce qui se conçoit bien s’énonce clairement et les mots pour le dire viennent aisément. (Boileau)
+> Ce qui se conçoit bien s'énonce clairement et les mots pour le dire viennent aisément. (Boileau)
 
 > You can only be _pragmatic_ if you know how to be _dogmatic_.
 
 > Toute abstraction visant à simplifier le travail d'un utilisateur transfère la complexité ailleurs, généralement aux équipes techniques. La complexité ne disparaît jamais, elle est déportée vers une application. [Conservation de la Complexité](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
 
-> La vérité, c’est qu’il n’y a pas de vérité. (Y compris celle-ci). (Proverbe Shadok)
+> La vérité, c'est qu'il n'y a pas de vérité. (Y compris celle-ci). (Proverbe Shadok)
 
 > A force de taper dans rien, il finit toujours par en sortir quelque chose. Et réciproquement. (Proverbe Shadok)
 
-> Avec un escalier prévu pour la montée, on réussit souvent à monter plus bas qu’on ne serait descendu avec un escalier prévu pour la descente. (Proverbe Shadok)
+> Avec un escalier prévu pour la montée, on réussit souvent à monter plus bas qu'on ne serait descendu avec un escalier prévu pour la descente. (Proverbe Shadok)
 
 > Programs must be written for people to read, and only incidentally for machines to execute. (Abelson & Sussman, SICP, preface to the first edition)
 

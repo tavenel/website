@@ -93,7 +93,7 @@ sudo chmod -R 0775 /srv/samba/partage
 sudo smbpasswd -a alice
 ```
 
-✅ Tester l’accès depuis un client :
+✅ Tester l'accès depuis un client :
 
 - Windows : `\\IP_serveur\partage`
 - Linux : `smbclient //IP/partage -U alice`

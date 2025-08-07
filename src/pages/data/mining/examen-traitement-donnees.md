@@ -17,22 +17,22 @@ date: 2023 / 2024
 
 # Exercice 2 - Relation prix d'un appartement / surface (5 pts + 1 bonus)
 
-En principe, pour un quartier donné la surface d’un appartement détermine assez bien son prix.
+En principe, pour un quartier donné la surface d'un appartement détermine assez bien son prix.
 
 Nous souhaitons donc expliquer le prix en kilo euros en fonction de la surface en $m^2$.
 
-Nous disposons pour cela d'un échantillon $(x_1 , y_1 )$, $(x_2 , y_2 )$, ... , $(x_n , y_n )$ de taille $n = 10$ où $x_i$ représente la surface de l’appartement $i$ et $y_i$ son prix.
+Nous disposons pour cela d'un échantillon $(x_1 , y_1 )$, $(x_2 , y_2 )$, ... , $(x_n , y_n )$ de taille $n = 10$ où $x_i$ représente la surface de l'appartement $i$ et $y_i$ son prix.
 
 Appartement    | 1      | 2      | 3      | 4       | 5      | 6      | 7      | 8      | 9      | 10     |
 ---------------|--------|--------|--------|---------|--------|--------|--------|--------|--------|--------|
 _Prix observé_ | 130.00 | 280.00 | 650.00 | 800.00  | 268.00 | 790.00 | 500.00 | 320.00 | 250.00 | 250.00 |
 
-Pour modéliser la dépendance entre le prix d’un appartement et la surface, nous choisissons le modèle de la régression linéaire simple : pour tout $i = 1, ... , n$ :
+Pour modéliser la dépendance entre le prix d'un appartement et la surface, nous choisissons le modèle de la régression linéaire simple : pour tout $i = 1, ... , n$ :
 
 $$y_i = b + a x_i + \epsilon_i$$ 
 
-1. Que représentent respectivement les termes $b+ a x_i$ et $\epsilon_i$ dans l’équation ci-dessous ? (0.5pt)
-2. Quelle est la méthode qui permet d’estimer les coefficients $a$ et $b$ ? Expliquer très brièvement le principe de cette méthode. (0.5pt)
+1. Que représentent respectivement les termes $b+ a x_i$ et $\epsilon_i$ dans l'équation ci-dessous ? (0.5pt)
+2. Quelle est la méthode qui permet d'estimer les coefficients $a$ et $b$ ? Expliquer très brièvement le principe de cette méthode. (0.5pt)
 3. Nous avons ajusté un modèle de régression linéaire simple pour expliquer le prix en fonction de la surface.
 
 Coefficients | Estimation | Erreur 
@@ -45,9 +45,9 @@ Statistique de test du Khi-2 : T=20
 
 (a) Quelle est la variable à expliquer ? Quelle est la variable explicative ? (0.5 pt)
 (b) Donner les estimations des coefficients de la régression et préciser leur interprétation. (1 pt)
-(c) Donner l’équation de la droite ajustée. (0.5 pt)
+(c) Donner l'équation de la droite ajustée. (0.5 pt)
 (d) Tester la nullité de la pente de la droite de régression en précisant l'hypothèse nulle du test. Que conclure au seuil 5% ? (1.5 pt)
-(e) Relever la valeur observée du coefficient de détermination $R^2$ et l’interpréter. (0.5 pt)
+(e) Relever la valeur observée du coefficient de détermination $R^2$ et l'interpréter. (0.5 pt)
 
 4. Expliquer comment on obtient les deux derniers lignes du tableau ci-dessous (_Prix prédit_ et _Résidus_). (1pt)
 
@@ -102,9 +102,9 @@ i | $x_i$ | $y_i$ | $x_i^2$ | $y_i^2$ | $x_iy_i$
 
 # Exercice 4 : Couleur d'un fruit : proches voisins (3 pts)
 
-On cherche à prédire la couleur d’un fruit en fonction de sa largeur (L) et de sa hauteur (H).
+On cherche à prédire la couleur d'un fruit en fonction de sa largeur (L) et de sa hauteur (H).
 
-On dispose des données d’apprentissage suivantes :
+On dispose des données d'apprentissage suivantes :
 
 largeur | hauteur | couleur
 --------|---------|--------
@@ -117,7 +117,7 @@ largeur | hauteur | couleur
 2       | 1       | violet
 6       | 1       | green
 
-L’objectif est d'étudier l'influence des voisins sur la propriété de couleur d'un fruit.
+L'objectif est d'étudier l'influence des voisins sur la propriété de couleur d'un fruit.
 
 Soit $U$ le nouveau fruit de largeur $L = 1$, et de hauteur $H = 4$.
 

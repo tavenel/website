@@ -5,18 +5,18 @@ date: 2024 / 2025
 
 ## 🎯 Objectif
 
-Mettre en œuvre un environnement Linux complet pour déployer et administrer une application web développée en interne, en s'appuyant exclusivement sur des outils natifs à l’écosystème Linux.
+Mettre en œuvre un environnement Linux complet pour déployer et administrer une application web développée en interne, en s'appuyant exclusivement sur des outils natifs à l'écosystème Linux.
 
 ## 📝 Contexte
 
 Vous êtes développeur dans une petite entreprise. En plus du développement de l'application, on vous confie la mission de **préparer un serveur Linux** capable d'héberger celle-ci, **de manière autonome et sécurisée**.
 
-L'objectif est de montrer votre **maîtrise de l’administration système Linux**, en allant jusqu'au déploiement final de votre application web.
+L'objectif est de montrer votre **maîtrise de l'administration système Linux**, en allant jusqu'au déploiement final de votre application web.
 
 ## 📦 Livrables attendus
 
 * Image ou VM Ubuntu Server prête à être lancée (ou script d'installation automatisée)
-* Code source de l’application
+* Code source de l'application
 * Fichiers de configuration des services système
 * Rapport technique expliquant l'installation, la configuration et la sécurisation
 * Documentation utilisateur pour la prise en main de l'environnement
@@ -41,16 +41,16 @@ L'objectif est de montrer votre **maîtrise de l’administration système Linux
 
 ### Services Linux
 
-* Mise en place d’un **serveur DNS local** ou redirection DNS avec `/etc/hosts`
+* Mise en place d'un **serveur DNS local** ou redirection DNS avec `/etc/hosts`
 * Installation et configuration de **Samba** pour l'accès distant aux fichiers partagés
-* Déploiement d’un service **LDAP** et configuration d'un service local s'appuyant dessus (authentification utilisateur, ou autre)
+* Déploiement d'un service **LDAP** et configuration d'un service local s'appuyant dessus (authentification utilisateur, ou autre)
 * Configuration des logs applicatifs et système (`journald`, `rsyslog`, `logrotate`)
 
 ### Supervision et planification
 
 * Planification automatique de tâches via `cron` (sauvegarde de la BDD, redémarrage de service, etc.)
-* Mise en place d’un outil de supervision natif ou léger (ex : `glances`, `htop`, `monit`)
-* Alertes simples par mail ou fichier journal en cas d’échec de service
+* Mise en place d'un outil de supervision natif ou léger (ex : `glances`, `htop`, `monit`)
+* Alertes simples par mail ou fichier journal en cas d'échec de service
 
 ### Résilience et dépannage
 

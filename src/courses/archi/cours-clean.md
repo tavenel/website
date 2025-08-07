@@ -53,7 +53,7 @@ tags:
 - ⬅️ ➡️ Fait le lien entre les `Use Case` et les couches externes
 - 🏗️ Adapte les données pour les cas d'usage…
 - 🏗️ …puis les présente dans le bon format à l'interface utilisateur ou d'autres API.
-- Isolent la logique métier des détails techniques de l’application.
+- Isolent la logique métier des détails techniques de l'application.
 - `controllers`, `presenters`, `gateways`, …
 
 ---

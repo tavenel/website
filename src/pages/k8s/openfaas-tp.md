@@ -418,7 +418,7 @@ def get_secret(secret_name):
 password = get_secret("mon-password")
 ```
 
-**Avantage** 🌟 : Le secret **n'est jamais visible** dans le YAML, ni injecté comme variable d’environnement.
+**Avantage** 🌟 : Le secret **n'est jamais visible** dans le YAML, ni injecté comme variable d'environnement.
 
 ### ⚙️ Configurations externes simples
 
@@ -482,7 +482,7 @@ def handle(event, context):
 
 ## Chaînage de fonctions
 
-Une fonction simple sans contexte n'est pas très représentative d'un vrai programme. Nous allons créer un exemple simple de chaîne de fonctions OpenFaaS en utilisant plusieurs fonctions qui s’enchaînent les unes après les autres via des appels HTTP. Nous allons créer deux fonctions pour cet exemple :
+Une fonction simple sans contexte n'est pas très représentative d'un vrai programme. Nous allons créer un exemple simple de chaîne de fonctions OpenFaaS en utilisant plusieurs fonctions qui s'enchaînent les unes après les autres via des appels HTTP. Nous allons créer deux fonctions pour cet exemple :
 
 - `uppercase()` : prend un texte en entrée et renvoie le texte en majuscules.
     ```python
@@ -821,7 +821,7 @@ Un template contient :
 - Un **Dockerfile** de base
 - Un **handler** préconfiguré
 - Un **processus de build** standardisé
-- La **manière** d’exécuter le code (Python, Node.js, Go, etc.)
+- La **manière** d'exécuter le code (Python, Node.js, Go, etc.)
 
 Cas d'usage typiques : ajouter des dépendances systèmes, changer la version du runtime (Python, …) , supporter des frameworks spécifiques (_Django_, _FastAPI_, …), ajouter du monitoring intégré, optimiser les tailles d'images
 

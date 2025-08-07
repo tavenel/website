@@ -11,7 +11,7 @@ layout: '@layouts/BaseLayout.astro'
 
 - Installer et configurer l'outil Git
 - Créer et configurer un dépôt avec Git
-- Maîtriser les bases de l’outil Git (Clone, Checkout, Add, Commit, Push, Branch, Merge, ...).
+- Maîtriser les bases de l'outil Git (Clone, Checkout, Add, Commit, Push, Branch, Merge, ...).
 - Comprendre la différence entre Git et GitHub et comment ils fonctionnent ensemble.
 - Travailler avec une plateforme distante comme GitHub.
 - Savoir utiliser la puissance des branches.

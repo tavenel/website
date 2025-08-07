@@ -19,9 +19,9 @@ Afin d'être au plus proche d'un déploiement réel sur un serveur dédié, il e
 
 Pour Windows, récupérer la version stable depuis ce lien : <https://hub.docker.com/editions/community/docker-ce-desktop-windows>
 
-Renseigner le compte `Docker® Hub` créé à l’étape 1 lorsque demandé.
+Renseigner le compte `Docker® Hub` créé à l'étape 1 lorsque demandé.
 
-3. Tester l’installation : ouvrir un terminal et taper `docker version`, vérifier que la version est affichée sans erreur.
+3. Tester l'installation : ouvrir un terminal et taper `docker version`, vérifier que la version est affichée sans erreur.
 
 _Il est également possible d'utiliser le `Docker® Lab` pour utiliser un environnement de tests : [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/)_
 
@@ -33,8 +33,8 @@ Une fois le compte `Docker® Hub` configuré, les images sont automatiquement r�
 Depuis le 01/04/2025, Docker Hub a mis en place un système de quotas stricts pour la récupération d'images :
 
 - Utilisateurs non authentifiés : 10 pulls d'images toutes les 6 heures.
-- Utilisateurs authentifiés avec un compte gratuit : 100 pulls d’images toutes les 6 heures.
-- Comptes payants (Pro, Team, Business) : pulls illimités, sous réserve d’un usage conforme.
+- Utilisateurs authentifiés avec un compte gratuit : 100 pulls d'images toutes les 6 heures.
+- Comptes payants (Pro, Team, Business) : pulls illimités, sous réserve d'un usage conforme.
 
 Attention à bien être connecté à votre compte _Docker Hub_ depuis _Docker Desktop_ ou en tapant `docker login` dans un terminal !
 :::
@@ -47,9 +47,9 @@ Vérifier que l'exécution de cette image affiche bien `Hello from Docker!`
 
 Note :
 
-Un conteneur Docker® reste actif tant que son processus n’a pas terminé son exécution.
+Un conteneur Docker® reste actif tant que son processus n'a pas terminé son exécution.
 
-Ici, ce processus affiche un simple `Hello, World` avant de terminer son exécution, ce qui a pour conséquence d’arrêter le conteneur que nous venons de créer.
+Ici, ce processus affiche un simple `Hello, World` avant de terminer son exécution, ce qui a pour conséquence d'arrêter le conteneur que nous venons de créer.
 
 ### Créer un conteneur depuis une véritable image de production
 
@@ -61,19 +61,19 @@ Nous allons démarrer ce conteneur en arrière-plan (mode “détaché”) pour 
 docker run -d -p 8080:80 nginx
 ```
 
-L’option `-d` active le mode détaché
+L'option `-d` active le mode détaché
 
-L’option `-p` lie un port du conteneur (ici 80) vers un port de l'hôte (ici 8080). Cela permet d’accéder au port 80 du conteneur depuis l’adresse locale 8080
+L'option `-p` lie un port du conteneur (ici 80) vers un port de l'hôte (ici 8080). Cela permet d'accéder au port 80 du conteneur depuis l'adresse locale 8080
 
-Vérifier que le conteneur a été correctement démarré avec un serveur `Nginx` en joignant l’URL :
+Vérifier que le conteneur a été correctement démarré avec un serveur `Nginx` en joignant l'URL :
 
 [http://localhost:8080](http://localhost:8080)
 
 #### Note 1 :
 
-Notre conteneur étant actif en arrière-plan, il peut être intéressant de s’y connecter.
+Notre conteneur étant actif en arrière-plan, il peut être intéressant de s'y connecter.
 
-Pour cela, Docker® permet d’exécuter des commandes dans un conteneur actif, on pourra donc lui demander d’exécuter un shell dans notre conteneur :
+Pour cela, Docker® permet d'exécuter des commandes dans un conteneur actif, on pourra donc lui demander d'exécuter un shell dans notre conteneur :
 
 1. Lister les conteneurs actifs (et récupérer leurs `ID`) :
 
@@ -89,7 +89,7 @@ docker exec -t -i ID_DU_CONTENEUR bash
 
 #### Note 2 :
 
-Les images Docker® sont des images de système d’exploitation distribuées sur le réseau, elles peuvent donc être volumineuses et il est important de réduire leur taille au maximum.
+Les images Docker® sont des images de système d'exploitation distribuées sur le réseau, elles peuvent donc être volumineuses et il est important de réduire leur taille au maximum.
 
 Une conséquence est que la plupart des outils utiles à un administrateur système ont souvent été retirés des images pour gagner de la place.
 
@@ -103,21 +103,21 @@ apt-get update -yq && apt-get install -yq nano
 
 Utiliser les commandes Docker® pour lister les conteneurs actifs et les arrêter (utiliser la Cheatsheet en annexe).
 
-Supprimer ensuite tous les conteneurs inactifs (il n’est pas possible de supprimer un conteneur actif)
+Supprimer ensuite tous les conteneurs inactifs (il n'est pas possible de supprimer un conteneur actif)
 
 <div style="page-break-after: always"></div>
 
 ## Créer des images de conteneurs
 
-Au lieu d’utiliser l'image `Nginx` déjà présente sur le `Docker® Hub`, nous allons recréer notre propre version de cette image.
+Au lieu d'utiliser l'image `Nginx` déjà présente sur le `Docker® Hub`, nous allons recréer notre propre version de cette image.
 
-La création d’une image Docker® passe par **un fichier `Dockerfile`** qui contient la description et les instructions pour créer cette image.
+La création d'une image Docker® passe par **un fichier `Dockerfile`** qui contient la description et les instructions pour créer cette image.
 
-Pour optimiser le transfert des images, Docker® utilise un système de mises à jour : chaque image est une mise à jour d’une autre image (en réalité, du layer d’une image).
+Pour optimiser le transfert des images, Docker® utilise un système de mises à jour : chaque image est une mise à jour d'une autre image (en réalité, du layer d'une image).
 
-Lors de la construction de l’image depuis le `Dockerfile`, chaque instruction va créer, depuis une image de base, un nouveau layer empilé sur le layer précédent.
+Lors de la construction de l'image depuis le `Dockerfile`, chaque instruction va créer, depuis une image de base, un nouveau layer empilé sur le layer précédent.
 
-Afin d’optimiser la taille et les performances de notre image, il faut limiter au maximum le nombre de couches d'images et donc le nombre d’instructions, par exemple en enchaînant les commandes par un `&&` !
+Afin d'optimiser la taille et les performances de notre image, il faut limiter au maximum le nombre de couches d'images et donc le nombre d'instructions, par exemple en enchaînant les commandes par un `&&` !
 
 :::warn
 Les instructions suivantes ne sont pas des commandes Docker ! Il s'agit des instructions à entrer dans un **fichier nommé `Dockerfile`**. Le `Dockerfile` est donc un langage (comme Python par exemple) qui va être interprété par la commande `docker build` et **NON des commandes à taper dans le terminal** !!!
@@ -129,9 +129,9 @@ Créer un nouveau fichier nommé `Dockerfile` (sans extension de fichier). Dans 
 
 #### `FROM`
 
-Un `Dockerfile` démarre par l’instruction `FROM` qui indique quelle est l’image de base utilisée.
+Un `Dockerfile` démarre par l'instruction `FROM` qui indique quelle est l'image de base utilisée.
 
-Nous allons partir de l’image officielle `debian:12`
+Nous allons partir de l'image officielle `debian:12`
 
 ```dockerfile
 FROM debian:12
@@ -139,7 +139,7 @@ FROM debian:12
 
 #### `RUN`
 
-L'instruction `RUN` permet d’exécuter des commandes dans l’image durant sa création.
+L'instruction `RUN` permet d'exécuter des commandes dans l'image durant sa création.
 
 Nous allons installer `NginX` dans l'image pour éviter de le faire à chaque création de conteneur :
 
@@ -153,7 +153,7 @@ Chaque instruction `RUN` crée un nouveau _layer_ : limiter leur nombre pour ré
 
 #### `EXPOSE`
 
-Le `Dockerfile` possède un ensemble d’instructions permettant de configurer le conteneur qui sera créé depuis notre image.
+Le `Dockerfile` possède un ensemble d'instructions permettant de configurer le conteneur qui sera créé depuis notre image.
 
 Nous allons exposer le port 80 de `NginX` dans chaque conteneur créé depuis notre image :
 
@@ -165,9 +165,9 @@ EXPOSE 80
 
 Le `Dockerfile` se termine par une instruction `CMD` indiquant la commande du processus unique exécuté dans le conteneur.
 
-Cette instruction ne sera pas utilisée lors de la création de l’image et sert uniquement au démarrage des conteneurs créés depuis cette image.
+Cette instruction ne sera pas utilisée lors de la création de l'image et sert uniquement au démarrage des conteneurs créés depuis cette image.
 
-Ici, nous allons exécuter la commande `nginx` qui démarre `NginX` et rend la main. Pour que notre conteneur ne s’arrête pas après l'exécution de la commande `NginX`, on ajoute un `sleep infinity` pour continuer à faire tourner le conteneur :
+Ici, nous allons exécuter la commande `nginx` qui démarre `NginX` et rend la main. Pour que notre conteneur ne s'arrête pas après l'exécution de la commande `NginX`, on ajoute un `sleep infinity` pour continuer à faire tourner le conteneur :
 
 ```dockerfile
 CMD nginx && sleep infinity
@@ -225,7 +225,7 @@ Par exemple : `docker push epsi/my_nginx:latest`
 
 ### Utilisation de l'image publiée sur le Docker Hub
 
-La nouvelle image peut maintenant être utilisée par n’importe qui :
+La nouvelle image peut maintenant être utilisée par n'importe qui :
 
 ```sh
 docker run epsi/my_nginx:latest
@@ -523,10 +523,10 @@ docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive 
 
 ## Récupération des logs du conteneur 
 
-Les programmes qui tournent dans un conteneur ne sont pas gérés intégralement par le système d’exploitation de l’hôte : il faut donc un système annexe pour, par exemple, récupérer les logs de conteneurs. 
+Les programmes qui tournent dans un conteneur ne sont pas gérés intégralement par le système d'exploitation de l'hôte : il faut donc un système annexe pour, par exemple, récupérer les logs de conteneurs. 
 
 1. Comment les applications exposent-elles ces logs à Docker® ?
-2. Utiliser les commandes Docker® pour récupérer dynamiquement les logs des conteneurs en cours d’exécution.
+2. Utiliser les commandes Docker® pour récupérer dynamiquement les logs des conteneurs en cours d'exécution.
 
 :::correction
 ```sh
@@ -540,7 +540,7 @@ docker logs -f mon_conteneur
 
 ## Limiter les ressources du conteneur 
 
-Docker® n’est pas un système de machines virtuelles à proprement parler, mais permet d’en simuler l'usage. Un des intérêts de la virtualisation est l’isolation des ressources, afin de ne pas perturber le reste du système. 
+Docker® n'est pas un système de machines virtuelles à proprement parler, mais permet d'en simuler l'usage. Un des intérêts de la virtualisation est l'isolation des ressources, afin de ne pas perturber le reste du système. 
 
 1. Utiliser les commandes Docker® pour limiter les ressources disponibles pour un conteneur.
 2. Quelle est la bonne pratique pour changer les ressources disponibles d'un conteneur en cours d'exécution ?
@@ -573,7 +573,7 @@ docker run --rm -d -v "${PWD}:/usr/share/nginx/html" -p 8080:80 nginx
 
 ### Utiliser la même version des outils partagés par l'équipe à travers Docker® 
 
-Docker® peut être utilisé pour partager un outil à l'ensemble de l’équipe projet, et ainsi garantir d’utiliser exactement le même environnement. Cela est aussi utile pour utiliser des programmes initialement écrits pour un autre système d’exploitation (majoritairement Linux). 
+Docker® peut être utilisé pour partager un outil à l'ensemble de l'équipe projet, et ainsi garantir d'utiliser exactement le même environnement. Cela est aussi utile pour utiliser des programmes initialement écrits pour un autre système d'exploitation (majoritairement Linux). 
 
 1. Créer une image Docker® depuis un système Alpine et contenant l'utilitaire `tar`.
 2. Utiliser l'image créée pour partager la même version de `tar` et créer une archive d'un fichier sur l'hôte. On utilisera la commande : `tar czf mon_archive.tgz mon_fichier_à_archiver.txt`

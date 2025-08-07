@@ -19,25 +19,25 @@ Voici les principales fonctionnalités décrites par le service produit :
 
 * Un apprenant peut **rechercher un enseignant** par matière, niveau, prix ou langue parlée.
 * Il peut **envoyer une demande de cours** pour un créneau horaire donné.
-* L’enseignant peut **accepter ou refuser** la demande.
+* L'enseignant peut **accepter ou refuser** la demande.
 * Une fois acceptée, le cours est **réservé et planifié**.
 
 #### Paiement
 
 * Les cours sont payés **à la réservation**.
-* L’apprenant peut payer par carte ou portefeuille préchargé.
-* L’enseignant est **rémunéré** chaque semaine selon ses cours validés.
+* L'apprenant peut payer par carte ou portefeuille préchargé.
+* L'enseignant est **rémunéré** chaque semaine selon ses cours validés.
 
 #### Cours et suivi pédagogique
 
 * Les cours sont tenus en **visioconférence intégrée**.
-* À la fin du cours, l’enseignant **rédige un compte-rendu** visible par l’apprenant.
+* À la fin du cours, l'enseignant **rédige un compte-rendu** visible par l'apprenant.
 * Un **historique des cours** est conservé pour chaque utilisateur.
 
 #### Support client
 
 * Les utilisateurs peuvent **signaler un problème** sur une réservation.
-* L’équipe support peut **émettre un remboursement** ou trancher un litige.
+* L'équipe support peut **émettre un remboursement** ou trancher un litige.
 
 ### 🎯 Travail demandé
 

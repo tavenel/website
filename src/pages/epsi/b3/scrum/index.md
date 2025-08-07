@@ -14,7 +14,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### Compétences à acquérir
 
-- Gérer un projet en utilisant les principes de l’agilité
+- Gérer un projet en utilisant les principes de l'agilité
 - Mettre en place des indicateurs de mesure propres aux méthodes agiles
 
 ### 📅 Déroulé des séances

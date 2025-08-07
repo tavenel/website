@@ -34,22 +34,22 @@ _On appelle code métier du code lié directement aux exigences fonctionnelles (
 
 Les parties de code _métier_ d'une application sont les plus critiques et celles à tester le plus en profondeur dans les tests unitaires. Au contraire, les classes ayant des dépendances externes sont en général difficiles à tester et sensibles aux changements d'implémentation : il est normal que leur couverture de tests unitaires soit moins importante.
 
-- On activera la couverture de test dans l’IDE afin de vérifier que les classes sont bien testées.
+- On activera la couverture de test dans l'IDE afin de vérifier que les classes sont bien testées.
 - On ajoutera les tests unitaires nécessaires.
 - On pensera à utiliser des substituts (`Mock`, `Stub`) lorsque c'est nécessaire pour s'abstraire des dépendances.
-- On modifiera le code source de l’application pour corriger les bugs trouvés au fur et à mesure du développement (Test-Driven Development).
+- On modifiera le code source de l'application pour corriger les bugs trouvés au fur et à mesure du développement (Test-Driven Development).
 
 ## Tests end-to-end
 
 - En utilisant le framework d'automatisation de navigateurs `Selenium`, ajouter des tests de fonctionnalité depuis l'interface Web.
   + On utilisera un design pattern de `PageObject`, c'est-à-dire que les pages et les éléments de l'interface graphique seront décrits dans des classes de tests dédiées (voir cours).
-- On pourra également lancer l’application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
+- On pourra également lancer l'application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
 
 # Travail demandé 
 
 Dans le respect du cahier des charges, il est attendu :
 
-- Le développement de l’application en suivant un processus de **test-driven development** :
+- Le développement de l'application en suivant un processus de **test-driven development** :
   + L'application sera une **application Web** ;
   + L'application devra utiliser un système de persistance (base de données `SQL`, ...);
   + L'application devra posséder un **backend** et un **frontend** réalisés chacuns par l'équipe du projet ;

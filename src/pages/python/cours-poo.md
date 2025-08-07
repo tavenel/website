@@ -421,10 +421,10 @@ print(MaClasse.nb_instances) # 0
 - `class MonImplem(MonParent)` fais hériter `MonImplem` de `MonParent`.
 - Utiliser `self` dans toutes les méthodes (y compris le constructeur).
 - Sans `self` les attributs / méthodes directement dans la classe sont statiques (partagés avec toutes les instances).
-- `super().__init__(...)` permet d’appeler le constructeur de la classe parente.
+- `super().__init__(...)` permet d'appeler le constructeur de la classe parente.
 - Les classes filles disposent des méthodes de la classe mère mais peuvent les _surcharger_ (redéfinir ces méthodes).
-- `super().une_methode(...)` permet d’appeler `une_methode` telle que définie dans la classe mère.
-- `dir(mon_instance)` ou `mon_instance.__dict__` : liste tous les attributs / methodes d’un objet (ou module).
+- `super().une_methode(...)` permet d'appeler `une_methode` telle que définie dans la classe mère.
+- `dir(mon_instance)` ou `mon_instance.__dict__` : liste tous les attributs / methodes d'un objet (ou module).
 
 ---
 

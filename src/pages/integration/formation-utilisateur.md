@@ -11,7 +11,7 @@ tags:
 
 Comment former les utilisateurs au nouveau service ?
 
-Qu'il s’agisse d’un nouveau produit, d’une nouvelle fonctionnalité ou d’une évolution majeure du produit, le but principal d’une formation est de rendre l’utilisateur autonome le plus rapidement possible sur son utilisation du service.
+Qu'il s'agisse d'un nouveau produit, d'une nouvelle fonctionnalité ou d'une évolution majeure du produit, le but principal d'une formation est de rendre l'utilisateur autonome le plus rapidement possible sur son utilisation du service.
 
 ---
 
@@ -28,8 +28,8 @@ La formation doit se limiter aux besoins du client et passer sous silence les au
 
 La première étape consiste donc à analyser le public cible :
 
-- Quelle sera l’utilisation principale du produit pour le public cible ?
-- Quel est l’expérience et le niveau de connaissance du public cible sur la fonctionnalité proposée ? 
+- Quelle sera l'utilisation principale du produit pour le public cible ?
+- Quel est l'expérience et le niveau de connaissance du public cible sur la fonctionnalité proposée ? 
 - Quel est le niveau technique du public cible ?
 
 ---
@@ -51,7 +51,7 @@ On analyse ensuite le contexte de la formation :
 
 - Une formation est donc souvent dédiée à une utilisation limitée du produit pour un certain public.
 - Deux formations sur le même service peuvent être totalement différentes.
-  + Exemple : une entreprise met à jour son système d’exploitation sur l'ensemble de ses postes de travail : les formations données aux développeurs seront très différentes de celles reçues par les équipes marketing
+  + Exemple : une entreprise met à jour son système d'exploitation sur l'ensemble de ses postes de travail : les formations données aux développeurs seront très différentes de celles reçues par les équipes marketing
 
 ---
 
@@ -61,13 +61,13 @@ Une fois les besoins analysés, il est temps de créer la formation qui sera dis
 
 Une nouvelle question se pose : quel support de formation ?
 
-Il n’y a pas de règle absolue, le meilleur support dépendant du type de formation : il faudra donc adapter le support au contexte et aux utilisateurs !
+Il n'y a pas de règle absolue, le meilleur support dépendant du type de formation : il faudra donc adapter le support au contexte et aux utilisateurs !
 
 ---
 
 On notera toutefois quelques règles absolues :
 
-- Les interfaces graphiques supportent très mal les longs discours. L’utilisation de copies d'écran ou, d’enregistrements vidéos (screencast) est fortement recommandée
+- Les interfaces graphiques supportent très mal les longs discours. L'utilisation de copies d'écran ou, d'enregistrements vidéos (screencast) est fortement recommandée
 - Au contraire, les interfaces en ligne de commande (CLI) sont compliquées à suivre en image. Cela empêche également le copier/coller. Préférer des exemples concrets de commandes avec un exemple du retour d'exécution.
 
 ---
@@ -78,7 +78,7 @@ Cela offre plusieurs avantages 🌟 :
 
 - La formation est réalisée directement sur le même support : pas de différence de version, etc ...
 - La formation est beaucoup plus intuitive
-- Le feedback est direct : l’utilisateur est obligé d’effectuer l’action pour avancer, et la correction est immédiate
+- Le feedback est direct : l'utilisateur est obligé d'effectuer l'action pour avancer, et la correction est immédiate
 
 ---
 
@@ -89,7 +89,7 @@ Cependant cette pratique génère également des inconvénients :
 
 ---
 
-On réservera ces supports de formation aux grandes lignes d’utilisation du produit ou à une nouvelle fonctionnalité ou un changement d’interface
+On réservera ces supports de formation aux grandes lignes d'utilisation du produit ou à une nouvelle fonctionnalité ou un changement d'interface
 
 ---
 
@@ -103,9 +103,9 @@ La création de supports de formation est coûteux en ressources humaines : il e
 
 ---
 
-Une formation doit toujours avoir comme fil directeur les besoins du client en s’appuyant sur son expérience utilisateur.
+Une formation doit toujours avoir comme fil directeur les besoins du client en s'appuyant sur son expérience utilisateur.
 
-Elle ne doit en aucun cas être une description de l’interface utilisateur !
+Elle ne doit en aucun cas être une description de l'interface utilisateur !
 
 ---
 

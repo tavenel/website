@@ -6,7 +6,7 @@ tags:
 - projet
 ---
 
-> Le pilotage de projet est un processus de collecte, de gestion et d’analyse des données, utilisé pour prédire, comprendre et influencer, de manière constructive, les résultats de temps et de coût d’un projet ou d’un programme. Cela, grâce à la communication d’informations dans des formats qui assurent une gestion efficace et la prise de décision. _Omniscient Project Management Body of Knowledge_
+> Le pilotage de projet est un processus de collecte, de gestion et d'analyse des données, utilisé pour prédire, comprendre et influencer, de manière constructive, les résultats de temps et de coût d'un projet ou d'un programme. Cela, grâce à la communication d'informations dans des formats qui assurent une gestion efficace et la prise de décision. _Omniscient Project Management Body of Knowledge_
 
 ---
 
@@ -27,10 +27,10 @@ Il permet en outre une communication avec l'équipe et les parties prenantes à 
 
 Pour concevoir un tableau performant et opérationnel, il convient de choisir des indicateurs pertinents (`KPI`), représentatifs de l'avancée des travaux et du niveau de performance atteint en cohérence avec les objectifs fixés.
 
-Quelques exemples d’indicateurs de management de projet :
+Quelques exemples d'indicateurs de management de projet :
 
 - nombre d'heures consommées / nombre d'heures consommées planifiées
-- pourcentage d’achèvement du projet
+- pourcentage d'achèvement du projet
 - taux d'utilisation du budget
 - nombre de points non résolus
 
@@ -72,14 +72,14 @@ Cet outil de synthèse de gestion des risques est utile pour garder sous surveil
 
 ---
 
-## Les rapports d’avancement
+## Les rapports d'avancement
 
-Le rapport d’avancement de projet est une mise à jour sur la progression du projet.
-Très concis, il présente des informations générales sur cette progression afin que les membres de l’équipe sachent en un coup d’oeil ce qu’il se passe au sein du projet (délais, freins prochaines étapes, ...). 
+Le rapport d'avancement de projet est une mise à jour sur la progression du projet.
+Très concis, il présente des informations générales sur cette progression afin que les membres de l'équipe sachent en un coup d'oeil ce qu'il se passe au sein du projet (délais, freins prochaines étapes, ...). 
 
 La fréquence de publication dépend de la chronologie de projet : hebdomadaire, mensuelle, ...
 
-Ces rapports d’avancement ne sont pas destinés à pointer du doigt ce qui se passe mal, mais à tenir l'équipe informée de la progression du projet au cours des dernières semaines par un savant mélange de résumés généraux et d’indicateurs importants.
+Ces rapports d'avancement ne sont pas destinés à pointer du doigt ce qui se passe mal, mais à tenir l'équipe informée de la progression du projet au cours des dernières semaines par un savant mélange de résumés généraux et d'indicateurs importants.
 
 ---
 

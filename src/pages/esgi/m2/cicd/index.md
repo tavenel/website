@@ -9,7 +9,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectif
  
-- Comprendre les principes et les enjeux de l'intégration et du déploiement continus dans le cadre du développement d’une application informatique.
+- Comprendre les principes et les enjeux de l'intégration et du déploiement continus dans le cadre du développement d'une application informatique.
 
 ### Compétences à acquérir
 
@@ -64,7 +64,7 @@ Module de 18H
 
 ### 🏆 Projet intégration et déploiement continus d'une application de groupes de travail
 
-Votre équipe de développement a reçu une nouvelle commande de la part d’un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
+Votre équipe de développement a reçu une nouvelle commande de la part d'un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
 
 - [📄 Lien vers le sujet](/ci/projet_groupes_utilisateurs_ci)
 

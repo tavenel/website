@@ -7,7 +7,7 @@ date: 2023 / 2024
 
 ## Introduction
 
-L'une des rares lois que l’on a pu mettre en évidence en Écologie est la relation existant entre le nombre $N$ d'espèces présentes dans un habitat donné (bien délimité) et la surface $S$ de cet habitat.
+L'une des rares lois que l'on a pu mettre en évidence en Écologie est la relation existant entre le nombre $N$ d'espèces présentes dans un habitat donné (bien délimité) et la surface $S$ de cet habitat.
 
 On considère généralement que cette relation est de la forme :
 
@@ -15,7 +15,7 @@ $$N = A.S^B$$
 
 Où $A$ et $B$ sont deux constantes.
 
-Afin de vérifier cette relation pour les plantes présentes dans une prairie (pissenlit, paquerettes, orties, boutons d’or, ...), on a effectué les mesures indiquées dans le premier tableau ci-dessous. On a représenté sur la première figure ci-dessous les valeurs de $N$ en fonction de celles de $S$ et sur la deuxième les valeurs de $\tilde{N} = ln(N)$ en fonction de celles de $\tilde{S} = ln(S)$.
+Afin de vérifier cette relation pour les plantes présentes dans une prairie (pissenlit, paquerettes, orties, boutons d'or, ...), on a effectué les mesures indiquées dans le premier tableau ci-dessous. On a représenté sur la première figure ci-dessous les valeurs de $N$ en fonction de celles de $S$ et sur la deuxième les valeurs de $\tilde{N} = ln(N)$ en fonction de celles de $\tilde{S} = ln(S)$.
 
 On voit que la régression linéaire de $\tilde{N}$ sur $\tilde{S}$ a donné l'équation $\tilde{N} = 0,2199 \tilde{S} + 1,7432$ avec $R^2 = 0,9684$.
 
@@ -59,7 +59,7 @@ On veut étudier de quelle façon les variables pH, C/N et P influent sur le pou
 ## Questions
 
 1. Exprimer, par une régression linéaire, %V en fonction de pH et donner l'équation de la droite des moindres carrés ainsi que la valeur du coefficient de détermination $R^2$ (on pourra utiliser le fait que la variance de pH vaut 0.417, que la variance de %V vaut 150.44 et que leur covariance vaut 6.92).
-2. On a aussi cherché à expliquer de la même façon %V à l’aide de deux autres variables, C/N et P. On a obtenu les dessins des nuages et des droites de régression suivants :
+2. On a aussi cherché à expliquer de la même façon %V à l'aide de deux autres variables, C/N et P. On a obtenu les dessins des nuages et des droites de régression suivants :
 
 ![Regression C/N et P](@assets/data/reg-c-n-p.png)
 

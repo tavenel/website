@@ -6,7 +6,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Contexte de l'atelier
 
-Dans le but de remporter un appel d’offres pour la réalisation d’un projet décrit ci-dessous, plusieurs équipes DevOps décident de réaliser un prototype répondant aux spécifications demandées.
+Dans le but de remporter un appel d'offres pour la réalisation d'un projet décrit ci-dessous, plusieurs équipes DevOps décident de réaliser un prototype répondant aux spécifications demandées.
 
 Ces projets nécessitant un déploiement dans une infrastructure de Cloud, plusieurs équipes SysOps proposent le déploiement et la gestion de cette infrastructure complexe.
 
@@ -16,7 +16,7 @@ Afin de gérer efficacement le projet, celui-ci sera réalisé en suivant les pr
 
 ### Partie Devops/Sysops
 
-- Un court document décrivant l’ensemble des principes Devops/Sysops suivis dans le projet et comment ceux-ci ont été implémentés
+- Un court document décrivant l'ensemble des principes Devops/Sysops suivis dans le projet et comment ceux-ci ont été implémentés
 - Le ou les dépôts de code source utilisés, que ce soit pour la gestion du code source des applications métier, ou pour la gestion des configurations des infrastructures.
 - Le rapport et les détails d'implémentation seront présentés lors d'une soutenance de projet (dernier cours).
 
@@ -37,18 +37,18 @@ Si nécessaire, certains dépôts de code peuvent être partagés entre les équ
 
 ## Environnements à déployer
 
-La mission des équipes SysOps est la mise à disposition et la maintenance d’infrastructures de Cloud (une infrastructure différente par équipe) permettant le déploiement de conteneurs applicatifs Docker.
+La mission des équipes SysOps est la mise à disposition et la maintenance d'infrastructures de Cloud (une infrastructure différente par équipe) permettant le déploiement de conteneurs applicatifs Docker.
 
 Ces conteneurs applicatifs seront fournis par les équipes DevOps et contiendront le code métier du projet.
 
-**Attention : tout conteneur applicatif de n’importe qu’elle équipe DevOps devra pouvoir être déployé sur n’importe quelle plateforme Cloud des équipes SysOps !**
+**Attention : tout conteneur applicatif de n'importe qu'elle équipe DevOps devra pouvoir être déployé sur n'importe quelle plateforme Cloud des équipes SysOps !**
 
-**Il pourra donc être nécessaire de définir un ensemble de spécifications communes, en accord avec l’ensemble des équipes projets.**
+**Il pourra donc être nécessaire de définir un ensemble de spécifications communes, en accord avec l'ensemble des équipes projets.**
 
-L’infrastructure physique utilisée comme support pourra être au choix :
+L'infrastructure physique utilisée comme support pourra être au choix :
 
 - Une ou plusieurs VMs d'un serveur physique
-- Une infrastructure d’IaaS (Amazon Web Services, ...)
+- Une infrastructure d'IaaS (Amazon Web Services, ...)
 - Des machines virtuelles locales (Oracle® VirtualBox, ...)
 
 - Afin de pouvoir déployer des conteneurs, il faudra un environnement de production robuste : on déploira donc un cluster Kubernetes.

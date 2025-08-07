@@ -56,7 +56,7 @@ _Quel est le **but** de [cette application django](https://github.com/johnnncode
 
 # Architecture Hexagonale
 
-> Permettre à une application d’être pilotée aussi bien par des utilisateurs que par des programmes, des tests automatisés ou des scripts batchs, et d'être développée et testée en isolation de ses éventuels systèmes d’exécution et bases de données. (Alistair Cockburn, 2005)
+> Permettre à une application d'être pilotée aussi bien par des utilisateurs que par des programmes, des tests automatisés ou des scripts batchs, et d'être développée et testée en isolation de ses éventuels systèmes d'exécution et bases de données. (Alistair Cockburn, 2005)
 
 ---
 

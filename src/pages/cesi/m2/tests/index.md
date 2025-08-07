@@ -28,7 +28,7 @@ title: INF243 - Stratégie de tests
   - Rappel des concepts de tests et liens entre eux (politique, stratégie et plan de tests)
   - Introduction au test-driven development et présentation des étapes du cycle de vie du test logiciel (software testing life cycle) en définissant les différents types de tests (fonctionnels, performance, sécurité, …)
 - Jour 1 après-midi et Jour 2 :
-  - Présentation des outils / frameworks d’automatisation des tests et des critères de choix
+  - Présentation des outils / frameworks d'automatisation des tests et des critères de choix
   - Manipulations d'outils de tests tels que :
     - `Selenium` pour les tests fonctionnels
     - `Postman`, `Citrus` pour les tests d'intégration
@@ -41,7 +41,7 @@ title: INF243 - Stratégie de tests
 
 - [🤓 Cours sur les tests logiciels](/cesi/m2/tests/cours)
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
-- [⚛️ TP Selenium - industrialiser le test d’interface utilisateur](/selenium/tp)
+- [⚛️ TP Selenium - industrialiser le test d'interface utilisateur](/selenium/tp)
 - [🐇 TP Jmeter : tests de performance d'une API Web](/tests/jmeter-tp-api)
 - [🏆 Projet Développement et Tests Complets d'une Application Web](/cesi/m2/tests/projet)
 -  Dépôts d'exemples de tests :

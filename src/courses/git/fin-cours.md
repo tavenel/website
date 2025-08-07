@@ -10,7 +10,7 @@ layout: '@layouts/CoursePartLayout.astro'
 ### Interfaces graphiques 🖼️👁️
 
 - Il existe de nombreuses interfaces graphiques pour `git` permettant de réaliser les opérations visuellement 👆  
-- La présence d’un **graphe des branches** est souvent bien plus intuitive lors d’intégrations complexes 🧠🧬
+- La présence d'un **graphe des branches** est souvent bien plus intuitive lors d'intégrations complexes 🧠🧬
 
 Des interfaces graphiques en ligne de commandes existent également :  
 
@@ -37,7 +37,7 @@ Des interfaces graphiques en ligne de commandes existent également :
 
 ### Intégration dans un IDE 🧠🔧
 
-- Il est également possible d’intégrer `git` directement dans un IDE 🛠️  
+- Il est également possible d'intégrer `git` directement dans un IDE 🛠️  
 - La plupart des IDE sont capables de **détecter automatiquement** un dépôt `git` 🧲  
 
 :::tip
@@ -48,14 +48,14 @@ Des interfaces graphiques en ligne de commandes existent également :
 
 Intégrer `git` dans un IDE permet : 🚀  
 
-- d’afficher en temps réel les changements apportés au code source 📝🔍  
+- d'afficher en temps réel les changements apportés au code source 📝🔍  
 - de trouver des informations (commit log, développeur, numéro de bug, ...) sur un changement déjà apporté dans le code 🔎📖
 
 ---
 
 ## `.gitignore` 🙈📄
 
-- Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier)  permet de **lister des chemins de fichiers à ignorer** lors d’un `git checkout` 🚫📂  
+- Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier)  permet de **lister des chemins de fichiers à ignorer** lors d'un `git checkout` 🚫📂  
 - 👉 Ces fichiers deviennent invisibles pour git 👻
 
 :::link
@@ -66,15 +66,15 @@ Intégrer `git` dans un IDE permet : 🚀
 
 ## Hooks 🪝⚙️
 
-- Permettent d’exécuter des scripts _avant_ (`pre-*`) ou _après_ (`post-*`) des commandes ⏳🖇️  
+- Permettent d'exécuter des scripts _avant_ (`pre-*`) ou _après_ (`post-*`) des commandes ⏳🖇️  
   - côté _client_ : `pre-commit` 🖊️  
   - côté _serveur_ : `pre-receive` 🛎️
 
 ---
 
 - À mettre dans le répertoire `.git/hooks` 📁🔩  
-  - fichiers d’exemples : `.git/hooks/*.sample` 🧪  
-  - en cas d’erreur (`code de retour != 0`), la commande n’est pas exécutée ❌🚫
+  - fichiers d'exemples : `.git/hooks/*.sample` 🧪  
+  - en cas d'erreur (`code de retour != 0`), la commande n'est pas exécutée ❌🚫
 
 ---
 
@@ -110,13 +110,13 @@ Intégrer `git` dans un IDE permet : 🚀
   - listes de tâches ✅
 
 - Besoin seulement d'une **URL secrète** 🔐 : facilite l'automatisation 🤖  
-- Techniquement : **vrai dépôt Git**, mais usage limité via l’interface Web 🌐
+- Techniquement : **vrai dépôt Git**, mais usage limité via l'interface Web 🌐
 
 ---
 
 ## Submodules 🧬📁
 
-- Permettent d’inclure un **autre dépôt Git** dans un dépôt principal 🔗  
+- Permettent d'inclure un **autre dépôt Git** dans un dépôt principal 🔗  
   (ex : dépendance partagée)
 
 - Fichier `.gitmodules` 📄  

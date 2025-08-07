@@ -320,7 +320,7 @@ Cela permet :
 
 - d'intégrer les modifications apportées dans la branche de développement ✅
 - de garder un historique clair et structuré 🗂️
-- de conserver l’isolation jusqu’au moment voulu 🔒➡️🔓
+- de conserver l'isolation jusqu'au moment voulu 🔒➡️🔓
 
 Ce comportement permet par exemple d'isoler une branche de développement avant de l'intégrer dans la branche principale :
 
@@ -441,8 +441,8 @@ commit
 ### Merge vs Rebase ✅
 
 👉 Utiliser `merge` dans les cas suivants :
-- Pour conserver l’historique des branches 📚  
-- Lorsqu’on travaille en équipe sur une même branche 🔄👥  
+- Pour conserver l'historique des branches 📚  
+- Lorsqu'on travaille en équipe sur une même branche 🔄👥  
 - Pour garder une trace explicite des fusions 🔍
 
 👉 Utiliser `rebase` dans les cas suivants :
@@ -458,7 +458,7 @@ commit
 
 - Stratégie de fusion si la branche cible ne contient **aucun commit supplémentaire** que la branche source 🚫➕  
 - Simple **déplacement de pointeur** vers le dernier commit de la branche source 🎯📍  
-- Évite la création d’un _merge commit_ ❌🔀
+- Évite la création d'un _merge commit_ ❌🔀
 
 
 ```

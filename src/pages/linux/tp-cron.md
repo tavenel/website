@@ -9,7 +9,7 @@ Tâches planifiées
 
 ## Commande `at`
 
-`at` est une commande Unix qui permet de programmer des commandes à n'exécuter qu'une fois - par opposition à `cron` - à un moment donné. La commande enregistrée hérite de l’environnement courant utilisé au moment de sa définition. Par exemple, pour une exécution de la commande à 05:45 :
+`at` est une commande Unix qui permet de programmer des commandes à n'exécuter qu'une fois - par opposition à `cron` - à un moment donné. La commande enregistrée hérite de l'environnement courant utilisé au moment de sa définition. Par exemple, pour une exécution de la commande à 05:45 :
 
 ```sh
 echo "touch file.txt" | at 0545
@@ -90,7 +90,7 @@ Le programme `crontab` permet aux utilisateurs de gérer leurs tâches.
 
 ### Répertoires `/etc/cron*`
 
-Placer un script dans l’un de ses répertoires l’exécute à un moment prédéfini :
+Placer un script dans l'un de ses répertoires l'exécute à un moment prédéfini :
 
 ```sh
 ls /etc/cron*

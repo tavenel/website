@@ -1826,7 +1826,7 @@ Pour tester les expressions _CEL_, on pourra utiliser le playground : <https://p
 
 ## Autres commandes
 
-Pour plus d’information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
+Pour plus d'information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
 
 ---
 
@@ -1871,7 +1871,7 @@ kubectl apply -n kube-system -f sealed-secret-key.yaml
 ```
 
 :::warn
-Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas être modifié directement dans le cluster. Toute modification requiert un chiffrement avec kubeseal avant d’être appliquée. Attention : Si une application utilise ce secret, elle ne recevra pas immédiatement la nouvelle valeur.
+Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas être modifié directement dans le cluster. Toute modification requiert un chiffrement avec kubeseal avant d'être appliquée. Attention : Si une application utilise ce secret, elle ne recevra pas immédiatement la nouvelle valeur.
 :::
 
 ---

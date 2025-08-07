@@ -88,7 +88,7 @@ On testera la partie H/A du déploiement applicatif :
 
 Afin de **déployer l'ensemble de votre application de manière automatisée et reproductible**, le déploiement final passera par une _Helm Chart_. Cette chart doit encapsuler tous les composants nécessaires à votre stack : services backend, frontend, base de données, services de cache ou de messagerie, configuration réseau, volumes persistants, etc.
 
-Helm vous permet de **gérer l’ensemble des manifestes Kubernetes** (Deployment, Service, Ingress, Secret, ConfigMap…) via un système de templates et de valeurs paramétrables. Cela facilite non seulement le déploiement initial, mais aussi les mises à jour, les rollbacks et l’intégration avec des pipelines CI/CD ou GitOps.
+Helm vous permet de **gérer l'ensemble des manifestes Kubernetes** (Deployment, Service, Ingress, Secret, ConfigMap…) via un système de templates et de valeurs paramétrables. Cela facilite non seulement le déploiement initial, mais aussi les mises à jour, les rollbacks et l'intégration avec des pipelines CI/CD ou GitOps.
 
 Votre chart doit être **modulaire et configurable**, avec un fichier `values.yaml` bien documenté. Elle doit permettre de déployer votre stack dans différents environnements (dev, staging, prod) en changeant simplement les valeurs. Pensez également à inclure des `readinessProbe`/`livenessProbe`, des ressources (`limits`/`requests`), et à suivre les bonnes pratiques de sécurité (non-root, accès aux secrets, etc.).
 

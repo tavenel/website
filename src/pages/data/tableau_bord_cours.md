@@ -80,8 +80,8 @@ tags:
 ### Relation entre les Couches
 
 1. **Flux descendant** :
-   - L’utilisateur interagit avec la couche présentation.
-   - Les requêtes descendent à travers la couche applicative jusqu’à la couche données.
+   - L'utilisateur interagit avec la couche présentation.
+   - Les requêtes descendent à travers la couche applicative jusqu'à la couche données.
 
 2. **Flux ascendant** :
    - Les données collectées remontent via la couche applicative pour être affichées.
@@ -113,7 +113,7 @@ tags:
 - Comprendre ce qu'est un tableau de bord.
 - Identifier ses avantages et ses limites.
 - Découvrir les types de tableaux de bord.
-- Explorer les cas d’utilisation dans un Système d’Information (SI).
+- Explorer les cas d'utilisation dans un Système d'Information (SI).
 
 ---
 
@@ -295,9 +295,9 @@ tags:
 - Temps moyen de résolution des incidents
 - Taux de satisfaction des utilisateurs
 - Coût total de possession des systèmes informatiques
-- Pourcentage d’incidents résolus à l'heure
+- Pourcentage d'incidents résolus à l'heure
 - Pourcentage de demandes satisfaites dans les délais impartis
-- Nombre moyen d’incidents résolus par jour
+- Nombre moyen d'incidents résolus par jour
 - Nombre de problèmes résolus par le personnel informatique
 - Nombre de nouvelles applications informatiques déployées
 - Nombre de nouvelles mises à jour des systèmes informatiques
@@ -526,7 +526,7 @@ tags:
 #### Exemple
 
 - _**Cas pratique** : Répartition des utilisateurs d'une application par région._
-- _**Visualisation** : Carte avec des points ou des zones colorées selon le nombre d’utilisateurs._
+- _**Visualisation** : Carte avec des points ou des zones colorées selon le nombre d'utilisateurs._
 
 ---
 
@@ -661,7 +661,7 @@ tags:
 - [70 Exemples de dashboard](https://www.geckoboard.com/dashboard-examples/)
 - [Concepts de base de Power BI](https://learn.microsoft.com/fr-fr/power-bi/consumer/end-user-basic-concepts)
 - [Types de visualisations dans Power BI](https://learn.microsoft.com/fr-fr/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a)
-- [Tutoriel : générer un rapport Power BI à partir d’un classeur Excel](https://learn.microsoft.com/fr-fr/power-bi/create-reports/service-from-excel-to-stunning-report)
+- [Tutoriel : générer un rapport Power BI à partir d'un classeur Excel](https://learn.microsoft.com/fr-fr/power-bi/create-reports/service-from-excel-to-stunning-report)
 - [Exemples de données pour PowerBI](https://learn.microsoft.com/fr-fr/power-bi/create-reports/sample-datasets)
 - [PowerBI : essential training](https://www.linkedin.com/learning/power-bi-essential-training-17362720)
 - [Power BI : Data visualization and dashboard tips and tricks](https://www.linkedin.com/learning/power-bi-data-visualization-and-dashboard-tips-tricks-techniques)

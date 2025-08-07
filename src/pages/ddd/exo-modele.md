@@ -10,7 +10,7 @@ title: 🧪 Refactoring d'un modèle anémique vers un modèle riche
 
 ## 📝 Contexte - Gestion de commande e-commerce
 
-Voici une implémentation initiale du modèle de commande d’un site e-commerce. On souhaite la **refactorer selon les principes du Domain-Driven Design**.
+Voici une implémentation initiale du modèle de commande d'un site e-commerce. On souhaite la **refactorer selon les principes du Domain-Driven Design**.
 
 ### Code initial (modèle anémique)
 
@@ -35,7 +35,7 @@ class Order:
 2. Refactorez ce code pour appliquer les patterns tactiques de DDD :
    - Créez une entité `Order` avec comportement métier.
    - Créez une entité `OrderItem` (ou un _Value Object_ si pertinent).
-   - Encapsulez la logique métier : ajout d’articles, calcul du total, paiement.
+   - Encapsulez la logique métier : ajout d'articles, calcul du total, paiement.
    - Ajoutez des validations métier (ex. : pas de paiement sans article).
 
 :::correction

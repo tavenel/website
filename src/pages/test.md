@@ -204,7 +204,7 @@ config:
   theme: 'base'
 ---
 flowchart TD
-    A["La solution peut-elle être achetée/intégrée?"] -->|Oui| B["Cela mettra-t-il en péril l’entreprise ?"]
+    A["La solution peut-elle être achetée/intégrée?"] -->|Oui| B["Cela mettra-t-il en péril l'entreprise ?"]
     A -->|Non| C["Complexité de la logique métier?"]
     B -->|Oui| D["Domaine Principal"]
     B -->|Non| E["Sous-domaine Générique"]

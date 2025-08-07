@@ -3,7 +3,7 @@ title: Gestion de services avec docker compose
 date: 2024 / 2025
 ---
 
-Nous allons maintenant utiliser l’outil `docker compose` pour créer, configurer et démarrer une stack `WordPress®` complète contenant un conteneur applicatif `WordPress®` et un conteneur `MySQL®`.
+Nous allons maintenant utiliser l'outil `docker compose` pour créer, configurer et démarrer une stack `WordPress®` complète contenant un conteneur applicatif `WordPress®` et un conteneur `MySQL®`.
 
 Pour cela, nous allons définir 2 services :
 
@@ -19,17 +19,17 @@ Le conteneur `MySQL®` :
 
 - utilise un volume externe pour persister des données (rappel : un conteneur doit être **stateless** au maximum, on persiste donc les données sur un volume externe au conteneur)
 
-- définit les variables d’environnement suivantes : `MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`
+- définit les variables d'environnement suivantes : `MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`
 
 Le conteneur `Wordpress®` :
 
-- dépend du conteneur `MySQL®` (on utilisera l’attribut `depends_on`)
+- dépend du conteneur `MySQL®` (on utilisera l'attribut `depends_on`)
 - expose son port 80 sur un port du système hôte
-- définit les variables d’environnement suivants :
+- définit les variables d'environnement suivants :
    - `WORDPRESS_DB_HOST: db:3306`
-   - `WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `WORDPRESS_DB_NAME` cohérentes avec les variables d’environnement du conteneur `MySQL®`
+   - `WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `WORDPRESS_DB_NAME` cohérentes avec les variables d'environnement du conteneur `MySQL®`
 
-Nous ajouterons la configuration `restart: always` à tous les services pour redémarrer automatiquement les conteneurs en cas d’arrêt ou de crash.
+Nous ajouterons la configuration `restart: always` à tous les services pour redémarrer automatiquement les conteneurs en cas d'arrêt ou de crash.
 
 Exemple de fichier `compose.yaml` final pour une stack `MySQL®` + `WordPress®`.
 
@@ -149,8 +149,8 @@ Dans ce dépôt git se trouve le programme `dockercoins` : ce programme simule u
 
 ## Dockeriser une application
 
-> Jean, un de vos amis, est développeur dans une école d'informatique. Il vient tout juste de finaliser son premier projet en Python. Il s’agit d’une API qui va permettre d’enregistrer des élèves dans une base de données Redis.
-> Avant d’avancer plus loin dans son code, il vous demande s'il est possible d’utiliser Docker pour pouvoir présenter son application à ses collègues depuis n’importe quel poste informatique. En effet, ces derniers ne travaillent pas tous sous le même système d’exploitation.
+> Jean, un de vos amis, est développeur dans une école d'informatique. Il vient tout juste de finaliser son premier projet en Python. Il s'agit d'une API qui va permettre d'enregistrer des élèves dans une base de données Redis.
+> Avant d'avancer plus loin dans son code, il vous demande s'il est possible d'utiliser Docker pour pouvoir présenter son application à ses collègues depuis n'importe quel poste informatique. En effet, ces derniers ne travaillent pas tous sous le même système d'exploitation.
 
 Suivre [cet exercice OpenClassrooms](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/7540111-entrainez-vous-en-orchestrant-vos-images-docker-avec-docker-compose) pour vous entraîner à dockeriser une application.
 

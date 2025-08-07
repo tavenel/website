@@ -41,7 +41,7 @@ C'est une association :
 
 ### Pour limiter la pollution et la consommation de l'entreprise
 
-- Numérique : croissance 10% / an, 7% de la consommation mondiale d’électricité, 3.5% des GES en 2021, prévisions x2 GES en 2025.
+- Numérique : croissance 10% / an, 7% de la consommation mondiale d'électricité, 3.5% des GES en 2021, prévisions x2 GES en 2025.
 - L'efficacité énergétique grâce au progrès technologique ne compense pas l'augmentation des usages :
   - +9% par an (objectif : +1.5%)
   - IoT
@@ -70,14 +70,14 @@ C'est une association :
 
 ### Pour attirer de nouveaux talents
 
-> 51% des travailleurs refusent un travail dans une entreprise qui ne s’engage pas en faveur de l’environnement ou qui ne s'engage pas pour des actions responsables : [étude Cone Communication](https://conecomm.com/2016-millennial-employee-engagement-study/).
-> Aux revendications historiques sur les salaires et le temps de travail (par l’âge de départ à la retraite dans les débats actuels) s’ajoutent dorénavant des revendications relatives à la transition écologique et sociale. _Le Monde, Anthony Hussenot_ 
+> 51% des travailleurs refusent un travail dans une entreprise qui ne s'engage pas en faveur de l'environnement ou qui ne s'engage pas pour des actions responsables : [étude Cone Communication](https://conecomm.com/2016-millennial-employee-engagement-study/).
+> Aux revendications historiques sur les salaires et le temps de travail (par l'âge de départ à la retraite dans les débats actuels) s'ajoutent dorénavant des revendications relatives à la transition écologique et sociale. _Le Monde, Anthony Hussenot_ 
 
 ---
 
 ### Pour construire une entreprise plus résiliente
 
-- Permet d’anticiper les enjeux environnementaux futurs et les défis qui l'accompagnent.
+- Permet d'anticiper les enjeux environnementaux futurs et les défis qui l'accompagnent.
   - < 10-15 ans : tensions ressources (terres rares OK car réparties, mais raréfaction des métaux).
 - Entreprises moins exposées aux sinistres donc subissent moins de risques en termes de remboursement des crédits (résistent mieux aux crises).
 - [Voir aussi les recommendations de la Task Force sur les risques financiers liés au climat](https://www.fsb-tcfd.org/recommendations/).
@@ -133,7 +133,7 @@ C'est une association :
 ## Éviter le greenwashing
 
 - [Guide Ademe anti-greenwashing](https://ademe.typepad.fr/files/ademe_greenwashing_guide-2.pdf) : Principalement destiné aux agences de communication et aux entreprises.
-- [Quels pièges à éviter pour évaluer l’empreinte environnementale du numérique ? (greenit.fr)](https://www.greenit.fr/2023/04/18/quels-pieges-a-eviter-pour-evaluer-lempreinte-environnementale-du-numerique/)
+- [Quels pièges à éviter pour évaluer l'empreinte environnementale du numérique ? (greenit.fr)](https://www.greenit.fr/2023/04/18/quels-pieges-a-eviter-pour-evaluer-lempreinte-environnementale-du-numerique/)
 - [Compilation d'articles sur le Greenwashing (greenit.fr)](https://www.greenit.fr/tag/greenwashing/)
 
 ---
@@ -174,18 +174,18 @@ C'est une association :
 
 #### Loi sur la rationnalisation de l'énergie
 
-- "Est légalement interdit, toute incitation à avoir une utilisation non rationnelle de l’énergie" (Code de l’environnement - loi 2006)
+- "Est légalement interdit, toute incitation à avoir une utilisation non rationnelle de l'énergie" (Code de l'environnement - loi 2006)
 
 ---
 
 #### Loi PACTE et Entreprise à Mission
 
 - La Loi PACTE (22/05/2019) renforce la RSE et crée la "société à mission" :
-- l'entreprise inscrit dans ses **statut juridiques** une "**raison d'être**" profitant à l’intérêt commun et ayant un impact sur la qualité de l'environnement, du social et sur l'empreinte carbone.
+- l'entreprise inscrit dans ses **statut juridiques** une "**raison d'être**" profitant à l'intérêt commun et ayant un impact sur la qualité de l'environnement, du social et sur l'empreinte carbone.
 - Contrôle au moins tous les deux ans par un organisme indépendant agréé.
 
 - <https://www.economie.gouv.fr/loi-pacte-croissance-transformation-entreprises>
-- [Guide de l'Observatoire de la RSE - C3D « Loi Pacte & Raison d’être : et si on passait à la pratique ? »](https://www.orse.org/nos-travaux/guide-orse-c3d-loi-pacte-raison-detre-et-si-on-passait-a-la-pratique)
+- [Guide de l'Observatoire de la RSE - C3D « Loi Pacte & Raison d'être : et si on passait à la pratique ? »](https://www.orse.org/nos-travaux/guide-orse-c3d-loi-pacte-raison-detre-et-si-on-passait-a-la-pratique)
 - [Article hellocarbo.com sur l'entreprise à mission](https://www.hellocarbo.com/blog/communaute/entreprise-a-mission/)
 
 ---
@@ -210,7 +210,7 @@ C'est une association :
 
 - "limiter le renouvellement des terminaux"
 - Obsolescence programmée :  "fraudes" et "tromperies" (comprend l'obsolescence logicielle).
-- Interdiction de "limiter la restauration de l’ensemble des fonctionnalités" et de "restreindre la liberté du consommateur d'installer les logiciels ou les systèmes d'exploitation de son choix sur son terminal"
+- Interdiction de "limiter la restauration de l'ensemble des fonctionnalités" et de "restreindre la liberté du consommateur d'installer les logiciels ou les systèmes d'exploitation de son choix sur son terminal"
 
 ---
 
@@ -226,22 +226,22 @@ C'est une association :
 #### Reconditionner et réemploi
 
 - Information des consommateurs de l'existence de reconditionné lors d'un achat ;
-- Interdiction de limiter l'accès "aux pièces détachées, modes d’emploi, informations techniques ou à tout autre instrument, équipement ou logiciel permettant la réparation des produits" ;
+- Interdiction de limiter l'accès "aux pièces détachées, modes d'emploi, informations techniques ou à tout autre instrument, équipement ou logiciel permettant la réparation des produits" ;
 - Secteur public : réemploi et réparation des équipements informatiques fonctionnels <10 ans
 
 ---
 
 #### Écoconception des services numériques
 
-- Référentiel général de l’écoconception des services numériques (ARCOM et ADEME) au 1er janvier 2024
-  - notamment "stratégies de captation de l’attention des utilisateurs "
+- Référentiel général de l'écoconception des services numériques (ARCOM et ADEME) au 1er janvier 2024
+  - notamment "stratégies de captation de l'attention des utilisateurs "
 
 ---
 
 #### Obligations environnementales pour les entreprises du numérique
 
 - Publication des indicateurs clés sur leurs politiques de réduction de leur empreinte environnementale
-- TICFE (contribution au service public de l’électricité) réduit pour les centres de données économes en ressources.
+- TICFE (contribution au service public de l'électricité) réduit pour les centres de données économes en ressources.
 - Recommendation : informer les utilisateurs du coût en énergie et GeS de leur consommation vidéo
 
 ---
@@ -347,7 +347,7 @@ C'est une association :
 - **Responsabilité Sociétale des Entreprises** à mettre en place globalement (pas uniquement du code).
 - Indicateurs **SMART** de critères **ESG** (Environnementaux, Sociaux et de Gouvernance).
 - [Pour plus d'informations, voir ce lien (hellocarbo.com)](https://www.hellocarbo.com/blog/reduire/iso-26000/)
-- [Voir RSE : 15 idées pour passer de la stratégie à l’action (hellocarbo.com)](https://www.hellocarbo.com/blog/communaute/actions-rse/)
+- [Voir RSE : 15 idées pour passer de la stratégie à l'action (hellocarbo.com)](https://www.hellocarbo.com/blog/communaute/actions-rse/)
 - [Exemples d'indicateurs](https://www.hellocarbo.com/blog/calculer/indicateurs-rse/)
 
 ---
@@ -355,7 +355,7 @@ C'est une association :
 #### TCO Certified
 
 - Label privé (1992).
-- Analyse le cycle de vie des équipements technologiques (de la consommation d’énergie au recyclage en passant par les substances utilisées telles que les métaux lourds). 
+- Analyse le cycle de vie des équipements technologiques (de la consommation d'énergie au recyclage en passant par les substances utilisées telles que les métaux lourds). 
 - [Voir le guide pour choisir un label (hellocarbo.com)](https://www.hellocarbo.com/blog/reduire/obtenir-un-label-eco-responsable-pour-mon-entreprise/)
 
 ---
@@ -428,7 +428,7 @@ C'est une association :
 
 ### Contraintes sur les applications & développements
 
-- Restreindre l’utilisation de certains framework / certaines librairies
+- Restreindre l'utilisation de certains framework / certaines librairies
 - Éviter les "dark patterns" (UX)
 - ...
 
@@ -437,7 +437,7 @@ C'est une association :
 ### Contraintes sur les données
 
 - Dates maximales d'archivage
-- Seuil maximal de volumes de données pour l’entreprise
+- Seuil maximal de volumes de données pour l'entreprise
 - Seuil maximal de volume par application / utilisateur
 - ...
 
@@ -528,7 +528,7 @@ Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strat
 - [Exposition de l'ademe : "Votre smartphone est riche en métaux"](https://agirpourlatransition.ademe.fr/acteurs-education/enseigner/smartphone-riche-metaux)
 - ["Électricité : combien consomment les appareils de la maison ?" (ademe.fr)](https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/electricite-combien-consomment-appareils-maison)
 - [Étude "iNUM : impacts environnementaux du numérique en France" (greenit.fr)](https://www.greenit.fr/impacts-environnementaux-du-numerique-en-france/)
-- [Étude NumEU "Le numérique en Europe : une approche des impacts environnementaux par l’analyse du cycle de vie" (greenit.fr)](https://www.greenit.fr/le-numerique-en-europe-une-approche-des-impacts-environnementaux-par-lanalyse-du-cycle-de-vie/)
+- [Étude NumEU "Le numérique en Europe : une approche des impacts environnementaux par l'analyse du cycle de vie" (greenit.fr)](https://www.greenit.fr/le-numerique-en-europe-une-approche-des-impacts-environnementaux-par-lanalyse-du-cycle-de-vie/)
 - Voir la [bibliographie de cet article de kpmg.com ("numérique responsable")](https://kpmg.com/fr/fr/blogs/home/posts/2023/06/numerique-responsable.html)
 - Voir les [sources de la fresque du numérique](https://fresquedunumerique.org/sources.html) pour une liste de liens utiles
 - <https://github.com/rlemaire/bookmarks-green-it>

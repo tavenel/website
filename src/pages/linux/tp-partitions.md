@@ -7,32 +7,32 @@ date: 2024 / 2025
 
 Ce TP a pour but de déterminer le meilleur schéma de partitionnement possible, ce qui représente la plus grande difficulté pour un débutant. Le TP convient pour toutes les distributions.
 
-Vous disposez sur votre PC personnel d’un disque de 160 Go dont 40 sont déjà occupés par un autre système. Votre machine dispose de 2 Go de mémoire vive. Il vous reste 120 Go d’espace disque.
+Vous disposez sur votre PC personnel d'un disque de 160 Go dont 40 sont déjà occupés par un autre système. Votre machine dispose de 2 Go de mémoire vive. Il vous reste 120 Go d'espace disque.
 
 _Comment pouvez-vous les répartir, sachant que vous voulez séparer vos données du système ?_
 
-1. Quelle doit être la taille de la partition d’échange SWAP ?
+1. Quelle doit être la taille de la partition d'échange SWAP ?
 
 :::correction
-La partition d’échange est utilisée lorsque Linux ne dispose plus d’assez de place en mémoire vive pour traiter toutes ses données. Les données sont déplacées en mémoire virtuelle sur cette partition d’échange pour libérer plus ou moins temporairement de la mémoire pour d’autres données. Votre système disposant de 2 Go de mémoire, vous pouvez ne prévoir que 2 Go de swap. Il reste alors 118 Go d’espace disque pour la suite.
+La partition d'échange est utilisée lorsque Linux ne dispose plus d'assez de place en mémoire vive pour traiter toutes ses données. Les données sont déplacées en mémoire virtuelle sur cette partition d'échange pour libérer plus ou moins temporairement de la mémoire pour d'autres données. Votre système disposant de 2 Go de mémoire, vous pouvez ne prévoir que 2 Go de swap. Il reste alors 118 Go d'espace disque pour la suite.
 :::
 
 2. Quelle place réserver au système `/` ?
 
 :::correction
-Même si vous deviez installer tous les produits présents sur un DVD d’installation, le total n’atteindrait pas 10 Go. Mais deux choses doivent attirer votre attention : vous pouvez rajouter des produits issus d’autres sources (nouveaux dépôts, installation manuelle, etc.) par la suite, et les répertoires `/var` et `/tmp` peuvent être amenés à grossir.Disposant d’assez de place, pourquoi ne pas réserver 20 ou 30 Go à la racine ? Partez par exemple sur 20 Go. Il reste 98 Go.
+Même si vous deviez installer tous les produits présents sur un DVD d'installation, le total n'atteindrait pas 10 Go. Mais deux choses doivent attirer votre attention : vous pouvez rajouter des produits issus d'autres sources (nouveaux dépôts, installation manuelle, etc.) par la suite, et les répertoires `/var` et `/tmp` peuvent être amenés à grossir.Disposant d'assez de place, pourquoi ne pas réserver 20 ou 30 Go à la racine ? Partez par exemple sur 20 Go. Il reste 98 Go.
 :::
 
 3. Quelle place réserver au `/home` ?
 
 :::correction
-La partition qui contient `/home` est celle qui contient vos données, ou celle des autres utilisateurs. C’est elle qui occupe le plus de place, entre les photos, la musique, les films, les documents de travail, etc. Réservez les 98 Go restants. Le disque est entièrement partitionné.
+La partition qui contient `/home` est celle qui contient vos données, ou celle des autres utilisateurs. C'est elle qui occupe le plus de place, entre les photos, la musique, les films, les documents de travail, etc. Réservez les 98 Go restants. Le disque est entièrement partitionné.
 :::
 
 4. Est-il utile de créer une partition étendue ?
 
 :::correction
-Vous avez trois partitions à créer sur le disque, en plus de celle qui existe déjà soit en tout quatre partitions. C’est le nombre exact pour prévoir quatre partitions primaires. Mais pensez que vous pouvez avoir besoin de réduire, supprimer ou recréer des partitions. Dans ce cas, la limite est déjà atteinte. Soyez prévoyant et créez une partition étendue où créer des partitions logiques.
+Vous avez trois partitions à créer sur le disque, en plus de celle qui existe déjà soit en tout quatre partitions. C'est le nombre exact pour prévoir quatre partitions primaires. Mais pensez que vous pouvez avoir besoin de réduire, supprimer ou recréer des partitions. Dans ce cas, la limite est déjà atteinte. Soyez prévoyant et créez une partition étendue où créer des partitions logiques.
 :::
 
 5. Quel est le schéma final du disque ?
@@ -49,14 +49,14 @@ Vous avez trois partitions à créer sur le disque, en plus de celle qui existe 
 
 ## Les disques et partitions
 
-But : créer une partition et la faire reconnaître par le système. Attention l’opération peut être destructive !
+But : créer une partition et la faire reconnaître par le système. Attention l'opération peut être destructive !
 
 1. Le premier disque a été entièrement partitionné par l'installation par défaut. Il est possible de modifier ce partitionnement mais l'opération est fastidieuse et risquée - nous allons donc travailler sur un 2e disque virtuel.
   - Éteindre la machine virtuelle.
   - Aller dans la configuration `VirtualBox`, onglet `Stockage`, sélectionner la ligne `Contrôleur SATA` et cliquer sur le bouton `Ajouter un disque dur` au bout de la ligne.
   - Créer un nouveau disque dur `VDI` (par exemple 20 Gio maximum - seule la taille réellement utilisée sera réquisitionnée, il n'est donc pas nécessaire d'avoir assez d'espace disque sur votre machine physique).
   - Valider et redémarrer la machine.
-2. Notre système dispose désormais d'un nouveau disque dur disposant d’espace pour la création de nouvelles partitions.
+2. Notre système dispose désormais d'un nouveau disque dur disposant d'espace pour la création de nouvelles partitions.
   - Le 1er disque `SATA` (`/dev/sda`) dispose d'une table de partitions `GPT` (modèle par défaut des systèmes récents).
   - Créer une table de partitions au format historique `DOS` sur le 2e disque.
   - Créer 3 partitions primaires sur ce disque de 2 Gio.
@@ -113,14 +113,14 @@ ls -l /dev/sdb*
 ```
 :::
 
-## Création d’un système de fichiers Linux
+## Création d'un système de fichiers Linux
 
 But : créer et manipuler le système de fichiers dans `/dev/sdb1`. Attention cette opération est destructive.
 
 1. Créez un système de fichiers de type `ext2` dans `/dev/sdb1`, sans options particulières.
-2. En fin de compte, il fallait le créer en `ext3` pour profiter de la journalisation. Modifiez le système de fichiers pour qu’il soit maintenant en ext3.
+2. En fin de compte, il fallait le créer en `ext3` pour profiter de la journalisation. Modifiez le système de fichiers pour qu'il soit maintenant en ext3.
 3. La nouvelle partition va servir au stockage de diverses données. Attribuez-lui une étiquette (nom, label) : `BACKUP`.
-4. Cherchez maintenant à connaître l’identifiant unique de système de fichiers, l'`UUID`, de votre nouveau système de fichiers. Utiliser deux méthodes :
+4. Cherchez maintenant à connaître l'identifiant unique de système de fichiers, l'`UUID`, de votre nouveau système de fichiers. Utiliser deux méthodes :
   - Par `blkid`
   - Par `dumpe2fs`
 
@@ -153,7 +153,7 @@ Filesystem UUID: 527585d3-1e52-4aba-b7fc-70f18388458d
 ```
 :::
 
-## Création d’un système de fichiers Windows
+## Création d'un système de fichiers Windows
 
 But : créer et manipuler le système de fichiers dans `/dev/sdb5`. Attention cette opération est destructive.
 
@@ -221,28 +221,28 @@ mount -L DONNEES
 
 ## Statistiques et entretien du système de fichiers 
 
-But : obtenir des informations sur l’occupation du système de fichiers et le réparer si besoin. 
+But : obtenir des informations sur l'occupation du système de fichiers et le réparer si besoin. 
 
-1. Regardez l’état d’occupation de vos systèmes de fichiers, de manière lisible pour un humain.
-2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s’agit de déterminer ce qui peut occuper autant de place. Déterminez l’occupation de chaque fichier et répertoire.
+1. Regardez l'état d'occupation de vos systèmes de fichiers, de manière lisible pour un humain.
+2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s'agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et répertoire.
 3. Le résultat est trop long. Triez la sortie de manière à obtenir les plus grosses occupations en dernier.
-4. Un répertoire monté sur `/mnt/backup` (TP précédent) a des problèmes : il semble que le contenu d’un répertoire soit corrompu : noms de fichiers et tailles farfelues. Vérifiez et réparez ce système de fichiers.
+4. Un répertoire monté sur `/mnt/backup` (TP précédent) a des problèmes : il semble que le contenu d'un répertoire soit corrompu : noms de fichiers et tailles farfelues. Vérifiez et réparez ce système de fichiers.
 5. Forcez une vérification de ce système de fichiers au prochain redémarrage.
   - L'astuce pour cela est de changer artificiellement le nombre de montages avec `tune2fs` (par exemple à `1000`).
 6. Quelle est la commande permettant de mettre votre disque dur en mode lecture seule ?
   - Il vous faudra peut-être installer le package `hdparm` :
     - `sudo apt install hdparm`
     - `sudo dnf install hdparm`
-7. Quelle est la commande permettant d'activer/désactiver le cache d’un disque dur ?
+7. Quelle est la commande permettant d'activer/désactiver le cache d'un disque dur ?
 
 :::correction
-1. Regardez l’état d’occupation de vos systèmes de fichiers, de manière lisible pour un humain.
+1. Regardez l'état d'occupation de vos systèmes de fichiers, de manière lisible pour un humain.
 
 ```sh
 df -H
 ```
 
-2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s’agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et répertoire.
+2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s'agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et répertoire.
 
 ```sh
 du -m /home 
@@ -254,7 +254,7 @@ du -m /home
 du -m | sort -n 
 ```
 
-4. Un répertoire monté sur `/mnt/backup` (TP précédent) a des problèmes : il semble que le contenu d’un répertoire soit corrompu : noms de fichiers et tailles farfelues. Vérifiez et réparez ce système de fichiers.
+4. Un répertoire monté sur `/mnt/backup` (TP précédent) a des problèmes : il semble que le contenu d'un répertoire soit corrompu : noms de fichiers et tailles farfelues. Vérifiez et réparez ce système de fichiers.
 
 ```sh
 cd 
@@ -278,7 +278,7 @@ hdparm -r /dev/sdb
 hdparm -r 1 /dev/sdb
 ```
 
-7. Quelle est la commande permettant d'activer/désactiver le cache d’un disque dur ?
+7. Quelle est la commande permettant d'activer/désactiver le cache d'un disque dur ?
 
 ```sh
 # Lecture du paramètre
@@ -320,11 +320,11 @@ Swap:      2104472    1296  2103176
 
 La machine dispose de 2 Go de mémoire vive, et de 2 Go de swap.
 
-Bien qu’indiquant environ 48 Mo de mémoire libre, il y a environ 950 Mo de mémoire cache et 160 Mo de tampon. Soit potentiellement environ 1 Go de mémoire à libérer. 
+Bien qu'indiquant environ 48 Mo de mémoire libre, il y a environ 950 Mo de mémoire cache et 160 Mo de tampon. Soit potentiellement environ 1 Go de mémoire à libérer. 
 
 2. Vérifiez le nom de la partition contenant le ou les espaces de swap.
 
-Un man de `swapon` indique que l’information peut être trouvée dans `/proc/swaps` : 
+Un man de `swapon` indique que l'information peut être trouvée dans `/proc/swaps` : 
 
 ```console
 $ cat /proc/swaps 

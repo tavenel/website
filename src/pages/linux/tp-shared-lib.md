@@ -74,6 +74,6 @@ libacl.so.1 => /tmp/lib/libacl.so.1
 Le programme fonctionne à nouveau.
 :::
 
-4. Remettez tout dans l’état initial. Déplacez la bibliothèque vers sa position d’origine, supprimez `/tmp/lib` de `ld.so.conf` et relancez `ldconfig`. Supprimez `/tmp/lib`.
+4. Remettez tout dans l'état initial. Déplacez la bibliothèque vers sa position d'origine, supprimez `/tmp/lib` de `ld.so.conf` et relancez `ldconfig`. Supprimez `/tmp/lib`.
 
 [wiki-shared-lib]: https://fr.wikiversity.org/wiki/Certification_Linux_LPI/Administrateur_syst%C3%A8me_d%C3%A9butant/Examen_101/Installation_de_Linux_et_gestion_des_packages/G%C3%A9rer_les_biblioth%C3%A8ques_partag%C3%A9es

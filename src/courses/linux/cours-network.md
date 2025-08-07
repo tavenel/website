@@ -12,7 +12,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 - Rappels sur l'adressage IPv4/IPv6 :
   - [Cours LPI](https://learning.lpi.org/en/learning-materials/102-500/109/109.1/109.1_01/)
-  - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d’applications mobiles"](/web)
+  - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d'applications mobiles"](/web)
   - [Cours TCP/IP de François Goffinet](https://linux.goffinet.org/administration/configuration-du-reseau/introduction-a-tcp-ip/)
 
 ---
@@ -275,7 +275,7 @@ DHCP=yes # ou IPv4 ou IPv6
 - Il mesure les statistiques de latence et de perte de paquets pour chaque routeur (ou "saut")
 - Il permet une analyse continue, utile pour détecter les problèmes intermittents
 
-#### 🔍 Cas d’usage
+#### 🔍 Cas d'usage
 
 - Identifier une latence ou une perte de paquets anormale
 - Diagnostiquer des problèmes réseau intermittents

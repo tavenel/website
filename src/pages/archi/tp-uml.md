@@ -5,7 +5,7 @@ date: 2023 / 2024
 
 ## Présentation de l'étude de cas
 
-Cette étude de cas porte sur la réalisation d’une application de gestion d'une bibliothèque. L'étude de cas est inspirée de l'exemple suivant : <https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html>.
+Cette étude de cas porte sur la réalisation d'une application de gestion d'une bibliothèque. L'étude de cas est inspirée de l'exemple suivant : <https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html>.
 
 ## Le projet 
 

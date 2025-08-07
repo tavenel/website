@@ -99,7 +99,7 @@ echo "$count fichiers .tmp supprimé(s)."
 
 Écrire un script qui :
 
-1. Ajoute un ou plusieurs utilisateurs fictifs à partir d’un fichier texte.
+1. Ajoute un ou plusieurs utilisateurs fictifs à partir d'un fichier texte.
 2. Associe à chaque utilisateur un répertoire personnel dans `/home`.
 3. Applique des permissions pour que seul cet utilisateur puisse accéder à son répertoire.
 
@@ -257,7 +257,7 @@ Créer un script qui surveille l'espace disque et alerte si l'utilisation dépas
 
 - Utilisez la commande `df` pour analyser l'espace disque.  
 - Si le seuil est atteint, le script envoie une notification (via `mail` ou `echo`).  
-- Ajoutez une option pour afficher un résumé de l’utilisation par partition.  
+- Ajoutez une option pour afficher un résumé de l'utilisation par partition.  
 
 #### Exemple de sortie
 

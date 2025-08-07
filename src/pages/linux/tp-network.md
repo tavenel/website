@@ -141,7 +141,7 @@ sudo update-grub
 sudo reboot
 ```
 
-Attention, il sera aussi indispensable d’adapter le fichier de configuration `/etc/network/interfaces` avec le nouveau nom d'interface.
+Attention, il sera aussi indispensable d'adapter le fichier de configuration `/etc/network/interfaces` avec le nouveau nom d'interface.
 
 :::exo
 1. Changer la dénomination des interfaces pour utiliser la dénomination traditionnelle.

@@ -11,7 +11,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - Connaître les outils d'accessibilité
 - Effectuer les tâches d'administration de base : gérer les utilisateurs, utiliser les tâches automatiques, …
 - Installer et paramétrer les services essentiels : messagerie, impression, horloge système, journaux système
-- Avoir les notions de réseau essentielles à l’administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
+- Avoir les notions de réseau essentielles à l'administration système : protocoles Internet, configuration réseau des postes, résolution `DNS` et dépannage
 - Savoir mettre en place un niveau de sécurité sur les postes : services en écoute et ports ouverts, limitations d'accès, et chiffrement des données
 
 ```mermaid
@@ -33,7 +33,7 @@ LPIC-1 - 102
       GNOME, KDE, XFCE
     Accessibilité
 
-  Tâches d’administration
+  Tâches d'administration
     Gestion des utilisateurs & groupes
       useradd, passwd, groupadd
     Planification des tâches
@@ -79,7 +79,7 @@ LPIC-1 - 102
 
 ### Sujet 105 : Shells et scripts Shell [8]
 
-- 105.1 Personnalisation et utilisation de l’environnement du shell [4]
+- 105.1 Personnalisation et utilisation de l'environnement du shell [4]
 - 105.2 Personnalisation ou écriture de scripts simples [4]
 
 ---
@@ -92,20 +92,20 @@ LPIC-1 - 102
 
 ---
 
-### Sujet 107 : Tâches d’administration [12]
+### Sujet 107 : Tâches d'administration [12]
 
 - 107.1 Gestion des comptes utilisateurs et des groupes ainsi que des fichiers systèmes concernés [5]
-- 107.2 Automatisation des tâches d’administration par la planification des travaux [4]
+- 107.2 Automatisation des tâches d'administration par la planification des travaux [4]
 - 107.3 Paramètres régionaux et langues [3]
 
 ---
 
 ### Sujet 108 : Services systèmes essentiels [12]
 
-- 108.1 Gestion de l’horloge système [3]
+- 108.1 Gestion de l'horloge système [3]
 - 108.2 Journaux systèmes [4]
-- 108.3 Bases sur l’agent de transfert de courrier (MTA) [3]
-- 108.4 Gestion des imprimantes et de l’impression [2]
+- 108.3 Bases sur l'agent de transfert de courrier (MTA) [3]
+- 108.4 Gestion des imprimantes et de l'impression [2]
 
 ---
 
@@ -120,7 +120,7 @@ LPIC-1 - 102
 
 ### Sujet 110 : Securité [10]
 
-- 110.1 Tâches d’administration de sécurité [3]
+- 110.1 Tâches d'administration de sécurité [3]
 - 110.2 Configuration de la sécurité du système [3]
 - 110.3 Sécurisation des données avec le chiffrement [4]
 

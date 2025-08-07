@@ -18,8 +18,8 @@ Tâches et scénarios à simuler :
 
 - **Configuration des serveurs** : Déploiement de serveurs web et de bases de données en environnement virtualisé pour garantir la flexibilité et la redondance.
 - **Mise en place d'un monitoring avancé** : Installation et configuration d'outils de surveillance pour détecter les anomalies et prévenir les interruptions de service.
-- **Planification des sauvegardes et de la sécurité** : Élaboration de stratégies de backup et de restauration, ainsi que le déploiement de correctifs et mesures de sécurité pour protéger l’infrastructure.
-- **Simulation d’incidents** : Organisation de scénarios d'urgence (pannes, attaques DDoS, défaillance d'un serveur critique) pour entraîner l'équipe à réagir rapidement et efficacement en mode agile.
+- **Planification des sauvegardes et de la sécurité** : Élaboration de stratégies de backup et de restauration, ainsi que le déploiement de correctifs et mesures de sécurité pour protéger l'infrastructure.
+- **Simulation d'incidents** : Organisation de scénarios d'urgence (pannes, attaques DDoS, défaillance d'un serveur critique) pour entraîner l'équipe à réagir rapidement et efficacement en mode agile.
 - **Collaboration inter-équipes** : Coordination avec les développeurs pour garantir une intégration continue entre le déploiement de nouvelles fonctionnalités et la stabilité de l'infrastructure.
 
 En cas de question sur les spécifications, le formateur jouera le rôle du client final pour préciser celles-ci.

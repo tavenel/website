@@ -17,7 +17,7 @@ layout: '@layouts/BaseLayout.astro'
 - [📝 Exercices : tests d'un système de cartes météo](/tests/methodo/td-tests-cartes-meteo)
 - [📝 Exercices sur les techniques de tests](/tests/methodo/techniques-tests-exercices)
 - [📝 Travaux dirigés : écrire un plan de tests d'un projet existant](/tests/methodo/td_plan_tests)
-- [📝 Travaux dirigés : Élaboration de la recette fonctionnelle d’un projet existant](/tests/methodo/td_recette_fonctionnelle)
+- [📝 Travaux dirigés : Élaboration de la recette fonctionnelle d'un projet existant](/tests/methodo/td_recette_fonctionnelle)
 - [📝 Travaux dirigés : Tests d'un contrôleur d'ascenseur](/tests/methodo/td-ascenseur)
 
 ## Tests unitaires

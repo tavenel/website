@@ -5,22 +5,22 @@ title: Projet Scrum Campus TaskForce
 
 # Présentation du projet 
 
-L'université souhaite renforcer la collaboration entre ses associations étudiantes en mettant en place une plateforme web collaborative nommée **TaskForce Campus**. Cette application a pour vocation de faciliter l’organisation de projets associatifs et la gestion des événements sur le campus.
+L'université souhaite renforcer la collaboration entre ses associations étudiantes en mettant en place une plateforme web collaborative nommée **TaskForce Campus**. Cette application a pour vocation de faciliter l'organisation de projets associatifs et la gestion des événements sur le campus.
 
 Les objectifs de ce projet sont les suivants :
 
 - Permettre aux équipes étudiantes de planifier, suivre et coordonner leurs actions.
-- Favoriser la communication et l’échange d’informations entre les membres des associations.
+- Favoriser la communication et l'échange d'informations entre les membres des associations.
 - Proposer une solution intuitive intégrant gestion de tâches, notifications en temps réel et partage de documents.
 
 Fonctionnalités clés à développer :
 
 - **Création et gestion de groupes de projet** : Chaque association peut créer un espace dédié où les membres ajoutent des tâches, planifient des réunions et partagent des ressources.
-- **Gestion des tâches collaboratives** : Mise en place d’un système de suivi des tâches avec priorisation, affectation de responsabilités et échéances.
+- **Gestion des tâches collaboratives** : Mise en place d'un système de suivi des tâches avec priorisation, affectation de responsabilités et échéances.
 - **Système de notifications** : Alertes en temps réel pour signaler les mises à jour importantes et les rappels de deadlines.
-- **Interface interactive** : Tableau de bord personnalisé affichant l’état d’avancement des projets et facilitant la visualisation des indicateurs clés (KPI).
+- **Interface interactive** : Tableau de bord personnalisé affichant l'état d'avancement des projets et facilitant la visualisation des indicateurs clés (KPI).
 
-Le projet est un projet full-stack : il s'agit de concevoir et implémenter à la fois l’interface utilisateur et les services backend (API, gestion de base de données, etc.) pour une solution complète.
+Le projet est un projet full-stack : il s'agit de concevoir et implémenter à la fois l'interface utilisateur et les services backend (API, gestion de base de données, etc.) pour une solution complète.
 
 En cas de question sur les spécifications, le formateur jouera le rôle du client final pour préciser celles-ci.
 

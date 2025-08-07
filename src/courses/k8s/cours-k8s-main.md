@@ -517,7 +517,7 @@ Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple d
 - Les `ConfigMap` et `Secret` injectent les configurations et les données sensibles. 🔐
 - Le/Les `Ingress` gèrent le trafic externe (routage par _URI_ ou header _host_) et les certificats SSL/TLS. 🌍
 - Les `PersistentVolume` et `StatefulSet` supportent les applications avec état. 💾
-- Les `DaemonSet` assurent le fonctionnement des outils d’administration sur chaque nœud. 🛠️
+- Les `DaemonSet` assurent le fonctionnement des outils d'administration sur chaque nœud. 🛠️
 
 ---
 

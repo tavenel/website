@@ -10,7 +10,7 @@ layout: '@layouts/BaseLayout.astro'
 ### 🎯 Compétences à acquérir
 
 - Concevoir un processus de partage d'information afin de faciliter la collaboration entre les membres en télétravail et/ou à distance en utilisant des outils numériques.
-- Animer des réunions à distance afin de maintenir une dynamique de groupe et renforcer l’esprit d’équipe des membres en télétravail et/ou à 
+- Animer des réunions à distance afin de maintenir une dynamique de groupe et renforcer l'esprit d'équipe des membres en télétravail et/ou à 
 distance.
 
 ### 📅 Déroulé des séances

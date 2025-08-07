@@ -78,7 +78,7 @@ Le reste du déploiement de l'application est prévu de manière similaire à l'
 ### Partie migration des données
 
 - Concevoir le tableau de mapping source et données : Lister les données sources et champs de destination pour stocker les données  
-- Déterminer le type de migration : migration d’initialisation – migration quotidienne  
+- Déterminer le type de migration : migration d'initialisation – migration quotidienne  
 - Expliquer la stratégie de tests : identification des techniques de tests et des critères retenus pour choisir les scénarios de tests.
 - Concevoir un plan de tests permettant de valider la migration des données du format `XML` à une base de données relationnelle.
 - Définir les scénarios et les cas de tests 

@@ -9,7 +9,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Compétences à acquérir
 
-- Proposer des solutions innovantes afin de favoriser les interactions au sein de l’équipe et d’anticiper des conflits de 
+- Proposer des solutions innovantes afin de favoriser les interactions au sein de l'équipe et d'anticiper des conflits de 
 travail liés aux malentendus multiculturels.
 
 ### 📅 Déroulé des séances

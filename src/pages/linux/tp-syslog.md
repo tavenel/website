@@ -16,10 +16,10 @@ Le protocole définit des échanges client/serveur de journaux d'événements :
 
 ### Format Syslog
 
-Un journal au format Syslog comporte dans l’ordre les informations suivantes :
+Un journal au format Syslog comporte dans l'ordre les informations suivantes :
 
 - la date à laquelle a été émis le log,
-- le nom de l’équipement ayant généré le log (`hostname`),
+- le nom de l'équipement ayant généré le log (`hostname`),
 - une information sur le processus qui a déclenché cette émission,
 - le niveau de gravité du log,
 - un identifiant du processus ayant généré le log
@@ -33,7 +33,7 @@ Par exemple :
 Sep 14 14:09:09 machine_de_test dhcp service[warning] 110 corps du message
 ```
 
-Les origines peuvent être multiples et sont juxtaposées à l’aide d’un `;`
+Les origines peuvent être multiples et sont juxtaposées à l'aide d'un `;`
 
 Elles sont construites sous la forme :
 
@@ -41,7 +41,7 @@ Elles sont construites sous la forme :
 facility.criticity
 ```
 
-- La gravité (`criticity`) doit être comprise comme la criticité minimale, ainsi `user.critical` correspond au message d’origine utilisateur pour le niveau de gravité critical et les niveaux supérieurs, en l'occurrence `alert` et `emergency`.
+- La gravité (`criticity`) doit être comprise comme la criticité minimale, ainsi `user.critical` correspond au message d'origine utilisateur pour le niveau de gravité critical et les niveaux supérieurs, en l'occurrence `alert` et `emergency`.
 - Le mot-clef `none` peut lui aussi être utilisé afin de filtrer les messages, il est alors utilisé en lieu et place de la gravité.
 
 ### Niveaux de gravité
@@ -53,13 +53,13 @@ facility.criticity
 | 2  | Crit          | Erreur critique pour le système             |
 | 3  | Err           | Erreur de fonctionnement                    |
 | 4  | Warning       | Avertissement                               |
-| 5  | Notice        | Événement normal méritant d’être signalé    |
+| 5  | Notice        | Événement normal méritant d'être signalé    |
 | 6  | Informational | Pour information seulement                  |
 | 7  | Debug         | Déboggage                                   |
 
 ### Origine
 
-Les messages sont aussi orientés au regard de leur origine, dont les codes sont regroupés suivant des types que l’on appelle des “facilités”, soit l’origine, de `local0` à `local7` à personnaliser. On peut trouver :
+Les messages sont aussi orientés au regard de leur origine, dont les codes sont regroupés suivant des types que l'on appelle des “facilités”, soit l'origine, de `local0` à `local7` à personnaliser. On peut trouver :
 
 | Facilité        | Origine                                           |
 |-----------------|---------------------------------------------------|

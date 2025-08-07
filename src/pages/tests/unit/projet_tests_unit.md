@@ -26,10 +26,10 @@ _On appelle code métier du code lié directement aux exigences fonctionnelles (
 
 Les parties de code _métier_ d'une application sont les plus critiques et celles à tester le plus en profondeur dans les tests unitaires. Au contraire, les classes ayant des dépendances externes sont en général difficiles à tester et sensibles aux changements d'implémentation : il est normal que leur couverture de tests unitaires soit moins importante.
 
-- On activera la couverture de test dans l’IDE afin de vérifier que les classes sont bien testées.
+- On activera la couverture de test dans l'IDE afin de vérifier que les classes sont bien testées.
 - On ajoutera les tests unitaires nécessaires.
 - On pensera à utiliser des substituts (`Mock`, `Stub`) lorsque c'est nécessaire pour s'abstraire des dépendances.
-- On modifiera le code source de l’application pour corriger les bugs trouvés au fur et à mesure du développement (Test-Driven Development).
+- On modifiera le code source de l'application pour corriger les bugs trouvés au fur et à mesure du développement (Test-Driven Development).
 
 ## Notation
 

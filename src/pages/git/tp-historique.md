@@ -153,7 +153,7 @@ Le `reflog` (log des références) est un enregistrement local des références 
 
 De son côté, `fsck`, qui signifie `file system check`, permet de vérifier l'intégrité du système de fichier de Git et d'identifier les commit n'ayant plus de parents.
 
-Lorsqu'un commit est "effacé", il est simplement déréférencé car il n’est plus atteignable par les commit de l'historique. Le `reflog` comme `fsck` permettent donc de récupérer des commit perdus.
+Lorsqu'un commit est "effacé", il est simplement déréférencé car il n'est plus atteignable par les commit de l'historique. Le `reflog` comme `fsck` permettent donc de récupérer des commit perdus.
 
 1. Modifier le fichier `index.html`, ajouter les changements dans le staging et créer un nouveau commit.
 2. Noter l'identifiant du commit : `git log`
