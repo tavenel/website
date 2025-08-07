@@ -27,3 +27,7 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP - Intégrer Git dans un IDE](/git/tp-ide)
 - [💻 TP - Manipulations avancées de la HEAD](/git/tp-deplacer-head-avance)
 - [💻 TP Neovim - gérer ses configurations avec Git](/git/tp-iac-nvim)
+
+## 🚀 Autres ressources
+
+- Jujutsu, une alternative à Git compatible avec un dépôt Git : <https://maddie.wtf/posts/2025-07-21-jujutsu-for-busy-devs>
