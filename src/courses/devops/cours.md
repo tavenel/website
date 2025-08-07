@@ -305,6 +305,109 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 ---
 
+## DevOps Research and Assessment (DORA)
+
+Initiative de recherche (aujourd'hui Google Cloud) pour améliorer les pratiques DevOps (métriques, …).
+
+:::link
+Pour plus d'information, voir : <https://dora.dev/>
+:::
+
+---
+
+### Métriques
+
+---
+
+#### Lead Time for Changes (temps de livraison)
+
+- Temps nécessaire pour qu'un commit passe de la phase de développement à la production ;
+  - Si trop lent => goulot d'étranglement
+- Indicateur de rapidité de livraison d'un changement.
+
+---
+
+#### Fréquence de déploiement
+
+- Fréquence de déploiement en production ;
+  - Si fréquence élevée => processus automatisé et mature
+- Indicateur d'agilité.
+
+---
+
+#### Temps moyen de récupération (MTTR)
+
+- Temps de reprise après incident ;
+  - Si temps court => confiance accrue
+- Indicateur de robustesse et de réactivité
+
+---
+
+#### Taux d'échec des changements
+
+- Poucentage d'erreurs dans les changements déployés ;
+  - Si faible => vraie politique de tests
+- Indicateur de qualité et de fiabilité
+
+---
+
+### Capacités
+
+DORA identifie les capacités DevOps essentielles à suivre :
+
+#### Techniques
+
+- **Automatisation** des processus de **développement** et de **déploiement** ;
+- **CI/CD** ;
+- **Gestion efficace** de la configuration et de l'**infrastructure**.
+
+#### Processus
+
+- Gestion **agile** ;
+- **Visualisation du workflow** ;
+- **Limitation du travail en cours** (_LEAN_).
+
+#### Mesure et Surveillance
+
+- **Tableaux de bord** temps réel des performances ;
+- **Outils de suivi** ;
+- **Métriques de performance** : évaluation et améliorations.
+
+#### Culturelles
+
+- **Collaboration** et **Communication** entre équipes ;
+- **Apprentissage continu** (et **partage**) ;
+- **Acceptation de l'échec** (apprentissage).
+
+---
+
+### Niveaux de Performance
+
+---
+
+#### Faible
+
+- Fréquence de déploiement : Quelques déploiements par an.
+- Temps de livraison des changements : De plusieurs semaines à plusieurs mois.
+- Temps moyen de récupération (MTTR) : Plusieurs jours à plusieurs semaines pour restaurer un service après un incident.
+- Taux d'échec des changements : 46-60% des changements entraînent des défaillances ou des incidents.
+
+#### Moyenne
+
+- Fréquence de déploiement : Un déploiement par mois à un par semaine.
+- Temps de livraison des changements : De quelques jours à une semaine.
+- Temps moyen de récupération (MTTR) : De quelques heures à un jour.
+- Taux d'échec des changements : 16-30% des changements entraînent des défaillances ou des incidents.
+
+#### Haute
+
+- Fréquence de déploiement : Plusieurs déploiements par jour.
+- Temps de livraison des changements : Moins d'un jour, souvent quelques heures.
+- Temps moyen de récupération (MTTR) : Moins d'une heure.
+- Taux d'échec des changements : 0-15% des changements entraînent des défaillances ou des incidents.
+
+---
+
 ```mermaid
 mindmap
 root((DevOps))
@@ -390,6 +493,7 @@ root((DevOps))
 - [OpenClassrooms : Découvrez la méthodologie DevOps](https://openclassrooms.com/fr/courses/6093671-decouvrez-la-methodologie-devops)
 - <https://blog.wescale.fr/gitops-au-pays-des-bisounours>
 - Wiki Ops de SourceHut : <https://man.sr.ht/ops/>
+- <https://teamtopologies.com/>
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 [tuto-openclassrooms-monitoring]: https://openclassrooms.com/fr/courses/2035736-mettez-en-place-lintegration-et-la-livraison-continues-avec-la-demarche-devops/6183162-monitorez-votre-application

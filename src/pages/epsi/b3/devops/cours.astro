@@ -3,6 +3,7 @@ import Layout from '@layouts/CourseLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Devops } from '@courses/devops/cours.md';
+import { Content as TeamTopology } from '@courses/management/team-topologies.md';
 import { Content as LegalDevops } from '@courses/devops/legal.md';
 import { Content as MethodesAgile } from '@courses/agile/comparaison-methodes.md';
 import { Content as Themes } from '@courses/devops/themes.md';
@@ -30,6 +31,7 @@ const frontmatter = {
 ---
 <Layout frontmatter={frontmatter} >
 	<Chapter> <Devops />  </Chapter>
+ <Chapter> <TeamTopology /> </Chapter>
 	<Chapter> <MethodesAgile />  </Chapter>
 	<Chapter> <Themes />  </Chapter>
 	<Chapter> <Ansible />  </Chapter>

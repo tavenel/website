@@ -3,6 +3,7 @@ import Layout from '@layouts/CourseLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as DDD } from '@courses/ddd/cours-ddd.md';
+import { Content as TeamTopology } from '@courses/management/team-topologies.md';
 import { Content as BDD } from '@courses/tests/cours-bdd.md';
 import { Content as Hexagonal } from '@courses/archi/cours-hexagonal.md';
 import { Content as Clean } from '@courses/archi/cours-clean.md';
@@ -19,6 +20,7 @@ const frontmatter = {
 ---
 <Layout frontmatter={frontmatter} >
  <Chapter> <DDD /> </Chapter>
+ <Chapter> <TeamTopology /> </Chapter>
  <Chapter> <BDD /> </Chapter>
  <Chapter> <Hexagonal /> </Chapter>
  <Chapter> <Clean /> </Chapter>
