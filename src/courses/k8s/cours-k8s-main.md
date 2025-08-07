@@ -1142,6 +1142,21 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ---
 
+### Device Plugin
+
+- Permet de déclarer des ressources au _Kubelet_ pour les utiliser des les _Pod_
+- ex : `nvidia-device-plugin` pour les GPU nvidia
+
+:::tip
+Les _Device_ sont assez limités (statiques, réquisition unique, …). Kubernetes introduit les [_Dynamic Ressource Allocation_ (_DRA_)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/)
+:::
+
+:::link
+Pour débugger les Pods avec Device, voir : <https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/>
+:::
+
+---
+
 ## 🛠️ Configuration du cluster
 
 - Metadata 🏷️

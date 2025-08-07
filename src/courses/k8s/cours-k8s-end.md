@@ -87,7 +87,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 ### Installation de clusters et environnements de test
 
 - [Fichiers perso de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh) 📂
-- Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/> et <https://kodekloud.com/playgrounds/> 🏗️
+- Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/> et <https://kodekloud.com/playgrounds/> et <https://labs.iximiuz.com/playgrounds/k8s-omni> 🏗️
 - Mini-distributions : <https://blog.palark.com/small-local-kubernetes-comparison/> 📦
 - [Administration de cluster via etcd](https://blog.stephane-robert.info/post/kubernetes-etcd/) 📝
 - [Un cluster de production en un éclair avec Talos](https://kdrive.infomaniak.com/app/share/834488/21e24b60-ece5-4445-ba1d-c5adc3c170cc) ⚡
@@ -121,6 +121,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - [Terminaison de Pod et bonnes pratiques](https://jaadds.medium.com/gracefully-terminating-pods-in-kubernetes-handling-sigterm-fb0d60c7e983) 📚
 - <https://www.pulumi.com/blog/kubernetes-best-practices-i-wish-i-had-known-before/> 📚
 - Mailing-list : <https://learnkube.com/learn-kubernetes-weekly> 📧
+- Roadmap k8s <https://roadmap.sh/kubernetes> et roadmap orientée cybersécurité : <https://kubesec-diagram.github.io/> 🗺️
 
 ---
 
@@ -132,6 +133,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838) 🛡️
 - <https://openai.com/index/scaling-kubernetes-to-7500-nodes/> 📈
 - [Kubernetes Pod Scheduling: Tutorial and Best Practices](https://www.cloudbolt.io/kubernetes-pod-scheduling/)
+- [Balancing Capacity and Cost for Kubernetes Clusters](https://dnastacio.medium.com/kubernetes-cluster-capacity-d96d0d82b380) ⚖️
 
 ---
 
@@ -229,23 +231,35 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 ---
 
+### Controlleurs, Operators, Schedulers
+
+- [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler) 📅
+- <https://www.pulumi.com/blog/why-every-platform-engineer-should-care-about-kubernetes-operators/>
+- <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.📝
+
+---
+
+### Détails techniques
+
+- [Kubernetes the Hard Way (Kelsey Hightower) : Bootstrap Kubernetes the hard way. No scripts.](https://github.com/kelseyhightower/kubernetes-the-hard-way)
+- [Kubernetes the Harder Way : A guide to setting up a production-like Kubernetes cluster on a local machine.](https://github.com/ghik/kubernetes-the-harder-way)
+- [Inside Kubernetes Scheduler: What Really Happens Before Your Pod Lands on a Node](https://medium.com/@hmusicofficial27/inside-kubernetes-scheduler-what-really-happens-before-your-pod-lands-on-a-node-99e9aeb829a1)
+- [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/) 📖
+- How Kubernetes Runs Containers : A Practical Deep Dive : <https://blog.esc.sh/kubernetes-containers-linux-processes/>
+
+---
+
 ### Autres
 
-- Roadmap k8s <https://roadmap.sh/kubernetes> et roadmap orientée cybersécurité : <https://kubesec-diagram.github.io/> 🗺️
 - Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources> 🌟
-- [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/) 📖
 - [A journey of writing my own Kubernetes](https://medium.com/@jonatan5524/a-journey-of-writing-my-own-kubernetes-ef45839a769d) 📝
 - [Learning Kubernetes, Pods & Deployments with Doom](https://www.youtube.com/watch?v=j9DOWkw9-pc) 🎮
-- [Scheduler Kubernetes (pour démonstration)](https://github.com/kelseyhightower/scheduler) 📅
 - Exemples :
   - de projets : voir la [page des liens](/liens#kubernetes) 🔗
   - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples> 📄
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾
-- <https://une-tasse-de.cafe/blog/operator/> : exemple d'écriture d'un opérateur en Go.📝
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
-- [Balancing Capacity and Cost for Kubernetes Clusters](https://dnastacio.medium.com/kubernetes-cluster-capacity-d96d0d82b380) ⚖️
-- [Kubernetes the Hard Way (Kelsey Hightower) : Bootstrap Kubernetes the hard way. No scripts.](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
 ---
 
