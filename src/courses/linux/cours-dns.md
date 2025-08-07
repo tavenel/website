@@ -8,29 +8,134 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ### 📁 Fichiers clés
 
-- `/etc/named.conf` : Fichier principal de configuration BIND.
-- `/var/named/` : Répertoire par défaut des fichiers de zone.
+- `/etc/bind/named.conf` : Fichier principal de configuration BIND.
+- `/var/cache/bind/` : Répertoire par défaut des fichiers de zone.
 
-### ⚙️ Configuration basique dans `/etc/named.conf`
+:::tip
+Les anciennes versions de bind utilisent plutôt `/etc/named.conf` et `/var/named`.
+:::
+
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- []()
+
+Voir aussi le wiki Debian : <https://wiki.debian.org/Bind9>
+:::
+
+### ⚙️ Configuration basique
 
 ```
+// /etc/bind/named.conf
+
 options {
-    directory "/var/named";
+    directory "/var/cache/bind";
     recursion yes;
     allow-query { any; };
 };
 
-zone "exemple.local" IN {
-    type master;
-    file "exemple.local.zone";
+zone "example.com" {
+        type master;
+        file "/var/lib/bind/db.example.com";
+};
+```
+
+### ⚙️ Configuration avancée
+
+```
+// /etc/bind/named.conf
+
+
+// TSIG key used for the dynamic update
+include "/etc/bind/ns-example-com_rndc-key";
+
+// Configure the communication channel for Administrative BIND9 with rndc
+// By default, they key is in the rndc.key file and is used by rndc and bind9
+// on the localhost
+controls {
+        inet 127.0.0.1 port 953 allow { 127.0.0.1; };
+};
+
+options {
+
+    // Répertoire de travail
+    directory "/var/cache/bind";
+  
+    // Exchange port between DNS servers
+    query-source address * port *;
+  
+    // Transmit requests to 192.168.1.1 if
+    // this server doesn't know how to resolve them
+    forward only;
+    forwarders { 192.168.1.1; };
+
+    auth-nxdomain no;    # conform to RFC1035
+
+
+    // Listen on local interfaces only(IPV4)
+    listen-on-v6 { none; };
+    listen-on { 127.0.0.1; 192.168.0.1; };
+
+
+    // Do not transfer the zone information to the secondary DNS
+    allow-transfer { none; };
+  
+    // Accept requests for internal network only
+    allow-query { internals; };
+  
+    // Allow recursive queries to the local hosts
+    allow-recursion { internals; };
+  
+    // Do not make public version of BIND
+    version none;
+
+};
+
+include "/etc/bind/named.conf.default-zones";
+
+// prime the server with knowledge of the root servers
+zone "." {
+        type hint;
+        file "/etc/bind/db.root";
+};
+
+zone "example.com" {
+        type master;
+        file "/var/lib/bind/db.example.com";
+        allow-update { key rndc-key; };
+};
+zone "0.168.192.in-addr.arpa" {
+        type master;
+        file "/var/lib/bind/db.example.com.inv";
+        allow-update { key rndc-key; };
+};
+
+logging {
+        channel update_debug {
+                file "/var/log/update_debug.log" versions 3 size 100k;
+                severity debug;
+                print-severity  yes;
+                print-time      yes;
+        };
+       channel bind_log {
+                file "/var/log/bind.log" versions 3 size 1m;
+                severity info;
+                print-category  yes;
+                print-severity  yes;
+                print-time      yes;
+        };
+
+        category default { bind_log; };
+        category lame-servers { null; };
+        category update { update_debug; };
+        category update-security { update_debug; };
 };
 ```
 
 ### 🔧 Commandes utiles
 
 - `rndc reload` : Recharger la configuration.
-- `named-checkconf` : Vérifier la validité de la configuration.
-- `kill -HUP $(pidof named)` : Relancer le démon (peu recommandé).
+- `named-checkconf` : Vérifier la validité de la configuration (`named.conf`).
 - `dig`, `host` : Tester les requêtes DNS.
 
 ### 🔄 Alternatives à BIND
@@ -58,68 +163,58 @@ zone "exemple.local" IN {
 
 ---
 
-### 📁 Exemple de zone
+### 📁 Exemple de résolution de nom
 
 Pour le domaine `exemple.com`, une zone peut contenir :
 
-```
-$TTL 86400
-@   IN  SOA ns1.exemple.com. admin.exemple.com. (
-        2025080501 ; Serial
-        3600       ; Refresh
-        1800       ; Retry
-        604800     ; Expire
-        86400 )    ; Minimum
+```text title="db.example.com"
+;
+; Ressource Record pour résolution de nom
+;
+$TTL    3600
+@       IN      SOA     sid.example.com. root.example.com. (
+                   2007010401           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+;
+@       IN      NS      sid.example.com.
+@       IN      MX      10 sid.example.com.
 
-    IN  NS  ns1.exemple.com.
-    IN  NS  ns2.exemple.com.
+sid     IN      A       192.168.0.1
+etch    IN      A       192.168.0.2
 
-@   IN  A   192.0.2.10
-www IN  A   192.0.2.11
-mail IN  A   192.0.2.12
-@   IN  MX  10 mail.exemple.com.
+pop     IN      CNAME   sid
+www     IN      CNAME   sid
+mail    IN      CNAME   sid
 ```
 
 ---
 
+### 🔄 Exemple de résolution inverse
 
-### 🧾 Exemple de fichier de zone (`exemple.local.zone`)
+```text title="db.example.com.inv"
+;
+; Ressource Record pour résolution inverse
+;
+@       IN      SOA     sid.example.com. root.example.com. (
+                   2007010401           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+;
+@       IN      NS      sid.example.com.
 
-```
-$TTL 86400
-@   IN  SOA ns1.exemple.local. admin.exemple.local. (
-        2025080501 ; Serial
-        3600       ; Refresh
-        1800       ; Retry
-        604800     ; Expire
-        86400 )    ; Minimum TTL
-
-    IN  NS      ns1.exemple.local.
-    IN  A       192.168.0.10
-ns1 IN  A       192.168.0.10
-www IN  A       192.168.0.20
-```
-
-### 🔄 Zone inverse (`0.168.192.in-addr.arpa.zone`)
-
-```
-$TTL 86400
-@   IN  SOA ns1.exemple.local. admin.exemple.local. (
-        2025080501 ; Serial
-        3600       ; Refresh
-        1800       ; Retry
-        604800     ; Expire
-        86400 )    ; Minimum TTL
-
-    IN  NS  ns1.exemple.local.
-10  IN  PTR ns1.exemple.local.
-20  IN  PTR www.exemple.local.
+1       IN      PTR     sid.example.com.
+2       IN      PTR     etch.example.com.
 ```
 
 ### 🛠️ Validation
 
-- `named-checkzone exemple.local exemple.local.zone`
-- `named-compilezone -o exemple.local.zone.db -f text exemple.local exemple.local.zone`
+- `named-checkzone exemple.local exemple.local.zone` : vérification de fichiers de zone
+- `named-compilezone -o exemple.local.zone.db -f text exemple.local exemple.local.zone` : lecture de fichier de zone compilé en texte clair
 
 ---
 
@@ -169,7 +264,9 @@ tsig-keygen transfert-securise > tsig.key
 
 - Ajouter dans `named.conf` :
 
-```
+```text ins={2-6,9,15}
+// /etc/bind/named.conf
+
 key transfert-securise {
     algorithm hmac-sha256;
     secret "base64clé==";
@@ -242,13 +339,13 @@ Le résolveur peut ainsi **remonter la chaîne jusqu'à la racine** pour vérifi
 - Générer les clés :
 
 ```sh
-dnssec-keygen -a RSASHA256 -b 2048 -n ZONE exemple.local
+dnssec-keygen -a RSASHA256 -b 2048 -n ZONE exemple.local.
 ```
 
 - Signer la zone :
 
 ```sh
-dnssec-signzone -o exemple.local -k KSK exemple.local.zone ZSK
+dnssec-signzone -o exemple.local exemple.local.zone ZSK
 ```
 
 ---
@@ -287,8 +384,8 @@ Dane fonctionne même avec des certificats auto-signés (si publiés dans DNSSEC
 ##### 🔑 Exemple d'enregistrement TLSA
 
 ```
-_443._tcp.exemple.com. IN TLSA 3 1 1 (
-  d2abde240d7cd3ee6b4b28c54df034b721ed3c5e0c2ff2c9c8d1d6cd53b6d23b
+_443._tcp.exemple.com. IN TLSA (
+  0 0 1 d2abde240d7cd3ee6b4b28c54df034b721ed3c5e0c2ff2c9c8d1d6cd53b6d23b
 )
 ```
 
@@ -321,6 +418,18 @@ Ce champ indique :
 - `dig +dnssec www.exemple.local`
 - `host -t tlsa _443._tcp.exemple.local`
 - `journalctl -u named`
+
+---
+
+## 🔗 Liens
+
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [Basic DNS server configuration](https://lpic2book.github.io/src/lpic2.207.1/)
+- [Create and maintain DNS zones](https://lpic2book.github.io/src/lpic2.207.2/)
+- [Securing a DNS Server](https://lpic2book.github.io/src/lpic2.207.3/)
+:::
 
 ---
 
