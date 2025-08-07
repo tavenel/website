@@ -2,7 +2,8 @@
 import Layout from '@layouts/CourseLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
-import { Content } from '@courses/devops/cours.md';
+import { Content as DevOps } from '@courses/devops/cours.md';
+import { Content as Themes } from '@courses/devops/themes.md';
 
 const frontmatter = {
   license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
@@ -16,6 +17,7 @@ const frontmatter = {
 
 ---
 <Layout frontmatter={frontmatter} >
-	<Chapter> <Content />  </Chapter>
+	<Chapter> <DevOps />  </Chapter>
+	<Chapter> <Themes />  </Chapter>
 </Layout>
 
