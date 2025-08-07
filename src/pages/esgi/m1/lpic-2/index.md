@@ -127,7 +127,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 
 ### 📝 Ressources utiles
 
-- Livre de la formation LPIC-2 : <https://lpic2book.github.io>
+- Livre de la formation LPIC-2 : <https://lpic2book.github.io/src>
 - Examens blancs :
   - <https://www.penguintutor.com/quiz/index.php>
   - <https://www.examtopics.com/exams/lpi/201-450/>
@@ -151,6 +151,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 
 - [📝 Syllabus du contenu de la certification LPIC-2](/linux/lpic-2/contenu)
 <!-- - [🤓 Cours Linux pour la certification LPIC-2](/linux/lpic-2/cours) -->
+<!-- - [🏆 Projet LPIC-2 : Mise en place d'une infrastructure système complète sécurisée et supervisée](/linux/lpic-2/projet) -->
 
 ## 🚀 Pour aller plus loin
 
