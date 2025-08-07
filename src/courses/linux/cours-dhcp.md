@@ -7,6 +7,12 @@ layout: '@layouts/CoursePartLayout.astro'
 - 🎯 But du serveur DHCP (`dhcpd`) : distribuer des adresses IP dynamiquement ou statiquement, aussi bien en IPv4 qu'en IPv6
 - Parfois simplement dans un rôle d'agent relais.
 
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [DHCP Configuration](https://lpic2book.github.io/src/lpic2.210.1/)
+:::
+
 ---
 
 ### 📁 Fichiers et journaux importants
@@ -29,9 +35,40 @@ layout: '@layouts/CoursePartLayout.astro'
 #### ✅ Déclaration globale
 
 ```
+# Paramètres des baux
 default-lease-time 600;
 max-lease-time 7200;
+
+# Seul serveur DHCP dans le subnet : refuse IPs invalides
 authoritative;
+```
+
+#### 🧩 Configuration des services
+
+```
+# DNS
+option domain-name-servers 21.31.0.2;
+# SMTP
+option smtp-server 21.31.0.3;
+# POP3
+option pop-server 21.31.0.4;
+# NEWS
+option nntp-server 21.31.0.5;
+# NTP
+option time-servers 21.31.0.6;
+
+# ou par nom de domaine
+
+# DNS
+option domain-name-servers dns.company.com;
+# SMTP
+option smtp-server smtp.company.com;
+# POP3
+option pop-server pop3.company.com;
+# NEWS
+option nntp-server news.company.com;
+# NTP
+option time-servers ntp.company.com;
 ```
 
 #### 🧭 Configuration d'un sous-réseau
@@ -45,12 +82,49 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 }
 ```
 
+#### 🧭 Configuration de réseau partagé
+
+```
+# Réseau physique
+shared-network mon-reseau {
+
+  # Paramètres communs à tous les subnets
+  option routers 21.31.17.1;
+  option lpr-servers 21.31.17.2, 21.31.18.2, 21.31.19.2, 21.31.18.3;
+  option broadcast-address 21.31.31.255;
+
+  subnet 21.31.17.0 netmask 255.255.240.0 {
+    range 21.31.17.11 21.31.17.210;
+  }
+  subnet 21.31.18.0 netmask 255.255.240.0 {
+    range 21.31.18.11 21.31.18.210;
+  }
+}
+```
+
 #### 📌 Attribution fixe par adresse MAC
 
 ```
-host imprimante {
-  hardware ethernet 00:11:22:33:44:55;
-  fixed-address 192.168.1.10;
+group {
+  # Options communes à tous les `host`
+  option routers 21.31.55.1;
+  option lpr-servers 21.31.56.3;
+  option broadcast-address 21.31.63.255;
+  netmask 255.255.240.0;
+
+  host luke {
+    # specifique à luke
+    hardware ethernet AA:88:54:72:7F:92;
+    fixed-address 21.31.55.211;
+    option host-name "luke";
+  }
+
+  host leah {
+    # specifique à leah
+    hardware ethernet CC:88:54:72:84:4F;
+    fixed-address 21.31.55.212;
+    option host-name "leah";
+  }
 }
 ```
 
@@ -58,11 +132,7 @@ host imprimante {
 
 ### 📡 BOOTP
 
-BOOTP est un prédécesseur de DHCP, encore pris en charge pour compatibilité :
-
-```
-allow bootp;
-```
+BOOTP est un prédécesseur de DHCP, encore pris en charge pour compatibilité.
 
 ---
 
@@ -76,9 +146,12 @@ Exemple `radvd.conf` :
 ```
 interface eth0 {
   AdvSendAdvert on;
+  MinRtrAdvInterval 3; 
+  MaxRtrAdvInterval 10;
   prefix 2001:db8:1::/64 {
     AdvOnLink on;
     AdvAutonomous on;
+    AdvRouterAddr on;
   };
 };
 ```
