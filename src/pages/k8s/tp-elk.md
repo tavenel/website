@@ -1,7 +1,6 @@
 ---
 title: Logging centralisé d'un cluster Kubernetes
 date: 2024 / 2025
-correction: false
 ---
 
 # Logging centralisé d'un cluster Kubernetes

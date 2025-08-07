@@ -1,6 +1,5 @@
 ---
 title: Exercices Tk
-correction: false
 ---
 
 ## Fenêtre simple

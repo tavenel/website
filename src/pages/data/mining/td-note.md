@@ -1,7 +1,6 @@
 ---
 title: Projet noté traitement des données
 date: 2023 / 2024
-correction: false
 ---
 
 # Partie 1

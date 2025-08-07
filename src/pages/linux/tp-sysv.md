@@ -1,7 +1,6 @@
 ---
 title: SysV
 date: 2024 / 2025
-correction: false
 ---
 
 ## SysV : init et runlevel

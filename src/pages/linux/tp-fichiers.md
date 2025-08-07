@@ -1,7 +1,6 @@
 ---
 title: TP - Les fichiers
 date: 2024 / 2025
-correction: false
 ---
 
 :::tip

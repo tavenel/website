@@ -1,6 +1,5 @@
 ---
 title: Projet Pur Beurre
-correction: false
 ---
 
 ## Contexte

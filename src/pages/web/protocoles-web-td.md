@@ -3,7 +3,6 @@ title: Notions de protocoles Web
 date: 2023 / 2024
 tags:
 - cloud
-correction: false
 ---
 
 # TD1. Notions de protocoles Web

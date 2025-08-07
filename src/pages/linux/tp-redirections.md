@@ -1,7 +1,6 @@
 ---
 title: TP - Utilisation des flux, des pipes et des redirections 
 date: 2024 / 2025
-correction: false
 ---
 
 ## Cours

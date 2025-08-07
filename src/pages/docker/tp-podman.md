@@ -1,7 +1,6 @@
 ---
 title: TP Podman
 date: 2024 / 2025
-correction: false
 ---
 
 # TP Podman - Conteneurs et Pods sans serveur

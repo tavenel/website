@@ -1,6 +1,5 @@
 ---
 title: Exercices Techniques de tests
-correction: false
 ---
 
 ## Analyse partitionnelle

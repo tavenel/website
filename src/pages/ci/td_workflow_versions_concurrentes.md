@@ -1,7 +1,6 @@
 ---
 title: TD Intégration Continue
 date: 2023-2024
-correction: false
 ---
 
 # Workflow support de versions concurrentes

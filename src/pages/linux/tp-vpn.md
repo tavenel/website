@@ -1,7 +1,6 @@
 ---
 title: TP Installation d'un service VPN
 date: 2025 / 2026
-correction: false
 ---
 
 Voici une configuration de base de WireGuard pour établir un VPN entre deux machines : un serveur et un client.

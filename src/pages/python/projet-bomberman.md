@@ -1,7 +1,6 @@
 ---
 title: Projet Python Bomberman
 date: 2024 / 2025
-correction: false
 ---
 
 # Projet Python - Bomberman

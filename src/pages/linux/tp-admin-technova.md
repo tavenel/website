@@ -1,7 +1,6 @@
 ---
 title: TP Administration d'un système Linux
 date: 2024 / 2025
-correction: false
 ---
 
 # TP : Administration d'un système Linux

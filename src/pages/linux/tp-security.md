@@ -1,7 +1,6 @@
 ---
 title: Sécurité sous Linux
 date: 2024 / 2025
-correction: false
 ---
 
 ## Définition ou modification des mots de passe utilisateur ainsi que des informations d’expiration du compte.

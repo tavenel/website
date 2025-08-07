@@ -1,7 +1,6 @@
 ---
 title: Projet Python Gestionnaire de Configuration des Serveurs
 date: 2024 / 2025
-correction: false
 ---
 
 # Projet Python - Gestionnaire de Configuration des Serveurs
