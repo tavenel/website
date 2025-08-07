@@ -127,6 +127,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 
 ### 📝 Ressources utiles
 
+- Livre de la formation LPIC-2 : <https://lpic2book.github.io>
 - Examens blancs :
   - <https://www.penguintutor.com/quiz/index.php>
   - <https://www.examtopics.com/exams/lpi/201-450/>
