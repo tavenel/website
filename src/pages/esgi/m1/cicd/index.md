@@ -58,11 +58,9 @@ Module de 21H
 - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
-### 🏆 Projet intégration et déploiement continus d'une application de groupes de travail
+### 🏆 Projet intégration et déploiement continus
 
-Votre équipe de développement a reçu une nouvelle commande de la part d'un client souhaitant développer une application Web pour permettre à ses utilisateurs de créer des groupes de travail.
-
-- [📄 Lien vers le sujet](/ci/projet_groupes_utilisateurs_ci)
+- [📄 Lien vers le sujet](/ci/projet_cas_etude)
 
 ## 🚀 Pour aller plus loin
 

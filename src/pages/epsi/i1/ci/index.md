@@ -24,31 +24,6 @@ Module de 10H
 
 Évaluation : Examen + Projet commun avec le module [tests automatiques](/epsi/i1/tests-auto)
 
-### Séance 1
-
-- Rappels de cours : l'intégration continue (cours)
-- Le serveur d'intégration continue (cours)
-- Présentation de Jenkins® (cours)
-- TP Jenkins® (pratique)
-
-### Séance 2
-
-- Mini Quizz séance précédente (examen)
-- Les outils de l'intégration continue (cours)
-- Les processus d'intégration (cours)
-- Les grands principes de l'intégration continue (cours)
-- Fin du TP Jenkins® (pratique)
-
-### Séance 3
-
-- Mini Quizz séance précédente (examen)
-- TD sur les workflow d'intégration continue
-- Démarrage du projet noté (pratique)
-
-### Séance 4
-
-- Devoir surveillé sur l'intégration continue - 2H (examen)
-
 ## 📑 Documents
 
 - [🤓 Cours sur l'intégration continue ](/ci/cours)
@@ -79,3 +54,4 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 - [💻 TP Workflow : support de versions concurrentes](/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - Voir les autres ressources du [cours sur l'intégration continue](/ci).
+
