@@ -1001,6 +1001,72 @@ mount -t nfs "<NFS_SERVER_ADDRESS>:<NFS_SHARE_PATH>" /mnt
 ```
 :::
 
+## Device
+
+Les plugins de Device permettent de déclarer et d'utiliser des ressources disponibles sur les _Nodes_ : GPU, …
+
+### Utiliser un GPU Nvidia
+
+```sh
+# Sur le Node
+
+## Installation les drivers NVIDIA
+sudo apt install nvidia-driver-535
+nvidia-smi
+
+## Installation du NVIDIA Container Toolkit
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt update && sudo apt install -y nvidia-container-toolkit
+sudo systemctl restart containerd
+
+# Déploiement du Device Plugin (DaemonSet)
+kubectl apply -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/legacy/1.13/nvidia-device-plugin.yml
+```
+
+```console
+$ kubectl describe node <nom-noeud>
+
+[…]
+Allocatable: nvidia.com/gpu: X
+```
+
+```yaml ins={10-12}
+# Pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gpu-test
+spec:
+  containers:
+  - name: cuda-container
+    image: nvidia/cuda:12.2.0-base
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+    command: ["nvidia-smi"]
+```
+
+```yaml ins={12-14}
+# Job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gpu-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: compute
+        image: tensorflow/tensorflow:latest-gpu
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        command: ["python", "-c", "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"]
+      restartPolicy: Never
+```
+
 ## Network k8s
 
 ### Exemple de fichier de ClusterIP
