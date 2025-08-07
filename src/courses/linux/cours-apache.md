@@ -6,6 +6,13 @@ layout: '@layouts/CoursePartLayout.astro'
 
 _Apache_ (ou _httpd_) est l'un des serveurs web les plus utilisés au monde. Il est libre, open-source, robuste, extensible, et largement supporté sur les systèmes Unix/Linux.
 
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [Basic Apache Configuration](https://lpic2book.github.io/src/lpic2.208.1/)
+- [Apache configuration for HTTPS](https://lpic2book.github.io/src/lpic2.208.2/)
+:::
+
 ## 📁 Fichiers et chemins importants
 
 | Fichier/Dossier                 | Rôle                         |

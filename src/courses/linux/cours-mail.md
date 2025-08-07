@@ -17,6 +17,14 @@ layout: '@layouts/CoursePartLayout.astro'
   - Plus simple que Sendmail, très modulaire.
   - Fichier principal : `/etc/exim/exim.conf`
 
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [Using e-mail servers](https://lpic2book.github.io/src/lpic2.211.1/)
+- [Managing E-Mail Delivery](https://lpic2book.github.io/src/lpic2.211.2/)
+- [Managing Mailbox Access](https://lpic2book.github.io/src/lpic2.211.3/)
+:::
+
 ---
 
 ## 📬 Serveur Postfix

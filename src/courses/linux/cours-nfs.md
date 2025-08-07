@@ -12,6 +12,12 @@ layout: '@layouts/CoursePartLayout.astro'
   - Centralisation des données dans des environnements multi-utilisateurs
   - Montage automatique de répertoires utilisateurs dans des infrastructures réseau
 
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [Configuring an NFS Server](https://lpic2book.github.io/src/lpic2.209.2/)
+:::
+
 ---
 
 ## Configuration du serveur NFS

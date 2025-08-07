@@ -321,5 +321,21 @@ Fichier de conf persistant : `/etc/sysctl.conf`
 
 ---
 
+## 🔗 Liens
+
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [Operating The Linux Filesystem](https://lpic2book.github.io/src/lpic2.203.1/)
+- [Maintaining a Linux Filesystem](https://lpic2book.github.io/src/lpic2.203.2/)
+- [Creating And Configuring Filesystem Options](https://lpic2book.github.io/src/lpic2.203.3/)
+- [Advanced Storage Device Administration](https://lpic2book.github.io/src/lpic2.204.0/)
+- [Adjusting Storage Device Access](https://lpic2book.github.io/src/lpic2.204.2/)
+- [Logical Volume Manager](https://lpic2book.github.io/src/lpic2.204.3/)
+- [Configuring PCMCIA Devices](https://lpic2book.github.io/src/lpic2.204.4/)
+:::
+
 [tp-partitions]: /linux/tp-partitions
+
+---
 

@@ -13,6 +13,13 @@ layout: '@layouts/CoursePartLayout.astro'
 
 📚 Serveur libre le plus courant : **OpenLDAP**
 
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [LDAP client usage](https://lpic2book.github.io/src/lpic2.210.3/)
+- [Configuring an OpenLDAP server](https://lpic2book.github.io/src/lpic2.210.4/)
+:::
+
 ---
 
 ### 📦 Installation
