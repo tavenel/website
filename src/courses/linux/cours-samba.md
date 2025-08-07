@@ -9,7 +9,13 @@ layout: '@layouts/CoursePartLayout.astro'
 - Partage de fichiers et d'imprimantes entre systèmes Linux/Unix et Windows
 - Intégration dans un domaine _Active Directory_ (AD)
 - Gestion des utilisateurs et des autorisations (comme un contrôleur de domaine)
-📡 Implémente le protocole _SMB/CIFS_ (_Server Message Block_).
+- 📡 Implémente le protocole _SMB/CIFS_ (_Server Message Block_).
+
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [SAMBA Server Configuration](https://lpic2book.github.io/src/lpic2.209.1/)
+:::
 
 ---
 

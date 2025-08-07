@@ -23,6 +23,12 @@ layout: '@layouts/CoursePartLayout.astro'
 | `/proc/mdstat`        | Surveillance de l'état du RAID         |
 | `partition type 0xFD` | Type pour RAID autodétecté             |
 
+:::link
+Pour plus d'information, voir le document de la formation LPIC-2 :
+
+- [Configuring RAID](https://lpic2book.github.io/src/lpic2.204.1/)
+:::
+
 ---
 
 ## 🔧 Création d'un RAID logiciel
