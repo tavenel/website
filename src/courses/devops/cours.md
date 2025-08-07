@@ -362,13 +362,13 @@ root((DevOps))
 - **CD** : Continuous Delivery/Deployment (Déploiement Continu). Mise en production automatique des artéfacts générés par la CI.
 - **SaaS** : Software-as-a-Service. Application hébergée sur le cloud et accessible directement à l'utilisateur final.
 
-
 ---
 
 ## Ressources
 
 - Voir une [sélection d'outils DevOps sur le site web](/tools)
 - Glossaire DevOps : <https://blog.stephane-robert.info/docs/glossaire/>
+- Un autre [glossaire orienté IaC](https://itnext.io/kubernetes-configuration-and-infrastructure-as-code-taxonomy-62ab4dd7e82f)
 - Un [résumé de Docker et du CI/CD](https://cours.brosseau.ovh/tp/devops/support-docker-cicd.html)
 - <https://roadmap.sh/devops>
 - <https://www.damyr.fr/glossaire/>
