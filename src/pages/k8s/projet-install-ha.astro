@@ -3,25 +3,27 @@ import Layout from '@layouts/CourseLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
 import { Content as Exo } from '@courses/k8s/projet-install-exo.md';
-import { Content as Requirements } from '@courses/k8s/install-requirements.md';
 import { Content as Procedure } from '@courses/k8s/install-procedure.md';
+import { Content as HA } from '@courses/k8s/install-ha.md';
+import { Content as Etcd } from '@courses/etcd/faq.md';
 import { Content as Debug } from '@courses/k8s/debug-cluster.md';
 
 const frontmatter = {
   license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
-  title: "🏆 Projet Installation d'un Cluster Kubernetes et déploiement d'une application",
+  title: "🏆 Projet Installation H/A d'un Cluster Kubernetes",
   tags: [
     "devops",
 		"docker",
-		"kubernetes"
+		"kubernetes",
+		"h/a"
   ],
 }
 
 ---
 <Layout frontmatter={frontmatter} >
 	<Chapter> <Exo /> </Chapter>
-	<Chapter> <Requirements /> </Chapter>
-	<Chapter> <Procedure /> </Chapter>
+	<Chapter> <HA /> </Chapter>
+	<Chapter> <Etcd /> </Chapter>
 	<Chapter> <Debug /> </Chapter>
 </Layout>
 

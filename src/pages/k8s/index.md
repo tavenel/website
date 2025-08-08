@@ -21,7 +21,8 @@ layout: '@layouts/BaseLayout.astro'
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/k8s/tp-elk) : le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.
 - [🏆 Projet Docker et Kubernetes : application de vote](/k8s/projet-vote) : le but de ce TP est d'isoler et de déployer une application dans une stack de conteneurs Kubernetes
   -  Sources git : <https://git.sr.ht/~toma/docker-vote>
-- [🏆 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/k8s/projet-install)
+- [🏆 Projet Installation simple d'un Cluster Kubernetes et déploiement d'une application](/k8s/projet-install)
+- [🏆 Projet Installation H/A d'un Cluster Kubernetes](/k8s/projet-install-ha)
 - [🏆 Projet Administration d'un Cluster Kubernetes](/k8s/tp-administration)
 
 ## λ OpenFaaS
