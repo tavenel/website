@@ -42,6 +42,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## Travailler en équipe
 
+- [📅 Méthodologie de travail en équipe](/projet/workflow)
 - [🤓 Partage d'informations et collaboration à distance (cours)](/projet/presentation-distance-outils-collab)
 - [🏆 Atelier pratique - Présentation en distanciel](/projet/atelier-presentation_distanciel)
 - [🤓 Manager une équipe multiculturelle (cours)](/projet/multiculturel)
