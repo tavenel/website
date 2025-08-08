@@ -295,6 +295,7 @@ created: 2024-10-17
   - `Suricata`
   - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>
 - `rkhunter` : détection de rootkits
+- <https://localcert.net/> : certificats gratuits en `.localcert.net` pour réseau privé
 
 ### 📈 Supervision / Monitoring / Observabilité
 
