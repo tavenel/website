@@ -978,7 +978,8 @@ L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` recquiert l'installat
 :::
 
 :::link
-Voir aussi la documentation officielle : <https://kubernetes.io/docs/concepts/storage/volume-snapshots/> et <https://kubernetes.io/docs/concepts/storage/volume-snapshot-classes/>
+- Voir aussi la documentation officielle : <https://kubernetes.io/docs/concepts/storage/volume-snapshots/> et <https://kubernetes.io/docs/concepts/storage/volume-snapshot-classes/>
+- Voir un tutoriel pour les snapshots de volumes persistants avec Rook : <https://une-tasse-de.cafe/expresso/snapshot-class/>
 :::
 
 ### Debug du storage
