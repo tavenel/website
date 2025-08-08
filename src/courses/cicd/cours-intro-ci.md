@@ -381,6 +381,20 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 
 ---
 
+## Promotion Pipelines
+
+- _Promotion Pipelines_ : Passage d'un environnement de test -> staging -> … -> prod
+- Configuration des **différents environnements** : utiliser des **fichiers / répertoires** dédiés (~pas de branches Git par environnement~)
+- Valeurs **par défaut** : **production** (évite d'envoyer des conf de dev en prod)
+
+:::link
+- <https://dev.to/codefreshio/how-to-model-your-gitops-environments-and-promote-releases-between-them-1p6i>
+- <https://developers.redhat.com/articles/2022/07/20/git-workflows-best-practices-gitops-deployments>
+- <https://codefresh.io/blog/stop-using-branches-deploying-different-gitops-environments/>
+:::
+
+---
+
 # Ressources
 
 - Le site de référence de [Martin Fowler sur l'intégration continue](https://martinfowler.com/delivery.html)
@@ -391,6 +405,7 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 - [Exemple de pipeline Jenkins YAML en Infrastructure-as-Code][gist-jenkins-pipeline-yaml]
 - [CD : Gestionnaires d'artéfacts - attaques supply chain](https://blog.wescale.fr/supply-chain-attack-proxies-gestionnaires-dartefacts-et-cartographie)
 - [CD : attaques supply chain - livrables de confiance](https://blog.wescale.fr/supply-chain-attack-des-livrables-de-confiance)
+- Le pipeline d'Actions Github du site Web du cours (www.avenel.pro) : <https://github.com/tavenel/website/actions>
 - 🚀 Pour aller plus loin : le [cours sur les pratiques DevOps](/devops).
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70

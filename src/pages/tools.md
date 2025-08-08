@@ -244,11 +244,26 @@ created: 2024-10-17
 #### Outils CI
 
 - `dagger` : coder son pipeline en `Go`, `Python`, `Typescript` (indépendant du serveur CI/CD)
-- `Trivy` : détection de vulnérabilités [lien de présentation](https://blog.stephane-robert.info/docs/securiser/outils/trivy/)
+- <https://github.com/woodruffw/zizmor> : analyse statique des actions GitHub.
+
+##### 🛡️ Sécurité
+
 - <https://r2devops.io/> : auditer le pipeline CI/CD
 - [Regula](https://blog.stephane-robert.info/post/infra-as-code-policy-check-regula/) : vérifications de sécurité dans code IaC (Terraform, yaml k8s, …)
 - `Lynis` : sécurité des configs Linux [tuto](https://blog.stephane-robert.info/docs/securiser/durcissement/lynis/)
-- <https://github.com/woodruffw/zizmor> : analyse statique des actions GitHub.
+- `dependabot` : mise à jour des dépendances (Github Actions)
+- `CodeQL` (GitHub) ou `Semgrep` : Analyse statique orientée sécurité.
+- `Hadolint` : Analyse des Dockerfiles pour bonnes pratiques et sécurité.
+- `gitleaks` recherche des vulnérabilités dans un dépôt Git (mots de passe en clair, …)
+- `Trivy` : détection de vulnérabilités [lien de présentation](https://blog.stephane-robert.info/docs/securiser/outils/trivy/) : Scan d’images Docker, dépendances, dépôts Git pour vulnérabilités (CVE).
+- `r2devops` / `regula` permettent d'auditer le code à la recherche de CVE
+- `Snyk` : Analyse de dépendances + suggestions de correction.
+- `Gitleaks` : Détection de secrets/API keys dans le code.
+- `OWASP ZAP` : Test d’intrusion automatisé des APIs/web apps.
+- `Dependency-Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
+- _Open Policy Agent_ (`OPA`) : Validation de règles (policies) dans le pipeline.
+- `Conftest` : Contrôle d'infra-as-code (Terraform, K8s YAML) contre des règles internes.
+- `Terraform Compliance` / `Checkov` : Analyse IaC pour conformité et sécurité.
 
 #### CD & Gitops
 

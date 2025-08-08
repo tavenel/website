@@ -235,11 +235,6 @@ Pour s'assurer de la qualité du code produit, on peut procéder à une analyse 
 
 ## 🧰 Les autres outils : quelques exemples
 
-- 📚 Documentation du code
-- 🔍 Revue de code
-- 🛠️ Serveurs d'intégration continue
-- 📈 Serveurs d'analyse de la qualité
-
 ---
 
 ### 📚 Documentation du code
@@ -263,6 +258,63 @@ Les serveurs d'intégration continue permettant le respect de pipelines d'intég
 ### 📈 Serveurs d'analyse de la qualité
 
 Les serveurs d'analyse continue de qualité (`SonarQube`, `Jenkins`, ...) permettant l'analyse et le suivi de la qualité globale d'un projet.
+
+---
+
+### 🔄 Mise à jour des dépendances
+
+Des outils comme `dependabot` (pour _Github Actions_) permettent de créer une pull request automatiquement avec la mise à jour des dépendances
+
+---
+
+### 🛡️ Détection de vulnérabilités
+
+- `gitleaks` recherche des vulnérabilités dans un dépôt Git (mots de passe en clair, …)
+- `Trivy` / `Grype` : Scan d’images Docker, dépendances, dépôts Git pour vulnérabilités (CVE).
+- `r2devops` / `regula` permettent d'auditer le code à la recherche de CVE
+- `Snyk` : Analyse de dépendances + suggestions de correction.
+- `Gitleaks` : Détection de secrets/API keys dans le code.
+- `OWASP ZAP` : Test d’intrusion automatisé des APIs/web apps.
+- `Dependency-Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
+
+---
+
+### 🧪 Tests et validation avancée
+
+- `Testcontainers` : Tests d’intégration avec environnements temporaires (BDD, services).
+- `k6` / `JMeter` : Tests de charge et de performance.
+- `Cypress` / `Playwright` : Tests end-to-end pour front et API.
+- Mutation Testing (`PIT`, `Stryker`) : Vérifie la robustesse des tests unitaires.
+
+---
+
+### 📜 Conformité et gouvernance
+
+- _Open Policy Agent_ (`OPA`) : Validation de règles (policies) dans le pipeline.
+- `Conftest` : Contrôle d'infra-as-code (Terraform, K8s YAML) contre des règles internes.
+- `Terraform Compliance` / `Checkov` : Analyse IaC pour conformité et sécurité.
+
+---
+
+### 🚀 Optimisation de l'artefact et déploiement
+
+- `Docker Slim` : Minification des images Docker.
+- `Kaniko` / `BuildKit` : Builds plus rapides et sécurisés.
+- `Helm` + `chart-testing` : Validation des chartes Helm avant déploiement.
+- `Argo CD` / `FluxCD` : Déploiement GitOps.
+
+---
+
+### 🔍 Autres linters / analyse statique
+
+- `CodeQL` (GitHub) ou `Semgrep` : Analyse statique orientée sécurité.
+- `Hadolint` : Analyse des Dockerfiles pour bonnes pratiques et sécurité.
+
+---
+
+:::link
+Voir aussi [la liste des outils CI/CD sur le site web](/tools#-cicd)
+:::
 
 ---
 
