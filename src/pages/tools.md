@@ -59,11 +59,12 @@ created: 2024-10-17
     - `grype` : scan de sécurité des images Docker
   - Analyse des images Docker :
     - `dive` : analyse poussée des layers
-		- [sou](https://github.com/knqyf263/sou) : analyse simple des layers
+    - [sou](https://github.com/knqyf263/sou) : analyse simple des layers
     - `Container Structure Test` : tests sur images Docker produites. [tuto](https://blog.stephane-robert.info/docs/conteneurs/outils/container-struct-test/)
   - images légères :
     - Alpine linux : <https://www.alpinelinux.org/>
     - Distroless : <https://blog.garambrogne.net/distroless.html>
+    - _Docker Slim_ : réduction drastique de la taille des images déjà buildées
 - 🚢 `podman` : idem Docker sans agent, supporte Docker et pods k8s
 - `cri-o` : container runtime k8s
 

@@ -493,6 +493,22 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
   - `docker buildx build` plutôt que `docker build`.
 
 ---
+
+
+## Offload
+
+Fonctionnalité payante qui permet de builder et d'exécuter des conteneurs dans le Cloud en les lançant depuis sa machine.
+
+---
+
+## Docker Hardened Images (DHI)
+
+- Images minimales, sécurisées et prêtes pour la production
+- Gérées par Docker.
+- Conçues pour réduire les vulnérabilités et simplifier la conformité
+
+---
+
 # 🏗️ Présentation de Docker Compose
 
 ---
@@ -615,6 +631,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
   - L'option `--no-cache` évite le cache de packets 📦
 - **Analysez** vos images, par exemple avec [dive](https://github.com/wagoodman/dive) 🔍
 - Docker utilise _UnionFS_ : ~retirer un fichier d'un layer précédent n'a **aucune influence** sur la taille de l'image~. 📦
+- Utiliser _Docker Slim_ pour réduire drastiquement la taille des images déjà buildées
 
 ---
 
