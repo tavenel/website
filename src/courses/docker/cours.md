@@ -475,6 +475,24 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
+## BuildKit et `buildx`
+
+- **BuildKit** : nouveau moteur moderne de build d'images Docker :
+  - Builds parallèles plus rapides.
+  - Cache plus efficace et exportable.
+  - Support des secrets (`--mount=type=secret`).
+  - Meilleure gestion des multi-étapes.
+  - Moins d'espace disque gaspillé.
+  - Utilise et remplace `docker build` (mais limité sans `buildx`).
+- **buildx** : plugin Docker CLI pour BuildKit avancé :
+  - Création de **builders personnalisés**
+  - Build **multi-architecture**
+  - Export d'images vers plusieurs formats : Docker registry, tarball, …
+  - Partage et persistance du cache.
+  - Accès à toutes les fonctionnalités avancées de BuildKit.
+  - `docker buildx build` plutôt que `docker build`.
+
+---
 # 🏗️ Présentation de Docker Compose
 
 ---
