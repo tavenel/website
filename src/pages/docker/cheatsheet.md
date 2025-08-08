@@ -598,6 +598,67 @@ docker buildx build \
   --build-context repo2=git://github.com/user/repo2.git .
 ```
 
+## IA
+
+### Model runner
+
+Permet d'exécuter facilement un modèle d'IA.
+
+```sh
+docker model run …
+```
+
+:::link
+Voir :
+
+- la documentation : <https://docs.docker.com/ai/model-runner/>
+- le catalogue : <https://hub.docker.com/catalogs/models>
+:::
+
+### Model-Connected-Pipeline (MCP)
+
+Permet de gérer l'intégration avec des MCPs.
+
+```sh
+docker mcp …
+```
+
+Démarrer la passerelle (point d'accès unique pour le client) :
+
+```sh
+docker mcp gateway run
+```
+
+:::link
+Voir :
+
+- la documentation : <https://docs.docker.com/ai/mcp-catalog-and-toolkit/>
+- le catalogue : <https://hub.docker.com/mcp>
+:::
+
+## Offload
+
+Permet de builder et d'exécuter les conteneurs dans le Cloud.
+
+:::link
+Voir la documentation : <https://docs.docker.com/offload/>
+:::
+
+### Création d'un environnement Cloud
+
+```sh
+docker offload start
+```
+
+### Exécution d'un conteneur
+
+```sh
+docker run --rm hello-world
+
+# Si besoin de GPU :
+docker run --rm --gpus all hello-world
+```
+
 ---
 
 # Cheatsheet docker compose
@@ -641,6 +702,14 @@ docker compose watch
 - `depends_on ` permet de dire que le conteneur dépend d'un autre conteneur
 - `ports` : permet de définir les ports disponibles entre la machine host et le conteneur
 - `provider` : utilise un _Provider_ et non une image Docker pour ce service. Voir : <https://docs.docker.com/compose/how-tos/provider-services/>
+
+## Models
+
+Champ `models:` : permet de lancer des modèles d'IA depuis Docker Compose (très similaire aux `services:`).
+
+:::link
+Voir la documentation : <https://docs.docker.com/ai/compose/models-and-compose/>
+:::
 
 ## Convertir un Docker Compose en manifest Kubernetes
 
