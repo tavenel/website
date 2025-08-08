@@ -12,15 +12,11 @@ Les installations de clusters Kubernetes sont assez hétérogènes en fonction d
 
 On effectue donc en principe l'odre de déploiement suivant :
 
-- Création d'un 1er noeud _control plane_ (aussi appelé _master_) :
+- Création d'un noeud _control plane_ (aussi appelé _master_) :
   - déploiement `etcd` (ou BDD).
   - déploiement `api-server` utilisant l'`etcd`.
 	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
 	- déploiement `control-manager` et `scheduler` et enregistrement auprès de l'`api-server`
-- Création des autres _control plane_ :
-  - déploiement des composants (similaire au 1er noeud) mais enregistrement des composants HA auprès du 1er _control plane_, notamment `api-server` et `etcd`.
-  - choisir une solution de load balancing adaptée : `kube-vip`, `MetalLB`, …
-  - mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
 - Création des workers :
 	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
 
@@ -80,24 +76,6 @@ Forcer un CIDR pour le réseau des pods peut être obligatoire pour certains CNI
 kubeadm init … –pod-network-cidr=100.0.0/16
 ```
 :::
-
-## Avec H/A
-
-```sh
-# prérequis : Bastion =>
-# - Soit : Installation d'un HAProxy entre les OS des Control Plane
-# - Soit : Déploiement d'un kube-vip en utilisant un manifest de Pod statique pendant l'init
-# - Soit : Déférer le H/A après l'installation du 1er control plane (k3s)
-
-# Init du 1e master
-kubeadm init --control-plane-endpoint "<IP_bastion>:6443" --pod-network-cidr=100.0.0.0/16 --upload-certs
-# Join des autres control-plane
-kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>" --control-plane --certificate-key "<HASH_CERT>"
-# Join des workers
-kubeadm join "<IP_bastion>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>"
-# calico, …
-```
-
 
 ## Pods statiques
 

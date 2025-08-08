@@ -17,12 +17,16 @@ layout: '@layouts/CoursePartLayout.astro'
 
 Le but de cette partie est d'installer un cluster Kubernetes. Le cluster devra être composé d'au moins 2 noeuds : 2 worker, le `ControlPlane` peut éventuellement être installé sur le même noeud qu'un `Worker` pour limiter les ressources nécessaires.
 
-Note 1 : il n'est pas demandé de gérer précisément la sécurité du cluster, ni la supervision et le logging, ces parties seront abordées durant le second module Kubernetes.
+:::tip
+Il n'est pas demandé de gérer précisément la sécurité du cluster, ni la supervision et le logging, ces parties seront abordées plus tard.
+:::
 
-Note 2 : On demande à installer une "vraie" distribution Kubernetes pouvant être déployée en production : `k8s` via `kubeadm`, `rke`, `k3s`, … On évitera donc les versions orientées développeur à déployer uniquement sur sa machine personnelle : ~`Docker Desktop`, `Minikube`, …~
+:::tip
+On demande à installer une "vraie" distribution Kubernetes pouvant être déployée en production : `k8s` via `kubeadm`, `rke`, `k3s`, … On évitera donc les versions orientées développeur à déployer uniquement sur sa machine personnelle : ~`Docker Desktop`, `Minikube`, …~
+:::
 
 :::exo
-Réaliser l'installation du cluster Kubernetes en H/A :
+Réaliser l'installation du cluster Kubernetes :
 
 1. **Choix de l'environnement**
    - Déploiement sur des machines virtuelles (VirtualBox, VMware).
@@ -35,13 +39,12 @@ Réaliser l'installation du cluster Kubernetes en H/A :
    - Initialisation du cluster avec `kubeadm` ou autre
    - Ajout de noeuds workers
    - Configuration du réseau avec un CNI (`Flannel`, `Calico`, …)
-4. On **testera** la partie H/A du `control-plane` :
+4. **Cluster H/A uniquement** : on testera la partie **H/A du `control-plane`** :
    - Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
-   - Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
 :::
 
 :::warn
-Attention, on demande bien d'installer un cluster **production-ready** ! Celui-ci devra donc être en haute disponibilité (Load balancer devant l'API Server, …) et on réfléchira aux procédures d'administration, de sauvegarde, …
+Attention, on demande bien d'installer un cluster **production-ready** !
 :::
 
 :::link
@@ -66,9 +69,9 @@ Le but de cette partie est de déployer dans le cluster un projet personnel exis
    - Rolling updates et rollback
 
 :::exo
-On testera la partie H/A du `control-plane` et du déploiement applicatif :
+On testera la résilience du déploiement applicatif (et du `control-plane` **pour un cluster H/A uniquement**) :
 
-1. Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
+1. Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement (**si cluster H/A**).
 2. Tester la suppression d'un conteneur / Pod
 3. Tester la déconnexion d'un _worker node_
 4. Vérifier la réconciliation des ressources
