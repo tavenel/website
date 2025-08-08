@@ -15,6 +15,12 @@ layout: '@layouts/BaseLayout.astro'
 - Optimiser et sécuriser les configurations Terraform.
 - S'interfacer avec des outils d'orchestration ou CI/CD.
 
+### Pré-requis
+
+- Compte Azure Cloud
+- Connaissance des environnements Cloud. Rappels : [Introduction au Cloud](/cours/cloud-web.pptx)
+- Notions de programmation
+
 ### 📅 Déroulé des séances
 
 Module de 15H
