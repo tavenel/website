@@ -500,6 +500,104 @@ node_modules
 build
 ```
 
+## Buildx et BuildKit
+
+Nouveau moteur moderne de build d'images Docker (remplace `docker build`).
+
+### Activer BuildKit
+
+```sh
+DOCKER_BUILDKIT=1 docker build .
+```
+
+### Créer un nouveau builder
+
+```sh
+docker buildx create --name mybuilder --use
+docker buildx inspect --bootstrap
+```
+
+### Lister les builders existants
+
+```sh
+docker buildx ls
+```
+
+### Construction et push multi-arch avec cache
+
+```sh
+docker buildx build \
+  --cache-to=type=local,dest=.buildxcache \
+  --cache-from=type=local,src=.buildxcache \
+  --platform linux/amd64,linux/arm64 \
+  -t moncompteDocker/nginx-custom:latest \
+  --push .
+```
+
+:::tip
+- `--push` : envoie directement l'image vers le registre
+- Peut être remplacé par `--load` pour un test local (pour 1 architecture uniquement).
+:::
+
+### Vérifier l'image sur Docker Hub
+
+```sh
+docker buildx imagetools inspect moncompteDocker/nginx-custom:latest
+```
+
+### Montage de secrets
+
+Permet de passer des secrets au moment du build sans les stocker dans l'image (invisible dans `docker history`).
+
+
+```dockerfile
+# Dockerfile
+
+FROM alpine
+RUN --mount=type=secret,id=mytoken \
+    curl -H "Authorization: Bearer $(cat /run/secrets/mytoken)" https://api.example.com/data
+```
+
+```sh
+docker buildx build --secret id=mytoken,src=token.txt .
+```
+
+### Montage temporaire
+
+`--mount=type=tmpfs` ou `--mount=type=bind` : Crée un filesystem temporaire ou accède à un fichier externe (les fichiers ne restent pas dans l'image).
+
+```dockerfile
+# Dockerfile
+
+RUN --mount=type=tmpfs,target=/tmp \
+    make
+```
+
+### Montage de cache
+
+```dockerfile
+# Dockerfile
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install -r requirements.txt
+```
+
+### Contextes multiples
+
+```dockerfile
+# Dockerfile
+
+FROM alpine
+COPY --from=repo1 /src /app/src
+COPY --from=repo2 /lib /app/lib
+```
+
+```sh
+docker buildx build \
+  --build-context repo1=git://github.com/user/repo1.git \
+  --build-context repo2=git://github.com/user/repo2.git .
+```
+
 ---
 
 # Cheatsheet docker compose
