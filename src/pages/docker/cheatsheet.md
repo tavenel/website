@@ -386,6 +386,14 @@ Rappel des principales capabilities d'un noyau Linux :
 - `SYS_MODULE` : Permet de charger et d'exécuter du code au niveau module du noyau Linux.
 - `SYSLOG` : Logging
 
+:::tip
+Pour afficher les capabilities courantes, utiliser :
+
+```sh
+capsh --print
+```
+:::
+
 ### CIS Benchmarks
 
 **Docker Bench for Security** permet de vérifier la conformité aux benchmarks _Center for Internet Security_ (CIS) :
