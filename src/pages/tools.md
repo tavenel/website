@@ -61,6 +61,7 @@ created: 2024-10-17
     - `dive` : analyse poussée des layers
     - [sou](https://github.com/knqyf263/sou) : analyse simple des layers
     - `Container Structure Test` : tests sur images Docker produites. [tuto](https://blog.stephane-robert.info/docs/conteneurs/outils/container-struct-test/)
+    - `dfimage` : recrée (approximativement) un Dockerfile depuis une image Docker : <https://github.com/LanikSJ/dfimage>
   - images légères :
     - Alpine linux : <https://www.alpinelinux.org/>
     - Distroless : <https://blog.garambrogne.net/distroless.html>
