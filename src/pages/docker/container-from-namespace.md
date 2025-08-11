@@ -3,6 +3,59 @@ title: Créer un conteneur en utilisant les namespace Linux
 date: 05/06/2025
 ---
 
+## Schéma réseau des namespace
+
+```mermaid
+flowchart LR
+  %% Outer server container (approximated)
+  subgraph Linux_Server["Linux server"]
+    direction TB
+
+    %% Left network namespace
+    subgraph netns0["netns0<br/>172.18.0.10/16"]
+      direction TB
+      ns0_lo[/"lo0"/]
+      ns0_ceth0[["ceth0"]]
+    end
+
+    %% Right network namespace
+    subgraph netns1["netns1<br/>172.18.0.20/16"]
+      direction TB
+      ns1_lo[/"lo0"/]
+      ns1_ceth1[["ceth1"]]
+    end
+
+    %% veths outside namespaces
+    veth0[["veth0<br/>172.18.0.11/16"]]
+    veth1[["veth1<br/>172.18.0.21/16"]]
+
+    %% local interfaces on host
+    host_lo[/"lo0"/]
+    host_eth0[["eth0"]]
+    host_br0[["br0<br/>172.18.0.1<br/>route 172.18.0.0/16 via br0"]]
+
+  end
+
+  %% Connections: veth pair arrows to ceth inside namespaces
+  veth0 -->ns0_ceth0
+  ns0_ceth0 -->|Dans le namespace| ns0_lo
+
+  veth1 -->ns1_ceth1
+  ns1_ceth1 -->|Dans le namespace| ns1_lo
+
+  %% host local interfaces placement
+  host_lo --- host_eth0 --- host_br0
+
+  %% show routes linking to veths
+  host_br0 --- veth0
+  host_br0 --- veth1
+
+  %% Styling
+  class ns0_lo,ns1_lo green;
+  class ns0_ceth0,ns1_ceth1 green;
+  class veth0,veth1,host_lo,host_eth0,host_br0 blue;
+```
+
 ## Resource Isolation components in Docker
 
 ### Namespaces
@@ -138,5 +191,52 @@ echo "Pour se connecter au conteneur c1 : "
 echo "nsenter -a --root=c1 --wd=c1 -t $C1_PID"
 echo "Pour se connecter au conteneur c2 : "
 echo "nsenter -a --root=c2 --wd=c2 -t $C2_PID"
+```
+
+:::tip
+Pour ajouter une réelle connectivité avec l'extérieure, on ajouterait un _sNAT_ (_source NAT_) depuis `iptables`, i.e. remplacer l'adresse source (inconnue publiquement) du conteneur vers l'adresse publique de la machine pour pouvoir obtenir une réponse.
+:::
+
+:::tip
+Pour effectuer une _publication_ de port, on utiliserait le _DNAT_ (_Destination NAT_). D'autres solutions existent : eBPF, … (Kernel-space), `socat`, `nc`, … (user-space).
+:::
+
+## Accéder au namespace réseau d'un conteneur
+
+Démarrage d'un conteneur Nginx. Rappel : chaque conteneur a son propre namespace.
+
+```sh
+docker run --rm nginx
+```
+
+Connexion au namespace réseau du conteneur. Dans ce namespace, le conteneur a 2 interfaces : `localhost` et une IP publique connectée au _bridge_ (visible depuis `docker inspect`).
+
+```console
+$ sudo lsns
+[…]
+4026532622 mnt         5 23128 root nginx: master process nginx -g daemon off;
+4026532623 uts         5 23128 root nginx: master process nginx -g daemon off;
+4026532624 ipc         5 23128 root nginx: master process nginx -g daemon off;
+4026532625 pid         5 23128 root nginx: master process nginx -g daemon off;
+4026532626 cgroup      5 23128 root nginx: master process nginx -g daemon off;
+4026532627 net         5 23128 root nginx: master process nginx -g daemon off;
+
+$ sudo nsenter --target 23128 --net
+
+$ ip address
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo
+       valid_lft forever preferred_lft forever
+2: eth0@if6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether ee:c6:22:d5:35:53 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+
+$ curl localhost:80
+[…]
+<h1>Welcome to nginx!</h1>
 ```
 
