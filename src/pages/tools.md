@@ -130,15 +130,19 @@ created: 2024-10-17
   - [Keda](https://keda.sh/) : Event-driven autoscaling
   - `Goldilocks` : génération de recommendations de _requests_ et _limits_
 - 🔒 sécurité
-  - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : vérification de cluster k8s
-  - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
 	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
-  - `polaris` : détection de problèmes de sécurité dans un cluster
   - <https://chaos-mesh.org/> : chaos computing dans un cluster
   - <https://github.com/kubernetes-sigs/security-profiles-operator> : Opérateur SELinux, Apparmor, Seccomp
-  - `Falco`
+  - Analyse de clusters :
+    - `polaris` : détection de problèmes de sécurité dans un cluster
+    - Benchmark CIS : <https://github.com/aquasecurity/kube-bench>
+    - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : recherche de problèmes de sécurité dans un cluster k8s
+    - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
+  - IDS :
+    - <https://tetragon.io/> : eBPF-based Security Observability and Runtime Enforcement
+    - `Falco` : voir section Cybersécurité
 - 🧐 supervision
   - `k9s` : [tuto](https://blog.stephane-robert.info/docs/outils/indispensables/#k9s)
   - `kubevious` : [tuto](https://blog.stephane-robert.info/post/kubernetes-tableau-bord-kubevious/)
@@ -279,7 +283,7 @@ created: 2024-10-17
   - images Docker avec packages générées à la volée : <https://nixery.dev/>
 - tracking dépendances : `Dependency Track` [tuto](https://blog.stephane-robert.info/docs/securiser/analyser-code/dependency-track/)
 
-### 🔐 Administration sécurisée
+### 🔐 Administration sécurisée, Cybersécurité
 
 - `ssh`, `assh` (sur-couche SSH)
   - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
@@ -294,7 +298,7 @@ created: 2024-10-17
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) :
   - `Suricata`
-  - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>
+  - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>, <https://falco.org/>
 - `rkhunter` : détection de rootkits
 - <https://localcert.net/> : certificats gratuits en `.localcert.net` pour réseau privé
 
