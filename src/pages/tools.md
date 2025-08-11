@@ -283,25 +283,6 @@ created: 2024-10-17
   - images Docker avec packages générées à la volée : <https://nixery.dev/>
 - tracking dépendances : `Dependency Track` [tuto](https://blog.stephane-robert.info/docs/securiser/analyser-code/dependency-track/)
 
-### 🔐 Administration sécurisée, Cybersécurité
-
-- `ssh`, `assh` (sur-couche SSH)
-  - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
-- `x-pipe`
-- multiplexeurs :
-  - `tmux` => la référence, très configurable.
-    - [MyNav](https://github.com/GianlucaP106/mynav) : gestionnaire de sessions tmux
-    - <https://tmate.io/> : fork de tmux permettant le partage de session.
-  - `zellij` => moderne, très simple
-  - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
-  - `screen` => moins utilisé aujourd'hui, support natif de sessions.
-- `wazuh` (intégration Docker)
-- IDS (Intrusion Detection System) :
-  - `Suricata`
-  - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>, <https://falco.org/>
-- `rkhunter` : détection de rootkits
-- <https://localcert.net/> : certificats gratuits en `.localcert.net` pour réseau privé
-
 ### 📈 Supervision / Monitoring / Observabilité
 
 - monitoring :
@@ -486,6 +467,33 @@ created: 2024-10-17
 - `projectlibre` : FOSS, gère Gantt, compatible `MS Project`
 - `JIRA` : free forever < 10 / team
 - Github Pull-request in terminal : <https://github.com/dlvhdr/gh-dash>
+
+## Cybersécurité
+
+### Outils généraux
+
+- Outil brute-foce pour Répertoire/fichier, DNS & virtual host : <https://github.com/OJ/gobuster>
+- Collection de listes de mots, données, … à utiliser en analyses : <https://github.com/danielmiessler/SecLists>
+- Vérification de leak de crédentials (Git, CI, Docker, …) : <https://github.com/trufflesecurity/trufflehog>
+
+### 🔐 Administration sécurisée
+
+- `ssh`, `assh` (sur-couche SSH)
+  - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
+- `x-pipe`
+- multiplexeurs :
+  - `tmux` => la référence, très configurable.
+    - [MyNav](https://github.com/GianlucaP106/mynav) : gestionnaire de sessions tmux
+    - <https://tmate.io/> : fork de tmux permettant le partage de session.
+  - `zellij` => moderne, très simple
+  - `wezterm` => terminal tout-en-un (multiplexeur, SSH, …)
+  - `screen` => moins utilisé aujourd'hui, support natif de sessions.
+- `wazuh` (intégration Docker)
+- IDS (Intrusion Detection System) :
+  - `Suricata`
+  - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>, <https://falco.org/>
+- `rkhunter` : détection de rootkits
+- <https://localcert.net/> : certificats gratuits en `.localcert.net` pour réseau privé
 
 ## 💻 Outils Poste de travail
 
