@@ -97,17 +97,22 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 
 ## Ressources
 
+### Exercices, Gamification, Challenges
+
+- [Une VM Linux dans le navigateur](https://webvm.io/)
+- Un jeu de piste Linux utilisant le terminal : <https://github.com/phyver/GameShell>
+- Un jeu de piste à réaliser sur sa machine virtuelle en utilisant les commandes Linux: <https://github.com/veltman/clmystery>
+- Un "wargame" (orienté cyber-sécurité) en ligne permettant d'apprendre Linux par le jeu : <https://overthewire.org/wargames/bandit/>
+- VMs d'entraînement avec des problèmes à résoudre: <https://sadservers.com/>
+- Formations et challenges : <https://labs.iximiuz.com/>
+
+### Liens
+
 - [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
 - Aide simple sur les commandes : <https://cheat.sh/>
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - <https://roadmap.sh/linux>
-- [Une VM Linux dans le navigateur](https://webvm.io/)
 - [Une formation gratuite de la Linux Foundation (LFS101)](https://training.linuxfoundation.org/training/introduction-to-linux/)
-- [Un "wargame" (orienté cyber-sécurité) en ligne permettant d'apprendre Linux par le jeu](https://overthewire.org/wargames/bandit/)
-- [Un jeu de piste à réaliser sur sa machine virtuelle en utilisant les commandes Linux](https://github.com/veltman/clmystery)
-- [Un autre jeu de piste](https://github.com/phyver/GameShell)
-- [VMs d'entraînement avec des problèmes à résoudre](https://sadservers.com/)
-- Formations et challenges : <https://labs.iximiuz.com/>
 - [Vidéo : 100+ Linux things in 10 mins](https://youtube.com/watch?v=LKCVKw9CzFo)
 - [Structure du système de fichiers](https://www.zdnet.fr/pratique/linux-la-structure-du-systeme-de-fichiers-expliquee-397880.htm)
 - [Commandes Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/) et [Commandes avancées](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes-avancees/)
@@ -123,7 +128,7 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 
 ### Liens VIM
 
-- <https://vim-adventures.com>
+- Un jeu graphique en ligne pour découvrir VIM (3 premiers niveaux gratuits) : <https://vim-adventures.com>
 - <https://thevaluable.dev/vim-commands-beginner/>
 - <https://thevaluable.dev/vim-intermediate/>
 - <https://thevaluable.dev/vim-advanced/>

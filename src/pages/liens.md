@@ -133,24 +133,20 @@ checked: 2025-01-27
 
 ## Gamification
 
-### Linux
+### Linux, Vim, Docker, Kubernetes, Git
 
-- Un jeu de piste utilisant le terminal : <https://github.com/phyver/GameShell>
-- Un autre jeu de piste utilisant les commandes Linux : <https://github.com/veltman/clmystery>
-- VMs d'entraînement avec des problèmes à résoudre : <https://sadservers.com/>
+:::link
+Voir les pages de cours :
 
-### VIM
-
-- Un jeu graphique en ligne pour découvrir VIM (3 premiers niveaux gratuits) : <https://vim-adventures.com>
-
-### Git
-
-- Apprendre Git par des tutos en ligne : <https://learngitbranching.js.org/?locale=fr_FR>
+- [Page Linux et Vim](/linux)
+- [Liens Gamification Docker](/docker/cours#exercices-challenges)
+- [Liens Kubernetes](/k8s/cours#-liens)
+- [Liens Git](/git/cours#ressources)
+:::
 
 ### Cybersécurité
 
 - Wargames orientés Linux et déploiement Web (démarrer par _bandit_) : <https://overthewire.org/wargames/bandit/>
-- <https://madhuakula.com/kubernetes-goat/> : Kubernetes Goat - Interactive Kubernetes Security Learning Playground
 - CTF populaires :
   - <https://www.hackthebox.com/> : plateforme de gamification permettant d'apprendre la cybersécurité en résolvant des défis.
   - <https://tryhackme.com/> : plateforme d'apprentissage gamifiée avec des laboratoires pratiques et des scénarios réels. Cette plateforme est très accessible
