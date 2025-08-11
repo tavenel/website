@@ -678,64 +678,98 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 # Ressources
 
-- [Documentation / Tutoriels officiels Docker][doc-docker]
-- [Documentation officielle sur le sécurité][doc-docker-secu]
-- [Comparaison de technologies de virtualisation niveau 2 (OS)][wiki-virt]
-- [Architecture Docker][doc-archi]
-- [Awesome Docker - écosystème Docker](https://github.com/veggiemonk/awesome-docker)
-- [Awesome Docker : development environment](https://github.com/veggiemonk/awesome-docker#development-environment)
-- [Awesome Docker Compose : templates pour des stacks classiques](https://github.com/docker/awesome-compose/)
-- <https://blog.stephane-robert.info/docs/conteneurs/introduction/>
-- <https://github.com/groda/big_data/blob/master/docker_for_beginners.md>
-- [Jérôme Petazzoni : Docker Intensif](https://2021-05-enix.container.training/1.yml.html#1)
-- <https://github.com/eficode-academy/docker-katas> Exercices Docker
-- <https://docker-curriculum.com/> Autres exercices Docker
-- [Comprendre le réseau Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-network/)
-
 ---
 
+## Cours, Documentations, Formations
+
+- [Documentation / Tutoriels officiels Docker](https://docs.docker.com/)
+- [Comparaison de technologies de virtualisation niveau 2 (OS)](https://en.wikipedia.org/wiki/OS-level_virtualization)
+- [Architecture Docker](https://delftswa.github.io/chapters/docker/)
+- <https://github.com/groda/big_data/blob/master/docker_for_beginners.md>
 - [Vidéo Docker for novices (Alec Clews, youtube)](https://www.youtube.com/watch?v=xsjSadjKXns)
 - [Vidéo : Docker simplified in 55s (youtube)](https://www.youtube.com/watch?v=vP_4DlOH1G4)
-- [Fonctionnement du réseau sous Docker][doc-reseau]
-- [Gestion de l'état dans les conteneurs][doc-stateful]
-- <https://blog.garambrogne.net/persister-les-conteneurs.html>
-- [Bac à sable Docker en ligne][play-docker]
+- [Vidéo : 0 downtime avec Docker stack et Docker Swarm](https://www.youtube.com/watch?v=fuZoxuBiL9o)
 - [Formation complète Docker (stephane-robert.info)](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker/)
+- [Jérôme Petazzoni : Docker Intensif](https://2021-05-enix.container.training/1.yml.html#1)
 - [Vidéo : 100+ Docker concepts you should know (8')](https://www.youtube.com/watch?v=rIrNIzy6U_g)
 - [Livre : Bootstrapping Microservices with Docker, Kubernetes, and Terraform](https://www.manning.com/books/bootstrapping-microservices-with-docker-kubernetes-and-terraform)
 - Livre : <https://docker-handbook.farhan.dev/>
 
 ---
 
-- [Pourquoi utiliser l'option `-t` pour un conteneur interactif](https://www.baeldung.com/linux/docker-run-interactive-tty-options)
-- [Astuce _Docker in Docker_ : `-v var/run/docker.sock:/var/run/docker.sock`](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
-- [Build multi-plateformes](https://blog.microlinux.fr/docker-cmatrix-alpine-03/)
-- [Analyses de sécurité](https://github.com/docker/docker-bench-security)
-- <https://docker-saigon.github.io/post/Docker-Caveats/>
+## Exercices, Challenges
+
+- [Bac à sable Docker en ligne](https://labs.play-with-docker.com/)
+- <https://github.com/eficode-academy/docker-katas> Exercices Docker
+- <https://docker-curriculum.com/> Autres exercices Docker
+- Formations et challenges : <https://labs.iximiuz.com/>
+- Exemples de projets : voir la [page des liens](/liens#docker)
 
 ---
+
+## Réseau
+
+- [Comprendre le réseau Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-network/)
+- [Fonctionnement du réseau sous Docker](https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker)
+
+---
+
+## Stockage
+
+- [Gestion de l'état dans les conteneurs](https://container.training/swarm-selfpaced.yml.html#450)
+- <https://blog.garambrogne.net/persister-les-conteneurs.html>
+
+---
+
+## Outils et écosystème
+
+- [Awesome Docker - écosystème Docker](https://github.com/veggiemonk/awesome-docker)
+- [Awesome Docker : development environment](https://github.com/veggiemonk/awesome-docker#development-environment)
+- [Awesome Docker Compose : templates pour des stacks classiques](https://github.com/docker/awesome-compose/)
+
+---
+
+## Environnements de développement
 
 - <https://coder.com/> : environnements de dev dockerisés
 - [Dev Containers in VS Code](https://www.youtube.com/watch?v=LH5qMhpko8k)
 - <https://github.com/RamiKrispin/vscode-python> : Python dev containers (VScode)
 - <https://containertoolbx.org/> : environnements de dev utilisant Podman
-- [Vidéo : 0 downtime avec Docker stack et Docker Swarm](https://www.youtube.com/watch?v=fuZoxuBiL9o)
 
 ---
 
-- [A Decade of Docker](https://opensourcewatch.beehiiv.com/p/decade-docker)
-- [Solomon Hykes : Why we built Docker (youtube)](https://youtu.be/3N3n9FzebAA)
-- Podman : autre technologie de conteneurs compatible Docker / docker compose / k8s : <https://podman.io/>
-- [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
-- [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
-- [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
-- Exemples de projets : voir la [page des liens](/liens#docker)
+## Bonnes pratiques et astuces
+
+- [Best pratices dev (doc officielle)](https://docs.docker.com/develop/dev-best-practices/)
+- [Bonnes pratiques sur le serveur Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-bonnes-pratiques/)
+- [Docker Caveats : What You Should Know About Running Docker In Production]<https://docker-saigon.github.io/post/Docker-Caveats/>
+- [Pourquoi utiliser l'option `-t` pour un conteneur interactif](https://www.baeldung.com/linux/docker-run-interactive-tty-options)
+- [Astuce _Docker in Docker_ : `-v var/run/docker.sock:/var/run/docker.sock`](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
+- [Build multi-plateformes](https://blog.microlinux.fr/docker-cmatrix-alpine-03/)
+- [Documentation sur les logs](https://docs.docker.com/engine/logging/configure/)
+
+---
+
+## Construction d'images
+
+- [Best practives Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Best practives Dockerfile (2)](https://github.com/hexops-graveyard/dockerfile)
+- [Optimiser la taille des images](https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/optimiser-taille-image/)
+- [Optimiser les images avec le cache des layers](https://bearstech.com/societe/blog/securiser-et-optimiser-le-build-des-images-docker-pour-vos-applications/)
+
+---
+
+## Sécurité
+
+- [Documentation officielle sur le sécurité](https://docs.docker.com/engine/security/)
+- [Démo faille sécu volume Docker (et résolution)](https://lafor.ge/docker-volume-security/)
+- [Analyses de sécurité](https://github.com/docker/docker-bench-security)
 
 ---
 
 ## Détails techniques d'implémentation
 
-- [Documentation sur les Namespace et les Cgroups][doc-namespace-cgroups]
+- [Documentation sur les Namespace et les Cgroups](https://medium.com/@kasunmaduraeng/docker-namespace-and-cgroups-dece27c209c7)
 - [Au final… qu'est-ce qu'un conteneur ? (blog une-tasse-de.cafe)](https://une-tasse-de.cafe/blog/conteneur/)
 - [Building a Linux container by hand using namespaces](https://www.redhat.com/en/blog/building-container-namespaces)
 - [Building a container by hand using namespaces: The mount namespace](https://www.redhat.com/en/blog/mount-namespaces)
@@ -750,29 +784,16 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
-## Bonnes pratiques
+## Autres
 
-- [Best pratices dev (doc officielle)](https://docs.docker.com/develop/dev-best-practices/)
-- [Best practives Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-- [Best practives Dockerfile (2)](https://github.com/hexops-graveyard/dockerfile)
-- [Optimiser la taille des images](https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/optimiser-taille-image/)
-- [Optimiser les images avec le cache des layers](https://bearstech.com/societe/blog/securiser-et-optimiser-le-build-des-images-docker-pour-vos-applications/)
-- [Démo faille sécu volume Docker (et résolution)](https://lafor.ge/docker-volume-security/)
-- [Documentation sur les logs][doc-logs]
-- [Bonnes pratiques sur le serveur Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-bonnes-pratiques/)
+- [A Decade of Docker (histoire de Docker)](https://opensourcewatch.beehiiv.com/p/decade-docker)
+- [Solomon Hykes : Why we built Docker (youtube)](https://youtu.be/3N3n9FzebAA)
+- Podman : autre technologie de conteneurs compatible Docker / docker compose / k8s : <https://podman.io/>
+- [LXC / LXD : autres technologies de conteneurs sous Linux](https://lwn.net/Articles/907613/)
+- [Containerd : moteur de conteneurs à la base de Docker / Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/)
+- [Nerdctl : un concurrent de Docker utilisant Containerd](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/containerd/nerdctl-base/)
 
 ---
-
-[img-archi]: https://cdn-images-1.medium.com/fit/c/650/599/1*Zusvp8MI28yU27SVSG0wcA.png
-[doc-docker]: https://docs.docker.com/
-[doc-docker-secu]: https://docs.docker.com/engine/security/
-[wiki-virt]: https://en.wikipedia.org/wiki/OS-level_virtualization
-[doc-archi]: https://delftswa.github.io/chapters/docker/
-[doc-namespace-cgroups]: https://medium.com/@kasunmaduraeng/docker-namespace-and-cgroups-dece27c209c7
-[doc-reseau]: https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker
-[doc-stateful]: https://container.training/swarm-selfpaced.yml.html#450
-[play-docker]: https://labs.play-with-docker.com/
-[doc-logs]: https://docs.docker.com/engine/logging/configure/
 
 # Legal
 
