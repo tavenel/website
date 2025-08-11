@@ -101,6 +101,10 @@ tags:
 - Un _Pod_ est associé à un _ServiceAccount_ (par défaut : `default`, sans droits) 🔄
 - Le token associé est dans le Pod : `/var/run/secrets/kubernetes.io/serviceaccount/token` 🔑
 
+:::tip
+Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un conteneur : <https://kubernetes.io/docs/tasks/run-application/access-api-from-pod/>
+:::
+
 ---
 
 ## 🛡️ Sécurisation du _Control Plane_
