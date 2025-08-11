@@ -174,6 +174,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 
 ### Sécurité
 
+- Kubernetes Goat - Interactive Kubernetes Security Learning Playground : challenges de sécurité : <https://madhuakula.com/kubernetes-goat/>
 - <https://spacelift.io/blog/kubernetes-secrets> 🔐
 - [Slides sur cert-manager](https://2021-05-enix.container.training/3.yml.html#205) 🔐
 - [Connexion à l'API Kubernetes par OpenID (Jérôme Petazzoni)](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openid-connect.md) : Google account, … 🔐

@@ -270,7 +270,7 @@ sequenceDiagram
 ### Cours
 
 - Livre officiel et gratuit : <https://git-scm.com/book/>
-- [Exercices interactifs en ligne][learn-git-branch]
+- Apprendre Git par des tutos en ligne : <https://learngitbranching.js.org/?locale=fr_FR>
 - [Documentation et pages de manuel officiels][git-scm]
 - [Git Cheatsheet de GitHub Education][github-cheatsheet]
 - [Git Cheatsheet interactive de NDP Software][ndp-cheatsheet]
@@ -332,7 +332,6 @@ sequenceDiagram
 - <https://alchemists.io/articles/git_configuration>
 - [A Git story: Not so fun this time (les origines de Git)](https://blog.brachiosoft.com/en/posts/git/)
 
-[learn-git-branch]: https://learngitbranching.js.org/?locale=fr_FR
 [git-scm]: https://git-scm.com/doc
 [github-cheatsheet]: https://training.github.com/downloads/fr/github-git-cheat-sheet/
 [ndp-cheatsheet]: https://ndpsoftware.com/git-cheatsheet.html
