@@ -367,6 +367,7 @@ Voir aussi :
 - La documentation : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
 - Une image Docker utile pour du debug : <https://github.com/jpetazzo/shpod>
 - Une autre image utile : <https://github.com/kubernetes-up-and-running/kuard>
+- _Cdebug_, un utilitaire de _Pod éphémère_ permettant de faire du debug même avec des droits / capabilities limitées (non-root, distroless, …) : <https://github.com/iximiuz/cdebug>
 :::
 
 :::tip
@@ -374,6 +375,36 @@ Il est aussi possible de lancer un _Pod_ de débug directement dans un _Node_. L
 
 ```sh
 kubectl debug -it nodes/control-plane --image alpine:edge
+```
+:::
+
+:::tip
+La commande `kubectl debug` est facile à utiliser mais limitée (il n'est pas possible de changer la spec du conteneur, par défaut non-privilégié). Il est par contre possible d'utiliser l'_API Server_ pour patcher la spec :
+
+```sh
+kubectl proxy &
+
+curl -Lvk localhost:8001/api/v1/namespaces/default/pods/web/ephemeralcontainers \
+  -XPATCH \
+  -H 'Content-Type: application/strategic-merge-patch+json' \
+  -d '
+{
+    "spec":
+    {
+        "ephemeralContainers":
+        [
+            {
+                "name": "debugger-123",
+                "command": ["sh"],
+                "targetContainerName": "web",
+                "image": "alpine",
+                "stdin": true,
+                "tty": true,
+                "securityContext": { "privileged": true }
+            }
+        ]
+    }
+}'
 ```
 :::
 
