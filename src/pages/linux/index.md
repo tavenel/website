@@ -107,6 +107,7 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 - [Un jeu de piste à réaliser sur sa machine virtuelle en utilisant les commandes Linux](https://github.com/veltman/clmystery)
 - [Un autre jeu de piste](https://github.com/phyver/GameShell)
 - [VMs d'entraînement avec des problèmes à résoudre](https://sadservers.com/)
+- Formations et challenges : <https://labs.iximiuz.com/>
 - [Vidéo : 100+ Linux things in 10 mins](https://youtube.com/watch?v=LKCVKw9CzFo)
 - [Structure du système de fichiers](https://www.zdnet.fr/pratique/linux-la-structure-du-systeme-de-fichiers-expliquee-397880.htm)
 - [Commandes Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes/) et [Commandes avancées](https://blog.stephane-robert.info/docs/admin-serveurs/linux/commandes-avancees/)

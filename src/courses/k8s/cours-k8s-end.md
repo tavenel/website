@@ -122,6 +122,7 @@ Pour plus d'information, voir [une explication des différentes formations](http
 - <https://www.pulumi.com/blog/kubernetes-best-practices-i-wish-i-had-known-before/> 📚
 - Mailing-list : <https://learnkube.com/learn-kubernetes-weekly> 📧
 - Roadmap k8s <https://roadmap.sh/kubernetes> et roadmap orientée cybersécurité : <https://kubesec-diagram.github.io/> 🗺️
+- Formations et challenges : <https://labs.iximiuz.com/>
 
 ---
 
