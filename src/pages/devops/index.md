@@ -10,13 +10,16 @@ layout: '@layouts/BaseLayout.astro'
 ## Cours
 
 - [🤓 Cours d'introduction au Devops](/devops/cours)
+<!-- - [![](@icons/ansible.svg) Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible) -->
 - [🤓 Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible)
-- [🤓 Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
+- [![](@icons/terraform.svg) Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
 
 ## TP
 
 - [💻 Configuration des clés SSH pour un accès sécurisé](/devops/tp_ssh)
+<!-- - [![](@icons/ansible.svg) TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible) -->
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible)
+- [![](@icons/terraform.svg) Projet Déploiement d'une infrastructure sur Azure avec Terraform](/devops/terraform-projet)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/devops/projet)
 
 ## Liens
