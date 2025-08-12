@@ -392,7 +392,12 @@ created: 2024-10-17
 	- `Gatlin`
 	- [Vegeta](https://github.com/tsenart/vegeta)
 	- `k6` : [exemple](https://github.com/grafana/quickpizza)
-- Tests e2e (interface Web principalement) : `Selenium`, `Selenide`, `Geb`, `Testing library`, `Playwright`, `Cypress`
+- Tests e2e (interface Web principalement) :
+  - `Testing library` : utilisation de sélecteurs indépendants des frameworks de test
+  - `Selenium`
+    - et variations : `Selenide`, `Geb`
+  - `Playwright` et son serveur MCP : <https://github.com/microsoft/playwright-mcp>
+  - `Cypress`
   - [Outil d'automatisation de tests d'acceptance FitNesse et intégration avec Junit](https://fitnesse.org/FitNesse/UserGuide/WritingAcceptanceTests/RunningFromJunit.html)
 - BDD : `Cucumber`, `Spock`, `JBehave`
 - Tests d'infrastructure : <https://une-tasse-de.cafe/blog/testinfra/>
