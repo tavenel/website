@@ -283,7 +283,7 @@ Des outils comme `dependabot` (pour _Github Actions_) permettent de créer une p
 
 - `Testcontainers` : Tests d’intégration avec environnements temporaires (BDD, services).
 - `k6` / `JMeter` : Tests de charge et de performance.
-- `Cypress` / `Playwright` : Tests end-to-end pour front et API.
+- `Selenium` / `Cypress` / `Playwright` : Tests end-to-end pour front et API.
 - Mutation Testing (`PIT`, `Stryker`) : Vérifie la robustesse des tests unitaires.
 
 ---
