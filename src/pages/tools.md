@@ -458,14 +458,13 @@ created: 2024-10-17
 - <https://www.happyhues.co/> : palettes de couleurs
 - Tables complexes : <https://www.ag-grid.com/>
 
-## 📊 Data science, data mining, machine learning
+## 📊 Data science, data mining
 
 - Dessin de graphes : `matplotlib`
 - Librairies Python : data science : `numpy`, `pandas` ; data mining et ML : `scipy`, `sklearn`
 - ETL open-source : `airflow`
 - Local LLM : `ollama`, <https://terminaltrove.com/parllama/> (TUI)
 - SQL queries on a CSV, Json, Excel file : <https://terminaltrove.com/sqly/>
-- MCP : `FastMCP` (idem FastAPI pour MCP)
 
 ## Project management
 
@@ -474,6 +473,11 @@ created: 2024-10-17
 - Github Pull-request in terminal : <https://github.com/dlvhdr/gh-dash>
 
 ## Cybersécurité
+
+### MCP
+
+- Liste de serveurs MCP : <https://github.com/modelcontextprotocol/servers>
+- `FastMCP` (idem FastAPI pour MCP)
 
 ### Outils généraux
 
@@ -499,6 +503,14 @@ created: 2024-10-17
   - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>, <https://falco.org/>
 - `rkhunter` : détection de rootkits
 - <https://localcert.net/> : certificats gratuits en `.localcert.net` pour réseau privé
+
+## IA
+
+### Free IAs
+
+- <https://chatgpt.com/>
+- <https://chat.mistral.ai/chat>
+- <https://gemini-free.com/>
 
 ## 💻 Outils Poste de travail
 
@@ -576,7 +588,7 @@ created: 2024-10-17
 
 - [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
-- `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `tfsec`, `trivy`
+- `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `trivy`
 - `Docker` :
   - `lazydocker` => TUI pour gérer des conteneurs Docker
   - `dry` => manage Docker containers and Swarm cluster
