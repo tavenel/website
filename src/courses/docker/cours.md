@@ -215,6 +215,14 @@ Un conteneur peut donc ressembler un peu à une VM mais : 🐳
 - La vision `running`, `stopped`, … de Docker est donc une abstraction 🔄
 - **Arrêt du processus principal (PID=1, provenant de l'image ou de `docker run …`) == _"arrêt"_ du conteneur** ⏹️
 
+:::tip
+Si l'on doit lancer plusieurs services dans un conteneur (déconseillé sauf services directement liés au processus principal), on pourra utiliser :
+
+- Un script shell comme processus principal, responsable du lancement des autres processus
+- Un service de supervision : <https://supervisord.org/>
+- Un "vrai" système d'_init_ comme dans une distribution Linux standard, mais beaucoup plus léger : <https://github.com/krallin/tini>
+:::
+
 ---
 
 ## 📦 Registry
