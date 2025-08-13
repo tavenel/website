@@ -211,6 +211,18 @@ Paramètres disponibles pour un réseau de type `bridge` :
 - `gateway` : Spécifier la passerelle du réseau.
 :::
 
+:::tip
+Comment atteindre des services de l'hôte depuis un conteneur isolé par le _bridge_ Docker ?
+
+- _Docker Desktop_ (dev uniquement) : Utiliser l'adresse IP interne ou le nom DNS `host.docker.internal`
+- Linux natif : ajouter `--add-host=host.docker.internal:host-gateway` à la ligne de commande
+- _Docker Compose_ : ajouter à la configuration du conteneur :
+    ```yaml
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
+    ```
+:::
+
 ### Supprimer un réseau
 
 ```sh
