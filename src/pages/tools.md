@@ -387,11 +387,12 @@ created: 2024-10-17
   - `Swagger`
   - `resto`
   - <https://proxymock.io/> : générateur de Mock HTTP (analyse le payload des requêtes)
-- Tests de charge :
+- Tests de charge et stress tests :
   - `Jmeter`
-	- `Gatlin`
-	- [Vegeta](https://github.com/tsenart/vegeta)
-	- `k6` : [exemple](https://github.com/grafana/quickpizza)
+  - `Gatlin`
+  - [Vegeta](https://github.com/tsenart/vegeta)
+  - `k6` : [exemple](https://github.com/grafana/quickpizza)
+  - stress-ng (charge CPU et mémoire d'un système Linux) : <https://github.com/ColinIanKing/stress-ng/>
 - Tests e2e (interface Web principalement) :
   - `Testing library` : utilisation de sélecteurs indépendants des frameworks de test
   - `Selenium`
