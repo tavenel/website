@@ -95,6 +95,11 @@ Voir le [cours dédié](/esgi/b3/lpic-1)
 
 Voir le [cours dédié](/esgi/m1/lpic-2)
 
+## 🤯 Concepts avancés
+
+- [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
+- [🤯 Création de conteneur en utilisant les namespace natifs Linux](/docker/container-from-namespace) : cet exercice montre comment créer des conteneurs sans Docker en utilisant directement les fonctionalités des namespace du noyau Linux.
+
 ## Ressources
 
 ### Exercices, Gamification, Challenges
@@ -135,3 +140,8 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 - <https://thevaluable.dev/vim-adept/>
 - <https://thevaluable.dev/vim-veteran/>
 - <https://thevaluable.dev/vim-expert/>
+
+## 🚀 Autres ressources
+
+- Voir la page sur [⚒️ les outils](/tools)
+

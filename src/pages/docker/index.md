@@ -20,5 +20,11 @@ layout: '@layouts/BaseLayout.astro'
   -  Sources git : <https://git.sr.ht/~toma/docker-vote>
 - [🏆 Projet Dockerisation d'un Projet Multi-Composants](/docker/projet-dev) : le but de ce projet est de dockeriser un projet personnel existant qui se compose de plusieurs composants. 
 - [🤯 Création de conteneur en utilisant les namespace natifs Linux](/docker/container-from-namespace) : cet exercice montre comment créer des conteneurs sans Docker en utilisant directement les fonctionalités des namespace du noyau Linux.
+- [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
 
+## 🚀 Autres ressources
+
+- Voir la page sur [⚒️ les outils](/tools)
+- Voir la page sur [🐧 Linux](/linux)
+- Voir la page sur [󱃾  Kubernetes](/k8s)
 
