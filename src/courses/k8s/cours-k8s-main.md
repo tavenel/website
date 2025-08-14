@@ -333,6 +333,10 @@ flowchart TD
 - IBMCloud K8s 🌐
 - OVHCloud K8s 🌐
 
+:::tip
+Les services gérés coûtent souvent 30 à 50 % de plus que les services autogérés, mais réduisent considérablement les frais opérationnels ([source](https://testkube.io/blog/when-to-adopt-kubernetes-pay-now-or-pay-later-dilemma?utm_campaign=18840171-LearnKube&utm_source=Newsletter)).
+:::
+
 ---
 
 ## 🏗️ Architecture
