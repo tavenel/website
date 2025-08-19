@@ -46,6 +46,12 @@ checked: 2025-01-27
 - <https://jakelazaroff.com/words/an-interactive-intro-to-crdts/> : Introduction et exemples de CRDTS
 - <https://zknill.io/posts/collaboration-no-crdts/> : comment collaborer sans CRDTS
 
+### High Availability (HA)
+
+- The CAP Theorem : <https://www.thecoder.cafe/p/cap>
+- The PACELC Theorem : <https://www.thecoder.cafe/p/pacelc>
+- Availability Models : <https://www.thecoder.cafe/p/availability-models>
+
 ### Cybersécurité (2020)
 
 - 50% des applications Web ont une faille critique
