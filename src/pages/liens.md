@@ -30,6 +30,51 @@ checked: 2025-01-27
 
 ## Informations transverses
 
+### Apprentissage et organisation
+
+#### Inbox 0
+
+- Objectif : Minimiser le temps passé à la gestion des mails
+- Principes :
+  - Vérifier ses mail à heure fixe et non toute la journée (pas de notification)
+  - Catégoriser ses mails dans des répertoires
+  - Appliquer un arbre de décision à chaque mail reçu :
+    - Faire directement si < 2 min
+    - Sinon Différer
+    - Déléguer si possible
+    - Supprimer si l'e-mail est uniquement informatif
+- <http://www.43folders.com/43-folders-series-inbox-zero>
+- <https://asana.com/resources/inbox-zero>
+- <https://www.microsoft.com/en-us/microsoft-365-life-hacks/organization/inbox-zero-six-tips-for-living-outside-the-box>
+
+#### Méthode des J
+
+- Principe : "raffraichir" la mémoire à dates régulières afin d'éviter la courbe de l'oubli en révisant par exemple à :
+  - J0, J1, J3, J7, J14, J30
+  - J0, J1, J3, J10, J20, J35
+  - J0, J2, J5, J14
+- En Pratique : QCMs, exercices, … aux dates prévues. L'apprentissage se fait à J0, les autres dates sont de courtes sessions de remémorisation.
+- <https://www.adobe.com/fr/acrobat/resources/studying/spaced-repetition-method.html>
+- <https://hermione.co/methode-des-j-pass/>
+
+#### Prise de notes et rédaction efficaces
+
+- Noter et écrire le fond en _temps réel_
+- Avoir une collection d'abbréviations pour gagner du temps
+- Séparer d'une colonne : notes objectives "résumé" et notes subjectives "questions / actions à prendre / …"
+- Retravailler la forme et la mise en page plus tard
+- <https://apprendre5minutes.wordpress.com/2025/03/08/techniques-prise-de-notes-efficaces/>
+- <https://kevindetem.com/12-methodes-prise-de-notes-efficace>
+
+#### Sketchnote
+
+- Principe : Représenter graphiquement en dessinant et annotant une prise de notes
+- Très utile en cours magistral / conférence technique /  … pour résumer un concept complexe
+- Voir aussi : <https://www.mindmapping.com/>
+- <https://www.insuffle.com/cest-quoi-le-sketchnoting/>
+- <https://www.bienenseigner.com/sketchnote/>
+- <https://www.optimike.net/sketchnoting/>
+
 ### Sauvegardes : la règle du 3-2-1-1-0
 
 - 3 = Conservez au moins trois copies de vos données : production, sauvegarde, copie de sauvegarde (en bonus l'archivage compte comme une copie)
@@ -60,7 +105,7 @@ checked: 2025-01-27
 
 ### IA
 
-### Types de prompts IA
+#### Types de prompts IA
 
 - _zero-shot_ => pas de contexte
 - _few shots_ => contexte par exemples
@@ -68,7 +113,7 @@ checked: 2025-01-27
 - _RAG_ (retrieval augmented generation) => élévation de contexte par vecteur de contexte
 - _agents_ => conscience de l'environnement
 
-### Liens IA
+#### Liens IA
 
 - <https://www.comparia.beta.gouv.fr/>
 - <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
