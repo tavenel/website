@@ -63,7 +63,7 @@ jobs:
         ports:
           - 5432:5432
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v3
         with:
           node-version: 20

@@ -38,7 +38,7 @@ jobs:
 
       # récupération du code source
       - name: Checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       # initialisation de l'environnement
       - name: Initialize PHP ${{ env.php_version }}

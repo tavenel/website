@@ -39,7 +39,7 @@ jobs:
          ansible-version: [2.7.13, 2.8.4]
 
     steps: # liste des étapes du workflow
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v5
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
