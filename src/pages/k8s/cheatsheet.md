@@ -5,6 +5,7 @@ title: Cheatsheet Kubernetes®
 # Cheatsheet Kubernetes
 
 :::link
+- Description des API k8s et schemas : <https://kubespec.dev/>
 - Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - Liens utiles : <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
 :::
