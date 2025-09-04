@@ -57,6 +57,10 @@ La commande `sysctl` est utilisée pour consulter et modifier les paramètres st
 
 Les modifications apportées à l'aide de `sysctl` sont généralement temporaires et ne sont pas persistantes après le redémarrage du système, sauf si vous configurez explicitement les fichiers de configuration appropriés pour les paramètres du noyau.
 
+:::link
+_Sysctl_ comporte de nombreuses options. Pour simplifier son utilisation et obtenir de l'aide sur les configurations on pourra utiliser <https://github.com/orhun/systeroid>
+:::
+
 ## Les modules noyau
 
 - Les modules noyau sont des morceaux de code qui peuvent être chargés et déchargés du noyau Linux sans nécessiter une recompilation complète du noyau. Ils étendent les fonctionnalités du noyau en ajoutant des pilotes, des fonctionnalités ou en modifiant le comportement du noyau.

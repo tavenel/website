@@ -617,6 +617,7 @@ created: 2024-10-17
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
+  - TUI `sysctl` : <https://github.com/orhun/systeroid>
 - `termdbms` : SQL queries in TUI
 - <https://github.com/Macmod/godap> : LDAP in TUI
 - `otel-tui` : TUI `OpenTelemetry`, `Zipkin`, `Prometheus` : <https://github.com/ymtdzzz/otel-tui>
