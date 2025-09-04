@@ -49,4 +49,5 @@ Le but de ce projet est de dockeriser un projet personnel existant qui se compos
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [  cours sur Docker & Kubernetes](/docker).
+- Voir les autres ressources du [  cours sur Docker](/docker) et du [󱃾  cours sur Kubernetes](/k8s).
+

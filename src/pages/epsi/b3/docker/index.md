@@ -45,4 +45,5 @@ Module de 10H
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [  cours sur Docker & Kubernetes](/docker).
+- Voir les autres ressources du [  cours sur Docker](/docker) et du [󱃾  cours sur Kubernetes](/k8s).
+

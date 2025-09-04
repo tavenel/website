@@ -33,4 +33,5 @@ Module de 18H
 
 ## 🚀 Pour aller plus loin
 
-- Voir les autres ressources du [  cours sur Docker & Kubernetes](/docker).
+- Voir les autres ressources du [  cours sur Docker](/docker).
+
