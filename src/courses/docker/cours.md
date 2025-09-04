@@ -643,6 +643,10 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
+- Mettre à jour les langages de programmation et frameworks (_npm_, _[Java](https://medium.com/@sb.aravind/the-hidden-java-8-tax-in-your-kubernetes-bill-and-how-to-stop-paying-it-8b4f0ad83694)_, …)
+
+---
+
 ## 📦 Optimiser la taille des images Docker
 
 - Limiter le **nombre de couches** : chaque instruction `RUN`, `COPY` ou `ADD` ajoute un layer supplémentaire, combiner les commandes si possible : 📦
