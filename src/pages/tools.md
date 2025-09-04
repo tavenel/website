@@ -594,6 +594,7 @@ created: 2024-10-17
   - `lazydocker` => TUI pour gérer des conteneurs Docker
   - `dry` => manage Docker containers and Swarm cluster
   - `ctop`, [dtop](https://github.com/StakeSquid/dtop) => like `top` for containers
+  - `dcv` (_Docker Container Viewer_) : TUI Docker et Docker Compose <https://github.com/tokuhirom/dcv>
 - `Kubernetes` :
   - `kubectx` : change context
   - `kubens` : change namespace
