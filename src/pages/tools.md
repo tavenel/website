@@ -161,7 +161,7 @@ created: 2024-10-17
   - `flagger` : blue/green, A/B, canary deployments
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - 🪫 Consommation d'énergie et pricing :
-  - `kepler` : monitor Pod energy consumption
+  - `kepler` : monitor Pod energy consumption : <https://sustainable-computing.io/>
   - `kube-green` : k8s operator for energy-saving actions. [tuto](https://blog.octo.com/arreter-ses-environnements-avec-kubernetes)
   - [Keda](https://keda.sh/) : Event-driven autoscaling
   - `sablier` scaling depuis requêtes sur _Ingress_
