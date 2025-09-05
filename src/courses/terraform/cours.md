@@ -239,6 +239,47 @@ dynamic "rule" {
 
 ---
 
+### 📊 Précédence des variables
+
+Ordre de chargement des variables (les derniers écrasent les précédents) :
+
+1. Variables d’environnement (préfixe `TF_VAR_`)
+
+    ```bash
+    export TF_VAR_region=francecentral
+    ```
+
+2. Fichier `terraform.tfvars`
+
+    ```hcl
+    # terraform.tfvars
+    variable "region" {
+      default = "westeurope"
+    }
+    ```
+
+3. Fichier `terraform.tfvars.json`
+
+    ```json
+    # terraform.tfvars.json
+    {
+      "variable": {
+        "region": {
+          "default": "northamerica"
+        }
+      }
+    }
+    ```
+
+4. Fichiers `*.auto.tfvars` ou `*.auto.tfvars.json` (dans l'ordre lexicographique)
+5. Options en ligne de commande de `terraform apply` : `-var` et `-var-file` (dans l'ordre où elles sont fournies)
+
+    ```bash
+    terraform apply -var region="northafrica" -var-file varfile.tfvars
+    ```
+
+---
+
 ## 🧩 Modules
 
 - Regroupement logique de fichiers Terraform réutilisables, qui encapsulent un ensemble de ressources.
