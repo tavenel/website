@@ -155,6 +155,8 @@ checked: 2025-01-27
 
 > La vérité, c'est qu'il n'y a pas de vérité. (Y compris celle-ci). (Proverbe Shadok)
 
+> Les ordinateurs, plus on s'en sert moins, moins ça a de chance de mal marcher. (Proverbe Shadok)
+
 > A force de taper dans rien, il finit toujours par en sortir quelque chose. Et réciproquement. (Proverbe Shadok)
 
 > Avec un escalier prévu pour la montée, on réussit souvent à monter plus bas qu'on ne serait descendu avec un escalier prévu pour la descente. (Proverbe Shadok)
