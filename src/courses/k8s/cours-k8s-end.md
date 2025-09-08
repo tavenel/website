@@ -19,9 +19,9 @@ tags:
 
 ## 🗃️ Services avec état (Stateful)
 
-- Vous pouvez parfaitement conserver vos bases de données de production hors de Kubernetes (surtout si 1 serveur BDD !) 💾
-- Mettre les BDD de dev et pre-prod dans le cluster 🛠️
-- Migrer les BDD de prod seulement s'il y en a beaucoup (pour profiter de l'automatisation) 🤖
+- BDD dev / pre-prod : bons candidats à l'intégration dans le cluster (de dev / pre-prod associé) 🛠️
+- BDD de prod : migrer seulement s'il y en a beaucoup (pour profiter de l'automatisation) 🤖
+  - Vous pouvez parfaitement conserver vos bases de données de production hors de Kubernetes (surtout si 1 seule BDD dans le cluster entier !) 💾
 - **Gérer des services avec état dans Kubernetes est compliqué !** 😵
 
 ---
@@ -33,6 +33,7 @@ tags:
 - Logiciels à jour : Kubernetes, OS Linux hôte, conteneurs 🔄
 - Collecter et surveiller les journaux de l'_APIServer_ 📝
 - Ajouter une _NetworkPolicy_ 🌐
+- Ne pas utiliser le namespace `default`
 
 ---
 
@@ -41,7 +42,8 @@ tags:
 - **Utiliser des `Secret` pour remplacer les variables d'environnement sensibles** (`DB_PASSWORD`, …) des `Deployment`, `StatefulSet`, … 🔑
 - ~**Ne pas stocker de `Secret` en clair**~ dans des fichiers YAML : Utiliser `Kubeseal` pour les chiffrer. 🔒
 - Limiter l'accès aux `Secret` avec **Role-Based Access Control (RBAC)** : Par défaut, accès à tous les Secrets du Namespace. 🔐
-- Activer le **chiffrement des Secrets dans `etcd`** : par défaut les Secrets sont en clair. Attention à l'impact sur les performances. 🔐
+- Si nécessaire activer le **chiffrement des Secrets dans `etcd`** : par défaut les Secrets sont en clair.
+  - Attention à l'impact sur les performances. 🔐
 - Utiliser des **solutions de gestion externe des Secrets** : _HashiCorp Vault_, _AWS Secrets Manager_, _Azure Key Vault_, … 🔐
 
 ---
@@ -60,8 +62,9 @@ tags:
 
 ---
 
-## 🔄 Découpage en sous-clusters :
+## 🔄 Découpage en sous-clusters
 
+- Plusieurs stratégies possibles :
 - Un cluster par application, des `Namespace` différents pour les environnements ? 🤔
 - Un cluster par environnement, des `Namespace` différents pour les applications ? 🤔
 - Tout sur un seul cluster ? Un cluster par combinaison ? 🤔

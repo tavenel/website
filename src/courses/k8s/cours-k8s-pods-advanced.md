@@ -57,6 +57,14 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
+:::tip
+- Historiquement : limitations des ressources d'un _Container_ uniquement (à répliquer si sidecar, non partagé).
+- Depuis 1.32 il est possible de limiter les ressources d'un _Pod_ directement (partagé par tous ses _Container_).
+- Voir : <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#pod-level-resource-specification>
+:::
+
+---
+
 :::warn
 ### Attention aux limits
 

@@ -26,7 +26,12 @@ tags:
 kubectl logs pod
 kubectl describe pod
 kubectl exec -it pod -- /bin/sh
+kubectl debug -it pod --image=paulbouwer/hello-kubernetes:1.8
 ```
+
+:::link
+Voir [la cheatsheet](/k8s/cheatsheet#debug)
+:::
 
 #### ReplicaSet
 
