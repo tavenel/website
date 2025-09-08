@@ -177,7 +177,7 @@ flowchart TD
 
 ### 🌐 Flannel
 
-- Est un réseau de sous-réseaux pour Kubernetes 🌐
+- Réseau de sous-réseaux pour Kubernetes 🌐
 - Fonctionne avec divers backends (VXLAN, UDP, etc.) 🔄
 - Offre une isolation réseau par pod 🔒
 - Plus simple à configurer que les autres options 🛠️
@@ -187,13 +187,21 @@ flowchart TD
 
 ### 🛡️ Calico
 
-- Supporte plusieurs modes de réseau : BGP, IPIP, VXLAN 🌐
+- Supporte plusieurs modes de réseau : 🌐
+  - routage direct
+  - VXLAN seul
+  - IPIP + BGP
+  - cross-subnet possible (tout ou aucun traffic ou uniquement la partie qui traverse un subnet) : AWS multi-AZ, azure vnets, réseaux L2 hétérogènes
 - Propose une isolation réseau granulaire (par pod) 🔒
 - Intègre de la sécurité 🛡️
 - Conçu pour des (très) grands clusters 🏗️
 - S'intègre bien avec l'infrastructure existante 🔄
 - Souvent utilisé dans les déploiements Cloud ☁️
 - Inconvénients : Complexe, besoin de compatibilité réseau (BGP) ⚠️
+
+:::link
+Voir : <https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip>
+:::
 
 ---
 
@@ -217,8 +225,20 @@ flowchart TD
 
 :::tip
 - Cilium fournit un outil de monitoring (_Hubble_) avec une CLI et UI permettant de visualiser les communications au sein du cluster.
-- Cilium fournit un "_Cluster Mesh_" (⚠️ à ne pas confondre avec un _Service Mesh_ k8s) permettant une communication entre _Service_ de différents clusters.
+- Cilium fournit un "_Cluster Mesh_" (⚠️ à ne pas confondre avec un _Service Mesh_ k8s) permettant une communication load balancé entre _Service_ de différents clusters.
 :::
+
+---
+
+### ❔ Autres
+
+- D'autres CNI exotiques existent :
+- `Canal` (`Flannel` + `Calico`) pour ajouter les `NetworkPolicies` (ou avant le support des VXLAN par Flannel)
+- CNIs Cloud : _Amazon VPC CNI_ (_EKS_), _Azure CNI_ (_AKS_), _GCP CNI_ (_GKE_), _NSX-T CNI_ (_VMware Tanzu_), _Cisco ACI CNI_, …
+- _SR-IOV CNI_ (haute performance, accès direct au _NIC_)
+- _Macvlan CNI_
+- `kindnetd` pour _kind_
+- …
 
 ---
 
@@ -856,7 +876,7 @@ flowchart TD
 
 ### 🔗 EndpointSlice
 
-- Lien `Service` <-> `Pod` 🔗
+- Lien `Service` <-> `Pod` (ressource interne) 🔗
 
 ---
 
@@ -1127,6 +1147,7 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 ### 💾 StatefulSet
 
 - Déploie des applications avec état : BDD, … 💾
+- Metadatas semblables au `Deployment` mais très différent des autres ressources en pratique (beaucoup de cas particuliers à k8s)
 - Ressources **ordonnées** (ordre de lancement) 📜
 - Un `PV` par _Pod_ (vs. _ReplicaSet_ où les volumes sont partagés) 💾
 - _Persistent volume claim templates_ (`spec.volumeClaimTemplates`) : Crée un `PVC` par _Pod_ nommé `<claim-name>.<stateful-set-name>.<pod-index>` 📝
@@ -1146,7 +1167,7 @@ Voir [la documentation](https://kubernetes.io/docs/concepts/storage/persistent-v
 
 ---
 
-### Device Plugin
+### 💿 Device Plugin
 
 - Permet de déclarer des ressources au _Kubelet_ pour les utiliser des les _Pod_
 - ex : `nvidia-device-plugin` pour les GPU nvidia
@@ -1163,10 +1184,10 @@ Pour débugger les Pods avec Device, voir : <https://kubernetes.io/blog/2025/07/
 
 ## 🛠️ Configuration du cluster
 
-- Metadata 🏷️
+- `Metadata` pour chaque ressource (nom, labels, annotations, …) 🏷️
 - `Namespace` : Espaces de noms isolant des ressources 🏷️
   - Cloisonne une partie du cluster 🏗️
-  - Idem namespace Linux 🐧
+  - Similaire namespace Linux 🐧
   - Namespaces spéciaux : 🏷️
     - `kube-public` : Ressources accessibles à tous (par ex pour le _bootstrap_ du cluster) 🌍
     - `kube-system` : Composants Kubernetes 🏗️
