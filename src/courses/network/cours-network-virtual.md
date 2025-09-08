@@ -1,58 +1,122 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Comparaison des Technologies de Réseau Virtuel - VLAN, SDN, VXLAN, BGP, IPIP
+title: Technologies de Réseau Virtuel
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
 ## VLAN (Virtual Local Area Network) 🌐
 
-- Définition : Un VLAN est un réseau local virtuel qui permet de segmenter un réseau physique en plusieurs réseaux logiques.
-- Fonctionnement : Les VLAN utilisent des tags (étiquettes) pour identifier et séparer le trafic réseau au niveau de la couche 2 (liaison de données) du modèle OSI.
+- But : Segmenter un réseau physique en plusieurs réseaux logiques (virtuels).
+- Fonctionnement : Tags pour identifier et séparer le trafic (Layer 2).
 - Avantages 🌟 :
   - **Sécurité :** Isolation des segments de réseau 🔐
-  - **Gestion simplifiée :** Facilite la gestion des réseaux en regroupant les utilisateurs par fonction ou département 🧑‍💼👩‍💼
+  - **Gestion simplifiée :** Regroupe les flux utilisateurs par fonction ou département 🧑‍💼👩‍💼
   - **Efficacité :** Réduit la taille des domaines de diffusion ⚡
 - Inconvénients ❌:
-  - **Scalabilité limitée :** Les VLAN sont limités à 4096 identifiants (ID) 📉
-  - **Complexité de gestion :** Peut devenir complexe à gérer dans des environnements très larges 🧩
+  - **Scalabilité limitée :** 4096 Vlan ID 📉
+  - **Complexité de gestion** dans des environnements très larges 🧩
 
 ---
 
-## SDN (Software-Defined Networking) 🧠💻
+## IPIP ou IPinIP (IP in IP Encapsulation) 🎁📦
 
-- Définition : Le SDN est une approche de gestion réseau qui sépare le plan de contrôle du plan de données, permettant une gestion centralisée et programmable du réseau.
-- Fonctionnement : Utilise des contrôleurs SDN pour gérer les règles de flux et les politiques réseau via des API 🔧
+- But : Créer des tunnels virtuels à travers des réseaux IP existants (majoritairement point-à-point) 🕳️➡️📨
+- Fonctionnement : Encapsulation de paquet IP dans un autre paquet IP (sans modifier le paquet original) (Layer 3).
 - Avantages 🌟 :
-  - **Flexibilité :** Permet une configuration dynamique et automatisée du réseau 🤖
-  - **Efficacité :** Optimisation des ressources réseau grâce à une gestion centralisée 🚀
-  - **Innovation :** Facilite l'intégration de nouvelles technologies et services 🧪
+  - **Simple :** pas de modifications des paquets originaux 🛠️
+  - **Compatibilité :** tout réseau IP, sans matériel spécifique 🖧
 - Inconvénients ❌:
-  - **Complexité initiale :** Nécessite une courbe d'apprentissage pour la mise en œuvre 📚
-  - **Sécurité :** Le contrôleur SDN peut devenir un point unique de défaillance ⚠️
+  - **Overhead :** taille des paquets => **latence** 📏🐢
+  - **Sécurité :** Pas de chiffrement ou d'authentification pour sécuriser les tunnels 🔐
 
 ---
 
 ## VXLAN (Virtual Extensible LAN) 🧳🌍
 
-- Définition : VXLAN est une technologie d'encapsulation qui permet de créer des réseaux virtuels extensibles sur des réseaux physiques.
-- Fonctionnement : Utilise l'encapsulation des trames Ethernet dans des paquets UDP/IP, permettant de créer des réseaux virtuels sur des infrastructures IP existantes (Layer 2) 📦➡️📨
+- But : Créer des réseaux virtuels (Layer 2) sur des infrastructures IP existantes (Layer 3) 📦➡️📨
+- Principe : Encapsule trames Ethernet dans des paquets UDP/IP
+- Très utilisé en infra Cloud (multi zones) et multi sites.
+- Fonctionnement :
+  - _VXLAN Tunnel End Point_ (_VTEP_) : points d'entrée / sortie :
+    - Encapsule les trames Ethernet dans des paquets UDP/IP pour les transporter via le réseau IP sous-jacent (overlay -> underlay) ;
+    - À la réception, décapsule les paquets VXLAN pour les livrer au réseau local de destination.
+  - VTEP software : VMware ESXi, Microsoft Hyper-V, …
+  - VTEP hardware : switchs ToR (Top of Rack), …
+  - _VTEP IP_ : IP publique unique du VTEP, lien avec le réseau sous-jacent
+  - _Virtual Network Identifier (_VNI_) : équivalent VLAN ID (1 VTEP IP -> 1+ VNI)
 - Avantages 🌟 :
-  - **Scalabilité :** Supporte jusqu'à 16 millions de segments réseau 📈
-  - **Flexibilité :** Permet de créer des réseaux virtuels indépendamment de l'infrastructure physique sous-jacente 🛠️
-  - **Compatibilité :** Fonctionne sur des réseaux IP existants sans modification majeure ✅
+  - **Scalabilité :** 16 millions de VNI 📈
+  - **Flexibilité :** Réseaux virtuels indépendamment de l'infrastructure physique 🛠️
+  - **Compatibilité :** Fonctionne sur réseaux IP existants sans modification majeure ✅
+  - **Fonctionnalités :** _unicast_, _broadcast_, _multicast_
 - Inconvénients ❌:
-  - **Complexité :** Peut ajouter une couche de complexité supplémentaire à la gestion du réseau 🔄
-  - **Performance :** L'encapsulation peut introduire une latence supplémentaire 🐢
+  - **Complexité :** supplémentaire à la gestion du réseau 🔄
+  - **Performance :** Encapsulation = latence supplémentaire (> à IPIP mais assez similaire) et gros overhead au payload 🐢
 
 ```sh
 ip link show type vxlan
 ```
 
+:::link
+Voir :
+
+- <https://www.techsyncer.com/fr/vxlan-vmware-basics.html>
+- <https://vincent.bernat.ch/fr/blog/2017-vxlan-linux>
+- <https://networklessons.com/cisco/ccnp-encor-350-401/introduction-to-virtual-extensible-lan-vxlan>
+:::
+
+---
+
+## eBPF (extended Berkeley Packet Filter) 🧬🐧
+
+- Technologie puissante et flexible intégré au noyau Linux
+- **Fonctionnement** : Programmes eBPF écrits en C ou en Rust, puis compilés en bytecode eBPF et chargés directement dans le noyau Linux ⚙️
+- **Hooks** : Les programmes sont exécutés suite à des événements noyau : appels système, événements réseau, traces de fonctions, … 🔗
+- Avantages 🌟 :
+  - **Performance élevée :** Exécution directe dans le noyau avec une latence minimale 🚀
+  - **Flexibilité :** Initialement conçu pour le filtrage de paquets réseau, aujourd'hui large gamme d'applications, de la surveillance à la sécurité en passant par le réseau 🔍🛡️
+  - **Sécurité :** Vérification des programmes eBPF exécutés par le noyau ✅
+- Inconvénients ❌:
+  - **Complexité :** Nécessite une bonne compréhension du fonctionnement interne du noyau Linux 🧠
+  - **Compatibilité :** Noyau Linux compatible eBPF 📦🔒
+
+### Utilisations Courantes
+
+- 🧐📊 Surveillance et Observabilité : **Tracing** (appels système, événements réseau, …), **Profiling**
+- 🔒🛡️ Sécurité : **Détection d'intrusion** (comportements suspects, tentatives d'intrusion en temps réel), **Contrôle d'accès**
+- 🌐🛠️ Réseau  : **Filtrage de paquets** en fonction de règles complexes (flexible et performant), **Routage et NAT** directement dans le noyau 🔁
+- ⚙️⚡ Optimisation des Performances : **Surveillance** et contrôle de l'utilisation des ressources système, **optimisation** mémoire, CPU, I/O 📊🧮
+
+### Outils et Projets Basés sur eBPF 🛠️📦
+
+- _BCC (BPF Compiler Collection) :_ Collection d'outils et d'exemples pour écrire, compiler, et exécuter des programmes eBPF 📚
+- _bpftrace :_ Langage de script haut niveau 📝
+- _Cilium :_ CNI (Container Network Interface) pour Kubernetes qui utilise eBPF pour fournir des politiques de réseau et de sécurité à haute performance ☸️🛡️
+- _Falco :_ Outil de détection d'intrusion en temps réel (IDS) basé sur eBPF, conçu pour surveiller les comportements suspects dans les environnements cloud-native ☁️🔍
+
+### Exemple de Service k8s avec Cilium
+
+La `ServiceHashMap` (informations de routage) eBPF de Cilium joue le rôle de Load Balancer. Le `Service IP` est l'IP publique (virtuelle) du service. Les "Endpoint IP" sont les IPs des conteneurs des Pods.
+
+| Service IP | Port | Service ID | Endpoint ID | Endpoint IP | Port |
+|------------|------|------------|-------------|-------------|------|
+|  1.2.3.4   | 8080 |      1     |      4      |   4.3.2.1   | 8080 |
+|  1.2.3.4   | 8080 |      1     |      5      |   4.3.2.2   | 8080 |
+
+
+Exemple de `ConnTrackMap` (tracking des connexions) :
+
+| Service IP | Source Port | Destination IP | Destination Port | Type | EndpointID | Service ID |
+|------------|-------------|----------------|------------------|------|------------|------------|
+|  4.3.2.3   | 80          |     1.2.3.4    |      8080        | SVC  |      4     |     X      |
+|  4.3.2.3   | 80          |     4.3.2.1    |      8080        | Egress  |      X     |     1      |
+
+
 ---
 
 ## BGP (Border Gateway Protocol) 🌍📡
 
-- Définition : BGP est un protocole de routage externe (gateway extérieures) utilisé pour échanger des informations de routage entre différents _systèmes autonomes_ (AS) sur Internet.
+- Définition : Protocole de routage externe (gateway extérieures) utilisé pour échanger des informations de routage entre différents _systèmes autonomes_ (AS) sur Internet.
 - Fonctionnement : Utilise des tables de routage pour déterminer les meilleurs chemins pour acheminer le trafic entre les réseaux.
 - Avantages 🌟 :
   - **Scalabilité :** Conçu pour gérer des réseaux de grande taille comme Internet 🌐
@@ -68,98 +132,30 @@ ip link show type vxlan
 
 ---
 
-## IPinIP (IP in IP Encapsulation) 🎁📦
+## Comparaison 📊
 
-- Définition : _IPinIP_ ou _IPIP_ est une technique d'encapsulation où un paquet IP est encapsulé dans un autre paquet IP. Cela permet de transporter des paquets IP sur un réseau IP sans modifier les paquets originaux (Layer 3).
-- Fonctionnement : Un paquet IP est encapsulé dans un autre paquet IP avec un nouvel en-tête IP, permettant de créer des tunnels virtuels à travers des réseaux IP existants 🕳️➡️📨
-- Avantages 🌟 :
-  - **Simplicité :** Facile à mettre en œuvre car il ne nécessite pas de modifications des paquets originaux 🛠️
-  - **Compatibilité :** Fonctionne sur n'importe quel réseau IP sans nécessiter de support matériel spécifique 🖧
-  - **Flexibilité :** Permet de créer des tunnels virtuels pour diverses applications, comme le VPN ou le transport de trafic privé sur des réseaux publics 🔁
-- Inconvénients ❌:
-  - **Overhead :** Ajoute un en-tête supplémentaire, ce qui peut augmenter la taille des paquets et introduire une latence 📏🐢
-  - **Sécurité :** Ne fournit pas de chiffrement ou d'authentification par défaut, nécessitant des mécanismes supplémentaires pour sécuriser les tunnels 🔐
-
----
-
-## eBPF (extended Berkeley Packet Filter) 🧬🐧
-
-### Description
-
-_eBPF_ est une technologie puissante et flexible intégrée au noyau Linux, qui permet d'exécuter des programmes de manière sécurisée et efficace directement dans le noyau. Initialement conçu pour le filtrage de paquets réseau, eBPF a évolué pour offrir une large gamme de fonctionnalités, notamment la surveillance, la sécurité, le réseau, et l'optimisation des performances. Cependant, sa complexité et ses exigences en matière de compatibilité nécessitent une expertise approfondie pour en tirer pleinement parti.
-
-- Avantages 🌟 :
-  - **Performance élevée :** Exécution directe dans le noyau avec une latence minimale 🚀
-  - **Flexibilité :** Large gamme d'applications, de la surveillance à la sécurité en passant par le réseau 🔍🛡️
-  - **Sécurité :** Vérification rigoureuse des programmes pour garantir la stabilité et la sécurité du système ✅
-- Inconvénients ❌:
-  - **Complexité :** Nécessite une bonne compréhension du fonctionnement interne du noyau Linux 🧠
-  - **Compatibilité :** Dépend de la prise en charge de eBPF par le noyau Linux, ce qui peut limiter son utilisation sur certaines plateformes ou versions du noyau 📦🔒
-
-### Fonctionnement
-
-- Programmes eBPF : Les programmes eBPF sont écrits en C ou en Rust, puis compilés en bytecode eBPF. Ce bytecode est ensuite chargé dans le noyau Linux, où il est exécuté en réponse à divers événements ⚙️
-- Hooks : eBPF permet d'attacher des programmes à divers hooks dans le noyau, tels que les appels système, les événements réseau, les traces de fonctions, … 🔗
-- Sécurité : Avant d'être exécuté, le bytecode eBPF est vérifié par un vérificateur intégré au noyau, qui garantit que le programme est sûr et ne peut pas compromettre la stabilité ou la sécurité du système 🔍🧰
-
-### Utilisations Courantes
-
-#### Surveillance et Observabilité 🧐📊
-
-- **Tracing :** eBPF peut être utilisé pour tracer les appels système, les événements réseau, et d'autres activités du noyau, fournissant des informations détaillées sur le comportement du système 🧵
-- **Profiling :** Permet de mesurer les performances des applications et du système, en identifiant les goulots d'étranglement et les inefficacités 📈
-
-#### Sécurité 🔒🛡️
-
-- **Détection d'intrusion :** eBPF peut être utilisé pour surveiller les comportements suspects et détecter les tentatives d'intrusion en temps réel 🚨
-- **Contrôle d'accès :** Permet de mettre en œuvre des politiques de sécurité granulaires, en contrôlant l'accès aux ressources système 🧱
-
-#### Réseau 🌐🛠️
-
-- **Filtrage de paquets :** eBPF peut être utilisé pour filtrer les paquets réseau en fonction de règles complexes, offrant une flexibilité et une performance supérieures aux solutions traditionnelles 🧪
-- **Routage et NAT :** Permet de mettre en œuvre des fonctionnalités de routage avancées et de traduction d'adresses réseau (NAT) directement dans le noyau 🔁
-
-#### Optimisation des Performances ⚙️⚡
-
-- **Accélération des applications :** eBPF peut être utilisé pour optimiser les performances des applications en réduisant la latence et en améliorant l'efficacité des opérations 🏎️
-- **Gestion des ressources :** Permet de surveiller et de contrôler l'utilisation des ressources système, en optimisant la gestion de la mémoire, du CPU, et des E/S 📊🧮
-
-### Outils et Projets Basés sur eBPF 🛠️📦
-
-- _BCC (BPF Compiler Collection) :_ Une collection d'outils et d'exemples pour écrire, compiler, et exécuter des programmes eBPF 📚
-- _bpftrace :_ Un langage de script haut niveau pour écrire des programmes eBPF, inspiré par des outils comme awk et C 📝
-- _Cilium :_ Un CNI (Container Network Interface) pour Kubernetes qui utilise eBPF pour fournir des politiques de réseau et de sécurité à haute performance ☸️🛡️
-- _Falco :_ Un outil de détection d'intrusion en temps réel basé sur eBPF, conçu pour surveiller les comportements suspects dans les environnements cloud-native ☁️🔍
-
----
-
-## Comparaison des Technologies Réseau 📊
-
-| Critère          | VLAN                          | SDN                           | VXLAN                        | BGP                          | IPinIP                       | eBPF                         |
-|-----------------------|-----------------------------------|-----------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------------|
-| **Couche OSI**        | Couche 2 (Liaison de données)     | Couche 3 (Réseau)                | Couche 2 et 3                    | Couche 3 (Réseau)                | Couche 3 (Réseau)                | Couche 3 (Réseau)                |
-| **Scalabilité**       | Limité à 4096 VLANs              | Très élevée                       | Jusqu'à 16 millions de segments  | Très élevée                      | Moyenne                          | Très élevée                      |
-| **Flexibilité**       | Moyenne                           | Très élevée                       | Élevée                           | Élevée                           | Élevée                           | Très élevée                      |
-| **Complexité**        | Moyenne                           | Élevée                            | Élevée                           | Très élevée                      | Faible                           | Élevée                           |
-| **Utilisation**       | Segmentation de réseaux locaux    | Gestion centralisée des réseaux   | Réseaux virtuels extensibles     | Routage inter-AS sur Internet    | Tunnels virtuels sur réseaux IP  | Surveillance, sécurité, réseau, optimisation des performances |
-| **Sécurité**          | Isolation des segments            | Point unique de défaillance       | Isolation des segments           | Politiques de routage complexes  | Nécessite des mécanismes supplémentaires | Vérification rigoureuse des programmes |
-| **Performance**       | Bonne                             | Bonne                             | Potentielle latence supplémentaire| Bonne                            | Overhead supplémentaire          | Très haute                       |
-| **Compatibilité**     | Réseaux Ethernet                  | Réseaux IP                        | Réseaux IP                      | Réseaux IP                       | Réseaux IP                      | Noyau Linux                      |
-| **Intégration**       | Commutateurs et routeurs          | Contrôleurs SDN                   | Commutateurs et routeurs         | Routeurs                          | Routeurs                         | Outils de surveillance et sécurité |
-| **Résilience**        | Moyenne                           | Élevée                            | Élevée                           | Très élevée                      | Moyenne                          | Très élevée                      |
+| Critère          | VLAN                          | VXLAN                        | BGP                          | IPinIP                       | eBPF                         |
+|-----------------------|-----------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------------|
+| **Couche OSI**        | Couche 2 (Liaison de données)      | Couche 2 et 3                    | Couche 3 (Réseau)                | Couche 3 (Réseau)                | Couche 3 (Réseau)                |
+| **Scalabilité**       | Limité à 4096 VLANs                | Jusqu'à 16 millions de segments  | Très élevée                      | Moyenne                          | Très élevée                      |
+| **Flexibilité**       | Moyenne                            | Élevée                           | Élevée                           | Élevée                           | Très élevée                      |
+| **Complexité**        | Moyenne                            | Élevée                           | Très élevée                      | Faible                           | Élevée                           |
+| **Utilisation**       | Segmentation de réseaux locaux     | Réseaux virtuels extensibles     | Routage inter-AS sur Internet    | Tunnels virtuels sur réseaux IP  | Surveillance, sécurité, réseau, optimisation des performances |
+| **Sécurité**          | Isolation des segments             | Isolation des segments           | Politiques de routage complexes  | Nécessite des mécanismes supplémentaires | Vérification rigoureuse des programmes |
+| **Performance**       | Bonne                              | Potentielle latence supplémentaire| Bonne                            | Overhead supplémentaire          | Très haute                       |
+| **Compatibilité**     | Réseaux Ethernet                   | Réseaux IP                      | Réseaux IP                       | Réseaux IP                      | Noyau Linux                      |
+| **Intégration**       | Commutateurs et routeurs           | Commutateurs et routeurs         | Routeurs                          | Routeurs                         | Outils de surveillance et sécurité |
+| **Résilience**        | Moyenne                            | Élevée                           | Très élevée                      | Moyenne                          | Très élevée                      |
 
 ---
 
 ### Conclusion 🧭
 
-Chaque technologie a ses propres avantages et inconvénients, et le choix dépendra des besoins spécifiques de l'environnement réseau :
-
-- **VLAN** est idéal pour la segmentation simple et efficace des réseaux locaux 🧱
-- **SDN** offre une flexibilité et une gestion centralisée pour les réseaux modernes et dynamiques 🧠
-- **VXLAN** est parfait pour créer des réseaux virtuels extensibles sur des infrastructures IP existantes 🌉
-- **BGP** est essentiel pour le routage inter-AS sur Internet et les grands réseaux 🌐
-- **IPinIP** est utile pour créer des tunnels virtuels simples et compatibles sur des réseaux IP existants 🕳️
-- **eBPF** est une technologie puissante et polyvalente pour la surveillance, la sécurité, le réseau, et l'optimisation des performances, offrant des capacités avancées avec une performance inégalée 🚀
+- **VLAN** : segmentation simple et efficace des réseaux locaux 🧱
+- **IPIP** : tunnels virtuels simples et compatibles sur des réseaux IP existants 🕳️
+- **VXLAN** : réseaux virtuels extensibles sur des infrastructures IP existantes 🌉
+- **eBPF** : technologie puissante et polyvalente offrant des capacités avancées avec une performance inégalée 🚀
+- **BGP** : routage inter-AS sur Internet et les grands réseaux 🌐
 
 ---
 
