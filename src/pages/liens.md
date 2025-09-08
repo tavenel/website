@@ -30,7 +30,27 @@ checked: 2025-01-27
 
 ## Informations transverses
 
-### Apprentissage et organisation
+### Apprentissage, Métacognition, Organisation
+
+#### Notions d'apprentissage
+
+- **Cessité attentionnelle** : lors d'un focus fort sur une tâche, peu d'attention au reste
+  - Voir l'expérience du gorille dans ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-attention-4589382>
+  - Vidéo Youtube : [selective attention test](https://www.youtube.com/watch?v=IGQmdoK_ZfY)
+- **Inhibition** : capacité du cortex préfrontal à sortir des routines et automatismes
+  - Voir l'expérience de l'effet Stroop : <https://biais-psychologiques.com/biais/effet-stroop/> et podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-inhibition-et-la-flexibilite-3735919>
+- La **récompense** permet d'appliquer une **motivation extrinsèque** (de l'extérieur) à l'apprentissage à court terme mais **au détriment de la motivation intrinsèque** (interne à l'apprenant) sur le long terme (à minimiser donc).
+  - Pour promouvoir la **motivation intrinsèque** : mettre le focus sur l'apprentissage de nouvelles compétences & l'interaction entre apprenants
+  - Voir le podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/la-motivation-et-l-esprit-de-changement-1962894>
+- L'utilisation des **émotions** permet un engagement fort :
+  - Émotion positive : succès de la réalisation, reconnaissance de la réussite, plaisir et bien-être dans le groupe, …
+  - Émotion négative : situation future néfaste pouvant être évitée par la réalisation de la tâche ou de l'apprentissage, peur de passer à côté d'une opportunité (bien connu en marketing), …
+- **Mémorisation** :
+  - Tout le monde apprend à peu près pareil (pas de "visuels", "auditifs", …). Le meilleur apprentissage est croisé (visuel + auditif + …)
+  - Éviter le _"par coeur"_ peu efficace. Privilégier un **traitement profond** (basé sur le **sens** des informations)
+  - Travailler par associations. Excellent podcast (10') : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/comment-fonctionne-votre-memoire-1-6-non-apprendre-par-coeur-n-est-pas-tres-efficace-2431233>
+  - S'impliquer **personnellement** et utiliser des références à **soi-même**
+  - Apprentissage basé sur l'**action** : il est beaucoup plus simple de se rappeler ce que l'on a fait que d'apprendre théoriquement
 
 #### Inbox 0
 
