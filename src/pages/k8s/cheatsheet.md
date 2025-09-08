@@ -8,6 +8,7 @@ title: Cheatsheet Kubernetes®
 - Description des API k8s et schemas : <https://kubespec.dev/>
 - Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - Liens utiles : <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
+- Pour plus d'information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
 :::
 
 ## Administration
@@ -303,55 +304,65 @@ kubectl top nodes
 kubectl top pods
 ```
 
-### Créer une ressource (pod, service, ...)
-
-```sh
-kubectl apply -f monFichier.yml
-```
-
-### Lister les ressources créés (pod, service, storage, ...)
-
-```sh
-kubectl get deployments,svc,endpoints,pods,pv,pvc,nodes [--all-namespaces]
-```
-
-### Inspecter des ressources
-
-```sh
-kubectl describe deployment myapp1
-
-kubectl describe po/mon-pod
-
-kubectl describe svc myapp1-sv
-```
-
 ### Nettoyer les Pod en échec
 
 ```sh
 kubectl get pods --all-namespaces --field-selector=status.phase=Failed
 ```
 
-## Ressources
+## Gestion des ressources par kubectl
 
-### Lister les conteneurs d'un pod (i.e. namespace==default)
+### apply
+
+Créer ou modifier une ressource (pod, service, …)
 
 ```sh
-kubectl describe po/mon-pod -n default
+kubectl apply -f monFichier.yml
 ```
 
-### Exposer un Pod (créer un service)
+### get
+
+Lister les ressources créés (pod, service, storage, …) :
+
+```sh
+kubectl get deployments,svc,endpoints,pods,pv,pvc,nodes [--all-namespaces]
+```
+
+### describe
+
+Inspecter des ressources :
+
+```sh
+kubectl describe deployment myapp1
+
+kubectl describe po/mon-pod # implique namespace==default (sinon -n MON_NAMESPACE)
+
+kubectl describe svc myapp1-sv
+```
+
+:::tip
+`kubectl describe` affiche entre autres la liste des conteneurs d'un Pod.
+:::
+
+### expose
+
+Exposer un Pod (créer un service) :
 
 ```sh
 kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
 ```
 
-### kubectl exec : exécuter une commande dans un pod déjà en activité
+### exec
+
+Exécuter une commande dans un pod déjà en activité :
 
 ```sh
 kubectl exec -it MON_POD -c MON_CONTENEUR_DANS_LE_POD -- MA_COMMANDE
 ```
 
-### kubectl debug démarrer un nouveau conteneur dans un Pod pour du débug
+### debug
+
+Démarrer un nouveau conteneur dans un Pod pour du débug :
 
 ```sh
 kubectl debug MON_POD -it --image=paulbouwer/hello-kubernetes:1.8
@@ -409,13 +420,15 @@ curl -Lvk localhost:8001/api/v1/namespaces/default/pods/web/ephemeralcontainers 
 ```
 :::
 
-### kubectl attach : s'attacher à la sortie du PID=1 (commande de lancement du conteneur)
+### attach
+
+S'attacher à la sortie du PID=1 (commande de lancement du conteneur) :
 
 ```sh
 kubectl attach MON_POD
 ```
 
-### Gestion des labels
+### label
 
 ```sh
 kubectl label MA_RESSOURCE MON_LABEL=MA_VALEUR
@@ -481,7 +494,7 @@ spec: # Les spécifications de la ressource. Différent pour chaque type de ress
 
 ## Pod
 
-### Exemple minimal de fichier de description d'un Pod
+### Exemple minimal
 
 ```yaml
 apiVersion: v1
@@ -496,7 +509,7 @@ spec:
     - containerPort: 80 # port dans le conteneur
 ```
 
-### Exemple avancé de fichier de description d'un Pod
+### Exemple avancé
 
 ```yaml {"base": 10-20} {"env":22-34} {"ressources":36-43} {"probe":45-59} {"volumes":64-71} {"autre conteneur":73-79} {"init container":81-94} {"affinity":96-121}
 apiVersion: v1
@@ -654,7 +667,7 @@ kubectl get pod <POD_NAME> -o jsonpath='{ .status.qosClass}{"\n"}'
 ```
 
 :::tip
-Kubernetes 1.32 introduit la limitation de ressources (`request` et `limit`) directement au niveau du _Pod_ (et non uniquement du _Container_).
+Kubernetes 1.32 introduit la limitation de ressources (`request` et `limit`) directement au niveau du _Pod_ (et non uniquement du _Container_). Voir : <https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#pod-level-resource-specification>
 :::
 
 #### Qualité de Service (QoS)
@@ -813,9 +826,9 @@ spec:
 kubectl describe resourcequota my-resource-quota
 ```
 
-## Stockage k8s
+## Stockage
 
-### Exemple de montage d'un volume hostPath
+### Volume hostPath
 
 ```yaml {9,12}
 apiVersion: v1
@@ -837,7 +850,7 @@ spec:
 
 Valeurs possible de `type` de `hostPath` : `DirectoryOrCreate`, `Directory`, `FileOrCreate`, `File`, `Socket`, `CharDevice`, `BlockDevice`
 
-### Exemple de montage d'un volume Cloud AWS EBS
+### Volume Cloud AWS EBS
 
 ```yaml
 apiVersion: v1
@@ -858,7 +871,7 @@ spec:
       fsType: ext4
 ```
 
-### Exemple de montage d'un volume NFS
+### Volume NFS
 
 ```yaml
 apiVersion: v1
@@ -879,7 +892,7 @@ spec:
       path: "/exports/assets"
 ```
 
-### Exemple de PersistantVolume
+### PersistantVolume
 
 ```yaml
 apiVersion: v1
@@ -893,7 +906,7 @@ spec:
     path: "/mnt/data"  # Chemin sur le Node où les données seront stockées
 ```
 
-### Exemple de PersistanceVolumeClaim
+### PersistanceVolumeClaim
 
 ```yaml
 apiVersion: v1
@@ -906,7 +919,7 @@ spec:
       storage: 500Mi  # La quantité de stockage demandée par ce PVC
 ```
 
-### Exemple de StorageClass NFS
+### StorageClass NFS
 
 ```sh
 # Prérequis : Installation du driver CSI pour NFS
@@ -944,7 +957,7 @@ spec:
   storageClassName: nfs-csi # StorageClass NFS définie précédemment
 ```
 
-### Exemple de StorageClass LocalPathProvisionner
+### StorageClass LocalPathProvisionner
 
 Permet d'utiliser dynamiquement le storage local des _Node_ avec des `PVC` utilisant une `storageClassName: local-path`.
 
@@ -984,7 +997,7 @@ NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE
 local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  26h
 ```
 
-### Faire un snapshot de volume
+### Snapshot de volume
 
 ```yaml {4,14}
 apiVersion: snapshot.storage.k8s.io/v1
@@ -1014,7 +1027,7 @@ L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` recquiert l'installat
 - Voir un tutoriel pour les snapshots de volumes persistants avec Rook : <https://une-tasse-de.cafe/expresso/snapshot-class/>
 :::
 
-### Debug du storage
+### Debug storage
 
 Les erreurs liées aux volumes sont souvent enregistrées dans les événements Kubernetes :
 
@@ -1038,7 +1051,9 @@ mount -t nfs "<NFS_SERVER_ADDRESS>:<NFS_SHARE_PATH>" /mnt
 
 Les plugins de Device permettent de déclarer et d'utiliser des ressources disponibles sur les _Nodes_ : GPU, …
 
-### Utiliser un GPU Nvidia
+### GPU Nvidia
+
+Utilisation d'un GPU Nvidia :
 
 ```sh
 # Sur le Node
@@ -1100,9 +1115,9 @@ spec:
       restartPolicy: Never
 ```
 
-## Network k8s
+## Réseau
 
-### Exemple de fichier de ClusterIP
+### ClusterIP
 
 ```yaml {6,10}
 apiVersion: v1
@@ -1128,7 +1143,7 @@ spec:
 
 :::
 
-### Exemple de fichier de NodePort
+### NodePort
 
 ```yaml {6,10} ins={14}
 apiVersion: v1
@@ -1149,7 +1164,7 @@ spec:
 
 `nodePort` est facultatif : Kubernetes définiera un port aléatoire si cet attribut n'est pas renseigné. Assurez-vous que le port `NodePort` choisi est dans la plage autorisée par votre configuration Kubernetes (généralement entre 30000 et 32767).
 
-### Exemple de fichier LoadBalancer
+### LoadBalancer
 
 ```yaml {6,10}
 apiVersion: v1
@@ -1200,7 +1215,7 @@ spec:
     - first-pool
 ```
 
-### Exemple de fichier ExternalName
+### ExternalName
 
 ```yaml
 apiVersion: v1
@@ -1216,12 +1231,6 @@ spec:
 $ ping my-external-name-service
 64 bytes from 216.58.205.206: seq=0 ttl=42 time=9.765 ms
 ```
-
-### DNS spécifique
-
-Par défaut, un Pod utilise le DNS de Kubernetes.
-
-Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/>
 
 ### Ingress
 
@@ -1346,6 +1355,12 @@ spec:
               number: 80
 ```
 
+### DNS spécifique
+
+Par défaut, un Pod utilise le DNS de Kubernetes.
+
+Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/>
+
 ### TLS : ClusterIssuer (Let's Encrypt)
 
 ```sh
@@ -1457,7 +1472,9 @@ foo-service-5b4kb   IPv4          8080    10.244.0.17   47h
 
 ## Deployment
 
-### Exemple de fichier de Déploiement et de Service
+### Exemple
+
+Exemple de fichier de Déploiement et de Service :
 
 ```yaml {8,12,26}
 apiVersion: apps/v1
@@ -1498,7 +1515,7 @@ spec:
 - `template.metadata.labels` applique le label aux _Pods_ créés par le _Deployment_.
 :::
 
-### Exemple de stratégie
+### Stratégie
 
 ```yaml ins={7-11}
 apiVersion: apps/v1
@@ -1527,7 +1544,7 @@ spec:
 
 Kubernetes "met à jour" le Déploiement en cas de changement dans la configuration : version de l'image, … Il faut donc avoir des tags différents dans les images pour mettre à jour le(s) conteneur(s) (par exemple : `mon-image-docker:v1`, `mon-image-docker-v2`, … ).
 
-### Exemple de fichier de ReplicaSet
+### ReplicaSet
 
 ```yaml
 apiVersion: apps/v1
@@ -1553,7 +1570,7 @@ spec:
         - containerPort: 80
 ```
 
-### Exemple de fichier HorizontalPodAutoscaler
+### HorizontalPodAutoscaler
 
 ```yaml
 apiVersion: autoscaling/v2
@@ -1576,7 +1593,7 @@ spec:
         averageUtilization: 50 # 50% de CPU
 ```
 
-## Exemples de Jobs
+## Job
 
 ```yaml
 apiVersion: batch/v1
@@ -1622,7 +1639,7 @@ spec:
 Voir aussi _Kueue_, une solution plus poussée que les `Job` / `CronJob` de Kubernetes : <https://kueue.sigs.k8s.io/> 
 :::
 
-## Exemple de fichier de Namespace
+## Namespace
 
 ```yaml
 apiVersion: v1
@@ -1631,7 +1648,9 @@ metadata:
   name: mon-namespace
 ```
 
-## Exemple de RBAC (Role-Based Access Control)
+## RBAC
+
+Exemple de RBAC (Role-Based Access Control) :
 
 ### (Cluster)Role
 
@@ -1922,10 +1941,6 @@ spec:
 :::link
 Pour tester les expressions _CEL_, on pourra utiliser le playground : <https://playcel.undistro.io/>
 :::
-
-## Autres commandes
-
-Pour plus d'information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
 
 ---
 
