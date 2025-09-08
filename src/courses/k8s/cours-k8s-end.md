@@ -13,7 +13,7 @@ tags:
 - **Image légère** : ✅ < 100 MB, ❌ > 1GB 🏷️
 - **Démarrage rapide** : ✅ < min, ❌ > 5 min ⏱️
 - **Réplicable** : _Stateless_ (sans état) autant que possible, utiliser des `PVC` pour l'état, déléguer à des services (_DBaaS_, …) 🔄
-- Voir le cours Docker pour plus d'information. 📚
+- Voir le [cours Docker](/docker/cours) pour plus d'information. 📚
 
 ---
 
