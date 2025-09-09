@@ -57,11 +57,11 @@ Ou par fichier de configuration :
 # A retrouver après installation dans : /var/lib/kubelet/config.yaml
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
-kubernetesVersion: v1.21.0
+kubernetesVersion: v1.34.0
 ---
 kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1
-cgroupDriver: systemd
+# cgroupDriver: systemd # Deprecated in k8s v1.34.0
 […]
 ```
 
