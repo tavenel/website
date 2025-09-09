@@ -988,6 +988,10 @@ graph LR;
   - Un CIDR publique (routé par le plugin CNI) pour communiquer au sein du Cluster (pour les `Service`, …) 🌍
 - Peuvent s'ajouter des _external IP_ (Load Balancer, …) 🌐
 
+:::tip
+v1.33.0 introduit le _Service IP Expansion_ : l'API `ServiceCIDR` permet d'ajouter (dynamiquement) autant de CIDRs que voulu aux `Service`.
+:::
+
 ---
 
 ## 🛠️ Configuration des applications
