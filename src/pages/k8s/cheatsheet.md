@@ -308,6 +308,7 @@ kubectl top pods
 
 ```sh
 kubectl get pods --all-namespaces --field-selector=status.phase=Failed
+kubectl delete …
 ```
 
 ## Gestion des ressources par kubectl
@@ -343,6 +344,20 @@ kubectl describe svc myapp1-sv
 :::tip
 `kubectl describe` affiche entre autres la liste des conteneurs d'un Pod.
 :::
+
+### delete
+
+```sh
+kubectl delete pod/mon-pod
+```
+
+```console
+$ kubectl delete -i pod/mon-pod # interactive
+
+You are about to delete the following 1 resource(s):
+pod/mon-pod
+Do you want to continue? (y/n):
+```
 
 ### expose
 
