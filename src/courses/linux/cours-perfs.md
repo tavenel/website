@@ -66,6 +66,25 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+## Pressure Stall Information (PSI)
+
+- Fonctionnalité du noyau Linux qui permet de mesurer la **pression des ressources** (CPU, mémoire, I/O).
+- Mesure **combien de temps les tâches passent à attendre** parce que ces ressources sont saturées (pas de CPU dispo, swapping ou reclaim de mémoire, I/O bloquant sur disque).
+  - et non combien de CPU, RAM ou I/O sont utilisés
+- Métriques : `/proc/pressure/{cpu, memory, io}`
+- Utilisation : `systemd`, `cgroups`, `Kubernetes`, `psi-exporter` (Prometheus), … pour déclencher des actions (scaling, throttling, alerte) si une ressource devient un goulot d'étranglement.
+
+```bash
+cat /proc/pressure/memory
+some avg10=0.00 avg60=0.00 avg300=0.00 total=0
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+```
+
+- `avg10`, `avg60`, `avg300` : moyennes sur 10s, 60s et 300s.
+- `some` (`full`) : fraction de temps où **au moins une tâche** (**toutes les tâches**) attendent.
+
+---
+
 :::link
 Voir aussi :
 
