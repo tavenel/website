@@ -80,7 +80,7 @@ kubeadm init … –pod-network-cidr=100.0.0/16
 ## Pods statiques
 
 :::tip
-Déployer le _Control Plane_ dans des _Pods_ permet de les gérer avec toute la puissance de Kubernetes… mais recquiert un cluster opérationnel !
+Déployer le _Control Plane_ dans des _Pods_ permet de les gérer avec toute la puissance de Kubernetes… mais requiert un cluster opérationnel !
 Pour contourner cette limite, Kubernetes permet de déployer des _Pods_ dits _statiques_ directement dans le _Kubelet_ (sans passer par l'_API Server_) en utilisant des _manifest_ : c'est ce que fait _kubeadm_ à l'initialisation du cluster : fichiers `/etc/kubernetes/manifests/`. Le _Kubelet_ réconcilie les _Pods_ en cas de changement(s) dans le _manifest_. Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#227) pour plus d'information.
 :::
 

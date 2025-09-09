@@ -1019,7 +1019,7 @@ spec:
 ```
 
 :::tip
-L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` recquiert l'installation de CRDs (souvent automatique avec l'ajout d'une `StorageClass` depuis un _CSI_).
+L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` requiert l'installation de CRDs (souvent automatique avec l'ajout d'une `StorageClass` depuis un _CSI_).
 :::
 
 :::link
@@ -1185,7 +1185,7 @@ spec:
 
 #### MetalLB
 
-Un `LoadBalancer` recquiert une implémentation de LB, souvent fournie par un provider Cloud. En l'absence de LB (bare-metal, …) on pourra installer `MetalLB` :
+Un `LoadBalancer` requiert une implémentation de LB, souvent fournie par un provider Cloud. En l'absence de LB (bare-metal, …) on pourra installer `MetalLB` :
 
 ```sh
 # Prérequis : installation de MetalLB
