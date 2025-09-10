@@ -354,7 +354,7 @@ Voir : <https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip>
 - OVHCloud K8s 🌐
 
 :::tip
-Les services gérés coûtent souvent 30 à 50 % de plus que les services autogérés, mais réduisent considérablement les frais opérationnels ([source](https://testkube.io/blog/when-to-adopt-kubernetes-pay-now-or-pay-later-dilemma?utm_campaign=18840171-LearnKube&utm_source=Newsletter)).
+Les services gérés coûtent souvent 30 à 50 % de plus que les services autogérés, mais réduisent considérablement les frais opérationnels ([source](https://testkube.io/blog/when-to-adopt-kubernetes-pay-now-or-pay-later-dilemma)).
 :::
 
 ---
@@ -365,9 +365,10 @@ Les services gérés coûtent souvent 30 à 50 % de plus que les services autog�
 
 ### 🛠️ Installation
 
-- `kubeadm` : l'outil officiel (installation de chaque composant séparément) 🛠️
-- Intégré dans la distribution : `k3s`, `minikube`, `microk8s`, … 📦
-- Versions managées : outils dédiés au fournisseur de Cloud ☁️
+- Plusieurs méthodes :
+  - `kubeadm` : l'outil officiel (installation de chaque composant séparément) 🛠️
+  - Installeur intégré dans la distribution : `k3s`, `minikube`, `microk8s`, … 📦
+  - Versions managées : outils dédiés au fournisseur de Cloud ☁️
 
 ---
 
@@ -934,27 +935,6 @@ graph LR;
 
 ---
 
-## 🔐 cert-manager (TLS)
-
-- CRD à ajouter au Cluster pour générer et signer des `Certificat` 🔐
-- Stocke la `key` et le `crt` dans un `Secret` 🔒
-  - Réutilisables dans `Ingress`, … 🌐
-- Utilise des `Issuer` (namespace-limited) ou des `ClusterIssuer` (cluster-wide) 🏷️
-
----
-
-## 🛡️ Service Mesh
-
-- Ajoute les services d'infrastructure communs 🛠️
-  - Authentification 🔐
-  - Sécurité 🛡️
-  - Logs 📝
-- Gère la communication sécurisée entre conteneurs sur des architectures micro-services 🌐
-- À installer : `Istio`, `linkerd`, `consul`, … 🛠️
-  - Voir la [page des outils Devops](https://www.avenel.pro/tools#-kubernetes-specific) 🔗
-
----
-
 ## 🌐 Gateway API
 
 - Nouvelle API Kubernetes (successeur Ingress) 🌐
@@ -977,6 +957,27 @@ graph LR;
   service-->pod1[Pod];
   service-->pod2[Pod];
 ```
+
+---
+
+## 🔐 cert-manager (TLS)
+
+- CRD à ajouter au Cluster pour générer et signer des `Certificat` 🔐
+- Stocke la `key` et le `crt` dans un `Secret` 🔒
+  - Réutilisables dans `Ingress`, … 🌐
+- Utilise des `Issuer` (namespace-limited) ou des `ClusterIssuer` (cluster-wide) 🏷️
+
+---
+
+## 🛡️ Service Mesh
+
+- Ajoute les services d'infrastructure communs 🛠️
+  - Authentification 🔐
+  - Sécurité 🛡️
+  - Logs 📝
+- Gère la communication sécurisée entre conteneurs sur des architectures micro-services 🌐
+- À installer : `Istio`, `linkerd`, `consul`, … 🛠️
+  - Voir la [page des outils Devops](https://www.avenel.pro/tools#-kubernetes-specific) 🔗
 
 ---
 
