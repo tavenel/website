@@ -679,7 +679,8 @@ private User checkCredentialsInDatabase(String username, String password) {
 - Tests de page Web : <https://www.webpagetest.org>
 - Analyses de sécurité Web (entêtes HTTP principalement) : <https://observatory.mozilla.org/>
 - <https://github.com/cnumr/best-practices-mobile>
-- Voir aussi le cours d'écoconception.
+- Implémentations en PHP : <https://github.com/piotrplenik/clean-code-php>
+- Voir aussi le [cours d'écoconception](/green-it).
 
 ---
 
