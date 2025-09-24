@@ -27,22 +27,17 @@ Module de 15H
 ## 📑 Documents
 
 - [🔀 Module en classe renversée](/esgi/b3/tests/classe-renversee)
+- [🤓 Cours sur les tests logiciels](/esgi/b3/tests/cours)
 
 ### Méthodologie
 
-- [🤓 Cours : méthodologie des tests](/tests/cours-methodo)
 - [📖 Exemple de rapport de bug](/tests/methodo/exemple-rapport-bug)
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
 - [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
 - [📝 Exercices sur les techniques de tests](/tests/methodo/techniques-tests-exercices)
 
-### Industrialisation des tests
-
-- [🤓 Cours sur l'industrialisation des tests](/tests/cours-indus)
-
 ### Tests unitaires
 
-- [🤓 Cours : le framework Unittest en Python](/tests/unit/python/cours-python-unittest)
 -  Dépôts d'exemples de tests unitaires :
   - 󰌠 Python : <https://git.sr.ht/~toma/python-unit>
   - ☕ Java : <https://git.sr.ht/~toma/java-unit>
@@ -54,7 +49,6 @@ Module de 15H
 
 ### ⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web
 
-- [🤓 Cours Selenium](/selenium/cours)
 - [💻 TP Selenium - industrialiser le test d'interface utilisateur](/selenium/tp)
   -   Sources pour le TP : `git clone https://git.sr.ht/~toma/selenium`
 
