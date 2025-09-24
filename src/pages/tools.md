@@ -331,6 +331,7 @@ created: 2024-10-17
 - `docusaurus` : wiki
 - `MarkItDown`: PDF, PPT, Word vers Markdown
 - <https://github.com/getomni-ai/zerox> : PDF, PPT, Word vers Markdown using AI for OCR
+- <https://typst.app/> : écriture proche de markdown puis génération automatique de documents, slides, … en utilisant des templates
 - `asciinema` : enregistrement de sessions de terminal
 
 ### 🤵 IAM, SSO
@@ -458,6 +459,7 @@ created: 2024-10-17
 - Affichage de messages et d'alertes : <https://alertifyjs.com/>
 - <https://www.happyhues.co/> : palettes de couleurs
 - Tables complexes : <https://www.ag-grid.com/>
+- Minimal CSS Framework for Semantic HTML : <https://picocss.com/>
 
 ## 📊 Data science, data mining
 
