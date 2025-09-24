@@ -28,8 +28,6 @@ Module de 15H
 
 - [🔀 Module en classe renversée](/esgi/b3/tests/classe-renversee)
 
-<!--
-
 ### Méthodologie
 
 - [🤓 Cours : méthodologie des tests](/tests/cours-methodo)
@@ -68,4 +66,3 @@ Module de 15H
 
 - Voir les autres ressources du [🧪 cours sur les tests](/tests) et du [cours sur l'intégration continue](/ci).
 
--->
