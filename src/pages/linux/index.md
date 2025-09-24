@@ -117,6 +117,8 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 - Aide simple sur les commandes : <https://cheat.sh/>
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - <https://roadmap.sh/linux>
+- Formation détaillée sur les bases de Linux : <https://formations.microlinux.fr/linux-rhel9/a-propos/>
+  - Du même auteur, histoire d'Unix, Linux et de l'Open-Source : <https://formations.microlinux.fr/introduction/a-propos/>
 - [Une formation gratuite de la Linux Foundation (LFS101)](https://training.linuxfoundation.org/training/introduction-to-linux/)
 - [Vidéo : 100+ Linux things in 10 mins](https://youtube.com/watch?v=LKCVKw9CzFo)
 - [Structure du système de fichiers](https://www.zdnet.fr/pratique/linux-la-structure-du-systeme-de-fichiers-expliquee-397880.htm)
