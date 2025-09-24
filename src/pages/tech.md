@@ -12,7 +12,7 @@ This page is strongly opinionated : expect advocacy of free, open-source and eff
 
 ## Fun
 
-Some [fun strips about computer science](/tech/fun)
+Some [fun strips about computer science](/fun)
 
 ## Notes
 
