@@ -51,6 +51,14 @@ checked: 2025-01-27
   - Travailler par associations. Excellent podcast (10') : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/comment-fonctionne-votre-memoire-1-6-non-apprendre-par-coeur-n-est-pas-tres-efficace-2431233>
   - S'impliquer **personnellement** et utiliser des références à **soi-même**
   - Apprentissage basé sur l'**action** : il est beaucoup plus simple de se rappeler ce que l'on a fait que d'apprendre théoriquement
+- Fun fact : la perception du temps change avec l'âge : <https://sdan.io/blog/perceived-age>
+
+#### Impact des écrans
+
+- Le _multitasking_ crée de gros soucis de concentration
+  - voir expérience : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/multitasking-l-impossible-multitache-des-hyperconnectes-5889944>
+- "Flow" : TODO def
+  - condition 1 : adéquation entre difficulté de la tâche et récompense
 
 #### Inbox 0
 
