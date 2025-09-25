@@ -88,8 +88,6 @@ Utilisateur standard
 Nom en majuscules : {{ utilisateur.nom | upper }}
 ```
 
-Super idée 👌 ! Les **templates Go** (aussi appelés **Go text/template** ou **Go html/template**) sont très proches de Jinja2, mais avec leur propre syntaxe et logique. Voici un petit cours + TP pratique sur le sujet, sur le même modèle que celui que je t’ai fait pour YAML & Jinja2.
-
 ## 🐹 Templates Go
 
 - Inclus dans la bibliothèque standard (`text/template` et `html/template`).
