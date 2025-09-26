@@ -14,10 +14,16 @@ created: 2024-10-17
 
 ## 🌍 Utilitaires en ligne
 
-- Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
+- Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json` ou <https://www.monip.org/>
 - ❓ Aides sur les commandes : `curl cheat.sh/ma_commande`
 - ⛅ `curl wttr.in/Grenoble` => weather at Grenoble, France.
 - [Extension Firefox et Chrome pour alerter sur les sites générés par IA](https://next.ink/164873/outils-next-une-extension-chrome-et-firefox-pour-etre-alerte-des-sites-genai/)
+- <https://bugmenot.com/> : partage de logins
+- DNS :
+  - `9.9.9.9` (Quad9)
+  - [liste standard](https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md) `dnscrypt`
+  - Check website DNS : <https://www.whatsmydns.net/>
+  - <https://nip.io/> : DNS résolvant toute IP vers un hostname : `10.0.0.1.nip.io` résoud vers `10.0.0.1`
 
 ## Outils utiles Devops (liste non exhaustive)
 
@@ -218,6 +224,7 @@ created: 2024-10-17
 - 📦 `packer` : création d'images de VMs
 - `semaphore` : UI for operating `ansible`, `terraform/OpenTofu`, `pulumi`. <https://semaphoreui.com/>
 - diagrammes : `plantuml`, `mermaid`, `ditaa`, `kroki`, <https://diagrams.mingrammer.com/>, `dot`
+  - Comparaison de librairies générant des diagrammes depuis Markdown : <https://support.typora.io/Draw-Diagrams-With-Markdown/>
 - 💲 `Infracost` : track coût plateformes IaC (`Terraform`, …)
 - </> `Typer` : librairie Python pour écrire facilement une CLI
 - <https://github.com/Textualize/rich> : Rich library for text-based GUI and advanced text formatting in Python
@@ -310,6 +317,8 @@ created: 2024-10-17
 - [Crowdsec](https://blog.stephane-robert.info/docs/securiser/reseaux/crowdsec/) : outil communautaire
 - statuspage : <https://hydrozen.io/>
 - API monitoring : `checkly`
+- OCSInventory => inventaire automatique et gestion de parc de machines
+- GLPI => gestion de parc, ticketing, …
 
 ### 🤫 Gestion des secrets
 
@@ -412,7 +421,7 @@ created: 2024-10-17
   - <https://www.arcmutate.com/>
 - Données de test :
   - <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
-  - Génération de fausses données : <https://fakerjs.dev/>
+  - Génération de fausses données : <https://fakerjs.dev/> et <https://generatedata.com/>
 
 ## Backend tools
 
@@ -460,6 +469,11 @@ created: 2024-10-17
 - <https://www.happyhues.co/> : palettes de couleurs
 - Tables complexes : <https://www.ag-grid.com/>
 - Minimal CSS Framework for Semantic HTML : <https://picocss.com/>
+- Générateur de couleurs accessibles : <https://randoma11y.com>
+- Diagnostic CSS (highlight issues) :
+  - <https://meyerweb.com/eric/tools/css/diagnostics/index.html>
+  - <https://meyerweb.com/eric/tools/favelets/>
+- Fonds de cartes Open-Street Map : <http://maps.stamen.com>
 
 ## 📊 Data science, data mining
 
@@ -545,6 +559,7 @@ created: 2024-10-17
 - shell :
 	- `bash`, disponible partout (avec [Oh My Bash][oh-my-bash])
   - `zsh`, plus puissant avec [Oh My ZSH][oh-my-zsh] (voir aussi [awesome-zsh][awesome-zsh])
+    - ZSH expert features : <https://thevaluable.dev/zsh-expansion-guide-example/>
 	- exotiques : `fish` (avec [Fisher][fisher]), [nu][nushell]
 - prompt shell (`PS1`) :
 	- [pure][pure] : prompt très rapide sous ZSH
@@ -585,7 +600,12 @@ created: 2024-10-17
 - `column -s ',' -t` => better CSV output
 - `bsdtar` => archive management on Linux, includes `rar` format
 - `ntfy send ...` => send notification (can use many backends)
+
+### Outils poste de travail Développeur
+
+- `ngrok` : rendre les applications locales accessibles sur Internet (Ingress)
 - Environnements de développement sous Kubernetes : <https://skaffold.dev/>, <https://tilt.dev/>
+- `Wappalyzer` : extension détectant les technologies utilisées par un site Web
 
 ### Outils poste de travail DevOps
 
@@ -710,6 +730,24 @@ created: 2024-10-17
 - _google translate_ => <https://libretranslate.com/>
 - <https://silex.me/> => création de site web no-code
 - <https://capjs.js.org/> : proof-of-work alternatif aux CAPTCHA
+- <https://framatalk.org> : video conference without account
+- <http://framadate.org/> et <https://polls.fr/> (anonyme et liens directs vers choix - utile pour chat) : sondages
+- <https://openfeedback.io/> : Get feedback (free)
+- <https://github.com/ether/etherpad-lite/wiki/Sites-That-Run-Etherpad> etherpads : éditions collaboratives
+- <https://cijoint.org/> envoi de fichier (<100MB), chiffré côté client
+- <https://tlk.io/> instant chatrooms
+- remote clipboards :
+  - <https://pastebin.com> : share code lines
+  - <http://www.olissea.com/PP/PP.php> : also sends mail
+- [QR code](https://lehollandaisvolant.net/tout/tools/qrcode/) generator
+- <https://yewtu.be> frontend alternatif pour YouTube
+- Proxy YouTube : <https://www.proxfree.com/youtube-proxy.php>
+
+### Hébergements
+
+- <https://www.zaclys.com> _chaton_ français (hébergeur indépendant) : `nextcloud` (presque tous les plugins), `searx`, `rssfeed`, mail, ....
+- <https://www.chapril.org/> _chaton_ de l'April : nombreux services
+- <https://leviia.com> hébergeur indépendant français : `nextcloud` et `OnlyOffice` sur stockage OVH.
 
 ## 🔗 Awesome lists
 
@@ -743,14 +781,6 @@ created: 2024-10-17
 - <<https://www.trackawesomelist.com/markodenic/web-development-resources/rss.xml> : awesome Web development resources
 - <<https://www.trackawesomelist.com/aviaryan/awesome-no-login-web-apps/rss.xml> : awesome No-login Web apps
 - <<https://www.trackawesomelist.com/unixorn/awesome-zsh-plugins/rss.xml> : awesome ZSH Plugins
-
-## Adoption
-
-- En 2025 (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/>) :
-- CI/CD: GitHub Actions (40%), GitLab (39%), Jenkins (36%)
-- Provisioning: Terraform (39%), Ansible (35%), GCP (32%)
-- Monitoring: Grafana (40%), Prometheus (38%), Elastic (34%)
-- Containers in IT : 92%
 
 
 [ack]: https://github.com/beyondgrep/ack3

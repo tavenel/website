@@ -1,8 +1,10 @@
 ---
-title: Liens utiles
+title: Références et Liens utiles
 created: 2024-10-17
 checked: 2025-01-27
 ---
+
+![](@assets/undraw/undraw_link-shortener_9ro5.svg)
 
 ## Livres
 
@@ -23,135 +25,49 @@ checked: 2025-01-27
 
 - [Bootstrapping Microservices, Second Edition With Docker, Kubernetes, GitHub Actions, and Terraform (Ashley Davis)](https://www.manning.com/books/bootstrapping-microservices-second-edition)
 
+### Building a Second Brain
+
+- "_Building a Second Brain_" ([livre](https://www.goodreads.com/book/show/59616977-building-a-second-brain)) est une méthode pratique pour stocker et organiser ses notes efficacement selon la méthode **CODE** :
+
+- **Capturer** les idées 📝
+- **Organiser** ces idées par des relations entre elles 🗂️
+- **Distiller** : ne garder que l'essentiel du concept ⚗️
+- **Exprimer** : donner forme et partager (mail, présentation, article, décision, …) 🎤
+
+### Made to Stick
+
+"_Made to Stick_" ([livre](https://www.goodreads.com/book/show/69242.Made_to_Stick)) : pourquoi certaines idées ont un impact durable et d'autres non? Pour ancrer les idées, utiliser la méthode **SUCCES** :
+
+- **Simple** : "Quand on dit trois choses, on ne dit rien."
+- **Inattendu (Unexpected)** : La surprise attire l'attention.
+- **Concret**
+- **Crédible**
+- **Émotions** : faire ressentir les choses
+- **Histoire (Story)** : pour faire ressentir quelque chose, utiliser des histoires et le storytelling
+
+### The Mom Test
+
+"_The Mom Test_" ([livre](https://www.goodreads.com/book/show/52283963-the-mom-test)) explore les (anti-)schémas lors des retours avec les clients :
+
+- Présentez une idée à votre mère et elle vous dira qu'elle est excellente, même si ce n'est pas le cas.
+  - Idem pour les clients : retours souvent polis plutôt qu'utiles.
+- Solution :
+  - Pas de question basée sur des opinions : "Pensez-vous que c'est une bonne idée ?" ❌
+  - Privilégier : expériences et comportements réels (non simulables) ✔️
+- Éviter :
+  - "Achèteriez-vous un produit qui ferait … ?" ❌
+  - "Combien paieriez-vous pour … ?" ❌
+- Privilégier :
+  - "Comment vivez-vous cette situation actuellement ?" ✔️
+  - "Pourquoi est-ce important pour vous ?" ✔️
+  - "Pouvez-vous me raconter la dernière fois où cela s’est produit ?" ✔️
+
+> Merci à [Teiva Harsanyi](https://substack.com/@teivah) pour la découverte de ces livres : <https://www.thecoder.cafe/p/paternity-leave>
+
 ## Podcasts
 
 - Cybersécurité : "_True stories from the dark side of the Internet_" : <https://darknetdiaries.com/>
 - Développement : "_Developer Voices_" : <https://www.developervoices.com/>
-
-## Informations transverses
-
-### Apprentissage, Métacognition, Organisation
-
-#### Notions d'apprentissage
-
-- **Cessité attentionnelle** : lors d'un focus fort sur une tâche, peu d'attention au reste
-  - Voir l'expérience du gorille dans ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-attention-4589382>
-  - Vidéo Youtube : [selective attention test](https://www.youtube.com/watch?v=IGQmdoK_ZfY)
-- **Inhibition** : capacité du cortex préfrontal à sortir des routines et automatismes
-  - Voir l'expérience de l'effet Stroop : <https://biais-psychologiques.com/biais/effet-stroop/> et podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-inhibition-et-la-flexibilite-3735919>
-- La **récompense** permet d'appliquer une **motivation extrinsèque** (de l'extérieur) à l'apprentissage à court terme mais **au détriment de la motivation intrinsèque** (interne à l'apprenant) sur le long terme (à minimiser donc).
-  - Pour promouvoir la **motivation intrinsèque** : mettre le focus sur l'apprentissage de nouvelles compétences & l'interaction entre apprenants
-  - Voir le podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/la-motivation-et-l-esprit-de-changement-1962894>
-- L'utilisation des **émotions** permet un engagement fort :
-  - Émotion positive : succès de la réalisation, reconnaissance de la réussite, plaisir et bien-être dans le groupe, …
-  - Émotion négative : situation future néfaste pouvant être évitée par la réalisation de la tâche ou de l'apprentissage, peur de passer à côté d'une opportunité (bien connu en marketing), …
-- **Mémorisation** :
-  - Tout le monde apprend à peu près pareil (pas de "visuels", "auditifs", …). Le meilleur apprentissage est croisé (visuel + auditif + …)
-  - Éviter le _"par coeur"_ peu efficace. Privilégier un **traitement profond** (basé sur le **sens** des informations)
-  - Travailler par associations. Excellent podcast (10') : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/comment-fonctionne-votre-memoire-1-6-non-apprendre-par-coeur-n-est-pas-tres-efficace-2431233>
-  - S'impliquer **personnellement** et utiliser des références à **soi-même**
-  - Apprentissage basé sur l'**action** : il est beaucoup plus simple de se rappeler ce que l'on a fait que d'apprendre théoriquement
-- Fun fact : la perception du temps change avec l'âge : <https://sdan.io/blog/perceived-age>
-
-#### Impact des écrans
-
-- Le _multitasking_ crée de gros soucis de concentration
-  - voir expérience : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/multitasking-l-impossible-multitache-des-hyperconnectes-5889944>
-- "Flow" : TODO def
-  - condition 1 : adéquation entre difficulté de la tâche et récompense
-
-#### Inbox 0
-
-- Objectif : Minimiser le temps passé à la gestion des mails
-- Principes :
-  - Vérifier ses mail à heure fixe et non toute la journée (pas de notification)
-  - Catégoriser ses mails dans des répertoires
-  - Appliquer un arbre de décision à chaque mail reçu :
-    - Faire directement si < 2 min
-    - Sinon Différer
-    - Déléguer si possible
-    - Supprimer si l'e-mail est uniquement informatif
-- <http://www.43folders.com/43-folders-series-inbox-zero>
-- <https://asana.com/resources/inbox-zero>
-- <https://www.microsoft.com/en-us/microsoft-365-life-hacks/organization/inbox-zero-six-tips-for-living-outside-the-box>
-
-#### Méthode des J
-
-- Principe : "raffraichir" la mémoire à dates régulières afin d'éviter la courbe de l'oubli en révisant par exemple à :
-  - J0, J1, J3, J7, J14, J30
-  - J0, J1, J3, J10, J20, J35
-  - J0, J2, J5, J14
-- En Pratique : QCMs, exercices, … aux dates prévues. L'apprentissage se fait à J0, les autres dates sont de courtes sessions de remémorisation.
-- <https://www.adobe.com/fr/acrobat/resources/studying/spaced-repetition-method.html>
-- <https://hermione.co/methode-des-j-pass/>
-
-#### Prise de notes et rédaction efficaces
-
-- Noter et écrire le fond en _temps réel_
-- Avoir une collection d'abbréviations pour gagner du temps
-- Séparer d'une colonne : notes objectives "résumé" et notes subjectives "questions / actions à prendre / …"
-- Retravailler la forme et la mise en page plus tard
-- <https://apprendre5minutes.wordpress.com/2025/03/08/techniques-prise-de-notes-efficaces/>
-- <https://kevindetem.com/12-methodes-prise-de-notes-efficace>
-
-#### Sketchnote
-
-- Principe : Représenter graphiquement en dessinant et annotant une prise de notes
-- Très utile en cours magistral / conférence technique /  … pour résumer un concept complexe
-- Voir aussi : <https://www.mindmapping.com/>
-- <https://www.insuffle.com/cest-quoi-le-sketchnoting/>
-- <https://www.bienenseigner.com/sketchnote/>
-- <https://www.optimike.net/sketchnoting/>
-
-### Sauvegardes : la règle du 3-2-1-1-0
-
-- 3 = Conservez au moins trois copies de vos données : production, sauvegarde, copie de sauvegarde (en bonus l'archivage compte comme une copie)
-- 2 = Utilisez au moins deux types de supports différents pour le stockage (de marque différentes) : disques internes, SAN, NAS (en bonus l'archivage avec les bandes LTO compte comme un support)
-- 1 = Conservez au moins une copie hors site : autre site (de production et de sauvegarde) que ce soit une infra de stockage ou dans un coffre-fort par exemple.
-- 1 = Conservez au moins une copie hors ligne, isolée ou immuable : c'est surtout pour se prémunir d'une destruction volontaire (ransomware, acte malveillant via accès distant)
-- 0 = Zéro erreur après tests de restauration : une sauvegarde non restaurable n'est pas exploitable le jour où on en a besoin.
-
-### CRDTS
-
-**Conflict Free Replicated Data types** : comment fusionner des données répliquées ?
-
-- <https://vlcn.io/blog/intro-to-crdts> : Enjeux des CRDTS
-- <https://jakelazaroff.com/words/an-interactive-intro-to-crdts/> : Introduction et exemples de CRDTS
-- <https://zknill.io/posts/collaboration-no-crdts/> : comment collaborer sans CRDTS
-
-### High Availability (HA)
-
-- The CAP Theorem : <https://www.thecoder.cafe/p/cap>
-- The PACELC Theorem : <https://www.thecoder.cafe/p/pacelc>
-- Availability Models : <https://www.thecoder.cafe/p/availability-models>
-
-### Cybersécurité (2020)
-
-- 50% des applications Web ont une faille critique
-- 50 nouvelles CVE découvertes chaque jour
-- 50% des PME attaquées ont coulé
-
-### IA
-
-#### Types de prompts IA
-
-- _zero-shot_ => pas de contexte
-- _few shots_ => contexte par exemples
-- _chain of thought_ => "let's think …" (step-by-step example)
-- _RAG_ (retrieval augmented generation) => élévation de contexte par vecteur de contexte
-- _agents_ => conscience de l'environnement
-
-#### Liens IA
-
-- <https://www.comparia.beta.gouv.fr/>
-- <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
-- <https://github.com/microsoft/AI-For-Beginners> : Cours gratuits Microsoft
-- Impact des IA génératives sur les étudiants :
-  - <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
-  - <https://www.newcartographies.com/p/the-myth-of-automated-learning>
-- [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
-- [UX : Comment les entreprises de la tech nous forcent à utiliser l'IA](https://limitesnumeriques.fr/travaux-productions/ai-forcing)
-- <https://blog.wescale.fr/back-to-basics-pere-castor-raconte-moi-le-prompt-engineering>
 
 ## Citations
 
@@ -173,44 +89,123 @@ checked: 2025-01-27
 
 > Dealing with failure is easy: Work hard to improve. Success is also easy to handle: You've solved the wrong problem. Work hard to improve. (Alan Perlis)
 
-## Liens transverses
+## Liens
 
-- Les méta-lois en informatique : <https://github.com/StephaneTrebel/presentations/tree/main/meta-lois>
-- [CERISE : Conseils aux Etudiants en Recherche d'InformationS Efficace](https://callisto-formation.fr/course/view.php?id=263)
-- Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
-- Gérer la variable d'environnement `$PATH` :
-  - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
-  - sous Linux, voir le TP sur la ligne de commandes [du cours Linux](/linux)
-- Article très complet sur les origines de la console et des terminaux Unix : <https://thevaluable.dev/guide-terminal-shell-console/>
+### CRDTS
+
+**Conflict Free Replicated Data types** : comment fusionner des données répliquées ?
+
+- <https://vlcn.io/blog/intro-to-crdts> : Enjeux des CRDTS
+- <https://jakelazaroff.com/words/an-interactive-intro-to-crdts/> : Introduction et exemples de CRDTS
+- <https://zknill.io/posts/collaboration-no-crdts/> : comment collaborer sans CRDTS
+
+### High Availability (HA)
+
+- The CAP Theorem : <https://www.thecoder.cafe/p/cap>
+- The PACELC Theorem : <https://www.thecoder.cafe/p/pacelc>
+- Availability Models : <https://www.thecoder.cafe/p/availability-models>
+
+### E-Mail
+
+- <https://www.mail-tester.com> : test mail spammyness
+- <https://www.emailprivacytester.com> : test mail client for privacy
+- <https://www.virustotal.com> : scan file for viruses (Google)
+
+### IA
+
+- <https://www.comparia.beta.gouv.fr/>
+- <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
+- <https://github.com/microsoft/AI-For-Beginners> : Cours gratuits Microsoft
+- Impact des IA génératives sur les étudiants :
+  - <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
+  - <https://www.newcartographies.com/p/the-myth-of-automated-learning>
+- [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
+- [UX : Comment les entreprises de la tech nous forcent à utiliser l'IA](https://limitesnumeriques.fr/travaux-productions/ai-forcing)
+- <https://blog.wescale.fr/back-to-basics-pere-castor-raconte-moi-le-prompt-engineering>
+- Local AI LLMs : <https://ollama.com/> et <https://docs.openwebui.com/>
+  - `tinyllama`, `tinydolphin`, `dolphin-mistral`, `codestral`, …
+- Block AI indexing in your website : <https://github.com/ai-robots-txt/ai.robots.txt>
+
+:::link
+Voir aussi : [informations IA](/other#ia)
+:::
+
+### Cybersécurité
+
+- <https://blog.stephane-robert.info/post/google-dorks/> : Les Google Dorks - trouver des informations sensibles depuis Google Search.
+- <https://ddosecrets.com/> : Distributed Denial of Secrets : publication des leaks
+- <https://en.fofa.info/> : Recherche d'hôtes sur critères
+- Check DNS leaks : <https://dnsleaktest.com/>
+
+### Dev
+
+- Lexique du développeur : <https://zestedesavoir.com/tutoriels/531/les-bases-de-la-programmation/>
 - <https://conventionalcomments.org/>
 - <https://zestedesavoir.com/tutoriels/299/la-theorie-rest-restful-et-hateoas/>
 - <https://zestedesavoir.com/tutoriels/621/algorithmique-pour-lapprenti-programmeur/>
-- Excellent article sur le fonctionnement d'un ordinateur : <https://lafor.ge/virtualization-1/>
-- Lexique du développeur : <https://zestedesavoir.com/tutoriels/531/les-bases-de-la-programmation/>
-- Cours sur les optimisations des compilateurs : <https://zestedesavoir.com/tutoriels/427/les-optimisations-des-compilateurs/>
-- Cours mémoire cache et optimisation de code : <https://zestedesavoir.com/tutoriels/331/memoire-cache-et-optimisation-de-code/>
-- Introduction au droit d'auteur et aux licences Creative Commons : <https://zestedesavoir.com/tutoriels/261/le-droit-dauteur-creative-commons-et-les-licences-sur-zeste-de-savoir/>
-- Exemples de bons README : <https://github.com/matiassingers/awesome-readme>
+- Histoire de Java : <https://codegym.cc/fr/groups/posts/fr.594.histoire-de-java-une-histoire-complete-du-developpement-java-de-1991-a-2021>
+- <https://perso.crans.org/besson/publis/slides/2016_07__Python_demo_at_EPFL/> : cours Python ML/DL/data science
+- [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
+- [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
+- [Pattern CQRS/ES et implémentations](https://romaintrm.github.io/posts/cqrs-es-nos-heuristiques-apres-plusieurs-annees-de-production/)
+- <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
+
+### UI et UX
+
+- Cas d'étude d'UX Design : <https://growth.design/>
 - UX asynchrone : <https://kyusuf.com/post/fake-it-til-you-make-it-css>
 - <https://dev.to/devluc/50-best-websites-for-web-design-inspiration-and-ideas-be6>
+- <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
+- Exemple de pire interface utilisateur : <https://userinyerface.com/>
+
+### Doc
+
+- Exemples simplifiés de pages de manuel (+ ligne de commandes et format opensearch pour ajout au navigateur) : <https://cheat.sh/>
+- Explication graphique de commandes de terminal : <https://explainshell.com/>
+- Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
+- [CERISE : Conseils aux Etudiants en Recherche d'InformationS Efficace](https://callisto-formation.fr/course/view.php?id=263)
+- Exemples de bons README : <https://github.com/matiassingers/awesome-readme>
+- Exemple de page d'aide de CLI : voir la commande `kubectl --help`
+- Comment écrire de bons exemples : <https://conventionalcomments.org/>
+- Documentation technique - fonctionne hors ligne <https://devdocs.io/>
+- Écrire des maths en LaTeX : <https://zestedesavoir.com/tutoriels/409/outils-pour-lecriture-des-mathematiques-en-latex/>
+- Utiliser LaTeX pour créer des sujets d'examen : <https://blog.dorian-depriester.fr/latex/rediger-des-sujets-dexamen-avec-latex>
+- Symboles mathématiques et lettres grecques en LaTeX : <https://fr.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>
+
+### Théorie
+
+- Les méta-lois en informatique : <https://github.com/StephaneTrebel/presentations/tree/main/meta-lois>
+- Article très complet sur les origines de la console et des terminaux Unix : <https://thevaluable.dev/guide-terminal-shell-console/>
+- Excellent article sur le fonctionnement d'un ordinateur : <https://lafor.ge/virtualization-1/>
+- Cours sur les optimisations des compilateurs : <https://zestedesavoir.com/tutoriels/427/les-optimisations-des-compilateurs/>
+- Cours mémoire cache et optimisation de code : <https://zestedesavoir.com/tutoriels/331/memoire-cache-et-optimisation-de-code/>
+- Le paradoxe de la complexité : <https://www.votito.com/methods/togs-paradox/>
+- <https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing> : erreurs typiques en programmation & déploiement de systèmes distribués
+- [NAT vs BRIDGE](https://blog.stephane-robert.info/docs/homelab/bridge-nat/)
+
+### Liens transverses Tech
+
+- <https://oracle.com/cloud/free> : free servers
+- <https://endoflife.date>
+- Gérer la variable d'environnement `$PATH` :
+  - voir [ce tutoriel sous Windows](https://www.malekal.com/comment-modifier-la-variable-path-sous-windows-10-11/)
+  - sous Linux, voir le TP sur la ligne de commandes [du cours Linux](/linux)
 - Tips `Vagrant` : <https://blog.stephane-robert.info/docs/infra-as-code/provisionnement/vagrant/introduction/#quelques-tips>
 - Salaires dans la tech : <https://www.silkhom.com/les-salaires-informatique-et-electronique/>
 - <https://killercoda.com/> : playgrounds Dev / Ops (Linux, Git, k8s, …)
-- <https://perso.crans.org/besson/publis/slides/2016_07__Python_demo_at_EPFL/> : cours Python ML/DL/data science
-- Le paradoxe de la complexité : <https://www.votito.com/methods/togs-paradox/>
-- Exemple de page d'aide de CLI : voir la commande `kubectl --help`
-- [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
-- <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
-- [NAT vs BRIDGE](https://blog.stephane-robert.info/docs/homelab/bridge-nat/)
-- <https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing> : erreurs typiques en programmation & déploiement de systèmes distribués
-- <https://nip.io/> : DNS résolvant toute IP vers un hostname : `10.0.0.1.nip.io` résoud vers `10.0.0.1`
-- Cas d'étude d'UX Design : <https://growth.design/>
-- [Pattern CQRS/ES et implémentations](https://romaintrm.github.io/posts/cqrs-es-nos-heuristiques-apres-plusieurs-annees-de-production/)
-- <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
 - [Une architecture open-source qui ne déraille pas (Julien Cognet, Snowcamp 2025)](https://www.slideshare.net/slideshow/snowcamp-2025-une-architecture-qui-ne-deraille-pas/275103626)
-- [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
-- Histoire de Java : <https://codegym.cc/fr/groups/posts/fr.594.histoire-de-java-une-histoire-complete-du-developpement-java-de-1991-a-2021>
+- <https://sebsauvage.net/wiki/doku.php?id=android> applications et jeux Android intéressants
+- Fiches de réparation de matériels électroniques : <https://fr.ifixit.com/>
+- "A series of nonverbal algorithm assembly instructions" : <https://idea-instructions.com/>
+
+### Liens Divers
+
+- Introduction au droit d'auteur et aux licences Creative Commons : <https://zestedesavoir.com/tutoriels/261/le-droit-dauteur-creative-commons-et-les-licences-sur-zeste-de-savoir/>
 - [Do Not Erase: Beautiful Collection of Mathematicians' Blackboards](https://abakcus.com/do-not-erase-beautiful-collection-of-mathematicians-blackboards)
+- [Le charbon est beaucoup plus dangereux que le nucléaire](https://lehollandaisvolant.net/?d=2022/08/29/18/40/42-le-charbon-est-beaucoup-plus-dangereux-que-le-nucleaire)
+- Perma-entreprise : <https://www.permaentreprise.fr/>
+- <https://www.librealire.org/bien-gerer-son-projet-libre-que-faire-au-dela-du-code>
+- Comics about energy : <https://www.stuartmcmillen.com/comic/energy-slaves/>
 
 ## Gamification
 
