@@ -175,6 +175,7 @@ tags:
 - <https://kubernetes.io/docs/tutorials/services/source-ip/> : tester et comprendre l'abstraction de service (NAT, source / destination IP) 🌐
 - [Understanding Kubernetes Networking (playlist)](https://www.youtube.com/playlist?list=PLSAko72nKb8QWsfPpBlsw-kOdMBD7sra-) 📹
 - [Container Network Interface (CNI) in Kubernetes: An Introduction](https://itnext.io/container-network-interface-cni-in-kubernetes-an-introduction-6cd453b622bd) 🌐
+- <https://itnext.io/inside-intra-node-pod-traffic-in-kubernetes-how-kindnet-with-ptp-moves-packets-ffbbc07612b7>
 
 ---
 
@@ -191,6 +192,7 @@ tags:
 - <https://www.parseable.com/blog/track-privilege-escalations-with-ebpf> 🔐
 - [SPIFFE et mTLS avec cert-manager](https://une-tasse-de.cafe/blog/spiffe/) 🔐
 - Déployer un Pod _honeypot_ pour détecter les mouvements latéraux suspects : <https://beelzebub-honeypot.com/blog/deploy-beelzebub-honeypot-on-kubernetes/>
+- <https://medium.com/@sijomthomas05/kubernetes-authentication-authorization-8bebecf52cf8>
 
 ---
 
@@ -268,6 +270,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
+- Un guide sur l'utilisation de "Pressure Stall Information" (PSI) depuis cAdvisor pour mieux gérer les ressources et pourquoi PSI est mieux adapté à k8s qu'aux VMs : [From Utilization to PSI: Rethinking Resource Starvation Monitoring in Kubernetes](https://blog.zmalik.dev/p/from-utilization-to-psi-rethinking)
 
 ---
 
