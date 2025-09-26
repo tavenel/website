@@ -135,6 +135,7 @@ created: 2024-10-17
 - 📦📦 scaling
   - [Keda](https://keda.sh/) : Event-driven autoscaling
   - `Goldilocks` : génération de recommendations de _requests_ et _limits_
+  - <https://github.com/jthomperoo/predictive-horizontal-pod-autoscaler> : modèles prédictifs pour auto-scaling (HPA)
 - 🔒 sécurité
 	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
 	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
@@ -187,6 +188,7 @@ created: 2024-10-17
   - [kube-backup](https://github.com/pieterlange/kube-backup) : backup YAML dans répo Git
   - [bivac](https://github.com/camptocamp/bivac) : Backup Interface for Volumes Attached to Containers 
   - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/) : [snapshots par annotations](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/snaps-annotations/#taking-periodic-snapshots-on-a-running-pod)
+- Scan de cluster et diagnostics par IA : <https://github.com/k8sgpt-ai/k8sgpt>
 
 ##### Installation de cluster
 
