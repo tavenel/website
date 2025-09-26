@@ -16,6 +16,7 @@ layout: '@layouts/BaseLayout.astro'
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
 - 󱃾  Learn Kubernetes Basics: Tutoriels officiels pour débuter avec Kubernetes : <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
+- Exemple de déploiement d'applications Go et d'utilisation d'un Ingress : <https://git.sr.ht/~toma/iac/tree/main/item/k8s/examples/ingress/README.md>
 - [󱃾  TP : Déploiement applicatif avec Helm](/k8s/tp-helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.
 - [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/k8s/tp-prometheus-grafana) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/k8s/tp-elk) : le logging centralisé est essentiel dans un environnement `Kubernetes` pour surveiller les applications et diagnostiquer les problèmes. Nous allons voir différentes solutions de logging centralisé : stack ELK, `Fluent`, `Loki`.

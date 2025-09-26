@@ -93,6 +93,7 @@ tags:
 ### Installation de clusters et environnements de test
 
 - [Fichiers perso de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh) 📂
+- Exemples de fichiers k8s : <https://git.sr.ht/~toma/iac>
 - Bacs à sable pour tester k8s : [killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) et <https://labs.play-with-k8s.com/> et <https://kodekloud.com/playgrounds/> et <https://labs.iximiuz.com/playgrounds/k8s-omni> 🏗️
 - Mini-distributions : <https://blog.palark.com/small-local-kubernetes-comparison/> 📦
 - [Administration de cluster via etcd](https://blog.stephane-robert.info/post/kubernetes-etcd/) 📝

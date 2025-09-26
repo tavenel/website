@@ -1261,6 +1261,10 @@ helm install traefik traefik --namespace=traefik --create-namespace --repo https
 ```
 
 :::link
+Pour un mini exemple d'applications Go utilisant un Ingress, voir le dépôt : <https://git.sr.ht/~toma/iac/tree/main/item/k8s/examples/ingress/README.md>
+:::
+
+:::link
 Voir aussi :
 
 - <https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md>
