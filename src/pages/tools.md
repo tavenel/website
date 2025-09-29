@@ -156,6 +156,7 @@ created: 2024-10-17
   - <https://k8slens.dev/> : un IDE orienté k8s
   - <https://github.com/stern/stern> : logs multi-pods
   - <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
+  - <https://grogg.app/> : dashboard de gestion k8s (app native ou extension vscode)
   - <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
   - <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
   - <https://www.tigera.io/> : Unified Network Security & Observability for Kubernetes
@@ -625,6 +626,7 @@ created: 2024-10-17
   - `kubie` : change context / namespace temporairement
   - `kube-ps1` : show k8s cluster/context in shell
   - `kubecolor` : colored kubectl output
+  - <https://github.com/keisku/kubectl-explore> : kubectl extension pour chercher dans la doc avec un "fuzzy finder"
   - `k9s` : Terminal UI k8s management
   - `k8s lens` : graphical cluster management
   - `kube-capacity` : monitor ressources
