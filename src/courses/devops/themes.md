@@ -8,94 +8,83 @@ Voici une liste structurée des **principaux thèmes DevOps**, organisée par do
 
 ---
 
-### 🔧 **1. Intégration et Livraison Continues (CI/CD)**
+### 🔧 1. Intégration et Livraison Continues (CI/CD)
 
-* Pipelines CI/CD (GitLab CI, GitHub Actions, Jenkins…)
-* Tests automatisés (unitaires, d'intégration, e2e)
-* Gestion des artefacts (Docker Registry, Nexus, Artifactory)
-* Déploiement automatisé (rolling update, blue/green, canary)
-
----
-
-### 📦 **2. Conteneurisation & Orchestration**
-
-* Docker : images, volumes, réseaux, multi-stage builds
-* Kubernetes : pods, services, ingress, configMaps, Helm…
-* Docker Compose
-* Serverless (OpenFaaS, AWS Lambda…)
+- Pipelines CI/CD (GitLab CI, GitHub Actions, Jenkins…)
+- Tests automatisés (unitaires, d'intégration, e2e)
+- Gestion des artefacts (Docker Registry, Nexus, Artifactory)
+- Déploiement automatisé (rolling update, blue/green, canary)
 
 ---
 
-### ⚙️ **3. Infrastructure as Code (IaC)**
+### 🧪 2. Qualité & Tests
 
-* Terraform
-* Ansible
-* Pulumi
-* Cloud-init / Packer
-* Gestion des environnements (prod/dev/staging)
-
----
-
-### 🛡️ **4. Sécurité (DevSecOps)**
-
-* Analyse statique du code (SAST)
-* Analyse dynamique (DAST)
-* Détection de vulnérabilités (Trivy, Clair, Grype…)
-* Secret management (Vault, Sealed Secrets, Doppler)
-* Politique de moindre privilège (RBAC, IAM)
+- Linting et formattage
+- Tests automatisés : TDD, BDD
+- Tests de charge et performance (Locust, Gatling, JMeter)
+- Chaos Engineering (Gremlin, Chaos Mesh)
 
 ---
 
-### 📊 **5. Observabilité & Monitoring**
+### 📦 3. Conteneurisation & Orchestration
 
-* Monitoring (Prometheus, Grafana, Zabbix…)
-* Logs centralisés (ELK, Loki, Fluentd…)
-* Tracing distribué (Jaeger, OpenTelemetry)
-* Alerting (Alertmanager, Opsgenie…)
-
----
-
-### 🧪 **6. Qualité & Tests**
-
-* Linting et formattage
-* Tests automatisés : TDD, BDD
-* Tests de charge et performance (Locust, Gatling, JMeter)
-* Chaos Engineering (Gremlin, Chaos Mesh)
+- Docker : Conteneurs, Images, Docker Hub
+- Docker Compose : orchestration simple
+- Kubernetes : orchestration complexe, Pods, Helm
+- Serverless (OpenFaaS, AWS Lambda)
+- Micro-services
 
 ---
 
-### ☁️ **7. Cloud & Plateformes**
+### ⚙️ 4. Infrastructure as Code (IaC)
 
-* AWS / Azure / GCP
-* Cloud hybride / multi-cloud
-* Plateformes Kubernetes managées (EKS, AKS, GKE)
-* Edge Computing & IoT
-
----
-
-### 🔁 **8. Collaboration & Culture DevOps**
-
-* GitOps (ArgoCD, Flux)
-* ChatOps (Slack + bots, Mattermost, MS Teams)
-* Documentation automatisée (MkDocs, Swagger/OpenAPI)
-* Méthodes agiles (Scrum, Kanban)
-* Feedback loop rapide et amélioration continue
+- Versioning Git
+- Modèles déclaratifs vs impératifs
+- Ansible, 
+- Terraform
+- Cloud-init / Packer
+- Gestion des environnements (prod/dev/staging)
+- Gestion des Configurations
+- GitOps (ArgoCD, Flux)
 
 ---
 
-### 🗂️ **9. Gestion de Configuration et Déploiement**
+### ☁️ 5. Cloud & Plateformes
 
-* Ansible, Chef, Puppet
-* Modèles déclaratifs vs impératifs
-* Rolling updates, Recreate, Blue/Green Deployments
+- AWS / Azure / GCP
+- Cloud hybride / multi-cloud
+- Plateformes Kubernetes managées (EKS, AKS, GKE)
+- "Pet" vs "Cattle"
 
 ---
 
-### 🧩 **10. Outils et Métriques**
+### 📊 6. Observabilité & Monitoring
 
-* Git, GitLab/GitHub/Bitbucket
-* CI/CD metrics : DORA metrics (lead time, deployment frequency, MTTR…)
-* KPIs DevOps (temps de cycle, couverture de tests, taux d’échec de build)
+- Monitoring (Prometheus, Grafana, Zabbix…)
+- Logs centralisés (ELK, Loki, Fluentd…)
+- Tracing distribué (Jaeger, OpenTelemetry)
+- Alerting (Alertmanager, Opsgenie…)
+
+---
+
+### 🛡️ 7. Sécurité (DevSecOps)
+
+- Analyse statique du code (SAST)
+- Analyse dynamique (DAST)
+- Détection de vulnérabilités (Trivy, Clair, Grype…)
+- Secret management (Vault, Sealed Secrets, Doppler)
+- Politique de moindre privilège (RBAC, IAM)
+
+---
+
+### 🔁 8. Collaboration & Culture DevOps
+
+- Les 5 piliers CALMS
+- Méthodes agiles (Scrum, Kanban)
+- Feedback loop rapide et amélioration continue
+- DORA metrics (lead time, deployment frequency, MTTR…)
+- Documentation automatisée (MkDocs, Swagger/OpenAPI)
+- ChatOps (Slack + bots, Mattermost, MS Teams)
 
 ---
 
