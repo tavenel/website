@@ -24,12 +24,10 @@ Module de 13H
 
 ## 📑 Documents
 
-- [🤓 Introduction au DevOpsen en classe renversée](/epsi/b3/devops/classe-renversee)
-<!--
+- [🤓 Introduction au DevOps et SysOps en classe renversée](/epsi/b3/devops/classe-renversee)
 - [🤓 Cours d'introduction au Devops](/epsi/b3/devops/cours)
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
 - [🏆 Projet Devops/Sysops](/epsi/b3/devops/projet)
--->
 
 ## Ressources
 
