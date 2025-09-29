@@ -32,3 +32,5 @@ layout: '@layouts/BaseLayout.astro'
 - [Hype, Sustainability, and the Price of the Bigger-is-Better Paradigm in AI (Gael Varoquaux, Alexandra Sasha Luccioni, Meredith Whittaker)](https://arxiv.org/pdf/2409.14160)
 - <https://sustainableai.substack.com/p/how-much-electricity-will-data-centers>
 - [ADEME: Evaluation de l'impact environnemental du numérique en France](https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html)
+- <https://bonpote.com/intelligence-artificielle-le-vrai-cout-environnemental-de-la-course-a-lia/>
+
