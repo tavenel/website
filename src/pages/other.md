@@ -10,12 +10,14 @@ checked: 2025-09-26
 
 - **Cessité attentionnelle** : lors d'un focus fort sur une tâche, peu d'attention au reste
   - Voir l'expérience du gorille dans ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-attention-4589382>
+  - Voir l'expérience de ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/votre-cerveau-cree-en-se-liberant-du-jugement-5137741>
   - Vidéo Youtube : [selective attention test](https://www.youtube.com/watch?v=IGQmdoK_ZfY)
 - **Inhibition** : capacité du cortex préfrontal à sortir des routines et automatismes
   - Voir l'expérience de l'effet Stroop : <https://biais-psychologiques.com/biais/effet-stroop/> et podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-inhibition-et-la-flexibilite-3735919>
 - La **récompense** permet d'appliquer une **motivation extrinsèque** (de l'extérieur) à l'apprentissage à court terme mais **au détriment de la motivation intrinsèque** (interne à l'apprenant) sur le long terme (à minimiser donc).
   - Pour promouvoir la **motivation intrinsèque** : mettre le focus sur l'apprentissage de nouvelles compétences & l'interaction entre apprenants
-  - Voir le podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/la-motivation-et-l-esprit-de-changement-1962894>
+  - La **motivation intrinsèque** nécessite de ne **pas travailler directement pour l'évaluation** (qui peut quand même venir après)
+  - Voir les podcasts : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/la-motivation-et-l-esprit-de-changement-1962894> et <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/votre-cerveau-cree-en-se-liberant-du-jugement-5137741>
 - L'utilisation des **émotions** permet un engagement fort :
   - Émotion positive : succès de la réalisation, reconnaissance de la réussite, plaisir et bien-être dans le groupe, …
   - Émotion négative : situation future néfaste pouvant être évitée par la réalisation de la tâche ou de l'apprentissage, peur de passer à côté d'une opportunité (bien connu en marketing), …
