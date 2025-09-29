@@ -48,7 +48,7 @@ layout: '@layouts/CoursePartLayout.astro'
 	- Intégration & Livraison Continus (**CI/CD**)
 - **Lean**
   - Amélioration continue
-	- Livraison au plutôt, **itérations**
+	- Livraison au plus tôt, **itérations**
 - **Mesurer** :
   - Monitoring continu.
 - **Share** :
@@ -185,6 +185,31 @@ Voir le [cours sur les gestionnaires de versions (Git)](/git).
 
 :::warn
 Cette observabilité doit se coupler à des **alertes** en cas de souci !
+:::
+
+:::tip
+En DevOps moderne, on utilise de plus en plus souvent du "_ChatOps_" qui consiste à intégrer les opérations (Ops) et l'automatisation dans un outil de communication collaboratif : Slack, Microsoft Teams, Mattermost, Discord.
+
+Exemples de systèmes connectés :
+
+- CI/CD : GitLab, Jenkins, GitHub Actions
+- Cloud : AWS, Azure, GCP, Kubernetes
+- Monitoring : Prometheus, Grafana, Datadog
+- Outils de tickets : Jira, …
+
+Exemples de requêtes :
+
+- Déploiement applicatif :
+
+```bash
+/deploy frontend v1.3
+```
+
+- Monitoring :
+
+```bash
+/status cluster-k8s
+```
 :::
 
 ---
