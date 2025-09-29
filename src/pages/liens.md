@@ -89,6 +89,8 @@ checked: 2025-01-27
 
 > Dealing with failure is easy: Work hard to improve. Success is also easy to handle: You've solved the wrong problem. Work hard to improve. (Alan Perlis)
 
+> Je crois qu'il y a un marché mondial pour à peu près cinq ordinateurs. Thomas Watson, président d'IBM, 1958
+
 ## Liens
 
 ### CRDTS
