@@ -260,3 +260,62 @@ Par exemple :
 
 ---
 
+# Attributs de qualité logicielle ✅
+
+La norme ISO/IEC 25010 définit huit caractéristiques de qualité principales :
+
+1. Adéquation fonctionnelle
+
+  - Complétude fonctionnelle
+  - Correction fonctionnelle
+  - Pertinence fonctionnelle
+
+2. Performance/efficacité
+
+  - Comportement temporel (temps de réponse, latence)
+  - Utilisation des ressources
+  - Capacité (nombre max d’utilisateurs, transactions)
+
+3. Compatibilité
+
+  - Coexistence (partage de ressources avec d’autres systèmes)
+  - Interopérabilité (capacité à échanger et utiliser des données)
+
+4. Utilisabilité
+
+  - Facilité d’apprentissage
+  - Accessibilité
+  - Esthétique de l’interface utilisateur
+  - Protection contre les erreurs utilisateurs
+
+5. Fiabilité
+
+  - Maturité (stabilité)
+  - Disponibilité
+  - Tolérance aux fautes
+  - Récupérabilité (après panne)
+
+6. Sécurité
+
+  - Confidentialité
+  - Intégrité
+  - Non-répudiation
+  - Responsabilisation (traçabilité)
+  - Authenticité
+
+7. Maintenabilité
+
+  - Modularité
+  - Réutilisabilité
+  - Analysabilité (facilité de diagnostic)
+  - Modifiabilité
+  - Testabilité
+
+8. Portabilité
+
+  - Adaptabilité (changement d’environnement)
+  - Installabilité
+  - Remplaçabilité (migration vers un autre logiciel)
+
+---
+
