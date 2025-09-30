@@ -76,6 +76,10 @@ Le design pattern `Page Object` permet d'éviter les problèmes de maintenabilit
 Les méthodes d'une classe `Page Object` correspondent à des actions possibles sur une page.
 Une `Page Object` doit également fournir des mécanismes pour manipuler, observer et rechercher des éléments d'une page.
 
+:::tip
+Le Page Object test une stratégie "model-based-testing" où l'on (re)modélise le système de production dans les tests.
+:::
+
 ---
 
 🌟 Les principaux avantages de ce modèle sont :

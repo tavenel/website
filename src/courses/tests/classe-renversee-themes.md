@@ -15,6 +15,6 @@ layout: '@layouts/CoursePartLayout.astro'
 | 6     | TDD (Test-Driven Development) et ses variantes (problème des tests classiques, red/green/refactor, conception émergente) |
 | 7     | Stratégies de tests (7 principes, code legacy, applications orientées data, …)             |
 | 8     | Industrialisation des tests (automatisations, choix des tests)                |
-| 9    | Tests de charge (jmeter, gatling)                                             |
+| 9    | Tests de performance et de charge (jmeter, gatling)                                             |
 
 

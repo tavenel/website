@@ -49,6 +49,10 @@ Le test permet de vérifier :
 
 > 💬 Non, je n'ai pas de preuve de cette grenouille qui parle mais cela ne veut pas dire qu'elle n'existe pas
 
+:::tip
+Plutôt que d'essayer de valider un comportement, le mindset à avoir pour faire du test est donc plutôt d'essayer de casser le produit pour y trouver des erreurs !
+:::
+
 ---
 
 ## 2. Le test exhaustif est impossible 🚫
@@ -115,7 +119,7 @@ Le test permet de vérifier :
 ## Tests unitaires ou de composant 🧩
 
 - 🧪 Vérifient des unités **isolées** du système sans dépendance : fonction, composant, …
-- 🤖 Simples à coder, rapides, automatisés.
+- 🤖 **Simples** à coder, rapides, automatisés, **indépendants**.
 - 🔧 Proches de l'implémentation => sensibles au changement de code
 - 📝 Documentent le fonctionnement de chaque unité en isolation
 - 💾 Ex : retour d'une fonction, contenu d'un fichier de configuration généré
@@ -168,8 +172,8 @@ flowchart BT
 
 ```
 
-- 🧪 **Tests unitaires** : proches de l'implémentation, faciles à automatiser, bugs faciles à corriger, vite obsolètes
-- ✅ **Tests d'acceptation** : éloignés de l'implémentation : difficiles à implémenter ou manuels, bugs difficiles à corriger, stables
+- 🧪 **Tests unitaires** : proches de l'implémentation, faciles à automatiser, complètement reproductibles, bugs faciles à corriger, vite obsolètes
+- ✅ **Tests d'acceptation** : éloignés de l'implémentation : difficiles à implémenter ou manuels, bugs difficiles à corriger, erreurs aléatoires (bug réseau, …), changent peu (stables)
 - 🔢 **Ordre : tests unitaires > intégration > systèmes > acceptation**
 
 ---
@@ -178,8 +182,20 @@ flowchart BT
 
 - 📈 Modèle populaire de plan de tests proposé par Kent Beck
 - 🧪 Beaucoup de tests unitaires, moins de tests d'intégration, encore moins de tests end-to-end
+- 🎯 Objectif : éviter les doublons de tests
 - ⚠️ Utile dans certains cas (web, …) mais **attention à la spécificité du projet** !
-- ⚠️ Peu adapté aux projets fortement orientés data ou intégration
+- ⚠️ Peu adapté aux projets :
+  - fortement orientés data (forme d'entonoir : beaucoup tests unitaires et e2e)
+  - aux métier d'intégrateur de solutions (ex ERP : forme de losange, beaucoup de tests d'intégration et peu de tests unitaires ou e2e).
+
+:::tip
+On choisira souvent de tester les chemins critiques en haut de la pyramide, et tous les cas particuliers en bas de la pyramide.
+
+Par exemple : 
+
+- un login correct & un login incorrect (mot de passe incorrect) en test end-to-end
+- tous les cas particuliers : nom vide, mot de passe vide, alphabets différents, nom avec espace, longueur du mot de passe, complexité du mot de passe, … en tests unitaires
+:::
 
 ---
 
