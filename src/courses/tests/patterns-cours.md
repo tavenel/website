@@ -7,6 +7,18 @@ tags:
 - architecture
 ---
 
+## Règle FIRST
+
+La règle **FIRST** est une règle permettant d'écrire de bons tests unitaires :
+
+- **F – Fast (Rapide)** : Les tests doivent s'exécuter très rapidement.
+- **I – Independent (Indépendant)** : Chaque test doit pouvoir s'exécuter seul, sans dépendre des autres.
+- **R – Repeatable (Répétable)** : Les tests doivent toujours donner le même résultat, indépendamment de facteurs externes.
+- **S – Self-Validating (Auto-validant)** : Les tests doivent produire un résultat clair "pass/fail" sans interprétation humaine.
+- **T – Timely (Opportun / à temps)** : Écrire le test au bon moment, idéalement avant ou en même temps que le code.
+
+---
+
 ## AAA
 
 Un test suit un pattern **AAA** pour **Arrange**, **Act**, **Assert** :
