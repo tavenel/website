@@ -12,12 +12,6 @@ Récupérer les sources du projet :
 git clone https://git.sr.ht/~toma/facadia
 ```
 
-:::tip
-Le projet utilise pour l'instant une version simulée des données météo.
-
-Pour la "vraie" version de production, vous aurez besoin de créer un compte sur l'API `WeatherCast` : <https://weatherstack.com/> et de modifier le fichier `/js/utils/api/sensorsApi.js` en conséquence. Nous utiliserons pour l'instant une version simulée (Mock) de ces appels.
-:::
-
 Notre projet fil rouge permet de suivre des façades par le biais de capteurs. Ces capteurs nous donnent des informations telles que le degré d'humidité ou les coordonnées géographiques. Grâce à l'API `WeatherCast` et aux coordonnées GPS de chaque capteur, nous récupérons les données météorologiques pour chaque façade.
 
 Le projet comporte quatre pages :
@@ -28,7 +22,7 @@ Le projet comporte quatre pages :
 - La page d'ajout d'une façade. Elle comprend un formulaire.
 
 :::tip
-Pour démarrer le projet, vous pouvez utiliser l'extension VSCode [live server de ritwickdey](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). L'extension ajoute un bouton `Go Live` en bas à droite de l'interface.
+Pour démarrer le projet, vous pouvez utiliser l'extension VSCode `Live Server (Five Server)`. L'extension ajoute un bouton `Go Live` en bas à droite de l'interface.
 :::
 
 # Tests unitaires
