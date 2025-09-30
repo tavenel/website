@@ -310,6 +310,7 @@ Voir aussi : <https://about.gitlab.com/platform/>
 | **ArchOps** | Réflexions d'architecture dans la boucle DevOps |
 | **TestOps** | Focus tests |
 | **DevSecOps** | Focus sécurité |
+| **MLOps** | DevOps orienté data pour le Machine Learning | 
 | **GitOps** | Automatisation et Gestion des Infrastructures par Git |
 
 ---
