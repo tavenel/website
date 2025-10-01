@@ -4,7 +4,7 @@ title: 📦 Les cgroups
 
 ## Introduction
 
-Les **cgroups** (Control Groups) sont un mécanisme du noyau Linux permettant de limiter, comptabiliser et isoler l’utilisation des ressources système (CPU, mémoire, disque, réseau, etc.) par des groupes de processus. Ceux-ci permettent d'améliorer la gestion des ressources dans les environnements multi-utilisateurs ou conteneurisés (comme Docker ou Kubernetes), garantissant une meilleure stabilité et performance du système. En associant des processus à des hiérarchies de cgroups, il devient possible de définir des quotas, des priorités ou même de suspendre des groupes de tâches.
+Les **cgroups** (Control Groups) sont un mécanisme du noyau Linux permettant de limiter, comptabiliser et isoler l'utilisation des ressources système (CPU, mémoire, disque, réseau, etc.) par des groupes de processus. Ceux-ci permettent d'améliorer la gestion des ressources dans les environnements multi-utilisateurs ou conteneurisés (comme Docker ou Kubernetes), garantissant une meilleure stabilité et performance du système. En associant des processus à des hiérarchies de cgroups, il devient possible de définir des quotas, des priorités ou même de suspendre des groupes de tâches.
 
 :::tip
 Les _cgroup_ sont hiérarchiques et héritent des limites de leurs parents.

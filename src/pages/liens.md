@@ -60,7 +60,7 @@ checked: 2025-01-27
 - Privilégier :
   - "Comment vivez-vous cette situation actuellement ?" ✔️
   - "Pourquoi est-ce important pour vous ?" ✔️
-  - "Pouvez-vous me raconter la dernière fois où cela s’est produit ?" ✔️
+  - "Pouvez-vous me raconter la dernière fois où cela s'est produit ?" ✔️
 
 > Merci à [Teiva Harsanyi](https://substack.com/@teivah) pour la découverte de ces livres : <https://www.thecoder.cafe/p/paternity-leave>
 

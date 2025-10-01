@@ -532,7 +532,7 @@ class OrderRepository:
   - Utiliser une interface abstraite dans le domaine
 	- Injecter l'implémentation.
 
-##### Étape 1 — Interface métier (`order_repository.py`)
+##### Étape 1 - Interface métier (`order_repository.py`)
 
 ```python
 # Domaine (indépendant)
@@ -541,7 +541,7 @@ class OrderRepository:
     def get_by_id(self, order_id): raise NotImplementedError
 ```
 
-##### Étape 2 — Implémentation dans l'infrastructure (`sqlalchemy_order_repository.py`)
+##### Étape 2 - Implémentation dans l'infrastructure (`sqlalchemy_order_repository.py`)
 
 ```python
 # ORM infrastructure
@@ -563,7 +563,7 @@ class SqlAlchemyOrderRepository(OrderRepository):
         return orm_model.to_domain()
 ```
 
-##### Étape 3 — Mapping entre ORM et domaine (`orm_entities.py`)
+##### Étape 3 - Mapping entre ORM et domaine (`orm_entities.py`)
 
 ```python
 class OrderModel(Base):
@@ -584,7 +584,7 @@ class OrderModel(Base):
         )
 ```
 
-##### Étape 4 — Utilisation dans l'Application Service
+##### Étape 4 - Utilisation dans l'Application Service
 
 ```python
 class OrderApplicationService:

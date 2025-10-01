@@ -271,11 +271,11 @@ created: 2024-10-17
 - `CodeQL` (GitHub) ou `Semgrep` : Analyse statique orientée sécurité.
 - `Hadolint` : Analyse des Dockerfiles pour bonnes pratiques et sécurité.
 - `gitleaks` recherche des vulnérabilités dans un dépôt Git (mots de passe en clair, …)
-- `Trivy` : détection de vulnérabilités [lien de présentation](https://blog.stephane-robert.info/docs/securiser/outils/trivy/) : Scan d’images Docker, dépendances, dépôts Git pour vulnérabilités (CVE).
+- `Trivy` : détection de vulnérabilités [lien de présentation](https://blog.stephane-robert.info/docs/securiser/outils/trivy/) : Scan d'images Docker, dépendances, dépôts Git pour vulnérabilités (CVE).
 - `r2devops` / `regula` permettent d'auditer le code à la recherche de CVE
 - `Snyk` : Analyse de dépendances + suggestions de correction.
 - `Gitleaks` : Détection de secrets/API keys dans le code.
-- `OWASP ZAP` : Test d’intrusion automatisé des APIs/web apps.
+- `OWASP ZAP` : Test d'intrusion automatisé des APIs/web apps.
 - `Dependency-Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
 - _Open Policy Agent_ (`OPA`) : Validation de règles (policies) dans le pipeline.
 - `Conftest` : Contrôle d'infra-as-code (Terraform, K8s YAML) contre des règles internes.

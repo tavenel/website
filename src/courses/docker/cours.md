@@ -508,7 +508,7 @@ Docker propose différents projets facilitant l'utilisation et l'intégration d'
 
 - **Docker Model Runner** (**DMR**) : permet d'exécuter facilement un modèle d'IA.
 - **Model-Connected-Pipeline** (**MCP**) : permet de gérer l'intégration avec des MCPs :
-  - **Docker MCP Catalog** : bibliothèque centralisée (Hub) de serveurs MCP prêts à l’emploi (Stripe, Elastic, New Relic, …).
+  - **Docker MCP Catalog** : bibliothèque centralisée (Hub) de serveurs MCP prêts à l'emploi (Stripe, Elastic, New Relic, …).
   - **Docker MCP Toolkit** : intégration du MCP (+ authentification et sécurité), configuration du conteneur.
 - Champ `models` dans _Docker Compose_
 

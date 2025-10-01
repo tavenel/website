@@ -97,7 +97,7 @@ Il existe de nombreux autres OS : Android, iOS, …
 
 A la fin des années 1960, AT&T Bell Labs développe Unix : un système d'exploitation accessible et sécurisé pour utilisateurs multiples .
 
-Dans les années 1980, certaines entreprises commencent à vendre leurs propres OS de type "Unix” : BSD, Solaris, Mac OS X, …
+Dans les années 1980, certaines entreprises commencent à vendre leurs propres OS de type "Unix" : BSD, Solaris, Mac OS X, …
 
 Ces systèmes connaissent un certain succès mais sont coûteux et peu évolutifs : il manque dans cet écosystème un OS gratuit et libre (open-source).
 
@@ -682,7 +682,7 @@ $ man find
 `echo` : affiche un message sur la sortie standard (par défaut la _console_).
 
 ```sh
-$ echo "Hello, World”
+$ echo "Hello, World"
 ```
 
 ---
@@ -821,7 +821,7 @@ La nouvelle variable sera accessible en utilisant l'expression : `$variable` (en
 ```console
 $ maVariable=2
 
-$ echo "Ma variable est : $maVariable”
+$ echo "Ma variable est : $maVariable"
 
 Ma variable est : 2
 ```
@@ -1197,7 +1197,7 @@ Ces permissions sont distinguées pour : le **propriétaire**, le **groupe** du 
 ```console
 $ ls -l test.txt
 
--rw-rx-r—. 1 tavenel vboxusers 0 Nov 16 14:39 test.txt
+-rw-rx-r-. 1 tavenel vboxusers 0 Nov 16 14:39 test.txt
 ```
 
 ![Un exemple de droits](@assets/linux/droits.png)

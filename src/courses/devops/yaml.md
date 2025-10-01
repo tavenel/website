@@ -14,7 +14,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 1. **Indentation obligatoire** :
   - espaces (généralement 2), pas de tabulations
-  - sensible aux espaces : chaque niveau d’imbrication doit avoir la même indentation
+  - sensible aux espaces : chaque niveau d'imbrication doit avoir la même indentation
 
 2. **Clés-valeurs** simples :
 
@@ -136,7 +136,7 @@ Utilisateur standard
 
 4. **Filtres** et **Fonctions**
 
-- `len` : longueur d’une liste
+- `len` : longueur d'une liste
 - `printf` : formatage
 
 Exemple :

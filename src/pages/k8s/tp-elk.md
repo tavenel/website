@@ -200,6 +200,6 @@ Pour tester Loki facilement, on pourra s'inspirer de : <https://linuxblog.xyz/po
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Prometheus® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Helm® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs (“Grafana Labs”).
+- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs ("Grafana Labs").
 
 

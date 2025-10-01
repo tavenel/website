@@ -23,7 +23,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - SONARQUBE is a trademark of SonarSource SA.
 - The name SpotBugs and the SpotBugs logo are trademarked by the University of Maryland.
 - TeamCity is a trademark or registered trademark of JetBrains, s.r.o.
-- The project name “webpack” is a trademark of the JS Foundation.
+- The project name "webpack" is a trademark of the JS Foundation.
 - Windows is a registered trademark of Microsoft Corporation in the United States and other countries.
 - Other names may be trademarks of their respective owners
 

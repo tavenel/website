@@ -45,7 +45,7 @@ Framework : ensemble de composants qui structure une application et contraint la
 
 - \+ Facilité d'utilisation
 - \+ fonctionnalités déjà intégrées
-- \+ Besoins client “standards” 
+- \+ Besoins client "standards" 
 - \- Utilisation de fonctionnalités avancées du langage de programmation 
 - \- Impact sur l'architecture / difficulté à changer de framework 
 

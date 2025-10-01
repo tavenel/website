@@ -135,7 +135,7 @@ Le but étant de ne pas trop charger le réseau, il faut éviter :
 
 Ce sont les paramètres `PROLOG_FREQ` (onglet serveur) et `FREQUENCY` (onglet Inventaire) qui gèrent le rythme des inventaires.
 
-`PROLOG_FREQ` définit en nombre d'heure la période max entre 2 lancements d'un agent. Cette notion de “période max” permet d'éviter les surcharges si tous les postes remontaient leur inventaire simultanément ; l'agent choisit un temps de manière aléatoire pouvant aller jusqu'à cette période max pour demander au serveur quoi faire – pas nécessairement remonter l'inventaire.*
+`PROLOG_FREQ` définit en nombre d'heure la période max entre 2 lancements d'un agent. Cette notion de "période max" permet d'éviter les surcharges si tous les postes remontaient leur inventaire simultanément ; l'agent choisit un temps de manière aléatoire pouvant aller jusqu'à cette période max pour demander au serveur quoi faire – pas nécessairement remonter l'inventaire.*
 
 C'est la valeur de la variable `FREQUENCY` qui va réellement permettre le lancement de l'inventaire :
 

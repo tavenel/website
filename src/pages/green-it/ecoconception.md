@@ -33,7 +33,7 @@ tags:
 
 ---
 
-### Mettre en place un plan de “fin de vie”
+### Mettre en place un plan de "fin de vie"
 
 - Prévoir la fin de vie :
   - du code

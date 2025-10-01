@@ -55,7 +55,7 @@ Ici, ce processus affiche un simple `Hello, World` avant de terminer son exécut
 
 Nous allons maintenant créer un conteneur depuis une image contenant un serveur `Nginx`, qui tournera en continu.
 
-Nous allons démarrer ce conteneur en arrière-plan (mode “détaché”) pour pouvoir continuer à utiliser notre terminal :
+Nous allons démarrer ce conteneur en arrière-plan (mode "détaché") pour pouvoir continuer à utiliser notre terminal :
 
 ```sh
 docker run -d -p 8080:80 nginx

@@ -210,5 +210,5 @@ Vous pouvez configurer des alertes dans les fichiers de configuration de `Promet
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Prometheus® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Helm® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs (“Grafana Labs”).
+- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs ("Grafana Labs").
 

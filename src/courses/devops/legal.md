@@ -13,7 +13,7 @@ layout: '@layouts/CoursePartLayout.astro'
 - GITHUB is a trademark of GitHub, Inc., registered in the United States and other countries.
 - GitLab is a registered trademark of GitLab Inc.
 - Spring® is a trademark of Pivotal Software, Inc. in the U.S. and other countries.
-- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs (“Grafana Labs”).
+- Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs ("Grafana Labs").
 - NGINX® is a registered trademark of F5 NETWORKS, INC.
 - Ansible® is a registered trademark of RED HAT, INC.
 - Terraform is a trademark and brand of HashiCorp, Inc.

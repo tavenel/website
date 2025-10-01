@@ -66,5 +66,5 @@ aws cloudformation deploy --template-file /home/ec2-user/environment/MythicalMys
 # Legal
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
-- “Amazon Web Services", the “Powered by Amazon Web Services” logo, Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage Service (Amazon S3), Amazon Relational Database Service (Amazon RDS) are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries
+- "Amazon Web Services", the "Powered by Amazon Web Services" logo, Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage Service (Amazon S3), Amazon Relational Database Service (Amazon RDS) are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.

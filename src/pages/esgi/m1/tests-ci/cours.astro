@@ -4,6 +4,8 @@ import Chapter from '@components/Chapter.astro';
 
 import { Content as IntroTest } from '@courses/tests/cours-introduction-tests.md';
 import { Content as Methodo } from '@courses/tests/cours-methodo-tests.md';
+import { Content as Perf } from '@courses/tests/cours-perf.md';
+import { Content as IA } from '@courses/tests/cours-ia.md';
 import { Content as TDD } from '@courses/tests/cours-tdd.md';
 import { Content as Indus } from '@courses/tests/indus-tests-cours.md';
 import { Content as Patterns } from '@courses/tests/patterns-cours.md';
@@ -34,6 +36,8 @@ const frontmatter = {
 <Layout frontmatter={frontmatter} >
   <Chapter> <IntroTest /> </Chapter>
   <Chapter> <Methodo /> </Chapter>
+  <Chapter> <Perf /> </Chapter>
+  <Chapter> <IA /> </Chapter>
   <Chapter> <TDD /> </Chapter>
   <Chapter> <Indus /> </Chapter>
   <Chapter> <Patterns /> </Chapter>

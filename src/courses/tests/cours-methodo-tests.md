@@ -262,7 +262,7 @@ Par exemple :
 
 # Attributs de qualité logicielle ✅
 
-La norme ISO/IEC 25010 définit huit caractéristiques de qualité principales :
+Qu'est-ce qu'un bon logiciel ? La norme ISO/IEC 25010 définit huit caractéristiques de qualité principales à tester :
 
 1. Adéquation fonctionnelle
 
@@ -274,18 +274,18 @@ La norme ISO/IEC 25010 définit huit caractéristiques de qualité principales :
 
   - Comportement temporel (temps de réponse, latence)
   - Utilisation des ressources
-  - Capacité (nombre max d’utilisateurs, transactions)
+  - Capacité (nombre max d'utilisateurs, transactions)
 
 3. Compatibilité
 
-  - Coexistence (partage de ressources avec d’autres systèmes)
+  - Coexistence (partage de ressources avec d'autres systèmes)
   - Interopérabilité (capacité à échanger et utiliser des données)
 
 4. Utilisabilité
 
-  - Facilité d’apprentissage
+  - Facilité d'apprentissage
   - Accessibilité
-  - Esthétique de l’interface utilisateur
+  - Esthétique de l'interface utilisateur
   - Protection contre les erreurs utilisateurs
 
 5. Fiabilité
@@ -313,7 +313,7 @@ La norme ISO/IEC 25010 définit huit caractéristiques de qualité principales :
 
 8. Portabilité
 
-  - Adaptabilité (changement d’environnement)
+  - Adaptabilité (changement d'environnement)
   - Installabilité
   - Remplaçabilité (migration vers un autre logiciel)
 

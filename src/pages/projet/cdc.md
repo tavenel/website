@@ -590,7 +590,7 @@ Les objectifs sont également repris de notre cahier des charges fonctionnel et 
 
 #### Exemple :
 
-Préciser la nécessité d'initier une connexion avec le serveur de base de données de l'application de suivi des flux afin d'alimenter la table “Transaction” que nous avons définie lors de la définition de la base de données de notre solution. 📊
+Préciser la nécessité d'initier une connexion avec le serveur de base de données de l'application de suivi des flux afin d'alimenter la table "Transaction" que nous avons définie lors de la définition de la base de données de notre solution. 📊
 
 ---
 

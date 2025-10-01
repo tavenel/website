@@ -8,7 +8,7 @@ Inspiration : <https://openclassrooms.com/>
 
 Vous êtes deux équipiers dans une agence spécialisée dans les projets digitaux, Miroir Noir. La startup Pur Beurre vient de nous contacter :
 
-> Nous sommes une jeune startup et nous aimerions réaliser une plateforme web pour nos clients. Ils viennent régulièrement dans le restaurant que nous avons fondé il y a quelques années, à Montmartre, et nous aimerions leur proposer un service complémentaire : Pur Beurre. Cette plateforme permettra à nos clients de manger mieux en leur proposant un substitut plus sain à l'aliment qu'ils auront proposé. Autrement dit, quand Jean-Philippe entrera “Nutella”, notre gentil robot lui proposera une “pâte aux noisettes et au sucre de Cannes”.  
+> Nous sommes une jeune startup et nous aimerions réaliser une plateforme web pour nos clients. Ils viennent régulièrement dans le restaurant que nous avons fondé il y a quelques années, à Montmartre, et nous aimerions leur proposer un service complémentaire : Pur Beurre. Cette plateforme permettra à nos clients de manger mieux en leur proposant un substitut plus sain à l'aliment qu'ils auront proposé. Autrement dit, quand Jean-Philippe entrera "Nutella", notre gentil robot lui proposera une “pâte aux noisettes et au sucre de Cannes”.  
 
 ## Exercice
 

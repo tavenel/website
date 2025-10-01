@@ -95,7 +95,7 @@ Attention : cet objet doit donc être un singleton dans votre application, et ê
 
 Spring est avant tout un framework d'injection de dépendances.
 
-L'injection de dépendances est un design pattern qui consiste à ne plus fournir directement les dépendances d'une classe de manière statique, mais à laisser le framework “injecter” ces dépendances dynamiquement lorsque nécessaire.
+L'injection de dépendances est un design pattern qui consiste à ne plus fournir directement les dépendances d'une classe de manière statique, mais à laisser le framework "injecter" ces dépendances dynamiquement lorsque nécessaire.
 
 Par exemple : 
 
@@ -133,9 +133,9 @@ Il existe également de nombreuses autres méthodes permettant de définir et d'
 
 ### Note sur l'injection de dépendances
 
-Attention : Pour profiter de l'injection de dépendances, il faut laisser Spring “prendre la main” sur ses composants. Cela veut dire qu'il ne faut jamais instancier soi-même un composant Spring (pas de mot-clé `new`) !!
+Attention : Pour profiter de l'injection de dépendances, il faut laisser Spring "prendre la main" sur ses composants. Cela veut dire qu'il ne faut jamais instancier soi-même un composant Spring (pas de mot-clé `new`) !!
 
-Une conséquence est que tant qu'un composant Spring n'a pas été récupéré depuis l' `ApplicationContext`, il n'est pas possible d'injecter des dépendances dans ce composant (par exemple avec l'annotation `Autowired`) : en effet, le framework Spring n'est pas encore actif sur la classe courante, et l'application exécute alors du “pure” code Java et les appels aux dépendances retournent des `NullPointerException` puisque ces dépendances n'ont pas été injectées.
+Une conséquence est que tant qu'un composant Spring n'a pas été récupéré depuis l' `ApplicationContext`, il n'est pas possible d'injecter des dépendances dans ce composant (par exemple avec l'annotation `Autowired`) : en effet, le framework Spring n'est pas encore actif sur la classe courante, et l'application exécute alors du "pure" code Java et les appels aux dépendances retournent des `NullPointerException` puisque ces dépendances n'ont pas été injectées.
 
 Pour récupérer l'instance d'un composant générée par Spring, il est possible d'utiliser la méthode `getBean()` de l'`ApplicationContext` :
 
@@ -195,7 +195,7 @@ Exemple d'un fichier XML `MyEntity.hbm.xml` situé dans le même package que la 
 
 <class name="org.myPackage.MyEntity"
 
-table=”MY\_ENTITY”>
+table="MY_ENTITY">
 
 <id name="id">
 
@@ -205,7 +205,7 @@ table=”MY\_ENTITY”>
 
 <property name="myString" type="string"
 
-not-null=”true” />
+not-null="true" />
 
 </class>
 
@@ -296,7 +296,7 @@ Attention à bien respecter le cycle de vie de la `SessionFactory` ! Utiliser un
 
 Il est maintenant temps de réaliser les requêtes en base de données en utilisant des méthodes ORM (Object-Relational Mapping) directement.
 
-On pourra utiliser les méthodes `save()`, `update()`, `delete()` de la classe `Session` pour effectuer des opérations de modification sur les données persistées et les méthodes “queries” de la classe `Session` pour lister les données persistées.
+On pourra utiliser les méthodes `save()`, `update()`, `delete()` de la classe `Session` pour effectuer des opérations de modification sur les données persistées et les méthodes "queries" de la classe `Session` pour lister les données persistées.
 
 Pour rappel, toute opération doit avoir lieu dans une transaction : on pourra démarrer cette transaction avec la méthode `beginTransaction()` de l'objet `Session`.
 
@@ -327,7 +327,7 @@ Nous pouvons donc maintenant supprimer le fichier de configuration d'Hibernate :
 
 ## III.2 Déléguer la gestion des transactions à Spring
 
-Spring intègre la gestion et la propagation des transactions au travers de ses composants (les transactions sont en principe définies dans la couche d'architecture dite de “Service” d'une application, mais ce n'est qu'une bonne pratique de modélisation et Spring n'impose aucune contrainte sur l'implémentation des transactions).
+Spring intègre la gestion et la propagation des transactions au travers de ses composants (les transactions sont en principe définies dans la couche d'architecture dite de "Service" d'une application, mais ce n'est qu'une bonne pratique de modélisation et Spring n'impose aucune contrainte sur l'implémentation des transactions).
 
 Il existe notamment une implémentation pour les transactions Hibernate :
 
@@ -361,7 +361,7 @@ Utiliser l'injection de dépendances de Spring pour isoler la partie persistance
 
 Spring Boot est un framework étendant les différents composants Spring, pour faciliter grandement la configuration d'une application Spring en suivant des pratiques standardisés. Cela permet d'accélérer le développement et facilite la maintenance applicative.
 
-Spring Boot est très majoritairement utilisé avec des “starters”, qui sont des regroupements de dépendances.
+Spring Boot est très majoritairement utilisé avec des "starters”, qui sont des regroupements de dépendances.
 
 Dans la suite de ce projet, nous allons utiliser Spring Web MVC. Nous pourrions ajouter la dépendance spring-webmvc et la configurer, mais pour simplifier le développement nous utiliserons le starter Spring Boot Web.
 
@@ -388,7 +388,7 @@ Une simple classe avec un constructeur public permettant d'initialiser les attri
 
 Note : les entités du modèle ne sont pas des composants à ajouter à Spring.
 
-## Composants “view”
+## Composants "view"
 
 `Spring-mvc` fournit des librairies de tags pouvant être utilisées dans les vues `jsp`.
 
@@ -439,7 +439,7 @@ Des templates de vues `jsp` sont fournies dans le répertoire `resourcesEtudiant
 
 Les vues doivent être placées dans un sous-répertoire de `src/main/webapp`, défini dans le fichier de propriétés `application.yml` (par exemple : `src/main/webapp/WEB-INF/views/` ).
 
-## Composants “controller”
+## Composants "controller"
 
 Nous allons maintenant créer la couche des contrôleurs du modèle MVC.
 
@@ -484,8 +484,8 @@ Nous allons principalement utiliser les paradigmes suivants :
 
   ```java
   public ModelAndView myActionMethod() {
-      ModelAndView result = new ModelAndView(“nameOfTheView”);
-      result.addObject(“myInstance”, myEntityInstance);
+      ModelAndView result = new ModelAndView("nameOfTheView");
+      result.addObject("myInstance", myEntityInstance);
       return result;
   } 
   ```

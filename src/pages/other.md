@@ -118,13 +118,13 @@ Voir aussi :
 - **Apprentissage supervisé** : le modèle apprend à partir de données **étiquetées** (avec réponses connues) pour prédire une sortie lors de nouvelles données.
   - en principe : 80% des données pour l'apprentissage
     - parfois : 20% des données d'apprentissage utilisées en données de **validation** utilisées pour le réglage de l'algorithme pendant l'entraînement, mais pas pour ajuster directement les poids du modèle. Servent à ajuster les **hyperparamètres** : profondeur d'un arbre, taux d'apprentissage d'un réseau de neurones, … ; à décider de l'arrêt de l'entraînement (_early stopping_) ; à comparer plusieurs modèles candidats.
-  - 20% pour le test (jamais vues pendant l’entraînement ni pendant la validation, mesurent (impartial) la performance réelle du modèle sur des données nouvelles).
+  - 20% pour le test (jamais vues pendant l'entraînement ni pendant la validation, mesurent (impartial) la performance réelle du modèle sur des données nouvelles).
 - **Apprentissage non supervisé** : le modèle apprend à partir de données **non étiquetées** et cherche à découvrir (seul) des structures cachées (groupes, similarités, réductions de dimensions).
 
 ```
 Jeu de données complet
         │
-        ├── 70-80 % → Données d’entraînement (train set)
+        ├── 70-80 % → Données d'entraînement (train set)
         │              - Utilisées pour ajuster les poids/paramètres du modèle
         │
         ├── 10-15 % → Données de validation (validation set)

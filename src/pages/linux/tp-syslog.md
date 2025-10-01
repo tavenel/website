@@ -59,7 +59,7 @@ facility.criticity
 
 ### Origine
 
-Les messages sont aussi orientés au regard de leur origine, dont les codes sont regroupés suivant des types que l'on appelle des “facilités”, soit l'origine, de `local0` à `local7` à personnaliser. On peut trouver :
+Les messages sont aussi orientés au regard de leur origine, dont les codes sont regroupés suivant des types que l'on appelle des "facilités", soit l'origine, de `local0` à `local7` à personnaliser. On peut trouver :
 
 | Facilité        | Origine                                           |
 |-----------------|---------------------------------------------------|

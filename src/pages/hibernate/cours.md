@@ -253,11 +253,11 @@ public class MyEntity {
 
 ```xml
 <hibernate-mapping>
-    <class name="MyEntity" table=”MY_ENTITY”>
+    <class name="MyEntity" table="MY_ENTITY">
         <id name="id">
             <generator class="native"/>
          </id>
-         <property name="myString" type="string" not-null=”true” />
+         <property name="myString" type="string" not-null="true" />
     </class>
 </hibernate-mapping>
 ```

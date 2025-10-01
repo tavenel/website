@@ -243,7 +243,7 @@ dynamic "rule" {
 
 Ordre de chargement des variables (les derniers écrasent les précédents) :
 
-1. Variables d’environnement (préfixe `TF_VAR_`)
+1. Variables d'environnement (préfixe `TF_VAR_`)
 
     ```bash
     export TF_VAR_region=francecentral

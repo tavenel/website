@@ -59,7 +59,7 @@ Freelance teacher mostly at EPSI Grenoble and ESGI Grenoble : Linux, Continuous 
 ### Education
 
 * **Master of Science - Engineering school Grenoble INP ENSIMAG** Computer Science and Applied Mathematics, specialty Information Systems Engineer, Grenoble, France (2010 - 2013)
-* **“Classes Preparatoires Grandes Ecoles”** preparing for the competitive examinations for major French engineering schools, Pierre Corneille High School, Rouen, France (2007 - 2010)
+* **"Classes Preparatoires Grandes Ecoles"** preparing for the competitive examinations for major French engineering schools, Pierre Corneille High School, Rouen, France (2007 - 2010)
 
 ### Skills
 

@@ -12,7 +12,7 @@ title: Installation de Linux Debian Serveur dans une machine virtuelle
 ## Installation du pack d'extension VirtualBox pour utiliser des fonctionnalités avancées
 
 - Télécharger le pack d'extension depuis le site de Virtual Box : <https://download.virtualbox.org/virtualbox/7.0.6/Oracle_VM_VirtualBox_Extension_Pack-7.0.6a-155176.vbox-extpack>
-- Ouvrir `VirtualBox` et ajouter le pack d'extension : Dans le menu Fichier, sélectionner **Paramètres.** Dans la fenêtre qui s'affiche, ouvrir la catégorie **Extensions**, cliquer sur le bouton “+” et ajouter l'extension téléchargée
+- Ouvrir `VirtualBox` et ajouter le pack d'extension : Dans le menu Fichier, sélectionner **Paramètres.** Dans la fenêtre qui s'affiche, ouvrir la catégorie **Extensions**, cliquer sur le bouton "+" et ajouter l'extension téléchargée
 
 ## Récupération d'une image préinstallée d'un système Linux
 

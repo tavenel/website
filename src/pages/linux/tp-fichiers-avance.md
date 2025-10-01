@@ -335,7 +335,7 @@ $ find / -user seb -mtime +7 -ls
 
 4. Listez et affichez en format long les fichiers dans votre répertoire personnel qui ont comme propriétaire `guest` ou qui ont une taille entre 512 et 1024 octets, inclus.
  
-Le petit piège réside ici dans le “inclus”. Si vous indiquez +512c, les fichiers de 512 octets sont exclus. Vous devez modifier les bornes en conséquence.
+Le petit piège réside ici dans le "inclus". Si vous indiquez +512c, les fichiers de 512 octets sont exclus. Vous devez modifier les bornes en conséquence.
 
 ```sh
 $ find ~ -user guest -size +511c -size -1025c -ls

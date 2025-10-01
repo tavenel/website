@@ -57,7 +57,7 @@ $ python exemple2.py
 - Utiliser le mode de découverte pour scanner et exécuter automatiquement les tests :
 
 ```sh
-$ python -m unittest discover répertoire_projet “exemple*.py”
+$ python -m unittest discover répertoire_projet "exemple*.py"
 ```
 
 

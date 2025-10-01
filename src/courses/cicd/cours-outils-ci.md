@@ -270,18 +270,18 @@ Des outils comme `dependabot` (pour _Github Actions_) permettent de créer une p
 ### 🛡️ Détection de vulnérabilités
 
 - `gitleaks` recherche des vulnérabilités dans un dépôt Git (mots de passe en clair, …)
-- `Trivy` / `Grype` : Scan d’images Docker, dépendances, dépôts Git pour vulnérabilités (CVE).
+- `Trivy` / `Grype` : Scan d'images Docker, dépendances, dépôts Git pour vulnérabilités (CVE).
 - `r2devops` / `regula` permettent d'auditer le code à la recherche de CVE
 - `Snyk` : Analyse de dépendances + suggestions de correction.
 - `Gitleaks` : Détection de secrets/API keys dans le code.
-- `OWASP ZAP` : Test d’intrusion automatisé des APIs/web apps.
+- `OWASP ZAP` : Test d'intrusion automatisé des APIs/web apps.
 - `Dependency-Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
 
 ---
 
 ### 🧪 Tests et validation avancée
 
-- `Testcontainers` : Tests d’intégration avec environnements temporaires (BDD, services).
+- `Testcontainers` : Tests d'intégration avec environnements temporaires (BDD, services).
 - `k6` / `JMeter` : Tests de charge et de performance.
 - `Selenium` / `Cypress` / `Playwright` : Tests end-to-end pour front et API.
 - Mutation Testing (`PIT`, `Stryker`) : Vérifie la robustesse des tests unitaires.

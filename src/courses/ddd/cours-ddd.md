@@ -1576,7 +1576,7 @@ courseService.createRecurringCourseRequest(user);
 - [Résumé du DDD (blog.scottlogic.com)](https://blog.scottlogic.com/2018/03/28/domain-driven-design.html)
 - [Alex Soyes - DDD](https://alexsoyes.com/ddd-domain-driven-design/)
 - [Blog Opus Software - articles DDD](https://opus.ch/en/blog/)
-- [DDD 101 — The 5-Minute Tour (medium.com)](https://medium.com/the-coding-matrix/ddd-101-the-5-minute-tour-7a3037cf53b8)
+- [DDD 101 - The 5-Minute Tour (medium.com)](https://medium.com/the-coding-matrix/ddd-101-the-5-minute-tour-7a3037cf53b8)
 - [DDD en 5 minutes (cdiese.fr)](https://cdiese.fr/domain-driven-design-en-5-min/)
 - [DDD vs Clean architecture en images](https://khalilstemmler.com/articles/software-design-architecture/domain-driven-design-vs-clean-architecture/)
 - [Exemple de brainstorming (event storming)][brainstorming-example]

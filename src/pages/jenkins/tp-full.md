@@ -400,7 +400,7 @@ Dans cet exemple, nous allons installer un serveur d'analyse SonarQube. Nous int
   - Démarrer le serveur SonarQube, par exemple : `C:\Program Files\sonarqube-9.6.1\sonarqube-9.6.1\bin\windows-x86-64\StartSonar.bat`
   - Vérifier le bon démarrage du serveur : [http://localhost:9000](http://localhost:9000/) (`admin/admin`)
 2. **Installer et configurer le scanner SonarQube pour Jenkins**
-  - Installer le plugin **“SonarQube Scanner”**
+  - Installer le plugin **"SonarQube Scanner"**
   - Configurer le scanner :
     - Dans le panel _Administrer Jenkins_, choisir _Configuration Globale des Outils_. Dans la section _SonarQube Scanner_, cliquer sur le bouton **_Ajouter SonarQube Scanner_**. Vérifier que l'installation automatique depuis le Maven Central est bien sélectionnée.
 3. **Configurer le serveur SonarQube dans Jenkins**

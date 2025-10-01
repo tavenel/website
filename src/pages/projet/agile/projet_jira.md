@@ -39,7 +39,7 @@ De même, l'utilisation d'Epics est possible mais n'est pas obligatoire.
 
 Les projets Scrum utilisent en général des sprints de 1 à 3 semaines. Pour s'entraîner à la gestion itérative d'un projet, ce projet sera réalisé en simulant 3 sprints de 30 minutes chacun. 
 
-Chaque Sprint sera composé de 3 “journées” de 10 minutes. 
+Chaque Sprint sera composé de 3 "journées" de 10 minutes. 
 
 Ici, chaque sprint correspond à la livraison d'une nouvelle partie de l'histoire pour le prochain magazine à publier. On ajoutera chaque élément de l'histoire (nouveau personnage, nouvel événement, mise à jour d'un décor, …) sous forme de user-story dédiées. 
 

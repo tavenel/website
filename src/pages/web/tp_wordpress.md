@@ -18,7 +18,7 @@ Dans ce TP, nous verrons comment créer un site Web en mode SaaS, et comment int
 ## Enregistrement du site Web
 
 1. Ouvrez votre navigateur Web à l'URL : <http://fr.wordpress.com>
-1. Cliquer sur le bouton “Créer votre site Web”.
+1. Cliquer sur le bouton "Créer votre site Web".
 1. Saisir une adresse mail, un identifiant, un mot de passe et cliquer sur le bouton _Créer votre compte_.
 1. Choisissez un nom de domaine : taper le nom de domaine choisi et sélectionner le nom de domaine gratuit utilisant l'extension `.wordpress.com`.
 1. Dans l'écran suivant proposant de sélectionner un plan, cliquer en haut de la page sur le lien _Vous hésitez ? Commencer avec un site gratuit_.

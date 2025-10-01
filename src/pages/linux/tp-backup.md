@@ -16,7 +16,7 @@ date: 2025 / 2026
 - Un disque supplémentaire ou un répertoire de sauvegarde (`/mnt/backup`)
 - Les paquets suivants installés : `rsync`, `partimage`, `dump`, `nfs-common`, `nfs-kernel-server`, `mondorestore`, `mondo`, `backuppc`
 
-## 🗃️ Partie 1 — Sauvegardes classiques
+## 🗃️ Partie 1 - Sauvegardes classiques
 
 ### 🔹 1. Sauvegarde avec `tar`
 
@@ -78,7 +78,7 @@ sudo restore -rf /mnt/backup/root.dump
 ```
 :::
 
-## 💾 Partie 2 — Sauvegardes d'images système
+## 💾 Partie 2 - Sauvegardes d'images système
 
 ### 🔹 4. Sauvegarde avec `partimage`
 
@@ -114,7 +114,7 @@ sudo mondoarchive
 3. Créer une image ISO du système dans `/mnt/backup`.
 4. Simuler une restauration avec `mondorestore`.
 
-## 🌐 Partie 3 — Sauvegarde centralisée avec BackupPC
+## 🌐 Partie 3 - Sauvegarde centralisée avec BackupPC
 
 ### 🔹 6. Installation de BackupPC (sur une autre VM ou localhost)
 

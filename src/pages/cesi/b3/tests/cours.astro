@@ -4,6 +4,7 @@ import Chapter from '@components/Chapter.astro';
 
 import { Content as Intro } from '@courses/tests/cours-introduction-tests.md';
 import { Content as Methodo } from '@courses/tests/cours-methodo-tests.md';
+import { Content as IA } from '@courses/tests/cours-ia.md';
 import { Content as Static } from '@courses/tests/test-statique.md';
 import { Content as Recette } from '@courses/tests/cours-recette.md';
 import { Content as TDD } from '@courses/tests/cours-tdd.md';
@@ -29,6 +30,7 @@ const frontmatter = {
 <Layout frontmatter={frontmatter} >
   <Chapter> Intro /> </Chapter>
   <Chapter> Methodo /> </Chapter>
+  <Chapter> IA /> </Chapter>
   <Chapter> Static /> </Chapter>
   <Chapter> Recette /> </Chapter>
   <Chapter> TDD /> </Chapter>
