@@ -65,6 +65,26 @@ apiVersion: kubelet.config.k8s.io/v1beta1
 […]
 ```
 
+Un exemple plus poussé configurant le Node (voir : [Kubernetes Node Stability and Performance: Tuning Kubelet for Better Resource Management](https://medium.com/@jfpucheu/kubernetes-node-stability-and-performance-tuning-kubelet-for-better-resource-management-e0f95ccfefe9) ) :
+
+```yaml
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+kubeReserved:
+  cpu: 420m
+  memory: 9Gi
+systemReserved:
+  cpu: 100m
+  memory: 1Gi
+evictionHard:
+  memory.available: 100Mi
+  nodefs.available: 10%
+  imagefs.available: 15%
+  nodefs.inodesFree: 5%
+shutdownGracePeriod: 60s
+shutdownGracePeriodCriticalPods: 30s
+```
+
 ```sh
 kubeadm init --config kubeadm-config.yaml --upload-certs
 ```
