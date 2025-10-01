@@ -134,6 +134,9 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
   - <https://www.examtopics.com/exams/lpi/202-450/>
   - <https://www.itexams.com/vendor/LPI>
   - <https://www.certlibrary.com/vendor/LPI>
+- Formation LinkedIn Learning :
+  - <https://www.linkedin.com/learning/lpic-2-linux-engineer-201-450-cert-prep>
+  - <https://www.linkedin.com/learning/lpic-2-linux-engineer-202-450-cert-prep>
 
 #### 🔗 Autres liens utiles
 
