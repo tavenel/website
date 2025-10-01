@@ -32,7 +32,7 @@ Pour obtenir la certification LPIC-2, un candidat doit être en mesure :
 - d'élaborer, de mettre en œuvre, d'entretenir, de conserver dans un état cohérent et de sécuriser, ainsi que de résoudre les problèmes dans un petit réseau hétérogène (Linux, MS) avec :
   - serveurs LAN (Samba, NFS, DNS, DHCP, gestion des clients).
   - passerelle Internet (pare-feu, VPN, SSH, serveur mandataire (proxy) / cache web, messagerie).
-  - serveur Internet (serveur web, proxy inverse reverse, serveur FTP.
+  - serveur Internet (serveur web, proxy inverse, serveur FTP).
 - d'encadrer des techniciens.
 - de conseiller la direction sur les achats et l'automatisation.
 
@@ -145,16 +145,14 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 ## 📅 Déroulé du cours
 
 - 3 Modules de 12H
-- Évaluation : QCM et Projets
+- Évaluation : QCM et Projet
 
 ## 📑 Documents
 
-- [🏆 Module en classe renversée](/esgi/m1/lpic-2/classe-renversee)
-<!-- 
-- [📝 Syllabus du contenu de la certification LPIC-2](/linux/lpic-2/contenu)
+<!-- [🏆 Module en classe renversée et contenu de la certification LPIC-2](/esgi/m1/lpic-2/classe-renversee) -->
+- [🏆 Contenu de la certification LPIC-2](/linux/lpic-2/contenu)
 - [🤓 Cours Linux pour la certification LPIC-2](/linux/lpic-2/cours)
 - [🏆 Projet LPIC-2 : Mise en place d'une infrastructure système complète sécurisée et supervisée](/linux/lpic-2/projet)
--->
 
 ## 🚀 Pour aller plus loin
 
