@@ -161,6 +161,7 @@ created: 2024-10-17
   - <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
   - <https://www.tigera.io/> : Unified Network Security & Observability for Kubernetes
   - <https://www.kuboscore.io/> : vérification de clusters
+  - <https://github.com/gianlucam76/k8s-cleaner> : détection et notification de ressources non utilisées
 - 🚀 CD
   - `fluxcd` : GitOps
   - `argocd` : <https://une-tasse-de.cafe/blog/argocd/>
