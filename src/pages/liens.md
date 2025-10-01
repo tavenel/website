@@ -201,6 +201,7 @@ Voir aussi : [informations IA](/other#ia)
 - <https://sebsauvage.net/wiki/doku.php?id=android> applications et jeux Android intéressants
 - Fiches de réparation de matériels électroniques : <https://fr.ifixit.com/>
 - "A series of nonverbal algorithm assembly instructions" : <https://idea-instructions.com/>
+- <https://wrongthink.link/posts/all-you-need-is-ssh/>
 
 ### Liens Divers
 
