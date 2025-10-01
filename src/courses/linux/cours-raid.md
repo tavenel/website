@@ -9,11 +9,20 @@ layout: '@layouts/CoursePartLayout.astro'
 **RAID** (Redundant Array of Independent Disks) : technique de combinaison de plusieurs disques pour améliorer la **performance**, la **tolérance aux pannes** ou les deux.
 
 
-| Type   | Description                                            | Nombre min. de disques |
-| ------ | ------------------------------------------------------ | ---------------------- |
-| RAID 0 | Répartition (striping) : rapide mais pas de redondance | 2                      |
-| RAID 1 | Miroir (mirroring) : redondance complète               | 2                      |
-| RAID 5 | Parité répartie : bon compromis performance/sécurité   | 3                      |
+| Type   | Description                                            | Nombre de disques | Nombre max de disques en erreur supportés |
+| ------ | ------------------------------------------------------ | ---------------------- | ----------------------------------------- |
+| RAID 0 | Répartition (striping) : rapide mais pas de redondance | 2                  | 0 |
+| RAID 1 | Miroir (mirroring) : redondance complète               | 2                  | 1 |
+| RAID 5 | Parité répartie : plus d'espace de stockage, moins de redondance | 3 ou plus          | 1 |
+
+
+![RAID 1](@assets/linux/RAID_1.svg)
+
+<div class="caption">RAID1. Source : https://commons.wikimedia.org/wiki/File:RAID_1.svg (CC-BY-SA).</div>
+
+![RAID 5](@assets/linux/RAID_5.svg)
+
+<div class="caption">RAID5. Source : https://en.wikipedia.org/wiki/File:RAID_5.svg (GFDL).</div>
 
 
 | Outil/Fichier         | Rôle                                   |
