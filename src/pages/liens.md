@@ -91,6 +91,8 @@ checked: 2025-01-27
 
 > Je crois qu'il y a un marché mondial pour à peu près cinq ordinateurs. Thomas Watson, président d'IBM, 1958
 
+> Toujours laisser le code plus propre que vous l'aviez trouvé. (Règle adaptée des Scouts)
+
 ## Liens
 
 ### CRDTS
