@@ -670,6 +670,9 @@ Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cour
 - [Vault](https://www.vaultproject.io/) & [Sentinel](https://docs.hashicorp.com/sentinel/)
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 - [Terraform linter (tflint)](https://github.com/terraform-linters/tflint)
+- Exercices et tutoriels :
+  - <https://developer.hashicorp.com/terraform/tutorials/>
+  - <https://github.com/iButcat/terraform-associate-practice> : préparation à la certification Terraform
 
 ---
 

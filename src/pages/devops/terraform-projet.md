@@ -103,13 +103,13 @@ terraform-project/
 :::exo
 1. Développer le projet Terraform permettant de déployer l'infrastructure sur Azure.
 2. Créez un module `network` permettant de :
-  - Créer un _Virtual Network_
-  - Créer un ou plusieurs _Subnets_ dynamiquement
-  - Retourner les IDs des sous-réseaux
+   - Créer un _Virtual Network_
+   - Créer un ou plusieurs _Subnets_ dynamiquement
+   - Retourner les IDs des sous-réseaux
 3. Optimiser le code Terraform :
-  - Blocs dynamiques (ex : règles NSG)
-  - Fonctions ternaires et count
-  -  Variables + fichier `terraform.tfvars`
+   - Blocs dynamiques (ex : règles NSG)
+   - Fonctions ternaires et count
+   -  Variables + fichier `terraform.tfvars`
 4. Utiliser le module `network` pour déployer deux VMs dans deux subnets différents.
 :::
 
@@ -189,6 +189,7 @@ terraform-azure-project/
 
 - [Terraform Azure Examples](https://github.com/hashicorp/terraform-provider-azurerm/tree/main/examples)
 - [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates)
+- [Tutoriels Azure HashiCorp](https://developer.hashicorp.com/terraform/tutorials/azure-get-started)
 
 ### Outils complémentaires
 
