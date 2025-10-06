@@ -673,6 +673,9 @@ Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cour
 - Exercices et tutoriels :
   - <https://developer.hashicorp.com/terraform/tutorials/>
   - <https://github.com/iButcat/terraform-associate-practice> : préparation à la certification Terraform
+- Homelab : Terraform et Proxmox
+  - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/terraform/>
+  - <https://github.com/bpg/terraform-provider-proxmox>
 
 ---
 
