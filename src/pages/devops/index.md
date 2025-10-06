@@ -19,7 +19,8 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 Configuration des clés SSH pour un accès sécurisé](/devops/tp_ssh)
 <!-- - [![](@icons/ansible.svg) TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible) -->
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible)
-- [![](@icons/terraform.svg) Projet Déploiement d'une infrastructure sur Azure avec Terraform](/devops/terraform-projet)
+- [![](@icons/terraform.svg) Projet Déploiement d'une infrastructure sur Azure avec Terraform](/devops/terraform-projet-azure)
+- [![](@icons/terraform.svg) Projet Déploiement de composants Kubernetes avec Terraform](/devops/terraform-projet-k8s)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/devops/projet)
 
 ## Liens

@@ -177,6 +177,12 @@ terraform-azure-project/
 └── tests/                   # Tests automatisés
 ```
 
+## Conseils et Bonnes Pratiques
+
+- Utilisez des variables et des sorties dans vos fichiers Terraform pour une meilleure flexibilité.
+- Commentez votre code pour expliquer les choix et les configurations.
+- Testez vos configurations localement avant de les déployer sur un cluster.
+
 ## 🔗 Ressources utiles
 
 ### Documentation officielle
