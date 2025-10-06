@@ -359,7 +359,7 @@ dnssec-signzone -o exemple.local exemple.local.zone ZSK
 Traditionnellement, les certificats TLS sont validés via une **chaîne de confiance de l'autorité de certification (CA)**.
 Avec **DANE**, on peut **publier le certificat ou son empreinte directement dans le DNS**, signé par **DNSSEC**.
 
-👉 Cela permet :
+Cela permet :
 
 - De **protéger contre les certificats frauduleux ou compromis**
 - De **se passer totalement des autorités de certification** (modèle "CA-less")
