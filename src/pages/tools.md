@@ -650,6 +650,7 @@ created: 2024-10-17
 - <https://github.com/Macmod/godap> : LDAP in TUI
 - `otel-tui` : TUI `OpenTelemetry`, `Zipkin`, `Prometheus` : <https://github.com/ymtdzzz/otel-tui>
 - `loggo` : TUI for logs : <https://github.com/aurc/loggo>
+- <https://www.localstack.cloud/> et <https://azure.localstack.cloud/> : déploiements locaux simulant les services cloud AWS et Azure (payant mais version d'essai et version gratuite GitHub students)
 
 ### Outils poste de travail Admin système
 
