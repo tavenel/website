@@ -280,6 +280,164 @@ Ordre de chargement des variables (les derniers écrasent les précédents) :
 
 ---
 
+## 🛠️ Provisionneurs
+
+### 👤 user-data
+
+- ⚙️ Paramètres communs aux instances "compute" : AWS EC2, Azure VM, OpenStack instance
+- 📝 Permet d'exécuter un script `cloud-init` à la création de la VM : installation de packages, …
+
+```hcl {5-11}
+resource "aws_instance" "web" {
+  ami           = "ami-04505e74c0741db8d"
+  instance_type = "t2.micro"
+
+  user_data = <<-EOF
+              #!/bin/bash
+              apt update -y
+              apt install nginx -y
+              systemctl enable nginx
+              systemctl start nginx
+              EOF
+
+  tags = {
+    Name = "web-server"
+  }
+}
+```
+
+---
+
+:::tip
+💠 Azure utilise le champ similaire : `custom_data` mais la data **doit être encodée en Base 64** :
+
+```hcl {14}
+resource "azurerm_linux_virtual_machine" "example" {
+  name                  = "vm-example"
+  resource_group_name   = azurerm_resource_group.rg.name
+  location              = azurerm_resource_group.rg.location
+  size                  = "Standard_B1s"
+  admin_username        = "azureuser"
+  network_interface_ids = [azurerm_network_interface.main.id]
+
+  admin_ssh_key {
+    username   = "azureuser"
+    public_key = file("~/.ssh/id_rsa.pub")
+  }
+
+  custom_data = filebase64("init.sh")
+}
+```
+:::
+
+---
+
+### 🌐 remote-exec
+
+- 🔧 Provisioner permettant d'exécuter des commandes par SSH (ou WinRM) sur une ressource distante (VM, …) après sa création.
+
+```hcl {30-47}
+resource "azurerm_linux_virtual_machine" "vm" {
+  name                  = "vm-remoteexec"
+  resource_group_name   = azurerm_resource_group.rg.name
+  location              = azurerm_resource_group.rg.location
+  size                  = "Standard_B1s"
+  admin_username        = "azureuser"
+  network_interface_ids = [azurerm_network_interface.nic.id]
+
+  admin_ssh_key {
+    username   = "azureuser"
+    public_key = file("~/.ssh/id_rsa.pub")
+  }
+
+  os_disk {
+    name                 = "osdisk-demo"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
+  }
+
+  # -------------------------------
+  # remote-exec provisioner
+  # -------------------------------
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt update -y",
+      "sudo apt install nginx -y",
+      "sudo systemctl enable nginx",
+      "sudo systemctl start nginx"
+    ]
+    # inline ou script :
+    # script = "setup_web.sh"
+
+    connection {
+      type        = "ssh"
+      host        = azurerm_public_ip.pubip.ip_address
+      user        = "azureuser"
+      private_key = file("~/.ssh/id_rsa")
+      timeout     = "2m"
+    }
+  }
+}
+```
+
+---
+
+:::warn
+Les provisioner de commandes (`remote-exec`, `local-exec`) rendent les déploiements moins déclaratifs et plus difficiles à reproduire.
+:::
+
+---
+
+### ⚙️ local-exec
+
+💻 Permet d'exécuter du code sur la machine tournant Terraform :
+
+- 🪵 **Logging** : `echo ${self.public_ip} >> ips.txt`
+- 🧩 **Exécution de scripts** : `command = "bash ./post_deploy.sh ${self.public_ip}"`
+- 🌐 **Appels d'APIs externes** : `curl -X POST https://hooks.slack.com/...`
+- ➕ …
+
+```hcl
+provisioner "local-exec" {
+  command     = "Write-Host VM deployed!"
+  interpreter = ["PowerShell", "-Command"]
+}
+```
+
+---
+
+:::tip
+💡 Un cas d’usage courant est le lancement d’un playbook _Ansible_ depuis _Terraform_ :
+
+```hcl
+provisioner "local-exec" {
+  command = "ansible-playbook -i '${self.public_ip_address},' playbook.yml --user azureuser --private-key ~/.ssh/id_rsa"
+}
+```
+:::
+
+---
+
+### 📂 file
+
+📤 Copie un script local sur une ressource distante :
+
+```hcl
+  provisioner "file" {
+    source      = "scripts/init.sh"
+    destination = "/home/azureuser/init.sh"
+    connection { … }
+```
+
+---
+
 ## 🧩 Modules
 
 - Regroupement logique de fichiers Terraform réutilisables, qui encapsulent un ensemble de ressources.
