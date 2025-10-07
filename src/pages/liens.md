@@ -69,6 +69,10 @@ checked: 2025-01-27
 - Cybersécurité : "_True stories from the dark side of the Internet_" : <https://darknetdiaries.com/>
 - Développement : "_Developer Voices_" : <https://www.developervoices.com/>
 
+## Mailing lists
+
+- <https://www.thecoder.cafe/>
+
 ## Citations
 
 > Ce qui se conçoit bien s'énonce clairement et les mots pour le dire viennent aisément. (Boileau)
