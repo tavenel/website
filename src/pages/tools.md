@@ -435,6 +435,8 @@ created: 2024-10-17
 	- `vLLM`
 	- <https://pollinations.ai/>
 	- <https://docs.sillytavern.app/>
+  - `litLLM` : aggreggation de LLMs : <https://docs.litellm.ai/docs/>
+    - [À la découverte de liteLLM, une plateforme pour les gouverner tous](https://www.youtube.com/watch?v=L8CeGZ0Pf5o)
 - Database :
   - `Postgresql` : `replication manager` pour failover / réplication
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
