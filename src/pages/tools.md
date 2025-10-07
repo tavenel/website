@@ -655,6 +655,7 @@ created: 2024-10-17
 ### Outils poste de travail Admin système
 
 - `systemd-analyze` : analyse du temps de démarrage des services
+- `ncdu`, `gdu` : espace disque
 
 #### Network
 
