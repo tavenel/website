@@ -617,7 +617,7 @@ created: 2024-10-17
 
 - [Telepresence](https://www.telepresence.io/) : redirige des services k8s distants sur machine locale pour test (staging, …)
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
-- `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `trivy`
+- `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `trivy`, `tflint`
 - `Docker` :
   - `lazydocker` => TUI pour gérer des conteneurs Docker
   - `dry` => manage Docker containers and Swarm cluster
