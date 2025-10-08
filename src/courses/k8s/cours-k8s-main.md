@@ -183,6 +183,10 @@ flowchart TD
 - Plus simple à configurer que les autres options 🛠️
 - Inconvénients : Peut introduire une latence supplémentaire, moins de fonctionnalités avancées (`NetworkPolicies`, …), moins adapté aux très grands clusters ⚠️
 
+:::link
+Pour plus d'information sur Flannel, voir : <https://msazure.club/flannel-networking-demystify/>
+:::
+
 ---
 
 ### 🛡️ Calico
