@@ -99,6 +99,7 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 ## 🤯 Concepts avancés
 
 - [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
+- [💾 TP Clusters de haute disponibilité (HA) et Corosync](/linux/tp-ha)
 - [🤯 Création de conteneur en utilisant les namespace natifs Linux](/docker/container-from-namespace) : cet exercice montre comment créer des conteneurs sans Docker en utilisant directement les fonctionalités des namespace du noyau Linux.
 
 ## Ressources
