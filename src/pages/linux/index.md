@@ -73,6 +73,7 @@ layout: '@layouts/BaseLayout.astro'
 - [⚙️ TP : Gestion des processus et de leur priorité](/linux/tp-process)
 - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
+- [💽 TP : Utiliser iSCSI pour gérer des disques réseau](/linux/tp-iscsi)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
 - [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/linux/tp-droits-avance)
 - [👥 TP : Gestion des utilisateurs et de la sécurité](/linux/tp-utilisateurs)
