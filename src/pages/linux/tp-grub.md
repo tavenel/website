@@ -24,7 +24,9 @@ La ligne `init=/bin/sh` change la commande d'`init` du noyau : au lieu de lancer
 
 Dans un premier temps, nous allons détruire le bootloader pour nos tests. Redémarrer la machine virtuelle et ouvrir un terminal une fois connecté dans l'OS.
 
+:::warn
 **Avant toute action, faites un snapshot de votre machine virtuelle !!!**
+:::
 
 Sur un `UEFI` (changer `fedora` pour le nom du répertoire correspondant sur une autre distribution) :
 
