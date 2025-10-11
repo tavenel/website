@@ -600,9 +600,10 @@ created: 2024-10-17
   - `docker run --rm -it browsh/browsh` // `docker run --rm -ti fathyb/carbonyl https://yewtu.be` => terminal-based web browsers
 - json viewers and processors :
   - `fx`
-	- `jq`
-	- `jqp`
-	- `vim +set ft=json`
+  - `jq`
+  - `jqp`
+  - `vim +set ft=json`
+  - <https://github.com/tomnomnom/gron> : greppable json
 - `column -s ',' -t` => better CSV output
 - `bsdtar` => archive management on Linux, includes `rar` format
 - `ntfy send ...` => send notification (can use many backends)
