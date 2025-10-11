@@ -207,6 +207,10 @@ cryptsetup close nom_volume
 - les `LVs` peuvent être distribués sur plusieurs disques, gèrent chiffrement, ...
 - `LV` accessible comme disque classique : `dev/VGNAME/LVNAME`
 
+:::link
+Pour des exemples d'utilisation, voir l'excellent wiki Archlinux : <https://wiki.archlinux.org/title/LVM>
+:::
+
 ---
 
 ## Disques réseau : SAN
