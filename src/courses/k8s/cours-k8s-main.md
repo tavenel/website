@@ -195,6 +195,7 @@ Pour plus d'information sur Flannel, voir : <https://msazure.club/flannel-networ
   - routage direct
   - VXLAN seul
   - IPIP + BGP
+  - eBPF
   - cross-subnet possible (tout ou aucun traffic ou uniquement la partie qui traverse un subnet) : AWS multi-AZ, azure vnets, réseaux L2 hétérogènes
 - Propose une isolation réseau granulaire (par pod) 🔒
 - Intègre de la sécurité 🛡️
@@ -204,7 +205,9 @@ Pour plus d'information sur Flannel, voir : <https://msazure.club/flannel-networ
 - Inconvénients : Complexe, besoin de compatibilité réseau (BGP) ⚠️
 
 :::link
-Voir : <https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip>
+Voir aussi :
+- Calico en VXLAN ou IPIP : <https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip>
+- Introduction à eBPF et utilisation en Calico : <https://docs.tigera.io/calico/latest/about/kubernetes-training/about-ebpf>
 :::
 
 ---
