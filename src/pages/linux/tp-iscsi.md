@@ -65,16 +65,83 @@ Puis exécutez les commandes suivantes dans le shell `targetcli` :
 /> iscsi/ create iqn.2025-10.local.iscsi:target01
 /> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/luns/ create /backstores/fileio/disk01
 /> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/acls/ create iqn.2025-10.local.iscsi:initiator01
-/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/portals/ create 192.168.50.10
 /> saveconfig
 /> exit
 ```
 
-### Vérification du service
+#### 🧩 Étapes détaillées
 
 ```bash
-sudo systemctl enable target.service --now
+/> backstores/fileio create disk01 /srv/iscsi_disks/disk01.img 1G
+```
+
+➡️ Crée un **backstore de type fileio** (fichier disque virtuel) :
+
+- Nom : `disk01`
+- Fichier image : `/srv/iscsi_disks/disk01.img`
+- Taille : `1G`
+
+👉 Représente la "brique de stockage" physique exportée via iSCSI.
+
+```bash
+/> iscsi/ create iqn.2025-10.local.iscsi:target01
+```
+
+➡️ Crée une **cible iSCSI** avec l’identifiant :
+
+```
+iqn.2025-10.local.iscsi:target01
+```
+
+✅ Format : `iqn.YYYY-MM.domain:label`
+
+```bash
+/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/luns/ create /backstores/fileio/disk01
+```
+
+➡️ Associe le backstore `disk01` à la cible iSCSI sous forme de **LUN** (Logical Unit Number).
+
+* `tpg1` : Target Portal Group 1 (le groupe par défaut).
+
+```bash
+/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/acls/ create iqn.2025-10.local.iscsi:initiator01
+```
+
+➡️ Crée une **ACL (Access Control List)** pour autoriser un initiateur spécifique :
+
+```
+iqn.2025-10.local.iscsi:initiator01
+```
+
+➡️ Cet IQN doit correspondre à celui du client initiateur iSCSI.
+
+#### Choix de l'interface réseau
+
+```bash
+/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/portals/ delete 0.0.0.0 3260
+/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/portals/ create 192.168.50.10
+```
+
+➡️ Supprime l'**interface réseau (portal)** créée par défaut sur toutes les interfaces réseau pour en recréer un uniquement sur l'interface sur laquelle la cible écoutera :
+
+* IP : `192.168.50.10`
+* Port par défaut : `3260`
+
+### ✅ Vérification du service
+
+```bash
 sudo targetcli ls
+```
+
+```
+/backstores/fileio
+    disk01  (fileio, /srv/iscsi_disks/disk01.img) write-back activated
+/iscsi
+    iqn.2025-10.local.iscsi:target01
+        tpg1
+            acls: iqn.2025-10.local.iscsi:initiator01
+            luns: lun0 -> /backstores/fileio/disk01
+            portals: 192.168.50.10:3260
 ```
 
 ## 💻 Configuration du client iSCSI Initiator
@@ -83,7 +150,8 @@ sudo targetcli ls
 
 ```bash
 sudo apt update
-sudo apt install open-iscsi -y
+sudo apt install open-iscsi -y # Debian/Ubuntu
+sudo dnf install iscsi-initiator-utils  # CentOS/RHEL/Fedora
 ```
 
 ### Définir l'IQN du client
@@ -155,22 +223,54 @@ Ajoutez dans `/etc/fstab` :
 
 ```bash
 sudo targetcli
-/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1 set attribute authentication=1
-/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/acls/iqn.2025-10.local.iscsi:initiator01 set auth userid=admin
-/> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/acls/iqn.2025-10.local.iscsi:initiator01 set auth password=supersecret
+/> cd iscsi/iqn.2025-10.local.iscsi:target01/tpg1/acls/iqn.2025-10.local.iscsi:initiator01
+/> /iscsi/iqn.../tpg1> set attribute authentication=1
+/> /iscsi/iqn.../tpg1> set auth userid=admin
+/> /iscsi/iqn.../tpg1> set auth password=supersecret
+/> cd /
 /> saveconfig
 /> exit
 ```
 
 ### Côté Initiator
 
-Fichier : `/etc/iscsi/iscsid.conf`
+Ajout des identifiants CHAP :
+
+```bash
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.authmethod -v CHAP
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.username -v admin
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.password -v supersecret
+```
+
+Vérification :
+
+```bash
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102 -o show | grep -A3 auth
+iface.chap_auth = <empty>
+iface.bidi_chap = <empty>
+iface.strict_login_compliance = <empty>
+iface.discovery_auth = <empty>
+iface.discovery_logout = <empty>
+node.discovery_address = 192.168.1.102
+node.discovery_port = 3260
+--
+node.session.auth.authmethod = CHAP
+node.session.auth.username = admin
+node.session.auth.password = ********
+node.session.auth.username_in = <empty>
+node.session.auth.password_in = <empty>
+node.session.auth.chap_algs = MD5
+```
+
+:::tip
+Il est aussi possible de remplir les informations CHAP dans le fichier : `/etc/iscsi/iscsid.conf`
 
 ```bash
 node.session.auth.authmethod = CHAP
 node.session.auth.username = admin
 node.session.auth.password = supersecret
 ```
+:::
 
 Reconnectez ensuite :
 
@@ -179,6 +279,62 @@ sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.50.10 --log
 sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.50.10 --login
 ```
 
+### CHAP mutuel
+
+Nous avons mis en place une authentification à sens unique mais CHAP supporte également une authentification bidirectionnelle :
+
+- Utiliser `usename`/`password` pour que seul l'initiateur s'authentifie auprès de la cible (unidirectionnel).
+- Ajouter `username_in`/`password_in` pour que l'initiateur et la cible s'authentifient mutuellement (bidirectionnel/CHAP mutuel).
+
+
+| Credential | Direction | But |
+|------------|-----------|-----|
+| `username`/`password` | Initiator → Target | Initiator authenticates to the target. |
+| `username_in`/`password_in` | Target → Initiator | Target authenticates to the initiator (Mutual CHAP). |
+
+
+```bash
+# target
+
+targetcli
+
+/> /iscsi/iqn.20...i:initiator01> set auth mutual_userid=admin2
+Parameter mutual_userid is now 'admin2'.
+/> /iscsi/iqn.20...i:initiator01> set auth mutual_password=supersecret2
+Parameter mutual_password is now 'supersecret2'.
+
+saveconfig
+```
+
+```bash
+# initiator
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.authmethod -v CHAP
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.username -v admin
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.password -v supersecret
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.username_in -v admin2
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102   --op update -n node.session.auth.password_in -v supersecret2
+
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.1.102 -o show | grep -A3 auth
+iface.chap_auth = <empty>
+iface.bidi_chap = <empty>
+iface.strict_login_compliance = <empty>
+iface.discovery_auth = <empty>
+iface.discovery_logout = <empty>
+node.discovery_address = 192.168.1.102
+node.discovery_port = 3260
+--
+node.session.auth.authmethod = CHAP
+node.session.auth.username = admin
+node.session.auth.password = ********
+node.session.auth.username_in = admin2
+node.session.auth.password_in = ********
+node.session.auth.chap_algs = MD5
+[…]
+
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.50.10 --logout
+
+sudo iscsiadm -m node -T iqn.2025-10.local.iscsi:target01 -p 192.168.50.10 --login
+```
 
 ## 📚 Pour aller plus loin
 
