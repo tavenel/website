@@ -82,6 +82,7 @@ Module de 4 journées
 - [💽 TP : Utiliser iSCSI pour gérer des disques réseau](/linux/tp-iscsi)
 - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
 - [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
+- [🔐 TP : Investigation post-compromission sous Linux : Détection et analyse](/linux/tp-forensics) : Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery).
 
 ### Optionnels
 

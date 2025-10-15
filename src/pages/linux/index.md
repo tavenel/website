@@ -89,6 +89,7 @@ layout: '@layouts/BaseLayout.astro'
 - [🛠️ TP : Administration d'un système Linux](/linux/tp-admin-technova) : Cas fictif pour mettre en pratique les commandes shell sous Linux, en se concentrant sur la gestion des droits des utilisateurs et des groupes et la configuration de l'élévation de privilèges.
 - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 - [📦 TP : Compilation, Personnalisation et Installation d'un Noyau Linux](/linux/tp-build-kernel) : Votre mission est de compiler et installer un noyau Linux personnalisé ainsi que de rebuilder automatiquement un module externe avec DKMS.
+- [🔐 TP : Investigation post-compromission sous Linux : Détection et analyse](/linux/tp-forensics) : Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery).
 
 ## 🔗 LPIC-1
 
