@@ -79,6 +79,7 @@ Module de 4 journées
 - [🌐 TP : Installation d'un service VPN](/linux/tp-vpn)
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
+- [💽 TP : Utiliser iSCSI pour gérer des disques réseau](/linux/tp-iscsi)
 - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
 - [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
 
