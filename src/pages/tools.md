@@ -613,6 +613,7 @@ created: 2024-10-17
 - `ngrok` : rendre les applications locales accessibles sur Internet (Ingress)
 - Environnements de développement sous Kubernetes : <https://skaffold.dev/>, <https://tilt.dev/>
 - `Wappalyzer` : extension détectant les technologies utilisées par un site Web
+- <https://github.com/sectordistrict/intentrace> : trace les appels système (similaire `strace`) mais avec une explication sur leur sens
 
 ### Outils poste de travail DevOps
 
