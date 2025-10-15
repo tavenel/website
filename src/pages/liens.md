@@ -239,8 +239,10 @@ Voir les pages de cours :
   - <https://www.root-me.org/> : plateforme d'apprentissage immersive permettant de se familiariser avec la cybersécurité en s'entraînant sur des environnements réels.
   - <https://www.securecodewarrior.com/> : apprendre à développer du code robuste
   - <https://hackropole.fr/fr/> : rejouer les épreuves du France Cybersecurity Challenge
+- <https://docs.rapid7.com/metasploit/metasploitable-2/> et <https://github.com/rapid7/metasploitable3> : VMs Linux vulnérables
 - <https://github.com/apsdehal/awesome-ctf>
 - <https://sploitus.com/> : recherche de vulnérabilités
+- <https://archive.org/download/HalLinuxForensics> : exercices de forensics
 
 ## Exemples de projets
 
