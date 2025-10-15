@@ -122,6 +122,10 @@ drwxr-xrw- [...]
   - `chmod g+s /bin/cat`, `chmod 2xxx /bin/cat`
 - `SGID` sur répertoire : les fichiers et sous-répertoires créés dans ce répertoire hériteront du groupe propriétaire du répertoire parent (au lieu du groupe de l'utilisateur créant les fichiers).
 
+:::tip
+La plupart des distributions récentes ont un noyau qui refuse l'exécution de `SUID` pour les scripts shells par mesure de sécurité.
+:::
+
 ---
 
 #### Sticky bit
