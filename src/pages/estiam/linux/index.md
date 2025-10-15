@@ -84,6 +84,10 @@ Module de 4 journées
 - [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
 - [🔐 TP : Investigation post-compromission sous Linux : Détection et analyse](/linux/tp-forensics) : Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery).
 
+### Projet
+
+- [🔐 Projet : Infrastructure Linux sécurisée pour un centre de données confidentiel](/linux/projet-cyber) : L'objectif est de concevoir, déployer et sécuriser une infrastructure Linux complète répondant à des exigences fortes de disponibilité, confidentialité et intégrité des données.
+
 ### Optionnels
 
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
