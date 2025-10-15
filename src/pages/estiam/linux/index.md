@@ -78,6 +78,7 @@ Module de 4 journées
 - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 - [🌐 TP : Installation d'un service VPN](/linux/tp-vpn)
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
+- [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
 - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
 - [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
 

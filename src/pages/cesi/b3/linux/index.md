@@ -105,6 +105,7 @@ mindmap
 - [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
 - [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
 - [💾 TP Sauvegarde et Restauration sous Linux](/linux/tp-backup)
+- [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
 - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 
 ## 🚀 Pour aller plus loin
