@@ -105,6 +105,7 @@ checked: 2025-01-27
 
 - <https://vlcn.io/blog/intro-to-crdts> : Enjeux des CRDTS
 - <https://jakelazaroff.com/words/an-interactive-intro-to-crdts/> : Introduction et exemples de CRDTS
+- <https://read.thecoder.cafe/p/crdt> : explication des CRDTs
 - <https://zknill.io/posts/collaboration-no-crdts/> : comment collaborer sans CRDTS
 
 ### High Availability (HA)
