@@ -31,9 +31,9 @@ On ne demande pas de réaliser de déploiement hautement disponible.
 
 ### Stockage & sécurité
 
-- Création de volumes LVM
-- Mise en place d'un RAID logiciel (niveau 1 ou 5)
-- Chiffrement avec LUKS
+- Mise en place d'un RAID logiciel (niveau 1 ou 5) avec `mdadm` sur les disques entiers
+- Création de volumes LVM au-dessus du volume raid (`md0`)
+- Chiffrement avec LUKS des volumes LVM nécessaires
 - Sauvegardes automatisées (rsnapshot, borg, duplicity, etc.)
 - Critères :
   - RAID fonctionnel, LVM opérationnel, disque chiffré accessible, …
