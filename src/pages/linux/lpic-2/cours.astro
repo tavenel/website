@@ -17,6 +17,7 @@ import { Content as Apache } from '@courses/linux/cours-apache.md';
 import { Content as Squid } from '@courses/linux/cours-squid.md';
 import { Content as Nginx } from '@courses/linux/cours-nginx.md';
 import { Content as Samba } from '@courses/linux/cours-samba.md';
+import { Content as NAS } from '@courses/storage/das-nas-san.md';
 import { Content as NFS } from '@courses/linux/cours-nfs.md';
 import { Content as DHCP } from '@courses/linux/cours-dhcp.md';
 import { Content as PAM } from '@courses/linux/cours-pam.md';
@@ -39,28 +40,29 @@ const frontmatter = {
 
 <Layout frontmatter={frontmatter} >
 
-  <Chapter> <Perf />     </Chapter> <!-- 200 -->
-  <Chapter> <Hardware />     </Chapter> <!-- 201, 202.1, 202.2, 202.3 -->
-  <Chapter> <Kernel />     </Chapter> <!-- 201 -->
+  <Chapter> <Perf />      </Chapter> <!-- 200 -->
+  <Chapter> <Hardware />  </Chapter> <!-- 201, 202.1, 202.2, 202.3 -->
+  <Chapter> <Kernel />    </Chapter> <!-- 201 -->
   <Chapter> <Disks />     </Chapter> <!-- 203.1, 203.2, 203.3, 204.2, 204.3 -->
   <Chapter> <Smart />     </Chapter> <!-- 203 -->
-  <Chapter> <RAID />     </Chapter> <!-- 204.1 -->
-  <Chapter> <Network />     </Chapter> <!-- 205.1, 205.2, 205.3, 212.1 -->
-  <Chapter> <Make />     </Chapter> <!-- 206.1 -->
-  <Chapter> <Backup />     </Chapter> <!-- 206.2 -->
-  <Chapter> <InfoUsers />     </Chapter> <!-- 206.3 -->
-  <Chapter> <DNS />     </Chapter> <!-- 207.1, 207.2, 207.3 -->
-  <Chapter> <Apache />     </Chapter> <!-- 208.1, 208.2, 208.3 -->
+  <Chapter> <RAID />      </Chapter> <!-- 204.1 -->
+  <Chapter> <Network />   </Chapter> <!-- 205.1, 205.2, 205.3, 212.1 -->
+  <Chapter> <Make />      </Chapter> <!-- 206.1 -->
+  <Chapter> <Backup />    </Chapter> <!-- 206.2 -->
+  <Chapter> <InfoUsers /> </Chapter> <!-- 206.3 -->
+  <Chapter> <DNS />       </Chapter> <!-- 207.1, 207.2, 207.3 -->
+  <Chapter> <Apache />    </Chapter> <!-- 208.1, 208.2, 208.3 -->
   <Chapter> <Squid />     </Chapter> <!-- 208.3 -->
   <Chapter> <Nginx />     </Chapter> <!-- 208.4 -->
   <Chapter> <Samba />     </Chapter> <!-- 209.1 -->
-  <Chapter> <NFS />     </Chapter> <!-- 209.2 -->
-  <Chapter> <DHCP />     </Chapter> <!-- 210.1 -->
-  <Chapter> <PAM />     </Chapter> <!-- 210.2 -->
-  <Chapter> <LDAP />     </Chapter> <!-- 210.3 -->
-  <Chapter> <Mail />     </Chapter> <!-- 211.1, 211.2, 211.3 -->
+	<Chapter> <NAS />       </Chapter>
+  <Chapter> <NFS />       </Chapter> <!-- 209.2 -->
+  <Chapter> <DHCP />      </Chapter> <!-- 210.1 -->
+  <Chapter> <PAM />       </Chapter> <!-- 210.2 -->
+  <Chapter> <LDAP />      </Chapter> <!-- 210.3 -->
+  <Chapter> <Mail />      </Chapter> <!-- 211.1, 211.2, 211.3 -->
 	<!-- SKIP 212.2 (FTP) -->
-  <Chapter> <Security />     </Chapter> <!-- 205.3, 212.3, 212.4 -->
+  <Chapter> <Security />  </Chapter> <!-- 205.3, 212.3, 212.4 -->
   <Chapter> <VPN /> <!-- 212.5 -->
   <Chapter> <Debug />     </Chapter> <!-- Bonus -->
 </Layout>
