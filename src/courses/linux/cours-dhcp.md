@@ -15,7 +15,7 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 
 ---
 
-### 📁 Fichiers et journaux importants
+## 📁 Fichiers et journaux importants
 
 | Fichier / Outil                            | Description                                               |
 | ------------------------------------------ | --------------------------------------------------------- |
@@ -30,9 +30,9 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 
 ---
 
-### 🔧 Exemple de configuration : `/etc/dhcp/dhcpd.conf`
+## 🔧 Exemple de configuration : `/etc/dhcp/dhcpd.conf`
 
-#### ✅ Déclaration globale
+### ✅ Déclaration globale
 
 ```
 # Paramètres des baux
@@ -43,7 +43,7 @@ max-lease-time 7200;
 authoritative;
 ```
 
-#### 🧩 Configuration des services
+### 🧩 Configuration des services
 
 ```
 # DNS
@@ -71,7 +71,7 @@ option nntp-server news.company.com;
 option time-servers ntp.company.com;
 ```
 
-#### 🧭 Configuration d'un sous-réseau
+### 🧭 Configuration d'un sous-réseau
 
 ```
 subnet 192.168.1.0 netmask 255.255.255.0 {
@@ -82,7 +82,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 }
 ```
 
-#### 🧭 Configuration de réseau partagé
+### 🧭 Configuration de réseau partagé
 
 ```
 # Réseau physique
@@ -102,7 +102,7 @@ shared-network mon-reseau {
 }
 ```
 
-#### 📌 Attribution fixe par adresse MAC
+### 📌 Attribution fixe par adresse MAC
 
 ```
 group {
@@ -130,13 +130,13 @@ group {
 
 ---
 
-### 📡 BOOTP
+## 📡 BOOTP
 
 BOOTP est un prédécesseur de DHCP, encore pris en charge pour compatibilité.
 
 ---
 
-### 🌍 DHCPv6 et `radvd`
+## 🌍 DHCPv6 et `radvd`
 
 * DHCPv6 nécessite `dhcpd` compilé avec le support IPv6.
 * Pour la configuration automatique sans état (stateless), on utilise `radvd`.
@@ -158,7 +158,7 @@ interface eth0 {
 
 ---
 
-### 🔁 Agent relais DHCP
+## 🔁 Agent relais DHCP
 
 Pour relayer les requêtes DHCP vers un autre serveur :
 
@@ -171,7 +171,7 @@ dhcrelay -i eth0 -i eth1 192.168.1.1
 
 ---
 
-### 🧪 Vérifications & maintenance
+## 🧪 Vérifications & maintenance
 
 * Afficher les baux actifs :
 
