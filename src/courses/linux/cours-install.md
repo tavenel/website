@@ -24,21 +24,6 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## LVM : Logical Volume Manager
-
-- `Physical Volume PV` : disque physique (gère `RAID`, ...)
-- `Volume Group VG` : pool de `PV`
-- `Logical Volumes LVs` : découpage de `VG`
-- Données gérées par unités (`extents`) : `PE` (`PV`) et `LE` (`LV`)
-- les `LVs` peuvent être distribués sur plusieurs disques, gèrent chiffrement, ...
-- `LV` accessible comme disque classique : `dev/VGNAME/LVNAME`
-
-:::link
-Pour des exemples d'utilisation, voir l'excellent wiki Archlinux : <https://wiki.archlinux.org/title/LVM>
-:::
-
----
-
 ## Partitionnement
 
 - Bonne pratique : **séparer le système en plusieurs partitions**
@@ -48,8 +33,6 @@ Pour des exemples d'utilisation, voir l'excellent wiki Archlinux : <https://wiki
 - `/home` : fichiers personnels et configurations des utilisateurs
 - `/var` : données variables (`/var/logs`, `/var/tmp`, `/var/cache`) ou fichiers changeant pendant l'exécution (`/var/www/html`, `/var/lib/mysql`, `/var/lib/docker`)
 - `swap` pour augmenter la RAM en utilisant un disque (non monté)
-
-### Démo
 
 ---
 
