@@ -283,7 +283,7 @@ DHCP=yes # ou IPv4 ou IPv6
 
 ---
 
-## Pare-feu : Netfilter/IpTables
+## Pare-feu : Netfilter/IpTables/NfTables
 
 - `Netfilter` : module noyau pare-feu, traduction d'adresse (NAT) et historique réseau
 - Intercepte et manipule les paquets IP **avant** et **après** le routage.
@@ -293,6 +293,10 @@ DHCP=yes # ou IPv4 ou IPv6
 iptables -P INPUT DROP
 iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j ACCEPT
 ```
+
+:::tip
+`iptables` est déprécié : préférer `nftables` (voir ci-dessous) mais les concepts sont les mêmes.
+:::
 
 ---
 
@@ -343,12 +347,56 @@ iptables -A OUTPUT -o eth0 -p tcp -s 192.168.1.2 -d 192.168.1.0/24 --dport 22 -j
 
 ---
 
+#### Exemples de règles :
+
+1. Bloquer des connexions entrantes
+
+```sh
+iptables -A INPUT -s 192.168.2.1 -j DROP
+```
+
+2. Autoriser des connexions SSH entrantes (et utiliser CONNTRACK pour garder l'état des connexionx ouvertes) :
+
+```sh
+iptables -A INPUT -i eth0 -p tcp -s 192.168.1.0/24 --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+```
+
+---
+
+### Nftables
+
+- Remplaçant moderne de `iptables` pour _Netfilter_ (à privilégier).
+- Fonctionnement similaire : _chaînes_ et _règles_
+- Configuration unifiée IPv4 + IPv6
+- Pas de chaîne de base (pas de `INPUT`, …)
+
+:::tip
+`iptables-translate` permet de transformer des règles `iptables` en `nftables`
+:::
+
+#### Exemples de règles :
+
+1. Bloquer des connexions entrantes
+
+```sh
+nft add rule ip filter INPUT ip saddr 192.168.2.1 counter drop
+```
+
+2. Autoriser des connexions SSH entrantes (et utiliser CONNTRACK pour garder l'état des connexionx ouvertes) :
+
+```sh
+nft add rule ip filter INPUT iifname eth0 ip saddr 192.168.1.0/24 tcp dport 22 ct state new,established counter accept
+```
+
+---
+
 # Ressources
 
 - Pour des exemples de base de `iptables`, voir [la documentation Ubuntu](https://doc.ubuntu-fr.org/iptables)
 - Voir aussi la [wikiversité](https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter)
 - Tutoriel complet : <https://www.inetdoc.net/guides/iptables-tutorial/>
 - Tutoriel sur `Conntrack` : <https://www.malekal.com/conntrack-sur-linux-comment-ca-marche/>
+- Passer de `iptables` à `nftables` : <https://linuxhandbook.com/iptables-vs-nftables/>
 - Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
 - Voir le [TP sur la configuration du réseau sous Linux][tp-network]
 
