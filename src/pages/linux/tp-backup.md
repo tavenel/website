@@ -129,3 +129,31 @@ sudo apt install backuppc
 4. Lancer une sauvegarde à distance d'un répertoire `/etc`.
 5. Restaurer un fichier depuis l'interface.
 
+:::warn
+Backuppc doit pouvoir accéder les fichiers à sauvegarder (notamment `/etc`) ! Penser à donner les droits :
+
+- soit à l'utilisateur `backuppc` d'accéder directement aux fichiers à sauvegarder (ajout au groupe, changement de droits, …)
+- soit à donner les droits d'exécution `sudo` à l'utilisateur puis à changer la commande de backuppc pour utiliser sudo (sélectionner l'hôte `localhost`, _Edit Config_, _Xfer_, _TarClientCmd_) :
+   ```
+	 # /etc/sudoers
+   backuppc ALL=(ALL) NOPASSWD: /usr/bin/tar
+   ```
+:::
+
+:::correction
+Pour accéder à l'interface de backuppc, en absence de connexion SSL configurée dans ce TP, on pourra **exceptionnellement pour un test** ouvrir l'interface publiquement en HTTP :
+
+```ini
+# /etc/apache2/conf-enabled/backuppc.conf
+
+[…]
+        <RequireAll>
+                # Comment out this line once you have setup HTTPS and uncommented SSLRequireSSL
+                # Require local
+
+                # This line ensures that only authenticated users may access your backups
+                Require valid-user
+        </RequireAll>
+```
+
+:::
