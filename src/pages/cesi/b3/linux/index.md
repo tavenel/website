@@ -96,6 +96,8 @@ mindmap
 
 - [󰣛 Machine virtuelle Fedora Desktop dans VirtualBox](/linux/tp-installation-vbox-fedora-workstation)
 - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/linux/tp-installation-vbox-ubuntu-workstation)
+- [󰣚  Machine virtuelle Debian serveur dans VirtualBox](/linux/tp-installation-vbox-debian-server)
+- [Installer un serveur Ubuntu sous Virtualbox](https://www.eugenetoons.fr/installer-un-serveur-ubuntu-sous-virtualbox/)
 - [🤓 Cours Linux administration avancée](/cesi/b3/linux/cours)
 - [📀 TP : utiliser GRUB pour une restauration système](/linux/tp-grub)
 - [📀 TP : utiliser un Live CD/USB pour une restauration système](/linux/tp-rescue)
