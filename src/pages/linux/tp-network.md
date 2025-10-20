@@ -126,6 +126,30 @@ iface eth0 inet6 static
 Utiliser le fichier `/etc/network/interfaces` et les commandes `ifup` / `ifdown` pour persister la configuration réseau précédente.
 :::
 
+
+### Persistance avec systemd
+
+Même si le fichier `/etc/network/interfaces` est encore largement utilisé, il est aussi possible d'utiliser _systemd_ pour configurer le réseau (beaucoup plus adapté aux configurations complexes notamment) en ajoutant des fichiers de configuration dans `/etc/systemd/network` :
+
+#### Exemple de fichier `/etc/systemd/network/enp3s5.network`
+
+```
+[Match]
+Name=enp3s5
+# ou :
+#MACAddress=00:16:3e:8d:2b:5b
+
+[Network]
+DHCP=yes # ou IPv4 ou IPv6
+# ou :
+#Address=192.168.0.100/24
+#Gateway=192.168.0.1
+```
+
+:::exo
+Porter la persistance utilisée par `/etc/network/interfaces` vers `systemd`. Penser à redémarrer le service réseau !
+:::
+
 ### Dénomination traditionnelle
 
 Pour activer la dénomination traditionnelle, il faut éditer le fichier `/etc/default/grub` en ajoutant la valeur `net.ifnames=0 biosdevname=0` à la variable `GRUB_CMDLINE_LINUX`.
