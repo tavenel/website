@@ -47,6 +47,47 @@ sudo mount /dev/sdXn /mnt
 sudo mount /dev/sda1 /mnt
 ```
 
+:::warn
+Si vous utilisez LVM (utilisation classique d'un serveur, par exemple installation par défaut d'Ubuntu Server) il faudra utiliser la partition LVM et non la partition `/dev/sd…`
+
+Par exemple :
+
+```sh
+sudo lsblk
+
+[…]
+sdd                      8:48   0   64G  0 disk
+└─sdd1                   8:49   0   64G  0 part
+  └─md0                  9:0    0   64G  0 raid1
+    └──vg1-root         253:1    0 37.3G  0 lvm
+…
+
+# LVM : on utilise `lvdisplay` pour afficher les partitions (Logical Volume)
+sudo lvdisplay
+
+[…]
+ --- Logical volume ---
+  LV Path                /dev/vg1/root
+  LV Name                root
+  VG Name                vg1
+  LV UUID                XYXsQS-Ybye-WDtw-xGNq-lUF9-Z0N2-SFznDt
+  LV Write Access        read/write
+  LV Creation host, time debian-full, 2025-10-14 19:10:17 +0200
+  LV Status              available
+  # open                 1
+  LV Size                37.25 GiB
+  Current LE             9536
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:1
+[…]
+
+sudo mount /dev/vg1/root /mnt
+```
+:::
+
 Puis montez les systèmes nécessaires pour le chroot :
 
 ```sh
