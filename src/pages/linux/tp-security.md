@@ -190,7 +190,7 @@ fuser -k mon_fichier
 Le noyau Linux permet de séparer des espaces de noms pour plusieurs types de ressources (c'est une des technologies à la base de Docker !). Ces espaces de noms sont totalement isolés par le noyau et ne peuvent pas échanger de données.
 
 :::exo
-Utiliser la commande `ip netns` pour créer un namespace. En utilisant la commande `python3 -m http.webserver`, démarrer un serveur web dans le network namespace créé et vérifier que seul le namespace a accès au réseau.
+Utiliser la commande `ip netns` pour créer un namespace. En utilisant la commande `python3 -m http.webserver`, démarrer un serveur web dans le network namespace créé et vérifier que seul le namespace a accès au serveur web créé (par défaut sur le port 8000).
 :::
 
 :::correction
