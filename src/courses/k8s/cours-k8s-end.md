@@ -153,6 +153,7 @@ tags:
 - [Exemple de déploiement d'une application stateful](https://kubernetes.io/docs/tutorials/stateful-application/) 📦
   - [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/) 📦
   - [Exemple complet : déploiement d'un cluster ZooKeeper stateful, et maintenance des noeuds](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/) 📦
+- Exemple de déploiement de postgresql : stateless vs statefull : <https://cloudnative-pg.io/documentation/current/use_cases/>
 
 #### Déploiement continu
 
