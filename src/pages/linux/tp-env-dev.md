@@ -168,6 +168,12 @@ Il existe de nombreuses distributions `neovim` : pour les tester, on pourra util
 - Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
 - Afficher des pages d'aide de commadnes : `curl cheat.sh/ma_commande`
 
+## Voir aussi
+
+:::link
+- Une liste complète d'applications utiles : <https://wiki.archlinux.org/title/List_of_applications>
+:::
+
 [ack]: https://github.com/beyondgrep/ack3
 [ag]: https://github.com/ggreer/the_silver_searcher
 [alacritty]: https://alacritty.org/
