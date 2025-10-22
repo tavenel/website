@@ -14,6 +14,10 @@ layout: '@layouts/CoursePartLayout.astro'
   - [Cours LPI](https://learning.lpi.org/en/learning-materials/102-500/109/109.1/109.1_01/)
   - [Cours sur le site : "Le Web, HTTP, Introduction au Cloud, architectures client/serveur et types d'applications mobiles"](/web)
   - [Cours TCP/IP de François Goffinet](https://linux.goffinet.org/administration/configuration-du-reseau/introduction-a-tcp-ip/)
+- Rappels sur les réseaux virtuels : 
+  - <https://www.it-connect.fr/le-nat-et-le-pat-pour-les-debutants/>
+  - <https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/>
+  - NAT vs BRIDGE : <https://blog.stephane-robert.info/docs/homelab/bridge-nat/>
 
 ---
 
