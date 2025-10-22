@@ -140,6 +140,7 @@ checked: 2025-01-27
 - Local AI LLMs : <https://ollama.com/> et <https://docs.openwebui.com/>
   - `tinyllama`, `tinydolphin`, `dolphin-mistral`, `codestral`, …
 - Block AI indexing in your website : <https://github.com/ai-robots-txt/ai.robots.txt>
+- ["Encadrer l'utilisation de l'IA dans les devoirs à la maison" (Académie de Grenoble, PDF)](https://dane.web.ac-grenoble.fr/sites/default/files/Media/document/IA%20devoirs_Ac-Paris.pdf)
 
 :::link
 Voir aussi : [informations IA](/other#ia)
@@ -196,7 +197,6 @@ Voir aussi : [informations IA](/other#ia)
 - Cours mémoire cache et optimisation de code : <https://zestedesavoir.com/tutoriels/331/memoire-cache-et-optimisation-de-code/>
 - Le paradoxe de la complexité : <https://www.votito.com/methods/togs-paradox/>
 - <https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing> : erreurs typiques en programmation & déploiement de systèmes distribués
-- [NAT vs BRIDGE](https://blog.stephane-robert.info/docs/homelab/bridge-nat/)
 
 ### Liens transverses Tech
 
