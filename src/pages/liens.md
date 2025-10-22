@@ -99,6 +99,12 @@ checked: 2025-01-27
 
 ## Liens
 
+### Réseau
+
+- <https://www.it-connect.fr/le-nat-et-le-pat-pour-les-debutants/>
+- <https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/>
+- NAT vs BRIDGE : <https://blog.stephane-robert.info/docs/homelab/bridge-nat/>
+
 ### CRDTS
 
 **Conflict Free Replicated Data types** : comment fusionner des données répliquées ?
