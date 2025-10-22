@@ -102,6 +102,7 @@ Les fichiers de logs de `journalctl` sont stockés **au format binaire** (ce qui
 1. Utilisez `journalctl` pour rechercher tous les messages contenant le terme `error`.
 1. Affichez la cible (`target`) par défaut du système.
 1. Changez la cible par défaut du système pour une cible différente (par exemple, `multi-user.target`).
+1. Utiliser `systemd-analyze blame` pour afficher et trier les temps de lancement des services système au démarrage.
 
 :::link
 Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/journalisation/>
@@ -117,6 +118,18 @@ Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/journa
 1. Utilisez `journalctl` pour rechercher tous les messages contenant le terme `error` avec `journalctl -g error`.
 1. Affichez la cible (`target`) par défaut du système avec `systemctl get-default`.
 1. Changez la cible par défaut du système pour une cible différente (par exemple, `multi-user.target`) en utilisant `systemctl set-default`.
+1. `systemd-analyze blame` :
+
+```sh
+systemd-analyze blame
+1.396s systemd-networkd-wait-online.service
+1.324s dev-sda2.device
+1.187s rtslib-fb-targetctl.service
+ 937ms dbus.service
+ 923ms incus-agent.service
+ 907ms nmbd.service
+[…]
+```
 :::
 
 ### Création d'un service personnalisé
