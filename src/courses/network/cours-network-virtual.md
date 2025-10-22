@@ -4,6 +4,16 @@ title: Technologies de Réseau Virtuel
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
+## Rappels : NAT, PAT, Bridge
+
+Voir les liens :
+
+- <https://www.it-connect.fr/le-nat-et-le-pat-pour-les-debutants/>
+- <https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/>
+- NAT vs BRIDGE : <https://blog.stephane-robert.info/docs/homelab/bridge-nat/>
+
+---
+
 ## VLAN (Virtual Local Area Network) 🌐
 
 - But : Segmenter un réseau physique en plusieurs réseaux logiques (virtuels).
