@@ -104,6 +104,7 @@ checked: 2025-01-27
 - <https://www.it-connect.fr/le-nat-et-le-pat-pour-les-debutants/>
 - <https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/>
 - NAT vs BRIDGE : <https://blog.stephane-robert.info/docs/homelab/bridge-nat/>
+- Types de réseaux virtuels basiques sous Linux : <https://pve.proxmox.com/wiki/Network_Configuration>
 
 ### CRDTS
 
