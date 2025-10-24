@@ -614,6 +614,7 @@ created: 2024-10-17
 - Environnements de développement sous Kubernetes : <https://skaffold.dev/>, <https://tilt.dev/>
 - `Wappalyzer` : extension détectant les technologies utilisées par un site Web
 - <https://github.com/sectordistrict/intentrace> : trace les appels système (similaire `strace`) mais avec une explication sur leur sens
+- Alternatives à Postman : <https://blog.shevarezo.fr/post/2025/10/22/alternatives-postman-local-first-sans-compte>
 
 ### Outils poste de travail DevOps
 
