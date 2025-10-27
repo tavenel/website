@@ -91,6 +91,7 @@ Voir aussi :
 - Le lien : <https://www.brendangregg.com/linuxperf.html> pour plus d'information sur les performances d'un système Linux, et l'ensemble des outils disponibles.
 - La page d'optimisation des performances d'un système Linux du blog de Stéphane Robert : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/performances/>.
 - Les indicateurs _USE_ de Brendan Gregg : <https://www.brendangregg.com/USEmethod/use-linux.html>
+- [Netflix Tech Blog : Linux Performance Analysis in 60,000 Milliseconds](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
 :::
 
 ---
