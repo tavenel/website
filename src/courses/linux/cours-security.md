@@ -122,13 +122,6 @@ tty6::respawn:/sbin/getty 38400 tty6
 
 ---
 
-:::link
-- Voir le [TP sur la sécurité d'un système Linux][tp-security]
-- Voir la page : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/capabilities/>
-:::
-
----
- 
 ## Sécurisation des données avec le chiffrement
 
 ---
@@ -155,16 +148,144 @@ tty6::respawn:/sbin/getty 38400 tty6
 
 ---
 
-Voir le [TP sur SSH et GPG][tp-ssh-gpg]
+## 🧱 SELinux et AppArmor
 
 ---
 
-# Ressources
+### 🔐 DAC : Discretionary Access Control
 
+- Droits standards d'un système Unix :
+- Le **propriétaire** d'un objet (fichier, dossier, processus, etc.) décide **qui peut y accéder** et avec quels droits.
+- Basé sur les **utilisateurs, groupes et permissions** (rwx).
+- Chaque utilisateur gère librement ses propres ressources.
+- Le système se base sur l'**identité** de l'utilisateur pour autoriser l'accès.
+- **Simple**
+
+```bash
+ls -l /home/user/file.txt
+chmod 640 /home/user/file.txt
+```
+
+---
+
+### 🛡️ MAC : Mandatory Access Control
+
+- Les règles d'accès sont **définies par une politique centrale** et **imposées par le système**, pas par les utilisateurs.
+- Basé sur des **étiquettes de sécurité** (_SELinux_, _AppArmor_)
+- Chaque interaction (processus ↔ fichier, réseau, mémoire…) est évaluée selon la politique.
+- Même le superutilisateur (`root`) ne peut pas ignorer la politique.
+- **Complexe** mais **sécurité renforcée**
+
+**Exemple :**
+SELinux bloque un serveur web (`httpd_t`) qui tente d’accéder à `/home` même si les permissions Unix le permettent.
+
+---
+
+### 🧱 SELinux
+
+- _Security-Enhanced Linux_
+- Développé par la _NSA_
+- Intégré nativement aux distributions RHEL : Fedora, CentOS, Rocky, Alma
+- Basé sur le **LSM** : _Linux Security Modules_.
+- Notions de **contexte de sécurité** : `user:role:type:level`.
+- Modes :
+  - **Enforcing** : les politiques sont appliquées.
+  - **Permissive** : les violations sont enregistrées mais pas bloquées.
+  - **Disabled** : désactivé.
+
+---
+
+#### Targeted Policy
+
+- Politiques ciblées :
+- Démons système sensibles (`httpd`, `sshd`, `named`, `mysqld`, …) confinés :
+  - domaines SELinux spécifiques avec règles précises (ex : `httpd_t`, `sshd_t`, `named_t`).
+- Processus utilisateurs classiques et programmes standards non confinés :
+  - domaine générique `unconfined_t`.
+- Mode de politique par défaut sur la plupart des distributions Linux modernes
+  - bon compromis sécurité vs compatibilité
+
+---
+
+D'autres politiques existent, par exemple :
+
+- **mls** (Multi-Level Security) :
+  - niveaux de classification : _Top Secret_, _Secret_, …
+  - Environnements gouvernementaux ou militaires.
+- **mcs** (Multi-Category Security) :
+ - variante simplifiée de MLS (catégories sans hiérarchie)
+  - conteneurs, environnements multi-utilisateurs.
+
+---
+
+#### Commandes utiles
+
+```bash
+getenforce # Status
+sestatus # Status
+setenforce 0 # mode Permissive
+```
+
+- Vérifier les contextes incorrects : `ls -Z`
+- Corriger avec `restorecon` ou `chcon`.
+- Diagnostiquer via `ausearch` + `sealert`, audits dans `/var/log/audit/audit.log`
+- Génération automatique : `audit2allow` et `semodule`
+  - `audit2why` pour comprendre les blocages.
+
+---
+
+### 🧰 AppArmor
+
+- Approche simplifiée du confinement
+- Développé par **Immunix**, puis intégré à Ubuntu, Debian, SUSE.
+- Fonctionne aussi via **LSM**
+- Logique basée **chemins de fichiers** (et non étiquettes comme SELinux).
+- Profils définissant ce qu'un programme peut faire :
+  - Lecture, écriture, exécution, accès réseau.
+  - Profils stockés dans `/etc/apparmor.d/`.
+- Modes :
+  - **Enforce** : profil appliqué.
+  - **Complain** : enregistre les violations sans bloquer.
+
+---
+
+#### Commandes utiles
+
+```bash
+aa-status
+aa-enabled
+aa-complain /etc/apparmor.d/usr.bin.firefox
+aa-enforce /etc/apparmor.d/usr.sbin.nginx
+aa-genprof nginx # Création de profile
+aa-logprof # Génération automatique de profil depuis les logs
+```
+
+---
+
+### SELinux vs AppArmor
+
+| Caractéristique | SELinux                               | AppArmor                               |
+| --------------- | ------------------------------------- | -------------------------------------- |
+| Basé sur        | Étiquettes (contexts)                 | Chemins de fichiers                    |
+| Difficulté      | Plus complexe                         | Plus simple                            |
+| Granularité     | Très fine                             | Moins précise                          |
+| Adoption        | Red Hat, Fedora, CentOS               | Ubuntu, Debian                         |
+| Cas d’usage     | Data centers, serveurs sensibles      | Postes utilisateurs, serveurs généraux |
+
+---
+
+## 📚 Ressources
+
+:::link
+- Voir le [TP sur SSH et GPG](/linux/tp-ssh-gpg)
+- Voir le [TP sur la sécurité d'un système Linux](/linux/tp-security)
 - Voir aussi [GTF0bins : exploits classiques sur Linux (tuto)](https://blog.stephane-robert.info/docs/securiser/menaces/gtfobins/)
-
-[tp-security]: /linux/tp-security
-[tp-ssh-gpg]: /linux/tp-ssh-gpg
+- Voir la page sur les capabilities : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/capabilities/>
+- Documentation SELinux : <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/>
+  - guide : <https://blog.stephane-robert.info/docs/securiser/durcissement/selinux/>
+- Guide Ubuntu AppArmor : <https://ubuntu.com/server/docs/security-apparmor>
+  - guide : <https://blog.stephane-robert.info/docs/securiser/durcissement/apparmor/>
+:::
 
 ---
 
