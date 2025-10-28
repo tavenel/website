@@ -479,3 +479,15 @@ before_script:
 
 ---
 
+## Framework SLSA
+
+- Objectif : Garantir l'intégrité des artefacts logiciels pour éviter les attaques sur la chaîne d'approvisionnement (_supply chain_) logicielle.
+- SLSA 1 : CI/CD entièrement automatisé et metadata de provenance.
+- SLSA 2 : Gestionnaire de version, CI/CD hébergée en ligne et provenance authentifiée.
+- SLSA 3 : Normes spécifiques pour auditabilité de la source et intégrité de la provenance.
+- SLSA 4: Revue de toutes les modifications par deux personnes, CI/CD hermétique et reproductible.
+
+Pour plus d'information, voir : <https://blog.stephane-robert.info/docs/securiser/supply-chain/slsa/>
+
+---
+
