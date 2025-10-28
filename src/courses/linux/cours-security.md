@@ -13,11 +13,12 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Exemples de thèmes de sécurité
 
+- Droits sur les fichiers : `rwx`, _ACL_
+  - Audit des fichiers avec permissions `suid` / `guid`
 - Limites utilisateurs pour les connexions, processus, utilisation mémoire : `usermod`, `ulimit`
 - Mots de passe : `passwd`, `chage`
 - Élévation de privilèges : `su`, `sudo`, `/etc/sudoers`
 - Ports ouverts : `nmap`, `ss`
-- Audit des fichiers avec permissions `suid` / `guid`
 - Fichiers ouverts (et donc processus, ports, …) : `lsof`, `fuser`
 - Monitorer et arrêter les services inutiles
 
@@ -98,7 +99,33 @@ tty6::respawn:/sbin/getty 38400 tty6
 
 ---
 
-Voir le [TP sur la sécurité d'un système Linux][tp-security]
+## Capabilities
+
+- Objectif : accorder à un processus uniquement les "droits" dont il a besoin dans l'ensemble des droits de `root`.
+- Très utile dans les conteneurs (_Docker_, _Kubernetes_)
+- Par processus :
+  - **Permitted (Prm)** : capabilities que le processus est autorisé à activer.
+  - **Effective (Eff)** : capabilities actuellement actives.
+  - **Inheritable (Inh)** : capabilities que le processus peut transmettre à ses enfants.
+- Par fichier exécutable :
+  - `getcap`, `setcap` : le processus hérite des capabilities du fichier exécutable (sans avoir besoin d'être `root`)
+
+### Principales capabilities
+
+- `CAP_NET_BIND_SERVICE` : utiliser ports < 1024.
+- `CAP_SYS_ADMIN` : très large : montage de fichier systèmes, gestion de namespaces, …
+- `CAP_NET_RAW` : manipulation directe de paquets (audits, `tcpdump`).
+- `CAP_DAC_OVERRIDE` : ignorer les restrictions classiques d'accès aux fichiers.
+- `CAP_SYS_TIME` : modifier l'horloge système.
+- `CAP_SYS_PTRACE` : débogger (`strace`/`gdb`) d'autres processus.
+- `CAP_CHOWN` : changer propriétaire/groupe de fichiers.
+
+---
+
+:::link
+- Voir le [TP sur la sécurité d'un système Linux][tp-security]
+- Voir la page : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/capabilities/>
+:::
 
 ---
  

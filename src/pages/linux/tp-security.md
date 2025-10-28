@@ -492,3 +492,19 @@ mtr -rw -c 100 -o "LSDNBAW" google.com > rapport.txt
 1. Utilise `mtr` pour générer un rapport de la latence des différents sauts ;
 2. Analyser le rapport.
 :::
+
+## Capabilities
+
+:::exo
+1. Identifier et analyser les exécutables sur le système qui possèdent des capabilities.
+2. Pour un service existant (vous allez choisir un service installé ou en installer un si besoin, par exemple : `nginx` ou `bind9` ou un autre), configurer ce service afin qu'il s’exécute sous un utilisateur non-root, tout en conservant les fonctionnalités qui nécessitaient un port < 1024 ou un privilège spécial, via les capabilities.
+3. Supprimer les capabilities superflues et observer l'impact.
+:::
+
+:::correction
+- Exécuter `getcap -r / 2>/dev/null` pour trouver tous les fichiers avec capabilities.
+- Pour 3 exécutables de votre choix parmi cette liste (neutres ou connus), investiguer quelles capabilities ont été assignées (`getcap /chemin`).
+- Appliquer la capability nécessaire via `sudo setcap cap_net_bind_service=+ep /usr/sbin/<executable>` (adapter au binaire choisi).
+- Vérifier avec `getcap` que la capability a bien été appliquée.
+:::
+
