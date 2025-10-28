@@ -178,6 +178,7 @@ Outils essentiels pour gérer l'installation, la mise à jour et la suppression 
 
 - `virt-host-validate` : informations sur le support de la virtualisation par l'hyperviseur
 - `virsh` : créer et gérer des machines virtuelles (KVM, …)
+- `systemd-detect-virt --list` : détecter le type de virtualisation dans un guest (sinon `none`)
 
 ---
 
