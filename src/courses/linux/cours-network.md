@@ -394,6 +394,15 @@ nft add rule ip filter INPUT iifname eth0 ip saddr 192.168.1.0/24 tcp dport 22 c
 
 ---
 
+### Autres pare-feux
+
+Il existe aussi d'autres pare-feux populaires :
+
+- _Uncomplicated Firewall_ : `ufw` (par défaut sous Ubuntu) qui est une autre sur-couche à `iptables`.
+- `firewalld` (par défaut sous Fedora) qui est une interface de pare-feu dynamique sur `netfilter`.
+
+---
+
 # Ressources
 
 - Pour des exemples de base de `iptables`, voir [la documentation Ubuntu](https://doc.ubuntu-fr.org/iptables)
@@ -403,6 +412,8 @@ nft add rule ip filter INPUT iifname eth0 ip saddr 192.168.1.0/24 tcp dport 22 c
 - Passer de `iptables` à `nftables` : <https://linuxhandbook.com/iptables-vs-nftables/>
 - Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
 - Voir le [TP sur la configuration du réseau sous Linux][tp-network]
+- Pour UFW, voir : <https://blog.stephane-robert.info/docs/securiser/reseaux/ufw/>
+- Pour Firewalld, voir : <https://blog.stephane-robert.info/docs/securiser/reseaux/firewalld/>
 
 [tp-network]: /linux/tp-network
 
