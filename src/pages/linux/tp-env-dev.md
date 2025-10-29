@@ -172,6 +172,8 @@ Il existe de nombreuses distributions `neovim` : pour les tester, on pourra util
 
 :::link
 - Une liste complète d'applications utiles : <https://wiki.archlinux.org/title/List_of_applications>
+- <https://homelab.casaursus.net/terminal-tools/>
+- <https://homelab.casaursus.net/newcommands/>
 :::
 
 [ack]: https://github.com/beyondgrep/ack3
