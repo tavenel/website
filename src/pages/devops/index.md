@@ -28,6 +28,10 @@ layout: '@layouts/BaseLayout.astro'
 - <https://supports.uptime-formation.fr> : cours python, docker, k8s, ansible, elastic search, linux, git
 - <https://developer.hashicorp.com/tutorials> : Tutoriels HashiCorp : terraform, vault, consul, nomad, packer, vagrant
 - Dépôt d'exemples d'Infrastructure-as-Code (IaC) : <https://git.sr.ht/~toma/iac>
+- Exemple de projet de déploiement d'infrastructure par Ansible & Terraform dans Proxmox :
+  - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/terraform/>
+  - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/ansible-inventory/>
+  - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/ansible-modules/>
 
 ## 🚀 Autres ressources
 
