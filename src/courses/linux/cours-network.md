@@ -89,7 +89,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Gestion des interfaces
+### Gestion dynamique des interfaces sans persistance
 
 - `ifconfig` : ancienne commande
 - `ip` : plus puissante, et sépare les couches et services
@@ -103,24 +103,171 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-### Fichier `/etc/network/interfaces`
+### Persistance des configurations
+
+- La configuration réseau sous Linux est réalisable de différentes façons.
+- Elle dépend fortement du **contexte** : serveur vs poste de travail, serveur headless vs station nomade, distribution Linux utilisée.
+- Plusieurs outils existent qui peuvent entrer en conflit (éviter de les mélanger).
+
+---
+
+### Méthode traditionnelle : `/etc/network/interfaces`
+
+- Historiquement très utilisée sur Debian et dérivés
+- Fichier `/etc/network/interfaces`
+- Simple
+- Facile à versionner pour serveur simple
+- Peu adaptée aux environnements modernes multiplateformes (Wi-Fi, VPN, changement d'interface dynamique).
+- Ne gère pas bien les événements dynamiques, changements d'interface
+
+#### Utilisation
+
+1. Ouvrir `/etc/network/interfaces`, éditer l'interface.
+2. Relancer : `ifdown enp0s3 && ifup enp0s3` ou redémarrer le service `networking` (`systemd`, `rc-service`, …).
+
+Exemple d'entrée pour une interface en DHCP ou statique :
 
 ```
 # loopback
 auto lo
 iface lo inet loopback
 
-# `auto` => ifup -a
-# `inet`, `ipx` ou `inet6`
 # dhcp
-auto enp3s5
-iface enp3s5 inet dhcp
+auto enp3s5 # interface activée au démarrage (ou par `ifup -a`)
+iface enp3s5 inet dhcp # `inet`, `ipx` ou `inet6`
 
 # static
 iface enp3s6 inet static
-    address 192.168.1.2/24
+    address 192.168.1.2
+    netmask 255.255.255.0 # ou directement : address 192.168.1.2/24
     gateway 192.168.1.1
+    dns-nameservers 8.8.8.8 1.1.1.1 # optionnel
 ```
+
+---
+
+### systemd‑networkd
+
+- `systemd-networkd` : service _systemd_
+- Léger
+- Gestion nette et déclarative des interfaces
+  - Repertoire : `/etc/systemd/network/`
+  - Fichiers avec extension `.network`, `.netdev`, `.link`
+  - Compatible _legacy_ (`/etc/network/interfaces`)
+- Très bien documenté, supporte VLAN, bridges, bonds, virtualisation.
+- Moins orienté poste de travail (Wi-Fi, network-profiles, VPN)
+- Souvent utilisé pour des serveurs, containers et environnements minimalistes
+
+#### Utilisation
+
+Exemple :
+
+```ini
+# /etc/systemd/network/05-eth0.network
+
+[Match]
+Name=eth0
+
+[Network]
+DHCP=no
+Address=192.0.2.123/24
+Gateway=192.0.2.1
+DNS=203.0.113.1 203.0.113.2
+IPv6AcceptRA=true
+```
+
+Ou en DHCP :
+
+```
+# /etc/systemd/network/20-dhcp.network
+
+[Match]
+Name=enp0s3
+
+[Network]
+DHCP=yes
+```
+
+```bash
+systemctl enable --now systemd-networkd
+systemctl restart systemd-networkd
+```
+
+---
+
+### Netplan
+
+- Surcouche introduite par Ubuntu Server
+- Syntaxe simple YAML : facile à comprendre et versionner
+  - `/etc/netplan/…`
+- Utilise backend `networkd` ou `NetworkManager`
+- Bien adapté aux distributions modernes qui souhaitent une configuration unifiée
+- Moins de granularité que config "manuelle" : certains boutons "magiques" peuvent surprendre
+
+#### Utilisation
+
+Exemple :
+
+```yaml
+# /etc/netplan/01-static.yaml
+network:
+	version: 2
+	ethernets:
+		enp0s3:
+			addresses:
+				- 192.168.1.10/24
+			gateway4: 192.168.1.1
+			nameservers:
+				addresses: [1.1.1.1, 8.8.8.8]
+```
+
+```bash
+netplan try
+netplan apply
+```
+
+---
+
+### NetworkManager
+
+- Configuration centrale du réseau : 1 seul outil
+- Daemon réseau pensé pour les environnements "poste de travail"
+- Excellent pour Wi-Fi, configuration VPN, passer d'un réseau à l'autre (portable), VPN
+- Gestion des "profils" réseau, grande flexibilité
+- Fortement utilisé sur Fedora, Ubuntu Desktop, …
+- Lourd et incompatible avec autre outil
+
+---
+
+#### Utilisation
+
+- Ligne de commande : `nmcli device show`, `nmcli connection up/down`
+- Interface en mode texte : `nmtui`
+- Interface graphique intégrée par défaut dans la plupart des environnements de bureau : Gnome, KDE, …
+- Configuration manuelle possible via fichiers `.nmconnection` dans `/etc/NetworkManager/system-connections/`
+
+Exemple de connexion Ethernet statique :
+
+```bash
+nmcli connection add type ethernet ifname enp0s3 con-name static-enp0s3 ipv4.addresses 192.168.1.20/24 ipv4.gateway 192.168.1.1 ipv4.dns 1.1.1.1 ipv4.method manual
+nmcli connection up static-enp0s3
+```
+
+Exemple de connexion Wi-Fi avec WPA2 :
+
+```bash
+nmcli device wifi list
+nmcli device wifi connect SSID-nom password motdepasse
+```
+
+---
+
+### Recommandations
+
+- Pour un **serveur de production** : privilégier `systemd-networkd` ou bien _Netplan_ avec backend `networkd`.
+- Pour un environnement **desktop** ou **laptop** : `NetworkManager` est souvent le bon choix.
+- Toujours désactiver les autres gestionnaires pour éviter les conflits (ex. ne pas avoir à la fois `systemd-networkd`` et `NetworkManager` gérant la même interface).
+- Documenter la configuration (quel fichier fait quoi) pour l'équipe.
 
 ---
 
@@ -207,41 +354,6 @@ search mydomain.net mydomain.com
 
 - `ping -4 www.google.fr`
 - `ping -6 www.google.fr`
-
----
-
-### systemd
-
-- `systemd-resolved` : DNS
-- `systemd-networkd` : config réseau
-- compatibles _legacy_
-- `/etc/systemd/network`
-
----
-
-#### Exemple
-
-```
-[Match]
-Name=enp3s5
-# ou :
-#MACAddress=00:16:3e:8d:2b:5b
-
-[Network]
-DHCP=yes # ou IPv4 ou IPv6
-# ou :
-#Address=192.168.0.100/24
-#Gateway=192.168.0.1
-```
-
----
-
-### NetworkManager
-
-- Configuration centrale du réseau : 1 seul outil
-- commandes `nmcli` et `nmtui`
-- intégré par défaut dans la plupart des environnements de bureau
-- compatible _legacy_
 
 ---
 
@@ -405,17 +517,17 @@ Il existe aussi d'autres pare-feux populaires :
 
 # Ressources
 
+:::link
 - Pour des exemples de base de `iptables`, voir [la documentation Ubuntu](https://doc.ubuntu-fr.org/iptables)
 - Voir aussi la [wikiversité](https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter)
 - Tutoriel complet : <https://www.inetdoc.net/guides/iptables-tutorial/>
 - Tutoriel sur `Conntrack` : <https://www.malekal.com/conntrack-sur-linux-comment-ca-marche/>
 - Passer de `iptables` à `nftables` : <https://linuxhandbook.com/iptables-vs-nftables/>
-- Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/>
-- Voir le [TP sur la configuration du réseau sous Linux][tp-network]
+- Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/reseaux/> et <https://blog.stephane-robert.info/docs/admin-serveurs/linux/network/#les-outils-de-configuration-r%C3%A9seau-sous-linux>
+- Voir le [TP sur la configuration du réseau sous Linux](/linux/tp-network)
 - Pour UFW, voir : <https://blog.stephane-robert.info/docs/securiser/reseaux/ufw/>
 - Pour Firewalld, voir : <https://blog.stephane-robert.info/docs/securiser/reseaux/firewalld/>
-
-[tp-network]: /linux/tp-network
+:::
 
 ---
 
