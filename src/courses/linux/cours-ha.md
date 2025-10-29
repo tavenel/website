@@ -45,7 +45,7 @@ Ces contraintes fondent les choix : redondance active/passive ou active/active, 
 
 ---
 
-### Composants d’un cluster HA
+### Composants d'un cluster HA
 
 - **Layer de communication et membership** (ex. Corosync) : maintien de la vue des nœuds et diffusion fiable.
 - **Resource manager** (ex. Pacemaker) : définition, démarrage/arrêt et placement des ressources.
@@ -84,7 +84,7 @@ Toujours configurer un mécanisme STONITH opérationnel avant tout essai en prod
 ### Principaux modules / services
 
 - **Totem** : protocole de diffusion ordonnée (ring/token) qui garantit livraison fiable et ordering.
-- **CPG (Closed Process Group)** : API de messagerie pour applications qui ont besoin d’un groupe et d’un ordre (Pacemaker utilise ces API).
+- **CPG (Closed Process Group)** : API de messagerie pour applications qui ont besoin d'un groupe et d'un ordre (Pacemaker utilise ces API).
 - **Quorum** : module qui calcule si le cluster a le droit de voter (majority, expected_votes...).
 - **Configuration manager (cmap)** : permet de partager de petites données de configuration/clé-valeur entre nœuds.
 
@@ -104,7 +104,7 @@ Le Totem protocol fournit la logique sous-jacente de transport et d'ordre. Il ut
 
 ### Token passing
 
-- Un token circule entre nœuds suivant l’ordre de la `nodelist`.
+- Un token circule entre nœuds suivant l'ordre de la `nodelist`.
 - Le nœud qui possède le token peut émettre des messages ; le token garantit un ordre global.
 - Si un nœud ne renvoie pas le token, les autres détectent sa défaillance et mettent à jour la vue.
 
@@ -112,12 +112,12 @@ Le Totem protocol fournit la logique sous-jacente de transport et d'ordre. Il ut
 
 - **Multicast** : efficace pour LAN, nécessite que le réseau autorise le multicast.
 - **UDPU (User Datagram Protocol Unicast)** : option si multicast indisponible - chaque pair communique en unicast.
-- Choix conditionné par l’infrastructure (clouds/hébergeurs qui bloquent multicast → UDPU).
+- Choix conditionné par l'infrastructure (clouds/hébergeurs qui bloquent multicast → UDPU).
 
 ### Paramètres Totem importants
 
 - `token` (ms) : intervalle cible pour la rotation du token - influences latence de détection ; augmenter si réseau lent.
-- `token_retransmits_before_loss_const` : nombre de retransmissions avant qu’un nœud soit considéré perdu.
+- `token_retransmits_before_loss_const` : nombre de retransmissions avant qu'un nœud soit considéré perdu.
 - `join` : délai maximal pour joindre le cluster.
 - `consensus` : paramètres internes pour parvenir à un accord.
 - `max_messages` : nombre maximal de messages envoyés quand on détient le token.
@@ -197,7 +197,7 @@ Avant toute création de ressources en production, configurer le fencing STONITH
 
 **Tests et monitoring** :
 
-- Scénarios de test : arrêt brutal d’un nœud, perte d’une interface réseau, surcharge CPU/mémoire.
+- Scénarios de test : arrêt brutal d'un nœud, perte d'une interface réseau, surcharge CPU/mémoire.
 - Metriques à surveiller : latence réseau, perte de paquets, taux de token loss, logs corosync/pacemaker, état STONITH.
 
 **Valeurs recommandées** :
@@ -211,12 +211,12 @@ Avant toute création de ressources en production, configurer le fencing STONITH
 ## Troubleshooting et diagnostics
 
 - **Perte de quorum** : exécuter `corosync-quorumtool -l` et vérifier la configuration `expected_votes`.
-- **Split-brain** : deux groupes indépendants - vérifier les logs et la présence d’un mécanisme STONITH.
+- **Split-brain** : deux groupes indépendants - vérifier les logs et la présence d'un mécanisme STONITH.
 - **Réseau intermittent** : regarder `dmesg`, `ethtool`, `ip -s link` pour collisions, erreurs.
 
 ### Exemple de procédure en cas de split-brain
 
-1. Vérifier l’état du réseau et des nœuds (ping, ssh, journalctl).
+1. Vérifier l'état du réseau et des nœuds (ping, ssh, journalctl).
 2. Ne prenez pas de décision hâtive - identifier la tranche de nœuds majoritaire.
 3. Si un nœud est isolé, utiliser STONITH pour l'éteindre proprement.
 4. Rattacher le nœud éteint et laisser Pacemaker re-répliquer/relancer les ressources.
@@ -228,8 +228,8 @@ Avant toute création de ressources en production, configurer le fencing STONITH
 
 1. Pourquoi le fencing est-il indispensable dans un cluster HA ?
 2. Expliquez le fonctionnement du protocole Totem en 3 phrases.
-3. Quels sont les risques d’utiliser multicast sur un réseau non isolé ?
-4. Dans un cluster 2 nœuds, quelles options permettent d’éviter le split-brain ?
+3. Quels sont les risques d'utiliser multicast sur un réseau non isolé ?
+4. Dans un cluster 2 nœuds, quelles options permettent d'éviter le split-brain ?
 5. Décrivez une procédure sûre pour remettre en production un nœud isolé.
 
 ---

@@ -414,7 +414,7 @@ provisioner "local-exec" {
 ---
 
 :::tip
-💡 Un cas d’usage courant est le lancement d’un playbook _Ansible_ depuis _Terraform_ :
+💡 Un cas d'usage courant est le lancement d'un playbook _Ansible_ depuis _Terraform_ :
 
 ```hcl
 provisioner "local-exec" {

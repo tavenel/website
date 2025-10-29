@@ -7,16 +7,16 @@ date: 2025 / 2026
 
 **Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery)** :
 
-- Savoir identifier les traces d’une compromission sur un système Linux.
+- Savoir identifier les traces d'une compromission sur un système Linux.
 - Analyser les logs système et les mécanismes de persistence.
-- Utiliser des outils dédiés à la détection de rootkits et d’anomalies.
-- Comprendre le rôle de l’audit et de la surveillance continue.
+- Utiliser des outils dédiés à la détection de rootkits et d'anomalies.
+- Comprendre le rôle de l'audit et de la surveillance continue.
 
 ## Contexte
 
-L'administrateur d'un serveur interne a remarqué une montée d’activité réseau inhabituelle et une entrée suspecte dans `/etc/cron.d`. Après triage initial, il vous demande d’identifier si la machine a été compromise, quelles traces existent, et de produire un rapport avec preuves et actions recommandées.
+L'administrateur d'un serveur interne a remarqué une montée d'activité réseau inhabituelle et une entrée suspecte dans `/etc/cron.d`. Après triage initial, il vous demande d'identifier si la machine a été compromise, quelles traces existent, et de produire un rapport avec preuves et actions recommandées.
 
-## Préparation de l’environnement
+## Préparation de l'environnement
 
 ### Installation des outils nécessaires
 
@@ -176,7 +176,7 @@ Osquery est un outil open source développé par Facebook (Meta) qui permet de t
 
 ## Audit avec auditd
 
-### Configuration de règles d’audit
+### Configuration de règles d'audit
 
 - Ajoutez une règle pour surveiller les accès à `/etc/passwd` :
 
@@ -200,7 +200,7 @@ Osquery est un outil open source développé par Facebook (Meta) qui permet de t
 
 ## Synthèse et rapport
 
-### Rédigez un rapport d’investigation
+### Rédigez un rapport d'investigation
 
 - Résumez les anomalies détectées.
 - Proposez des actions correctives (suppression de fichiers suspects, mise à jour des mots de passe, etc.).

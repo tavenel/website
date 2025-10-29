@@ -24,17 +24,17 @@ Monter un cluster 3 nœuds :
 
 *(Résumé extrait du cours complet : voir version détaillée du module)*
 
-### Qu'est-ce qu’un cluster de haute disponibilité ?
+### Qu'est-ce qu'un cluster de haute disponibilité ?
 
-Un **cluster HA** vise à assurer la **continuité de service** malgré des pannes matérielles ou logicielles. Il s’appuie sur :
+Un **cluster HA** vise à assurer la **continuité de service** malgré des pannes matérielles ou logicielles. Il s'appuie sur :
 
 - **Corosync** : communication fiable entre les nœuds, quorum, membership.
 - **Pacemaker** : orchestration et gestion des ressources (services, IPs, volumes, etc.).
-- **Fencing/STONITH** : mécanisme d’exclusion d’un nœud défaillant.
+- **Fencing/STONITH** : mécanisme d'exclusion d'un nœud défaillant.
 
-### Types d’architecture
+### Types d'architecture
 
-- **Active/Passive** : un nœud actif, l’autre en secours.
+- **Active/Passive** : un nœud actif, l'autre en secours.
 - **Active/Active** : services répartis entre plusieurs nœuds (plus complexe).
 
 ### Règles de base
@@ -64,7 +64,7 @@ sudo apt install corosync pacemaker crmsh -y
 sudo dnf install corosync pacemaker pcs -y
 ```
 
-### Génération et distribution de la clé d’authentification
+### Génération et distribution de la clé d'authentification
 
 Sur `node1` :
 
@@ -149,7 +149,7 @@ pcs status --full
 
 Les deux nœuds doivent apparaître en ligne (`Online: [ node1 node2 ]`).
 
-### Création d’une ressource IP virtuelle (VIP)
+### Création d'une ressource IP virtuelle (VIP)
 
 ```bash
 sudo pcs resource create ClusterIP ocf:heartbeat:IPaddr2 ip=192.168.100.100 cidr_netmask=24 op monitor interval=30s
@@ -167,7 +167,7 @@ Pinguez la VIP :
 ping 192.168.100.100
 ```
 
-### Ajout d’une ressource Apache (exemple)
+### Ajout d'une ressource Apache (exemple)
 
 Sur **chaque nœud**, installez Apache :
 
@@ -224,7 +224,7 @@ Sur un nœud :
 sudo ip link set eth1 down
 ```
 
-Sur l’autre : observez la reprise du service.
+Sur l'autre : observez la reprise du service.
 
 Restaurez :
 
@@ -246,7 +246,7 @@ sudo pcs cluster destroy --all
 - Utiliser un LUN iSCSI (ou DRBD) pour le stockage partagé des ressources.
 - Intégrer une ressource **DRBD** pour la réplication de stockage.
 - Observer le comportement via `crm_mon -Af` pour suivi en direct.
-- Tester perte d’un anneau réseau (déconnecter une interface).
+- Tester perte d'un anneau réseau (déconnecter une interface).
 - Tester ralentissement réseau (tc/netem) et observer les paramètres totem.
 
 ## Annexes
@@ -354,5 +354,5 @@ service { name: pacemaker }
 
 #### Exemple 3 - configuration multi-ring (redondance réseau)
 
-Ajouter plusieurs blocs `interface { ringnumber: 0 }` et `interface { ringnumber: 1 }` pointant vers deux réseaux physiques distincts (ex. `192.168.100.0` et `192.168.101.0`) : ainsi si une interface tombe, l’autre maintient la communication.
+Ajouter plusieurs blocs `interface { ringnumber: 0 }` et `interface { ringnumber: 1 }` pointant vers deux réseaux physiques distincts (ex. `192.168.100.0` et `192.168.101.0`) : ainsi si une interface tombe, l'autre maintient la communication.
 
