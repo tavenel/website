@@ -177,7 +177,7 @@ chmod 640 /home/user/file.txt
 - **Complexe** mais **sécurité renforcée**
 
 **Exemple :**
-SELinux bloque un serveur web (`httpd_t`) qui tente d’accéder à `/home` même si les permissions Unix le permettent.
+SELinux bloque un serveur web (`httpd_t`) qui tente d'accéder à `/home` même si les permissions Unix le permettent.
 
 ---
 
@@ -270,7 +270,7 @@ aa-logprof # Génération automatique de profil depuis les logs
 | Difficulté      | Plus complexe                         | Plus simple                            |
 | Granularité     | Très fine                             | Moins précise                          |
 | Adoption        | Red Hat, Fedora, CentOS               | Ubuntu, Debian                         |
-| Cas d’usage     | Data centers, serveurs sensibles      | Postes utilisateurs, serveurs généraux |
+| Cas d'usage     | Data centers, serveurs sensibles      | Postes utilisateurs, serveurs généraux |
 
 ---
 

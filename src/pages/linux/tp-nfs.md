@@ -139,12 +139,12 @@ Vérifier que le partage est monté automatiquement.
 
 ### 5️⃣ Sécurisation
 
-- Restreindre l’accès à un seul client dans `/etc/exports` :
+- Restreindre l'accès à un seul client dans `/etc/exports` :
 
   ```
   /srv/partage_nfs 192.168.56.20(rw,sync,no_subtree_check)
   ```
-- Mettre en place un firewall (`ufw` ou `nftables`) pour limiter l’accès au port NFS (2049/tcp).
+- Mettre en place un firewall (`ufw` ou `nftables`) pour limiter l'accès au port NFS (2049/tcp).
 
 ## 🔍 Vérifications
 
@@ -166,10 +166,10 @@ rpcinfo -p server_IP
 ```
 
 :::warn
-Attention dans le cas d'utilisation d'un conteneur (par exemple LXC), par défaut le conteneur n’a **pas la capacité kernel requise pour monter le pseudo-système NFS**:
+Attention dans le cas d'utilisation d'un conteneur (par exemple LXC), par défaut le conteneur n'a **pas la capacité kernel requise pour monter le pseudo-système NFS**:
 
 - le conteneur n'a pas accès aux modules noyau (`modprobe`, `lockd`, `sunrpc`…),
-- il ne peut pas monter des pseudo-systèmes (`proc`, `sysfs`, `rpc_pipefs`) sauf s’ils sont explicitement autorisés,
+- il ne peut pas monter des pseudo-systèmes (`proc`, `sysfs`, `rpc_pipefs`) sauf s'ils sont explicitement autorisés,
 - et il ne dispose pas de certaines capabilities nécessaires (`SYS_ADMIN`, `DAC_READ_SEARCH`, etc.).
 
 ```bash

@@ -11,7 +11,7 @@ layout: '@layouts/BaseLayout.astro'
 
 #### 1. **Maîtrise avancée du système Linux**
 
-- Comprendre en profondeur le fonctionnement du noyau, de l’espace utilisateur et des processus.
+- Comprendre en profondeur le fonctionnement du noyau, de l'espace utilisateur et des processus.
 - Diagnostiquer et résoudre des problèmes complexes de performance (CPU, mémoire, I/O, réseau).
 - Gérer et analyser les logs systèmes et applicatifs.
 - Mettre en œuvre des configurations avancées du système d'initialisation (systemd, cgroups, namespaces).
@@ -30,11 +30,11 @@ layout: '@layouts/BaseLayout.astro'
 - Mettre en place du NAT, du proxy et du reverse-proxy sécurisé.
 - Superviser le trafic réseau et détecter des anomalies (tcpdump, Wireshark, Suricata, etc.).
 
-#### 4. **Gestion des incidents et continuité d’activité**
+#### 4. **Gestion des incidents et continuité d'activité**
 
 - Mettre en place des stratégies de sauvegarde et restauration.
 - Simuler et gérer un incident : compromission, panne disque, corruption de configuration.
-- Concevoir et tester des plans de reprise d’activité (PRA/PCA).
+- Concevoir et tester des plans de reprise d'activité (PRA/PCA).
 
 ### 📋 Prérequis
 

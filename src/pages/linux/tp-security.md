@@ -497,7 +497,7 @@ mtr -rw -c 100 -o "LSDNBAW" google.com > rapport.txt
 
 :::exo
 1. Identifier et analyser les exécutables sur le système qui possèdent des capabilities.
-2. Pour un service existant (vous allez choisir un service installé ou en installer un si besoin, par exemple : `nginx` ou `bind9` ou un autre), configurer ce service afin qu'il s’exécute sous un utilisateur non-root, tout en conservant les fonctionnalités qui nécessitaient un port < 1024 ou un privilège spécial, via les capabilities.
+2. Pour un service existant (vous allez choisir un service installé ou en installer un si besoin, par exemple : `nginx` ou `bind9` ou un autre), configurer ce service afin qu'il s'exécute sous un utilisateur non-root, tout en conservant les fonctionnalités qui nécessitaient un port < 1024 ou un privilège spécial, via les capabilities.
 3. Supprimer les capabilities superflues et observer l'impact.
 :::
 

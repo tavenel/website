@@ -6,7 +6,7 @@ date: 2025 / 2026
 ## 🎯 Objectifs pédagogiques
 
 - Mettre en place un serveur iSCSI (target) et un client (initiator) sous Linux.
-- Configurer la découverte, la connexion et le montage d’un volume iSCSI.
+- Configurer la découverte, la connexion et le montage d'un volume iSCSI.
 - Automatiser la reconnexion au démarrage du système.
 
 ## 🧩 Environnement de TP
@@ -52,7 +52,7 @@ sudo dd if=/dev/zero of=/srv/iscsi_disks/disk01.img bs=100M count=10
 
 ### Configuration avec `targetcli`
 
-Lancez l’outil d’administration interactif :
+Lancez l'outil d'administration interactif :
 
 ```bash
 sudo targetcli
@@ -87,7 +87,7 @@ Puis exécutez les commandes suivantes dans le shell `targetcli` :
 /> iscsi/ create iqn.2025-10.local.iscsi:target01
 ```
 
-➡️ Crée une **cible iSCSI** avec l’identifiant :
+➡️ Crée une **cible iSCSI** avec l'identifiant :
 
 ```
 iqn.2025-10.local.iscsi:target01
