@@ -1,6 +1,7 @@
 ---
 title: 🧑‍💻 Devops - Sysops
 layout: '@layouts/BaseLayout.astro'
+packerIcon: '../../icons/hashicorp-packer.svg'
 ---
 
 # 🧑‍💻 Devops - Sysops
@@ -11,8 +12,10 @@ layout: '@layouts/BaseLayout.astro'
 
 - [🤓 Cours d'introduction au Devops](/devops/cours)
 <!-- - [![](@icons/ansible.svg) Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible) -->
-- [🤓 Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible)
-- [![](@icons/terraform.svg) Cours d'introduction à Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
+- [🤓 Cours Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible)
+- [![](@icons/terraform.svg) Cours Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
+<!-- - [![](@icons/hashicorp-packer.svg) Cours Packer : automatiser la création d'images machines](/devops/terraform) -->
+- [🤓 Cours Packer : automatiser la création d'images machines](/devops/packer)
 
 ## TP
 
