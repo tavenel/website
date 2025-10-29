@@ -35,6 +35,7 @@ packerIcon: '../../icons/hashicorp-packer.svg'
   - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/terraform/>
   - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/ansible-inventory/>
   - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/ansible-modules/>
+  - <https://homelab.casaursus.net/terraforming-proxmox/>
 
 ## 🚀 Autres ressources
 
