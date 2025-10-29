@@ -71,6 +71,7 @@ sudo nano /etc/motd
 Systèmes modernes (Debian, Ubuntu...) :
 
 - Génèrent automatiquement `/etc/motd` depuis `/etc/update-motd.d/`
+- Texte affiché au démarrage généré dans : `/var/run/motd.dynamic`
 - Pour un _motd_ statique, désactiver ce comportement ou ajouter un script personnalisé.
 
 ---
