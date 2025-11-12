@@ -101,6 +101,7 @@ tags:
 - [Installer Kubernetes via kubeadm](https://dev.to/abhay_yt_52a8e72b213be229/how-to-set-up-and-install-a-kubernetes-cluster-a-step-by-step-guide-375j) 📋
 - <https://learnk8s.io/production-best-practices/> 📚
 - <https://kubernetes.io/docs/tasks/administer-cluster/> 📚
+- <https://blog.zwindler.fr/2025/11/02/93-facons-de-deployer-kubernetes/>
 
 ---
 
