@@ -16,6 +16,10 @@ tags:
 - 🔒 OpenSSL sur Debian (génération aléatoire suite warning Valgrind)
 - 💸 Pensions alimentaires britanniques : 1 milliard dollars
 
+:::link
+Pour plus d'information : <https://read.thecoder.cafe/p/therac-25>
+:::
+
 ---
 
 > 💡 En essayant continuellement on finit par réussir. Donc : plus ça rate, plus on a de chance que ça marche. (Devise Shadok)
