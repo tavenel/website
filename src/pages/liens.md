@@ -153,6 +153,7 @@ Voir aussi : [informations IA](/other#ia)
 - <https://ddosecrets.com/> : Distributed Denial of Secrets : publication des leaks
 - <https://en.fofa.info/> : Recherche d'hôtes sur critères
 - Check DNS leaks : <https://dnsleaktest.com/>
+- <https://blog.humancoders.com/les-pires-failles-de-securite-de-2025-3853/>
 
 ### Dev
 
