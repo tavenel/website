@@ -141,7 +141,6 @@ tags:
 - [Vertical Pod Autoscaler (VPA): A Deep Dive - Part 1](https://erikzilinsky.com/posts/vpa1.html) 📈
 - [Kubernetes HA : what if kubernetes internal components go down](https://medium.com/@s.atmaramani/what-if-kubernetes-internal-components-goes-down-6f6372ce0838) 🛡️
 - <https://openai.com/index/scaling-kubernetes-to-7500-nodes/> 📈
-- [Kubernetes Pod Scheduling: Tutorial and Best Practices](https://www.cloudbolt.io/kubernetes-pod-scheduling/)
 - [Balancing Capacity and Cost for Kubernetes Clusters](https://dnastacio.medium.com/kubernetes-cluster-capacity-d96d0d82b380) ⚖️
 
 ---
@@ -160,6 +159,13 @@ tags:
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml) 🐦
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes> 🛡️
 - [Upgrading Stateful Kubernetes Clusters with near-zero downtime](https://medium.com/freshworks-engineering-blog/fast-k8s-upgrades-9cb60be7f93e)
+---
+
+### Scheduling
+
+- <https://cast.ai/blog/kubernetes-pod-scheduling-balancing-cost-and-resilience/>
+- <https://chaitanyakharche.hashnode.dev/how-kubernetes-pod-priority-and-preemption-work>
+- [Kubernetes Pod Scheduling: Tutorial and Best Practices](https://www.cloudbolt.io/kubernetes-pod-scheduling/)
 
 ---
 
@@ -170,6 +176,7 @@ tags:
   - [Utiliser un service](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/) 🌐
   - [Tutoriel complet](https://medium.com/@extio/mastering-kubernetes-pod-to-pod-communication-a-comprehensive-guide-46832b30556b) 🌐
   - [Youtube Xavki : Kubernetes 021 - Services : NodePort, LoadBalancer, ExternalName et notions de Endpoints](https://www.youtube.com/watch?v=tF28iwTco9A) 📹
+  - <https://www.freecodecamp.org/news/kubernetes-networking-tutorial-for-developers>
 - <https://www.cortex.io/post/understanding-kubernetes-services-ingress-networking> 🌐
 - [Video: Kubernetes Ingress Explained (2 Types)](https://www.youtube.com/watch?v=1BksUVJ1f5M) 📹
 - [Video (Anton Putra) : How to debug Kubernetes Ingress? (TLS - Cert-Manager - HTTP-01 & DNS-01 Challenges)](https://www.youtube.com/watch?v=DJ2sa49iEKo) 📹
@@ -259,6 +266,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - [Inside Kubernetes Scheduler: What Really Happens Before Your Pod Lands on a Node](https://medium.com/@hmusicofficial27/inside-kubernetes-scheduler-what-really-happens-before-your-pod-lands-on-a-node-99e9aeb829a1)
 - [Dear Friend, you have built a Kubernetes](https://www.macchaffee.com/blog/2024/you-have-built-a-kubernetes/) 📖
 - How Kubernetes Runs Containers : A Practical Deep Dive : <https://blog.esc.sh/kubernetes-containers-linux-processes/>
+- [Building Kubernetes (a lite version) from scratch in Go](https://medium.com/@owumifestus/building-kubernetes-a-lite-version-from-scratch-in-go-7156ed1fef9e)
 
 ---
 
@@ -274,6 +282,8 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
 - Un guide sur l'utilisation de "Pressure Stall Information" (PSI) depuis cAdvisor pour mieux gérer les ressources et pourquoi PSI est mieux adapté à k8s qu'aux VMs : [From Utilization to PSI: Rethinking Resource Starvation Monitoring in Kubernetes](https://blog.zmalik.dev/p/from-utilization-to-psi-rethinking)
+- [AI Infrastructure on Kubernetes](https://kube.today/ai-infrastructure-2025)
+- <https://msalinas92.medium.com/deep-dive-into-kubernetes-leases-robust-leader-election-for-daemonsets-with-go-examples-f3b9a8858c49>
 
 ---
 

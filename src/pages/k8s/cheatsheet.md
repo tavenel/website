@@ -1818,6 +1818,10 @@ spec:
 Le _StatefulSet_ est assez proche dans la configuration d'un _Deployment_ : voir celui-ci pour les paramètres.
 :::
 
+:::link
+Voir aussi : [Kubernetes Headaches: Unsticking StatefulSets from EBS ReadWriteMany Drama](https://medium.com/@sqanafrica/kubernetes-headaches-unsticking-statefulsets-from-ebs-readwritemany-drama-e603facba912)
+:::
+
 ## NetworkPolicy
 
 Permet de contrôler le trafic réseau entrant (`Ingress`) ou sortant (`Egress`) entre les pods.
