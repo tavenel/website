@@ -325,7 +325,7 @@ search mydomain.net mydomain.com
 
 - `resolvectl query www.wikipedia.fr` : résolution DNS par `systemd-resolved`
 - `nslookup www.wikipedia.fr` : résolution DNS
-- `dig @8.8.8.8 www.wikipedia.fr` : résolution DNS en passant par le serveur DNS de Google (`8.8.8.8`)
+- `drill @8.8.8.8 www.wikipedia.fr` : résolution DNS en passant par le serveur DNS de Google (`8.8.8.8`)
 - `host www.wikipedia.fr` ou `host www.wikipedia.fr 8.8.8.8`
 - fichier `/etc/resolv.conf`
 
@@ -362,7 +362,7 @@ search mydomain.net mydomain.com
 1. `ip addr show` : Adresse IP ?
 2. `ping www.google.fr` : connectivité ?
 3. `ip route` et `traceroute www.google.fr` : routage ?
-4. `nslookup www.google.fr` ou `dig www.google.fr` et fichier `/etc/resolv.conf` : DNS ?
+4. `nslookup www.google.fr` ou `drill www.google.fr` et fichier `/etc/resolv.conf` : DNS ?
 
 ---
 
