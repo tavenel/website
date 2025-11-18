@@ -25,7 +25,12 @@ Attention : tout comme les images Docker, une chart Helm permet de récupérer d
 :::
 
 :::tip
-_Helm_ a beaucoup changé de modèle en passant de la v2 à la v3, notamment en ~~supprimant le besoin d'un serveur `tiller`~~ : attention à ne pas suivre une doc sur Helm v2 !
+- _Helm_ a beaucoup changé de modèle en passant de la v2 à la v3, notamment en ~~supprimant le besoin d'un serveur `tiller`~~ : attention à ne pas suivre une doc sur Helm v2 !
+- En v3, _Helm_ applique un **Three Way Merge** en comparant trois états avant de modifier un objet :
+  - Le nouvel état défini dans le manifeste que l'on souhaite appliquer ;
+  - L'état actuel de l'objet (état "live") ;
+  - Et la dernière configuration appliquée avec succès, stockée dans un secret (`helm history`).
+- En v4, _Helm_ suit la nouvelle logique de l'API Kubernetes (depuis la v1.22) en appliquant un **Server Side Apply (SSA)** : chaque modification apportée sur un champ d'un objet se voit attribuer un propriétaire : `kubectl get --show-managed-fields`
 :::
 
 ### Structure
