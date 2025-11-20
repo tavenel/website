@@ -82,8 +82,10 @@ tags:
 - Certified Kubernetes Security Specialist (CKS) 📜
 
 :::link
+
 - Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) 📚
 - Pour s'entraîner aux certifications, utiliser <https://github.com/sailor-sh/CK-X>
+
 :::
 
 ---
@@ -159,6 +161,7 @@ tags:
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml) 🐦
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes> 🛡️
 - [Upgrading Stateful Kubernetes Clusters with near-zero downtime](https://medium.com/freshworks-engineering-blog/fast-k8s-upgrades-9cb60be7f93e)
+
 ---
 
 ### Scheduling
@@ -219,18 +222,20 @@ tags:
 
 :::tip
 L'image `shpod` est très utile pour du débug, on pourra la lancer depuis une _Helm Chart_ :
+
 ```sh
 helm upgrade --install --repo https://shpod.in/ shpod shpod \
-	--namespace default \
-	--set service.type=NodePort \
-	--set resources.requests.cpu=0.1 \
-	--set resources.requests.memory=500M \
-	--set resources.limits.cpu=1 \
-	--set resources.limits.memory=500M \
-	--set persistentVolume.enabled=true \
-	--set "rbac.cluster.clusterRoles={cluster-admin}" \
-	--set ssh.authorized_keys="\$(cat ~/.ssh/*.pub)"
+ --namespace default \
+ --set service.type=NodePort \
+ --set resources.requests.cpu=0.1 \
+ --set resources.requests.memory=500M \
+ --set resources.limits.cpu=1 \
+ --set resources.limits.memory=500M \
+ --set persistentVolume.enabled=true \
+ --set "rbac.cluster.clusterRoles={cluster-admin}" \
+ --set ssh.authorized_keys="\$(cat ~/.ssh/*.pub)"
 ```
+
 :::
 
 ---
@@ -284,6 +289,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Un guide sur l'utilisation de "Pressure Stall Information" (PSI) depuis cAdvisor pour mieux gérer les ressources et pourquoi PSI est mieux adapté à k8s qu'aux VMs : [From Utilization to PSI: Rethinking Resource Starvation Monitoring in Kubernetes](https://blog.zmalik.dev/p/from-utilization-to-psi-rethinking)
 - [AI Infrastructure on Kubernetes](https://kube.today/ai-infrastructure-2025)
 - <https://msalinas92.medium.com/deep-dive-into-kubernetes-leases-robust-leader-election-for-daemonsets-with-go-examples-f3b9a8858c49>
+- Modifier des ressources k8s : Client-side vs Server-side : <https://hackernoon.com/battle-for-resources-or-the-ssa-path-to-kubernetes-diplomacy>
 
 ---
 
@@ -294,4 +300,3 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Other names may be trademarks of their respective owners
 
 ---
-
