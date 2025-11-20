@@ -5,10 +5,12 @@ title: Cheatsheet Kubernetes®
 # Cheatsheet Kubernetes
 
 :::link
+
 - Description des API k8s et schemas : <https://kubespec.dev/>
 - Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
 - Liens utiles : <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et <https://kubernetes.io/docs/tasks/debug/debug-application/>
 - Pour plus d'information sur les différentes commandes de k8s, voir : <https://kubernetes.io/fr/docs/home/>
+
 :::
 
 ## Administration
@@ -190,10 +192,10 @@ kubectl auth can-i get pods
 ```sh
 kubectl auth can-i "<verbe>" "<ressource>"
 kubectl auth can-i list nodes \
-		--as some-user
+  --as some-user
 
 kubectl auth can-i list nodes \
-		--as "system:serviceaccount:<namespace>:<name-of-service-account>"
+  --as "system:serviceaccount:<namespace>:<name-of-service-account>"
 ```
 
 ### Vérifier la présence d'un composant k8s
@@ -389,12 +391,13 @@ Lorsqu'un _debug container_ vise un conteneur spécifique du Pod (`--target=…`
 :::
 
 :::link
-Voir aussi : 
+Voir aussi :
 
 - La documentation : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
 - Une image Docker utile pour du debug : <https://github.com/jpetazzo/shpod>
 - Une autre image utile : <https://github.com/kubernetes-up-and-running/kuard>
 - _Cdebug_, un utilitaire de _Pod éphémère_ permettant de faire du debug même avec des droits / capabilities limitées (non-root, distroless, …) : <https://github.com/iximiuz/cdebug>
+
 :::
 
 :::tip
@@ -403,6 +406,7 @@ Il est aussi possible de lancer un _Pod_ de débug directement dans un _Node_. L
 ```sh
 kubectl debug -it nodes/control-plane --image alpine:edge
 ```
+
 :::
 
 :::tip
@@ -433,6 +437,7 @@ curl -Lvk localhost:8001/api/v1/namespaces/default/pods/web/ephemeralcontainers 
     }
 }'
 ```
+
 :::
 
 ### attach
@@ -1001,7 +1006,6 @@ annotations:
   defaultVolumeType: <local or hostPath>
 ```
 
-
 ### Changer de StorageClass par défaut
 
 ```console
@@ -1038,8 +1042,10 @@ L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` requiert l'installati
 :::
 
 :::link
+
 - Voir aussi la documentation officielle : <https://kubernetes.io/docs/concepts/storage/volume-snapshots/> et <https://kubernetes.io/docs/concepts/storage/volume-snapshot-classes/>
 - Voir un tutoriel pour les snapshots de volumes persistants avec Rook : <https://une-tasse-de.cafe/expresso/snapshot-class/>
+
 :::
 
 ### Debug storage
@@ -1060,6 +1066,7 @@ En cas d'erreur de montage d'un volume, tester directement le montage dans le _P
 ```sh
 mount -t nfs "<NFS_SERVER_ADDRESS>:<NFS_SHARE_PATH>" /mnt
 ```
+
 :::
 
 ## Device
@@ -1151,6 +1158,7 @@ spec:
 ```
 
 :::tip
+
 - Pour accéder au service : <http://my-clusterip-service> (même namespace) ou <http://my-clusterip-service.nom-du-namespace.svc.cluster.local>
 - Pour récupérer la Virtual IP du service :
   - avec `jq` : `kubectl get svc httpenv -o json | jq -r .spec.clusterIP`
@@ -1272,6 +1280,7 @@ Voir aussi :
 - <https://kubernetes.github.io/ingress-nginx/deploy/#quick-start>
 - [Ingress entre différentes namespace](https://tech.aabouzaid.com/2022/08/2-ways-to-route-ingress-traffic-across-namespaces.html)
 - Exemples de déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
+
 :::
 
 :::warn
@@ -1281,6 +1290,7 @@ Pour accéder à un `Ingress` d'un cluster local :
 - Depuis un cluster `Docker` depuis _Docker Desktop_, en ajoutant un mapping de port puis en se connectant sur le mapping en `localhost`
 - Dans `Minikube`, déployer l'ingress par `minikube addons enable ingress` puis utiliser l'adresse IP du _Node_ Minikube.
 - Dans le cas général : `kubectl port-forward 8888:80` vers l'ingress controller puis <http://localhost:8888>
+
 :::
 
 ```yaml {"nginx specific":6-17} {24}
@@ -1335,7 +1345,6 @@ data:
   tls.key: <base64 key>
 type: kubernetes.io/tls
 ```
-
 
 #### Traefik Ingress - canary
 
@@ -1394,9 +1403,11 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 ```
 
 :::link
+
 - Tutoriel : <https://cert-manager.io/docs/tutorials/acme/nginx-ingress/>
 - Débug : <https://cert-manager.io/docs/troubleshooting/>
 - Intégration de `cert-manager` dans un `Ingress` : <https://cert-manager.io/docs/usage/ingress/>
+
 :::
 
 ```yaml
@@ -1530,8 +1541,10 @@ spec:
 ```
 
 :::tip
+
 - `spec.selector.matchLabels` définis les _Pod_ managés par le _Deployment_
 - `template.metadata.labels` applique le label aux _Pods_ créés par le _Deployment_.
+
 :::
 
 ### Stratégie
@@ -1655,7 +1668,7 @@ spec:
 ```
 
 :::link
-Voir aussi _Kueue_, une solution plus poussée que les `Job` / `CronJob` de Kubernetes : <https://kueue.sigs.k8s.io/> 
+Voir aussi _Kueue_, une solution plus poussée que les `Job` / `CronJob` de Kubernetes : <https://kueue.sigs.k8s.io/>
 :::
 
 ## Namespace
@@ -1848,7 +1861,7 @@ spec:
 
 ### Exemple 2
 
-Permettre uniquement le trafic entrant vers un pod étiqueté avec `app: my-app`` depuis des pods étiquetés avec `role: frontend` :
+Permettre uniquement le trafic entrant vers un pod étiqueté avec `app: my-app`` depuis des pods étiquetés avec`role: frontend` :
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -1902,6 +1915,10 @@ spec:
       appArmorProfile: {...}
       seLinuxOptions: {...}
 ```
+
+:::link
+Voir aussi : <https://learnkube.com/security-contexts>
+:::
 
 ## PodDisruptionBudget
 
@@ -2353,4 +2370,3 @@ spec:
 - © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-
