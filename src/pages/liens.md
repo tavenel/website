@@ -142,6 +142,7 @@ checked: 2025-01-27
   - `tinyllama`, `tinydolphin`, `dolphin-mistral`, `codestral`, …
 - Block AI indexing in your website : <https://github.com/ai-robots-txt/ai.robots.txt>
 - ["Encadrer l'utilisation de l'IA dans les devoirs à la maison" (Académie de Grenoble, PDF)](https://dane.web.ac-grenoble.fr/sites/default/files/Media/document/IA%20devoirs_Ac-Paris.pdf)
+- <https://korben.info/linus-torvalds-ia-vibe-coding-pragmatisme-dev.html>
 
 :::link
 Voir aussi : [informations IA](/other#ia)
