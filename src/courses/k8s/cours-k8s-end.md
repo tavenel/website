@@ -161,6 +161,7 @@ tags:
 - [Canary deployment in k8s](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml) 🐦
 - <https://blog.wescale.fr/comment-rendre-une-application-haute-disponibilit%C3%A9-avec-kubernetes> 🛡️
 - [Upgrading Stateful Kubernetes Clusters with near-zero downtime](https://medium.com/freshworks-engineering-blog/fast-k8s-upgrades-9cb60be7f93e)
+
 ---
 
 ### Scheduling
@@ -289,6 +290,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Un guide sur l'utilisation de "Pressure Stall Information" (PSI) depuis cAdvisor pour mieux gérer les ressources et pourquoi PSI est mieux adapté à k8s qu'aux VMs : [From Utilization to PSI: Rethinking Resource Starvation Monitoring in Kubernetes](https://blog.zmalik.dev/p/from-utilization-to-psi-rethinking)
 - [AI Infrastructure on Kubernetes](https://kube.today/ai-infrastructure-2025)
 - <https://msalinas92.medium.com/deep-dive-into-kubernetes-leases-robust-leader-election-for-daemonsets-with-go-examples-f3b9a8858c49>
+- Modifier des ressources k8s : Client-side vs Server-side : <https://hackernoon.com/battle-for-resources-or-the-ssa-path-to-kubernetes-diplomacy>
 
 ---
 
