@@ -41,19 +41,19 @@ layout: '@layouts/CoursePartLayout.astro'
 ## 🏗️ Les 5 piliers CALMS du DevOps
 
 - **Culture** :
-	- Équipes transverses orientées produit
-	- Gérer le risque et les erreurs
+  - Équipes transverses orientées produit
+  - Gérer le risque et les erreurs
 - **Automatisation** :
   - Coder l'Infrastructure (**IaC**)
-	- Intégration & Livraison Continus (**CI/CD**)
+    - Intégration & Livraison Continus (**CI/CD**)
 - **Lean**
   - Amélioration continue
-	- Livraison au plus tôt, **itérations**
+    - Livraison au plus tôt, **itérations**
 - **Mesurer** :
   - Monitoring continu.
 - **Share** :
   - Collaboration
-	- _Feedback loop_
+    - _Feedback loop_
 
 ---
 
@@ -100,7 +100,9 @@ Voir le [cours sur les gestionnaires de versions (Git)](/git).
 > Ensemble de pratiques permettant de réduire la feedback loop. 🔄
 
 :::link
+
 - Voir le [cours sur l'intégration continue](/ci/cours).
+
 :::
 
 ---
@@ -115,17 +117,17 @@ Voir le [cours sur les gestionnaires de versions (Git)](/git).
 ### 🌟 Avantages
 
 - \+ Immutabilité image de production :
-  * Instances des applications générées depuis une image figée ;
-  * Un seul livrable de production ;
-  * Changements d'état sont minimaux et non critiques ;
+  - Instances des applications générées depuis une image figée ;
+  - Un seul livrable de production ;
+  - Changements d'état sont minimaux et non critiques ;
 - \+ Une instance applicative doit donc pouvoir être détruite et recréée à n'importe quel moment !
 
 ---
 
 - \+ Environnement applicatif invariant :
-  * Abstraction plateforme d'exécution ;
-  * Dev, CI/CD, production => même image, OS, dépendances, ...
-  * Tests dans même environnement que la production.
+  - Abstraction plateforme d'exécution ;
+  - Dev, CI/CD, production => même image, OS, dépendances, ...
+  - Tests dans même environnement que la production.
 
 ---
 
@@ -210,6 +212,7 @@ Exemples de requêtes :
 ```bash
 /status cluster-k8s
 ```
+
 :::
 
 ---
@@ -221,7 +224,9 @@ Exemples de requêtes :
 - Populaire en sécurité : DevSecOps et SRE 🔒
 
 :::link
+
 - Voir une introduction à la _Simian Army_ dans le [cours sur les tests](/tests/cours-indus#-simian-army).
+
 :::
 
 ---
@@ -310,7 +315,7 @@ Voir aussi : <https://about.gitlab.com/platform/>
 | **ArchOps** | Réflexions d'architecture dans la boucle DevOps |
 | **TestOps** | Focus tests |
 | **DevSecOps** | Focus sécurité |
-| **MLOps** | DevOps orienté data pour le Machine Learning | 
+| **MLOps** | DevOps orienté data pour le Machine Learning |
 | **GitOps** | Automatisation et Gestion des Infrastructures par Git |
 
 ---
@@ -520,7 +525,7 @@ root((DevOps))
 - <https://blog.wescale.fr/gitops-au-pays-des-bisounours>
 - Wiki Ops de SourceHut : <https://man.sr.ht/ops/>
 - <https://teamtopologies.com/>
+- [Remote Development Environment Supercharged with MCP servers (_Medium_)](https://medium.com/tailor-tech/remote-development-environment-supercharged-with-mcp-servers-c4b959cb321c)
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 [tuto-openclassrooms-monitoring]: https://openclassrooms.com/fr/courses/2035736-mettez-en-place-lintegration-et-la-livraison-continues-avec-la-demarche-devops/6183162-monitorez-votre-application
-
