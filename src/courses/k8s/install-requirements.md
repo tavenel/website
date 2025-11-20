@@ -12,7 +12,7 @@ Sur chaque `Node` :
 - `Kubeadm`, `Kubelet` et `Kubectl`
 
 :::tip
-Kubernetes impose un peu de tuning du noyau Linux : 
+Kubernetes impose un peu de tuning du noyau Linux :
 
 - Charger les modules noyau `overlay` et `br_netfilter`
 - Appliquer les paramètres de configuration du noyau (`sysctl`) suivants :
@@ -26,10 +26,11 @@ net.ipv4.ip_forward = 1
 net.netfilter.nf_conntrack_max=1000000
 vm.overcommit_memory=1
 ```
+
 :::
 
 :::warn
-Si vous tournez le cluster sur votre machine personnelle dans des VMs, Kubernetes peut être très gourmand en I/O. 
+Si vous tournez le cluster sur votre machine personnelle dans des VMs, Kubernetes peut être très gourmand en I/O.
 
 Appliquer également les paramètres suivants :
 
@@ -37,10 +38,15 @@ Appliquer également les paramètres suivants :
 fs.inotify.max_user_instances=1024
 fs.inotify.max_user_watches=1048576
 ```
+
 :::
 
 :::warn
 Docker n'est plus supporté nativement par Kubernetes, il faut un _Container Runtime Interface_ (CRI), par exemple `cri-dockerd`. On utilise souvent `containerd` directement (sans Docker). Voir : <https://kubernetes.io/docs/setup/production-environment/container-runtimes/>
+:::
+
+:::tip
+Si nécessaire, Kubernetes >= 1.34 supporte l'usage du Swap sur le Node : <https://kubernetes.io/blog/2025/08/19/tuning-linux-swap-for-kubernetes-a-deep-dive/>
 :::
 
 Configuration réseau :
@@ -48,7 +54,7 @@ Configuration réseau :
 - Tous les _Node_ :
   - `kubelet` : 10250
   - Si utilisation de `BGP` : 179
-- _Control Plane_ uniquement : 
+- _Control Plane_ uniquement :
   - `kube-apiserver` : 6443
   - `scheduler` : 10251
   - `controller-manager` : 10252
@@ -68,5 +74,5 @@ sudo docker run -it --rm \
   -v $LOG_DIR:/var/result \
   registry.k8s.io/node-test:0.2
 ```
-:::
 
+:::
