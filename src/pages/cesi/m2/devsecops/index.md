@@ -28,7 +28,7 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 
 ## 📑 Documents
 
-- [🤓 Cours sur le Devops](/cesi/m2/devsecops/cours)
+- [🤓 Cours sur le DevSecOps](/cesi/m2/devsecops/cours)
 - [🏆 Projet - De la culture DevSecOps à la mise en oeuvre CI/CD](/cesi/m2/devsecops/projet)
 
 ## 🚀 Pour aller plus loin
@@ -37,4 +37,3 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 - Voir les autres ressources du [cours sur le devops](/devops).
 - Intégration continue et déploiement continu : voir le [cours CI/CD](/ci)
 - Conteneurs Docker & Kubernetes : voir le [cours Docker](/docker)
-
