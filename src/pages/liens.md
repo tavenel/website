@@ -215,6 +215,7 @@ Voir aussi : [informations IA](/other#ia)
 - Fiches de réparation de matériels électroniques : <https://fr.ifixit.com/>
 - "A series of nonverbal algorithm assembly instructions" : <https://idea-instructions.com/>
 - <https://wrongthink.link/posts/all-you-need-is-ssh/>
+- Comment réaliser un bon onboarding : <https://blog.wescale.fr/bienvenue-dans-lequipe-voici-ton-onboarding-puisse-le-sort-vous-etre-favorable>
 
 ### Liens Divers
 
@@ -236,6 +237,7 @@ Voir les pages de cours :
 - [Liens Gamification Docker](/docker/cours#exercices-challenges)
 - [Liens Kubernetes](/k8s/cours#-liens)
 - [Liens Git](/git/cours#ressources)
+
 :::
 
 ### Cybersécurité
@@ -281,4 +283,3 @@ Voir les pages de cours :
 - <https://spring-petclinic.github.io/>
 - <https://github.com/gothinkster/realworld>
 - <https://github.com/bradtraversy/50projects50days>
-
