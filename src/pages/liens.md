@@ -155,6 +155,7 @@ Voir aussi : [informations IA](/other#ia)
 - <https://en.fofa.info/> : Recherche d'hôtes sur critères
 - Check DNS leaks : <https://dnsleaktest.com/>
 - <https://blog.humancoders.com/les-pires-failles-de-securite-de-2025-3853/>
+- <https://zythom.fr/2025/11/cybersecurite-assistee-par-ia/>
 
 ### Dev
 
@@ -168,6 +169,7 @@ Voir aussi : [informations IA](/other#ia)
 - [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
 - [Pattern CQRS/ES et implémentations](https://romaintrm.github.io/posts/cqrs-es-nos-heuristiques-apres-plusieurs-annees-de-production/)
 - <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
+- <https://cloudnativenow.com/contributed-content/you-are-more-likely-to-land-a-lead-level-cloud-native-role-than-a-junior-one/>
 
 ### UI et UX
 
