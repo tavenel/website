@@ -17,7 +17,7 @@ tags:
 - `LivenessProbe`
   - 📊 Monitoring du Pod
   - ☠️ Kill du conteneur si échec
-   	- 🔄 Et donc (souvent) redémarrage automatique du Pod
+    - 🔄 Et donc (souvent) redémarrage automatique du Pod
   - 🚫 Jamais de dépendance vers l'extérieur du Pod
 - `StartupProbe`
   - ❌ Doit renvoyer un échec tant que l'application n'est pas initialisée
@@ -101,12 +101,13 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ## 📈 Scaling
 
-- 🔄 Scaling horizontal : plusieurs instances de l'application
+- 🔄 Scaling horizontal : plusieurs instances de l'application (recommandé)
   - 🛠️ Commande `kubectl`
   - Ou automatiquement `HorizontalPodAutoscaler` (`HPA`) : natif k8s mais requiert un [Metrics Server](https://github.com/kubernetes-sigs/metrics-server)
 - 📊 Scaling vertical : redimensionner les ressources de l'application (mémoire, CPU)
   - 🔄 Par mise à jour du déploiement et création d'un nouveau Pod
   - Ou automatiquement : `VerticalPodAutoscaler` [extension à installer](https://github.com/kubernetes/autoscaler/tree/9f87b78df0f1d6e142234bb32e8acbd71295585a/vertical-pod-autoscaler)
+  - ou (k8s >= 1.33) par modification des ressources assignées aux conteneurs : <https://kubernetes.io/docs/tasks/configure-pod-container/resize-container-resources/>
 
 ---
 
@@ -114,9 +115,9 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 - 🛡️ Appliquer un `SecurityContext` :
   - Changer le `UID`, `GID`
-   	- Drop de _capabilities_
-   	- Filesystem _R/O_
-   	- …
+    - Drop de _capabilities_
+    - Filesystem _R/O_
+    - …
 
 ---
 
