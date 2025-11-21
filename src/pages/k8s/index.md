@@ -3,18 +3,19 @@ title: 󱃾 Kubernetes®
 layout: '@layouts/BaseLayout.astro'
 ---
 
-# 󱃾 Kubernetes® 
+# 󱃾 Kubernetes®
 
 ![](@assets/undraw/undraw_container-ship_t6yx.svg)
 
-## 󱃾 Kubernetes® 
+## 󱃾 Kubernetes®
 
 - [🤓 Cours Kubernetes : initiation basique](/k8s/cours-mini)
 - [🤓 Cours Kubernetes : l'intégral](/k8s/cours)
 - [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
 - [🤓 Cours Kubernetes orienté Administrateur Système](/k8s/cours-admin)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
-- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp-intro) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP Création de manifestes et déploiement d'une application containerisée avec kubectl](/k8s/tp-appli) : Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à 2 services + 1 SGBDR containerisé.
 - 󱃾  Learn Kubernetes Basics: Tutoriels officiels pour débuter avec Kubernetes : <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
 - Exemple de déploiement d'applications Go et d'utilisation d'un Ingress : <https://git.sr.ht/~toma/iac/tree/main/item/k8s/examples/ingress/README.md>
 - [󱃾  TP : Déploiement applicatif avec Helm](/k8s/tp-helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.
@@ -29,4 +30,3 @@ layout: '@layouts/BaseLayout.astro'
 ## λ OpenFaaS
 
 - [λ TP serverless : Fonctions-as-a-Service dans Kubernetes avec OpenFaaS](/k8s/openfaas-tp)
-

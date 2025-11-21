@@ -8,10 +8,10 @@ layout: '@layouts/BaseLayout.astro'
 ## Présentation du module
 
 ### 🎯 Objectifs du cours
- 
+
 - Créer des conteneurs avec la solution Docker®
 - Comprendre les implications de la conteneurisation pour le développement logiciel : écriture de Dockerfile, …
-- Gérer les images et les instances 
+- Gérer les images et les instances
 - Comprendre et mettre en place les mécanismes de stockage des conteneurs
 - S'initier aux orchestrateurs de conteneurs : (docker-compose et Kubernetes®)
 - Utiliser des conteneurs comme environnement de travail (VSCode DevContainers)
@@ -34,20 +34,20 @@ Module de 15H
 - [💻 TP : Environnement de Développement avec DevContainers](/docker/tp-devcontainer) : ce TP vise à configurer un environnement de développement portable et reproductible à l'aide de `Docker` et des `DevContainers`. L'objectif est de maîtriser la configuration d'un environnement `DevContainer` pour une application `Node.js` et de comprendre comment `Docker` peut être intégré dans le processus de développement.
 - [🚢 TP Podman : Conteneurs et Pods sans serveur](/docker/tp-podman) : `Podman` est un moteur de conteneur compatible avec l'API Docker conçu pour créer, exécuter et gérer des conteneurs et des pods Kubernetes sans nécessiter de démon, ce qui le rend idéal pour le développement et pour tester des pods Kubernetes en local sans nécessiter de cluster Kubernetes complet.
 
-### 󱃾 Kubernetes® 
+### 󱃾 Kubernetes®
 
 - [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
-- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp-intro) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP Création de manifestes et déploiement d'une application containerisée avec kubectl](/k8s/tp-appli) : Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à 2 services + 1 SGBDR containerisé.
 - 󱃾  Learn Kubernetes Basics: Tutoriels officiels pour débuter avec Kubernetes : <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
 
 ### 🏆 Projet Dockerisation d'un Projet Multi-Composants
 
-Le but de ce projet est de dockeriser un projet personnel existant qui se compose de plusieurs composants. 
+Le but de ce projet est de dockeriser un projet personnel existant qui se compose de plusieurs composants.
 
 - [📄 Sujet](/docker/projet-dev)
 
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [  cours sur Docker](/docker) et du [󱃾  cours sur Kubernetes](/k8s).
-

@@ -34,7 +34,8 @@ Module de 3*12H
 
 - [🤓 Cours Kubernetes orienté Administrateur Système](/k8s/cours-admin)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
-- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp-intro) : l'objectif de ce TP est de découvrir Kubernetes® à travers Minikube, une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP Création de manifestes et déploiement d'une application containerisée avec kubectl](/k8s/tp-appli) : Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à 2 services + 1 SGBDR containerisé.
 - [🏆 Projet Installation d'un Cluster Kubernetes et déploiement d'une application](/k8s/projet-install)
 
 ### Partie 2
@@ -50,4 +51,3 @@ Module de 3*12H
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [  cours sur Docker](/docker) et du [󱃾  cours sur Kubernetes](/k8s).
-
