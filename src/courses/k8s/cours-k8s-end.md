@@ -290,6 +290,8 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - [AI Infrastructure on Kubernetes](https://kube.today/ai-infrastructure-2025)
 - <https://msalinas92.medium.com/deep-dive-into-kubernetes-leases-robust-leader-election-for-daemonsets-with-go-examples-f3b9a8858c49>
 - Modifier des ressources k8s : Client-side vs Server-side : <https://hackernoon.com/battle-for-resources-or-the-ssa-path-to-kubernetes-diplomacy>
+- <https://medium.com/bigdatarepublic/frameworks-for-serving-machine-learning-models-on-kubernetes-835565067d6b>
+- <https://github.com/moabukar/k8s-in-a-box> : random broken app to fix for learning
 
 ---
 
