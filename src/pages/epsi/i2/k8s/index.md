@@ -40,7 +40,8 @@ layout: '@layouts/BaseLayout.astro'
 - [🔀 Module en classe renversée](/epsi/i2/k8s/classe-renversee)
 - [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
-- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp-intro) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
+- [󱃾  TP Création de manifestes et déploiement d'une application containerisée avec kubectl](/k8s/tp-appli) : Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à 2 services + 1 SGBDR containerisé.
 - [󱃾  TP : Déploiement applicatif avec Helm](/k8s/tp-helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.
 - [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/k8s/tp-prometheus-grafana) : un exemple pour mettre en place une infrastructure standard de monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation.
 - [🏆 Projet Déploiement applicatif dans Kubernetes](/epsi/i2/k8s/projet)
@@ -48,4 +49,3 @@ layout: '@layouts/BaseLayout.astro'
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [  cours sur Docker](/docker) et du [󱃾  cours sur Kubernetes](/k8s).
-

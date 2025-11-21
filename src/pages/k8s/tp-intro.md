@@ -1,11 +1,9 @@
 ---
-title: Kubernetes
+title: TP Premiers pas avec Kubernetes
 date: 2024 / 2025
 ---
 
-# Introduction à Kubernetes®
-
-Dans cette partie, nous allons utiliser l'orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l'équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
+Dans ce TP, nous allons utiliser l'orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l'équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
 
 ## Installation
 
@@ -26,6 +24,7 @@ Un cluster kubernetes complet peut être un peu gourmand en ressources et suivan
 ```sh
 minikube start --cpus 4 --memory 8192
 ```
+
 :::
 
 ### Installer Kubectl
@@ -57,6 +56,7 @@ minikube dashboard
 ```
 
 :::tip
+
 ### Exécution bac à sable en ligne
 
 En cas de souci avec l'installation du cluster, il est possible de tester l'utilisation de Kubernetes depuis un environnement en ligne :
@@ -64,6 +64,7 @@ En cas de souci avec l'installation du cluster, il est possible de tester l'util
 - <https://labs.play-with-k8s.com/>
 - <https://killercoda.com/playgrounds/scenario/kubernetes>
 - <https://kodekloud.com/playgrounds/>
+
 :::
 
 ## Prise en main d'un cluster Kubernetes
@@ -77,21 +78,25 @@ Ensuite, nous exposerons un `service` kubernetes pour pouvoir accéder à nos co
 :::tip
 Dans la suite du TP, nous utiliserons une image de test pour simuler un serveur Web : [`inanimate/echo-server`](https://github.com/InAnimaTe/echo-server).
 
-Cette image peut être remplacée par d'autres images de test : 
+Cette image peut être remplacée par d'autres images de test :
 
 - `paulbouwer/hello-kubernetes:1.8` qui permet d'afficher le `Node` et le `Pod` en cours d'exécution pour du débug.
 - <https://github.com/kubernetes-up-and-running/kuard> qui affiche des détails sur l'exécution du Pod
+
 :::
 
 :::exo
+
 1. En utilisant la cheatsheet kubernetes, créer un fichier décrivant un Pod utilisant une image `inanimate/echo-server` pour créer un pod nommé `web`. L'application tourne sur le port `8080`.
 2. Récupérer l'adresse IP du pod créé.
 3. Créer un 2e pod nommé `test` et utilisant une image `alpine`. On exécutera une commande `sleep 9999` pour faire tourner ce pod en continue.
 4. Se connecter au pod `test` et exécuter un `ping` et un `curl` du pod `web`.
 5. Détruire le conteneur de test
+
 :::
 
 :::correction
+
 ```yaml
 # 1. Configuration du Pod web
 #web-pod.yml
@@ -106,6 +111,7 @@ spec:
       ports:
         - containerPort: 8080
 ```
+
 ```sh
 # Création du Pod web
 kubectl apply -f web-pod.yaml
@@ -130,6 +136,7 @@ ping 10.244.0.34
 # 5. Nettoyage du pod
 kubectl delete test --force=true
 ```
+
 :::
 
 ### Premier service
@@ -140,10 +147,12 @@ Un `Service` permet d'exposer les ports d'un pod. Nous allons voir comment expos
 - Vers l'extérieur via un `NodePort` pour configurer l'accès au port d'un conteneur en attribuant un port sur chaque nœud du cluster.
 
 :::exo
+
 1. En utilisant la ligne de commande `kubectl`, exposer un port du pod `nginx`
 2. Modifier le pod `web` pour lui ajouter un label : `app=web-app`. Ce label permettre de lier le Pod aux Services.
 3. Créer un service de type `ClusterIP` pour exposer le pod `web` dans le cluster. Tester la connexion depuis un 2e Pod.
 4. Créer un service de type `NodePort`. Tester l'accès au serveur Web depuis la machine hôte sur le port choisi.
+
 :::
 
 :::correction
@@ -195,6 +204,7 @@ kubectl describe po/web
 #…
 #Labels:           app=web-app
 ```
+
 - 3. ClusterIP
 
 ```yaml
@@ -260,6 +270,7 @@ wget http://192.168.39.48:30001 # ou dans un navigateur
 #index.html           100% |******************************************************************************|   615  0:00:00 ETA
 #'index.html' saved
 ```
+
 :::
 
 ### Affinité de Node
@@ -267,9 +278,11 @@ wget http://192.168.39.48:30001 # ou dans un navigateur
 Pour créer un pod avec une affinité pour un nœud ayant un label spécifique, vous devez utiliser les affinités de nœud dans la définition du pod. Kubernetes vous permet de définir une affinité de type "soft" (préférence) ou "hard" (obligation) - voir la cheatsheet.
 
 :::exo
+
 1. Ajouter un nouveau label à l'un des `WorkerNode`.
 1. Créer un pod avec une affinité pour ce `WorkerNode`.
 1. Vérifier que le Pod a été démarré sur le bon Node.
+
 :::
 
 :::tip
@@ -277,6 +290,7 @@ Dans Minikube, il n'y a qu'1 seul `Node`, mais sur un vrai cluster on peut séle
 :::
 
 :::correction
+
 - 1. Ajout de label
 
 ```sh
@@ -328,6 +342,7 @@ kubectl get po/web-affinity-node -o wide
 #NAME                READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
 #web-affinity-node   1/1     Running   0          29s   10.244.0.38   minikube   <none>           <none>
 ```
+
 :::
 
 ### Affinité de Pod
@@ -335,12 +350,15 @@ kubectl get po/web-affinity-node -o wide
 En Kubernetes, vous pouvez définir des affinités inter-pods pour lier deux pods ensemble, c'est-à-dire pour forcer la planification de deux pods sur les mêmes nœuds (ou pour les séparer selon des critères définis). Ces affinités sont gérées via des règles `podAffinity` (affinité) ou `podAntiAffinity` (anti-affinité).
 
 :::exo
+
 1. Ajouter un label `app=web-app` au Pod `web` et vérifier l'ajout.
 2. Créer un Pod `cache` tournant un conteneur `redis` avec une affinité pour le Pod `web`. Vérifier l'affinité.
 3. Créer un Pod `antagoniste` tournant un conteneur `alpine` avec une anti-affinité pour le Pod `web`. Vérifier la non-affinité.
+
 :::
 
 :::correction
+
 - 1. Ajout du label
 
 ```yaml
@@ -440,15 +458,19 @@ kubectl describe po/antagoniste
 # C'est normal, on ne dispose que d'1 seul Node
 # et on ne veut pas d'affinité avec Web !
 ```
+
 :::
 
 ### Limiter les ressources d'un Pod
 
 :::exo
+
 1. Recréer le Pod `web` en ajoutant une limite des ressources (CPU et mémoire). Vérifier la limitation.
+
 :::
 
 :::correction
+
 ```yaml
 #web-pod-limits.yml 
 # Configuration du Pod web avec limitation de ressources
@@ -477,6 +499,7 @@ kubectl describe po/web
 #      cpu:     500m
 #      memory:  200Mi
 ```
+
 :::
 
 ## Création de ressources par Deployment
@@ -484,11 +507,14 @@ kubectl describe po/web
 Les ressources de type `Pod` sont en réalité rarement utilisées - on leur préfère le `Deployment`, bien plus puissant. Celui-ci permet de déployer un grand nombre de ressources différentes (dont des Pods, en utilisant les syntaxes vues précédemment).
 
 :::exo
+
 1. Utiliser un `Deployment` pour recréer le Pod `web`. Inclure un service exposant le webserveur `nginx` dans le même fichier.
 2. Détruire le Pod créé par le déploiement. Lister les Pods : que remarque-t-on ?
+
 :::
 
 :::correction
+
 ```yaml
 #web-deployment.yml 
 # Deployment pour Pod Web et Service
@@ -553,6 +579,7 @@ kubectl get po
 
 # Après destruction, un nouveau Pod a été créé automatiquement par le Déploiement
 ```
+
 :::
 
 ### Mise à jour d'un Pod
@@ -566,12 +593,15 @@ La commande `kubectl rollout` est utilisée pour gérer et surveiller les déplo
 :::
 
 :::exo
+
 1. Changer le Deployment (par exemple, la version de `nginx` utilisée), appliquer la modification et vérifier le résultat.
 2. Effectuer un rollback du déploiement par la ligne de commande.
 3. Effectuer un déploiement en utilisant la stratégie `Recreate` et analyser le changement de comportement.
+
 :::
 
 :::correction
+
 - 1. Modifier le Deployment :
 
 ```yaml
@@ -622,6 +652,7 @@ kubectl describe po/web-deploy-85c575ffc9-g2mwj
 #…
 #  Normal  Pulling    17s   kubelet            Pulling image "nginx:latest"
 ```
+
 :::
 
 ## Gestion du réseau
@@ -678,11 +709,14 @@ En Kubernetes, un volume `hostPath` permet à un pod d'accéder directement à u
 Cependant, l'utilisation de `hostPath` peut présenter des risques de sécurité, car un pod a accès aux fichiers système du nœud. Il est donc recommandé de l'utiliser uniquement dans des cas spécifiques, comme pour des nœuds de confiance ou des environnements contrôlés (test, …).
 
 :::exo
+
 1. Utiliser un `hostPath` pour monter un fichier du noeud dans le pod. Le fichier doit exister.
 2. Utiliser un `hostPath` pour monter un répertoire du noeud dans le pod. Créer le répertoire s'il n'existe pas.
+
 :::
 
 :::correction
+
 ```yaml {9,12}
 apiVersion: v1
 kind: Pod
@@ -700,6 +734,7 @@ spec:
       path: /data/nginx # Chemin sur le nœud hôte
       type: File # pour 1. // DirectoryOrCreate pour 2.
 ```
+
 :::
 
 ### PersistantVolume
@@ -716,15 +751,19 @@ Dans Kubernetes, les `accessModes` définissent comment un volume peut être mon
 - `ReadWriteMany` (RWX) : le volume peut être monté en lecture/écriture par plusieurs pods simultanément.
   - Attention, ce mode n'est pas pris en charge par tous les types de stockage. Par exemple, les volumes de stockage locaux comme `hostPath` ne supportent pas le mode RWX.
 - Il est possible de définir plusieurs modes d'accès autorisés pour un volume
+
 :::
 
 :::exo
+
 1. Pour utiliser un stockage local sur minikube, créer un PV qui utilise un chemin du disque local de Node Minikube. On pourra utiliser la commande `minikube ssh` pour se connecter au Node. Vérifier la création du PV.
 2. Créer un PVC afin de permettre de réclamer un PV en fonction des besoins d'une application. Vérifier la création du PVC.
 3. Maintenant que le PVC est créé, vous pouvez l'utiliser dans un pod en le montant en tant que volume. Tester l'accès aux fichiers du dossier hôte dans le conteneur.
+
 :::
 
 :::correction
+
 ```yaml
 # pv.yaml
 apiVersion: v1
@@ -768,6 +807,7 @@ spec:
     persistentVolumeClaim:
       claimName: pvc-exemple  # Le PVC créé précédemment
 ```
+
 :::
 
 ## ConfigMap : gestion des configurations
@@ -788,11 +828,14 @@ server2=10.166.10.2
 ```
 
 :::exo
+
 1. Utiliser la ligne de commande pour créer une `ConfigMap` depuis ce fichier de configuration.
 2. Ajouter cette ConfigMap dans un Pod et vérifier que la configuration est bien disponible.
+
 :::
 
 :::correction
+
 ```sh
 kubectl create configmap ma-conf-test --from-file=./ma_conf_test.conf
 #configmap/ma-conf-test created
@@ -863,6 +906,7 @@ root@config-map:/# cat /configs/ma_conf_test.conf
 #server1=10.166.10.1
 #server2=10.166.10.2
 ```
+
 :::
 
 ### ConfigMap depuis un fichier env
@@ -877,6 +921,7 @@ serveur2=1.2.3.5
 ```
 
 :::correction
+
 ```sh
 kubectl create configmap ma-conf-env --from-env-file=./ma_conf.env      
 #configmap/ma-conf-env created
@@ -929,6 +974,7 @@ kubectl exec -it env -- bash
 root@env:/# env | grep MON_SERVEUR
 #MON_SERVEUR=1.2.3.4
 ```
+
 :::
 
 ## Réplicas et scaling
@@ -943,14 +989,17 @@ Le scaling horizontal (ou mise à l'échelle) est l'action d'augmenter ou de ré
 On préfère généralement effectuer du scaling vertical sur des machines virtuelles, et du scaling horizontal sur des conteneurs (voir la philosophie _Pet vs Cattle_ du DevOps). Kubernetes est donc l'outil idéal pour faire du scaling **horizontal**.
 :::
 
-### Scaling horizontal manuel 
+### Scaling horizontal manuel
 
 :::exo
+
 1. Utiliser le commande `kubectl` pour effectuer un scaling du déploiement de `nginx`. Modifier si besoin le service du déploiement pour utiliser un LoadBalancer.
 2. Modifier le fichier `/usr/share/nginx/html/index.html` dans chaque conteneur pour savoir quel Pod répond : `POD 1` dans le 1e Pod et `POD 2` dans le 2nd. Tester de nombreuses requêtes pour vérifier le load balancing.
+
 :::
 
 :::correction
+
 ```sh
 kubectl scale deployment web-deploy --replicas=2
 #deployment.apps/web-deploy scaled
@@ -983,12 +1032,15 @@ while true; do curl http://192.168.39.48:30001; done
 #POD 2
 #POD 2
 ```
+
 :::
 
 ### ReplicaSet
 
 :::exo
+
 1. Utiliser un fichier `ReplicaSet` pour effectuer le scaling depuis un fichier de configuration.
+
 :::
 
 :::correction
@@ -1006,24 +1058,30 @@ minikube addons enable metrics-server
 ```
 
 :::exo
+
 1. En utilisant la ligne de commande `kubectl`, configurer nginx pour un scaling de 2 à 10.
 2. Vérifier que les requêtes n'arrivent pas toutes sur le même pod.
+
 :::
 
 :::correction
+
 ```sh
 kubectl autoscale deployment monnginx --min=2 --max=10
 ```
+
 :::
 
-#### Scaling horizontal automatique 
+#### Scaling horizontal automatique
 
 Un Horizontal Pod Autoscaler (HPA) en Kubernetes permet de redimensionner dynamiquement le nombre de réplicas d'un déploiement en fonction de l'utilisation des ressources (CPU, mémoire, etc.) ou de métriques personnalisées. Voici un exemple simple de HPA basé sur l'utilisation du CPU.
 
 :::exo
+
 1. Créez d'abord un déploiement avec une application simple, avec des ressources allouées (`requests`) et limitées (`limits`). Ajouter un `LoadBalancer` sur le port `80` du conteneur.
 2. Ajouter un `HorizontalPodAutoscaler` pour augmenter le nombre de pods à partir de 3% de CPU consommé.
 3. Envoyer des requêtes sur le service. Vérifier que le status du HPA, vérifier que le nombre de pods suit le scaling et que le service assure bien la livraison des requêtes après le scaling.
+
 :::
 
 :::tip
@@ -1031,6 +1089,7 @@ On pourra utiliser l'image `registry.k8s.io/hpa-example` qui est faite pour cré
 :::
 
 :::correction
+
 ```yaml
 #hpa-base.yml
 apiVersion: apps/v1
@@ -1125,16 +1184,20 @@ kubectl get po
 #hpa-test-6d5d4548f-mltbc   1/1     Running   0          23s
 #hpa-test-6d5d4548f-vz7qr   1/1     Running   0          4m3s
 ```
+
 :::
 
 ## Namespace
 
 :::exo
+
 1. Utiliser le namespace du dashboard pour lister les ressources spécifiques au dashboard kubernetes.
 2. Créer un nouveau namespace et déployer un Pod dans ce namespace.
+
 :::
 
 :::correction
+
 ```sh
 # Namespace du dashboard
 
@@ -1169,15 +1232,19 @@ spec:
       ports:
         - containerPort: 80
 ```
+
 :::
 
 ## Configuration du cluser
 
 :::exo
+
 1. À l'aide de commandes `kubectl`, afficher le plus d'informations possible sur la configuration du cluster.
+
 :::
 
 :::correction
+
 ```sh
 kubectl config get-contexts    
 
@@ -1243,6 +1310,7 @@ kubectl config view
 #     client-certificate: /home/tom/.minikube/profiles/minikube/client.crt
 #     client-key: /home/tom/.minikube/profiles/minikube/client.key
 ```
+
 :::
 
 # Legal
@@ -1250,4 +1318,3 @@ kubectl config view
 - © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-

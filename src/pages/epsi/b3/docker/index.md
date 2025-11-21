@@ -8,9 +8,9 @@ layout: '@layouts/BaseLayout.astro'
 ## Présentation du module
 
 ### 🎯 Objectifs du cours
- 
+
 - Créer des conteneurs avec la solution Docker®
-- Gérer les images et les instances 
+- Gérer les images et les instances
 - Comprendre et mettre en place les mécanismes de stockage des conteneurs
 - Comprendre les orchestrateurs de conteneurs : docker-compose et Kubernetes®
 
@@ -34,7 +34,8 @@ Module de 10H
 
 - [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
-- [󱃾  TP Kubernetes : Premiers pas avec k8s](/k8s/tp)
+- [󱃾  TP Kubernetes : Premiers pas avec k8s](/k8s/tp-intro)
+- [󱃾  TP Création de manifestes et déploiement d'une application containerisée avec kubectl](/k8s/tp-appli) : Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à 2 services + 1 SGBDR containerisé.
 - [󱃾  TP : Monitoring de Kubernetes avec Prometheus et Grafana](/k8s/tp-prometheus-grafana)
 - [󱃾  TP : Logging centralisé d'un cluster Kubernetes](/k8s/tp-elk)
 
@@ -46,4 +47,3 @@ Module de 10H
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [  cours sur Docker](/docker) et du [󱃾  cours sur Kubernetes](/k8s).
-
