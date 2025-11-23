@@ -163,8 +163,10 @@ On pourra utiliser plusieurs profils (_pipelines_) d'intégration suivant les ch
 ---
 
 :::tip
+
 - On pourra répliquer certains éléments de la boucle d'intégration continue sur l'environnement du développeur pour améliorer les temps de réponse.
 - Cela ne dispense pas de reproduire ces étapes sur le serveur d'intégration (environnement neutre).
+
 :::
 
 ---
@@ -206,6 +208,7 @@ Voir le [cours sur le gestionnaire de versions Git](/git/).
 ### Qualité du commit vs qualité de la pull-request
 
 Il existe 2 grands schémas de lancement de pipeline d'intégration continue (et beaucoup de modèles mélangeant un peu de ces deux schémas) :
+
 - Pour chaque commit : à privilégier pour les branches stables du projet, où chaque commit est critique : `master`, ...
 - Au moment d'une pull-request : à privilégier pour les branches de travail instables : fonctionnalité, correction de bug, ...
 
@@ -388,10 +391,77 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 - Valeurs **par défaut** : **production** (évite d'envoyer des conf de dev en prod)
 
 :::link
+
 - <https://dev.to/codefreshio/how-to-model-your-gitops-environments-and-promote-releases-between-them-1p6i>
 - <https://developers.redhat.com/articles/2022/07/20/git-workflows-best-practices-gitops-deployments>
 - <https://codefresh.io/blog/stop-using-branches-deploying-different-gitops-environments/>
+
 :::
+
+```mermaid
+---
+title: Promotion Pipelines
+---
+flowchart
+  %% Actors & repo
+  Dev["fa:fa-code-branch Repo Git
+  (fichiers IaC: Terraform + app/Dockerfile)"]
+  Dev --> CI["fa:fa-gitlab Pipeline CI/CD
+  (GitLab CI / GitHub Actions)"]
+
+  %% Build & registry
+  subgraph CICD [CI / CD]
+    CI --> Build["fa:fa-docker Build image Docker"]
+    Build --> Registry["fa:fa-docker Docker Registry
+    (image: myapp:123)"]
+  end
+  
+  %% Common IaC code
+  CI --> TF_PLAN["fa:fa-file-code Terraform plan
+  (même code Terraform)"]
+
+  %% Remote state / vars
+  RemoteState["fa:fa-database (Backend remote
+  (ex: S3 + lock)"]
+  TF_PLAN -.-> RemoteState
+
+  %% Integration stage
+  subgraph INT [Intégration / Test]
+    TF_INT[fa:fa-file-code Terraform apply workspace=integration vars=integration.tfvars]
+    TF_PLAN --> TF_INT
+    TF_INT --> Deploy_INT["fa:fa-server Déployer infra & app (image: myapp:123)"]
+    Registry -.-> Deploy_INT
+    Deploy_INT --> Tests_INT["fa:fa-vial-circle-check Tests automatisés
+    (unit / intégration)"]
+  end
+
+  
+  %% Promotion decision
+  Tests_INT --> Promote{Promotion : Tests OK ?}
+  Promote -.- non[fa:fa-x non] -.-> Fix[fa:fa-code-branch Retour dev
+  nouveau commit]
+  Fix -.-> Dev
+  Promote -.- oui[fa:fa-check oui] -.-> TF_PRE[fa:fa-file-code Terraform apply workspace=preprod vars=preprod.tfvars]
+
+  %% Staging stage
+  subgraph STAGING [Staging]
+    TF_PRE --> Deploy_PRE["fa:fa-server Déployer infra & app
+    (image: myapp:123)"]
+    Registry -.-> Deploy_PRE
+    Deploy_PRE --> Tests_PRE[fa:fa-vial-circle-check Smoke tests
+    e2e]
+    Tests_PRE -.-> Approval{Promotion : Approval Gate manuel ou automatisé}
+  end
+
+  Approval -.-> TF_PROD[fa:fa-file-code Terraform apply workspace=production vars=prod.tfvars]
+
+  %% Production stage
+  subgraph PROD [Production]
+    TF_PROD --> Deploy_PROD["fa:fa-server Déployer infra & app (image: myapp:123)"]
+    Registry -.-> Deploy_PROD
+    Deploy_PROD --> Monitoring[fa:fa-bell Monitoring, Alerts, Rollback]
+  end
+```
 
 ---
 
@@ -405,10 +475,9 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 - [Exemple de pipeline Jenkins YAML en Infrastructure-as-Code][gist-jenkins-pipeline-yaml]
 - [CD : Gestionnaires d'artéfacts - attaques supply chain](https://blog.wescale.fr/supply-chain-attack-proxies-gestionnaires-dartefacts-et-cartographie)
 - [CD : attaques supply chain - livrables de confiance](https://blog.wescale.fr/supply-chain-attack-des-livrables-de-confiance)
-- Le pipeline d'Actions Github du site Web du cours (www.avenel.pro) : <https://github.com/tavenel/website/actions>
+- Le pipeline d'Actions Github du site Web du cours (<www.avenel.pro>) : <https://github.com/tavenel/website/actions>
 - 🚀 Pour aller plus loin : le [cours sur les pratiques DevOps](/devops).
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 
 ---
-
