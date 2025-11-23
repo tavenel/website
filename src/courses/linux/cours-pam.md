@@ -21,10 +21,11 @@ account required pam_unix.so
 ```
 
 :::link
-Pour plus d'information, voir le document de la formation LPIC-2 :
+Pour plus d'information, voir :
 
-- [PAM authentication](https://lpic2book.github.io/src/lpic2.210.2/)
+- Le document de la formation LPIC-2 : [PAM authentication](https://lpic2book.github.io/src/lpic2.210.2/)
+- Le blog [linuxembedded : Authentification avec PAM sous Linux](https://www.linuxembedded.fr/2025/10/authentification-avec-pam-sous-linux)
+
 :::
 
 ---
-
