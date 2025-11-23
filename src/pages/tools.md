@@ -40,8 +40,8 @@ created: 2024-10-17
   - 🔐 sécurité
     - [git-crypt](https://github.com/AGWA/git-crypt)
     - 🔑 `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
-		- <https://github.com/gitleaks/gitleaks> : `docker run -v ${PWD}:/path ghcr.io/gitleaks/gitleaks:latest detect --source="/path" -v`
-		- <https://github.com/trufflesecurity/trufflehog> : trouver des secrets exposés dans ses dépôts Git
+    		- <https://github.com/gitleaks/gitleaks> : `docker run -v ${PWD}:/path ghcr.io/gitleaks/gitleaks:latest detect --source="/path" -v`
+    		- <https://github.com/trufflesecurity/trufflehog> : trouver des secrets exposés dans ses dépôts Git
   - outils
     - 🤪 [gitmoji](https://github.com/carloscuesta/gitmoji) : ajouter des emojis de contexte aux commits
     - <https://alchemists.io/projects/git-lint> : linter de commits Git pour une cohérence des messages
@@ -89,7 +89,7 @@ created: 2024-10-17
 - Registry internes :
   - <https://github.com/Joxit/docker-registry-ui>
   - `gitea`
-  - <https://hub.docker.com/_/registry> 
+  - <https://hub.docker.com/_/registry>
 
 #### Orchestration de conteneurs
 
@@ -119,11 +119,11 @@ created: 2024-10-17
     - _Ingress controller_ (ingress avec _CRD_ custom) :
       - `Contour`
       - `Emissary Ingress`
-      - `Voyager` 
+      - `Voyager`
     - _Application proxy_ avec services : _rate limiting_, …
       - `Kong`
       - `Apisix`
-      - `Traefik proxy` 
+      - `Traefik proxy`
     - _Service mesh_
       - `Istio` : [article](https://une-tasse-de.cafe/blog/istio/) et observabilité par <https://kiali.io/>
       - `Cilium` : networking, security, observability
@@ -137,9 +137,9 @@ created: 2024-10-17
   - `Goldilocks` : génération de recommendations de _requests_ et _limits_
   - <https://github.com/jthomperoo/predictive-horizontal-pod-autoscaler> : modèles prédictifs pour auto-scaling (HPA)
 - 🔒 sécurité
-	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
-	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
-	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
+ 	- `kubeseal` et `Sealed Secret` : [tuto 1](https://une-tasse-de.cafe/blog/sealed-secrets/) et [tuto 2](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/sealed-secrets/) : chiffrement de secrets dans k8s
+ 	- <https://external-secrets.io/> : injection de secrets (Opérateur et CRDs) : [tuto](https://blog.wescale.fr/synchronisation-des-secrets-dans-votre-cluster-kubernetes-avec-external-secrets)
+ 	- `cert-manager` : gestion des certificats SSL/TLS [tuto](https://une-tasse-de.cafe/blog/cert-manager/)
   - <https://chaos-mesh.org/> : chaos computing dans un cluster
   - <https://github.com/kubernetes-sigs/security-profiles-operator> : Opérateur SELinux, Apparmor, Seccomp
   - Analyse de clusters :
@@ -188,14 +188,14 @@ created: 2024-10-17
   - [ReShifter](https://github.com/mhausenblas/reshifter) : cluster state management
   - [Velero](https://github.com/heptio/velero) : full cluster backup
   - [kube-backup](https://github.com/pieterlange/kube-backup) : backup YAML dans répo Git
-  - [bivac](https://github.com/camptocamp/bivac) : Backup Interface for Volumes Attached to Containers 
+  - [bivac](https://github.com/camptocamp/bivac) : Backup Interface for Volumes Attached to Containers
   - [Portworx](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/) : [snapshots par annotations](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/snaps-annotations/#taking-periodic-snapshots-on-a-running-pod)
 - Scan de cluster et diagnostics par IA : <https://github.com/k8sgpt-ai/k8sgpt>
 
 ##### Installation de cluster
 
 - 📥 installation => `kubeadm`, `rke`, `kubespray` (supporte Ansible), `rancher`
-	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
+ 	- <https://github.com/kubernetes/node-problem-detector> : Détecter les problèmes sur un Node
 - CNI :
   - [Tigera](https://github.com/tigera/operator) : gestion du _CNI_ Calico dans le cluster
 - [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
@@ -217,7 +217,7 @@ created: 2024-10-17
   - galaxy : grande collection de rôles tout prêts
   - sécurité : voir collection `devsec.hardening` dans ansible galaxy
   - `ansible-vault` (voir `vault`)
-	- [ansible-inventory-grapher](https://github.com/willthames/ansible-inventory-grapher) : graph Ansible
+   	- [ansible-inventory-grapher](https://github.com/willthames/ansible-inventory-grapher) : graph Ansible
 - `pulumi` (multi-langages)
   - `pulumi convert --from kubernetes --language <language> --out <output_dir>` : k8s Yaml => pulumi
   - `pulumi convert --from terraform` : terraform HCL => pulumi
@@ -301,14 +301,14 @@ created: 2024-10-17
     - Liste d'exporters disponibles : <https://prometheus.io/docs/instrumenting/exporters/>
     - Scaling par `thanos`
   - `cAdvisor` => sondes Prometheus automatiques pour conteneurs
-	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
+   	- <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
   - `zabbix` (plutôt sysadmin que devops)
   - `hertzbeat` (compatible `prometheus`) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/hertzbeat/)
 - stacks de logging :
   - `ELK` : _Elastricsearch_, _Logstash_, _Kibana_
   - `loki` + `grafana` (pour tester : <https://github.com/grafana/docker-otel-lgtm>) : <https://une-tasse-de.cafe/blog/loki/>
   - `VictoriaMetrics` (pull, très efficace) + `VMAlert` (règles compatibles prometheus) + `grafana`
-	- <https://github.com/openobserve/openobserve> : léger
+   	- <https://github.com/openobserve/openobserve> : léger
 - tracing :
   - `zipkin`
   - `OpenTelemetry`
@@ -381,6 +381,7 @@ created: 2024-10-17
 ## (reverse) proxy, load balancing, service registry
 
 - `nginx`
+  - <https://nginxui.com/> : statistics, logs, tests, …
 - `haproxy`
 - `consul` : <https://une-tasse-de.cafe/blog/consul/>
 - `traefik`
@@ -431,17 +432,17 @@ created: 2024-10-17
 
 - IA / LLMs :
   - <https://www.langchain.com/>
-	- <https://haystack.deepset.ai/>
-	- `vLLM`
-	- <https://pollinations.ai/>
-	- <https://docs.sillytavern.app/>
+   	- <https://haystack.deepset.ai/>
+   	- `vLLM`
+   	- <https://pollinations.ai/>
+   	- <https://docs.sillytavern.app/>
   - `litLLM` : aggreggation de LLMs : <https://docs.litellm.ai/docs/>
     - [À la découverte de liteLLM, une plateforme pour les gouverner tous](https://www.youtube.com/watch?v=L8CeGZ0Pf5o)
 - Database :
   - `Postgresql` : `replication manager` pour failover / réplication
   - [DrawDB](https://github.com/drawdb-io/drawdb) : database designer
   - <https://neon.tech> : Serverless Postgres with branching
-	- Backend dans 1 seul fichier : `PocketBase`, <https://manifest.build/>
+   	- Backend dans 1 seul fichier : `PocketBase`, <https://manifest.build/>
   - <https://kottster.app/> : UI sur la database
 - Gestion d'erreurs : `Sentry`
 - APIs : `OpenAPI`
@@ -456,7 +457,7 @@ created: 2024-10-17
   - `React` : most used, heavy, powerfull, quite difficult
   - `Vue` : easy, trending
   - <https://alpinejs.dev/> : minimal, very easy
-	- <https://astro.build/> : framework statique / SSR multi-composants (`React`, …). 0 JS par défaut
+   	- <https://astro.build/> : framework statique / SSR multi-composants (`React`, …). 0 JS par défaut
 - Backend : `appwrite`, `firebase`, `nitric`
 - animations :
   - Animate text like a typewritter : <https://github.com/mattboldt/typed.js>
@@ -538,11 +539,11 @@ created: 2024-10-17
 ## 💻 Outils Poste de travail
 
 - IDE
-	- (Neo)vim et [LazyVim][LazyVim].
-		- [Kulala](https://www.lazyvim.org/keymaps#kulalanvim) : HTTP requests from Neovim
-	- <https://lazyman.dev/> : test de configurations pour `neovim`.
-	- Voir le guide : [LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes/)
-	- [helix][helix] : très inspiré de `vim`.
+ 	- (Neo)vim et [LazyVim][LazyVim].
+  		- [Kulala](https://www.lazyvim.org/keymaps#kulalanvim) : HTTP requests from Neovim
+ 	- <https://lazyman.dev/> : test de configurations pour `neovim`.
+ 	- Voir le guide : [LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes/)
+ 	- [helix][helix] : très inspiré de `vim`.
 - clients HTTP :
   - <https://github.com/zaghaghi/openapi-tui>
   - <https://github.com/Julien-cpsn/ATAC>
@@ -554,7 +555,7 @@ created: 2024-10-17
   - <https://github.com/rs/curlie> : `curl` frontend
   - <https://github.com/ducaale/xh> : focus performance
 - bat
-- émulateur de terminal : 
+- émulateur de terminal :
   - [alacritty][alacritty] : rapide (utilise le GPU)
   - [foot][foot] : très léger
   - [wezterm][wezterm], [kitty][kitty], [warp][warp] : terminaux avec fonctionnalités supplémentaires
@@ -563,39 +564,39 @@ created: 2024-10-17
   - [tmux][tmux] : le plus populaire
   - <https://mosh.org> : terminal remote (similaire SSH) avec support roaming, déconnexion, …
 - shell :
-	- `bash`, disponible partout (avec [Oh My Bash][oh-my-bash])
+ 	- `bash`, disponible partout (avec [Oh My Bash][oh-my-bash])
   - `zsh`, plus puissant avec [Oh My ZSH][oh-my-zsh] (voir aussi [awesome-zsh][awesome-zsh])
     - ZSH expert features : <https://thevaluable.dev/zsh-expansion-guide-example/>
-	- exotiques : `fish` (avec [Fisher][fisher]), [nu][nushell]
+   	- exotiques : `fish` (avec [Fisher][fisher]), [nu][nushell]
 - prompt shell (`PS1`) :
-	- [pure][pure] : prompt très rapide sous ZSH
-	- [poweline][powerline] : très populaire
+ 	- [pure][pure] : prompt très rapide sous ZSH
+ 	- [poweline][powerline] : très populaire
 - Police de caractères (font) : utiliser les versions [nerd-fonts][nerd-fonts], polices recommandées pour coder : `Hack`, `Inconsolata`, `Noto Color Emoji`, `FiraCode`, `VictorMono` (cursif)
   - `fc-list` // `fc-cache -fv` => show available fonts // refresh font cache
 - `atuin` => command history with persistence
 - lister / explorer des fichiers :
   - [eza][eza] (anciennement `exa`) : alternative à `ls`
     - `eza --header --long --git --icons --sort=ext --tree --accessed --created --modified --group --links --grid --classify` => full eza options
-	- [bat][bat] : alternative à `cat`. `bat --list-themes`
-	- [yazi][yazi], [n3][nnn] et [ranger][ranger] : explorateurs de fichiers en mode console
-	- [fd][fd] : alternative à `find`
-	- [ripgrep][rg] (`rg`), [Silver Searcher][ag] (`ag` ), [ack][ack] : alternatives à `grep`
-	- [plocate][plocate] : implémentation rapide pour `locate` (plus rapide que `mlocate`)
+   	- [bat][bat] : alternative à `cat`. `bat --list-themes`
+   	- [yazi][yazi], [n3][nnn] et [ranger][ranger] : explorateurs de fichiers en mode console
+   	- [fd][fd] : alternative à `find`
+   	- [ripgrep][rg] (`rg`), [Silver Searcher][ag] (`ag` ), [ack][ack] : alternatives à `grep`
+   	- [plocate][plocate] : implémentation rapide pour `locate` (plus rapide que `mlocate`)
   - Grep with colors => `grep --color=always <pattern> | less -R`
   - `ls file1.py | entr python /_` => execute cmd on file change
     - `entr -c` => clear screen first
     - `entr -p` => postpone 1st cmd before change
     - `entr -r` => reload a non-stopping cmd
 - fuzzy-finder :
-	- [fzf][fzf] : `export FZF_DEFAULT_COMMAND='fd . --hidden'`, `docker ps -a | fzf`, `fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'`
+ 	- [fzf][fzf] : `export FZF_DEFAULT_COMMAND='fd . --hidden'`, `docker ps -a | fzf`, `fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'`
 - interfaces utilisateurs en mode terminal (TUI):
-	- [glow][glow] : lecteur markdown
-	- [lazygit][lazygit]
-	- `lazysql`
-	- [systemctl-tui](https://github.com/rgwood/systemctl-tui)
-	- [pipeform](https://github.com/magodo/pipeform) : TUI pour Terraform
-	- `ddgr` : recherche Web
-	- <https://aider.chat> : AI pair programming
+ 	- [glow][glow] : lecteur markdown
+ 	- [lazygit][lazygit]
+ 	- `lazysql`
+ 	- [systemctl-tui](https://github.com/rgwood/systemctl-tui)
+ 	- [pipeform](https://github.com/magodo/pipeform) : TUI pour Terraform
+ 	- `ddgr` : recherche Web
+ 	- <https://aider.chat> : AI pair programming
   - `cmus` // `mocp` => audio player
   - `docker run --rm -it browsh/browsh` // `docker run --rm -ti fathyb/carbonyl https://yewtu.be` => terminal-based web browsers
 - json viewers and processors :
@@ -637,7 +638,7 @@ created: 2024-10-17
   - `k8s lens` : graphical cluster management
   - `kube-capacity` : monitor ressources
   - <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
-	- <https://k8slens.dev/> : IDE dédié à Kubernetes
+   	- <https://k8slens.dev/> : IDE dédié à Kubernetes
   - <https://github.com/philippemerle/KubeDiagrams> : génération de diagrammes d'infra d'un cluster
   - Plugins `kubectl` :
     - upgrade : <https://github.com/kubepug/kubepug>
@@ -794,14 +795,11 @@ created: 2024-10-17
 - <<https://www.trackawesomelist.com/aviaryan/awesome-no-login-web-apps/rss.xml> : awesome No-login Web apps
 - <<https://www.trackawesomelist.com/unixorn/awesome-zsh-plugins/rss.xml> : awesome ZSH Plugins
 
-
 [ack]: https://github.com/beyondgrep/ack3
 [ag]: https://github.com/ggreer/the_silver_searcher
 [alacritty]: https://alacritty.org/
 [awesome-zsh]: https://github.com/unixorn/awesome-zsh-plugins
 [bat]: https://github.com/sharkdp/bat
-[cmus]: https://cmus.github.io/
-[dry]: https://github.com/moncho/dry
 [eza]: https://github.com/eza-community/eza
 [fd]: https://github.com/sharkdp/fd
 [fisher]: https://github.com/jorgebucaran/fisher
@@ -809,9 +807,7 @@ created: 2024-10-17
 [fzf]: https://github.com/junegunn/fzf
 [glow]: https://github.com/charmbracelet/glow
 [helix]: https://helix-editor.com/
-[k9s]: https://k9scli.io/
 [kitty]: https://sw.kovidgoyal.net/kitty/
-[lazydocker]: https://github.com/jesseduffield/lazydocker
 [lazygit]: https://github.com/jesseduffield/lazygit
 [lazyvim]: https://www.lazyvim.org/
 [nerd-fonts]: https://www.nerdfonts.com/
@@ -824,14 +820,7 @@ created: 2024-10-17
 [pure]: https://github.com/sindresorhus/pure
 [ranger]: https://github.com/ranger/ranger
 [rg]: https://github.com/BurntSushi/ripgrep
-[sc-im]: https://github.com/andmarti1424/sc-im
-[screen]: https://www.gnu.org/software/screen/
-[term-dbms]: https://github.com/mathaou/termdbms
-[tig]: https://jonas.github.io/tig/
 [tmux]: https://github.com/tmux/tmux/wiki
 [warp]: https://www.warp.dev/
 [wezterm]: https://wezfurlong.org/wezterm/index.html
 [yazi]: https://github.com/sxyazi/yazi
-[zellij]: https://zellij.dev/
-[zsh-autosuggestions]: https://github.com/zsh-users/zsh-autosuggestions
-
