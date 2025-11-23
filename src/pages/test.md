@@ -4,9 +4,13 @@ date: 2025
 ---
 
 # H1 title
+
 ## H2 title
+
 ### H3 title
+
 #### H4 title
+
 ##### H5 title
 
 **bold** and _emphasis_.
@@ -38,6 +42,7 @@ Un exercice avec :
    - étape 1
    - étape 2
 2. Deuxième question
+
 :::
 
 ## Subsection
@@ -87,19 +92,20 @@ $$ \sqrt{3x-1}+(1+x)^2 $$
 
 ```python
 class A():
-	def __init__(self, x):
-		self.x = x
-		print(x)
-		return x
+ def __init__(self, x):
+  self.x = x
+  print(x)
+  return x
 
 def f(y):
-	return y
+ return y
 
 a = A()
 f(2)
 ```
 
 :::correction
+
 ```console
 $ API=$(kubectl get svc kubernetes -o json | jq -r .spec.clusterIP)
 
@@ -138,13 +144,14 @@ $ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0Ro
 
 ## Accès encore refusé (authz) mais l'utilisateur est authentifié (authn).
 ```
+
 :::
 
 # gfm
 
 ## Autolink literals
 
-www.example.com, https://example.com, and contact@example.com.
+<www.example.com>, <https://example.com>, and <contact@example.com>.
 
 ## Footnote
 
@@ -163,8 +170,8 @@ A note[^1]
 
 ## Tasklist
 
-* [ ] to do
-* [x] done
+- [ ] to do
+- [x] done
 
 ## Table big
 
@@ -180,6 +187,7 @@ A note[^1]
 | Compatibilité     | Réseaux Ethernet                  | Réseaux IP                        | Réseaux IP                      | Réseaux IP                       | Réseaux IP                      | Noyau Linux                      |
 | Intégration       | Commutateurs et routeurs          | Contrôleurs SDN                   | Commutateurs et routeurs         | Routeurs                          | Routeurs                         | Outils de surveillance et sécurité |
 | Résilience        | Moyenne                           | Élevée                            | Élevée                           | Très élevée                      | Moyenne                          | Très élevée                      |
+
 # Math
 
 Lift($$L$$) can be determined by Lift Coefficient ($$C_L$$) like the following
@@ -191,11 +199,11 @@ $$
 
 ```python
 class A:
-	def __init__(self, x):
-		self.x = x
-	
-	def f(self, y)
-			 return self.x + y
+ def __init__(self, x):
+  self.x = x
+ 
+ def f(self, y)
+    return self.x + y
 ```
 
 ```mermaid
@@ -227,7 +235,6 @@ graph LR
   end
 ```
 
-
 ```mermaid
 graph TD
   subgraph Machine personnelle
@@ -246,7 +253,6 @@ graph TD
 
   E2-->|OK|E3[(Livraison sur Artifactory)]-->E4[Production]
 ```
-
 
 ```mermaid
 ---
@@ -282,7 +288,6 @@ checkout dev
 checkout main
 merge livraison-1.0 tag:"v1.0"
 ```
-
 
 ```mermaid
 graph LR
@@ -356,7 +361,6 @@ stateDiagram-v2
     Implementation --> Refactoring : succès du test
     Refactoring --> Test : problème suivant
 ```
-
 
 ```mermaid
 ---
@@ -623,6 +627,7 @@ flowchart TD
 ```
 
 :::correction
+
 ```mermaid
 ---
 title: Plan d'adressage IP
