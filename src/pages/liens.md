@@ -168,6 +168,7 @@ Voir aussi : [informations IA](/other#ia)
 - [Algorithme génétique de déplacement dans l'eau](https://www.youtube.com/watch?v=gVEWaOtEASM)
 - [Authentication and authorization in a microservice architecture](https://microservices.io/post/architecture/2025/05/28/microservices-authn-authz-part-2-authentication.html)
 - [Pattern CQRS/ES et implémentations](https://romaintrm.github.io/posts/cqrs-es-nos-heuristiques-apres-plusieurs-annees-de-production/)
+- [Message Queues vs Pub/Sub : arrêtez de les confondre](https://maxence.maireaux.fr/fr/blog/message-queues-vs-pub-sub/)
 - <https://lafor.ge/monad/> : "Les monades sans les maths". Introduction simple aux conteneurs, fonctor & monades
 - <https://cloudnativenow.com/contributed-content/you-are-more-likely-to-land-a-lead-level-cloud-native-role-than-a-junior-one/>
 
