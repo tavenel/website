@@ -28,8 +28,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## 📑 Documents
 
-- [🔀 Module en classe renversée](/cesi/m2/k8s/classe-renversee)
-- [🤓 Cours Kubernetes orienté Développeur](/k8s/cours-dev)
+- [🤓 Cours Kubernetes](/k8s/cours-dev)
 - [🤓 Cheatsheet Kubernetes®](/k8s/cheatsheet)
 - [󱃾  TP : Premiers pas avec Kubernetes](/k8s/tp-intro) : l'objectif de ce TP est de découvrir Kubernetes® à travers une installation (très) simplifiée pour tester Kubernetes sur un seul serveur.
 - [󱃾  TP Création de manifestes et déploiement d'une application containerisée avec kubectl](/k8s/tp-appli) : Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à 2 services + 1 SGBDR containerisé.
