@@ -421,7 +421,7 @@ flowchart
   (même code Terraform)"]
 
   %% Remote state / vars
-  RemoteState["fa:fa-database (Backend remote
+  RemoteState["fa:fa-database Backend remote
   (ex: S3 + lock)"]
   TF_PLAN -.-> RemoteState
 
