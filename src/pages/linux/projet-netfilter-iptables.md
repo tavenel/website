@@ -1,5 +1,5 @@
 ---
-title: TP Mise en place de règles de filtrage sous Debian avec Netfilter
+title: TP Mise en place de règles de filtrage sous Debian avec Netfilter iptables
 date: 2024 / 2025
 ---
 
@@ -22,11 +22,11 @@ La syntaxe principale d'une commande `iptables` est la suivante :
 
 ```sh
 iptables -A chaîne \
-	-i interface_source (ou -o interface_destination) \
-	-p protocole \
-	-s adresse_source --sport port_source \
-	-d adresse_destination --dport port_destination \
-	-j politique
+ -i interface_source (ou -o interface_destination) \
+ -p protocole \
+ -s adresse_source --sport port_source \
+ -d adresse_destination --dport port_destination \
+ -j politique
 ```
 
 :::tip
@@ -53,6 +53,7 @@ iptables -Z
 
 # 6. Installation du script : documentation sur le propriétaire et les droits
 ```
+
 :::
 
 :::tip
@@ -64,6 +65,7 @@ Pour autoriser les connexions entrantes **(déjà) établies**, on pourra :
 
 - charger le module qui gère la persistance des connexions (avec l'option `-m`)
 - utiliser le matcher d'état : `--ctstate` sur les états `ESTABLISHED` et `RELATED`
+
 :::
 
 ## Livrables attendus
@@ -71,4 +73,3 @@ Pour autoriser les connexions entrantes **(déjà) établies**, on pourra :
 1. Un fichier `firewall.sh` opérationnel.
 2. Une capture d'écran ou un rapport des tests réseau réalisés.
 3. Une explication des choix liés aux droits du fichier `firewall.sh`.
-

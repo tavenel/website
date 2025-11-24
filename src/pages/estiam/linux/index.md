@@ -75,7 +75,7 @@ Module de 4 journées
 - [📡 TP : Configuration réseau](/linux/tp-network) : gérer la configuration réseau d'un système Linux en utilisant les outils historiques `net-tools`, les outils modernes `iproute2`, ou les implémentations `systemd`. L'utilisation de `Network Manager` est aussi abordée.
 - [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
 - [🔒 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
-- [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
+- [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter nftables](/linux/projet-netfilter-nftables) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 - [🌐 TP : Installation d'un service VPN](/linux/tp-vpn)
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
@@ -96,4 +96,3 @@ Module de 4 journées
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur Linux](/linux).
-
