@@ -351,6 +351,11 @@ created: 2024-10-17
 
 - `keycloak`
 
+### VPN
+
+- Wireguard
+  - Dashboard : <https://wgdashboard.dev/>
+
 ### 📊 Data, Logs
 
 - `ELK` : `logstash` (Extract-Transform-Load) --> `elasticsearch` BDD NoSQL --> `kibana` (visualisation, ~= `grafana`)
@@ -660,7 +665,6 @@ created: 2024-10-17
 ### Outils poste de travail Admin système
 
 - `systemd-analyze` : analyse du temps de démarrage des services
-- `ncdu`, `gdu` : espace disque
 - Gestion de services :
   - TUI `systemd`: <https://isd-project.github.io/isd/>
   - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
@@ -687,6 +691,7 @@ created: 2024-10-17
 
 #### Disk
 
+- `ncdu`, `gdu` : espace disque
 - `shake` => defragment Ext4
 - `lsblk -f` => list software (partitions) with topology
 - `blkid` => partitions IDs
