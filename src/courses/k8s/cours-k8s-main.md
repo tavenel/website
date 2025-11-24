@@ -530,7 +530,9 @@ flowchart TD
 
 ---
 
-Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple de fonctionnement du _Control Plane_ suite à la création d'un `Deployment`
+:::link
+**Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple de fonctionnement du _Control Plane_ suite à la création d'un `Deployment`**
+:::
 
 ---
 
