@@ -625,9 +625,14 @@ created: 2024-10-17
 ### Outils poste de travail DevOps
 
 - <https://github.com/ekzhang/bore> : expose service local dans un tunnel TCP
-- `Terraform` => `terragrunt`, `tfswitch`, `tgswitch`, `terraform-docs`, `trivy`, `tflint`
 - `otel-tui` : TUI `OpenTelemetry`, `Zipkin`, `Prometheus` : <https://github.com/ymtdzzz/otel-tui>
 - <https://www.localstack.cloud/> et <https://azure.localstack.cloud/> : déploiements locaux simulant les services cloud AWS et Azure (payant mais version d'essai et version gratuite GitHub students)
+
+#### Terraform
+
+- Linter :`terragrunt`, `trivy`, `tflint`
+- `terraform-docs` : outil pour documenter ses modules Terraform
+- <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
 
 #### Docker
 
@@ -638,18 +643,16 @@ created: 2024-10-17
 
 #### Kubernetes
 
+- <https://github.com/philippemerle/KubeDiagrams> : génération de diagrammes d'infra d'un cluster
+
+##### Outils et extensions kubectl
+
 - `kubectx` : change context
 - `kubens` : change namespace
 - `kubie` : change context / namespace temporairement
 - `kube-ps1` : show k8s cluster/context in shell
 - `kubecolor` : colored kubectl output
 - <https://github.com/keisku/kubectl-explore> : kubectl extension pour chercher dans la doc avec un "fuzzy finder"
-- `k9s` : Terminal UI k8s management
-- `k8s lens` : graphical cluster management
-- `kube-capacity` : monitor ressources
-- <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
-  - <https://k8slens.dev/> : IDE dédié à Kubernetes
-- <https://github.com/philippemerle/KubeDiagrams> : génération de diagrammes d'infra d'un cluster
 - Plugins `kubectl` :
   - upgrade : <https://github.com/kubepug/kubepug>
   - sécurité :
@@ -657,10 +660,23 @@ created: 2024-10-17
     - `kubectl access-matrix` / [Rakkess (Review Access)](https://github.com/corneliusweig/rakkess) by Cornelius Weig
     - `kubectl rbac-lookup` / [RBAC Lookup](https://github.com/FairwindsOps/rbac-lookup) by FairwindsOps
     - `kubectl rbac-tool` / [RBAC Tool](https://github.com/alcideio/rbac-tool) by insightCloudSec
-- Génération de Yaml :
-  - <https://kube-composer.com/>
-  - <https://k8syaml.com/>
+
+##### Dashboard
+
+- `k9s` : Terminal UI k8s management
+- `k8s lens` : graphical cluster management
+- `kube-capacity` : monitor ressources
+- <https://k8slens.dev/> : IDE dédié à Kubernetes avec vision des ressources
+
+##### Génération de Yaml
+
+- <https://kube-composer.com/>
+- <https://k8syaml.com/>
+
+##### Exposition de services pour test
+
 - <https://www.telepresence.io/> : redirige des services k8s distants sur machine locale pour test (staging, …)
+- <https://github.com/hcavarsan/kftray> : dashboard kubectl forward et reverse tunnel (similaire ngrok) pour k8s
 
 ### Outils poste de travail Admin système
 
