@@ -12,9 +12,9 @@ tags:
 ## 🧭 Stratégie de Débug en Kubernetes 🔍🔧
 
 - Approche du **bas vers le haut** :
-	- Commencer **au niveau du pod**
-	- Puis valider chaque niveau **jusqu'à l'utilisateur final**.
-	- Permet de **remonter progressivement** vers la source du problème.
+  - Commencer **au niveau du pod**
+  - Puis valider chaque niveau **jusqu'à l'utilisateur final**.
+  - Permet de **remonter progressivement** vers la source du problème.
 
 ---
 
@@ -150,8 +150,10 @@ kubectl run -it --rm debug --image=busybox -- sh
 ---
 
 :::link
+
 - Voir la cheatsheet pour les commandes de diagnostic.
 - Voir les liens de cours pour des exemples d'images de conteneurs utiles pour le debug.
+
 :::
 
 ---
@@ -162,13 +164,12 @@ kubectl run -it --rm debug --image=busybox -- sh
 
 ### 🐳 Erreur `ImagePullBackOff` 📦🚫
 
-#### 🛑 Diagnostic :
+#### 🛑 Diagnostic
 
 ```sh
 kubectl get pods
 # STATUS: ImagePullBackOff
 ```
-
 
 ```sh
 kubectl describe pod my-pod
@@ -177,7 +178,7 @@ kubectl describe pod my-pod
 
 ---
 
-#### 🔍 Causes fréquentes :
+#### 🔍 Causes fréquentes
 
 - ❌ **Nom d'image invalide**
 - 🔖 **Tag inexistant ou mal orthographié**
@@ -192,6 +193,7 @@ kubectl describe pod my-pod
       --docker-password=DOCKER_PASS \
       --docker-email=EMAIL
     ```
+
   - L'utiliser dans le `spec` :
 
     ```yaml
@@ -209,7 +211,7 @@ kubectl describe pod my-pod
 
 ### 🔁 Erreur `CrashLoopBackOff` 🔄💥
 
-#### 🛑 Diagnostic :
+#### 🛑 Diagnostic
 
 ```sh
 kubectl get pods
@@ -225,7 +227,7 @@ kubectl logs my-pod --previous
 
 ---
 
-#### 🔍 Causes fréquentes :
+#### 🔍 Causes fréquentes
 
 - 💥 L'application dans le conteneur **crashe au démarrage**
 - 🔂 Kubernetes tente de la redémarrer… encore et encore
@@ -234,7 +236,7 @@ kubectl logs my-pod --previous
 
 ---
 
-#### ✅ Résolution :
+#### ✅ Résolution
 
 - Vérifier les variables d'environnement attendues
 - Tester l'image manuellement en local :
@@ -247,7 +249,7 @@ kubectl logs my-pod --previous
 
 ### 💣 Erreur `OOMKilled` (Out Of Memory) 🧠🔥
 
-#### 🛑 Symptôme :
+#### 🛑 Symptôme
 
 ```sh
 kubectl get pod my-pod
@@ -257,12 +259,12 @@ kubectl describe pod my-pod
 
 ---
 
-#### 🔍 Causes :
+#### 🔍 Causes
 
 - 🚫 Le conteneur a dépassé la **limite de mémoire définie**
 - Kubernetes l'a **tué automatiquement**
 
-#### 💡 Exemple de spec mémoire :
+#### 💡 Exemple de spec mémoire
 
 ```yaml
 resources:
@@ -274,7 +276,7 @@ resources:
 
 ---
 
-#### ✅ Solutions :
+#### ✅ Solutions
 
 - 🔍 Augmenter la mémoire disponible si nécessaire
 - 🧪 Optimiser la consommation mémoire de l'application
@@ -282,9 +284,9 @@ resources:
 
 ---
 
-### 🚫 Erreur `RunContainerError` 🐚🐳 
+### 🚫 Erreur `RunContainerError` 🐚🐳
 
-#### 🛑 Diagnostic :
+#### 🛑 Diagnostic
 
 ```sh
 kubectl get pods
@@ -299,11 +301,11 @@ kubectl describe pod my-pod
 - Le **conteneur** n'a pas pu être créé
   - Problème de configuration du conteneur
   - Inutile de regarde les logs…
-	- …L'application n'a pas encore démarré !
+    - …L'application n'a pas encore démarré !
 
 ---
 
-#### 🔍 Causes fréquentes :
+#### 🔍 Causes fréquentes
 
 - ❗ **Erreur dans la commande de démarrage**
   - Commande ou binaire inexistant dans l'image :
@@ -324,18 +326,20 @@ kubectl describe pod my-pod
 
 ---
 
-#### ✅ Résolution :
+#### ✅ Résolution
 
 - 🔍 Tester localement avec Docker :
 
   ```sh
   docker run -it myimage /bin/sh
   ```
+
 - 🔧 Vérifier le binaire ou script dans l'image :
 
   ```sh
   docker run myimage ls /start.sh
   ```
+
 - ✅ Rendre les scripts exécutables (`chmod +x`)
 - 🧪 Privilégier des images de debug (`alpine`, `busybox`, etc.) pour tester
 
@@ -343,7 +347,7 @@ kubectl describe pod my-pod
 
 ### ⏳ Pod bloqué en état `Pending` 💤📦
 
-#### 🛑 Diagnostic :
+#### 🛑 Diagnostic
 
 ```sh
 kubectl get pods
@@ -362,7 +366,7 @@ kubectl describe pod my-pod
 
 ---
 
-#### 🔍 Causes fréquentes :
+#### 🔍 Causes fréquentes
 
 - 🧠 **Pas assez de ressources disponibles** (CPU / RAM) sur les noeuds du cluster
 - 🚫 **Tolerations / nodeSelector / affinity** trop restrictifs (aucun noeud éligible)
@@ -373,7 +377,7 @@ kubectl describe pod my-pod
 
 ---
 
-#### ✅ Solutions :
+#### ✅ Solutions
 
 - 📉 **Réduire les ressources demandées** :
 
@@ -407,7 +411,7 @@ kubectl describe pod my-pod
 
 ### 🟢 Pod `Running` mais `NotReady` 🏃❌
 
-#### 🛑 Diagnostic :
+#### 🛑 Diagnostic
 
 ```sh
 kubectl get pods
@@ -431,7 +435,7 @@ kubectl get endpoints my-service
 
 ---
 
-#### 🔍 Causes fréquentes :
+#### 🔍 Causes fréquentes
 
 - 🧪 **Probes d'état (`readinessProbe`) qui échouent**
 - ⏳ **Service dépendant non encore accessible** (ex: base de données)
@@ -441,7 +445,7 @@ kubectl get endpoints my-service
 
 ---
 
-#### ✅ Bonnes pratiques :
+#### ✅ Bonnes pratiques
 
 - ✔️ Testez les probes en local :
 
@@ -558,8 +562,8 @@ kubectl get endpoints my-service
 
 ### 🎯 Pas de routage réseau
 
-- Service mal configuré 
--  🌐 Vérifier les ports exposés : `port` / `targetPort` / `containerPort` 🎯
+- Service mal configuré
+- 🌐 Vérifier les ports exposés : `port` / `targetPort` / `containerPort` 🎯
 
 ```yaml
 apiVersion: v1
@@ -587,7 +591,7 @@ kubectl describe pod my-pod
 
 - ⚙️ Vérifier les correspondances `label` / `selector` 🔗
 
-#### 🔍 Exemple pour un Service :
+#### 🔍 Exemple pour un Service
 
   ```yaml
   selector:
@@ -600,7 +604,7 @@ kubectl describe pod my-pod
   kubectl get pods --show-labels
   ```
 
-#### 🧪 Exemple pour un Deployment :
+#### 🧪 Exemple pour un Deployment
 
 ```yaml
 selector:
@@ -616,7 +620,7 @@ template:
 
 ### 🛣️ Déboguer un Ingress Controller 🌐🧪
 
-#### 🛑 Symptôme :
+#### 🛑 Symptôme
 
 - L'application est inaccessible via l'URL publique (erreur 404, 502, connexion refusée).
 - Le nom de domaine pointe bien vers l'IP du cluster, mais la route ne fonctionne pas.
@@ -628,10 +632,10 @@ template:
 ✅ **1. Vérifier que l'Ingress Controller est bien installé :**
 
 ```sh
-kubectl get pods -n ingress-nginx
+kubectl get pods -n traefik
 ```
 
-- Exemple de pod : `ingress-nginx-controller`
+- Exemple de pod : `traefik-ingress-controller-7d6f4c5d6-abcde`
 - Vérifier qu'il est **Running** et **Ready**
 
 ✅ **2. Vérifier l'Ingress lui-même :**
@@ -659,8 +663,9 @@ rules:
 ```
 
 ✅ **3. Vérifier le Service backend :**
-  - Le service mentionné dans l'Ingress doit exister et être exposé sur le bon port.
-  - Vérifier la cohérence de : `service.name` et `service.port.number` :
+
+- Le service mentionné dans l'Ingress doit exister et être exposé sur le bon port.
+- Vérifier la cohérence de : `service.name` et `service.port.number` :
 
 ```sh
 kubectl get svc
@@ -700,8 +705,7 @@ kubectl exec -it some-pod -- curl http://my-service:port
   - Erreurs de routing ou d'accès backend (`upstream unavailable`, `host not found`, etc.)
 
 ```sh
-kubectl logs -n ingress-nginx deploy/ingress-nginx-controller
+kubectl logs -n traefik deploy/traefik-ingress-controller
 ```
 
 ---
-
