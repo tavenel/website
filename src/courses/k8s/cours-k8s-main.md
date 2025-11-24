@@ -96,18 +96,18 @@ tags:
 
 `Kubernetes` (ou `k8s`) est un orchestrateur de déploiement et de gestion de conteneurs applicatifs dans un cluster de machines virtuelles. 🚀
 
-* Indépendant de Docker® mais même runtime `containerd` => peut tourner les mêmes images 🐳
-* Configure et gère un cluster applicatif complexe : nœuds du cluster, réseau, stockage, ... 🌐
-* Possibilité de gérer tout le cluster via API `kubectl` 🔧
-* Mais configuration recommandée via `Yaml` / `Json` pour audit 📝
+- Indépendant de Docker® mais même runtime `containerd` => peut tourner les mêmes images 🐳
+- Configure et gère un cluster applicatif complexe : nœuds du cluster, réseau, stockage, ... 🌐
+- Possibilité de gérer tout le cluster via API `kubectl` 🔧
+- Mais configuration recommandée via `Yaml` / `Json` pour audit 📝
 
 ---
 
 ## 💡 Recommandations
 
-* `Docker®` seul / `docker compose` pour CI/CD et outils internes 🛠️
-* `k8s®` pour gestion applicative de l'environnement de production 🏗️
-* `k8s®` duplique des fonctionnalités de Docker® => préférer 100% Docker® ou k8s® 🔄
+- `Docker®` seul / `docker compose` pour CI/CD et outils internes 🛠️
+- `k8s®` pour gestion applicative de l'environnement de production 🏗️
+- `k8s®` duplique des fonctionnalités de Docker® => préférer 100% Docker® ou k8s® 🔄
 
 ---
 
@@ -206,8 +206,10 @@ Pour plus d'information sur Flannel, voir : <https://msazure.club/flannel-networ
 
 :::link
 Voir aussi :
+
 - Calico en VXLAN ou IPIP : <https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip>
 - Introduction à eBPF et utilisation en Calico : <https://docs.tigera.io/calico/latest/about/kubernetes-training/about-ebpf>
+
 :::
 
 ---
@@ -231,8 +233,10 @@ Voir aussi :
 - Inconvénients : Complexe (eBPF et concepts réseau avancés), eBPF doit être activé dans le noyau Linux ⚠️
 
 :::tip
+
 - Cilium fournit un outil de monitoring (_Hubble_) avec une CLI et UI permettant de visualiser les communications au sein du cluster.
 - Cilium fournit un "_Cluster Mesh_" (⚠️ à ne pas confondre avec un _Service Mesh_ k8s) permettant une communication load balancé entre _Service_ de différents clusters.
+
 :::
 
 ---
@@ -428,7 +432,7 @@ flowchart TD
   class Logger,Nginx blue
 ```
 
-<div class="caption">Architecture d'un Pod</div> 
+<div class="caption">Architecture d'un Pod</div>
 
 ---
 
@@ -582,7 +586,7 @@ flowchart TD
     class Pod1,Pod2 green
 ```
 
-<div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div> 
+<div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div>
 
 ---
 
@@ -895,7 +899,7 @@ flowchart TD
 - Règles de routage avancées 📜
 - En principe, crée un service `LoadBalancer` (point d'entrée de l'Ingress) ⚖️
 - Requiert une implémentation d'`Ingress Controller` à installer : 🛠️
-  - `Nginx Ingress Controller` : Standard, stable, supporte HTTPS et annotations avancées 🌐
+  - ~`Nginx Ingress Controller` : Standard, stable, supporte HTTPS et annotations avancées 🌐 (_Déprécié_) ~
   - `HAProxy Ingress` : Performant ⚡
   - `Traefik` : Léger, dynamique (cloud, microservices) ☁️
   - `Consul Ingress / Istio Gateway` : Intégration avec les _service mesh_ Consul / Istio 🌐
@@ -1040,8 +1044,10 @@ v1.33.0 introduit le _Service IP Expansion_ : l'API `ServiceCIDR` permet d'ajout
 ---
 
 :::tip
+
 - Il est possible d'injecter des volumes issus d'images OCI : [Injecter des volumes issus d'images OCI](https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/) 📦
 - Exemple : Image Docker custom `FROM scratch` + un binaire à injecter dans le conteneur principal 🐳
+
 :::
 
 ---
@@ -1090,7 +1096,7 @@ flowchart TD
 
 ---
 
-### 📌 En résumé :
+### 📌 En résumé
 
 - `Volume` => Vision _container_ : Un point de montage pour configs, persistence, filesystem temporaire, … 📂
 - `PersistentVolume` (`PV`) => Vision _storage_ du cluster Kubernetes, un espace de stockage 💾
@@ -1099,7 +1105,6 @@ flowchart TD
 ---
 
 ### 💾 Quelques solutions de stockage
-
 
 | Solution | Type | Mode d'accès | Cas d'usage |
 |---------|------|--------------|-------------|
@@ -1230,4 +1235,3 @@ spec: # Les spécifications de la ressource. Différent pour chaque type de ress
 ```
 
 ---
-

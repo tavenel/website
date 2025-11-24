@@ -136,7 +136,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 - 🔄 Autres stratégies manuelles ou en ajoutant d'autres outils :
   - **Blue/Green** : coexistance des 2 versions (dont la nouvelle pour test)
-  - **Canary deployment** : coexistance avec migration progressive des requêtes vers v2 : avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
+  - **Canary deployment** : coexistance avec migration progressive des requêtes vers v2 : avec Ingress, par exemple [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
 - 🛠️ Utiliser un outil comme <https://github.com/weaveworks/flagger> pour des déploiements plus poussés
 
 ---

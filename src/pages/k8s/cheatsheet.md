@@ -1258,13 +1258,7 @@ $ ping my-external-name-service
 ### Ingress
 
 ```sh
-# Prérequis : installation de l'Ingress Controller Nginx
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm install ingress-nginx ingress-nginx/ingress-nginx
-# Ou directement :
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.1/deploy/static/provider/cloud/deploy.yaml
-
-# Pour Traefik :
+# Prérequis : installation de l'Ingress Controller Traefik
 helm install traefik traefik --namespace=traefik --create-namespace --repo https://traefik.github.io/charts
 ```
 
@@ -1272,14 +1266,17 @@ helm install traefik traefik --namespace=traefik --create-namespace --repo https
 Pour un mini exemple d'applications Go utilisant un Ingress, voir le dépôt : <https://git.sr.ht/~toma/iac/tree/main/item/k8s/examples/ingress/README.md>
 :::
 
+:::tip
+L'ingress Nginx (autrefois populaire) est déprécié mais il est possible d'utiliser la même configuration avec Traefik : <https://doc.traefik.io/traefik/reference/routing-configuration/kubernetes/ingress-nginx/>
+:::
+
 :::link
 Voir aussi :
 
 - <https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md>
 - <https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml>
-- <https://kubernetes.github.io/ingress-nginx/deploy/#quick-start>
 - [Ingress entre différentes namespace](https://tech.aabouzaid.com/2022/08/2-ways-to-route-ingress-traffic-across-namespaces.html)
-- Exemples de déploiements Canary avec Ingress [Nginx](https://kubernetes.github.io/ingress-nginx/examples/canary/) ou [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
+- Exemples de déploiements Canary avec Ingress [Traefik](https://2021-05-enix.container.training/2.yml.html#658)
 
 :::
 
@@ -1293,48 +1290,51 @@ Pour accéder à un `Ingress` d'un cluster local :
 
 :::
 
-```yaml {"nginx specific":6-17} {24}
+```yaml {"traefik specific":6-25}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: api-ingress
- annotations:
+  name: my-app-ingress
+  annotations:
+    # Enable Traefik as the Ingress controller
+    kubernetes.io/ingress.class: "traefik"
 
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    # Redirect HTTP to HTTPS
+    traefik.ingress.kubernetes.io/redirect-entry-point: "https"
 
-    # Load Balancing strategy
-    # - "round_robin" (default)
-    # - "least_connections" (équilibre charge)
-    # - "ip_hash" (stick IP to Pod)
-    nginx.ingress.kubernetes.io/load-balance: "round_robin"
+    # Enable TLS (HTTPS)
+    traefik.ingress.kubernetes.io/router.tls: "true"
 
-    # Rate limit
-    nginx.ingress.kubernetes.io/limit-rpm: "100"
-    nginx.ingress.kubernetes.io/limit-burst-multiplier: "5"
+    # Middleware: Add headers or rate limiting
+    traefik.ingress.kubernetes.io/router.middlewares: "default-my-headers@kubernetescrd"
 
-    # Si SSL, Issuer ou ClusterIssuer. Auto-configure le secret et le certificat
+    # Rewrite the path (e.g., /app -> /)
+    traefik.ingress.kubernetes.io/router.pathrewrite: "/"
+
+    # Enable basic auth (if using middleware)
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+
+    # Reference the ClusterIssuer
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    # cert-manager.io/issuer: "letsencrypt-prod"
-
 spec:
- ingressClassName: nginx
- tls: # seulement si TLS sur l'ingress
-    - secretName: certif-test-cluster
-      hosts:
-        - test.cluster
- rules:
-  # redirige http://api.example.com vers le service api-service
-  - host: api.example.com
+  rules:
+  - host: myapp.example.com
     http:
       paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: api-service
-              port: 
-                number: 8080
----
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-service
+            port:
+              number: 80
+  tls:
+  - secretName: my-tls-secret
+    hosts:
+    - myapp.example.com
+```
+
+```yaml
 # Si TLS, secret associé (non nécessaire car auto-généré si cluster-issuer dans les annotation de l'Ingress)
 apiVersion: v1
 kind: Secret

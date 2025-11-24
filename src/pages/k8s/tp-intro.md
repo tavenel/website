@@ -1255,7 +1255,7 @@ kubectl get namespace
 
 # NAME                   STATUS   AGE
 # default                Active   13h
-# ingress-nginx          Active   86m
+# ingress-traefik        Active   86m
 # kube-node-lease        Active   13h
 # kube-public            Active   13h
 # kube-system            Active   13h

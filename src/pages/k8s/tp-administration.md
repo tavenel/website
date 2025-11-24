@@ -12,6 +12,7 @@ Voir aussi :
 
 - <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/administration/>.
 - <https://kubernetes.io/docs/tasks/debug/debug-cluster/> et les sous-sections
+
 :::
 
 ## Backup de clusters
@@ -92,9 +93,11 @@ Il est également recommandé de redémarrer les composants Kubernetes (`kube-sc
 :::
 
 :::link
+
 - Voir aussi la [documentation etcd snapshot and restore](https://coreos.com/etcd/docs/latest/op-guide/recovery.html#snapshotting-the-keyspace)
 - Un [environnement de test pour etcd](https://kodekloud.com/playgrounds/playground-ha-etcd-cluster)
 - Source et crédits : [Backup Cluster - Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-backup.md)
+
 :::
 
 #### Procédure kubeadm
@@ -121,8 +124,10 @@ Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restorin
 ### Exercice
 
 :::exo
+
 1. Assurer la sauvegarde et la résilience : Mettre en place une stratégie de sauvegarde régulière de la base etcd et prévoir des mécanismes de restauration en cas de défaillance.
 2. Lancer un test de restauration de `etcd` à partir d'une sauvegarde et vérifier la cohérence du cluster.
+
 :::
 
 ## Upgrade
@@ -152,8 +157,10 @@ L'upgrade d'un cluster suit [la procédure officielle de la documentation](https
 :::
 
 :::warn
+
 - Lors de l'upgrade d'un `Kubelet`, il est recommandé de le _boucler_ (_cordon_) par la commande `kubectl drain` pour retirer tous les Pods exécutés sur celui-ci au préalable.
 - Le déplacement de pods _stateful_ (BDD, …) peut entraîner des interruptions de service ! Utiliser la réplication de BDD (switch de l'instance _primaire_ sur le _Node_ non impacté) - certains `Operator` (ex [CNPG](https://cloudnative-pg.io/)) effectuent ce basculement automatiquement lorsqu'ils détectent qu'un _Node_ devient _cordon_.
+
 :::
 
 Exemple simplifié de procédure d'upgrade avec `kubeadm` (pour plus d'information, suivre [la documentation officielle](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)). Voir aussi [la formation de Jérôme Petazzoni](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/cluster-upgrade.md)
@@ -177,8 +184,10 @@ kubectl uncordon "<node-name>" # fin du drainage
 ### Exercice
 
 :::exo
+
 1. Décrire une procédure de mise à jour pour votre cluster.
 2. Tester la procédure en mettant à jour votre cluster.
+
 :::
 
 ## Supervision
@@ -240,10 +249,12 @@ helm install --generate-name deliveryhero/node-problem-detector
 ### Exercice
 
 :::exo
+
 1. Mettre en place la supervision du cluster en installant une stack _Prometheus_ / _Grafana_.
 2. Créer un (ou plusieurs) tableau(x) de bord dans Grafana de supervision de votre cluster et de votre application.
 3. Déployer un _node-problem-detector_ sur chaque _Node_ du cluster
 4. (Bonus) mettre en place des systèmes de correction en cas de problème sur un _Node_.
+
 :::
 
 ## Sécurité
@@ -313,15 +324,17 @@ Par défaut, les secrets Kubernetes ne sont pas chiffrés mais seulement encodé
 Des outils externes permettent d'ajouter du chiffrement, on pourra par exemple utiliser _Kubeseal_ pour que seul le cluster soit capable de déchiffrer un secret.
 
 :::link
+
 - Voir la [cheatsheet Kubernetes sur Kubeseal](/k8s/cheatsheet#kubeseal)
 - Sur K3s, on peut aussi utiliser la capacité de chiffrage des secrets intégrée à k3s : <https://docs.k3s.io/security/secrets-encryption>
+
 :::
 
 ### Ingress SSL
 
 Pour pouvoir accéder à l'application en HTTPS, on utilisera un Ingress SSL. Pour cela, il faut :
 
-- Un contrôleur Ingress installé (ex : `NGINX Ingress Controller`)
+- Un contrôleur Ingress installé (ex : `Traefik`)
 - Option 1 : générer un certificat manuellement => il faudra gérer manuellement son cycle de vie !
 - Option 2 : utiliser `cert-manager` pour automatiser la génération du certificat :
   - par _Let's Encrypt_ si le nom de domaine pointe vers l'IP publique du contrôleur Ingress
@@ -346,27 +359,32 @@ kubectl create secret tls example-tls \
   --key=tls.key \
   -n default
 ```
+
 :::
 
 :::link
 Voir aussi :
 
 - La [cheatsheet Kubernetes](/k8s/cheatsheet#tls--clusterissuer-lets-encrypt)
-- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/user-guide/tls/)
+- [Traefik Ingress Controller : TLS](https://doc.traefik.io/traefik/reference/routing-configuration/kubernetes/ingress/#tls)
 - [Documentation Cert-Manager](https://cert-manager.io/docs/)
+
 :::
 
 ### Exercice
 
 :::exo
+
 1. Sécuriser les control-plane en mettant en place une communication sécurisée entre composants.
 2. Mettre en place et tester une procédure de renouvellement des certificats.
 3. Mettre en place et tester des rôles de sécurité (RBAC) pour :
-  - sécuriser votre application ;
-  - créer un compte de support pouvant lister les ressources principales du cluster sans pouvoir y apporter de modification.
+
+- sécuriser votre application ;
+- créer un compte de support pouvant lister les ressources principales du cluster sans pouvoir y apporter de modification.
+
 4. Mettre en place des NetworkPolicies pour votre application.
 5. Mettre en place un audit des droits sur le cluster.
 6. Chiffrer les secrets avec _Kubeseal_.
 7. (Bonus) Configurer un Ingress en HTTPS pour accéder à votre application.
-:::
 
+:::
