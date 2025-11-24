@@ -47,8 +47,8 @@ _🔄 À l'inverse, il est possible d'exécuter du code directement dans les mac
 `Makefile`, `Apache Maven`, `Gradle`, `npm`, `Webpack®`
 
 - 🏗️ Compilent le code source pour créer les binaires
-  + 🔄 Peuvent aussi transpiler le code source vers un autre format : `TypeScript`, ...
-  + ⚙️ Peuvent optimiser le code pour la production : obfuscation, minimisation, ...
+  - 🔄 Peuvent aussi transpiler le code source vers un autre format : `TypeScript`, ...
+  - ⚙️ Peuvent optimiser le code pour la production : obfuscation, minimisation, ...
 - 📦 Gèrent éventuellement les dépendances.
 
 ---
@@ -87,7 +87,7 @@ Versionner son code source permet :
 
 ---
 
-`Git` (très majoritaire), `SVN`, `Mercurial` 
+`Git` (très majoritaire), `SVN`, `Mercurial`
 
 Voir le [📘 cours sur le gestionnaire de versions Git](/git)
 
@@ -143,14 +143,14 @@ Les 2 extraits de code suivants sont équivalents, mais si les développeurs n'u
 
 ```java
 int addition(int i) {
-	return i + COEFF_ADDITION;
+ return i + COEFF_ADDITION;
 }
 ```
 
 ```java
 int addition( int i )
 {
-	return i+coeffAddition;
+ return i+coeffAddition;
 }
 ```
 
@@ -168,7 +168,7 @@ _On pourra également utiliser les fonctions de formatage de code de l'IDE pour 
 
 `Linter`, `Spotbugs`, `PMD`
 
-- 🔍 L'analyse **statique** de code (parfois appelée *linter*) permet de vérifier la sémantique, c'est-à-dire la cohérence du modèle décrit, dans le code source et/ou les binaires.
+- 🔍 L'analyse **statique** de code (parfois appelée _linter_) permet de vérifier la sémantique, c'est-à-dire la cohérence du modèle décrit, dans le code source et/ou les binaires.
 - ⚙️ L'analyse **dynamique** (sur le code exécuté) et l'analyse statique (sur le code source ou le binaire avant exécution) n'ont donc rien à voir, même si les vérifications peuvent parfois être redondantes (mais nécessaires).
 
 ---
@@ -383,7 +383,7 @@ Ces outils sont le noyau dur de l'intégration continue, et ceux que l'on essaie
 ### 🔒 Sécurité de la chaîne CI/CD
 
 - Ne **jamais stocker de secrets en clair**
-  * Utiliser des secrets managers (_Vault_, GitHub/GitLab secrets, etc.)
+  - Utiliser des secrets managers (_Vault_, GitHub/GitLab secrets, etc.)
 - Restreindre les droits sur les runners et pipelines
 - Exécuter dans des environnements isolés
 - Utiliser des **signatures d'artefacts** (ex : _Sigstore_)
@@ -490,4 +490,3 @@ before_script:
 Pour plus d'information, voir : <https://blog.stephane-robert.info/docs/securiser/supply-chain/slsa/>
 
 ---
-
