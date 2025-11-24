@@ -16,16 +16,16 @@ layout: '@layouts/BaseLayout.astro'
 ### Contenu du cours
 
 - Les droits
-  - Rappels sur les droits classiques 
+  - Rappels sur les droits classiques
   - Les droits spéciaux : suid, sgid, sticky bit
   - Les ACL
   - Gestion du masque
 - Expressions Régulières
-  - Filtres 
-  - Les Glob 
+  - Filtres
+  - Les Glob
   - Les regex
 - Bash avancé
-  - Vim 
+  - Vim
   - Script bash
     - exécution, jobs, shebang, source, variables, arguments
     - tests et conditions
@@ -63,7 +63,7 @@ layout: '@layouts/BaseLayout.astro'
   - <https://thevaluable.dev/vim-expert/>
 - [📜 TP Bash - Gestion des fichiers et des utilisateurs](/linux/tp-script) : apprendre à manipuler des fichiers et des répertoires avec Bash, utiliser des boucles et des conditions, créer des scripts interactifs, gérer les utilisateurs et permissions basiques.
 - [🔐 TP : Notions de sécurité : limitations des comptes utilisateurs, élévation de privilèges, audit de sessions, fichiers et ports ouverts, …](/linux/tp-security)
-- [🏆 Projet : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
+- [🏆 Projet : Mise en place de règles de filtrage sous Debian avec Netfilter nftables](/linux/projet-netfilter-nftables) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 
 ## 🚀 Pour aller plus loin
 

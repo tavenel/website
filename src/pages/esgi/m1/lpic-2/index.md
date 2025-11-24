@@ -115,7 +115,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
   - 211.3 Gestion des accès aux boîtes aux lettres (valeur: 2)
 - Sujet 212 : **Sécurité du système**
   - 212.1 Configuration d'un routeur (valeur : 3)
-    - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter](/linux/projet-netfilter) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
+    - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter iptables](/linux/projet-netfilter-iptables) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
   - 212.2 Gestion des serveurs FTP (valeur : 2)
   - 212.3 Shell sécurisé (SSH) (valeur : 4)
     - [🔐 TP : Sécurité des échanges avec SSH et GPG](/linux/tp-ssh-gpg)
