@@ -37,6 +37,12 @@ packerIcon: '../../icons/hashicorp-packer.svg'
   - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/ansible-modules/>
   - <https://homelab.casaursus.net/terraforming-proxmox/>
 
+### 🗺️ Landscape Devops
+
+- <https://platformengineering.org/platform-tooling>
+- <https://xavki.blog/devops-sources/>
+- <https://landscape.cncf.io/>
+
 ## 🚀 Autres ressources
 
 - Voir la page sur [⚒️ les outils](/tools)
@@ -45,5 +51,4 @@ packerIcon: '../../icons/hashicorp-packer.svg'
 - Voir la page sur [󱃾  Kubernetes](/k8s)
 - Voir la page sur [🔄 l'Intégration Continue](/ci)
 - Voir la page sur [🧪 les tests](/tests)
-- Voir la page sur [ 🌐 HTTP, Web et les Clouds](/web)
-
+- Voir la page sur [🌐 HTTP, Web et les Clouds](/web)
