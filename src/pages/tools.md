@@ -567,6 +567,7 @@ created: 2024-10-17
 ### 🔐 Administration sécurisée
 
 - `ssh`, `assh` (sur-couche SSH)
+  - blocage connexions : `fail2ban`, `SSHGuard` ([tuto](https://loud-technology.com/insight/sshguard-protection-ssh-alternative-fail2ban/))
 - `x-pipe`
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) :
