@@ -33,7 +33,6 @@ Pour plus d'information, voir le site officiel : <https://teamtopologies.com>
 - En **support continu des autres équipes**
 - **Transverses**
 - Souvent une posture de coach : font monter en compétence les autres équipes
-- Les CoP pourraient être des enabling team [TODO]
 
 ---
 
@@ -68,7 +67,7 @@ Pour plus d'information, voir le site officiel : <https://teamtopologies.com>
 
 ---
 
-### X-a-a-service
+### X-as-a-service
 
 - Analogie avec l'acronyme "Software-As-A-Service"
 - Permet une relation d'**autonomie** des équipes
@@ -82,4 +81,3 @@ Pour plus d'information, voir le site officiel : <https://teamtopologies.com>
 - ex : coachs, mentors, _Enabling Teams_
 
 ---
-
