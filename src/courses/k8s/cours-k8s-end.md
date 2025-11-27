@@ -264,6 +264,13 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 ---
 
+### Finops
+
+- <https://medium.com/@razkevich8/cloud-cost-optimization-a-senior-engineers-guide-d49ed4606de1>
+- <https://medium.com/life-at-telkomsel/understanding-the-true-cost-of-a-kubernetes-workload-3a81e2b9529b>
+
+---
+
 ### Détails techniques
 
 - [Kubernetes the Hard Way (Kelsey Hightower) : Bootstrap Kubernetes the hard way. No scripts.](https://github.com/kelseyhightower/kubernetes-the-hard-way)
