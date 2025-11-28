@@ -16,13 +16,11 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Utilitaires
 
-
 | Outil | Type | Utilisation | Avantages 🌟 |
 |-------|------|-------------|-----------|
 | `tar` | Archivage | Créer des archives de fichiers | Simple, combinable avec compression |
 | `rsync` | Synchronisation | Synchroniser des fichiers localement ou à distance | Efficace pour les sauvegardes incrémentielles |
 | `dump/restore` | Sauvegarde de système de fichiers | Sauvegarder et restaurer des systèmes de fichiers | Sauvegarde complète et incrémentielle |
-
 
 ---
 
@@ -58,13 +56,11 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ## Produits dédiés à la sauvegarde
 
-
 | Outil | Type | Interface | Fonctionalités | Cas d'utilisation |
 |-------|------|-----------|----------------|-------------------|
 | Partimage | Sauvegarde de partitions | Ligne de commande | Nombreux systèmes de fichiers supportés | Sauvegarde de systèmes |
 | MondoRescue | Sauvegarde complète | Graphique et CLI | Sauvegardes incrémentielles | Récupération après sinistre |
 | BackupPC | Sauvegarde centralisée | Web | Compression et déduplication des données | Environnements multi-machines |
-
 
 ---
 
@@ -72,12 +68,17 @@ layout: '@layouts/CoursePartLayout.astro'
 
 **SLA** (Service Level Agreement) : engagement contractuel de disponibilité (en %) de service sur un an.
 
-| Taux de disponibilité | Durée d'indisponibilité sur un an |
-|-----------------------|-----------------------------------|
-| 99% | 3 jours 15 heures |
-| 99,9% | 8 heures 48 minutes |
-| 99,99% | 53 minutes |
-| 99,999% | 5 minutes |
+| Taux de disponibilité | 99 %                      | 99,9 %                         | 99,99 %                             | 99,999 %                                     |
+| ---------------------------- | ------------------------- | ------------------------------ | ----------------------------------- | -------------------------------------------- |
+| **Durée d'indisponibilité sur 1 an**       | 3 jours 15 heures     | 8 heures 48 minutes          | 53 minutes              | 5 minutes |
+| **Redondance compute**       | N                         | N+1                            | N+2                                 | Active/Active (minimum 3 sites)              |
+| **Redondance stockage**      | RAID local                | Stockage distribué single zone | Multi-AZ storage                    | Multi-région ou cross-provider               |
+| **Base de données**          | Single instance + backups | Cluster 2 nœuds + failover     | Cluster multi-AZ + replication sync | Multi-région avec commit quasi-sync + quorum |
+| **Load balancer**            | Optionnel                 | Obligatoire                    | HA cross-zone                       | HA multi-région + anycast                    |
+| **Single Points of Failure** | Plusieurs                 | Élimination de la majorité     | Aucun toléré                        | Aucun toléré + tests proactifs               |
+| **Backups**                  | Quotidiens                | Horaires                       | Continus (PITR)                     | Multi-régions + tests automatisés            |
+| **Déploiement**              | Downtime acceptable       | Rolling updates obligatoires   | Blue/Green ou Canary                | Zero-downtime + auto-rollback                |
+| **Faillite d'un nœud**       | Service indisponible      | Service ralenti                | Impact minimal                      | Aucun impact perceptible                     |
 
 Pour augmenter la disponibilité d'un service, on utilise généralement **la redondance de tous les éléments** afin d'éviter les **SPOF** (_Single Point of Failure_) : si un élément est défaillant, un autre prend le relai pour assurer une continuité de service (_failover_).
 
@@ -86,4 +87,3 @@ Pour augmenter la disponibilité d'un service, on utilise généralement **la re
 <div class="caption">Chaque élément unique de l'architecture est un SPOF (Source: https://openclassrooms.com/fr/courses/2356316-montez-un-serveur-linux-et-ses-services/5173591-construisez-une-solution-adaptee-a-vos-besoins)</div>
 
 ---
-
