@@ -79,11 +79,24 @@ layout: '@layouts/CoursePartLayout.astro'
 | **Backups**                  | Quotidiens                | Horaires                       | Continus (PITR)                     | Multi-régions + tests automatisés            |
 | **Déploiement**              | Downtime acceptable       | Rolling updates obligatoires   | Blue/Green ou Canary                | Zero-downtime + auto-rollback                |
 | **Faillite d'un nœud**       | Service indisponible      | Service ralenti                | Impact minimal                      | Aucun impact perceptible                     |
+| **Implications RH** | Part-time On-call (dev & ops) | On-call structuré, personnel dédié à fiabilité | Équipe SRE temps plein | Équipes importantes d'ingénierie de fiabilité, On-call hautement spécialisé 24/7, plans d'escalade internationaux. Recrutement de compétences avancées (réseaux, stockage distribué, DB répliquées) |
 
 Pour augmenter la disponibilité d'un service, on utilise généralement **la redondance de tous les éléments** afin d'éviter les **SPOF** (_Single Point of Failure_) : si un élément est défaillant, un autre prend le relai pour assurer une continuité de service (_failover_).
 
 ![Tout élément non redondé est un SPOF](https://user.oc-static.com/upload/2018/06/08/15284524666409_SPOF.png)
 
 <div class="caption">Chaque élément unique de l'architecture est un SPOF (Source: https://openclassrooms.com/fr/courses/2356316-montez-un-serveur-linux-et-ses-services/5173591-construisez-une-solution-adaptee-a-vos-besoins)</div>
+
+:::warn
+Plus on pousse la disponibilité, plus l'architecture devient complexe et plus la surface d'erreur (et le coût de conception) augmente. Paradoxalement la redondance peut donc créer de nouveaux modes de défaillance si elle est mal gérée.
+:::
+
+:::link
+Voir aussi :
+
+- <https://www.nobl9.com/resources/do-you-really-need-five-nines>
+- <https://thenewstack.io/the-hidden-costs-of-chasing-five-nines-in-availability/>
+
+:::
 
 ---
