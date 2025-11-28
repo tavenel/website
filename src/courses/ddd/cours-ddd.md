@@ -27,7 +27,7 @@ graph TD
   Controller --> Model
 ```
 
-_Quel est le **but** de cette application ?_ 
+_Quel est le **but** de cette application ?_
 
 ---
 
@@ -212,22 +212,21 @@ _Eric Evans_, 2003
 
   <circle cx="250" cy="250" r="200" stroke="#4DA6FF" stroke-width="3" fill="none" />
   <text x="150" y="190" text-anchor="middle" stroke="#4DA6FF" alignment-baseline="middle" font-size="18">
-		<tspan>Contexte</tspan>
-		<tspan dx="-90" dy="20">métier</tspan>
-	</text>
+  <tspan>Contexte</tspan>
+  <tspan dx="-90" dy="20">métier</tspan>
+ </text>
 
   <circle cx="450" cy="250" r="200" stroke="#FF7B54" stroke-width="3" fill="none" />
   <text x="550" y="190" text-anchor="middle" stroke="#FF7B54" alignment-baseline="middle" font-size="18">
-		<tspan>Conception</tspan>
-		<tspan dx="-90" dy="20">technique</tspan>
-	</text>
+  <tspan>Conception</tspan>
+  <tspan dx="-90" dy="20">technique</tspan>
+ </text>
 
   <text x="270" y="250" fill="purple" font-size="22">
-		<tspan>Langage</tspan>
-		<tspan dx="-120" dy="20">Ubiquitaire</tspan>
-	</text>
+  <tspan>Langage</tspan>
+  <tspan dx="-120" dy="20">Ubiquitaire</tspan>
+ </text>
 </svg>
-
 
 <div class="caption">Le langage ubiquitaire à la rencontre du contexte métier et de la conception technique</div>
 
@@ -249,9 +248,6 @@ _Eric Evans_, 2003
 - Domaine très **générique** ou peu de complexité métier
 - Le DDD **prend du temps** (time to market)
 
-
----
-layout: center
 ---
 
 # Stratégie vs tactique
@@ -322,9 +318,9 @@ title: Domaine, Bounded Context & Langage Ubiquitaire.
 ---
 graph TD
     subgraph Domaine
-			subgraph Bounded_Context [Bounded Context]
+   subgraph Bounded_Context [Bounded Context]
         Vente["Contexte Vente (langage ubiquitaire)"]
-			end
+   end
     end
 ```
 
@@ -541,7 +537,7 @@ Plusieurs stratégies permettent d'y parvenir :
    - Identifier les parties principales du modèle appartenant au Core (sans les extraire pour l'instant).
 4. **Mécanismes cohérents**  
    - Repérer les mécanismes du modèle qui fonctionnent généralement ensemble.
-5. **Core séparé** 
+5. **Core séparé**
    - Détacher les fonctionnalités de support du Core.
 6. **Core abstrait**  
    - Viser des concepts abstraits dans le Core réutilisables dans les sous-domaines spécialisés.
@@ -609,12 +605,12 @@ graph TD
 title: Un découpage en sous-domaines
 ---
 graph TD
-	SD1["Sous-domaine de Support"]
-	SD2["Sous-domaine Générique"]
-	SD3["Sous-domaine Générique"]
-	SD4["Sous-domaine de Support"]
-	CD["Domaine Principal (Core Domain)"]
-	SD5["Sous-domaine Générique"]
+ SD1["Sous-domaine de Support"]
+ SD2["Sous-domaine Générique"]
+ SD3["Sous-domaine Générique"]
+ SD4["Sous-domaine de Support"]
+ CD["Domaine Principal (Core Domain)"]
+ SD5["Sous-domaine Générique"]
 ```
 
 ---
@@ -895,7 +891,6 @@ graph LR
 - Définit un **modèle commun d'intégration**
 - Encourage le **découplage** et la **stabilité contractuelle**.
 
-
 :::tip
 C'est un point d'entrée standardisé, conçu pour l'interopérabilité.
 :::
@@ -1011,8 +1006,9 @@ graph LR
 
 1. Application principale de e-commerce
 2. Système de gestion des stocks indépendant (propre domaine et logique métier)
-  - Communique avec l'application via une file de messages bien définie
-  - Développé et maintenu par une équipe distincte
+
+- Communique avec l'application via une file de messages bien définie
+- Développé et maintenu par une équipe distincte
 
 ---
 
@@ -1048,7 +1044,6 @@ classDiagram
 | **Anti-Corruption Layer (ACL)** | Barrière d'adaptation   | Faible (localement) | Forte           | Faible / unilatérale        | Adapter un modèle externe sans l'importer tel quel          |
 | **Separate Ways**               | Aucune relation         | Aucun           | Totale          | Nulle                   | Les domaines évoluent totalement indépendamment             |
 
-
 ---
 
 ### 📌 Résumé mnémotechnique
@@ -1062,7 +1057,6 @@ classDiagram
 | Partager un langage stable            | **Published Language**    |
 | Ne pas collaborer                     | **Separate Ways**         |
 | Définir une relation asymétrique      | **Upstream / Downstream** |
-
 
 ---
 
@@ -1117,55 +1111,6 @@ graph LR
   pmc ---|Shared Kernel| DCC
   pmc ---|Partnership| rmc
 ```
-
----
-
-## Relations entre équipes
-
----
-
-![Photo de l'intérieur d'un PC portable](@assets/sysadmin/EBMotherboard.jpg)
-
-<div class="caption">Photo de l'intérieur d'un PC portable. By <a href="https://en.wikipedia.org/wiki/User:Ravenperch" class="extiw" title="wikipedia:User:Ravenperch">Ravenperch</a> at <a href="https://en.wikipedia.org/wiki/" class="extiw" title="wikipedia:">English Wikipedia</a> - <span class="int-own-work" lang="en">Own work</span> (<span lang="en" dir="ltr">Original text: Self created</span>), <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=18540450">Link</a></div>
-
-À votre avis, quelles sont les différentes équipes à travailler sur la réalisation de cet ordinateur ?
-
----
-
-### Loi de Conway
-
-> Les organisations produisent des systèmes qui reflètent leur structure de communication
-
-- Exemple :
-  - _facturation_
-  - _gestion des stocks_
-  - _gestion des comptes_
-
----
-
-### Team topologies
-
-- Idée : refléter le découpage en composants dans le découpage des équipes
-- **Team Topologies** : pattern d'organisation complémentaire au DDD
-  - inverse de la loi de Conway (adapter l'organisation aux modules et pas l'inverse)
-
----
-
-### Dépendance mutuelle
-
-- Dépendance mutuelle (Shared Kernel)
-- Relation **succès/échec partagée**
-  - besoin de **collaboration forte**
-  - relation de **partenariat**
-
----
-
-### Dépendance Upstream / Downstream 
-
-- **Upstream impacte le succès Downstream**
-- Downstream n'impacte pas le succès Upstream
-  - soit : collaboration par **requêtes** (envie du Customer à remonter au Supplier), pas par ~~exigence (besoin)~~
-  - soit : API publique (Open Host Service) indépendant du consommateur (le Customer doit s'adapter au Supplier)
 
 ---
 
@@ -1290,8 +1235,6 @@ mindmap
 - Le `BDD` (Behavior-Driven Development) permet de faire le lien par le langage des spécifications (**par l'exemple**) au code
 
 ---
-layout: 
----
 
 ## Architecture
 
@@ -1317,15 +1260,24 @@ DDD utilise les concepts d'**architecture à grande échelle** pour organiser le
 ---
 
 1. **Ordre évolutif**  
-  - Laisser la structure évoluer avec le temps.
+
+- Laisser la structure évoluer avec le temps.
+
 2. **Métaphore système**  
-  - Rechercher une métaphore globale pour le système.
+
+- Rechercher une métaphore globale pour le système.
+
 3. **Couches de responsabilité**  
-  - Organiser le modèle de domaine en plusieurs couches.
+
+- Organiser le modèle de domaine en plusieurs couches.
+
 4. **Niveau de connaissance**  
-  - Permettre la configuration des opérations principales à partir d'un niveau de connaissance.
+
+- Permettre la configuration des opérations principales à partir d'un niveau de connaissance.
+
 5. **Cadre de composants plug-and-play**  
-  - Abstraction du cœur avec une infrastructure de plugins.
+
+- Abstraction du cœur avec une infrastructure de plugins.
 
 ---
 
@@ -1468,13 +1420,14 @@ userService.processData(user);
 **Problème** : que signifie "processData" ? Est-ce une mise à jour du profil ? Une inscription ? Un calcul ? Aucun lien avec le métier.
 
 :::correction
+
 #### ✅ Après (langage ubiquitaire orienté métier)
 
 ```java
 userService.registerNewCustomer(user);
 ```
 
-**Amélioration** : Le terme métier *"register"* est explicite et repris des discussions avec les experts. "Customer" est un mot métier utilisé dans les specs.
+**Amélioration** : Le terme métier _"register"_ est explicite et repris des discussions avec les experts. "Customer" est un mot métier utilisé dans les specs.
 :::
 
 ---
@@ -1493,6 +1446,7 @@ class Transaction {
 **Problème** : en contexte métier, il s'agit de **réservations**, pas de transactions financières.
 
 :::correction
+
 #### ✅ Après
 
 ```java
@@ -1516,6 +1470,7 @@ class Reservation {
 **Problème** : 3 termes pour désigner la même chose = confusion sur les rôles, les permissions, les données.
 
 :::correction
+
 #### ✅ Après (langage ubiquitaire)
 
 > "On utilise **Customer** partout pour désigner l'utilisateur qui paie, y compris dans Stripe et dans notre modèle métier. Pour les logins et tokens, on parle d'**Account**."
@@ -1536,6 +1491,7 @@ product.getPrice();
 **Problème** : le prix dépend-il d'une réduction ? D'une devise ? D'une date ? C'est flou.
 
 :::correction
+
 #### ✅ Après
 
 ```java
@@ -1558,6 +1514,7 @@ svc.add_cr2(u);
 **Problème** : "svc" ? "cr2" ? "u" ? Incompréhensible hors contexte.
 
 :::correction
+
 #### ✅ Après
 
 ```python
@@ -1619,4 +1576,3 @@ courseService.createRecurringCourseRequest(user);
 - [DDD en DotNet (linkedin learning)](https://www.linkedin.com/learning/expert-domain-driven-design-ddd-implementation-in-dot-net)
 - [Model Mitosis : ne plus se tromper entre les microservices et le monolithe (Julien Topcu)](https://julientopcu.com/talks/model-mitosis)
 - [Le pattern Hive : une stratégie de modularisation pour votre monolithe modulaire ou vos microservice (Julien Topcu)](https://julientopcu.com/talks/hive)
-

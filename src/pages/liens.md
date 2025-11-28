@@ -21,6 +21,14 @@ checked: 2025-01-27
 - Un livre génial sur le refactoring de code : comment restructurer un code existant
 - Explique aussi comment gérer le code _legacy_ et s'en protéger pour créer des évolutions stables
 
+### Team Topologies
+
+- <https://teamtopologies.com/book>
+- Comment découper et organiser les équipes autour d'un projet informatique
+- Comment formaliser les interactions entre sous-équipes (collaboration, relation client / fournisseur …)
+- Très utilisé en DDD mais très utile dans tous les contextes de projets !
+- Voir aussi le [cours DDD](/ddd/cours#relations-entre-quipes) pour un résumé des topologies d'équipes
+
 ### Développement
 
 - [Bootstrapping Microservices, Second Edition With Docker, Kubernetes, GitHub Actions, and Terraform (Ashley Davis)](https://www.manning.com/books/bootstrapping-microservices-second-edition)
