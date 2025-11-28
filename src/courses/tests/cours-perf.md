@@ -10,7 +10,7 @@ tags:
 ## Principes
 
 - 🎯 Objectif : évaluer la capacité, la robustesse et l'efficacité d'un système sous différentes contraintes.
-* 📈 Toujours définir **des SLA ou objectifs de performance** : temps de réponse max, taux d'erreur toléré.
+- 📈 Toujours définir **des SLA ou objectifs de performance** : temps de réponse max, taux d'erreur toléré.
 - Faire varier uniquement 1 paramètre pour pouvoir analyser les résultats : uniquement le nombre de connexion simultanées ou uniquement le nombre de requêtes d'un utilisateur (mais pas les 2 à la fois)
 - Tester progressivement : charge normale → forte → extrême
 
@@ -81,4 +81,3 @@ tags:
 - Mesure des conflits, des locks, et des performances globales.
 
 ---
-
