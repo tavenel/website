@@ -81,7 +81,8 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
   - **Mémoire : limites généralement conseillées**
     - La mémoire est **non compressible** : dépasser un `limit` implique un _OOM kill_, ce qui peut protéger le _Node_ entier.
     - Fixer `memory limit == request` permet d'éviter la surconsommation par certains pods, et d'alerter quand il faut ajuster les allocations via monitoring + OOM kills
-💸 Sources : [1](https://medium.com/@carlosalbertoalvesscorreia/would-the-kubernetes-cpu-limit-be-an-anti-pattern-2b07d92d7bd8) [2](https://www.perfectscale.io/blog/kubernetes-cpu-limits) [3](https://home.robusta.dev/blog/stop-using-cpu-limits) [4](https://medium.com/directeam/kubernetes-resources-under-the-hood-part-3-6ee7d6015965) [5](https://stormforge.io/blog/flexibility-matters-when-setting-kubernetes-resource-limits/?utm_campaign=FY25_Q3_Learnk8s&utm_medium=newsletter&utm_source=Learnk8s) [6](https://www.kubeblog.com/blog/understanding-and-fixing-cpu-limits-in-kubernetes/)
+- 💸 Sources : [1](https://medium.com/@carlosalbertoalvesscorreia/would-the-kubernetes-cpu-limit-be-an-anti-pattern-2b07d92d7bd8) [2](https://www.perfectscale.io/blog/kubernetes-cpu-limits) [3](https://home.robusta.dev/blog/stop-using-cpu-limits) [4](https://medium.com/directeam/kubernetes-resources-under-the-hood-part-3-6ee7d6015965) [5](https://stormforge.io/blog/flexibility-matters-when-setting-kubernetes-resource-limits/?utm_campaign=FY25_Q3_Learnk8s&utm_medium=newsletter&utm_source=Learnk8s) [6](https://www.kubeblog.com/blog/understanding-and-fixing-cpu-limits-in-kubernetes/)
+- Voir aussi : <https://medium.com/@vladimir.prus/kubernetes-cpu-limits-scylla-and-charybdis-6a9aa3a8c6ca>
 
 :::
 
