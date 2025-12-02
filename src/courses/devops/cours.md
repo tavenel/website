@@ -38,6 +38,24 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
+## Cycle de vie
+
+Le cycle de vie DevOps est un cycle continu allant des étapes de planification au monitoring :
+
+![Le cycle de vie DevOps](https://mikadolabs.com//wp-content/uploads/2023/02/article2-1024x527.png)
+
+| Étape | Outils majeurs | Description courte |
+| :---------------- | :------------------------------------------- | :------------------------------------------- |
+| **Planification** | Jira, Trello, GitHub Projects | Suivi des tâches, gestion Agile |
+| **Codage** | Git (GitHub, GitLab, Bitbucket) | Gestion de version et collaboration |
+| **Build** | Jenkins, GitLab CI/CD, Travis CI | Automatisation de la compilation |
+| **Test** | Selenium, JUnit, Jest, Postman | Exécution automatisée des tests |
+| **Release/Déploiement** | Docker, Kubernetes, Ansible, Terraform | Packaging conteneurs et orchestration |
+| **Opération** | Ansible, Puppet, Chef | Gestion dynamique de configuration |
+| **Monitoring** | Prometheus, Grafana, ELK Stack, Datadog | Collecte métriques, logs, alerting |
+
+---
+
 ## 🏗️ Les 5 piliers CALMS du DevOps
 
 - **Culture** :
@@ -336,6 +354,14 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 ---
 
+## Exemples concrets
+
+- **Netflix** déploie plus de **1 000 modifications par jour** en production grâce à une chaîne CI/CD automatisée.
+- **Spotify** utilise des tests automatisés et des dashboards en temps réel pour identifier rapidement les bugs et garantir l'expérience utilisateur.
+- Les équipes **Amazon** travaillent en mode "two-pizza teams" (groupes de petite taille) intégrant développeurs et opérateurs, favorisant autonomie et collaboration.
+
+---
+
 ## DevOps Research and Assessment (DORA)
 
 Initiative de recherche (aujourd'hui Google Cloud) pour améliorer les pratiques DevOps (métriques, …).
@@ -526,6 +552,8 @@ root((DevOps))
 - Wiki Ops de SourceHut : <https://man.sr.ht/ops/>
 - <https://teamtopologies.com/>
 - [Remote Development Environment Supercharged with MCP servers (_Medium_)](https://medium.com/tailor-tech/remote-development-environment-supercharged-with-mcp-servers-c4b959cb321c)
+- <https://www.honeycomb.io/resources/what-is-observability/>
+- OWASP DevSecOps Guide : <https://owasp.org/www-project-devsecops/>
 
 [gist-jenkins-pipeline-yaml]: https://gist.github.com/jonico/e205b16cf07451b2f475543cf1541e70
 [tuto-openclassrooms-monitoring]: https://openclassrooms.com/fr/courses/2035736-mettez-en-place-lintegration-et-la-livraison-continues-avec-la-demarche-devops/6183162-monitorez-votre-application
