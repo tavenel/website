@@ -56,10 +56,10 @@ mindmap
 
 ## 🎯 Objectifs
 
-- Apprendre les principes fondamentaux des déploiements continus et leur importance dans le cycle de vie du développement logiciel. |
-- Étudier divers modèles de déploiement comme Blue-Green, Canary Release, Ring Based Deployment, Feature Flags, Dark Launch, et Test A/B. |
-- Analyser les avantages et inconvénients de chaque modèle pour comprendre quand et comment les appliquer. |
-- Comprendre comment intégrer ces modèles de déploiement avec des outils d'intégration et de livraison continues (CI/CD). |
+- Apprendre les principes fondamentaux des déploiements continus et leur importance dans le cycle de vie du développement logiciel.
+- Étudier divers modèles de déploiement comme Blue-Green, Canary Release, Ring Based Deployment, Feature Flags, Dark Launch, et Test A/B.
+- Analyser les avantages et inconvénients de chaque modèle pour comprendre quand et comment les appliquer.
+- Comprendre comment intégrer ces modèles de déploiement avec des outils d'intégration et de livraison continues (CI/CD).
 
 ---
 
@@ -131,3 +131,9 @@ mindmap
 - Chaque utilisateur est aiguillé **aléatoirement** sur l'un des sites 🔄
 - Seule la version la "meilleure" (moins de bugs, meilleurs retours clients, ...) est gardée 🏆
 
+---
+
+## Liens
+
+- <https://martinfowler.com/bliki/BlueGreenDeployment.html>
+- <https://martinfowler.com/bliki/ContinuousDelivery.html>
