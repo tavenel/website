@@ -1,0 +1,40 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Devops } from '@courses/devops/cours.md';
+import { Content as CIIntro } from '@courses/cicd/cours-intro-ci.md';
+import { Content as GITWorkflows } from '@courses/git/workflows-cours.md';
+import { Content as CIOutils } from '@courses/cicd/cours-outils-ci.md';
+import { Content as CDModeles } from '@courses/cicd/modeles-cd-cours.md';
+import { Content as CICDk8s } from '@courses/k8s/cours-k8s-cicd.md';
+import { Content as K8sTools } from '@courses/k8s/cours-k8s-tools.md';
+import { Content as ArgoCD } from '@courses/argocd/cours.md';
+import { Content as SecuSupplyChain } from '@courses/cicd/cours-secu-ci.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours DevSecOps",
+  tags: [
+    "devops",
+		"ci",
+		"cd",
+		"git",
+		"workflows",
+		"k8s"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Devops />  </Chapter>
+	<Chapter> <CIIntro />  </Chapter>
+	<Chapter> <GITWorkflows />  </Chapter>
+	<Chapter> <CIOutils />  </Chapter>
+	<Chapter> <CDModeles />  </Chapter>
+	<Chapter> <CICDk8s />  </Chapter>
+	<Chapter> <K8sTools />  </Chapter>
+	<Chapter> <ArgoCD />  </Chapter>
+	<Chapter> <SecuSupplyChain />  </Chapter>
+</Layout>
+
