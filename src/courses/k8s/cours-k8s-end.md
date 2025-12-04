@@ -133,7 +133,8 @@ tags:
 - Mailing-list : <https://learnkube.com/learn-kubernetes-weekly> 📧
 - Roadmap k8s <https://roadmap.sh/kubernetes> et roadmap orientée cybersécurité : <https://kubesec-diagram.github.io/> 🗺️
 - Formations et challenges : <https://labs.iximiuz.com/>
-- Bonnes pratiques : <https://kubernetes.io/blog/2025/11/25/configuration-good-practices/>
+- <https://kubernetes.io/blog/2025/11/25/configuration-good-practices/>
+- <https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/>
 
 ---
 
