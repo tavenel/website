@@ -518,10 +518,8 @@ flowchart TD
 
 - Gère le réseau sur chaque `Node` (entre Pods et vers extérieur) 🌍
 - Plusieurs modes : 🔄
-  - Tout trafic par `iptables`, règles `DNAT` (⚠️ CPU si beaucoup de règles) ⚠️
+  - Tout trafic par (anciennement: `iptables`) `nftables`, règles `DNAT` (⚠️ CPU si beaucoup de règles) ⚠️
     - Load-balancer : _round-robin_ 🔄
-  - `ipvs` : Module noyau gérant un ensemble de règles d'un coup (plus performant) ⚡
-    - Load-balancer avancé ⚖️
   - Si CNI `Cilium` : Règles `eBPF` dans le noyau, plus besoin de `Kube-proxy` 🌟
     - Voir section sur les CNI 📚
 - Connexion entre `Pods` : Niveau 3 (_IP_) 🌐
