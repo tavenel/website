@@ -297,7 +297,6 @@ created: 2024-10-17
 - `Snyk` : Analyse de dépendances + suggestions de correction.
 - `Gitleaks` : Détection de secrets/API keys dans le code.
 - `OWASP ZAP` : Test d'intrusion automatisé des APIs/web apps.
-- `Dependency-Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
 - _Open Policy Agent_ (`OPA`) : Validation de règles (policies) dans le pipeline.
 - `Conftest` : Contrôle d'infra-as-code (Terraform, K8s YAML) contre des règles internes.
 
@@ -310,7 +309,7 @@ created: 2024-10-17
 
 - tous types : `artifactory`, `nexus`
 - Docker, Helm : `Harbor`
-- tracking dépendances : `Dependency Track` [tuto](https//blog.stephane-robert.info/docs/securiser/analyser-code/dependency-track/)
+- tracking dépendances : `Dependency Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
 
 ## 📈 Supervision / Monitoring / Observabilité
 
