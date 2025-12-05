@@ -14,8 +14,9 @@ packerIcon: '../../icons/hashicorp-packer.svg'
 <!-- - [![](@icons/ansible.svg) Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible) -->
 - [🤓 Cours Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible)
 - [![](@icons/terraform.svg) Cours Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
-<!-- - [![](@icons/hashicorp-packer.svg) Cours Packer : automatiser la création d'images machines](/devops/terraform) -->
+<!-- - [![](@icons/hashicorp-packer.svg) Cours Packer : automatiser la création d'images machines](/devops/packer) -->
 - [🤓 Cours Packer : automatiser la création d'images machines](/devops/packer)
+- [🤓 Cours OpenNebula : créer un Virtual Data Center](/devops/opennebula)
 
 ## TP
 
