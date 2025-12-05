@@ -1,0 +1,30 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Ansible } from '@courses/ansible/cours.md';
+import { Content as Terraform } from '@courses/terraform/cours.md';
+import { Content as Packer } from '@courses/packer/cours.md';
+import { Content as OpenNebula } from '@courses/opennebula/cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Virtual Data Center",
+  tags: [
+    "vdc",
+    "devops",
+    "ansible",
+    "terraform",
+    "packer",
+    "opennebula",
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Ansible />  </Chapter>
+	<Chapter> <Terraform />  </Chapter>
+	<Chapter> <Packer />  </Chapter>
+	<Chapter> <OpenNebula />  </Chapter>
+</Layout>
+
