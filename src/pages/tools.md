@@ -159,6 +159,7 @@ created: 2024-10-17
 - [Popeye](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/popeye/) : recherche de problèmes de sécurité dans un cluster k8s
 - [Kubescape](https://blog.stephane-robert.info/docs/securiser/conteneurs/kubescape/) : scan de clusters, intégration dev et CI/CD
 - <https://www.kuboscore.io/> : vérification de clusters
+- <https://github.com/topiaruss/kogaro> : vérification d'erreurs classiques de configuration, intégration CI/CD
 
 ### 🧐 Supervision
 
@@ -210,7 +211,9 @@ created: 2024-10-17
 
 - `WatchTower`
 - `Keel` (avec triggers)
-- `Pluto` : gestion des dépréciations d'API : [tuto](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/pluto/)
+- Gestion des dépréciations d'API :
+  - `Pluto` : [tuto](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/pluto/)
+  - <https://github.com/doitintl/kube-no-trouble>
 
 ### Backup de cluster
 
@@ -766,6 +769,7 @@ created: 2024-10-17
 - <https://grogg.app/> : dashboard de gestion k8s (app native ou extension vscode)
 - <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
 - <https://k8slens.dev/> : IDE dédié à Kubernetes avec vision des ressources
+- <https://github.com/kbterm/kubeterm> : application de dashboard k8s (desktop et mobile)
 
 ##### Génération de Yaml
 

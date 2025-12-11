@@ -104,6 +104,7 @@ tags:
 - <https://learnk8s.io/production-best-practices/> 📚
 - <https://kubernetes.io/docs/tasks/administer-cluster/> 📚
 - <https://blog.zwindler.fr/2025/11/02/93-facons-de-deployer-kubernetes/>
+- [When DIY Beats Managed Kubernetes](https://lakshminp.substack.com/p/when-diy-beats-managed-kubernetes)
 
 ---
 
