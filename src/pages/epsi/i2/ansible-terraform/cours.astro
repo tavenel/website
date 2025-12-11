@@ -1,0 +1,26 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Yaml } from '@courses/devops/yaml.md';
+import { Content as Ansible } from '@courses/ansible/cours.md';
+import { Content as Terraform } from '@courses/terraform/cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Cours DevOps",
+  tags: [
+    "devops",
+		"iac",
+		"ansible",
+		"terraform"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Yaml />  </Chapter>
+	<Chapter> <Ansible />  </Chapter>
+	<Chapter> <Terraform />  </Chapter>
+</Layout>
+
