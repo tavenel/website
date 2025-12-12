@@ -225,11 +225,11 @@ onevm list
 - Template final (.yml)
 - Capture écran de la VM active
 
-## Construction d’images Cloud avec HashiCorp Packer
+## Construction d'images Cloud avec HashiCorp Packer
 
 ### Objectifs
 
-- Comprendre l’utilité du _baking d’images_ dans un Virtual Data Center.
+- Comprendre l'utilité du _baking d'images_ dans un Virtual Data Center.
 - Concevoir une image personnalisée pour OpenNebula via Packer.
 - Automatiser la génération d'images compatibles KVM/Firecracker.
 - Intégrer Packer dans une pipeline IaC (Terraform + OpenNebula).
@@ -799,7 +799,7 @@ Tester le HPA en générant une charge (par ex. `hey`, `ab`, ou un pod stress) e
 ### Supervision & Dashboards
 
 - Importer dashboards Grafana pour Kubernetes (node, kube-state-metrics, kubelet, HPA)
-- Créer un dashboard d’état global (nodes, pods, cpu/memory, HPA)
+- Créer un dashboard d'état global (nodes, pods, cpu/memory, HPA)
 - Configurer alertes (pod restarts hauts, node NotReady, HPA scaling failures)
 
 ### Livrables

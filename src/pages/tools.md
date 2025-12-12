@@ -332,6 +332,7 @@ created: 2024-10-17
   - <https://github.com/robusta-dev/holmesgpt> : Investigate Prometheus with AI
 - `zabbix` (plutôt sysadmin que devops)
 - `hertzbeat` (compatible `prometheus`) : [tuto](https://blog.stephane-robert.info/docs/observer/metriques/hertzbeat/)
+- <https://github.com/coroot/coroot> : monitoring eBPF
 
 ### Logging
 
