@@ -33,6 +33,7 @@ packerIcon: '../../icons/hashicorp-packer.svg'
 
 - [🤓 Cours d'introduction au Devops](/devops/cours)
 - [💻 Configuration des clés SSH pour un accès sécurisé](/devops/tp_ssh)
+- [💻 TP découverte d'Ansible et de Terraform](/devops/tp-terraform-ansible) : Ce double TP a pour objectif de manipuler la mise en place d'une mini‑infrastructure virtualisée via Terraform, puis l'automatisation de sa configuration via Ansible.
 - [💻 Projet Infrastructure as Code avec Packer, Ansible et Terraform](/devops/projet-iac)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/devops/projet)
 
