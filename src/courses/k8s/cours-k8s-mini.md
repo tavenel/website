@@ -141,6 +141,7 @@ root((Utilisation))
 ## Déploiements applicatifs
 
 - `Pod` : abstraction d'un (normalement) unique _Conteneur_ : backend, frontend, …
+  - ajouter sondes de Healthcheck : `ReadinessProbe`, `LivenessProbe`, `StartupProbe`
 - `Deployment` : gère le déploiement d'un `ReplicaSet` (nombre de `Pod`)
   - et la mise à jour du `Pod` (rolling update, rollback, scaling)
 
@@ -161,7 +162,7 @@ flowchart TD
     class Pod1,Pod2 green
 ```
 
-<div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div> 
+<div class="caption">Un Deployment gérant un ReplicaSet gérant un Pod</div>
 
 ---
 
@@ -174,7 +175,6 @@ flowchart TD
   - `type=ClusterIP` (defaut) : communication entre `Pod` dans le cluster uniquement
   - `type=NodePort` : ajoute un accès depuis tous les `Node` du cluster
   - autres types : `type=LoadBalancer` (Cloud provider), `type=ExternalName` (alias DNS)
-
 
 ---
 
@@ -246,6 +246,7 @@ flowchart TD
     e2@{ animate : true }
     e3@{ animate : true }
 ```
+
 <div class="caption">Communication depuis l'extérieur par NodePort.</div>
 
 ---
@@ -292,9 +293,9 @@ flowchart TD
 
 ## Autres ressources
 
-* `Namespace` : espaces de noms isolant des ressources
+- `Namespace` : espaces de noms isolant des ressources
+
 - `StatefulSet` : composants avec état et ordre à respecter : BDD, … (très différent du reste)
 - `Volume` (différent `PersistentVolume`, proche d'un volume _Docker_) : point de montage pour configs, filesystem temporaire, …
 - `DaemonSet` : assure que des pods tournent sur tous les noeuds du cluster (ex pour des services techniques)
 - `Job` et `CronJob` pour des tâches
-
