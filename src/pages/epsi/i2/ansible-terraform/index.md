@@ -24,12 +24,13 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 4H
 
-Évaluation :
+Évaluation : TP noté
 
 ## 📑 Documents
 
 - [🤓 Cours sur Ansible et Terraform](/epsi/i2/ansible-terraform/cours)
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/git/tp-ansible)
+- [🏆 Projet découverte d'Ansible et de Terraform](/devops/tp-terraform-ansible) : Ce double TP a pour objectif de manipuler la mise en place d'une mini‑infrastructure virtualisée via Terraform, puis l'automatisation de sa configuration via Ansible.
 
 ## 🚀 Pour aller plus loin
 
