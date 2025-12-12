@@ -74,13 +74,13 @@ Créer un workflow Git complet :
 
 1. Commit → validation automatique
 2. Merge en `main` → déclenchement du déploiement via Argo CD
-3. Mise en place d’environnements dev et prod
+3. Mise en place d'environnements dev et prod
 
 ### Livrables attendus
 
-- Captures d'écran de l’interface Argo CD
+- Captures d'écran de l'interface Argo CD
 - Manifests YAML
-- Explication des choix d’architecture GitOps
+- Explication des choix d'architecture GitOps
 - Analyse des dérives et correctifs apportés
 
 :::

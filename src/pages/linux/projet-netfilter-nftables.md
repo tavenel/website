@@ -10,13 +10,13 @@ Ce TP est une réécriture du sujet Netfilter `iptables` **en version `nftables`
 Vous êtes administrateur système dans une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu avec **nftables** afin de :
 
 1. **Autoriser uniquement les connexions SSH provenant du réseau local.**
-2. **Bloquer tout autre trafic entrant**, à l’exception des **réponses aux connexions sortantes légitimes**.
-3. **Permettre l’accès HTTP/HTTPS (ports 80 et 443) uniquement depuis une plage IP spécifique.**
+2. **Bloquer tout autre trafic entrant**, à l'exception des **réponses aux connexions sortantes légitimes**.
+3. **Permettre l'accès HTTP/HTTPS (ports 80 et 443) uniquement depuis une plage IP spécifique.**
 4. **Journaliser dans les logs système toutes les connexions bloquées.**
 
-La configuration du pare-feu devra être **persistante**, c’est-à-dire automatiquement restaurée après un redémarrage.
+La configuration du pare-feu devra être **persistante**, c'est-à-dire automatiquement restaurée après un redémarrage.
 
-Vous devez également écrire un **script shell** automatisant la configuration, et faire en sorte qu’un **utilisateur non privilégié** puisse exécuter ce script.
+Vous devez également écrire un **script shell** automatisant la configuration, et faire en sorte qu'un **utilisateur non privilégié** puisse exécuter ce script.
 
 Vous utiliserez des outils comme `ping`, `curl`, `nc` ou `nmap` pour vérifier le comportement du pare-feu depuis différentes machines ou réseaux.
 
@@ -60,7 +60,7 @@ nft add chain inet filter output  { type filter hook output priority 0 \; policy
 
 # 6. Rendre la configuration persistante
 
-# 7. Documentation et configuration des droits d’accès du script
+# 7. Documentation et configuration des droits d'accès du script
 ```
 
 :::
@@ -118,6 +118,6 @@ Le fichier permanent sera alors dans :
 
 ## Livrables attendus
 
-1. **Un script `firewall.sh` fonctionnel**, appliquant l’ensemble de la configuration nftables et assurant la persistance.
+1. **Un script `firewall.sh` fonctionnel**, appliquant l'ensemble de la configuration nftables et assurant la persistance.
 2. **Une capture d'écran ou un rapport** montrant les tests réalisés (`curl`, `ping`, `nmap`…).
-3. **Une explication claire des droits d'exécution du script**, justifiant comment un utilisateur non privilégié peut l'exécuter sans disposer d’un accès root complet.
+3. **Une explication claire des droits d'exécution du script**, justifiant comment un utilisateur non privilégié peut l'exécuter sans disposer d'un accès root complet.

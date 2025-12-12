@@ -8,25 +8,33 @@ packerIcon: '../../icons/hashicorp-packer.svg'
 
 ![](@assets/undraw/undraw_algorithm-execution_rksm.svg)
 
-## Cours
+## Packer
+
+- [🤓 Cours Packer : automatiser la création d'images machines](/devops/packer/cours)
+- [💻 TP Packer - Création d'une image Azure et déploiement d'une application web complète](/devops/packer/projet)
+
+## Ansible
+
+- [🤓 Cours Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible/cours)
+- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible)
+
+## Terraform
+
+- [![](@icons/terraform.svg) Cours Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform/cours)
+- [![](@icons/terraform.svg) Projet Déploiement d'une infrastructure sur Azure avec Terraform](/devops/terraform/projet-azure)
+- [![](@icons/terraform.svg) Projet Déploiement de composants Kubernetes avec Terraform](/devops/terraform/projet-k8s)
+
+## OpenNebula
+
+- [🤓 Cours OpenNebula : créer un Virtual Data Center](/devops/opennebula/cours)
+- [🏆 Projet montage d'un Virtual Data Center basé sur OpenNebula](/devops/opennebula/projet) : utiliser OpenNebula conjointement à Ansible, Terraform, Packer, Kubernetes, Prometheus, Grafana & Loki pour monter et automatiser une infrastructure complète de datacenter virtuel.
+
+## Devops - Sysops
 
 - [🤓 Cours d'introduction au Devops](/devops/cours)
-<!-- - [![](@icons/ansible.svg) Cours d'introduction à Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible) -->
-- [🤓 Cours Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible)
-- [![](@icons/terraform.svg) Cours Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform)
-<!-- - [![](@icons/hashicorp-packer.svg) Cours Packer : automatiser la création d'images machines](/devops/packer) -->
-- [🤓 Cours Packer : automatiser la création d'images machines](/devops/packer)
-- [🤓 Cours OpenNebula : créer un Virtual Data Center](/devops/opennebula)
-
-## TP
-
 - [💻 Configuration des clés SSH pour un accès sécurisé](/devops/tp_ssh)
-<!-- - [![](@icons/ansible.svg) TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible) -->
-- [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible)
-- [![](@icons/terraform.svg) Projet Déploiement d'une infrastructure sur Azure avec Terraform](/devops/terraform-projet-azure)
-- [![](@icons/terraform.svg) Projet Déploiement de composants Kubernetes avec Terraform](/devops/terraform-projet-k8s)
+- [💻 Projet Infrastructure as Code avec Packer, Ansible et Terraform](/devops/projet-iac)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/devops/projet)
-- [🏆 Projet montage d'un Virtual Data Center basé sur OpenNebula](/devops/projet-vdc) : utiliser OpenNebula conjointement à Ansible, Terraform, Packer, Kubernetes, Prometheus, Grafana & Loki pour monter et automatiser une infrastructure complète de datacenter virtuel.
 
 ## Liens
 
