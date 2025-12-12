@@ -22,7 +22,7 @@ via Terraform et Ansible
 
 ### 📑 Documents
 
-- [🏆 Projet IaC](/devops/projet-iac)
+- [🏆 Projet Infrastructure as Code avec Packer, Ansible et Terraform](/devops/projet-iac)
 
 ### Ressources
 
