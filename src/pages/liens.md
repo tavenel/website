@@ -228,6 +228,7 @@ Voir aussi : [informations IA](/other#ia)
 - "A series of nonverbal algorithm assembly instructions" : <https://idea-instructions.com/>
 - <https://wrongthink.link/posts/all-you-need-is-ssh/>
 - Comment réaliser un bon onboarding : <https://blog.wescale.fr/bienvenue-dans-lequipe-voici-ton-onboarding-puisse-le-sort-vous-etre-favorable>
+- Histoire du pilotage des serveurs : de l'administration physique aux terminaux à l'infrastructure-as-code : <https://richard-dern.fr/interets/informatique/2025/12/12/piloter-ses-serveurs-avec-un-emulateur-de-terminal-web/>
 
 ### Liens Divers
 
