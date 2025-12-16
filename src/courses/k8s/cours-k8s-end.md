@@ -296,6 +296,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
   - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples> 📄
 - Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾
+- <https://blog.mossroy.fr/2025/12/14/nfs-en-stockage-persistant-pour-kube/>
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
 - Un guide sur l'utilisation de "Pressure Stall Information" (PSI) depuis cAdvisor pour mieux gérer les ressources et pourquoi PSI est mieux adapté à k8s qu'aux VMs : [From Utilization to PSI: Rethinking Resource Starvation Monitoring in Kubernetes](https://blog.zmalik.dev/p/from-utilization-to-psi-rethinking)
 - [AI Infrastructure on Kubernetes](https://kube.today/ai-infrastructure-2025)

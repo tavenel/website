@@ -106,7 +106,8 @@ created: 2024-10-17
   - `k3s` (installable par `k3d`), `microk8s` (ubuntu) : implémentations légères
   - `minikube` : version 1 noeud simple pour dev/test uniquement
   - `kind` : déploiement local utilisant Docker (excellent pour une installation locale) : [tuto](https://blog.stephane-robert.info/post/kubernetes-kind/)
-   [`Talos` : OS immuable pour k8s](https://une-tasse-de.cafe/blog/talos/)
+   `Talos` : OS immuable pour k8s : <https://une-tasse-de.cafe/blog/talos/>
+  - Kairos, un autre OS immuable pour k8s : <https://une-tasse-de.cafe/blog/kairos/>
   - `openshift` : orchestrateur de RedHat
   - `rancher` : manager de cluster(s) k8s (installation, monitoring, tests, …)
   - `k8s-tew` : k8s the easy way, cluster complet. [tuto](https://blog.zwindler.fr/2025/05/26/test-k8s-tew/)
@@ -123,7 +124,9 @@ created: 2024-10-17
 - [external DNS](https://github.com/kubernetes-sigs/external-dns) : synchronisation Ingress / Service avec DNS externe (Cloud, …)
 - <https://chaos-mesh.org/> : chaos computing dans un cluster
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
-- [auger](https://github.com/etcd-io/auger?tab=readme-ov-file#use-cases) : Décode la data d'`etcd`
+- `etcd` : store clé / valeur de k8s
+  - [auger](https://github.com/etcd-io/auger?tab=readme-ov-file#use-cases) : Décode la data d'`etcd`
+  - <https://github.com/nexusriot/etcd-walker> : parcours des valeurs etcd
 
 ### Ingress & service mesh
 
@@ -590,11 +593,12 @@ created: 2024-10-17
 - Liste de serveurs MCP : <https://github.com/modelcontextprotocol/servers>
 - `FastMCP` (idem FastAPI pour MCP)
 
-### Free IAs
+### IA gratuites
 
 - <https://chatgpt.com/>
 - <https://chat.mistral.ai/chat>
 - <https://gemini-free.com/>
+- <https://euria.infomaniak.com/>
 
 ## 💻 Outils Poste de travail
 
