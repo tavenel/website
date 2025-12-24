@@ -146,9 +146,47 @@ logging {
 
 ---
 
+#### Exemple de configuration dnsmasq
+
+```
+# /etc/dnsmasq.conf
+
+# Interface à utiliser (sinon toutes les interfaces du système)
+interface=eth0
+
+# Plage DHCP
+dhcp-range=192.168.0.101,192.168.0.150,255.255.255.0,6h
+# IPs statiques
+dhcp-host=ab:cd:ef:12:34:56,example-host,192.168.0.10,infinite
+
+# Si seul serveur DHCP : "serveur d'autorité". Permet d'accepter les renouvellement d'IPs fournies par un autre DHCP.
+dhcp-authoritative
+
+# Par défaut les IPs sont associées aux MAC (1 client retrouve la même adresse). Ce paramètre force un incrément (continuité des IPs)
+dhcp-sequential-ip
+
+# Nombre max de baux envoyés en parrallèle (défaut 1000)
+dhcp-lease-max=100
+```
+
+```sh
+# Test config
+dnsmasq --test
+# Activation et démarrage
+sudo systemctl enable --now dnsmasq
+```
+
+Pour vérifier les baux DHCP (_"leases"_) fournies aux clients :
+
+```sh
+cat /var/lib/misc/dnsmasq.leases
+```
+
+---
+
 ## 🧭 Zone DNS
 
-> Une **zone DNS** est une portion de l'espace de noms de domaine que l'on administre depuis un **serveur DNS** donné. Elle contient les enregistrements DNS (appelés *Resource Records*, ou `RR`) pour un ou plusieurs domaines.
+> Une **zone DNS** est une portion de l'espace de noms de domaine que l'on administre depuis un **serveur DNS** donné. Elle contient les enregistrements DNS (appelés _Resource Records_, ou `RR`) pour un ou plusieurs domaines.
 
 - Une zone peut être :
   - **Directe (forward)** : nom → IP
@@ -158,7 +196,9 @@ logging {
 - Elle contient aussi des `NS`, `A`, `AAAA`, `CNAME`, `MX`, etc.
 
 :::warn
+
 - Une zone DNS **n'est pas forcément égale à un domaine** : un domaine peut être découpé en plusieurs zones, chacune gérée par un serveur différent.
+
 :::
 
 ---
@@ -237,9 +277,9 @@ OPTIONS="-t /var/named/chroot -u named"
 
 TSIG est principalement utilisé pour :
 
-* **Authentifier les mises à jour DNS dynamiques** (par exemple avec `nsupdate`)
-* **Sécuriser les transferts de zones DNS** entre serveurs maîtres et esclaves
-* **Empêcher les attaques de type spoofing ou falsification de données DNS**
+- **Authentifier les mises à jour DNS dynamiques** (par exemple avec `nsupdate`)
+- **Sécuriser les transferts de zones DNS** entre serveurs maîtres et esclaves
+- **Empêcher les attaques de type spoofing ou falsification de données DNS**
 
 ---
 
@@ -250,8 +290,10 @@ TSIG est principalement utilisé pour :
 3. **Vérification** : Le destinataire utilise la même clé pour vérifier la signature. Si elle correspond, le message est authentifié.
 
 :::warn
+
 - TSIG **ne chiffre pas** les données DNS : il **authentifie** seulement l'origine et l'intégrité.
 - Pour des besoins modernes et automatisés, certains systèmes remplacent _TSIG_ par des méthodes basées sur **TLS (_DoT_)** ou **HTTPS (_DoH_)**, mais TSIG reste courant dans les infrastructures internes.
+
 :::
 
 ---
@@ -296,7 +338,7 @@ En effet, le DNS traditionnel ne vérifie pas si les réponses proviennent bien 
 
 **DNSSEC ajoute des signatures numériques aux enregistrements DNS** pour que le résolveur puisse vérifier qu'ils n'ont pas été modifiés.
 
-#### ⚠️ Limitations et points de vigilance :
+#### ⚠️ Limitations et points de vigilance
 
 - **Complexité de gestion** : renouvellement des clés, propagation des DS, …
 - **Taille des réponses DNS** plus grande et peut poser problème avec certains pare-feux.
@@ -330,7 +372,6 @@ Le résolveur peut ainsi **remonter la chaîne jusqu'à la racine** pour vérifi
 | **DNSKEY**            | Clé publique (ZSK/KSK)                          |
 | **DS**                | Lien de confiance vers la clé d'une zone enfant |
 | **NSEC / NSEC3**      | Prouve qu'un nom n'existe pas (anti-forgery)    |
-
 
 ---
 
@@ -372,9 +413,11 @@ Cela permet :
 DANE utilise un **enregistrement DNS de type `TLSA`**, associé à un service TLS (ex : _HTTPS_, _SMTP_, _XMPP_, …).
 
 :::warn
+
 - **DNSSEC doit être activé et fonctionnel**
 - Tous les résolveurs DNS intermédiaires doivent **supporter DNSSEC**
 - Les **clients/serveurs** doivent être **compatibles** avec DANE (ex : Postfix, Exim, OpenSSL avec libunbound)
+
 :::
 
 :::tip
@@ -419,6 +462,13 @@ Ce champ indique :
 - `host -t tlsa _443._tcp.exemple.local`
 - `journalctl -u named`
 
+Pour forcer la libération d'une _"lease"_ DHCP côté client :
+
+```sh
+dhcpcd -k
+dhclient -r
+```
+
 ---
 
 ## 🔗 Liens
@@ -429,7 +479,7 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 - [Basic DNS server configuration](https://lpic2book.github.io/src/lpic2.207.1/)
 - [Create and maintain DNS zones](https://lpic2book.github.io/src/lpic2.207.2/)
 - [Securing a DNS Server](https://lpic2book.github.io/src/lpic2.207.3/)
+
 :::
 
 ---
-
