@@ -29,3 +29,12 @@ Pour plus d'information, voir :
 :::
 
 ---
+
+Exemple : Création automatique du répertoire `/home` à la première connexion :
+
+```ini
+# /etc/pam.d/common-session
+session required pam_mkhomedir.so skel=/etc/skel umask=0022
+```
+
+---
