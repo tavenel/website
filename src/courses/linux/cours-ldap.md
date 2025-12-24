@@ -18,6 +18,7 @@ Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [LDAP client usage](https://lpic2book.github.io/src/lpic2.210.3/)
 - [Configuring an OpenLDAP server](https://lpic2book.github.io/src/lpic2.210.4/)
+
 :::
 
 ---
@@ -114,32 +115,43 @@ Les options `-x`, `-W` et `-D "cn=admin,dc=example,dc=com"` servent à l'authent
 
 1. `top` : Classe racine dont héritent toutes les autres classes d'objet. Elle est abstraite et ne définit aucun attribut. Requise dans chaque entrée LDAP comme base de la hiérarchie des classes d'objet.
 2. `person` : Classe de base utilisée pour représenter un individu. Souvent utilisée comme base de classes d'objets plus spécifiques.
-  - `cn` (_Common Name_): Nom complet
-  - `sn` (_Surname_): Nom de famille
+
+- `cn` (_Common Name_): Nom complet
+- `sn` (_Surname_): Nom de famille
+
 3. `organizationalPerson` : Extension de `person` pour représenter les individus au sein d'une organisation.
-  - `ou` (_Organizational Unit_) : Unité organisationnelle à laquelle appartient la personne.
-  - `telephoneNumber`
-  - …
+
+- `ou` (_Organizational Unit_) : Unité organisationnelle à laquelle appartient la personne.
+- `telephoneNumber`
+- …
+
 4. `inetOrgPerson` (Internet Organizational Person) : Extension de `organizationalPerson` largement utilisée dans les annuaires Internet et Intranet pour représenter les personnes.
-  - `mail`
-  - `userPassword` (généralement stocké sous forme de hash)
-  - `givenName`
-  - `displayName`
-  - `employeeNumber`
-  - …
+
+- `mail`
+- `userPassword` (généralement stocké sous forme de hash)
+- `givenName`
+- `displayName`
+- `employeeNumber`
+- …
+
 5. `posixAccount` : Compte utilisateur Unix
-  - `uid` (identifiant utilisateur, utilisé comme nom de connexion pour le compte Unix)
-  - `uidNumber` (identifiant utilisateur Unix)
-  - `gidNumber` (identifiant du groupe Unix)
-  - `homeDirectory` (chemin absolu vers le répertoire personnel de l'utilisateur)
-  - `loginShell` (chemin vers l'interpréteur de commandes de connexion de l'utilisateur)
+
+- `uid` (identifiant utilisateur, utilisé comme nom de connexion pour le compte Unix)
+- `uidNumber` (identifiant utilisateur Unix)
+- `gidNumber` (identifiant du groupe Unix)
+- `homeDirectory` (chemin absolu vers le répertoire personnel de l'utilisateur)
+- `loginShell` (chemin vers l'interpréteur de commandes de connexion de l'utilisateur)
+
 6. `shadowAccount` : Utilisé pour stocker les informations de la suite de mots de passe _shadow_ (attributs liés aux politiques d'expiration des mots de passe).
-  - `shadowLastChange`
-  - `shadowMin` 
-  - `shadowMax`
-  - `shadowWarning`
+
+- `shadowLastChange`
+- `shadowMin`
+- `shadowMax`
+- `shadowWarning`
+
 7. `domain` : Domaine ou zone DNS
-  - `dc` (_Domain Component_)
+
+- `dc` (_Domain Component_)
 
 ---
 
@@ -189,4 +201,3 @@ Il est souvent intéressant de coupler un service d'authentificatio réseau type
 :::
 
 ---
-
