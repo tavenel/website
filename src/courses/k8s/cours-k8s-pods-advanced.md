@@ -181,3 +181,11 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 - Usage : chargement de données, migration BDD, génération de configs, attente dépendances, … (tous les prérequis du conteneur)
 
 ---
+
+## Pause Container
+
+- Un conteneur _pause_ pour chaque _Pod_
+- Gère les namespaces : network, IPC, …
+- pas de logique métier
+
+---
