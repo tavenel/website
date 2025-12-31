@@ -749,6 +749,8 @@ created: 2024-10-17
 
 ##### Outils et extensions kubectl
 
+- <https://krew.sigs.k8s.io/> : `krew` : kubectl plugin manager
+- <https://kubernetes.io/docs/reference/kubectl/kuberc/> : `kuberc` : kubectl user preference
 - `kubectx` : change context
 - `kubens` : change namespace
 - `kubie` : change context / namespace temporairement
@@ -762,6 +764,7 @@ created: 2024-10-17
     - `kubectl access-matrix` / [Rakkess (Review Access)](https://github.com/corneliusweig/rakkess) by Cornelius Weig
     - `kubectl rbac-lookup` / [RBAC Lookup](https://github.com/FairwindsOps/rbac-lookup) by FairwindsOps
     - `kubectl rbac-tool` / [RBAC Tool](https://github.com/alcideio/rbac-tool) by insightCloudSec
+  - <https://docs.prequel.dev/> : recherche des problèmes courants (_common reliability enumeration : CRE_)
 
 ##### Dashboard
 
@@ -798,7 +801,9 @@ created: 2024-10-17
 - `systemd-analyze` : analyse du temps de démarrage des services
 - [systemctl-tui](https://github.com/rgwood/systemctl-tui)
 - Lecteur `journalctl`: <https://github.com/Lifailon/lazyjournal>
-- TUI `systemd`: <https://isd-project.github.io/isd/>
+- TUI `systemd`:
+  - <https://isd-project.github.io/isd/>
+  - <https://github.com/matheus-git/systemd-manager-tui>
 - TUI `sysctl` : <https://github.com/orhun/systeroid>
 
 #### Network
