@@ -13,47 +13,30 @@ Le déploiement de Kubernetes dans un environnement de production est une étape
 
 Pour tester l'utilisation de Kubernetes, vous pouvez :
 
-- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker). Ou `k3d` qui permet de faire la même chose avec `k3s`. Ces distributions sont utiles pour avoir plusieurs clusters en parrallèle.
+- Utiliser `kind` qui permet de déployer un cluster Kubernetes complet en utilisant des conteneurs Docker (nécesite Docker). Utile pour avoir plusieurs clusters en parrallèle. C'est l'outil de test utilisé par les développeurs de Kubernetes, il est donc très robuste et à jour.
+- Utiliser `Docker Desktop` qui permet dans les dernières versions de déployer un mini cluster de test Kubernetes, soit mono-noeud en utilisant `kubeadm` (l'installeur standard de Kubernetes), soit multi-noeud en utilisant `kind`.
+
+Il existe d'autres méthodes d'installation, notamment :
+
 - Utiliser `Minikube` (Windows / MacOS / Linux), qui permet de déployer un noeud simple dans une instance locale. Minikube peut utiliser différents types de drivers (VirtualBox, KVM, Docker, …) et crée tout le cluster dans une VM (ou dans un conteneur). Les ressources sont donc plus limitées : <https://kubernetes.io/fr/docs/tasks/tools/install-minikube/>
 - Utiliser `k3s` (Linux uniquement, par exemple dans une VM) qui permet de déployer une vraie instance légère de Kubernetes (mono-noeud par défaut) : <https://docs.k3s.io/quick-start>
-- Utiliser `Docker Desktop` qui permet dans les dernières versions de déployer un mini cluster de test Kubernetes
-
-:::tip
-Un cluster kubernetes complet peut être un peu gourmand en ressources et suivant les installations, Minikube est très restrictif. Ajouter les options suivantes **à la création du cluster** :
-
-```sh
-minikube start --cpus 4 --memory 8192
-```
-
-:::
+- `k3d` qui permet de faire la même chose que `kind` avec `k3s`.
 
 ### Installer Kubectl
 
-kubectl est l'interface en ligne de commande de configuration de Kubernetes. Installer kubectl sur la même machine que Minikube :
+kubectl est l'interface en ligne de commande permettant d'interagir avec un cluster Kubernetes. **Si celui-ci n'est pas installé automatiquement (docker desktop)**, installer kubectl de préférence sur la même machine que le cluster :
 
 <https://kubernetes.io/docs/tasks/tools/>
 
-:::tip
-`kubectl` est la CLI de Kubernetes. Pour l'utiliser avec Minikube, on utilisera la notation suivante :
+Kubectl utilise un fichier de configuration **kubeconfig** pour savoir **à quel cluster se connecter, avec quel utilisateur, et dans quel namespace** (emplacement par défaut : `~/.kube/config`). Kubectl sélectionne le cluster à utiliser via un **context** = combinaison _(cluster + user + namespace)_ :
 
-```sh
-minikube kubectl -- …
-```
-
-Attention à bien ajouter les caractères `--` qui permettent de séparer la sous-commande `kubectl` de `minikube` des paramètres passés à `kubectl`. Par exemple : `minikube kubectl -- get po -A`.
-
-Dans la suite du TP, on utilisera uniquement la notation `kubectl` : attention à bien taper `minikube kubectl --` puis la suite de la commande.
-:::
-
-### Dashboard de Kubernetes
-
-Pour vérifier simplement le bon déroulement du TP, on peut déployer le dashboard Web de Kubernetes. En pratique, ce dashboard est rarement utilisé (on lui préfère les commandes `kubectl` beaucoup plus puissantes), mais celui-ci est assez utile pour tester kubernetes.
-
-Minikube permet de déployer et lancer le dashboard très simplement :
-
-```sh
-minikube dashboard
-```
+- **clusters** → adresse de l’API + certificat
+- **users** → méthode d’authentification (certificat, token, OIDC…)
+- **contexts** → lien entre _cluster / user / namespace_
+- **current-context** → celui utilisé par défaut
+- Voir la config : `kubectl config view`
+- Lister les contexts : `kubectl config get-contexts`
+- Changer de context : `kubectl config use-context <nom>`
 
 :::tip
 
