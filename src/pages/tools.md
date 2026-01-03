@@ -60,6 +60,10 @@ created: 2024-10-17
 
 - <https://github.com/veggiemonk/awesome-docker> : awesome Docker
 - <https://github.com/docker/awesome-compose> : awesome Docker Compose
+- Dashboards :
+  - <https://getarcane.app/>
+  - <https://www.portainer.io/>
+  - `lazydocker`
 - 🔒 Sécurité :
   - _Docker Scout_ (inclus dans _Docker desktop_) : voir la [cheatsheet Docker](/docker/cheatsheet)
   - <https://github.com/docker/docker-bench-security>
