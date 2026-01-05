@@ -370,6 +370,12 @@ Les services gérés coûtent souvent 30 à 50 % de plus que les services autog�
 
 ---
 
+:::link
+Il existe de (très) nombreuses manières d'installer Kubernetes : voir <https://github.com/zwindler/101-ways-to-deploy-kubernetes>
+:::
+
+---
+
 ## 🏗️ Architecture
 
 ---
