@@ -182,6 +182,7 @@ created: 2024-10-17
   - <https://kargo.io/> : promotion de pipelines (test,staging,prod,…). [tuto](https://piotrminkowski.com/2025/01/14/continuous-promotion-on-kubernetes-with-gitops/)
   - <https://devtron.ai/> : alternative à `Kargo`
 - `flagger` : blue/green, A/B, canary deployments
+- <https://keel.sh/> : "Operator to automate Helm, DaemonSet, StatefulSet & Deployment updates"
 
 ### 🪫 FinOps
 
