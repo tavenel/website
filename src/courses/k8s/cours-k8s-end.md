@@ -285,6 +285,14 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 ---
 
+### Multi-cluster
+
+- [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186)
+- <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
+- <https://kubevirt.io/2025/Stretched-layer2-network-between-clusters.html>
+
+---
+
 ### Autres
 
 - Awesome Kubernetes: <https://github.com/tomhuang12/awesome-k8s-resources> 🌟
@@ -293,7 +301,6 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Exemples :
   - de projets : voir la [page des liens](/liens#kubernetes) 🔗
   - de fichiers de manifest YAML : <https://github.com/kubernetes-up-and-running/examples> 📄
-- Multi-cluster : [Interconnecting Clusters (Jérôme Petazzoni)](https://2021-05-enix.container.training/5.yml.html#186) et <https://www.kubecost.com/kubernetes-multi-cloud/kubernetes-multi-cluster/> 🌐
 - Tutoriels pour 2 solutions de stockage : [Portworx](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/portworx.md) et [OpenEBS](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/openebs.md) 💾
 - <https://blog.mossroy.fr/2025/12/14/nfs-en-stockage-persistant-pour-kube/>
 - [Readiness vs. Liveness probes: what is the difference? (and startup probes!)](https://medium.com/@jrkessl/readiness-vs-liveness-probes-what-is-the-difference-and-startup-probes-215560f043e4) 📝
