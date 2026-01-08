@@ -9,11 +9,11 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectifs du cours
 
-- Se familiariser avec le jargon des tests. 
-- Comprendre les différents types de tests logiciels. 
+- Se familiariser avec le jargon des tests.
+- Comprendre les différents types de tests logiciels.
 - Utiliser la méthode et les outils de test adaptés au contexte et à la situation.
 - Développer des tests unitaires dans un projet informatique
-- Elaborer des jeux d'essais et le déroulement d'une recette fonctionnelle. 
+- Elaborer des jeux d'essais et le déroulement d'une recette fonctionnelle.
 
 ### 📅 Déroulé des séances
 
@@ -24,8 +24,6 @@ Module de 10H
 ## 📑 Documents
 
 - [🔀 Module en classe renversée](/epsi/b3/methodo-tests/classe-renversee)
-
-<!--
 
 ### Méthodologie des tests
 
@@ -45,6 +43,3 @@ Module de 10H
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/tests).
-
--->
-
