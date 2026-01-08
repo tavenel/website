@@ -285,7 +285,7 @@ created: 2024-10-17
 - `woodpecker CI` : léger, intègre Docker
 - `tekton`, `drone` : déployer sa CI/CD dans k8s
 - <https://werf.io/> : lier CI/CD et k8s
-- <https://www.shipfox.io/> : GitHub runners rapides et moins cher
+- <https://www.shipfox.io/> et <https://runmyjob.io/> : GitHub runners rapides et moins cher
 - <https://www.usemergeable.dev/> : Inbox pour les Pull Requests depuis GitHub
 
 ### Outils CI
