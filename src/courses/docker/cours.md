@@ -221,6 +221,7 @@ Si l'on doit lancer plusieurs services dans un conteneur (déconseillé sauf ser
 - Un script shell comme processus principal, responsable du lancement des autres processus
 - Un service de supervision : <https://supervisord.org/>
 - Un "vrai" système d'_init_ comme dans une distribution Linux standard, mais beaucoup plus léger : <https://github.com/krallin/tini>
+
 :::
 
 ---
@@ -248,6 +249,7 @@ Il est possible d'utiliser d'autres registries que le hub par défaut comme :
 - Hub Github : <https://ghcr.io/> 🔗
 - Hub d'images temporaires <https://ttl.sh/> 🔗
 - Registry interne à l'entreprise : `gitea`, <https://hub.docker.com/_/registry> 🔗
+
 :::
 
 ---
@@ -754,7 +756,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 - [Best pratices dev (doc officielle)](https://docs.docker.com/develop/dev-best-practices/)
 - [Bonnes pratiques sur le serveur Docker](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/docker-bonnes-pratiques/)
-- [Docker Caveats : What You Should Know About Running Docker In Production]<https://docker-saigon.github.io/post/Docker-Caveats/>
+- [Docker Caveats : What You Should Know About Running Docker In Production](https://docker-saigon.github.io/post/Docker-Caveats/)
 - [Pourquoi utiliser l'option `-t` pour un conteneur interactif](https://www.baeldung.com/linux/docker-run-interactive-tty-options)
 - [Astuce _Docker in Docker_ : `-v var/run/docker.sock:/var/run/docker.sock`](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/)
 - [Build multi-plateformes](https://blog.microlinux.fr/docker-cmatrix-alpine-03/)
@@ -764,8 +766,8 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ## Construction d'images
 
-- [Best practives Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-- [Best practives Dockerfile (2)](https://github.com/hexops-graveyard/dockerfile)
+- [Best practices Dockerfile (doc officielle)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Best practices Dockerfile (2)](https://github.com/hexops-graveyard/dockerfile)
 - [Optimiser la taille des images](https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/optimiser-taille-image/)
 - [Optimiser les images avec le cache des layers](https://bearstech.com/societe/blog/securiser-et-optimiser-le-build-des-images-docker-pour-vos-applications/)
 
@@ -815,4 +817,3 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 - Windows is a registered trademark of Microsoft Corporation in the United States and other countries.
 - Oracle and VirtualBox are registered trademarks of Oracle and/or its affiliates.
 - Other names may be trademarks of their respective owners
-
