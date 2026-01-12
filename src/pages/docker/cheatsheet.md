@@ -92,7 +92,7 @@ Lister toutes les images :
 docker images -a
 ```
 
-## Supprimer une image :
+## Supprimer une image
 
 ```sh
 docker rmi 54321
@@ -119,7 +119,7 @@ docker diff
 - `docker container rename`
 - `docker container stats` : monitoring des ressources Docker
 - `docker container commit` : crée une image depuis un conteneur existant (à éviter)
-- `docker container inspect` : affiche la configuration d'un conteneur en Json. Cette configuration peut être verbeuse, on utilise souvent `jq` pour filtrer l'affichage, par exemple pour afficher uniquement l'état (_healthcheck_) : `docker inspect --format='{{json .State.Health}}'`
+- `docker container inspect` : affiche la configuration d'un conteneur en Json. Cette configuration peut être verbeuse, on utilise souvent `jq` pour filtrer l'affichage, par exemple pour afficher uniquement l'état (*healthcheck*) : `docker inspect --format='{{json .State.Health}}'`
 
 ## Docker volumes
 
@@ -209,18 +209,21 @@ Paramètres disponibles pour un réseau de type `bridge` :
 - `com.docker.network.bridge.enable_ip_masquerade` : Active le masquage IP pour l'accès au réseau externe.
 - `subnet` : Choisir le réseau (CIDR)
 - `gateway` : Spécifier la passerelle du réseau.
+
 :::
 
 :::tip
-Comment atteindre des services de l'hôte depuis un conteneur isolé par le _bridge_ Docker ?
+Comment atteindre des services de l'hôte depuis un conteneur isolé par le *bridge* Docker ?
 
-- _Docker Desktop_ (dev uniquement) : Utiliser l'adresse IP interne ou le nom DNS `host.docker.internal`
+- *Docker Desktop* (dev uniquement) : Utiliser l'adresse IP interne ou le nom DNS `host.docker.internal`
 - Linux natif : ajouter `--add-host=host.docker.internal:host-gateway` à la ligne de commande
-- _Docker Compose_ : ajouter à la configuration du conteneur :
+- *Docker Compose* : ajouter à la configuration du conteneur :
+
     ```yaml
     extra_hosts:
     - "host.docker.internal:host-gateway"
     ```
+
 :::
 
 ### Supprimer un réseau
@@ -301,13 +304,13 @@ Build Cache     32        0         246.5MB   246.5MB
 ```sh
 docker buildx du
 
-ID						RECLAIMABLE	SIZE		LAST ACCESSED
-9zfls97m6q210we36khnehxl1*              	true 		231.8MB   	29 hours ago
+ID      RECLAIMABLE SIZE  LAST ACCESSED
+9zfls97m6q210we36khnehxl1*               true   231.8MB    29 hours ago
 […]
-Shared:		187.4MB
-Private:	246.5MB
-Reclaimable:	433.9MB
-Total:		433.9MB
+Shared:  187.4MB
+Private: 246.5MB
+Reclaimable: 433.9MB
+Total:  433.9MB
 ```
 
 ## Serveur distant
@@ -336,11 +339,12 @@ docker run -v var/run/docker.sock:/var/run/docker.sock …`
 ## Liens
 
 :::link
-Voir aussi : 
+Voir aussi :
 
 - <https://spacelift.io/blog/docker-commands-cheat-sheet>
 - <https://github.com/wsargent/docker-cheat-sheet>
 - <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/cheat-sheet/>
+
 :::
 
 ## Registry
@@ -370,7 +374,7 @@ docker scout recommendations nginx:latest # MAJ à effectuer
 
 ### Capabilities
 
-Docker permet de contrôler les _capabilities_ du noyau Linux disponibles dans un conteneur.
+Docker permet de contrôler les *capabilities* du noyau Linux disponibles dans un conteneur.
 
 ```sh
 # Retirer des capabilities
@@ -381,6 +385,7 @@ docker run --cap-drop=NET_RAW,MKNOD,SYS_ADMIN,SYS_MODULE mon_image
 # Retirer TOUTES les capabilities sauf …
 docker run --cap-drop=ALL --cap-add=NET_ADMIN,… mon_image
 ```
+
 Rappel des principales capabilities d'un noyau Linux :
 
 - `AUDIT_WRE` : Audit et accès au file system
@@ -404,11 +409,12 @@ Pour afficher les capabilities courantes, utiliser :
 ```sh
 capsh --print
 ```
+
 :::
 
 ### CIS Benchmarks
 
-**Docker Bench for Security** permet de vérifier la conformité aux benchmarks _Center for Internet Security_ (CIS) :
+**Docker Bench for Security** permet de vérifier la conformité aux benchmarks *Center for Internet Security* (CIS) :
 
 ```sh
 docker run -it --net host --pid host --cap-add audit_control \
@@ -419,7 +425,7 @@ docker/docker-bench-security
 
 ### WAF
 
-Un _Pare-feu d'applications Web_ (WAF) comme `ModSecurity` permet de protéger vos applications contre les attaques courantes : injections SQL, XSS, …
+Un *Pare-feu d'applications Web* (WAF) comme `ModSecurity` permet de protéger vos applications contre les attaques courantes : injections SQL, XSS, …
 
 ```sh
 docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
@@ -431,22 +437,22 @@ docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
 
 - `FROM` : permet de définir l'image source
 - `ADD <SOURCE> <DESTINATION>` : permet d'ajouter / télécharger des fichiers dans l'image
-  + `<SOURCE>` est un chemin sur l'hyperviseur, `<DESTINATION>` est un chemin à l'intérieur de l'image en création.
+  - `<SOURCE>` est un chemin sur l'hyperviseur, `<DESTINATION>` est un chemin à l'intérieur de l'image en création.
 - `RUN` : permet d'exécuter des commandes dans votre conteneur
 - `EXPOSE <PORT>` : permet de documenter l'utilisation d'un port du conteneur.
-  + Remplacer `<PORT>` par la valeur du port utilisé dans le conteneur, par exemple `80`.
+  - Remplacer `<PORT>` par la valeur du port utilisé dans le conteneur, par exemple `80`.
 - `VOLUME <VOL>` : permet de documenter l'utilisation d'un répertoire du conteneur partageant des données avec l'hyperviseur.
-  + Remplacer `<VOL>` par le chemin du répertoire dans le conteneur.
+  - Remplacer `<VOL>` par le chemin du répertoire dans le conteneur.
 - `WORKDIR <DIR>` : définit le nouveau répertoire de travail à utiliser dans le conteneur.
-  + Remplacer `<DIR>` par le chemin du répertoire dans le conteneur.
+  - Remplacer `<DIR>` par le chemin du répertoire dans le conteneur.
 - `ENTRYPOINT <COMMANDE>` : définit le processus principal (PID=1) permettant de lancer le conteneur.
-  + Remplacer `<COMMANDE>` par la commande désirée, par exemple `['java','-jar','myapp.jar']`.
-  + Préférer un tableau d'arguments à une chaîne de caractères.
-  + Non remplacé par la commande `docker run`
+  - Remplacer `<COMMANDE>` par la commande désirée, par exemple `['java','-jar','myapp.jar']`.
+  - Préférer un tableau d'arguments à une chaîne de caractères.
+  - Non remplacé par la commande `docker run`
 - `CMD <COMMANDE>` : (re)définit la commande et ses arguments par défaut à exécuter au démarrage du conteneur.
-  + Préférer un tableau d'arguments à une chaîne de caractères.
-  + Peut être remplacé par la commande `docker run …`
-  + Préférer définir uniquement des arguments par défaut et définir la commande dans l'entrypoint (évite de remplacer le processus par un `docker run …`)
+  - Préférer un tableau d'arguments à une chaîne de caractères.
+  - Peut être remplacé par la commande `docker run …`
+  - Préférer définir uniquement des arguments par défaut et définir la commande dans l'entrypoint (évite de remplacer le processus par un `docker run …`)
 - `HEALTHCHECK` permet d'exécuter une commande dans le conteneur pour vérifier son état : [doc](https://docs.docker.com/reference/dockerfile/#healthcheck). Par exemple : `HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1`
 
 - [Lien : vidéo CMD vs ENTRYPOINT mais c'est quoi la différence ?](https://www.youtube.com/watch?v=kfyDu5R4VrM)
@@ -465,7 +471,7 @@ RUN npm package
 # On repart d'une image vierge
 FROM nginx AS ma-prod
 # Mais on peut copier des fichiers du build précédent
-COPY --fromt=mon-build dist/ build/
+COPY --from=mon-build dist/ build/
 …
 ```
 
@@ -488,7 +494,7 @@ docker build -t NOM_DE_MA_NOUVELLE_IMAGE -f NOM_DU_FICHIER_DOCKERFILE REPERTOIRE
 - Amélioration des performances de build grâce à la construction en parallèle et une meilleure gestion des caches.
 - Utilisation optimisée des ressources (CPU, mémoire).
 - Fonctionnalités avancées comme le support des builds multi-plateformes et des caches de builds distribués.
-- Meilleure sécurité avec des fonctionnalités comme le build _rootless_ (sans accès root).
+- Meilleure sécurité avec des fonctionnalités comme le build *rootless* (sans accès root).
 
 Pour plus d'information, voir les liens suivants :
 
@@ -555,8 +561,10 @@ docker buildx build \
 ```
 
 :::tip
+
 - `--push` : envoie directement l'image vers le registre
 - Peut être remplacé par `--load` pour un test local (pour 1 architecture uniquement).
+
 :::
 
 ### Vérifier l'image sur Docker Hub
@@ -568,7 +576,6 @@ docker buildx imagetools inspect moncompteDocker/nginx-custom:latest
 ### Montage de secrets
 
 Permet de passer des secrets au moment du build sans les stocker dans l'image (invisible dans `docker history`).
-
 
 ```dockerfile
 # Dockerfile
@@ -633,6 +640,7 @@ Voir :
 
 - la documentation : <https://docs.docker.com/ai/model-runner/>
 - le catalogue : <https://hub.docker.com/catalogs/models>
+
 :::
 
 ### Model-Connected-Pipeline (MCP)
@@ -654,6 +662,7 @@ Voir :
 
 - la documentation : <https://docs.docker.com/ai/mcp-catalog-and-toolkit/>
 - le catalogue : <https://hub.docker.com/mcp>
+
 :::
 
 ## Offload
@@ -683,13 +692,13 @@ docker run --rm --gpus all hello-world
 
 # Cheatsheet docker compose
 
-## Démarrer la stack :
+## Démarrer la stack
 
 ```sh
 docker compose up
 ```
 
-## Détruire la stack :
+## Détruire la stack
 
 ```sh
 docker compose down
@@ -708,20 +717,22 @@ docker compose watch
 ```
 
 :::link
+
 - Voir la documentation : <https://docs.docker.com/compose/how-tos/file-watch/>
 - Pour un exemple, voir : <https://github.com/dockersamples/avatars>
+
 :::
 
-## Attributs d'un service décrit dans un `docker compose.yml` :
+## Attributs d'un service décrit dans un `docker compose.yml`
 
 - `image` : permet de spécifier l'image source pour le conteneur
 - `build` : permet de spécifier le `Dockerfile` source pour créer l'image du conteneur
 - `volume` : permet de spécifier les points de montage entre le système hôte et les conteneurs
 - `restart` : permet de définir le comportement du conteneur en cas d'arrêt du processus
 - `environment` : permet de définir les variables d'environnement
-- `depends_on ` permet de dire que le conteneur dépend d'un autre conteneur
+- `depends_on` permet de dire que le conteneur dépend d'un autre conteneur
 - `ports` : permet de définir les ports disponibles entre la machine host et le conteneur
-- `provider` : utilise un _Provider_ et non une image Docker pour ce service. Voir : <https://docs.docker.com/compose/how-tos/provider-services/>
+- `provider` : utilise un *Provider* et non une image Docker pour ce service. Voir : <https://docs.docker.com/compose/how-tos/provider-services/>
 
 ## Models
 
@@ -746,4 +757,3 @@ Voir : <https://docs.docker.com/compose/bridge/usage/>
 - © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-
