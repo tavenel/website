@@ -22,83 +22,11 @@ tags:
 
 ---
 
-### 🌟 Charts Helm populaires
+### 🌟 Exemples de Chart Helm
 
 ---
 
-1. **MySQL** :
-   - **Description** : Déploie une instance MySQL.
-   - **Repository** : `bitnami/mysql`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add bitnami https://charts.bitnami.com/bitnami
-     helm install my-mysql bitnami/mysql
-     ```
-
----
-
-2. **WordPress** :
-   - **Description** : Déploie une instance WordPress avec une base de données MySQL.
-   - **Repository** : `bitnami/wordpress`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add bitnami https://charts.bitnami.com/bitnami
-     helm install my-wordpress bitnami/wordpress
-     ```
-
----
-
-3. **MongoDB** :
-   - **Description** : Déploie une instance MongoDB.
-   - **Repository** : `bitnami/mongodb`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add bitnami https://charts.bitnami.com/bitnami
-     helm install my-mongodb bitnami/mongodb
-     ```
-
----
-
-4. **Redis** :
-   - **Description** : Déploie une instance Redis.
-   - **Repository** : `bitnami/redis`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add bitnami https://charts.bitnami.com/bitnami
-     helm install my-redis bitnami/redis
-     ```
-
----
-
-5. **Nginx** :
-   - **Description** : Déploie une instance Nginx.
-   - **Repository** : `bitnami/nginx`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add bitnami https://charts.bitnami.com/bitnami
-     helm install my-nginx bitnami/nginx
-     ```
-
----
-
-6. **PostgreSQL** :
-   - **Description** : Déploie une instance PostgreSQL.
-   - **Repository** : `bitnami/postgresql`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add bitnami https://charts.bitnami.com/bitnami
-     helm install my-postgresql bitnami/postgresql
-     ```
-
----
-
-7. **Kubernetes Dashboard** :
+1. **Kubernetes Dashboard** :
    - **Description** : Déploie le Kubernetes Dashboard pour la gestion visuelle du cluster.
    - **Repository** : `kubernetes/dashboard`
    - **Exemple de commande** :
@@ -110,16 +38,28 @@ tags:
 
 ---
 
-8. **Prometheus & Grafana** :
+2. **Prometheus & Grafana** :
    - **Description** : Déploie la stack Prometheus & Grafana pour la surveillance et la collecte de métriques.
    - **Repository** : `prometheus-community/prometheus`
    - **Exemple de commande** :
 
      ```sh
      helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-   helm install my-prometheus prometheus-community/kube-prometheus-stack
-   # ou seulement Prometheus :
-   # helm install prometheus-community/prometheus
+     helm install my-prometheus prometheus-community/kube-prometheus-stack
+     # ou seulement Prometheus
+     helm install prometheus-community/prometheus
+     ```
+
+---
+
+3. **Nginx** :
+   - **Description** : Déploie une instance Nginx.
+   - **Repository** : `helm.nginx.com`
+   - **Exemple de commande** :
+
+     ```sh
+     helm repo add nginx-stable https://helm.nginx.com/stable
+     helm install nginx-ingress nginx-stable/nginx-ingress
      ```
 
 ---
