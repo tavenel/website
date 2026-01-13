@@ -175,7 +175,6 @@ helm search repo kubernetes-dashboard
 3. Installation de la chart :
 
 - `helm upgrade --install` installe ou met à jour la chart.
-- `--set replicaCount=2` change `replicaCount` des `values.yml`
 
 ```sh
 helm upgrade -i my-dashboard kubernetes/kubernetes-dashboard
