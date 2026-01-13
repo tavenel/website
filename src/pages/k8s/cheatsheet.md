@@ -20,7 +20,7 @@ title: Cheatsheet Kubernetes®
 Vérifier l'état des composants du système :
 
 ```sh
-kubectl get ComponentStatus
+kubectl get --raw='/readyz?verbose'
 ```
 
 ### Versions
@@ -45,7 +45,7 @@ kubectl get nodes -o wide
 kubectl get nodes -o jsonpath='{ $.items[*].status.addresses[?(@.type=="InternalIP")].address }'
 ```
 
-#### Control-plane dans un Pod
+#### Composants du Control-plane déployés dans des Pod
 
 ```sh
 kubectl --namespace=kube-system get pods -o json \
