@@ -153,11 +153,79 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
-# 🧩 Pods multi-conteneurs
+## Session Affinity
+
+Objectif : garantir que les requêtes d'un même client sont **redirigées vers le même Pod** (**sticky sessions**).
 
 ---
 
-## 🚗 Sidecars et autres patterns
+### Session Affinity via Service (ClientIP) 🌐
+
+- **kube-proxy** associe IP client (IP source) et Pod
+- Fonctionne **uniquement en L4**
+- Problèmes possibles avec :
+  - NAT
+  - Proxies
+  - Load balancers cloud
+- Non adapté aux protocoles :
+  - HTTP stateful complexes
+  - Auth par cookies
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: ClusterIP
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+    - port: 80
+      targetPort: 8080
+```
+
+---
+
+### Session Affinity via Ingress (cookies) 🍪
+
+- L'Ingress Controller gère la persistance
+- Utilise généralement les Cookies HTTP
+- Plus fiable pour HTTP/HTTPS
+- Compatible avec les navigateurs
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "SESSIONID"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "3600"
+spec:
+  rules:
+    - host: app.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-service
+                port:
+                  number: 80
+```
+
+---
+
+## 🧩 Pods multi-conteneurs
+
+---
+
+### 🚗 Sidecars et autres patterns
 
 - Conteneur(s) classique(s) supplémentaire(s) dans le Pod
 - Points d'accès entrée et/ou sortie à la place du conteneur principal
@@ -173,7 +241,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
-## 🛠️ InitContainer
+### 🛠️ InitContainer
 
 - Type de conteneur Kubernetes spécifique : `initContainers`
 - Lancés dans l'ordre de spécification
@@ -182,7 +250,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
-## Pause Container
+### Pause Container
 
 - Un conteneur _pause_ pour chaque _Pod_
 - Gère les namespaces : network, IPC, …
