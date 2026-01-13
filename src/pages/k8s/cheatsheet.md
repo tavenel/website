@@ -242,6 +242,12 @@ kubectl config view --raw -o json \
 | jq .
 ```
 
+#### Création d'un token pour un ServiceAccount
+
+```sh
+kubectl create token MON_SERVICE_ACCOUNT
+```
+
 ## Généralités
 
 ### dry-run : simule la commande sans modification du cluster
