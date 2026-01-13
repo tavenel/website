@@ -73,10 +73,12 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
   - 203.1 Intervention sur le système de fichiers Linux (valeur : 4)
   - 203.2 Maintenance des systèmes de fichiers Linux (valeur : 3)
     - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
+    - [💽 TP : Utiliser ZFS pour gérer des volumes logiques et des partitions](/linux/tp-zfs)
   - 203.3 Options de création et de configuration des systèmes de fichiers (valeur : 2)
 - Sujet 204 : **Administration avancée des périphériques de stockage**
   - 204.1 Configuration du RAID logiciel (valeur : 3)
   - 204.2 Ajustement des accès aux périphériques de stockage (valeur : 2)
+    - [💽 TP : Utiliser iSCSI pour gérer des disques réseau](/linux/tp-iscsi)
   - 204.3 Gestionnaire de volumes logiques (valeur : 3)
     - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - Sujet 205 : **Configuration réseau**
@@ -104,6 +106,7 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - Sujet 209 : **Partage de fichiers**
   - 209.1 Configuration d'un serveur SAMBA (valeur : 5)
   - 209.2 Configuration d'un serveur NFS (valeur : 3)
+  - [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
 - Sujet 210 : **Gestion des clients réseau**
   - 210.1 Configuration DHCP (valeur : 2)
   - 210.2 Authentification PAM (valeur : 3)
