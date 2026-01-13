@@ -18,16 +18,23 @@ helm show values gitlab/gitlab > values.yaml
 helm upgrade --install gitlab gitlab/gitlab -f values.yaml
 ```
 
+:::warn
+La helm chart Gitlab est très gourmande en ressources. Pour un serveur d'intégration continue alternatif, on pourra déployer <https://gittea.dev/> qui est compatible avec la CI/CD de Github : <https://docs.gitea.com/installation/install-on-kubernetes>
+:::
+
 ### Pipeline simple CI/CD
 
 :::exo
 Créer une **premier pipeline** GitLab CI pour :
-  - Créer les composants de votre application : images Docker du backend & frontend
-  - Publier ces images dans la registry Gitlab
-  - Déployer votre application sur Kubernetes via Helm.
+
+- Créer les composants de votre application : images Docker du backend & frontend
+- Publier ces images dans la registry Gitlab
+- Déployer votre application sur Kubernetes via Helm.
+
 :::
 
 :::link
-- Pour apprendre à utiliser Gitlab pour stocker ses images docker, voir : <https://blog.stephane-robert.info/post/gitlab-container-docker-registry/>
-:::
 
+- Pour apprendre à utiliser Gitlab pour stocker ses images docker, voir : <https://blog.stephane-robert.info/post/gitlab-container-docker-registry/>
+
+:::
