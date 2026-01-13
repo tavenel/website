@@ -579,7 +579,7 @@ created: 2024-10-17
 
 - `ssh`, `assh` (sur-couche SSH)
   - blocage connexions : `fail2ban`, `SSHGuard` ([tuto](https://loud-technology.com/insight/sshguard-protection-ssh-alternative-fail2ban/))
-- `x-pipe`
+- <https://github.com/xpipe-io/xpipe> : centralisation des accès à l'entièreté de l'infrastructure : SSH, Docker, k8s, Proxmox, AWS, RDP, …
 - `wazuh` (intégration Docker)
 - IDS (Intrusion Detection System) :
   - `Suricata`
