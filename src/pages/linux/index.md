@@ -75,6 +75,7 @@ layout: '@layouts/BaseLayout.astro'
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
 - [💽 TP : Utiliser iSCSI pour gérer des disques réseau](/linux/tp-iscsi)
+- [💽 TP : Utiliser ZFS pour gérer des volumes logiques et des partitions](/linux/tp-zfs)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
 - [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/linux/tp-droits-avance)
 - [👥 TP : Gestion des utilisateurs et de la sécurité](/linux/tp-utilisateurs)
