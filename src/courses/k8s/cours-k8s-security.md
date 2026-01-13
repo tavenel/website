@@ -181,48 +181,79 @@ Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un c
 
 ### 🔐 Authentification par jeton en pratique
 
-```console
-$ API=$(kubectl get svc kubernetes -o json | jq -r .spec.clusterIP)
+Connexion anonyme : forbidden
 
-$ curl -k https://$API # Connexion anonyme 
+```sh
+API_IP=$(kubectl get nodes -o jsonpath='{ $.items[*].status.addresses[?(@.type=="InternalIP")].address }')
 
-{
-  "kind": "Status",
-  "apiVersion": "v1",
-  "metadata": {},
-  "status": "Failure",
-  "message": "forbidden: User \"system:anonymous\" cannot get path \"/\"",
-  "reason": "Forbidden",
-  "details": {},
-  "code": 403
-}
+curl -k https://$API_IP:6443
+# {
+#   "kind": "Status",
+#   "apiVersion": "v1",
+#   "metadata": {},
+#   "status": "Failure",
+#   "message": "forbidden: User \"system:anonymous\" cannot get path \"/\"",
+#   "reason": "Forbidden",
+#   "details": {},
+#   "code": 403
+# }
+```
 
-$ kubectl get ServiceAccount
-NAME      SECRETS   AGE
-default   0         7h33m
+Création d'un nouveau ServiceAccount `my-api-client` :
 
-$ kubectl create token default
+```sh
+kubectl create serviceaccount my-api-client
+```
 
-eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0RoVURfVjdWdjNSeEtTMVZsdk5qUFR3Q1U5eldUanlxcWcifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzQzNjE3Nzk2LCJpYXQiOjE3NDM2MTQxOTYsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiMmViMDNjYTYtYWY4MC00YTNjLWI3OTMtYWVkYjZlM2YyYmEyIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRlZmF1bHQiLCJ1aWQiOiJkYTY4ODVhMC1jZGE1LTRhNmUtYThmZC1iZTdjMzZkNzIwMGUifX0sIm5iZiI6MTc0MzYxNDE5Niwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6ZGVmYXVsdCJ9.BjaXxdFx-w5cclykMycsEh-WbgSHwWl5z3fkm-StWkARa2MLRjTwjsT1LM1RGqutmPv4qMy9PXoua1VW4rNs8BeEy0rppG9txDKjMr1utXCgnlYJLnW80B9rTJIl_VfyVWJnvuaBnilZEyrS1_NuT1irC0GVAPexhTd6D7bHyCpB63xq1_3DjSHjoY0pK9R8VYGCa6aYR8ByyqFj5vSs-mJ7EImHEV2RqyyrQBKX3FlezZvt9q9E-ouB0I45oA1galGmOX3v7wHSHUas9qdB1FO7bEaNppud2JHXXKUUzGhkhB57IBSBuIO1sTcDQg9JXbHbaLYbC1DiBd9XL9IOoQ
+Création et lien d'un `Role` dans le namespace actuel (default) pour autoriser `my-api-client` à lister les Pods :
 
-$ curl -k -H "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjFKVHBxWE1ac0RoVURfVjdWdjNSeEtTMVZsdk5qUFR3Q1U5eldUanlxcWcifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzQzNjE3Nzk2LCJpYXQiOjE3NDM2MTQxOTYsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiMmViMDNjYTYtYWY4MC00YTNjLWI3OTMtYWVkYjZlM2YyYmEyIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRlZmF1bHQiLCJ1aWQiOiJkYTY4ODVhMC1jZGE1LTRhNmUtYThmZC1iZTdjMzZkNzIwMGUifX0sIm5iZiI6MTc0MzYxNDE5Niwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6ZGVmYXVsdCJ9.BjaXxdFx-w5cclykMycsEh-WbgSHwWl5z3fkm-StWkARa2MLRjTwjsT1LM1RGqutmPv4qMy9PXoua1VW4rNs8BeEy0rppG9txDKjMr1utXCgnlYJLnW80B9rTJIl_VfyVWJnvuaBnilZEyrS1_NuT1irC0GVAPexhTd6D7bHyCpB63xq1_3DjSHjoY0pK9R8VYGCa6aYR8ByyqFj5vSs-mJ7EImHEV2RqyyrQBKX3FlezZvt9q9E-ouB0I45oA1galGmOX3v7wHSHUas9qdB1FO7bEaNppud2JHXXKUUzGhkhB57IBSBuIO1sTcDQg9JXbHbaLYbC1DiBd9XL9IOoQ" https://$API
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-reader
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
 
-{
-  "kind": "Status",
-  "apiVersion": "v1",
-  "metadata": {},
-  "status": "Failure",
-  "message": "forbidden: User \"system:serviceaccount:default:default\" cannot get path \"/\"",
-  "reason": "Forbidden",
-  "details": {},
-  "code": 403
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: my-api-client-binding
+subjects:
+  - kind: ServiceAccount
+    name: my-api-client
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+```
 
-## Accès encore refusé (authz) mais l'utilisateur est authentifié (authn).
+```sh
+kubectl create token my-api-client
+# <TOKEN>
+```
+
+Listing des Pods avec le nouveau token
+
+```sh
+curl -k -H "Authorization: Bearer <TOKEN>" https://$API_IP:6443/api/v1/namespaces/default/pods
+
+#{
+#  "kind": "PodList",
+#  "apiVersion": "v1",
+#  "metadata": {
+#    "resourceVersion": "27451"
+#  },
+#  "items": [ …
 ```
 
 ---
 
 ### 🌐 Webhooks
+
 - Ressources (`kind:`) spécifiques pour les autorisations, dont les `SubjectAccessReview`. 📋
 - _authz_ par webhooks : envoi d'un `SubjectAccessReview` à l'_api-server_ pour autoriser chaque requête (réponse `allow` ou `deny`). 🔄
 
@@ -269,14 +300,14 @@ EOF
 
 ### 🔑 `ClusterRoles` par défaut
 
-- `cluster-admin` peut *tout faire* (pensez à `root` sous UNIX) 🔑
-- `admin` peut faire *presque tout* (sauf, par exemple, modifier les quotas et les limites de ressources). 🔑
+- `cluster-admin` peut _tout faire_ (pensez à `root` sous UNIX) 🔑
+- `admin` peut faire _presque tout_ (sauf, par exemple, modifier les quotas et les limites de ressources). 🔑
 - `edit` est similaire à `admin`, mais ne permet pas d'afficher ni de modifier les permissions. 🔑
 - `view` a un accès en lecture seule à la plupart des ressources, à l'exception des permissions et des secrets. 🔑
 - Par défaut, les CRD ne sont pas inclus dans `view` / `edit` / etc. ❌
 
 :::tip
-*Dans de nombreux cas, ces rôles suffisent.* ✅
+_Dans de nombreux cas, ces rôles suffisent._ ✅
 :::
 
 ---
@@ -284,8 +315,11 @@ EOF
 ### 📋 Verbes `list` vs. `get`
 
 - ⚠️ `list` accorde (aussi) des droits de lecture aux ressources ! 📋
+
 :::warn
+
 - **Si un contrôleur doit pouvoir lister les secrets, il pourra aussi les lire** 📋
+
 :::
 
 ---
@@ -300,6 +334,7 @@ EOF
   - Si un `Pod` **est _sélectionné_** par au moins une `NetworkPolicy` : **isolation totale par défaut** (sauf règles acceptées par la `NetworkPolicy`) 🔒
   - **Stateful** : isolation à la **connexion**, et ~non par paquet~ 🔄
   - Pour communication Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`) 🔄
+
 :::warn
 Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet ! ⚠️
 :::
@@ -372,4 +407,3 @@ flowchart LR
 - Voir la [documentation officielle](https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/) 📚
 
 ---
-
