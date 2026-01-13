@@ -330,6 +330,15 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ## 💾 Persistance des données
 
+- Les **conteneurs sont éphémères** ⚠️
+- À l'arrêt ou à la suppression d'un conteneur les données internes sont **perdues**
+
+:::warn
+Ne jamais stocker de données critiques directement dans le conteneur : bases de données, données applicatives
+:::
+
+---
+
 - Possibilité de stocker les données en dehors des conteneurs. 💾
 - Permet de dissocier le cycle de vie des données / cycle de vie du conteneur. 🔄
 - Données non critiques et temporaires : dans le conteneur. 📦
@@ -337,30 +346,48 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 
 ---
 
-### 📦 Volume Docker®
+### Volume 📁
 
-- Mécanisme de persistance de données. 📦
-- Permet l'échange de données avec l'hôte ou un autre conteneur. 🔄
+- Espace de stockage **géré par Docker**
 - Initialisé lors de la création du conteneur. 📦
-- Non détruit à l'arrêt ou à la destruction du conteneur. 🔄
+- Stocké sur l'hôte Docker
+- Persistant : non détruit à l'arrêt ou à la destruction du conteneur 🔄
+- Partageable entre conteneurs
+- Sauvegardable facilement
+- Possibilité d'utiliser un vrai volume de stockage partagé : `iSCSI`, `FC` ou `NFS` comme `data volume`. 💾
+  - Beaucoup plus robuste 🛡️
+
+```bash
+docker volume create mydata
+docker run -v mydata:/var/lib/mysql mysql
+```
+
+- `mydata` : volume Docker
+- `/var/lib/mysql` : chemin dans le conteneur
 
 ---
 
-### 📁 Bind mount
+### Bind mounts 🔗
 
-- Volume virtuel lié et monté dans le conteneur : `bind mount` 📁
-- Monte un dossier de l'hôte directement dans le conteneur 📁
-- Facile d'utilisation 🛠️
-- Dépendant du système hôte : performances, robustesse, portabilité, ... ⚠️
+- Lien direct entre :
+  - Un dossier **de l'hôte**
+  - Un dossier **du conteneur**
+- Accès direct aux fichiers
+- Volume virtuel
+- Facile d'utilisation
+- Dépendance forte à l'hôte : performances, robustesse, portabilité, ... ⚠️
+- Moins portable
+
+```bash
+docker run -v /data/app:/app nginx
+```
+
+:::tip
+
 - Surtout utilisé pour partager des fichiers de configuration, avec peu de changements / accès dans le conteneur 📄
+- Très utilisé en **développement** 🛠️
 
----
-
-### 💾 Data volume dédié
-
-- Utilisation d'un vrai volume de stockage partagé : `iSCSI`, `FC` ou `NFS` comme `data volume`. 💾
-- Utilise un vrai cluster de stockage 💾
-- Beaucoup plus robuste 🛡️
+:::
 
 ---
 
@@ -388,19 +415,68 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.aven
 
 ### 🌐 Réseau Docker
 
-- Pour interconnecter les conteneurs et pour communiquer avec l'extérieur, Docker® gère une abstraction du réseau : le _CNM_ (_Container Network Model_). 🌐
+- Les conteneurs doivent :
+  - Communiquer entre eux 🔄
+  - Exposer des services vers l'extérieur 🌍
+- Chaque conteneur :
+  - Dispose de sa propre **stack réseau**
+  - Peut avoir une ou plusieurs interfaces
+
+---
+
+- Docker agit comme un **Virtual switch** logiciel avec une abstraction du réseau : le _CNM_ (_Container Network Model_). 🌐
 - Le comportement par défaut décrit est celui d'un système Linux (installation classique). Celui-ci peut varier dans des installations plus exotiques (`Oracle® VirtualBox` sur Windows, ...). ⚠️
 - La configuration du réseau est gérée par des pilotes (driver) différents décrits ci-après. 🛠️
+
+:::tip
+
+- Par défaut, les conteneurs sont **isolés** du réseau hôte
 - Sauf pour `macvlan`, l'adresse `mac` du conteneur est la même que celle de l'hôte. 🔒
 - Docker intègre un serveur `DNS` pour les réseaux créés par l'utilisateur - en cas d'échec, le service `DNS` configuré dans le conteneur est utilisé (peut provenir de l'hôte). 🌐
+
+:::
 
 ---
 
 ### 🌉 Driver `bridge`
 
-- À l'installation, création d'un réseau de type pont nommé `bridge` connecté à l'interface `docker0`. 🌉
-- Réseau par défaut si non spécifié à la création du conteneur. 🌉
-- Permet l'interconnexion des conteneurs, mais pas d'accès depuis l'extérieur. 🌐
+- Réseau privé interne à l'hôte
+- Interconnexion des conteneurs sur le même bridge mais pas d'accès depuis l'extérieur 🌐
+- NAT entre conteneurs et extérieur
+- **DNS Docker** intégré 🧠
+  - les conteneurs communiquent par **leur nom**
+- Par défaut : bridge commun `docker0` si non spécifié à la création du conteneur 🌉
+
+:::tip
+
+- Chaque conteneur reçoit :
+  - Une IP privée
+  - Une route par défaut
+- De loin le plus utilisé
+
+:::
+
+```bash
+docker network create mynet
+docker run --network mynet --name web nginx
+docker run --network mynet busybox ping web
+```
+
+---
+
+#### Exposer un service : publication de ports 🚪🌍
+
+Pour accéder à un conteneur depuis l'hôte :
+
+- Accéder à une application web
+- Fournir une API
+
+```bash
+docker run -p 8080:80 nginx
+```
+
+- `8080` : port de l'hôte
+- `80` : port du conteneur
 
 ---
 
@@ -410,14 +486,21 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.aven
 - Connexion à l'interface locale `loopback` uniquement. 🔄
 - À l'installation, création d'un réseau de type `null` nommé `none`. 🚫
 
+```bash
+docker run --network none alpine
+```
+
 ---
 
 ### 🌐 Driver `host`
 
 - Supprime l'isolation du réseau. 🌐
-- Connexion directe à une interface de l'hôte. 🌐
-- À l'installation, création d'un réseau de type `null` nommé `host`. 🌐
+- Vision directe des interfaces de l'hôte. 🌐
 - Pas de mapping de port (option `-p`). 🌐
+
+```bash
+docker run --network host nginx
+```
 
 ---
 
@@ -442,6 +525,19 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.aven
 - Très performant (pas de _bridge_) 🌐
 - Layer 2 VLAN tagging (couche de liaison) : partage de la même interface physique, adresses IP distinctes. 🌐
 - IPvlan L3 : agit comme un routeur : routage en couche 3 ("réseau") automatique dans le réseau, à gérer manuellement à l'extérieur. 🌐
+
+---
+
+### Résumé
+
+| Driver        | Usage principal             |
+| ------------- | --------------------------- |
+| `bridge`   | Réseau par défaut           |
+| `host`    | Accès direct au réseau hôte |
+| `none`     | Aucun réseau                |
+| `overlay` | Clusters / Swarm            |
+| `macvlan`  | IP du réseau physique       |
+| `ipvlan`  | Partage de l'adresse MAC       |
 
 ---
 
