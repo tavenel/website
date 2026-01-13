@@ -332,21 +332,6 @@ docker run -v var/run/docker.sock:/var/run/docker.sock …`
 # Permet de faire des commandes : `docker …` à l'intérieur du conteneur et de voir les autres conteneurs (monitoring, …)
 ```
 
-## docker init : générer un Dockerfile
-
-`docker init` : génère un `Dockerfile` de base pour une application, sans avoir à le créer manuellement.
-
-## Liens
-
-:::link
-Voir aussi :
-
-- <https://spacelift.io/blog/docker-commands-cheat-sheet>
-- <https://github.com/wsargent/docker-cheat-sheet>
-- <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/cheat-sheet/>
-
-:::
-
 ## Registry
 
 Il est possible d'installer sa propre registry Docker :
@@ -431,6 +416,17 @@ Un *Pare-feu d'applications Web* (WAF) comme `ModSecurity` permet de protéger v
 docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
 ```
 
+## Liens
+
+:::link
+Voir aussi :
+
+- <https://spacelift.io/blog/docker-commands-cheat-sheet>
+- <https://github.com/wsargent/docker-cheat-sheet>
+- <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/cheat-sheet/>
+
+:::
+
 ---
 
 # Cheatsheet Dockerfile
@@ -455,8 +451,20 @@ docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
   - Préférer définir uniquement des arguments par défaut et définir la commande dans l'entrypoint (évite de remplacer le processus par un `docker run …`)
 - `HEALTHCHECK` permet d'exécuter une commande dans le conteneur pour vérifier son état : [doc](https://docs.docker.com/reference/dockerfile/#healthcheck). Par exemple : `HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1`
 
+:::link
+
 - [Lien : vidéo CMD vs ENTRYPOINT mais c'est quoi la différence ?](https://www.youtube.com/watch?v=kfyDu5R4VrM)
 - D'autres technologies de construction d'images existent : voir la page <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/introduction/>
+
+:::
+
+## docker init : générer un Dockerfile
+
+```sh
+docker init
+```
+
+Génère un `Dockerfile` de base pour une application, sans avoir à le créer manuellement.
 
 ## Build multistage
 
@@ -487,32 +495,25 @@ docker build -t NOM_DE_MA_NOUVELLE_IMAGE REPERTOIRE_DU_DOCKERFILE
 docker build -t NOM_DE_MA_NOUVELLE_IMAGE -f NOM_DU_FICHIER_DOCKERFILE REPERTOIRE_DU_DOCKERFILE
 ```
 
-## BuildKit
-
-`BuildKit` (activé par défaut depuis la version 23.0) est un nouveau moteur de build plus performant, sécurisé et flexible voué à remplacer la commande `docker build` :
-
-- Amélioration des performances de build grâce à la construction en parallèle et une meilleure gestion des caches.
-- Utilisation optimisée des ressources (CPU, mémoire).
-- Fonctionnalités avancées comme le support des builds multi-plateformes et des caches de builds distribués.
-- Meilleure sécurité avec des fonctionnalités comme le build *rootless* (sans accès root).
-
-Pour plus d'information, voir les liens suivants :
-
-- <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/buildkit/>
-- <https://blog.stephane-robert.info/post/docker-build-multiarch/>
-- <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/secrets-docker/>
-
 ## Tagger une image
 
-`docker tag <NOM_DE_MON_IMAGE_LOCALE:latest> <YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE>` : tag d'une image locale pour préparer un tag distant.
+Tag d'une image locale pour préparer un tag distant :
+
+```sh
+docker tag <NOM_DE_MON_IMAGE_LOCALE:latest> <YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE>
+```
 
 ## Publier une image
 
-`docker push YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE`
+```sh
+docker push YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE
+```
 
 ## Chercher une image
 
-`docker search`
+```sh
+docker search
+```
 
 ## Ignorer des fichiers lors d'un `ADD` : `.dockerignore`
 
@@ -528,7 +529,21 @@ build
 
 ## Buildx et BuildKit
 
-Nouveau moteur moderne de build d'images Docker (remplace `docker build`).
+`BuildKit` (activé par défaut depuis la version 23.0) est un nouveau moteur de build plus performant, sécurisé et flexible voué à remplacer la commande `docker build` :
+
+- Amélioration des performances de build grâce à la construction en parallèle et une meilleure gestion des caches.
+- Utilisation optimisée des ressources (CPU, mémoire).
+- Fonctionnalités avancées comme le support des builds multi-plateformes et des caches de builds distribués.
+- Meilleure sécurité avec des fonctionnalités comme le build *rootless* (sans accès root).
+
+:::link
+Pour plus d'information, voir les liens suivants :
+
+- <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/buildkit/>
+- <https://blog.stephane-robert.info/post/docker-build-multiarch/>
+- <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/secrets-docker/>
+
+:::
 
 ### Activer BuildKit
 
@@ -723,7 +738,7 @@ docker compose watch
 
 :::
 
-## Attributs d'un service décrit dans un `docker compose.yml`
+## Attributs d'un service décrit dans un docker `compose.yml`
 
 - `image` : permet de spécifier l'image source pour le conteneur
 - `build` : permet de spécifier le `Dockerfile` source pour créer l'image du conteneur
