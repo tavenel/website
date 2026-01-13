@@ -1996,8 +1996,8 @@ Seul le cluster peut déchiffrer un `SealedSecret`, il est donc possible de lais
 
 ```sh
 # Installation de SealedSecrets
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install sealed-secrets bitnami/sealed-secrets --namespace kube-system
+helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
+helm install sealed-secrets -n kube-system --set-string fullnameOverride=sealed-secrets-controller sealed-secrets/sealed-secrets
 ```
 
 Pour chiffrer un secret `mysecret.yaml` :
@@ -2026,6 +2026,10 @@ kubectl apply -n kube-system -f sealed-secret-key.yaml
 
 :::warn
 Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas être modifié directement dans le cluster. Toute modification requiert un chiffrement avec kubeseal avant d'être appliquée. Attention : Si une application utilise ce secret, elle ne recevra pas immédiatement la nouvelle valeur.
+:::
+
+:::link
+Pour plus d'information, voir : <https://github.com/bitnami-labs/sealed-secrets>
 :::
 
 ---

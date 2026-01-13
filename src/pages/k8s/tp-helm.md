@@ -10,7 +10,7 @@ date: 2024 / 2025
 - Les `charts` Helm sont des packages qui encapsulent des configurations Kubernetes, des `templates`, et d'autres ressources nécessaires pour déployer une application.
 - Les `charts` sont distribuées en ligne dans des `repositories` (publics ou privés)
   - un repo a un nom sur la machine locale : `helm repo add mon-repo http://…`
-	- cela permet de l'utiliser facilement : `helm install ma-release mon-repo/nginx`
+    - cela permet de l'utiliser facilement : `helm install ma-release mon-repo/nginx`
 - Une instance de la `chart` déployée dans le cluster est appelée `release`. Une `release` est versionnée : (des)installation, upgrade, rollback
 - Il est possible d'ajouter des `hooks` autour des `releases` : avant / après installation, upgrade, …
 
@@ -19,23 +19,28 @@ Attention : tout comme les images Docker, une chart Helm permet de récupérer d
 :::
 
 :::link
+
 - Voir la [cheatsheet Kubernetes](/k8s/cheatsheet) pour les commandes.
 - Voir aussi le [TP Prometheus & Grafana](/k8s/tp-prometheus-grafana) pour apprendre à déployer Prometheus et Grafana en utilisant Helm.
 - Voir le lien suivant pour un tutoriel : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/helm/>
+
 :::
 
 :::tip
+
 - _Helm_ a beaucoup changé de modèle en passant de la v2 à la v3, notamment en ~~supprimant le besoin d'un serveur `tiller`~~ : attention à ne pas suivre une doc sur Helm v2 !
 - En v3, _Helm_ applique un **Three Way Merge** en comparant trois états avant de modifier un objet :
   - Le nouvel état défini dans le manifeste que l'on souhaite appliquer ;
   - L'état actuel de l'objet (état "live") ;
   - Et la dernière configuration appliquée avec succès, stockée dans un secret (`helm history`).
 - En v4, _Helm_ suit la nouvelle logique de l'API Kubernetes (depuis la v1.22) en appliquant un **Server Side Apply (SSA)** : chaque modification apportée sur un champ d'un objet se voit attribuer un propriétaire : `kubectl get --show-managed-fields`
+
 :::
 
 ### Structure
 
 Une _Chart Helm_ contient au minimum :
+
 - Un répertoire `templates` : fichiers de manifests Kubernetes qui utilisent le système de _templates Go_.
 - Un fichier `values.yaml` qui contient les valeurs par défaut (modifiables) pour les templates de la `chart`.
 - Un fichier `Chart.yaml` contenant les metadata de la _Chart_ : nom, version, description, …
@@ -60,8 +65,10 @@ Les templates de manifests utilisent le système de templates de _Go_ :
   - `{{ template "x.y" . }}` : Le `.` est le _contexte_ pour ce template (pour transmettre au template les variables du contexte local)
 
 :::link
+
 - Et aussi : toute la bibliothèque [Sprig](http://masterminds.github.io/sprig/) et des ajouts : `lower` `upper` `quote` `trim` `default` `b64enc` `b64dec` `sha256sum` `indent` `toYaml` …
 - Pour plus d'information voir [la documentation sur les template Go](https://golang.org/pkg/text/template/).
+
 :::
 
 :::tip
@@ -98,11 +105,12 @@ Les dépendances doivent être mises à jour par : `helm dependency update` : cr
 :::
 
 :::tip
-Comment faire si l'on veut récupérer mais modifier la _Chart_ d'une dépendance (et que le `--set …` ne suffit pas) ? Il suffit de : 
+Comment faire si l'on veut récupérer mais modifier la _Chart_ d'une dépendance (et que le `--set …` ne suffit pas) ? Il suffit de :
 
 1. Décompresser la _Chart_ en dépendance dans le répertoire `charts/`
 2. Modifier le(s) fichier(s) de la dépendance : `cd charts && tar zxf redis-*.tgz && cd ..`
 3. Relancer `helm dependency update`
+
 :::
 
 :::tip
@@ -151,57 +159,75 @@ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get-helm-3
 
 1. Ajouter le dépôt.
 
-```console
-$ helm repo add bitnami https://charts.bitnami.com/bitnami
-"bitnami" has been added to your repositories
+```sh
+helm repo add kubernetes https://kubernetes.github.io/dashboard
+# "kubernetes" has been added to your repositories
 ```
 
 2. Chercher la chart.
 
-```console
-$ helm search repo drupal
-NAME            CHART VERSION   APP VERSION     DESCRIPTION
-bitnami/drupal  10.2.6          9.1.5           One of the most versatile open source content m...
+```sh
+helm search repo kubernetes-dashboard
+# NAME                            CHART VERSION APP VERSION DESCRIPTION                                   
+# kubernetes/kubernetes-dashboard 7.14.0                    General-purpose web UI for Kubernetes clusters
 ```
 
 3. Installation de la chart :
+
 - `helm upgrade --install` installe ou met à jour la chart.
 - `--set replicaCount=2` change `replicaCount` des `values.yml`
 
-```console
-$ helm upgrade -i mysite bitnami/drupal --set replicaCount=2
-NAME: mysite
-LAST DEPLOYED: Wed Mar 10 03:36:29 2025
-NAMESPACE: default
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-*******************************************************************
-*** PLEASE BE PATIENT: Drupal may take a few minutes to install ***
-*******************************************************************
+```sh
+helm upgrade -i my-dashboard kubernetes/kubernetes-dashboard
 
-1. Get the Drupal URL:
-
-  NOTE: It may take a few minutes for the LoadBalancer IP to be available.
-        Watch the status with: 'kubectl get svc --namespace default -w mysite-drupal'
-
-  export SERVICE_IP=$(kubectl get svc --namespace default mysite-drupal --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
-  echo "Drupal URL: http://$SERVICE_IP/"
-
-2. Get your Drupal login credentials by running:
-
-  echo Username: user
-  echo Password: $(kubectl get secret --namespace default mysite-drupal -o jsonpath="{.data.drupal-password}" | base64 --decode)
+# Release "my-dashboard" does not exist. Installing it now.
+# I0113 13:47:46.289080   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.289108   52883 warnings.go:110] "Warning: unrecognized format \"int32\""
+# I0113 13:47:46.289076   52883 warnings.go:110] "Warning: unrecognized format \"int32\""
+# I0113 13:47:46.295739   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.296583   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.311456   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.319156   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.323256   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.323876   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.338284   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
+# I0113 13:47:46.338305   52883 warnings.go:110] "Warning: unrecognized format \"int32\""
+# NAME: my-dashboard
+# LAST DEPLOYED: Tue Jan 13 13:47:48 2026
+# NAMESPACE: default
+# STATUS: deployed
+# REVISION: 1
+# TEST SUITE: None
+# NOTES:
+# *************************************************************************************************
+# *** PLEASE BE PATIENT: Kubernetes Dashboard may need a few minutes to get up and become ready ***
+# *************************************************************************************************
+# 
+# Congratulations! You have just installed Kubernetes Dashboard in your cluster.
+# 
+# To access Dashboard run:
+#   kubectl -n default port-forward svc/my-dashboard-kong-proxy 8443:443
+# 
+# NOTE: In case port-forward command does not work, make sure that kong service name is correct.
+#       Check the services in Kubernetes Dashboard namespace using:
+#         kubectl -n default get svc
+# 
+# Dashboard will be available at:
+#   https://localhost:8443
 ```
 
 4. Vérifier l'installation
 
-```console
-$ helm list
-NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-mysite  default         1               2025-03-10 03:36:29.001757599 +0530 IST deployed        drupal-10.2.6   9.1.5
+```sh
+helm list
+# NAME         NAMESPACE REVISION UPDATED                                 STATUS   CHART                       APP VERSION
+# my-dashboard default   1        2026-01-13 13:47:48.412406821 +0100 CET deployed kubernetes-dashboard-7.14.0
+
+# Exposition du dashboard sur la machine personnelle
+kubectl -n default port-forward svc/my-dashboard-kong-proxy 8443:443
 ```
+
+Vérifier l'accès au dashboard : <https://localhost:8443>
 
 ## Upgrade et rollback
 
@@ -217,7 +243,6 @@ helm history ma-release
 helm upgrade ma-release
 helm rollback ma-release
 ```
-
 
 ## Créer sa propre Helm Chart
 
@@ -236,7 +261,6 @@ helm install "<ma-release>" "<chart-name>"
 # Par exemple :
 helm install test1 chart-perso --namespace chart1-v1
 ```
-
 
 Pour supprimer la release :
 
@@ -262,7 +286,7 @@ Examples: [install essentials on a cluster, Jérôme Petazzoni][helmfile-ex-1], 
 
 - Fichier principal `helmfile.yaml` définissant :
 - `repositories` (dépôts Helm distants)
-- ` releases` (éléments à installer : charts, YAML, etc.)
+- `releases` (éléments à installer : charts, YAML, etc.)
 - `environments` (facultatif : pour différencier production, staging, etc.) : par `values.yaml`
 
 # Legal
@@ -271,4 +295,3 @@ Examples: [install essentials on a cluster, Jérôme Petazzoni][helmfile-ex-1], 
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Helm® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-

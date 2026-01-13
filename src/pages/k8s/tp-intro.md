@@ -30,8 +30,8 @@ kubectl est l'interface en ligne de commande permettant d'interagir avec un clus
 
 Kubectl utilise un fichier de configuration **kubeconfig** pour savoir **à quel cluster se connecter, avec quel utilisateur, et dans quel namespace** (emplacement par défaut : `~/.kube/config`). Kubectl sélectionne le cluster à utiliser via un **context** = combinaison _(cluster + user + namespace)_ :
 
-- **clusters** → adresse de l’API + certificat
-- **users** → méthode d’authentification (certificat, token, OIDC…)
+- **clusters** → adresse de l'API + certificat
+- **users** → méthode d'authentification (certificat, token, OIDC…)
 - **contexts** → lien entre _cluster / user / namespace_
 - **current-context** → celui utilisé par défaut
 - Voir la config : `kubectl config view`

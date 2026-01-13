@@ -30,6 +30,7 @@ tags:
    - **Description** : Déploie une instance MySQL.
    - **Repository** : `bitnami/mysql`
    - **Exemple de commande** :
+
      ```sh
      helm repo add bitnami https://charts.bitnami.com/bitnami
      helm install my-mysql bitnami/mysql
@@ -41,6 +42,7 @@ tags:
    - **Description** : Déploie une instance WordPress avec une base de données MySQL.
    - **Repository** : `bitnami/wordpress`
    - **Exemple de commande** :
+
      ```sh
      helm repo add bitnami https://charts.bitnami.com/bitnami
      helm install my-wordpress bitnami/wordpress
@@ -52,6 +54,7 @@ tags:
    - **Description** : Déploie une instance MongoDB.
    - **Repository** : `bitnami/mongodb`
    - **Exemple de commande** :
+
      ```sh
      helm repo add bitnami https://charts.bitnami.com/bitnami
      helm install my-mongodb bitnami/mongodb
@@ -63,6 +66,7 @@ tags:
    - **Description** : Déploie une instance Redis.
    - **Repository** : `bitnami/redis`
    - **Exemple de commande** :
+
      ```sh
      helm repo add bitnami https://charts.bitnami.com/bitnami
      helm install my-redis bitnami/redis
@@ -74,6 +78,7 @@ tags:
    - **Description** : Déploie une instance Nginx.
    - **Repository** : `bitnami/nginx`
    - **Exemple de commande** :
+
      ```sh
      helm repo add bitnami https://charts.bitnami.com/bitnami
      helm install my-nginx bitnami/nginx
@@ -85,6 +90,7 @@ tags:
    - **Description** : Déploie une instance PostgreSQL.
    - **Repository** : `bitnami/postgresql`
    - **Exemple de commande** :
+
      ```sh
      helm repo add bitnami https://charts.bitnami.com/bitnami
      helm install my-postgresql bitnami/postgresql
@@ -96,9 +102,10 @@ tags:
    - **Description** : Déploie le Kubernetes Dashboard pour la gestion visuelle du cluster.
    - **Repository** : `kubernetes/dashboard`
    - **Exemple de commande** :
+
      ```sh
      helm repo add kubernetes https://kubernetes.github.io/dashboard
-     helm install my-dashboard kubernetes/dashboard
+     helm install my-dashboard kubernetes/kubernetes-dashboard
      ```
 
 ---
@@ -107,11 +114,12 @@ tags:
    - **Description** : Déploie la stack Prometheus & Grafana pour la surveillance et la collecte de métriques.
    - **Repository** : `prometheus-community/prometheus`
    - **Exemple de commande** :
+
      ```sh
      helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-		 helm install my-prometheus prometheus-community/kube-prometheus-stack
-		 # ou seulement Prometheus :
-		 # helm install prometheus-community/prometheus
+   helm install my-prometheus prometheus-community/kube-prometheus-stack
+   # ou seulement Prometheus :
+   # helm install prometheus-community/prometheus
      ```
 
 ---
@@ -162,10 +170,10 @@ tags:
 
 ### 🛠️ Fonctionnalités
 
-- *Accepter / Refuser* les manifestes de ressources ✅❌
-- *Modifier* les ressources lors de leur création ou de leur mise à jour 🔄
-- *Générer* des ressources supplémentaires lors de leur création 🔄
-- *Auditer* les ressources existantes 🔍
+- _Accepter / Refuser_ les manifestes de ressources ✅❌
+- _Modifier_ les ressources lors de leur création ou de leur mise à jour 🔄
+- _Générer_ des ressources supplémentaires lors de leur création 🔄
+- _Auditer_ les ressources existantes 🔍
 - Voir [une introduction à Kyverno](https://2021-05-enix.container.training/4.yml.html#399) 📚
 
 ---
@@ -192,4 +200,3 @@ path: "!/var/run/docker.sock"
 - Il devient possible de laisser les _Secret_ chiffrés dans _Git_. 🔐
 
 ---
-
