@@ -121,6 +121,7 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 ### Liens
 
 - [Livre Bash beginner's guide](https://ftp.traduc.org/doc-vf/guides/Bash-Beginners-Guide/)
+- <https://github.com/bobbyiliev/introduction-to-bash-scripting> : livre gratuit
 - Aide simple sur les commandes : <https://cheat.sh/>
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - <https://roadmap.sh/linux>
