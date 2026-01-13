@@ -1137,6 +1137,77 @@ spec:
       restartPolicy: Never
 ```
 
+### DRA : Dynamic Ressource Allocation
+
+Avec DRA :
+
+- Le **device n’est plus déclaré statiquement** sur le nœud
+- Kubernetes dialogue avec un **Resource Driver**
+- Les devices sont alloués **dynamiquement par Pod**
+
+:::link
+Voir aussi :  <https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/>
+:::
+
+#### ResourceClass
+
+Définit le type de device :
+
+- Associe Kubernetes à un **driver DRA**
+- Comparable à une `StorageClass`
+
+```yaml
+apiVersion: resource.k8s.io/v1beta1
+kind: ResourceClass
+metadata:
+  name: example-device
+driverName: example.com/device-driver
+```
+
+#### ResourceClaim
+
+- Déclare une **demande abstraite de device**
+- L’allocation réelle est faite par le driver
+
+```yaml
+apiVersion: resource.k8s.io/v1beta1
+kind: ResourceClaim
+metadata:
+  name: my-device-claim
+spec:
+  resourceClassName: example-device
+```
+
+#### Pod consommant le device
+
+- Le Pod **référence le ResourceClaim**
+- Le device est :
+  - Alloué à l’admission
+  - Libéré à la suppression du Pod
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dra-consumer
+spec:
+  containers:
+    - name: app
+      image: busybox
+      command: ["sh", "-c", "sleep 3600"]
+      resources:
+        claims:
+          - name: mydevice
+  resourceClaims:
+    - name: mydevice
+      source:
+        resourceClaimName: my-device-claim
+```
+
+:::tip
+Le statut du `Device` est reporté dans le Pod : <https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/>
+:::
+
 ## Réseau
 
 ### ClusterIP
