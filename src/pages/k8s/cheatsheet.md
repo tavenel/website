@@ -128,6 +128,16 @@ etcdctl […] del cle
 etcdctl […] watch cle # scrute les changemens de `cle`
 ```
 
+### Gérer les plugins kubectl
+
+```bash
+kubectl krew search <plugin>
+kubectl krew install <plugin>
+kubectl krew list
+```
+
+Voir le [cours k8s](/k8s/cours#krew--gestionnaire-de-plugins-kubectl) pour une sélection des plugins utiles
+
 ### Ajouter la completion de commandes dans le shell
 
 ```sh

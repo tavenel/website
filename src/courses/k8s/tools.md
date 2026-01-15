@@ -8,6 +8,73 @@ tags:
 - devops
 ---
 
+## Krew : Gestionnaire de plugins kubectl
+
+- Gestionnaire officiel de plugins kubectl
+- Étend `kubectl` sans modifier le binaire principal et standardise l'accès aux outils communautaires.
+
+```bash
+kubectl krew search <plugin>
+kubectl krew install <plugin>
+kubectl krew list
+```
+
+---
+
+### Plugins incontournables
+
+#### 🔍 Observation & diagnostic
+
+| Plugin           | Usage                                      |
+| ---------------- | ------------------------------------------ |
+| **ctx**          | Changement rapide de contexte              |
+| **ns**           | Changement rapide de namespace             |
+| **tree**         | Vue hiérarchique des ressources            |
+| **neat**         | **Nettoyage des manifests (YAML propre)**      |
+| **view-secret**  | Lecture de secrets décodés                 |
+| **describe-all** | Describe sur toutes les ressources         |
+| **get-all**      | Liste toutes les ressources d'un namespace |
+
+#### 🧠 Debug & Troubleshooting
+
+| Plugin         | Usage                                    |
+| -------------- | ---------------------------------------- |
+| **debug**      | Debug éphémère avec ephemeral containers |
+| **doctor**     | Diagnostic du cluster                    |
+| **node-shell** | Shell direct sur un nœud                 |
+| **status**     | **Résumé de l'état du cluster**              |
+| **trace**      | Tracing syscalls (eBPF)                  |
+
+#### 📦 Gestion des ressources
+
+| Plugin                | Usage                               |
+| --------------------- | ----------------------------------- |
+| **resource-capacity** | Vue CPU/Mem par nœud                |
+| **topology**          | Vue topology-aware du cluster       |
+| **konfig**            | Fusion / nettoyage de kubeconfig    |
+| **split-yaml**        | Découpe de manifests YAML           |
+| **modify-secret**     | Modification interactive de secrets |
+
+#### 🔐 Sécurité & audit
+
+| Plugin            | Usage                       |
+| ----------------- | --------------------------- |
+| **access-matrix** | Matrice RBAC                |
+| **rbac-view**     | Visualisation RBAC          |
+| **auth-can-i**    | Vérification de permissions |
+| **who-can**       | Qui peut faire quoi         |
+
+#### 🚀 Développement & CI/CD
+
+| Plugin             | Usage                                  |
+| ------------------ | -------------------------------------- |
+| **exec-as**        | Tester RBAC en changeant d'identité    |
+| **rollout-status** | Suivi avancé de rollout                |
+| **reap**           | Nettoyage de ressources orphelines     |
+| **score**          | Scoring des manifests (best practices) |
+
+---
+
 ## 📦 Helm : déploiement applicatif
 
 - Gestionnaire de "paquets" k8s 📦
