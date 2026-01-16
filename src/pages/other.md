@@ -187,6 +187,22 @@ En 2025 (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/>)
 - Monitoring: Grafana (40%), Prometheus (38%), Elastic (34%)
 - Containers in IT : 92%
 
+## Documentation
+
+### Diagramme C4
+
+Type de diagramme très utilisé en agilité, permettant de décrire l'architecture en "zoomant" des composants au code : <https://c4model.com/>
+
+### ADR
+
+Un **ADR** (_Architecture Decision Record_) permet de documenter un choix d'architecture, par exemple avec le formalisme suivant :
+
+> In the context of \<use case/user story>, facing \<concern> we decided for \<option> to achieve \<quality>, accepting \<downside>, because \<additional rationale>.
+
+:::link
+Voir aussi : <https://adr.github.io/>
+:::
+
 ---
 
 ## Remerciements
