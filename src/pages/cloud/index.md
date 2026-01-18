@@ -24,6 +24,7 @@ layout: '@layouts/BaseLayout.astro'
 ## OpenNebula
 
 - [🤓 Cours OpenNebula : créer un Virtual Data Center](/cloud/opennebula/cours)
+- [💻 TP découverte d'OpenNebula](/cloud/opennebula/tp) : déployer une instance de test _miniOne_ pour comprendre les concepts clefs d'_OpenNebula_ : images, datastores, templates, VM, réseaux virtuels, hôtes, clusters, utilisateurs/quotas.
 - [🏆 Projet montage d'un Virtual Data Center basé sur OpenNebula](/cloud/opennebula/projet) : utiliser OpenNebula conjointement à Ansible, Terraform, Packer, Kubernetes, Prometheus, Grafana & Loki pour monter et automatiser une infrastructure complète de datacenter virtuel.
 
 ## 🏆 Projet : Exécution de programmes dans un environnement Cloud multi-provider
