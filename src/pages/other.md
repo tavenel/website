@@ -106,8 +106,6 @@ Voir aussi :
 
 ## IA
 
-- <https://blog.shevarezo.fr/post/2025/12/10/astuces-meilleures-reponses-chatgpt>
-
 ### Prompts
 
 #### Générer un bon prompt
@@ -116,6 +114,8 @@ Voir aussi :
   - _"avant de répondre, pose-moi toutes les questions nécessaires pour optimiser ta réponse"_
   - _"si tu ne sais pas, dis-le moi et n'invente rien"_
 
+- <https://blog.shevarezo.fr/post/2025/12/10/astuces-meilleures-reponses-chatgpt>
+
 #### Types de prompts IA
 
 - _zero-shot_ => pas de contexte
@@ -123,6 +123,10 @@ Voir aussi :
 - _chain of thought_ => "let's think …" (step-by-step example)
 - _RAG_ (retrieval augmented generation) => élévation de contexte par vecteur de contexte
 - _agents_ => conscience de l'environnement
+
+### Agents
+
+- <https://cursor.com/blog/agent-best-practices>
 
 ### Utiliser l'IA en formation
 
