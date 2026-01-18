@@ -25,7 +25,7 @@ Module de 12H
 ### 📑 Documents
 
 - [🤓 Cours Packer](/devops/packer/cours)
-- [🤓 Présentation d'Azure Cloud](/web/azure-cloud)
+- [🤓 Présentation d'Azure Cloud](/cloud/azure/cours)
 - [🏆 Projet Packer](/devops/packer/projet)
 
 ### Ressources

@@ -15,11 +15,9 @@ Module de 7 journées
 
 ## 📑 Documents
 
-- [🤓 Cours Ansible : gérer des machines simplement par Infrastructure-as-Code](/devops/ansible/cours)
-- [![](@icons/terraform.svg) Cours Terraform : gérer des ressources dans un cluster Cloud avec une notion d'état](/devops/terraform/cours)
-- [🤓 Cours Packer : automatiser la création d'images machines](/devops/packer/cours)
+- [🤓 Cours Virtual Data Center Automation : Réseaux virtuels, Ansible, Terraform, Packer, OpenNebula](/estiam/vdc/cours)
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code.](/git/tp-ansible)
-- [🏆 Projet montage d'un Virtual Data Center basé sur OpenNebula](/devops/opennebula/projet) : utiliser OpenNebula conjointement à Ansible, Terraform, Packer, Kubernetes, Prometheus, Grafana & Loki pour monter et automatiser une infrastructure complète de datacenter virtuel.
+- [🏆 Projet montage d'un Virtual Data Center basé sur OpenNebula](/cloud/opennebula/projet) : utiliser OpenNebula conjointement à Ansible, Terraform, Packer, Kubernetes, Prometheus, Grafana & Loki pour monter et automatiser une infrastructure complète de datacenter virtuel.
 
 ## 🚀 Pour aller plus loin
 

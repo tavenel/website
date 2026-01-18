@@ -24,11 +24,6 @@ packerIcon: '../../icons/hashicorp-packer.svg'
 - [![](@icons/terraform.svg) Projet Déploiement d'une infrastructure sur Azure avec Terraform](/devops/terraform/projet-azure)
 - [![](@icons/terraform.svg) Projet Déploiement de composants Kubernetes avec Terraform](/devops/terraform/projet-k8s)
 
-## OpenNebula
-
-- [🤓 Cours OpenNebula : créer un Virtual Data Center](/devops/opennebula/cours)
-- [🏆 Projet montage d'un Virtual Data Center basé sur OpenNebula](/devops/opennebula/projet) : utiliser OpenNebula conjointement à Ansible, Terraform, Packer, Kubernetes, Prometheus, Grafana & Loki pour monter et automatiser une infrastructure complète de datacenter virtuel.
-
 ## Devops - Sysops
 
 - [🤓 Cours d'introduction au Devops](/devops/cours)
