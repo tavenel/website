@@ -6,9 +6,9 @@ tags:
 - cloud
 ---
 
-# Remarques importantes sur l'utilisation des services `AWS` dans ce module de formation :
+# Remarques importantes sur l'utilisation des services `AWS` dans ce module de formation
 
-[Voir la remarque dans le TP précédent](/web/tp_aws-1)
+[Voir la remarque dans le TP précédent](/cloud/aws/tp2)
 
 # TP 2 : Développement d'une application moderne en utilisant les services avancés d'`AWS`
 
@@ -45,7 +45,6 @@ Dans la partie 4 du tutoriel, le `Dockerfile` utilisé n'est pas à jour avec la
 Pour résoudre ce problème, on modifiera le fichier `Dockerfile` fourni par le tutoriel par la version suivante :
 
 <https://github.com/aws-samples/aws-modern-application-workshop/blob/7ee3074c7de97c8d7eadf8123142ce31573c99af/module-4/app/Dockerfile>
-
 
 ## Partie 5
 
