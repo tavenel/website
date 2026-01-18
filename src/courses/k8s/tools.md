@@ -13,12 +13,6 @@ tags:
 - Gestionnaire officiel de plugins kubectl
 - Étend `kubectl` sans modifier le binaire principal et standardise l'accès aux outils communautaires.
 
-```bash
-kubectl krew search <plugin>
-kubectl krew install <plugin>
-kubectl krew list
-```
-
 ---
 
 ### Plugins incontournables
