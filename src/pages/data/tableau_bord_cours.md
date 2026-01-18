@@ -309,16 +309,16 @@ tags:
 ### Bonnes Pratiques pour Choisir un Indicateur
 
 1. **Pertinence** :
-	L'indicateur doit répondre à un objectif précis.
+ L'indicateur doit répondre à un objectif précis.
 
 2. **Clarté** :
-	Il doit être compréhensible par tous les acteurs.
+ Il doit être compréhensible par tous les acteurs.
 
 3. **Fiabilité** :
-	Les données utilisées doivent être exactes et à jour.
+ Les données utilisées doivent être exactes et à jour.
 
 4. **Exploitabilité** :
-	Il doit permettre de prendre des décisions concrètes.
+ Il doit permettre de prendre des décisions concrètes.
 
 ---
 
@@ -510,7 +510,7 @@ tags:
 
 - Identifier des modèles ou des **anomalies** dans des données tabulaires.
 - Comparer de grandes quantités de données rapidement.
-- 🚨 Attention : pas de visualisation de type _Heatmap_ par défaut dans PowerBI (à installer ou à simuler en utilisant un formattage des données). 🚨 
+- 🚨 Attention : pas de visualisation de type _Heatmap_ par défaut dans PowerBI (à installer ou à simuler en utilisant un formattage des données). 🚨
 - _**Cas pratique** : Analyse des performances des serveurs (temps moyen de réponse)._
 - _**Visualisation** : Couleurs variant du vert (bon) au rouge (mauvais)._
 
@@ -667,8 +667,8 @@ tags:
 - [Power BI : Data visualization and dashboard tips and tricks](https://www.linkedin.com/learning/power-bi-data-visualization-and-dashboard-tips-tricks-techniques)
 - <https://generatedata.com/> : générer des donnée de test
 - [Lucidchart - Roadmap technologique](https://www.lucidchart.com/blog/fr/fonction-d-une-roadmap-technologique)
+- <https://www.teotimepacreau.fr/blog/designer-des-tableaux-clairs-et-efficaces/>
 
 [exemples-tableaux]: https://www.journaldunet.com/solutions/dsi/1002623-12-tableaux-de-bord-pour-piloter-ses-activites-informatiques/
 
 ---
-
