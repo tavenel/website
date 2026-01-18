@@ -9,6 +9,13 @@ layout: '@layouts/BaseLayout.astro'
 
 ### 🎯 Objectifs pédagogiques
 
+- Concevoir l'architecture, déployer et configurer un Virtual Data Center simple.
+- Écrire des modules Terraform pour provisionner des VMs dans le VDC.
+- Automatiser la configuration et le déploiement des services avec Ansible.
+- Mettre en place une chaîne d'observabilité : Prometheus (métriques), Grafana (dashboards), Loki (logs) et Alertmanager.
+- Documenter l'infrastructure et rédiger un rapport technique professionnel.
+- Déployer et monitorer un cluster Kubernetes provisionné sur le VDC.
+
 ### 📅 Déroulé des séances
 
 Module de 7 journées
