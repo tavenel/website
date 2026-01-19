@@ -419,6 +419,13 @@ created: 2024-10-17
 - `OpenVZ`
 - `lxc`,`lxd` (conteneurs), `incus`
 
+## serverless
+
+- AWS Lambda
+- on-premise :
+  - <https://micronaut.io/>
+  - <https://www.openfaas.com/>
+
 ## async : queues de messages, brokers
 
 - `kafka`
