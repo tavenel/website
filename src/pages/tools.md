@@ -820,6 +820,7 @@ created: 2024-10-17
 - <https://github.com/Macmod/godap> : LDAP in TUI
 - Buckets S3 locaux : <https://github.com/minio/minio> : `docker run -p 9000:9000 -p 9001:9001 quay.io/minio/minio server /data --console-address ":9001"`
 - <https://www.trackawesomelist.com/awesome-foss/awesome-sysadmin/rss.xml> : awesome Sysadmin
+- <https://phpldapadmin.org/> : interface web pour LDAP
 
 #### Services
 
