@@ -128,6 +128,29 @@ Voir aussi :
 
 - <https://cursor.com/blog/agent-best-practices>
 
+#### MCP
+
+- MCP best practices from Horacio Gonzalez : [blog](https://lostinbrittany.dev/en/building-smarter-mcp-servers-from-theory-to-practice/) et [slides](https://lostinbrittany.dev/talks/2026/2026-01-16_SnowCamp_MCP-Servers-Good-Practices-Design-Choices-and-Consequences/) :
+  - Narrow, named capabilities : each tool should read like a product verb: `getMonsterByName`, `listMonstersByType`, `compareMonsters`.
+  - Stable types in/out : explicit schemas (IDs, enums, unions) so the agent can plan reliably.
+  - Deterministic behavior : same inputs → same outputs; include `idempotencyKey` when making state changes.
+  - Least privilege : tools do one thing; internal queries/side-effects are not exposed.
+  - Guardrails at the edge : validate inputs, clamp result sizes, redact PII, enforce authZ inside the server
+  - Make the LLM succeed on the first try : types (union, enum), limits, idempotency
+  - Always return a **machine part** and a **human part**
+- Turn _tasks_ into MCP _tools_/_resources_/_prompts_ :
+  - **Tools** (actions) :
+    - Read: `getMonsterByName(name) -> Monster`
+    - List: `listMonstersByType(type, limit=25, cursor?) -> {items:[Monster], nextCursor}`
+    - Search: `searchMonsters(q, limit=10) -> [MonsterSummary]`
+  - **Resources** (documents/URIs the client can browse/fetch) :
+    - `ragmonsters://schema/Monster` (JSON schema for types)
+    - `ragmonsters://docs/query-tips` (compact usage notes)
+    - `ragmonsters://images/{monsterId}` (read-only asset stream)
+  - **Prompts** (reusable instructions/templates) :
+    - `prompt://ragmonsters/answering-style` (tone, do/don't)
+    - `prompt://ragmonsters/disambiguation` (ask for missing fields first)
+
 ### Utiliser l'IA en formation
 
 Idées d'utilisation de l'IA :
