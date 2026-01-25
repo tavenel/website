@@ -201,3 +201,9 @@ Il est souvent intéressant de coupler un service d'authentificatio réseau type
 :::
 
 ---
+
+:::link
+Pour gérer graphiquement un LDAP, on pourra utiliser <https://phpldapadmin.org/>
+:::
+
+---
