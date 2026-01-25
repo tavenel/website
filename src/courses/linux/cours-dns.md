@@ -283,6 +283,29 @@ TSIG est principalement utilisé pour :
 
 ---
 
+#### Quand utiliser TSIG
+
+Utiliser TSIG lorsque :
+
+- vous devez **restreindre** qui peut modifier une zone,
+- vous effectuez des **transferts de zone** (AXFR/IXFR),
+- vous utilisez des **mises à jour dynamiques** (RFC 2136).
+
+Cas typiques :
+
+- synchronisation primaire ↔ secondaire,
+- intégration DHCP → DNS (environnements dynamiques),
+- automatisation (CI/CD, IaC) pilotant des zones DNS,
+- infrastructures internes ou hybrides.
+
+#### Limites de TSIG
+
+- pas de scalabilité à grande échelle (gestion de clés partagées),
+- pas adapté à des clients publics,
+- ne protège pas la résolution DNS des utilisateurs.
+
+---
+
 #### ⚙️ Fonctionnement
 
 1. **Clé partagée (TSIG key)** : Deux entités (serveurs DNS ou client/serveur) partagent une **clé secrète**.
@@ -343,6 +366,28 @@ En effet, le DNS traditionnel ne vérifie pas si les réponses proviennent bien 
 - **Complexité de gestion** : renouvellement des clés, propagation des DS, …
 - **Taille des réponses DNS** plus grande et peut poser problème avec certains pare-feux.
 - **DNSSEC n'empêche pas l'écoute (pas de chiffrement)** : utiliser _DoT_/_DoH_ pour la confidentialité.
+
+---
+
+#### Quand utiliser DNSSEC
+
+Utiliser DNSSEC lorsque :
+
+- vous exploitez une **zone publique** (ex. domaine Internet),
+- vous voulez garantir que les clients reçoivent des réponses DNS **non falsifiées**,
+- vos utilisateurs dépendent de la **fiabilité des résolutions** (services exposés, e-commerce, APIs, etc.).
+
+Cas typiques :
+
+- serveurs DNS faisant autorité pour des domaines publics,
+- environnements où la sécurité de la chaîne de résolution est critique,
+- infrastructures soumises à des exigences de conformité ou de bonnes pratiques (ANSSI, RFC, etc.).
+
+#### Quand DNSSEC n'est pas pertinent
+
+- DNS interne sans validation côté résolveur,
+- environnements fermés sans risque de falsification,
+- besoin d'authentification ou de contrôle d'accès (ce n'est pas son rôle).
 
 ---
 
@@ -468,6 +513,39 @@ Pour forcer la libération d'une _"lease"_ DHCP côté client :
 dhcpcd -k
 dhclient -r
 ```
+
+---
+
+## DNSSEC vs TSIG
+
+| Critère               | DNSSEC                      | TSIG                       |
+| --------------------- | --------------------------- | -------------------------- |
+| Type de sécurité      | Cryptographique asymétrique | Cryptographique symétrique |
+| Protège quoi          | Réponses DNS                | Transactions DNS           |
+| Authentifie           | Les données                 | Les serveurs               |
+| Cas d'usage principal | Résolution fiable           | Administration DNS         |
+| Public / privé        | Public principalement       | Privé / interne            |
+| Chiffrement           | Non                         | Non                        |
+
+---
+
+## Utilisation conjointe
+
+DNSSEC et TSIG sont **complémentaires** et souvent utilisés ensemble :
+
+- **TSIG** pour sécuriser :
+
+  - transferts de zone,
+  - mises à jour dynamiques,
+  - relations maître/esclave.
+
+> Je veux contrôler qui peut modifier ou synchroniser mes zones
+
+- **DNSSEC** pour garantir :
+
+  - la validité des réponses servies aux clients.
+
+> Je veux garantir que les réponses DNS ne sont pas falsifiées
 
 ---
 
