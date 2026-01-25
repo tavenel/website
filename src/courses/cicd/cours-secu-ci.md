@@ -8,6 +8,11 @@ layout: '@layouts/CoursePartLayout.astro'
 
 La "Supply Chain" est devenue ces dernières années un vecteur stratégique en cybersécurité. Les exemples ci-dessous montrent la diversité de ces attaques (open source, cloud, AI/ML) et ont mis en lumière l'importance de sécuriser chaque maillon de la chaîne logicielle (pipelines CI/CD), de renforcer l'authentification multi-facteurs et de surveiller activement les dépendances logicielles.
 
+- En moyenne, 85% du code d'une application provient de dépendances externes
+- Les attaques de supply chain ont augmenté de +900% entre 2020 et 2025 (Sonatype)
+- 5 packages npm malveillants publiés par jour en moyenne (Socket.dev)
+- Temps médian avant détection : 45 jours (Veracode, amélioration grâce à l'IA!)
+
 ---
 
 ## Exemples d'attaques
@@ -88,3 +93,7 @@ La compromission initiale est survenue à cause d'une mauvaise configuration des
 - **Méthode** : Exploitation des intégrations entre partenaires pour propager des malwares ou voler des données. [source](https://0xhack.fr/supply-chain-attack-2026-les-nouvelles-menaces-et-strategies-de-defense-a-connaitre/)
 
 ---
+
+:::link
+Pour plus d'information, voir aussi cette présentation : <http://conferences.gioria.org/presentations/2026/snowcamp2026/>
+:::
