@@ -93,7 +93,7 @@ kubeadm init --config kubeadm-config.yaml --upload-certs
 Forcer un CIDR pour le réseau des pods peut être obligatoire pour certains CNI (_Calico_) :
 
 ```sh
-kubeadm init … –pod-network-cidr=100.0.0/16
+kubeadm init … --pod-network-cidr=100.0.0/16
 ```
 :::
 
