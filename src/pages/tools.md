@@ -151,7 +151,9 @@ created: 2024-10-17
     - `Traefik mesh`
     - `NGINX Service Mesh`
     - `Consul` : DNS, reverse proxy, load balancing, …
-  - Gateway API : `ingress2gateway`
+  - Gateway API :
+    - `ingress2gateway`
+    - <https://kgateway.dev/> : gateway microservices et AI agents
 
 ### 🔒 Sécurité
 
@@ -487,6 +489,26 @@ created: 2024-10-17
 - <https://testcontainers.com>
 - Image générant de faux logs : <https://github.com/chentex/random-logger>
 - <https://www.trackawesomelist.com/TheJambo/awesome-testing/rss.xml> : awesome Testing
+- Chaos Computing :
+  - <https://github.com/fpaparoni/chaos-room>
+  - <https://github.com/lucky-sideburn/kubeinvaders>
+
+## IA
+
+### LLM
+
+- <https://www.langchain.com/>
+  - <https://haystack.deepset.ai/>
+  - `vLLM`
+  - <https://pollinations.ai/>
+  - <https://docs.sillytavern.app/>
+- `litLLM` : aggreggation de LLMs : <https://docs.litellm.ai/docs/>
+  - [À la découverte de liteLLM, une plateforme pour les gouverner tous](https://www.youtube.com/watch?v=L8CeGZ0Pf5o)
+- <https://github.com/f/awesome-chatgpt-prompts/commits/main.atom> : awesome ChatGPT prompts
+
+### Agents
+
+- <https://github.com/google/A2UI> : auto-generated UIs
 
 ## Backend tools
 
@@ -498,17 +520,6 @@ created: 2024-10-17
 - </> `Typer` : librairie Python pour écrire facilement une CLI
 - <https://www.trackawesomelist.com/public-apis/public-apis/rss.xml> : awesome Public APIs
 - <https://www.trackawesomelist.com/vinta/awesome-python/rss.xml> : awesome Python
-
-### IA / LLMs
-
-- <https://www.langchain.com/>
-  - <https://haystack.deepset.ai/>
-  - `vLLM`
-  - <https://pollinations.ai/>
-  - <https://docs.sillytavern.app/>
-- `litLLM` : aggreggation de LLMs : <https://docs.litellm.ai/docs/>
-  - [À la découverte de liteLLM, une plateforme pour les gouverner tous](https://www.youtube.com/watch?v=L8CeGZ0Pf5o)
-- <https://github.com/f/awesome-chatgpt-prompts/commits/main.atom> : awesome ChatGPT prompts
 
 ### Database
 
