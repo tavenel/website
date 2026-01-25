@@ -62,35 +62,41 @@ tags:
 
 Tests spécifiques pour une application utilisant une IA générative :
 
-1. Principe général : séparer les données classifiées
+1. Critères de test d'un LLM en production :
+
+- ton, clarté, concision
+- pertinence, exhaustif
+- exactitude, ancrage
+
+2. Principe général : séparer les données classifiées
 
 - Une partie des données sert à l'entraînement du modèle
 - Le reste des données (en général ~20%) sert à la validation du modèle (on compare les réponses du modèle sur ces données aux réponses attendues, par exemple pour un modèle de classification)
 
-2. Tests de robustesse (input-output)
+3. Tests de robustesse (input-output)
 
 - Créer des jeux de prompts de référence (scénarios représentatifs, edge cases, inputs adversariaux).
 - Évaluer si les réponses générées respectent les contraintes attendues (format, style, présence/absence de certains éléments).
 
-3. Tests de non-régression sur données gelées
+4. Tests de non-régression sur données gelées
 
 - Sauvegarder des paires input & output validés.
 - Comparer les générations futures à ces sorties "acceptables" (en tolérant une variabilité, via règles ou scoring).
 
-4. Tests basés sur des métriques automatiques
+5. Tests basés sur des métriques automatiques
 
 - Textuelles : BLEU, ROUGE, METEOR, BERTScore, perplexité.
 - Images : FID, CLIPScore.
 - Attention : ces métriques donnent une tendance mais ne suffisent pas seules.
 
-5. Tests de conformité aux règles
+6. Tests de conformité aux règles
 
 - Absence de contenu interdit (toxicité, biais, hallucinations).
 - Respect du format demandé (JSON bien formé, schéma valide, longueur max).
 - Cohérence factuelle (via croisement avec bases de vérité ou modèles de vérification).
 - Prompt injection attacks : vérifier que l'IA ne fuit pas de données sensibles ou n'exécute pas d'ordres interdits.
 
-6. Évaluation humaine
+7. Évaluation humaine
 
 - Tests manuels exploratoires : vérifier pertinence, créativité, clarté.
 - Panels utilisateurs / experts : scorer la qualité sur critères définis (fidélité, utilité, sécurité).
