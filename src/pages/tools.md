@@ -41,6 +41,7 @@ created: 2024-10-17
   - <https://alchemists.io/projects/git-lint> : linter de commits Git pour une cohérence des messages
   - <https://github.com/jesseduffield/lazygit> : **formidable TUI git**
   - <https://www.trackawesomelist.com/stevemao/awesome-git-addons/rss.xml> : awesome Git addons
+  - <https://terminaltrove.com/lazyworktree/> : TUI pour gérer des worktree Git
 - 🔐 Sécurité :
   - [git-crypt](https://github.com/AGWA/git-crypt)
   - 🔑 `gittuf` : utilise The Update Framework (TUF) : gestion des clés des développeurs du dépôt, autorisations par branches, fichiers, …
@@ -214,6 +215,11 @@ created: 2024-10-17
   - <https://submariner.io/>
   - <https://liqo.io/>
 - [Spegel](https://github.com/spegel-org/spegel) : Miroir qui récupère les images Docker sur les Nodes où elles sont en cache
+
+#### Multi-clusters
+
+- CAPI : K8s-as-a-Service : <https://itnext.io/build-your-own-managed-kubernetes-service-on-proxmox-with-capi-8d9786644818>
+- Virtual clusters : <https://www.vcluster.com/>
 
 ### 🔄 Upgrade de cluster
 
@@ -515,6 +521,7 @@ created: 2024-10-17
 ## Frontend development
 
 - Backend : `appwrite`, `firebase`, `nitric`
+- Gestionnaire d'état server-side : `tanstack query`, voir : <https://talk-tanstack-query-slides.vercel.app/1>
 - Scanner de technologies de site web : <https://ingredients.work/>
 - `Wappalyzer` : extension détectant les technologies utilisées par un site Web
 - Fonds de cartes Open-Street Map : <http://maps.stamen.com>
@@ -593,6 +600,11 @@ created: 2024-10-17
   - `Falco` : comportement des conteneurs et des applications : <https://une-tasse-de.cafe/blog/falco/>, <https://falco.org/>
   - <https://tetragon.io/> : eBPF-based Security Observability and Runtime Enforcement
 - <https://localcert.net/> : certificats gratuits en `.localcert.net` pour réseau privé
+
+#### Bastion
+
+- `Apache Guacamole` : bastion web RDP / SSH / VNC léger
+- `Jumpserver` : bastion web + audit poussé
 
 ## IA
 
@@ -786,6 +798,7 @@ created: 2024-10-17
 - `k8s lens` : graphical cluster management
 - `kube-capacity` : monitor ressources
 - <https://codeberg.org/hjacobs/kube-web-view> : remplacement R/O du web dashboard, supporte le multi-cluster
+- <https://headlamp.dev/> : gestion de ressources k8s, supporte le multi-cluster
 - <https://grogg.app/> : dashboard de gestion k8s (app native ou extension vscode)
 - <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
 - <https://k8slens.dev/> : IDE dédié à Kubernetes avec vision des ressources
