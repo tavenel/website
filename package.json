@@ -17,7 +17,7 @@
 		"@types/sanitize-html": "^2.13.0",
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",
-		"astro": "^5.16.15",
+		"astro": "^5.17.1",
 		"astro-broken-link-checker": "imazen/astro-broken-link-checker",
 		"astro-expressive-code": "^0.41.2",
 		"astro-icon": "^1.1.5",
