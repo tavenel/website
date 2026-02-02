@@ -52,6 +52,8 @@ _Le but est la création d'un tableau de bord incluant la représentation visuel
 4. Réalisez le tableau de bord en utilisant Power BI.
 5. Retours croisés : présentez votre dashboard à un autre groupe et faites des retours sur la réalisation de ce groupe.
 
+> Le but ici n'est pas de faire de la transformation complexe de données mais bien de représenter graphiquement ces données. On pourra donc s'aider d'une IA pour générer de la donnée à utiliser.
+
 ## Exercice 3 : Roadmap
 
 L'objectif de cet exercice est de réaliser une roadmap pour prévoir l'évoluation future de votre SI.
@@ -61,3 +63,18 @@ L'objectif de cet exercice est de réaliser une roadmap pour prévoir l'évoluat
 3. Utilisez un outil de diagramme (`Lucidchart`, `draw.io`, …) pour construire une roadmap simple.  
 4. Retours croisés : présentez votre roadmap à un autre groupe et faites des retours sur la réalisation de ce groupe.
 
+## Exemple de contexte
+
+Une entreprise de e-commerce de taille intermédiaire, spécialisée dans la vente de matériel électronique grand public en Europe, dispose d'un système d'information fortement orienté services numériques et applications web.
+Son SI repose sur une architecture hybride combinant un cloud public pour la partie front-office (site web, applications mobiles iOS/Android, API publiques pour partenaires) et un datacenter interne pour les applications cœur de métier (ERP, gestion des stocks, facturation, CRM et data warehouse).
+
+L'entreprise connaît une croissance rapide de son volume de transactions, avec des pics d'activité importants lors d'événements promotionnels, ce qui met sous tension la couche applicative, notamment les microservices liés au panier, au paiement et à la recommandation de produits.
+
+Les équipes techniques observent régulièrement des dégradations de performance lors des montées en charge, des incidents de synchronisation entre le stock réel et le stock affiché, ainsi que des problèmes de disponibilité intermittente sur certaines API internes utilisées par le service logistique.
+Par ailleurs, le service support client signale une augmentation des tickets liés à des lenteurs d'affichage, des erreurs de paiement et des retards de confirmation de commande.
+
+L'organisation du SI est répartie entre plusieurs équipes (développement, exploitation, data, sécurité) qui utilisent des outils différents de supervision, de ticketing et de reporting, rendant la vision globale difficile pour la direction informatique.
+
+La direction souhaite donc mettre en place des tableaux de bord décisionnels permettant d'améliorer la performance de la couche applicative (qualité de service, stabilité, scalabilité, maintenabilité) tout en gardant une visibilité sur les dépendances techniques sous-jacentes (infrastructure cloud, bases de données, réseau, conteneurs).
+
+Vous vous positionnez comme des analystes SI chargés d'identifier des indicateurs pertinents couvrant la disponibilité des applications, la performance transactionnelle, la qualité du code, la satisfaction utilisateur, la fiabilité des intégrations inter-applicatives et l'efficacité opérationnelle des équipes, puis proposez des visualisations adaptées dans Power BI afin d'aider à la prise de décision stratégique et à l'amélioration continue du système applicatif.
