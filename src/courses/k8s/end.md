@@ -83,7 +83,7 @@ tags:
 
 :::link
 
-- Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) 📚
+- Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) et un REX du Kubestronaut : <https://blog.zwindler.fr/2026/01/18/rex-kubestronaut/> 📚
 - Pour s'entraîner aux certifications, utiliser <https://github.com/sailor-sh/CK-X>
 
 :::
@@ -311,7 +311,6 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Modifier des ressources k8s : Client-side vs Server-side : <https://hackernoon.com/battle-for-resources-or-the-ssa-path-to-kubernetes-diplomacy>
 - <https://medium.com/bigdatarepublic/frameworks-for-serving-machine-learning-models-on-kubernetes-835565067d6b>
 - <https://github.com/moabukar/k8s-in-a-box> : random broken app to fix for learning
-- Informations sur les certifications k8s : <https://blog.zwindler.fr/2026/01/18/rex-kubestronaut/>
 
 ---
 
