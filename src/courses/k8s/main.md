@@ -698,6 +698,15 @@ Pour débugger les Pods avec Device, voir : <https://kubernetes.io/blog/2025/07/
 
 ---
 
+### 🔐 cert-manager (TLS)
+
+- CRD à ajouter au Cluster pour générer et signer des `Certificat` 🔐
+- Stocke la `key` et le `crt` dans un `Secret` 🔒
+  - Réutilisables dans `Ingress`, … 🌐
+- Utilise des `Issuer` (namespace-limited) ou des `ClusterIssuer` (cluster-wide) 🏷️
+
+---
+
 ## 🛠️ Configuration du cluster
 
 - `Metadata` pour chaque ressource (nom, labels, annotations, …) 🏷️
