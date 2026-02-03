@@ -387,15 +387,6 @@ graph LR;
 
 ---
 
-## 🔐 cert-manager (TLS)
-
-- CRD à ajouter au Cluster pour générer et signer des `Certificat` 🔐
-- Stocke la `key` et le `crt` dans un `Secret` 🔒
-  - Réutilisables dans `Ingress`, … 🌐
-- Utilise des `Issuer` (namespace-limited) ou des `ClusterIssuer` (cluster-wide) 🏷️
-
----
-
 ## Cas d'usage - quels services utiliser ?
 
 ---
