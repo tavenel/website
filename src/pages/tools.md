@@ -120,6 +120,7 @@ created: 2024-10-17
 - `docker compose` : orchestrateur simple de Docker (dev, test, CI/CD, prod simpliste)
 - `nomad` : orchestrateur applicatif conteneurisées ou non, simple pour on-premise
 - `mesos` + `dc/os`
+- <https://uncloud.run/> : déploiements de configs Docker Compose multi-noeuds
 
 ## 󱃾 Kubernetes
 
