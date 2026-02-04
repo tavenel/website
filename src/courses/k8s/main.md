@@ -510,7 +510,7 @@ flowchart TD
 
 - 1 `Kubelet` par `Node` 📦
   - Un `kubelet` est souvent installé sur le `MasterNode` pour y gérer ses composants dans des pods (optionnel) 🏢
-  - En général, on y ajoute le `taint` : `node-role.kubernetes.io/master:NoSchedule` pour ne pas utiliser le _Master_ comme un _Worker_. ⚠️
+  - En général, on y ajoute le `taint` : `node-role.kubernetes.io/control-plane:NoSchedule` pour ne pas utiliser le _Master_ comme un _Worker_. ⚠️
 - Connexion permanente à l'`APIServer` 🌐
 - Déploie le `Pod` s'il a le `nodeName` du `Node` courant : 📦
   1. Récupération de l'image (format `OCI`) 📥
