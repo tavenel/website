@@ -23,6 +23,72 @@ Vérifier l'état des composants du système :
 kubectl get --raw='/readyz?verbose'
 ```
 
+### Administration de Node
+
+#### Taint
+
+Les _taint_ permettent de **repousser les pods** de certains nœuds afin de réserver ou spécialiser ces nœuds pour des charges précises (GPU, base de données, workloads critiques, etc.). Un taint s'applique sur un **node** et empêche par défaut le scheduling des pods qui ne le "_tolèrent_" pas. Pour les utiliser, on ajoute un `taint` au nœud avec `kubectl taint nodes <node> key=value:<effet>`, puis on déclare une **toleration** correspondante dans le manifeste du pod afin de l'autoriser explicitement à s'y déployer ; sans toleration compatible, le scheduler évite ou expulse le pod selon l'effet choisi.
+
+Il existe **trois effets de taints** dans Kubernetes :
+
+- `NoSchedule` : le scheduler **ne place pas** de nouveaux pods sur le nœud si ceux-ci n'ont pas de _toleration_ correspondante. Les pods déjà présents restent.
+- `PreferNoSchedule` : règle **souple** ; le scheduler **évite autant que possible** le nœud, mais peut quand même y placer un pod s'il n'y a pas de meilleure option.
+- `NoExecute` : **pas de scheduling** et en plus les **pods existants sont expulsés** du nœud s'ils ne possèdent pas la _toleration_ adéquate (éventuellement avec un délai `tolerationSeconds`).
+
+:::link
+Voir la partie _toleration_ de la section _Pod_.
+:::
+
+Voir les `taint` d'un `Node` :
+
+```sh
+kubectl get node worker-1 -o json | jq '.spec.taints'
+```
+
+Interdire le scheduling de Pods sur le noeud (par exemple sur un Control Plane) :
+
+```sh
+kubectl taint nodes control-plane1 node-role.kubernetes.io/control-plane:NoSchedule
+```
+
+Autoriser le scheduling de Pods sur le noeud (i.e. le transformer en Worker) en retirant le `NoSchedule` :
+
+```sh
+kubectl taint nodes control-plane1 node-role.kubernetes.io/control-plane:NoSchedule-
+```
+
+Le node-controller applique automatiquement un taint à un nœud lorsque certaines conditions sont remplies :
+
+- `node.kubernetes.io/not-ready` : Le nœud n'est pas prêt (`Ready==False`)
+- `node.kubernetes.io/unreachable` : Le nœud est injoignable depuis le contrôleur (`Ready==Unknown`)
+- `node.kubernetes.io/memory-pressure`, `node.kubernetes.io/disk-pressure`, `node.kubernetes.io/pid-pressure` : pression sur les ressources
+- `node.kubernetes.io/network-unavailable` : Le réseau du nœud est indisponible.
+- `node.kubernetes.io/unschedulable` : Le nœud ne peut pas être planifié.
+- `node.cloudprovider.kubernetes.io/uninitialized` : Lorsqu'un kubelet est démarré avec un fournisseur cloud externe, cette marque est appliquée à un nœud pour le signaler comme inutilisable. Une fois le nœud initialisé par un _cloud-controler-manager_, le kubelet supprime ce _taint_.
+
+Si un nœud doit être vidé (`kubectl drain`), (`node.kubernetes.io/not-ready` et `node.kubernetes.io/unreachable` ajoutent le _taint_ `NoExecute` (supprimé si la situation se normalise).
+
+:::warn
+Dans certains cas où le nœud est injoignable, l'api-server ne peut pas communiquer avec le kubelet sur ce nœud. La décision de supprimer les pods ne peut être communiquée au kubelet que lorsque la communication avec l'api-server est rétablie. En attendant, les pods dont la suppression est programmée peuvent continuer à s'exécuter sur le nœud partitionné.
+:::
+
+:::tip
+Les _taint_ gèrent les rôles des _Node_ : `node-role.kubernetes.io/control-plane` => `kubectl get nodes` renvoie `control-plane`
+:::
+
+#### Sortir un noeud du cluster
+
+```sh
+# Retirer les pods et déconnecter le noeud pour maintenance
+kubectl drain --ignore-daemonsets "<node-name>"
+# Rendre le noeud de nouveau disponible
+kubectl uncordon "<node-name>" 
+```
+
+:::warn
+Attention aux prérequis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
+:::
+
 ### Versions
 
 #### API Server
@@ -213,19 +279,6 @@ kubectl auth can-i list nodes \
 ```sh
 kubectl get apiservices | grep metrics-server
 ```
-
-### Sortir un noeud du cluster
-
-```sh
-# Retirer les pods et déconnecter le noeud pour maintenance
-kubectl drain --ignore-daemonsets "<node-name>"
-# Rendre le noeud de nouveau disponible
-kubectl uncordon "<node-name>" 
-```
-
-:::warn
-Attention aux prérequis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
-:::
 
 ### Certificats et Tokens
 
@@ -1157,7 +1210,7 @@ spec:
 
 Avec DRA :
 
-- Le **device n’est plus déclaré statiquement** sur le nœud
+- Le **device n'est plus déclaré statiquement** sur le nœud
 - Kubernetes dialogue avec un **Resource Driver**
 - Les devices sont alloués **dynamiquement par Pod**
 
@@ -1183,7 +1236,7 @@ driverName: example.com/device-driver
 #### ResourceClaim
 
 - Déclare une **demande abstraite de device**
-- L’allocation réelle est faite par le driver
+- L'allocation réelle est faite par le driver
 
 ```yaml
 apiVersion: resource.k8s.io/v1beta1
@@ -1198,7 +1251,7 @@ spec:
 
 - Le Pod **référence le ResourceClaim**
 - Le device est :
-  - Alloué à l’admission
+  - Alloué à l'admission
   - Libéré à la suppression du Pod
 
 ```yaml
