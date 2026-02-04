@@ -77,7 +77,7 @@ Mais la plupart du temps (_kubeadm_ par exemple) il n'est pas supporté de chang
 :::tip
 _kube-vip_ permet de déployer un _load-balancer_ pour des control plane H/A, et pour faire office de service `LoadBalancer` :
 
-- Si cluster installé par `kubeadm` : néessite une _virtual IP_ à l'installation : la _VIP_ est déployée en _Static Pod_ et stackée dans le 1er _control-plane_.
+- Si cluster installé par `kubeadm` : nécessite une _virtual IP_ à l'installation : la _VIP_ est déployée en _Static Pod_ et stackée dans le 1er _control-plane_.
   - les autres _control-plane_ rejoignent la _VIP_ et _kube-vip_ gère la réplication de la _VIP_.
 - Si cluster _k3s_, la _VIP_ n'a pas besoin d'être présente à l'initialisation du cluster : celle-ci peut être déployée en `DaemonSet` sur chacun des _Node_.
 
