@@ -614,6 +614,8 @@ spec:
   - name: main-container # nom du conteneur
     image: nginx # image Docker
     imagePullPolicy: Always # re-pull la dernière version d'image à la (re)création du Pod
+    imagePullSecrets:
+      - name: my-registry-credentials # nom du secret gérant la connexion à la registry de conteneurs
     command: ["printenv"] # The command to start the container
     args: ["HOSTNAME", "KUBERNETES_PORT"] # args for the command
     restartPolicy: Always # restart toujours si stoppé
@@ -728,6 +730,29 @@ Pour un `podAffinity`, le champ `topologyKey` spécifie la "topologie" sur laque
 
 :::link
 Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/affinity-toleration-taint/>
+:::
+
+#### Registry de conteneurs
+
+Pour se connecter à une registry de conteneurs sécurisée, on utilise un secret référencé dans l'`imagePullSecrets`. Le secret est généré par :
+
+```sh
+kubectl create secret docker-registry my-registry-credentials \
+  --docker-server=registry.example.com \
+  --docker-username=myuser \
+  --docker-password=mypassword \
+  --docker-email=<myemail@example.com>
+```
+
+:::tip
+Pour éviter d'ajouter l'`imagePullSecrets` à chaque specification de `Pod`, on peut patcher le `ServiceAccount` utilisé (par défaut : `default`) :
+
+```sh
+kubectl patch serviceaccount default \
+  -p '{"imagePullSecrets":[{"name":"my-registry-credentials"}]}'
+```
+
+Une autre solution est d'utiliser un `MutatingAdmissionWebhook` pour patcher la ressource à sa création (voir l'exemple _Kyverno_).
 :::
 
 ### Priorité, réquisition et limitation de ressources
@@ -2507,6 +2532,27 @@ spec:
           ingress:
           - from:
             - podSelector: {}
+```
+
+## Exemple d'ajout de credentials de registry à tous les Pods
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-registry-secret
+spec:
+  rules:
+    - name: add-imagepullsecret
+      match:
+        resources:
+          kinds:
+            - Pod
+      mutate:
+        patchStrategicMerge:
+          spec:
+            imagePullSecrets:
+              - name: my-registry-credentials
 ```
 
 # Legal
