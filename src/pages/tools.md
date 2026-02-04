@@ -270,6 +270,7 @@ created: 2024-10-17
 - `terraform-docs` : outil pour documenter ses modules Terraform
 - <https://github.com/sl1pm4t/k2tf> : transforme les Yaml k8s en HCL Terraform
 - <https://github.com/magodo/pipeform> : TUI pour Terraform
+- <https://github.com/Owloops/tfjournal> : record Terraform runs
 - <https://www.trackawesomelist.com/shuaibiyy/awesome-terraform/rss.xml> : awesome Terraform
 
 ## 🛠️ Build tools et dépendances
