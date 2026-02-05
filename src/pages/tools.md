@@ -568,6 +568,7 @@ created: 2024-10-17
 ### Librairies JS
 
 - Système de commentaires utilisant Github : <https://giscus.app/>
+- Système de commentaires auto-hébergeable respectueux de la vie privée avec intégration de réseaux sociaux : <https://remark42.com/>
 - Affichage de messages et d'alertes : <https://alertifyjs.com/>
 - Client-side search : <https://pagefind.app/>
 - Animations :
