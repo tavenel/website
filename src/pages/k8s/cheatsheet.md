@@ -25,6 +25,12 @@ kubectl get --raw='/readyz?verbose'
 
 ### Administration de Node
 
+#### Afficher uniquement les Pods sur un Noeud particulier
+
+```sh
+kubectl get pods --field-selector spec.nodeName=…
+```
+
 #### Taint
 
 Les _taint_ permettent de **repousser les pods** de certains nœuds afin de réserver ou spécialiser ces nœuds pour des charges précises (GPU, base de données, workloads critiques, etc.). Un taint s'applique sur un **node** et empêche par défaut le scheduling des pods qui ne le "_tolèrent_" pas. Pour les utiliser, on ajoute un `taint` au nœud avec `kubectl taint nodes <node> key=value:<effet>`, puis on déclare une **toleration** correspondante dans le manifeste du pod afin de l'autoriser explicitement à s'y déployer ; sans toleration compatible, le scheduler évite ou expulse le pod selon l'effet choisi.
