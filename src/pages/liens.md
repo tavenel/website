@@ -109,6 +109,7 @@ checked: 2025-01-27
 
 ### Réseau
 
+- [V2F (Youtube) :  screw it... let's rebuild the ENTIRE Internet](https://www.youtube.com/watch?v=HRa31C7zfzk)
 - <https://www.it-connect.fr/le-nat-et-le-pat-pour-les-debutants/>
 - <https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-de-vmware-workstation-pro/>
 - NAT vs BRIDGE : <https://blog.stephane-robert.info/docs/homelab/bridge-nat/>
