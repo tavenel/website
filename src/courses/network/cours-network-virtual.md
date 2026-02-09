@@ -68,11 +68,13 @@ ip link show type vxlan
 ```
 
 :::link
-Voir :
+Voir aussi :
 
 - <https://www.techsyncer.com/fr/vxlan-vmware-basics.html>
 - <https://vincent.bernat.ch/fr/blog/2017-vxlan-linux>
 - <https://networklessons.com/cisco/ccnp-encor-350-401/introduction-to-virtual-extensible-lan-vxlan>
+- <https://dryusdan.space/mon-lab-episode-3-isoler-les-reseaux>
+
 :::
 
 ---
@@ -113,14 +115,12 @@ La `ServiceHashMap` (informations de routage) eBPF de Cilium joue le rôle de Lo
 |  1.2.3.4   | 8080 |      1     |      4      |   4.3.2.1   | 8080 |
 |  1.2.3.4   | 8080 |      1     |      5      |   4.3.2.2   | 8080 |
 
-
 Exemple de `ConnTrackMap` (tracking des connexions) :
 
 | Service IP | Source Port | Destination IP | Destination Port | Type | EndpointID | Service ID |
 |------------|-------------|----------------|------------------|------|------------|------------|
 |  4.3.2.3   | 80          |     1.2.3.4    |      8080        | SVC  |      4     |     X      |
 |  4.3.2.3   | 80          |     4.3.2.1    |      8080        | Egress  |      X     |     1      |
-
 
 :::link
 Voir : <https://medium.com/@rickijen/how-to-use-ebpf-to-capture-traffic-over-cilium-vtep-integration-fcb70cef0fc1>
@@ -143,6 +143,10 @@ Voir : <https://medium.com/@rickijen/how-to-use-ebpf-to-capture-traffic-over-cil
 ### Outils et Projets Basés sur BGP 🧪
 
 - `Bird` & `FRRRouting` : simulateurs BGP
+
+:::link
+Voir aussi : <https://une-tasse-de.cafe/blog/bgp-kubernetes/>
+:::
 
 ---
 
@@ -172,4 +176,3 @@ Voir : <https://medium.com/@rickijen/how-to-use-ebpf-to-capture-traffic-over-cil
 - **BGP** : routage inter-AS sur Internet et les grands réseaux 🌐
 
 ---
-
