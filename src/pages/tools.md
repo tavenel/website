@@ -223,6 +223,7 @@ created: 2024-10-17
 
 - CAPI : K8s-as-a-Service : <https://itnext.io/build-your-own-managed-kubernetes-service-on-proxmox-with-capi-8d9786644818>
 - Virtual clusters : <https://www.vcluster.com/>
+- Multi-tenant : <https://projectcapsule.dev/>
 
 ### 🔄 Upgrade de cluster
 
