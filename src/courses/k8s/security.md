@@ -9,6 +9,22 @@ tags:
 - security
 ---
 
+## Surface d'attaque d'un cluster
+
+Composants critiques :
+
+- API Server
+- etcd
+- kubelet
+- controller manager
+- scheduler
+- Pods / containers
+- réseau inter-pods
+
+La majorité des attaques passent par **l'API Server**
+
+---
+
 ## 🔐 Authentification et autorisation
 
 ---
@@ -24,8 +40,40 @@ tags:
 
 ---
 
+## ServiceAccount
+
+- `ServiceAccount` : authentification basique à l'intérieur du cluster
+- _RBAC_ lie un `ServiceAccount` à un `(Cluster)Role`
+- Un _Pod_ est associé à un _ServiceAccount_ pour parler à l'API (par défaut : `default`, sans droits) 🔄
+- Le token associé est dans le Pod : `/var/run/secrets/kubernetes.io/serviceaccount/token` 🔑
+
+:::tip
+Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un conteneur : <https://kubernetes.io/docs/tasks/run-application/access-api-from-pod/>
+:::
+
+---
+
+Commande :
+
+```bash
+kubectl get serviceaccounts
+```
+
+Création :
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: app-sa
+```
+
+---
+
 ## 🔐 Authentification (authn)
 
+- Identifie un client (pas ses droits).
+- **pas de gestion d'utilisateurs interne** (délégation).
 - Nombreuses méthodes _authn_ lors d'une requête _api-server_ (génère username, identifiant, groupes) 📋
 - L'_api-server_ ne les interprète pas : tâche des _autorizers_ (_authz_). 🔄
 
@@ -35,8 +83,66 @@ tags:
 
 - Certificats clients TLS (clusters `kubeadm`) 🔒
 - Bearer tokens (header HTTP) 🔑
+- Autres types de tokens (peu utilisé) 🔑
 - Autre proxy authn devant l'_api-server_ 🌐
+- Clés d'API externes : _AWS EKS_, … 🔑
 - Méthodes authn(s) actuelle(s) dans : `~/.kube/config` 📂
+
+---
+
+#### 🔒 Certificats TLS X.509
+
+- Méthode la plus courante en cluster on-premise.
+- Client présente un certificat signé par la CA du cluster
+- Mapping sur un `username` + `groups`
+- _username_ : `CN` du certificat client 👤
+- _liste des groupes_ : `O` du certificat client 👥
+- L'_api-server_ peut aussi valider les certificats clients par une CA custom. 🔄
+
+Exemple :
+
+```bash
+kubectl config view
+```
+
+---
+
+#### 🔑 Bearer Tokens
+
+- Utilisés par :
+  - ServiceAccounts
+  - Automatisation
+  - CI/CD
+- Transmis par en-têtes HTTP : `Authorization: Bearer …` 🔑
+- Validés de différentes manières :
+  - En dur dans un fichier sur l'_api-server_ 📂
+  - [Bootstrap tokens](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/) : création cluster, ajout _Node_ 🌐
+  - [OpenID Connect Token](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens) : _authn_ par fournisseurs externe `OAuth2` 🌐
+  - `ServiceAccount` : [create-token](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#create-token) 🔑
+
+---
+
+#### OpenID Connect (OIDC)
+
+Intégration avec :
+
+- Keycloak
+- Azure AD
+- Google IAM
+- Okta
+- …
+
+Avantages :
+
+- SSO
+- MFA
+- Centralisation identité
+
+---
+
+#### Webhook Auth
+
+Kubernetes délègue l'authentification à un service externe.
 
 ---
 
@@ -50,19 +156,10 @@ tags:
 
 ---
 
-### 🔒 authn par certificats TLS
-
-- Dans presque tous les déploiements 🌐
-- _username_ : `CN` du certificat client 👤
-- _liste des groupes_ : `O` du certificat client 👥
-- L'_api-server_ peut aussi valider les certificats clients par un CA custom. 🔄
-
----
-
 ### 🔐 authn kubelet
 
 - _Kubelet_ s'authentifie souvent par certificats : `O=system:nodes`, `CN=system:node:name-of-the-node` 🔒
-- L'API Kubernetes peut agir comme un CA (encapsule une _CSR X509_ dans une `CertificateSigningRequest`) 🔄
+- L'API Kubernetes peut agir comme une CA (encapsule une _CSR X509_ dans une `CertificateSigningRequest`) 🔄
 - Permet au _Kubelet_ de renouveler son propre certificat 🔄
 - Peut émettre des certificats utilisateur 👤
 - Pas de révocation de certificat (clé compromise, …) par l'_api-server_ : [issue #18982](https://github.com/kubernetes/kubernetes/issues/18982) ❌
@@ -70,40 +167,15 @@ tags:
 
 ---
 
-### 🔑 authn par token
+## 🔐 Autorisation (authz)
 
-- Transmis par en-têtes HTTP : `Authorization: Bearer …` 🔑
-- Validés de différentes manières :
-  - En dur dans un fichier sur l'_api-server_ 📂
-  - [Bootstrap tokens](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/) : création cluster, ajout _Node_ 🌐
-  - [OpenID Connect Token](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#openid-connect-tokens) : _authn_ par fournisseurs externe `OAuth2` 🌐
-  - `ServiceAccount` : [create-token](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#create-token) 🔑
-
----
-
-### 🔑 Autres méthodes authn
-
-- Autres types de tokens 🔑
-- Clés d'API externes : _AWS EKS_, … 🔑
-
----
-
-## 🔐 Autorisations (authz)
+Décide **ce que l'utilisateur peut faire** après authn.
 
 - Plusieurs méthodes appelées [authorizers](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules), notamment :
-  - [Webhook](https://kubernetes.io/docs/reference/access-authn-authz/webhook/) (chaque requête API est soumise à un service externe pour approbation) 🌐
   - [Role-Base Access System (RBAC)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) : associe dynamiquement les permissions aux utilisateurs 🔑
-
----
-
-### 🔄 Pods et ServiceAccount
-
-- Un _Pod_ est associé à un _ServiceAccount_ (par défaut : `default`, sans droits) 🔄
-- Le token associé est dans le Pod : `/var/run/secrets/kubernetes.io/serviceaccount/token` 🔑
-
-:::tip
-Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un conteneur : <https://kubernetes.io/docs/tasks/run-application/access-api-from-pod/>
-:::
+  - [Webhook](https://kubernetes.io/docs/reference/access-authn-authz/webhook/) (chaque requête API est soumise à un service externe pour approbation) 🌐
+  - Node Authorizer
+- Plus de détails dans la section "Sécurité dans le cluster"
 
 ---
 
@@ -121,6 +193,43 @@ Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un c
 
 ---
 
+### mTLS (Mutual TLS)
+
+Kubernetes repose sur **mTLS interne** :
+
+- API Server ↔ kubelet
+- API Server ↔ etcd
+- Controller ↔ API Server
+- Scheduler ↔ API Server
+
+Chaque composant possède :
+
+- un certificat client
+- un certificat serveur
+
+---
+
+### API Server
+
+- Ne pas exposer publiquement l'API Server :
+  - Security Groups / Firewall
+  - IP whitelisting
+  - VPN / Bastion
+- TLS obligatoire :
+  - Certificats signés par une CA interne
+  - TLS 1.2 minimum
+  - Rotation des certificats
+
+Flags importants :
+
+```
+--tls-cert-file
+--tls-private-key-file
+--client-ca-file
+```
+
+---
+
 ### 📂 etcd
 
 - Stocke toute l'information du Cluster (`Secret`, …) et souvent **non chiffrée** (performances) 📂
@@ -130,13 +239,28 @@ Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un c
 - _authz_ : Kubernetes ~~n'utilise pas le RBAC interne de _etcd_~~ => tous les droits 🔑
 - Voir : [Documentation etcd sur l'authentification](https://etcd.io/docs/current/op-guide/authentication/) et [PKI The Wrong Way](https://www.youtube.com/watch?v=gcOLDEzsVHI) à la KubeCon NA 2020 📚
 
+Flags importants :
+
+```
+--cert-file
+--key-file
+--client-cert-auth
+```
+
 ---
 
 ### 🔄 Kubelet et api-server
 
+- Risque majeur : exécution de commandes sur les nœuds.
 - Communication bidirectionnelle _Kubelet_ <-> _api-server_ 🔄
 - Enregistrement _Kubelet_ -> _api-server_ : le Kubelet demande les pods à démarrer/arrêter. 🔄
 - Communication _api-server_ -> _Kubelet_ : pour actions logs, exec, attach 🔄
+
+```
+--kubelet-client-certificate
+--kubelet-client-key
+--kubelet-certificate-authority
+```
 
 ---
 
@@ -162,7 +286,17 @@ Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un c
 
 ---
 
-### 🔄 Controller manager
+### Scheduler & Controller Manager
+
+Moins exposés mais doivent :
+
+- Communiquer uniquement via TLS
+- Ne jamais être exposés publiquement
+- Utiliser des ServiceAccounts restreints
+
+---
+
+#### 🔄 Controller manager
 
 - Pour utiliser l'API `CertificateSigningRequest` le _Controller Manager_ a besoin du certificat et de la clé du CA (transmis avec `--cluster-signing-cert-file` et `--cluster-signing-key-file`) 🔒
 - Le _Controller Manager_ génère aussi les tokens pour les `ServiceAccount` 🔑
@@ -283,7 +417,46 @@ EOF
 
 ---
 
+## PKI & Rotation
+
+Risques :
+
+- Certificats expirés
+- Certificats compromis
+
+Bonnes pratiques :
+
+- Rotation automatique (`kubeadm certs renew`)
+- Durée de vie courte
+- CA protégée offline si possible
+
+---
+
 ## 🔒 Sécurité dans le Cluster
+
+---
+
+### Node Authorizer
+
+- Mécanisme d'autorisation conçu **exclusivement pour les kubelets**
+- Contrôle de privilèges minimalistes automatique pour les workers.
+- Objectif : permettre à un nœud de faire uniquement les actions nécessaires à l'exécution des Pods qui lui sont assignés
+
+### Fonctionnement
+
+- **Common Name du certificat kubelet**
+  Format typique : `system:node:<nodeName>`
+- **Groupes** : `system:nodes`
+- S'appuie sur :
+  - L'objet `Node`
+  - Les Pods assignés au Node
+  - Les volumes montés
+- Flag API Server : `--authorization-mode=Node,RBAC`
+  - Ordre important : Node est souvent placé **avant RBAC**.
+- Presque toujours couplé avec l'**Admission Controller `NodeRestriction`** :
+  - Empêche un kubelet de modifier des labels critiques
+  - Empêche l'usurpation d'identité d'un autre nœud
+  `--enable-admission-plugins=NodeRestriction`
 
 ---
 
@@ -298,7 +471,36 @@ EOF
 
 ---
 
-### 🔑 `ClusterRoles` par défaut
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: dev
+  name: pod-reader
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+```
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pods
+  namespace: dev
+subjects:
+- kind: User
+  name: alice
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+```
+
+---
+
+#### 🔑 `ClusterRoles` par défaut
 
 - `cluster-admin` peut _tout faire_ (pensez à `root` sous UNIX) 🔑
 - `admin` peut faire _presque tout_ (sauf, par exemple, modifier les quotas et les limites de ressources). 🔑
@@ -312,7 +514,7 @@ _Dans de nombreux cas, ces rôles suffisent._ ✅
 
 ---
 
-### 📋 Verbes `list` vs. `get`
+#### 📋 Verbes `list` vs. `get`
 
 - ⚠️ `list` accorde (aussi) des droits de lecture aux ressources ! 📋
 
@@ -324,24 +526,20 @@ _Dans de nombreux cas, ces rôles suffisent._ ✅
 
 ---
 
-### 🌐 NetworkPolicies
+### Admission Controllers
 
-- Par défaut :
-  - Un `Pod` peut communiquer avec tout autre `Pod`, y compris d'autres `Namespace` 🔄
-  - Un `Service` est accessible partout, y compris depuis d'autres `Namespace` 🌐
-- Une `NetworkPolicy` permet d'**ajouter** de l'isolation :
-  - Si un `Pod` n'est _sélectionné_ par **aucune `NetworkPolicy`** : **aucune isolation** 🔄
-  - Si un `Pod` **est _sélectionné_** par au moins une `NetworkPolicy` : **isolation totale par défaut** (sauf règles acceptées par la `NetworkPolicy`) 🔒
-  - **Stateful** : isolation à la **connexion**, et ~non par paquet~ 🔄
-  - Pour communication Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`) 🔄
+Permettent d'appliquer des politiques de sécurité.
 
-:::warn
-Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet ! ⚠️
-:::
+Exemples :
+
+- `NodeRestriction`
+- `PodSecurity`
+- `ResourceQuota`
+- `LimitRanger`
 
 ---
 
-### 🔄 AdmissionController Statiques
+#### 🔄 AdmissionController Statiques
 
 - **Acceptent / refusent** ou **modifient** la création de ressources 🔄
 - Ex : valeurs par défaut (image pull secret, sidecars, env var), interdire les tag `latest`, exiger `request` et `limits`, … 🔄
@@ -350,7 +548,7 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-### 🌐 AdmissionController Dynamiques
+#### 🌐 AdmissionController Dynamiques
 
 - _Webhooks_ **dynamiques** (ajoutables/supprimables à la volée) 🌐
 - **Dans** (`service.name` & `service.namespace`) ou **en-dehors** (`https://…`) du cluster 🌐
@@ -400,10 +598,73 @@ flowchart LR
 
 ---
 
-### 🔍 ValidatingAdmissionPolicy
+#### 🔍 ValidatingAdmissionPolicy
 
 - Nouvelle alternative simple aux _Validating Admission Webhook_ 🌐
 - Utilisent le _Common Expression Language_ (`CEL`) 📜
 - Voir la [documentation officielle](https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/) 📚
+
+---
+
+### 🌐 Réseau
+
+---
+
+#### Network Segmentation
+
+Isoler :
+
+- Control Plane ↔ Workers
+- etcd ↔ reste du réseau
+- Admins ↔ API Server
+
+Utiliser :
+
+- VLAN
+- Security Groups
+- `NetworkPolicies` ou politiques spécifiques du CNI (_Cilium_)
+
+---
+
+#### NetworkPolicies
+
+- Par défaut :
+  - Un `Pod` peut communiquer avec tout autre `Pod`, y compris d'autres `Namespace` 🔄
+  - Un `Service` est accessible partout, y compris depuis d'autres `Namespace` 🌐
+- Une `NetworkPolicy` permet d'**ajouter** de l'isolation :
+  - Si un `Pod` n'est _sélectionné_ par **aucune `NetworkPolicy`** : **aucune isolation** 🔄
+  - Si un `Pod` **est _sélectionné_** par au moins une `NetworkPolicy` : **isolation totale par défaut** (sauf règles acceptées par la `NetworkPolicy`) 🔒
+  - **Stateful** : isolation à la **connexion**, et ~non par paquet~ 🔄
+  - Pour communication Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`) 🔄
+
+:::warn
+Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet ! ⚠️
+:::
+
+---
+
+## Service Mesh
+
+- Services additionnels à installer dans le cluster : _Istio_, _Linkerd_, _Consul_, …
+- mTLS entre pods
+- Identity workload
+- Chiffrement automatique
+- Observabilité sécurité
+
+---
+
+## Outils utiles
+
+- `kubectl auth can-i`
+- `kubectl describe role`
+- `kubectl describe clusterrole`
+- `kube-bench`
+- `kube-hunter`
+
+Exemple :
+
+```bash
+kubectl auth can-i create pods --as alice -n dev
+```
 
 ---
