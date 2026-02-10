@@ -200,6 +200,10 @@ Voir aussi : [informations IA](/other#ia)
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - Comment écrire de bons exemples : <https://conventionalcomments.org/>
 - Documentation technique - fonctionne hors ligne <https://devdocs.io/>
+- Référence sur l'écriture d'une bonne documentation technique : <https://diataxis.fr/> et <https://blog.wescale.fr/back-to-basics-pere-castor-dis-moi-comment-ecrire-une-bonne-documentation-technique>
+
+#### LaTeX
+
 - Écrire des maths en LaTeX : <https://zestedesavoir.com/tutoriels/409/outils-pour-lecriture-des-mathematiques-en-latex/>
 - Utiliser LaTeX pour créer des sujets d'examen : <https://blog.dorian-depriester.fr/latex/rediger-des-sujets-dexamen-avec-latex>
 - Symboles mathématiques et lettres grecques en LaTeX : <https://fr.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>
