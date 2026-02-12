@@ -34,9 +34,6 @@ title: INFAL34 - Tests et recette d'un projet de développement
 ## 📑 Documents
 
 - [🔀 Module en classe renversée](/cesi/b3/tests/classe-renversee)
-
-<!--
-
 - [🤓 Cours sur les tests logiciels](/cesi/b3/tests/cours)
 - [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
 - [📝 Exercices : tests d'un système de cartes météo](/tests/methodo/td-tests-cartes-meteo)
@@ -62,4 +59,3 @@ title: INFAL34 - Tests et recette d'un projet de développement
   - [Testez fonctionnellement votre application PHP Symfony](https://openclassrooms.com/fr/courses/4087076-testez-fonctionnellement-votre-application-php-symfony)
 - Livre [A Frontend Web Developer's Guide to Testing](https://univ.scholarvox.com/catalog/book/docid/88929017)
 
--->
