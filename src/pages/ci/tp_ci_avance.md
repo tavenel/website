@@ -26,7 +26,7 @@ S'ils n'ont pas encore été intégrés dans le projet, on pourra ajouter dans l
 
 Maintenant que nous avons testé nos fonctionnalités, il est également intéressant d'ajouter des tests non-fonctionnels. Ces tests vont qualifier notre application, pour savoir "à quel point" celle-ci est plaisante pour l'utilisateur. 
 
-On pourra notamment réaliser des tests de charge et de performance (à l'aide d'un outil tel `JMeter` ou `Gatling` par exemple). 
+On pourra notamment réaliser des tests de charge et de performance (à l'aide d'un outil tel `JMeter` ou `Gatling` ou `k6` par exemple). 
 
 
 ## Déploiement continu 
