@@ -157,6 +157,7 @@ tags:
   - [Wordpress avec MySQL](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/) 📦
   - [Exemple complet : déploiement d'un cluster ZooKeeper stateful, et maintenance des noeuds](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/) 📦
 - Exemple de déploiement de postgresql : stateless vs statefull : <https://cloudnative-pg.io/documentation/current/use_cases/>
+- Exemple de déploiement stateful simple mais complet : <https://www.devopswithritesh.in/persistent-storage-in-aks-using-azure-disks-deploying-mysql-with-a-webapp-via-loadbalancer>
 
 #### Déploiement continu
 
