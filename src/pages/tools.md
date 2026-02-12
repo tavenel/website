@@ -178,6 +178,7 @@ created: 2024-10-17
 - <https://codeberg.org/hjacobs/kube-janitor> : Supprimes des ressources Kubernetes après un certain temps
 - <https://www.tigera.io/> : Unified Network Security & Observability for Kubernetes
 - <https://github.com/gianlucam76/k8s-cleaner> : détection et notification de ressources non utilisées
+- <https://korrel8r.github.io/korrel8r/> : corrélation k8s ressources / logs / traces / alertes (utilisé par _OpenShift_ dans son panel "Troubleshooting")
 
 ### 🚀 CD
 
