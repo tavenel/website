@@ -124,6 +124,14 @@ checked: 2025-01-27
 - <https://read.thecoder.cafe/p/crdt> : explication des CRDTs
 - <https://zknill.io/posts/collaboration-no-crdts/> : comment collaborer sans CRDTS
 
+### Sauvegardes : la règle du 3-2-1-1-0
+
+- 3 = Conservez au moins trois copies de vos données : production, sauvegarde, copie de sauvegarde (en bonus l'archivage compte comme une copie)
+- 2 = Utilisez au moins deux types de supports différents pour le stockage (de marque différentes) : disques internes, SAN, NAS (en bonus l'archivage avec les bandes LTO compte comme un support)
+- 1 = Conservez au moins une copie hors site : autre site (de production et de sauvegarde) que ce soit une infra de stockage ou dans un coffre-fort par exemple.
+- 1 = Conservez au moins une copie hors ligne, isolée ou immuable : c'est surtout pour se prémunir d'une destruction volontaire (ransomware, acte malveillant via accès distant)
+- 0 = Zéro erreur après tests de restauration : une sauvegarde non restaurable n'est pas exploitable le jour où on en a besoin.
+
 ### High Availability (HA)
 
 - The CAP Theorem : <https://www.thecoder.cafe/p/cap>
@@ -136,28 +144,6 @@ checked: 2025-01-27
 - <https://www.emailprivacytester.com> : test mail client for privacy
 - <https://www.virustotal.com> : scan file for viruses (Google)
 
-### IA
-
-- <https://www.comparia.beta.gouv.fr/>
-- <https://tugaleres.com/2025/03/04/est-on-plus-efficace-en-utilisant-une-ia-type-chatgpt/>
-- <https://github.com/microsoft/AI-For-Beginners> : Cours gratuits Microsoft
-- Impact des IA génératives sur les étudiants :
-  - <https://open.devinci.fr/ressource/etude-2024-impact-ia-generatives-etudiants/>
-  - <https://www.newcartographies.com/p/the-myth-of-automated-learning>
-- [Les sacrifiés de l'IA (Henri Poulain)](https://www.francetvinfo.fr/replay-radio/info-medias/les-sacrifies-de-l-ia-dans-son-documentaire-henri-poulain-revele-les-coulisses-d-une-industrie-qui-exploite-la-misere-humaine_7038260.html)
-- [UX : Comment les entreprises de la tech nous forcent à utiliser l'IA](https://limitesnumeriques.fr/travaux-productions/ai-forcing)
-- <https://blog.wescale.fr/back-to-basics-pere-castor-raconte-moi-le-prompt-engineering>
-- Local AI LLMs : <https://ollama.com/> et <https://docs.openwebui.com/>
-  - `tinyllama`, `tinydolphin`, `dolphin-mistral`, `codestral`, …
-- Block AI indexing in your website : <https://github.com/ai-robots-txt/ai.robots.txt>
-- ["Encadrer l'utilisation de l'IA dans les devoirs à la maison" (Académie de Grenoble, PDF)](https://dane.web.ac-grenoble.fr/sites/default/files/Media/document/IA%20devoirs_Ac-Paris.pdf)
-- <https://korben.info/linus-torvalds-ia-vibe-coding-pragmatisme-dev.html>
-- <https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing>
-
-:::link
-Voir aussi : [informations IA](/other#ia)
-:::
-
 ### Cybersécurité
 
 - <https://blog.stephane-robert.info/post/google-dorks/> : Les Google Dorks - trouver des informations sensibles depuis Google Search.
@@ -166,6 +152,46 @@ Voir aussi : [informations IA](/other#ia)
 - Check DNS leaks : <https://dnsleaktest.com/>
 - <https://blog.humancoders.com/les-pires-failles-de-securite-de-2025-3853/>
 - <https://zythom.fr/2025/11/cybersecurite-assistee-par-ia/>
+
+#### Ampleur des attaques
+
+- Presque 80 nouvelles CVE/jour [source 2024](https://www.ninjaone.com/fr/blog/7-statistiques-sur-la-cybersecurite-que-chaque-pme-et-msp-doit-connaitre/)
+- 50% des PME ont connu une violation de site web et plus de 40 % signalent des attaques mensuelles ou plus fréquentes [source 2021](https://www.sectigo.com/resource-library/study-finds-50-of-smbs-have-experienced-a-website-breach-and-40-are-being-attacked-monthly?utm_source=chatgpt.com)
+- 50% des PME attaquées ont coulé [source 2025](https://www.lemagit.fr/conseil/Combien-de-PME-mettent-la-cle-sous-la-porte-apres-une-cyberattaque?utm_source=chatgpt.com)
+
+### Documentation
+
+#### Diagramme C4
+
+Type de diagramme très utilisé en agilité, permettant de décrire l'architecture en "zoomant" des composants au code : <https://c4model.com/>
+
+#### ADR
+
+Un **ADR** (_Architecture Decision Record_) permet de documenter un choix d'architecture, par exemple avec le formalisme suivant :
+
+> In the context of \<use case/user story>, facing \<concern> we decided for \<option> to achieve \<quality>, accepting \<downside>, because \<additional rationale>.
+
+:::link
+Voir aussi : <https://adr.github.io/>
+:::
+
+#### Liens
+
+- Exemples simplifiés de pages de manuel (+ ligne de commandes et format opensearch pour ajout au navigateur) : <https://cheat.sh/>
+- Explication graphique de commandes de terminal : <https://explainshell.com/>
+- Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
+- [CERISE : Conseils aux Etudiants en Recherche d'InformationS Efficace](https://callisto-formation.fr/course/view.php?id=263)
+- Exemples de bons README : <https://github.com/matiassingers/awesome-readme>
+- Exemple de page d'aide de CLI : voir la commande `kubectl --help`
+- Comment écrire de bons exemples : <https://conventionalcomments.org/>
+- Documentation technique - fonctionne hors ligne <https://devdocs.io/>
+- Référence sur l'écriture d'une bonne documentation technique : <https://diataxis.fr/> et <https://blog.wescale.fr/back-to-basics-pere-castor-dis-moi-comment-ecrire-une-bonne-documentation-technique>
+
+##### LaTeX
+
+- Écrire des maths en LaTeX : <https://zestedesavoir.com/tutoriels/409/outils-pour-lecriture-des-mathematiques-en-latex/>
+- Utiliser LaTeX pour créer des sujets d'examen : <https://blog.dorian-depriester.fr/latex/rediger-des-sujets-dexamen-avec-latex>
+- Symboles mathématiques et lettres grecques en LaTeX : <https://fr.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>
 
 ### Dev
 
@@ -189,24 +215,6 @@ Voir aussi : [informations IA](/other#ia)
 - <https://dev.to/devluc/50-best-websites-for-web-design-inspiration-and-ideas-be6>
 - <https://xyris.app/blog/best-svg-animation-tools-in-2025-features-pros-cons/>
 - Exemple de pire interface utilisateur : <https://userinyerface.com/>
-
-### Doc
-
-- Exemples simplifiés de pages de manuel (+ ligne de commandes et format opensearch pour ajout au navigateur) : <https://cheat.sh/>
-- Explication graphique de commandes de terminal : <https://explainshell.com/>
-- Documentation technique - fonctionne hors ligne : <https://devdocs.io/>
-- [CERISE : Conseils aux Etudiants en Recherche d'InformationS Efficace](https://callisto-formation.fr/course/view.php?id=263)
-- Exemples de bons README : <https://github.com/matiassingers/awesome-readme>
-- Exemple de page d'aide de CLI : voir la commande `kubectl --help`
-- Comment écrire de bons exemples : <https://conventionalcomments.org/>
-- Documentation technique - fonctionne hors ligne <https://devdocs.io/>
-- Référence sur l'écriture d'une bonne documentation technique : <https://diataxis.fr/> et <https://blog.wescale.fr/back-to-basics-pere-castor-dis-moi-comment-ecrire-une-bonne-documentation-technique>
-
-#### LaTeX
-
-- Écrire des maths en LaTeX : <https://zestedesavoir.com/tutoriels/409/outils-pour-lecriture-des-mathematiques-en-latex/>
-- Utiliser LaTeX pour créer des sujets d'examen : <https://blog.dorian-depriester.fr/latex/rediger-des-sujets-dexamen-avec-latex>
-- Symboles mathématiques et lettres grecques en LaTeX : <https://fr.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>
 
 ### Théorie
 
@@ -235,6 +243,15 @@ Voir aussi : [informations IA](/other#ia)
 - <https://wrongthink.link/posts/all-you-need-is-ssh/>
 - Comment réaliser un bon onboarding : <https://blog.wescale.fr/bienvenue-dans-lequipe-voici-ton-onboarding-puisse-le-sort-vous-etre-favorable>
 - Histoire du pilotage des serveurs : de l'administration physique aux terminaux à l'infrastructure-as-code : <https://richard-dern.fr/interets/informatique/2025/12/12/piloter-ses-serveurs-avec-un-emulateur-de-terminal-web/>
+
+### Adoption
+
+En 2025 (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/>) :
+
+- CI/CD: GitHub Actions (40%), GitLab (39%), Jenkins (36%)
+- Provisioning: Terraform (39%), Ansible (35%), GCP (32%)
+- Monitoring: Grafana (40%), Prometheus (38%), Elastic (34%)
+- Containers in IT : 92%
 
 ### Liens Divers
 
