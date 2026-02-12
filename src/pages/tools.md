@@ -101,7 +101,7 @@ created: 2024-10-17
 ### Alternatives à docker
 
 - 🚢 `podman` : idem Docker sans agent, supporte Docker et pods k8s
-- `cri-o` : container runtime k8s
+- `cri-o`, `containerd`, `runc` : container runtime k8s
 
 ### Orchestration de conteneurs
 
@@ -121,6 +121,7 @@ created: 2024-10-17
 - `nomad` : orchestrateur applicatif conteneurisées ou non, simple pour on-premise
 - `mesos` + `dc/os`
 - <https://uncloud.run/> : déploiements de configs Docker Compose multi-noeuds
+- <https://score.dev/> : déclaration agnostique de dépendances applicatives générant les config réelles : docker, podman, k8s, … Voir : <https://itnext.io/unifying-inner-outer-loops-to-bridge-the-gaps-between-devs-ops-with-containers-microcks-d28603342f4b>
 
 ## 󱃾 Kubernetes
 
@@ -451,7 +452,7 @@ created: 2024-10-17
 - `consul` : <https://une-tasse-de.cafe/blog/consul/>
 - `traefik`
 
-## 🧪 Tests
+## Tests 🧪
 
 - Tests unitaires :
   - Java : `Junit`, `TestNG`, `Mockito` (mocks)
@@ -459,13 +460,16 @@ created: 2024-10-17
   - JS : `Jasmine`, `Jest`, `Mocha`, `Vitest`
   - PHP : `PHPUnit`
 - <https://argos-ci.com/> : tests visuels (offre gratuite 5000 tests / mois)
-- Tests HTTP / API :
-  - <https://hurl.dev/>
-  - Wiremock (mock API)
-  - [ATAC](https://github.com/Julien-cpsn/ATAC)
-  - `Swagger`
-  - `resto`
-  - <https://proxymock.io/> : générateur de Mock HTTP (analyse le payload des requêtes)
+- Tests d'intégration :
+  - <https://testcontainers.com>
+  - <https://microcks.io/>
+  - Tests HTTP / API :
+    - <https://hurl.dev/>
+    - Wiremock (mock API)
+    - [ATAC](https://github.com/Julien-cpsn/ATAC)
+    - `Swagger`
+    - `resto`
+    - <https://proxymock.io/> : générateur de Mock HTTP (analyse le payload des requêtes)
 - Tests de charge et stress tests :
   - `Jmeter`
   - `Gatlin`
@@ -490,7 +494,6 @@ created: 2024-10-17
 - Données de test :
   - <https://postgresql-anonymizer.readthedocs.io> : anonymiser une BDD Postgresql pour utiliser ses données en tests
   - Génération de fausses données : <https://fakerjs.dev/> et <https://generatedata.com/>
-- <https://testcontainers.com>
 - Image générant de faux logs : <https://github.com/chentex/random-logger>
 - <https://www.trackawesomelist.com/TheJambo/awesome-testing/rss.xml> : awesome Testing
 - Chaos Computing :
