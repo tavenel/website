@@ -43,9 +43,12 @@ La majorité des attaques passent par **l'API Server**
 ## ServiceAccount
 
 - `ServiceAccount` : authentification basique à l'intérieur du cluster
+- Compte technique (machine à machine), pas prévu pour utilisateur individuel
 - _RBAC_ lie un `ServiceAccount` à un `(Cluster)Role`
+- Au moins 1 `ServiceAccount` par `Namespace`
 - Un _Pod_ est associé à un _ServiceAccount_ pour parler à l'API (par défaut : `default`, sans droits) 🔄
-- Le token associé est dans le Pod : `/var/run/secrets/kubernetes.io/serviceaccount/token` 🔑
+  - Le token associé est dans le Pod : `/var/run/secrets/kubernetes.io/serviceaccount/token` 🔑
+  - désactivable par `automountServiceAccountToken: false` dans la spec du `Pod`
 
 :::tip
 Le _ServiceAccount_ est notamment utile pour utiliser l'_API Server_ depuis un conteneur : <https://kubernetes.io/docs/tasks/run-application/access-api-from-pod/>
@@ -219,6 +222,7 @@ Chaque composant possède :
   - Certificats signés par une CA interne
   - TLS 1.2 minimum
   - Rotation des certificats
+- Éviter d'utiliser les `ServiceAccount` comme credentials permanents
 
 Flags importants :
 
@@ -442,7 +446,7 @@ Bonnes pratiques :
 - Contrôle de privilèges minimalistes automatique pour les workers.
 - Objectif : permettre à un nœud de faire uniquement les actions nécessaires à l'exécution des Pods qui lui sont assignés
 
-### Fonctionnement
+#### Fonctionnement
 
 - **Common Name du certificat kubelet**
   Format typique : `system:node:<nodeName>`
@@ -610,19 +614,28 @@ flowchart LR
 
 ---
 
-#### Network Segmentation
+#### Segmentation réseau
 
-Isoler :
+- Réseau public : uniquement les `NodePort` des applications à destination d'utilisateurs finaux
+- Isoler du réseau public :
+  - L'API Server
+  - Les kubelet (tous les noeuds)
+  - Worker : les `NodePort` de services internes (_grafana_, …)
+- Lier sur `localhost` uniquement les composants internes du control-plane s'ils sont stackés :
+  - scheduler
+  - etcd
+  - controller-manager
 
-- Control Plane ↔ Workers
-- etcd ↔ reste du réseau
-- Admins ↔ API Server
+---
 
-Utiliser :
-
-- VLAN
-- Security Groups
-- `NetworkPolicies` ou politiques spécifiques du CNI (_Cilium_)
+- Segmenter :
+  - Control Plane ↔ Workers
+  - etcd ↔ reste du réseau
+  - Admins ↔ API Server
+- Utiliser :
+  - VLAN
+  - Security Groups
+  - `NetworkPolicies` ou politiques spécifiques du CNI (_Cilium_)
 
 ---
 
@@ -653,6 +666,19 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
+## 🔒 Pods
+
+### 🛡️ SecurityContext
+
+- spec `securityContext:` (Pod / Conteneur) :
+- Restreindre l'utilisateur tournant dans le conteneur : `runAsNonRoot: true`, `allowPrivilegeEscalation: false`
+- Changer `UID` / `GID` : `runAsUser` & `runAsGroup`
+- Protéger les points de montage : `fsGroup`, `readOnlyRootFilesystem: true`
+- Drop de _capabilities_ du noyau Linux utilisables
+- Utiliser des profiles _seccomp_ [lien](https://kubernetes.io/docs/tutorials/security/seccomp/) & _AppArmor_
+- Éviter `privileged: true` (bypass la séparation conteneur / host et implique `allowPrivilegeEscalation`)
+
+---
 ## Outils utiles
 
 - `kubectl auth can-i`
