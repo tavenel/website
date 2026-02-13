@@ -2138,6 +2138,90 @@ spec:
 Le CNI doit supporter la `NetworkPolicy` : ce n'est pas le cas de `Flannel` ! La ressource est ajoutée mais sans effet…
 :::
 
+## CiliumNetworkPolicy
+
+- `CiliumNetworkPolicy` : CRD fournie par _Cilium_ qui remplace ou complète les `NetworkPolicy` standards
+- Basée eBPF, réseau L3 -> L7
+- Sécurité L7 : Filtrage HTTP (méthode, path, header), gRPC, Kafka topics
+- DNS Aware : autoriser FQDN vs IP
+- Observabilité native Cilium (intégration avec _Hubble_)
+
+
+| Critère           | NetworkPolicy K8s   | CiliumNetworkPolicy      |
+| ----------------- | ------------------- | ------------------------ |
+| Type              | Standard Kubernetes | CRD Cilium               |
+| Couche OSI        | L3 / L4             | L3 / L4 / L7             |
+| Performance       | iptables/ipvs       | eBPF (kernel)            |
+| DNS Filtering     | Limité              | Natif et avancé          |
+| HTTP / gRPC       | ❌ Non               | ✅ Oui                    |
+| Kafka / MQTT      | ❌ Non               | ✅ Oui                    |
+| Identité workload | Labels uniquement   | Labels + identité Cilium |
+| Visibilité trafic | Basique             | Très avancée (Hubble)    |
+| Expressivité      | Moyenne             | Très riche               |
+| Portabilité       | Très haute          | Dépend de Cilium         |
+
+### Exemple simple
+
+```yaml
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: example-policy
+spec:
+  endpointSelector:
+    matchLabels:
+      app: myapp
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: frontend
+  egress:
+  - toEndpoints:
+    - matchLabels:
+        app: database
+```
+
+### Autoriser HTTP GET uniquement
+
+```yaml
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-http-get
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: frontend
+    toPorts:
+    - ports:
+      - port: "80"
+        protocol: TCP
+      rules:
+        http:
+        - method: "GET"
+          path: "/api/.*"
+```
+
+### Autoriser sortie DNS vers un domaine
+
+```yaml
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-external-api
+spec:
+  endpointSelector:
+    matchLabels:
+      app: myapp
+  egress:
+  - toFQDNs:
+    - matchName: api.github.com
+```
+
 ## SecurityContext
 
 Paramètres de sécurité appliqués à un pod ou à un conteneur :
