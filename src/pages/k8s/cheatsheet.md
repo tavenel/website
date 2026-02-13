@@ -13,6 +13,34 @@ title: Cheatsheet Kubernetes®
 
 :::
 
+## Client
+
+### Gérer les plugins kubectl
+
+```bash
+kubectl krew search <plugin>
+kubectl krew install <plugin>
+kubectl krew list
+```
+
+Voir le [cours k8s](/k8s/cours#krew--gestionnaire-de-plugins-kubectl) pour une sélection des plugins utiles
+
+### Ajouter la completion de commandes dans le shell
+
+```sh
+# Pour Bash, à ajouter par exemple dans ~/.bashrc
+source <(kubectl completion bash)
+# Pour ZSH, à ajouter par exemple dans ~/.zshrc
+source <(kubectl completion zsh)
+
+# Idem pour kubectl, helm, k3s, kind, talosctl, minikube, … :
+source <(helm completion zsh)
+```
+
+:::link
+[Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
+:::
+
 ## Administration
 
 ### Installation
@@ -306,34 +334,6 @@ rules:
 # 6. Tout le reste : metadata minimal
 - level: Metadata
 ```
-
-## Client
-
-### Gérer les plugins kubectl
-
-```bash
-kubectl krew search <plugin>
-kubectl krew install <plugin>
-kubectl krew list
-```
-
-Voir le [cours k8s](/k8s/cours#krew--gestionnaire-de-plugins-kubectl) pour une sélection des plugins utiles
-
-### Ajouter la completion de commandes dans le shell
-
-```sh
-# Pour Bash, à ajouter par exemple dans ~/.bashrc
-source <(kubectl completion bash)
-# Pour ZSH, à ajouter par exemple dans ~/.zshrc
-source <(kubectl completion zsh)
-
-# Idem pour kubectl, helm, k3s, kind, talosctl, minikube, … :
-source <(helm completion zsh)
-```
-
-:::link
-[Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
-:::
 
 ### Lister les types de ressources supportées
 
