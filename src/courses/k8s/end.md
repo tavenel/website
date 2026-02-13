@@ -76,15 +76,16 @@ tags:
 
 ## 📜 Certifications
 
-- Kubernetes and Cloud Native Associate (KCNA) 📜
-- Certified Kubernetes Application Developer (CKAD) 📜
-- Certified Kubernetes Administrator (CKA) 📜
-- Certified Kubernetes Security Specialist (CKS) 📜
+- Kubernetes and Cloud Native Associate (KCNA) 📜 [formation LinkedIn](https://www.linkedin.com/learning/kubernetes-and-cloud-native-associate-kcna-cert-prep)
+- Certified Kubernetes Application Developer (CKAD) 📜 [formation LinkedIn](https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep)
+- Certified Kubernetes Administrator (CKA) 📜 [formation LinkedIn](https://www.linkedin.com/learning/certified-kubernetes-administrator-cka-cert-prep-25818035/)
+- Certified Kubernetes Security Specialist (CKS) 📜 [formation LinkedIn](https://www.linkedin.com/learning/certified-kubernetes-security-specialist-cks-cert-prep/)
 
 :::link
 
 - Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) et un REX du Kubestronaut : <https://blog.zwindler.fr/2026/01/18/rex-kubestronaut/> 📚
 - Pour s'entraîner aux certifications, utiliser <https://github.com/sailor-sh/CK-X>
+- <https://killer.sh/> est très populaire pour s'entraîner aux examens (assez proche des vrais examens, mêmes environnements, payant).
 
 :::
 
@@ -313,6 +314,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Modifier des ressources k8s : Client-side vs Server-side : <https://hackernoon.com/battle-for-resources-or-the-ssa-path-to-kubernetes-diplomacy>
 - <https://medium.com/bigdatarepublic/frameworks-for-serving-machine-learning-models-on-kubernetes-835565067d6b>
 - <https://github.com/moabukar/k8s-in-a-box> : random broken app to fix for learning
+- OWASP Top 10 : <https://owasp.org/www-project-kubernetes-top-ten/>
 
 ---
 
