@@ -254,12 +254,27 @@ created: 2024-10-17
   - `pulumi convert --from kubernetes --language <language> --out <output_dir>` : k8s Yaml => pulumi
   - `pulumi convert --from terraform` : terraform HCL => pulumi
   - `pulumi import --from terraform` : import terraform state from `tfstate`
-- 👨‍🍳 `chef` (client/serveur)
-- 🤹 `puppet`
-- 📦 `packer` : création d'images de VMs
 - `semaphore` : UI for operating `ansible`, `terraform/OpenTofu`, `pulumi`. <https://semaphoreui.com/>
 - 💲 `Infracost` : track coût plateformes IaC (`Terraform`, …)
 - [Sake](https://github.com/alajmo/sake) : exécution de tâches à distance (SSH, Docker), micro-ansible
+
+### Provisioning d'OS
+
+- 👨‍🍳 `chef` (client/serveur)
+- 🤹 `puppet`
+
+### Gestion bare-metal
+
+- Metal-as-a-Service : <https://canonical.com/maas>
+- <https://tinkerbell.org/> : provisioning bare-metal utilisant des API compatibles Kubernetes
+
+### Machines Virtuelles
+
+- 📦 `packer` : création d'images de VMs
+- `vagrant`
+  - TUI : <https://github.com/braheezy/violet>
+- `incus`
+- cloud init
 
 ### 🅰️ Ansible
 
@@ -288,7 +303,6 @@ created: 2024-10-17
   - <https://docs.openrewrite.org/> : refactoring automatique de code pour mise à jour, …
 - 🐘 PHP => `composer`
 - 󰌠 Python => `venv` + `pip`, `poetry`, `uv`, `pipx`, `hatch`
-- Virtual machines => `packer`, `vagrant` (+TUI : <https://github.com/braheezy/violet>), `incus`
 
 ## 🔄 CI/CD
 
