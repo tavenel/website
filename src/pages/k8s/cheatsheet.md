@@ -15,6 +15,47 @@ title: Cheatsheet Kubernetes®
 
 ## Administration
 
+### Installation
+
+#### Control Plane
+
+Init du control plane :
+
+```sh
+kubeadm init
+```
+
+Ou avec options :
+
+```sh
+kubeadm init \
+  --apiserver-advertise-address # addresse publique du control-plane actuel
+  --control-plane-endpoint # IP ou DNS partagé par tous les control-plane (si H/A, sinon idem apiserver-advertise-address)
+  --pod-network-cidr # CIDR des Pods (attention aux exigences du CNI)
+  --service-cidr # CIDR des Services (défaut : 10.96.0.0/12)
+  --config # fichier de config YAML pour kubeadm
+```
+
+:::link
+Voir aussi : <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#considerations-about-apiserver-advertise-address-and-controlplaneendpoint>
+:::
+
+#### Récupérer le token du Control Plane
+
+Token à donner aux autres noeuds pour joindre le cluster :
+
+```sh
+kubeadm token create --print-join-command
+```
+
+#### Noeuds
+
+Ajout des Node Worker en récupérant la sortie de la commande précédente
+
+```sh
+kubeadm join "<IP_control_plane>:6443" --token "<TOKEN>" --discovery-token-ca-cert-hash "sha256:<HASH>"
+```
+
 ### État du cluster
 
 Vérifier l'état des composants du système :
