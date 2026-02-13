@@ -249,6 +249,66 @@ etcdctl […] del cle
 etcdctl […] watch cle # scrute les changemens de `cle`
 ```
 
+### Audit Policy
+
+- Config de l'API Server :
+- `--audit-policy-file=/etc/kubernetes/audit-policy.yaml`
+- `--audit-log-path=/var/log/kubernetes/audit.log`
+- `--audit-log-maxage`, `--audit-log-maxbackup`, `--audit-log-maxsize`
+
+```yaml
+apiVersion: audit.k8s.io/v1
+kind: Policy
+
+# Ne pas logguer health et métriques
+omitStages:
+  - "RequestReceived"
+
+rules:
+
+# 1. Pas d'audit sur healthcheck
+- level: None
+  nonResourceURLs:
+    - /healthz*
+    - /version
+    - /metrics
+    - /livez*
+    - /readyz*
+
+# 2. Secrets : log complet (critique sécurité)
+- level: RequestResponse
+  resources:
+    - group: ""
+      resources: ["secrets"]
+
+# 3. RBAC : log complet
+- level: RequestResponse
+  resources:
+    - group: "rbac.authorization.k8s.io"
+      resources: ["roles", "clusterroles", "rolebindings", "clusterrolebindings"]
+
+# 4. Modifications de workloads : metadata seulement
+- level: Metadata
+  verbs: ["create", "update", "patch", "delete"]
+  resources:
+    - group: ""
+      resources: ["pods", "services", "configmaps"]
+    - group: "apps"
+      resources: ["deployments", "statefulsets", "daemonsets"]
+
+# 5. Accès en lecture simples : metadata
+- level: Metadata
+  verbs: ["get", "list"]
+  resources:
+    - group: ""
+      resources: ["pods", "namespaces"]
+
+# 6. Tout le reste : metadata minimal
+- level: Metadata
+```
+
+## Client
+
 ### Gérer les plugins kubectl
 
 ```bash
