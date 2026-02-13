@@ -156,6 +156,7 @@ Kubernetes délègue l'authentification à un service externe.
   - _username_ : `system:anonymous` 👤
   - _liste des groupes_ : `system:unauthenticated` 👥
   - Par défaut ne peut rien faire ❌
+- Désactivable sur API Server via `--anonymous-auth=false`
 
 ---
 
@@ -656,16 +657,6 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-## Service Mesh
-
-- Services additionnels à installer dans le cluster : _Istio_, _Linkerd_, _Consul_, …
-- mTLS entre pods
-- Identity workload
-- Chiffrement automatique
-- Observabilité sécurité
-
----
-
 ## 🔒 Pods
 
 ### 🛡️ SecurityContext
@@ -694,6 +685,101 @@ labels:
   pod-security.kubernetes.io/audit: baseline
   …
 ```
+
+---
+
+## Audit d'administration du cluster
+
+Objectif : traçabilité, détection d'incidents de sécurité, conformité et forensic.
+
+---
+
+### API Server
+
+- Presque toutes les actions passent par l'API Server (`kubectl`, création / suppression Pods, secrets, RBAC, appels internes de controllers)
+- Requêtes journalisables via un **Audit Policy File** (voir cheatsheet)
+- Sans politique définie : **pas d'audit logs détaillés**.
+- Possibilité d'envoyer vers un backend webhook (recommandé en production) : _SIEM_, _Elastic_, _Splunk_, …
+
+---
+
+- Exemples d'analyses utiles :
+  - Détection d'accès aux `secrets`
+  - Suppressions massives
+  - Élévation de privilèges RBAC
+  - Appels anonymes
+- Exemples courants :
+  - `RequestResponse` pour `secrets`, `roles`, `clusterroles` (critiques)
+  - `Metadata` pour `pods`
+  - `None` pour `healthz` ou métriques
+
+---
+
+#### Audit Levels
+
+La politique d'audit définit la granularité :
+
+| Niveau            | Contenu                                              |
+| ----------------- | ---------------------------------------------------- |
+| `None`            | Rien n'est loggé                                     |
+| `Metadata`        | Infos générales (user, ressource, verbe, namespace…) |
+| `Request`         | Métadonnées + payload de la requête                  |
+| `RequestResponse` | Métadonnées + requête + réponse complète             |
+
+---
+
+#### Phases
+
+Un _audit event_ peut apparaître plusieurs fois avec des **stages** :
+
+- `RequestReceived`
+- `ResponseStarted` (watch, stream)
+- `ResponseComplete`
+- `Panic` : Erreur interne API server
+
+---
+
+#### Structure
+
+- JSON d'un événement typique :
+  - `timestamp`
+  - `user.username` & `user.groups`
+  - `verb` (get, list, create, delete…)
+  - `objectRef` (resource, namespace, name)
+  - `sourceIPs`
+  - `responseStatus`
+  - `requestObject` / `responseObject` (selon niveau)
+
+---
+
+### kubelet
+
+- Logs kubelet sur chaque Node
+- Création / suppression de containers
+- Problèmes de volumes
+- Interactions CRI
+
+### etcd
+
+- Accès directs à la base clé/valeur
+- Tentatives d'authentification
+- Problèmes de quorum
+
+### Controller Manager / Scheduler
+
+- Décisions de scheduling
+- Échecs de placement
+- Reconcilers anormaux
+
+---
+
+## Service Mesh
+
+- Services additionnels à installer dans le cluster : _Istio_, _Linkerd_, _Consul_, …
+- mTLS entre pods
+- Identity workload
+- Chiffrement automatique
+- Observabilité sécurité
 
 ---
 
