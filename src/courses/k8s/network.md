@@ -23,6 +23,18 @@ v1.33.0 introduit le _Service IP Expansion_ : l'API `ServiceCIDR` permet d'ajout
 
 ---
 
+## DNS
+
+- DNS interne k8s : Pods _CoreDNS_ tournant le namespace `kube-system`
+  - Pods `pending` jusqu'à l'installation d'un CNI
+- exposés par _Service_ `kubedns` (IP: `10.96.0.10`)
+- DNS resolver dans les Pod : service `kubedns`
+  - permet de joindre tous les _Service_ par nom _DNS_ :
+  - `<nom-du-service>` dans le même _Namespace_
+  - `<nom-du-service>.<namespace>.svc.<clustername>` sinon (`<clustername>`: `cluster.local` ou config _CoreDNS_)
+
+---
+
 ## 🌐 Service
 
 - Service DNS permettant d'accéder à 1 (ou plusieurs) Pods 🌐
