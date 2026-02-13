@@ -148,7 +148,7 @@ tty6::respawn:/sbin/getty 38400 tty6
 
 ---
 
-## 🧱 SELinux et AppArmor
+## DAC vs MAC
 
 ---
 
@@ -181,7 +181,7 @@ SELinux bloque un serveur web (`httpd_t`) qui tente d'accéder à `/home` même 
 
 ---
 
-### 🧱 SELinux
+## 🧱 SELinux
 
 - _Security-Enhanced Linux_
 - Développé par la _NSA_
@@ -195,7 +195,7 @@ SELinux bloque un serveur web (`httpd_t`) qui tente d'accéder à `/home` même 
 
 ---
 
-#### Targeted Policy
+### Targeted Policy
 
 - Politiques ciblées :
 - Démons système sensibles (`httpd`, `sshd`, `named`, `mysqld`, …) confinés :
@@ -218,7 +218,7 @@ D'autres politiques existent, par exemple :
 
 ---
 
-#### Commandes utiles
+### Commandes utiles
 
 ```bash
 getenforce # Status
@@ -234,7 +234,7 @@ setenforce 0 # mode Permissive
 
 ---
 
-### 🧰 AppArmor
+## 🧰 AppArmor
 
 - Approche simplifiée du confinement
 - Développé par **Immunix**, puis intégré à Ubuntu, Debian, SUSE.
@@ -249,7 +249,7 @@ setenforce 0 # mode Permissive
 
 ---
 
-#### Commandes utiles
+### Commandes utiles
 
 ```bash
 aa-status
@@ -260,17 +260,67 @@ aa-genprof nginx # Création de profile
 aa-logprof # Génération automatique de profil depuis les logs
 ```
 
+
 ---
 
-### SELinux vs AppArmor
+## Seccomp
 
-| Caractéristique | SELinux                               | AppArmor                               |
-| --------------- | ------------------------------------- | -------------------------------------- |
-| Basé sur        | Étiquettes (contexts)                 | Chemins de fichiers                    |
-| Difficulté      | Plus complexe                         | Plus simple                            |
-| Granularité     | Très fine                             | Moins précise                          |
-| Adoption        | Red Hat, Fedora, CentOS               | Ubuntu, Debian                         |
-| Cas d'usage     | Data centers, serveurs sensibles      | Postes utilisateurs, serveurs généraux |
+- Fonctionnalité du noyau Linux.
+- Filtre les *syscalls* (appels système) qu'un processus peut exécuter.
+- Principe du **moindre privilège**.
+- Peu d'impact sur la performance.
+- Deux modes :
+  - **Strict mode**
+  - **Filter mode (BPF)**
+
+---
+
+### Mode Strict
+
+- Mode historique, très limité.
+- Autorise uniquement :
+  - `read`
+  - `write`
+  - `exit`
+  - `sigreturn`
+- Tout autre syscall → **processus tué**.
+- Trop restrictif pour la plupart des applications modernes.
+- Rarement utilisé aujourd'hui.
+
+---
+
+### Mode Filter
+
+- Utilise **BPF (Berkeley Packet Filter)**.
+- Permet de définir des règles fines.
+- Décisions possibles :
+  - `ALLOW`
+  - `KILL` (tue le processus)
+  - `ERRNO` (erreur)
+  - `TRACE`
+  - `LOG`
+
+---
+
+- Très utilisé par :
+  - Docker (bloque par défaut `kexec_load`, `delete_module`, `swapon`)
+  - Kubernetes
+  - Sandbox applicatives : _systemd_, navigateurs Web, …
+- Politique typique :
+  - Autoriser : `read`, `write`, `openat`, `close`
+  - Refuser : `mount`, `ptrace`, `reboot`
+
+---
+
+## SELinux vs AppArmor vs Seccomp
+
+| Caractéristique | SELinux                          | AppArmor                               | seccomp                                |
+| --------------- | -------------------------------- | -------------------------------------- | -------------------------------------- |
+| Basé sur        | Étiquettes (contexts)            | Chemins de fichiers                    | Appels système (syscalls)              |
+| Difficulté      | Plus complexe                    | Plus simple                            | Simple à intermédiaire                 |
+| Granularité     | Très fine                        | Moins précise                          | Très fine sur les appels noyau         |
+| Adoption        | Red Hat, Fedora, CentOS          | Ubuntu, Debian                         | Large (Docker, Kubernetes, conteneurs) |
+| Cas d'usage     | Data centers, serveurs sensibles | Postes utilisateurs, serveurs généraux | Sandboxing d'applications, conteneurs  |
 
 ---
 
