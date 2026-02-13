@@ -329,6 +329,12 @@ kubectl get apiservices | grep metrics-server
 
 ### Certificats et Tokens
 
+#### Certificat du Kubelet
+
+```sh
+openssl x509 -in /var/lib/kubelet/pki/kubelet.crt -text
+```
+
 #### Inspection d'un certificat
 
 ```sh
@@ -1595,11 +1601,29 @@ spec:
               number: 80
 ```
 
-### DNS spécifique
+#### Ingress TLS
 
-Par défaut, un Pod utilise le DNS de Kubernetes.
+1. Création manuelle d'un certificat TLS pour l'Ingress :
 
-Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/>
+```sh
+openssl req -x509 -nodes -new -x509 \
+  -out tls.crt -keyout tls.key \
+  -subj "/CN=ingress.tls"
+```
+
+2. Création du secret associé
+
+```sh
+kubectl create secret tls secret-tls --cert=tls.crt --key=tls.key
+```
+
+3. Création de l'Ingress
+
+```sh
+kubectl create ingress example-tls --rule="foo.com/bar=svc1:8080,tls=secret-tls"
+```
+
+Voir aussi : `cert-manager` ci-dessous pour gérer automatiquement les certificats
 
 ### TLS : ClusterIssuer (Let's Encrypt)
 
@@ -1711,6 +1735,12 @@ NAME                ADDRESSTYPE   PORTS   ENDPOINTS     AGE
 bar-service-dhxpp   IPv4          8080    10.244.0.18   47h
 foo-service-5b4kb   IPv4          8080    10.244.0.17   47h
 ```
+
+### DNS spécifique
+
+Par défaut, un Pod utilise le DNS de Kubernetes.
+
+Pour une configuration plus poussée, voir : <https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/>
 
 ## Deployment
 
