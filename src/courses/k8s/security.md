@@ -679,6 +679,24 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 - Éviter `privileged: true` (bypass la séparation conteneur / host et implique `allowPrivilegeEscalation`)
 
 ---
+
+### Pod Security Admission
+
+- Contrôle la sécurité des Pods via des _labels_ sur le _Namespace_
+- L'API Server vérifie les Pods à la création
+- 3 niveaux : `privileged` (non restreint), `baseline` (sécurité standard), `restricted` (sécurité forte)
+- 3 modes : `enforce` (création refusée), `audit` (log), `warning` (console kubectl uniquement)
+- Non personnalisable : voir les outils _Kyverno_ ou _Open Policy Agent_.
+
+```yaml
+labels:
+  pod-security.kubernetes.io/enforce: restricted
+  pod-security.kubernetes.io/audit: baseline
+  …
+```
+
+---
+
 ## Outils utiles
 
 - `kubectl auth can-i`
