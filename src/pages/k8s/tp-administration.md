@@ -83,13 +83,23 @@ base64 /host/tmp/snapshot | base64 -d > snapshot
 ### Restauration etcd
 
 :::warn
-Pas de restauration d'etcd si des `APIServer` sont en cours d'exécution !
+Pas de restauration d'etcd si des _APIServer_ sont en cours d'exécution !
 
-1. Arrêter toutes les instances d'`APIServer`
-2. Restaurer l'état de toutes les instances `etcd`
-3. Redémarrer toutes les instances d'`APIServer`
+1. Arrêter toutes les instances d'_APIServer_
+2. Restaurer l'état de toutes les instances _etcd_
+3. Redémarrer toutes les instances d'_APIServer_
 
 Il est également recommandé de redémarrer les composants Kubernetes (`kube-scheduler`, `kube-controller-manager`, `kubelet`) afin de s'assurer qu'ils ne reposent pas sur des données obsolètes (normalement automatique car la restauration prend du temps et les composants perdent leur lien vers l'etcd donc redémarrent).
+:::
+
+:::tip
+Si _etcd_ est démarré en Pod statique par le _kubelet_ (cluster _kubeadm_), il suffit d'enlever **temporairement** le manifest `/etc/kubernetes/manifests/etcd.yaml` pour arrêter temporairement l'_etcd_ et continuer à tourner le cluster (attendre ~ 1 minute).
+
+Vérifier avec le runtime de conteneurs que l'etcd est arrêté, par exemple :
+
+```sh
+crictl ps
+```
 :::
 
 :::warn
