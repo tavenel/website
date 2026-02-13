@@ -176,6 +176,14 @@ kubectl --namespace=kube-system get pods -o json \
 
 #### Authentification
 
+:::tip
+Afficher le process `etcd` (tourne en pod statique stacké dans le cluster si déployé par `kubeadm`) pour afficher les options de connexion :
+
+```sh
+ps aux | grep etcd
+```
+:::
+
 ##### Entre pairs
 
 - `--peer-client-cert-auth=true` : activer authentification TLS
