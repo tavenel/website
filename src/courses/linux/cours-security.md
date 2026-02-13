@@ -148,6 +148,67 @@ tty6::respawn:/sbin/getty 38400 tty6
 
 ---
 
+## Auditd
+
+- Système d'audit du noyau Linux
+- Objectifs :
+  - Traçabilité des actions
+  - Détection d'intrusions
+  - Conformité (ISO 27001, PCI-DSS, etc.)
+  - Investigation post-incident
+- `auditd` (daemon), `auditctl` (CLI de configuration, volatil), `ausearch` & `aureport` (analyse des logs)
+
+---
+
+### Exemples d'usage
+
+- Surveiller `/etc/shadow`
+- Tracer `sudo`
+- Détecter suppression de logs
+- Audit des changements de permissions
+- Audit des connexions root
+
+---
+
+#### Surveiller un fichier
+
+Exemple : surveiller `/etc/passwd`
+
+```bash
+auditctl -w /etc/passwd -p wa -k passwd_changes
+```
+
+- `-w` : watch file
+- `-p wa` : write + attribute change (au choix parmis `rwxa`)
+- `-k` : mot-clé pour filtrer dans les logs
+
+---
+
+#### Surveiller un syscall
+
+Exemple : tracer `execve`
+
+```bash
+auditctl -a always,exit -S execve -k exec_monitor
+```
+
+- `always,exit` : audit à la sortie du syscall
+- `-S` : syscall ciblé
+- Permet de voir **toutes les commandes exécutées**
+
+---
+
+### Consultation des logs
+
+Logs : `/var/log/audit/audit.log`
+
+```bash
+ausearch -k passwd_changes
+aureport
+```
+
+---
+
 ## DAC vs MAC
 
 ---
@@ -263,8 +324,11 @@ aa-logprof # Génération automatique de profil depuis les logs
 
 ---
 
-## Seccomp
+## Seccomp - Secure Computing Mode
 
+- Problématique :
+  - Les processus Linux disposent de centaines de _syscalls_ (appels système).
+  - \+ de syscalls disponibles = \+ de surface d'attaque.
 - Fonctionnalité du noyau Linux.
 - Filtre les *syscalls* (appels système) qu'un processus peut exécuter.
 - Principe du **moindre privilège**.
