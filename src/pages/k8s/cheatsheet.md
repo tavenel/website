@@ -13,6 +13,57 @@ title: Cheatsheet Kubernetes®
 
 :::
 
+## Commandes utiles
+
+Quelques commandes simples mais utiles pour gagner du temps, notamment en examen (certification, …) :
+
+- Forcer la suppression d'un Pod :
+
+```sh
+kubectl delete pods <pod> --grace-period=0 --force
+```
+
+### dry-run
+
+- Générer un template de fichier YAML en simulant une action :
+
+```sh
+--dry-run=client -o yaml
+```
+
+- Exemple : créer un fichier de déploiement
+
+```sh
+kubectl run nginx --image nginx --dry-run=client -o yaml > nginx.yaml
+# edit nginx.yaml
+kubectl apply -f nginx.yaml
+```
+
+### Débug simple
+
+Le cluster fonctionne-t-il ?
+
+```sh
+kubectl get nodes -o wide
+systemctl status kubelet # sur chaque noeud
+```
+
+Obtenir des informations :
+
+```sh
+# Config d'une ressource :
+kubectl describe …
+kubectl get … -o yaml
+# Lister les événements liés à la ressource :
+kubectl events …
+```
+
+Afficher les logs des conteneurs :
+
+```sh
+kubectl logs …
+```
+
 ## Client
 
 ### Gérer les plugins kubectl
