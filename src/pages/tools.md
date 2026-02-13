@@ -102,6 +102,8 @@ created: 2024-10-17
 
 - 🚢 `podman` : idem Docker sans agent, supporte Docker et pods k8s
 - `cri-o`, `containerd`, `runc` : container runtime k8s
+- `Kata` : tourne des conteneurs dans des VM légères (sécurité supplémentaire)
+- `gVisor` : tourne les conteneurs en _user-space_ (et non en _kernel-space_)
 
 ### Orchestration de conteneurs
 
