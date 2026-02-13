@@ -36,6 +36,10 @@ Voir aussi :
 Automatiser le (re)déploiement d'un cluster (GitOps) peut être une procédure de recovery efficace mais risquée (ne rien oublier !) : continuez les backup d'`etcd`.
 :::
 
+:::link
+Des outils dédiés permettent de faire un backup de cluster : _Stash_, _Velero_, …
+:::
+
 ### Backup etcd
 
 - Contient tous les objets du cluster (metadata : taille faible)
