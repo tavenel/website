@@ -334,6 +334,7 @@ created: 2024-10-17
 - tous types : `artifactory`, `nexus`
 - Docker, Helm : `Harbor`
 - tracking dépendances : `Dependency Track` : Gestion du _SBOM_ (_Software Bill of Materials_).
+- Formats SBOM populaires : `CycloneDX`, `SPDX`
 
 ## 📈 Supervision / Monitoring / Observabilité
 
