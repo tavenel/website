@@ -112,16 +112,6 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
-## 🔒 Sécurité
-
-- 🛡️ Appliquer un `SecurityContext` :
-  - Changer le `UID`, `GID`
-    - Drop de _capabilities_
-    - Filesystem _R/O_
-    - …
-
----
-
 ## 🔄 Stratégies de déploiements
 
 - 🛠️ k8s propose 2 stratégies de déploiements :
