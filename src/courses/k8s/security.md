@@ -658,7 +658,7 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 - `kubectl auth can-i`
 - `kubectl describe role`
 - `kubectl describe clusterrole`
-- `kube-bench`
+- `kube-bench` => CIS Benchmark
 - `kube-hunter`
 
 Exemple :
