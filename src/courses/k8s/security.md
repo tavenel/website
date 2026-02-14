@@ -658,9 +658,9 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-## 🔒 Pods
+### 🔒 Pods
 
-### 🛡️ SecurityContext
+#### 🛡️ SecurityContext
 
 - spec `securityContext:` (Pod / Conteneur) :
 - Restreindre l'utilisateur tournant dans le conteneur : `runAsNonRoot: true`, `allowPrivilegeEscalation: false`
@@ -672,7 +672,7 @@ Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource
 
 ---
 
-### Pod Security Admission
+#### Pod Security Admission
 
 - Contrôle la sécurité des Pods via des _labels_ sur le _Namespace_
 - L'API Server vérifie les Pods à la création
@@ -686,6 +686,21 @@ labels:
   pod-security.kubernetes.io/audit: baseline
   …
 ```
+
+---
+
+## EncryptionConfiguration : chiffrer les Secrets
+
+- Par défaut en clair dans _etcd_ (base64)
+- Chiffrement complet d'etcd possible mais en principe déconseillé (performances)
+- Possibilité de fournir une `EncryptionConfiguration` à l'API Server pour (dé)chiffrer des ressources (secrets, …) lors des appels Rest (avant écriture dans etcd).
+  - transparent pour utilisateur et Pod
+- Le 1e provider sert à chiffrer, les autres à déchiffer :
+
+  - `aescbc` : bon compromis sécurité / performance
+  - `secretbox` : très sécurisé, plus lent
+  - `kms` : Key Management System externe : Cloud KMS, HashiCorp Vault, …. Plus complexe mais meilleure gestion des clés
+  - `identity` : pas de chiffrement, fallback pour lire d'anciens secrets non chiffrés
 
 ---
 
