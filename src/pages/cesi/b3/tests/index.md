@@ -35,6 +35,7 @@ title: INFAL34 - Tests et recette d'un projet de développement
 
 - [🔀 Module en classe renversée](/cesi/b3/tests/classe-renversee)
 - [🤓 Cours sur les tests logiciels](/cesi/b3/tests/cours)
+- [📖 Exemple de recette fonctionnelle](/tests/exemple-recette)
 - [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
 - [📝 Exercices : tests d'un système de cartes météo](/tests/methodo/td-tests-cartes-meteo)
 - [💻 TP : Analyses de code en Python et utilisation du debugger](/tests/unit/python/tp-python-lint-debug)
