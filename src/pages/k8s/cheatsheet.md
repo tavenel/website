@@ -354,6 +354,36 @@ etcdctl […] del cle
 etcdctl […] watch cle # scrute les changemens de `cle`
 ```
 
+### EncryptionConfiguration
+
+Permet de chiffrer des ressources avant leur écriture dans l'etcd :
+
+```yaml
+apiVersion: apiserver.config.k8s.io/v1
+kind: EncryptionConfiguration
+resources:
+  - resources:
+      - secrets
+    providers:
+      - aescbc:
+          keys:
+            - name: key1
+              secret: <clé_base64_32_octets>
+      - identity: {}
+```
+
+Flag api-server :
+
+```sh
+--encryption-provider-config=/etc/kubernetes/encryption-config.yaml
+```
+
+Ré-écrire les secrets après activation du provider de chiffrement :
+
+```sh
+kubectl get secrets --all-namespaces -o json | kubectl replace -f -
+```
+
 ### Audit Policy
 
 - Config de l'API Server :
