@@ -5,6 +5,7 @@ import Chapter from '@components/Chapter.astro';
 import { Content as Exo } from '@courses/k8s/projet-install-exo.md';
 import { Content as Requirements } from '@courses/k8s/install-requirements.md';
 import { Content as Procedure } from '@courses/k8s/install-procedure.md';
+import { Content as StopCluster } from '@courses/k8s/stop-cluster.md';
 import { Content as Debug } from '@courses/k8s/debug-cluster.md';
 
 const frontmatter = {
@@ -22,6 +23,7 @@ const frontmatter = {
 	<Chapter> <Exo /> </Chapter>
 	<Chapter> <Requirements /> </Chapter>
 	<Chapter> <Procedure /> </Chapter>
+	<Chapter> <StopCluster /> </Chapter>
 	<Chapter> <Debug /> </Chapter>
 </Layout>
 
