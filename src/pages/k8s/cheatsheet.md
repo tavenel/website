@@ -64,6 +64,32 @@ Afficher les logs des conteneurs :
 kubectl logs …
 ```
 
+### Arrêt / redémarrage d'un cluster de test
+
+:::warn
+Non supporté officiellement, uniquement pour une instance de test !
+:::
+
+1. Arrêter les VMs
+  - workers puis control-plane(s) (mieux) sinon en parallèle OK
+  - shutdown OS <- stop automatique des services systemd <- stop automatique des pods
+2. Forcer la suppression des Pod bloqués
+3. Redémarrer les VMs (ordre sans importance)
+
+Si problème sur un Node :
+
+   ```bash
+   systemctl restart containerd
+   systemctl restart kubelet
+   ```
+
+Si cluster cassé :
+
+   ```bash
+   kubeadm reset -f
+	 # puis re-init ou re-join
+   ```
+
 ## Client
 
 ### Gérer les plugins kubectl
