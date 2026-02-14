@@ -221,9 +221,10 @@ Chaque composant possède :
   - VPN / Bastion
 - TLS obligatoire :
   - Certificats signés par une CA interne
-  - TLS 1.2 minimum
+  - TLS 1.2 minimum, 1.3 recommandé et choisir les algorithmes (_Cipher_) utilisés : `--tls-min-version=VersionTLS13`, `--tls-cipher-suites=…`
   - Rotation des certificats
 - Éviter d'utiliser les `ServiceAccount` comme credentials permanents
+- Protection DoS : `--max-requests-inflight`, `--max-mutating-requests-inflight`, `--enable-priority-and-fairness=true`
 
 Flags importants :
 
