@@ -467,7 +467,8 @@ created: 2024-10-17
   - <https://nginxui.com/> : statistics, logs, tests, …
 - `haproxy`
 - `consul` : <https://une-tasse-de.cafe/blog/consul/>
-- `traefik`
+- `traefik` : très utilisé en environnements de conteneurs
+- `caddy` : reverse-proxy moderne et très efficace
 
 ## Tests 🧪
 
@@ -641,6 +642,10 @@ created: 2024-10-17
 
 - `Apache Guacamole` : bastion web RDP / SSH / VNC léger
 - `Jumpserver` : bastion web + audit poussé
+
+### SSL / TLS
+
+- `testssl.sh` : vérification de la configuration SSL d'un nom de domaine
 
 ## IA
 
