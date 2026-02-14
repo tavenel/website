@@ -13,6 +13,7 @@ layout: '@layouts/BaseLayout.astro'
 - [🤓 Cours sur l'industrialisation des tests](/tests/cours-indus)
 - [📖 Exemple de rapport de bug](/tests/methodo/exemple-rapport-bug)
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
+- [📖 Exemple de recette fonctionnelle](/tests/exemple-recette)
 - [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
 - [📝 Exercices : tests d'un système de cartes météo](/tests/methodo/td-tests-cartes-meteo)
 - [📝 Exercices sur les techniques de tests](/tests/methodo/techniques-tests-exercices)

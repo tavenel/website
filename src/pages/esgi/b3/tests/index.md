@@ -35,6 +35,7 @@ Module de 15H
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
 - [📝 Exercices sur la méthodologie de test](/tests/methodo/exercices_methodo_tests)
 - [📝 Exercices sur les techniques de tests](/tests/methodo/techniques-tests-exercices)
+- [📖 Exemple de recette fonctionnelle](/tests/exemple-recette)
 
 ### Tests unitaires
 
