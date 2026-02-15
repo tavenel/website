@@ -442,6 +442,34 @@ rules:
 - level: Metadata
 ```
 
+### API Priority and Fairness
+
+- Régule et priorise le trafic vers l'API server pour éviter qu'un type de client ne sature tout.
+- `FlowSchema` : comment classifier une requête API entrante
+- Chaque FlowSchema associe un `PriorityLevelConfiguration`
+
+```bash
+kubectl get flowschemas.flowcontrol.apiserver.k8s.io service-accounts -o yaml
+kubectl get prioritylevelconfigurations.flowcontrol.apiserver.k8s.io workload-low -o yaml
+```
+
+```yaml
+apiVersion: flowcontrol.apiserver.k8s.io/v1
+kind: PriorityLevelConfiguration
+metadata:
+  name: custom-low-priority
+spec:
+  type: Limited
+  limited:
+    assuredConcurrencyShares: 20
+    limitResponse:
+      type: Queue
+      queuing:
+        queues: 16
+        handSize: 4
+        queueLengthLimit: 50
+```
+
 ### Lister les types de ressources supportées
 
 ```sh
