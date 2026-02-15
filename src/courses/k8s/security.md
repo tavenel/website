@@ -641,6 +641,43 @@ flowchart LR
 
 ---
 
+#### Principaux ports
+
+##### Control-Plane
+
+| Port      | Direction | Component               | Purpose                                             |
+| --------- | --------- | ----------------------- | --------------------------------------------------- |
+| 6443      | Inbound   | kube-apiserver          | Kubernetes API server (kubectl, controllers, nodes) |
+| 2379–2380 | Inbound   | etcd                    | etcd client (2379) and peer (2380) communication    |
+| 10250     | Inbound   | kubelet                 | Communicate with / from API server (use firewall)   |
+| 10257     | Inbound   | kube-controller-manager | Control plane health/metrics                        |
+| 10259     | Inbound   | kube-scheduler          | Scheduler health/metrics                            |
+| 443       | Outbound  | Internet / registries   | Pull container images, updates                      |
+| 53        | Outbound  | DNS servers             | Name resolution (UDP / TCP)                         |
+
+---
+
+##### Worker
+
+| Port        | Direction | Component         | Purpose                              |
+| ----------- | --------- | ----------------- | ------------------------------------ |
+| 10250       | Inbound   | kubelet           | API server communication, logs, exec |
+| 30000–32767 | Inbound   | NodePort Services | External service exposure (if used)  |
+
+---
+
+##### Node-to-Node (all Nodes) - Networking / CNI
+
+| Port / Range | Protocol | Used By              | Purpose                          |
+| ------------ | -------- | -------------------- | -------------------------------- |
+| 8472         | UDP      | Flannel (VXLAN)      | Overlay network encapsulation    |
+| 4789         | UDP      | Calico / VXLAN       | Overlay networking               |
+| 179          | TCP      | Calico (BGP)         | Routing between nodes            |
+| 51820        | UDP      | WireGuard (optional) | Encrypted pod networking         |
+| ICMP         | ICMP     | All                  | MTU/path discovery & diagnostics |
+
+---
+
 #### NetworkPolicies
 
 - Par défaut :
