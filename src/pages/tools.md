@@ -652,7 +652,6 @@ created: 2024-10-17
 - <https://aider.chat> : AI pair programming (TUI in terminal)
 - Local LLM : `ollama`, <https://terminaltrove.com/parllama/> (TUI)
 - [Extension Firefox et Chrome pour alerter sur les sites générés par IA](https://next.ink/164873/outils-next-une-extension-chrome-et-firefox-pour-etre-alerte-des-sites-genai/)
-
 ### MCP
 
 - Liste de serveurs MCP : <https://github.com/modelcontextprotocol/servers>
@@ -664,6 +663,15 @@ created: 2024-10-17
 - <https://chat.mistral.ai/chat>
 - <https://gemini-free.com/>
 - <https://euria.infomaniak.com/>
+
+### Tests et évaluation
+
+- RAG : _Ragas_
+- Tests automatiques CI/CD : _DeepEval_
+- Produit LLM en production : _Langfuse_
+- Écosystème LangChain : _LangSmith_
+- Évaluation sur mesure : _OpenEvals_
+- Vision business / équipe transverse : _Maxim_
 
 ## 💻 Outils Poste de travail
 
