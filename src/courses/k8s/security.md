@@ -183,17 +183,15 @@ Décide **ce que l'utilisateur peut faire** après authn.
 
 ---
 
-## 🛡️ Sécurisation du _Control Plane_
+## Public Key Infrastructure (PKI)
 
----
-
-- De nombreux composants acceptent les connexions (et les requêtes) d'autres composants :
-  - `api-server` 🌐
-  - `etcd` 📂
-  - `Kubelet` 🔄
-- Nous devons sécuriser ces connexions :
-  - Pour refuser les requêtes non autorisées ❌
-  - Pour empêcher l'interception de secrets, de _tokens_ et d'autres informations sensibles 🔒
+-  Certificats `X.509` et autorités de certification (CA) pour authentifier **composants**, **nœuds** et **utilisateurs**
+- Système de confiance interne :
+  - authentification mutuelle (mTLS)
+  - intégrité des communications
+  - autorisation basée sur l'identité du certificat
+- **Chaque composant critique possède un certificat**
+- Une ou plusieurs CA signent ces certificats
 
 ---
 
@@ -210,6 +208,129 @@ Chaque composant possède :
 
 - un certificat client
 - un certificat serveur
+
+---
+
+### CA
+
+Un cluster standard possède généralement **3 CA distinctes** :
+
+---
+
+#### Cluster CA (Main CA)
+
+- Racine principale de confiance.
+- Sert à signer :
+  - certificats des utilisateurs (admin, dev…)
+  - certificats des composants internes
+  - certificats kubelet client
+  - `ca.crt`
+  - `ca.key`
+
+---
+
+#### Etcd CA
+
+- Spécifique à la base de données **etcd**.
+- Isole la confiance de stockage des données critiques.
+- Signe :
+  - etcd server cert
+  - etcd peer cert
+  - etcd client cert
+
+---
+
+#### Front Proxy CA
+
+- Utilisée pour l'**aggregation layer** (API aggregation / extensions).
+- Permet à l'API Server de faire confiance à des proxys ou API externes.
+
+---
+
+### Certificats des composants
+
+#### API Server
+
+- Certificat serveur TLS exposé sur `:6443`.
+- Contient :
+  - DNS du cluster
+  - IP du control plane
+  - _Subject Alternative Name_ (SAN) multiples (identités valides pour lesquelles ce certificat peut être utilisé)
+- Utilisé par :
+  - `kubectl`
+  - _kubelets_
+  - _controllers_
+
+---
+
+#### Kubelet
+
+- Deux certificats :
+- **Client cert** pour s'authentifier auprès de l'API Server
+- **Server cert** pour que l'API Server puisse lui parler
+
+---
+
+#### Controller Manager et Scheduler
+
+- Client cert uniquement.
+- Agissent comme des utilisateurs système.
+
+---
+
+#### Admin / Utilisateurs
+
+- Certificats clients générés dans `kubeconfig`.
+- L'identité se base sur :
+  - `CN` : utilisateur (ex: `CN=admin`)
+  - `O` : groupe RBAC (ex: `O=system:masters`)
+
+---
+
+### Emplacement des certificats
+
+Sur cluster `kubeadm` :
+
+```
+/etc/kubernetes/pki/
+```
+
+- `ca.*`
+- `apiserver.*`
+- `front-proxy-ca.*`
+- `etcd/*`
+- `sa.key` / `sa.pub` (service accounts, JWT)
+
+---
+
+### Rotation des certificats
+
+- Risques :
+  - Certificats expirés
+  - Certificats compromis
+- Bonnes pratiques :
+  - Durée de vie courte (max 1 an)
+  - CA protégée offline si possible
+- 2 modes :
+  - Automatique :
+    - kubelet client cert rotation
+    - possible via controller manager
+  - Manuelle / kubeadm : `kubeadm certs renew all`
+
+---
+
+## 🛡️ Sécurisation du _Control Plane_
+
+---
+
+- De nombreux composants acceptent les connexions (et les requêtes) d'autres composants :
+  - `api-server` 🌐
+  - `etcd` 📂
+  - `Kubelet` 🔄
+- Nous devons sécuriser ces connexions :
+  - Pour refuser les requêtes non autorisées ❌
+  - Pour empêcher l'interception de secrets, de _tokens_ et d'autres informations sensibles 🔒
+- Voir la partie PKI ci-dessus
 
 ---
 
@@ -420,21 +541,6 @@ spec:
     #name: web-xyz1234567-pqr89
 EOF
 ```
-
----
-
-## PKI & Rotation
-
-Risques :
-
-- Certificats expirés
-- Certificats compromis
-
-Bonnes pratiques :
-
-- Rotation automatique (`kubeadm certs renew`)
-- Durée de vie courte
-- CA protégée offline si possible
 
 ---
 
