@@ -118,6 +118,23 @@ source <(helm completion zsh)
 [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 :::
 
+### Merger plusieurs config kubectl
+
+```sh
+cp ~/.kube/config /tmp/config.a
+export KUBECONFIG=/tmp/config.a /tmp/config.b
+kubectl config view --flatten > ~/.kube/config
+```
+
+:::warn
+Attention à ne pas merger et rediriger `~/.kube/config` avec lui-même pour ne pas perdre le contenu existant !
+
+```sh
+export KUBECONFIG=~/.kube/config:/tmp/config.b
+kubectl config view --flatten > ~/.kube/config # !! KO !!
+```
+:::
+
 ## Administration
 
 ### Installation
