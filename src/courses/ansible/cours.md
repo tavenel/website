@@ -503,7 +503,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - Trouver des Plugins et des Rôles :
   - Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html)
   - Plugins et rôles de la communauté : <https://galaxy.ansible.com>
-- Le [format Yaml][https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax] utilisé par les playbooks : 
+- Le [format Yaml](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax) utilisé par les playbooks : 
 - Exemples de Playbooks :
   - <https://github.com/ansible/ansible-examples>
 	- <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
