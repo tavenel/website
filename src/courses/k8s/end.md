@@ -286,6 +286,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - How Kubernetes Runs Containers : A Practical Deep Dive : <https://blog.esc.sh/kubernetes-containers-linux-processes/>
 - [Building Kubernetes (a lite version) from scratch in Go](https://medium.com/@owumifestus/building-kubernetes-a-lite-version-from-scratch-in-go-7156ed1fef9e)
 - [Déployer un cluster "vanilla" multi-noeuds dans NixOS en utilisant des services systemd](https://stephank.nl/p/2025-11-17-a-small-vanilla-kubernetes-install-on-nixos.html)
+- <https://codefresh.io/blog/custom-k8s-scheduler-continuous-integration/>
 
 ---
 
