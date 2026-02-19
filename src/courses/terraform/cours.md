@@ -139,7 +139,34 @@ mindmap
 
 ---
 
-### 📄 Exemple de fichier Terraform
+### 📄 Exemples de fichiers Terraform
+
+```tf
+terraform {
+  required_providers {
+    docker = {
+      source = "kreuzwerker/docker"
+      version = "~> 3.0.1"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = false
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "tutorial"
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+```
 
 ```tf
 provider "kubernetes" {
@@ -671,7 +698,7 @@ Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cour
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 - [Terraform linter (tflint)](https://github.com/terraform-linters/tflint)
 - Exercices et tutoriels :
-  - <https://developer.hashicorp.com/terraform/tutorials/>
+  - <https://developer.hashicorp.com/terraform/tutorials/> notamment le [tutoriel Docker](https://developer.hashicorp.com/terraform/tutorials/docker-get-started) et la [sandbox simulant un environnement AWS avec LocalStack](https://developer.hashicorp.com/terraform/tutorials/sandbox/sandbox)
   - <https://github.com/iButcat/terraform-associate-practice> : préparation à la certification Terraform
 - Homelab : Terraform et Proxmox
   - <https://blog.stephane-robert.info/docs/virtualiser/type1/proxmox/terraform/>
