@@ -21,7 +21,7 @@ Vous apprendrez à :
 
 - Terraform installé.
 - Ansible installé.
-- Accès à un environnement de virtualisation (VMware Workstation, VirtualBox, cluster VMware, Proxmox, OpenNebula).
+- Accès à un environnement de virtualisation (VirtualBox ou Proxmox).
 - Template Debian 12 minimal OU capacité à en générer un via Terraform.
 - Accès SSH fonctionnel vers les VMs une fois créées.
 
@@ -58,7 +58,7 @@ terraform/
 
 Définir :
 
-- Le provider selon l'environnement (ex : `vsphere`, `virtualbox`, `vmware` local…).
+- Le provider selon l'environnement (virtualbox, …).
 - Le template _Debian_ comme source pour un clonage.
 - Deux ressources `vm` nommées `web01` et `db01`.
 - Paramètres :
