@@ -2,6 +2,7 @@
 import Layout from '@layouts/CourseLayout.astro';
 import Chapter from '@components/Chapter.astro';
 
+import { Content as Intro } from '@courses/k8s/intro.md';
 import { Content as Mini } from '@courses/k8s/mini.md';
 
 const frontmatter = {
@@ -16,6 +17,7 @@ const frontmatter = {
 
 ---
 <Layout frontmatter={frontmatter} >
+	<Chapter> <Intro />  </Chapter>
 	<Chapter> <Mini />  </Chapter>
 </Layout>
 
