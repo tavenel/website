@@ -1218,7 +1218,7 @@ spec:
 
 :::
 
-## Configuration du cluser
+## Configuration du cluster
 
 :::exo
 
