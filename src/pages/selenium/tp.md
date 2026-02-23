@@ -25,9 +25,9 @@ Dans la partie précédente, nous avons créé un ensemble de scénarios de test
 
 Si cela permet un test rapide du produit et un rejeu rapide des tests, ceux-ci sont toutefois dépendant :
 
-- De votre environnement personnel (plugin ajouté dans votre navigateur Web)
-- De la présence physique du testeur pour rejouer les tests
-- Les vérifications de comportement sont toujours réalisées manuellement
+* De votre environnement personnel (plugin ajouté dans votre navigateur Web)
+* De la présence physique du testeur pour rejouer les tests
+* Les vérifications de comportement sont toujours réalisées manuellement
 
 Afin de créer une véritable automatisation des tests, et pour commencer à s'abstraire de l'environnement d'exécution, nous allons utiliser le robot `Selenium WebDriver` pour coder l'exécution des tests et les vérifications à effectuer.
 
@@ -41,13 +41,13 @@ Ce projet contient un template de projet minimal pour lancer des tests `Selenium
 
 ## Version Java
 
-- Le projet est packagé par un build `Gradle`
-- L'ajout des dépendances Sélénium est déjà réalisé dans le `build.gradle` :
-  - Le code de l'API `Selenium WebDriver`
-  - La librairie `JUnit` pour exécuter les tests
-- Un exemple de test simpliste se trouve dans le répertoire `src/test/java`
-- Les tests sont exécutés par le framework de tests unitaires `JUnit` pour `Java`
-- Attention à bien placer vos fichiers de test dans le répertoire `src/test` (et non `src/main`) pour que `JUnit` puisse les exécuter.
+* Le projet est packagé par un build `Gradle`
+* L'ajout des dépendances Sélénium est déjà réalisé dans le `build.gradle` :
+  * Le code de l'API `Selenium WebDriver`
+  * La librairie `JUnit` pour exécuter les tests
+* Un exemple de test simpliste se trouve dans le répertoire `src/test/java`
+* Les tests sont exécutés par le framework de tests unitaires `JUnit` pour `Java`
+* Attention à bien placer vos fichiers de test dans le répertoire `src/test` (et non `src/main`) pour que `JUnit` puisse les exécuter.
 
 ```sh
 {Windows}$ .\gradlew.bat test
@@ -56,12 +56,12 @@ Ce projet contient un template de projet minimal pour lancer des tests `Selenium
 
 ## Version Python
 
-- Installer les librairies `selenium` et `unittest` : `pip install unittest selenium`
-- L'ajout des dépendances Sélénium est déjà réalisé dans le projet :
-  - Le code de l'API `Selenium WebDriver`
-  - La librairie `Unittest` pour exécuter les tests
-- Un exemple de test simpliste est fourni : `test_example.py`
-- Les tests sont exécutés par le framework de tests unitaires `Unittest` pour `Python` :
+* Installer les librairies `selenium` et `unittest` : `pip install selenium`
+* L'ajout des dépendances Sélénium est déjà réalisé dans le projet :
+  * Le code de l'API `Selenium WebDriver`
+  * La librairie `Unittest` pour exécuter les tests
+* Un exemple de test simpliste est fourni : `test_example.py`
+* Les tests sont exécutés par le framework de tests unitaires `Unittest` pour `Python` :
 
 ```sh
 python -m unittest test_example.py
@@ -69,14 +69,14 @@ python -m unittest test_example.py
 
 ## Dans les deux cas
 
-- On pourra regrouper les suites logiques de tests dans des packages dédiés.
+* On pourra regrouper les suites logiques de tests dans des packages dédiés.
 
 Pour pouvoir exécuter un test d'interface utilisateur dans un navigateur Web, `Selenium WebDriver` délègue les actions à réaliser à un driver spécifique au navigateur. Celui-ci n'est pas inclus dans le template de projet :
 
-- Récupérer le driver de votre navigateur : [https://www.selenium.dev/documentation/en/webdriver/driver_requirements/](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
-- En `Java` : il n'est pas obligatoire de mettre à jour le `$PATH` car le chemin vers le driver est codé en dur dans le code du test.
-- En `Python` : attention à bien mettre à jour le `$PATH` vers le chemin du driver utilisé dans le code du test.
-- Dans un contexte d'environnement continu, on injecterait cette variable depuis l'environnement d'exécution plutôt que de la coder en dur dans le code.
+* Récupérer le driver de votre navigateur : [https://www.selenium.dev/documentation/en/webdriver/driver_requirements/](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
+* En `Java` : il n'est pas obligatoire de mettre à jour le `$PATH` car le chemin vers le driver est codé en dur dans le code du test.
+* En `Python` : attention à bien mettre à jour le `$PATH` vers le chemin du driver utilisé dans le code du test.
+* Dans un contexte d'environnement continu, on injecterait cette variable depuis l'environnement d'exécution plutôt que de la coder en dur dans le code.
 
 Dans le fichier de test, mettre à jour la ligne de code suivante si nécessaire pour décrire l'emplacement du driver. Attention à modifier le nom de la propriété si le driver n'est pas un driver `Google Chrome` :
 
@@ -97,8 +97,8 @@ L'exemple fourni utilise `Google Chrome`. Si nécessaire, changer le code de l'e
 
 Exécuter le test fourni en exemple : `$.\gradlew.bat test` (Java) ou `$ python -m unittest test_example.py` (Python)
 
-- Les résultats de test sont disponibles pour chaque test dans le répertoire : `build/reports/test`
-  - En Java, le build `Gradle` ajoute le plugin `build-dashboard` qui permet d'aggréger tous les rapports de build : on pourra donc utiliser le fichier `build/reports/buildDashboard/index.html` comme point d'entrée pour tous les rapports de test.
+* Les résultats de test sont disponibles pour chaque test dans le répertoire : `build/reports/test`
+  * En Java, le build `Gradle` ajoute le plugin `build-dashboard` qui permet d'aggréger tous les rapports de build : on pourra donc utiliser le fichier `build/reports/buildDashboard/index.html` comme point d'entrée pour tous les rapports de test.
 
 Une fois l'exemple de test correctement exécuté, en s'inspirant de cet exemple et en utilisant les enregistrements de `Selenium IDE`, coder l'automatisation des tests décrits dans la partie précédente.
 
@@ -106,7 +106,7 @@ Attention à bien gérer les problèmes d'état entre les différents tests ! `J
 
 Note : Les tests sont exécutés à travers le framework `JUnit` ou `Unittest`, qui s'intègre très bien avec la plupart des IDE, il est donc possible de lancer les tests directement depuis l'IDE.
 
-## Exemple et correction
+# Exemple et correction
 
 Exemple d'écriture d'un test Selenium pour la _SampleTodoApp_ :
 
@@ -126,21 +126,24 @@ Pour cela :
 1. On utilise _Selenium IDE_ pour automatiser les actions de l'utilisateur (ouvrir la page et cliquer sur le 3e élément de la liste).
 2. Dans _Selenium IDE_, cliquer sur `…` à côté du nom du test et choisir `Exporter`. Choisir un framework de test, par exemple _pytest_.
 3. Ajouter le code dans un projet de test, par exemple :
- - créer un nouveau fichier dans un nouveau répertoire `test-selenium`
- - dans ce répertoire, installer _pytest_ : `pip install pytest`
-4. Ajouter du code de vérification :
- - le code généré par _Selenium IDE_ automatise les actions de l'utilisateur, pas les vérifications (partie _Assert_).
- - pour cela, on veut :
+
+* créer un nouveau fichier dans un nouveau répertoire `test-selenium`
+* dans ce répertoire, installer _pytest_ : `pip install pytest`
+
+1. Ajouter du code de vérification :
+
+* le code généré par _Selenium IDE_ automatise les actions de l'utilisateur, pas les vérifications (partie _Assert_).
+* pour cela, on veut :
    1. récupérer le 3e élément de la liste
    2. vérifier qu'il est bien coché.
- - on utilise les _Developper Tools_ pour trouver comment récupérer le 3e élément de la liste, et comment vérifier à l'aide du _Domain Object Model_ (_DOM_) du navigateur les éléments à vérifier (ici, que la checkbox est cochée). EN utilisant les _Developper Tools_, on remarque que lorsque l'on coche l'élément, on passe dans le _DOM_ d'une classe : `ng-empty` à `ng-not-empty` pour le 3e élément, et que celui-ci possède un attribut unique pour le sélectionner dans le _DOM_ : `name=li3`.
- - On ajoute donc dans la partie _Assert_ du test, une vérification après le scénario : l'élément `name=li3` possède la classe `ng-not-empty`.
+* on utilise les _Developper Tools_ pour trouver comment récupérer le 3e élément de la liste, et comment vérifier à l'aide du _Domain Object Model_ (_DOM_) du navigateur les éléments à vérifier (ici, que la checkbox est cochée). EN utilisant les _Developper Tools_, on remarque que lorsque l'on coche l'élément, on passe dans le _DOM_ d'une classe : `ng-empty` à `ng-not-empty` pour le 3e élément, et que celui-ci possède un attribut unique pour le sélectionner dans le _DOM_ : `name=li3`.
+* On ajoute donc dans la partie _Assert_ du test, une vérification après le scénario : l'élément `name=li3` possède la classe `ng-not-empty`.
 
 Cliquer sur le bouton _Afficher la correction_ pour afficher le code de correction.
 
 :::correction
 
-### Exemple de code
+## Exemple de code
 
 ```python
 # Generated by Selenium IDE
@@ -187,14 +190,14 @@ Dans cette partie, nous allons utiliser `Selenium Grid` pour industrialiser notr
 
 `Selenium Grid` permet principalement de :
 
-- Tester notre code sur des environnements différents (OS, Navigateurs Web)
-- Paralléliser l'exécution des tests sur plusieurs machines pour réduire le temps global d'exécution de la suite de tests.
+* Tester notre code sur des environnements différents (OS, Navigateurs Web)
+* Paralléliser l'exécution des tests sur plusieurs machines pour réduire le temps global d'exécution de la suite de tests.
 
 L'architecture de `Selenium Grid` est une architecture classique :
 
-- Un `hub` gère l'ordonnancement des tests et l'envoi des commandes à exécuter
+* Un `hub` gère l'ordonnancement des tests et l'envoi des commandes à exécuter
 Depuis `Grid 4`, le `Hub` est maintenant découpé en sous-composants (`Router`,  `Distributor`, `Session Map`, `New Session Queuer`, `Event Bus`) permettant un déploiement beaucoup plus fin - le terme `Hub` décrit alors le regroupement de tous ces composants sur une machine unique. Nous utiliserons uniquement un déploiement de type `Hub` dans ce projet.
-- Des noeuds de la grille fonctionnent comme des agents qui attendent les commandes à exécuter et réalisent l'opération sur le ou les navigateurs installés sur la même machine.
+* Des noeuds de la grille fonctionnent comme des agents qui attendent les commandes à exécuter et réalisent l'opération sur le ou les navigateurs installés sur la même machine.
 
 ![Diagramme d'architecture](https://www.selenium.dev/images/documentation/grid/components.png)
 
@@ -208,9 +211,9 @@ En cas de problème avec l'exécution des tests dans la `Grid`, on pourra utilis
 
 Nous allons donc maintenant séparer :
 
-- L'ordonnancement des tests, par le framework `JUnit` ou `Unittest`, lancé comme précédemment.
-- Le code des tests sera modifié pour utiliser un `Hub`.
-- Les différents `Nodes` serviront à exécuter les actions de test, sur des OS et navigateurs dédiés.
+* L'ordonnancement des tests, par le framework `JUnit` ou `Unittest`, lancé comme précédemment.
+* Le code des tests sera modifié pour utiliser un `Hub`.
+* Les différents `Nodes` serviront à exécuter les actions de test, sur des OS et navigateurs dédiés.
 
 ## Démarrer la Grid en mode standalone
 
@@ -248,9 +251,9 @@ self.driver = webdriver.Remote(
 
 Exécuter les tests précédents et vérifier leur bon fonctionnement :
 
-- `$.\gradlew.bat test` (Java) ou `$ python -m unittest discover` (Python)
-- La console de la `Grid` affiche des informations sur l'exécution des tests
-- L'API de la `Grid` permet de vérifier la bonne exécution des tests : <http://localhost:4444/status>
+* `$.\gradlew.bat test` (Java) ou `$ python -m unittest discover` (Python)
+* La console de la `Grid` affiche des informations sur l'exécution des tests
+* L'API de la `Grid` permet de vérifier la bonne exécution des tests : <http://localhost:4444/status>
 
 ## Démarrer la Grid en mode Hub / Node(s)
 
@@ -281,8 +284,8 @@ Note : Comme décrit précédemment, il est même possible depuis `Grid 4` de s�
 
 En déployant des `Nodes` sur différents systèmes (on pourra utiliser des machines virtuelles `VirtualBox` par exemple), exécuter les tests dans différents environnements :
 
-- `Windows` et `Linux`
-- `Google Chrome`, `Firefox`, ...
+* `Windows` et `Linux`
+* `Google Chrome`, `Firefox`, ...
 
 On utilisera pour cela les `DesiredCapabilities` lors de la mise en place de l'environnement du test, qui permettent d'atteindre un `Node` respectant les contraintes fixées.
 
@@ -301,9 +304,9 @@ On pourra commencer par exécuter des déploiements `Sélénium` standalone. Lor
 
 # Legal
 
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- SELENIUM is a trademark of Software Freedom Conservancy, Inc.
-- GRADLE is a trademark of GRADLE, INC
-- Oracle and Java are registered trademarks of Oracle and/or its affiliates.
-- Jenkins® is a registered trademark of LF Charities Inc.
-- "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well.
+* © 2025 Tom Avenel under CC  BY-SA 4.0
+* SELENIUM is a trademark of Software Freedom Conservancy, Inc.
+* GRADLE is a trademark of GRADLE, INC
+* Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+* Jenkins® is a registered trademark of LF Charities Inc.
+* "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well.
