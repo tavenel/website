@@ -10,9 +10,9 @@ tags:
 ## Présentation
 
 - Outil d'automatisation des actions utilisateur dans un navigateur web et de récupérer les résultats de ces actions :
-  + visiter une page
-  + cliquer sur un lien
-  + remplir un formulaire, etc.
+  - visiter une page
+  - cliquer sur un lien
+  - remplir un formulaire, etc.
 
 ---
 
@@ -108,10 +108,211 @@ flowchart TD
 
 ## Quelques bonnes pratiques
 
-- L'identification des éléments d'une page se fait en utilisant des sélecteurs `CSS`. De nombreux frameworks frontend génèrent du code (et donc des attributs `CSS`) à chaque exécution du code, il est donc très risqué d'utiliser des attributs internes au framework !
+- Utiliser des sélecteurs CSS (pas de XPath), notamment :
+  - `By.ID` (le plus robuste)
+  - `By.CSS_SELECTOR` (flexible)
+- De nombreux frameworks frontend génèrent du code (et donc des attributs `CSS`) à chaque exécution du code, il est donc très risqué d'utiliser des attributs internes au framework !
 - On essaiera donc d'utiliser au maximum des attributs `CSS` ajoutés manuellement dans le code. De même, pour éviter tout soucis de duplication, on utilisera plutôt des `classes` `CSS` que des `ID`.
 
 ---
+
+## Exemples de tests Selenium
+
+---
+
+### Vérifier un titre simple
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <h1 id="main-title">Bienvenue</h1>
+</body>
+</html>
+```
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://…")
+
+title = driver.find_element(By.ID, "main-title")
+assert title.text == "Bienvenue"
+
+driver.quit()
+```
+
+👉 Vérifie :
+
+- présence de l'élément
+- contenu texte exact
+
+---
+
+### Vérifier un formulaire
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <form>
+        <input type="text" id="username" value="admin">
+        <button id="submit-btn">Envoyer</button>
+    </form>
+</body>
+</html>
+```
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://…")
+
+input_field = driver.find_element(By.ID, "username")
+button = driver.find_element(By.ID, "submit-btn")
+
+assert input_field.get_attribute("value") == "admin"
+assert button.is_displayed()
+
+driver.quit()
+```
+
+👉 Vérifie :
+
+- valeur d'un attribut
+- visibilité d'un élément
+
+---
+
+### Vérifier une liste dynamique
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <ul id="items">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+    </ul>
+</body>
+</html>
+```
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://…")
+
+items = driver.find_elements(By.CLASS_NAME, "item")
+
+assert len(items) == 3
+assert items[0].text == "Item 1"
+
+driver.quit()
+```
+
+👉 Vérifie :
+
+- nombre d'éléments
+- ordre dans le DOM
+
+---
+
+### Vérifier un changement après interaction
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="document.getElementById('msg').innerText='OK'">
+        Cliquer
+    </button>
+    <p id="msg"></p>
+</body>
+</html>
+```
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://…")
+
+button = driver.find_element(By.TAG_NAME, "button")
+button.click()
+
+msg = driver.find_element(By.ID, "msg")
+assert msg.text == "OK"
+
+driver.quit()
+```
+
+👉 Vérifie :
+
+- interaction utilisateur
+- mutation du DOM
+
+---
+
+### Vérifier une classe CSS conditionnelle
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="status" class="inactive"></div>
+</body>
+</html>
+```
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://…")
+
+status = driver.find_element(By.ID, "status")
+
+classes = status.get_attribute("class")
+assert "inactive" in classes
+
+driver.quit()
+```
+
+👉 Vérifie :
+
+- état via classes CSS (très courant en frontend moderne)
+
+---
+
+### Wait explicite
+
+Exemple avancé : ajouter des **waits explicites** pour vérifier une condition dans le DOM de manière dynamique (dans le cas où le changement du DOM est lent, par exemple pour attendre l'apparition d'un élément avec un `ID` donné dans une grosse application) :
+
+```python
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "msg"))
+)
+```
+
+---
+
+### PageObject
 
 - Un code de test `Sélénium` est très proche de l'implémentation de la page Web, ce qui rend sa lecture très compliquée. Le pattern architectural `PageObject`, `PageElement` (parfois aussi appelé `HTMLWrapper`) permet de grandement améliorer l'architecture des tests :
 - On décrit dans une classe dédiée les éléments de la page à tester et on abstrait les interactions de l'utilisateur dans des méthodes dédiées.
@@ -164,4 +365,3 @@ Exemple de test utilisant les `PageObject` `LoginPage` et `HomePage` encapsulant
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well. ®
 - Windows is a registered trademark of Microsoft Corporation in the United States and other countries.
 - Other names may be trademarks of their respective owners
-
