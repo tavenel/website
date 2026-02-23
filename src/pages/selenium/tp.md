@@ -31,7 +31,7 @@ Si cela permet un test rapide du produit et un rejeu rapide des tests, ceux-ci s
 
 Afin de créer une véritable automatisation des tests, et pour commencer à s'abstraire de l'environnement d'exécution, nous allons utiliser le robot `Selenium WebDriver` pour coder l'exécution des tests et les vérifications à effectuer.
 
-Récupérer les sources du projet de test : 
+Récupérer les sources du projet de test :
 
 ```sh
 git clone https://git.sr.ht/~toma/selenium
@@ -43,8 +43,8 @@ Ce projet contient un template de projet minimal pour lancer des tests `Selenium
 
 - Le projet est packagé par un build `Gradle`
 - L'ajout des dépendances Sélénium est déjà réalisé dans le `build.gradle` :
-  + Le code de l'API `Selenium WebDriver`
-  + La librairie `JUnit` pour exécuter les tests
+  - Le code de l'API `Selenium WebDriver`
+  - La librairie `JUnit` pour exécuter les tests
 - Un exemple de test simpliste se trouve dans le répertoire `src/test/java`
 - Les tests sont exécutés par le framework de tests unitaires `JUnit` pour `Java`
 - Attention à bien placer vos fichiers de test dans le répertoire `src/test` (et non `src/main`) pour que `JUnit` puisse les exécuter.
@@ -58,13 +58,13 @@ Ce projet contient un template de projet minimal pour lancer des tests `Selenium
 
 - Installer les librairies `selenium` et `unittest` : `pip install unittest selenium`
 - L'ajout des dépendances Sélénium est déjà réalisé dans le projet :
-  + Le code de l'API `Selenium WebDriver`
-  + La librairie `Unittest` pour exécuter les tests
+  - Le code de l'API `Selenium WebDriver`
+  - La librairie `Unittest` pour exécuter les tests
 - Un exemple de test simpliste est fourni : `test_example.py`
 - Les tests sont exécutés par le framework de tests unitaires `Unittest` pour `Python` :
 
 ```sh
-$ python -m unittest test_example.py
+python -m unittest test_example.py
 ```
 
 ## Dans les deux cas
@@ -73,10 +73,10 @@ $ python -m unittest test_example.py
 
 Pour pouvoir exécuter un test d'interface utilisateur dans un navigateur Web, `Selenium WebDriver` délègue les actions à réaliser à un driver spécifique au navigateur. Celui-ci n'est pas inclus dans le template de projet :
 
-+ Récupérer le driver de votre navigateur : [https://www.selenium.dev/documentation/en/webdriver/driver_requirements/](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/) 
-+ En `Java` : il n'est pas obligatoire de mettre à jour le `$PATH` car le chemin vers le driver est codé en dur dans le code du test.
-+ En `Python` : attention à bien mettre à jour le `$PATH` vers le chemin du driver utilisé dans le code du test.
-+ Dans un contexte d'environnement continu, on injecterait cette variable depuis l'environnement d'exécution plutôt que de la coder en dur dans le code.
+- Récupérer le driver de votre navigateur : [https://www.selenium.dev/documentation/en/webdriver/driver_requirements/](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
+- En `Java` : il n'est pas obligatoire de mettre à jour le `$PATH` car le chemin vers le driver est codé en dur dans le code du test.
+- En `Python` : attention à bien mettre à jour le `$PATH` vers le chemin du driver utilisé dans le code du test.
+- Dans un contexte d'environnement continu, on injecterait cette variable depuis l'environnement d'exécution plutôt que de la coder en dur dans le code.
 
 Dans le fichier de test, mettre à jour la ligne de code suivante si nécessaire pour décrire l'emplacement du driver. Attention à modifier le nom de la propriété si le driver n'est pas un driver `Google Chrome` :
 
@@ -98,13 +98,88 @@ L'exemple fourni utilise `Google Chrome`. Si nécessaire, changer le code de l'e
 Exécuter le test fourni en exemple : `$.\gradlew.bat test` (Java) ou `$ python -m unittest test_example.py` (Python)
 
 - Les résultats de test sont disponibles pour chaque test dans le répertoire : `build/reports/test`
-  + En Java, le build `Gradle` ajoute le plugin `build-dashboard` qui permet d'aggréger tous les rapports de build : on pourra donc utiliser le fichier `build/reports/buildDashboard/index.html` comme point d'entrée pour tous les rapports de test.
+  - En Java, le build `Gradle` ajoute le plugin `build-dashboard` qui permet d'aggréger tous les rapports de build : on pourra donc utiliser le fichier `build/reports/buildDashboard/index.html` comme point d'entrée pour tous les rapports de test.
 
 Une fois l'exemple de test correctement exécuté, en s'inspirant de cet exemple et en utilisant les enregistrements de `Selenium IDE`, coder l'automatisation des tests décrits dans la partie précédente.
 
 Attention à bien gérer les problèmes d'état entre les différents tests ! `JUnit` et `Unittest` sont des framework de tests unitaires, qui s'attendent à ce que chaque test soit indépendant et puisse être lancé en parallèle des autres tests.
 
 Note : Les tests sont exécutés à travers le framework `JUnit` ou `Unittest`, qui s'intègre très bien avec la plupart des IDE, il est donc possible de lancer les tests directement depuis l'IDE.
+
+## Exemple et correction
+
+Exemple d'écriture d'un test Selenium pour la _SampleTodoApp_ :
+
+```
+// Arrange
+étant donné la page _SampleTodoApp_ dans son état initial
+
+// Act
+si je clique sur l'élément 3
+
+// Assert
+alors la checkbox doit être activée.
+```
+
+Pour cela :
+
+1. On utilise _Selenium IDE_ pour automatiser les actions de l'utilisateur (ouvrir la page et cliquer sur le 3e élément de la liste).
+2. Dans _Selenium IDE_, cliquer sur `…` à côté du nom du test et choisir `Exporter`. Choisir un framework de test, par exemple _pytest_.
+3. Ajouter le code dans un projet de test, par exemple :
+ - créer un nouveau fichier dans un nouveau répertoire `test-selenium`
+ - dans ce répertoire, installer _pytest_ : `pip install pytest`
+4. Ajouter du code de vérification :
+ - le code généré par _Selenium IDE_ automatise les actions de l'utilisateur, pas les vérifications (partie _Assert_).
+ - pour cela, on veut :
+   1. récupérer le 3e élément de la liste
+   2. vérifier qu'il est bien coché.
+ - on utilise les _Developper Tools_ pour trouver comment récupérer le 3e élément de la liste, et comment vérifier à l'aide du _Domain Object Model_ (_DOM_) du navigateur les éléments à vérifier (ici, que la checkbox est cochée). EN utilisant les _Developper Tools_, on remarque que lorsque l'on coche l'élément, on passe dans le _DOM_ d'une classe : `ng-empty` à `ng-not-empty` pour le 3e élément, et que celui-ci possède un attribut unique pour le sélectionner dans le _DOM_ : `name=li3`.
+ - On ajoute donc dans la partie _Assert_ du test, une vérification après le scénario : l'élément `name=li3` possède la classe `ng-not-empty`.
+
+Cliquer sur le bouton _Afficher la correction_ pour afficher le code de correction.
+
+:::correction
+
+### Exemple de code
+
+```python
+# Generated by Selenium IDE
+import pytest
+import time
+import json
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+
+class TestCheck:
+    def setup_method(self, method):
+        self.driver = webdriver.Firefox()
+        self.vars = {}
+
+    def teardown_method(self, method):
+        self.driver.quit()
+
+    def test_check(self):
+        # Arrange
+        self.driver.get("https://lambdatest.github.io/sample-todo-app/")
+        self.driver.set_window_size(981, 1054)
+
+        # Act
+        self.driver.find_element(By.NAME, "li3").click()
+
+        # Assert
+        checkbox = self.driver.find_element(By.NAME, "li3")
+
+        classes = checkbox.get_attribute("class").split()
+        assert "ng-not-empty" in classes
+```
+
+:::
 
 # Selenium Grid – Industrialisation des tests
 
@@ -127,10 +202,9 @@ Depuis `Grid 4`, le `Hub` est maintenant découpé en sous-composants (`Router`,
 
 Note :
 
-En cas de problème avec l'exécution des tests dans la `Grid`, on pourra utiliser les fonctionnalités d'observabilité de [Selenium Grid](https://www.selenium.dev/documentation/en/grid/grid_4/advanced_features/observability/) pour tracer l'exécution des tests. 
+En cas de problème avec l'exécution des tests dans la `Grid`, on pourra utiliser les fonctionnalités d'observabilité de [Selenium Grid](https://www.selenium.dev/documentation/en/grid/grid_4/advanced_features/observability/) pour tracer l'exécution des tests.
 
 `Selenium Grid 4` introduit également une [API GraphQL](https://www.selenium.dev/documentation/en/grid/grid_4/graphql_support/) qui est très pratique pour interagir avec les `Nodes`.
-
 
 Nous allons donc maintenant séparer :
 
@@ -167,9 +241,9 @@ En Python :
 
 ```python
 self.driver = webdriver.Remote(
-	command_executor='http://127.0.0.1:4444/wd/hub',
-	options=webdriver.ChromeOptions()
-	)
+ command_executor='http://127.0.0.1:4444/wd/hub',
+ options=webdriver.ChromeOptions()
+ )
 ```
 
 Exécuter les tests précédents et vérifier leur bon fonctionnement :
@@ -190,7 +264,7 @@ Pour cela :
 java -jar selenium-server-4.1.1.jar hub
 ```
 
-2. Démarrer un `Node` (pour l'instant sur la même machine). Pour se référencer auprès du `Hub`, il faut définir les points d'accès pour publier et recevoir les événements de test :
+1. Démarrer un `Node` (pour l'instant sur la même machine). Pour se référencer auprès du `Hub`, il faut définir les points d'accès pour publier et recevoir les événements de test :
 
 ```sh
 java -jar selenium-server-4.1.1.jar node \
@@ -198,8 +272,8 @@ java -jar selenium-server-4.1.1.jar node \
 --subscribe-events "tcp://localhost:4443"
 ```
 
-3. Exécuter les tests : `$.\gradlew.bat test` (Java) ou `$ python -m unittest discover` (Python)
-4. Vérifier que l'API du `Hub` a bien reçu l'ordre et exécuté le test, et vérifier dans la console du `Node` que le test a bien été reçu.
+1. Exécuter les tests : `$.\gradlew.bat test` (Java) ou `$ python -m unittest discover` (Python)
+2. Vérifier que l'API du `Hub` a bien reçu l'ordre et exécuté le test, et vérifier dans la console du `Node` que le test a bien été reçu.
 
 Note : Comme décrit précédemment, il est même possible depuis `Grid 4` de séparer le `Hub` en différents composants pour des besoins de déploiement plus complexes.
 
