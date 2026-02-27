@@ -101,6 +101,19 @@ Le cycle de vie DevOps est un cycle continu allant des étapes de planification 
 
 ---
 
+- Stack standard : _Ansible_ et _Terraform_ (souvent en combinaison)
+- **Ansible** :
+  - Outil simple, pour automatisation similaire à un script shell.
+  - Utilise un _playbook_ écrits en YAML : liste de tâches réutilisables écrites par la communauté : installer un package, démarrer un service, …
+  - Très compatible administration "traditionnelle"
+- **Terraform** :
+  - Pour orchestrer des environnements complexes et multi-cloud de manière reproductible et versionnée (via code _HCL_).
+  - Approche DevOps orientée infrastructure (réseaux, VM, load balancers, services cloud …).
+  - Utilise des *providers* pour créer / modifier / supprimer des ressources via les APIs des produits / plateformes (AWS, Azure, GCP, Kubernetes, …)
+  - Maintient un état (_state_) des ressources déployées.
+
+---
+
 ## 🔄 Gestion des versions
 
 - Objectif : segmenter tout changement et gérer un historique : 📜
