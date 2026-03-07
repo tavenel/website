@@ -121,3 +121,9 @@ Le fichier permanent sera alors dans :
 1. **Un script `firewall.sh` fonctionnel**, appliquant l'ensemble de la configuration nftables et assurant la persistance.
 2. **Une capture d'écran ou un rapport** montrant les tests réalisés (`curl`, `ping`, `nmap`…).
 3. **Une explication claire des droits d'exécution du script**, justifiant comment un utilisateur non privilégié peut l'exécuter sans disposer d'un accès root complet.
+
+## Liens
+
+:::link
+Voir aussi le wiki Arch Linux : <https://wiki.archlinux.org/title/Nftables>
+:::
