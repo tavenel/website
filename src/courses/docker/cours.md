@@ -184,7 +184,7 @@ _Docker®_ 🐳
 Docker® est un outil de création, gestion et hébergement de conteneurs applicatifs 🐳
 
 - Compatible Windows, Linux et MacOS 🖥️
-- Utilise des images figées pour générer des conteneurs (version dynamique des images) 📦
+- Utilise des **images** figées pour générer des **conteneurs** (version dynamique des images) 📦
 - La création d'une image est décrite dans un fichier `Dockerfile` 📄
 
 ---
@@ -201,13 +201,17 @@ Un conteneur ne tourne qu'un seul processus 🏗️
 Un conteneur est donc un **processus en isolation** du reste du système, il a : 🐳
 
 - Son propre **namespace** applicatif : ne voit pas les autres processus 🔒
-- Son propre **système de fichiers** (provient de l'_image_) 📁
+- Son propre **système de fichiers** **isolé** (provient de l'_image_) 📁
 - Sa propre **stack réseau** : en principe, _bridge_ simulé par un _namespace_ réseau 🌐
 - Il récupère les **logs de la console** écrits par les applications : `println`, … 📜
 
+:::tip
+D'un point de vue système, un conteneur n'est donc rien d'autre qu'un processus ou un groupe de processus exécutés avec des contraintes et une isolation spécifiques.
+:::
+
 ---
 
-## 🔄 Cycle de vie
+### 🔄 Cycle de vie
 
 Un conteneur peut donc ressembler un peu à une VM mais : 🐳
 
@@ -226,7 +230,50 @@ Si l'on doit lancer plusieurs services dans un conteneur (déconseillé sauf ser
 
 ---
 
-## 📦 Registry
+### Modes d'exécution
+
+#### Interactif
+
+- **Mode interactif** `-it` : pour interagir avec le processus du conteneur via un terminal (ex : bash interactif).
+
+```bash
+docker run -it ubuntu bash
+````
+
+:::tip
+Sans option `-it`, le shell `bash` n'a rien à faire… et termine donc son exécution (et donc le conteneur s'arrête) !
+:::
+
+#### Détaché
+
+- **Mode détaché** `-d` : lance le conteneur en arrière-plan (ex : serveur web, BDD).
+- Docker retourne l'_ID_ du conteneur créé
+- Pour interagir avec le conteneur, on exécute une nouvelle commande (par exemple `bash`) dans le même contexte :
+
+```bash
+docker exec -it <container> bash
+```
+
+---
+
+## 📦Image
+
+- **Template de système de fichiers** utilisé pour créer des conteneurs (similaire à une archive, un installeur, une ISO).
+- **Modèle immuable** qui contient tout le nécessaire pour exécuter une application :
+- Plusieurs conteneurs peuvent être créés à partir de la **même image**
+
+---
+
+### Layers
+
+- Une image est construite en **couches successives**, généralement définies dans un **Dockerfile**.
+- Chaque instruction ajoute une nouvelle couche :
+- Ces couches sont **empilées** pour former l'image finale.
+- Docker **mutualise** les 1ères couches communes à plusieurs images (pas de duplication de données)
+
+---
+
+### 📦 Registry
 
 Docker® utilise des caches locaux et distants pour stocker les images des conteneurs 📦
 
@@ -277,7 +324,7 @@ Il est possible d'utiliser d'autres registries que le hub par défaut comme :
 
 ---
 
-## 🏗️ Architecture de Docker® : les namespaces et les cgroups
+## 🏗️ Architecture de Docker®
 
 Docker utilise massivement deux technologies du noyau Linux pour isoler et associer des ressources aux conteneurs : les `namespaces` et les `cgroups`. 🏗️
 
@@ -346,16 +393,45 @@ Ne jamais stocker de données critiques directement dans le conteneur : bases de
 
 ---
 
+### Rappel : stockage dans un système Linux
+
+- **Partition** :
+  - subdivision logique d'un disque physique (ex : disque `/dev/sda`, partitions `/dev/sda1` et `/dev/sda2`)
+  - possède son propre système de fichiers (_NTFS_, _ext4_, _btrfs_, _zfs_, …)
+- **Point de montage** (mountpoint) :
+  - Chemin permettant d'accéder au contenu d'un système de fichiers
+  - Le système de fichiers de la partition devient accessible via ce point de montage.
+  - Windows : `C:` (partition principale du système), `D:`, `E:`, …
+  - Linux :
+    - arborescence unique : `/` (partition principale du système),
+    - Toute autre partition peut être montée sur n'importe quel répertoire vide (ex: `/dev/sdb1` sur `/data`)
+
+Linux utilise une **arborescence unique** :
+
+```
+
+/ => /dev/sda2 (par exemple)
+├── home => dans /dev/sda2
+├── var => dans /dev/sda2
+├── etc => dans /dev/sda2
+└── data => /dev/sdb1
+
+```
+
+---
+
 ### Volume 📁
 
+- Permet de **stocker des données en dehors du conteneur**
 - Espace de stockage **géré par Docker**
 - Initialisé lors de la création du conteneur. 📦
-- Stocké sur l'hôte Docker
 - Persistant : non détruit à l'arrêt ou à la destruction du conteneur 🔄
 - Partageable entre conteneurs
 - Sauvegardable facilement
-- Possibilité d'utiliser un vrai volume de stockage partagé : `iSCSI`, `FC` ou `NFS` comme `data volume`. 💾
-  - Beaucoup plus robuste 🛡️
+- Stocké sur l'hôte Docker …
+- … ou possibilité d'utiliser un vrai volume de stockage partagé : `iSCSI`, `FC` ou `NFS` comme `data volume`. 💾
+- Le conteneur accède aux données via un **montage**, exactement comme un **mountpoint Linux**.
+- ex : la base de données écrit dans le conteneur dans `/var/lib/mysql` mais les données sont en réalité stockées dans le volume `mydata` en dehors du conteneur.
 
 ```bash
 docker volume create mydata
@@ -757,6 +833,70 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 - **Analysez** vos images, par exemple avec [dive](https://github.com/wagoodman/dive) 🔍
 - Docker utilise _UnionFS_ : ~retirer un fichier d'un layer précédent n'a **aucune influence** sur la taille de l'image~. 📦
 - Utiliser _Docker Slim_ pour réduire drastiquement la taille des images déjà buildées
+
+---
+
+## Debug
+
+- Vérifier le code de sortie du conteneur si différent de 0 (i.e. code d'erreur de l'application principale):
+
+```bash
+docker ps -a
+
+CONTAINER ID   IMAGE         COMMAND     CREATED         STATUS                     PORTS     NAMES
+26a29e53c241   alpine:edge   "/bin/sh"   6 seconds ago   Exited (3) 3 seconds ago             pedantic_satoshi
+```
+
+- Consulter les logs :
+
+```bash
+docker logs <container>
+
+# En temps réel :
+docker logs -f <container>
+```
+
+- Inspecter le conteneur pour obtenir toutes les informations techniques :
+
+```bash
+docker inspect <container>
+```
+
+- "Entrer" dans le conteneur, i.e. exécuter une commande dans le même contexte d'isolation :
+
+```bash
+docker exec -it <container> sh
+```
+
+- Vérifier la configuration réseau :
+  - vérifier les ports exposés par `docker ps`
+  - vérifier la config réseau du conteneur par `docker inspect`
+  - vérifier que l'application fonctionne dans le conteneur (`docker exec …` puis `curl localhost …`)
+  - tester depuis l'hôte : `curl localhost:8080`
+  - vérifier le réseau sur l'hôte : `docker network inspect …`
+
+- Vérifier les volumes :
+  - vérifier la config du volume sur l'hôte : `docker volume inspect …`
+  - vérifier le point de montage dans le conteneur :
+
+```bash
+mount
+ls /data
+```
+
+- Si le conteneur plante au démarrage :
+  - le conteneur s'arrête si l'application principale s'arrête
+  - redémarrer le conteneur en mode interactif avec une autre commande (ex : `bash`) pour lancer le conteneur et s'y connecter sans erreur
+  - vérifier la configuration dans le conteneur
+  - lancer manuellement l'application et observer les erreurs
+
+```bash
+docker run -it image bash
+
+# Dans le conteneur
+mon_application
+…
+```
 
 ---
 
