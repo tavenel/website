@@ -131,7 +131,7 @@ Intégrer `git` dans un IDE permet : 🚀
 - `git worktree` crée plusieurs répertoires de travail pour un même dépôt 🧰  
 - Permet de travailler **simultanément sur plusieurs branches** 🔄🧠
 
-- Utile avec `git --bare` pour créer un dépôt **central** 🏛️ (nu) à partir duquel on peut créer et gérer ces répertoires de travail. 
+- Utile avec `git --bare` pour créer un dépôt **central** 🏛️ (nu) à partir duquel on peut créer et gérer ces répertoires de travail.
 - Exemple : `git worktree add ../mon-projet-feature feature-branch` 🛠️
 - Chaque worktree est **indépendant** 🔐  
   => vous pouvez y faire des commits sans impacter les autres répertoires de travail 🧪
@@ -180,11 +180,11 @@ Intégrer `git` dans un IDE permet : 🚀
 - Blame et log sur certaines lignes seulement : `git blame -L 20,40 my_file` et `git log -L20,40:my_file`
 - Blame sur un block en suivant un `PATTERN` : `git blame -L :'PATTERN' my_file` et `git blame -L :'class MyClass' MyClass.java`
 - Blame en ignorant les espaces et sauts de ligne : `git blame -w`
--  Scheduler une optimisation du dépôt : `git maintenance` et `git maintenance run`
+- Scheduler une optimisation du dépôt : `git maintenance` et `git maintenance run`
 
 ---
 
-- Suivre les fichier(s) / block(s) à travers : 
+- Suivre les fichier(s) / block(s) à travers :
   - Le commit courrant : `git blame -C …`
   - Le commit courrant vs le commit ayant créé le fichier : `git blame -C …`
   - Tous les commits (très utile) : `git blame -C -C -C …`
@@ -230,36 +230,36 @@ sequenceDiagram
 
 ---
 
-6. `git reset --soft HEAD~1` : Annulez le dernier commit en conservant vos modifications. ⚠️  Attention avec l'option `--hard` qui supprime définitivement les modifications
-7. `git stash / git stash pop` : Mettez de côté vos modifications temporairement. Idéal pour switcher rapidement de branche.
-8. `git cherry-pick <commit-hash>` : Appliquez un commit spécifique d'une autre branche.
-9. `git branch -d <branch-name>` : Nettoyez vos branches locales inutilisées.
-10. `git log -- <file>` : Visualisez l'historique d'un fichier spécifique (attention à l'espace après `--`).
+1. `git reset --soft HEAD~1` : Annulez le dernier commit en conservant vos modifications. ⚠️  Attention avec l'option `--hard` qui supprime définitivement les modifications
+2. `git stash / git stash pop` : Mettez de côté vos modifications temporairement. Idéal pour switcher rapidement de branche.
+3. `git cherry-pick <commit-hash>` : Appliquez un commit spécifique d'une autre branche.
+4. `git branch -d <branch-name>` : Nettoyez vos branches locales inutilisées.
+5. `git log -- <file>` : Visualisez l'historique d'un fichier spécifique (attention à l'espace après `--`).
 
 ---
 
-11. `git blame <filename>` : Identifiez qui a modifié chaque ligne de code.
-12. `git bisect` : Trouvez le commit qui a introduit un bug grâce à une recherche dichotomique.
-13. `git merge --abort` : Annulez une fusion problématique.
-14. `git log --grep="xxx"` : Recherchez dans les messages de commit.
-15. `git tag -a v1.0 -m "Version 1.0"` : Marquez les moments importants de votre projet avec des tags.
+1. `git blame <filename>` : Identifiez qui a modifié chaque ligne de code.
+2. `git bisect` : Trouvez le commit qui a introduit un bug grâce à une recherche dichotomique.
+3. `git merge --abort` : Annulez une fusion problématique.
+4. `git log --grep="xxx"` : Recherchez dans les messages de commit.
+5. `git tag -a v1.0 -m "Version 1.0"` : Marquez les moments importants de votre projet avec des tags.
 
 ---
 
-16. `git clean -fd` : Nettoyez votre espace de travail. ⚠️utilisez d'abord `git clean -n` pour prévisualiser les suppressions
-17. `git reflog` : Visualisez l'historique de toutes les opérations Git.
-18. `git rebase -i HEAD~<n>` : Réorganisez vos commits. ⚠️ À éviter sur des branches partagées.
-19. `git revert <commit-hash>` : Annulez proprement un commit sans réécrire l'historique.
-20. `git fetch --all --prune` : Synchronisez et nettoyez votre repo en une commande.
+1. `git clean -fd` : Nettoyez votre espace de travail. ⚠️utilisez d'abord `git clean -n` pour prévisualiser les suppressions
+2. `git reflog` : Visualisez l'historique de toutes les opérations Git.
+3. `git rebase -i HEAD~<n>` : Réorganisez vos commits. ⚠️ À éviter sur des branches partagées.
+4. `git revert <commit-hash>` : Annulez proprement un commit sans réécrire l'historique.
+5. `git fetch --all --prune` : Synchronisez et nettoyez votre repo en une commande.
 
 ---
 
-21. `git log --graph --oneline --all` : Visualisez graphiquement l'historique de toutes vos branches.
-22. `git log --name-status` : Affiche le nom des fichiers modifiés (et leur status, sinon `--name-only`)
-23. `git log --source --all` : Ajoute l'information de branche pour chaque commit
-24. `git diff --staged` : Examinez les modifications qui sont dans la staging area avant de commiter.
-25. `git show <commit-hash>` : Affichez les détails complets d'un commit spécifique.
-26. `git archive` : crée une archive contenant les fichiers d'un commit ou d'une branche sans inclure l'historique Git
+1. `git log --graph --oneline --all` : Visualisez graphiquement l'historique de toutes vos branches.
+2. `git log --name-status` : Affiche le nom des fichiers modifiés (et leur status, sinon `--name-only`)
+3. `git log --source --all` : Ajoute l'information de branche pour chaque commit
+4. `git diff --staged` : Examinez les modifications qui sont dans la staging area avant de commiter.
+5. `git show <commit-hash>` : Affichez les détails complets d'un commit spécifique.
+6. `git archive` : crée une archive contenant les fichiers d'un commit ou d'une branche sans inclure l'historique Git
 
 ---
 
@@ -330,6 +330,7 @@ sequenceDiagram
 - [Documentation sur les hooks][git-hooks] et [exemples pour les Ops](https://blog.wescale.fr/vers-linfrastructure-craftsmanship-avec-les-git-hooks)
 - [Utiliser git pour gérer ses dotfiles (atlassian)](https://www.atlassian.com/fr/git/tutorials/dotfiles) et [Armand Philippot](https://www.armandphilippot.com/article/dotfiles-git-fichiers-configuration)
 - <https://alchemists.io/articles/git_configuration>
+- <https://nesbitt.io/2026/02/05/git-magic-files.html> : gitignore and co
 - [A Git story: Not so fun this time (les origines de Git)](https://blog.brachiosoft.com/en/posts/git/)
 
 [git-scm]: https://git-scm.com/doc
@@ -348,7 +349,6 @@ sequenceDiagram
 [laforge-workflows]: https://lafor.ge/gitworkflow/
 [pa-champin]: https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-git/
 
-[git-logo]: https://git-scm.com/images/logos/downloads/Git-Logo-1788C.svg "The Git logo"
 [sourcetree-ui]: https://wac-cdn.atlassian.com/dam/jcr:580c367b-c240-453d-aa18-c7ced44324f9/hero-mac-screenshot.png?cdnVersion=542 "Sourcetree UI"
 [gitkraken-ui]: https://www.gitkraken.com/wp-content/uploads/2022/10/1-visual-commit-graph-1600x900-1-1024x576.png.webp "Gitkraken UI"
 
@@ -359,4 +359,3 @@ sequenceDiagram
 - [Git Logo](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.svg) by [Jason Long](https://twitter.com/jasonlong) is licensed under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
 - Other names may be trademarks of their respective owners
-
