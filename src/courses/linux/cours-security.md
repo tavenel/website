@@ -274,8 +274,8 @@ D'autres politiques existent, par exemple :
   - niveaux de classification : _Top Secret_, _Secret_, …
   - Environnements gouvernementaux ou militaires.
 - **mcs** (Multi-Category Security) :
- - variante simplifiée de MLS (catégories sans hiérarchie)
-  - conteneurs, environnements multi-utilisateurs.
+- variante simplifiée de MLS (catégories sans hiérarchie)
+- conteneurs, environnements multi-utilisateurs.
 
 ---
 
@@ -321,7 +321,6 @@ aa-genprof nginx # Création de profile
 aa-logprof # Génération automatique de profil depuis les logs
 ```
 
-
 ---
 
 ## Seccomp - Secure Computing Mode
@@ -330,7 +329,7 @@ aa-logprof # Génération automatique de profil depuis les logs
   - Les processus Linux disposent de centaines de _syscalls_ (appels système).
   - \+ de syscalls disponibles = \+ de surface d'attaque.
 - Fonctionnalité du noyau Linux.
-- Filtre les *syscalls* (appels système) qu'un processus peut exécuter.
+- Filtre les _syscalls_ (appels système) qu'un processus peut exécuter.
 - Principe du **moindre privilège**.
 - Peu d'impact sur la performance.
 - Deux modes :
@@ -391,6 +390,7 @@ aa-logprof # Génération automatique de profil depuis les logs
 ## 📚 Ressources
 
 :::link
+
 - Voir le [TP sur SSH et GPG](/linux/tp-ssh-gpg)
 - Voir le [TP sur la sécurité d'un système Linux](/linux/tp-security)
 - Voir aussi [GTF0bins : exploits classiques sur Linux (tuto)](https://blog.stephane-robert.info/docs/securiser/menaces/gtfobins/)
@@ -399,7 +399,8 @@ aa-logprof # Génération automatique de profil depuis les logs
   - guide : <https://blog.stephane-robert.info/docs/securiser/durcissement/selinux/>
 - Guide Ubuntu AppArmor : <https://ubuntu.com/server/docs/security-apparmor>
   - guide : <https://blog.stephane-robert.info/docs/securiser/durcissement/apparmor/>
+- Voir le wiki Arch Linux : <https://wiki.archlinux.org/title/Security>
+
 :::
 
 ---
-
