@@ -114,6 +114,7 @@ tags:
 - [Site web Kubernetes](https://kubernetes.io/) 🌐
 - [Introduction à k8s](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/) 📚
 - Cours sur Kubernetes :
+  - [Formation complète MicroK8s et Kubernetes en français du niveau débutant à expert](https://github.com/NDXDeveloper/formation-microk8s)
   - [uptime-formation](https://supports.uptime-formation.fr/05-kubernetes/01_cours_presentation_k8s/) 📚
   - [stephane-robert](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/introduction/) 📚
   - [vidéos xavki](https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5) 📹
