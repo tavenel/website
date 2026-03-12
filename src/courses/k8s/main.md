@@ -277,20 +277,20 @@ Voir aussi :
 
 ---
 
-2. **Kubespray** 🔄
+1. **Kubespray** 🔄
    - Utilise `Ansible` pour (re)déployer automatiquement un cluster
    - Compatible _bare-metal_ et _cloud_ ☁️
 
 ---
 
-3. **Rancher (RKE)** 🏗️
+1. **Rancher (RKE)** 🏗️
    - Plateforme complète pour gérer des clusters Kubernetes
    - Propose des fonctionnalités avancées comme la gestion multi-cluster 🌐
    - Offre une interface graphique intuitive 🖥️
 
 ---
 
-4. **K3s (Rancher Labs)** 📦
+1. **K3s (Rancher Labs)** 📦
    - Version allégée de Kubernetes conçue pour les environnements embarqués
    - Consomme moins de ressources que Kubernetes standard 🔋
    - Idéal pour les systèmes à faible puissance ⚡
@@ -299,48 +299,48 @@ Voir aussi :
 
 ---
 
-5. **K0s (CNCF)** 📦
+1. **K0s (CNCF)** 📦
    - Autre version allégée Kubernetes
    - Très minimale, aucun composant additionnel 🔧
    - Compatible on-premise, edge, IoT, … 🌍
 
 ---
 
-6. **OpenShift** 🏢
+1. **OpenShift** 🏢
    - Distribution propriétaire de Red Hat basée sur Kubernetes
    - Inclut des fonctionnalités supplémentaires comme l'orchestration d'applications 🛠️
    - Forte sécurité et conformité 🔒
 
 ---
 
-7. **Docker Kubernetes Service (DKS)** 🐳
+1. **Docker Kubernetes Service (DKS)** 🐳
    - Surveillance intégrée du cluster et des applications 👁️
    - Nombreux drivers storage 💾
 
 ---
 
-8. **MicroK8s (Ubuntu)** 📦
+1. **MicroK8s (Ubuntu)** 📦
    - Distribution légère et sécurisée de Kubernetes
    - Conçue pour les environnements Ubuntu 🐧
    - Propose des fonctionnalités avancées comme l'installation de paquets 📦
 
 ---
 
-9. **Minikube** 🧪
+1. **Minikube** 🧪
    - Version légère pour le développement et le test
    - Fonctionne sur un seul ordinateur 💻
    - Idéal pour débutants et environnement de développement 🛠️
 
 ---
 
-10. **Docker Desktop** 🐳
+1. **Docker Desktop** 🐳
     - Intègre Kubernetes nativement
     - Offre une expérience utilisateur simplifiée 🖥️
     - Adapté aux développeurs utilisant Docker 🛠️
 
 ---
 
-11. **Kind (Kubernetes IN Docker)** 🧪
+1. **Kind (Kubernetes IN Docker)** 🧪
     - Déploie Kubernetes dans un conteneur pour le développement et le test
     - Crée rapidement un ou plusieurs clusters localement 🏗️
     - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, … 🔄
@@ -349,7 +349,7 @@ Voir aussi :
 
 ---
 
-12. **Talos Linux** 🐧
+1. **Talos Linux** 🐧
     - Distribution Linux dédiée
     - OS immuable : pas de SSH, shell, … 🔒
 
@@ -671,6 +671,25 @@ flowchart TD
 - Un DNS dédié (_service headless_) : 📡
   - Load-balancing sur tous les pods du set ⚖️
   - Sélection d'un pod en particulier 🎯
+
+:::tip
+Le _StatefulSet_ est utile lorsque l'on doit pouvoir différencier et sélectionner les différentes instances à déployer (par exemple BDD SQL : Pod `primaire` vs Pod `secondaire`)
+:::
+
+---
+
+#### Deployment vs StatefulSet
+
+| Caractéristique | Deployment | StatefulSet |
+|----------------|------------|-------------|
+| **Nom des pods** | Aléatoire (app-xxx-yyy) | Ordonné (app-0, app-1, app-2) |
+| **Identité** | Interchangeable | Unique et stable |
+| **Nom DNS** | Variable | Stable et prévisible |
+| **Ordre de déploiement** | Parallèle | Séquentiel (0→1→2) |
+| **Ordre de suppression** | Aléatoire | Inverse (2→1→0) |
+| **Stockage** | Partagé ou éphémère | Dédié par pod |
+| **Persistance après redémarrage** | Non garantie | Garantie |
+| **Scaling** | Parallèle | Séquentiel |
 
 ---
 
