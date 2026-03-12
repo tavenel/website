@@ -656,6 +656,7 @@ created: 2024-10-17
 - <https://aider.chat> : AI pair programming (TUI in terminal)
 - Local LLM : `ollama`, <https://terminaltrove.com/parllama/> (TUI)
 - [Extension Firefox et Chrome pour alerter sur les sites générés par IA](https://next.ink/164873/outils-next-une-extension-chrome-et-firefox-pour-etre-alerte-des-sites-genai/)
+
 ### MCP
 
 - Liste de serveurs MCP : <https://github.com/modelcontextprotocol/servers>
@@ -856,6 +857,7 @@ created: 2024-10-17
 - <https://github.com/kubernetes-sigs/kui> : version graphique de `kubectl`
 - <https://k8slens.dev/> : IDE dédié à Kubernetes avec vision des ressources
 - <https://github.com/kbterm/kubeterm> : application de dashboard k8s (desktop et mobile)
+- <https://github.com/mvklingeren/sk8r> : dashboard des ressources et métriques de consommation
 
 ##### Génération de Yaml
 
