@@ -1020,6 +1020,7 @@ mon_application
 ## Détails techniques d'implémentation
 
 - [Documentation sur les Namespace et les Cgroups](https://medium.com/@kasunmaduraeng/docker-namespace-and-cgroups-dece27c209c7)
+- [Video décrivant ce qu'est réellement un conteneur : Containers Don't Exist - Your Kernel Is Lying to You](https://youtu.be/DUgzXX2_aDQ?si=rHNkxWPwaJygTjfV)
 - [Au final… qu'est-ce qu'un conteneur ? (blog une-tasse-de.cafe)](https://une-tasse-de.cafe/blog/conteneur/)
 - [Building a Linux container by hand using namespaces](https://www.redhat.com/en/blog/building-container-namespaces)
 - [Building a container by hand using namespaces: The mount namespace](https://www.redhat.com/en/blog/mount-namespaces)
