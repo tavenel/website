@@ -211,6 +211,27 @@ D'un point de vue système, un conteneur n'est donc rien d'autre qu'un processus
 
 ---
 
+```mermaid
+flowchart TB
+
+subgraph Host["Machine hôte"]
+    Kernel["Linux Kernel"]
+
+    subgraph Container["Conteneur"]
+        PID1["Processus principal (PID = 1)"]
+        Processes["Processus fils"]
+        FS["Système de fichiers isolé"]
+        Net["Namespace réseau"]
+        Env["Variables d'environnement"]
+    end
+end
+
+Kernel --> PID1
+PID1 --> Processes
+```
+
+---
+
 ### 🔄 Cycle de vie
 
 Un conteneur peut donc ressembler un peu à une VM mais : 🐳
@@ -270,6 +291,25 @@ docker exec -it <container> bash
 - Chaque instruction ajoute une nouvelle couche :
 - Ces couches sont **empilées** pour former l'image finale.
 - Docker **mutualise** les 1ères couches communes à plusieurs images (pas de duplication de données)
+
+```mermaid
+flowchart TB
+
+subgraph CONTAINER["Container"]
+    merged["Merged single filesystem view (/ )"]
+end
+
+subgraph STORAGE["Container Filesystem Layers"]
+    write["Writable layer (container layer)"]
+    img3["COPY src/ /app => Image layer 3 : application files"]
+    img2["RUN npm install => Image layer 2 : dependencies"]
+    img1["FROM alpine => Image layer 1 : base OS (Ubuntu / Alpine)"]
+end
+
+write --> img3
+img3 --> img2
+img2 --> img1
+```
 
 ---
 
@@ -340,6 +380,35 @@ Docker utilise massivement deux technologies du noyau Linux pour isoler et assoc
   - `IPC` (Interprocess communication)
   - `User` (expérimental)
   - `Network`
+
+---
+
+```mermaid
+flowchart TB
+
+subgraph HOST["Linux Host Process Tree"]
+    systemd["systemd (PID 1)"]
+    dockerd["dockerd"]
+    containerd["containerd"]
+    shim["containerd-shim"]
+    hostProc["Process1 associé au conteneur (PID 4321 on host)"]
+    execProc["docker exec container_id process2 (PID 4335 on host)"]
+end
+
+systemd --> dockerd
+dockerd --> containerd
+containerd --> shim
+shim --> hostProc
+hostProc --> execProc
+
+subgraph CONTAINER["Container (PID Namespace)"]
+    pid1["Main process : process1 (PID 1)"]
+    execInside["Process from docker exec : process2 (PID 2)"]
+end
+
+hostProc -.lié à.-> pid1
+execProc -.lié à.-> execInside
+```
 
 ---
 
@@ -434,12 +503,37 @@ Linux utilise une **arborescence unique** :
 - ex : la base de données écrit dans le conteneur dans `/var/lib/mysql` mais les données sont en réalité stockées dans le volume `mydata` en dehors du conteneur.
 
 ```bash
-docker volume create mydata
-docker run -v mydata:/var/lib/mysql mysql
+docker volume create db_data
+docker run -v db_data:/var/lib/mysql mysql
 ```
 
-- `mydata` : volume Docker
+- `db_data` : volume Docker
 - `/var/lib/mysql` : chemin dans le conteneur
+
+```mermaid
+flowchart TB
+
+subgraph HOST["Docker Host"]
+    volume["Docker Volume\n/var/lib/docker/volumes/db_data"]
+end
+
+subgraph CONTAINER["Container"]
+    
+    subgraph FS["Container filesystem (merged view / )"]
+        root["/"]
+        etc["/etc"]
+        app["/app"]
+        data["/var/lib/mysql (mount point)"]
+    end
+
+end
+
+root --> etc
+root --> app
+root --> data
+
+volume <-. mounted as .-> data
+```
 
 ---
 
@@ -536,6 +630,33 @@ Voir la section sur les volumes de la [cheatsheet sur Docker®](https://www.aven
 docker network create mynet
 docker run --network mynet --name web nginx
 docker run --network mynet busybox ping web
+```
+
+```mermaid
+flowchart LR
+
+subgraph HOST["Host Network Namespace"]
+    hostProc["Container process (PID 4321)"]
+    vethHost["veth-host"]
+    bridge["docker0 bridge"]
+    eth0["Host interface (eth0)"]
+end
+
+subgraph CONTAINER["Container Network Namespace"]
+    pid1["Main process (PID 1)"]
+    ethCont["eth0 (container interface)"]
+    vethCont["veth-container"]
+end
+
+pid1 --> ethCont
+ethCont --- vethCont
+
+vethCont <-- veth pair --> vethHost
+
+vethHost --> bridge
+bridge --> eth0
+
+hostProc -.appartient au namespace réseau du conteneur.-> pid1
 ```
 
 ---
@@ -635,9 +756,88 @@ docker run --network host nginx
 ### 🧩 Layers
 
 - Les instructions du `Dockerfile` (`ADD`, …) créent chacun une mini-image (_layer_) 🧩
+- La couche suivante hérite de **tout les contexte** de la couche précédente : _user_, _workdir_, … (notamment lors du `FROM`)
 - L'image finale est l'empilement de tous les _layers_ 🧩
 - En cas de modification, seuls les nouveaux _layers_ sont modifiés ! 🔄
 - Les images utilisent _UnionFS_ : chaque layer **ajoute** les changements du filesystem (nouveau fichier, suppression, …) au layer précédent => **un layer ne supprime jamais de données dans l'image finale** 🧩
+
+---
+
+#### Exemple de layers
+
+```Dockerfile
+# Dockerfile A
+FROM node:20-alpine
+RUN apk add curl
+COPY appA /app
+```
+
+```Dockerfile
+# Dockerfile B
+FROM node:20-alpine
+RUN apk add curl
+COPY appB /app
+```
+
+Images construites :
+
+```
+Image A
+ ├ Layer 3 : appA
+ ├ Layer 2 : curl
+ └ Layer 1 : node
+
+Image B
+ ├ Layer 3 : appB
+ ├ Layer 2 : curl
+ └ Layer 1 : node
+```
+
+```mermaid
+flowchart TB
+
+%% Dockerfiles
+subgraph DOCKERFILES["Dockerfiles"]
+    DF1["Dockerfile A"]
+    DF2["Dockerfile B"]
+end
+
+%% Shared layers
+subgraph LAYERS["Shared Image Layers"]
+    L1["Layer 1 : base image (node:20-alpine)"]
+    L2["Layer 2 : RUN apk add curl"]
+end
+
+%% Image specific layers
+subgraph IMG_A["Image A"]
+    A3["Layer 3 : COPY appA"]
+end
+
+subgraph IMG_B["Image B"]
+    B3["Layer 3 : COPY appB"]
+end
+
+%% Containers
+subgraph CONTAINERS["Running Containers"]
+    C1["Container A1 Writable layer"]
+    C2["Container A2 Writable layer"]
+    C3["Container B1 Writable layer"]
+end
+
+%% Build relationships
+DF1 --> L1
+DF2 --> L1
+
+L1 --> L2
+
+L2 --> A3
+L2 --> B3
+
+%% Containers using images
+A3 --> C1
+A3 --> C2
+B3 --> C3
+```
 
 ---
 
@@ -648,6 +848,64 @@ docker run --network host nginx
   - Tout le reste du layer est détruit à la fin 🗑️
   - Il ne reste que les instructions après le dernier `FROM …` 🏗️
 - Très utile pour séparer une partie _dev_ ou _build_ de la _prod_ 🏗️
+
+---
+
+#### Exemple de multistage
+
+```Dockerfile
+FROM golang:1.22 AS builder
+WORKDIR /src
+COPY . .
+RUN go build -o app
+
+FROM alpine
+COPY --from=builder /src/app /app
+CMD ["/app"]
+```
+
+Image construite :
+
+```
+Image builder
+ ├ Layer 2 : RUN go build -o app
+ └ Layer 1 : COPY . .
+
+Image finale
+ └ Layer 1 : COPY --from-builder /src/app /app
+```
+
+```mermaid
+flowchart TB
+
+%% Build stage
+subgraph STAGE1["Stage 1 : builder"]
+    S1L1["Layer 1 : FROM golang:1.22"]
+    S1L2["Layer 2 : install build dependencies"]
+    S1L3["Layer 3 : COPY source code"]
+    S1L4["Layer 4 : RUN go build → app binary"]
+end
+
+S1L1 --> S1L2 --> S1L3 --> S1L4
+
+%% Final stage
+subgraph STAGE2["Stage 2 : runtime (final image)"]
+    S2L1["Layer 1 : FROM alpine"]
+    S2L2["Layer 2 : COPY --from=builder /app"]
+end
+
+S2L1 --> S2L2
+
+%% Artifact transfer
+S1L4 -.copy artifact.-> S2L2
+
+%% Final container
+subgraph CONTAINER["Running Container"]
+    FS["Merged filesystem"]
+end
+
+S2L2 --> FS
+```
 
 ---
 
@@ -773,6 +1031,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
   - **Layers optimisés** ? ✅
   - Failles de **sécurité** ? Image **maintenue** ? 🔒
   - Ne pas utiliser le tag `latest` mais **préciser un tag** avec numéro de version ou (mieux) directement le `digest` : `FROM NOM_IMAGE@sha256:…`. Voir : `docker manifest inspect NOM_IMAGE` et l'outil `dive`. 🔍
+  - **Tout** ce qui est dans l'image récupérée depuis `FROM` est hérité : `USER`, `WORKDIR`, `CMD`, …
 
 ---
 
