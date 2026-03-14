@@ -765,14 +765,14 @@ docker run --network host nginx
 
 #### Exemple de layers
 
-```Dockerfile
+```dockerfile
 # Dockerfile A
 FROM node:20-alpine
 RUN apk add curl
 COPY appA /app
 ```
 
-```Dockerfile
+```dockerfile
 # Dockerfile B
 FROM node:20-alpine
 RUN apk add curl
@@ -853,7 +853,7 @@ B3 --> C3
 
 #### Exemple de multistage
 
-```Dockerfile
+```dockerfile
 FROM golang:1.22 AS builder
 WORKDIR /src
 COPY . .
