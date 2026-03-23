@@ -131,7 +131,6 @@ created: 2024-10-17
 - 📦 Package manager (sur-couche) => `helm` (et secrets : <https://github.com/jkroepke/helm-secrets>)
 - 🔎 Linter (vérification fichiers) => `kubeconform`, `kube-score`
 - [external DNS](https://github.com/kubernetes-sigs/external-dns) : synchronisation Ingress / Service avec DNS externe (Cloud, …)
-- <https://chaos-mesh.org/> : chaos computing dans un cluster
 - `kubevirt` : Ajout de la gestion de VMs dans Kubernetes
 - `etcd` : store clé / valeur de k8s
   - [auger](https://github.com/etcd-io/auger?tab=readme-ov-file#use-cases) : Décode la data d'`etcd`
@@ -521,6 +520,8 @@ created: 2024-10-17
 - Chaos Computing :
   - <https://github.com/fpaparoni/chaos-room>
   - <https://github.com/lucky-sideburn/kubeinvaders>
+  - <https://chaos-mesh.org/> : chaos computing dans un cluster
+  - `fault` : chaos orienté microservices. Tuto : <https://une-tasse-de.cafe/blog/fault/>
 
 ## IA
 
