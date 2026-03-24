@@ -30,15 +30,157 @@ Ce projet vise à faire concevoir, déployer et exploiter un **Virtual Data Cent
 - Notions de réseau (VLAN, NAT, routage de base)
 - Accès à un hyperviseur (ou VMs) pour le lab : au moins 6 VMs, ou accès à un environnement cloud pour provisionner des VMs
 
-### Topologie recommandée (lab)
+## 🎯 Objectif global du projet
 
-- **ordinateur personnel ou bastion** : 2 vCPU, 4GB RAM. Outils : git, terraform, ansible
-- **opennebula-master** : 4 vCPU, 8GB RAM, 60 Go disque. Frontend OpenNebula, database, sunstone, stockage local. Ubuntu ou AlmaLinux.
-- **opennebula-compute-1** : 4 vCPU, 8GB RAM, 80 Go disque, virtualisation activée. Ubuntu ou AlmaLinux.
-- **monitoring** : 2 vCPU, 4–8GB RAM. Prometheus + Loki + Grafana (peut être séparé en 2 VMs si besoin)
-- **k8s-node(s)** : 1–3 VMs pour k8s (taille selon tests)
+Le projet vise donc à concevoir une **plateforme cloud basée sur OpenNebula** avec une dimension DevOps / Platform Engineering permettant :
 
-> Remarque : pour des TP, on peut réduire la mémoire et le CPU si l'infra hôte est limitée.
+- de fournir des **environnements isolés par tenant (multi-tenancy)**
+- de **provisionner automatiquement une infrastructure complète**
+- de permettre le **déploiement rapide de clusters Kubernetes**
+- d'intégrer **observabilité + automatisation (DevOps-ready)**
+
+:::tip
+Autrement dit : construire une **offre "VDC-as-a-Service"** orientée onboarding rapide, donc un mini équivalent de AWS/GCP… basé sur OpenNebula
+:::
+
+### 🧭 Plateforme
+
+👉 Ce que vous construisez réellement : une **plateforme interne de type cloud provider** avec :
+
+| Niveau        | Rôle                  |
+| ------------- | --------------------- |
+| OpenNebula    | IaaS                  |
+| VDC           | Boundary multi-tenant |
+| Automation    | Provisioning          |
+| Kubernetes    | PaaS                  |
+| Observabilité | Exploitabilité        |
+
+## 🧱 Rôle du VDC
+
+Un **VDC (Virtual Data Center)** est :
+
+- un **environnement isolé**
+- regroupant :
+  - compute (VMs)
+  - réseau(x) isolé(s)
+  - stockage
+- associé à :
+  - un ou plusieurs groupes utilisateurs
+  - des quotas et ACL
+
+➡️ Il constitue **l'unité de multi-tenancy principale**
+
+```
+VDC Tenant A
+├── Groupes utilisateurs
+├── Réseaux (privé, public)
+├── Templates VM
+├── Images
+├── Quotas
+└── ACL
+VDC Tenant B
+├── Groupes utilisateurs
+├── Réseaux (privé, public)
+├── Templates VM
+├── Images
+├── Quotas
+└── ACL
+…
+```
+
+:::link
+Voir aussi : <https://opennebula.io/blog/experiences/managing-virtual-data-centers-with-opennebula-zones/>
+:::
+
+### 🧠 Architecture
+
+Le VDC n'est pas juste une feature OpenNebula, c'est **le produit final à industrialiser**
+
+Chaque tenant doit recevoir un VDC prêt à l'emploi avec :
+
+- réseau préconfiguré
+- templates VM
+- images
+- quotas
+- droits utilisateurs
+
+## 🚀 Objectif clé : onboarding automatisé d'un tenant
+
+- C'est le cœur du projet : 👉 _Créer un VDC = onboarder un client_
+- Un client (tenant) doit pouvoir (en quelques minutes) :
+  - **demander un VDC**
+  - **déployer un cluster K8s**
+  - **consulter ses métriques**
+
+### Exemple de pipeline d’onboarding automatisé
+
+1. Création du VDC
+2. Création des groupes utilisateurs
+3. Allocation des ressources :
+   - clusters
+   - datastores
+   - réseaux
+4. Déploiement des templates :
+   - VM Linux
+   - images cloud-init ou Packer
+5. Configuration réseau
+6. Injection des accès (SSH / credentials) avec credentials isolés par tenant
+
+## Exemple de produit final
+
+Exemple de produit final : modules Terraform personnalisés permettant l'onboarding d'un tenant : création d'un VDC et d'un cluster k8s
+
+```hcl
+module "tenant_vdc" {
+  name        = "tenant-a"
+  cpu_quota   = 100
+  ram_quota   = 256GB
+  networks    = ["private", "public"]
+}
+
+module "k8s_vdc" {
+  vdc = "vdc-a"
+  workers = 2
+}
+```
+
+:::tip
+Ceci est la vision finale du projet : on pourra dans un premier temps se limiter à un exemple de code Terraform à modifier pour chaque tenant.
+:::
+
+### Exemple de découpage
+
+1. Terraform : 1 VM
+   - accès API OpenNebula
+   - création d'une VM
+   - utilisation d'un template existant ou créé simplement
+2. Terraform : N VMs + réseau
+   - `count` ou `for_each`
+3. Ansible : exécution de playbook dans les VMs créées par terraform
+   - provisioning (Terraform) et inventaire dynamique (Terraform output)
+   - configuration (Ansible) : users, packages, Docker / container runtime, sécurité de base, …
+4. Observabilité : monitoring/logs(/traces) :
+   - Monitoring des VMs : Prometheus + Grafana (node exporter sur chaque VM)
+   - Logs centralisés avec Loki + Promtail + Grafana (agent Loki / promtail)
+5. Kubernetes : cluster automatisé
+   - déploiement des nodes : VMs terraform
+   - configuration des nodes : Ansible
+   - `kubeadm init` (master)
+   - `kubeadm join` (workers)
+6. Assembler toutes les briques : VDC complet + onboarding
+   - module Terraform pour créer un VDC
+   - module Terraform pour déployer un cluster k8s dans un VDC
+   - dahsboard par tenant
+
+## 🚀 Critères de notation
+
+- ✅ **Industrialisation** :
+  - VDC reproductible
+  - templates standardisés
+- ⚡ **Rapidité** : onboarding < 10 min
+- 🔁 **Idempotence** : relancer sans casser
+- 📈 **Scalabilité** : N tenants sans redesign
+- 🔍 **Observabilité** : visibilité complète par tenant
 
 ### Livrables finaux
 
@@ -65,6 +207,62 @@ Ce projet vise à faire concevoir, déployer et exploiter un **Virtual Data Cent
 
 - Mettre en place un catalogue d'images automatisé (Packer)
 - Déployer Grafana Alertmanager avec notification (email / slack)
+
+## ⚙️ Enjeux techniques liés au VDC
+
+### Isolation stricte
+
+- isolation réseau
+- isolation compute
+- isolation IAM (groupes / ACL)
+
+:::warn
+➡️ Le tenant **ne voit jamais l'infrastructure physique**
+:::
+
+### Allocation dynamique des ressources
+
+- un VDC = mapping vers :
+
+  - clusters
+  - datastores
+  - réseaux
+
+➡️ Possibilité de :
+
+- partager des ressources
+- ou dédier des pools
+
+### Modèle "self-service"
+
+- ➡️ Un VDC est proche d'un modèle **mini cloud public interne** avec :
+- admin VDC :
+  - crée réseaux, templates
+  - gère utilisateurs
+- utilisateurs :
+  - déploient leurs VMs / services
+
+## ☸️ Déploiement simplifié de Kubernetes
+
+- Le VDC sert de **substrat pour K8s**
+- Il est attendu dans chaque VDC :
+  - templates pour _master nodes_ et _worker nodes_
+  - automatisation : (cloud-init / Packer) / Ansible / Terraform
+  - provisioning rapide d'un cluster
+
+## 📊 Observabilité obligatoire
+
+- 👉 Objectif : donner au tenant une **vision complète de son VDC** ➡️ sans fuite inter-tenant :
+
+- **Infrastructure** :
+  - métriques VM / hyperviseur
+  - capacité (CPU, RAM, storage)
+- **Kubernetes** :
+  - métriques cluster
+  - logs
+  - events
+- **Tenant** :
+  - visibilité isolée par VDC
 
 ## Conception & préparation
 
