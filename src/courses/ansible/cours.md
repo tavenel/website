@@ -494,6 +494,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - Tutoriel Ansible débutant : <https://alemorvan.frama.io/formatux.fr-support/SupportLinux-Automatismes-DevOPS.pdf>
   - correction du tutoriel : <https://docs.formatux.fr/DEVOPS-021-Ansible-Niveau-2-TD-Corrections.pdf>
 - Liste complète de tutoriels Ansible en français : <https://gitlab.com/xavki/presentation-ansible-fr>
+- Ansible par la pratique : <https://formations.microlinux.fr/ansible/a-propos/>
 - [Ansible : cas pratique (1er partie)](https://blog.levassb.ovh/post/ansible-study-case/)
 - [Cours et TPs Ansible](https://supports.uptime-formation.fr/06-ansible/cours1/)
 - [AWX : interface Web de gestion d'ansible](https://github.com/ansible/awx)
@@ -503,17 +504,16 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - Trouver des Plugins et des Rôles :
   - Modules et plugins standard : [lien](https://docs.ansible.com/ansible/latest/collections/index_module.html)
   - Plugins et rôles de la communauté : <https://galaxy.ansible.com>
-- Le [format Yaml](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax) utilisé par les playbooks : 
+- Le [format Yaml](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax) utilisé par les playbooks :
 - Exemples de Playbooks :
   - <https://github.com/ansible/ansible-examples>
-	- <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
+   	- <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
 - Voir aussi le [cours sur les pratiques DevOps](/devops)
 
 ---
 
-## Legal 
+## Legal
 
 - Ansible® is a registered trademark of RED HAT, INC.
 - Vault is a trademark and brand of HashiCorp, Inc.
 - Other names may be trademarks of their respective owners
-
