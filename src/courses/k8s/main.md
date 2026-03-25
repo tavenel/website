@@ -155,9 +155,13 @@ flowchart TD
 
 - **Container Networking Interface** (_CNI_) : 🌍
   - Permet la communication réseau au sein du cluster 🌐
+  - Utilise un _Software-Defined Networking_ (_SDN_) pour gérer la configuration réseau globalement (`NetworkPolicies`, …)
   - Parfois intégré à la distribution, sinon à installer séparément 🛠️
-  - [GitHub - CNI](https://github.com/containernetworking/cni/) 🔗
   - Par défaut, _Kubelet_ charge les configurations des plugins réseau depuis : `/etc/cni/net.d` 📂
+
+:::link
+Voir aussi <https://github.com/containernetworking/cni/> et <https://www.cni.dev/>
+:::
 
 ---
 
