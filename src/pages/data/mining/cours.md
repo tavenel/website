@@ -84,8 +84,8 @@ Le Data Mining est né de :
 - L'évolution des SGBD vers l'informatique décisionnelle avec les entrepôts de données (Data Warehouse).
 - La constitution d'énormes bases de données : transactions de cartes de crédit, appels téléphoniques, factures de supermarchés: terabytes de données recueillies automatiquement.
 - Développement de la Gestion de la Relation Client (CRM)
-  + Marketing client au lieu de marketing produit
-  + Attrition, satisfaction, etc.
+  - Marketing client au lieu de marketing produit
+  - Attrition, satisfaction, etc.
 - Recherches en Intelligence artificielle, apprentissage, extraction de connaissances
 
 :::tip
@@ -98,7 +98,8 @@ Qu'est-ce qu'un bon algorithme d'apprentissage ?
 - Non asymptotique : garanties de performance pour $n$ donné ;
 - Sans paramètre : Paramétrage automatique ;
 - Vitesse : complexité linéaire, possibilité de paralléliser ;
-- En ligne : mise à jour séquentielle. 
+- En ligne : mise à jour séquentielle.
+
 :::
 
 Il n'y a pas de meilleure méthode !
@@ -113,18 +114,18 @@ Il n'y a pas de meilleure méthode !
 Quelques paradoxes :
 
 - Un bon modèle statistique ne donne pas nécessairement des prédictions précises au niveau individuel.
-  + facteurs de risque en épidémiologie
+  - facteurs de risque en épidémiologie
 - On peut prévoir sans comprendre:
-  + pas besoin d'une théorie du consommateur pour faire du ciblage
-  + un modèle n'est qu'un algorithme
+  - pas besoin d'une théorie du consommateur pour faire du ciblage
+  - un modèle n'est qu'un algorithme
 - Questions d'éthique et traitements de données personnelles
-
 
 # Introduction à la statistique
 
 ## Vocabulaire
 
 :::strong
+
 - _Donnée statistique_ : observation ou mesure qui sert de base à un raisonnement. C'est le point de départ pour une recherche.
 - _Individu_ ou _unité statistique_ : Élément observé ou mesuré : par exemple une personne dans un sondage, un objet dans un comparatif.
 - _Population_ : Ensemble des individus observés ou mesurés dans le cadre d'une étude. Peut être infini. Par exemple : l'ensemble des entreprises françaises.
@@ -133,6 +134,7 @@ Quelques paradoxes :
 - _Série statistique_ ou _distribution_ : liste de valeurs recueillies sur un caractère observé ou mesuré sur un ensemble d'individus.
 - _Variable observée_ : variable concrètement observable chez un individu (ex: salaire).
 - _Variable latente_ : variable non observée chez un individu (ex: âge + salaire).
+
 :::
 
 ### Échantillon vs population
@@ -143,6 +145,7 @@ Attention à ne pas confondre échantillon et population !
 - L'étude d'un échantillon est une science : la statistique descriptive.
 - L'estimation des caractéristiques d'une population depuis un échantillon représentatif est une autre science : la statistique inférentielle.
 - Pour faire des statistiques, il faut donc avoir des **connaissances dans le domaine** de l'étude.
+
 :::
 
 ### Exercice
@@ -161,6 +164,7 @@ Quels sont :
 - La population de l'étude ?
 - L'échantillon de l'étude ?
 - Les variables étudiées ?
+
 :::
 
 :::correction
@@ -178,11 +182,12 @@ Quels sont :
 2 types de variables :
 
 - Les variables _quantitatives_ : variables à valeurs numériques, pour lesquelles les opérations arithmétiques ont un sens. Par exemple, un âge, une distance, un volume, etc :
-  + _discrètes_ : dans un ensemble dénombrable (on peut compter toutes les valeurs possibles) ;
-  + _continues_ : valeurs possibles non connues à l'avance et travail dans les réels ;
+  - _discrètes_ : dans un ensemble dénombrable (on peut compter toutes les valeurs possibles) ;
+  - _continues_ : valeurs possibles non connues à l'avance et travail dans les réels ;
 - Les variables _qualitatives_ : les valeurs possibles sont codées par des _modalités_ (ou _catégories_). Par exemple, la couleur des yeux, le département, ou tout autre codage où les opérations arithmétiques ne sont pas correctement définies :
-  + _ordinale_ : pouvant être ordonné (niveau d'appréciation d'un produit, mention dans un diplôme) ;
-  + _nominale_ : aucun ordre (couleur des yeux, ville de naissance).
+  - _ordinale_ : pouvant être ordonné (niveau d'appréciation d'un produit, mention dans un diplôme) ;
+  - _nominale_ : aucun ordre (couleur des yeux, ville de naissance).
+
 :::
 
 :::exo
@@ -194,6 +199,7 @@ Quel est le type des variables précédentes ?
 - âge : variable quantitative discrète
 - CSP : variable qualitative ordinale
 - temps moyen: variable quantitative continue
+
 :::
 
 # Statistique descriptive à une dimension
@@ -207,8 +213,8 @@ Pour plus d'information, voir le [cours zeste de savoir de statistique descripti
 - Famille d'indicateurs statistiques les plus courants car simples.
 - Résume une liste de valeurs numériques en un seul nombre réel.
 - Donne une information sur la distribution, aucune sur les individus (répartition, ...)
-  + Peu robuste aux valeurs extrêmes.
-  + Exemple d'un unique salaire élevé.
+  - Peu robuste aux valeurs extrêmes.
+  - Exemple d'un unique salaire élevé.
 
 :::link
 Voir [l'article Wikipedia sur la moyenne][wiki-moyenne].
@@ -225,8 +231,8 @@ $$\mu = \frac{\sum_{i=1}^n{m_i \cdot x_i}}{\sum_{i=1}^n {m_i}}$$
 ### Autres moyennes
 
 - Il existe d'autres moyennes, par exemple :
-  + [Moyenne de Hölder][wiki-moyenne-holder] (ou d'ordre p) : $$\left( \frac{1}{n} \sum_{i=1}^n x_i^p \right)^{\frac{1}{p}}$$
-  + Permet de donner plus d'importance aux petites valeurs (p petit) ou aux grandes valeurs (p grand).
+  - [Moyenne de Hölder][wiki-moyenne-holder] (ou d'ordre p) : $$\left( \frac{1}{n} \sum_{i=1}^n x_i^p \right)^{\frac{1}{p}}$$
+  - Permet de donner plus d'importance aux petites valeurs (p petit) ou aux grandes valeurs (p grand).
 - La moyenne numérique est généralisable : barycentre en géométrie, espérance en probabilités, ...
 - En absence de précision, le terme seul de _moyenne_ décrit la _moyenne arithmétique_.
 
@@ -257,6 +263,7 @@ La moyenne arithmétique est très élevée à cause d'une valeur extrême : la 
 **Moyenne de Hölder**
 
 Calculons la moyenne de Hölder d'ordre 2 et d'ordre 50, par exemple en Python :
+
 ```python
 m = ( (1/20)*(19*25000**p + 1000000**p) )**(1/p)
 m_2 => 224930
@@ -273,8 +280,8 @@ La [médiane][wiki-mediane] indique le centre d'une série statistique : c'est l
 
 - Donne peu d'information sur la série elle-même.
 - Utile pour nuancer d'autres mesures de tendance, comme la moyenne :
-  + Assez robuste aux valeurs extrêmes.
-  + Reprise de l'exemple précédent.
+  - Assez robuste aux valeurs extrêmes.
+  - Reprise de l'exemple précédent.
 - Plus complexe que la moyenne car nécessite un tri : coûteux, généralement $\mathcal{O}(n\log{n})$.
 
 ### Formule de la médiane
@@ -307,10 +314,11 @@ Contrairement à la moyenne, la médiane ne se calcule pas algébriquement : il 
 Pour une série de $n$ éléments :
 
 1. Ordonner la série
+
 - Si $n$ est impair : l'élément à la position $\frac{n+1}{2}$ est la médiane.
 - Si $n$ est pair :
-  + Toute valeur entre l'élément à la position $\frac{n}{2}$ et l'élément à la position $\frac{n}{2}+1$ est une médiane.
-  + En pratique, on utilise la moyenne arithmétique de ces deux éléments.
+  - Toute valeur entre l'élément à la position $\frac{n}{2}$ et l'élément à la position $\frac{n}{2}+1$ est une médiane.
+  - En pratique, on utilise la moyenne arithmétique de ces deux éléments.
 
 :::link
 Lien vers [la page Wikipedia sur la médiane][wiki-mediane].
@@ -360,7 +368,7 @@ $$V = \frac{1}{n}\sum_{i=1}^n \left(x_i - \overline{x}\right)^2$$
 ### En programmation
 
 :::warn
-Attention : l'écart-type calculé directement avec la formule mathématique peut être [incorrect en programmation][deviation-computing-error] à cause d'arrondis, notamment pour des valeurs faibles (entre 0 et 1). 
+Attention : l'écart-type calculé directement avec la formule mathématique peut être [incorrect en programmation][deviation-computing-error] à cause d'arrondis, notamment pour des valeurs faibles (entre 0 et 1).
 
 Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-computing-solution] pour ce besoin.
 :::
@@ -368,12 +376,15 @@ Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-compu
 ### 🌟 Avantages et inconvénients
 
 :::tip
-+  Mesures particulièrement représentatives de la réalité lorsque la distribution est normale.
-+  Tient compte de toutes les valeurs de la distribution donc représentent bien sa dispersion.
-+  Utiles pour comparer la dispersion d'une variable d'une même population à des temps différents ou de populations semblables.
+
+- Mesures particulièrement représentatives de la réalité lorsque la distribution est normale.
+- Tient compte de toutes les valeurs de la distribution donc représentent bien sa dispersion.
+- Utiles pour comparer la dispersion d'une variable d'une même population à des temps différents ou de populations semblables.
+
 - Mesures affectées par les valeurs extrêmes
 - Difficultés d'interprétation liées au fait que la valeur de l'écart-type varie selon les valeur de la variable.
-  * Un grand écart-type n'est pas synonyme de grande dispersion (dépend des valeurs).
+  - Un grand écart-type n'est pas synonyme de grande dispersion (dépend des valeurs).
+
 :::
 
 :::link
@@ -451,6 +462,7 @@ On utilise souvent plutôt le carré de ce terme pour augmenter sa dispersion ve
 Ce coefficient sera très utile lors des régressions linéaires.
 
 :::exo
+
 | Nombre de caisses ouvertes (x) :       | 3  | 4  | 5  | 6    | 8    | 10   | 12   |
 |----------------------------------------| ---| ---| ---| -----| -----| -----| -----|
 | Temps moyen d'attente en minutes (y) : | 16 | 15 | 16 | 14.9 | 16.6 | 14.7 | 14.8 |
@@ -459,12 +471,15 @@ Dans cet exemple, y a-t-il une relation directe entre le nombre de caisses ouver
 :::
 
 :::correction
+
 1. Commençons par calculer le centre de gravité du nuage de points $\{x;y\}$ : $G=(6.8 ; 15.4)$.
 2. Calculons les variances de $X$ et $Y$ :
-  + $Var(X) = 9.27$
-  + $Var(Y) = 0.49$
-3. Calculons la covariance de $X$ et $Y$ : $Cov(X,Y)$ = -0.97$
-4. On en déduit la coefficient de corrélation : $\rho(X,Y)=-0.45$.
+
+- $Var(X) = 9.27$
+- $Var(Y) = 0.49$
+
+1. Calculons la covariance de $X$ et $Y$ : $Cov(X,Y)$ = -0.97$
+2. On en déduit la coefficient de corrélation : $\rho(X,Y)=-0.45$.
 
 Le coefficient de corrélation linéaire est assez éloigné de 1 : $R^2=-0.20$. Il n'y a pas de lien direct entre le nombre de caisses ouvertes et le temps moyen d'attente dans cet exemple.
 
@@ -493,12 +508,14 @@ plt.show()
 ### Rappels et notations
 
 :::tip
+
 - $P(Y=1)$ est la probabilité a priori pour que $Y=1$. Pour simplifier, on note parfois : $p(1)$.
 - $p(X|1)$ est la distribution conditionnelle des $X$ sachant la valeur prise par $Y$.
 - $\sum_{i=1}^n p_i = 1$
 - La probabilité a posteriori d'obtenir la modalité $1$ de $Y$ sachant la valeur prise par $X$ est notée $p(1|X)$.
 - Si $X$ est une variable aléatoire **réelle**, la fonction de répartition de $X$ est la fonction $F_X(t) = \mathbb P(X\leq t)$.
 - Si l'événement $A$ se produit $N_A$ fois sur $N$ observations, la fréquence de l'événement $A$ est : $\frac{N_A}{N}$.
+
 :::
 
 ### Espérance
@@ -621,7 +638,7 @@ En termes statistiques, la p-valeur s'interprète comme la probabilité d'un ré
 $$p = \mathbb P(x|H_0)$$
 :::
 
-Le résultat d'une p-valeur "improbable" (à définir) implique que l'expérience observée ne suit pas l'hypothèse nulle. Par exemple, imaginons que l'on connaisse la loi répartissant le poids des individus d'une population en surpoids et qu'on teste un traitement amincissant sur un groupe de personnes. On évalue le poids moyen du groupe après le traitement et on vérifie avec la loi initiale si le résultat est probable ou improbable. S'il est improbable, le traitement est efficace. 
+Le résultat d'une p-valeur "improbable" (à définir) implique que l'expérience observée ne suit pas l'hypothèse nulle. Par exemple, imaginons que l'on connaisse la loi répartissant le poids des individus d'une population en surpoids et qu'on teste un traitement amincissant sur un groupe de personnes. On évalue le poids moyen du groupe après le traitement et on vérifie avec la loi initiale si le résultat est probable ou improbable. S'il est improbable, le traitement est efficace.
 
 On utilise généralement les seuils suivants :
 
@@ -710,7 +727,6 @@ Supposons que notre expérience donne les résultats suivants :
 
 c'est-à-dire nous avons obtenu 88 fois le chiffre 1, 109 fois le chiffre 2, etc.
 
-
 1. Quelle est l'hypothèse nulle $H_0$ ?
 2. Combien y a-t-il de degrés de liberté ?
 3. En considérant l'hypothèse nulle vraie, définir la variable statistique du $\chi^2$ : $T$.
@@ -725,11 +741,11 @@ c'est-à-dire nous avons obtenu 88 fois le chiffre 1, 109 fois le chiffre 2, etc
 
 :::correction
 
-1. L'hypothèse que l'on souhaite rejeter (qu'on appelle hypothèse nulle et qu'on note $H_0$) est donc ici : "Le dé est équilibré". 
-2. Le nombre de degrés de liberté est de $6 - 1 = 5$. En effet, $88 + 109 + 107 + 94 + 105 + 97 = 600$ et si l'on connaît par exemple les nombres de fois où l'on obtient les chiffres 1 à 5, on connaît le nombre de fois où l'on obtient le chiffre 6 : $600 - (88 + 109 + 107 + 94 + 105) = 97$. 
+1. L'hypothèse que l'on souhaite rejeter (qu'on appelle hypothèse nulle et qu'on note $H_0$) est donc ici : "Le dé est équilibré".
+2. Le nombre de degrés de liberté est de $6 - 1 = 5$. En effet, $88 + 109 + 107 + 94 + 105 + 97 = 600$ et si l'on connaît par exemple les nombres de fois où l'on obtient les chiffres 1 à 5, on connaît le nombre de fois où l'on obtient le chiffre 6 : $600 - (88 + 109 + 107 + 94 + 105) = 97$.
 3. En considérant l'hypothèse nulle vraie, la variable T définie précédemment vaut : ${\frac {(88-100)^{2}}{100}}+{\frac {(109-100)^{2}}{100}}+{\frac {(107-100)^{2}}{100}}+{\frac {(94-100)^{2}}{100}}+{\frac {(105-100)^{2}}{100}}+{\frac {(97-100)^{2}}{100}}=3.44$
 4. La statistique T suit la loi du $\chi^2$ à cinq degrés de liberté. Cette loi donne la valeur en deçà de laquelle on considère le tirage comme conforme avec un risque $\alpha = 0.05 : P(T < 11.07) = 0.95$. Puisque $3.44 < 11.07$, on ne peut pas rejeter l'hypothèse nulle : ces données statistiques ne permettent pas de considérer que le dé est truqué.
-5. $T ={\frac {(89-100)^{2}}{100}}+{\frac {(131-100)^{2}}{100}}+{\frac {(93-100)^{2}}{100}}+{\frac {(92-100)^{2}}{100}}+{\frac {(104-100)^{2}}{100}}+{\frac {(91-100)^{2}}{100}}=12.92 > 11.07$ : on peut rejeter l'hypothèse nulle : le dé est truqué. 
+5. $T ={\frac {(89-100)^{2}}{100}}+{\frac {(131-100)^{2}}{100}}+{\frac {(93-100)^{2}}{100}}+{\frac {(92-100)^{2}}{100}}+{\frac {(104-100)^{2}}{100}}+{\frac {(91-100)^{2}}{100}}=12.92 > 11.07$ : on peut rejeter l'hypothèse nulle : le dé est truqué.
 
 :::
 
@@ -747,16 +763,17 @@ c'est-à-dire nous avons obtenu 88 fois le chiffre 1, 109 fois le chiffre 2, etc
 Les algorithmes d'apprentissage peuvent se catégoriser selon le type d'apprentissage qu'ils emploient :
 
 - L'apprentissage **supervisé**
-  + Un expert est employé pour étiqueter correctement des exemples.
-  + La machine doit trouver ou approximer la fonction qui permet d'affecter la bonne étiquette aux données.
+  - Un expert est employé pour étiqueter correctement des exemples.
+  - La machine doit trouver ou approximer la fonction qui permet d'affecter la bonne étiquette aux données.
 - L'apprentissage **non supervisé**
-  + Aucun expert n'est disponible.
-  + La machine doit découvrir par elle-même la structure des données.
+  - Aucun expert n'est disponible.
+  - La machine doit découvrir par elle-même la structure des données.
 - L'apprentissage **par renforcement** (hors programme)
-  + La machine apprend à se rapprocher d'une stratégie comportementale optimale par des interactions répétitives avec l'environnement.
-  + L'apprentissage se fait sans supervision.
-  + Repose sur le principe d'essai/erreur.
-  + Utile quand l'environnement évolue.
+  - La machine apprend à se rapprocher d'une stratégie comportementale optimale par des interactions répétitives avec l'environnement.
+  - L'apprentissage se fait sans supervision.
+  - Repose sur le principe d'essai/erreur.
+  - Utile quand l'environnement évolue.
+
 :::
 
 # Apprentissage supervisé
@@ -772,6 +789,7 @@ Exemples d'utilisation :
 - Aide au diagnostic médical (ex : cancer du sein)
 - Aide au pilotage
 - Moteurs de recommandation, apprentissage sur les graphes
+
 :::
 
 Cadre classique :
@@ -779,8 +797,8 @@ Cadre classique :
 - Données : échantillon d'apprentissage $(x_k, y_k)_{1\leq k\leq n}$ constitué d'observations que l'on suppose représentatives et sans lien entre elles.
 - Objectif : prédire les valeurs de $y$ associées à chaque valeur possible de $x \in X$.
 - _Classification_ : $Y$ discret (on peut dénombrer l'ensemble des valeurs: variables _qualitatives_). Pour chaque valeur de $x \in X$ on prédit la classe la plus souvent associée.
-  + Classification _non paramétrique_ (_classification hiérarchique_, _méthode des centres mobiles_) : ne considère qu'une seule hypothèse - plus deux individus sont proches, plus ils ont de chances de faire partie de la même classe.
-  + _Classification probabiliste_ : utilise une hypothèse sur la distribution des individus à classifier (par exemple, suivre une _loi normale_). On détermine alors quels sont les paramètres des lois (_moyenne_, _variance_) et à quelle classe les individus ont le plus de chances d'appartenir.
+  - Classification _non paramétrique_ (_classification hiérarchique_, _méthode des centres mobiles_) : ne considère qu'une seule hypothèse - plus deux individus sont proches, plus ils ont de chances de faire partie de la même classe.
+  - _Classification probabiliste_ : utilise une hypothèse sur la distribution des individus à classifier (par exemple, suivre une _loi normale_). On détermine alors quels sont les paramètres des lois (_moyenne_, _variance_) et à quelle classe les individus ont le plus de chances d'appartenir.
 - _Régression_ : Méthodes d'analyse statistique permettant d'approcher une variable à partir d'autres qui lui sont corrélées. Généralement $Y$ est continue ou est une fonction (variables _quantitatives_).
 - Règle de classification : à partir de l'échantillon d'apprentissage, construire $f_n : X \rightarrow Y$ associant à chaque entrée possible $x$ la classe $y$ prédite pour elle.
 
@@ -852,7 +870,7 @@ La fonction de régression correspond dans ce cas à un partage de l'espace des 
 
 Le but de la régression linéaire simple (respectivement multiple) est d'expliquer une variable $Y$ à l'aide d'une variable $X$ (respectivement plusieurs variables $X_1, ... , X_q$).
 
-La variable $Y$ est appelée variable _à expliquer_ ou variable _dépendante_ et les variables $X_j (j=1, ... ,q)$ sont appelées variables _explicatives_ ou variables _indépendantes_. 
+La variable $Y$ est appelée variable _à expliquer_ ou variable _dépendante_ et les variables $X_j (j=1, ... ,q)$ sont appelées variables _explicatives_ ou variables _indépendantes_.
 
 :::strong
 Le but est donc de trouver une fonction $f$ telle que : $y_i \approx f(x_i)$.
@@ -871,28 +889,37 @@ _Étude de la relation entre la tension artérielle et l'âge d'un individu_.
 Les données sont extraites de _Bouyer et al. (1995) Epidémiologie. Principes et méthodes quantitatives, Les éditions INSERM._
 
 1. Objectif
-  - On souhaite savoir si, de façon générale, l'âge a une influence sur la tension artérielle et sous quelle forme cette influence peut être exprimée.
-  - Le but est d'expliquer au mieux comment la tension artérielle varie en fonction de l'âge et éventuellement de prédire la tension à partir de l'âge.
-2. Population et variables étudiées 
-  - Population générale d'individus sur laquelle on définit 2 variables :
-  - La variable $Y$ : variable tension - c'est la variable à expliquer (variable à régresser)
-  - La variable $X$ : variable âge - c'est la variable explicative (variable régresseur)
-3. Échantillon aléatoire d'individus
-  - Pour l'étude, on doit faire des mesures sur $n$ individus tirés au sort dans la population.
-  - On observe deux échantillons appariés de $X$ et $Y$ de taille $n$ : $(x_1, y_1), ... , (x_i, y_i), ... , (x_n, y_n)$ où $x_i$ et $y_i$ sont les valeurs de $X$ et $Y$ observées sur le $i^{eme}$ individu tiré au sort.
-4. Modèle exprimant la relation entre $Y$ et $X$
-  - On cherche à exprimer la relation entre la variable tension et la variable âge à l'aide d'une fonction mathématique du type $y = f(x)$.
-  - Graphiquement cela revient à représenter cette relation à l'aide d'une courbe (graphe de la fonction).
-5. Choix du modèle
-  - Quelle fonction mathématique utiliser ?
-  - Pour choisir le modèle de relation, on doit faire des observations sur un échantillon d'individus.
-  - Les données recueillies sur ces individus sont représentées graphiquement à l'aide d'un nuage de points.
-  - Si le nuage a une forme particulière s'apparentant à une courbe mathématique, on choisira la fonction mathématique correspondant à cette courbe.
+
+- On souhaite savoir si, de façon générale, l'âge a une influence sur la tension artérielle et sous quelle forme cette influence peut être exprimée.
+- Le but est d'expliquer au mieux comment la tension artérielle varie en fonction de l'âge et éventuellement de prédire la tension à partir de l'âge.
+
+1. Population et variables étudiées
+
+- Population générale d'individus sur laquelle on définit 2 variables :
+- La variable $Y$ : variable tension - c'est la variable à expliquer (variable à régresser)
+- La variable $X$ : variable âge - c'est la variable explicative (variable régresseur)
+
+1. Échantillon aléatoire d'individus
+
+- Pour l'étude, on doit faire des mesures sur $n$ individus tirés au sort dans la population.
+- On observe deux échantillons appariés de $X$ et $Y$ de taille $n$ : $(x_1, y_1), ... , (x_i, y_i), ... , (x_n, y_n)$ où $x_i$ et $y_i$ sont les valeurs de $X$ et $Y$ observées sur le $i^{eme}$ individu tiré au sort.
+
+1. Modèle exprimant la relation entre $Y$ et $X$
+
+- On cherche à exprimer la relation entre la variable tension et la variable âge à l'aide d'une fonction mathématique du type $y = f(x)$.
+- Graphiquement cela revient à représenter cette relation à l'aide d'une courbe (graphe de la fonction).
+
+1. Choix du modèle
+
+- Quelle fonction mathématique utiliser ?
+- Pour choisir le modèle de relation, on doit faire des observations sur un échantillon d'individus.
+- Les données recueillies sur ces individus sont représentées graphiquement à l'aide d'un nuage de points.
+- Si le nuage a une forme particulière s'apparentant à une courbe mathématique, on choisira la fonction mathématique correspondant à cette courbe.
 
 ![Exemple de régression linéaire](@assets/data/reg-lin-ex1.png)
 
 <div class="caption">Source et crédit : Ana Karina Fermin Rodriguez.</div>
- 
+
 La forme étirée et croissante du nuage suggère une relation linéaire entre la tension et l'âge. Le coefficient de corrélation linéaire observé sur l'échantillon est $r = 0, 7868$ assez proche de $1$ : on va modéliser cette relation à l'aide d'une droite.
 
 ### Équation générale du modèle de régression linéaire simple
@@ -918,9 +945,9 @@ Pour un âge $x$ donné, la tension d'un individu est la somme de deux termes :
 
 - $ax+b$ entièrement déterminé par l'âge ;
 - le terme d'erreur $\epsilon$ (variable aléatoire) qui varie de façon aléatoire d'un individu à l'autre :
-  + Synthétise toutes les variables influant sur la tension et qui ne sont pas prises en compte.
-  + Les erreurs doivent être des variables indépendantes, de même loi, centrées et de même variance.
-  + $\epsilon_i$ est l'observation de cette variable : représente l'erreur commise (l'écart de valeur entre $Y$ observée et le modèle).
+  - Synthétise toutes les variables influant sur la tension et qui ne sont pas prises en compte.
+  - Les erreurs doivent être des variables indépendantes, de même loi, centrées et de même variance.
+  - $\epsilon_i$ est l'observation de cette variable : représente l'erreur commise (l'écart de valeur entre $Y$ observée et le modèle).
   
 La variable $Y$ est donc aléatoire. La variable $X$ est supposée non aléatoire, on la mesure sans erreur sur chaque individu.
 
@@ -936,12 +963,9 @@ Le modèle théorique est une famille de fonctions $f(x;\theta)$ d'une ou plusie
 
 La méthode des moindres carrés permet de sélectionner parmi ces fonctions celle qui reproduit le mieux les données expérimentales.
 
-
 ![Méthode des moindres carrés](@assets/data/Moindres_carres_introduction.png)
 
 <div class="caption">Source et crédits : Nicolas Regnault https://commons.wikimedia.org/wiki/File:Moindres_carres_introduction.png</div>
-
-
 
 L'idée est de minimiser les écarts quadratiques (i.e. au carré) entre l'observation et le modèle, ainsi pour $N$ observations on minimise :
 
@@ -964,7 +988,7 @@ $$b = \bar{Y} - a \bar{X}$$
 :::
 
 :::warn
-Attention : dans la pratique, on ne connaît jamais $a$ et $b$ (valeurs exactes du modèle) ! 
+Attention : dans la pratique, on ne connaît jamais $a$ et $b$ (valeurs exactes du modèle) !
 
 On calcule donc : $\hat{a}$ et $\hat{b}$, valeurs estimées de $a$ et $b$ dans les conditions de l'expérience.
 
@@ -1090,9 +1114,9 @@ On peut tester la significativité globale d'une régression :
 On peut tester chacun des paramètres :
 
 - (a) Est-ce que le coefficient $a$ est non nul, autrement dit la variable $X$ a-t-elle réellement une influence sur $Y$ ?
-  + $H_0$ : $a = 0$ (contre $H_1$ : $a\neq 0$)
+  - $H_0$ : $a = 0$ (contre $H_1$ : $a\neq 0$)
 - (b) Est-ce que le coefficient $b$ est non nul, autrement dit faut-il une constante dans le modèle ?
-  + $H_0$ : $b = 0$ (contre $H_1$ : $b\neq 0$)
+  - $H_0$ : $b = 0$ (contre $H_1$ : $b\neq 0$)
 - On utilise une statistique $T$ de _Student(n-2)_ : $T = \frac{\hat{a}}{\hat{\sigma}_{\hat{a}}}$ (idem pour $b$).
 - On rejette $H_0$ si $|T|$ est grande, donc on rejette $H_0$ au risque d'erreur $\alpha$ si $\alpha_{obs}\leq \alpha$
 - $\alpha_{obs} = 2 \mathbb P_{H_0}(T(n-2) > \left|\frac{\hat{a}}{\hat{\sigma}_{\hat{a}}}\right|)$ (idem pour $b$).
@@ -1122,9 +1146,9 @@ Il se peut que le nombre $p$ des variables disponibles soit (trop) grand. On peu
 Les GLM sont une extension des modèles linéaires classiques qui peuvent être utilisés lorsque les réponses ne sont pas de type numérique continues :
 
 - Les données sont de type comptage (nombre de vélos, ...)
-  + elles suivent théoriquement une loi de Poisson de paramètre $\lambda$.
+  - elles suivent théoriquement une loi de Poisson de paramètre $\lambda$.
 - Les données sont de type binaire (Malade/non malade, ...)
-  + on parle de _régression logistique_ (chapitre suivant du cours).
+  - on parle de _régression logistique_ (chapitre suivant du cours).
 
 #### Prédicteur linéaire
 
@@ -1201,7 +1225,7 @@ On calcule alors l'amélioration du modèle à partir de la probabilité -log li
 
 On obtient alors le résultat suivant, qui illustre la différence au carré entre le modèle de base (la constante ou l'événement qui arrive le plus souvent) et le modèle avec un ou plusieurs prédicteurs :
 
-$$\chi_{k-1}^2 = 2(LL_{modèle} - LL_{base})$$
+$$\chi_{k-1}^2 = 2(LL_{modele} - LL_{base})$$
 
 avec $\chi_{k-1}^2$ une distribution du $\chi^2$ à $k-1$ degrés de liberté.
 
@@ -1209,7 +1233,7 @@ La statistique $R$ peut être déduite de ce résultat et d'une statistique de [
 
 On utilise donc plutôt des peudo $R^2$ calculés différemment et qui approchent cette valeur, comme :
 
-$$R_{logit}^2 = 1 - \frac{-2LL_{modèle}}{-2LL_{base}}$$
+$$R_{logit}^2 = 1 - \frac{-2LL_{modele}}{-2LL_{base}}$$
 
 #### Conditions d'utilisation
 
@@ -1222,6 +1246,7 @@ $$R_{logit}^2 = 1 - \frac{-2LL_{modèle}}{-2LL_{base}}$$
 #### Qualités
 
 :::tip
+
 - Interprétable : NON
 - Critique : OUI (très utilisé pour le scoring)
 - Consistance : NON (sauf si le modèle est exact)
@@ -1229,6 +1254,7 @@ $$R_{logit}^2 = 1 - \frac{-2LL_{modèle}}{-2LL_{base}}$$
 - Sans paramètre : OUI
 - Vitesse : OUI
 - En ligne : possible
+
 :::
 
 :::link
@@ -1274,17 +1300,17 @@ $$f_\beta(X_{i,.},y_i)=\frac{1}{N} \sum_{i=1}^N y_i (\beta_0 + X_{i,.}^T \beta) 
 
 Les principaux avantages du lasso sont :
 
-+ Grande dimension : fonctionne dans les cas où le nombre d'individus est inférieur au nombre de variables ($n < p$) si toutefois un faible nombre de ces variables a une influence sur les observations (hypothèse de parcimonie).
-  * N'est pas vraie dans le cas de la régression linéaire classique avec un risque associé qui augmente comme la dimension de l'espace des variables même si l'hypothèse de parcimonie est vérifiée.
-+ Algorithmes peu coûteux en temps de calcul et de stockage
-+ Sélection parcimonieuse : permet de sélectionner un sous-ensemble restreint de variables (dépendant du paramètre $\lambda$).
-  * Cette sélection restreinte permet souvent de mieux interpréter un modèle (rasoir d'Ockham).
-+ Consistance de la sélection : lorsque le vrai vecteur solution $\beta$ est creux $(\|\beta \|_{0}=K<p)$, c'est-à-dire que seul un sous-ensemble de variables est utilisé pour la prédiction, sous de bonnes conditions, le lasso sera en mesure de sélectionner ces variables d'intérêts avant toutes autres variables.
+- Grande dimension : fonctionne dans les cas où le nombre d'individus est inférieur au nombre de variables ($n < p$) si toutefois un faible nombre de ces variables a une influence sur les observations (hypothèse de parcimonie).
+  - N'est pas vraie dans le cas de la régression linéaire classique avec un risque associé qui augmente comme la dimension de l'espace des variables même si l'hypothèse de parcimonie est vérifiée.
+- Algorithmes peu coûteux en temps de calcul et de stockage
+- Sélection parcimonieuse : permet de sélectionner un sous-ensemble restreint de variables (dépendant du paramètre $\lambda$).
+  - Cette sélection restreinte permet souvent de mieux interpréter un modèle (rasoir d'Ockham).
+- Consistance de la sélection : lorsque le vrai vecteur solution $\beta$ est creux $(\|\beta \|_{0}=K<p)$, c'est-à-dire que seul un sous-ensemble de variables est utilisé pour la prédiction, sous de bonnes conditions, le lasso sera en mesure de sélectionner ces variables d'intérêts avant toutes autres variables.
 
 Ses principaux inconvénients sont :
 
 - Fortes corrélations : si des variables sont fortement corrélées entre elles et qu'elles sont importantes pour la prédiction, le lasso en privilégiera une au détriment des autres.
-  * Un autre cas, où les corrélations posent problème, est quand les variables d'intérêts sont corrélées avec d'autres variables. Dans ce cas, la consistance de la sélection du lasso n'est plus assurée.
+  - Un autre cas, où les corrélations posent problème, est quand les variables d'intérêts sont corrélées avec d'autres variables. Dans ce cas, la consistance de la sélection du lasso n'est plus assurée.
 - La très grande dimension : lorsque notamment la dimension est trop élevée ($p >> n$) ou si le vrai vecteur $\beta$ n'est pas suffisamment creux (trop de variables d'intérêts), le lasso ne pourra pas retrouver l'ensemble de ces variables d'intérêts.
 
 :::link
@@ -1312,7 +1338,7 @@ $$\sum_{i=1}^n\sum_{k=1}^K1_k(i)(y_i - (\alpha_k + \beta_k x_i))^2$$
 Avec $1_k(i)$ la fonction indicatrice du cluster $k$ : vaut 1 ssi $i\in k$ sinon 0.
 :::
 
-#### Algorithme :
+#### Algorithme
 
 - À partir d'une partition initiale, on estime séparément $k$ modèles de régression.
 – Chaque observation est affectée au cluster (ou modèle) donnant le plus petit résidu carré, c'est-à-dire la meilleure prédiction. Une fois toutes les observations reclassées, on a une nouvelle partition.
@@ -1367,24 +1393,24 @@ flowchart TD
   class x8 green;
 ```
 
-
 #### Algorithme de classification
 
 - Paramètre : le nombre $k$ de voisins.
-  + Souvent le nombre d'attributs +1.
+  - Souvent le nombre d'attributs +1.
 - Donnée : un échantillon de $m$ exemples et leurs classes.
 - La classe d'un exemple $X$ est $c(X)$.
 - Entrée : un enregistrement $Y$.
 - Déterminer les $k$ plus proches exemples de $Y$ en calculant les distances.
-  + Le choix de la distance est primordial au bon fonctionnement de la méthode.
-  + Dépend du type des données et des connaissances préalables du problème.
-  + Par ex: pondérer la distance euclidienne pour éviter qu'un attribut domine le calcul.
+  - Le choix de la distance est primordial au bon fonctionnement de la méthode.
+  - Dépend du type des données et des connaissances préalables du problème.
+  - Par ex: pondérer la distance euclidienne pour éviter qu'un attribut domine le calcul.
 - Combiner les classes de ces $k$ exemples en une classe $C$.
 - Sortie : la classe de $Y$ est $c(Y)=C$.
 
 #### Qualités
 
 :::tip
+
 - Interprétable : OUI et NON
 - Critique : OUI mais pas très fiable
 - Consistance : NON mais possible si $k = log(n)$ (par exemple)
@@ -1392,6 +1418,7 @@ flowchart TD
 - Sans paramètre : NON
 - Vitesse : OUI et NON, implémentation possible en $\mathcal O(n log n)$
 - En ligne : OUI
+
 :::
 
 :::link
@@ -1461,14 +1488,17 @@ Il existe deux principaux types d'arbre de décision en fouille de données :
 #### 🌟 Avantages / Inconvénients
 
 :::tip
-+ Solutions sous formes graphiques simples à interpréter.
-+ Peu de préparation des données.
-+ Se combinent bien à d'autres techniques d'apprentissage.
-+ Très calculatoire et efficace à condition d'avoir de grandes tailles d'échantillon.
-+ Capable de gérer à la fois les variables quantitatives et qualitatives simultanément.
-+ Peu d'hypothèses requises !
+
+- Solutions sous formes graphiques simples à interpréter.
+- Peu de préparation des données.
+- Se combinent bien à d'autres techniques d'apprentissage.
+- Très calculatoire et efficace à condition d'avoir de grandes tailles d'échantillon.
+- Capable de gérer à la fois les variables quantitatives et qualitatives simultanément.
+- Peu d'hypothèses requises !
+
 - Algorithme basé sur une stratégie pas à pas hiérarchisée, peut passer à côté d'un optimum global.
 - Peut construire des arbres très complexes (sur-apprentissage) qui généralisent mal l'ensemble étudié : besoin d'élagage..
+
 :::
 
 ![Exemple de sur-apprentissage](@assets/data/surajustement_modele_2.jpg)
@@ -1537,9 +1567,9 @@ Une fois les critères d'arrêt atteints, il faut affecter une valeur à chaque 
 
 - Si $Y$ est quantitative, attribution de la valeur moyenne aux observations de cette feuille ;
 - Si $Y$ est qualitative, chaque feuille est affectée à une modalité $\tau_l$ de $Y$ en considérant le mode conditionnel :
-  + celle ayant la proportion la plus élevée à l'intérieur de cette feuille. Il est alors facile de comparer le nombre de données mal classées.
-  + la modalité la moins coûteuse si des coûts de mauvais classements sont donnés.
-  + la classe a posteriori la plus probable au sens bayésien si des probabilités a priori sont connues.
+  - celle ayant la proportion la plus élevée à l'intérieur de cette feuille. Il est alors facile de comparer le nombre de données mal classées.
+  - la modalité la moins coûteuse si des coûts de mauvais classements sont donnés.
+  - la classe a posteriori la plus probable au sens bayésien si des probabilités a priori sont connues.
 
 #### Critère d'homogénéité
 
@@ -1676,6 +1706,7 @@ Les procédures d'élagage diffèrent par la façon d'estimer l'erreur de prédi
 - Une estimation sans biais est obtenue par l'utilisation d'un autre échantillon (validation) ou encore par validation croisée.
 
 La procédure de validation croisée a une particularité : la séquence d'arbres obtenue est différente pour chaque estimation sur l'un des sous-échantillons :
+
 - L'erreur moyenne n'est pas calculée pour chaque sous-arbre avec un nombre de feuilles donné mais pour chaque sous-arbre correspondant à une valeur fixée du coefficient de pénalisation $\gamma$.
 - À la valeur de $\gamma$ minimisant l'estimation de l'erreur de prévision, correspond ensuite l'arbre jugé optimal dans la séquence estimée sur tout l'échantillon d'apprentissage.
 
@@ -1690,12 +1721,14 @@ Le principe de sélection d'un arbre optimal est donc décrit par l'algorithme s
 #### Qualités du classifieur CART
 
 :::tip
+
 - Interprétable : OUI !
 - Consistance : OUI (sous certaines réserves) MAIS instable !
 - Minimax : NON !
 - Sans paramètre : NON
 - Vitesse : OUI
 - En ligne : NON
+
 :::
 
 :::link
@@ -1732,13 +1765,13 @@ stateDiagram-v2
 ## Classification automatique (_Clustering_)
 
 - Méthode mathématique d'analyse de données pour faciliter l'étude d'une population d'effectif important (animaux, plantes, malades, gènes, etc...).
-- Regroupement en classes : 
-  + d'individus le plus semblables possible.
-  + classes le plus distinctes possibles.
+- Regroupement en classes :
+  - d'individus le plus semblables possible.
+  - classes le plus distinctes possibles.
 - Différentes méthodes et algorithmes pour différentes classifications, dans le cours :
-  + Classification hiérarchique ascendante.
-  + Méthode des centres mobiles (k-moyennes).
-  + Méthodes à densité (DBSCAN).
+  - Classification hiérarchique ascendante.
+  - Méthode des centres mobiles (k-moyennes).
+  - Méthodes à densité (DBSCAN).
 
 Très utile notamment pour parcourir une base de données dans le but d'en extraire des clusters.
 
@@ -1785,13 +1818,13 @@ $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i} , \bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i
 :::
 
 - Si l'on suppose que tous les individus ont le même poids égal à $\frac{1}{n}$ , le poids $p_l$ de la classe $\Gamma_l$ est égal à l'effectif de $\Gamma_l$ divisé par $n$.
-  + De cette façon la somme des poids de toutes les classes vaut $1$.
+  - De cette façon la somme des poids de toutes les classes vaut $1$.
 
 - Pour mesurer l'écart entre deux classes $\Gamma_{l}$ et $\Gamma_{m}$, il existe de nombreuses façons de procéder :
-  + Distance du plus proche voisin : $\min_{Mi \in \Gamma_m, Mj \in \Gamma_l}{d(Mi, Mj )  }$.
-  + $\max_{Mi \in \Gamma_m, Mj \in \Gamma_l}{d(Mi, Mj )}$.
-  + Distance des centres de gravité $d_2(G_m, G_l)$.
-  + (Le plus souvent) écart de Ward :
+  - Distance du plus proche voisin : $\min_{Mi \in \Gamma_m, Mj \in \Gamma_l}{d(Mi, Mj )  }$.
+  - $\max_{Mi \in \Gamma_m, Mj \in \Gamma_l}{d(Mi, Mj )}$.
+  - Distance des centres de gravité $d_2(G_m, G_l)$.
+  - (Le plus souvent) écart de Ward :
 
 :::strong
 $$ d(\Gamma_m,\Gamma_l) = \frac{p_m p_l}{p_m + p_l}d_2(G_m, G_l)^2 $$
@@ -1821,7 +1854,7 @@ $$I_{intra} = I(\Gamma_1) + I(\Gamma_2) + ... + I(\Gamma_k)$$
 
 Les inerties des classes $I(\Gamma_1), I(\Gamma_2), ...$ sont simplement calculées avec la formule de l'inertie ci-dessus où l'on remplace le centre de gravité $G$ par celui de la classe $G_1, G_2, ...$ et le poids $\frac{1}{n}$ par celui de la classe.
 
-Attention : _L'inertie totale d'un nuage n'est généralement pas égale à la somme des inerties des classes qui le composent (inertie intra-classe) car il faut prendre en compte également la **dispersion des classes par rapport au centre de gravité du nuage**._ 
+Attention : _L'inertie totale d'un nuage n'est généralement pas égale à la somme des inerties des classes qui le composent (inertie intra-classe) car il faut prendre en compte également la **dispersion des classes par rapport au centre de gravité du nuage**._
 
 Cette dispersion est définie par _l'inertie interclasse_ :
 
@@ -1850,9 +1883,9 @@ Pour classifier une population d'effectif $n$ dont les individus sont numéroté
 
 - On considère cette population comme la réunion de $n$ classes à un seul élément
 - Puis on regroupe progressivement les classes deux à deux selon l'algorithme suivant :
-  + Étape 1 : Calculer la matrice des distances $\mathbb{D} = (d(M_i, M_j)_{0\leq i\leq n,0\leq j\leq n}$ ou directement la matrice des distances de Ward des classes réduites aux points $\mathbb{W} = \left( \frac{p_i p_j}{p_i + p_j} (d(M_i, M_j)^2 \right)_{1\leq i\leq n,1\leq j\leq n}$.
-  + Étape 2 : Remplacer les deux individus de distance minimale par une classe (à 2 éléments) numérotée $n + 1$, qui sera représentée par le centre de gravité des individus et affectée de la somme des poids des individus.
-  + Étape 3 : Calculer la perte d'inertie _interclasse_ (ou gain d'inertie _intra-classe_) due au regroupement précédent : il s'agit exactement de l'écart de Ward des deux individus regroupés.
+  - Étape 1 : Calculer la matrice des distances $\mathbb{D} = (d(M_i, M_j)_{0\leq i\leq n,0\leq j\leq n}$ ou directement la matrice des distances de Ward des classes réduites aux points $\mathbb{W} = \left( \frac{p_i p_j}{p_i + p_j} (d(M_i, M_j)^2 \right)_{1\leq i\leq n,1\leq j\leq n}$.
+  - Étape 2 : Remplacer les deux individus de distance minimale par une classe (à 2 éléments) numérotée $n + 1$, qui sera représentée par le centre de gravité des individus et affectée de la somme des poids des individus.
+  - Étape 3 : Calculer la perte d'inertie _interclasse_ (ou gain d'inertie _intra-classe_) due au regroupement précédent : il s'agit exactement de l'écart de Ward des deux individus regroupés.
 
 Après ces trois étapes, la population compte alors $n-1$ classes ($n-2$ classes à un élément et une à 2 éléments). On peut donc recommencer à l'étape 1 en remplaçant _"individus"_ par _"classes"_ si nécessaire (et donc "distance entre individus" par "écarts entre classes").
 Après $n-1$ itérations, tous les individus sont regroupés en une classe unique.
@@ -1946,14 +1979,15 @@ $A(2,2) B(3,4) C(7,8) D(9,8) E(5,1) F(8,7)$
 
 | Centres | A(2,2) | G(7/2,3/2)   | I(10/3,7/3) |
 |         | B(3,4) | H(27/4,27/4) | K(8,23/3)   |
+
 | Points  |        |              |             |
 |---------|--------|--------------|-------------|
 | A(2,2)  | **A**  | **G**        | **I**       |
-| B(3,4)  | __B__  | **G**        | **I**       |
-| C(7,8)  | __B__  | __H__        | __K__       |
-| D(9,8)  | __B__  | __H__        | __K__       |
+| B(3,4)  | **B**  | **G**        | **I**       |
+| C(7,8)  | **B**  | **H**        | **K**       |
+| D(9,8)  | **B**  | **H**        | **K**       |
 | E(5,1)  | **A**  | **G**        | **I**       |
-| F(8,7)  | __B__  | __H__        | __K__       |
+| F(8,7)  | **B**  | **H**        | **K**       |
 
 Les deux clusters sont donc : $\{A;B;E\}$ de centre $I(10/3;7/3)$ et $\{C;D;F\}$ de centre $K(8;23/3)$.
 :::
@@ -1970,13 +2004,13 @@ Les classes des méthodes à densité correspondent aux zones de densité relati
 Montrer graphiquement zones de densité sur le smiley.
 :::
 
-La méthode phare de cette catégorie est appelée "density-based spatial clustering of applications with noise" (_DBSCAN_). En plus de former des classes d'individus, l'algorithme repère par la même occasion les valeurs hors du commun que l'on qualifie de bruit. 
+La méthode phare de cette catégorie est appelée "density-based spatial clustering of applications with noise" (_DBSCAN_). En plus de former des classes d'individus, l'algorithme repère par la même occasion les valeurs hors du commun que l'on qualifie de bruit.
 
 Il prend deux paramètres en entrée : $\epsilon$ la distance maximale qui peut définir deux individus comme voisins, et $N$ le nombre minimal d'individus nécessaires pour former un groupe. A partir de là, l'algorithme est assez intuitif. On aura besoin de stocker deux informations : les cluster successifs et les individus visités au fur et à mesure.
 
-- La première étape consiste à choisir un point parmi les $n$ disponibles. Grâce au paramètre $\epsilon$, on peut définir le voisinage du point initial, c'est-à-dire l'ensemble des points que l'on peut qualifier comme ses voisins. 
-  + Grâce au paramètre $N$, on peut dire que si cet ensemble est constitué de moins de $N$ points, alors le point initial correspond à du bruit. On le stocke alors dans les individus visités.
-  + À l'inverse si le voisinage comprend plus de $N$ points, alors on peut initialiser un cluster avec le point de départ. On étudie chaque point de son voisinage initial.
+- La première étape consiste à choisir un point parmi les $n$ disponibles. Grâce au paramètre $\epsilon$, on peut définir le voisinage du point initial, c'est-à-dire l'ensemble des points que l'on peut qualifier comme ses voisins.
+  - Grâce au paramètre $N$, on peut dire que si cet ensemble est constitué de moins de $N$ points, alors le point initial correspond à du bruit. On le stocke alors dans les individus visités.
+  - À l'inverse si le voisinage comprend plus de $N$ points, alors on peut initialiser un cluster avec le point de départ. On étudie chaque point de son voisinage initial.
 - Et pour tout point de ce voisinage, si son propre voisinage comporte plus de $N$ éléments, alors on étend le voisinage initial en le réunissant avec le voisinage du point visité.
 - Puis on ajoute ce point dans le cluster. Une fois que tous les points du voisinage ont été testés, ceux retenus dans le cluster sont stockés comme individus visités. Le cluster obtenu est stocké dans la liste des cluster.
 
@@ -2010,12 +2044,14 @@ Lorsque le nombre d'individus est très grands et qu'il est alors difficile de c
 ## Conclusion
 
 :::tip
+
 - Au-delà de ces 3 catégories d'algorithmes, beaucoup d'autres méthodes moins intuitives existent comme la maximisation de l'espérance, qui repose sur des outils mathématiques probabilistes ou des réseaux de neurones.
 - Chaque méthode présente ses avantages mais aussi ses limites, selon le type de données à traiter ❌:
-  + Les méthodes hiérarchiques peuvent être gourmandes en calculs.
-  + La méthode des k-moyennes donne des groupes à la forme uniquement convexe.
-  + Pour chaque méthode les paramètres d'initialisation ne sont pas forcément optimaux.
+  - Les méthodes hiérarchiques peuvent être gourmandes en calculs.
+  - La méthode des k-moyennes donne des groupes à la forme uniquement convexe.
+  - Pour chaque méthode les paramètres d'initialisation ne sont pas forcément optimaux.
 - Sachant cela, l'objectif reste de minimiser les variances intra-classes tout en s'évitant des temps de calcul trop contraignants.
+
 :::
 
 # Réduction de dimensions
@@ -2036,9 +2072,11 @@ Pour une approche mathématique de l'analyse factorielle, voir le très bon [cou
 #### 🌟 Avantages
 
 :::tip
+
 - Condenser des variables.
 - Découvrir des rassemblements de données.
 - Simplifier la compréhension.
+
 :::
 
 ##### Exemple 1 : profiles type
@@ -2065,10 +2103,10 @@ En catégorisant les données, il est possible de les représenter sous forme de
 - Comme étape intermédiaire pour réduire le nombre de variables avant création des segments par [k-moyennes][wiki-k-means]. Voir le chapitre "Méthode des centres mobiles".
 - Dans un but descriptif : condense l'information contenue dans un tableau constitué d'un grand nombre de lignes et de colonnes en quelques représentations graphiques à deux dimensions, accompagnées de tableaux reprenant les valeurs numériques de caractéristiques destinées à aider l'utilisateur lors de l'interprétation.
 - Simplifie les résultats d'une enquête complexe : longues études comportant plusieurs grands blocs de questions dont les réponses sont sous forme d'échelle comme l'échelle de Likert (réponses allant de "pas du tout d'accord" à "tout à fait d'accord" )
-  + condense les réponses.
-  + crée des groupes de facteurs.
-  + résultats plus visuels et compréhensibles.
-  + Les questions à échelle qui portent sur le comportement (habitudes d'achat, etc.) et la psychologie (préférences, croyances, etc.) des consommateurs sont particulièrement adaptées.
+  - condense les réponses.
+  - crée des groupes de facteurs.
+  - résultats plus visuels et compréhensibles.
+  - Les questions à échelle qui portent sur le comportement (habitudes d'achat, etc.) et la psychologie (préférences, croyances, etc.) des consommateurs sont particulièrement adaptées.
 
 ## Analyse factorielle discriminante
 
@@ -2117,9 +2155,9 @@ Ainsi, sur notre exemple, la droite d'équation $X_2 = -X_1 + 19$ semble sépare
 
 Après analyse factorielle discriminante, on obtient ce graphique où les points bien classés sont représentés par des cercles, les points mal classés par des triangles et les points supplémentaires par des carrés. La couleur (rouge ou noir) correspond au groupe calculé.
 
-### Exemple 2 : _distance de Mahalanobis_.
+### Exemple 2 : _distance de Mahalanobis_
 
-Dans l'exemple précédent, les deux groupes présentent à peu près la même dispersion de valeurs. Cependant, dans d'autres situations, l'un des groupes peut être nettement plus dispersé que l'autre. 
+Dans l'exemple précédent, les deux groupes présentent à peu près la même dispersion de valeurs. Cependant, dans d'autres situations, l'un des groupes peut être nettement plus dispersé que l'autre.
 
 Considérons la situation suivante, où l'on a représenté la distribution des valeurs issues de deux groupes sur un "facteur discriminant".
 
@@ -2137,14 +2175,14 @@ La définition de la distance de Mahalanobis est nettement plus compliquée lors
 L'analyse discriminante peut également être prédictive (apprentissage supervisé) : il s'agit de l'[analyse discriminante linéaire][wiki-adl] (comparable à la régression logistique).
 :::
 
-## ACP : Analyse en Composantes Principales (_PCA_) 
+## ACP : Analyse en Composantes Principales (_PCA_)
 
 - Analyse factorielle la plus courante
 - Transforme des variables corrélées statistiquement (liées entre elles) en nouvelles variables décorrélées les unes des autres : les _composantes principales_.
 - Avantages 🌟 :
-  + Réduit le nombre de variables.
-  + Simplifie une analyse.
-  + Identifie le facteur qui provoque le plus de variance.
+  - Réduit le nombre de variables.
+  - Simplifie une analyse.
+  - Identifie le facteur qui provoque le plus de variance.
 
 ### Exemple
 
@@ -2237,7 +2275,6 @@ Si nous devions regrouper les clients potentiels interrogés en fonction de ces 
 - [scikit-learn: Machine Learning in Python](https://scipy-lectures.org/packages/scikit-learn/index.html)
 - [Livre : Python pour le data scientist : Des bases du langage au machine learning](https://www.scholarvox.com/catalog/book/docid/88911514)
 
-
 [zds-stat-desc-1d]: https://zestedesavoir.com/tutoriels/1669/statistique-descriptive-a-une-dimension/
 [wiki-moyenne]: https://fr.wikipedia.org/wiki/Moyenne
 [wiki-moyenne-holder]: https://fr.wikipedia.org/wiki/Moyenne_d%27ordre_p
@@ -2273,4 +2310,3 @@ Si nous devions regrouper les clients potentiels interrogés en fonction de ces 
 [wiki-adl]: https://fr.wikipedia.org/wiki/Analyse_discriminante_lin%C3%A9aire
 [wiki-adf]: https://fr.wikipedia.org/wiki/Analyse_discriminante
 [wiki-bias]: https://en.wikipedia.org/wiki/Bias_of_an_estimator
-
