@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: 📚 Thèmes à répartir entre les groupes
 layout: '@layouts/CoursePartLayout.astro'
 ---
@@ -17,5 +17,3 @@ layout: '@layouts/CoursePartLayout.astro'
 | 8     | Industrialisation des tests (automatisations, choix des tests)                |
 | 9    | Recette fonctionnelle                                             |
 | 10    | Tester une IA en production                                             |
-
-
