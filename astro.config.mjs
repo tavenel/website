@@ -132,16 +132,13 @@ export default defineConfig({
 		]
 	},
 
-	experimental: {
-		fonts: [
-			{
-				name: "Inter",
-				cssVariable: "--font-main",
-				provider: fontProviders.fontsource(),
-				// Download only font files for characters used on the page
-				subsets: ["latin"],
-			},
-		]
-	}
-
+	fonts: [
+		{
+			name: "Inter",
+			cssVariable: "--font-main",
+			provider: fontProviders.fontsource(),
+			// Download only font files for characters used on the page
+			subsets: ["latin"],
+		},
+	],
 })
