@@ -8,7 +8,7 @@ layout: '@layouts/BaseLayout.astro'
 ## Présentation du module
 
 ### 🎯 Objectif
- 
+
 - Comprendre les enjeux de l'automatisation des tests
 - Savoir sélectionner des plans de tests à automatiser
 - Écrire des tests unitaires et d'intégration automatisés
@@ -22,12 +22,13 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 14H
 
-Évaluation : 
+Évaluation :
 
 - Projet commun avec le module [serveurs d'intégration continue](/epsi/i1/ci)
 
 ## 📑 Documents
 
+- [🔀 Module en classe renversée](/epsi/i1/tests-auto/classe-renversee)
 - [🤓 Cours sur les tests logiciels](/epsi/i1/tests-auto/cours)
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
 - [💻 TP : Tests automatisés en Python](/tests/unit/python/tp-python-tests)

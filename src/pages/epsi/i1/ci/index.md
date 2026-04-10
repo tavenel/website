@@ -8,7 +8,7 @@ layout: '@layouts/BaseLayout.astro'
 ## Présentation du module
 
 ### 🎯 Objectif
- 
+
 - Comprendre les principes et les enjeux de l'intégration et du déploiement continus dans le cadre du développement d'une application informatique.
 
 ### Compétences à acquérir
@@ -22,11 +22,12 @@ layout: '@layouts/BaseLayout.astro'
 
 Module de 10H
 
-Évaluation : Examen + Projet commun avec le module [tests automatiques](/epsi/i1/tests-auto)
+Évaluation : Classe renversée + Projet commun avec le module [tests automatiques](/epsi/i1/tests-auto)
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](/ci/cours)
+- [🔀 Module en classe renversée](/epsi/i1/ci/classe-renversee)
+- [🤓 Cours sur l'intégration continue](/ci/cours)
 - [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
 - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
 - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
@@ -54,4 +55,3 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 - [💻 TP Workflow : support de versions concurrentes](/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - Voir les autres ressources du [cours sur l'intégration continue](/ci).
-
