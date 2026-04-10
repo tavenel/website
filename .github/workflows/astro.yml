@@ -34,7 +34,7 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v6
         with:
-          ackage-manager: bun@latest
+          package-manager: bun@latest
 
   deploy:
     needs: build
