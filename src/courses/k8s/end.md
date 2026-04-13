@@ -214,6 +214,7 @@ tags:
 - <https://medium.com/@sijomthomas05/kubernetes-authentication-authorization-8bebecf52cf8>
 - <https://une-tasse-de.cafe/blog/kloak/> : injection de secrets en kernel-space via eBPF
 - [Beyond the surface - Exploring attacker persistence strategies in Kubernetes](https://raesene.github.io/blog/2025/09/12/beyond-the-surface/)
+- [Kubernetes Remote Code Execution Via Nodes/Proxy GET Permission](https://grahamhelton.com/blog/nodes-proxy-rce)
 
 ---
 
