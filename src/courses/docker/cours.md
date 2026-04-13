@@ -706,6 +706,10 @@ docker run --network host nginx
 - Permet de gérer un réseau multi-hôtes distribué entre plusieurs `Docker Engine`. 🌐
 - Routage automatique du paquet vers le bon couple : hôte/conteneur. 🌐
 
+:::warn
+Un driver overlay nécessite un orchestrateur de conteneurs comme `Docker Swarm`.
+:::
+
 ---
 
 ### 🌐 Driver `macvlan`
