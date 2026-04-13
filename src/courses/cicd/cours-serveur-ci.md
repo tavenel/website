@@ -112,8 +112,8 @@ L'utilisation d'un serveur d'intégration dédié est une ressource supplémenta
 - Augmente le temps d'exécution de la feedback loop pour le développeur (temps nécessaire avant d'avoir un retour sur la qualité des changements à intégrer). ⏳
 - Il faut trouver un **compromis** entre une **exécution rapide** mais peu de feedback, ou **beaucoup de vérifications** mais à un coût en temps et ressources élevées. ⚖️
 - En général, une feedback loop de :
-	- `15 / 30 min` est une bonne moyenne ⏳
-	- `> 1h` est peu utilisable : l'environnement du développeur sera trop différent de celui des modifications à tester ❌
+  - `15 / 30 min` est une bonne moyenne ⏳
+  - `> 1h` est peu utilisable : l'environnement du développeur sera trop différent de celui des modifications à tester ❌
 
 ---
 
@@ -158,6 +158,7 @@ L'utilisation d'un serveur d'intégration dédié est une ressource supplémenta
 ## 🔄 Modèles de déploiement
 
 Mode de déploiement `Contrôleur` / `Agent` (maître / esclave). 🔄
+
 - Le contrôleur orchestre les builds : récupère les changements à valider, choisit un nœud agent pour l'exécution et démarre le build. 🛠️
 - L'agent exécute simplement les tâches qui lui sont assignées et retourne les résultats au contrôleur. 🔄
 
@@ -210,6 +211,7 @@ Un job multi-configuration peut être d'une grande utilité dans des projets plu
 ## 🔄 Enchaînement de jobs
 
 Le chaînage des jobs est l'une des fonctionnalités les plus intéressantes de Jenkins : 🔄
+
 - Permet de créer des liens logiques entre les jobs 🔗
 - Exécution d'autres jobs en cas de succès ou d'échec ✅❌
 
@@ -221,6 +223,7 @@ En pratique, on utilise les dépendances entre jobs pour :
 - Appeler des jobs (publication de résultats, ...) qui peuvent être communs à un ensemble de builds d'intégration continue. 📢
 - Nettoyer le système en cas d'échec lors d'un build. 🧹
 - Séparer les étapes d'un processus d'intégration continue : compilation des sources, exécution des tests, analyse statique, ... 🛠️
+
 :::
 
 ---
@@ -238,6 +241,7 @@ En pratique, on utilise les dépendances entre jobs pour :
 ### 🧪 Tests unitaires et d'intégration
 
 Jenkins est un orchestrateur : il permet donc d'automatiser les tests unitaires et/ou d'intégration, de plusieurs manières : 🤖
+
 - En utilisant des plugins dédiés. 🔌
 - En s'intégrant avec des outils de build : `Maven`, `Gradle`, ... 🛠️
 - En fournissant des scripts à exécuter 📜
@@ -251,6 +255,7 @@ Jenkins permet de s'interfacer avec de nombreux outils d'exécution ou de report
 ### 🛠️ Le plugin Warnings Next Generation
 
 Regroupe de nombreux plugins d'intégration continue pour : 🛠️
+
 - Analyser les erreurs des compilateurs : `C`, `C#`, `Java` 🔍
 - Générer des avertissements en utilisant des outils d'analyse statique : `CheckStyle`, `SpotBugs` ⚠️
 - Détecter les duplications de code : `CPD` 🔍
@@ -366,9 +371,11 @@ Ces étapes sont très utiles dans des pipelines de déploiement. Elles permette
 ---
 
 :::tip
+
 - Une utilisation classique de ce pattern en intégration continue est l'exécution parallèle de tests : 🧪
 - Les tests exécutés en parallèle dépendent du job de compilation. 🏗️
 - Un job de résultats regroupe toutes les exécutions dans une étape `join`. 🔄
+
 :::
 
 ---
@@ -378,6 +385,7 @@ Pour plus d'informations sur l'enchaînement de jobs :
 
 - Le plugin [Depgraph View](https://plugins.jenkins.io/depgraph-view/) permet de représenter les dépendances 📊
 - Documentation du plugin [join](https://plugins.jenkins.io/join/) 📄
+
 :::
 
 ---
@@ -407,23 +415,6 @@ La documentation de Jenkins est très complète, on pourra notamment citer :
 - Comment utiliser les [pipelines Jenkins ?](https://www.jenkins.io/doc/book/pipeline/)
 - Comment mettre en œuvre les [builds dans Jenkins ?](https://www.jenkins.io/doc/pipeline/tour/getting-started/)
 - [Guide complet de Jenkins](https://www.jenkins.io/doc/)
-
-[jenkins-logo]: https://www.jenkins.io/images/logos/jenkins/256.png
-[server-ci-process]: ./server-ci-process.jpg
-[sonarqube-ui]: https://upload.wikimedia.org/wikipedia/commons/a/ac/SonarQube_Project_page.png
-
-<!--references-->
-[jenkins-website]: https://www.jenkins.io/
-[doc-jenkins-main]: https://www.jenkins.io/doc/
-[doc-jenkins-secu]: https://www.jenkins.io/doc/book/managing/security/
-[doc-jenkins-plugins]: https://www.jenkins.io/doc/book/managing/plugins/
-[doc-jenkins-pipelines]: https://www.jenkins.io/doc/tutorials/#pipeline
-[doc-jenkins-builds]: https://www.jenkins.io/doc/tutorials/#tools
-[jenkins-guide-complet]: https://jenkins-le-guide-complet.github.io/html/book.html
-
-<!--plugins-->
-[plugin-depgraph-view]: https://plugins.jenkins.io/depgraph-view/
-[plugin-join]: https://plugins.jenkins.io/join/
+- [Modernizing Jenkins: From Static Agents to Kubernetes Dynamic Pods](https://blog.stackademic.com/modernizing-jenkins-from-static-agents-to-kubernetes-dynamic-pods-fbda3f897018)
 
 ---
-
