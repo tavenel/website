@@ -213,6 +213,7 @@ tags:
 - Déployer un Pod _honeypot_ pour détecter les mouvements latéraux suspects : <https://beelzebub-honeypot.com/blog/deploy-beelzebub-honeypot-on-kubernetes/>
 - <https://medium.com/@sijomthomas05/kubernetes-authentication-authorization-8bebecf52cf8>
 - [Beyond the surface - Exploring attacker persistence strategies in Kubernetes](https://raesene.github.io/blog/2025/09/12/beyond-the-surface/)
+- [Kubernetes Remote Code Execution Via Nodes/Proxy GET Permission](https://grahamhelton.com/blog/nodes-proxy-rce)
 
 ---
 
