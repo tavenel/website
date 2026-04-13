@@ -27,9 +27,10 @@ Module de 10H
 - [🤓 Cours - introduction à Docker](/docker/cours)
 - [🤓 Cheatsheet commandes Docker®, Dockerfile & Docker Compose](/docker/cheatsheet)
 - [  TP Docker® : Introduction à l'usage de conteneurs](/docker/tp)
+- [  TP Docker Compose : Gestion de services applicatifs](/docker/tp-docker_compose)
+- [  TP Conteneurisation d'une application multi-composants](/docker/tp-app) : Comment conteneuriser une petite application fullstack afin de faciliter son déploiement.
 - [  TP Optimisation des layers d'une image Docker](/docker/tp-layers) : optimiser le Dockerfile d'une application.
 - [  TP Build avec buildx et BuildKit](/docker/tp-buildkit) : l'objectif de ce TP est de découvrir BuildKit, un builder moderne pour Docker.
-- [  TP Docker Compose : Gestion de services applicatifs](/docker/tp-docker_compose)
 
 ### Kubernetes
 
