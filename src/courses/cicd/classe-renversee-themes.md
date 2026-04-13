@@ -178,7 +178,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 10. Outils CI/CD (comparatif)
+## 10. Serveurs CI/CD (comparatif)
 
 ### Objectifs
 
@@ -213,6 +213,7 @@ layout: '@layouts/CoursePartLayout.astro'
   - SAST / DAST
   - scan de dépendances
 - Intégration dans pipeline
+- Attaques supply chain
 
 ---
 
