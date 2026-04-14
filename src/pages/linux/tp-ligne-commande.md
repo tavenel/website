@@ -25,6 +25,7 @@ Voir aussi :
 - <https://doc.ubuntu-fr.org/tutoriel/console_ligne_de_commande>
 - <https://doc.ubuntu-fr.org/console>
 - <https://doc.ubuntu-fr.org/terminal>
+
 :::
 
 ## Variables shell
@@ -37,7 +38,7 @@ Voir aussi :
 
 - _Variables Locales et Globales_ : En Bash, les variables sont locales par défaut, ce qui signifie qu'elles ne sont visibles que dans le script ou le contexte où elles sont déclarées. Pour créer une variable globale (ou variable d'environnement), on utilise l'instruction `export`. Par exemple : `export MA_VARIABLE_GLOBALE="Voici une variable globale"`. _Attention : l'export n'est réalisé que sur les processus pour lesquels vous avez le droit d'impacter l'environnement ! En général, il s'agit donc des processus hérités du processus courant._
 - `env` est une commande commande utilisée pour afficher les variables d'environnement et leurs valeurs actuelles.
-- `set` affiche les variables d'environnement, les variables locales et les options du shell. 
+- `set` affiche les variables d'environnement, les variables locales et les options du shell.
 - Quelques variables d'environnement courantes :
   - `USER` : Le nom de l'utilisateur actuellement connecté.
   - `HOME` : Le répertoire personnel de l'utilisateur.
@@ -53,6 +54,7 @@ env NOM_DE_VARIABLE=VALEUR mon_programme
 ```
 
 :::exo
+
 1. Créer une variable `ma_variable` ayant comme valeur `42`. Afficher la valeur de cette variable.
 1. Taper la commande `bash` : ceci va créer un nouveau shell (dans un nouveau processus) fils du shell courant.
 1. Vérifier que la variable `ma_variable` n'est pas instanciée. Finir l'exécution de ce processus par la commande `exit`.
@@ -60,6 +62,7 @@ env NOM_DE_VARIABLE=VALEUR mon_programme
 1. Taper de nouveau la commande `bash` pour créer un nouveau shell (dans un nouveau processus) fils du shell courant.
 1. Vérifier que la variable `ma_variable` est maintenant présente dans le nouveau processus. Finir l'exécution de ce processus par la commande `exit`.
 1. Supprimer la variable `ma_variable`.
+
 :::
 
 ### Le PATH
@@ -84,11 +87,13 @@ Modifier le `PATH` pour ajouter un répertoire de votre choix contenant un binai
 4. La commande `type` est utilisée pour déterminer le type d'une commande. Elle indique si une commande est une commande interne du shell, une commande externe ou un alias.
 
 :::exo
+
 1. Afficher la page de manuel de la commande `ls`.
 1. Trouver des commandes liées à la copie de fichiers.
 1. Chercher le chemin vers l'exécutable de la commande `python`.
 1. Chercher le type de la commande `ls`.
 1. Chercher le type de la commande `cd`.
+
 :::
 
 ## Historique des commandes
@@ -121,17 +126,21 @@ echo ${^array}.png # one.png two.png three.png
 ```
 
 :::exo
+
 1. Comment affichez-vous les 10 dernières commandes de l'historique ?
 1. Utilisez la commande `!n` (où `n` est un numéro de commande) pour réexécuter une commande spécifique à partir de l'historique.
 1. Utilisez la commande `!!` pour réexécuter la dernière commande de votre historique.
 1. Utilisez la commande `!commande` (où `commande` est une partie d'une commande précédente) pour réexécuter la dernière commande qui contient la chaîne spécifiée.
 1. Quel est le rôle du fichier `.bash_history` ?
 1. Comment effacez-vous l'historique des commandes ?
+
 :::
 
 :::tip
+
 - Pour éviter d'ajouter une commande dans l'historique, par exemple pour des raisons de sécurité, il suffit d'ajouter un espace avant la commande.
 - La commande `history -c` efface l'historique de la session courante.
+
 :::
 
 ## Complétion et navigation : Tabulation, touches directionnelles, raccourcis
@@ -160,3 +169,7 @@ echo ${^array}.png # one.png two.png three.png
   - `[Ctrl] + [T]` : inverse les 2 derniers caractères
   - `[Alt] + [T]` : inverse les 2 derniers mots
 - Il est possible d'utiliser plutôt les raccourcis `vi` : `set -o vi`
+
+:::link
+Voir aussi : <https://blog.hofstede.it/shell-tricks-that-actually-make-life-easier-and-save-your-sanity/>
+:::
