@@ -162,27 +162,12 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 9. Infrastructure et environnements
+## 9. Serveurs CI/CD (comparatif) et Infrastructure & environnements
 
 ### Objectifs
 
 - Comprendre où s’exécute la CI
-
-### Travail étudiants
-
-- Concepts :
-  - conteneurs
-  - VM
-  - Kubernetes
-- Isolation des environnements
-
----
-
-## 10. Serveurs CI/CD (comparatif)
-
-### Objectifs
-
-- Vision marché
+- Vision marché des serveurs CI/CD
 
 ### Travail étudiants
 
@@ -194,14 +179,14 @@ layout: '@layouts/CoursePartLayout.astro'
   - simplicité
   - extensibilité
   - scalabilité
-
-### Livrable
-
-- Tableau comparatif critique
+- Isolation des environnements :
+  - conteneurs
+  - VM
+  - Kubernetes
 
 ---
 
-## 11. Sécurité dans la CI/CD (DevSecOps)
+## 10. Sécurité dans la CI/CD (DevSecOps)
 
 ### Objectifs
 
@@ -217,7 +202,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 12. Monitoring et feedback
+## 11. Monitoring et feedback
 
 ### Objectifs
 
@@ -232,7 +217,7 @@ layout: '@layouts/CoursePartLayout.astro'
 
 ---
 
-## 13. Bonnes pratiques et anti-patterns
+## 12. Bonnes pratiques et anti-patterns
 
 ### Objectifs
 
