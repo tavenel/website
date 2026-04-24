@@ -416,6 +416,84 @@ Un *Pare-feu d'applications Web* (WAF) comme `ModSecurity` permet de protéger v
 docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
 ```
 
+## Debug
+
+### Afficher le contenu d'un conteneur sans y accéder
+
+- Utile pour un conteneur ne pouvant pas exécuter de shell ou pour un conteneur arrêté.
+- Rappel : le filesystem d'un conteneur est un ensemble de layers : il suffit de récupérer le filesystem fusionné
+
+```sh
+docker inspect -f '{{.GraphDriver.Data.MergedDir}}' mon_conteneur
+```
+
+:::warn
+Le `MergedDir` n'est exposé que sur un driver `overlay` (non disponible, par exemple, avec un driver `btrfs`).
+:::
+
+## IA
+
+### Model runner
+
+Permet d'exécuter facilement un modèle d'IA.
+
+```sh
+docker model run …
+```
+
+:::link
+Voir :
+
+- la documentation : <https://docs.docker.com/ai/model-runner/>
+- le catalogue : <https://hub.docker.com/catalogs/models>
+
+:::
+
+### Model-Connected-Pipeline (MCP)
+
+Permet de gérer l'intégration avec des MCPs.
+
+```sh
+docker mcp …
+```
+
+Démarrer la passerelle (point d'accès unique pour le client) :
+
+```sh
+docker mcp gateway run
+```
+
+:::link
+Voir :
+
+- la documentation : <https://docs.docker.com/ai/mcp-catalog-and-toolkit/>
+- le catalogue : <https://hub.docker.com/mcp>
+
+:::
+
+## Offload
+
+Permet de builder et d'exécuter les conteneurs dans le Cloud.
+
+:::link
+Voir la documentation : <https://docs.docker.com/offload/>
+:::
+
+### Création d'un environnement Cloud
+
+```sh
+docker offload start
+```
+
+### Exécution d'un conteneur
+
+```sh
+docker run --rm hello-world
+
+# Si besoin de GPU :
+docker run --rm --gpus all hello-world
+```
+
 ## Liens
 
 :::link
@@ -638,69 +716,6 @@ COPY --from=repo2 /lib /app/lib
 docker buildx build \
   --build-context repo1=git://github.com/user/repo1.git \
   --build-context repo2=git://github.com/user/repo2.git .
-```
-
-## IA
-
-### Model runner
-
-Permet d'exécuter facilement un modèle d'IA.
-
-```sh
-docker model run …
-```
-
-:::link
-Voir :
-
-- la documentation : <https://docs.docker.com/ai/model-runner/>
-- le catalogue : <https://hub.docker.com/catalogs/models>
-
-:::
-
-### Model-Connected-Pipeline (MCP)
-
-Permet de gérer l'intégration avec des MCPs.
-
-```sh
-docker mcp …
-```
-
-Démarrer la passerelle (point d'accès unique pour le client) :
-
-```sh
-docker mcp gateway run
-```
-
-:::link
-Voir :
-
-- la documentation : <https://docs.docker.com/ai/mcp-catalog-and-toolkit/>
-- le catalogue : <https://hub.docker.com/mcp>
-
-:::
-
-## Offload
-
-Permet de builder et d'exécuter les conteneurs dans le Cloud.
-
-:::link
-Voir la documentation : <https://docs.docker.com/offload/>
-:::
-
-### Création d'un environnement Cloud
-
-```sh
-docker offload start
-```
-
-### Exécution d'un conteneur
-
-```sh
-docker run --rm hello-world
-
-# Si besoin de GPU :
-docker run --rm --gpus all hello-world
 ```
 
 ---
