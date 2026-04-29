@@ -733,8 +733,8 @@ flowchart LR
     comfort_class -.-> shared_comfort_class
     schedule -.-> shared_schedule
     search --> search_comfort_class & search_schedule
-    shared_comfort_class -.-> search_comfort_class
-    shared_schedule -.-> search_schedule
+    search_comfort_class -.-> shared_comfort_class
+    search_schedule -.-> shared_schedule
 
     class comfort_class,shared_comfort_class,search_comfort_class blue
     class schedule,shared_schedule,search_schedule green
@@ -1259,25 +1259,11 @@ DDD utilise les concepts d'**architecture à grande échelle** pour organiser le
 
 ---
 
-1. **Ordre évolutif**  
-
-- Laisser la structure évoluer avec le temps.
-
-2. **Métaphore système**  
-
-- Rechercher une métaphore globale pour le système.
-
-3. **Couches de responsabilité**  
-
-- Organiser le modèle de domaine en plusieurs couches.
-
-4. **Niveau de connaissance**  
-
-- Permettre la configuration des opérations principales à partir d'un niveau de connaissance.
-
-5. **Cadre de composants plug-and-play**  
-
-- Abstraction du cœur avec une infrastructure de plugins.
+- **Ordre évolutif** : laisser la structure évoluer avec le temps.
+- **Métaphore système** : rechercher une métaphore globale pour le système.
+- **Couches de responsabilité** : organiser le modèle de domaine en plusieurs couches.
+- **Niveau de connaissance** : permettre la configuration des opérations principales à partir d'un niveau de connaissance.
+- **Cadre de composants plug-and-play** : abstraction du cœur avec une infrastructure de plugins.
 
 ---
 
@@ -1300,11 +1286,11 @@ Voici des **patterns** qui favorisent un design souple :
 
 ---
 
-5. **Classes autonomes**  
+1. **Classes autonomes**  
    - Réduire les dépendances pour alléger la charge mentale.
-6. **Opérations dans des ensembles clos**  
+2. **Opérations dans des ensembles clos**  
    - Les opérations doivent idéalement retourner le même type que leurs arguments.
-7. **Design déclaratif**  
+3. **Design déclaratif**  
    - Utiliser un style de programmation déclaratif si possible.
 
 ---
