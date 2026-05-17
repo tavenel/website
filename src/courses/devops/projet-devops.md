@@ -69,11 +69,13 @@ Utiliser un gestionnaire d'artefacts permet à la fois d'éviter d'exposer ceux-
 
 Nexus OSS est un gestionnaire d'_artefacts_, de dépendances, d'images Docker, … pouvant être déployé _on-premise_ et intégrable dans de nombreux outils.
 
-:::link - Pour plus d'information, voir la documentation officielle : <https://help.sonatype.com/en/sonatype-nexus-repository.html>
+:::link
 
+- Pour plus d'information, voir la documentation officielle : <https://help.sonatype.com/en/sonatype-nexus-repository.html>
 - Exemple d'amélioration du temps de build d'image Docker grâce à Nexus : <https://blog.stephane-robert.info/post/homelab-optimisation-temps-build-nexus/>
 - Exemples de gestionnaires d'artefacts : <https://blog.stephane-robert.info/docs/developper/artefacts/>
 - Utiliser Gitlab pour stocker ses images docker : <https://blog.stephane-robert.info/post/gitlab-container-docker-registry/>
+
 :::
 
 ## Observabilité
