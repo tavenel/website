@@ -642,31 +642,6 @@ kubectl describe po/web-deploy-85c575ffc9-g2mwj
 
 Nous avons déjà vu comment utiliser un `Service` de type `ClusterIP` ou `NodePort` pour accéder facilement à un `Pod` depuis l'intérieur ou l'extérieur du cluster. Il existe des configurations plus évoluées :
 
-### Externel IP
-
-En Kubernetes, le champ `externalIPs` dans la configuration d'un `Service` permet d'associer une ou plusieurs adresses IP externes à ce service. Ces adresses IP sont généralement utilisées pour rendre un service accessible depuis l'extérieur du cluster, mais sans avoir besoin d'utiliser un load balancer ou un service de type `NodePort`.
-
-Lorsque vous définissez un ou plusieurs `externalIPs` pour un service, Kubernetes redirige automatiquement le trafic provenant de ces adresses IP externes vers le service interne.
-
-Les `externalIPs` ne sont pas gérés par Kubernetes (ce ne sont pas des adresses IP dynamiques attribuées automatiquement comme dans un `LoadBalancer`). Il s'agit d'adresses IP statiques que vous devez configurer manuellement en dehors du cluster.
-
-```yml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  type: ClusterIP
-  selector:
-    app: my-app
-  ports:
-    - port: 80           # Le port exposé par le service
-      targetPort: 8080    # Le port sur lequel l'application dans le pod écoute
-  externalIPs:
-    - 192.168.1.100       # IP externe statique
-    - 192.168.1.101       # Une autre IP externe statique
-```
-
 ### LoadBalancer
 
 Un `LoadBalancer` distribue le trafic **entrant** entre plusieurs pods, ce qui permet d'optimiser l'utilisation des ressources et de prévenir la surcharge d'un seul pod. Cela aide à assurer une réponse rapide même sous des charges élevées.
