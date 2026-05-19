@@ -71,10 +71,12 @@ Non supporté officiellement, uniquement pour une instance de test !
 :::
 
 1. Arrêter les VMs
-  - workers puis control-plane(s) (mieux) sinon en parallèle OK
-  - shutdown OS <- stop automatique des services systemd <- stop automatique des pods
-2. Forcer la suppression des Pod bloqués
-3. Redémarrer les VMs (ordre sans importance)
+
+- workers puis control-plane(s) (mieux) sinon en parallèle OK
+- shutdown OS <- stop automatique des services systemd <- stop automatique des pods
+
+1. Forcer la suppression des Pod bloqués
+2. Redémarrer les VMs (ordre sans importance)
 
 Si problème sur un Node :
 
@@ -87,7 +89,7 @@ Si cluster cassé :
 
    ```bash
    kubeadm reset -f
-	 # puis re-init ou re-join
+  # puis re-init ou re-join
    ```
 
 ## Client
@@ -133,6 +135,7 @@ Attention à ne pas merger et rediriger `~/.kube/config` avec lui-même pour ne 
 export KUBECONFIG=~/.kube/config:/tmp/config.b
 kubectl config view --flatten > ~/.kube/config # !! KO !!
 ```
+
 :::
 
 ## Administration
@@ -304,6 +307,7 @@ Afficher le process `etcd` (tourne en pod statique stacké dans le cluster si d�
 ```sh
 ps aux | grep etcd
 ```
+
 :::
 
 ##### Entre pairs
@@ -1831,13 +1835,13 @@ openssl req -x509 -nodes -new -x509 \
   -subj "/CN=ingress.tls"
 ```
 
-2. Création du secret associé
+1. Création du secret associé
 
 ```sh
 kubectl create secret tls secret-tls --cert=tls.crt --key=tls.key
 ```
 
-3. Création de l'Ingress
+1. Création de l'Ingress
 
 ```sh
 kubectl create ingress example-tls --rule="foo.com/bar=svc1:8080,tls=secret-tls"
@@ -2358,7 +2362,6 @@ Le CNI doit supporter la `NetworkPolicy` : ce n'est pas le cas de `Flannel` ! La
 - DNS Aware : autoriser FQDN vs IP
 - Observabilité native Cilium (intégration avec _Hubble_)
 
-
 | Critère           | NetworkPolicy K8s   | CiliumNetworkPolicy      |
 | ----------------- | ------------------- | ------------------------ |
 | Type              | Standard Kubernetes | CRD Cilium               |
@@ -2464,6 +2467,19 @@ spec:
 
 :::link
 Voir aussi : <https://learnkube.com/security-contexts>
+:::
+
+## hostUsers
+
+- `hostUsers: false` active les _User Namespaces Linux_ et donc désactive le partage du namespace utilisateur de l'hôte pour un Pod.
+- Le conteneur voit ses propres UID/GID (e.g. `root: Container UID=0`), mappés vers des UID/GID non privilégiés sur l'hôte (e.g. `root: Host UID=10001`).
+- `root` dans le conteneur /= `root` sur l'hôte
+
+:::warn
+
+- Le CRI et le kernel doivent supporter cette option.
+- Souvent problématique pour le stockage partagé : les permissions ne sont plus les mêmes
+
 :::
 
 ## PodDisruptionBudget
