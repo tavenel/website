@@ -299,7 +299,7 @@ Des outils comme `dependabot` (pour _Github Actions_) permettent de créer une p
 ### 🚀 Optimisation de l'artefact et déploiement
 
 - `Docker Slim` : Minification des images Docker.
-- `Kaniko` / `BuildKit` : Builds plus rapides et sécurisés.
+- `Buildah` / `BuildKit` : Builds plus rapides et sécurisés.
 - `Helm` + `chart-testing` : Validation des chartes Helm avant déploiement.
 - `Argo CD` / `FluxCD` : Déploiement GitOps.
 
