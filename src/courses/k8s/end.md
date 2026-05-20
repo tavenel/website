@@ -210,6 +210,7 @@ tags:
 - Déployer un Pod _honeypot_ pour détecter les mouvements latéraux suspects : <https://beelzebub-honeypot.com/blog/deploy-beelzebub-honeypot-on-kubernetes/>
 - <https://medium.com/@sijomthomas05/kubernetes-authentication-authorization-8bebecf52cf8>
 - <https://une-tasse-de.cafe/blog/kloak/> : injection de secrets en kernel-space via eBPF
+- [Beyond the surface - Exploring attacker persistence strategies in Kubernetes](https://raesene.github.io/blog/2025/09/12/beyond-the-surface/)
 
 ---
 
@@ -311,6 +312,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Modifier des ressources k8s : Client-side vs Server-side : <https://hackernoon.com/battle-for-resources-or-the-ssa-path-to-kubernetes-diplomacy>
 - <https://medium.com/bigdatarepublic/frameworks-for-serving-machine-learning-models-on-kubernetes-835565067d6b>
 - <https://github.com/moabukar/k8s-in-a-box> : random broken app to fix for learning
+- Informations sur les certifications k8s : <https://blog.zwindler.fr/2026/01/18/rex-kubestronaut/>
 
 ---
 
