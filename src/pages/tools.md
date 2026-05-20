@@ -363,6 +363,7 @@ created: 2024-10-17
 - API monitoring : `checkly`
 - OCSInventory => inventaire automatique et gestion de parc de machines
 - GLPI => gestion de parc, ticketing, …
+- <https://github.com/incidentfox/incidentfox> : AI SRE platform (in Slack, …)
 
 ### Monitoring
 
