@@ -82,8 +82,10 @@ tags:
 - Certified Kubernetes Security Specialist (CKS) 📜
 
 :::link
+
 - Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) 📚
 - Pour s'entraîner aux certifications, utiliser <https://github.com/sailor-sh/CK-X>
+
 :::
 
 ---
@@ -194,6 +196,7 @@ tags:
 - [SPIFFE et mTLS avec cert-manager](https://une-tasse-de.cafe/blog/spiffe/) 🔐
 - Déployer un Pod _honeypot_ pour détecter les mouvements latéraux suspects : <https://beelzebub-honeypot.com/blog/deploy-beelzebub-honeypot-on-kubernetes/>
 - <https://medium.com/@sijomthomas05/kubernetes-authentication-authorization-8bebecf52cf8>
+- <https://une-tasse-de.cafe/blog/kloak/> : injection de secrets en kernel-space via eBPF
 
 ---
 
@@ -210,18 +213,20 @@ tags:
 
 :::tip
 L'image `shpod` est très utile pour du débug, on pourra la lancer depuis une _Helm Chart_ :
+
 ```sh
 helm upgrade --install --repo https://shpod.in/ shpod shpod \
-	--namespace default \
-	--set service.type=NodePort \
-	--set resources.requests.cpu=0.1 \
-	--set resources.requests.memory=500M \
-	--set resources.limits.cpu=1 \
-	--set resources.limits.memory=500M \
-	--set persistentVolume.enabled=true \
-	--set "rbac.cluster.clusterRoles={cluster-admin}" \
-	--set ssh.authorized_keys="\$(cat ~/.ssh/*.pub)"
+ --namespace default \
+ --set service.type=NodePort \
+ --set resources.requests.cpu=0.1 \
+ --set resources.requests.memory=500M \
+ --set resources.limits.cpu=1 \
+ --set resources.limits.memory=500M \
+ --set persistentVolume.enabled=true \
+ --set "rbac.cluster.clusterRoles={cluster-admin}" \
+ --set ssh.authorized_keys="\$(cat ~/.ssh/*.pub)"
 ```
+
 :::
 
 ---
@@ -282,4 +287,3 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 - Other names may be trademarks of their respective owners
 
 ---
-
