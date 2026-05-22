@@ -217,6 +217,8 @@ tags:
 - [Kubernetes Remote Code Execution Via Nodes/Proxy GET Permission](https://grahamhelton.com/blog/nodes-proxy-rce)
 - [UserNamespaces dans Kubernetes : la feature géniale qui sert (presque) à rien. (Zwindler's Reflection)](https://blog.zwindler.fr/2026/04/28/kubernetes-usernamespaces/)
 - [nodes/proxy GET : la permission Kubernetes de trop (Zwindler's Reflection)](https://blog.zwindler.fr/2026/05/19/kubernetes-nodes-proxy-rce/)
+- <https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/>
+- <https://kayssel.substack.com/p/kubernetes-for-pentesters-breaking>
 
 ---
 
@@ -255,6 +257,7 @@ helm upgrade --install --repo https://shpod.in/ shpod shpod \
 
 - [Helm: package manager pour déployer dans k8s](https://helm.sh/) et [Introduction à Helm](https://www.aukfood.fr/helm-le-meilleur-ami-de-votre-kubernetes/) 📦
 - [Exemple de monitoring Prometheus - Grafana dans un cluster Kubernetes](https://blog.octo.com/exemple-dutilisation-de-prometheus-et-grafana-pour-le-monitoring-dun-cluster-kubernetes) 📊
+- <https://une-tasse-de.cafe/blog/crd-vs-apiservice/>
 
 ---
 
