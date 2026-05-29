@@ -8,9 +8,9 @@ checked: 2025-09-26
 
 ### Notions d'apprentissage
 
-- **Cessité attentionnelle** : lors d'un focus fort sur une tâche, peu d'attention au reste
+- **Cécité attentionnelle** : lors d'un focus fort sur une tâche, peu d'attention au reste
   - Voir l'expérience du gorille dans ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-attention-4589382>
-  - Voir l'expérience de ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/votre-cerveau-cree-en-se-liberant-du-jugement-5137741>
+  - Voir aussi ce podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/votre-cerveau-cree-en-se-liberant-du-jugement-5137741>
   - Vidéo Youtube : [selective attention test](https://www.youtube.com/watch?v=IGQmdoK_ZfY)
 - **Inhibition** : capacité du cortex préfrontal à sortir des routines et automatismes
   - Voir l'expérience de l'effet Stroop : <https://biais-psychologiques.com/biais/effet-stroop/> et podcast : <https://www.radiofrance.fr/franceculture/podcasts/votre-cerveau/l-inhibition-et-la-flexibilite-3735919>
@@ -61,18 +61,18 @@ checked: 2025-09-26
 
 ### Méthode des J
 
-- Principe : "raffraichir" la mémoire à dates régulières afin d'éviter la courbe de l'oubli en révisant par exemple à :
+- Principe : "rafraîchir" la mémoire à dates régulières afin d'éviter la courbe de l'oubli en révisant par exemple à :
   - J0, J1, J3, J7, J14, J30
   - J0, J1, J3, J10, J20, J35
   - J0, J2, J5, J14
-- En Pratique : QCMs, exercices, … aux dates prévues. L'apprentissage se fait à J0, les autres dates sont de courtes sessions de remémorisation.
+- En pratique : QCMs, exercices, … aux dates prévues. L'apprentissage se fait à J0, les autres dates sont de courtes sessions de remémorisation.
 - <https://www.adobe.com/fr/acrobat/resources/studying/spaced-repetition-method.html>
 - <https://hermione.co/methode-des-j-pass/>
 
 ### Prise de notes et rédaction efficaces
 
 - Noter et écrire le fond en _temps réel_
-- Avoir une collection d'abbréviations pour gagner du temps
+- Avoir une collection d'abréviations pour gagner du temps
 - Séparer d'une colonne : notes objectives "résumé" et notes subjectives "questions / actions à prendre / …"
 - Retravailler la forme et la mise en page plus tard
 - <https://apprendre5minutes.wordpress.com/2025/03/08/techniques-prise-de-notes-efficaces/>

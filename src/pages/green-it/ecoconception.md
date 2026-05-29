@@ -247,7 +247,7 @@ sequenceDiagram
 
 - Machine virtuelle / Docker pour déploiements mutualisés
 - Attention : cloud == green n'est pas automatique
-- Mutualiser les appels aux dépendances (BDD, services externes...) pour récupérer toute la donnée en 1x
+- Mutualiser les appels aux dépendances (BDD, services externes...) pour récupérer toute la donnée en une fois
 
 ---
 

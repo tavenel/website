@@ -16,9 +16,9 @@ L'encodage est une norme qui décrit comment stocker et afficher les caractères
 
 ### Conversions d'encodages
 
-#### La commande `iconv` 
+#### La commande `iconv`
 
-La commande `iconv` permet de changer l'encodage d'un fichier : `iconv -f <FORMAT_ACTUERL> -t <FORMAT-DESTINATION> input.txt > output.txt`
+La commande `iconv` permet de changer l'encodage d'un fichier : `iconv -f <FORMAT_ACTUEL> -t <FORMAT_DE_DESTINATION> input.txt > output.txt`
 
 `iconv --list` fournit une liste des encodages disponibles.
 
@@ -38,7 +38,7 @@ En principe :
 - Une fin de ligne sous Unix (Linux/MacOS > 10) s'écrit par une terminaison de ligne uniquement (`LF`)
 - Une fin de ligne sous MacOS <= 9 s'écrit par un retour chariot uniquement (`CR`)
 
-La plupart des programmes savent gérer les 2 types d'écriture mais il peut être utile de convertir par exemple les fichiers de script dans le format attendu sur la machine qui l'exécutera.
+La plupart des programmes savent gérer les deux types d'écriture, mais il peut être utile de convertir, par exemple, les fichiers de script dans le format attendu sur la machine qui les exécutera.
 
 Pour s'assurer d'utiliser la convention Unix (donc: supprimer les retours chariot) on peut utiliser l'utilitaire _POSIX_ `tr` (donc disponible sur presque tout système Unix) ligne par ligne : `tr -d '\r'`.
 
@@ -56,7 +56,7 @@ echo "$(tr -d '\r' < mon_fichier)" > mon_fichier
 1. Vérifier que la version de `vim` supporte l'encodage : `vim --version | grep multi_byte`
 2. Afficher l'encodage d'affichage courant : `:set encoding?`
   - Linux utilise presque toujours `UTF-8` pour le contenu d'un fichier.
-  - Il existe des exception : `python`, …
+  - Il existe des exceptions : `python`, …
 3. Modifier l'encodage d'écriture courant en `UTF-16`. Attention il s'agit de `fileencoding` et non de `encoding` !
   - `:set fileencoding=utf-16`
 4. Enregistrer le fichier : `:w`
@@ -72,7 +72,7 @@ echo "$(tr -d '\r' < mon_fichier)" > mon_fichier
 
 - Pour configurer la langue, on utilise des _LOCALE_ du système.
 - Le changement de langue a un impact fort (format d'affichage des heures et des dates, devises, …) et est donc séparé en plusieurs options : les variables `LC_*`.
-- Les _locale_ à générer sur le système sont décrites dans `/etc/locale.gen` (seules les lignes non commentées sont utilisées)
+- Les _locale_ à générer sur le système sont décrites dans `/etc/locale.gen` (seules les lignes non commentées sont utilisées).
 - La `locale` par défaut du système est écrite dans : `/etc/default/locale`.
 
 
@@ -85,7 +85,7 @@ dpkg-reconfigure locales
 :::
 
 :::exo
-1. Afficher les informations de `locale` actuels.
+1. Afficher les informations de `locale` actuelles.
   - Exécuter la commande `ls /toto` : une erreur en anglais devrait être retournée.
 2. Ajouter la locale `fr_FR.UTF-8` aux locales à générer
 3. Afficher les locales disponibles sur le système : `locale -a`
@@ -98,6 +98,6 @@ dpkg-reconfigure locales
   - `export LC_ALL="fr_FR.UTF-8"`
 7. Exécutez la commande `bash` pour relancer un shell et vérifier que la `locale` est correcte.
 8. Sous Ubuntu, il faut installer le package supplémentaire `language-pack-fr` pour mettre à jour la langue pour les commandes système.
-9. Vérifier que la commande `ls /toto` renvoit maintenant un message d'erreur en français
+9. Vérifier que la commande `ls /toto` renvoie maintenant un message d'erreur en français.
 :::
 

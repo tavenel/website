@@ -8,13 +8,13 @@ date: 2025 / 2026
 **Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery)** :
 
 - Savoir identifier les traces d'une compromission sur un système Linux.
-- Analyser les logs système et les mécanismes de persistence.
+- Analyser les logs système et les mécanismes de persistance.
 - Utiliser des outils dédiés à la détection de rootkits et d'anomalies.
 - Comprendre le rôle de l'audit et de la surveillance continue.
 
 ## Contexte
 
-L'administrateur d'un serveur interne a remarqué une montée d'activité réseau inhabituelle et une entrée suspecte dans `/etc/cron.d`. Après triage initial, il vous demande d'identifier si la machine a été compromise, quelles traces existent, et de produire un rapport avec preuves et actions recommandées.
+L'administrateur d'un serveur interne a remarqué une augmentation d'activité réseau inhabituelle et une entrée suspecte dans `/etc/cron.d`. Après triage initial, il vous demande d'identifier si la machine a été compromise, quelles traces existent, et de produire un rapport avec preuves et actions recommandées.
 
 ## Préparation de l'environnement
 
@@ -146,12 +146,12 @@ En utilisant les outils Linux standard, vérifier :
 
 ### Librairies dynamiques en pré-chargement
 
-- Le "preload" de librairie dynamique : `/etc/ld.so.preload` est souvent un indicateur de rootkit.
+- Le préchargement de bibliothèques dynamiques : `/etc/ld.so.preload` est souvent un indicateur de rootkit.
 
 ## Utilisation d'osquery
 
 :::tip
-Osquery est un outil open source développé par Facebook (Meta) qui permet de transformer les informations système d'un ordinateur en tables relationnelles accessibles via un langage de requête SQL. Il est conçu pour faciliter la surveillance, la détection d'intrusions et l'investigation "forensics" sur les systèmes Linux, macOS et Windows.
+Osquery est un outil open source développé par Facebook (Meta) qui permet de transformer les informations système d'un ordinateur en tables relationnelles accessibles via un langage de requête SQL. Il est conçu pour faciliter la surveillance, la détection d'intrusions et l'investigation forensique sur les systèmes Linux, macOS et Windows.
 :::
 
 ### Interrogation du système avec osquery

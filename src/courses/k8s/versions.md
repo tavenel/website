@@ -4,7 +4,7 @@ title: Versions et upgrade
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
-- Kubernetes suit un versionning _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
+- Kubernetes suit un versionnage _sémantique_ vMAJOR.MINOR.PATCH (ex 1.28.9).
 - Il est _recommandé_ (pas obligatoire) d'exécuter des versions homogènes sur l'ensemble du cluster mais :
 - Les `APIServer` (en H/A) peuvent avoir différentes versions
   - et donc le résultat de `kubectl` peut être … exotique !

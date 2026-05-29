@@ -77,7 +77,7 @@ Voir le [🧪 cours sur les tests unitaires](/tests#tests-unitaires)
 
 ---
 
-## 🗂️ Les outils de versionning
+## 🗂️ Les outils de versionnage
 
 Versionner son code source permet :
 

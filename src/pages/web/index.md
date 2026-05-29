@@ -16,4 +16,4 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP : Utilisation du protocole HTTP avec Telnet](/web/exo-telnet_http)
 - [💻 TP : Envoi de mail en utilisant le protocole SMTP](/web/exo-smtp)
 - [📝 TD Protocoles Web et adressage réseau](/web/protocoles-web-td)
-- [💻 TP Wordpress : Création d'un site utilisant des services cloud SaaS](/web/tp_wordpress)
+- [💻 TP WordPress : création d'un site utilisant des services cloud SaaS](/web/tp_wordpress)

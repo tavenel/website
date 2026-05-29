@@ -35,7 +35,7 @@ tags:
    1. **d'émettre une requête vers le serveur**
 
 
-1. Le nombre binaire 1001 vaut en héxadécimal :
+1. Le nombre binaire 1001 vaut en hexadécimal :
    1. F3
    1. **9**
    1. 1A
@@ -73,20 +73,20 @@ Il s'agit d'un programme tournant en permanence et attendant des requêtes HTTP 
   + Non, car le NetID est différent
 :::
 :::correction
-1. Dans le même réseau IPv4 deux machines différentes peuvent-elles posséder la même adresse IPv4 au même moment ?
+1. Dans le même réseau IPv4, deux machines différentes peuvent-elles posséder la même adresse IPv4 au même moment ?
 :::
 :::correction
   + Non, une adresse IP identifie un hôte de manière unique à un instant donné
 :::
 :::correction
-1. Dans le même réseau IPv4 deux machines différentes peuvent-elles posséder la même adresse IPv4 à deux moments différents ?
+1. Dans le même réseau IPv4, deux machines différentes peuvent-elles posséder la même adresse IPv4 à deux moments différents ?
 :::
 :::correction
-  + Oui, une adresse IP identifie un hôte de manière unique mais seulement à un instant donné. Ce n'est toutefois pas recommandé, mais souvent nécessaire pour recycler des adresses (par exemple, le Cloud utilise beaucoup de machines temporaires, dont la consommation d'adresses IP serait compliquée sans recyclage de celles-ci)
+  + Oui, une adresse IP identifie un hôte de manière unique mais seulement à un instant donné. Ce n'est toutefois pas recommandé, mais souvent nécessaire pour recycler des adresses (par exemple, le cloud utilise beaucoup de machines temporaires, dont la consommation d'adresses IP serait compliquée sans recyclage de celles-ci).
 :::
 
 
-*L'adresse du réseau local est une adresse cachée par le routeur, ce qui fait que toutes les machines de ce réseau sont cachées derrière le routeur et par la suite invisible sur Internet. Le routeur a donc deux adresses IP, l'une du côté du réseau local (donc même adresse du réseau) et l'autre du côté du réseau internet lui permettant d'être visible à l'extérieur.*
+*L'adresse du réseau local est masquée par le routeur, ce qui fait que toutes les machines de ce réseau sont cachées derrière le routeur et par conséquent invisibles sur Internet. Le routeur a donc deux adresses IP, l'une du côté du réseau local (donc même adresse du réseau) et l'autre du côté du réseau internet lui permettant d'être visible à l'extérieur.*
 
 1. Dans ce cas, deux machines de deux réseaux différents connectés tous les deux à Internet peuvent-elles avoir la même adresse ?
 :::correction
@@ -97,7 +97,7 @@ Oui, car cette adresse est masquée sur l'interconnexion des réseaux : une adre
 
 ## Plan d'adressage
 
-Dessinez un réseau local composée d'une box Internet, 3 PC, un téléphone IP, un serveur Web et un serveur d'impression. Ce réseau local est connecté à Internet depuis la box Internet. Supposons que l'adresse du réseau local est 192.168.10, affectez des adresses IP aux différents périphériques.
+Dessinez un réseau local composé d'une box Internet, de 3 PC, d'un téléphone IP, d'un serveur Web et d'un serveur d'impression. Ce réseau local est connecté à Internet depuis la box Internet. Supposons que l'adresse du réseau local est 192.168.10, affectez des adresses IP aux différents périphériques.
 
 :::correction
 ```mermaid
@@ -123,7 +123,7 @@ flowchart TD
 
 ## Communications sécurisées avec HTTPS
 
-Le protocole HTTPS (HTTP sur SSL/TLS) est couramment utilisé pour sécuriser les communications entre un serveur Web et un navigateur. Pour cela, une session HTTPS s'appuie sur un certificat diffusé par le serveur permettant d'effectuer une session d'authentification initiale et ensuite un chiffrement du canal de communication dans lequel transite l'échange HTTP.
+Le protocole HTTPS (HTTP sur SSL/TLS) est couramment utilisé pour sécuriser les communications entre un serveur Web et un navigateur. Pour cela, une session HTTPS s'appuie sur un certificat diffusé par le serveur permettant d'effectuer une authentification initiale, puis un chiffrement du canal de communication dans lequel transite l'échange HTTP.
 
 1. Lors de l'authentification, le protocole utilise une clef publique contenue dans un certificat que le serveur détient et diffuse au client à l'établissement de la connexion. Quelles sont les protections offertes par cette utilisation d'un certificat serveur ?
 
@@ -157,7 +157,7 @@ Attention : La valeur 0 n'est jamais utilisée comme Host ID pour des raisons de
 
 1. Donner et expliquez la valeur du plus petit masque possible pour le réseau principal (196.179.110.0) correspondant à ce besoin ?
 :::correction
-  + Comme on doit pouvoir adresser 10 machines, il faut donc 10 adresses IP dérivées de l'adresse initiale. La valeur décimale 10 se code par 1010 en binaire, il faut donc disposer de 4 bits au moins pour pouvoir identifier 10 entités en écriture binaire. La part du HostID dans le masque de sous-réseau sera donc de 4 bits (et donc celle du network ID : 32 – 4 = 28 bits).
+  + Comme on doit pouvoir adresser 10 machines, il faut donc 10 adresses IP dérivées de l'adresse initiale. La valeur décimale 10 se code par 1010 en binaire ; il faut donc disposer d'au moins 4 bits pour pouvoir identifier 10 entités en écriture binaire. La part du HostID dans le masque de sous-réseau sera donc de 4 bits (et donc celle du network ID : 32 – 4 = 28 bits).
   + Le masque de sous-réseau à construire est donc : 28 bits à 1 pour le NetID suivis de 4 bits à 0 pour le HostID, soit : 11111111.11111111.11111111.11110000 soit encore en décimal : 255.255.255.240
 :::
 

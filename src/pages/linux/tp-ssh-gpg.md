@@ -14,7 +14,7 @@ Le protocole SSH supporte le chiffrement symétrique mais en pratique on utilise
   - la clé privée est le secret
 - La clé privée, gardée **secrète**, est stockée sur la machine cliente ;
 - La clé publique est partagée et stockée sur le serveur pour autoriser la connexion : la clé est publique mais le secret réside dans le fait d'accepter ou non cette clé publique
-- Lors d'une connexion SSH, on partage la clé publique de chaque tiers et on utilise localement sa clé publique pour générer une nouvelle clé secrète unique et temporaire pour la connexion courante. Cette clé est chiffrée avec chacune des clés des parties, ainsi personne ne peut la déchiffer.
+- Lors d'une connexion SSH, on partage la clé publique de chaque tiers et on utilise localement sa clé publique pour générer une nouvelle clé secrète unique et temporaire pour la connexion courante. Cette clé est chiffrée avec chacune des clés des parties, ainsi personne ne peut la déchiffrer.
 
 :::warn
 En résumé :

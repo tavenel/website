@@ -510,7 +510,7 @@ Exemple de matrice de matérialité (2 MB) : <https://www.getlinkgroup.com/strat
 - Site ecologic : <https://www.e-dechet.com/>
 - Donner un téléphone usagé : <https://www.jedonnemontelephone.fr/>
 - Particulier : [Gestion de déchets électriques et électroniques (service-public.fr)](https://www.service-public.fr/particuliers/vosdroits/F31955)
-- Cadre légal : [site e-dechet.com](https://www.e-dechet.com/outils/telecharger-documentation)
+- Cadre légal : [site e-dechet.com](https://www.e-dechet.com/outils/télécharger-documentation)
 
 ---
 

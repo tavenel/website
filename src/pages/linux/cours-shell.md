@@ -15,12 +15,12 @@ On obtient la liste des shells présents sur le système en affichant le fichier
 cat /etc/shells
 ```
 
-- `sh` : Bourn Shell, historique, standard, "portable"
+- `sh` : Bourne Shell, historique, standard, "portable"
 - `csh/tcsh` : C Shell
 - `ksh` : Korn Shell
 - `fish` : Friendly Interactive Shell
 - `zsh` : Z Shell
-- `bash` : Bourn Again Shell Linux, le plus utilisé
+- `bash` : Bourne Again Shell, le plus utilisé
 
 :::tip
 La plupart des shells sont fortement compatibles car ils suivent des normes comme la [norme POSIX](https://fr.wikipedia.org/wiki/POSIX)
@@ -37,7 +37,7 @@ Le projet GNU offre des outils pour l'administration de système de type UNIX qu
 - `/etc/profile` : fichier de configurations commun à tous les utilisateurs et tous les shells
 - `/etc/bash/bashrc` ou `/etc/bash.bashrc` : fichier de configurations commun à tous les utilisateurs de `bash`
 - `~/.profile` : fichier de configuration pour tous les shells de l'utilisateur courant
-- `~/.bashrc` : fichier de configuration `bash` pour l'utilisateur courant (quelque soit le contexte)
+- `~/.bashrc` : fichier de configuration `bash` pour l'utilisateur courant (quel que soit le contexte)
 - `~/.bash_profile` : en cas d'utilisation de shell interactif
 - `~/.bash_login` : à la connexion de l'utilisateur (peu utilisé)
 - `~/.bash_logout` : à la déconnexion de l'utilisateur (peu utilisé)
@@ -139,7 +139,7 @@ Linux c7li 3.10.0-327.4.5.el7.x86_64 #1 SMP Mon Jan 25 22:07:14 UTC 2016 x86_64 
 system=$(uname -a)
 echo $system
 
-# ou (mois robuste)
+# ou (moins robuste)
 
 system=`uname -a`
 echo $system

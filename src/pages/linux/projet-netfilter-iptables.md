@@ -12,7 +12,7 @@ Vous êtes administrateur système pour une petite entreprise. L'équipe réseau
 3. Permettre l'accès HTTP/HTTPS (ports 80 et 443) uniquement depuis une plage IP spécifique.
 4. Enregistrer dans les logs système les connexions bloquées.
 
-La configuration du pare-feu devra être persistante (et donc ne pas être effacée par un redémarrage).
+La configuration du pare-feu devra être persistante et ne pas être effacée par un redémarrage.
 
 Vous devez également automatiser cette configuration à l'aide d'un script shell et permettre à un utilisateur **non privilégié** d'exécuter ce script.
 
@@ -61,7 +61,7 @@ Pour logger les paquets, on pourra utiliser la cible `-j LOG` et le `--log-level
 :::
 
 :::tip
-Pour autoriser les connexions entrantes **(déjà) établies**, on pourra :
+Pour autoriser les connexions entrantes **déjà établies**, on pourra :
 
 - charger le module qui gère la persistance des connexions (avec l'option `-m`)
 - utiliser le matcher d'état : `--ctstate` sur les états `ESTABLISHED` et `RELATED`

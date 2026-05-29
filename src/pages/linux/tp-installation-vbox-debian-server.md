@@ -11,7 +11,7 @@ title: Installation de Linux Debian Serveur dans une machine virtuelle
 
 ## Installation du pack d'extension VirtualBox pour utiliser des fonctionnalités avancées
 
-- Télécharger le pack d'extension depuis le site de Virtual Box : <https://download.virtualbox.org/virtualbox/7.0.6/Oracle_VM_VirtualBox_Extension_Pack-7.0.6a-155176.vbox-extpack>
+- Télécharger le pack d'extension depuis le site de VirtualBox : <https://download.virtualbox.org/virtualbox/7.0.6/Oracle_VM_VirtualBox_Extension_Pack-7.0.6a-155176.vbox-extpack>
 - Ouvrir `VirtualBox` et ajouter le pack d'extension : Dans le menu Fichier, sélectionner **Paramètres.** Dans la fenêtre qui s'affiche, ouvrir la catégorie **Extensions**, cliquer sur le bouton "+" et ajouter l'extension téléchargée
 
 ## Récupération d'une image préinstallée d'un système Linux
@@ -30,7 +30,7 @@ title: Installation de Linux Debian Serveur dans une machine virtuelle
 ![Création d'une machine virtuelle](@assets/virtualbox/creer-vm.png)
 
 - 2e écran : Mémoire virtuelle
-  - Choisir de réserver `1024Mo` pour la mémoire
+  - Choisir de réserver `1024 Mo` pour la mémoire
   - Cliquer sur Suivant
 - 3e écran : Disque dur
   - Sélectionner « _Utiliser un fichier de disque dur virtuel existant_ »
@@ -60,7 +60,7 @@ title: Installation de Linux Debian Serveur dans une machine virtuelle
 
 ![Login dans la VM](@assets/virtualbox/login.png)
 
-- - Entrer le nom de l'utilisateur racine : `root` et valider (touche <kbd>Entrée</kbd>)
+- - Entrer le nom de l'utilisateur superutilisateur : `root` et valider (touche <kbd>Entrée</kbd>)
     - Entrer le mot de passe : `osboxes.org` et valider (touche <kbd>Entrée</kbd>)
 
 :::warn
@@ -129,7 +129,7 @@ Cette commande va afficher dans la console les deux interfaces configurées sur 
 ![Interfaces VirtualBox](@assets/virtualbox/interfaces.png)
 
 - Nous allons maintenant redémarrer le service réseau pour prendre en compte ces changements :
-  - Assurez-vous de bien avoir quitté l'éditeur nano et d'être retourné dans l'invité de commandes (curseur clignotant en bas de l'écran)
+  - Assurez-vous de bien avoir quitté l'éditeur nano et d'être retourné dans l'invite de commandes (curseur clignotant en bas de l'écran)
   - Pour redémarrer le service réseau, entrer la commande suivante :
   ```sh
   systemctl restart networking

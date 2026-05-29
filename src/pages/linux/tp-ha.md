@@ -7,7 +7,7 @@ date: 2025 / 2026
 
 ## 🎯 Objectif
 
-Monter un cluster 3 nœuds :
+Monter un cluster de trois nœuds :
 
 - Installer Corosync + Pacemaker sur 3 VMs.
 - Configurer corosync.conf (multicast ou udpu selon l'environnement).
@@ -77,7 +77,7 @@ sudo chmod 400 /etc/corosync/authkey
 
 ### Configuration du cluster
 
-Fichier `/etc/corosync/corosync.conf` identique sur les deux nœuds :
+Fichier `/etc/corosync/corosync.conf` identique sur les trois nœuds :
 
 ```json
 # /etc/corosync/corosync.conf
@@ -147,7 +147,7 @@ sudo crm_mon -1
 pcs status --full
 ```
 
-Les deux nœuds doivent apparaître en ligne (`Online: [ node1 node2 ]`).
+Les trois nœuds doivent apparaître en ligne (`Online: [ node1 node2 node3 ]`).
 
 ### Création d'une ressource IP virtuelle (VIP)
 

@@ -20,7 +20,7 @@ Vous êtes administrateur système sur un serveur Debian-like (Debian, Ubuntu). 
 Le noyau source choisi sera par exemple la version **LTS** (par exemple 6.12). Vous devez également configurer un module externe pour qu'il se reconstruise automatiquement avec DKMS.
 
 :::link
-Pour apprendre à compiler un noyaux Linux sous Debian, suivre la [documentation officielle](https://kernel-team.pages.debian.net/kernel-handbook/ch-common-tasks.html#s-common-official).
+Pour apprendre à compiler un noyau Linux sous Debian, suivre la [documentation officielle](https://kernel-team.pages.debian.net/kernel-handbook/ch-common-tasks.html#s-common-official).
 :::
 
 ### Préparation de l'environnement
@@ -62,7 +62,7 @@ Pour apprendre à compiler un noyaux Linux sous Debian, suivre la [documentation
    - Activer le support de Btrfs en dur (`[*]`).
    - Désactiver le support des systèmes de fichiers FAT et NTFS.
 
-3. Désactiver la signature : sur les systèmes dérivés de Debian, les modules noyau sont signés par un certificat qui est n'est pas présent par défaut sur le système. Pour cette 1e compilation, nous allons désactiver cette signature :
+3. Désactiver la signature : sur les systèmes dérivés de Debian, les modules noyau sont signés par un certificat qui n'est pas présent par défaut sur le système. Pour cette 1e compilation, nous allons désactiver cette signature :
 
    ```sh
    ./scripts/config --file .config --disable MODULE_SIG

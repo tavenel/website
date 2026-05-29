@@ -152,7 +152,7 @@ $ ls -lid ~
 # Le répertoire a 16 références (alors qu'aucun lien n'a été créé) !!!
 # En réalité, ces liens existent bien - il s'agit des références spéciales
 # créées avec le répertoire : `.` (et `..`).
-# Ansi, `.` pour le répertoire courant et `..` pour chaque sous-répertoire
+# Ainsi, `.` pour le répertoire courant et `..` pour chaque sous-répertoire
 # sont des références à ce répertoire...
 # Vérifions que ces références pointent bien sur l'inode `33` :
 
@@ -194,7 +194,7 @@ $ ls -l symlink-erreur
 
 lrwxrwxrwx    1 tom   tom     6 Aug 28 10:56 symlink-erreur -> target-fausse
 
-# Le lien est créé, même si la target n'existe pas.
+# Le lien est créé, même si la cible n'existe pas.
 
 ---------------------------------------------------------
 
@@ -204,7 +204,7 @@ $ ls -l symlink target
 
 lrwxrwxrwx    1 tom      tom              6 Aug 28 10:58 symlink -> target
 
-# symlink pointe bien vers target.
+# symlink pointe bien vers `target`.
 
 ---------------------------------------------------------
 
@@ -215,7 +215,7 @@ $ ls -li symlink target
 
 # Il y a bien une seule référence à `target`
 # (seules les liens réels comptent)
-# et les fichiers symlink et target n'ont pas le même inode
+# et les fichiers `symlink` et `target` n'ont pas le même inode
 # (fichiers différents).
 # On peut donc supprimer le contenu de l'inode de target.
 
@@ -229,7 +229,7 @@ $ cat symlink
 
 cat: can't open 'symlink': No such file or directory
 
-# Le lien symbolique existe encore mais est cassé.
+# Le lien symbolique existe encore, mais il est cassé.
 ```
 :::
 
@@ -242,7 +242,7 @@ cat: can't open 'symlink': No such file or directory
 find [chemin...] [expression]
 ```
 
-La commande `find` permet de rechercher de façon récursive dans un répertoire des fichiers selon certains critères de recherche commande le nom, le type, la date, la taille ou l'utilisateur.
+La commande `find` permet de rechercher de façon récursive dans un répertoire des fichiers selon certains critères de recherche comme le nom, le type, la date, la taille ou l'utilisateur.
 
 Vous pouvez également agir sur la liste des fichiers trouvés.
 

@@ -108,7 +108,7 @@ Accédez à Prometheus via l'URL : <http://localhost:9090>.
 
 ## Configurer Prometheus pour Monitorer Kubernetes
 
-Les composants `Prometheus` déployés via `Helm` viennent déjà configurés pour scraper les métriques du cluster `Kubernetes`. Vous pouvez cependant ajuster la configuration si nécessaire. Voici où trouver la configuration :
+Les composants `Prometheus` déployés via `Helm` sont déjà configurés pour récupérer les métriques du cluster `Kubernetes`. Vous pouvez cependant ajuster la configuration si nécessaire. Voici où trouver la configuration :
 
 ```sh
 kubectl edit configmap prometheus-kube-prometheus-prometheus -n monitoring
@@ -127,7 +127,7 @@ annotations:
 
 ### NodeExporter
 
-Pour récupérer des sondes `Linux` automatiquement, on pourra utiliser le `NodeExporter` sur les _Node_, qui permet d'envoyer à `Prometheus` les informations liés à l'OS : <https://prometheus.io/docs/guides/node-exporter/>
+Pour récupérer des sondes `Linux` automatiquement, on pourra utiliser le `NodeExporter` sur les _Node_, qui permet d'envoyer à `Prometheus` les informations liées à l'OS : <https://prometheus.io/docs/guides/node-exporter/>
 
 ### cAdvisor
 
@@ -147,7 +147,7 @@ Par exemple, utilisez l'ID :
 2. `11074` pour une vue orientée Node Exporter (OS Linux "host").
 3. `315` pour importer le tableau de bord classique de `Kubernetes` via Prometheus.
 4. `15661` pour une vue orientée métriques des Nodes du cluster.
-5. `11663` pour une les principales métriques des objets Kubernetes.
+5. `11663` pour les principales métriques des objets Kubernetes.
 6. `22128` pour monitorer les `HorizontalPodAutoscaler`.
 7. `11454` pour monitorer les `Volume`.
 8. `14279` pour monitorer les `CronJob`.

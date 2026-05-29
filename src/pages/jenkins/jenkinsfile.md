@@ -68,9 +68,9 @@ pipeline {
 }
 ```
 
-### Parrallélisme
+### Parallélisme
 
-Pour parralléliser l'exécution de certains _steps_, il faut le déclarer explicitement :
+Pour paralléliser l'exécution de certains _steps_, il faut le déclarer explicitement :
 
 ```groovy
 pipeline {

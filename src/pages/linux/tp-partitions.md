@@ -224,8 +224,8 @@ mount -L DONNEES
 But : obtenir des informations sur l'occupation du système de fichiers et le réparer si besoin. 
 
 1. Regardez l'état d'occupation de vos systèmes de fichiers, de manière lisible pour un humain.
-2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s'agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et répertoire.
-3. Le résultat est trop long. Triez la sortie de manière à obtenir les plus grosses occupations en dernier.
+2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s'agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et de chaque répertoire.
+3. Le résultat est trop long. Triez la sortie de manière à obtenir les plus grosses occupations à la fin.
 4. Un répertoire monté sur `/mnt/backup` (TP précédent) a des problèmes : il semble que le contenu d'un répertoire soit corrompu : noms de fichiers et tailles farfelues. Vérifiez et réparez ce système de fichiers.
 5. Forcez une vérification de ce système de fichiers au prochain redémarrage.
   - L'astuce pour cela est de changer artificiellement le nombre de montages avec `tune2fs` (par exemple à `1000`).
@@ -242,13 +242,13 @@ But : obtenir des informations sur l'occupation du système de fichiers et le r�
 df -H
 ```
 
-2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s'agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et répertoire.
+2. Le système de fichiers pointant sur `/home` semble bien occupé. Il s'agit de déterminer ce qui peut occuper autant de place. Déterminez l'occupation de chaque fichier et de chaque répertoire.
 
 ```sh
 du -m /home 
 ```
 
-3. Le résultat est trop long. Triez la sortie de manière à obtenir les plus grosses occupations en dernier.
+3. Le résultat est trop long. Triez la sortie de manière à obtenir les plus grosses occupations à la fin.
 
 ```sh
 du -m | sort -n 

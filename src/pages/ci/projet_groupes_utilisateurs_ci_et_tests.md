@@ -74,7 +74,7 @@ Le gestionnaire de versions a 2 objectifs principaux dans une intégration conti
 En intégration continue, il est important d'intégrer le plus régulièrement possible ses modifications (dans un commit) afin de limiter les changements à tester / valider.
 
 - Utiliser le gestionnaire de versions `git` pour intégrer et partager les modifications du projet au sein du binôme. On pourra utiliser une version hébergée (`Github`, `Bitbucket`, `Gitlab`, ...)
-- Configurer votre environnement de développement (IDE) pour associer le versionning Git au projet.
+- Configurer votre environnement de développement (IDE) pour associer le versionnage au projet.
 
 ## Les tests unitaires et de comportement
 

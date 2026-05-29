@@ -7,10 +7,10 @@ date: 2024 / 2025
 
 ## Objectif principal
 
-Mettre en pratique les commandes shell sous Linux, en se concentrant sur :
+Mettre en pratique les commandes shell sous Linux en se concentrant sur :
 
 - La gestion des droits des utilisateurs et des groupes.
-- Une recherche et configuration sur l'élévation de privilèges.
+- la recherche et la configuration de l'élévation de privilèges.
 
 ## Contexte du Cas Fictif d'Entreprise : TechNova Solutions
 
@@ -37,7 +37,7 @@ Pour une meilleure gestion de ses services, TechNova Solutions organise ses util
 | Administration| 2 administrateurs    |
 | IT            | 2 administrateurs système |
 
-Le service IT dispose de privilèges élevés pour gérer le serveur, tandis que les autres départements ont accès uniquement aux ressources nécessaires à leur travail.
+Le service IT dispose de privilèges élevés pour gérer le serveur, tandis que les autres départements n'ont accès qu'aux ressources nécessaires à leur travail.
 
 Les développeurs ont besoin de pouvoir lancer une base de données partagée à des buts de test. Cette base de données doit pouvoir être lancée par tous les développeurs.
 
@@ -53,15 +53,15 @@ Les différents services doivent pouvoir partager des documents :
 
 #### Droits sudoers
 
-- L'IT a tout les droits sur le serveur
-- Les Développeurs ont le droit d'installer des programmes
-- Le Support et les Développeurs ont le droit de lister tous les fichiers de configuration du système
+- L'IT a tous les droits sur le serveur
+- Les développeurs ont le droit d'installer des programmes
+- Le support et les développeurs ont le droit de lister tous les fichiers de configuration du système
 
 ### Objectifs de Sécurité
 
 1. **Séparation des Permissions** : Chaque groupe de travail doit avoir accès uniquement aux dossiers et fichiers nécessaires pour son département.
 2. **Sécurité des Données** : Les données confidentielles (ex. financières et personnelles) doivent être accessibles uniquement aux administrateurs.
-3. **Gestion des Privilèges** : Seuls les administrateurs système du groupe ont les privilèges pour installer des logiciels et configurer le serveur.
+3. **Gestion des Privilèges** : Seuls les administrateurs système du groupe ont les privilèges nécessaires pour installer des logiciels et configurer le serveur.
 
 ### Environnement d'Exécution
 

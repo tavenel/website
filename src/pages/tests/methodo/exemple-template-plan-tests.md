@@ -7,9 +7,9 @@ title: Plan de tests
 1. Introduction
   - 1.1. Objectifs du plan de test
 2. Portée
-  - 2.1. La saisie des données
+  - 2.1. Saisie des données
   - 2.2. Transfert de fichiers de rapports
-  - 2.3. Transfert de fichier
+  - 2.3. Transfert de fichiers
   - 2.4. Sécurité
 3. Stratégie de test
   - 3.1. Test du système
@@ -23,7 +23,7 @@ title: Plan de tests
   - 3.9. Test d'acceptation de l'utilisateur
 4. Exigences environnementales
   - 4.1. Stations de travail de saisie de données
-  - 4.2 MainFrame
+  - 4.2. Mainframe
 5. Calendrier des tests
 6. Procédures de contrôle
   - 6.1 Avis
@@ -38,10 +38,10 @@ title: Plan de tests
 10. Critères de suspension / sortie
 11. Critères de reprise
 12. Dépendances
-  - 12.1 Dépendances du personnel
-  - 12.2 Dépendances logicielles
-  - 12.3 Dépendances matérielles
-  - 12.3 Données de test et base de données
+  - 12.1. Dépendances du personnel
+  - 12.2. Dépendances logicielles
+  - 12.3. Dépendances matérielles
+  - 12.4. Données de test et base de données
 13. Risques
   - 13.1. Horaire
   - 13.2. Technique

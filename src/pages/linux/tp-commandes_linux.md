@@ -5,7 +5,7 @@ date: 2024 / 2025
 
 # 📋 Prérequis
 
-_L'ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle (ne pas se connecter avec le compte du super-utilisateur `root` )._
+_L'ensemble de ce TP sera réalisé avec le compte utilisateur créé à l'installation de la machine virtuelle (ne vous connectez pas avec le compte du superutilisateur `root`)._
 
 ## Réinitialisation du mot de passe administrateur (root)
 
@@ -20,7 +20,7 @@ Si vous avez oublié votre mot de passe utilisateur, vous pouvez utiliser la mé
 
 Cette commande permet de changer le mot de passe de votre utilisateur.
 
-Tapez la commande exit pour revenir à l'écran de connexion et utilisez votre utilisateur avec son nouveau mot de passe.
+Tapez la commande `exit` pour revenir à l'écran de connexion, puis utilisez votre utilisateur avec son nouveau mot de passe.
 
 # Gestion des fichiers
 
@@ -28,7 +28,7 @@ Tapez la commande exit pour revenir à l'écran de connexion et utilisez votre u
 
 *Remarque : par défaut, après la connexion d'un utilisateur le système vous place dans votre répertoire de travail : `/home/NOM_DE_VOTRE_UTILISATEUR`*
 
-*A tout moment, on pourra revenir facilement dans ce répertoire de travail grâce à la commande cd, utilisée sans paramètre :*
+*À tout moment, on peut revenir facilement dans ce répertoire de travail grâce à la commande `cd`, utilisée sans paramètre :*
 
 ```sh
 $ cd
@@ -52,7 +52,7 @@ $ cd
 
 ## Utilisations avancées
 
-- Créer un nouveau fichier `fichierAvance1` dans le répertoire `/root`.
+- Créez un nouveau fichier `fichierAvance1` dans le répertoire `/root`.
 - *Comme toutes les commandes du shell, la commande `ls` utilisée pour afficher des informations sur un fichier est en fait un programme dédié, installé sur le système* :
   + Rechercher le chemin du fichier `ls` installé sur le système (on pourra utiliser la commande `find`).
 
@@ -84,7 +84,7 @@ $ cd
 
 # Les processus
 
-## Les basiques
+## Les bases
 
 - Listez les processus de l'utilisateur courant.
 - Listez l'arbre des processus de l'utilisateur courant.
@@ -92,7 +92,7 @@ $ cd
 
 ## Utilisation avancée
 
-- Lister l'ensemble des processus de tous les utilisateurs.
+- Listez l'ensemble des processus de tous les utilisateurs.
 - Lister l'ensemble des processus de tous les utilisateurs avec la commande ayant lancé le processus.
 - Tuer un processus :
   + Lancez la commande : `$ sleep 600 &`
@@ -106,9 +106,9 @@ $ cd
 
 ## Rappels de cours
 
-Il existe 2 façons d'accéder à un fichier dans un environnement Linux :
+Il existe deux façons d'accéder à un fichier dans un environnement Linux :
 
-- En utilisant un chemin de fichier absolu, commençant par un `/` (le chemin du fichier depuis la racine, par exemple : `/etc/passwd`).
+- En utilisant un chemin de fichier absolu, qui commence par un `/` (le chemin du fichier depuis la racine, par exemple : `/etc/passwd`).
 - En utilisant un chemin de fichier relatif (le chemin d'accès au fichier depuis le répertoire courant, par exemple : `monSousRepertoire/monAutreRepertoire/monFichier`).
 
 À tout moment, on pourra afficher le répertoire de travail courant grâce à la commande :

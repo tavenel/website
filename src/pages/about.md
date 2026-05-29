@@ -15,7 +15,7 @@ J'interviens à la fois en écoles supérieures d'informatique et en milieu prof
 
 Freelance teacher, former lead developer of a Spring microservices project and Cloud administrator, working with distributed teams worldwide.
 
-Strong knowledge in Linux environments (daily driver for 15+ years), Devops and CI/CD processes, microservice development (Spring Cloud, Java, Kotlin).
+Strong knowledge in Linux environments (daily driver for 15+ years), DevOps and CI/CD processes, microservices development (Spring Cloud, Java, Kotlin).
 
 _As a Software Development enthusiast, I like sharing experiences about development processes, languages and frameworks that I have discovered at a local conference: active Java User Group member or online: TED talks_
 
@@ -31,7 +31,7 @@ Freelance teacher mostly at EPSI Grenoble and ESGI Grenoble : Linux, Continuous 
 
 ##### Microservice infrastructure for document services - DevOps
 
-* Implementation of a **microservice infrastructure** to support and implement **document-oriented services** :
+* Implementation of a **microservices infrastructure** to support and implement **document-oriented services** :
   * Java, Spring Boot, Spring Cloud
   * Cloud & Hybrid deployments, administration and monitoring of Linux systems
   * Content Service Alfresco
@@ -70,14 +70,14 @@ Freelance teacher mostly at EPSI Grenoble and ESGI Grenoble : Linux, Continuous 
 * Python-enthusiast
 * Object-oriented & Functional programming, Shell scripts
 * Important background in tests :
-  * Unit tests : Junit, Mocks, Stubs
+  * Unit tests : JUnit, Mocks, Stubs
   * Behavior, Integration, Functional tests : Spock
   * UI tests : Selenium
   * Performance tests : Jmeter
 
 #### Development processes
 
-* CI/CD, Devops, Pipelines
+* CI/CD, DevOps, pipelines
 * Domain-driven development (DDD)
 * Design patterns
 * Behavior/Test-driven development, XP, Kanban
@@ -94,8 +94,8 @@ Freelance teacher mostly at EPSI Grenoble and ESGI Grenoble : Linux, Continuous 
 
 #### Project management
 
-* Project management : JIRA, Bitbucket, Review Board
-* Release Engineering : Gradle, Maven, Git, TeamCity, Jenkins
+* Project management : Jira, Bitbucket, Review Board
+* Release engineering : Gradle, Maven, Git, TeamCity, Jenkins
 
 ####
 

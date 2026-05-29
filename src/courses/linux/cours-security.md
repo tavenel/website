@@ -179,7 +179,7 @@ auditctl -w /etc/passwd -p wa -k passwd_changes
 ```
 
 - `-w` : watch file
-- `-p wa` : write + attribute change (au choix parmis `rwxa`)
+- `-p wa` : write + attribute change (au choix parmi `rwxa`)
 - `-k` : mot-clé pour filtrer dans les logs
 
 ---

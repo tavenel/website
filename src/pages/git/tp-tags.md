@@ -27,7 +27,7 @@ Les tags sont très utilisés pour ajouter des indications de versions. Pour cr�
 
 1. Créer une nouvelle branche avec un nouveau commit.
 1. Ajouter un nouveau tag `v1.1` en ajoutant une annotation (option `-a` ou `--annotate`) : cela permet d'associer au tag une date de création, l'identité du créateur, et éventuellement sa signature (clé GnuPG).
-1. Afficher le tag avec son annotation : il faudra pour cela afficher plusieurs lignes du tag (par défaut, Git n'affiche que la 1ere ligne). On utilise souvent : `git tag -n99` pour afficher 99 lignes par tag (normalement plus que suffisant...)
+1. Afficher le tag avec son annotation : il faudra pour cela afficher plusieurs lignes du tag (par défaut, Git n'affiche que la 1re ligne). On utilise souvent : `git tag -n99` pour afficher 99 lignes par tag (normalement plus que suffisant...)
 
 ## Publication et récupération
 

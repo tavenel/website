@@ -32,7 +32,7 @@ _Après étude des besoins du client, vous décidez de développer cette applica
 
 ### Le gestionnaire de versions
 
-Le gestionnaire de versions a 2 objectifs principaux dans une intégration continue :
+Le gestionnaire de versions a deux objectifs principaux dans une intégration continue :
 
 - Pouvoir partager les modifications de code entre les développeurs du projet de manière sûre.
 - Avoir une référence de code stable pour tester la qualité.
@@ -76,7 +76,7 @@ Ces 2 méthodes sont cumulables.
 
 ### 📝 Rédaction d'un Plan de Test
 
-- Réfléchir à un **plan de test** complet qui décrit les objectifs, la portée, l'approche, et les critères des tests. Rédiger succintement ce plan de tests.
+- Réfléchir à un **plan de test** complet qui décrit les objectifs, la portée, l'approche et les critères des tests. Rédiger succinctement ce plan de tests.
 
 ### 🧪 Tests unitaires
 
@@ -102,11 +102,11 @@ Les parties de code _métier_ d'une application sont les plus critiques et celle
   + On utilisera un design pattern de `PageObject`, c'est-à-dire que les pages et les éléments de l'interface graphique seront décrits dans des classes de tests dédiées (voir cours).
 - On pourra également lancer l'application et réaliser des tests de fonctionnalité à la main - ceux-ci seront à documenter dans le rapport.
 
-### ⚡ Bonus: Tests de Performance
+### ⚡ Bonus : tests de performance
 
 - Utiliser **JMeter** pour créer et exécuter des tests de performance afin de mesurer la capacité de l'application à gérer des charges élevées. Analyser les résultats des tests de performance et identifier les **goulots d'étranglement**.
 
-### 🛡️ Bonus: Tests de Fiabilité et de Sécurité
+### 🛡️ Bonus : tests de fiabilité et de sécurité
 
 - **Simian Army (Cloud)** : Utiliser les outils du Simian Army pour tester la résilience et la fiabilité de l'application dans le cloud.
 - **Chaos Toolkit (Local)** : Utiliser le Chaos Toolkit pour simuler des défaillances en local et tester la robustesse de l'application.

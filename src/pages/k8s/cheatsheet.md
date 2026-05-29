@@ -154,7 +154,7 @@ Ou avec options :
 
 ```sh
 kubeadm init \
-  --apiserver-advertise-address # addresse publique du control-plane actuel
+  --apiserver-advertise-address # adresse publique du control-plane actuel
   --control-plane-endpoint # IP ou DNS partagé par tous les control-plane (si H/A, sinon idem apiserver-advertise-address)
   --pod-network-cidr # CIDR des Pods (attention aux exigences du CNI)
   --service-cidr # CIDR des Services (défaut : 10.96.0.0/12)

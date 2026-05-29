@@ -5,10 +5,10 @@ created: 2024-05-17
 
 ![](@assets/undraw/undraw_programming_65t2.svg)
 
-Here are a bunch of articles, howtos, tutorials and thoughts about technology and softwares that I like.
+Here are a bunch of articles, howtos, tutorials and thoughts about technology and software that I like.
 
 <span>⚠️</span>
-This page is strongly opinionated : expect advocacy of free, open-source and efficient tools.
+This page is strongly opinionated: expect advocacy of free, open-source and efficient tools.
 
 ## Fun
 
@@ -16,7 +16,7 @@ Some [fun strips about computer science](/fun)
 
 ## Notes
 
-Here are my personal cheatsheets :
+Here are my personal cheatsheets:
 
 - [Dev cheatsheet](/tech/notes/dev)
 - [Vim cheatsheet](/tech/notes/vim)
@@ -42,8 +42,8 @@ I also [teach](/cours)
 
 Vi is so incredible, it deserves a dedicated section.
 
-I now use Neovim everyday, and spend far too much time configuring it to perfectly match my needs.
+I now use Neovim every day, and spend far too much time configuring it to perfectly match my needs.
 
-My custom neovim configuration files and lua scripts are in the [dotfiles][dotfiles] repo.
+My custom Neovim configuration files and lua scripts are in the [dotfiles][dotfiles] repo.
 
 [dotfiles]: https://git.sr.ht/~toma/dotfiles

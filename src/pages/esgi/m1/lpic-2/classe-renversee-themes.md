@@ -5,7 +5,7 @@ layout: '@layouts/CoursePartLayout.astro'
 ---
 
 :::exo
-Choisir un thème au choix parmis les suivants :
+Choisir un thème au choix parmi les suivants :
 
 1. Sujet 200 : **Planification des ressources**
 1. Sujet 201 : **Le noyau Linux**

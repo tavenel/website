@@ -16,20 +16,20 @@ $ ls -l
 drwxr-xr-x - root 30 Aug 14:30 /etc/
 ```
 
-Le premier symbole indique la nature du fichier :
+Le premier caractère indique la nature du fichier :
 
 - `-` : fichier classique
 - `d` : dossier
 - `l` : lien **symbolique**
 - `c` : périphérique de type caractère
 - `b` : périphérique de type bloc
-- `p` : pipe (tube, tuyau ou file d'attente)
+- `p` : pipe (tube ou file d'attente)
 - `s` : socket
 
 ## Commandes utiles
 
 - `cp` (copy) : Cette commande est utilisée pour copier des fichiers ou des répertoires d'un emplacement à un autre.
-- `find` : La commande find est utilisée pour rechercher des fichiers et des répertoires dans une hiérarchie de répertoires en fonction de différents critères tels que le nom, la taille, la date de modification, etc.
+- `find` : La commande `find` permet de rechercher des fichiers et des répertoires dans une hiérarchie de répertoires selon différents critères : nom, taille, date de modification, etc.
 - `mkdir` (make directory) : Cette commande permet de créer un nouveau répertoire (dossier) dans le système de fichiers.
 - `mv` (move) : La commande mv est utilisée pour déplacer ou renommer des fichiers et des répertoires.
 - `ls` (list) : Cette commande est utilisée pour afficher la liste des fichiers et répertoires dans un répertoire donné.
@@ -40,7 +40,7 @@ Le premier symbole indique la nature du fichier :
 - `cpio` : La commande cpio est utilisée pour copier des fichiers dans ou depuis une archive `cpio`, un format d'archivage couramment utilisé sur les systèmes Unix.
 - `dd` : La commande dd est utilisée pour copier et convertir des fichiers et des données en utilisant des blocs de taille fixe. Elle est souvent utilisée pour la création de copies exactes de disques.
 - `file` : Cette commande permet de déterminer le type de fichier en se basant sur son contenu, en identifiant son format et ses caractéristiques.
-- `gzip`, `gunzip`, `bzip`, `bzip2` : Les commande `gzip`, `gunzip`, `bzip2`, `bunzip2` sont utilisées pour (dé)compresser des fichiers en utilisant l'algorithme de compression gzip/bzip2.
+- `gzip`, `gunzip`, `bzip`, `bzip2` : Les commandes `gzip`, `gunzip`, `bzip2` et `bunzip2` sont utilisées pour compresser et décompresser des fichiers avec les algorithmes gzip et bzip2.
 
 ## Travaux pratiques sur les fichiers
 
@@ -86,10 +86,10 @@ Objectif : Rechercher tous les fichiers avec une extension spécifique dans un r
 
 Objectif : Identifier le type de fichier.
 
-1. Identifier le type du fichier `/etc/passwd`.
-1. Identifier le type du fichier `/dev/sda1`.
-1. Identifier le type du fichier `/proc/1/fd/1`.
-1. Identifier le type du fichier `/tmp/`.
+1. Identifiez le type du fichier `/etc/passwd`.
+1. Identifiez le type du fichier `/dev/sda1`.
+1. Identifiez le type du fichier `/proc/1/fd/1`.
+1. Identifiez le type du dossier `/tmp/`.
 1. Retrouver les mêmes résultats avec la commande `ls`.
 
 :::correction

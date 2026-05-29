@@ -5,12 +5,12 @@ date: 2023 / 2024
 
 # Cas pratique 2 : Migration et reprise des données
 
-Dans les cas pratique 1, les données à intégrer sont un ensemble conséquent d'informations sur des employés.
+Dans le cas pratique 1, les données à intégrer sont un ensemble conséquent d'informations sur des employés.
 
 Ces données sont aujourd'hui stockées en production au format `XML`.
 Ce format pose cependant des soucis de maintenabilité et de performance pour un volume élevé de données.
 
-Il a donc été décidé de transformer ces données pour les intégrer dans un base de données relationnelle : il s'agit des données à intégrer dans le cas pratique 1, fournies sous forme d'un dump d'une base de donnée de développement.
+Il a donc été décidé de transformer ces données pour les intégrer dans une base de données relationnelle : il s'agit des données à intégrer dans le cas pratique 1, fournies sous forme d'un dump d'une base de données de développement.
 
 Le but de ce cas pratique est de valider la migration et la reprise de ces données, depuis le format précédent `XML` vers le nouveau format `SQL`.
 
@@ -20,7 +20,7 @@ Commencer par récupérer les données de production au format `XML` du cas prat
 
 ## Description des données migrées
 
-Les données sont disponibles dans un dump d'une base de données `MySQL`, simulant 300,000 enregistrements d'employés et 2,8 million d'entrées de salaires.
+Les données sont disponibles dans un dump d'une base de données `MySQL`, simulant 300 000 enregistrements d'employés et 2,8 millions d'entrées de salaires.
 Il s'agit de l'entièreté des données des employés de l'entreprise.
 
 Les données sont disponibles dans une archive : <https://github.com/datacharmer/test_db/releases/download/v1.0.7/test_db-1.0.7.tar.gz>
@@ -33,7 +33,7 @@ L'environnement d'intégration est un conteneur `MySQL` simple.
 
 Celui-ci utilise l'image ayant le tag `latest`, et les accès à la base de données sont réalisées par le super-utilisateur.
 
-Pour déployer l'application dans l'environnement d'intégration :
+Pour déployer la base de données dans l'environnement d'intégration :
 
 1. Extraire l'archive sur la machine hôte
 2. Démarrer un conteneur `MySQL` et provisionner la base avec les employés
@@ -73,15 +73,15 @@ Le reste du déploiement de l'application est prévu de manière similaire à l'
 
 ## Travail attendu
 
-- Définir le niveau de qualité requis et évaluer les risques de la migration et de la reprise de données
+- Définir le niveau de qualité requis et évaluer les risques de la migration et de la reprise des données
 
 ### Partie migration des données
 
-- Concevoir le tableau de mapping source et données : Lister les données sources et champs de destination pour stocker les données  
-- Déterminer le type de migration : migration d'initialisation – migration quotidienne  
-- Expliquer la stratégie de tests : identification des techniques de tests et des critères retenus pour choisir les scénarios de tests.
+- Concevoir le tableau de mapping source et destination : lister les données sources et les champs de destination pour stocker les données  
+- Déterminer le type de migration : migration d'initialisation ou migration quotidienne  
+- Expliquer la stratégie de tests : identifier les techniques de tests et les critères retenus pour choisir les scénarios de tests.
 - Concevoir un plan de tests permettant de valider la migration des données du format `XML` à une base de données relationnelle.
-- Définir les scénarios et les cas de tests 
+- Définir les scénarios et les cas de tests
 - Pour chaque type de test :  
   - Décrire le test, expliquer son implémentation et son exécution 
   - Si non implémenté ou exécuté, expliquer les raisons 
@@ -96,7 +96,7 @@ Le reste du déploiement de l'application est prévu de manière similaire à l'
 - Expliquer les défaillances et anomalies éventuellement relevées ainsi que les solutions apportées
 - Suite à la réalisation de ces tests, avez-vous des recommandations à apporter sur la future production ? sur l'environnement d'intégration ?
 
-## Documentation 
+## Documentation
 
 - Conteneur MySQL utilisé : [lien](https://hub.docker.com/_/mysql?tab=description)
 

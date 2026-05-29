@@ -11,7 +11,7 @@ Ce cas pratique sera réalisé en deux temps :
 1. Écriture du cahier de recette fonctionnelle d'un projet.
 2. Exécution de la recette fonctionnelle d'un autre projet.
 
-Le recettage d'un projet est un processus itératif : il est normal d'échanger et d'adapter les rendus entre les deux étapes de recettage.
+La recette d'un projet est un processus itératif : il est normal d'échanger et d'adapter les rendus entre les deux étapes de recette.
 
 Il est attendu pour chaque groupe une archive contenant : 
 

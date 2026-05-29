@@ -4,7 +4,7 @@ title: ☑️ Checklist Création de projet
 
 # ☑️ Checklist Création de projet
 
-_Modifié le: 2025-01-22_
+_Modifié le : 2025-01-22_
 
 ## Gestion de projet
 
@@ -16,9 +16,9 @@ _Modifié le: 2025-01-22_
 
 ## Développement :
 
-  - Choix d'architecture : REST API, Event-driven, Data-driven, synchrone vs asynchrone, …
+- Choix d'architecture : REST API, event-driven, data-driven, synchrone vs asynchrone, …
   - Choix des technologies : maturité ? communauté ? licenses ?
-	- Environnement de dev : plugins IDE, outils à installer, …
+  - Environnement de dev : plugins IDE, outils à installer, …
 
 ## Environnements : minimum dev + staging + production
 
@@ -30,7 +30,7 @@ _Modifié le: 2025-01-22_
 
 - Dépôt(s) Git (monorepo vs multirepo). Modèle de branches ?
 - Décrire le processus de pipeline => pull-request ?
-	- Rafiner à chaque itération
+  - Raffiner à chaque itération
 - Étapes minimales : Build, Analyses de code, Tests unitaires, Tests end-to-end
 
 ## Sécurité :
@@ -38,7 +38,7 @@ _Modifié le: 2025-01-22_
 - Modèle : STRIDE, PASTA, …
 - Disaster Recovery => à tester !
   - (Chaos Computing)
- CVEs
+- CVEs
 
 ## Data :
 

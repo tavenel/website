@@ -210,7 +210,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random
 6. Utiliser la méthode `predict()` du modèle pour prédire le succès ou l'échec pour les données de test.
 
 7. Utiliser la méthode `predict_proba()` du modèle pour prédire la probabilité de succès ou d'échec pour les données de test.
-  - Le résultat est une matrice affichant la probabilité de succès dans la 1ere colonne et la probabilité d'échec dans la 2e colonne.
+  - Le résultat est une matrice affichant la probabilité de succès dans la 1re colonne et la probabilité d'échec dans la 2e colonne.
 
 8. Comparer les données prédites aux données de test labellisées.
   - Y a-t-il des erreurs ?

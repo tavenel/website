@@ -17,7 +17,7 @@ checked: 2026-02-12
 ### Types de prompts IA
 
 - _zero-shot_ => pas de contexte
-- _few shots_ => contexte par exemples
+- _few-shot_ => contexte par exemples
 - _chain of thought_ => "let's think …" (step-by-step example)
 - _RAG_ (retrieval augmented generation) => élévation de contexte par vecteur de contexte
 - _agents_ => conscience de l'environnement
@@ -69,8 +69,8 @@ Objectif : clarifier les règles IA pour les projets et rendus.
   - n'hésitez pas à demander au formateur ce qui est intéressant à faire générer par une IA et ce qui mérite réflexion
   - vous pouvez inclure vos interactions pertinentes (prompts, …) avec les outils d'IA dans le rapport afin d'aider à valider vos compétences
 - Vous devez toujours être en capacité d'expliquer 100% de vos rendus, y compris les productions éventuelles d'autres apprenants
-- Aucun détecteur d'IA n'est utilisé pour la correction car ceux-ci ne sont pas fiables
-  - donc protégez votre proriété intellectuelle et ne soumettez pas vos travaux à ces outils (`zeroGPT`, …) !
+- Aucun détecteur d'IA n'est utilisé pour la correction car ils ne sont pas fiables
+  - donc protégez votre propriété intellectuelle et ne soumettez pas vos travaux à ces outils (`zeroGPT`, …) !
 - Enfin, vous êtes en mission d'apprentissage : il serait dommage de ne pas profiter de ce temps mis à votre disposition pour monter en compétences
 
 ## Les différents types d'apprentissage

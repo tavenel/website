@@ -5,7 +5,7 @@ date: 2024 / 2025
 
 ## Introduction
 
-Les environnements GNU/Linux sont des écosystèmes très dynamiques et en constante évolution. Il existe souvent des dizaines, voir des centaines d'alternatives permettant de résoudre le même problème.
+Les environnements GNU/Linux sont des écosystèmes très dynamiques et en constante évolution. Il existe souvent des dizaines, voire des centaines d'alternatives permettant de résoudre le même problème.
 
 Voici une liste, bien entendu non exhaustive, de quelques outils et programmes alternatifs qui peuvent s'avérer utiles sur un poste de travail afin d'améliorer l'ergonomie des commandes POSIX standard.
 
@@ -43,7 +43,7 @@ Voir le TP tmux sur le site web.
 Utiliser une police de caractères supportant les symboles permet d'afficher dans le terminal beaucoup d'informations (types de fichiers, …). Cela permet aussi d'utiliser des ligatures (symbole `->`, …) et d'éviter les erreurs de programmation (différence `0` vs `O` par exemple). On pourra utiliser les [nerd-fonts][nerd-fonts].
 
 :::tip
-Utiliser les commandes `fc-list` pour afficher les polices disponibles et `fc-cache -fv` pour raffraichir le cache.
+Utiliser les commandes `fc-list` pour afficher les polices disponibles et `fc-cache -fv` pour rafraîchir le cache.
 :::
 
 :::tip
@@ -68,7 +68,7 @@ Le shell lui-même peut être modifié.
 La variable PS1 décrit le _prompt_ du shell (la partie affichée avant les commandes). Modifier son prompt permet de gagner rapidement en efficacité :
 
 - [pure][pure] : prompt très rapide sous ZSH
-- [poweline][powerline] : de loin le prompt le plus populaire, disponible pour presque tous les shells
+- [powerline][powerline] : de loin le prompt le plus populaire, disponible pour presque tous les shells
 - ou modifier et exporter la variable `PS1` de son shell soi-même !
 
 #### Coloration syntaxique
@@ -93,7 +93,7 @@ Sous `zsh` on pourra par exemple utiliser [zsh-autosuggestions][zsh-autosuggesti
 #### Avertissement
 
 :::warn
-Le shell est un programme relancé très souvent, voir pour certaines parties (prompt par exemple) après chaque commande. Attention à ne pas surcharger votre shell de plugins et extensions inutiles (notamment concernant les autocomplétions) qui le ralentiraient fortement !
+Le shell est un programme relancé très souvent, voire pour certaines parties (prompt par exemple) après chaque commande. Attention à ne pas surcharger votre shell de plugins et extensions inutiles (notamment concernant les autocomplétions) qui le ralentiraient fortement !
 :::
 
 ### alias
@@ -108,7 +108,7 @@ alias l="ls --color"
 alias ll="ls -l"
 ```
 
-On peut aussi utiliser les alias pour redéfinir des commandes de base du système, par exemple `alias ls='ls -l'` ou `alias ls=eza`. Attention aux effects secondaires !!!
+On peut aussi utiliser les alias pour redéfinir des commandes de base du système, par exemple `alias ls='ls -l'` ou `alias ls=eza`. Attention aux effets secondaires !!!
 
 ## Petits programmes
 
@@ -158,7 +158,7 @@ Il existe de nombreuses distributions `neovim` : pour les tester, on pourra util
   - [lazydocker][lazydocker]
   - [dry][dry]
   - `dcv` (_Docker Container Viewer_) : TUI Docker et Docker Compose <https://github.com/tokuhirom/dcv>
-  - [k9s] (kubernetes)
+  - [k9s][k9s] (Kubernetes)
 - tableur : [sc-im][sc-im]
 - base de données : [term-dbms][term-dbms]
 - musique : [cmus][cmus]
@@ -166,7 +166,7 @@ Il existe de nombreuses distributions `neovim` : pour les tester, on pourra util
 ## Utilitaires en ligne
 
 - Afficher son IP publique : `curl ifconfig.me/ip` ou `curl ifconfig.me/all.json`
-- Afficher des pages d'aide de commadnes : `curl cheat.sh/ma_commande`
+- Afficher des pages d'aide de commandes : `curl cheat.sh/ma_commande`
 
 ## Voir aussi
 

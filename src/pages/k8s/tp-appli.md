@@ -177,7 +177,7 @@ metadata:
 data:
   DB_HOST: "db"
   DB_PORT: "3306"
-  # Ajoute d'autres variables si nécessaire
+  # Ajoutez d'autres variables si nécessaire
 ```
 
 ### `backend-deploy.yaml`

@@ -35,7 +35,7 @@ La commande `logger` permet d'écrire facilement un message de l'utilisateur dan
 Quelques options courantes :
 
 - `dmesg --level err` : afficher uniquement les messages d'erreur
-- `dmesg -H` et `dmesg -T` : affichage humain (heure + couleur) / aficher les timestamp
+- `dmesg -H` et `dmesg -T` : affichage humain (heure + couleur) / afficher les timestamp
 - `dmesg -c` : affiche les logs puis nettoie (_clean_) le _kernel ring buffer_.
 
 :::tip
@@ -74,7 +74,7 @@ _Sysctl_ comporte de nombreuses options. Pour simplifier son utilisation et obte
 
 ### depmod
 
-`depmod` génère et mets à jour la base de données des dépendances des modules noyau. Cette base de données est essentielle pour le système d'exploitation afin de savoir quelles dépendances existent entre les différents modules noyau, ce qui est crucial pour charger les modules correctement et gérer les dépendances.
+`depmod` génère et met à jour la base de données des dépendances des modules noyau. Cette base de données est essentielle pour le système d'exploitation afin de savoir quelles dépendances existent entre les différents modules noyau, ce qui est crucial pour charger les modules correctement et gérer les dépendances.
 
  - La principale fonction de `depmod` est de créer ou mettre à jour un fichier de dépendances des modules noyau. Ce fichier répertorie toutes les dépendances entre les modules noyau présents sur le système.
  - Le fichier de base pour `depmod` est généralement `/lib/modules/<version-du-noyau>/modules.dep`. Ce fichier est créé ou mis à jour par `depmod` en fonction de la configuration actuelle des modules noyau sur le système.
@@ -86,7 +86,7 @@ _Sysctl_ comporte de nombreuses options. Pour simplifier son utilisation et obte
 ### Travaux Pratiques sur les modules
 
 1. Vérifiez votre version du noyau Linux, et déplacez-vous dans le répertoire de ses modules.
-2. Vérifiez la date du fichier `modules.dep`. Si elle semble ancienne, lancez une commande pour le regénérer. 
+2. Vérifiez la date du fichier `modules.dep`. Si elle semble ancienne, lancez une commande pour le régénérer. 
 3. Listez les modules actuellement chargés. S'il n'y est pas, chargez le module `vfat` et ses dépendances. 
 4. De la même manière déchargez le module `vfat` et ses dépendances. 
 5. Le paramètre dynamique `arp_announce` du noyau permet de modifier les en-têtes ARP en fonction de l'adresse de destination du paquet. Sur une machine disposant de plusieurs cartes réseaux, la valeur par défaut peut poser des problèmes car Linux peut répondre avec l'adresse d'une carte quelconque. Il faut que la carte réponde avec une adresse du même sous-réseau que la destination. Vérifiez quels paramètres du noyau sont impactés.
@@ -106,7 +106,7 @@ $ uname -r
 $ cd /lib/modules/5.15.59-0-lts
 ```
 
-2. Vérifiez la date du fichier `modules.dep`. Si elle semble ancienne, lancez une commande pour le regénérer. 
+2. Vérifiez la date du fichier `modules.dep`. Si elle semble ancienne, lancez une commande pour le régénérer. 
 
 ```console
 $ ls -l modules.dep 
@@ -177,7 +177,7 @@ sysctl -p
 ```
 :::
 
-## Infomations sur la configuration du système
+## Informations sur la configuration du système
 
 1. Chercher dans les logs du noyau les lignes correspondant aux firmwares de la machine.
 

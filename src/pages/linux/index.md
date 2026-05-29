@@ -68,15 +68,15 @@ layout: '@layouts/BaseLayout.astro'
 - [📦 TP : Gestion de paquetages](/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
 - [  TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
 - [📃 TP : Traitement de flux de type texte](/linux/tp-texte)
-- [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/linux/tp-fichiers)
+- [📂 TP : Gestion basique des fichiers - déplacement, copie, liste et types de fichiers](/linux/tp-fichiers)
 - [↔️ TP : Utilisation des flux, des pipes et des redirections](/linux/tp-redirections)
-- [⚙️ TP : Gestion des processus et de leur priorité](/linux/tp-process)
+- [⚙️ TP : Gestion des processus et de leurs priorités](/linux/tp-process)
 - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - [💽 TP : Mise en place d'un partage NFS (Network File System) sous Debian](/linux/tp-nfs)
 - [💽 TP : Utiliser iSCSI pour gérer des disques réseau](/linux/tp-iscsi)
 - [💽 TP : Utiliser ZFS pour gérer des volumes logiques et des partitions](/linux/tp-zfs)
-- [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
+- [📁 TP : Gestion avancée des fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
 - [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/linux/tp-droits-avance)
 - [👥 TP : Gestion des utilisateurs et de la sécurité](/linux/tp-utilisateurs)
 - [🕗 TP : Planification de tâches avec `at`, `cron` et `systemd`](/linux/tp-cron)
@@ -90,8 +90,8 @@ layout: '@layouts/BaseLayout.astro'
 - [🛠️ TP : Administration d'un système Linux](/linux/tp-admin-technova) : Cas fictif pour mettre en pratique les commandes shell sous Linux, en se concentrant sur la gestion des droits des utilisateurs et des groupes et la configuration de l'élévation de privilèges.
 - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter iptables](/linux/projet-netfilter-iptables) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
 - [🔐 TP : Mise en place de règles de filtrage sous Debian avec Netfilter nftables](/linux/projet-netfilter-nftables) : Vous êtes administrateur système pour une petite entreprise. L'équipe réseau vous demande de sécuriser un serveur Debian en configurant un pare-feu.
-- [📦 TP : Compilation, Personnalisation et Installation d'un Noyau Linux](/linux/tp-build-kernel) : Votre mission est de compiler et installer un noyau Linux personnalisé ainsi que de rebuilder automatiquement un module externe avec DKMS.
-- [🔐 TP : Investigation post-compromission sous Linux : Détection et analyse](/linux/tp-forensics) : Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery).
+- [📦 TP : Compilation, personnalisation et installation d'un noyau Linux](/linux/tp-build-kernel) : Votre mission est de compiler et installer un noyau Linux personnalisé ainsi que de rebuilder automatiquement un module externe avec DKMS.
+- [🔐 TP : Investigation post-compromission sous Linux : détection et analyse](/linux/tp-forensics) : Identifier les traces d'une compromission (analyse de logs, rootkits, persistence) et utiliser des outils d'investigation (chkrootkit, rkhunter, auditd, osquery).
 - [🔐 Projet : Infrastructure Linux sécurisée pour un centre de données confidentiel](/linux/projet-cyber) : L'objectif est de concevoir, déployer et sécuriser une infrastructure Linux complète répondant à des exigences fortes de disponibilité, confidentialité et intégrité des données.
 
 ## 🔗 LPIC-1
@@ -106,7 +106,7 @@ Voir le [cours dédié](/esgi/m1/lpic-2)
 
 - [📦 TP : Découverte des Cgroups](/linux/tp-cgroup) : une introduction aux cgroups, permettant de limiter les ressources utilisées par des processus.
 - [💾 TP Clusters de haute disponibilité (HA) et Corosync](/linux/tp-ha)
-- [🤯 Création de conteneur en utilisant les namespace natifs Linux](/docker/container-from-namespace) : cet exercice montre comment créer des conteneurs sans Docker en utilisant directement les fonctionalités des namespace du noyau Linux.
+- [🤯 Création de conteneur en utilisant les namespace natifs Linux](/docker/container-from-namespace) : cet exercice montre comment créer des conteneurs sans Docker en utilisant directement les fonctionnalités des namespace du noyau Linux.
 
 ## Ressources
 

@@ -4,23 +4,23 @@ title: Rapport de bug
 
 # Exemple de rapport de bug
 
-Sommaire: Dans le CTR (taux de clics), le calcul de la ligne 'Total' est incorrect
+Sommaire : dans le CTR (taux de clics), le calcul de la ligne 'Total' est incorrect
 
 - Produit: `Exemple de produit`
 - Version: `1.0`
-- Plate-forme: `PC`
+- Plateforme : `PC`
 
 - URL: _(Fournissez l'URL de la page où le bug se produit)_
 - OS / Version: `Windows 2000`
 
-- Statut: `NOUVEAU`
-- Gravité: `Majeur`
-- Priorité: `P1`
+- Statut : `NOUVEAU`
+- Gravité : `Majeur`
+- Priorité : `P1`
 - Composant: `Statistiques de l'éditeur`
 
-- Assigné à: <developer@example.com>
-- Rapporté par: <tester@example.com>
-- DC: <manager@example.com>
+- Assigné à : <developer@example.com>
+- Rapporté par : <tester@example.com>
+- DC : <manager@example.com>
 
 ## Description du bug
 
@@ -33,7 +33,7 @@ Sommaire: Dans le CTR (taux de clics), le calcul de la ligne 'Total' est incorre
 ### Résultat réel
 
 - Le calcul de la ligne `Total` dans le tableau CTR est incorrect.
-- De plus, le CTR de ligne individuel pour chaque éditeur n'est pas tronqué à 2 chiffres après la virgule décimale.
+- De plus, le CTR de ligne individuel pour chaque éditeur n'est pas tronqué à deux chiffres après la virgule décimale.
 - Il affiche un CTR comme `0,042556767`.
 
 ### Résultat attendu

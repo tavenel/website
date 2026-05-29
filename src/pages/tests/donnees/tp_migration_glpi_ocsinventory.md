@@ -7,9 +7,9 @@ date: 2023 / 2024
 
 OCSInventory est un outil de collecte automatisée d'éléments d'un parc informatique.
 
-Pour plus d'information sur cet outil, voir le document fourni en annexe : *L'outil de gestion OCSInventory*
+Pour plus d'informations sur cet outil, voir le document fourni en annexe : *L'outil de gestion OCSInventory*
 
-On appuiera cette partie pratique par les informations fournies dans le document en annexe et par l'environnement de test installé en première partie.
+Cette partie pratique s'appuiera sur les informations fournies dans le document en annexe et sur l'environnement de test installé en première partie.
 
 ## Description du projet
 
@@ -34,7 +34,7 @@ Il ne sera pas demandé de rendu concernant cet environnement : celui-ci est don
 OCSInventory fonctionne sur un mode client/serveur :
 
 - Le(s) serveur(s) collecte(nt) et/ou reporte(nt) les données (système Linux). Dans notre cas, nous utiliserons un unique serveur faisant office d'inventaire et de reporting.
-- L'agent surveille et administre le poste du parc informatique sur lequel il est installé (systèmes Windows, Linux et Mac OS), en communiquant avec le serveur
+- L'agent surveille et administre le poste du parc informatique sur lequel il est installé (systèmes Windows, Linux et macOS), en communiquant avec le serveur
 - Il est aussi possible de découvrir directement des machines sur le réseau, sans passer par un agent
 
 Pour faciliter le déploiement du parc informatique du projet, on pourra utiliser :
@@ -54,9 +54,9 @@ En vous aidant de la section Installation du document fourni en annexe :
 
 # Migration des données de GLPI vers OCSInventory
 
-Le datacenter de l'entreprise utilise aujourd'hui un déploiement [GLPI](https://glpi-project.org/) pour faire l'inventaire de son par de machines. Cet outil est limité sur cet aspect mais permet une intégration poussée dans l'ensemble du processus de l'entreprise.
+Le datacenter de l'entreprise utilise aujourd'hui un déploiement [GLPI](https://glpi-project.org/) pour faire l'inventaire de son parc de machines. Cet outil est limité sur cet aspect mais permet une intégration poussée dans l'ensemble du processus de l'entreprise.
 
-Il est donc décidé de continuer d'utiliser GLPI, mais d'essayer de dédier l'inventaire du parc de machine à OCSInventory tout en synchronisant cet inventaire avec celui de GLPI.
+Il est donc décidé de continuer d'utiliser GLPI, mais d'essayer de dédier l'inventaire du parc de machines à OCSInventory tout en synchronisant cet inventaire avec celui de GLPI.
 
 En utilisant un serveur GLPI existant, réaliser la migration de l'inventaire des machines du module natif de GLPI vers OCSInventory.
 

@@ -299,7 +299,7 @@ for i in range(20):
 #> La double boucle sert à calculer directement :
 #> 20x le même algorithme `for i in range(20)`
 #> Pour chaque essai, toutes les prédictions pour `k` allant de 3 à 7
-#> Ici, quelque soit la valeur de k, on prédit toujours que le navigateur sera Safari.
+#> Ici, quel que soit la valeur de k, on prédit toujours que le navigateur sera Safari.
 #> Pour plusieurs essais avec `k` fixe, la précision varie : c'est normal, on choisit de garder aléatoirement 25% de données de test, mais pas toujours les mêmes !
 #> Globalement, on a une précision d'environ 60% : On peut donc prédire qu'un utilisateur de 40 ans a environ 60% de chances d'utiliser Safari (d'après k-NN).
 

@@ -9,7 +9,7 @@ title: Exercices Méthodologie des tests
 > Valider qu'un retrait \<$20 n'est pas permis
 > Valider que le retrait reçu est égal au montant demandé
 
-_Ces deux exemples décrivent-ils des cas de tests ? Pourquoi ?_
+_Ces deux exemples décrivent-ils des cas de test ? Pourquoi ?_
 
 ### Question 2 : 
 
@@ -17,7 +17,7 @@ Voici le rapport d'exécution d'un test :
 
 > L'utilisateur a inséré sa carte bancaire dans le distributeur automatique de billets, entré le code de sa carte bancaire et demandé un retrait de 50 euros. Le distributeur a fourni un billet de 50 euros : le retrait automatique d'espèces par carte bancaire fonctionne donc correctement.
 
-_Que pensez-vous de ce rapport ?_ 
+_Que pensez-vous de ce rapport d'exécution ?_ 
 
 ### Question 3 : 
 
@@ -34,7 +34,7 @@ Après de nombreux problèmes en production liés à cet annuaire, afin d'améli
 
 Cependant, après une année passée à utiliser cette nouvelle méthode, les mêmes tests exécutés chaque semaine ne détectent jamais d'anomalies et les problèmes en production sont toujours aussi fréquents. 
 
-_A votre avis, quel est le principe de test qui n'a pas été respecté pour résoudre ces problèmes ?_
+_À votre avis, quel principe de test n'a pas été respecté pour résoudre ces problèmes ?_
 
 ### Question 5 : 
 

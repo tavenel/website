@@ -7,9 +7,9 @@ date: 2023 / 2024
 
 En utilisant un projet déjà réalisé par vos soins, définir un plan de test global permettant de qualifier le bon fonctionnement du produit aux différentes étapes de sa conception (du cahier des charges à la recette). 
 
-Il est donc fortement recommandé de séparer ce plan de test global en différents plans de tests dédiés aux différentes étapes à tester. 
+Il est donc fortement recommandé de séparer ce plan de test global en différents plans de test dédiés aux différentes étapes à tester. 
 
-On utilisera les différents types de tests vus en cours : tests unitaires, tests d'intégration, tests système et tests d'acceptation / tests fonctionnels et non-fonctionnels / boîte blanche et boîte noire. 
+On utilisera les différents types de tests vus en cours : tests unitaires, tests d'intégration, tests système et tests d'acceptation, tests fonctionnels et non fonctionnels, boîte blanche et boîte noire. 
 
 Il n'est pas demandé de décrire avec précision les scénarios de test ou les données à utiliser. On se contentera de décrire succinctement mais précisément le test à réaliser en une phrase, les environnements d'exécution des plans de test et l'ordonnancement des tests. 
 

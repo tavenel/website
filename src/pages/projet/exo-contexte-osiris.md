@@ -10,13 +10,13 @@ Cette étude de cas porte sur l'analyse du projet Osiris, dont un compte rendu e
 
 Cette étude décrit un environnement organisationnel, technique et fonctionnel lié à l'introduction de technologies IoT (Internet des Objets) dans une entreprise du secteur de la chimie.
 
-Pendant cette étude, un prototype (Proof of Concept) a été réalisé avec succès et l'entreprise souhaite maintenant aller plus loin dans la réalisation du projet.
+Pendant cette étude, un prototype (proof of concept) a été réalisé avec succès et l'entreprise souhaite maintenant aller plus loin dans la réalisation du projet.
 
 ## Annexe méthodologique 
 
 ### Méthodologie
 
-La méthodologie retenue est la recherche action ; la richesse de ce type de recherche, qualitative et participante, est son processus flexible qui, partant d'une question saillante, permet de rester ancré aux besoins réels du terrain en réalisant des actions innovantes qui apporteront des réponses à la question posée ; d'ailleurs, cet atout correspondait à la demande de la DSI d'OSIRIS : expérimenter, à toute petite échelle, avec la POC, l'impact des compteurs connectés sur le suivi des utilités énergétiques pour ensuite convaincre progressivement les différentes parties prenantes de la faisabilité du projet OSIRIS 4.0. Pour mener cette recherche, un poste de data scientist a été créé pour une durée de 6 mois, dont 1/3 à temps plein sur le terrain. 
+La méthodologie retenue est la recherche-action ; la richesse de ce type de recherche, qualitative et participante, est son processus flexible qui, partant d'une question saillante, permet de rester ancré aux besoins réels du terrain en réalisant des actions innovantes qui apporteront des réponses à la question posée ; d'ailleurs, cet atout correspondait à la demande de la DSI d'OSIRIS : expérimenter, à toute petite échelle, avec le POC, l'impact des compteurs connectés sur le suivi des utilités énergétiques pour ensuite convaincre progressivement les différentes parties prenantes de la faisabilité du projet OSIRIS 4.0. Pour mener cette recherche, un poste de data scientist a été créé pour une durée de 6 mois, dont un tiers à temps plein sur le terrain.
 
 Pour mieux comprendre la demande, rajoutons qu'OSIRIS est le gestionnaire d'une offre de services et d'infrastructures mutualisées pour les 17 entreprises présentes sur la plate-forme ; ses missions vont du maintien de la sécurité sur la plate-forme à la logistique en passant par le contrôle analytique, la gestion du parc informatique ou encore la production et la distribution des utilités énergétiques (vapeur, gaz naturel, électricité, eau brute, eau déminéralisée, eau potable, azote, air comprimé). Ces différentes activités, historiquement organisées en silos, doivent être réorganisées pour répondre aux nouveaux services générés par l'industrie 4.0. (Cf. Partie 1). 
 
@@ -38,6 +38,6 @@ S'agissant de la construction du modèle général des données, le travail a co
 
 - En vous basant sur le rapport de l'étude, quelles sont les spécificités de votre nouveau projet qui utilise de l'IoT dans le domaine de la chimie ?
 - Quelles exigences et quelles contraintes peut-on prédire ?
-- Certaines exigences vous semblent-ils critiques ? Quels sont les risques associés ?
-- Quelles sont les dépendences entre ces exigences ?
+- Certaines exigences vous semblent-elles critiques ? Quels sont les risques associés ?
+- Quelles sont les dépendances entre ces exigences ?
 

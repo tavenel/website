@@ -13,13 +13,13 @@ Nous allons installer une version Workstation (c'est-à-dire une version optimis
 2. Télécharger et installer VirtualBox **pour votre OS actuel** (en principe Windows ou MacOS) : <https://www.virtualbox.org/wiki/Downloads>
 3. Lancer VirtualBox, cliquer sur _Nouvelle_ pour créer une nouvelle machine virtuelle
   + Choisir un nom pour la machine virtuelle
-  + Allouer au moins 2048MB de mémoire
-  + Choisir _Créer un disque_, choisir le type `VDI`, taille dynamique, et une taille d'au moins 10Gio. **Attention à bien placer ce fichier de disque virtuel à un endroit où vous ne le supprimerez pas !!!**.
+  + Allouer au moins 2048 Mo de mémoire
+  + Choisir _Créer un disque_, choisir le type `VDI`, taille dynamique, et une taille d'au moins 10 Gio. **Attention à bien placer ce fichier de disque virtuel à un endroit où vous ne le supprimerez pas !!!**.
 4. La machine virtuelle est créée, mais avant de la lancer nous allons y ajouter le média d'installation :
   + Sélectionner la machine virtuelle
   + Cliquer sur _Configuration_ / _Stockage_
   + Cliquer sur l'image de CD-Rom : le panel _Lecteur optique_ devrait s'afficher dans la fenêtre.
-  + Cliquer sur la nouvelle image de CD-Rom dans le panel _Lecteur optique_ intitulé _Choisissez un lecteur optique..._
+  + Cliquer sur la nouvelle image de CD-Rom dans le panneau _Lecteur optique_ intitulé _Choisissez un lecteur optique..._
   + Choisir _Choose a disk file_
   + Sélectionner le média et valider, quitter le menu de configuration
 

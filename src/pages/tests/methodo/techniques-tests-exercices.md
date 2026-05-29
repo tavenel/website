@@ -4,12 +4,12 @@ title: Exercices Techniques de tests
 
 ## Analyse partitionnelle
 
-Soit le spécifications techniques suivantes pour l'exécution d'une fonction `Factoriel` :
+Soit les spécifications techniques suivantes pour l'exécution d'une fonction `Factoriel` :
 
-- Si la valeur $n$ est négative : un message d'erreur est affichée.
+- Si la valeur $n$ est négative : un message d'erreur est affiché.
 - Si $n$ est dans $[1,20[$ on affiche la valeur exacte de `Factoriel(n)`.
 - Si $n$ est dans $[20,200]$ on affiche une _approximation_ de `Factoriel(n)` en virgule flottante avec une précision de $0,1$ %.
-- Si $n>200$ un message d'erreur est affiché.
+- Si $n > 200$, un message d'erreur est affiché.
 
 _Proposer des classes d'équivalence à tester._
 
@@ -24,7 +24,7 @@ _Proposer des classes d'équivalence à tester._
 
 Un programme de classification de triangles prend en entrée un triplet de réels $(a,b,c)$ correspondants aux longueurs des 3 côtés d'un triangle. Le programme doit préciser la nature du triangle (_équilatéral, isocèle, scalène, impossible_).
 
-Donner des exemples de valeurs aux limites.
+Donner des exemples de valeurs limites.
 
 :::correction
 - $(0,0,0)$ un point,

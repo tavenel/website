@@ -15,7 +15,7 @@ title: TP - Mise en place d'un partage NFS (Network File System) sous Debian
   - **Serveur NFS** : `nfs-server`
   - **Client NFS** : `nfs-client`
 - Accès root sur les deux systèmes.
-- Connectivité réseau entre les deux (ping OK) sur CIDR 192.168.56.0/24 (adapter le TP si autre CIDR).
+- Connectivité réseau entre les deux (ping OK) sur le CIDR 192.168.56.0/24 (adapter le TP si un autre CIDR est utilisé).
 
 ## 🪜 Étapes du TP
 
@@ -57,9 +57,9 @@ Ajouter la ligne suivante :
 
 - `rw` : lecture/écriture autorisée (sinon `ro` pour lecture seule)
 - `sync` : écriture synchrone (plus sûr)
-- `subtree_check` : si un répertoire est exporté au lieu d'un système de fichiers complet, l'hôte doit vérifier l'emplacement des fichiers et répertoires sur le système de fichiers hôte.
+- `subtree_check` : si un répertoire est exporté au lieu d'un système de fichiers complet, l'hôte doit vérifier l'emplacement des fichiers et des répertoires sur le système de fichiers hôte.
 - `no_subtree_check` : l'hôte ne doit pas vérifier l'emplacement des fichiers accédés dans le système de fichiers hôte.
-- `sync` : garantit que l'hôte conserve la synchronisation des modifications téléchargées dans le répertoire partagé.
+- `sync` : garantit que l'hôte conserve la synchronisation des modifications écrites dans le répertoire partagé.
 - `async` : ignore les vérifications de synchronisation au profit d'une vitesse accrue.
 - `no_root_squash` : option extrêmement dangereuse qui accorde aux utilisateurs `root` distants les mêmes privilèges qu'à l'utilisateur `root` de la machine hôte.
 :::

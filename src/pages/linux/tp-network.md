@@ -28,7 +28,7 @@ Voir aussi :
 ### Visualiser les adresses
 
 :::exo
-1. En utilisant la commande `ifconfig -a`, visualisez les interface et les adresses IP associées sur votre système.
+1. En utilisant la commande `ifconfig -a`, visualisez les interfaces et les adresses IP associées sur votre système.
 2. Même exercice en utilisant les commandes `ip` : `ip addr show` et `ip link show`.
 3. Bonus : utiliser un filtre `grep` et `awk` pour n'afficher que les adresses IP des interfaces `inet`.
 :::
@@ -176,7 +176,7 @@ Attention, il sera aussi indispensable d'adapter le fichier de configuration `/e
 
 :::exo
 1. Afficher le nom réseau de la machine.
-2. Changer le _hostname_ de 2 manières différentes, depuis un fichier de configuration et depuis une commande dédiée provenant de `systemd`
+2. Changer le _hostname_ de deux manières différentes, depuis un fichier de configuration et depuis une commande dédiée provenant de `systemd`
 :::
 
 :::correction
@@ -223,7 +223,7 @@ hostnamectl set-hostname monhostname
 ## Table de voisinage
 
 :::exo
-En utilisant `ip neigh` afficher la table de voisinage. À quoi correspondent ces informations ?
+En utilisant `ip neigh`, afficher la table de voisinage. À quoi correspondent ces informations ?
 :::
 
 :::correction

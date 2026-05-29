@@ -128,17 +128,17 @@ Les cahiers des charges sont des documents de référence :
 ## 📚 Différents types de cahier des charges
 
 Le cahier des charges est un document qui décrit les fonctions que devra remplir la solution à l'issue du projet, ainsi que ses spécifications techniques et les besoins auxquels elle devra répondre. 📝
-Il peut être utilisé dans différents contexte, en interne comme en externe (appels d'offre, marchés publics…) et a notamment pour but de faire gagner du temps aux différents intervenants dans la compréhension du projet. ⏳
+Il peut être utilisé dans différents contextes, en interne comme en externe (appels d'offre, marchés publics…) et a notamment pour but de faire gagner du temps aux différents intervenants dans la compréhension du projet. ⏳
 
 ---
 
-On distingue le _cahier des charge technique_ du _cahier des charges fonctionnel_. 🔍
+On distingue le _cahier des charges technique_ du _cahier des charges fonctionnel_. 🔍
 - Le premier s'intéresse particulièrement aux **exigences et contraintes techniques** du produit 🛠️
 - Le second se focalise sur les besoins **fonctionnels et la manière** dont la solution y répond 🎯
 
 ---
 
-Le cahier des charges techniques peut toutefois n'être que la partie technique d'un cahier des charges plus global, qui énumère les contraintes de différents types :
+Le cahier des charges technique peut toutefois n'être que la partie technique d'un cahier des charges plus global, qui énumère les contraintes de différents types :
 - Économiques 💰
 - Industrielles 🏭
 - Environnementales 🌱
@@ -148,7 +148,7 @@ Le cahier des charges techniques peut toutefois n'être que la partie technique 
 
 ## 🏛️ Organisations Réglementaires ou Légales
 
-- Les régulations et contraintes légales peuvent avoir un impact significatif sur le projet. ⚖️
+- Les réglementations et contraintes légales peuvent avoir un impact significatif sur le projet. ⚖️
 - Le CDC doit prendre en compte ces contraintes pour garantir la conformité et minimiser les risques juridiques. 🛡️
 
 ---
@@ -184,7 +184,7 @@ Les besoins sont exprimés sous forme de courtes "User Stories", ce qui permet u
 ### Le CCF
 
 :::strong
-Rédiger un CCF c'est **exprimer et formaliser le besoin**. 📝
+Rédiger un CCF, c'est **exprimer et formaliser le besoin**. 📝
 :::
 
 C'est donc un document qui présente de manière détaillée et structurée les **attendus** d'un projet (services, produit) et ses **contraintes** (techniques, managériales, contextuelles).
@@ -215,9 +215,9 @@ Expliquez en quelques mots le fondement de la demande. Il ne suffit pas simpleme
 
 ### Objectif
 
-Expliquez de façon complète les différents objectifs du projet : quelle seront les finalités du projet pour votre entreprise? 🎯
+Expliquez de façon complète les différents objectifs du projet : quelles seront les finalités du projet pour votre entreprise ? 🎯
 
-> Exemple : Pour un site web, le objectifs commerciaux et/ou marketing du site doivent être clairement rédigés. Ces objectifs ont une influence majeure sur les différents travaux qui seront mis en place pour réaliser le projet. 📈
+> Exemple : Pour un site web, les objectifs commerciaux et/ou marketing du site doivent être clairement rédigés. Ces objectifs ont une influence majeure sur les différents travaux qui seront mis en place pour réaliser le projet. 📈
 
 ---
 

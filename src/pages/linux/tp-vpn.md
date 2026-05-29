@@ -20,7 +20,7 @@ sudo sysctl -p
 
 ## 📥 Installation et configuration du serveur
 
-1. Installer Wireguard
+1. Installer WireGuard
 
 2. Générer des clés publiques et privées.
 
@@ -59,7 +59,7 @@ sudo wg-quick up wg0
 
 ## 🛠️ Installation et configuration du client
 
-1. Installer Wireguard
+1. Installer WireGuard
 
 2. Configurer le fichier de configuration `/etc/wireguard/wg0.conf` côté client, par exemple :
 
@@ -75,7 +75,7 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-3. Wireguard inclut une commande clé en main pour la création et configuration d'une interface dédiée au VPN :
+3. WireGuard inclut une commande clé en main pour la création et la configuration d'une interface dédiée au VPN :
 
 ```sh
 sudo wg-quick up wg0

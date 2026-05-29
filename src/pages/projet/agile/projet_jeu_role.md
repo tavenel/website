@@ -7,9 +7,9 @@ date: 2023 / 2024
 
 # Présentation du projet 
 
-Vous êtes une équipe ayant recu une commande pour un nouveau projet qui consiste à développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur.
+Vous êtes une équipe ayant reçu une commande pour un nouveau projet qui consiste à développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur.
 
-Le détail du cahier des charges est le suivant - en cas de question sur les spécifications, le formateur jouera le rôle du client final pour préciser celles-ci.
+Le détail du cahier des charges est le suivant : en cas de question sur les spécifications, le formateur jouera le rôle du client final pour préciser celles-ci.
 
 ## Fonctionnalités
 
@@ -46,9 +46,9 @@ De même, l'utilisation d'Epics est possible mais n'est pas obligatoire.
 
 Les projets Scrum utilisent en général des sprints de 1 à 3 semaines. Pour s'entraîner à la gestion itérative d'un projet, ce projet sera réalisé en simulant 3 sprints de 30 minutes chacun. 
 
-Chaque Sprint sera composé de 3 "journées" de 10 minutes. 
+Chaque Sprint sera composé de 3 "journées" de 10 minutes.
 
-Ici, chaque sprint correspond à la livraison d'une nouvelle partie de l'histoire pour le prochain magazine à publier. On ajoutera chaque élément de l'histoire (nouveau personnage, nouvel événement, mise à jour d'un décor, …) sous forme de user-story dédiées. 
+Ici, chaque sprint correspond à la livraison d'une nouvelle partie de l'histoire pour le prochain magazine à publier. On ajoutera chaque élément de l'histoire (nouveau personnage, nouvel événement, mise à jour d'un décor, …) sous forme de user stories dédiées.
 
 
 L'ensemble des cérémonies Scrum devra être respecté pendant l'itération, notamment : 
@@ -57,11 +57,11 @@ L'ensemble des cérémonies Scrum devra être respecté pendant l'itération, no
 - Les réunions de stand-up avant chaque nouvelle journée 
 - La revue puis la rétrospective en fin de Sprint 
 
-On prendra soin également de calculer la `vélocité` et le `burndown` après chaque Sprint. 
+On prendra soin également de calculer la `vélocité` et le `burndown` après chaque Sprint.
  
 ## Outil utilisé 
 
-Le suivi du projet sera réalisé grâce à l'outil `Jira` d'Atlassian, disponible gratuitement en SaaS pour de petites équipes : <https://www.atlassian.com/fr/software/jira>  
+Le suivi du projet sera réalisé grâce à l'outil `Jira` d'Atlassian, disponible gratuitement en SaaS pour de petites équipes : <https://www.atlassian.com/fr/software/jira>
 
 Pour réaliser le suivi du projet : 
 
@@ -93,5 +93,5 @@ Il est attendu pour chaque groupe :
 	- Une revue de Sprint, qui sera effectuée avec le client (i.e. le formateur). Cette revue comportera une démonstration du travail réalisé pendant le Sprint. Attention, il n'est pas demandé de détailler l'ensemble du produit, mais bien de proposer au client une démonstration de ce qui l'intéresse. 
 	- Une rétrospective du Sprint. 
 	- La page Confluence générée par Jira pour la rétrospective devra être utilisée comme la page d'accueil du rapport, même s'il est possible d'utiliser un autre outil (par exemple : https://easyretro.io/ ) et d'ajouter un lien dans Confluence vers la rétrospective générée dans cet autre outil. 
-	- On intègrera également le résultat de la revue (livrable et commentaires éventuels) sur cette page, directement ou via un lien vers ce livrable 
+	- On intègrera également le résultat de la revue (livrable et commentaires éventuels) sur cette page, directement ou via un lien vers ce livrable.
 

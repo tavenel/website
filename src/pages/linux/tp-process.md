@@ -20,7 +20,7 @@ La commande `ps` permet d'obtenir des informations sur les processus.
 5. En utilisant les variables du shell `$` et `PPID`, récupérer le `PID` du processus courant et de son parent.
 
 :::correction
-La syntaxe de cette commande est très différente d'un système à l'autre (notamment sur système `GNU` vs `BSD`). Lorsque nécessaire, 2 solutions sont données.
+La syntaxe de cette commande est très différente d'un système à l'autre (notamment sur les systèmes `GNU` et `BSD`). Lorsque nécessaire, deux solutions sont données.
 
 1. Listez les processus de tous les utilisateurs du système.
 
@@ -192,7 +192,7 @@ La syntaxe de base de la commande `nohup` est la suivante :
 nohup commande &
 ```
 
-où `commande` est la commande que vous souhaitez exécuter en arrière-plan. Le caractère `&` permet de démarrer le processus en arrière-plan, de sorte que vous puissiez continuer à utiliser votre terminal pendant que le processus est en cours d'exécution.
+où `commande` est la commande que vous souhaitez exécuter en arrière-plan. Le caractère `&` permet de démarrer le processus en arrière-plan, de sorte que vous puissiez continuer à utiliser votre terminal pendant que le processus s'exécute.
 
 1. Exécuter une commande `sleep 2000` avec un `nohup`.
 2. Se déconnecter du terminal et vérifier que la commande est toujours en cours d'exécution.
@@ -224,7 +224,7 @@ Quelques-unes des fonctionnalités principales de `Tmux` :
   - En utilisant l'invité de commandes (`[CTRL]` + `[b]` puis `[:]` et la commande `setw -g permit-attach on` activer le partage de session
   - Dans un autre terminal, s'attacher à la session
   - Déconnecter le nouvel utilisateur pour laisser un unique utilisateur de session
-11. [Optionel] Utiliser `tmux` pour gérer un ensemble de sessions de terminaux via une seule session `ssh`. Couper la connexion `ssh` et récupérer la session.
+11. [Optionnel] Utiliser `tmux` pour gérer un ensemble de sessions de terminaux via une seule session `ssh`. Couper la connexion `ssh` et récupérer la session.
 
 :::tip
 `tmux` est certainement le multiplexeur de terminal le plus connu, mais il en existe d'autres. `screen` est une autre alternative très utilisée, et des versions plus "modernes" existent aussi : `wezterm`, `zellij`, …

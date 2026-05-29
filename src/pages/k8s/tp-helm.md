@@ -7,7 +7,7 @@ date: 2024 / 2025
 
 `Helm` est un outil et une CLI de _gestion de paquets_ pour Kubernetes qui permet de déployer et de gérer des applications Kubernetes de manière _déclarative_.
 
-- Les `charts` Helm sont des packages qui encapsulent des configurations Kubernetes, des `templates`, et d'autres ressources nécessaires pour déployer une application.
+- Les `charts` Helm sont des paquets qui encapsulent des configurations Kubernetes, des `templates`, et d'autres ressources nécessaires pour déployer une application.
 - Les `charts` sont distribuées en ligne dans des `repositories` (publics ou privés)
   - un repo a un nom sur la machine locale : `helm repo add mon-repo http://…`
     - cela permet de l'utiliser facilement : `helm install ma-release mon-repo/nginx`
@@ -271,11 +271,11 @@ helm uninstall test1 --namespace chart1-v1
 
 ## Helmfile
 
-Les _Helm Chart_ sont puissantes mais l'on se retrouve vite avec beaucoup de _Chart_ différentes à appliquer, des `values` à passer en paramètres, …
+Les _Helm Charts_ sont puissantes mais l'on se retrouve vite avec beaucoup de _Chart_ différentes à appliquer, des `values` à passer en paramètres, …
 [Helmfile](https://github.com/helmfile/helmfile) permet de gérer tout ceci : _Helm Chart_ locales & distantes (git + hub), _Kustomization_, manifests `yaml`
 
 :::link
-Examples: [install essentials on a cluster, Jérôme Petazzoni][helmfile-ex-1], [run a Bento stack, Jérôme Petazzo][helmfile-ex-2]
+Examples: [install essentials on a cluster, Jérôme Petazzoni][helmfile-ex-1], [run a Bento stack, Jérôme Petazzoni][helmfile-ex-2]
 
 [helmfile-ex-1]: https://github.com/jpetazzo/beyond-load-balancers/blob/main/helmfile.yaml
 [helmfile-ex-2]: https://github.com/jpetazzo/beyond-load-balancers/blob/main/bento/helmfile.yaml

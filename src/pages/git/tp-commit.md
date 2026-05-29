@@ -106,7 +106,7 @@ La commande `git add -p` permet interactivement d'ajouter ou non des morceaux de
 
 ### Création d'un premier commit
 
-`Git` utilise une notion unique pour identifier tout changement dans les fichiers du dépôt : le _commit_. **Un commit est identifié par un _hash_ (identifiant unique) qui est immuable** : cet identifiant restera le même quelque soit la vie du commit. Cette propriété sera très utile lors de l'utilisation des branches.
+`Git` utilise une notion unique pour identifier tout changement dans les fichiers du dépôt : le _commit_. **Un commit est identifié par un _hash_ (identifiant unique) qui est immuable** : cet identifiant restera le même quel que soit la vie du commit. Cette propriété sera très utile lors de l'utilisation des branches.
 
 **Attention : un commit correspond à un ensemble de modifications sur un ensemble de fichiers, il n'est pas possible de "mélanger" des commit proposant des modifications différentes directement (voir système de "merge" dans le prochain tp). Il est donc préconisé de créer des commit identifiant de petites modifications logiques plutôt qu'un système de "backup" à la fin de la journée.**
 

@@ -22,11 +22,11 @@ Vous utiliserez des outils comme `ping`, `curl`, `nc` ou `nmap` pour vérifier l
 
 ## Rappels : syntaxe de base nftables
 
-La syntaxe `nftables` repose sur une logique différente d'`iptables` :
+La syntaxe `nftables` repose sur une logique différente de celle d'`iptables` :
 
 - On manipule des **tables**
 - Chaque table contient une ou plusieurs **chains**
-- Les règles sont écrites dans ces chains
+- Les règles sont écrites dans ces chaînes
 - Les règles s'expriment sous forme déclarative, par exemple :
 
 ```sh
@@ -110,7 +110,7 @@ sudo apt install nftables
 sudo systemctl enable nftables
 ```
 
-Le fichier permanent sera alors dans :
+Le fichier persistant sera alors dans :
 
 ```
 /etc/nftables.conf
@@ -120,7 +120,7 @@ Le fichier permanent sera alors dans :
 
 1. **Un script `firewall.sh` fonctionnel**, appliquant l'ensemble de la configuration nftables et assurant la persistance.
 2. **Une capture d'écran ou un rapport** montrant les tests réalisés (`curl`, `ping`, `nmap`…).
-3. **Une explication claire des droits d'exécution du script**, justifiant comment un utilisateur non privilégié peut l'exécuter sans disposer d'un accès root complet.
+3. **Une explication claire des droits d'exécution du script**, expliquant comment un utilisateur non privilégié peut l'exécuter sans disposer d'un accès root complet.
 
 ## Liens
 

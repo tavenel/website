@@ -146,12 +146,12 @@ echo ${^array}.png # one.png two.png three.png
 ## Complétion et navigation : Tabulation, touches directionnelles, raccourcis
 
 - Selon la distribution la touche de tabulation offre des possibilités d'auto-complétion.
-  - L'auto-complétion de certains binaires non natifs demandent l'installation et la configuration de scripts ou paquets supplémentaires.
+  - L'auto-complétion de certains binaires non natifs demande l'installation et la configuration de scripts ou paquets supplémentaires.
 - Les touches directionnelles permettent de naviguer dans l'historique des commandes
 - La plupart des shells utilisent par défaut les mêmes raccourcis (basés sur `emacs`):
   - `[Ctrl] + [a]` : aller au début de la ligne
   - `[Ctrl] + [e]` : aller à la fin de la ligne
-  - `[Ctrl] + [w]` : supprimer un mot en arrière (et le mets dans le presse-papier)
+  - `[Ctrl] + [w]` : supprimer un mot en arrière (et le met dans le presse-papier)
   - `[Alt] + [d]` : supprimer un mot en avant
   - `[Alt] + [b]` : revenir en arrière d'un mot
   - `[Alt] + [f]` : avancer d'un mot
@@ -161,7 +161,7 @@ echo ${^array}.png # one.png two.png three.png
   - `[Ctrl] + [c]` : tuer proprement le programme en cours d'exécution
   - `[Ctrl] + [z]` : suspendre le programme en cours d'exécution (`fg` pour ramener au 1er plan, `bg` pour continuer l'exécution en arrière-plan)
   - `[Ctrl] + [r]` : chercher dans l'historique (à l'envers)
-  - `[Ctrl] + [l]` : nettoyer l'écrant (`clear`)
+  - `[Ctrl] + [l]` : nettoyer l'écran (`clear`)
   - `[Ctrl] + [d]` : fermer le terminal (`exit`)
   - `[Ctrl] + [s]` : arrêter le défilement de l'écran
   - `[Ctrl] + [q]` : reprendre le défilement de l'écran

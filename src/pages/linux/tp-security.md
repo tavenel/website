@@ -8,9 +8,9 @@ date: 2024 / 2025
 :::exo
 En utilisant les commandes `passwd` et `chage` :
 
-  1. changer le mote de passe de l'utilisateur depuis le compte `root`
+  1. changer le mot de passe de l'utilisateur depuis le compte `root`
   2. mettre au point une politique de sécurité avec une expiration des mots de passe
-  3. vérifier que la poliitque est bien implémentée
+  3. vérifier que la politique est bien implémentée
 :::
 
 :::correction
@@ -41,10 +41,10 @@ Utiliser le tutoriel : <https://doc.ubuntu-fr.org/sudoers> pour configurer corre
 
 La commande `ulimit` est utilisée pour afficher ou modifier les limites des ressources pour les processus en cours d'exécution sur un système Linux. Elle permet de contrôler et de limiter différentes ressources système telles que la quantité de mémoire virtuelle, le nombre de fichiers ouverts, la taille du segment de mémoire partagée, etc., pour chaque processus ou pour l'utilisateur actuel.
 
-`ulimit` peut être utilisé par un utilisateur pour limites les ressources de ses propres processus, mais il existe des limites imposées par le système qui peuvent être modifiées uniquement par l'administrateur système.
+`ulimit` peut être utilisé par un utilisateur pour limiter les ressources de ses propres processus, mais il existe des limites imposées par le système qui peuvent être modifiées uniquement par l'administrateur système.
 
 :::tip
-Les modifications de `ulimit` son temporaires.
+Les modifications de `ulimit` sont temporaires.
 
 Pour les rendre permanentes, il faut éditer le fichier `/etc/security/limits.conf`.
 :::
@@ -251,7 +251,7 @@ Accept=yes
 WantedBy=sockets.target
 ```
 
-Ce ficher fait référence au service `SSH` configuré dans : `/etc/systemd/system/sshd.service`.
+Ce fichier fait référence au service `SSH` configuré dans : `/etc/systemd/system/sshd.service`.
 
 ```ini
 [Unit]
@@ -394,7 +394,7 @@ sudo tcpdump -i enp0s3 host 8.8.8.8
 
 #### Filtrage par port
 
-Capturez uniquement le trafic HTTP (port 80) puis pour le traffic HTTPS (port 443).
+Capturez uniquement le trafic HTTP (port 80) puis pour le trafic HTTPS (port 443).
 
 1. Quels types de paquets observez-vous ?
 

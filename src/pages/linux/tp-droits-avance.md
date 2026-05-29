@@ -19,11 +19,11 @@ Le `SUID` (Set User ID) est un mécanisme de permission qui permet à un utilisa
 ### Étape 1 : Création d'un fichier avec le SUID
 
 1. Créez un script simple appartenant à root et affichant qui est l'utilisateur courant du script.
-2. Rendre ce script exécutable et tester son exécution
+2. Rendez ce script exécutable et testez son exécution
 3. Modifiez les permissions pour activer le SUID et tester l'exécution du script
 
 :::warn
-La plupart des distributions récentes ont un noyau qui refuse l'exécution de `SUID` pour les scripts shells par mesure de sécurité.
+La plupart des distributions récentes disposent d'un noyau qui refuse l'exécution du `SUID` pour les scripts shell par mesure de sécurité.
 
 On pourra à la place utiliser un petit programme en C qui affiche l'utilisateur courant :
 
@@ -106,7 +106,7 @@ Le SGID (Set Group ID) applique les privilèges du groupe propriétaire à tout 
 
 ### Qu'est-ce que les ACL ?
 
-Les ACL (Access Control List) permettent de définir des permissions supplémentaires plus fines que celles offertes par les permissions standards (rwx). Les ACL sont utiles lorsque plusieurs utilisateurs ou groupes nécessitent des permissions différentes sur un fichier ou un répertoire.
+Les ACL (Access Control List) permettent de définir des permissions supplémentaires plus fines que celles offertes par les permissions standard (rwx). Les ACL sont utiles lorsque plusieurs utilisateurs ou groupes nécessitent des permissions différentes sur un fichier ou un répertoire.
 
 ### Étape 1 : Activation des ACL
 
@@ -115,7 +115,7 @@ Les ACL (Access Control List) permettent de définir des permissions supplément
     sudo tune2fs -l /dev/root | grep "Default mount options:"
     ```
 
-    Si ce n'est pas le cas, activez les `acl` pour votre système de fichiers : `sudo tune2fs -o acl /dev/root` et redémarrez la machine ou remontez le système de fichiers : `mount -o remount /`
+    Si ce n'est pas le cas, activez les options `acl` pour votre système de fichiers : `sudo tune2fs -o acl /dev/root`, puis redémarrez la machine ou remontez le système de fichiers avec `mount -o remount /`
     Si besoin, installez également le paquet `acl` (sous _Debian_ ou _Ubuntu_) afin d'avoir les commandes `getfacl` et `setfacl`.
 
 ### Étape 2 : Gestion des ACL avec `setfacl` et `getfacl`
@@ -150,7 +150,7 @@ Les ACL (Access Control List) permettent de définir des permissions supplément
 Pourquoi utiliser des ACL plutôt que les permissions standard ? Donnez un exemple de cas où cela est utile.
 
 :::correction
-Les ACL permettent de définir des permissions plus fines que les permissions standard rwx. Les permissions standard ne permettent de définir des droits d'accès qu'à trois entités : le propriétaire, le groupe, et les autres utilisateurs. Avec les ACL, vous pouvez spécifier des permissions pour des utilisateurs et des groupes supplémentaires, sans changer la propriété ou les groupes principaux du fichier.
+Les ACL permettent de définir des permissions plus fines que les permissions standard `rwx`. Les permissions standard ne permettent de définir des droits d'accès qu'à trois entités : le propriétaire, le groupe, et les autres utilisateurs. Avec les ACL, vous pouvez spécifier des permissions pour des utilisateurs et des groupes supplémentaires, sans changer la propriété ou les groupes principaux du fichier.
 
 Exemple de cas utile : Supposons que vous ayez un fichier accessible par un groupe de collaborateurs, mais qu'un seul membre d'un autre groupe ait besoin d'y accéder en écriture. Au lieu de changer la propriété ou de créer un groupe spécifique, vous pouvez utiliser les ACL pour attribuer l'accès en écriture à cet utilisateur, tout en laissant les autres utilisateurs du groupe avec les permissions habituelles.
 :::

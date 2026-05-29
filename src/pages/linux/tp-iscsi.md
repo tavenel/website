@@ -61,7 +61,7 @@ sudo targetcli
 Puis exécutez les commandes suivantes dans le shell `targetcli` :
 
 ```
-/> backstores/fileio create disk01 /srv/iscsi_disks/disk01.img 1G
+/> backstores/fileio create disk01 /srv/iscsi_disks/disk01.img 1 GiB
 /> iscsi/ create iqn.2025-10.local.iscsi:target01
 /> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/luns/ create /backstores/fileio/disk01
 /> iscsi/iqn.2025-10.local.iscsi:target01/tpg1/acls/ create iqn.2025-10.local.iscsi:initiator01

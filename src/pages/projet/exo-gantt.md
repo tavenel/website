@@ -25,7 +25,7 @@ La durée est exprimée en nombre de jours.
 
 En utilisant l'outil en ligne gratuit de création de diagramme de Gantt <https://www.onlinegantt.com> :
 
-1. Réaliser le diagramme de Gantt correspondant à la planification de ces tâches. On imagine avoir des ressources illimitées.
-2. L'équipe étant en réalité composée de 2 personnes :
-  * Adapter le diagramme de Gantt en conséquence (essayer d'optimiser la plannification) - chaque collaborateur ne peut travailler en parallèle sur 2 tâches à la fois.
+1. Réaliser le diagramme de Gantt correspondant à la planification de ces tâches. On imagine avoir des des ressources illimitées.
+2. L'équipe étant en réalité composée de deux personnes :
+  * Adapter le diagramme de Gantt en conséquence (essayer d'optimiser la planification) - chaque collaborateur ne peut travailler en parallèle sur 2 tâches à la fois.
   * Que remarquez-vous quand à l'occupation de chaque collaborateur ?

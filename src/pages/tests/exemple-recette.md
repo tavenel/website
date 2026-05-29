@@ -4,7 +4,7 @@ date: 2025 / 2026
 ---
 
 Le cahier de recette sert de **référence contractuelle** entre le métier et l'équipe technique.
-Il formalise **ce qui doit fonctionner**, **comment vérifier**, et **à partir de quand le produit est jugé acceptable**.
+Il formalise **ce qui doit fonctionner**, **comment vérifier** et **à partir de quand le produit est jugé acceptable**.
 
 
 ## 1. Présentation du projet
@@ -24,7 +24,7 @@ La recette fonctionnelle a pour objectif de :
 
 * Vérifier la conformité aux besoins métier
 * Valider les fonctionnalités principales
-* Détecter les anomalies bloquantes avant mise en production
+* Détecter les anomalies bloquantes avant la mise en production
 * Garantir l'acceptation par les utilisateurs finaux
 
 ## 3. Périmètre de test

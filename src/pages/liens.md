@@ -117,7 +117,7 @@ checked: 2025-01-27
 
 ### CRDTS
 
-**Conflict Free Replicated Data types** : comment fusionner des données répliquées ?
+**Conflict-free Replicated Data Types** : comment fusionner des données répliquées ?
 
 - <https://vlcn.io/blog/intro-to-crdts> : Enjeux des CRDTS
 - <https://jakelazaroff.com/words/an-interactive-intro-to-crdts/> : Introduction et exemples de CRDTS
@@ -157,12 +157,12 @@ checked: 2025-01-27
 
 - Presque 80 nouvelles CVE/jour [source 2024](https://www.ninjaone.com/fr/blog/7-statistiques-sur-la-cybersecurite-que-chaque-pme-et-msp-doit-connaitre/)
 - 50% des PME ont connu une violation de site web et plus de 40 % signalent des attaques mensuelles ou plus fréquentes [source 2021](https://www.sectigo.com/resource-library/study-finds-50-of-smbs-have-experienced-a-website-breach-and-40-are-being-attacked-monthly?utm_source=chatgpt.com)
-- 50% des PME attaquées ont coulé [source 2025](https://www.lemagit.fr/conseil/Combien-de-PME-mettent-la-cle-sous-la-porte-apres-une-cyberattaque?utm_source=chatgpt.com)
+- 50% des PME attaquées ont coulé [source 2025](https://www.lemagit.fr/conseil/Combien-de-PME-mettent-la-cle-sous-la-porte-apres-une-cyberattaque?utm_source=chatgpt.com).
 
 ### CRA - EU Cyber Resilience Act
 
 - Si publication de logiciel, besoin de publier un SBOM (Software Bill of Materials) des dépendances
-- Manager les vulnérabilités (scan CVE depuis sbom) -> statement (affecté  / non affecté <- à justifier) -> rapport
+- Gérer les vulnérabilités (scan CVE depuis SBOM) -> statement (affecté / non affecté <- à justifier) -> rapport
 
 ### Documentation
 
@@ -190,7 +190,7 @@ Voir aussi : <https://adr.github.io/>
 - Exemple de page d'aide de CLI : voir la commande `kubectl --help`
 - Comment écrire de bons exemples : <https://conventionalcomments.org/>
 - Documentation technique - fonctionne hors ligne <https://devdocs.io/>
-- Référence sur l'écriture d'une bonne documentation technique : <https://diataxis.fr/> et <https://blog.wescale.fr/back-to-basics-pere-castor-dis-moi-comment-ecrire-une-bonne-documentation-technique>
+- Référence pour écrire une bonne documentation technique : <https://diataxis.fr/> et <https://blog.wescale.fr/back-to-basics-pere-castor-dis-moi-comment-ecrire-une-bonne-documentation-technique>
 
 ##### LaTeX
 

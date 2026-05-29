@@ -209,7 +209,7 @@ cat /var/log/info.log
 
 #### SSH
 
-SSH est utilisé pour les sessions d'authorisation.
+SSH est utilisé pour les sessions d'autorisation.
 
 `/etc/rsyslog.d/02-ssh.conf`
 

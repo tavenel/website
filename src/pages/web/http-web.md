@@ -45,7 +45,7 @@ En général l'action concerne une ressource identifiée par l'URL qui suit le n
 
 ---
 
-Les réponses aux requêtes `HTTP` renvoient toutes :
+Les réponses aux requêtes `HTTP` contiennent toutes :
 
 - Un code de statut et une description. Ce code permet d'identifier et d'automatiser le traitement des erreurs.
 - Un ou plusieurs en-têtes (`headers`) optionnels.
@@ -53,7 +53,7 @@ Les réponses aux requêtes `HTTP` renvoient toutes :
 
 ---
 
-Un codes de statut est un nombre à 3 chiffres défini par la norme.
+Un code de statut est un nombre à 3 chiffres défini par la norme.
 
 Les codes de statut sont regroupés en 5 catégories :
 
@@ -71,8 +71,8 @@ Les codes de statut sont regroupés en 5 catégories :
 - Utilise le protocole sécurisé Transport Layer Security (`TLS`) ou `SSL` encapsulant le protocole `HTTP` dans les données qui transitent.
 - Sécurité des informations par certificats `SSL`.
   + Le serveur émet un certificat (clé publique) signée avec sa clé privée
-  + La détention de cette clé privée garantie l'identité du serveur.
-  + Les échanges de données sont alors chiffrées en utilisant les clés du serveur et du client : garantit la **confidentialité** et **l'intégrité** des échanges.
+  + La détention de cette clé privée garantit l'identité du serveur.
+  + Les échanges de données sont alors chiffrés en utilisant les clés du serveur et du client : cela garantit la **confidentialité** et **l'intégrité** des échanges.
 
 ---
 
@@ -89,7 +89,7 @@ Le protocole `WebSocket` (`ws`) permet d'établir sur les ports web standards un
 - Données échangées instantanément, hors du mode requête/réponse classique de `HTTP`.
 - Possibilité de _push_ de données du serveur vers le client (sans requête client).
 
-Comme `HTTP` et `FTP`, on utilise  le protocole `TCP` pour la couche de transport.
+Comme `HTTP` et `FTP`, on utilise le protocole `TCP` pour la couche de transport.
 
 ---
 

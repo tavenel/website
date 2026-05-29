@@ -58,7 +58,7 @@ On ajustera également le Sprint en fonction des imprévus signalés durant des 
 
 ## Outil utilisé 
 
-Le suivi du projet sera réalisé grâce à l'outil `Jira` d'Atlassian, disponible gratuitement en SaaS pour de petites équipes : <https://www.atlassian.com/fr/software/jira>  
+Le suivi du projet sera réalisé grâce à l'outil `Jira` d'Atlassian, disponible gratuitement en SaaS pour de petites équipes : <https://www.atlassian.com/fr/software/jira>
 
 Pour réaliser le suivi du projet : 
 
@@ -90,5 +90,5 @@ Il est attendu pour chaque groupe :
 	- Une revue de Sprint, qui sera effectuée avec le client (i.e. le formateur). Cette revue comportera une démonstration du travail réalisé pendant le Sprint. Attention, il n'est pas demandé de détailler l'ensemble du produit, mais bien de proposer au client une démonstration de ce qui l'intéresse. 
 	- Une rétrospective du Sprint. 
 	- La page Confluence générée par Jira pour la rétrospective devra être utilisée comme la page d'accueil du rapport, même s'il est possible d'utiliser un autre outil (par exemple : https://easyretro.io/ ) et d'ajouter un lien dans Confluence vers la rétrospective générée dans cet autre outil. 
-	- On intègrera également le résultat de la revue (livrable et commentaires éventuels) sur cette page, directement ou via un lien vers ce livrable 
+	- On intègrera également le résultat de la revue (livrable et commentaires éventuels) sur cette page, directement ou via un lien vers ce livrable.
 

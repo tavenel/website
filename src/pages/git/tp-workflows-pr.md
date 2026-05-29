@@ -113,7 +113,7 @@ git add contenu.txt
 git commit -m 'v3'
 git log --oneline --decorate --graph --all
 
-echo '# Ajout de fonctionalité'
+echo '# Ajout de fonctionnalité'
 echo '#E Création de la branche f1 depuis dev'
 git checkout dev
 git checkout -b f1

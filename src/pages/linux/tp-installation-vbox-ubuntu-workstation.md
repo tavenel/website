@@ -1,5 +1,5 @@
 ---
-title: Installation d'Ubuntu
+title: Installation d'Ubuntu en machine virtuelle
 date: 2023 / 2024
 ---
 
@@ -9,7 +9,7 @@ Nous allons installer une version Desktop (c'est-à-dire une version optimisée 
 
 ## Création de la machine virtuelle
 
-1. Télécharger un média d'installation de Ubuntu (choisir la version `LTS`) : <https://ubuntu.com/download/desktop>
+1. Télécharger un média d'installation d'Ubuntu (choisir la version `LTS`) : <https://ubuntu.com/download/desktop>
 2. Télécharger et installer VirtualBox **pour votre OS actuel** (en principe Windows ou MacOS) : <https://www.virtualbox.org/wiki/Downloads>
 3. Lancer VirtualBox, cliquer sur _Nouvelle_ pour créer une nouvelle machine virtuelle
   + Choisir un nom pour la machine virtuelle
@@ -27,12 +27,12 @@ Nous allons installer une version Desktop (c'est-à-dire une version optimisée 
 
 1. Sélectionner et Démarrer la machine virtuelle
 2. Cliquer sur _Installer Ubuntu_
-3. Choisir _Installation minimale_
+3. Choisir _Installation minimale_.
   + Cocher _Télécharger les mises à jour_
   + Cocher _Installer un logiciel tiers ..._
 4. Choisir _Effacer le disque et installer Ubuntu_
 5. Lancer l'installation
-6. Configurer le système pendant l'installation
+6. Configurer le système pendant l'installation.
   + Ne pas cocher _Active Directory_
 7. À la fin de l'installation, cliquer sur _Redémarrer_.
 
@@ -41,15 +41,15 @@ Nous allons installer une version Desktop (c'est-à-dire une version optimisée 
 1. Démarrer la machine virtuelle, suivre l'assistant de configuration.
   + Ubuntu s'installe par défaut avec le gestionnaire de fenêtres `Gnome` (l'interface graphique la plus courante sous Linux).
 2. Cliquez sur _Activité_ et cherchez et lancez l'application _Ubuntu Software_. Mettre à jour le système.
-  + Attention, la mise à jour peut être longue. Redémarrer le système si demandé.
+  + Attention, la mise à jour peut être longue. Redémarrez le système si demandé.
 3. Cliquez sur _Activité_ et cherchez _Terminal_ : ce sera (de loin) le programme le plus utilisé dans ce module.
-4. Cliquer sur le menu _Machine_ de VirtualBox puis _Prendre un instantané_ : cela permet de faire une sauvegarde de cet état de la machine en cas d'erreur par la suite.
+4. Cliquer sur le menu _Machine_ de VirtualBox puis _Prendre un instantané_ : cela permet de faire une sauvegarde de l'état de la machine en cas d'erreur par la suite.
 
 Votre machine virtuelle Ubuntu est prête à être utilisée !
 
 ## Additions invité
 
-Les _additions invité_ permettent d'améliorer l'ergonomie de votre VM. VirtualBox va patcher le noyau Linux pour y installer ses drivers et permettre le copier-coller, une résolution adaptée à votre écran, …
+Les _additions invité_ permettent d'améliorer l'ergonomie de votre VM. VirtualBox va patcher le noyau Linux pour y installer ses pilotes et permettre le copier-coller, une résolution adaptée à votre écran, …
 
 Suivre le tutoriel : <https://lecrabeinfo.net/virtualbox-installer-les-additions-invite-guest-additions.html>
 

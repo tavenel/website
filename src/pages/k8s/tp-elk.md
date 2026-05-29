@@ -90,7 +90,7 @@ Accédez à l'interface `Kibana` à <http://localhost:5601>.
 
 Dans `Kibana`, configurez un `Index Pattern` pour visualiser les logs collectés dans `Elasticsearch` (par exemple, les index `filebeat-*`).
 
-Utilisez ``Discover pour analyser les logs et créer des dashboards de visualisation personnalisés.
+Utilisez `Discover` pour analyser les logs et créer des dashboards de visualisation personnalisés.
 
 ## Utilisation de `Fluentd` pour le Logging dans `Kubernetes`
 

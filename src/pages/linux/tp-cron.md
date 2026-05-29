@@ -5,11 +5,11 @@ date: 2024 / 2025
 
 Tâches planifiées
 
-`at`, `cron` et `systemd` sont les programme Linux natifs qui permettent de planifier des tâches.
+`at`, `cron` et `systemd` sont les programmes natifs de Linux qui permettent de planifier des tâches.
 
 ## Commande `at`
 
-`at` est une commande Unix qui permet de programmer des commandes à n'exécuter qu'une fois - par opposition à `cron` - à un moment donné. La commande enregistrée hérite de l'environnement courant utilisé au moment de sa définition. Par exemple, pour une exécution de la commande à 05:45 :
+`at` est une commande Unix qui permet de programmer des commandes à n'exécuter qu'une fois, à un moment donné, contrairement à `cron`. La commande enregistrée hérite de l'environnement courant utilisé au moment de sa définition. Par exemple, pour une exécution de la commande à 05:45 :
 
 ```sh
 echo "touch file.txt" | at 0545
@@ -86,7 +86,7 @@ On utilise `cron` pour planifier des tâches à exécuter périodiquement à des
 
 `cron.d` est normalement lancé comme service.
 
-Le programme `crontab` permet aux utilisateurs de gérer leurs tâches.
+La commande `crontab` permet aux utilisateurs de gérer leurs tâches.
 
 ### Répertoires `/etc/cron*`
 
@@ -156,7 +156,7 @@ Par exemple, pour lancer un script toutes les minutes :
 ```
 
 :::tip
-- Les trois premières lettres des noms des mois et des jours de la semaine correspondent aux termes anglais quelle que soit la casse.
+- Les trois premières lettres des noms des mois et des jours de la semaine correspondent aux termes anglais, quelle que soit la casse.
 - On peut écrire des plages de valeurs (inclusif) : `8-11`
 - On peut écrire des listes de plages : `1,2,5,9` ou `0-4,8-12`
 - Une valeur suivie de `/<nombre>` correspond à une cadence : `0-23/2` est équivalent à `0,2,4,6,8,10,12,14,16,18,20,22`
@@ -177,7 +177,7 @@ Pour s'aider à écrire les `crontab` et les vérifier, on pourra utiliser l'exc
 
 ### Commande `crontab`
 
-- La commande `crontab` permet d'afficher / modifier les jobs `cron` : 
+- La commande `crontab` permet d'afficher ou de modifier les jobs `cron` : 
   - `crontab -e` : édite un `cron` avec l'éditeur par défaut
   - `crontab -l` : affiche les jobs programmés
 
@@ -228,7 +228,7 @@ Le répertoire `/var/spool/cron` est un répertoire système utilisé pour stock
 
 ### Dépannage des tâches `cron`
 
-Les fichiers de journaux système `/var/log/syslog` et/ou `/var/log/cron` fournissent les information de dépannage sur les erreurs et problèmes de configuration de jobs `cron`.
+Les fichiers de journaux système `/var/log/syslog` et/ou `/var/log/cron` fournissent les informations de dépannage sur les erreurs et les problèmes de configuration des jobs `cron`.
 
 ### Exercice
 

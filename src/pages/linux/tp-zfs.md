@@ -45,7 +45,7 @@ zfs version
 
 ## Création d'un pool ZFS
 
-Objectif : créer un pool résilient
+Objectif : créer un pool résilient.
 
 :::exo
 
@@ -83,7 +83,7 @@ Par défaut, le pool est monté dans :
 
 ## Gestion des datasets
 
-Objectif : segmenter les usages
+Objectif : segmenter les usages.
 
 :::exo
 
@@ -130,7 +130,7 @@ zfs get compression,quota tank/users tank/backups
 
 ## Snapshots et restauration
 
-Objectif : protéger et restaurer des données
+Objectif : protéger et restaurer des données.
 
 :::exo
 
@@ -172,7 +172,7 @@ zfs rollback tank/users@snap1
 
 ## Scrub et supervision
 
-Objectif : vérifier l'intégrité du stockage
+Objectif : vérifier l'intégrité du stockage.
 
 :::exo
 
@@ -206,7 +206,7 @@ zpool status
 
 ## Sauvegarde distante
 
-Objectif : mettre en œuvre une réplication
+Objectif : mettre en œuvre une réplication.
 
 :::exo
 
