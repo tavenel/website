@@ -1,0 +1,26 @@
+{
+  "qualityThreshold": 80,
+  "testCoverage": {
+    "minimum": 0,
+    "note": "No coverage baseline configured; this repository is primarily Astro/Markdown content."
+  },
+  "linting": [
+    "GitHub Super-Linter",
+    "remark-lint"
+  ],
+  "formatting": [],
+  "commitChecks": [
+    "bun run build for site-impacting changes",
+    "bun run test when TypeScript or remark plugin logic changes",
+    "targeted link checks for edited content when relevant"
+  ],
+  "deployGates": [
+    "Astro build succeeds",
+    "No known critical broken internal links",
+    "GitHub Actions checks pass"
+  ],
+  "cicdIntegration": {
+    "provider": "GitHub Actions",
+    "babysitterIntegration": "deferred"
+  }
+}

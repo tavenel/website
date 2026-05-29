@@ -1,0 +1,455 @@
+{
+  "projectName": "website",
+  "description": "Site statique Astro https://www.avenel.pro servant de support de cours techniques en français pour étudiants avancés et professionnels IT.",
+  "goals": [
+    {
+      "id": "goal-content-1",
+      "description": "Maintenir un corpus de cours techniques exact, cohérent et utile pédagogiquement.",
+      "category": "content-quality",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "id": "goal-site-1",
+      "description": "Garder le site Astro rapide, navigable, buildable et déployable sur GitHub Pages.",
+      "category": "static-site",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "id": "goal-labs-1",
+      "description": "Favoriser les TP/labs reproductibles et les exemples exécutables pour les apprenants.",
+      "category": "education",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "id": "goal-links-1",
+      "description": "Limiter la dérive des liens, dépendances et contenus obsolètes.",
+      "category": "maintenance",
+      "priority": "medium",
+      "status": "active"
+    }
+  ],
+  "techStack": {
+    "languages": [
+      {
+        "name": "Markdown",
+        "role": "primary educational content"
+      },
+      {
+        "name": "Astro",
+        "role": "static pages/components/layouts"
+      },
+      {
+        "name": "TypeScript/JavaScript",
+        "role": "client utilities, config and remark plugins"
+      },
+      {
+        "name": "CSS",
+        "role": "site styling"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Astro",
+        "version": "^6.1.5",
+        "category": "static-site-generator"
+      },
+      {
+        "name": "Pagefind",
+        "category": "static-search"
+      },
+      {
+        "name": "Expressive Code",
+        "category": "code-rendering"
+      },
+      {
+        "name": "remark/rehype",
+        "category": "markdown-pipeline"
+      },
+      {
+        "name": "KaTeX",
+        "category": "math-rendering"
+      }
+    ],
+    "databases": [],
+    "infrastructure": [
+      {
+        "name": "GitHub Pages",
+        "category": "hosting"
+      },
+      {
+        "name": "GitHub Actions",
+        "category": "ci-cd"
+      }
+    ],
+    "buildTools": [
+      "bun",
+      "astro",
+      "vite",
+      "rollup-plugin-visualizer"
+    ],
+    "packageManagers": [
+      "bun",
+      "npm (.a5c tooling only)"
+    ]
+  },
+  "architecture": {
+    "pattern": "Astro static website/content monolith",
+    "modules": [
+      {
+        "name": "pages",
+        "path": "src/pages",
+        "description": "Routed website pages and course/lab pages."
+      },
+      {
+        "name": "courses",
+        "path": "src/courses",
+        "description": "Reusable long-form Markdown course chapters."
+      },
+      {
+        "name": "components",
+        "path": "src/components",
+        "description": "Astro UI components for navigation, TOC, favorites, print, tags and site chrome."
+      },
+      {
+        "name": "layouts",
+        "path": "src/layouts",
+        "description": "Shared layouts for pages and courses."
+      },
+      {
+        "name": "assets",
+        "path": "src/assets",
+        "description": "Images and diagrams organized by teaching domain."
+      },
+      {
+        "name": "remark-plugins",
+        "path": "remark-plugins",
+        "description": "Custom Markdown processing plugins."
+      }
+    ],
+    "entryPoints": [
+      "astro.config.mjs",
+      "src/pages/index.astro",
+      "src/pages/**/*.md",
+      "src/pages/**/*.astro",
+      "src/courses/**/*.md"
+    ],
+    "dataFlow": "Markdown/Astro content is transformed by Astro with remark/rehype plugins into a static site, then built with Bun and deployed by GitHub Actions to GitHub Pages."
+  },
+  "team": [
+    {
+      "name": "Tom Avenel",
+      "role": "maintainer/teacher",
+      "responsibilities": [
+        "course content",
+        "site maintenance",
+        "technical accuracy",
+        "deployment decisions"
+      ]
+    },
+    {
+      "name": "External contributors",
+      "role": "occasional contributors",
+      "responsibilities": [
+        "typo fixes",
+        "issue reports",
+        "pull requests"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Local development",
+      "description": "Edit content and preview locally.",
+      "steps": [
+        "bun install",
+        "bun run dev",
+        "edit Markdown/Astro",
+        "bun run build when relevant"
+      ],
+      "triggers": [
+        "manual"
+      ]
+    },
+    {
+      "name": "Content update",
+      "description": "Update French technical course material while preserving admonitions and links.",
+      "steps": [
+        "identify related src/pages and src/courses files",
+        "edit content",
+        "check assets/links",
+        "run build or targeted checks"
+      ],
+      "triggers": [
+        "course update",
+        "typo fix",
+        "new lab"
+      ]
+    },
+    {
+      "name": "Deploy",
+      "description": "Continuous GitHub Pages deploy from main.",
+      "steps": [
+        "push to main",
+        "GitHub Actions Astro build",
+        "deploy-pages"
+      ],
+      "triggers": [
+        "push main",
+        "workflow_dispatch"
+      ]
+    },
+    {
+      "name": "Quality checks",
+      "description": "Super-linter/CodeQL on PR/push and scheduled link checking.",
+      "steps": [
+        "super-linter",
+        "CodeQL",
+        "lychee scheduled/manual"
+      ],
+      "triggers": [
+        "pull_request",
+        "push",
+        "schedule"
+      ]
+    }
+  ],
+  "processes": [],
+  "tools": {
+    "linting": [
+      {
+        "name": "GitHub Super-Linter",
+        "configPaths": [
+          ".github/workflows/super-linter.yml"
+        ]
+      },
+      {
+        "name": "remark-lint",
+        "configPaths": [
+          "package.json"
+        ]
+      }
+    ],
+    "testing": [
+      {
+        "name": "Vitest",
+        "script": "bun run test"
+      },
+      {
+        "name": "Astro build",
+        "script": "bun run build"
+      },
+      {
+        "name": "Lychee",
+        "configPaths": [
+          ".github/workflows/links.yml",
+          ".lycheeignore"
+        ]
+      }
+    ],
+    "formatting": []
+  },
+  "services": [
+    {
+      "name": "GitHub Pages",
+      "type": "hosting",
+      "url": "https://www.avenel.pro"
+    },
+    {
+      "name": "Vercel Analytics",
+      "type": "analytics"
+    },
+    {
+      "name": "Vercel Speed Insights",
+      "type": "performance monitoring"
+    }
+  ],
+  "externalIntegrations": [
+    {
+      "service": "GitHub Actions",
+      "category": "ci-cd",
+      "enabled": true
+    },
+    {
+      "service": "GitHub Pages",
+      "category": "hosting",
+      "enabled": true
+    },
+    {
+      "service": "Vercel Analytics",
+      "category": "analytics",
+      "enabled": true
+    },
+    {
+      "service": "Pagefind",
+      "category": "static search",
+      "enabled": true
+    }
+  ],
+  "cicd": {
+    "provider": "GitHub Actions",
+    "configPaths": [
+      ".github/workflows/astro.yml",
+      ".github/workflows/codeql.yml",
+      ".github/workflows/links.yml",
+      ".github/workflows/super-linter.yml",
+      ".github/dependabot.yml"
+    ],
+    "pipelines": [
+      {
+        "name": "Deploy Astro site to Pages",
+        "trigger": "push main / workflow_dispatch",
+        "stages": [
+          "build",
+          "deploy"
+        ]
+      },
+      {
+        "name": "CodeQL Advanced",
+        "trigger": "push, pull_request, weekly",
+        "stages": [
+          "analyze"
+        ]
+      },
+      {
+        "name": "Links",
+        "trigger": "manual, repository_dispatch, weekly",
+        "stages": [
+          "lychee",
+          "issue-on-failure"
+        ]
+      },
+      {
+        "name": "Lint Code Base",
+        "trigger": "push, pull_request",
+        "stages": [
+          "super-linter"
+        ]
+      }
+    ],
+    "babysitterIntegration": {
+      "enabled": false,
+      "triggerOn": [],
+      "processIds": []
+    }
+  },
+  "painPoints": [
+    {
+      "id": "pp-content-quality-1",
+      "description": "Maintenir la cohérence d'un gros corpus Markdown français.",
+      "severity": "medium",
+      "category": "documentation",
+      "discoveredVia": "repo analysis",
+      "suggestedRemediation": "Use targeted reviews for terminology, admonitions and related course/page changes."
+    },
+    {
+      "id": "pp-links-1",
+      "description": "Risque de liens externes obsolètes dans les supports de cours.",
+      "severity": "medium",
+      "category": "content-quality",
+      "discoveredVia": "existing lychee workflow",
+      "suggestedRemediation": "Use scheduled lychee and targeted checks for edited pages."
+    },
+    {
+      "id": "pp-build-1",
+      "description": "Les évolutions Astro/Bun peuvent casser le build statique.",
+      "severity": "medium",
+      "category": "build",
+      "discoveredVia": "git history",
+      "suggestedRemediation": "Run bun run build after config/component/dependency changes."
+    }
+  ],
+  "bottlenecks": [
+    {
+      "id": "bn-src-pages-tools-1",
+      "description": "Page d'outils très modifiée avec risque d'accumulation de dette de liens.",
+      "impact": "medium",
+      "location": "src/pages/tools.md",
+      "frequency": "high"
+    },
+    {
+      "id": "bn-k8s-content-1",
+      "description": "Zone Kubernetes à forte activité nécessitant cohérence et vérification de liens.",
+      "impact": "medium",
+      "location": "src/pages/k8s, src/courses/k8s",
+      "frequency": "high"
+    },
+    {
+      "id": "bn-a5c-local-1",
+      "description": "Métadonnées .a5c locales à ignorer pour éviter le bruit git.",
+      "impact": "low",
+      "location": ".a5c",
+      "frequency": "ongoing"
+    }
+  ],
+  "conventions": {
+    "naming": {
+      "components": "PascalCase .astro",
+      "content": "domain directories; French filenames using cours/tp/projet/exo when relevant",
+      "commits": "short scope-prefixed messages"
+    },
+    "git": {
+      "mainBranch": "main",
+      "branchStrategy": "main with occasional topic branches/PRs",
+      "commitStyle": "short scope-prefixed, not strict conventional commits",
+      "approvalRequiredFor": "commit, push, destructive operations"
+    },
+    "codeStyle": {
+      "language": "French for course content",
+      "admonitions": ":::tip, :::link, :::warn, :::exo, :::correction",
+      "packageManager": "bun for site; npm only for .a5c tooling"
+    },
+    "importOrder": [
+      "Astro/config",
+      "integrations",
+      "remark plugins",
+      "rehype plugins",
+      "local plugins"
+    ],
+    "errorHandling": "Prefer build-time validation; fix broken links/build errors before deployment.",
+    "testingConventions": "Run bun run build for site-impacting changes; use bun run test when TypeScript/plugin logic is touched; rely on CI for CodeQL/super-linter/link schedule.",
+    "additionalRules": [
+      "Prefer concise French communication.",
+      "Prioritize correctness; avoid hallucinated technical claims in course content.",
+      "Ask before CI/CD changes, dependency upgrades, git commit/push, deploy, destructive operations or large refactoring.",
+      "Semi-autonomous mode: content/code edits and local verification are allowed without extra confirmation when low risk."
+    ]
+  },
+  "repositories": [
+    {
+      "name": "website",
+      "url": "https://github.com/tavenel/website",
+      "defaultBranch": "main",
+      "localPath": "/home/tom/astro"
+    }
+  ],
+  "claudeMdInstructions": [
+    "Use Bun for project commands: bun run dev, bun run build, bun run test.",
+    "Keep course content in French unless explicitly requested otherwise.",
+    "Preserve custom admonition blocks :::tip/link/warn/exo/correction.",
+    "Ask before modifying GitHub Actions, dependencies, git history, commits/pushes or deployment settings.",
+    "For content changes, check related pages/courses/assets and run targeted build/link checks when useful.",
+    "CI/CD Babysitter integration is deferred; do not modify workflows without explicit approval."
+  ],
+  "installedSkills": [
+    "project-install",
+    "content-research-writer",
+    "changelog-generator"
+  ],
+  "installedAgents": [],
+  "installedProcesses": [
+    "cradle/project-install",
+    "specializations/technical-documentation/docs-testing",
+    "specializations/technical-documentation/style-guide-enforcement"
+  ],
+  "preferences": {
+    "autonomyLevel": "semi-autonomous",
+    "breakpointTolerance": "moderate-for-content-high-for-risk",
+    "riskTolerance": "very-low"
+  },
+  "createdAt": "2026-05-29T21:59:00Z",
+  "updatedAt": "2026-05-29T22:02:20Z",
+  "version": 1
+}
