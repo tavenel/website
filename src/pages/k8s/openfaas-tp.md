@@ -170,7 +170,7 @@ Automatisation des tâches répétitives dans le cycle de développement et de d
 
 ## Installation d'OpenFaaS dans Kubernetes
 
-1. Installer OpenFaaS dans votre cluster Kubernetes en suivant la documentation : <https://docs.openfaas.com/cli/install/>
+1. Installer OpenFaaS dans votre cluster Kubernetes en suivant la documentation : <https://docs.openfaas.com/deployment/kubernetes/>.
 
 ```sh
 arkade install openfaas
@@ -179,7 +179,7 @@ arkade install openfaas
 PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
 ```
 
-2. Installer la CLI d'OpenFaaS :
+1. Installer la CLI d'OpenFaaS : <https://docs.openfaas.com/cli/install/>
 
 ```sh
 arkade get faas-cli
@@ -199,7 +199,7 @@ Le portail OpenFaaS est maintenant accessible sur `http://127.0.0.1:8080`.
 Déployer la fonction de test _figlet_ (cette fonction crée un Ascii art depuis une chaîne de caractères passée en paramètre) :
 
 ```console
-$ faas-cli deploy figlet
+$ faas-cli store deploy figlet
 
 
 $ faas-cli list               
@@ -365,6 +365,10 @@ OpenFaaS inclut un dashboad permettant de suivre les appels d'une fonction :
 Pour plus d'informations, voir : <https://docs.openfaas.com/openfaas-pro/dashboard/>
 :::
 
+:::warn
+Le dashboard n'est disponible que dans les versions pro et enterprise d'OpenFaaS.
+:::
+
 ### Prometheus & Grafana
 
 OpenFaaS est prévu pour s'intégrer avec _Prometheus_ et _Grafana_ :
@@ -378,6 +382,7 @@ Voir aussi :
 
 - Les métriques Prometheus : <https://docs.openfaas.com/architecture/metrics/>
 - Le dashboard Grafana : <https://docs.openfaas.com/openfaas-pro/grafana-dashboards/>
+
 :::
 
 ## 📜 Gestion des informations sensibles (secrets) et de la configuration (variables d'environnement)
@@ -385,8 +390,9 @@ Voir aussi :
 :::link
 Voir la documentation officielle :
 
-- https://github.com/openfaas/workshop/blob/master/lab10.md
-- https://docs.openfaas.com/cli/secrets/
+- <https://github.com/openfaas/workshop/blob/master/lab10.md>
+- <https://docs.openfaas.com/cli/secrets/>
+
 :::
 
 ### 📦 Secrets
@@ -485,15 +491,18 @@ def handle(event, context):
 Une fonction simple sans contexte n'est pas très représentative d'un vrai programme. Nous allons créer un exemple simple de chaîne de fonctions OpenFaaS en utilisant plusieurs fonctions qui s'enchaînent les unes après les autres via des appels HTTP. Nous allons créer deux fonctions pour cet exemple :
 
 - `uppercase()` : prend un texte en entrée et renvoie le texte en majuscules.
+
     ```python
     def handle(event, context):
         return {"statusCode": 200, "body": event.body.upper()}
-		```
+    ```
+
 - `reverse()` : prend le texte transformé en majuscules et le renverse.
+
     ```python
     def handle(event, context):
         return {"statusCode": 200, "body": event.body[::-1]}
-		```
+    ```
 
 Il suffit alors de créer une 3e fonction réalisant la logique métier des appels :
 
@@ -524,6 +533,7 @@ Pour ajouter une nouvelle fonction dans la stack actuelle (après avoir créé l
 ```sh
 faas-cli new reversed --prefix mon_user_dockerhub --lang python3-http --append stack.yaml
 ```
+
 :::
 
 :::tip
@@ -556,8 +566,10 @@ functions:
 
 :::link
 Voir aussi :
+
 - La documentation officielle : <https://docs.openfaas.com/architecture/autoscaling/>
 - [un lab openfaas](https://github.com/openfaas/workshop/blob/master/lab9.md)
+
 :::
 
 ### Tester l'auto-scaling
@@ -610,14 +622,16 @@ Voir faas-idler : <https://github.com/cuulee/faas-idler>
 
 OpenFaaS peut réagir à plusieurs types d'événements externes grâce à un composant appelé **OpenFaaS Event Connector**, ou en utilisant des **triggers** comme :
 
-- des **CronJobs** (*fonction planifiée*)
-- des **messages Kafka, NATS, MQTT** (*événements temps réel*)
-- ou même **des webhooks GitHub, GitLab** (*CI/CD déclenché par un commit*)
+- des **CronJobs** (_fonction planifiée_)
+- des **messages Kafka, NATS, MQTT** (_événements temps réel_)
+- ou même **des webhooks GitHub, GitLab** (_CI/CD déclenché par un commit_)
 
 :::link
 Voir aussi la doccumentation officielle :
+
 - sur le _triggers_ : <https://docs.openfaas.com/reference/triggers/>
 - sur les fonctions asynchrones : <https://docs.openfaas.com/reference/async/>
+
 :::
 
 ### Exemple : Planifier une fonction avec **Cron-Connector**
@@ -745,6 +759,7 @@ def handle(event, context):
 - Utiliser un client de messagerie dans la fonction.
 
 **Secrets** :
+
 ```sh
 echo -n "amqp://user:password@rabbitmq.svc.cluster.local" | faas-cli secret create rabbitmq-url
 ```
@@ -872,7 +887,6 @@ fprocess: "python index.py"
 Pour **accélérer les cold start**, utiliser des images légères (`slim`, `alpine`, `distroless`) si possible.
 :::
 
-
 ## ➡️ Utilisation
 
 ```sh
@@ -982,7 +996,6 @@ def handle(event, context):
     except Exception as e:
         return f"Error adding watermark: {e}"
 ```
-
 
 ### Connecter les fonctions
 
@@ -1109,6 +1122,7 @@ Il reste cependant encore beaucoup de choses à améliorer :
 - Ajouter de l'**authentification JWT** au niveau de l'API Gateway OpenFaaS.
 - Mettre en place de l'**autoscaling** sur les fonctions selon la charge.
 - Faire du **versionning d'images** ou une **file d'attente de traitement**.
+
 :::
 
 :::tip
@@ -1117,10 +1131,13 @@ Pour tester l'application, on pourra envoyer une image entière au format binair
 ```sh
 curl --data-binary @/chemin/vers/mon/image.jpg http://127.0.0.1:8080/function/upload
 ```
+
 :::
 
 ## Liens
 
 :::link
+
 - Voir aussi, un podcast sur sur le serverless : _Beyond Kubernetes: Serverless Execution Models for Variable Workloads_ : <https://kube.fm/kubernetes-vs-lambda-marc>
+
 :::
