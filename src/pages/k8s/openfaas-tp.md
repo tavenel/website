@@ -204,8 +204,8 @@ $ faas-cli store deploy figlet
 
 $ faas-cli list               
 
-Function                      	Invocations    	Replicas
-figlet                        	0              	1
+Function                       Invocations     Replicas
+figlet                         0               1
 
 
 $ curl -X POST http://127.0.0.1:8080/function/figlet \
@@ -227,14 +227,13 @@ $ curl -X POST http://127.0.0.1:8080/function/figlet \
 
 $ faas-cli list
 
-Function                      	Invocations    	Replicas
-figlet                        	1              	1    
+Function                       Invocations     Replicas
+figlet                         1               1    
 ```
-
 
 ## Une première fonction serverless en Python
 
-Exemple de création d'une fonction simple : on utilise pour cela l'un des _templates_ existant (`dockerfile` pour utiliser directement une image Docker ou un langage de programmation pour la génération d'une image automatiquement). 
+Exemple de création d'une fonction simple : on utilise pour cela l'un des _templates_ existant (`dockerfile` pour utiliser directement une image Docker ou un langage de programmation pour la génération d'une image automatiquement).
 
 ```sh
 faas-cli new hello-openfaas --prefix mon_user_dockerhub --lang python3-http
@@ -253,9 +252,9 @@ La commande génère deux fichiers principaux :
 
 ```python
 def handle(event, context):
-	    return {
+     return {
         "statusCode": 200,
-  			"body": "You said: " + str(event.body)
+     "body": "You said: " + str(event.body)
     }
 ```
 
@@ -273,7 +272,7 @@ docker login
 faas-cli up -f stack.yaml
 ```
 
-(*`up` = build + push + deploy en une seule commande*)
+(_`up` = build + push + deploy en une seule commande_)
 
 :::tip
 Attention, la version gratuite d'OpenFaaS n'autorise pas le déploiement d'images privées : l'image créée sur votre compte _Docker Hub_ doit donc rester publique !
@@ -285,6 +284,7 @@ Pour créer une image multi-plateformes (_ARM_ pour MacOS, …) utiliser l'optio
 ```sh
 faas-cli publish -f stack.yaml --platforms linux/arm64,linux/arm/v7,linux/amd64
 ```
+
 :::
 
 ### Appeler la fonction
@@ -342,6 +342,7 @@ Les _Pods_ sont déployés dans le _Namespace_ `openfaas-fn`. Pour trouver le _P
 ```sh
 kubectl get pods -n openfaas-fn --selector=faas_function=…
 ```
+
 :::
 
 :::tip
@@ -351,6 +352,7 @@ Il est possible d'ajouter la variable d'environnement `write_debug=true` pour af
 environment:
   write_debug: true
 ```
+
 :::
 
 ### Dashboard OpenFaaS
@@ -681,10 +683,10 @@ faas-cli up
 ```console
 $ kubectl logs deploy/cron-connector -n openfaas
 
-2025/04/28 12:31:15 Version: 43c31dbb873719753cd4bd53e175435d2c6c5274	Commit: 0.7.0
+2025/04/28 12:31:15 Version: 43c31dbb873719753cd4bd53e175435d2c6c5274 Commit: 0.7.0
 2025/04/28 12:31:15 Gateway URL: http://gateway.openfaas:8080
 2025/04/28 12:31:15 Async Invocation: false
-2025/04/28 12:31:15 Rebuild interval: 30s	Rebuild timeout: 5s
+2025/04/28 12:31:15 Rebuild interval: 30s Rebuild timeout: 5s
 2025/04/28 12:32:15 Added: nodeinfo.openfaas-fn [*/5 * * * *]
 2025/04/28 12:35:00 Invoking: nodeinfo.openfaas-fn [*/5 * * * *]
 2025/04/28 12:35:00 Response: nodeinfo [200] (29ms)
@@ -980,7 +982,7 @@ def handle(event, context):
         # Dessiner le watermark
         draw = ImageDraw.Draw(image)
         watermark_text = "© MySuperCompany"
-				font = ImageFont.load_default()
+    font = ImageFont.load_default()
 
         # Position : en bas à droite
         x = image.width - 100
@@ -1139,5 +1141,6 @@ curl --data-binary @/chemin/vers/mon/image.jpg http://127.0.0.1:8080/function/up
 :::link
 
 - Voir aussi, un podcast sur sur le serverless : _Beyond Kubernetes: Serverless Execution Models for Variable Workloads_ : <https://kube.fm/kubernetes-vs-lambda-marc>
+- Une alternative à OpenFaaS : <https://slimfaas.dev/>
 
 :::
