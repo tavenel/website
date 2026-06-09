@@ -1,11 +1,13 @@
 ---
 title: TP Manipulations avancées de la HEAD
-date: 2023 / 2024
+date: 2025 / 2026
 tags:
 - git
 - ci
 - devops
 ---
+
+## Introduction
 
 Dans ce TP, nous allons voir des commandes avancées pour déplacer le pointeur vers le commit courant (`HEAD`) de Git.
 
@@ -221,8 +223,3 @@ git show $(git rev-parse HEAD~2)
 :::link
 Documentation de référence : <https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-rev-parse.html>
 :::
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

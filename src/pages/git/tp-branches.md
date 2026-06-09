@@ -1,26 +1,26 @@
 ---
 title: TP Le systeme de branches
-date: 2023 / 2024
+date: 2025 / 2026
+tags:
+- git
 ---
 
-## Présentation
+## Introduction
 
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
-
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
+Les branches sont une des fonctionnalités les plus puissantes de Git, qui permettent de gérer des historiques concurrents complexes.
 
 ## Afficher la liste des branches
 
 Pour afficher les branches de notre projet, on utilise la commande `$ git branch`. Une première branche a été créée avec notre dépôt : c'est cette branche que l'on a utilisé dans les autres TP.
 
 ```sh
-$ git branch # liste des branches locales
+git branch # liste des branches locales
 ```
 
 `Git` étant décentralisé, la notion de branche est locale à un dépôt. Pour afficher les branches disponibles dans les dépôts distants (`upstream`), on peut utiliser la commande suivante :
 
 ```sh
-$ git branch -a # liste des branches distantes
+git branch -a # liste des branches distantes
 ```
 
 ## Créer et se déplacer dans une nouvelle branche
@@ -30,15 +30,15 @@ Créer deux nouvelles branches et modifier la position de la `HEAD` pour utilise
 On utilisera les commandes suivantes :
 
 ```sh
-$ git branch ma_nouvelle_branche # crée une nouvelle branche
+git branch ma_nouvelle_branche # crée une nouvelle branche
 ```
 
 ```sh
-$ git checkout ma_nouvelle_branche # se déplace vers la branche
+git checkout ma_nouvelle_branche # se déplace vers la branche
 ```
 
 ```sh
-$ git checkout -b une_branche # crée et se déplace sur la branche
+git checkout -b une_branche # crée et se déplace sur la branche
 ```
 
 Utiliser la commande `$ git status` pour vérifier le positionnement sur la nouvelle branche.
@@ -52,7 +52,7 @@ Utiliser la commande `$ git status` pour vérifier le positionnement sur la nouv
 Supprimer la nouvelle branche non utilisée :
 
 ```sh
-$ git branch -d branche_a_supprimer
+git branch -d branche_a_supprimer
 ```
 
 ## Intégrer des commit dans la branche
@@ -69,13 +69,13 @@ Lors de la création d'une branche, celle-ci est liée au dépôt de code local.
 Pour l'intégrer dans un dépôt distant, il faut la lier au dépôt distant (`upstream`) la première fois.
 
 ```sh
-$ git push --set-upstream origin new-branch
+git push --set-upstream origin new-branch
 ```
 
 Cette commande ne fonctionne que si vous souhaitez créer une branche avec le même nom que la branche locale. Dans le cas contraire, on utilisera la version complète de `$ git push` en spécifiant un upstream :
 
 ```sh
-$ git push -u origin branche_locale:branche_distante
+git push -u origin branche_locale:branche_distante
 ```
 
 Les opérations suivantes d'envoi pourront se satisfaire d'un simple `$ git push`.
@@ -115,13 +115,13 @@ A la place d'un merge, il est aussi possible d'effectuer un rebase de cette bran
 Une option intéressante au moment du d'une branche est la possibilité de réécrire la suite de commit à intégrer en un commit unique. Cela évite de polluer l'historique avec les commit utilisés pendant le développement.
 
 ```sh
-$ git merge --squash ma_branche
+git merge --squash ma_branche
 ```
 
 Une opération de squash est également possible par rebase intéractif, par exemple, la commande suivante rassemble les 3 derniers commit en un seul :
 
 ```sh
-$ git rebase -i HEAD~3
+git rebase -i HEAD~3
 ```
 
 ## [Bonus] Réordonner les commit
@@ -129,7 +129,7 @@ $ git rebase -i HEAD~3
 Il est possible de réordonner des commit pendant une opération de rebase interactif : il suffit de sélectionner (`pick`) les commit dans un ordre différent de l'ordre actuel.
 
 ```sh
-$ git rebase -i HEAD~3
+git rebase -i HEAD~3
 # pick ...
 # pick ...
 # pick ...
@@ -161,12 +161,6 @@ Il peut arriver d'avoir besoin d'intégrer les modifications apportées par un c
 Dans ce cas, la commande `git cherry-pick` permet d'intégrer n'importe quel commit (situé dans n'importe quelle branche) dans la branche courante.
 
 ```sh
-$ git checkout branche_contenant_le_commit
-$ git cherry-pick identifiant_du_commit_à_intégrer
+git checkout branche_contenant_le_commit
+git cherry-pick identifiant_du_commit_à_intégrer
 ```
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-

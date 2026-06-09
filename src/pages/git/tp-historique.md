@@ -1,17 +1,13 @@
 ---
 title: TP Voyager et manipuler l'historique Git™
-date: 2023 / 2024
+date: 2025 / 2026
 tags:
 - git
-- ci
-- devops
 ---
 
-## Présentation
+## Introduction
 
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
-
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
+Git est un gestionnaire de versions, il permet donc de manipuler un historique des versions du code. Nous allons voir comment tirer parti de cet historique.
 
 ## Initialisation du projet
 
@@ -43,7 +39,7 @@ _Pensez-vous qu'il est judicieux de créer un même commit pour les deux changem
 Il est possible d'annuler des changements dans le `staging` grâce à la commande `reset` :
 
 ```sh
-$ git reset
+git reset
 ```
 
 Créer un commit unique pour le changement du fichier `index.html` et un autre pour l'ajout du `README`.
@@ -110,7 +106,7 @@ Cette commande est beaucoup plus puissante (et donc dangereuse) et permet en ré
 On peut utiliser cette commande pour "annuler" virtuellement un commit (en réalité, le détacher de l'historique) :
 
 ```sh
-$ git reset HEAD~2 # place la HEAD (modifie la branche courante) avant les deux derniers commit 
+git reset HEAD~2 # place la HEAD (modifie la branche courante) avant les deux derniers commit 
 ```
 
 Le symbole `~` permet de remonter (linéairement) l'historique des commit : `HEAD~2` est le parent du parent de la `HEAD` (verticalement). En cas de merge, il peut être utile de sélectionner sur quelle branche remonter avant le merge (donc sélectionner un parent horizontalement). Cette opération se fait avec l'opérateur `^` : `HEAD^2` sélectionne la 2e branche ayant créé le merge. Il est possible de cumuler ces opérateurs : `HEAD~3^2~2^^` mais cela devient vite illisible...
@@ -118,8 +114,9 @@ Le symbole `~` permet de remonter (linéairement) l'historique des commit : `HEA
 On peut aussi utiliser directement un identifiant de commit :
 
 ```sh
-$ git reset d56af577052517886f29179409dddc1f65a956d8 # retourne au commit avec le hash : d56af577052517886f29179409dddc1f65a956d8
+git reset d56af577052517886f29179409dddc1f65a956d8 # retourne au commit avec le hash : d56af577052517886f29179409dddc1f65a956d8
 ```
+
 ### Hard reset
 
 `git reset --hard` est l'option la plus souvent utilisée mais attention : **cette option détruit tout changement dans le staging et le répertoire de travail**. Elle permet de repositionner le pointeur de la branche courante sur un nouvel index, par défaut : `HEAD` (commit courant).
@@ -165,9 +162,3 @@ Il est courant pour récupérer un commit perdu de :
 
 - créer une nouvelle branche depuis ce commit (sans danger) : `git branch <commit-id>`
 - ou ajouter le commit perdu au-dessus du commit actuel (dangereux) : `git cherry-pick <commit-id>`.
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-

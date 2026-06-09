@@ -1,9 +1,9 @@
 ---
-title: Xampp
-date: 2023 / 2024
+title: Git pour un Projet XAMPP
+date: 2025 / 2026
+tags:
+- git
 ---
-
-# TP - Git pour un Projet XAMPP
 
 ## Objectif du TP
 
@@ -35,11 +35,3 @@ Configurer un environnement de développement local avec XAMPP et utiliser Git p
 ## Accéder à l'application dans le navigateur
 
 Ouvrez votre navigateur et accédez à <http://localhost/mon_projet> pour voir l'application en action.
-
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-
-

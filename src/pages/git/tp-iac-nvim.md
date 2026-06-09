@@ -1,15 +1,12 @@
 ---
 title: Git pour gérer ses configurations - IaC
-date: 2023 / 2024
+date: 2025 / 2026
+tags:
+- git
+- iac
 ---
 
-# Présentation
-
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
-
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
-
-# Infrastructure-as-Code (IaC)
+## Infrastructure-as-Code (IaC)
 
 L'Infrastructure-as-Code consiste à utiliser des fichiers de configuration et des scripts pour coder le déploiement et la configuration d'une architecture.
 
@@ -28,6 +25,7 @@ Dans cet exercice nous allons utiliser l'éditeur de texte `Vim` (plus spécifiq
 
 1. Appuyer sur `<Echap>` pour être sûr d'être en mode `Normal`.
 2. Taper la commande `:quit<Enter>` pour quitter l'éditeur.
+
 :::
 
 ### `Neovim`
@@ -53,8 +51,8 @@ Nous allons utiliser deux "distributions" permettant de récupérer des configur
 
 _Dans ce tutoriel, il est conseillé à la fin de supprimer le dossier `.git` afin de pouvoir créer votre propre dépôt `Git` avec vos configurations. Que pensez-vous de cette affirmation ? Existe-t-il un pattern permettant de gérer cette double dépendance : avoir un lien sur le dépôt `Git` officiel de `LazyVim` et un autre lien vers votre dépôt personnel ?_
 
-2. Lancer `nvim` une fois la configuration clonée : `Neovim` installe automatiquement les dépendances spécifiées dans les configurations.
-3. Ouvrir un fichier de code (`Python`, ...) et vérifier que `Neovim` a bien ajouté la coloration syntaxique, la complétion automatique, la détection d'erreurs, ...
+1. Lancer `nvim` une fois la configuration clonée : `Neovim` installe automatiquement les dépendances spécifiées dans les configurations.
+2. Ouvrir un fichier de code (`Python`, ...) et vérifier que `Neovim` a bien ajouté la coloration syntaxique, la complétion automatique, la détection d'erreurs, ...
 3. Les configurations de `Neovim` sont stockées dans un répertoire `.config/nvim` : voir <https://www.lazyvim.org/configuration>. Créer un dépôt `git` dans ce répertoire pour y gérer vos configurations. Faire un `push` de ces configurations dans un dépôt distant.
 4. Modifier une configuration - par exemple, changer le thème en utilisant `gruvbox` (en créant le fichier `lua/plugins/colorscheme.lua` dans le répertoire des configurations) : <https://www.lazyvim.org/plugins/colorscheme> . Redémarrer `nvim`, réouvrir le fichier de code et vérifier que la coloration syntaxique a bien changé.
 5. Partager le changement de configuration avec un autre apprenant en utilisant votre dépôt distant.
@@ -80,9 +78,3 @@ On peut bien sûr réitérer le même exercice avec tout programme configurable 
 
 On peut aussi aller jusqu'à stocker le déploiement des infrastructures et des outils (par exemple par des fichiers `Ansible` - voir le TP dédié).
 :::
-
-# Legal
-
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-- Ansible® is a registered trademark of RED HAT, INC.
-

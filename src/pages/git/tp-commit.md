@@ -1,13 +1,13 @@
 ---
 title: TP Premiers pas avec Git™
-date: 2023 / 2024
+date: 2025 / 2026
+tags:
+- git
 ---
 
 ## Présentation
 
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
-
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
+Dans ce TP, nous allons installer Git sur votre poste de travail et manipuler les objets les plus importants de Git : les _commits_.
 
 ## Installation et configuration
 
@@ -20,7 +20,7 @@ Attention, sous Windows il faut remplacer `C:\...\mon_programme.exe` par des sla
 Par exemple, pour utiliser `vsCode` sous Windows avec le chemin par défaut : `git config --global core.editor "C:/Program\ Files/Microsoft\ VS\ Code/Code.exe --wait"`
 
 :::tip
-Si vous souhaitez utiliser `vsCode` comme éditeur, attention à bien ajouter l'option `--wait` à la commande : `git config --global core.editor "C:/.../code.exe --wait`. 
+Si vous souhaitez utiliser `vsCode` comme éditeur, attention à bien ajouter l'option `--wait` à la commande : `git config --global core.editor "C:/.../code.exe --wait`.
 :::
 
 Attention, il est possible d'entrer plusieurs configurations `core.editor`. En cas d'erreur, il faut donc commencer par supprimer toutes les références précédentes à `core.editor` avant d'en déclarer un nouveau : `git config --global --unset-all core.editor`
@@ -28,12 +28,12 @@ Attention, il est possible d'entrer plusieurs configurations `core.editor`. En c
 ## Création d'un nouveau dépôt de code
 
 Avant toute opération sur les fichiers, il nous faut créer un dépôt de code.
-Ce dépôt nous servira à stocker les différentes versions de nos fichiers. 
+Ce dépôt nous servira à stocker les différentes versions de nos fichiers.
 
 Pour créer un dépôt, ouvrir un terminal dans le répertoire à utiliser et taper la commande :
 
 ```sh
-$ git init
+git init
 ```
 
 Cette commande crée un nouveau répertoire caché `.git` dans le répertoire courant : c'est une astuce simple pour vérifier que l'on travaille bien dans un dépôt git.
@@ -43,7 +43,7 @@ Attention, tous les fichiers utilisés par la suite devront être dans ce réper
 Pour visualiser simplement l'état du dépôt (modifications à intégrer, etc...) on pourra utiliser la commande :
 
 ```sh
-$ git status
+git status
 ```
 
 ## Ajout d'un premier fichier au dépôt
@@ -68,7 +68,7 @@ Créer un nouveau fichier _index.html_ dans le répertoire de travail avec le co
 Consulter l'état du dépôt : le nouveau fichier est détecté mais est pour l'instant ignoré : status `untracked`.
 
 ```sh
-$ git status
+git status
 
 On branch master
 
@@ -91,7 +91,7 @@ Ce comportement par défaut est très pratique. Il est possible de "polluer" son
 Utiliser la commande `git add` pour ajouter ce nouveau fichier à l'index du dépôt git :
 
 ```sh
-$ git add
+git add
 ```
 
 _Dans quel zone (working directory, staging, repository) le fichier index.html est-il actuellement ?_
@@ -113,7 +113,7 @@ La commande `git add -p` permet interactivement d'ajouter ou non des morceaux de
 La commande `git log` permet d'afficher l'historique des commit sur le dépôt courant :
 
 ```sh
-$ git log
+git log
 ```
 
 _A-t-on déjà créé un commit dans le dépôt courant ? Pourquoi ?_
@@ -121,10 +121,11 @@ _A-t-on déjà créé un commit dans le dépôt courant ? Pourquoi ?_
 Créer un nouveau commit en utilisant la commande `git commit` :
 
 ```sh
-$ git commit
+git commit
 ```
 
 Vérifier :
+
 - que le nouveau commit a bien été créé (voir les logs de commit)
 - qu'un changement n'est plus détecté dans notre fichier
 
@@ -142,8 +143,3 @@ Nous allons voir maintenant comment intégrer des changements de ce document dan
 4. _Dans quel zone (working directory, staging, repository) le fichier index.html est-il actuellement ?_
 5. Intégrer les changements dans un nouveau commit
 6. Vérifier la bonne intégration de ces changements
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

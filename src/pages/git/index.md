@@ -13,6 +13,7 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP - Premiers pas : installer & configurer git et les concepts de base](/git/tp-commit)
 - [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/git/tp-gitignore)
 - [💻 TP - Utiliser l'historique de Git™](/git/tp-historique)
+- [💻 TP - Patch : ajouter des morceaux de fichiers](/git/tp-patch)
 - [💻 TP - Github® et dépôts distants](/git/tp-github)
 - [💻 TP - Gitlab® et dépôts distants](/git/tp-gitlab)
 - [💻 TP - Les branches Git™](/git/tp-branches)

@@ -1,15 +1,15 @@
 ---
 title: Workflow de Fork
-date: 2023 / 2024
+date: 2025 / 2026
+tags:
+- git
 ---
 
-# Présentation
+## Présentation
 
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
+Le workflow de _fork_ permet de travailler sur une copie distante du dépôt de code officiel sans impacter celui-ci (par exemple, lorsque l'on ne peut pas pusher dans le dépôt officiel). Ce workflow est très utilisé en projet open-source.
 
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
-
-# Workflow de fork
+## Workflow de fork
 
 :::tip
 Par cohérence avec le reste des TP, nous utiliserons la notation `origin` pour le 1er dépôt distant lié après l'opération de clone, ici souvent le dépôt officiel.
@@ -29,9 +29,10 @@ Dans un premier temps, nous allons créer un dépôt de code contenant la versio
 :::tip
 Consultez le lien vers le dépôt distant depuis votre dépôt local : l'opération `git clone` a créé automatiquement une référence vers un dépôt distant (`remote`) nommé (par convention) `origin` :
 
-```
+```sh
 git remote -v
 ```
+
 :::
 
 ## Fork avec Git
@@ -95,12 +96,6 @@ Dans le dépôt `fork2`, cliquer sur `Sync fork` pour synchroniser le fork depui
 
 Publier la branche `modification` du fork vers le dépôt officiel en utilisant une [pull-request de fork (voir la documentation)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork)
 
-# Ressources
+## Ressources
 
 Voir aussi le [tutoriel Atlassian sur le workflow de fork](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/forking-workflow)
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-- GITHUB®, the GITHUB® logo design, the INVERTOCAT logo design, OCTOCAT®, and the OCTOCAT® logo design are trademarks of GitHub, Inc., registered in the United States and other countries.

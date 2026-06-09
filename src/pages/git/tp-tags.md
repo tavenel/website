@@ -1,15 +1,11 @@
 ---
 title: Les tags de Git
-date: 2023 / 2024
+date: 2025 / 2026
+tags:
+- git
 ---
 
-# Présentation
-
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
-
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
-
-# Les tags
+## Introduction
 
 Les tags servent à étiqueter des commits. Ils fonctionnent de la même manière que les branches mais ne bougent pas avec la `HEAD`.
 
@@ -35,13 +31,13 @@ Les tags sont très utilisés pour ajouter des indications de versions. Pour cr�
 
 Les 2 tags créés n'existent encore que localement. Pour publier un tag, on utilise aussi la commande `push` de la même manière que pour une branche :
 
-```
+```sh
 git push origin v1.0
 ```
 
 ou pour publier tous les tags :
 
-```
+```sh
 git push --tags origin
 ```
 
@@ -61,9 +57,3 @@ Les tags sont récupérés automatiquement lors d'un `git pull` **pour les commi
 Il est possible de se déplacer à n'importe quel moment vers un tag en utilisant une opération `checkout`.
 
 1. Se déplacer vers le tag `v1.0`. _Quel est l'état de la `HEAD` ?_
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-

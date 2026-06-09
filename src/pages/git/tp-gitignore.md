@@ -1,15 +1,13 @@
 ---
 title: Gitignore
-date: 2023 / 2024
+date: 2025 / 2026
 tags:
 - git
-- ci
-- devops
 ---
 
 ## Le fichier spécial .gitignore
 
-Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier) permet de lister des chemins de fichiers à ignorer lors d'un `git checkout ` : ces fichiers deviennent invisibles pour git.
+Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier) permet de lister des chemins de fichiers à ignorer lors d'un `git checkout` : ces fichiers deviennent invisibles pour git.
 
 Ce fichier contient un ensemble de patterns (répertoires, noms de fichiers, ...) à ignorer par Git. Par exemple, les fichiers compilés :
 
@@ -57,8 +55,3 @@ Untracked files:
 - En pratique, on utilise le `.gitignore` pour partager avec le reste de l'équipe les fichiers à ignorer de son répertoire de travail. Ajouter ce fichier dans un commit.
 - Ajouter le fichier `a.out` quand même à un commit (il faudra peut-être forcer l'ajout).
 - Modifier le contenu du fichier `a.out`. Afficher le statut : que peut-on en déduire ?
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

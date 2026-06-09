@@ -1,17 +1,15 @@
 ---
 title: TP Patching
-date: 2023 / 2024
+date: 2025 / 2026
+tags:
+- git
 ---
-
-## Présentation
-
-Dans la suite du TP, les commandes à entrer en utilisant votre utilisateur standard sont signalées par une ligne commençant par le symbole `$` (convention standard). Ce symbole n'est pas à entrer : par exemple, la ligne `$ ls .git` indique à l'utilisateur courant d'entrer la commande `ls .git` dans son terminal.
-
-De manière similaire, une ligne commençant par le symbole `#` indique une commande à entrer par le super-utilisateur (Linux, MacOS) ou un administrateur du système (Windows).
 
 ## Ajout partiel de modifications
 
-### Mode interactif
+Git supporte l'ajout de fichiers par morceaux (_hunks_) en utilisant la commande `git add --patch`. Cela permet de ne pas intégrer tous les changements d'un fichier d'un coup, par exemple si vous avez travaillé sur 2 fonctionnalités en même temps dans le même fichier de code.
+
+## Mode interactif
 
 Git fournit un mode interactif permettant d'ajouter ou non les `hunk` (morceaux de modifications) détectées automatiquement grâce à la commande `git add --patch`.
 
@@ -30,9 +28,9 @@ Le mode patch permet principalement les opérations suivantes :
 4. Modifier les 2 paragraphes de texte.
 5. Utiliser la commande `git add --patch mon_fichier` pour passer en mode interactif et ajouter seulement les modifications du premier paragraphe. On pourra séparer le bloc de modifications si besoin. Créer un commit.
 6. Vérifier l'état actuel des changements avec les commandes `git status` et `git diff`.
-6. Utiliser de nouveau l'option `patch` pour ajouter le 2e paragraphe et créer un nouveau commit.
+7. Utiliser de nouveau l'option `patch` pour ajouter le 2e paragraphe et créer un nouveau commit.
 
-### Mode édition
+## Mode édition
 
 Git fournit un mode édition permettant de modifier le _diff_ à intégrer : `git add --edit mon_fichier`. Cela ne modifie pas le contenu actuel du fichier, seulement les changements dans git. La commande `--edit` ouvre le diff total dans un éditeur de texte et permet ainsi à l'utilisateur de modifier le diff à intégrer.
 
@@ -44,8 +42,3 @@ Le _diff_ se compose :
 1. Reprendre le fichier précédent et modifier les 2 paragraphes de texte.
 2. Avec la commande `git add -e` ajouter uniquement les changements du 1er paragraphe. Réaliser un deuxième commit.
 3. Ajouter les changements du 2e paragraphe dans un troisième commit.
-
-# Legal
-
-- © 2025 Tom Avenel under CC  BY-SA 4.0
-- Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries

@@ -1,6 +1,8 @@
 ---
 title: TP Git Bisect
-date: 2024 / 2025
+date: 2025 / 2026
+tags:
+- git
 ---
 
 ## Introduction
@@ -25,9 +27,11 @@ date: 2024 / 2025
 
 1. Dans votre terminal, naviguez vers le répertoire du projet
 2. Lancez la commande suivante :
-   ```
+
+   ```sh
    git bisect start
    ```
+
 3. Répondez aux questions de Git Bisect :
    - Quel est l'état actuel du projet ? (good/bad)
    - Quelle est le dernièr commit connu où le problème n'était pas présent ?
@@ -47,7 +51,7 @@ date: 2024 / 2025
 ### Nettoyage
 
 1. Pour terminer Git Bisect, utilisez la commande :
-   ```
-   git bisect reset
-	 ```
 
+```sh
+git bisect reset
+```
