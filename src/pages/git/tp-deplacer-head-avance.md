@@ -7,13 +7,11 @@ tags:
 - devops
 ---
 
-# TP : Manipulations avancées de la HEAD
-
 Dans ce TP, nous allons voir des commandes avancées pour déplacer le pointeur vers le commit courant (`HEAD`) de Git.
 
-## Remonter l'historique : `~`, `^` et `@`.
+## Remonter l'historique : `~`, `^` et `@`
 
-Pour naviguer dans l'historique des commits en ligne de commande, on utilise des opérateurs spécifiques. 
+Pour naviguer dans l'historique des commits en ligne de commande, on utilise des opérateurs spécifiques.
 
 Par exemple, on peut utiliser la commande suivante :
 
@@ -43,7 +41,7 @@ Il est possible de combiner ces opérateurs pour effectuer une navigation comple
 - La syntaxe générale `HEAD@{n}` désigne le n-ième état antérieur de `HEAD`. Par exemple, `HEAD@{1}` fait référence à l'état immédiatement précédent de `HEAD`, `HEAD@{2}` à l'état d'avant, et ainsi de suite.
 - `HEAD@{}` sans un numéro affiche l'historique complet des changements de `HEAD` avec leurs dates, permettant de voir quand `HEAD` a changé de position.
 
-#### Exemples 
+#### Exemples
 
 ##### Lister les changements de HEAD
 
@@ -60,6 +58,7 @@ Si vous souhaitez revenir à un état précédent de HEAD, utilisez :
 ```sh
 git checkout HEAD@{n}
 ```
+
 où `n` est le nombre correspondant à l'état que vous voulez retrouver. Cela est utile pour revenir temporairement à un état spécifique sans créer un nouveau commit.
 
 ##### Utilisation avec `git reset`
@@ -80,6 +79,7 @@ Voir aussi :
 - <https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git>
 - <https://dkhambu.medium.com/head-and-head-in-git-655681c3237e>
 - <https://www.golinuxcloud.com/git-head-caret-vs-tilde-at-sign-examples/>
+
 :::
 
 ### Exercice
@@ -96,6 +96,7 @@ Assurez-vous d'avoir un dépôt Git avec plusieurs commits, dont des commits de 
 8. Que se passe-t-il lorsque vous utilisez `git reset --hard` ? Quelles sont les implications de cette commande ?
 
 :::correction
+
 ```sh
 # 1.
 git log --oneline
@@ -172,8 +173,8 @@ Assurez-vous d'avoir un dépôt Git avec plusieurs commits, y compris au moins u
 4. Quelles sont les raisons pour lesquelles Git refuse par défaut de revert un commit de fusion ?
 5. Pourquoi est-il important de spécifier quel parent utiliser lors du revert d'un commit de fusion ?
 
-
 :::correction
+
 ```sh
 git checkout -b nouvelle_branche
 git checkout main
@@ -225,4 +226,3 @@ Documentation de référence : <https://mirrors.edge.kernel.org/pub/software/scm
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
-
