@@ -8,7 +8,7 @@ layout: '@layouts/BaseLayout.astro'
 ## Présentation du module
 
 ### 🎯 Objectif
- 
+
 - Comprendre les principes et les enjeux de l'intégration et du déploiement continus dans le cadre du développement d'une application informatique.
 
 ### Compétences à acquérir
@@ -43,7 +43,7 @@ Module de 18H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](/ci/cours)
+- [🤓 Cours sur l'intégration continue](/ci/cours)
 
 ### Exercices
 
@@ -58,9 +58,11 @@ Module de 18H
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins](/jenkins/tp-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
+  - [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
+- [💻 TP Github - Les actions (introduction à la CI)](/ci/tp-github-actions)
+  - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [💻 TP GitLab - Les pipelines CI/CD](/ci/tp-gitlab-pipelines)
+  - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
 ### 🏆 Projet intégration et déploiement continus d'une application de groupes de travail
 

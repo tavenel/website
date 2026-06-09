@@ -43,7 +43,7 @@ Module de 21H
 
 ## 📑 Documents
 
-- [🤓 Cours sur l'intégration continue ](/ci/cours)
+- [🤓 Cours sur l'intégration continue](/ci/cours)
 - [📝 TD Processus d'intégration continue](/ci/td_process_ci) : une étude de cas d'intégration continue.
 
 ### TPs
@@ -54,9 +54,11 @@ Module de 21H
   - Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins](/jenkins/tp-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
+  - [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
+- [💻 TP Github - Les actions (introduction à la CI)](/ci/tp-github-actions)
+  - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [💻 TP GitLab - Les pipelines CI/CD](/ci/tp-gitlab-pipelines)
+  - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
 ### 🏆 Projet intégration et déploiement continus
 
@@ -65,4 +67,3 @@ Module de 21H
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [cours sur l'intégration continue](/ci).
-

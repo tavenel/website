@@ -21,7 +21,6 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP - Fork : découvrir le principe du fork pour partager des changements sur un logiciel sans impacter le dépôt officiel](/git/tp-fork)
 - [💻 TP - Git™ Bisect pour trouver un commit par dichotomie](/git/tp-bisect)
 - [💻 TP Github - Utiliser les Gist](/git/tp-github-gist)
-- [💻 TP Github - Les actions (introduction à la CI)](/git/tp-github-actions)
 - [💻 TP - Git pour un Projet XAMPP](/git/tp-xampp) : Configurer un environnement de développement local avec XAMPP et utiliser Git pour versionner une application web stockée dans le dossier `htdocs`.
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/git/tp-ansible)
 - [💻 TP - Intégrer Git dans un IDE](/git/tp-ide)

@@ -28,9 +28,6 @@ Module de 10H
 
 - [🔀 Module en classe renversée](/epsi/i1/ci/classe-renversee)
 - [🤓 Cours sur l'intégration continue](/ci/cours)
-- [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
 ### Exercices
 
@@ -41,6 +38,11 @@ Module de 10H
 - [💻 TP - Workflows Git™ et Pull Request](/git/tp-workflows-pr) : L'objectif de ce TP est de travailler sur un projet en suivant des workflows Git et de s'initier au principe de la pull-request.
 - [ TP Jenkins](/jenkins/tp-full)
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
+  - [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
+- [💻 TP Github - Les actions (introduction à la CI)](/ci/tp-github-actions)
+  - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [💻 TP GitLab - Les pipelines CI/CD](/ci/tp-gitlab-pipelines)
+  - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 - [💻 TP Intégration continue avancée](/ci/tp_ci_avance) : des exercices pour pousser plus loin l'intégration continue.
 
 ### 🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle

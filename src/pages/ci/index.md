@@ -7,7 +7,7 @@ layout: '@layouts/BaseLayout.astro'
 
 ## Cours
 
-- [🤓 Cours sur l'intégration continue ](/ci/cours)
+- [🤓 Cours sur l'intégration continue](/ci/cours)
 
 ## Exercices
 
@@ -19,11 +19,13 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP Workflow : support de versions concurrentes](/ci/td_workflow_versions_concurrentes) : Simulation d'un workflow Git permettant de maintenir en concurrence deux versions stables d'un produit et une version en cours de développement.
 - [ TP Jenkins niveau 1](/jenkins/tp-mini) : Utiliser Jenkins® pour orchestrer les tests (quand exécuter les tests, sur quelle base de code, et dans quel environnement).
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins-b3>
+  - [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
 - [ TP Jenkins niveau 2](/jenkins/tp-full) : Un TP plus poussé que le précédent.
   -  Sources pour le TP : <https://git.sr.ht/~toma/jenkins_exemples>
-- [Exemple de pipeline Jenkinsfile](/jenkins/jenkinsfile)
-- [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
-- [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
+- [💻 TP Github - Les actions (introduction à la CI)](/ci/tp-github-actions)
+  - [Exemple de pipeline pour Github Actions](/ci/exemple-github-actions)
+- [💻 TP GitLab - Les pipelines CI/CD](/ci/tp-gitlab-pipelines)
+  - [Exemple de pipeline pour Gitlab CI](/ci/exemple-gitlab-ci)
 
 ## Projets
 
@@ -55,3 +57,6 @@ Votre équipe de développement a reçu une nouvelle commande de la part d'un cl
 
 - [📄 Lien vers le sujet](/ci/projet_groupes_utilisateurs_ci_et_tests)
 
+## 🚀 Autres ressources
+
+- Voir la page sur [  Git](/git)
