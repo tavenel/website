@@ -26,6 +26,7 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP utiliser Ansible et Git pour réaliser de l'Infrastructure-as-Code](/git/tp-ansible)
 - [💻 TP - Intégrer Git dans un IDE](/git/tp-ide)
 - [💻 TP - Manipulations avancées de la HEAD](/git/tp-deplacer-head-avance)
+- [💻 TP - Worktree : travailler sur plusieurs branches simultanément](/git/tp-worktree)
 - [💻 TP Neovim - gérer ses configurations avec Git](/git/tp-iac-nvim)
 
 ## 🚀 Autres ressources
