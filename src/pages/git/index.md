@@ -14,6 +14,7 @@ layout: '@layouts/BaseLayout.astro'
 - [💻 TP - gitignore : utiliser le fichier spécial `.gitignore` pour masquer des fichiers à Git](/git/tp-gitignore)
 - [💻 TP - Utiliser l'historique de Git™](/git/tp-historique)
 - [💻 TP - Github® et dépôts distants](/git/tp-github)
+- [💻 TP - Gitlab® et dépôts distants](/git/tp-gitlab)
 - [💻 TP - Les branches Git™](/git/tp-branches)
 - [💻 TP - Recherche dans un dépôt Git™](/git/tp-grep)
 - [💻 TP - Les tags](/git/tp-tags)
