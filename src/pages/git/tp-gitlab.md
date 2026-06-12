@@ -48,6 +48,10 @@ git clone https://gitlab.com/mon_utilisateur/mon_depot_distant.git
 
 Note : Par défaut, le dépôt distant récupéré après une opération de `clone` a pour alias `origin` et est automatiquement lié au dépôt local.
 
+:::tip
+Dans Gitlab, l'URL du dépôt à cloner est accessible via l'onglet "Dépôt" puis cliquer sur le bouton bleu "Code".
+:::
+
 ## Gestion des dépôts distants
 
 Pour afficher les dépôts distants, utiliser la commande `remote` :
@@ -64,6 +68,12 @@ Il est possible d'ajouter ou de supprimer des dépôts distants avec les command
 
 La récupération de changements distants se fait par l'opération `fetch`. Cette opération met à jour dans le dépôt local les changements réalisés à distance (techniquement, les branches `refs/remotes/<branche_remote>/` sont mises à jour localement).
 Une opération `fetch` n'opère donc aucun changement sur les commit locaux, elle rapatrie juste des changements.
+
+Pour récupérer tous les objets distants, utiliser :
+
+```sh
+git fetch --all
+```
 
 ### Opération de merge
 
@@ -82,6 +92,10 @@ L'algorithme de merge de `git` est l'un des plus puissants parmi les gestionnair
 ### La commande pull
 
 En pratique, on utilise souvent la commande `pull` directement pour réaliser à la fois une opération `fetch` suivie d'une opération `merge`.
+
+```sh
+git pull
+```
 
 #### Pull sans conflit
 

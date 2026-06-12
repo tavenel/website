@@ -54,7 +54,7 @@ En cas d'erreur, il est possible de réécrire un commit grâce à l'option `--a
 
 1. Modifier le fichier `README` en ajoutant le contenu : "Pour installer le programme, voir le fichier INSTALL".
 2. Créer un fichier `INSTALL`
-3. Utiliser la commande `$ git commit -a` : cette commande va créer un commit en utilisant les changements connus par git.
+3. Utiliser la commande `git commit -a` : cette commande va créer un commit en utilisant les changements connus par git.
 
 _Le fichier `INSTALL` a-t-il été intégré au commit ? Pourquoi ?_
 
@@ -70,7 +70,7 @@ Pour corriger cette erreur :
 La commande `git revert` permet de créer un nouveau commit "inverse" du commit spécifié pour l'annuler. Aucun commit n'est donc détruit, ce qui limite grandement les risques de perte d'information mais peut polluer l'historique.
 
 1. Créer un nouveau fichier `inutile.txt`, l'ajouter au staging, puis créer un nouveau commit contenant ce fichier.
-2. Créer un nouveau commit annulant celui-ci grâce à la commande revert : `$ git revert HEAD`
+2. Créer un nouveau commit annulant celui-ci grâce à la commande revert : `git revert HEAD`
 3. Vérifier que le fichier a bien été supprimé du working directory et du staging.
 
 Attention : contrairement à `git reset` qui annule toute une ligne d'historique jusqu'au commit spécifié, `git revert` annule uniquement un seul et unique commit en créant un nouveau commit inverse.
@@ -85,11 +85,11 @@ La commande `git checkout` permet de déplacer la référence courante (`HEAD`) 
 
 Cette commande est utile pour inspecter un changement stocké dans l'historique.
 
-1. Noter la branche de travail actuelle avec la commande `$ git status` (en principe `master` ou `main`).
-2. Récupérer l'identifiant d'un commit précédent avec la commande `$ git log`
-3. Se déplacer dans le commit précédent avec la commande `$ git checkout identifiant_du_commit`
+1. Noter la branche de travail actuelle avec la commande `git status` (en principe `master` ou `main`).
+2. Récupérer l'identifiant d'un commit précédent avec la commande `git log`
+3. Se déplacer dans le commit précédent avec la commande `git checkout identifiant_du_commit`
 4. Inspecter la version récupérée : les fichiers ont été modifiés dans le working directory
-5. Revenir à un état attaché dans la branche de travail : `$ git checkout nom_de_la_branche`
+5. Revenir à un état attaché dans la branche de travail : `git checkout nom_de_la_branche`
 
 La commande `git checkout` est aussi très utile pour changer de branche (voir TP suivant).
 
@@ -124,22 +124,22 @@ git reset d56af577052517886f29179409dddc1f65a956d8 # retourne au commit avec le 
 **Cette option ne doit être utilisée sur des commit publiés en dehors du dépôt local (après push) au risque de corrompre l'historique du dépôt distant**
 
 ```sh
-$ git reset --hard
+git reset --hard
 # Détruit tout changement (working directory, staging) depuis le dernier commit.
 ```
 
 ### Supprimer des fichiers : git rm
 
-Il est possible de supprimer des fichiers par la commande `$ git rm`.
+Il est possible de supprimer des fichiers par la commande `git rm`.
 
 ```sh
-$ git rm index.html
+git rm index.html
 # Supprime un fichier index.html du working directory et du staging.
 # Nécessite un nouveau commit pour intégrer le changement.
 ```
 
 ```sh
-$ git rm --cached index.html
+git rm --cached index.html
 # Supprime le fichier index.html du staging uniquement.
 # Le fichier reste dans le working directory.
 ```

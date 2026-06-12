@@ -14,9 +14,9 @@ Les tags sont très utilisés pour ajouter des indications de versions. Pour cr�
 ## Création d'un premier tag
 
 1. Créer un nouveau dépôt en ligne et le cloner localement.
-1. Créer un nouveau fichier `f1` et l'ajouter dans un premier commit.
+1. Créer un nouveau fichier `f1.txt` et l'ajouter dans un premier commit.
 1. Créer un tag `v1.0`
-1. Modifier le fichier `f1` et créer un nouveau commit.
+1. Modifier le fichier `f1.txt` et créer un nouveau commit.
 1. Vérifier avec `git log` que la `HEAD` et la branche ont bien avancé mais que le tag est toujours attaché au 1er commit.
 
 ## Annotation
