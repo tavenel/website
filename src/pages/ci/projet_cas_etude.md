@@ -32,7 +32,11 @@ L'objectif est de simuler une situation réelle dans laquelle vous devez :
 3. **Démonstration** :
 
    - Présentation du projet, du pipeline et de son fonctionnement.
-   - Déclenchement d'une modification (commit/push) pour montrer l'exécution du pipeline.
+   - Décrire le workflow Git utilisé par votre équipe
+   - En lien avec ce workflow Git, faire une démo d'un changement et du lancement avec justification du/des pipeline(s) CI/CD pour :
+      - intégration d'un changement dans la doc uniquement
+      - intégration d'un changement dans un seul composant uniquement (par exemple, seulement en frontend)
+      - intégration d'un changement dans plusieurs composants interdépendants (par exemple, dans le frontend et le backend)
 
 4. **Documentation technique** :
 
@@ -62,7 +66,6 @@ Choisir **une seule** de ces proposition ou proposer un autre cas d'étude à fa
 | **Application avec base de données**  | CI avec tests, déploiement de l'application et de la DB via Docker Compose.            |
 | **Projet full DevSecOps**             | Pipeline avec scan de vulnérabilités, secret detection, policy gates, déploiement.     |
 
-
 ### 🧮 Grille d'évaluation
 
 | Critère                                       | Points |
@@ -73,4 +76,3 @@ Choisir **une seule** de ces proposition ou proposer un autre cas d'étude à fa
 | Justification des outils et étapes            | 3 pts  |
 | Démonstration orale claire et bien menée      | 2 pts  |
 | Pertinence des tests / déploiement            | 2 pts  |
-
