@@ -53,6 +53,7 @@ git status
 Créer un nouveau fichier _index.html_ dans le répertoire de travail avec le contenu suivant :
 
 ```html
+<!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +92,7 @@ Ce comportement par défaut est très pratique. Il est possible de "polluer" son
 Utiliser la commande `git add` pour ajouter ce nouveau fichier à l'index du dépôt git :
 
 ```sh
-git add
+git add index.html
 ```
 
 _Dans quel zone (working directory, staging, repository) le fichier index.html est-il actuellement ?_
@@ -122,6 +123,22 @@ Créer un nouveau commit en utilisant la commande `git commit` :
 
 ```sh
 git commit
+```
+
+Fournissez un message de commit dans votre éditeur et fermez le fichier pour créer le commit, par exemple :
+
+```text
+Mon premier commit
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+#
+# Initial commit
+#
+# Changes to be committed:
+# new file:   index.html
+#
 ```
 
 Vérifier :
