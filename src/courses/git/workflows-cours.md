@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Workflows Git - travailler en équipe
 layout: '@layouts/CoursePartLayout.astro'
 ---
@@ -276,4 +276,3 @@ flowchart TD
     e3@{ animate: true }
     e4@{ animate: true }
 ```
-

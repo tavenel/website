@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Git
 layout: '@layouts/CoursePartLayout.astro'
 ---
@@ -64,6 +64,7 @@ root((Git))
 ### 🔄 Versionner son code source
 
 Versionner son code source permet : 🔄
+
 - D'identifier, isoler et documenter les changements apportés dans le code 📝
 - De visualiser l'historique des changements et opérer un retour arrière 🔄
 - D'intégrer des changements, y compris de manière concurrente et non linéaire 🔄
@@ -118,6 +119,7 @@ Tout en Git ! <https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the
 ### 🔄 Principe de fonctionnement
 
 `git` est un gestionnaire de versions **décentralisé** (ou distribué) : 🔄
+
 - 1 copie = 1 nouveau dépôt complet avec l'historique des changements 📜
 - En général, un serveur distant héberge la version la plus à jour des intégrations 🌐
 - Possibilité d'infrastructures très complexes, par exemple plusieurs références distantes (`upstream`) non cohérentes 🌐
@@ -201,18 +203,14 @@ Date:   Mon Nov 27 12:47:48 2023 +0100
 
 ---
 
-### Pourquoi Git et Github ? 🤔
+### Pourquoi Git et Github/Gitlab ? 🤔
 
-`Git` et `GitHub` sont deux technologies différentes parfois confondues 🧠  
+`Git` et `GitHub` (ou `GitLab`) sont deux technologies différentes parfois confondues 🧠  
+
 - `git` est un gestionnaire de versions : il sert à créer un dépôt local et à gérer des versions de fichiers 🗂️  
-- `GitHub` est un service en ligne qui va héberger ce dépôt à distance : c'est donc un service de type Cloud SaaS de `git` ☁️  
+- `GitHub` / `GitLab` sont des services en ligne qui vont héberger ce dépôt à distance : ce sont donc des services de type Cloud SaaS de `git` ☁️  
   (et d'autres services utiles sur ce dépôt : revue de code 👀, intégration continue 🔁, ...)
-
----
-
-Il existe d'autres services de Cloud `git` :  
-- `Bitbucket` 🪣  
-- Des versions open-source : `GitLab` 🦊, `Sourcehut` 🏡, ...
+- Il existe d'autres services de forges logicielles pour `git` en Cloud ou auto-hébergées : `Bitbucket`, `Sourcehut`, `Forgejo`, `Gitea`, …
 
 ---
 
@@ -407,6 +405,7 @@ L'opération de `merge` a un inconvénient ❌: elle pollue l'historique avec de
 Une autre solution consiste à effectuer un `rebase` afin de **déplacer la chaîne de commit** d'une branche à la suite d'une autre 🔁📈
 
 Cette solution permet :
+
 - de garder l'historique de `dev` 📜  
 - d'obtenir une **histoire linéaire** 🪄📏
 
@@ -441,11 +440,13 @@ commit
 ### Merge vs Rebase ✅
 
 👉 Utiliser `merge` dans les cas suivants :
+
 - Pour conserver l'historique des branches 📚  
 - Lorsqu'on travaille en équipe sur une même branche 🔄👥  
 - Pour garder une trace explicite des fusions 🔍
 
 👉 Utiliser `rebase` dans les cas suivants :
+
 - Pour nettoyer un historique avant une fusion finale 🧼🧵  
 - Pour garder un historique linéaire plus lisible 📏  
 - Sur des branches locales, avant un `push` 🖥️➡️☁️
@@ -460,7 +461,6 @@ commit
 - Simple **déplacement de pointeur** vers le dernier commit de la branche source 🎯📍  
 - Évite la création d'un _merge commit_ ❌🔀
 
-
 ```
 A---B (main)
      \
@@ -470,4 +470,3 @@ A---B---C---D (main, feature)
 ```
 
 ---
-

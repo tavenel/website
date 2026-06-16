@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 layout: '@layouts/CoursePartLayout.astro'
 ---
 
@@ -57,10 +57,6 @@ Intégrer `git` dans un IDE permet : 🚀
 
 - Le fichier spécial `.gitignore` (à placer directement dans le répertoire de travail de Git, sans sous-dossier)  permet de **lister des chemins de fichiers à ignorer** lors d'un `git checkout` 🚫📂  
 - 👉 Ces fichiers deviennent invisibles pour git 👻
-
-:::link
-🧪 Voir le TP correspondant.
-:::
 
 ---
 
