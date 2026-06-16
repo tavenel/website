@@ -50,7 +50,7 @@ Untracked files:
 ## Exercice
 
 - Créer un nouveau fichier `a.out` dans votre répertoire de travail. Vérifier que git détecte ce nouveau fichier en affichant le statut.
-- Ajouter le `.gitignore` correspondant pour ignorer tous les fichiers ayant comme extension `.out` (fichiers compilés générés depuis du langage `C`).
+- Ajouter le `.gitignore` correspondant pour ignorer tous les fichiers ayant comme extension `.out` (fichiers compilés générés depuis du langage `C`), donc la ligne : `*.out`.
 - Vérifier que le fichier `a.out` n'est plus visible.
 - En pratique, on utilise le `.gitignore` pour partager avec le reste de l'équipe les fichiers à ignorer de son répertoire de travail. Ajouter ce fichier dans un commit.
 - Ajouter le fichier `a.out` quand même à un commit (il faudra peut-être forcer l'ajout).
