@@ -104,7 +104,7 @@ A la place d'un merge, il est aussi possible d'effectuer un rebase de cette bran
 
 1. Se déplacer dans la branche principale.
 2. Créer une nouvelle branche `a-rebase` depuis la branche principale et créer un nouveau commit avec un changement dans cette branche.
-3. Retourner dans la branche principale (`git rebase main`) et ajouter un nouveau changement (par exemple dans le `README.md`).
+3. Retourner dans la branche principale (`git switch main`) et ajouter un nouveau changement (par exemple dans le `README.md`).
 4. Retourner dans la branche `a-rebase` et réaliser l'opération de rebase pour recréer l'historique de cette branche depuis le nouveau commit qui vient d'être réalisé : `git rebase main`
 5. Retourner dans la branche principale et "avancer" (_fast-forward_) le pointeur de la branche `main` vers le nouveau rebase réalisé : `git merge --ff-only a-rebase`.
 6. Vérifier l'historique des branches.

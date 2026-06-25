@@ -75,7 +75,7 @@ La commande `git revert` permet de créer un nouveau commit "inverse" du commit 
 
 Attention : contrairement à `git reset` qui annule toute une ligne d'historique jusqu'au commit spécifié, `git revert` annule uniquement un seul et unique commit en créant un nouveau commit inverse.
 
-`Git revert` permet donc d'annuler n'importe quel ancien commit de l'historique, même s'il est très antérieur au commit actuel.
+`git revert` permet donc d'annuler n'importe quel ancien commit de l'historique, même s'il est très antérieur au commit actuel.
 
 ## Niveau expert : modifier les pointeurs (checkout / reset)
 
@@ -144,7 +144,7 @@ git rm --cached index.html
 # Le fichier reste dans le working directory.
 ```
 
-## [Bonus] Retrouver un commit perdu
+## Bonus - Retrouver un commit perdu
 
 Le `reflog` (log des références) est un enregistrement local des références du projet. Il est local et n'est jamais pushé. Cet historique nous permet de voir les états successifs de toutes les références (les pointeurs) du dépôt. Tout est enregistré.
 
@@ -160,5 +160,5 @@ Lorsqu'un commit est "effacé", il est simplement déréférencé car il n'est p
 
 Il est courant pour récupérer un commit perdu de :
 
-- créer une nouvelle branche depuis ce commit (sans danger) : `git branch <commit-id>`
+- créer une nouvelle branche depuis ce commit (sans danger) : `git checkout <commit-id>` puis `git branch nouvelle_branche`
 - ou ajouter le commit perdu au-dessus du commit actuel (dangereux) : `git cherry-pick <commit-id>`.

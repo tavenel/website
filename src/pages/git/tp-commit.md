@@ -156,7 +156,7 @@ Nous allons voir maintenant comment intégrer des changements de ce document dan
 
 1. Changer le titre dans la balise title pour y ajouter votre nom (par exemple : `Welcome Tom`)
 2. _Vérifier que `git` détecte bien un changement dans notre fichier : quelle commande utiliser ?_
-3. Afficher les différences entre la working directory et le staging avec la commande : `$ git diff`
+3. Afficher les différences entre la working directory et le staging avec la commande : `git diff`
 4. _Dans quel zone (working directory, staging, repository) le fichier index.html est-il actuellement ?_
 5. Intégrer les changements dans un nouveau commit
 6. Vérifier la bonne intégration de ces changements
