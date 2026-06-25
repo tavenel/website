@@ -87,19 +87,7 @@ tags:
 
 ---
 
-1. **Kubernetes Dashboard** :
-   - **Description** : Déploie le Kubernetes Dashboard pour la gestion visuelle du cluster.
-   - **Repository** : `kubernetes/dashboard`
-   - **Exemple de commande** :
-
-     ```sh
-     helm repo add kubernetes https://kubernetes.github.io/dashboard
-     helm install my-dashboard kubernetes/kubernetes-dashboard
-     ```
-
----
-
-2. **Prometheus & Grafana** :
+1. **Prometheus & Grafana** :
    - **Description** : Déploie la stack Prometheus & Grafana pour la surveillance et la collecte de métriques.
    - **Repository** : `prometheus-community/prometheus`
    - **Exemple de commande** :
@@ -113,7 +101,7 @@ tags:
 
 ---
 
-3. **Nginx** :
+1. **Nginx** :
    - **Description** : Déploie une instance Nginx.
    - **Repository** : `helm.nginx.com`
    - **Exemple de commande** :
