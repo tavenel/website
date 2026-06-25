@@ -132,6 +132,28 @@ merge F1
 
 ---
 
+## Nommage classique des branches
+
+- En Git, toutes  les branches sont équivalentes
+- Par convention, on utilise souvent :
+- **Branches principales** :
+  - `main` (ou anciennement `master`) : branche de production.
+  - `develop` : branche d'intégration (si nécessaire).
+  - `release/*` : préparation d'une version.
+- **Branches de travail** : couramment préfixées par le type d'intégration : fonctionnalité, bugfix, … (`/feature`, `/feat`, `/fix`, `/bugfix`, `docs`, `test`, `release`, `chore`, `ci`, `infra`, …) :
+  - `feature/login-page`
+  - `fix/header-alignment`
+  - `hotfix/security-patch`
+  - `release/1.5.0`
+  - `docs/api-guide`
+  - `test/performance-api`
+- **Avec identifiant de ticket** : très fréquent avec un outil de gestion de projet intégré : Jira, Azure DevOps, Gitlab, etc. :
+  - `feature/PROJ-123-user-authentication`
+  - `bugfix/PROJ-456-fix-payment-error`
+  - `hotfix/PROJ-789-security-fix`
+
+---
+
 ## Pull-request 🔄📥
 
 - Popularisé par GitHub, la `pull-request` ou `merge-request` est aujourd'hui largement répandue en gestion de projet 🌍  
