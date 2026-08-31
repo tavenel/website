@@ -223,6 +223,8 @@ Voir aussi : <https://adr.github.io/>
 
 ### Théorie
 
+- [The weird history of the internet... (Fireship, Youtube)](https://www.youtube.com/watch?v=7B0ydm64cV8)
+- [I read every major CS paper of the last 100 years... (Fireship, Youtube)](https://www.youtube.com/watch?v=ML3q7Ok4hJg)
 - Les méta-lois en informatique : <https://github.com/StephaneTrebel/presentations/tree/main/meta-lois>
 - Article très complet sur les origines de la console et des terminaux Unix : <https://thevaluable.dev/guide-terminal-shell-console/>
 - Excellent article sur le fonctionnement d'un ordinateur : <https://lafor.ge/virtualization-1/>
