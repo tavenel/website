@@ -1,0 +1,52 @@
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    devenv.url = "github:cachix/devenv";
+  };
+
+  outputs = { nixpkgs, devenv, ... }:
+    devenv.lib.mkFlake {
+      inputs = { inherit nixpkgs; };
+
+      modules = [
+        ({ pkgs, ... }: {
+          packages = with pkgs; [
+            bun
+            git
+          ];
+
+          env = {
+            ASTRO_TELEMETRY_DISABLED = "1";
+          };
+
+          scripts = {
+            dev = {
+              exec = "bun run dev";
+              description = "Start Astro development server";
+            };
+
+            build = {
+              exec = "bun run build";
+              description = "Build Astro for production";
+            };
+
+            preview = {
+              exec = "bun run preview";
+              description = "Preview production build";
+            };
+
+            check = {
+              exec = "bun run check";
+              description = "Run Astro checks";
+            };
+          };
+
+          enterShell = ''
+            echo "🚀 Astro development environment"
+            echo "Bun $(bun --version)"
+          '';
+        })
+      ];
+    };
+}
+

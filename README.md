@@ -13,6 +13,12 @@ This is the repository for my website : <https://www.avenel.pro/>. Feel free to 
 
 To upgrade : `npx @astrojs/upgrade`
 
+To launch the nix devenv using flake (provides reproducible working environment) :
+
+```sh
+nix-shell -p devenv --run devenv shell
+```
+
 ## 🔗 Links
 
 - <https://docs.astro.build> and an example : <https://github.com/hellotham/hello-astro/>
