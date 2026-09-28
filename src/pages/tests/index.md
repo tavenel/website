@@ -20,6 +20,7 @@ layout: '@layouts/BaseLayout.astro'
 - [📝 Travaux dirigés : écrire un plan de tests d'un projet existant](/tests/methodo/td_plan_tests)
 - [📝 Travaux dirigés : Élaboration de la recette fonctionnelle d'un projet existant](/tests/methodo/td_recette_fonctionnelle)
 - [📝 Travaux dirigés : Tests d'un contrôleur d'ascenseur](/tests/methodo/td-ascenseur)
+- [📝 Exercice : Tests qualité logicielle et architecture SI](/tests/methodo/exercice_lien_tests_qualite)
 
 ## Tests unitaires
 
@@ -72,7 +73,6 @@ layout: '@layouts/BaseLayout.astro'
 - [🏆 Projet noté CI/CD et Automatisation des tests - un jeu de rôle](/tests/projet_jeu_roles_tests_et_ci) : développer une application Web permettant à un joueur de jouer à un jeu de rôle contre l'ordinateur en suivant un processus CI/CD.
 - [🏆 Projet Facadia](/tests/projet_facadia) : écrire des tests unitaires, des tests d'intégration et des tests end-to-end pour un projet JS déjà développé.
 
-
 ## 🔗 Liens
 
 - [Tutoriel sur les tests en Java](https://openclassrooms.com/fr/courses/6100311-testez-votre-code-java-pour-realiser-des-applications-de-qualite)
@@ -82,7 +82,7 @@ layout: '@layouts/BaseLayout.astro'
 - [Cas d'étude sur les tests d'intégration](https://blog.thecodewhisperer.com/permalink/using-integration-tests-mindfully-a-case-study)
 - [Définition d'un test unitaire](https://www.artofunittesting.com/definition-of-a-unit-test)
 - [Vidéo sur les tests unitaires et la progammation par contrats](https://blog.thecodewhisperer.com/series#integrated-tests-are-a-scam)
-- Liens Openclassrooms : 
+- Liens Openclassrooms :
   - [Testez l'interface de votre site](https://openclassrooms.com/fr/courses/3504461-testez-linterface-de-votre-site)
   - [Testez fonctionnellement votre application PHP Symfony](https://openclassrooms.com/fr/courses/4087076-testez-fonctionnellement-votre-application-php-symfony)
 - Livre [A Frontend Web Developer's Guide to Testing](https://univ.scholarvox.com/catalog/book/docid/88929017)
@@ -91,4 +91,3 @@ layout: '@layouts/BaseLayout.astro'
 
 - Voir la page sur [⚒️ les outils](/tools)
 - Voir la page [⚛️ Selenium - Automatisation de tests fonctionnels d'interface Web](/selenium).
-

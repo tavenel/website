@@ -41,6 +41,7 @@ title: INF243 - Stratégie de tests
 
 - [🔀 Module en classe renversée](/cesi/m2/tests/classe-renversee)
 - [🤓 Cours sur les tests logiciels](/cesi/m2/tests/cours)
+- [📝 Exercice : Tests qualité logicielle et architecture SI](/tests/methodo/exercice_lien_tests_qualite)
 - [📖 Exemple de template de plan de tests](/tests/methodo/exemple-template-plan-tests)
 - [📖 Exemple de recette fonctionnelle](/tests/exemple-recette)
 - [⚛️ TP Selenium - industrialiser le test d'interface utilisateur](/selenium/tp)
@@ -56,4 +57,3 @@ title: INF243 - Stratégie de tests
 ## 🚀 Pour aller plus loin
 
 - Voir les autres ressources du [🧪 cours sur les tests](/tests).
-
