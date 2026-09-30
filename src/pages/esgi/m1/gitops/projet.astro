@@ -1,0 +1,23 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Context } from '@courses/k8s/projet-appli/context-app-existante.md';
+import { Content as ArgoCD } from '@courses/k8s/projet-appli/argocd.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "🏆 Projet Gitops et ArgoCD",
+  tags: [
+    "gitops",
+		"argocd",
+		"kubernetes"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Context />  </Chapter>
+	<Chapter> <ArgoCD />  </Chapter>
+</Layout>
+

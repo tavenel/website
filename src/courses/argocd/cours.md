@@ -8,6 +8,42 @@ tags:
 - argocd
 ---
 
+## Introduction
+
+Le déploiement d'une application consiste à faire évoluer un système informatique vers un état souhaité.
+
+Dans une approche traditionnelle, les opérations de déploiement sont souvent réalisées à l'aide de commandes ou de scripts : changements difficiles à tracer, l'état réel peut diverger de la configuration attendue, et reproduire exactement un déploiement ou revenir à une configuration précédente peuvent être complexes.
+
+---
+
+## Gitops
+
+- Git == source de vérité pour code et déploiement applications et infrastructure
+- Tous les changements (infrastructure et configurations) sont gérés et **versionnés** dans un dépôt Git (IaC).
+- Un outil GitOps (FluxCD, ArgoCD, Jenkins X) surveille les changements dans Git et applique automatiquement les mises à jour au cluster (ex. Kubernetes).
+- Traçabilité, Reproductibilité, Sécurité, Fiabilité, Rollbacks
+
+GitOps ne remplace pas nécessairement la CI. La CI vérifie et construit le logiciel, GitOps configure la production et déploie le livrable.
+
+---
+
+## Déclaratif
+
+Argo CD utilise un déploiement **déclaratif** : on décrit **ce que l'on souhaite obtenir**, plutôt que les commandes nécessaires pour y parvenir :
+
+```yaml
+spec:
+  replicas: 3
+```
+
+On décrit l'état attendu, et non l'action directement comme dans la commande suivante :
+
+```bash
+kubectl scale deployment myapp --replicas=3
+```
+
+---
+
 ## Présentation d'Argo CD
 
 - Argo CD est un contrôleur Kubernetes de déploiement continu basé sur le principe GitOps.
@@ -16,7 +52,7 @@ tags:
   - Le déploiement automatique depuis Git
   - La visualisation de l'état des applications
   - La gestion multi-environnements
-  - Le rollback automatique
+  - La réconciliation de ressources depuis l'état stocké dans Git
 
 ---
 

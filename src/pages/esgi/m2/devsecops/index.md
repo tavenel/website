@@ -3,7 +3,7 @@ title: DevSecOps
 layout: '@layouts/BaseLayout.astro'
 ---
 
-# DevSecOps pour administrateurs s
+# DevSecOps pour administrateurs
 
 ## Présentation du module
 
