@@ -3,17 +3,36 @@ title: DevSecOps
 layout: '@layouts/BaseLayout.astro'
 ---
 
-# DevSecOps
+# DevSecOps pour administrateurs s
 
 ## Présentation du module
 
 ### 🎯 Objectifs du cours
 
-- Automatiser le déploiement et la gestion des applications conteneurisées : Utiliser des outils d'orchestration pour automatiser le déploiement, la mise à l'échelle et la gestion des applications sur des clusters de conteneurs.
+Ce cours part du principe que les fondamentaux DevOps ont déjà été étudiés
+
+L'objectif n'est donc pas de refaire un cours DevOps, mais de répondre à une question opérationnelle :
+
+> **Comment construire et exploiter une chaîne de livraison dans laquelle la sécurité est intégrée à l'infrastructure, au CI/CD et aux déploiements ?**
+
+### Objectifs pédagogiques
+
+À l'issue du cours, vous devez être capables de :
+
+- identifier les principales surfaces d'attaque d'une chaîne logicielle ;
+- positionner les contrôles de sécurité dans le SDLC ;
+- sécuriser un pipeline CI/CD et ses runners ;
+- gérer les secrets et les identités de workloads ;
+- distinguer SAST, SCA, secret scanning, IaC scanning, container scanning et DAST ;
+- comprendre SBOM, provenance et signature d'artefacts ;
+- appliquer les principes de sécurité à des conteneurs et à Kubernetes ;
+- mettre en place des politiques de sécurité automatisées ;
+- interpréter une vulnérabilité en tenant compte de son exploitabilité et de son exposition ;
+- construire une chaîne DevSecOps cohérente plutôt qu'une simple collection de scanners.
 
 ### 📋 Prérequis
 
-- Connaissances de base de Kubernetes et des principes d'orchestration de conteneurs
+- Connaissances du DevOps
 
 ### 📅 Déroulé des séances
 
@@ -24,8 +43,7 @@ Module de 12H
 ## 📑 Documents
 
 - [🤓 Cours DevSecOps](/esgi/m2/devsecops/cours)
-- [󱃾  TP : Déploiement applicatif avec Helm](/k8s/tp-helm) : un TP pour découvrir Helm, installer des _Chart_ existantes et apprendre à créer sa propre Chart.
-- [🏆 Projet déploiement CI/CD dans Kubernetes](/esgi/m2/devsecops/projet)
+- [🏆 Projet](/devops/projet-devsecops)
 
 ## 🚀 Pour aller plus loin
 

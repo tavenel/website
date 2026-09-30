@@ -42,14 +42,14 @@ Les 8 caractéristiques de qualité :
 
 | # | Caractéristique | Question clé | Exemples d'indicateurs |
 | --- | ----------------- | -------------- | ------------------------ |
-| 1 | Adéquation fonctionnelle | Le logiciel fait-il correctement ce qu'il doit faire ? Couverture des exigences, taux d'erreurs fonctionnelles, exactitude des résultats |
-| 2 | Performance et efficacité | Le système est-il suffisamment rapide et efficace ? Temps de réponse, p95/p99, débit, CPU, mémoire, utilisateurs simultanés |
-| 3 | Compatibilité | Le logiciel fonctionne-t-il correctement avec son environnement ? Taux d'interopérabilité, incidents d'intégration, compatibilité API/OS/navigateurs |
-| 4 | Utilisabilité | Le logiciel est-il facile à comprendre et à utiliser ? Taux de réussite des tâches, temps d'apprentissage, erreurs utilisateur, satisfaction, SUS |
-| 5 | Fiabilité | Le système fonctionne-t-il de manière stable et continue ? Disponibilité, MTBF, MTTR, taux d'erreur, taux d'incidents |
-| 6 | Sécurité | Le système protège-t-il correctement les données et les fonctions ? Vulnérabilités, taux d'échec des contrôles d'accès, incidents de sécurité, couverture des contrôles |
-| 7 | Maintenabilité | Le logiciel est-il facile à analyser, modifier et tester ? Complexité cyclomatique, couverture de tests, temps de correction, dette technique, couplage |
-| 8 | Portabilité | Le logiciel peut-il être transféré vers un autre environnement ? Effort de migration, temps d'installation, nombre d'environnements supportés, taux de succès du déploiement |
+| 1 | Adéquation fonctionnelle | Le logiciel fait-il correctement ce qu'il doit faire ? | Couverture des exigences, taux d'erreurs fonctionnelles, exactitude des résultats |
+| 2 | Performance et efficacité | Le système est-il suffisamment rapide et efficace ? | Temps de réponse, p95/p99, débit, CPU, mémoire, utilisateurs simultanés |
+| 3 | Compatibilité | Le logiciel fonctionne-t-il correctement avec son environnement ? | Taux d'interopérabilité, incidents d'intégration, compatibilité API/OS/navigateurs |
+| 4 | Utilisabilité | Le logiciel est-il facile à comprendre et à utiliser ? | Taux de réussite des tâches, temps d'apprentissage, erreurs utilisateur, satisfaction, SUS |
+| 5 | Fiabilité | Le système fonctionne-t-il de manière stable et continue ? | Disponibilité, MTBF, MTTR, taux d'erreur, taux d'incidents |
+| 6 | Sécurité | Le système protège-t-il correctement les données et les fonctions ? | Vulnérabilités, taux d'échec des contrôles d'accès, incidents de sécurité, couverture des contrôles |
+| 7 | Maintenabilité | Le logiciel est-il facile à analyser, modifier et tester ? | Complexité cyclomatique, couverture de tests, temps de correction, dette technique, couplage |
+| 8 | Portabilité | Le logiciel peut-il être transféré vers un autre environnement ? | Effort de migration, temps d'installation, nombre d'environnements supportés, taux de succès du déploiement |
 
 Le modèle peut être utilisé selon la chaîne : Attribut de qualité → Sous-caractéristique → Indicateur → Test / mesure
 

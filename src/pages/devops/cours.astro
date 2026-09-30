@@ -4,6 +4,7 @@ import Chapter from '@components/Chapter.astro';
 
 import { Content as DevOps } from '@courses/devops/cours.md';
 import { Content as TeamTopology } from '@courses/management/team-topologies.md';
+import { Content as DevSecOps } from '@courses/devops/devsecops.md';
 import { Content as Themes } from '@courses/devops/themes.md';
 
 const frontmatter = {
@@ -19,7 +20,8 @@ const frontmatter = {
 ---
 <Layout frontmatter={frontmatter} >
 	<Chapter> <DevOps />  </Chapter>
- <Chapter> <TeamTopology /> </Chapter>
+  <Chapter> <TeamTopology /> </Chapter>
+	<Chapter> <DevSecOps />  </Chapter>
 	<Chapter> <Themes />  </Chapter>
 </Layout>
 
