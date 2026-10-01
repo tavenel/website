@@ -92,25 +92,7 @@ Proposition de stack technique standard :
 
 ## Scénario
 
-Vous recevez un dépôt initial [TODO] :
-
-```text
-secure-delivery/
-├── app/
-│   ├── src/
-│   ├── tests/
-│   ├── requirements.txt
-│   └── ...
-│
-├── Dockerfile
-│
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   └── namespace.yaml
-│
-└── README.md
-```
+Vous recevez un dépôt initial contenant une mini application Flask, un Dockerfile et des manifests Kubernetes.
 
 L'application fonctionne déjà, en revanche, **la chaîne de delivery est volontairement incomplète**.
 
@@ -222,7 +204,7 @@ application
 
 ### Challenge final
 
-Analyser une nouvelle version de l'application contenant plusieurs problèmes [TODO].
+Analyser une nouvelle version de l'application contenant plusieurs problèmes.
 
 Par exemple :
 
