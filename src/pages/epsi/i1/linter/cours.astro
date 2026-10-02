@@ -1,0 +1,26 @@
+---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as Maintenabilite } from '@courses/archi/maintenabilite.md';
+import { Content as Outils } from '@courses/cicd/cours-outils-ci.md';
+import { Content as CleanCode } from '@courses/archi/clean-code.md';
+import { Content as CodeTestable } from '@courses/tests/ecrire-code-testable-cours.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title: "Analyse de code et maintenabilité",
+  tags: [
+    "ci",
+  ],
+}
+
+---
+
+<Layout frontmatter={frontmatter} >
+	<Chapter> <Maintenabilite />  </Chapter>
+	<Chapter> <Outils />  </Chapter>
+  <Chapter> <CleanCode /> </Chapter>
+  <Chapter> <CodeTestable /> </Chapter>
+</Layout>
+

@@ -1,6 +1,6 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-layout: '@layouts/CourseLayout.astro'
+layout: '@layouts/CoursePartLayout.astro'
 title: Clean Code
 tags:
 - architecture
@@ -38,16 +38,16 @@ tags:
 ### Normes et conventions
 
 - Suivez des conventions reconnues :
-  + Constantes en majuscules
-  + `snake_case` vs `CamelCase`
+  - Constantes en majuscules
+  - `snake_case` vs `CamelCase`
 
 ---
 
 ### KISS
 
 - Keep it simple stupid :
-  + simple : noms de variables, héritage faible, ...
-  + non complexe => utiliser des abstractions
+  - simple : noms de variables, héritage faible, ...
+  - non complexe => utiliser des abstractions
 
 ---
 
@@ -66,16 +66,16 @@ for student_no in range(total_students):
 ### Boy Scout
 
 - Laissez le code plus propre que l'état dans lequel vous l'avez trouvé.
-  + Refactoring permanent
-  + Attention aux régressions (tests !)
+  - Refactoring permanent
+  - Attention aux régressions (tests !)
 
 ---
 
 ### Root cause
 
 - Lors de résolution d'un problème, toujours chercher et trouver la cause racine.
-  + Éviter les "rustines"
-  + Si besoin impératif de "rustine", identifier et reporter la dette technique associée.
+  - Éviter les "rustines"
+  - Si besoin impératif de "rustine", identifier et reporter la dette technique associée.
 
 ---
 
@@ -99,18 +99,18 @@ for student in students:
 ### Least Astonishment (POLA) ou Least Surprise (POLS)
 
 - Éviter à un utilisateur toutes les (mauvaises) surprises :
-  + Suivre les conventions d'IHM, de nommage, ...
-  + UX simple et évidente
-  + Modéliser les interfaces graphiques comme machines d'états finis
-  + Voir [l'article wikipedia](https://fr.wikipedia.org/wiki/Principe_de_moindre_surprise).
+  - Suivre les conventions d'IHM, de nommage, ...
+  - UX simple et évidente
+  - Modéliser les interfaces graphiques comme machines d'états finis
+  - Voir [l'article wikipedia](https://fr.wikipedia.org/wiki/Principe_de_moindre_surprise).
 
 ---
 
 ### DRY
 
 - Do Not Repeat Yourself :
-  + Éviter les copier-coller ;
-  + Utiliser des patterns de généralisation (fonctions, classes, délégation, ...).
+  - Éviter les copier-coller ;
+  - Utiliser des patterns de généralisation (fonctions, classes, délégation, ...).
 
 ---
 
@@ -125,9 +125,9 @@ for student in students:
 ### Les erreurs arrivent
 
 - Partir du principe que les erreurs se produiront :
-  + éviter les bugs (bien)
-  + maîtriser la reprise en cas d'erreur (mieux)
-  + Voir [l'article Wikipedia sur le Chaos Engineering](https://en.wikipedia.org/wiki/Chaos_engineering).
+  - éviter les bugs (bien)
+  - maîtriser la reprise en cas d'erreur (mieux)
+  - Voir [l'article Wikipedia sur le Chaos Engineering](https://en.wikipedia.org/wiki/Chaos_engineering).
 
 ---
 
@@ -334,10 +334,10 @@ private static boolean usernameInvalid(String username) {
 ### Value Objects
 
 - `Value Objects` > types primitifs.
-  + ajoute du sens
-  + évolution du type facile
-  + voir [cet exemple en Scala](https://www.baeldung.com/scala/type-declaration).
-  + voir [cet article en Python](https://patricklouys.com/2017/06/04/value-objects-explained/).
+  - ajoute du sens
+  - évolution du type facile
+  - voir [cet exemple en Scala](https://www.baeldung.com/scala/type-declaration).
+  - voir [cet article en Python](https://patricklouys.com/2017/06/04/value-objects-explained/).
 
 ```scala
 type Username = String
@@ -473,11 +473,11 @@ widget.repaintLater();
 ---
 
 - Normalement, un commentaire est inutile.
-  + Souvent signe d'un code à retravailler
+  - Souvent signe d'un code à retravailler
 - Ne pas décrire l'évident (`i++; // increment i`).
 - Bon commentaire :
-  + explique l'intention
-  + averti des conséquences
+  - explique l'intention
+  - averti des conséquences
 
 ---
 
@@ -507,8 +507,8 @@ widget.repaintLater();
 ### Espaces
 
 - Espaces et sauts de lignes :
-  + Peu d'espaces, code dense : liens forts
-  + Beaucoup d'espaces : liens faibles
+  - Peu d'espaces, code dense : liens forts
+  - Beaucoup d'espaces : liens faibles
 
 ---
 
@@ -519,10 +519,10 @@ widget.repaintLater();
 - Petit objet
 - Cache les structures internes.
 - Responsabilité unique :
-  + ne fait qu'une chose
-  + peu d'attributs
+  - ne fait qu'une chose
+  - peu d'attributs
 - Principe de Liskov :
-  + une classe de base ne devrait rien connaître de ses classes dérivées.
+  - une classe de base ne devrait rien connaître de ses classes dérivées.
 - Éviter le code statique (partagé entre les objets)
 - Voir le [cours sur la Programmation Orientée Objet et les principes SOLID](/archi/poo).
 
@@ -565,8 +565,8 @@ widget.repaintLater();
 ### Immobilité
 
 - Code non réutilisable dans d'autres projets :
-  + trop risqué
-  + trop coûteux
+  - trop risqué
+  - trop coûteux
 
 ---
 
@@ -579,7 +579,7 @@ widget.repaintLater();
 ### Niveaux d'imbrication
 
 - Limiter la profondeur d'héritage
-  + Implémentation d'interface uniquement
+  - Implémentation d'interface uniquement
 - Limiter les niveaux d'imbrication
 
 ---
@@ -605,7 +605,9 @@ def enumerate_array(my_array):
 ### Voir aussi
 
 :::link
+
 - Voir [cet article de CodeGuru](https://refactoring.guru/refactoring/smells) pour des exemples de _code smell_.
+
 :::
 
 ---
@@ -616,8 +618,8 @@ def enumerate_array(my_array):
 
 - Gestion des erreurs séparée du code.
 - `Exception` > codes d'erreurs.
-  + Ajouter du contexte métier aux messages des exceptions
-  + Ne jamais masquer une exception
+  - Ajouter du contexte métier aux messages des exceptions
+  - Ne jamais masquer une exception
 
 ---
 
@@ -690,4 +692,3 @@ private User checkCredentialsInDatabase(String username, String password) {
 - Other names may be trademarks of their respective owners
 
 ---
-

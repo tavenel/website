@@ -1,0 +1,20 @@
+﻿---
+import Layout from '@layouts/CourseLayout.astro';
+import Chapter from '@components/Chapter.astro';
+
+import { Content as CleanCode } from '@courses/archi/clean-code.md';
+
+const frontmatter = {
+  license: "© 2025 Tom Avenel under 󰵫  BY-SA 4.0",
+  title:"Clean Code",
+  tags: [
+		"archi"
+  ],
+}
+
+---
+<Layout frontmatter={frontmatter} >
+  <Chapter> <CleanCode /> </Chapter>
+</Layout>
+---
+
