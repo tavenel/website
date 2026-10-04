@@ -32,6 +32,11 @@ packerIcon: '../../icons/hashicorp-packer.svg'
 - [💻 Projet Infrastructure as Code avec Packer, Ansible et Terraform](/devops/projet-iac)
 - [🏆 Projet Devops - Conteneurisation et déploiement continu d'une application en suivant un modèle DevOps](/devops/projet)
 
+## DevSecOps
+
+- [🏆 Projet - De la culture DevSecOps à la mise en oeuvre CI/CD](/devops/projet-devsecops-culture)
+- [🏆 Projet DevSecOps - Construire une Secure Delivery Platform](/devops/projet-devsecops)
+
 ## Liens
 
 - <https://supports.uptime-formation.fr> : cours python, docker, k8s, ansible, elastic search, linux, git

@@ -29,7 +29,7 @@ title: 󱃾  INFAL245 - Transformation DevSecOps
 ## 📑 Documents
 
 - [🤓 Cours sur le DevSecOps](/cesi/m2/devsecops/cours)
-- [🏆 Projet - De la culture DevSecOps à la mise en oeuvre CI/CD](/cesi/m2/devsecops/projet)
+- [🏆 Projet - De la culture DevSecOps à la mise en oeuvre CI/CD](/devops/projet-devsecops-culture)
 
 ## 🚀 Pour aller plus loin
 

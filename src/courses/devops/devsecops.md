@@ -595,37 +595,24 @@ Runtime + Observability
 
 ## Outils
 
-- **CI/CD** : GitLab CI/CD, GitHub Actions ;
-- **secret scanning** : Gitleaks ;
-- **SAST** : Semgrep, CodeQL ;
-- **SCA** : Snyk, Dependency-Check, Trivy ;
-- **container scanning** : Trivy, Grype ;
-- **SBOM** : Syft ;
-- **vulnerability management** : Dependency-Track ;
-- **IaC / configuration scanning** : Checkov, Trivy ;
-- **Policy as Code** : OPA, Conftest, Kyverno ;
-- **DAST** : OWASP ZAP ;
-- **signature / supply chain** : Cosign, SLSA.
-
-### Trivy
-
-[Trivy](https://trivy.dev/) est un scanner de sécurité open source qui couvre plusieurs couches d'une chaîne :
-
-- **images de conteneurs** : vulnérabilités des paquets OS et applicatifs ;
-- **filesystem / projets** : dépendances et vulnérabilités ;
-- **IaC** : détection de mauvaises configurations ;
-- **secrets** : détection de credentials ;
-- **SBOM** : génération et analyse.
-
-### Snyk
-
-[Snyk](https://snyk.io/) est une plateforme de **Developer Security** orientée intégration dans le cycle de développement.
-
-Elle couvre notamment :
-
-- les **dépendances open source** ;
-- le **code** ;
-- les **images de conteneurs** ;
-- l'**Infrastructure as Code**.
-
-Snyk s'intègre directement aux environnements de développement et aux pipelines CI/CD. Le principe est notamment de détecter une vulnérabilité puis d'associer celle-ci à une information exploitable par le développeur ou l'équipe.
+| Domaine DevSecOps             | Objectif                                    | Outils courants                                             | Quand ?              |
+| ----------------------------- | ------------------------------------------- | ----------------------------------------------------------- | -------------------- |
+| **SAST**                      | Analyser le code source                     | SonarQube, Semgrep, CodeQL, Snyk Code                       | À chaque commit / PR |
+| **SCA**                       | Détecter les vulnérabilités des dépendances | Snyk Open Source, OWASP Dependency-Check, Trivy, Dependabot | Commit / PR          |
+| **Secret scanning**           | Détecter clés/API tokens/mots de passe      | Gitleaks, TruffleHog, GitHub Secret Scanning                | Commit / PR          |
+| **DAST**                      | Tester l'application en fonctionnement      | OWASP ZAP, Burp Suite                                       | Après déploiement    |
+| **Container scanning**        | Scanner les images Docker/OCI               | Trivy, Grype, Snyk Container, Docker Scout                  | Après `docker build` |
+| **IaC scanning**              | Sécuriser Terraform/Kubernetes/etc.         | Checkov, KICS, tfsec, Trivy                                 | PR / commit          |
+| **Kubernetes security**       | Vérifier manifests/configuration K8s        | Kubescape, Trivy, Kube-score                                | Avant déploiement    |
+| **SBOM**                      | Inventorier composants et dépendances       | Syft, Trivy, CycloneDX                                      | Build/release        |
+| **Image signing**             | Garantir l'intégrité/provenance             | Cosign, Sigstore                                            | Après build          |
+| **Provenance / Supply Chain** | Prouver comment l'artefact a été construit  | SLSA, GitHub Attestations, Cosign                           | Build/release        |
+| **License scanning**          | Vérifier les licences des dépendances       | FOSSA, Snyk, ScanCode Toolkit                               | PR / build           |
+| **Dependency update**         | Maintenir les dépendances à jour            | Renovate, Dependabot                                        | Automatique          |
+| **Linting**                   | Détecter erreurs et mauvaises pratiques     | ESLint, Ruff, golangci-lint, hadolint                       | Commit / PR          |
+| **Code quality**              | Mesurer dette technique / qualité           | SonarQube, SonarCloud                                       | PR / build           |
+| **IaC policy**                | Imposer des règles de sécurité              | Open Policy Agent, Conftest, Kyverno                        | PR + déploiement     |
+| **Runtime security**          | Détecter comportements suspects             | Falco, Tetragon                                             | Runtime              |
+| **DAST/API security**         | Tester API et endpoints                     | OWASP ZAP, StackHawk                                        | Staging              |
+| **Monitoring / SIEM**         | Détecter incidents                          | Grafana, Prometheus, Loki, ELK, Wazuh                       | Runtime              |
+| **Vulnerability management**  | Centraliser et suivre les vulnérabilités    | DefectDojo, Snyk, Dependency-Track                          | Continu              |
