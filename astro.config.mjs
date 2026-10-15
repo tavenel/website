@@ -24,13 +24,7 @@ import rehypeKatex from 'rehype-katex'; // with remark-math
 
 
 
-// Set default Layout for Markdown files
-const defaultLayout = () => {
-	return function (_, file) {
-		file.data.astro.frontmatter.layout =
-			file.data.astro.frontmatter.layout || "@layouts/CourseLayout.astro";
-	};
-};
+// Default layout is now handled by Starlight
 
 const remarkCalloutConfig = {
 	aliases: {
@@ -68,7 +62,7 @@ export default defineConfig({
 	markdown: {
 		// remark: Markdown processing
 		remarkPlugins: [
-			defaultLayout,
+			// defaultLayout removed — Starlight handles layout
 			remarkDiagram, // TODO
 			remarkMath,
 			remarkModifiedTime,
