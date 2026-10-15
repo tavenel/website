@@ -1,0 +1,10 @@
+title: "Cours CI/CD"
+slug: ci
+description: "Introduction à l'intégration continue et au déploiement continu : concepts, outils, serveurs, workflows Git, modèles de CD et sécurité de la supply chain."
+chapters:
+  - courses/cicd/cours-intro-ci
+  - courses/cicd/cours-serveur-ci
+  - courses/cicd/cours-outils-ci
+  - courses/git/workflows-cours
+  - courses/cicd/modeles-cd-cours
+  - courses/cicd/cours-secu-ci

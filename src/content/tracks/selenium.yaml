@@ -1,0 +1,5 @@
+title: "Selenium"
+slug: selenium
+description: "Selenium : automatisation de tests navigateur, IDE, WebDriver, Grid."
+chapters:
+  - courses/selenium/cours

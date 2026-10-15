@@ -1,0 +1,25 @@
+title: "Kubernetes"
+slug: k8s
+description: "Kubernetes : architecture, installation, administration, déploiement, réseautage, stockage, sécurité."
+chapters:
+  - courses/k8s/intro
+  - courses/k8s/main
+  - courses/k8s/install-requirements
+  - courses/k8s/install-procedure
+  - courses/k8s/admin
+  - courses/k8s/end
+  - courses/k8s/network
+  - courses/k8s/storage
+  - courses/k8s/security
+  - courses/k8s/cicd
+  - courses/k8s/versions
+  - courses/k8s/tools
+  - courses/k8s/pods-advanced
+  - courses/k8s/stop-cluster
+  - courses/k8s/projet-install-exo
+  - courses/k8s/classe-renversee-themes
+  - courses/k8s/ha
+  - courses/k8s/install-ha
+  - courses/k8s/extend
+  - courses/k8s/debug
+  - courses/k8s/debug-cluster

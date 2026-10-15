@@ -1,0 +1,175 @@
+---
+title: TP Le systeme de branches
+date: 2025 / 2026
+tags:
+- git
+type: tp
+sidebar:
+  order: 250
+description: TP Le systeme de branches
+---
+## Introduction
+
+Les branches sont une des fonctionnalités les plus puissantes de Git, qui permettent de gérer des historiques concurrents complexes.
+
+## Afficher la liste des branches
+
+Pour afficher les branches de notre projet, on utilise la commande `git branch`. Une première branche a été créée avec notre dépôt : c'est cette branche que l'on a utilisé dans les autres TP.
+
+```sh
+git branch # liste des branches locales
+```
+
+`Git` étant décentralisé, la notion de branche est locale à un dépôt. Pour afficher les branches disponibles dans les dépôts distants (`upstream`), on peut utiliser la commande suivante :
+
+```sh
+git branch -a # liste des branches distantes
+```
+
+## Créer et se déplacer dans une nouvelle branche
+
+Créer deux nouvelles branches et modifier la position de la `HEAD` pour utiliser une de ces nouvelles branches.
+
+On utilisera les commandes suivantes :
+
+```sh
+git branch ma_nouvelle_branche # crée une nouvelle branche
+```
+
+```sh
+git checkout ma_nouvelle_branche # se déplace vers la branche
+```
+
+```sh
+git checkout -b une_branche # crée et se déplace sur la branche
+```
+
+Utiliser la commande `git status` pour vérifier le positionnement sur la nouvelle branche.
+
+:::tip
+`git switch` est une nouvelle commande git simplifiée et spécialisée pouvant remplacer `git checkout` pour la gestion des branches : `git switch <branche_existante>` pour changer de branche (existante) et `git switch -c <nouvelle_branche>` pour créer une nouvelle branche.
+:::
+
+## Supprimer une branche
+
+Supprimer la nouvelle branche non utilisée :
+
+```sh
+git branch -d branche_a_supprimer
+```
+
+## Intégrer des commit dans la branche
+
+Effectuer des changements dans le working directory puis intégrer ces changements dans un commit de la branche.
+
+Vérifier la bonne intégration des changements.
+
+**Rappel : `git` identifie tous les changements à travers les commit.** Aucun historique de fichier n'est donc stocké dans une branche : les branches ne sont que des pointeurs et des listes d'identifiants de commit. Ce modèle s'avère très puissant pour déplacer ou partager des commit entre branches : il suffit de modifier des pointeurs. A aucun moment un commit n'est modifié.
+
+## Envoyer la branche vers un dépôt distant
+
+Lors de la création d'une branche, celle-ci est liée au dépôt de code local.
+Pour l'intégrer dans un dépôt distant, il faut la lier au dépôt distant (`upstream`) la première fois.
+
+```sh
+git push --set-upstream origin new-branch
+```
+
+Cette commande ne fonctionne que si vous souhaitez créer une branche avec le même nom que la branche locale. Dans le cas contraire, on utilisera la version complète de `git push` en spécifiant un upstream :
+
+```sh
+git push -u origin branche_locale:branche_distante
+```
+
+Les opérations suivantes d'envoi pourront se satisfaire d'un simple `git push`.
+
+Note : si la branche a été récupérée depuis un dépôt distant, son `upstream` est déjà configuré.
+
+## Fusionner la branche
+
+Une fois satisfait des changements réalisés dans la branche, nous allons intégrer les intégrer à la branche principale par une opération de fusion.
+
+### Opération de merge
+
+Réaliser un merge de la nouvelle branche dans la branche principale :
+
+1. Se déplacer dans la branche principale.
+2. Créer une nouvelle branche `a-merger` depuis la branche principale et créer un nouveau commit avec un changement dans cette branche.
+3. Se placer dans la branche principale.
+4. Réaliser l'opération de merge : `git merge --no-ff a-merger` (l'option `--no-ff` force à ne pas utiliser le _fast forward_ pour voir clairement la fusion).
+5. Vérifier l'historique des branches.
+
+Note : si des changements on été réalisés dans la branche de destination, on préfèrera ajouter ces changements dans la branche source avant la fusion. Cela permet de réaliser une opération de merge dans la branche `new-branch` et non dans la branche `main` : le risque est ainsi contraint à la branche du développeur et non à la branche publique. On pourra tester localement la version fusionnée avant de la publier.
+
+### Opération de rebase
+
+A la place d'un merge, il est aussi possible d'effectuer un rebase de cette branche sur la branche principale :
+
+1. Se déplacer dans la branche principale.
+2. Créer une nouvelle branche `a-rebase` depuis la branche principale et créer un nouveau commit avec un changement dans cette branche.
+3. Retourner dans la branche principale (`git switch main`) et ajouter un nouveau changement (par exemple dans le `README.md`).
+4. Retourner dans la branche `a-rebase` et réaliser l'opération de rebase pour recréer l'historique de cette branche depuis le nouveau commit qui vient d'être réalisé : `git rebase main`
+5. Retourner dans la branche principale et "avancer" (_fast-forward_) le pointeur de la branche `main` vers le nouveau rebase réalisé : `git merge --ff-only a-rebase`.
+6. Vérifier l'historique des branches.
+
+- Pour plus d'informations sur le principe délicat du rebase, voir l'excellent guide : [merge vs rebase](https://www.atlassian.com/fr/git/tutorials/merging-vs-rebasing)
+- Voir aussi le très complet tutoriel de SourceHut : <https://git-rebase.io/>
+
+:::tip
+L'option `--ff-only` du `merge` force à ne pas créer de réelle fusion mais à seulement avancer le pointeur de la branche vers la destination : il ne s'agit donc pas réellement d'un _merge_ mais plutôt d'une mise à jour de l'état de la branche vers une branche compatible.
+:::
+
+## [Bonus] Squash de commit
+
+Une option intéressante au moment du d'une branche est la possibilité de réécrire la suite de commit à intégrer en un commit unique. Cela évite de polluer l'historique avec les commit utilisés pendant le développement.
+
+```sh
+git merge --squash ma_branche
+```
+
+Une opération de squash est également possible par rebase intéractif, par exemple, la commande suivante rassemble les 3 derniers commit en un seul :
+
+```sh
+git rebase -i HEAD~3
+```
+
+## [Bonus] Réordonner les commit
+
+Il est possible de réordonner des commit pendant une opération de rebase interactif : il suffit de sélectionner (`pick`) les commit dans un ordre différent de l'ordre actuel.
+
+```sh
+git rebase -i HEAD~3
+# pick ...
+# pick ...
+# pick ...
+```
+
+## [Bonus] La stash
+
+Nous avons vu qu'il existe 3 espaces de travail dans `git` :
+
+- le `working directory`
+- le `staging`
+- la zone de `commit`
+
+En réalité, il existe virtuellement une 4e zone appelée la `stash` permettant de mettre temporairement de côté des modifications.
+
+1. Modifier un fichier de l'espace de travail
+2. Vérifier qu'il existe des changements à intégrer : `git status`
+3. Mettre de côté ces changements : `git stash --all`
+4. Vérifier que les changements ont disparu : `git status`
+5. Se déplacer dans une autre branche : `git checkout .....`
+6. Récupérer les modifications en cours : `git stash pop`
+
+_La stash est très utile lorsque l'on s'est trompé de branche de travail._
+
+## [Bonus] Cherry-picking
+
+Il peut arriver d'avoir besoin d'intégrer les modifications apportées par un commit dans deux branches différentes à la fois (par exemple : correction isolée d'un bug critique sur différentes versions ayant divergé). Une opération de fusion n'est alors pas appropriée car elle obligerait à intégrer tous les changements d'une branche.
+
+Dans ce cas, la commande `git cherry-pick` permet d'intégrer n'importe quel commit (situé dans n'importe quelle branche) dans la branche courante.
+
+```sh
+git checkout branche_contenant_le_commit
+git cherry-pick identifiant_du_commit_à_intégrer
+```

@@ -1,0 +1,118 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { GetStaticPathsOptions, GetStaticPathsItem } from 'astro';
+import { buildCourseTree } from '@lib/course-tree';
+import Roadmap from '@components/Roadmap.astro';
+
+export interface Props {
+  track: {
+    id: string;
+    title: string;
+    slug: string;
+    description?: string;
+    school?: string;
+    year?: string;
+    module?: string;
+    chapters: string[];
+    roadmap?: {
+      branches?: { from: string; to: string[] }[];
+    };
+  };
+  chapters: { slug: string; url: string; title: string; type: string }[];
+}
+
+export async function getStaticPaths({}: GetStaticPathsOptions): Promise<GetStaticPathsItem[]> {
+  const allTracks = await getCollection('tracks');
+  const docs = await getCollection('docs');
+
+  return allTracks.map((t) => {
+    const chapters = t.data.chapters
+      .map((slug: string) => {
+        const doc = docs.find((d) => d.id === slug || d.id === slug + '/index');
+        if (!doc) return null;
+        // slugs are like 'courses/git/cours' — strip 'courses/' prefix for URL
+        const courseSlug = slug.startsWith('courses/') ? slug.slice(8) : slug;
+        return {
+          slug: slug,
+          url: `/courses/${courseSlug}`,
+          title: doc.data.title || courseSlug.split('/').pop() || '',
+          type: (doc.data as any).type || 'cours',
+        };
+      })
+      .filter(Boolean) as { slug: string; url: string; title: string; type: string }[];
+
+    return {
+      params: { slug: t.data.slug },
+      props: { track: { ...t.data, id: t.id }, chapters },
+    };
+  });
+}
+
+const { track, chapters } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{track.title} — avenel.pro</title>
+    <meta name="description" content={track.description || track.title} />
+    <link rel="stylesheet" href="/src/styles/custom.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">🏠 Accueil</a>
+        {track.school && <a href={`/${track.school.toLowerCase()}`}>{track.school}</a>}
+      </nav>
+    </header>
+    <main>
+      <h1>{track.title}</h1>
+      {track.description && <p class="track-description">{track.description}</p>}
+      {track.school && (
+        <p class="track-meta">{track.school} {track.year} — {track.module}</p>
+      )}
+
+      <Roadmap chapters={chapters} trackSlug={track.slug} />
+
+      <hr />
+      <section class="chapter-list">
+        <h2>Chapitres</h2>
+        <ol>
+          {chapters.map((chapter) => (
+            <li>
+              <a href={chapter.url}>
+                <span class="chapter-type-badge type-{chapter.type}">{chapter.type}</span>
+                {chapter.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .track-description { color: #666; font-size: 1.1rem; max-width: 40rem; }
+  .track-meta { font-size: 0.9rem; color: #999; }
+  .chapter-list ol { max-width: 40rem; }
+  .chapter-list li { margin: 0.5rem 0; }
+  .chapter-type-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .type-cours { background: #e3f2fd; color: #1565c0; }
+  .type-tp { background: #e8f5e9; color: #2e7d32; }
+  .type-exo { background: #fff3e0; color: #e65100; }
+  .type-projet { background: #fce4ec; color: #c62828; }
+  .type-page { background: #f3e5f5; color: #6a1b9a; }
+  .type-note { background: #e0f2f1; color: #00695c; }
+</style>

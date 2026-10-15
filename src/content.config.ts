@@ -1,6 +1,7 @@
 import { docsLoader } from '@astrojs/starlight/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 // Starlight docs collection (courses + standalone pages — to be populated later)
 const docs = defineCollection({
@@ -19,7 +20,7 @@ const docs = defineCollection({
 
 // Tracks (chemins dédiés — curations de chapitres de cours)
 const tracks = defineCollection({
-	type: 'data',
+	loader: glob({ pattern: '**/*.{yaml,json}', base: 'src/content/tracks' }),
 	schema: z.object({
 		title: z.string(),
 		slug: z.string(),
