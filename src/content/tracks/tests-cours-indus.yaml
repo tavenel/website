@@ -1,0 +1,11 @@
+title: "Industrialisation des tests"
+slug: "tests/cours-indus"
+chapters:
+  - courses/tests/indus-tests-cours
+  - courses/tests/patterns-cours
+  - courses/tests/ecrire-code-testable-cours
+  - courses/tests/cours-unittest
+  - courses/selenium/cours
+  - courses/postman/cours
+  - courses/simian-army/cours
+

@@ -1,0 +1,8 @@
+title: "Méthodologie des tests"
+slug: "cesi/m2/tests"
+school: "CESI"
+year: "M2"
+module: "tests"
+chapters:
+  - pedagogie/classe-renversee
+  - tests/classe-renversee-themes

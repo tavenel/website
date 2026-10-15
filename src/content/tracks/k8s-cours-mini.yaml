@@ -1,0 +1,6 @@
+title: "Cours d'initiation rapide à Kubernetes"
+slug: "k8s/cours-mini"
+chapters:
+  - courses/k8s/intro
+  - courses/k8s/mini
+

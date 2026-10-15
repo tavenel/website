@@ -1,0 +1,30 @@
+title: "Formation LPIC 2"
+slug: "linux/lpic-2"
+chapters:
+  - linux/cours-perfs
+  - linux/cours-hardware
+  - linux/cours-kernel
+  - linux/cours-disks
+  - linux/cours-smart
+  - linux/cours-raid
+  - linux/cours-network
+  - linux/cours-make
+  - linux/cours-backup
+  - linux/cours-info-users
+  - linux/cours-dns
+  - linux/cours-apache
+  - linux/cours-squid
+  - linux/cours-nginx
+  - linux/cours-samba
+  - storage/das-nas-san
+  - storage/nfs
+  - storage/iscsi
+  - storage/zfs
+  - linux/cours-dhcp
+  - linux/cours-pam
+  - linux/cours-ldap
+  - linux/cours-ldaps
+  - linux/cours-mail
+  - linux/cours-vpn
+  - linux/cours-security
+  - linux/cours-debug

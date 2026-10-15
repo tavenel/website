@@ -1,0 +1,7 @@
+title: "Cours Gitops et ArgoCD"
+slug: "esgi/m1/gitops"
+school: "ESGI"
+year: "M1"
+module: "gitops"
+chapters:
+  - argocd/cours

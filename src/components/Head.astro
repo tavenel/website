@@ -4,7 +4,6 @@ import '@css/styles.css'
 // ClientRouter transforms the website into an SPA
 // import { ClientRouter } from 'astro:transitions'; // TODO
 import { Font } from 'astro:assets';
-import FontAwesome from './FontAwesome.astro';
 
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
@@ -35,7 +34,6 @@ type Props = {
 	<meta name="pwa-capable" content="yes" />
 
 	<Font cssVariable='--font-main' preload />
-  <FontAwesome />
 	<style>
 	  body {
 			font-family: var(--font-main);

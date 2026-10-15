@@ -1,0 +1,9 @@
+title: "Projet Installation H/A d'un Cluster Kubernetes"
+slug: k8s/projet-install-ha
+chapters:
+  - courses/k8s/projet-install-exo
+  - courses/k8s/install-procedure
+  - courses/k8s/install-ha
+  - courses/etcd/faq
+  - courses/k8s/stop-cluster
+  - courses/k8s/debug-cluster

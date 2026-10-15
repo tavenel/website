@@ -1,0 +1,5 @@
+title: "Architectures Hexagonales et Clean Architecture"
+slug: archi/hexagonal-clean
+chapters:
+  - courses/archi/cours-hexagonal
+  - courses/archi/cours-clean

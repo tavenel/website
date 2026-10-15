@@ -1,8 +1,5 @@
 ---
 import Head from '@components/Head.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import AddFavorite from '@components/AddFavorite.astro';
 
 const { title, url } = Astro.props;
 ---
@@ -11,12 +8,21 @@ const { title, url } = Astro.props;
 <html lang="en">
 	<Head title={title} url={url} />
 	<body>
-		<Header />
+		<header>
+			<nav>
+				<a href="/" style="font-weight:bold; color:var(--sl-color-accent); text-decoration:none;">avenel.pro</a>
+				<a href="/tracks" style="margin-left:1rem; color:var(--sl-color-gray-2); text-decoration:none;">Tracks</a>
+				<a href="/pages/about" style="margin-left:1rem; color:var(--sl-color-gray-2); text-decoration:none;">About</a>
+			</nav>
+		</header>
 		<main id="main">
 			<slot />
 		</main>
-		<Footer />
-		<AddFavorite />
+		<footer style="text-align:center; padding:2rem 1rem; font-size:0.8rem; color:var(--sl-color-gray-4);">
+			<p>© Tom Avenel — contenu sous licence 
+				<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0</a>
+			</p>
+		</footer>
 	</body>
 </html>
 

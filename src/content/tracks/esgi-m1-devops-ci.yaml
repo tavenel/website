@@ -1,0 +1,17 @@
+title: "Cours DevOps"
+slug: "esgi/m1/devops-ci"
+school: "ESGI"
+year: "M1"
+module: "devops-ci"
+chapters:
+  - devops/cours
+  - devops/legal
+  - devops/themes
+  - devops/yaml
+  - ansible/cours
+  - terraform/cours
+  - cicd/cours-intro-ci
+  - git/workflows-cours
+  - cicd/cours-outils-ci
+  - cicd/modeles-cd-cours
+  - docker/cours

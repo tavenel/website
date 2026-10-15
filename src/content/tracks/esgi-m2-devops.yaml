@@ -1,0 +1,24 @@
+title: "Cours DevOps"
+slug: "esgi/m2/devops"
+school: "ESGI"
+year: "M2"
+module: "devops"
+chapters:
+  - devops/cours
+  - devops/legal
+  - devops/themes
+  - devops/yaml
+  - ansible/cours
+  - terraform/cours
+  - cicd/cours-intro-ci
+  - git/workflows-cours
+  - cicd/cours-outils-ci
+  - cicd/modeles-cd-cours
+  - docker/cours
+  - k8s/intro
+  - k8s/main
+  - k8s/network
+  - k8s/storage
+  - k8s/pods-advanced
+  - k8s/tools
+  - k8s/mini

@@ -1,0 +1,11 @@
+title: "Virtual Data Center"
+slug: "estiam/vdc"
+school: "ESTIAM"
+year: "VDC"
+chapters:
+  - cloud/cours-vdc
+  - network/cours-network-virtual
+  - opennebula/cours
+  - ansible/cours
+  - terraform/cours
+  - packer/cours

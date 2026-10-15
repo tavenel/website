@@ -1,0 +1,8 @@
+title: "Cours Linux "
+slug: "epsi/b3/linux-asrbd"
+school: "EPSI"
+year: "B3"
+module: "linux-asrbd"
+chapters:
+  - linux/cours-droits
+  - linux/cours-find

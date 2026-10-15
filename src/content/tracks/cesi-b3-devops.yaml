@@ -1,0 +1,18 @@
+title: "Cours DevOps"
+slug: "cesi/b3/devops"
+school: "CESI"
+year: "B3"
+module: "devops"
+chapters:
+  - devops/cours
+  - management/team-topologies
+  - devops/themes
+  - devops/legal
+  - devops/yaml
+  - ansible/cours
+  - terraform/cours
+  - docker/cours
+  - cicd/cours-intro-ci
+  - git/workflows-cours
+  - cicd/cours-outils-ci
+  - cicd/modeles-cd-cours

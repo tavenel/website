@@ -1,0 +1,25 @@
+title: "Tests et Automatisations"
+slug: "esgi/m1/tests-ci"
+school: "ESGI"
+year: "M1"
+module: "tests-ci"
+chapters:
+  - tests/cours-introduction-tests
+  - tests/cours-methodo-tests
+  - tests/cours-perf
+  - tests/cours-ia
+  - tests/cours-tdd
+  - tests/indus-tests-cours
+  - tests/patterns-cours
+  - tests/ecrire-code-testable-cours
+  - tests/cours-unittest
+  - selenium/cours
+  - postman/cours
+  - jmeter/cours
+  - simian-army/cours
+  - tests/tests-with-docker
+  - cicd/cours-intro-ci
+  - cicd/cours-serveur-ci
+  - cicd/cours-outils-ci
+  - git/workflows-cours
+  - cicd/modeles-cd-cours

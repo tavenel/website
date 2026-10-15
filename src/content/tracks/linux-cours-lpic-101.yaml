@@ -1,0 +1,12 @@
+title: "Formation LPIC 101"
+slug: "linux/cours-lpic-101"
+chapters:
+  - courses/linux/lpic-101-intro
+  - courses/linux/cours-hardware
+  - courses/linux/cours-install
+  - courses/linux/cours-commands
+  - courses/linux/cours-disks
+  - courses/linux/cours-droits
+  - courses/linux/cours-liens
+  - courses/linux/cours-find
+

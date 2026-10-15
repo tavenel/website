@@ -1,0 +1,8 @@
+title: "Intégration Continue"
+slug: "epsi/i1/ci"
+school: "EPSI"
+year: "I1"
+module: "ci"
+chapters:
+  - pedagogie/classe-renversee
+  - cicd/classe-renversee-themes

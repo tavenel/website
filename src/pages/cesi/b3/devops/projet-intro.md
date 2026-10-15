@@ -1,7 +1,7 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Présentation du projet
-layout: '@layouts/CoursePartLayout.astro'
+layout: '@layouts/BaseLayout.astro'
 ---
 
 ## 🎯 Objectif général

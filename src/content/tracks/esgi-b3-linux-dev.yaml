@@ -1,0 +1,18 @@
+title: "Linux orienté Développeurs"
+slug: "esgi/b3/linux-dev"
+school: "ESGI"
+year: "B3"
+module: "linux-dev"
+chapters:
+  - linux/cours-desktop
+  - linux/cours-install
+  - linux/cours-commands
+  - linux/cours-droits
+  - linux/cours-liens
+  - linux/cours-find
+  - linux/cours-shell
+  - linux/cours-debug
+  - linux/cours-pam
+  - linux/cours-ldap
+  - linux/cours-ldaps
+  - linux/cours-samba
