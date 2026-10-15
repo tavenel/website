@@ -1,23 +1,74 @@
-/* Starlight theme overrides */
+/* Starlight theme overrides for avenel.pro */
 /* This file is loaded by Starlight via the `customCss` option */
-/* See also: src/css/styles.css (existing site-wide styles) */
 
+/* Color scheme — dark theme */
 :root {
-	--sl-color-accent: #0055aa;
-	--sl-color-accent-high: #003f80;
+	--sl-color-accent: #0077cc;
+	--sl-color-accent-high: #3399dd;
+	--sl-color-accent-low: #003355;
 	--sl-color-white: #f0f0f0;
 	--sl-color-gray-1: #d0d0d0;
+	--sl-color-gray-2: #a0a0a0;
+	--sl-color-gray-3: #707070;
+	--sl-color-gray-4: #505050;
 	--sl-color-gray-5: #3a3a3a;
 	--sl-color-gray-6: #2a2a2a;
 	--sl-color-black: #1a1a1a;
+	--sl-color-bg-nav: #222;
+	--sl-color-bg-sidebar: #1e1e1e;
+	--sl-font: 'Inter', system-ui, sans-serif;
 }
 
-/* Light mode overrides */
+/* Light mode */
 :root[data-theme='light'] {
-	--sl-color-accent: #0077cc;
+	--sl-color-accent: #0055aa;
+	--sl-color-accent-high: #003f80;
+	--sl-color-accent-low: #d0e4f7;
 	--sl-color-white: #1a1a1a;
 	--sl-color-gray-1: #2a2a2a;
+	--sl-color-gray-2: #4a4a4a;
+	--sl-color-gray-3: #6a6a6a;
+	--sl-color-gray-4: #909090;
 	--sl-color-gray-5: #c0c0c0;
 	--sl-color-gray-6: #e0e0e0;
 	--sl-color-black: #ffffff;
+	--sl-color-bg-nav: #f5f5f5;
+	--sl-color-bg-sidebar: #fafafa;
 }
+
+/* Site title styling */
+.site-title {
+	font-weight: 700;
+	font-size: var(--sl-text-lg);
+}
+.site-title a {
+	color: var(--sl-color-white);
+	text-decoration: none;
+}
+.site-title a:hover {
+	color: var(--sl-color-accent);
+}
+
+/* Content styling */
+.sl-markdown-content h1 {
+	font-size: 2.25rem;
+	border-bottom: 1px solid var(--sl-color-gray-5);
+	padding-bottom: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+.sl-markdown-content h2 {
+	font-size: 1.5rem;
+	margin-top: 2rem;
+	border-bottom: 1px solid var(--sl-color-gray-6);
+	padding-bottom: 0.3rem;
+}
+.sl-markdown-content code {
+	font-size: 0.85em;
+	border-radius: 4px;
+}
+
+/* Custom admonition compatibility */
+.starlight-aside--note { --sl-color-asides-text-accent: #1565c0; }
+.starlight-aside--tip { --sl-color-asides-text-accent: #2e7d32; }
+.starlight-aside--danger { --sl-color-asides-text-accent: #c62828; }
+.starlight-aside--caution { --sl-color-asides-text-accent: #e65100; }

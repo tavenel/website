@@ -126,9 +126,19 @@ export default defineConfig({
 		starlight({
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
-			sidebar: [],
+			sidebar: [
+				{ label: 'Cours', items: [{ autogenerate: { directory: 'courses' } }] },
+				{ label: 'Pages', items: [{ autogenerate: { directory: 'pages' } }] },
+			],
 			social: [],
 			disable404Route: true,
+			components: {
+				Header: '@components/StarlightHeader.astro',
+				Footer: '@components/StarlightFooter.astro',
+			},
+			customCss: [
+				'src/styles/custom.css',
+			],
 		}),
 	],
 

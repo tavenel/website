@@ -1,0 +1,32 @@
+---
+---
+
+<div class="footer">
+	<p>
+		© Tom Avenel — contenu sous licence 
+		<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0</a>
+	</p>
+	<p class="print-only">https://www.avenel.pro</p>
+</div>
+
+<style>
+	@layer starlight.core {
+		.footer {
+			text-align: center;
+			padding: 3rem 1rem 2rem;
+			font-size: var(--sl-text-xs);
+			color: var(--sl-color-gray-3);
+		}
+		.footer a {
+			color: var(--sl-color-accent);
+		}
+		.print-only {
+			display: none;
+		}
+		@media print {
+			.print-only {
+				display: block;
+			}
+		}
+	}
+</style>
