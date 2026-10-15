@@ -1,0 +1,23 @@
+/* Starlight theme overrides */
+/* This file is loaded by Starlight via the `customCss` option */
+/* See also: src/css/styles.css (existing site-wide styles) */
+
+:root {
+	--sl-color-accent: #0055aa;
+	--sl-color-accent-high: #003f80;
+	--sl-color-white: #f0f0f0;
+	--sl-color-gray-1: #d0d0d0;
+	--sl-color-gray-5: #3a3a3a;
+	--sl-color-gray-6: #2a2a2a;
+	--sl-color-black: #1a1a1a;
+}
+
+/* Light mode overrides */
+:root[data-theme='light'] {
+	--sl-color-accent: #0077cc;
+	--sl-color-white: #1a1a1a;
+	--sl-color-gray-1: #2a2a2a;
+	--sl-color-gray-5: #c0c0c0;
+	--sl-color-gray-6: #e0e0e0;
+	--sl-color-black: #ffffff;
+}

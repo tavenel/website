@@ -1,0 +1,7 @@
+# Ignore babysitter/pi agent internals
+.pi/
+.a5c/
+
+# Ignore graph output
+graphify-out/
+

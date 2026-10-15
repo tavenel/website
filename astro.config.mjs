@@ -6,6 +6,7 @@ import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 import pagefind from "astro-pagefind";
 import sitemap from '@astrojs/sitemap';
+import starlight from '@astrojs/starlight';
 import { visualizer } from "rollup-plugin-visualizer";
 
 import remarkDirective from 'remark-directive'; // required for CalloutDirectives
@@ -120,7 +121,15 @@ export default defineConfig({
 		icon(),
 		sitemap(),
 		// must be last to search in fully bundled
-		pagefind()
+		pagefind(),
+		// Starlight documentation theme (added alongside existing site — no content migration yet)
+		starlight({
+			title: 'avenel.pro',
+			defaultLocale: 'fr',
+			sidebar: [],
+			social: [],
+			disable404Route: true,
+		}),
 	],
 
 	vite: {
