@@ -3,7 +3,7 @@ title: Introduction à l'usage de conteneurs Docker®
 date: 2024 / 2025
 type: cours
 sidebar:
-  order: 800
+  order: 101
 description: Introduction à l'usage de conteneurs Docker®
 ---
 ## Créer et gérer des conteneurs Docker® depuis des images existantes
@@ -14,7 +14,7 @@ Nous allons créer un conteneur depuis une image `hello-world` récupérée sur 
 
 Dans un premier temps, nous allons déployer un nœud `Docker®` afin d'être en mesure de configurer une infrastructure `Docker®` par l'installation du `Docker® Engine`, de créer et gérer des images Docker® et enfin de déployer des conteneurs `Docker®`.
 
-Afin d'être au plus proche d'un déploiement réel sur un serveur dédié, il est conseillé d'effectuer les opérations suivantes dans une machine virtuelle Linux dédiée (par exemple : `Oracle® VirtualBox`). Cependant, il est possible d'effectuer l'installation directement sur son poste de travail, dans un environnement Windows®, Mac OS® ou Linux®. 
+Afin d'être au plus proche d'un déploiement réel sur un serveur dédié, il est conseillé d'effectuer les opérations suivantes dans une machine virtuelle Linux dédiée (par exemple : `Oracle® VirtualBox`). Cependant, il est possible d'effectuer l'installation directement sur son poste de travail, dans un environnement Windows®, Mac OS® ou Linux®.
 
 1. Créer un compte sur le `Docker® Hub` : <https://hub.docker.com/>
 
@@ -24,7 +24,7 @@ Pour Windows, récupérer la version stable depuis ce lien : <https://hub.docker
 
 Renseigner le compte `Docker® Hub` créé à l'étape 1 lorsque demandé.
 
-3. Tester l'installation : ouvrir un terminal et taper `docker version`, vérifier que la version est affichée sans erreur.
+1. Tester l'installation : ouvrir un terminal et taper `docker version`, vérifier que la version est affichée sans erreur.
 
 _Il est également possible d'utiliser le `Docker® Lab` pour utiliser un environnement de tests : [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/)_
 
@@ -72,7 +72,7 @@ Vérifier que le conteneur a été correctement démarré avec un serveur `Nginx
 
 [http://localhost:8080](http://localhost:8080)
 
-#### Note 1 :
+#### Note 1
 
 Notre conteneur étant actif en arrière-plan, il peut être intéressant de s'y connecter.
 
@@ -84,13 +84,13 @@ Pour cela, Docker® permet d'exécuter des commandes dans un conteneur actif, on
 docker ps
 ```
 
-2. Exécuter une commande dans un conteneur actif :
+1. Exécuter une commande dans un conteneur actif :
 
 ```sh
 docker exec -t -i ID_DU_CONTENEUR bash
 ```
 
-#### Note 2 :
+#### Note 2
 
 Les images Docker® sont des images de système d'exploitation distribuées sur le réseau, elles peuvent donc être volumineuses et il est important de réduire leur taille au maximum.
 
@@ -218,7 +218,7 @@ docker tag NOM_DE_MON_IMAGE_LOCALE:latest YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:
 
 Par exemple : `docker tag my_nginx:latest epsi/my_nginx:latest`
 
-2. Publication de l'image
+1. Publication de l'image
 
 ```sh
 docker push YOUR_USERNAME/NOM_DE_MON_IMAGE_REMOTE:NOM_DU_TAG_REMOTE
@@ -236,7 +236,7 @@ docker run epsi/my_nginx:latest
 
 ### Multi-stage build
 
-Il est possible d'utiliser plusieurs `FROM … AS etapeX` dans un `Dockerfile` : seul le dernier `FROM …` reste dans l'image finale (tout ce qui est avant le dernier `FROM` est détruit). L'intérêt de ce build _multi-stage_ est que l'on peut récupérer des fichiers du layer précédent par des instructions `COPY --from=etapeX …` 
+Il est possible d'utiliser plusieurs `FROM … AS etapeX` dans un `Dockerfile` : seul le dernier `FROM …` reste dans l'image finale (tout ce qui est avant le dernier `FROM` est détruit). L'intérêt de ce build _multi-stage_ est que l'on peut récupérer des fichiers du layer précédent par des instructions `COPY --from=etapeX …`
 
 Utilisons un multi-stage build pour un `hello-world` de Golang en créant un fichier `main.go` :
 
@@ -311,6 +311,7 @@ docker run --rm multi:v2 /bin/ls
 ```
 
 :::correction
+
 ```dockerfile
 # Stage 1: Build Environment (Golang)
 FROM golang:alpine AS build-stage
@@ -322,28 +323,32 @@ FROM alpine
 COPY --from=build-stage /go/main .
 CMD ["./main"]
 ```
-:::
 
+:::
 
 ## Utilisation de volumes
 
 1. Utiliser un point de montage (`bind mount`) pour monter un répertoire du système hôte à la création d'un conteneur :
-  + On utilisera l'image : `bash`.
-  + Créer un nouveau conteneur en lui liant un point de montage vers un répertoire du système hôte.
-  + Ajouter un fichier dans le répertoire hôte.
-  + Vérifier que le fichier est bien accessible au conteneur en se connectant sur celui-ci.
-2. Créer un volume dédié pour partager de la donnée entre deux conteneurs applicatifs :
-  + On utilisera l'image : `bash`.
-  + Créer un nouveau volume nommé grâce à la commande `docker volume create`.
-  + Créer deux conteneurs utilisant le volume nommé.
-  + Créer un fichier dans le point de montage du volume dans le premier conteneur.
-  + Vérifier que ce fichier est accessible dans le deuxième conteneur.
-  + Modifier le fichier dans le deuxième conteneur.
-  + Accéder au fichier dans le premier conteneur.
-  + Que remarquez-vous ?
+
+- On utilisera l'image : `bash`.
+- Créer un nouveau conteneur en lui liant un point de montage vers un répertoire du système hôte.
+- Ajouter un fichier dans le répertoire hôte.
+- Vérifier que le fichier est bien accessible au conteneur en se connectant sur celui-ci.
+1. Créer un volume dédié pour partager de la donnée entre deux conteneurs applicatifs :
+
+- On utilisera l'image : `bash`.
+- Créer un nouveau volume nommé grâce à la commande `docker volume create`.
+- Créer deux conteneurs utilisant le volume nommé.
+- Créer un fichier dans le point de montage du volume dans le premier conteneur.
+- Vérifier que ce fichier est accessible dans le deuxième conteneur.
+- Modifier le fichier dans le deuxième conteneur.
+- Accéder au fichier dans le premier conteneur.
+- Que remarquez-vous ?
 
 :::correction
-### Question 1.
+
+### Question 1
+
 ```sh
 # Ajouter un fichier dans C:\mon_repertoire_partage_windows
 # Créer le conteneur avec le répertoire partagé. On utilise le mode interactif ( `-it` ) pour rester dans le conteneur
@@ -352,7 +357,8 @@ docker run -it -v C:\mon_repertoire_partage_windows:/mon_repertoire_partage_linu
 ls /mon_repertoire_partage_linux
 ```
 
-### Question 2.
+### Question 2
+
 ```sh
 docker volume create mon_volume
 # Créer les 2 conteneurs utilisant le volume
@@ -363,27 +369,33 @@ echo 'salut' >> /mon_repertoire_partage_1/mon_fichier
 # Dans le 2e conteneur, affichage du fichier
 cat /mon_repertoire_partage_2/mon_fichier
 ```
+
 :::
 
 ## Gestion du réseau
 
 1. Créer un conteneur ne possédant pas d'accès réseau :
-  + On utilisera l'image : `bash`.
-  + Vérifier que le conteneur ne peut pas atteindre l'extérieur (`ping`)
-  + Vérifier que les autres conteneurs ne peuvent pas atteindre ce conteneur (`ping`)
-2. Créer un conteneur utilisant directement l'interface réseau de l'hôte :
-  + On utilisera l'image : `bash`.
-  + Vérifier dans le conteneur l'accès direct à l'interface réseau (`ip addr show`)
-  + Vérifier que le conteneur peut atteindre l'extérieur (`ping`)
-3. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
-  + On utilisera l'image : `bash`.
-  + Vérifier que les conteneurs peuvent communiquer entre eux
-4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
-  + On utilisera l'image : `nginx`.
-  + Vérifier que le service du conteneur est accessible depuis l'hôte à l'adresse : `http://localhost:8181`
+
+- On utilisera l'image : `bash`.
+- Vérifier que le conteneur ne peut pas atteindre l'extérieur (`ping`)
+- Vérifier que les autres conteneurs ne peuvent pas atteindre ce conteneur (`ping`)
+1. Créer un conteneur utilisant directement l'interface réseau de l'hôte :
+
+- On utilisera l'image : `bash`.
+- Vérifier dans le conteneur l'accès direct à l'interface réseau (`ip addr show`)
+- Vérifier que le conteneur peut atteindre l'extérieur (`ping`)
+1. Créer deux conteneurs pouvant communiquer entre eux mais pas avec l'extérieur
+
+- On utilisera l'image : `bash`.
+- Vérifier que les conteneurs peuvent communiquer entre eux
+1. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
+
+- On utilisera l'image : `nginx`.
+- Vérifier que le service du conteneur est accessible depuis l'hôte à l'adresse : `http://localhost:8181`
 
 :::correction
-### Question 1.
+
+### Question 1
 
 ```sh
 docker run -it --network none bash
@@ -409,7 +421,7 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 $ ping compassionate_neumann
 ```
 
-### Question 2.
+### Question 2
 
 ```console
 $ docker run -it --network host bash
@@ -476,13 +488,14 @@ ping conteneur1 # OK
 ping google.fr # KO
 ```
 
-### Question 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte :
+### Question 4. Créer un conteneur exposant son port 80 sur le port 8181 de l'hôte
 
 ```sh
 docker run -p 8181:80 nginx
 
 # Vérifier http://localhost:8181
 ```
+
 :::
 
 ## Interface utilisateur
@@ -522,16 +535,18 @@ Pour analyser l'image `test:v1` :
 ```sh
 docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive test:v1
 ```
+
 :::
 
-## Récupération des logs du conteneur 
+## Récupération des logs du conteneur
 
-Les programmes qui tournent dans un conteneur ne sont pas gérés intégralement par le système d'exploitation de l'hôte : il faut donc un système annexe pour, par exemple, récupérer les logs de conteneurs. 
+Les programmes qui tournent dans un conteneur ne sont pas gérés intégralement par le système d'exploitation de l'hôte : il faut donc un système annexe pour, par exemple, récupérer les logs de conteneurs.
 
 1. Comment les applications exposent-elles ces logs à Docker® ?
 2. Utiliser les commandes Docker® pour récupérer dynamiquement les logs des conteneurs en cours d'exécution.
 
 :::correction
+
 ```sh
 # Pour récupérer les logs actuels :
 docker logs mon_conteneur
@@ -539,16 +554,18 @@ docker logs mon_conteneur
 # Ou pour suivre dynamiquement (_follow_) les nouveaux logs :
 docker logs -f mon_conteneur
 ```
+
 :::
 
-## Limiter les ressources du conteneur 
+## Limiter les ressources du conteneur
 
-Docker® n'est pas un système de machines virtuelles à proprement parler, mais permet d'en simuler l'usage. Un des intérêts de la virtualisation est l'isolation des ressources, afin de ne pas perturber le reste du système. 
+Docker® n'est pas un système de machines virtuelles à proprement parler, mais permet d'en simuler l'usage. Un des intérêts de la virtualisation est l'isolation des ressources, afin de ne pas perturber le reste du système.
 
 1. Utiliser les commandes Docker® pour limiter les ressources disponibles pour un conteneur.
 2. Quelle est la bonne pratique pour changer les ressources disponibles d'un conteneur en cours d'exécution ?
 
 :::correction
+
 ```sh
 docker run --memory="1g" --cpus=".5" mon_image
 ```
@@ -567,16 +584,18 @@ Docker® est très utile pour tester sur sa machine des exécutions proches d'un
 1. Utiliser l'image `nginx` pour servir du contenu Web statique depuis le répertoire courant.
 
 :::correction
+
 ```sh
 # $PWD est la variable décrivant le chemin absolu du répertoire courant.
 # On peut aussi fournir directement un autre répertoire sur le système hôte (Windows, …)
 docker run --rm -d -v "${PWD}:/usr/share/nginx/html" -p 8080:80 nginx
 ```
+
 :::
 
-### Utiliser la même version des outils partagés par l'équipe à travers Docker® 
+### Utiliser la même version des outils partagés par l'équipe à travers Docker®
 
-Docker® peut être utilisé pour partager un outil à l'ensemble de l'équipe projet, et ainsi garantir d'utiliser exactement le même environnement. Cela est aussi utile pour utiliser des programmes initialement écrits pour un autre système d'exploitation (majoritairement Linux). 
+Docker® peut être utilisé pour partager un outil à l'ensemble de l'équipe projet, et ainsi garantir d'utiliser exactement le même environnement. Cela est aussi utile pour utiliser des programmes initialement écrits pour un autre système d'exploitation (majoritairement Linux).
 
 1. Créer une image Docker® depuis un système Alpine et contenant l'utilitaire `tar`.
 2. Utiliser l'image créée pour partager la même version de `tar` et créer une archive d'un fichier sur l'hôte. On utilisera la commande : `tar czf mon_archive.tgz mon_fichier_à_archiver.txt`
@@ -584,6 +603,7 @@ Docker® peut être utilisé pour partager un outil à l'ensemble de l'équipe p
 4. Utiliser cette même image pour extraire le contenu de l'archive : `tar xzvf mon_archive.tgz`
 
 :::correction
+
 ```sh
 # Création de l'image : on crée un Dockerfile (ou avec un éditeur de texte)
 cat << EOF > Dockerfile
@@ -610,6 +630,7 @@ docker run --rm -v ${PWD}:/archive mon-archiver:1.0 tzvf mon_archive.tgz mon_fic
 # Extraction du contenu de l'archive : "tar xzvf mon_archive.tgz"
 docker run --rm -v ${PWD}:/archive mon-archiver:1.0 xzvf mon_archive.tgz mon_fichier.txt
 ```
+
 :::
 
 ### Un LLM local avec Ollama

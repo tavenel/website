@@ -3,7 +3,7 @@ title: Déploiement Multi-Host avec Docker Swarm
 date: 2025 / 2026
 type: tp
 sidebar:
-  order: 250
+  order: 108
 description: Déploiement Multi-Host avec Docker Swarm
 ---
 ## Objectifs pédagogiques

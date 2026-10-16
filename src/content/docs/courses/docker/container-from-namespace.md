@@ -3,7 +3,7 @@ title: Créer un conteneur en utilisant les namespace Linux
 date: 05/06/2025
 type: cours
 sidebar:
-  order: 800
+  order: 3
 description: Créer un conteneur en utilisant les namespace Linux
 ---
 ## Schéma réseau des namespace
@@ -96,14 +96,18 @@ flowchart LR
 - `nsenter -a -t <pid_of_container>` : enter a namespace
 - Inside a namespace :
   - `ls -l /proc/$$/ns`
+
   ```sh
-	cat /proc/$$/uid_map
+ cat /proc/$$/uid_map
         0       1000       1
-	```
+ ```
+
   This file represents the following mapping of user UIDs :
+
   ```
-	ID-inside-ns      ID-outside-ns      range (number of users to map)
+ ID-inside-ns      ID-outside-ns      range (number of users to map)
   ```
+
 - On host :
   - `ls -l /proc/$PID/ns/`
 
@@ -242,4 +246,3 @@ $ curl localhost:80
 […]
 <h1>Welcome to nginx!</h1>
 ```
-

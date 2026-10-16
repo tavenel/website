@@ -3,7 +3,7 @@ title: Optimisation des layers d'une image Docker
 date: 2025 / 2026
 type: tp
 sidebar:
-  order: 250
+  order: 104
 description: Optimisation des layers d'une image Docker
 ---
 Vous travaillez dans une équipe DevOps. Une application Node.js doit être conteneurisée, mais le Dockerfile fourni est mal optimisé. Votre mission : **analyser, comprendre et améliorer cette image**.

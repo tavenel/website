@@ -5,7 +5,7 @@ tags:
 - docker
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: Docker et docker-compose
 ---
 ```mermaid
@@ -163,7 +163,7 @@ _Docker®_ 🐳
 
 ### 🏗️ Virtualisation forte
 
-| 🌟 Avantages | Inconvénients ❌|
+| 🌟 Avantages | Inconvénients ❌ |
 | --- | --- |
 | Grande indépendance par rapport à l'hyperviseur | Consomme beaucoup de ressources |
 | Isolation forte voire totale | Performances réduites : temps de démarrage, virtualisation des appels systèmes, ... |
@@ -173,7 +173,7 @@ _Docker®_ 🐳
 
 ### 🐳 Paravirtualisation (conteneurs)
 
-| 🌟 Avantages | Inconvénients ❌|
+| 🌟 Avantages | Inconvénients ❌ |
 | --- | --- |
 | Impact quasi nul sur les performances | Proche du système d'exploitation hôte |
 | | Isolation faible |

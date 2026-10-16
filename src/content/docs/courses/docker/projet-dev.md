@@ -3,7 +3,7 @@ title: Projet Dockerisation d'un Projet Multi-Composants
 date: 2023 / 2024
 type: projet
 sidebar:
-  order: 500
+  order: 202
 description: Projet Dockerisation d'un Projet Multi-Composants
 ---
 # Dockerisation d'un Projet Multi-Composants
@@ -33,4 +33,3 @@ De nombreux projets modernes sont constitués de plusieurs services interconnect
 - K8s® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Podman® is a registered trademark of The Linux Foundation in the United States and/or other countries.
 - Helm® is a registered trademark of The Linux Foundation in the United States and/or other countries.
-

@@ -3,7 +3,7 @@ title: TP Docker,docker-compose
 date: 2023 / 2024
 type: projet
 sidebar:
-  order: 500
+  order: 201
 description: TP Docker,docker-compose
 ---
 ## Présentation de l'application
@@ -28,7 +28,7 @@ Pour permettre ce déploiement, il faudra donc :
 
 - Dans un second temps, déployer la même stack applicative dans `kubernetes`. On privilégiera l'utilisation de fichiers de configuration `Yaml` ou `Json` et on utilisera `kubectl` uniquement pour appliquer ces fichiers (et non pour configurer directement les `pod`).
 
-## Rendu attendu 
+## Rendu attendu
 
 - Les 4 `Dockerfile`.
 - Le fichier `docker-compose.yml`.

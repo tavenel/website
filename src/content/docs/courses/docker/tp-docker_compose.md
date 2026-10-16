@@ -3,7 +3,7 @@ title: Gestion de services avec docker compose
 date: 2024 / 2025
 type: tp
 sidebar:
-  order: 250
+  order: 102
 description: Gestion de services avec docker compose
 ---
 Nous allons maintenant utiliser l'outil `docker compose` pour créer, configurer et démarrer une stack `WordPress®` complète contenant un conteneur applicatif `WordPress®` et un conteneur `MySQL®`.
@@ -29,8 +29,8 @@ Le conteneur `Wordpress®` :
 - dépend du conteneur `MySQL®` (on utilisera l'attribut `depends_on`)
 - expose son port 80 sur un port du système hôte
 - définit les variables d'environnement suivants :
-   - `WORDPRESS_DB_HOST: db:3306`
-   - `WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `WORDPRESS_DB_NAME` cohérentes avec les variables d'environnement du conteneur `MySQL®`
+  - `WORDPRESS_DB_HOST: db:3306`
+  - `WORDPRESS_DB_USER`, `WORDPRESS_DB_PASSWORD`, `WORDPRESS_DB_NAME` cohérentes avec les variables d'environnement du conteneur `MySQL®`
 
 Nous ajouterons la configuration `restart: always` à tous les services pour redémarrer automatiquement les conteneurs en cas d'arrêt ou de crash.
 
@@ -87,15 +87,19 @@ La CLI `docker compose` est basée sur la CLI `docker` pour être au maximum com
 :::
 
 :::exo
+
 1. Démarrer la stack `docker compose`.
 2. En utilisant `docker compose` et simplement `docker`, afficher les conteneurs, les volumes et le réseau créés.
+
 :::
 
 ## Réseau docker-compose
 
 :::tip
+
 - Tout comme _Docker_ crée un enregistrement _DNS_ par nom de conteneur, _Docker compose_ crée un enregistrement _DNS_ par nom de _Service_ : ainsi dans l'exemple précédent, le _Service_ `wordpress` peut joindre le _Service_ `db`, même si les conteneurs n'ont pas le même nom.
 - Par défaut, un fichier `compose.yml` crée automatiquement un réseau de type `bridge` pour l'ensemble des services dans ce fichier.
+
 :::
 
 Cette configuration n'est souvent pas suffisante, et l'on préfère définir explicitement les réseaux à utiliser.
@@ -137,7 +141,7 @@ Le paramètre `depends_on:` est utilisée pour spécifier les dépendances (et d
 
 ## Scaling de services
 
-Récupérer l'excellent support de formation de _Jérôme Petazzoni_ : 
+Récupérer l'excellent support de formation de _Jérôme Petazzoni_ :
 
 ```sh
 git clone https://github.com/jpetazzo/container.training.git
@@ -146,8 +150,10 @@ git clone https://github.com/jpetazzo/container.training.git
 Dans ce dépôt git se trouve le programme `dockercoins` : ce programme simule un miner de _docker coins_ qui est proportionnel au nombre de _workers_ déployés.
 
 :::exo
+
 1. Utiliser la commande `docker compose up` pour démarrer la stack applicative. Inspecter le fichier `docker-compose.yml` pour trouver comment accéder à l'interface Web du projet sur votre machine.
 2. En utilisant une commande `docker compose`, réaliser un _scaling_ des `workers`. Observer dans la différence dans l'interface Web.
+
 :::
 
 ## Dockeriser une application

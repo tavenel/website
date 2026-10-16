@@ -3,7 +3,7 @@ title: TP DevContainers
 date: 2024 / 2025
 type: tp
 sidebar:
-  order: 250
+  order: 106
 description: TP DevContainers
 ---
 # TP Docker - Environnement de Développement avec DevContainers
@@ -30,12 +30,13 @@ Un `DevContainer` est un environnement de développement personnalisé et isolé
 
 - Créer le dossier `.devcontainer/` à la racine du projet.
 - Créer un fichier `devcontainer.json` avec les éléments suivants :
-   - L'image Docker à utiliser (par exemple, `node:16`).
-   - Les options de montage de volume pour synchroniser le code source avec le conteneur.
-   - Les configurations pour exécuter automatiquement l'installation des dépendances (`npm install`).
-   - Les paramètres d'ouverture de port pour accéder à l'application via localhost.
+  - L'image Docker à utiliser (par exemple, `node:16`).
+  - Les options de montage de volume pour synchroniser le code source avec le conteneur.
+  - Les configurations pour exécuter automatiquement l'installation des dépendances (`npm install`).
+  - Les paramètres d'ouverture de port pour accéder à l'application via localhost.
 
 Exemple de fichier `devcontainer.json` :
+
 ```json
 {
   "name": "Node.js Dev Container",
@@ -125,4 +126,3 @@ Exemple de fichier `devcontainer.json` utilisant le service `app` et le `docker-
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
-

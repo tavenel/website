@@ -3,7 +3,7 @@ title: Conteneurisation d'une application multi-composants
 date: 2025 / 2026
 type: tp
 sidebar:
-  order: 250
+  order: 103
 description: Conteneurisation d'une application multi-composants
 ---
 ## Objectifs pédagogiques

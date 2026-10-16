@@ -3,7 +3,7 @@ title: Docker buildx
 date: 2025 / 2026
 type: tp
 sidebar:
-  order: 250
+  order: 105
 description: Docker buildx
 ---
 ## 🎯 Objectifs pédagogiques
@@ -21,11 +21,14 @@ Vous devez avoir Docker 19.03+ pour `buildx`.
 :::
 
 :::exo
+
 1. Vérifier la version de Buildx
 2. Créer un builder dédié avec build multi-arch
+
 :::
 
 :::correction
+
 ### Vérifier la version de Docker
 
 ```sh
@@ -66,6 +69,7 @@ CMD cat /message.txt
 ```
 
 :::correction
+
 - Commande de build et push :
 
 ```sh
@@ -87,9 +91,11 @@ docker buildx imagetools inspect "<compte_docker>/hello-multi:1.0"
 ## Utilisation du cache de build
 
 :::exo
+
 1. Ajouter une étape lente dans le Dockerfile (voir ci-dessous)
 2. Réaliser un 1er build avec cache exporté
 3. Relancer le même build : celui-ci doit être quasi instantané.
+
 :::
 
 ```dockerfile
@@ -101,6 +107,7 @@ RUN sleep 5 && echo "Cache test"
 ```
 
 :::correction
+
 ```sh
 docker buildx build \
   --platform linux/amd64 \
@@ -109,6 +116,7 @@ docker buildx build \
   --cache-from=type=local,src=.buildxcache \
   --load .
 ```
+
 :::
 
 ## Build avec secrets
@@ -123,19 +131,22 @@ RUN echo "API Key: $(cat /run/secrets/api_key)"
 ```
 
 :::exo
+
 1. Créer un fichier secret
 2. Builder l'image avec le fichier secret
 3. Tester
+
 :::
 
 :::correction
+
 1. Créer un fichier secret :
 
 ```sh
 echo "super_secret_token_123" > my_api_key.txt
 ```
 
-2. Builder l'image avec le fichier secret :
+1. Builder l'image avec le fichier secret :
 
 ```dockerfile
 # Dockerfile
@@ -153,7 +164,7 @@ docker buildx build \
   --load .
 ```
 
-3. Tester
+1. Tester
 
 ```sh
 docker run --rm secret-demo:1.0
@@ -161,4 +172,3 @@ docker run --rm secret-demo:1.0
 
 ✅ Le secret est affiché à l'exécution mais absent de l'image en inspection et de `docker history`.
 :::
-
