@@ -119,7 +119,7 @@ export default defineConfig({
 			defaultLocale: 'fr',
 			sidebar: [
 				{ label: 'Pages', items: [{ autogenerate: { directory: 'pages' } }] },
-				{ label: 'Tracks', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
+				{ label: 'Écoles', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
 				{ label: 'Cours', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
 			],
 			social: [],
