@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: GlusterFS - Système de fichiers distribué
 type: cours
 sidebar:
-  order: 3
+  order: 4
 description: GlusterFS - Système de fichiers distribué
 ---
 ## GlusterFS

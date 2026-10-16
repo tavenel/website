@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: iSCSI
 type: cours
 sidebar:
-  order: 4
+  order: 5
 description: iSCSI
 ---
 ## 🧠 Comprendre iSCSI
@@ -14,7 +14,7 @@ Il permet de connecter un **client (Initiator)** à un **serveur de stockage (Ta
 ## Concepts fondamentaux
 
 | Élément | Description |
-|----------|--------------|
+| ---------- | -------------- |
 | **Initiator** | Machine cliente qui accède au stockage distant. |
 | **Target** | Serveur qui héberge les volumes partagés (LUNs). |
 | **LUN (Logical Unit Number)** | Unité logique de stockage exposée par la target. |
@@ -32,14 +32,15 @@ Il permet de connecter un **client (Initiator)** à un **serveur de stockage (Ta
 ## Avantages et inconvénients
 
 **Avantages :**
+
 - Utilise l'infrastructure réseau existante (TCP/IP).
 - Solution économique comparée à la fibre optique (Fibre Channel).
 - Compatible avec de nombreux OS.
 
 **Inconvénients :**
+
 - Dépend des performances du réseau.
 - Peut introduire de la latence.
 - Nécessite une gestion soignée de la sécurité (authentification CHAP, isolation VLAN).
 
 ---
-

@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: NFS - Network File System
 type: cours
 sidebar:
-  order: 5
+  order: 6
 description: NFS - Network File System
 ---
 ## NFS
@@ -18,6 +18,7 @@ description: NFS - Network File System
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [Configuring an NFS Server](https://lpic2book.github.io/src/lpic2.209.2/)
+
 :::
 
 ---
@@ -99,4 +100,3 @@ Grâce à Kerberos et à l'utilisation d'un port unique, NFS v4 est plus sécuri
 :::
 
 ---
-

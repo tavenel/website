@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: DAS vs NAS vs SAN
 type: cours
 sidebar:
-  order: 2
+  order: 3
 description: DAS vs NAS vs SAN
 ---
 - **DAS** (*Direct Attached Storage*) : solution de stockage directement connectée à un serveur
@@ -15,7 +15,7 @@ description: DAS vs NAS vs SAN
 - **SAN** (*Storage Area Network*) : **infrastructure réseau dédiée au stockage**
   - **Fibre Channel**, **iSCSI**
   - **Accès au niveau bloc** à haute performance et haute disponibilité
-	- **Datacenters** et environnements virtualisés.
+   	- **Datacenters** et environnements virtualisés.
 
 ---
 
@@ -60,7 +60,6 @@ graph LR
 
 ---
 
-
 | **Critère**                    | **DAS** *(Direct Attached Storage)*                               | **NAS** *(Network Attached Storage)*               | **SAN** *(Storage Area Network)*                                      |
 | ------------------------------ | ----------------------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------- |
 | **Type de connexion**          | Directe au serveur via USB, SATA, SCSI                            | Réseau local (Ethernet)                            | Réseau dédié au stockage (Fibre Channel, iSCSI)                       |
@@ -79,4 +78,3 @@ graph LR
 | **Inconvénient principal**     | Non partageable                                                   | Performances limitées par le réseau                | Coût et complexité de gestion                                         |
 
 ---
-

@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Stockage Distribué avec Ceph
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: Stockage Distribué avec Ceph
 ---
 ## Ceph

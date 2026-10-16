@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: ZFS
 type: cours
 sidebar:
-  order: 6
+  order: 7
 description: ZFS
 ---
 ## Présentation
