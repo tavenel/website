@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Projet Scrum
 type: projet
 sidebar:
-  order: 1
+  order: 201
 description: Projet Scrum
 ---
 # Méthode Agile Scrum
@@ -72,4 +72,3 @@ On pourra également utiliser l'outil EasyRetro : <https://easyretro.io/>
 - GitLab is a registered trademark of GitLab Inc.
 - GITHUB is a trademark of GitHub, Inc., registered in the United States and other countries.
 - Grafana® is a registered trademark of Raintank, Inc. dba Grafana Labs ("Grafana Labs").
-
