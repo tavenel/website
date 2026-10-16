@@ -2,7 +2,7 @@
 title: TP Space Invaders
 type: tp
 sidebar:
-  order: 250
+  order: 106
 description: TP Space Invaders
 ---
 # TP Space Invaders
@@ -10,7 +10,7 @@ description: TP Space Invaders
 ## Espace de jeu
 
 Définir en Python une classe `Space` dont le constructeur fournit 2 attributs aux instances de cette classe : `nb_l`, et `nb_c` de type entiers, et signifiant les nombres de lignes et de colonnes de l'espace de jeu.
- 
+
 ## Affichage de la grille
 
 Ajouter à cette définition de classe un attribut d'objet `grille`: une liste initialement vide. Écrire, dans le constructeur de la classe, à l'aide de deux boucles `for ... in ...` imbriquées, un algorithme permettant d'initialiser la grille comme une tableau de `nb_l` lignes et `nb_c` colonnes. Les cellules du tableau contiennent initialement un unique caractère `" "` (espace).
@@ -31,7 +31,6 @@ sa grille vaudra :
 ## Invaders
 
 Définir en Python une classe `Invader` dont le constructeur déclare l'attribut `c` permettant de spécifier le type d'envahisseur. Ce sera un simple caractère, qui vaudra `#` par défaut.
- 
 
 ## Affichage d'un invader
 
@@ -44,7 +43,7 @@ Par exemple, à l'issue de l'instanciation d'un envahisseur, on pourra l'affiche
 >>> str(i)
 #
 ```
- 
+
 ## Envahisseurs dans la grille
 
 On souhaite faire apparaitre en haut de l'espace une ligne d'envahisseurs !
@@ -91,7 +90,7 @@ L'espace de jeu doit à présent avoir cette apparence :
 |          |
 └──────────┘
 ```
- 
+
 ## Tir
 
 Ajouter à la classe `Space` une méthode `tirer` qui permet de lancer un missile depuis le sol, à partir d'une position donnée. Le missile traverse alors l'espace de jeu jusqu'à toucher un envahisseur (On utilisera la fonction `time.sleep` pour ralentir l'affichage au fur et à mesure que le missile monte).
@@ -154,7 +153,7 @@ L'espace de jeu prend les apparences successives suivantes :
 |          |
 └──────────┘
 ```
- 
+
 ## Objet canon
 
 1. Créer une classe `Canon`, représentant le canon qui tire les missiles depuis le sol. Le canon possède un attribut `pos`, qui mémorise sa position dans la grille. Ne pas oublier de lui donner une méthode `__repr__` !
@@ -192,6 +191,7 @@ Ajouter un attribut `score` à la classe `Space`, l'incrémenter à chaque destr
 Faire descendre les envahisseurs progressivement au cours de la partie (un à un ou en bloc) : le jeu doit rester jouable !!
 
 :::correction
+
 # Correction
 
 ```python
@@ -385,5 +385,5 @@ if __name__ == '__main__':
         invaders_timer=8
         ).play()
 ```
-:::
 
+:::

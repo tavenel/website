@@ -3,7 +3,7 @@ title: Partie pratique - Django
 date: 2023 / 2024
 type: cours
 sidebar:
-  order: 800
+  order: 101
 description: Partie pratique - Django
 ---
 # Disclamer
@@ -40,7 +40,7 @@ Nous utiliserons donc un [venv](https://docs.python.org/fr/3/library/venv.html) 
 Pour créer un environment virtuel sous Linux :
 
 ```sh
-$ python -m venv chemin\vers\le\nouveau\repertoire\du\venv
+python -m venv chemin\vers\le\nouveau\repertoire\du\venv
 ```
 
 Ou sous Windows :
@@ -57,7 +57,7 @@ Il faut ensuite, **dans chaque terminal ouvert par la suite pour notre projet**,
 Par exemple sous Linux / Mac :
 
 ```sh
-$ source /path/to/new/virtual/environment/bin/activate
+source /path/to/new/virtual/environment/bin/activate
 ```
 
 Ou sous Windows (`cmd`) :
@@ -75,9 +75,11 @@ C:\> C:\path\to\myenv\Scripts\Activate.ps1
 :::
 
 :::link
+
 - Il est aussi possible d'utiliser `VSCode` pour générer directement l'environnement virtuel : <https://code.visualstudio.com/docs/python/environments>
 
 - Voir aussi ce lien pour intégrer finement Django à `VSCode` : <https://code.visualstudio.com/docs/python/tutorial-django>
+
 :::
 
 ## Installation de Django
@@ -85,13 +87,13 @@ C:\> C:\path\to\myenv\Scripts\Activate.ps1
 `Django` peut maintenant être installé dans l'environnement virtuel activé précédemment :
 
 ```sh
-$ python -m pip install django
+python -m pip install django
 ```
 
-L'installation peut être vérifiée par la commande : 
+L'installation peut être vérifiée par la commande :
 
 ```sh
-$ python -m django --version
+python -m django --version
 ```
 
 ## Génération de l'environnement de développement
@@ -105,9 +107,9 @@ python -m django startproject <mon_projet>
 Cette commande crée un nouveau répertoire `mon_projet` (le **projet**) avec :
 
 - un sous-répertoire `mon_projet` contenant les fichiers :
-  + `settings.py` : paramètres du site web : configurations et variables globales et gestion des **applications** ;
-  + `urls.py` : gestion des routes (en principe, redirection vers des applications gérant leurs propres routes) ;
-  + `wsgi.py` : interface avec le serveur Web (interne).
+  - `settings.py` : paramètres du site web : configurations et variables globales et gestion des **applications** ;
+  - `urls.py` : gestion des routes (en principe, redirection vers des applications gérant leurs propres routes) ;
+  - `wsgi.py` : interface avec le serveur Web (interne).
 - un script `manage.py` qui servira de version locale de `django-admin` pour ce projet. C'est donc ce script qui remplacera de préférence les commandes `django-admin` dans la suite.
 
 :::warn
@@ -215,7 +217,6 @@ classDiagram
 ```
 
 _Le diagramme de classes du modèle. Source et crédits : <https://github.com/mdn/django-locallibrary-tutorial>_
-
 
 # L'application catalog
 
@@ -348,6 +349,7 @@ urlpatterns = [
     ...
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ```
+
 :::
 
 :::warn
@@ -436,6 +438,7 @@ On utilisera comme valeurs :
         ('r', 'Reserved'),
     )
 ```
+
 :::
 
 :::warn
@@ -466,6 +469,7 @@ class MyModelName(models.Model):
         """Représentation de MyModelName (Admin site etc.)."""
         return self.my_field_name
 ```
+
 ## Types de champs
 
 :::tip
@@ -474,18 +478,21 @@ Principaux type de champs :
 - `CharField` : chaîne de caractères (argument `max_length` obligatoire) ;
 - `TextField` : texte de longueur variable dans la base de données ;
 - `IntegerField` : nombre entier ;
-  + `AutoField` : clé primaire `IntegerField` qui s'auto-incrémente - créé automatiquement en l'absence de clé primaire (`id`).
+  - `AutoField` : clé primaire `IntegerField` qui s'auto-incrémente - créé automatiquement en l'absence de clé primaire (`id`).
 - `DateField` et `DateTimeField` : date et heure :
-  + `auto_now=True` : créé au moment de la sauvegarde ;
-  + `auto_now_add=True` : créé avec la création de l'objet ;
-  + `default` : valeur par défaut.
+  - `auto_now=True` : créé au moment de la sauvegarde ;
+  - `auto_now_add=True` : créé avec la création de l'objet ;
+  - `default` : valeur par défaut.
 - `EmailField` ;
 - `FileField` et `ImageField`.
+
 :::
 
 :::link
+
 - Pour une liste des types de champs disponibles en Django, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#field-types).
 - Pour plus d'information sur les types énumérés, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#enumeration-types).
+
 :::
 
 ## Arguments des champs
@@ -500,6 +507,7 @@ Principaux arguments des champs à persister :
 - `blank`: si `True`, peut ne pas être saisi. Défaut : `False`.
 - `choices`: liste de choix possible ;
 - `primary_key`: si `True` le champ est une clé primaire.
+
 :::
 
 :::link
@@ -522,6 +530,7 @@ class Meta:
 
   verbose_name = 'BetterName' # UFN du modèle
 ```
+
 :::
 
 :::link
@@ -578,12 +587,13 @@ Pour rechercher un enregistrement avec des conditions sur un champ, on utilise l
 Principaux filtres :
 
 - `contains`
-  + `icontains` : idem mais insensible à la casse
+  - `icontains` : idem mais insensible à la casse
 - `exact`
-  + `iexact` : idem mais insensible à la casse
+  - `iexact` : idem mais insensible à la casse
 - `in` : dans l'ensemble
 - `gt` : plus grand que
 - `startswith`
+
 :::
 
 :::link
@@ -596,6 +606,7 @@ Le double `__` est aussi utilisé pour parcourir le modèle UML, par exemple pou
 ```python
 books_containing_genre = Book.objects.filter(genre__name__icontains='fiction')
 ```
+
 :::
 
 ## Data model de la bibliothèque
@@ -609,6 +620,7 @@ Pour les relations entre data classes, on utilisera en premier paramètre :
 
 - une chaîne de caractères si la classe destination n'a pas encore été définie en Python : `author = models.ForeignKey('Author', ...)` ;
 - la référence vers la classe elle-même si celle-ci a déjà été définie : `author = models.ForeignKey(Author, ...)`.
+
 :::
 
 :::tip
@@ -623,6 +635,7 @@ import uuid
 
 id = models.UUIDField(primary_key=True, default=uuid.uuid4, ...
 ```
+
 :::
 
 ## Appliquer les modifications en base
@@ -701,7 +714,7 @@ class BookAdmin(admin.ModelAdmin):
     # Filtres sur les champs dans la vue d'administration de listing
     list_filter = ('title', 'author') 
     # Champs présents pour les vues création / édition d'administration.
-	# 1 ligne par n-uplet (a, b, ...)
+ # 1 ligne par n-uplet (a, b, ...)
     fields = [('title', 'ISBN'), 'author', ... 
 ```
 
@@ -730,6 +743,7 @@ class Book:
 
     display_genre.short_description = 'Genre'
 ```
+
 :::
 
 ### Utilisation des fieldsets
@@ -842,6 +856,7 @@ Ce code est équivalent au code ci-dessous mais est plus robuste en cas de chang
 ```html
 <a href="/catalog/">Home</a>
 ```
+
 :::
 
 ## Vue
@@ -1009,13 +1024,13 @@ from django.views import generic
 class BookListView(generic.ListView):
     model = Book
 
-	''' tout le reste ci-dessous est optionnel '''
+ ''' tout le reste ci-dessous est optionnel '''
 
     # pagination : /catalog/books/?page=2
     paginate_by = 10
 
     # nom de la variable dans le template - par défaut book_list
-	context_object_name = 'my_book_list'
+ context_object_name = 'my_book_list'
 
     # redéfinit la liste à afficher - par défaut tous les objets
     queryset = Book.objects.filter(title__icontains='war')[:5]
@@ -1143,6 +1158,7 @@ Le lien vers l'auteur dans le template ci-dessus est vide, parce que nous n'avon
 ```html
 <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a>
 ```
+
 :::
 
 :::exo
@@ -1240,7 +1256,7 @@ class RenewBookForm(forms.Form):
 
   def clean_renewal_date(self):
     
-	# Récupération des données du formulaire
+ # Récupération des données du formulaire
     data = self.cleaned_data['renewal_date']
 
     # Vérifier que la date ne se situe pas dans le passé.
@@ -1276,14 +1292,14 @@ from catalog.models import BookInstance
 class RenewBookModelForm(ModelForm):
   def clean_due_back(self):
     # idem mais avec `due_back` au lieu de `renewal_date`
-	# car on utilise directement le champ de `BookInstance`.
-	...
+ # car on utilise directement le champ de `BookInstance`.
+ ...
 
   class Meta:
     model = BookInstance
     fields = ['due_back']
 
-	''' optionel '''
+ ''' optionel '''
     labels = {'due_back': _('New renewal date')}
     help_texts = {'due_back': _('Enter a date between now and 4 weeks (default 3).')}
 ```
@@ -1310,13 +1326,13 @@ def renew_book_librarian(request, pk):
   if request.method == 'POST':
 
     # Créer une instance de formulaire et la peupler
-	# avec des données récupérées dans la requête (liaison) :
+ # avec des données récupérées dans la requête (liaison) :
     form = RenewBookForm(request.POST)
 
     # Vérifier que le formulaire est valide :
     if form.is_valid():
       # Traiter les données dans form.cleaned_data tel que requis
-	  # (ici on les écrit dans le champ de modèle due_back) :
+   # (ici on les écrit dans le champ de modèle due_back) :
       book_instance.due_back = form.cleaned_data['renewal_date']
       book_instance.save()
 
@@ -1489,6 +1505,7 @@ Il faut dans ce cas forcer la mise à jour de la session :
 request.session['my_car']['roues'] = 'aluminium'
 request.session.modified = True
 ```
+
 :::
 
 ## Documentation
@@ -1516,14 +1533,18 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 ## Déploiement en production
 
 :::link
+
 - Pour apprendre à configurer une application `Django` pour la production et comment la déployer, [suivre le tutoriel developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment).
 - Voir aussi le tutoriel : <https://zestedesavoir.com/tutoriels/2213/deployer-une-application-django-en-production/>
+
 :::
 
 ## Gestion du cache
 
 :::link
+
 - Pour apprendre à gérer le cache, voir le tutoriel : <https://zestedesavoir.com/tutoriels/1295/mise-en-cache-intelligente-avec-django/>
+
 :::
 
 # Legal
@@ -1532,8 +1553,7 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 - Git and the Git logo are either registered trademarks or trademarks of Software Freedom Conservancy, Inc., corporate home of the Git Project, in the United States and/or other countries
 - Oracle and MySQL are registered trademarks of Oracle and/or its affiliates.
 - "Python" is a registered trademark of the PSF. The Python logos (in several variants) are use trademarks of the PSF as well. ®
-- Django is a registered trademark of the Django Software Foundation. 
+- Django is a registered trademark of the Django Software Foundation.
 - PyCharm is a trademark or registered trademark of JetBrains, s.r.o.
 - SQLite is in the [Public Domain](https://www.sqlite.org/copyright.html)
 - Ce sujet de TP est fortement inspiré du [tutoriel de Mozilla](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Tutorial_local_library_website) sous license CC-BY-SA 2.5
-

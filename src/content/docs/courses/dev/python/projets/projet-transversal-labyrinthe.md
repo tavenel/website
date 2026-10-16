@@ -3,7 +3,7 @@ title: SN1 EPSI - Projet transversal - Labyrinthe
 date: 2023 / 2024
 type: projet
 sidebar:
-  order: 500
+  order: 203
 description: SN1 EPSI - Projet transversal - Labyrinthe
 ---
 # Projet transversal - le labyrinthe du Minotaure
@@ -113,4 +113,3 @@ Le rendu devra également inclure le rendu du **produit**, c'est-à-dire un **li
 - un document d'installation ;
 - un manuel utilisateur.
 - un programme exécutable (et non un simple fichier Python) : voir <https://www.pyinstaller.org/> par exemple.
-

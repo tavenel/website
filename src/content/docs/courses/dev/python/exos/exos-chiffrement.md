@@ -2,7 +2,7 @@
 title: Exercices Python - chiffrement
 type: exo
 sidebar:
-  order: 600
+  order: 103
 description: Exercices Python - chiffrement
 ---
 ## Code de César
@@ -19,6 +19,7 @@ En utilisant les fonctions : `ord(chr) -> int` pour récupérer l'ordinal d'un c
 On pourra utiliser les fonctions : `isalpha()`, `isupper()`, `islower()` de la classe `Character`.
 
 :::correction
+
 ```python
 def chiffre_cesar(texte, decalage):
     texte_chiffre = ""
@@ -51,6 +52,7 @@ print("Texte chiffré:", texte_chiffre)
 texte_dechiffre = dechiffre_cesar(texte_chiffre, decalage_utilise)
 print("Texte déchiffré:", texte_dechiffre)
 ```
+
 :::
 
 ## Chiffre de Vernam
@@ -61,6 +63,7 @@ Le code de César n'est pas très robuste à une analyse statistique du texte, e
 2. Écrire une fonction `dechiffre_vernam(code, permutations)` qui réalise l'opération inverse.
 
 :::correction
+
 ```python
 def chiffre_vernam(texte, permutations):
     texte_chiffre = ""
@@ -97,6 +100,7 @@ print("Texte chiffré (Vernam):", texte_chiffre_vernam)
 texte_dechiffre_vernam = dechiffre_vernam(texte_chiffre_vernam, permutations_utilisees)
 print("Texte déchiffré (Vernam):", texte_dechiffre_vernam)
 ```
+
 :::
 
 ## Fonction de hachage
@@ -108,6 +112,7 @@ Une fonction de hachage est une fonction qui permet de projeter un ensemble comp
 3. Calculer le `hash` des instances : `A(1, 0.1, 'hello')`, `B(2, 0.8, 'world')`, `C(2, 0.9, 'here')`. Que remarquez-vous ? (Écrire la réponse en commentaire dans le code de l'exercice).
 
 :::correction
+
 ```python
 class MaClasse:
     def __init__(self, identifiant, index, donnees):
@@ -139,5 +144,5 @@ print("Hash de C:", hash_C)
 # ce qui signifie que les instances B et C auront le même hash.
 # Ceci peut causer des collisions dans un contexte où des valeurs distinctes ont le même hash.
 ```
-:::
 
+:::

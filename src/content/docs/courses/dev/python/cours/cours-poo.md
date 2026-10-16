@@ -5,12 +5,13 @@ tags:
 - python
 type: cours
 sidebar:
-  order: 2
+  order: 4
 description: Cours programmation orientée objet
 ---
 ## Classes
 
 Une déclaration de classe est un morceau de code standard et est **exécutée**.
+
 - La déclaration de classe peut être faite n'importe où
 - Le code dans la classe peut être n'importe quoi (fonctions, code exécuté, ...)
 
@@ -221,8 +222,8 @@ o.affiche2()
   - cherche `B.affiche1()` : X
   - cherche `A.affiche1()` : OK
     `self.__fonction_locale()` :
-      - remplacé par `A.__fonction_locale()`
-      - cherche `A.__fonction_locale()` : OK => i=1
+    - remplacé par `A.__fonction_locale()`
+    - cherche `A.__fonction_locale()` : OK => i=1
 
 ---
 
@@ -230,11 +231,12 @@ o.affiche2()
 >>> o.affiche2()
 2
 ```
+
 - `self.affiche2()` : (`self` <= `B`)
   - cherche `B.affiche2()` : X
   - cherche `A.affiche2()` : OK
     `self.fonction_publique()` :
-      - cherche `B.fonction_publique()` : OK => `x=2`
+    - cherche `B.fonction_publique()` : OK => `x=2`
 
 ---
 
@@ -354,6 +356,7 @@ print( c.cri() ) # NotImplementedError(...)
 ### Python ABC
 
 Il existe d'autres méthodes plus complexes pour implémenter des interfaces plus formellement :
+
 - l'utilisation de classes abstraites via la librairie _Abstract Base Class (ABC)_
 - le module `zope.interface` de la librairie _Zope Component Architecture_ qui permet de marquer des implémentations héritant d'interfaces.
 
@@ -364,8 +367,8 @@ Il existe d'autres méthodes plus complexes pour implémenter des interfaces plu
 - Écrire une classe `Mouette` héritant de deux classes parentes : une classe `Oiseau` et une classe `Vol`.
 - La classe `Oiseau` possède une fonction booléenne `ovipare`. La classe `Vol` implémente la fonction `deplacement` d'une interface `Locomotion` en renvoyant : `deplacement() => "vol"`
 - Instancier un objet `m` de type `Mouette`. Cette objet doit répondre au contrat suivant :
-  + `m.deplacement() => "vol"`
-  + `m.ovipare() => True`
+  - `m.deplacement() => "vol"`
+  - `m.ovipare() => True`
 
 ---
 
@@ -439,6 +442,7 @@ print(MaClasse.nb_instances) # 0
 ```python
 raise RuntimeError('Une erreur ici')
 ```
+
 On préfèrera utiliser une classe spécifique d'exception : `ValueError`, `OSError`, … ou une classe d'exception créée dans l'application.
 
 ---
@@ -489,17 +493,7 @@ finally:
 - [Visualisation graphique d'exécution de code][python-tutor]
 - [Python Challenges][python-challenge]
 
-[python-logo]: https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg
-[doc-install-win]: https://docs.python.org/fr/3/using/windows.html
-[doc-ref]: https://docs.python.org/fr/3/reference/index.html#reference-index
-[doc-seq]: https://docs.python.org/fr/3/library/stdtypes.html#typesseq
 [doc-exceptions]: https://docs.python.org/fr/3/library/exceptions.html#bltin-exceptions
-[doc-stdlib]: https://docs.python.org/fr/3/tutorial/stdlib.html
-[doc-full]: https://docs.python.org/fr/3/library/index.html#library-index
-[doc-venv]: https://docs.python.org/3/tutorial/venv.html
-[zds-annotations]: https://zestedesavoir.com/tutoriels/954/notions-de-python-avancees/2-functions/2-annotations-signatures/
-[zds-slices]: https://zestedesavoir.com/tutoriels/582/les-slices-en-python/
-[site-pypi]: https://pypi.org 
 [scipy]: https://scipy-lectures.org/
 [numpy-matplotlib]: https://zestedesavoir.com/tutoriels/4139/les-bases-de-numpy-et-matplotlib/
 [async]: https://www.integralist.co.uk/posts/python-asyncio/
@@ -516,4 +510,3 @@ finally:
 - Other names may be trademarks of their respective owners
 
 ---
-

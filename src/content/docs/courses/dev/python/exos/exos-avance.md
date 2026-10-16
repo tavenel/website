@@ -3,7 +3,7 @@ title: Exercices avancés Python
 date: 2023 / 2024
 type: exo
 sidebar:
-  order: 600
+  order: 109
 description: Exercices avancés Python
 ---
 # Commande de robot
@@ -16,7 +16,6 @@ Les commandes de déplacement du robot sont :
 - 'g' : rotation de 90° à gauche (si le robot est initialement orienté vers le nord, il sera orienté vers l'ouest) ;
 - 'd' : rotation de 90° à droite (si le robot est initialement orienté vers le nord, il sera orienté vers l'est) ;
 - entier de 1 à 9 : l'avancée du robot en nombre de cases selon sa direction en cours.
-
 
 Les commandes seront passées dans une liste, par exemple :
 
@@ -39,7 +38,6 @@ Le robot devra être bloqué sur la case qui précède l'obstacle, et passer à 
 
 Écrire une fonction `robot_simulation(commandes, obstacles)` qui prend en paramètres une liste des commandes à exécuter et une liste de coordonnées d'obstacles (liste vide si pas d'obstacles). Pendant tout son parcours, le robot va plus ou moins s'éloigner de sa position de départ (0, 0). La fonction devra renvoyer la distance maximale élevée au carré (distance euclidienne) de la case la plus éloignée du point de départ atteinte par le robot.
 
-
 ```python
 >>> robot_simulation(commandes = [7, 'd', 'd', 4], obstacles = [(0, 5)]) 
 >>> 16
@@ -61,6 +59,7 @@ Autres exemples :
 Source et crédit : <https://python.developpez.com/exercices/?page=Problemes-complexes#Commande-de-robot>
 
 :::correction
+
 ```python
 def robot_simulation(commandes, obstacles):
     # Initialisation du robot
@@ -107,9 +106,10 @@ resultat3 = robot_simulation(commandes=['g', 4, 'd', 3, 'g', 1, 'd', 'd', 5], ob
 print(resultat3)  # Résultat attendu: 26
 
 ```
+
 :::
 
-# Plus petit, plus grand - et détection de triche 
+# Plus petit, plus grand - et détection de triche
 
 Le jeu "plus petit/plus grand" est un des classiques dans l'apprentissage de la programmation. L'ordinateur génère un nombre aléatoire et le joueur essaye de le retrouver. À chaque étape, l'ordinateur indique si le nombre proposé est plus petit ou plus grand que le nombre à trouver.
 Ici, l'exercice proposé est de programmer la position inverse : le joueur choisit un nombre et l'ordinateur essaye de le retrouver selon la même approche.
@@ -146,6 +146,7 @@ J'ai gagné par forfait en 6 coups !!!
 Source et crédit : <https://python.developpez.com/exercices/?page=Problemes-complexes#Plus-petit-Plus-grand>
 
 :::correction
+
 ```python
 import random
 
@@ -203,6 +204,7 @@ jeu = PlusMoinsJeu(1, 100)
 jeu.jouer()
 
 ```
+
 :::
 
 # Legal

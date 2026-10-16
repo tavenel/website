@@ -3,7 +3,7 @@ title: Le jeu du Moulin
 date: 2023 / 2024
 type: tp
 sidebar:
-  order: 250
+  order: 107
 description: Le jeu du Moulin
 ---
 # Présentation du jeu
@@ -17,7 +17,6 @@ L'objectif du jeu est de retirer les pions de l'adversaire sur le damier ou de l
 Les règles du jeu sont disponibles sur cette page :
 <https://fr.wikipedia.org/wiki/Jeu_du_moulin#R%C3%A8gles_du_jeu>
 
-
 ## Clarification des règles
 
 Le jeu est en deux phases :
@@ -29,16 +28,13 @@ Au cours de ces deux phases, chaque fois qu'un joueur atteint un moulin (3 pions
 
 Si toutes les pièces adverses forment des moulins, une exception est faite et le joueur est autorisé à retirer n'importe quelle pièce.
 
-
 Ce n'est que lors de la formation d'un moulin qu'une pièce est capturée mais un joueur brise souvent un moulin en déplaçant une pièce puis, dans un tour suivant, la joue de nouveau, formant ainsi un nouveau moulin et capturant une autre pièce.
 
 Les pièces capturées ne sont jamais rejouées sur le plateau et restent capturées pour le reste de la partie.
 
 Règle du saut : lorsqu'un joueur est réduit à seulement trois pièces, il est autorisé à se déplacer de n'importe quel point vers n'importe quel autre point du plateau, quelles que soient les lignes ou si le point de destination est adjacent ou non.
 
-
 Le jeu est terminé lorsqu'un joueur perd en étant réduit à deux pièces ou en étant incapable de bouger.
-
 
 # Partie 1 : Moteur de jeu
 
@@ -82,9 +78,9 @@ L'interface de cette IA doit être un module `ia` respectant le contrat suivant 
 - `ia.player_sets(x,y,u=None,v=None)` informe l'IA que le joueur humain pose un pion en position `(X,Y)`. Les paramètres `(U,V)` correspondent à la position du pion appartenant à l'IA et volé par le joueur humain, dans le cas où un pion a été volé pendant cette phase (sinon ces paramètres valent `None`).
 - `ia.player_moves(x1,y1,x2,y2,u=None,v=None)` informe l'IA que le joueur humain déplace un pion de la position `(X1,Y1)` à la position `(X2,Y2)`. Si la phase de saut est développée, c'est également cet appel qui est utilisé. Les paramètres `(U,V)` correspondent à la position du pion appartenant à l'IA et volé par le joueur humain, dans le cas où un pion a été volé pendant cette phase (sinon ces paramètres valent `None`).
 - `ia.play()` est la fonction demandant à l'ordinateur quel est son prochain coup. La réponse peut être de deux types :
-    - `"set",(x,y),(u,v)` demande à placer un pion sur la case `(X,Y)` et à voler le pion en position `(u,v)`. Si aucun pion n'a été volé, alors `(u,v)` vaut `(None,None)`.
-    - `"move",(x1,y1),(x2,y2),(u,v)` demande à déplacer un pion de la case `(X1,Y1)` à la case `(X2,Y2)` et à voler le pion en position `(u,v)`. Si aucun pion n'a été volé, alors `(u,v)` vaut `(None,None)`.
-    - Attention : les retours de ces méthodes sont des tuples (et non une simple chaîne de caractères.Par exemple `"set",(x,y),(u,v)` est de type `tuple(str, tuple(int,int), tuple(int,int))`
+  - `"set",(x,y),(u,v)` demande à placer un pion sur la case `(X,Y)` et à voler le pion en position `(u,v)`. Si aucun pion n'a été volé, alors `(u,v)` vaut `(None,None)`.
+  - `"move",(x1,y1),(x2,y2),(u,v)` demande à déplacer un pion de la case `(X1,Y1)` à la case `(X2,Y2)` et à voler le pion en position `(u,v)`. Si aucun pion n'a été volé, alors `(u,v)` vaut `(None,None)`.
+  - Attention : les retours de ces méthodes sont des tuples (et non une simple chaîne de caractères.Par exemple `"set",(x,y),(u,v)` est de type `tuple(str, tuple(int,int), tuple(int,int))`
 
 :::warn
 L'IA a 1 minute pour répondre : après une minute sans réponse ou si le programme crash (exception, ...), la partie s'arrête et l'IA est déclarée perdante.
@@ -108,7 +104,6 @@ ia.play() -> "move",(2,4),(2,2) # L'IA déplace un pion de la position (2,4) ver
 ia.play() -> "move",(2,4),(2,2),(3,4) # L'IA déplace un pion de la position (2,4) vers la position (2,2) et vole un pion du joueur humain en position (3,4).
 ```
 
-
 Dans un premier temps, on pourra commencer par chercher l'ensemble des coups possibles. Une première version de l'IA pourra choisir un coup au hasard, avant d'être améliorée.
 
 ## Ajout du saut
@@ -120,11 +115,12 @@ Améliorer le moteur de jeu et l'IA pour prendre en compte l'étape 3 du jeu : l
 Développer une interface graphique pour le jeu.
 
 Cette interface aura les contraintes suivantes :
+
 - utiliser la librairie `Tkinter`.
 - afficher :
-    - le plateau de jeu (le damier)
-    - les différents pions sur le damier
-    - le gagnant en cas de victoire
+  - le plateau de jeu (le damier)
+  - les différents pions sur le damier
+  - le gagnant en cas de victoire
 - permettre de charger et sauvegarder une partie
 
 Le joueur courant doit également pouvoir placer un pion ou le déplacer en utilisant l'interface graphique.

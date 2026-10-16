@@ -2,7 +2,7 @@
 title: Estimateur de Kaplan-Meier
 type: cours
 sidebar:
-  order: 800
+  order: 104
 description: Estimateur de Kaplan-Meier
 ---
 ## Récupérer les données statistiques
@@ -22,12 +22,12 @@ Le but de cet exercice est de réaliser une simulation d'un estimateur de Kaplan
 
 Les données `initial` et `final` correspondent aux jours d'études sur l'individu (par exemple, le 1er individu a été étudié du jour 49 au jour 79).
 
-3. Écrire une fonction qui modifie chacun des individus pour ajouter un champ `duree` dans leur dictionnaire. La durée correspond au résultat de `final - initial`.
+1. Écrire une fonction qui modifie chacun des individus pour ajouter un champ `duree` dans leur dictionnaire. La durée correspond au résultat de `final - initial`.
 
 ## Indicateur de temps
 
-4. Écrire une fonction `nombre_individus_dans_etude(t)` qui calcule le nombre d'individus étudiés pendant au moins `t` jours.
-5. Écrire une fonction `nombre_individus_identifies_a(t, i)` qui calcule le nombre d'individus dont l'identifiant vaut `i` et dont la durée d'étude est égale à `t`.
+1. Écrire une fonction `nombre_individus_dans_etude(t)` qui calcule le nombre d'individus étudiés pendant au moins `t` jours.
+2. Écrire une fonction `nombre_individus_identifies_a(t, i)` qui calcule le nombre d'individus dont l'identifiant vaut `i` et dont la durée d'étude est égale à `t`.
 
 ## Estimateur de Kaplan-Meier
 
@@ -43,24 +43,23 @@ L'estimateur de _Kaplain-Meier_ est une fonction statistique `S(t)` permettant d
 
 On note `n(t)` le nombre de personnes entrées à l'hôpital et qui y sont encore après `t` jours, et `d(t)` le nombre de personnes qui sont décédées au jour `t` à partir de leur entrée à l'hôpital.
 
-L'estimateur de _Kaplan-Meier_ pour un `t` donné vaut alors : 
+L'estimateur de _Kaplan-Meier_ pour un `t` donné vaut alors :
 
 $$\hat{S}(t) = \prod_{i:t{i}\leq t}\left(1 - \frac{d_i}{n_i}\right)$$
 
 C'est-à-dire : $(1 - d(t)/n(t))$ multiplié par toutes les valeurs précédemment calculées de $S(i)$ pour $i < t$.
 
-6. Calculer tous les $S(t)$ pour $t$ allant de 1 à 100.
-
+1. Calculer tous les $S(t)$ pour $t$ allant de 1 à 100.
 
 ## Représentation graphique
 
-7. Installer la librairie `matplotlib`. Par exemple :
+1. Installer la librairie `matplotlib`. Par exemple :
 
 ```sh
 pip install matplotlib
 ```
 
-8. A l'aide de l'exemple de code ci-dessous, tracer la courbe de _Kaplan-Meier_ pour les $S(t)$ calculés précédemment.
+1. A l'aide de l'exemple de code ci-dessous, tracer la courbe de _Kaplan-Meier_ pour les $S(t)$ calculés précédemment.
 
 ```python
 import matplotlib.pyplot as plt
@@ -70,4 +69,3 @@ y = [2, 3, 5, 1]
 plt.plot(x, y)
 plt.show()
 ```
-

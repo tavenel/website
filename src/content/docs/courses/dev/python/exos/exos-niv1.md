@@ -2,7 +2,7 @@
 title: Exercices Python niveau 1
 type: exo
 sidebar:
-  order: 600
+  order: 101
 description: Exercices Python niveau 1
 ---
 ## Entrée utilisateur
@@ -10,6 +10,7 @@ description: Exercices Python niveau 1
 Écrire un programme qui demande à l'utilisateur de saisir son nom et affiche un message de bienvenue avec son nom.
 
 :::correction
+
 ```python
 # Demande de saisie du nom de l'utilisateur
 nom = input("Entrez votre nom : ")
@@ -17,6 +18,7 @@ nom = input("Entrez votre nom : ")
 # Affichage du message de bienvenue
 print("Bienvenue ", nom , " !")
 ```
+
 :::
 
 ## Tables de multiplication
@@ -26,6 +28,7 @@ print("Bienvenue ", nom , " !")
 L'utilisateur doit saisir la valeur de `n` et le nombre pour lequel la table de multiplication doit être affichée.
 
 :::correction
+
 ```python
 # Demande de saisie du nombre et du nombre de termes
 nombre = int(input("Entrez un nombre : "))
@@ -36,6 +39,7 @@ for i in range(1, termes + 1):
     resultat = nombre * i
     print(nombre, "x", i, "=", resultat)
 ```
+
 :::
 
 ## Diviseurs
@@ -54,6 +58,7 @@ Diviseurs propres sans répétition de 13 : aucun ! Il est premier
 ```
 
 :::correction
+
 ```python
 def diviseurs(nb):
     compteur = nb
@@ -79,6 +84,7 @@ if __name__ == '__main__':
     # Ou beaucoup plus directement :
     nb_diviseurs2 = [x for x in range(2, nb) if nb % x == 0]
 ```
+
 :::
 
 ### Nombres premiers
@@ -86,6 +92,7 @@ if __name__ == '__main__':
 Écrire un programme affichant la liste des 100 plus petits nombres premiers.
 
 :::correction
+
 ```python
     ### Nombres premiers
     premiers = []
@@ -98,6 +105,7 @@ if __name__ == '__main__':
         i += 1
     print(premiers)
 ```
+
 :::
 
 ## Suite de Fibonacci
@@ -105,6 +113,7 @@ if __name__ == '__main__':
 Écrire un programme qui calcule la suite de _Fibonacci_ jusqu'à un nombre donné. La suite de _Fibonacci_ est définie de la manière suivante : la première valeur est $0$, la deuxième valeur est $1$, et chaque valeur suivante est la somme des deux valeurs précédentes.
 
 :::correction
+
 ```python
 # Demande de saisie du nombre maximum
 nombre_max = int(input("Entrez le nombre maximum : "))
@@ -120,6 +129,7 @@ while n1 <= nombre_max:
     n1 = n2
     n2 = nth
 ```
+
 :::
 
 ## Gardien de phare
@@ -127,7 +137,7 @@ while n1 <= nombre_max:
 Un gardien de phare descend de son phare 5 fois par jour.
 
 Écrire une procédure (donc sans `return`) `hauteurParcourue()` qui reçoit deux paramètres, le nombre de marches du phare et la hauteur de chaque marche (en cm), et qui affiche :
- 
+
 > Pour x marches de y cm, il parcourt z.zz m par semaine.
 
 On n'oubliera pas :
@@ -144,18 +154,20 @@ print("La valeur de x est {:.2f}".format(x))
 ```
 
 :::correction
+
 ```python
 def marches_parcourues(nombre_de_marches, hauteur_de_marche):
-	distance_parcourue_aller_retour = nombre_de_marches * hauteur_de_marche * 2
-	distance_parcourue_par_jour = distance_parcourue_aller_retour * 5
-	distance_parcourue_par_semaine = distance_parcourue_par_jour * 7
-	distance_en_km = distance_parcourue_par_semaine / 100 / 1000
-	print( "Pour {} marches de {} cm, il parcourt {:.2f} km par semaine."
-	.format(nombre_de_marches, hauteur_de_marche, distance_en_km) )
+ distance_parcourue_aller_retour = nombre_de_marches * hauteur_de_marche * 2
+ distance_parcourue_par_jour = distance_parcourue_aller_retour * 5
+ distance_parcourue_par_semaine = distance_parcourue_par_jour * 7
+ distance_en_km = distance_parcourue_par_semaine / 100 / 1000
+ print( "Pour {} marches de {} cm, il parcourt {:.2f} km par semaine."
+ .format(nombre_de_marches, hauteur_de_marche, distance_en_km) )
 
 marches_parcourues(100, 20)
 # Pour 100 marches de 20 cm, il parcourt 1.40 km par semaine.
 ```
+
 :::
 
 ## Chaîne d'ADN
@@ -179,6 +191,7 @@ Il y a 10.53 % de "ca" dans votre chaîne.
 ```
 
 :::correction
+
 ```python
 def valide(chaine):
     """Retourne vrai si la chaîne est composée de a,t,g,c"""
@@ -208,5 +221,5 @@ if __name__ == '__main__':
     sequence = saisie("Sequence à chercher : ")
     print(" Il y a {:.2f} % de {:s} dans la chaine".format(proportion(chaine, sequence), sequence))
 ```
-:::
 
+:::

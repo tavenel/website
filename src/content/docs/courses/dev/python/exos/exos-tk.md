@@ -2,7 +2,7 @@
 title: Exercices Tk
 type: exo
 sidebar:
-  order: 600
+  order: 108
 description: Exercices Tk
 ---
 ## Fenêtre simple
@@ -12,6 +12,7 @@ Créez une fenêtre simple avec un titre et un bouton "Quitter" qui ferme la fen
 On utilisera un `Button` avec une commande `quit` de l'objet `Tk()`.
 
 :::correction
+
 ```python
 from tkinter import *
 
@@ -26,6 +27,7 @@ bouton_quitter.pack()
 # Affichez la fenêtre
 fenetre.mainloop()
 ```
+
 :::
 
 ## Champ de texte
@@ -38,6 +40,7 @@ On utilisera :
 - La fonction `tkinter.messagebox.showinfo()` pour afficher une popup
 
 :::correction
+
 ```python
 import tkinter.messagebox
 
@@ -60,8 +63,8 @@ bouton_afficher.pack()
 # Affichez la fenêtre
 fenetre.mainloop()
 ```
-:::
 
+:::
 
 ## Liste déroulante
 
@@ -79,6 +82,7 @@ def changement(*args):
 ```
 
 :::correction
+
 ```python
 # Créez la fenêtre
 fenetre = Tk()
@@ -102,6 +106,7 @@ choix.trace("w", changement)
 # Affichez la fenêtre
 fenetre.mainloop()
 ```
+
 :::
 
 ## Dessin
@@ -125,6 +130,7 @@ def draw(self, event):
 ```
 
 :::correction
+
 ```python
 import tkinter as tk
 from tkinter import colorchooser
@@ -173,6 +179,7 @@ class App:
 app = App()
 app.root.mainloop()
 ```
+
 :::
 
 ## Mouvements
@@ -200,6 +207,7 @@ La fonction `on_key_press()` peut être la suivante (si `self.square` est le rec
 Attention à garder en mémoire les coordonnées du rectangle !
 
 :::correction
+
 ```python
 class Game(tk.Frame):
     def __init__(self, master):
@@ -242,5 +250,5 @@ root.title('Simple Game')
 game = Game(root)
 game.mainloop()
 ```
-:::
 
+:::

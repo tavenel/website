@@ -3,7 +3,7 @@ title: Projet Python Gestionnaire de Configuration des Serveurs
 date: 2024 / 2025
 type: projet
 sidebar:
-  order: 500
+  order: 201
 description: Projet Python Gestionnaire de Configuration des Serveurs
 ---
 # Projet Python - Gestionnaire de Configuration des Serveurs
@@ -28,7 +28,7 @@ Ce projet vous permettra de :
 
 ## Fonctionnalités
 
-### Ajouter une configuration :
+### Ajouter une configuration
 
 Permettre à l'utilisateur d'ajouter des configurations pour un nouveau serveur (nom, adresse IP, système d'exploitation, services en cours d'exécution, etc.).
 
@@ -42,7 +42,7 @@ Entrez les services en cours d'exécution (séparés par des virgules) : Apache,
 Configuration ajoutée avec succès !
 ```
 
-### Modifier une configuration :
+### Modifier une configuration
 
 Permettre à l'utilisateur de modifier les détails d'une configuration existante.
 
@@ -54,7 +54,7 @@ Entrez la nouvelle adresse IP : 192.168.1.15
 Configuration mise à jour avec succès !
 ```
 
-### Supprimer une configuration :
+### Supprimer une configuration
 
 Permettre à l'utilisateur de supprimer une configuration.
 
@@ -65,7 +65,7 @@ Entrez le nom du serveur à supprimer : Serveur1
 Configuration supprimée avec succès !
 ```
 
-### Lister les configurations :
+### Lister les configurations
 
 Afficher toutes les configurations enregistrées avec leurs détails.
 
@@ -84,7 +84,7 @@ Configurations enregistrées :
    - Services : Nginx
 ```
 
-### Sauvegarder les configurations :
+### Sauvegarder les configurations
 
 Enregistrer les configurations dans un fichier JSON ou CSV pour les sauvegarder.
 
@@ -95,7 +95,7 @@ Entrez le nom du fichier de sauvegarde (ex: configurations.json) : sauvegarde_co
 Configurations sauvegardées avec succès dans sauvegarde_config.json
 ```
 
-### Restaurer les configurations :
+### Restaurer les configurations
 
 Charger les configurations depuis le fichier sauvegardé pour les réintégrer dans l'application.
 
@@ -153,4 +153,3 @@ Le rendu devra également inclure le code source prêt pour la production (code 
 Chaque groupe devra présenter sa solution lors d'une soutenance.
 
 Attention, il ne s'agit pas de lire le rapport ou de le recopier dans quelques slides, mais bien de présenter le projet à un jury qui ne connaîtrait pas votre réalisation. Il est fortement conseillé d'inclure une démonstration de votre rendu.
-

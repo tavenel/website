@@ -2,7 +2,7 @@
 title: Exercices Python
 type: exo
 sidebar:
-  order: 600
+  order: 102
 description: Exercices Python
 ---
 ## Jeu du plus ou moins
@@ -11,6 +11,7 @@ Tirer un nombre au hasard entre 1 et 100. L'utilisateur doit trouver ce nombre e
 Au bout de 5 essais, si le nombre n'a pas été trouvé le programme indique entre quelles dizaines chercher (par exemple : entre 30 et 40 pour 42).
 
 :::correction
+
 ```python
 def input_int():
     while True:
@@ -39,6 +40,7 @@ if __name__ == '__main__':
         if tries == 5:
             print(f"Le résultat est entre {10 * int(result / 10)}  et {10 * (int(result / 10) +1)}")
 ```
+
 :::
 
 ## (Dé)sérialisation simple d'objets Python
@@ -52,6 +54,7 @@ Soit une classe Point possédant 3 attributs `x`,`y`,`z`.
 5. Afficher le résultat de l'addition des points en utilisant la variable précédente.
 
 :::correction
+
 ```python
 import json
 
@@ -118,6 +121,7 @@ if __name__ == '__main__':
         l2_get = json.load(f)
         print("Deserialize:", l2_get)
 ```
+
 :::
 
 ## Exercice : Recherche dans une liste
@@ -135,10 +139,11 @@ Télécharger le fichier `mots.txt` qui contient un mot par ligne.
 
 Lorsqu'une liste est triée, rechercher un élément est beaucoup plus rapide. Si on cherche le mot X dans la liste, il suffit de le comparer au mot du milieu pour savoir si ce mot est situé dans la partie inférieur ou la partie supérieure. S'il est égal, le mot a été trouvé. Si le mot n'a pas été trouvé, on recommence avec la sous-liste inférieure ou supérieure selon les cas jusqu'à ce qu'on ait trouvé le mot ou qu'on soit sûr que le mot cherché n'y est pas. Le résultat de la recherche est la position du mot dans la liste ou -1 si ce mot n'a pas été trouvé. Cette recherche s'appelle une recherche dichotomique.
 
-5. Écrire la fonction qui effectue la recherche dichotomique d'un mot dans une liste triée de mots. Cette fonction peut être récursive ou non. Elle prend au moins les deux mêmes paramètres que ceux de la question 3, si elle en a d'autres, il faudra leur donner une valeur par défaut. On précise que les comparaisons entre chaînes de caractères utilisent aussi les opérateurs `<, ==, >`
-6. Vérifier que les deux fonctions retournent bien les mêmes résultats.
+1. Écrire la fonction qui effectue la recherche dichotomique d'un mot dans une liste triée de mots. Cette fonction peut être récursive ou non. Elle prend au moins les deux mêmes paramètres que ceux de la question 3, si elle en a d'autres, il faudra leur donner une valeur par défaut. On précise que les comparaisons entre chaînes de caractères utilisent aussi les opérateurs `<, ==, >`
+2. Vérifier que les deux fonctions retournent bien les mêmes résultats.
 
 :::correction
+
 ### Correction
 
 ```python
@@ -251,5 +256,5 @@ print(f"Position de 'DEUX' (dichotomique récursif) : {position_deux_dicho_rec}"
 assert position_un_dicho_rec == position_un
 assert position_deux_dicho_rec == position_deux
 ```
-:::
 
+:::

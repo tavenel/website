@@ -5,7 +5,7 @@ tags:
 - python
 type: cours
 sidebar:
-  order: 2
+  order: 3
 description: La librairie standard Python (stdlib)
 ---
 ## Introduction aux modules
@@ -211,7 +211,7 @@ with open('/tmp/cours-stdlib.json', 'r+') as f:
 `pip` est un programme permettant d'installer une bibliothèque Python depuis le [Python Package Index][site-pypi] :
 
 ```sh
-$ python -m pip install novas
+python -m pip install novas
 ```
 
 Pour plus d'information : [documentation venv][doc-venv].
@@ -275,7 +275,7 @@ with con:
 Installation du connecteur `MySQL` depuis une librairie externe :
 
 ```shell
-$ pip install mysql-connector-python
+pip install mysql-connector-python
 ```
 
 ---
@@ -353,11 +353,9 @@ with connection.cursor() as cursor:
         print(row)
 ```
 
-
 [doc-stdlib]: https://docs.python.org/fr/3/tutorial/stdlib.html
 [doc-full]: https://docs.python.org/fr/3/library/index.html#library-index
 [doc-venv]: https://docs.python.org/3/tutorial/venv.html
-[site-pypi]: https://pypi.org 
+[site-pypi]: https://pypi.org
 
 ---
-

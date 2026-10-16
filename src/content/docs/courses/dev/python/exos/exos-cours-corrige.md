@@ -2,7 +2,7 @@
 title: Correction des exercices de cours
 type: exo
 sidebar:
-  order: 600
+  order: 100
 description: Correction des exercices de cours
 ---
 # Exercice : Multiplication
@@ -31,9 +31,9 @@ y = 5
 z = x * y
 
 if z > 50:
-	print("Le resultat de la multiplication :", z, "est supérieur à 50")
+ print("Le resultat de la multiplication :", z, "est supérieur à 50")
 else:
-	print("Le resultat de la multiplication :", z, "est inférieur à 50")
+ print("Le resultat de la multiplication :", z, "est inférieur à 50")
 ```
 
 ---
@@ -47,7 +47,7 @@ Calculer la somme : `1+3+5+...+99`
 ```python
 s = 0
 for i in range(1,100,2):
-	s += i
+ s += i
 
 # ou
 s = sum( [ i for i in range(1,100,2) ] )
@@ -76,8 +76,8 @@ print(set1.intersection(set2))
 
 s = set()
 for x in set1:
-	if x in set2:
-		s.add(x)
+ if x in set2:
+  s.add(x)
 
 print(s)
 ```
@@ -92,7 +92,7 @@ Reprendre l'exercice de multiplication de deux variables numériques x et y. Dé
 
 ```python
 def multiplie(x,y):
-	return x * y
+ return x * y
 
 print(multiplie(2,3))
 ```
@@ -135,23 +135,23 @@ Quelle est la visibilité de chaque variable ?
 
 scope_test()
 
-	spam = "test spam" # contexte de "spam_scope_test"
+ spam = "test spam" # contexte de "spam_scope_test"
 
-	do_local()
-		spam = "local spam" # local "spamL" : différent de "spam_scope_test"
-	#scope_test
-	print(spam) # "spam_scope_test" => "test spam"
+ do_local()
+  spam = "local spam" # local "spamL" : différent de "spam_scope_test"
+ #scope_test
+ print(spam) # "spam_scope_test" => "test spam"
 
-	do_nonlocal()
+ do_nonlocal()
         nonlocal spam # "spam_non_local" => redéfinit "spam_scope_test"
         spam = "nonlocal spam" => "spam_scope_test" == "spam_non_local" = "nonlocal spam"
-	#scope_test
-	print(spam) # "spam_scope_test" => "nonlocal spam"
+ #scope_test
+ print(spam) # "spam_scope_test" => "nonlocal spam"
 
-	do_global()
+ do_global()
         global spam # "spam_global" => crée une variable globale "spam" (n'existe pas encore)
         spam = "global spam" => "spam_global" = "global spam"
-	print(spam) # "spam_scope_test" => "nonlocal spam"
+ print(spam) # "spam_scope_test" => "nonlocal spam"
 
 #global
 print(spam) # "spam_global" => "global spam"
@@ -164,8 +164,8 @@ print(spam) # "spam_global" => "global spam"
 - Écrire une classe `Mouette` héritant de deux classes parentes : une classe `Oiseau` et une classe `Vol`.
 - La classe `Oiseau` possède une fonction booléenne `ovipare`. La classe `Vol` implémente la fonction `deplacement` d'une interface `Locomotion` en renvoyant : `deplacement() => "vol"`
 - Instancier un objet `m` de type `Mouette`. Cette objet doit répondre au contrat suivant :
-  + `m.deplacement() => "vol"`
-  + `m.ovipare() => True`
+  - `m.deplacement() => "vol"`
+  - `m.ovipare() => True`
 
 ## Correction
 
@@ -213,7 +213,7 @@ import sys
 
 res = 1
 for arg in sys.argv[1::]:
-	res *= arg
+ res *= arg
 
 print(arg)
 ```

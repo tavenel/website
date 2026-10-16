@@ -2,7 +2,7 @@
 title: Intégration et modification du langage Python
 type: tp
 sidebar:
-  order: 250
+  order: 105
 description: Intégration et modification du langage Python
 ---
 ## Présentation
@@ -15,10 +15,11 @@ Pour réaliser une addition, Python utilise en fait la méthode `__add__()` de l
 
 Lorsque l'on tape `2 + 3` dans le shell, quelle est réellement l'opération réalisée en utilisant les instances de la classe `int` ?
 
-  + Vérifier que ces deux écritures font similaires en testant leur égalité.
-  + Rappel : en Python, `mon_instance.ma_methode()` est un raccourci pour appeler `MaClasse.ma_methode(mon_instance)` si `mon_instance` est une instance de `MaClasse`.
++ Vérifier que ces deux écritures font similaires en testant leur égalité.
++ Rappel : en Python, `mon_instance.ma_methode()` est un raccourci pour appeler `MaClasse.ma_methode(mon_instance)` si `mon_instance` est une instance de `MaClasse`.
 
 :::correction
+
 ```python
 # 2 + 3 réalise une opération `__add__()`
 # sur les instances `int(2)` et `int(3)` donc :
@@ -26,6 +27,7 @@ Lorsque l'on tape `2 + 3` dans le shell, quelle est réellement l'opération ré
 # print( int.__add__(2,3) )
 # print( 2+3 == int.__add__(2,3) )
 ```
+
 :::
 
 ## Utiliser le Python Object Model : addition de types personnalisés
@@ -36,27 +38,28 @@ Soit une classe `Point` modélisant un point à 3 dimensions :
 class Point:
 
     def __init__(self, x, y, z):
-	
+ 
         self.x = x
         self.y = y
         self.z = z
 ```
 
-- En reprenant l'exemple précédent, proposer une implémentation de la méthode `__add__(self, autre_instance)` pour la classe Point.
-- Utiliser cette implémentation pour réaliser élégamment l'addition de deux instances `Point(1,2,3)` et `Point(-1,2,0)`.
++ En reprenant l'exemple précédent, proposer une implémentation de la méthode `__add__(self, autre_instance)` pour la classe Point.
++ Utiliser cette implémentation pour réaliser élégamment l'addition de deux instances `Point(1,2,3)` et `Point(-1,2,0)`.
 
 ### Égalité
 
-- Tester l'égalité : `Point(1,2,3) == Point(1,2,3)`. Pourquoi ce résultat ?
-- De manière similaire, implémenter la méthode `__eq__(self, autre_instance)` qui retourne `True` si et seulement si deux instances sont égales.
-- Vérifier que `Point(1,2,3) == Point(1,2,3)`.
++ Tester l'égalité : `Point(1,2,3) == Point(1,2,3)`. Pourquoi ce résultat ?
++ De manière similaire, implémenter la méthode `__eq__(self, autre_instance)` qui retourne `True` si et seulement si deux instances sont égales.
++ Vérifier que `Point(1,2,3) == Point(1,2,3)`.
 
 :::correction
+
 ```python
 class Point:
 
     def __init__(self, x, y, z):
-	
+ 
         self.x = x
         self.y = y
         self.z = z
@@ -106,6 +109,7 @@ if __name__ == '__main__':
     print( "Point(1,2,3) =? 4", \
       Point(1,2,3) == 4 )
 ```
+
 :::
 
 ## Collection personnalisée
@@ -117,7 +121,7 @@ Soit la classe `CollectionDePoints` suivante :
 ```python
 class CollectionDePoints:
 
-	def __init__(self, collection):
+ def __init__(self, collection):
 
         self.mes_points = list(collection)
 ```
@@ -128,22 +132,23 @@ Créer une instance `ma_collection` de cette classe stockant 10 instances de `Po
 
 Les méthodes `__getitem__(self, indice)` et `__setitem(self, indice, item)__` permettent de récupérer / insérer un élément à un indice donné dans la collection.
 
-- Ajouter des implémentations pour la classe `CollectionDePoints`.
-- Vérifier l'ajout des points en utilisant : `ma_collection[1] = ...`
-- Récupérer une sous-collection de points des indices `2` (inclus) à `4` (exclus).
++ Ajouter des implémentations pour la classe `CollectionDePoints`.
++ Vérifier l'ajout des points en utilisant : `ma_collection[1] = ...`
++ Récupérer une sous-collection de points des indices `2` (inclus) à `4` (exclus).
 
 ### Itérations
 
-- Une classe est itérable si elle possède une fonction `__iter__()` qui renvoit un itérateur.
-- Un itérateur est un objet qui possède :
++ Une classe est itérable si elle possède une fonction `__iter__()` qui renvoit un itérateur.
++ Un itérateur est un objet qui possède :
   + une méthode `__next__(self)` qui renvoie l'élément suivant en cours d'itération.
   + une méthode `__iter__(self)` qui renvoie un objet itérateur avec lequel continuer l'itération (souvent un simple `return self`).
   + `raise` une exception `StopIteration` lorsqu'il n'y a plus d'élément à itérer.
-- Rendre la classe `CollectionDePoints` itérable
-- Itérer sur les 10 points de la classe en utilisant une boucle `for` et afficher chaque point atteint.
++ Rendre la classe `CollectionDePoints` itérable
++ Itérer sur les 10 points de la classe en utilisant une boucle `for` et afficher chaque point atteint.
   + Pour afficher les instances de `Point`, on pourra utiliser `__repr__(self)` et `__str__(self)` qui retournent un objet `str` pour l'affichage (la 1ere méthode donne une représentation interne pour les logs, la seconde sert à un affichage "propre").
 
 :::correction
+
 ```
 class CollectionDePoints:
     '''
@@ -184,9 +189,11 @@ class CollectionDePoints:
         self.iter += 1
         return elt
 ```
+
 :::
 
 :::correction
+
 ```python
 class CollectionDePointsDelegate:
     '''
@@ -212,9 +219,11 @@ class CollectionDePointsDelegate:
     def __iter__(self):
         return self.mes_points.__iter__()
 ```
+
 :::
 
 :::correction
+
 ```python
 if __name__ == '__main__':
     # COLLECTIONS
@@ -238,6 +247,7 @@ if __name__ == '__main__':
     for p in m2:
         print(p)
 ```
+
 :::
 
 ## Classe descripteur : getter et setter personnalisés
@@ -253,22 +263,22 @@ Cette redirection est très pratique pour écrire des classes descripteurs : ces
 
 Nous allons utiliser ce comportement pour sortir une opération de transformation de donnée `Fahrenheit` en `Celsius` d'une classe Température.
 
-- Écrire une classe conteneur `Temperature`. Cette classe contiendra :
++ Écrire une classe conteneur `Temperature`. Cette classe contiendra :
   + Un attribut `fahrenheit` initialisé dans le constructeur.
   + Une **variable statique de classe** `celsius = Celsius()` (pas de `self`). Une variable statique s'écrit directement dans le code de la classe et non dans le constructeur (une bonne pratique est de l'écrire juste après la ligne décrivant le nom de la classe). Cette variable sera associée au prototype de la classe elle-même et non aux instances de la classe.
-- Écrire une classe descripteur vide `Celsius`.
-- Ajouter à la classe `Celsius` une méthode `__get__(self, instance, owner)` :
++ Écrire une classe descripteur vide `Celsius`.
++ Ajouter à la classe `Celsius` une méthode `__get__(self, instance, owner)` :
   + `self` est la référence vers l'instance de `Celsius` : nous n'utiliserons pas cette classe directement.
   + `instance` est la référence vers l'instance du conteneur appelant (instance de `Temperature`) : c'est cette instance qui nous intéressera pour récupérer l'attribut `fahrenheit`.
   + `owner` est la référence vers la classe `Temperature` elle-même : nous ne l'utiliserons pas dans cet exemple.
   + Ajouter une trace à l'aide d'un `print` affichant les paramètres de cette méthode pour bien comprendre son appel.
   + Retourner la conversion en degrés Celsius depuis la formule : `5 * (fahrenheit - 32) / 9`.
-- Ajouter à la classe `Celsius` une méthode `__set__(self, instance, value)` :
++ Ajouter à la classe `Celsius` une méthode `__set__(self, instance, value)` :
   + Même commentaire pour les paramètres `self` et `instance`.
   + `value` contient la valeur à assiger.
   + Ajouter une trace à l'aide d'un `print` affichant les paramètres de cette méthode pour bien comprendre son appel.
   + Implémenter cette méthode pour assigner à l'attribut `fahrenheit` de `Temperature` la bonne valeur depuis une `value` en Celsius.
-- Testons notre classe descripteur avec le code suivant :
++ Testons notre classe descripteur avec le code suivant :
 
 ```python
 t = Temperature(212)
@@ -278,6 +288,7 @@ print(t.fahrenheit)
 ```
 
 :::correction
+
 ### Correction - Classe descripteur : getter et setter personnalisés
 
 ```python
@@ -306,5 +317,5 @@ if __name__ == '__main__':
     t.celsius = 0
     print(t.fahrenheit)
 ```
-:::
 
+:::

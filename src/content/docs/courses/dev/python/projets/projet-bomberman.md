@@ -3,7 +3,7 @@ title: Projet Python Bomberman
 date: 2024 / 2025
 type: projet
 sidebar:
-  order: 500
+  order: 202
 description: Projet Python Bomberman
 ---
 # Projet Python - Bomberman
@@ -143,4 +143,3 @@ Le rendu devra également inclure le code source prêt pour la production (code 
 Chaque groupe devra présenter sa solution lors d'une soutenance.
 
 Attention, il ne s'agit pas de lire le rapport ou de le recopier dans quelques slides, mais bien de présenter le projet à un jury qui ne connaîtrait pas votre réalisation. Il est fortement conseillé d'inclure une démonstration de votre rendu.
-

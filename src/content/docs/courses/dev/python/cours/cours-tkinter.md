@@ -5,7 +5,7 @@ tags:
 - python
 type: cours
 sidebar:
-  order: 2
+  order: 5
 description: Programmation des interfaces graphiques - Tkinter
 ---
 ## Tcl
@@ -199,4 +199,3 @@ Voir le [cours sur le pattern MVC](/archi/mvc).
 [zds-tkinter-events]: https://zestedesavoir.com/tutoriels/1729/programmation-avec-tkinter/
 
 ---
-
