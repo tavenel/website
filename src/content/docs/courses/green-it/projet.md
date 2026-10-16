@@ -3,7 +3,7 @@ title: Projet GreenIT
 date: 2023 / 2024
 type: projet
 sidebar:
-  order: 500
+  order: 200
 description: Projet GreenIT
 ---
 ## Contexte du projet
@@ -27,7 +27,7 @@ Réaliser le projet en équipe en suivant une écoconception :
 
 - Cette conception devra s'appuyer sur un ensemble de bonnes pratiques d'écoconception et de clean code identifées et définies par les apprenants et qui devront être validées à la livraison du produit.
 - La réalisation du projet devra suivre les objectifs environnementaux définis dans la politique RSE
-- Le suivi des indicateurs (KPI) environnementaux devra s'effectuer tout au long du cycle de vie du projet. On 
+- Le suivi des indicateurs (KPI) environnementaux devra s'effectuer tout au long du cycle de vie du projet. On
 
 Le rendu de cette partie consiste en :
 
@@ -35,4 +35,3 @@ Le rendu de cette partie consiste en :
 - un (ou plusieurs) livrable(s) produit ou un script / une explication simple sur la génération de ce(s) livrable(s)
 - une note de gestion de projet expliquant comment les KPI ont été mesurés
 - un document décrivant les bonnes pratiques d'écoconception et de clean code retenus
-

@@ -6,7 +6,7 @@ tags:
 - dette-technique
 type: cours
 sidebar:
-  order: 800
+  order: 3
 description: Écoconception de services numériques
 ---
 ## Bonnes pratiques générales
@@ -364,7 +364,7 @@ sequenceDiagram
 
 - Limiter la taille des pièces jointes
   - sinon souvent téléchargé automatiquement
-  - préférer un lien vers un dépôt cloud 
+  - préférer un lien vers un dépôt cloud
 - Supprimer les mails inutiles et trop anciens (impact faible : 1Go => -26g CO2e vs garder un PC 3ans de + => -250kg CO2e)
 - Ne pas surutiliser le mail (notifications, ...) : engorge le réseau
 - Impact global du mail [généralement assez faible](https://company.ovo.com/think-before-you-thank-if-every-brit-sent-one-less-thank-you-email-a-day-we-would-save-16433-tonnes-of-carbon-a-year-the-same-as-81152-flights-to-madrid/)
@@ -425,8 +425,8 @@ sequenceDiagram
 - [Cas d'étude de youtube.com (blog temesis.com)](https://www.temesis.com/blog/youtube-com-un-modele-de-performance-web-environnementale/)
 - [Impact écologique du numérique : que faire en tant que professionnel du web ?](https://www.24joursdeweb.fr/2018/impact-ecologique-du-numerique/)
 - [Maciej Cegłowski, Talk material : "The Website Obesity Crisis"](https://idlewords.com/talks/website_obesity.htm) et <https://danluu.com/web-bloat/>
-- https://speakerdeck.com/brad_frost/for-a-future-friendly-web
-- https://blog.chriszacharias.com/page-weight-matters (ex YouTube developer)
+- <https://speakerdeck.com/brad_frost/for-a-future-friendly-web>
+- <https://blog.chriszacharias.com/page-weight-matters> (ex YouTube developer)
 
 ---
 
@@ -462,4 +462,3 @@ sequenceDiagram
 - Calcul de performance d'un site web : <https://gtmetrix.com/>
 
 ---
-

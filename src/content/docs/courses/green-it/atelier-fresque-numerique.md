@@ -3,7 +3,7 @@ title: La Fresque du numérique
 date: 2023-2024
 type: cours
 sidebar:
-  order: 800
+  order: 100
 description: La Fresque du numérique
 ---
 ## Présentation de l'atelier
@@ -22,4 +22,3 @@ Pour faciliter l'exercice, les cartes sont séparées en 6 lots, à placer l'un 
 - Lot 4 => cartes 22 à 28
 - Lot 5 => cartes 29 à 35
 - Lot 6 => cartes solutions : S1 à S20
-

@@ -1,21 +1,23 @@
 ---
-title: 💚 Green IT
-layout: '@layouts/BaseLayout.astro'
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+title: Green IT
+tags:
+- greenit
+- rse
+type: cours
+sidebar:
+  order: 1
+description: Informatique responsable GreenIT
 ---
 
 # 💚 Green IT
 
 ![](@assets/undraw/undraw_eco-conscious_oqny.svg)
 
-- 1er quizz d'introduction : <https://quizanthropocene.fr/quiz/fresque-du-numerique>
-- 2ème quizz d'introduction : <https://quizanthropocene.fr/quiz/le-numerique-est-il-ecologique>
-- [🤓 Informatique responsable GreenIT (cours)](/green-it/cours) : une introduction à l'informatique responsable : enjeux, cadre légal, référentiels, bonnes pratiques de conception et de développement.
-- [🤓 Écoconception de services numériques (cours)](/green-it/ecoconception) : ensemble de bonnes pratiques d'écoconception pour les services numériques.
-- [✍️ Atelier fresque du numérique](/green-it/atelier-fresque-numerique) : recréer les liens de dépendances entre les différentes cartes fournies par le formateur représentant des conditions, actions, conséquences et solutions en lien avec le numérique.
-- [🏆 Projet "réaliser un projet écoconçu"](/green-it/projet) : écrire une politique RSE sur les enjeux environnementaux du numérique et réaliser un projet écoconçu
-
 ## 🔗 Liens utiles
 
+- 1er quizz d'introduction : <https://quizanthropocene.fr/quiz/fresque-du-numerique>
+- 2ème quizz d'introduction : <https://quizanthropocene.fr/quiz/le-numerique-est-il-ecologique>
 - Empreinte environnementale du numérique mondial : [lien externe greenit.fr (PDF, 320Ko)](https://www.greenit.fr/wp-content/uploads/2019/10/2019-10-GREENIT-etude_EENM-infographie.VF_.pdf)
 - Les 115 bonnes pratiques du livre Écoconception Web : <https://github.com/cnumr/best-practices>
 - Les 500 critères du GR491 (European Institutes for Sustainable IT) : <https://gr491.isit-europe.org/>
@@ -33,4 +35,3 @@ layout: '@layouts/BaseLayout.astro'
 - <https://sustainableai.substack.com/p/how-much-electricity-will-data-centers>
 - [ADEME: Evaluation de l'impact environnemental du numérique en France](https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html)
 - <https://bonpote.com/intelligence-artificielle-le-vrai-cout-environnemental-de-la-course-a-lia/>
-
