@@ -24,8 +24,6 @@ import rehypeKatex from 'rehype-katex'; // with remark-math
 
 
 
-// Default layout is now handled by Starlight
-
 const remarkCalloutConfig = {
 	aliases: {
 		exo: "note",
@@ -116,14 +114,13 @@ export default defineConfig({
 		sitemap(),
 		// must be last to search in fully bundled
 		pagefind(),
-		// Starlight documentation theme (added alongside existing site — no content migration yet)
 		starlight({
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
 			sidebar: [
-				{ label: 'Cours', items: [{ autogenerate: { directory: 'courses' } }] },
-				{ label: 'Tracks', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
 				{ label: 'Pages', items: [{ autogenerate: { directory: 'pages' } }] },
+				{ label: 'Tracks', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
+				{ label: 'Cours', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
 			],
 			social: [],
 			disable404Route: true,
