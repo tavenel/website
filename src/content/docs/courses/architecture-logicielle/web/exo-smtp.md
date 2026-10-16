@@ -3,7 +3,7 @@ title: TP - Envoi de mail en utilisant le protocole SMTP
 date: 2023 / 2024
 type: exo
 sidebar:
-  order: 600
+  order: 103
 description: TP - Envoi de mail en utilisant le protocole SMTP
 ---
 ## Introduction
@@ -31,7 +31,6 @@ gmail.com
 La configuration `DNS` reçue est assez complexe : dans la suite du TP, on utilisera le serveur `SMTP` principal `smtp.office365.com:587`
 :::
 
-
 ## Ouverture d'un tunnel `TLS`
 
 Pour utiliser `SMTP`, nous pouvons utiliser une interface texte simple tel `telnet`.
@@ -39,7 +38,7 @@ Cependant `Outlook` ne supporte que des connexions sécurisées, ce que `telnet`
 
 Pour contourner ce problème, nous allons utiliser `SMTPS`, qui est l'usage du protocole `SMTP` standard à travers un tunnel `TLS`. Le tunnel sera ouvert grâce au programme `openssl`.
 
-1. Installer `openssl` : https://wiki.openssl.org/index.php/Binaries 
+1. Installer `openssl` : <https://wiki.openssl.org/index.php/Binaries>
 2. Ouvrir une connexion `TLS` vers le serveur `Outlook` (remplacer `MAIL_SERVEUR` et `PORT` par l'adresse du serveur de mail, et le port `SMTPS`)
 3. Vérifier que la connexion est bien établie : le serveur doit répondre `220` ou `250`.
 
@@ -153,12 +152,13 @@ Ceci est un message envoyé directement depuis SMTP
 Pourquoi un champ `To:` alors qu'une requête `rcpt to:` a déjà été envoyée ? Le champ `To:` correspond à une information stockée dans l'enveloppe du mail et accessible au destinataire à sa lecture, alors que la requête `rcpt to:` décrit à qui réellement envoyer le message. Cela permet l'utilisation de _blind copies_ `bcc` : le destinataire ne saura pas que le message a également été transmis à d'autres destinataires.
 :::
 
-
-## Exercice attendu :
+## Exercice attendu
 
 :::exo
+
 1. Envoyer un ou plusieurs mails de test à sa propre adresse mail. On pourra tester l'usage (et l'absence) des différents champs dans l'enveloppe du mail : `From:`, `To:`, ...
 2. Envoyer un mail depuis votre adresse en utilisant `SMTP` vers l'adresse du formateur. Le sujet du mail devra être : _tp-smtp-nom-prénom_
+
 :::
 
 # Legal

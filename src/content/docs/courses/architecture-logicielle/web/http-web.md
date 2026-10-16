@@ -7,7 +7,7 @@ tags:
 - web
 type: cours
 sidebar:
-  order: 800
+  order: 5
 description: HTTP et le Web
 ---
 ## http://
@@ -30,7 +30,7 @@ En général l'action concerne une ressource identifiée par l'URL qui suit le n
 
 ---
 
-### Liste des méthodes `HTTP` :
+### Liste des méthodes `HTTP`
 
 - `GET` : C'est la méthode la plus courante pour demander une ressource. Une requête `GET` est sans effet sur la ressource, il doit être possible de répéter la requête sans effet.
 - `HEAD` : Cette méthode ne demande que des informations sur la ressource, sans demander la ressource elle-même.
@@ -72,9 +72,9 @@ Les codes de statut sont regroupés en 5 catégories :
 - `HTTPS` (S = secured) : variante sécurisée de `HTTP`.
 - Utilise le protocole sécurisé Transport Layer Security (`TLS`) ou `SSL` encapsulant le protocole `HTTP` dans les données qui transitent.
 - Sécurité des informations par certificats `SSL`.
-  + Le serveur émet un certificat (clé publique) signée avec sa clé privée
-  + La détention de cette clé privée garantit l'identité du serveur.
-  + Les échanges de données sont alors chiffrés en utilisant les clés du serveur et du client : cela garantit la **confidentialité** et **l'intégrité** des échanges.
+  - Le serveur émet un certificat (clé publique) signée avec sa clé privée
+  - La détention de cette clé privée garantit l'identité du serveur.
+  - Les échanges de données sont alors chiffrés en utilisant les clés du serveur et du client : cela garantit la **confidentialité** et **l'intégrité** des échanges.
 
 ---
 
@@ -97,7 +97,7 @@ Comme `HTTP` et `FTP`, on utilise le protocole `TCP` pour la couche de transport
 
 - Protocole utile si interactions entre les 2 parties : (visio-conférence, ...) ou échange de grande quantités de données non critiques (streaming, ...)
 - Souvent ajoutées à une application Web (en `EcmaScript`) pour optimiser une partie des échanges.
-  + Contrairement aux précédent protocoles implémentés dans des clients dédiés.
+  - Contrairement aux précédent protocoles implémentés dans des clients dédiés.
 
 ---
 
@@ -142,9 +142,9 @@ Peut désigner suivant le contexte :
 ---
 
 - Lorsque l'utilisateur visite un site Web, il renseigne l'adresse Internet correspondante dans son navigateur :
-  + Le navigateur (client) envoie une requête au serveur Web.
-  + Le serveur Web répond sous forme de page `HTML`.
-  + Le navigateur interprète la réponse et envoie de nouvelles requêtes au serveur pour intégrer par exemple les images ou les données `CSS` associées.
+  - Le navigateur (client) envoie une requête au serveur Web.
+  - Le serveur Web répond sous forme de page `HTML`.
+  - Le navigateur interprète la réponse et envoie de nouvelles requêtes au serveur pour intégrer par exemple les images ou les données `CSS` associées.
 - Transmission par `HTTP(S)`, via `IP` et `TCP` (rarement `UDP`).
 
 ---
@@ -169,9 +169,10 @@ Hébergement web : service en ligne de stockage et de mise à disponibilité de 
 
 - Le client reçoit un espace de stockage dédié pour mettre en ligne ses contenus.
 - La machine hôte est gérée par les administrateurs système de l'hébergeur et le serveur web applicatif est souvent mutualisé :
- + Réduit fortement les coûts d'exploitation.
- + Facilite la mise en production.
- + Mais offre moins de flexibilité.
+
+- Réduit fortement les coûts d'exploitation.
+- Facilite la mise en production.
+- Mais offre moins de flexibilité.
 
 ---
 
@@ -187,11 +188,11 @@ Différentes manières de mettre à disposition un contenu web :
 ## Principaux serveurs Web applicatifs
 
 - `Apache web server`, notamment pour les sites dynamiques `JavaEE`, `PHP`.
-  + Très puissant et entièrement configurable.
-  + Difficile à administrer et gourmand en ressources.
+  - Très puissant et entièrement configurable.
+  - Difficile à administrer et gourmand en ressources.
 - `NginX` : sites statiques, sites aux contenus légers, "reverse proxy" (passerelle vers des web serveurs secondaires).
-  + Redoutablement efficace.
-  + Limité en fonctionnalités.
+  - Redoutablement efficace.
+  - Limité en fonctionnalités.
 - `Node.js` : applications `NodeJS` ou serveur de développement sur un ordinateur personnel.
 - Nombreux autres visant un objectif spécifique : `Jetty` pour les performances, ...
 
@@ -211,6 +212,7 @@ Un client peut en effet choisir de déléguer plus ou moins de données ou de se
 ---
 
 Après l'effervescence des applications lourdes (années 80 - 2000), la tendance est aujourd'hui de nouveau aux clients (très) légers. Cela s'explique par :
+
 - La multiplication des clients et des points d'accès (ordinateur, smartphone, box, ...).
 - La capacité des infrastructures à supporter de forts échanges de données.
 
@@ -233,8 +235,8 @@ On distingue 3 familles d'applications mobiles liés à ce choix :
 - Développée à partir de technologies web.
 - Peut être utilisée directement via le navigateur du mobile.
 - Dans une démarche itérative, point de départ minimaliste et qui peut être réutilisé :
-  + économique et déployable rapidement.
-  + Capteurs locaux limités à la géolocalisation.
+  - économique et déployable rapidement.
+  - Capteurs locaux limités à la géolocalisation.
 
 ---
 
@@ -248,7 +250,6 @@ Ces applications sont également directement disponibles sur tous les clients "c
 
 #### L'application hybride
 
-
 - Développée avec des technologies utilisant les capacités `EcmaScript` des mobiles.
 - Prend en compte certains capteurs : appareil photo, calendrier, micro, ...
 - Un seul développement : développement rapide, maintenance simple.
@@ -259,8 +260,8 @@ Ces applications sont également directement disponibles sur tous les clients "c
 #### L'application native
 
 - Développement dans un environnement propre à chaque terminal
-  + `Swift/Objective-C` pour `iOS`.
-  + `Java/Kotlin` pour `Android`.
+  - `Swift/Objective-C` pour `iOS`.
+  - `Java/Kotlin` pour `Android`.
 - Utilise les spécificités et fonctions avancées de la plateforme.
 - Maintenance complexe : double développement
 - Fonctionne sans connexion Internet.
@@ -316,4 +317,3 @@ L'utilisation d'une API (unique) permet de limiter l'intégration avec les inter
 - Other names may be trademarks of their respective owners
 
 ---
-

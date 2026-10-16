@@ -1,7 +1,7 @@
 ---
 type: cours
 sidebar:
-  order: 800
+  order: 900
 title: Liens HTTP et Web
 ---
 

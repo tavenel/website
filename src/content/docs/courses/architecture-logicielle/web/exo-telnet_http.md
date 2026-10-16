@@ -3,12 +3,12 @@ title: TP - Utilisation du protocole HTTP avec Telnet
 date: 2023 / 2024
 type: exo
 sidebar:
-  order: 600
+  order: 102
 description: TP - Utilisation du protocole HTTP avec Telnet
 ---
 ## Installation de telnet
 
-Suivre les étapes décrites à l'adresse : https://rdr-it.com/windows-10-installation-du-client-telnet/ 
+Suivre les étapes décrites à l'adresse : <https://rdr-it.com/windows-10-installation-du-client-telnet/>
 
 ## Utilisation de telnet pour récupérer le contenu d'une page
 

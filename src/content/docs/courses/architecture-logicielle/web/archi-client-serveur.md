@@ -6,7 +6,7 @@ tags:
 - client-server
 type: cours
 sidebar:
-  order: 800
+  order: 2
 description: Architecture client serveur
 ---
 ## Client/serveur vs peer-to-peer
@@ -83,8 +83,8 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 - Tourne en permanence, attendant des requêtes.
 - Peut répondre à plusieurs clients en même temps.
 - Nécessite :
-  + Une machine robuste et rapide, qui fonctionne 24h/24 : alimentation redondante, technologie RAID, stockage et sauvegarde des données
-  + La présence d'administrateurs systèmes et réseau pour gérer les serveurs.
+  - Une machine robuste et rapide, qui fonctionne 24h/24 : alimentation redondante, technologie RAID, stockage et sauvegarde des données
+  - La présence d'administrateurs systèmes et réseau pour gérer les serveurs.
 
 ---
 
@@ -102,8 +102,8 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 - ...mais peut être partagée par plusieurs comptes ou profils !
 - Il est démarré par l'utilisateur seulement pour le temps d'utilisation de l'application.
 - Dépend des ressources de la machine de l'utilisateur :
-  + Limitation mémoire, bande passante, CPU, ...
-  + Dépendances peu maîtrisées : `Android` vs `iPhone`, version des librairies, ...
+  - Limitation mémoire, bande passante, CPU, ...
+  - Dépendances peu maîtrisées : `Android` vs `iPhone`, version des librairies, ...
 
 ---
 
@@ -118,7 +118,7 @@ Les processus client / serveur ne sont pas identiques : ils communiquent pour r�
 ## 🌟 Avantages de l'architecture client/serveur
 
 - Ressources centralisées : le serveur gère les ressources communes à tous les utilisateurs (base de données, ...)
-  + la cohérence des données est aisée
+  - la cohérence des données est aisée
 - Administration centralisée : seul le serveur est critique
 - Réseau évolutif : ajout / suppression de clients sans impact sur les autres clients
 - Sécurité : l'accès aux données est masqué par le serveur, les clients en manipulent le minimum
@@ -186,9 +186,9 @@ flowchart TD
 
 - Logiciel qui inter-connecte un ensemble d'applications en leur fournissant des fonctionnalités et services communs.
 - Se situe entre les requêtes du client et le serveur :
-  + Gérer une authentification commune (token `JWT`).
-  + Retravailler les headers.
-  + Vérifier des requêtes à l'API.
+  - Gérer une authentification commune (token `JWT`).
+  - Retravailler les headers.
+  - Vérifier des requêtes à l'API.
 - Peut aussi servir à abstraire le système sur lequel tourne l'application.
 
 ---
@@ -240,7 +240,7 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 
 - Réseau mondial regroupant un ensemble de sous-réseaux non homogènes d'architectures et de technologies différentes.
 - C'est donc un réseau de réseaux : `Inter-network` !
-- Comment faire pour permettre la communication entre des entités de réseaux très différents et n'utilisant pas les mêmes technologies ? 
+- Comment faire pour permettre la communication entre des entités de réseaux très différents et n'utilisant pas les mêmes technologies ?
 
 ---
 
@@ -295,11 +295,12 @@ Dans une architecture client/serveur, le serveur joue le rôle de _La Poste_ ent
 ### Couche application
 
 Ces protocoles gèrent l'accès applicatif aux services réseau :
-  + Gestion des noms de domaines `DNS`.
-  + Configuration dynamique des postes `DHCP`.
-  + _Hypertext Transfert Protocol_ `HTTP`.
-  + Transfert de fichiers `FTP`.
-  + Transfert de mails `SMTP`, ...
+
+- Gestion des noms de domaines `DNS`.
+- Configuration dynamique des postes `DHCP`.
+- _Hypertext Transfert Protocol_ `HTTP`.
+- Transfert de fichiers `FTP`.
+- Transfert de mails `SMTP`, ...
 
 ---
 
@@ -308,9 +309,9 @@ Ces protocoles gèrent l'accès applicatif aux services réseau :
 Ces protocoles établissent les communications :
 
 - De manière connectée en utilisant des sessions.
-  + _Transmission Control Protocol_ `TCP`.
+  - _Transmission Control Protocol_ `TCP`.
 - Ou en diffusant les messages sans connexion.
-  + _User Datagram Protocol_ `UDP`.
+  - _User Datagram Protocol_ `UDP`.
 
 ---
 
@@ -382,8 +383,8 @@ Leur configuration est gérée par les administrateurs réseaux et est général
 
 - Adresses logiques sur 32 bits (4 octets) de la forme `w.x.y.z`
 - Partitionnées en 2 segments grâce à un _masque de sous-réseau_ (`subnet mask`) :
-  + un ID réseau (`NetID`)
-  + suivi par un ID de machine (`HostID`).
+  - un ID réseau (`NetID`)
+  - suivi par un ID de machine (`HostID`).
 - Clé primaire pour identifier une machine ou un réseau.
 
 ---
@@ -421,8 +422,8 @@ Par exemple, pour le réseau `25.116.8.0/24` :
 - Les adresses `w.x.y.z` sont en réalité des adresses de la version IPv4 sur 32 bits.
 - Version majoritaire dans les déploiements actuels mais en cours d'épuisement.
 - Nouvelle norme : IPv6 sur 128 bits mais complexe à mettre en œuvre.
-  + Les adresses IPv6 ne s'écrivent pas en notation décimale `192.168.0.1` mais en notation hexadécimale (8 groupes de 2 octets soit 128 bits).
-  + Par exemple : `2001:0db8:0000:85a3:0000:0000:ac1f:8001`
+  - Les adresses IPv6 ne s'écrivent pas en notation décimale `192.168.0.1` mais en notation hexadécimale (8 groupes de 2 octets soit 128 bits).
+  - Par exemple : `2001:0db8:0000:85a3:0000:0000:ac1f:8001`
 - Il est possible de mélanger des déploiements de chaque version, une interface réseau peut même posséder une adresse IPv4 et une adresse IPv6 en même temps.
 
 ---
@@ -453,4 +454,3 @@ Le nom de domaine `en.wikipedia.org` représente la machine `en` qui appartient 
 - Other names may be trademarks of their respective owners
 
 ---
-
