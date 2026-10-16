@@ -3,7 +3,7 @@ title: TP Dashboard PowerBI et Roadmap
 date: 2024 / 2025
 type: tp
 sidebar:
-  order: 800
+  order: 101
 description: TP Dashboard PowerBI et Roadmap
 ---
 L'objectif de ces exercices est de réfléchier à l'amélioration de la strate / couche applicative du SI, voir de la couche inférieure technique.

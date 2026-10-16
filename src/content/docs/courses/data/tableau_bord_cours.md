@@ -6,7 +6,7 @@ tags:
 - data
 type: cours
 sidebar:
-  order: 800
+  order: 2
 description: Introduction aux tableaux de bord et feuilles de route
 ---
 ## Rappel : Découpage en Couches du SI
@@ -280,13 +280,13 @@ description: Introduction aux tableaux de bord et feuilles de route
 
 ### Exemple d'Indicateurs Clés pour une Application
 
-| Axe 🗃           | Indicateur 📊📈                  | Objectif 🎯            |
+| Axe 🗃 | Indicateur 📊📈 | Objectif 🎯 |
 | --------------- | ---------------------------- | -------------------- |
-| **Financier** 💵   | Coût mensuel de maintenance  | < 5% d'augmentation  |
-| **Technique** 📈   | Taux de disponibilité        | 99,9 % d'uptime.     |
-| **Sécurité** 🔐    | Nombre de vulnérabilités     | 0 faille critique    |
-| **Utilisateur** 🙎 | Satisfaction utilisateur (%) | 90 % minimum.        |
-| **Légal** 🏛       | Respect RGPD (%)             | 100 % de conformité. |
+| **Financier** 💵 | Coût mensuel de maintenance | < 5% d'augmentation |
+| **Technique** 📈 | Taux de disponibilité | 99,9 % d'uptime. |
+| **Sécurité** 🔐 | Nombre de vulnérabilités | 0 faille critique |
+| **Utilisateur** 🙎 | Satisfaction utilisateur (%) | 90 % minimum. |
+| **Légal** 🏛 | Respect RGPD (%) | 100 % de conformité. |
 
 ---
 
