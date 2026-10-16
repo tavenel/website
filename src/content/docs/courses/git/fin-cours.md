@@ -3,7 +3,7 @@ license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 type: cours
 title: Fin Cours
 sidebar:
-  order: 2
+  order: 4
 description: Fin Cours
 ---
 ## Alternatives à la ligne de commandes 🖱️💻

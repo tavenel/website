@@ -6,7 +6,7 @@ tags:
 - iac
 type: tp
 sidebar:
-  order: 250
+  order: 119
 description: Git pour gérer ses configurations - IaC
 ---
 ## Infrastructure-as-Code (IaC)

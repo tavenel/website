@@ -3,7 +3,7 @@ title: TP Git Worktree
 date: 2025 / 2026
 type: tp
 sidebar:
-  order: 250
+  order: 118
 description: TP Git Worktree
 ---
 ## Présentation
@@ -207,7 +207,7 @@ Utile pour inspecter un état ancien du projet sans créer de branche.
 ## Récapitulatif des commandes
 
 | Commande | Description |
-|---|---|
+| --- | --- |
 | `git worktree list` | Lister les worktrees |
 | `git worktree add <path> <branch>` | Créer un worktree |
 | `git worktree add -b <new-branch> <path>` | Créer un worktree avec une nouvelle branche |

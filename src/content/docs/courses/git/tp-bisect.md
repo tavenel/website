@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 112
 description: TP Git Bisect
 ---
 ## Introduction

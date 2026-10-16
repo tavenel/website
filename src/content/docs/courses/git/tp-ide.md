@@ -6,7 +6,7 @@ tags:
 - vscode
 type: tp
 sidebar:
-  order: 250
+  order: 116
 description: TP Intégration de Git dans l'IDE VsCode
 ---
 :::link

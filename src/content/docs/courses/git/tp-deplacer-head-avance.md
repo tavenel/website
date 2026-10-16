@@ -7,7 +7,7 @@ tags:
 - devops
 type: tp
 sidebar:
-  order: 250
+  order: 117
 description: TP Manipulations avancées de la HEAD
 ---
 ## Introduction

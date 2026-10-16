@@ -7,7 +7,7 @@ tags:
 - devops
 type: tp
 sidebar:
-  order: 250
+  order: 115
 description: TP Introduction à l'infrastructure-as-code (IaC)
 ---
 ## 📋 Prérequis et installation

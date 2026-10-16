@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 109
 description: Les tags de Git
 ---
 ## Introduction

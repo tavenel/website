@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 114
 description: Git pour un Projet XAMPP
 ---
 ## Objectif du TP

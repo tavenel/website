@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 104
 description: TP Patching
 ---
 ## Ajout partiel de modifications

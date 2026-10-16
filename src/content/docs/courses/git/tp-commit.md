@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 101
 description: TP Premiers pas avec Git™
 ---
 ## Présentation

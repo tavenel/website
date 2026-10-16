@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 108
 description: TP Git Grep - Recherches dans un dépôt Git
 ---
 ## Introduction
@@ -29,41 +29,49 @@ git grep "<regexp>" $(git rev-list --all -- lib/util) -- lib/util
 Autres méthodes de recherche utiles :
 
 1. Rechercher dans une branche :
+
  ```sh
  git grep "<regexp> origin/main"
  ```
 
-2. Rechercher depuis le répertoire courant le texte correspondant à l'expression régulière regexp :
+1. Rechercher depuis le répertoire courant le texte correspondant à l'expression régulière regexp :
+
  ```sh
  git grep "<regexp>"
  ```
 
-3. Afficher uniquement les chemins d'accès aux fichiers :
+1. Afficher uniquement les chemins d'accès aux fichiers :
+
  ```sh
  git grep -l "<regexp>"
  ```
 
-4. Rechercher les commits contenant à la fois `regexp1` et `regexp2` :
+1. Rechercher les commits contenant à la fois `regexp1` et `regexp2` :
+
  ```sh
  git grep --all-match -e <regexp1> -e <regexp2>
  ```
 
-5. Rechercher les lignes de texte modifiées correspondant au motif :
+1. Rechercher les lignes de texte modifiées correspondant au motif :
+
  ```sh
  git diff --unified=0 | grep <pattern>
  ```
 
-6. Rechercher du texte correspondant à l'expression régulière regexp dans tous les commits entre `rev1` et `rev2` :
+1. Rechercher du texte correspondant à l'expression régulière regexp dans tous les commits entre `rev1` et `rev2` :
+
  ```sh
  git grep <regexp> $(git rev-list "<rev1>..<rev2>")
  ```
 
-7. Recherche _pickaxe_ : rechercher les changements ayant ajouté ou supprimé une chaîne de caractères (`-p` affiche l'auteur, la date et le diff):
+1. Recherche _pickaxe_ : rechercher les changements ayant ajouté ou supprimé une chaîne de caractères (`-p` affiche l'auteur, la date et le diff):
+
  ```sh
  git log -S "FIXME" -p
  ```
 
-8. Chercher dans les messages de commits :
+1. Chercher dans les messages de commits :
+
  ```sh
  git log --grep "TODO"
  ```

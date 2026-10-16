@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 103
 description: TP Voyager et manipuler l'historique Git™
 ---
 ## Introduction

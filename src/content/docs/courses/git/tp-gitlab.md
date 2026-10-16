@@ -6,7 +6,7 @@ tags:
 - gitlab
 type: tp
 sidebar:
-  order: 250
+  order: 106
 description: Utiliser un dépôt distant - GitLab
 ---
 ## Création d'un dépôt distant

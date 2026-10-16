@@ -5,7 +5,7 @@ tags:
 - git
 type: tp
 sidebar:
-  order: 250
+  order: 102
 description: Gitignore
 ---
 ## Le fichier spécial .gitignore

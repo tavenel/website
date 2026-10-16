@@ -6,7 +6,7 @@ tags:
 - ci
 type: tp
 sidebar:
-  order: 250
+  order: 110
 description: Les workflows Git™ et la pull-request
 ---
 **L'intégralité de ce cas pratique est à réaliser en binôme.**

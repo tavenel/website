@@ -6,7 +6,7 @@ tags:
 - github
 type: tp
 sidebar:
-  order: 250
+  order: 104
 description: Utiliser un dépôt distant - Github®
 ---
 <!-- TODO : factor with gitlab / github -->
