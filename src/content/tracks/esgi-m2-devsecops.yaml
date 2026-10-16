@@ -4,6 +4,7 @@ school: "ESGI"
 year: "M2"
 module: "devsecops"
 chapters:
-  - devops/devsecops
+  - devops/devsecops/devsecops
   - cloud/secu
   - cicd/cours-secu-ci
+  - devops/devsecops/projet-devsecops
