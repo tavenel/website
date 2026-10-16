@@ -17,7 +17,7 @@ import path from 'node:path';
 import { load as parseYaml } from 'js-yaml';
 
 const DRY_RUN = process.argv.includes('--dry-run');
-const TRACKS_DIR = 'src/content/tracks';
+const TRACKS_SRC = 'src/content/tracks';
 const DOCS_TRACKS = 'src/content/docs/tracks';
 const DOCS_COURSES = 'src/content/docs/courses';
 
@@ -76,7 +76,6 @@ function serializeFrontmatter(fm) {
       out += `${key}: ${fm[key]}\n`;
     }
   }
-  // Any remaining keys
   for (const [key, val] of Object.entries(fm)) {
     if (processed.has(key)) continue;
     if (typeof val === 'string') {
@@ -87,11 +86,62 @@ function serializeFrontmatter(fm) {
   return out;
 }
 
+function collectTrackSlugs() {
+  const slugs = [];
+  if (!fs.existsSync(TRACKS_SRC)) return slugs;
+  for (const f of fs.readdirSync(TRACKS_SRC).filter(f => f.endsWith('.yaml'))) {
+    const track = readTrackYaml(path.join(TRACKS_SRC, f));
+    if (track.slug && Array.isArray(track.chapters)) {
+      slugs.push(track.slug);
+    }
+  }
+  return slugs;
+}
+
+function createIntermediateIndexes(dir) {
+  // Find child dirs that are track containers (have subdirectories with index.md)
+  const childDirs = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    childDirs.push(entry.name);
+  }
+  childDirs.sort();
+  for (const name of childDirs) {
+    const childDir = path.join(dir, name);
+    const relPath = childDir.replace(DOCS_TRACKS + '/', '').replace(DOCS_TRACKS, '');
+    // If this child already has an index.md, it's a track — skip
+    if (fs.existsSync(path.join(childDir, 'index.md'))) continue;
+    // Check if this child has subdirectories (tracks inside it)
+    const subDirs = fs.readdirSync(childDir, { withFileTypes: true })
+      .filter(e => e.isDirectory())
+      .map(e => e.name)
+      .sort();
+    if (subDirs.length === 0) continue;
+    // Create index.md for this container directory
+    const parentName = name.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const links = subDirs.map(sd => {
+      const sdIndex = path.join(childDir, sd, 'index.md');
+      const sdTitle = fs.existsSync(sdIndex)
+        ? (parseFrontmatter(fs.readFileSync(sdIndex, 'utf8')).frontmatter.title || sd)
+        : sd;
+      return `- [${sdTitle}](./${sd}/)`;
+    }).join('\n');
+    const body = `## ${parentName}\n\n${links}\n`;
+    const fm = { title: parentName, type: 'cours', sidebar: { order: 1 } };
+    fs.writeFileSync(path.join(childDir, 'index.md'), serializeFrontmatter(fm) + body, 'utf8');
+    console.log(`  🏠 ${relPath}/index.md (intermediate)`);
+    // Recurse into subdirs
+    for (const sd of subDirs) {
+      createIntermediateIndexes(path.join(childDir, sd));
+    }
+  }
+}
+
 function main() {
   console.log(`\n${DRY_RUN ? '🔍 DRY RUN' : '🚀'} Generating track content files\n`);
   
-  if (!fs.existsSync(TRACKS_DIR)) {
-    console.error(`Tracks directory not found: ${TRACKS_DIR}`);
+  if (!fs.existsSync(TRACKS_SRC)) {
+    console.error('Tracks source dir not found: ' + TRACKS_SRC);
     process.exit(1);
   }
   
@@ -100,32 +150,28 @@ function main() {
     fs.rmSync(DOCS_TRACKS, { recursive: true });
   }
   
-  const trackFiles = fs.readdirSync(TRACKS_DIR).filter(f => f.endsWith('.yaml'));
+  const trackFiles = fs.readdirSync(TRACKS_SRC).filter(f => f.endsWith('.yaml'));
   console.log(`Found ${trackFiles.length} track definitions.\n`);
   
   let totalChapters = 0;
   let errors = 0;
   
   for (const trackFile of trackFiles) {
-    const track = readTrackYaml(path.join(TRACKS_DIR, trackFile));
+    const track = readTrackYaml(path.join(TRACKS_SRC, trackFile));
     
-    if (!track.slug || !track.chapters || !Array.isArray(track.chapters) || track.chapters.length === 0) {
-      console.warn(`  ⚠️  Skipping ${trackFile}: no slug or chapters`);
+    if (!track.slug || !Array.isArray(track.chapters) || track.chapters.length === 0) {
+      console.warn(`  Skipping ${trackFile}: no slug or chapters`);
       errors++;
       continue;
     }
     
     const slug = track.slug;
     const trackDir = path.join(DOCS_TRACKS, slug);
-    console.log(`📁 tracks/${slug}/ (${track.chapters.length} chapters)`);
+    console.log(`  tracks/${slug}/ (${track.chapters.length} chapters)`);
     
-    // Create track index.md
     const chapters = [];
     for (let i = 0; i < track.chapters.length; i++) {
       const chapterSlug = track.chapters[i];
-      // chapterSlug is like "courses/linux/cours-hardware"
-      const courseFile = chapterSlug + '.md';
-      // Strip 'courses/' prefix if present (YAML chunks already include it)
       const relPath = chapterSlug.startsWith('courses/') ? chapterSlug.slice(8) + '.md' : chapterSlug + '.md';
       const srcPath = path.join(DOCS_COURSES, relPath);
       
@@ -134,23 +180,16 @@ function main() {
       
       chapters.push({ slug: chapterSlug, name: chapterName, order: i + 1 });
       
-      // Create chapter file with content from courses/
       if (fs.existsSync(srcPath)) {
         const srcContent = fs.readFileSync(srcPath, 'utf8');
         const { frontmatter: srcFm, body } = parseFrontmatter(srcContent);
         
-        // Build chapter frontmatter
         const chapterFm = { ...srcFm };
-        // Remove course-specific sidebar (track provides its own)
         chapterFm.sidebar = { order: i + 1 };
-        // Ensure title
         if (!chapterFm.title) {
           chapterFm.title = chapterName.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
         }
-        // Add description if missing
-        if (!chapterFm.description && chapterFm.title) {
-          chapterFm.description = chapterFm.title;
-        }
+        if (!chapterFm.description && chapterFm.title) chapterFm.description = chapterFm.title;
         
         const newContent = serializeFrontmatter(chapterFm) + body;
         const dstPath = path.join(trackDir, chapterName + '.md');
@@ -159,14 +198,13 @@ function main() {
           fs.mkdirSync(path.dirname(dstPath), { recursive: true });
           fs.writeFileSync(dstPath, newContent, 'utf8');
         }
-        console.log(`  📄 ${chapterName}.md (source: ${chapterSlug})`);
+        console.log(`    ${chapterName}.md`);
       } else {
-        console.warn(`  ⚠️  Chapter not found: ${srcPath}`);
+        console.warn(`    NOT FOUND: ${srcPath}`);
         errors++;
       }
     }
     
-    // Create index.md for the track
     const indexFm = {
       title: track.title || slug.split('/').pop() || 'Track',
       description: track.description || `Track ${track.title}`,
@@ -184,12 +222,20 @@ function main() {
       fs.mkdirSync(path.dirname(indexPath), { recursive: true });
       fs.writeFileSync(indexPath, indexContent, 'utf8');
     }
-    console.log(`  🏠 index.md`);
+    console.log(`    index.md`);
     
     totalChapters += track.chapters.length;
   }
   
-  console.log(`\n${DRY_RUN ? '🔍 DRY RUN' : '✅'} Complete.`);
+  // Create intermediate index pages for multi-level slugs
+  if (!DRY_RUN && fs.existsSync(DOCS_TRACKS)) {
+    const createdBefore = fs.readdirSync(DOCS_TRACKS, { withFileTypes: true }).filter(e => e.isDirectory()).length;
+    createIntermediateIndexes(DOCS_TRACKS);
+    const createdAfter = fs.readdirSync(DOCS_TRACKS, { withFileTypes: true }).filter(e => e.isDirectory()).length;
+    if (createdAfter > 0) console.log(`\nIntermediate indexes: created for ${createdAfter - createdBefore} container directories`);
+  }
+  
+  console.log(`\n${DRY_RUN ? 'DRY RUN' : 'Done.'}`);
   console.log(`Tracks: ${trackFiles.length}`);
   console.log(`Chapters: ${totalChapters}`);
   if (errors) console.log(`Errors: ${errors}`);
