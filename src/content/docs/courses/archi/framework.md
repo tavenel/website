@@ -5,7 +5,7 @@ tags:
 - architecture
 type: cours
 sidebar:
-  order: 800
+  order: 2
 description: Introduction au choix et à l'utilisation de framework
 ---
 ## Introduction aux frameworks
@@ -19,7 +19,7 @@ Framework : ensemble de composants qui structure une application et contraint la
 
 ---
 
-## 🌟 Avantages d'un framework :
+## 🌟 Avantages d'un framework
 
 - \+ Gain de temps et d'efficacité
 - \+ Meilleure structuration du code
@@ -27,7 +27,7 @@ Framework : ensemble de composants qui structure une application et contraint la
 
 ---
 
-## Inconvénients d'un framework :
+## Inconvénients d'un framework
 
 - \- Limite les fonctionnalités complexes du langage
 - \- Niveau d'abstraction supplémentaire
@@ -43,17 +43,17 @@ Framework : ensemble de composants qui structure une application et contraint la
 
 ---
 
-## Exemple de métriques techniques :
+## Exemple de métriques techniques
 
 - \+ Facilité d'utilisation
 - \+ fonctionnalités déjà intégrées
-- \+ Besoins client "standards" 
-- \- Utilisation de fonctionnalités avancées du langage de programmation 
-- \- Impact sur l'architecture / difficulté à changer de framework 
+- \+ Besoins client "standards"
+- \- Utilisation de fonctionnalités avancées du langage de programmation
+- \- Impact sur l'architecture / difficulté à changer de framework
 
 ---
 
-## Exemple de métriques projet :
+## Exemple de métriques projet
 
 - \+ Stabilité
 - \+ Maturité (technologie et/ou paradigme)
@@ -62,4 +62,3 @@ Framework : ensemble de composants qui structure une application et contraint la
 - \- Difficulté de formation
 
 ---
-
