@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Introduction à la certification LPIC-102
 type: cours
 sidebar:
-  order: 34
+  order: 2
 description: Introduction à la certification LPIC-102
 ---
 ## Objectifs
@@ -147,4 +147,3 @@ LPIC-1 - 102
   - Les symboles `[]` indiquent un argument optionnel.  
 
 ---
-

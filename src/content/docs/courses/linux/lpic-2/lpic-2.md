@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Contenu de la certification LPIC-2
 type: cours
 sidebar:
-  order: 35
+  order: 1
 description: Contenu de la certification LPIC-2
 ---
 ## Exam 201
@@ -12,33 +12,33 @@ description: Contenu de la certification LPIC-2
 mindmap
 Exam 201 - Administration Système Avancée
 
-	200 : **Planification des ressources**
-		200.1 Mesure de l'utilisation des ressources et résolution de problèmes
-		200.2 Prévision des besoins en ressources
-	201 : **le noyau Linux**
-		201.1 Composants du noyau
-		201.2 Compilation du noyau
-		201.3 Gestion du noyau à chaud et résolution de problèmes
-	202 : **Démarrage du système**
-		202.1 Personnalisation du démarrage système
-		202.2 Récupération du système
-		202.3 Chargeurs d'amorçage alternatifs
-	203 : **Systèmes de fichiers et périphériques**
-		203.1 Intervention sur le système de fichiers Linux
-		203.2 Maintenance des systèmes de fichiers Linux
-		203.3 Options de création et de configuration des systèmes de fichiers
-	204 : **Administration avancée des périphériques de stockage**
-		204.1 Configuration du RAID logiciel
-		204.2 Ajustement des accès aux périphériques de stockage
-		204.3 Gestionnaire de volumes logiques
-	205 : **Configuration réseau**
-		205.1 Configuration réseau de base
-		205.2 Configuration réseau avancée
-		205.3 Résolution des problèmes réseau
-	206 : **Maintenance système**
-		206.1 Compilation et installation de programmes à partir des sources
-		206.2 Opérations de sauvegarde
-		206.3 Information des utilisateurs
+ 200 : **Planification des ressources**
+  200.1 Mesure de l'utilisation des ressources et résolution de problèmes
+  200.2 Prévision des besoins en ressources
+ 201 : **le noyau Linux**
+  201.1 Composants du noyau
+  201.2 Compilation du noyau
+  201.3 Gestion du noyau à chaud et résolution de problèmes
+ 202 : **Démarrage du système**
+  202.1 Personnalisation du démarrage système
+  202.2 Récupération du système
+  202.3 Chargeurs d'amorçage alternatifs
+ 203 : **Systèmes de fichiers et périphériques**
+  203.1 Intervention sur le système de fichiers Linux
+  203.2 Maintenance des systèmes de fichiers Linux
+  203.3 Options de création et de configuration des systèmes de fichiers
+ 204 : **Administration avancée des périphériques de stockage**
+  204.1 Configuration du RAID logiciel
+  204.2 Ajustement des accès aux périphériques de stockage
+  204.3 Gestionnaire de volumes logiques
+ 205 : **Configuration réseau**
+  205.1 Configuration réseau de base
+  205.2 Configuration réseau avancée
+  205.3 Résolution des problèmes réseau
+ 206 : **Maintenance système**
+  206.1 Compilation et installation de programmes à partir des sources
+  206.2 Opérations de sauvegarde
+  206.3 Information des utilisateurs
 ```
 
 ### Sujet 200 : Planification des ressources
@@ -111,7 +111,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/usr/src/linux/`
 - `/usr/src/linux/Documentation/`
 - `zImage`
-- `bzImage` 
+- `bzImage`
 - Compression `xz`
 
 #### 201.2 Compilation du noyau (valeur : 3)
@@ -136,9 +136,9 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `mkinitrd`
 - `mkinitramfs`
 - `make`
-- `make` targets (`all`, `config`, `xconfig`, `menuconfig`, `gconfig`, `oldconfig`, `mrproper`, `zImage`, `bzImage`, `modules`, `modules_install`, `rpm-pkg`, `binrpm-pkg`, `deb-pkg`) 
+- `make` targets (`all`, `config`, `xconfig`, `menuconfig`, `gconfig`, `oldconfig`, `mrproper`, `zImage`, `bzImage`, `modules`, `modules_install`, `rpm-pkg`, `binrpm-pkg`, `deb-pkg`)
 - `gzip`
-- `bzip2 `
+- `bzip2`
 - module tools
 - `/usr/src/linux/.config`
 - `/lib/modules/kernel-version/`
@@ -176,9 +176,9 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/sbin/modprobe`
 - `/sbin/insmod`
 - `/bin/uname`
-- `/usr/bin/lsusb `
+- `/usr/bin/lsusb`
 - `/etc/sysctl.conf`, `/etc/sysctl.d/`
-- `/sbin/sysctl `
+- `/sbin/sysctl`
 - `udevmonitor`
 - `udevadm monitor`
 - `/etc/udev/`
@@ -193,7 +193,7 @@ Domaines de connaissances clés :
 
 - Systemd
 - SysV init
-- Linux Standard Base Specification (LSB) 
+- Linux Standard Base Specification (LSB)
 
 Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 
@@ -287,7 +287,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `blkid`
 - `sync`
 - `swapon`
-- `swapoff `
+- `swapoff`
 
 #### 203.2 Maintenance des systèmes de fichiers Linux (valeur : 3)
 
@@ -388,7 +388,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/sbin/lv*`
 - `/sbin/vg*`
 - `mount`
-- `/dev/mapper/ `
+- `/dev/mapper/`
 - `lvm.conf`
 
 ### Sujet 205 : Configuration réseau
@@ -495,7 +495,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `configure`
 - `make`
 - `uname`
-- `install `
+- `install`
 - `patch`
 
 #### 206.2 Opérations de sauvegarde (valeur : 3)
@@ -518,7 +518,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `tar`
 - `/dev/st*` & `/dev/nst*`
 - `mt`
-- `rsync `
+- `rsync`
 
 #### 206.3 Information des utilisateurs (valeur : 1)
 
@@ -535,7 +535,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/etc/issue.net`
 - `/etc/motd`
 - `wall`
-- `shutdown `
+- `shutdown`
 - `systemctl`
 
 ## Exam 202
@@ -592,7 +592,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/var/named/`
 - `rndc`
 - `named-checkconf`
-- `kill `
+- `kill`
 - `host`
 - `dig`
 
@@ -617,7 +617,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `masterfile-format`
 - `dig`
 - `nslookup`
-- `host `
+- `host`
 
 #### 207.3 Sécurisation d'un serveur DNS (valeur : 2)
 
@@ -637,7 +637,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/etc/named.conf`
 - `/etc/passwd`
 - _DNSSEC_
-- `dnssec-keygen `
+- `dnssec-keygen`
 - `dnssec-signzone`
 
 ### Sujet 208 : HTTP Services
@@ -747,7 +747,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `smbclient`
 - `mount.cifs`
 - `/etc/samba/`
-- `/var/log/samba/ `
+- `/var/log/samba/`
 
 #### 209.2 Configuration d'un serveur NFS (valeur : 3)
 
@@ -792,7 +792,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `dhcpd.leases`
 - Messages de log DHCP dans `syslog` ou le journal `systemd`
 - `arp`
-- `dhcpd `
+- `dhcpd`
 - `radvd`
 - `radvd.conf`
 
@@ -829,7 +829,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `ldapsearch`
 - `ldappasswd`
 - `ldapadd`
-- `ldapdelete `
+- `ldapdelete`
 
 #### 210.4 Configuration d'un serveur OpenLDAP (valeur : 4)
 
@@ -908,7 +908,7 @@ Domaines de connaissances clés :
 Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 
 - `/etc/dovecot/`
-- `dovecot.conf `
+- `dovecot.conf`
 - `doveconf`
 - `doveadm`
 
@@ -932,7 +932,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/proc/sys/net/ipv4/`
 - `/proc/sys/net/ipv6/`
 - `/etc/services`
-- `iptables `
+- `iptables`
 - `ip6tables`
 
 #### 212.2 Gestion des serveurs FTP (valeur : 2)
@@ -968,7 +968,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `/etc/ssh/sshd_config`
 - `/etc/ssh/`
 - Fichiers de clés privées et publiques
-- `PermitRootLogin`, `PubKeyAuthentication`, `AllowUsers`, `PasswordAuthentication`, `Protocol` 
+- `PermitRootLogin`, `PubKeyAuthentication`, `AllowUsers`, `PasswordAuthentication`, `Protocol`
 
 #### 212.4 Tâches de sécurité (valeur : 3)
 
@@ -987,7 +987,7 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 - `nmap`
 - `fail2ban`
 - `nc`
-- `iptables `
+- `iptables`
 
 #### 212.5 OpenVPN (valeur : 2)
 
@@ -995,10 +995,9 @@ Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 
 Domaines de connaissances clés :
 
-- OpenVPN 
+- OpenVPN
 
 Voici une liste partielle des fichiers, termes et utilitaires utilisés :
 
 - `/etc/openvpn/`
 - `openvpn`
-

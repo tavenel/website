@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Projet LPIC-2 - Mise en place d'une infrastructure système complète sécurisée et supervisée
 type: projet
 sidebar:
-  order: 500
+  order: 2
 description: Projet LPIC-2 - Mise en place d'une infrastructure système complète sécurisée et supervisée
 ---
 ## Contexte du projet
@@ -112,4 +112,3 @@ On ne demande pas de réaliser de déploiement hautement disponible.
 - Implication dans le projet et interaction avec le groupe
 - Difficulté de la tâche réalisée
 - Réponses techniques aux questions lors de la soutenance
-

@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Introduction à la certification LPIC-101
 type: cours
 sidebar:
-  order: 33
+  order: 1
 description: Introduction à la certification LPIC-101
 ---
 ## Objectifs
@@ -134,7 +134,7 @@ LPIC-1 - 101
 - 103.3 Gestion élémentaire des fichiers [4]
   - TP : Gestion des fichiers
 - 103.4 Utilisation des flux, des pipes et des redirections [4]
-  - TP : Utilisation des flux, des pipes et des redirections 
+  - TP : Utilisation des flux, des pipes et des redirections
 - 103.5 Création, contrôle et interruption des processus [4]
 - 103.6 Modification des priorités des processus [2]
   - TP : Gestion des processus et de leur priorité
@@ -157,4 +157,3 @@ LPIC-1 - 101
   - TP : Gestion avancée de fichiers - permissions, liens, recherche
 
 ---
-
