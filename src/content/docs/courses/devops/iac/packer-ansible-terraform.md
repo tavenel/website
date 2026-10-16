@@ -4,7 +4,7 @@ title: TP Infrastructure as Code avec Packer, Ansible et Terraform
 date: 2025 / 2026
 type: projet
 sidebar:
-  order: 500
+  order: 203
 description: TP Infrastructure as Code avec Packer, Ansible et Terraform
 ---
 ## Contexte métier

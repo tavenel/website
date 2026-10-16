@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: YAML & Jinja2 & Go templates
 type: cours
 sidebar:
-  order: 6
+  order: 3
 description: YAML & Jinja2 & Go templates
 ---
 ## YAML
@@ -15,10 +15,11 @@ description: YAML & Jinja2 & Go templates
 ### Principes de base
 
 1. **Indentation obligatoire** :
-  - espaces (généralement 2), pas de tabulations
-  - sensible aux espaces : chaque niveau d'imbrication doit avoir la même indentation
 
-2. **Clés-valeurs** simples :
+- espaces (généralement 2), pas de tabulations
+- sensible aux espaces : chaque niveau d'imbrication doit avoir la même indentation
+
+1. **Clés-valeurs** simples :
 
 ```yaml
 nom: Alice
@@ -26,7 +27,7 @@ age: 30
 admin: true
 ```
 
-3. **Listes** :
+1. **Listes** :
 
 ```yaml
 fruits:
@@ -35,7 +36,7 @@ fruits:
   - fraise
 ```
 
-4. **Objets imbriqués** :
+1. **Objets imbriqués** :
 
 ```yaml
 utilisateur:
@@ -45,11 +46,11 @@ utilisateur:
     - dev
 ```
 
-5. **Valeurs spéciales**
+1. **Valeurs spéciales**
 
-* `true/false` (booléen)
-* `null` (valeur vide)
-* `123` (entier), `1.23` (flottant)
+- `true/false` (booléen)
+- `null` (valeur vide)
+- `123` (entier), `1.23` (flottant)
 
 ## Jinja2
 
@@ -66,7 +67,7 @@ utilisateur:
 Bonjour, {{ utilisateur.nom }} !
 ```
 
-2. **Conditions**
+1. **Conditions**
 
 ```jinja
 {% if admin %}
@@ -76,7 +77,7 @@ Utilisateur standard
 {% endif %}
 ```
 
-3. **Boucles**
+1. **Boucles**
 
 ```jinja
 {% for fruit in fruits %}
@@ -84,7 +85,7 @@ Utilisateur standard
 {% endfor %}
 ```
 
-4. **Filtres** (pour transformer les données)
+1. **Filtres** (pour transformer les données)
 
 ```jinja
 Nom en majuscules : {{ utilisateur.nom | upper }}
@@ -117,7 +118,7 @@ Bonjour {{ .Nom }} !
 Le `.` représente l'objet courant (ex: une _structure_ Go ou une _map_).
 :::
 
-2. **Boucles**
+1. **Boucles**
 
 ```go
 Liste des fruits :
@@ -126,7 +127,7 @@ Liste des fruits :
 {{ end }}
 ```
 
-3. **Conditions**
+1. **Conditions**
 
 ```go
 {{ if .Admin }}
@@ -136,7 +137,7 @@ Utilisateur standard
 {{ end }}
 ```
 
-4. **Filtres** et **Fonctions**
+1. **Filtres** et **Fonctions**
 
 - `len` : longueur d'une liste
 - `printf` : formatage
@@ -147,7 +148,7 @@ Exemple :
 Il y a {{ len .Fruits }} fruits.
 ```
 
-5. **Inclusion** de sous-templates
+1. **Inclusion** de sous-templates
 
 ```go
 {{ define "header" }}<h1>{{ .Titre }}</h1>{{ end }}
@@ -181,4 +182,3 @@ func main() {
     t.Execute(os.Stdout, data)
 }
 ```
-

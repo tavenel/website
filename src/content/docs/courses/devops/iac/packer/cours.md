@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: 🧩 Packer
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: 🧩 Packer
 ---
 ## Introduction
@@ -61,22 +61,26 @@ resource "aws_instance" "web" {
 Un template Packer se compose de **trois grandes sections** qui s'exécutent l'une après l'autre :
 
 1. **Builders** :
-  - Définit **le type d'image à construire** : _Docker_, _VirtualBox_, _AWS AMI_, _Azure Image_, …
-  - Lance un **environnement vierge** pour y appliquer une configuration.
-2. **Provisioners** :
-  - Définit **comment configurer l'image** : installation de paquets (`apt`, `yum`), copie de fichiers (`file`), scripts `shell`, `ansible`, `chef`, `puppet`, …
-  - **Installe** et **configure** le système.
+
+- Définit **le type d'image à construire** : _Docker_, _VirtualBox_, _AWS AMI_, _Azure Image_, …
+- Lance un **environnement vierge** pour y appliquer une configuration.
+1. **Provisioners** :
+
+- Définit **comment configurer l'image** : installation de paquets (`apt`, `yum`), copie de fichiers (`file`), scripts `shell`, `ansible`, `chef`, `puppet`, …
+- **Installe** et **configure** le système.
+
   ```hcl
   provisioner "ansible" {
     playbook_file = "site.yml"
   }
   ```
-3. **Post-Processors** :
-  - Actions à exécuter **après la création de l'image** :
-  - Taguer l'image Docker et/ou la pousser vers un registre
-  - Générer un manifeste JSON
-  - Créer une box Vagrant
-  - …
+1. **Post-Processors** :
+
+- Actions à exécuter **après la création de l'image** :
+- Taguer l'image Docker et/ou la pousser vers un registre
+- Générer un manifeste JSON
+- Créer une box Vagrant
+- …
 
 ---
 
@@ -155,4 +159,3 @@ variable "nginx_version" {
 - <https://blog.stephane-robert.info/docs/virtualiser/outils/packer/>
 
 ---
-

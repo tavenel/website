@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Le DevOps
 type: cours
 sidebar:
-  order: 5
+  order: 3
 description: Le DevOps
 ---
 ## 🎯 Objectif

@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Le DevOps
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: Le DevOps
 ---
 ## 🎯 Objectifs
@@ -111,7 +111,7 @@ Le cycle de vie DevOps est un cycle continu allant des étapes de planification 
 - **Terraform** :
   - Pour orchestrer des environnements complexes et multi-cloud de manière reproductible et versionnée (via code _HCL_).
   - Approche DevOps orientée infrastructure (réseaux, VM, load balancers, services cloud …).
-  - Utilise des *providers* pour créer / modifier / supprimer des ressources via les APIs des produits / plateformes (AWS, Azure, GCP, Kubernetes, …)
+  - Utilise des _providers_ pour créer / modifier / supprimer des ressources via les APIs des produits / plateformes (AWS, Azure, GCP, Kubernetes, …)
   - Maintient un état (_state_) des ressources déployées.
 
 ---

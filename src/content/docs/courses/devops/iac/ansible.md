@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Ansible
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: Ansible
 ---
 ```mermaid
@@ -509,7 +509,7 @@ Une sélection des modules les plus utilisés, classés par catégories :
 - Le [format Yaml](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax) utilisé par les playbooks :
 - Exemples de Playbooks :
   - <https://github.com/ansible/ansible-examples>
-   	- <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
+    - <https://www.middlewareinventory.com/blog/ansible-playbook-example/>
 - Voir aussi le [cours sur les pratiques DevOps](/devops)
 
 ---

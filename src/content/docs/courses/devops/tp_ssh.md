@@ -3,7 +3,7 @@ title: Configuration des clés SSH pour un accès sécurisé
 date: 2024 / 2025
 type: tp
 sidebar:
-  order: 800
+  order: 101
 description: Configuration des clés SSH pour un accès sécurisé
 ---
 # Configuration des clés SSH pour un accès sécurisé
@@ -37,6 +37,7 @@ En résumé :
 
 - La clé publique est… publique, vous pouvez la distribuer largement : libre à chacun ensuite d'accepter ou non votre connexion
 - La clé privée est… **privée!!** - **on ne partage ABSOLUMENT JAMAIS une clé privée** (elle ne sort donc **JAMAIS** de la machine locale).
+
 :::
 
 Dans le TP, l'utilisateur `user_local` (sur la machine cliente) générera une paire de clés SSH et ajoutera la clé publique sur le serveur. Cette clé publique sera placée dans le fichier `authorized_keys` de l'utilisateur `user_remote` avec lequel on se connectera sur le serveur, ce qui autorisera la connexion sans mot de passe pour cet utilisateur.
@@ -92,6 +93,7 @@ Remplacez `utilisateur` par le nom d'utilisateur sur le serveur et `adresse_du_s
 Si `ssh-copy-id` n'est pas disponible, utilisez cette méthode :
 
 - Connectez-vous au serveur via SSH avec votre mot de passe :
+
 ```sh
 ssh utilisateur@adresse_du_serveur
 ```
@@ -167,4 +169,3 @@ sudo tail -f /var/log/auth.log
 # Legal
 
 - © 2025 Tom Avenel under CC  BY-SA 4.0
-

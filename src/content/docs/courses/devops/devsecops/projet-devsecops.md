@@ -4,7 +4,7 @@ title: Construire une Secure Delivery Platform
 date: 2026 / 2027
 type: projet
 sidebar:
-  order: 500
+  order: 202
 description: Construire une Secure Delivery Platform
 ---
 ## Objectifs pédagogiques

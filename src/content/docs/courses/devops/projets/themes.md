@@ -3,7 +3,7 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: 📚 Résumé des Thèmes DevOps
 type: cours
 sidebar:
-  order: 4
+  order: 900
 description: 📚 Résumé des Thèmes DevOps
 ---
 Voici une liste structurée des **principaux thèmes DevOps**, organisée par domaines de compétence, couvrant les aspects essentiels d'une démarche DevOps moderne :
@@ -42,7 +42,7 @@ Voici une liste structurée des **principaux thèmes DevOps**, organisée par do
 
 - Versioning Git
 - Modèles déclaratifs vs impératifs
-- Ansible, 
+- Ansible,
 - Terraform
 - Cloud-init / Packer
 - Gestion des environnements (prod/dev/staging)
@@ -89,4 +89,3 @@ Voici une liste structurée des **principaux thèmes DevOps**, organisée par do
 - ChatOps (Slack + bots, Mattermost, MS Teams)
 
 ---
-

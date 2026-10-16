@@ -4,7 +4,7 @@ title: TP découverte d'Ansible et de Terraform
 date: 2025 / 2026
 type: tp
 sidebar:
-  order: 250
+  order: 101
 description: TP découverte d'Ansible et de Terraform
 ---
 ## Présentation du TP

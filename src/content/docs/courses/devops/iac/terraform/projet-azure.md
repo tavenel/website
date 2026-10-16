@@ -4,7 +4,7 @@ title: 🎯 Projet Déploiement d'une infrastructure multi-environnement sur Azu
 date: 2025 / 2026
 type: projet
 sidebar:
-  order: 500
+  order: 201
 description: 🎯 Projet Déploiement d'une infrastructure multi-environnement sur Azure avec Terraform
 ---
 ## 📋 Présentation du projet
@@ -30,10 +30,10 @@ Votre mission : concevoir et déployer une infrastructure cloud moderne, scalabl
 L'infrastructure comprendra **3 environnements** (dev, staging, prod) avec les composants suivants :
 
 | Composant | Description | Quantité |
-|-----------|-------------|----------|
+| ----------- | ------------- | ---------- |
 | **Resource Group** | Conteneur logique des ressources | 1 par environnement |
 | **Virtual Network** | Réseau virtuel Azure | 1 avec 2 subnets
-| **Virtual Machines** | Serveurs Linux  | 3 (2 web + 1 db) |
+| **Virtual Machines** | Serveurs Linux | 3 (2 web + 1 db) |
 | **Load Balancer** | Répartiteur de charge | 1 |
 | **Public IP** | Adresse IP publique | 1 |
 | **Network Security Group** | Pare-feu réseau (port SSH, HTTP) | 2 (web + db) |
@@ -52,13 +52,16 @@ L'infrastructure comprendra **3 environnements** (dev, staging, prod) avec les c
 **Configuration locale :**
 
 :::exo
+
 1. Installer `terraform` et la ligne de commande azure : `az`
 2. Configurer un Workspace Terraform Cloud et le lier au repository
 3. Créer un Service Principal Azure avec les permissions appropriées
 4. Initialiser terraform :
+
     ```bash
     terraform init
     ```
+
 :::
 
 ### ⚠️ Coûts Azure
@@ -94,16 +97,20 @@ terraform-project/
 ### Diagramme d'Architecture Technique (DAT)
 
 :::exo
+
 1. Réfléchir à un [workflow Git](/git/cours#workflows-git-travailler-en-quipe) cohérent par rapport aux environnements à déployer.
 2. Créez un diagramme représentant :
-  - Les dépendances entre composants Azure
-  - Les correspondances entre ressources Azure et ressources Terraform
-  - Les flux de données et de communication
+
+- Les dépendances entre composants Azure
+- Les correspondances entre ressources Azure et ressources Terraform
+- Les flux de données et de communication
+
 :::
 
 ### 💻 Développement Terraform
 
 :::exo
+
 1. Développer le projet Terraform permettant de déployer l'infrastructure sur Azure.
 2. Créez un module `network` permettant de :
    - Créer un _Virtual Network_
@@ -112,23 +119,28 @@ terraform-project/
 3. Optimiser le code Terraform :
    - Blocs dynamiques (ex : règles NSG)
    - Fonctions ternaires et count
-   -  Variables + fichier `terraform.tfvars`
+   - Variables + fichier `terraform.tfvars`
 4. Utiliser le module `network` pour déployer deux VMs dans deux subnets différents.
+
 :::
 
 ### 🔄 CI/CD et automatisation
 
 :::exo
+
 1. Créer un pipeline d'intégration continue (Gitlab CI, Github, Jenkins) cohérent avec les environnements déployés / à déployer.
 2. Ajouter des outils dédiés à Terraform dans le pipeline, par exemple : linter _Terragrunt_, _Trivy_ pour la sécurité, …
+
 :::
 
 ### 🔐 Sécurisation avancée
 
 :::exo
+
 1. Intégrer Vault pour la gestion des secrets : aucun secret ne doit être stocké en clair.
 2. Si ce n'est pas déjà fait, intégrer le _state_ de Terraform dans un backend sécurisé
 3. Ajouter des politiques _Sentinel_ (_Terraform Cloud_), par exemple pour interdire des VMs trop puissantes en environnement _dev_ ou pour bloquer certaines régions.
+
 :::
 
 ### 🏆 Bonus
@@ -213,4 +225,3 @@ terraform-azure-project/
   - [e2e Testing](https://learn.microsoft.com/fr-fr/azure/developer/terraform/best-practices-end-to-end-testing)
   - [Integration Testing](https://learn.microsoft.com/fr-fr/azure/developer/terraform/best-practices-integration-testing)
 - [Terratest](https://terratest.gruntwork.io/) - Framework de tests
-

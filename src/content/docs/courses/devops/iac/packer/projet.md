@@ -3,7 +3,7 @@ title: 🧩 TP Packer - Création d'une image Azure et déploiement d'une applic
 date: 2025 / 2026
 type: projet
 sidebar:
-  order: 2
+  order: 201
 description: 🧩 TP Packer - Création d'une image Azure et déploiement d'une application web complète
 ---
 ## Présentation du TP
