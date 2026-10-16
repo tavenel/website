@@ -2,7 +2,7 @@
 title: 🧪 Aligner deux descriptions métier contradictoires
 type: exo
 sidebar:
-  order: 3
+  order: 103
 description: 🧪 Aligner deux descriptions métier contradictoires
 ---
 ## 🎯 Objectif pédagogique

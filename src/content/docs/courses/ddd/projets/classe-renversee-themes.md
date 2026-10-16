@@ -6,7 +6,7 @@ tags:
 - pedagogie
 type: cours
 sidebar:
-  order: 1
+  order: 201
 ---
 
 | Thème | Sujet                                                                                   |

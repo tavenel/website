@@ -8,7 +8,7 @@ tags:
 - clean
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: Domain-Driven Design
 ---
 ## Problèmes communs aux projets informatiques

@@ -2,7 +2,7 @@
 title: 🧪 Identification de Bounded Context
 type: exo
 sidebar:
-  order: 2
+  order: 102
 description: 🧪 Identification de Bounded Context
 ---
 ## 📝 Spécification fonctionnelle

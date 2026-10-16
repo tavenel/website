@@ -2,7 +2,7 @@
 title: 🧪 Refactoring d'un modèle anémique vers un modèle riche
 type: exo
 sidebar:
-  order: 4
+  order: 104
 description: 🧪 Refactoring d'un modèle anémique vers un modèle riche
 ---
 ## 🎯 Objectif pédagogique

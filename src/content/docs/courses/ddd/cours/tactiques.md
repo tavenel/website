@@ -6,7 +6,7 @@ tags:
 - poo
 type: cours
 sidebar:
-  order: 2
+  order: 3
 description: Patterns Tactiques
 ---
 ## Patterns tactiques de base
@@ -221,7 +221,7 @@ class Address:
 ### 📦 Aggregate
 
 :::tip
-Regroupe des `Entity` et des `Value Objects` qui forment une unité cohérente pour la logique métier et la cohérence des données. 
+Regroupe des `Entity` et des `Value Objects` qui forment une unité cohérente pour la logique métier et la cohérence des données.
 :::
 
 ```mermaid
@@ -262,7 +262,7 @@ classDiagram
    - Les `Entity` et `Value Objects` internes à un `Aggregate` sont accessibles uniquement via la racine d'agrégat.
 
 5. **Cohérence transactionnelle** :
-   - Les modifications dans un `Aggregate` sont cohérentes et complètes dans une seule transaction. 
+   - Les modifications dans un `Aggregate` sont cohérentes et complètes dans une seule transaction.
 
 #### Exemple d'Aggregate
 
@@ -274,7 +274,7 @@ Un agrégat `Order` (commande) pourrait inclure :
 - **Entités internes** : `OrderItem` (article de commande).
 - **Value Objects** : `Address` (adresse de livraison).
 
-##### Représentation en code :
+##### Représentation en code
 
 ```python
 class Order:
@@ -311,6 +311,7 @@ class OrderItem:
 ```
 
 Dans cet exemple :
+
 - `Order` est l'`Aggregate Root`.
 - Les interactions avec les `OrderItem` passent exclusivement par `Order`.
 
@@ -348,7 +349,7 @@ Dans un système bancaire, un agrégat **Compte bancaire (BankAccount)** pourrai
 - **Entités internes** : `Transaction`.
 - **Value Objects** : `Money`.
 
-##### Représentation :
+##### Représentation
 
 ```python
 class BankAccount:
@@ -481,12 +482,12 @@ print(f"Total de la commande : {retrieved_order.calculate_total()}")
 
 #### Différence entre **Repository** et **DAO (Data Access Object)**
 
-| **Aspect**                | **Repository**                                       | **DAO**                                          |
-|---------------------------|-----------------------------------------------------|--------------------------------------------------|
-| **Responsabilité**         | Manipule des agrégats et des entités du domaine, tout en respectant les règles métier. | Fournit un accès direct aux données, sans se soucier des règles métier. |
-| **Abstraction**            | Cache les détails de la persistance tout en maintenant la logique métier intacte. | Concentre généralement sur l'accès aux données sans logique métier. |
+| **Aspect** | **Repository** | **DAO** |
+| --------------------------- | ----------------------------------------------------- | -------------------------------------------------- |
+| **Responsabilité** | Manipule des agrégats et des entités du domaine, tout en respectant les règles métier. | Fournit un accès direct aux données, sans se soucier des règles métier. |
+| **Abstraction** | Cache les détails de la persistance tout en maintenant la logique métier intacte. | Concentre généralement sur l'accès aux données sans logique métier. |
 | **Interaction avec le domaine** | Le Repository interagit avec le domaine via des objets métiers (entités, agrégats, value objects). | Le DAO est plus focalisé sur l'accès aux données sous forme brute. |
-| **Niveau d'abstraction**   | Plus haut niveau d'abstraction (logique métier + persistance). | Plus bas niveau d'abstraction (accès direct aux données). |
+| **Niveau d'abstraction** | Plus haut niveau d'abstraction (logique métier + persistance). | Plus bas niveau d'abstraction (accès direct aux données). |
 
 #### Bonnes pratiques pour les **Repositories**
 
@@ -532,7 +533,7 @@ class OrderRepository:
   - Impossible à tester sans base de données.
 - ✅ À faire :
   - Utiliser une interface abstraite dans le domaine
-	- Injecter l'implémentation.
+   	- Injecter l'implémentation.
 
 ##### Étape 1 - Interface métier (`order_repository.py`)
 
@@ -602,7 +603,7 @@ class OrderApplicationService:
 
 Dans une architecture **CQRS (Command Query Responsibility Segregation)**, les **Repositories** peuvent être utilisés différemment pour la **Command Side** (écriture) et la **Query Side** (lecture). De plus, dans une architecture **Event Sourcing**, les Repositorys ne manipulent pas directement les entités ou agrégats, mais peuvent utiliser des événements pour reconstituer l'état des objets métier. Voir les sections _CQRS_ et _Event Sourcing_.
 
-##### Exemples :
+##### Exemples
 
 - **Command Side** : Utilisation de Repository pour stocker des événements ou agrégats dans un système de persistance événementielle.
 - **Query Side** : Utilisation de Repository pour récupérer des vues de lecture optimisées, souvent dans des bases de données dédiées aux requêtes.
@@ -667,7 +668,8 @@ Imaginons que nous avons un système de gestion de commandes où chaque module g
 2. **Module Paiement (Payment Module)** :
    - Gère les interactions liées aux paiements, avec des entités comme `Payment`, des services de paiement, des événements de domaine comme `PaymentProcessedEvent`, etc.
 
-##### Exemple de structure de fichiers d'un système avec des modules :
+##### Exemple de structure de fichiers d'un système avec des modules
+
 ```
 src/
   +-- order/
@@ -689,6 +691,7 @@ src/
 ```
 
 Dans cette structure :
+
 - Les modules `order` et `payment` ont leurs propres composants métier, comme les **agrégats** (`Order`, `Payment`), les **services** (`OrderService`, `PaymentService`), et les **événements de domaine**.
 - Le module `shared` contient des composants qui peuvent être utilisés par plusieurs autres modules, comme le `Logger`.
 
@@ -732,7 +735,7 @@ classDiagram
   OrderFactory --> Order
 ```
 
-#### 🌟 Avantages d'une **Factory** :
+#### 🌟 Avantages d'une **Factory**
 
 1. **Séparation des préoccupations** :
    - La création d'objets est séparée de la logique métier, ce qui permet de garder les classes et les services plus clairs et moins responsables.
@@ -786,6 +789,7 @@ order = OrderFactory.create_order(customer_id=42, shipping_address="mon addresse
 ```
 
 Dans cet exemple :
+
 - `OrderFactory` est responsable de la création de nouvelles commandes (`Aggregate`).
 - La logique de création inclut la génération d'un identifiant unique : `uuid.uuid4()`.
 - Les **invariants** (par exemple, une commande ne peut être créée sans adresse de livraison ou client) peuvent être ajoutés dans la `Factory`.
@@ -801,6 +805,7 @@ Dans cet exemple :
    - Utilisée lorsque le processus de création nécessite plusieurs objets différents mais liés.
 
    Exemple :
+
    ```python
    class AbstractOrderFactory:
        def create_order(self, customer_id, shipping_address):
@@ -848,7 +853,6 @@ classDiagram
   PricingService --> Order
   PricingService --> Money
 ```
-
 
 #### Caractéristiques d'un Domain Service
 
@@ -1043,7 +1047,6 @@ print(f"Order created with ID: {order_id}")
 | Interagit avec les API et l'infrastructure. | Agit uniquement au niveau du domaine. |
 | Se situe dans la couche application. | Se situe dans la couche domaine.     |
 
-
 #### ❌ Anti-pattern : logique métier dans l'Application Service
 
 ```python
@@ -1088,7 +1091,7 @@ classDiagram
   Service --> OrderRepository : injected
 ```
 
-#### Principes de base :
+#### Principes de base
 
 1. **Dépendances explicites** :  
    - Une classe ne gère pas elle-même la création ou la localisation des objets dont elle dépend. Ces dépendances sont injectées, généralement via un constructeur, une méthode ou un champ.
@@ -1099,7 +1102,7 @@ classDiagram
 3. **Configuration externe** :  
    - Les dépendances peuvent être configurées depuis une source externe (par exemple, un fichier de configuration, un conteneur IoC ou un framework).
 
-#### Types d'injection :
+#### Types d'injection
 
 1. **Injection par constructeur** :  
    - Les dépendances sont fournies à une classe via son constructeur.  
@@ -1140,7 +1143,7 @@ classDiagram
    }
    ```
 
-#### Lien avec le Domain-Driven Design (DDD) :
+#### Lien avec le Domain-Driven Design (DDD)
 
 Dans un contexte **DDD**, l'injection de dépendances est particulièrement utile dans les contextes de :
 
@@ -1153,7 +1156,7 @@ Dans un contexte **DDD**, l'injection de dépendances est particulièrement util
 3. **Packaging des Bounded Context** :  
    - Dans une architecture avec plusieurs **Bounded Contexts**, chaque contexte peut avoir son propre conteneur IoC pour gérer les dépendances spécifiques.
 
-#### Inconvénients ❌:
+#### Inconvénients ❌
 
 1. **Complexité initiale** :  
    - L'utilisation de frameworks IoC ou de conteneurs peut introduire une courbe d'apprentissage.
@@ -1164,7 +1167,7 @@ Dans un contexte **DDD**, l'injection de dépendances est particulièrement util
 3. **Difficulté de débogage** :  
    - Dans les systèmes complexes, il peut être difficile de suivre quelles dépendances sont injectées et d'où elles proviennent.
 
-#### Exemple avec un conteneur IoC :
+#### Exemple avec un conteneur IoC
 
 ##### Exemple Spring (Java)
 
@@ -1266,7 +1269,7 @@ Si les besoins des différents contextes se chevauchent significativement, il n'
 ### ⚖️ Policy (Décision métier encapsulée)
 
 :::tip
-Règle métier qui décrit un **comportement** ou une **contrainte métier** applicable à un contexte spécifique (_Bounded Context_). Elle est **déclarative** : elle exprime *quoi* faire plutôt que *comment* le faire.
+Règle métier qui décrit un **comportement** ou une **contrainte métier** applicable à un contexte spécifique (_Bounded Context_). Elle est **déclarative** : elle exprime _quoi_ faire plutôt que _comment_ le faire.
 :::
 
 ```mermaid
@@ -1451,10 +1454,10 @@ account.balance = -100  # oups
 
 ---
 
-###  📜 Specification Pattern
+### 📜 Specification Pattern
 
 :::tip
-Modèle de conception utilisé pour encapsuler des règles ou des critères métier dans un objet réutilisable, combinable et testable. Ce modèle permet de définir des spécifications sous forme d'objets, qui peuvent être utilisés pour valider, filtrer ou décider si un objet ou une entité satisfait à un ensemble de conditions. 
+Modèle de conception utilisé pour encapsuler des règles ou des critères métier dans un objet réutilisable, combinable et testable. Ce modèle permet de définir des spécifications sous forme d'objets, qui peuvent être utilisés pour valider, filtrer ou décider si un objet ou une entité satisfait à un ensemble de conditions.
 :::
 
 ```mermaid
@@ -1473,7 +1476,7 @@ classDiagram
   ActiveCustomerSpecification --> Customer
 ```
 
-#### Caractéristiques principales du **Specification Pattern** :
+#### Caractéristiques principales du **Specification Pattern**
 
 1. **Encapsulation des règles métier** :  
    - Les règles métier, qui pourraient autrement être dispersées dans le code, sont regroupées dans des objets spécifiques. Cela facilite leur gestion, leur compréhension et leur modification.
@@ -1487,7 +1490,7 @@ classDiagram
 4. **Testabilité** :  
    - Les spécifications étant des objets isolés, elles peuvent être facilement testées de manière unitaire pour s'assurer que leurs règles sont correctement implémentées.
 
-#### Structure typique :
+#### Structure typique
 
 Le **Specification Pattern** comprend généralement :
 
@@ -1543,7 +1546,7 @@ Le **Specification Pattern** comprend généralement :
            return not self.spec.is_satisfied_by(entity)
    ```
 
-#### Exemple dans le domaine DDD :
+#### Exemple dans le domaine DDD
 
 Supposons un domaine où l'on gère des **commandes**. Une règle métier pourrait être de valider qu'une commande est éligible pour une promotion uniquement si :
 
@@ -1630,11 +1633,11 @@ classDiagram
 
 Le modèle repose sur l'idée que les **commandes** (modifications de l'état du système) et les **requêtes** (lecture des données) sont des préoccupations fondamentalement différentes et qu'elles peuvent être gérées par des modèles distincts :
 
-1. **Command** (*Commande*) : Modifie l'état du système.
+1. **Command** (_Commande_) : Modifie l'état du système.
    - Exemple : "Créer une commande", "Mettre à jour le profil utilisateur".
    - Elle déclenche une action métier qui peut inclure des validations et des processus complexes.
 
-2. **Query** (*Requête*) : Lit les données sans les modifier.
+2. **Query** (_Requête_) : Lit les données sans les modifier.
    - Exemple : "Afficher la liste des commandes passées".
    - Elle se concentre uniquement sur la récupération des données optimisée pour la consommation.
 
@@ -1644,7 +1647,7 @@ Dans une architecture CQRS typique, on distingue deux modèles :
 
 1. **Modèle d'écriture (Command model)** :
    - Gère les modifications d'état.
-   - Peut être structuré autour de principes comme les *Aggregates* du DDD pour garantir la cohérence métier.
+   - Peut être structuré autour de principes comme les _Aggregates_ du DDD pour garantir la cohérence métier.
    - Exemple : Une API qui reçoit une commande "Créer une réservation".
 
 2. **Modèle de lecture (Query model)** :
@@ -1683,6 +1686,7 @@ Dans une architecture CQRS typique, on distingue deux modèles :
 #### Exemple de CQRS en pratique
 
 ##### Commande (écriture)
+
 ```python
 class CreateOrderCommand:
     def __init__(self, order_id, customer_id, items):
@@ -1698,6 +1702,7 @@ class OrderCommandHandler:
 ```
 
 ##### Requête (lecture)
+
 ```python
 class OrderQueryService:
     def __init__(self, query_database):
@@ -1795,7 +1800,7 @@ class OrderEventHandler:
 
 ```python
 class OrderInsertedToDbEvent:
-	    # ...
+     # ...
 ```
 
 - 🔴 Problème : ce n'est pas un fait métier, mais une opération technique → confusion avec Event technique ou audit.
@@ -1828,7 +1833,7 @@ classDiagram
   note for BillingService "Réagit plus tard<br/>Modèle mis à jour après réception de l'événement"
 ```
 
-#### Caractéristiques principales :
+#### Caractéristiques principales
 
 1. **Délais de propagation** :  
    - Les mises à jour ou les changements effectués sur une partie du système sont propagés de manière asynchrone aux autres parties. Cela peut entraîner un laps de temps pendant lequel différentes parties ont des états incohérents.
@@ -1841,7 +1846,7 @@ classDiagram
 
 ---
 
-#### Exemple pratique : 
+#### Exemple pratique
 
 Supposons un système de commerce électronique avec deux contextes limités :
 
@@ -1849,6 +1854,7 @@ Supposons un système de commerce électronique avec deux contextes limités :
 2. **Gestion des stocks** (Inventory Management).  
 
 Lorsqu'une commande est passée :  
+
 - Le contexte **Gestion des commandes** enregistre la commande et publie un **Domain Event** "Commande créée".  
 - Le contexte **Gestion des stocks** reçoit cet événement et ajuste le stock correspondant.  
 
@@ -1882,19 +1888,19 @@ classDiagram
 
 #### Principe de l'Event Sourcing
 
-1. **Événements immuables** : 
+1. **Événements immuables** :
    - Chaque modification d'état est capturée sous forme d'un événement spécifique (par exemple : "Commande créée", "Article ajouté au panier").
    - Les événements sont enregistrés de manière immuable dans un **Event Store**.
 
-2. **Reconstruction de l'état** : 
+2. **Reconstruction de l'état** :
    - L'état actuel d'un objet (comme un `Aggregate`) est recréé en rejouant tous les événements associés à cet objet depuis le début.
 
-3. **Source unique de vérité** : 
+3. **Source unique de vérité** :
    - Les événements sont la seule source de vérité et permettent une traçabilité complète des modifications.
 
 #### Exemple simplifié d'Event Sourcing
 
-##### Enregistrement d'un événement :
+##### Enregistrement d'un événement
 
 ```python
 event_store.append("order-123", {
@@ -1904,7 +1910,8 @@ event_store.append("order-123", {
 )
 ```
 
-##### Relecture des événements pour reconstruire un état :
+##### Relecture des événements pour reconstruire un état
+
 ```python
 events = event_store.get_events("order-123")
 order = replay(events)  # Recrée l'état de la commande à partir des événements
@@ -2005,7 +2012,7 @@ classDiagram
   note for SagaManager "Coordonne une série d'étapes distribuées"
 ```
 
-#### Caractéristiques clés d'une **Saga** :
+#### Caractéristiques clés d'une **Saga**
 
 1. **Processus de longue durée** :  
    - Une Saga représente un processus métier complexe et de longue durée qui ne peut pas être complété en une seule transaction. Elle implique plusieurs étapes qui peuvent s'étendre sur différents services, agrégats ou systèmes externes.
@@ -2024,7 +2031,7 @@ classDiagram
    - Les Sagas sont souvent basées sur des événements. Chaque service participant émet des événements, et la Saga réagit à ces événements pour déterminer l'action suivante.  
    - Les Sagas peuvent être **chorégraphiées** (chaque service connaît l'étape suivante et déclenche l'action suivante) ou **orchestrées** (un composant central ou orchestrateur gère la séquence des actions).
 
-#### Types de **Sagas** :
+#### Types de **Sagas**
 
 1. **Saga chorégraphiée** :  
    - Dans une Saga chorégraphiée, chaque service ou composant impliqué dans le processus connaît la prochaine étape à suivre. Chaque service écoute les événements et déclenche des actions basées sur ces événements.  
@@ -2034,7 +2041,7 @@ classDiagram
    - Dans une Saga orchestrée, un **orchestrateur** central contrôle le déroulement du processus. L'orchestrateur envoie des commandes aux services et attend des réponses ou des événements avant de passer à l'étape suivante.  
    - L'orchestrateur est responsable de la gestion de l'ensemble du processus et s'assure que les étapes sont exécutées dans le bon ordre.
 
-#### Cas d'utilisation typiques des **Sagas** :
+#### Cas d'utilisation typiques des **Sagas**
 
 1. **Traitement des commandes** :  
    - Dans un système de commerce électronique, lorsqu'une commande est passée, le système doit :  
@@ -2058,7 +2065,7 @@ classDiagram
      3. Finalisation du contrat de prêt.  
    - Si une vérification échoue, la Saga peut annuler les approbations précédentes ou informer le demandeur.
 
-#### Défis du modèle **Saga** :
+#### Défis du modèle **Saga**
 
 1. **Complexité** :
    - Mettre en œuvre et gérer des Sagas peut être complexe, notamment pour gérer les compensations et s'assurer que toutes les étapes sont correctement coordonnées entre les services.
@@ -2072,9 +2079,9 @@ classDiagram
 4. **Gestion des états** :
    - Gérer l'état d'une Saga, en particulier entre plusieurs services, peut être un défi. Assurer que l'état est correctement stocké et synchronisé ajoute de la complexité, notamment lorsque la Saga s'étend sur de longues périodes.
 
-#### Exemple d'une Saga en action :
+#### Exemple d'une Saga en action
 
-##### Traitement des commandes dans un système de commerce électronique :
+##### Traitement des commandes dans un système de commerce électronique
 
 1. **Commande passée** (Événement) → La Saga commence.
 2. **Réservation du stock** (Action) : Le service réserve les produits en entrepôt.
@@ -2123,7 +2130,7 @@ classDiagram
   }
 ```
 
-#### Caractéristiques principales du **Process Manager** :
+#### Caractéristiques principales du **Process Manager**
 
 1. **Orchestration centralisée** :  
    - Contrairement à une approche décentralisée où chaque service ou composant sait ce qu'il doit faire, le Process Manager centralise la logique du workflow.  
@@ -2132,7 +2139,7 @@ classDiagram
 2. **Coordination de multiples services** :  
    - Il est souvent utilisé dans des systèmes distribués pour coordonner des actions entre plusieurs services ou agrégats, garantissant que le processus global respecte les règles métier. Par exemple dans des architectures de microservices, où chaque service est responsable d'une partie du workflow, le Process Manager coordonne les services pour garantir un processus global cohérent.
 
-#### Structure d'un **Process Manager** :
+#### Structure d'un **Process Manager**
 
 Un Process Manager est généralement structuré en plusieurs parties clés :
 
@@ -2154,7 +2161,7 @@ Un Process Manager est généralement structuré en plusieurs parties clés :
 6. **Journalisation et audit** :  
    - Les actions et les transitions d'état sont souvent journalisées pour permettre un suivi et une traçabilité des processus métier.
 
-#### Exemple de fonctionnement :
+#### Exemple de fonctionnement
 
 Prenons l'exemple d'un système de commande dans un site e-commerce. Le processus métier pour traiter une commande peut inclure plusieurs étapes :  
 
@@ -2165,7 +2172,7 @@ Prenons l'exemple d'un système de commande dans un site e-commerce. Le processu
 
 Le Process Manager pourrait fonctionner ainsi :  
 
-##### Flux du Process Manager :
+##### Flux du Process Manager
 
 Le flux typique d'un **Process Manager** fonctionne comme suit :
 
@@ -2178,7 +2185,7 @@ Le flux typique d'un **Process Manager** fonctionne comme suit :
 
 Si une étape échoue, comme un paiement refusé, le Process Manager peut entreprendre des actions de compensation, comme libérer le stock réservé.
 
-#### 🌟 Avantages du **Process Manager** :
+#### 🌟 Avantages du **Process Manager**
 
 1. **Centralisation de la logique métier** :  
    - La logique du workflow est centralisée dans un composant unique, ce qui la rend plus facile à comprendre, à tester et à modifier.
@@ -2192,7 +2199,7 @@ Si une étape échoue, comme un paiement refusé, le Process Manager peut entrep
 4. **Cohérence** :  
    - Le Process Manager s'assure que toutes les étapes du processus sont exécutées correctement et dans le bon ordre.
 
-#### Défis et inconvénients ❌:
+#### Défis et inconvénients ❌
 
 1. **Composant critique** :
    - Le Process Manager est un élément centralisé qui peut devenir un point unique de défaillance.
@@ -2206,7 +2213,7 @@ Si une étape échoue, comme un paiement refusé, le Process Manager peut entrep
 4. **Dépendance vis-à-vis d'événements** :  
    - Le Process Manager repose sur une communication fiable par événements et commandes. Toute perte ou délai dans le traitement des événements peut affecter le fonctionnement du workflow.
 
-#### Différence entre **Process Manager** et **Saga** :
+#### Différence entre **Process Manager** et **Saga**
 
 Bien que les deux soient utilisés pour coordonner des workflows ou des transactions distribuées, ils diffèrent dans leur approche :  
 
@@ -2244,5 +2251,3 @@ Bien que les deux soient utilisés pour coordonner des workflows ou des transact
 | **Event Sourcing**         | L'état est **reconstruit** à partir des événements passés      | Chaque modification est un événement      | `Order.apply(Event)`                   |
 | **Saga**                   | **Coordonne** des opérations distribuées                       | Multi-étapes, orchestrée ou chorégraphiée, peut gérer les erreurs| Paiement → Livraison → Notification    |
 | **Process Manager**        | **Pilote** un processus métier avec mémoire d'état             | Réagit à plusieurs événements, garde un état intermédiaire       | `OrderFulfillmentProcessManager`       |
-
-
