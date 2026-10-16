@@ -7,7 +7,7 @@ tags:
 - argocd
 type: cours
 sidebar:
-  order: 1
+  order: 3
 description: Introduction au GitOps et à Argo CD
 ---
 ## Introduction

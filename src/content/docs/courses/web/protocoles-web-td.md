@@ -2,12 +2,9 @@
 type: cours
 sidebar:
   order: 800
-title: Protocoles Web Td
-description: Protocoles Web Td
----
-﻿---
 title: Notions de protocoles Web
 date: 2023 / 2024
+description: Protocoles Web Td
 tags:
 - cloud
 ---
@@ -24,7 +21,7 @@ tags:
    1. Google Docs
    1. **Google Chrome**
 
-1. http://www.google.fr est :
+1. <http://www.google.fr> est :
    1. une adresse e-mail
    1. **une adresse web**
    1. une adresse ftp
@@ -40,7 +37,6 @@ tags:
    1. de payer le service du serveur
    1. d'expédier les fichiers correspondant à une page
    1. **d'émettre une requête vers le serveur**
-
 
 1. Le nombre binaire 1001 vaut en hexadécimal :
    1. F3
@@ -61,41 +57,63 @@ Il s'agit d'un programme tournant en permanence et attendant des requêtes HTTP 
 ## Protocoles de transport
 
 1. Parmi les protocoles de transport, lequel utiliseriez-vous pour un système de visioconférence ?
+
 :::correction
-  + UDP, car les données sont volumineuses et la rapidité de transfert est la priorité (devant l'intégrité des données)
+
++ UDP, car les données sont volumineuses et la rapidité de transfert est la priorité (devant l'intégrité des données)
+
 :::
+
 1. Parmi les protocoles de transport, lequel utiliseriez-vous pour qu'une application accepte les cartes de crédit sur le réseau et pour garantir l'arrivée des données ?
+
 :::correction
-  + TCP, car il faut absolument garantir l'intégrité des données
+
++ TCP, car il faut absolument garantir l'intégrité des données
+
 :::
+
 1. Parmi les protocoles de transport, lequel utiliseriez-vous pour échanger des nombreux fichiers volumineux et garantir l'arrivée des données ?
+
 :::correction
-  + TCP, car il faut encore garantir l'intégrité des données, même si elles sont coûteuses à transporter
+
++ TCP, car il faut encore garantir l'intégrité des données, même si elles sont coûteuses à transporter
+
 :::
 
 ## Unicité des adresses IP
 
 1. Deux machines de réseaux IPv4 différents peuvent-elles posséder la même adresse IPv4 ?
-:::correction
-  + Non, car le NetID est différent
-:::
-:::correction
-1. Dans le même réseau IPv4, deux machines différentes peuvent-elles posséder la même adresse IPv4 au même moment ?
-:::
-:::correction
-  + Non, une adresse IP identifie un hôte de manière unique à un instant donné
-:::
-:::correction
-1. Dans le même réseau IPv4, deux machines différentes peuvent-elles posséder la même adresse IPv4 à deux moments différents ?
-:::
-:::correction
-  + Oui, une adresse IP identifie un hôte de manière unique mais seulement à un instant donné. Ce n'est toutefois pas recommandé, mais souvent nécessaire pour recycler des adresses (par exemple, le cloud utilise beaucoup de machines temporaires, dont la consommation d'adresses IP serait compliquée sans recyclage de celles-ci).
-:::
 
+:::correction
+
++ Non, car le NetID est différent
+
+:::
+:::correction
+
+1. Dans le même réseau IPv4, deux machines différentes peuvent-elles posséder la même adresse IPv4 au même moment ?
+
+:::
+:::correction
+
++ Non, une adresse IP identifie un hôte de manière unique à un instant donné
+
+:::
+:::correction
+
+1. Dans le même réseau IPv4, deux machines différentes peuvent-elles posséder la même adresse IPv4 à deux moments différents ?
+
+:::
+:::correction
+
++ Oui, une adresse IP identifie un hôte de manière unique mais seulement à un instant donné. Ce n'est toutefois pas recommandé, mais souvent nécessaire pour recycler des adresses (par exemple, le cloud utilise beaucoup de machines temporaires, dont la consommation d'adresses IP serait compliquée sans recyclage de celles-ci).
+
+:::
 
 *L'adresse du réseau local est masquée par le routeur, ce qui fait que toutes les machines de ce réseau sont cachées derrière le routeur et par conséquent invisibles sur Internet. Le routeur a donc deux adresses IP, l'une du côté du réseau local (donc même adresse du réseau) et l'autre du côté du réseau internet lui permettant d'être visible à l'extérieur.*
 
 1. Dans ce cas, deux machines de deux réseaux différents connectés tous les deux à Internet peuvent-elles avoir la même adresse ?
+
 :::correction
 Oui, car cette adresse est masquée sur l'interconnexion des réseaux : une adresse IP est unique seulement dans son propre réseau (par exemple, les réseaux domestiques utilisent souvent les mêmes plages d'IP 192.168.0.1, 192.168.0.2, …)
 :::
@@ -107,6 +125,7 @@ Oui, car cette adresse est masquée sur l'interconnexion des réseaux : une adre
 Dessinez un réseau local composé d'une box Internet, de 3 PC, d'un téléphone IP, d'un serveur Web et d'un serveur d'impression. Ce réseau local est connecté à Internet depuis la box Internet. Supposons que l'adresse du réseau local est 192.168.10, affectez des adresses IP aux différents périphériques.
 
 :::correction
+
 ```mermaid
 ---
 title: Plan d'adressage IP
@@ -126,6 +145,7 @@ flowchart TD
     serveur --- router
     pcs --- router
 ```
+
 :::
 
 ## Communications sécurisées avec HTTPS
@@ -138,13 +158,13 @@ Le protocole HTTPS (HTTP sur SSL/TLS) est couramment utilisé pour sécuriser le
 Le protocole SSL avec un certificat serveur offre d'abord une authentification du partenaire accédé par une vérification que ce serveur détient bien la clef privée correspondant à la clef publique diffusée. Ensuite, la communication est chiffrée, on a donc des garanties sur la confidentialité des échanges ainsi que sur l'intégrité de la communication pendant toute sa durée.
 :::
 
-1. Comment   l'utilisateur   du   navigateur   peut-il   être   assuré   que   cette   clef   publique correspond bien à l'organisme auquel il souhaite accéder ? 
+1. Comment   l'utilisateur   du   navigateur   peut-il   être   assuré   que   cette   clef   publique correspond bien à l'organisme auquel il souhaite accéder ?
 
 :::correction
 Le certificat n'inclut pas seulement la clef publique, mais également une signature de cette   clef   publique   par   un   autre   certificat.   (Celui-ci   pouvant   également   être   un certificat   intermédiaire.)   La   racine   de   cette   chaîne   de   certification   doit   être   un certificat pré­installé sur le navigateur (ou obtenu indépendamment en préalable à la communication).   L'utilisateur   peut   alors   être   sûr   que   le   certificat   diffusé   par   le serveur appartient bien à l'organisme indiqué s'il vérifie la chaine de certification, s'il a confiance dans le certificat racine et s'il a confiance dans les organismes détenteurs des certificats intermédiaires pour avoir fait les vérifications nécessaires avant de signer les certificats dérivés. (Il s'agit alors de tiers de confiance ou d'autorités de certification.)
 :::
 
-1. Pourquoi de nombreux services Web, utilisant pourtant HTTPS, demandent-ils en plus à   l'utilisateur   de   fournir   un   nom   de   compte   et   un   mot   de   passe   pour   compléter l'ouverture de session 
+1. Pourquoi de nombreux services Web, utilisant pourtant HTTPS, demandent-ils en plus à   l'utilisateur   de   fournir   un   nom   de   compte   et   un   mot   de   passe   pour   compléter l'ouverture de session
 
 :::correction
 Le certificat serveur n'offre qu'une authentification du serveur. Si le service accédé gère   une   base   de   comptes   utilisateurs,  ceux-ci   doivent   donc   également   en   plus s'authentifier. Cette authentification du client peut éventuellement s'effectuer via un nom d'utilisateur et un mot de passe. Cette méthode est moins forte qu'une technique faisant appel à des algorithmes de cryptographie asymétriques, mais elle est bénéficie néanmoins via HTTPS de la protection offerte par le canal chiffré et signé de SSL.
@@ -156,58 +176,70 @@ Le certificat serveur n'offre qu'une authentification du serveur. Si le service 
 Dans   ce   cas,   l'authentification   du   client,   appuyée   sur   un   certificat   et   une authentification à clef privée/clef publique offre des garanties bien plus importantes en terme de sécurité. Par contre, il faut alors gérer une procédure de délivrance de ces   certificats   clients   (incluant   leur   signature   par   un   tiers   de   confiance,   après vérification de l'identité du demandeur par exemple).
 :::
 
-## Masque de sous-réseau 
+## Masque de sous-réseau
 
-Une entreprise à succursale multiple utilise l'adresse d'un réseau identifié par l'IP 196.179.110.0. Pour une gestion plus fine de ses sous-réseaux, le responsable informatique désire pouvoir affecter une adresse IP propre à chacune des 10 succursales. 
+Une entreprise à succursale multiple utilise l'adresse d'un réseau identifié par l'IP 196.179.110.0. Pour une gestion plus fine de ses sous-réseaux, le responsable informatique désire pouvoir affecter une adresse IP propre à chacune des 10 succursales.
 
 Attention : La valeur 0 n'est jamais utilisée comme Host ID pour des raisons de compatibilité.
 
 1. Donner et expliquez la valeur du plus petit masque possible pour le réseau principal (196.179.110.0) correspondant à ce besoin ?
+
 :::correction
-  + Comme on doit pouvoir adresser 10 machines, il faut donc 10 adresses IP dérivées de l'adresse initiale. La valeur décimale 10 se code par 1010 en binaire ; il faut donc disposer d'au moins 4 bits pour pouvoir identifier 10 entités en écriture binaire. La part du HostID dans le masque de sous-réseau sera donc de 4 bits (et donc celle du network ID : 32 – 4 = 28 bits).
-  + Le masque de sous-réseau à construire est donc : 28 bits à 1 pour le NetID suivis de 4 bits à 0 pour le HostID, soit : 11111111.11111111.11111111.11110000 soit encore en décimal : 255.255.255.240
+
++ Comme on doit pouvoir adresser 10 machines, il faut donc 10 adresses IP dérivées de l'adresse initiale. La valeur décimale 10 se code par 1010 en binaire ; il faut donc disposer d'au moins 4 bits pour pouvoir identifier 10 entités en écriture binaire. La part du HostID dans le masque de sous-réseau sera donc de 4 bits (et donc celle du network ID : 32 – 4 = 28 bits).
++ Le masque de sous-réseau à construire est donc : 28 bits à 1 pour le NetID suivis de 4 bits à 0 pour le HostID, soit : 11111111.11111111.11111111.11110000 soit encore en décimal : 255.255.255.240
+
 :::
 
 1. En utilisant ce masque de réseau, le réseau pourra-t-il supporter des machines en plus des 10 déjà allouées ? Si oui, combien et pourquoi ?
+
 :::correction
-  + Compte tenu des bits affectés à l'identification de la machine dans le réseau (HostID), on utilise 4 bits pour identifier les machines. 4 bits permettent d'identifier 16 entités (2^4), mais la valeur 0 représente le réseau lui-même et la valeur tout à 1 représente l'adresse de broadcast : le réseau pourra donc identifier jusqu'à 14 machines. Il reste donc 4 adresses supplémentaires de libres sur le réseau.
+
++ Compte tenu des bits affectés à l'identification de la machine dans le réseau (HostID), on utilise 4 bits pour identifier les machines. 4 bits permettent d'identifier 16 entités (2^4), mais la valeur 0 représente le réseau lui-même et la valeur tout à 1 représente l'adresse de broadcast : le réseau pourra donc identifier jusqu'à 14 machines. Il reste donc 4 adresses supplémentaires de libres sur le réseau.
+
 :::
 
 1. Quelle est l'adresse de broadcast (ou adresse de diffusion) du réseau ?
-:::correction
-  + L'adresse de broadcast correspond à tous les bits du champ Host\_ID à 1.
-  + Le HostID est ici codé sur 4 bits, on peut donc considérer uniquement le dernier octet (8 bits).
-  + Le dernier octet de l'adresse du réseau vaut 0 (196.179.110.0), donc en binaire : 0000 0000 (4 derniers bits du Network ID suivis de 4 bits du Host ID).
-  + Le dernier octet de l'adresse de broadcast vaut donc (en mettant le Host\_ID à 1) : 0000 1111
-  + Ce qui correspond en décimal à 15, soit l'adresse de diffusion : 196.179.110.15
-:::
 
+:::correction
+
++ L'adresse de broadcast correspond à tous les bits du champ Host\_ID à 1.
++ Le HostID est ici codé sur 4 bits, on peut donc considérer uniquement le dernier octet (8 bits).
++ Le dernier octet de l'adresse du réseau vaut 0 (196.179.110.0), donc en binaire : 0000 0000 (4 derniers bits du Network ID suivis de 4 bits du Host ID).
++ Le dernier octet de l'adresse de broadcast vaut donc (en mettant le Host\_ID à 1) : 0000 1111
++ Ce qui correspond en décimal à 15, soit l'adresse de diffusion : 196.179.110.15
+
+:::
 
 ## Segmentation de réseau TCP/IP
 
 Une entreprise utilise pour ses sites Web la plage d'adresse 10.0.0.0 de la classe A (le NetID est exprimé uniquement et entièrement sur le 1er octet de l'adresse). Considérons quatre serveurs de cette entreprise dont les noms et adresses sont donnés ci- dessous :
 
 |*Nom (DNS)*|*Adresse IP (adresse logique)*|*Adresse MAC (adresse physique)*|
-| :- | :- | :- |
+|:-|:-|:-|
 |Site1.Entreprise.com|10.99.43.27|00-90-27-55-74-35|
 |Site2.Entreprise.com|10.163.12.254|00-90-27-55-74-36|
 |Site3.Entreprise.com|10.189.12.27|00-90-27-55-74-38|
 |Site4.Entreprise.com|10.126.43.254|00-90-27-55-74-37|
 
 1. Quel est le NetID de ce plan d'adressage ?
+
 :::correction
-  + En classe A le NetID est exprimé sur 1 octet, soit 10 (en décimal) pour le premier octet (ou 00001010 en binaire)
+
++ En classe A le NetID est exprimé sur 1 octet, soit 10 (en décimal) pour le premier octet (ou 00001010 en binaire)
+
 :::
 
 1. On souhaite réaliser deux sous-réseaux (SubNetID) tels que Site1 et Site4 appartiennent au même sous réseaux et que Site2 et Site3 appartiennent à un autre sous-réseau.
-  - Quel est le nombre de bit nécessaires pour réaliser ces deux sous-réseaux ?
-  - Les bits du NetID et du SubNetID doivent être contigus (par exemple les sous-réseaux 192.168.1.0 et 192.168.2.0 sont deux sous-réseaux du réseau 192.168.0.0). Pour répondre à cette question, on cherchera donc le nombre de premiers bits nécessaires et suffisants après le Net ID pour segmenter le réseau en deux sous-réseaux distincts.
+
++ Quel est le nombre de bit nécessaires pour réaliser ces deux sous-réseaux ?
++ Les bits du NetID et du SubNetID doivent être contigus (par exemple les sous-réseaux 192.168.1.0 et 192.168.2.0 sont deux sous-réseaux du réseau 192.168.0.0). Pour répondre à cette question, on cherchera donc le nombre de premiers bits nécessaires et suffisants après le Net ID pour segmenter le réseau en deux sous-réseaux distincts.
 
 :::correction
 Pour distinguer le nombre de bits nécessaires il suffit d'examiner la valeur binaire du 1er octet du Host\_ID, si cela est insuffisant du second... jusqu'à trouver la combinaison binaire qui réponde au problème posé.*
 
 |Nom (DNS)|Octet 1 du HostID (décimal)|Octet 1 du HostID (binaire)|
-| :- | :- | :- |
+|:-|:-|:-|
 |Site1.Entreprise.com|227|11    100011|
 |Site2.Entreprise.com|163|10    100011|
 |Site3.Entreprise.com|189|10    111101|
@@ -217,18 +249,22 @@ L'examen du tableau ci-dessus montre que seuls deux bits du 1er octet du HostID 
 :::
 
 1. Donnez le masque correspondant aux deux sous-réseaux.
+
 :::correction
-  + Le masque de sous réseau correspondant est :
-  + NetID (1er octet de l'adresse) : 11111111  +  SubnetID : 11000000 00000000 00000000 00000000*
-  + Soit en décimal : 255.192.0.0
+
++ Le masque de sous réseau correspondant est :
++ NetID (1er octet de l'adresse) : 11111111  +  SubnetID : 11000000 00000000 00000000 00000000*
++ Soit en décimal : 255.192.0.0
+
 :::
 
 1. On souhaite isoler chaque machine dans un sous-réseau distinct.
    1. Quel est le nombre de bits minimum et nécessaire pour qu'aucune des machines n'appartiennent au même sous réseau ?
 
 :::correction
+
 |Nom (DNS)|Octet 1 du HostID (décimal)|Octet 1 du HostID (binaire)|
-| :- | :- | :- |
+|:-|:-|:-|
 |Site1.Entreprise.com|227|1110  0011|
 |Site2.Entreprise.com|163|1010  0011|
 |Site3.Entreprise.com|189|1011  1101|
@@ -238,41 +274,55 @@ L'examen du tableau ci-dessus montre que la plus petite combinaison binaire pour
 :::
 
 1. Donnez le masque correspondant.
-:::correction
-  - Le masque de sous-réseau est alors : 
-  - NetID (1er octet de l'adresse) : 11111111  +  SubnetID : 11110000 00000000 00000000 00000000
-  - Soit en décimal : 255.240.0.0
-:::
 
+:::correction
+
++ Le masque de sous-réseau est alors :
++ NetID (1er octet de l'adresse) : 11111111  +  SubnetID : 11110000 00000000 00000000 00000000
++ Soit en décimal : 255.240.0.0
+
+:::
 
 ## Calculs d'adresses IP
 
 1. Quelle est l'adresse machine (HostID) et l'adresse réseau (NetID) associée ?
-  - Adresse IP : 113.47.91.75
-  - Masque réseau : 255.0.0.0
+
++ Adresse IP : 113.47.91.75
++ Masque réseau : 255.0.0.0
+
 :::correction
-  - HostID = 0.47.91.75 et  NetID = 113.0.0.0
+
++ HostID = 0.47.91.75 et  NetID = 113.0.0.0
+
 :::
 
-
 1. Quelle est l'adresse IP associée ?
-  - adresse réseau : 195.183.34.0
-  - adresse machine : 0.0.0.27
-  - masque réseau : 255.255.255.0
+
++ adresse réseau : 195.183.34.0
++ adresse machine : 0.0.0.27
++ masque réseau : 255.255.255.0
+
 :::correction
-  - Réponse : Adresse IP : 195.183.34.27
+
++ Réponse : Adresse IP : 195.183.34.27
+
 :::
 
 1. Quel est le masque réseau pour l'adresse IP et l'adresse machine suivante ??
-  - adresse IP : 99.47.91.75
-  - adresse réseau : 99.0.0.0
-  - adresse machine : 0.47.91.75
+
++ adresse IP : 99.47.91.75
++ adresse réseau : 99.0.0.0
++ adresse machine : 0.47.91.75
+
 :::correction
-  - Réponse : masque réseau : 255.0.0.0
+
++ Réponse : masque réseau : 255.0.0.0
+
 :::
 
 1. Quelles sont la première et dernière adresse IP disponibles sur le réseau 192.168.10.0/20 ?
-  - La notation xxxx/20 représente un masque avec les 20 bits de gauche à 1.
+
++ La notation xxxx/20 représente un masque avec les 20 bits de gauche à 1.
 
 :::correction
 Le NetID étant codé sur les 20 bits de gauche, le HostID est codé sur les 32-20=12 bits restants de droite.
@@ -285,9 +335,8 @@ Le troisième octet de la première adresse IP est donc : 0000 0000 = 0 et le tr
 La première adresse IP du réseau est donc : 192.168.0.1
 La dernière adresse IP du réseau est donc : 192.168.15.254
 
-http://jodies.de/ipcalc?host=192.168.10.0&mask1=20
+<http://jodies.de/ipcalc?host=192.168.10.0&mask1=20>
 :::
-
 
 Proposer une structuration du réseau 147.56.0.0 (masque de réseau : 255.255.0.0) en 5 sous-réseaux. Donner les masques de chaque sous-réseau et donner l'adresse IP d'une machine de chaque sous-réseau.
 
@@ -300,10 +349,10 @@ La nouvelle valeur du masque est : 255.255.224.0
 
 Maintenant on utilise un codage pour les 5 sr, en fonction du codage choisit on déterminera les plages d'adresse IP pour chaque sous-réseau
 
-- SR 1 : 000 => 147.56.0.1 – 147.56.31.254
-- SR 2 : 001 => 147.56.32.1 – 147.56.63.254
-- SR 3 : 010 => 147.56.64.1 – 147.56.95.254
-- SR 4 : 011 => 147.56.96.1 – 147.56.127.254
-- SR 5 : 100 => 147.56.128.1 – 147.56.159.254
-:::
++ SR 1 : 000 => 147.56.0.1 – 147.56.31.254
++ SR 2 : 001 => 147.56.32.1 – 147.56.63.254
++ SR 3 : 010 => 147.56.64.1 – 147.56.95.254
++ SR 4 : 011 => 147.56.96.1 – 147.56.127.254
++ SR 5 : 100 => 147.56.128.1 – 147.56.159.254
 
+:::

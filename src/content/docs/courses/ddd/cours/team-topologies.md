@@ -8,7 +8,7 @@ tags:
 - topology
 type: cours
 sidebar:
-  order: 1
+  order: 4
 description: Relations entre équipes
 ---
 ![Photo de l'intérieur d'un PC portable](@assets/sysadmin/EBMotherboard.jpg)
