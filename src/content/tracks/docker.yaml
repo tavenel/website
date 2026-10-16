@@ -1,5 +1,0 @@
-title: "Docker et docker-compose"
-slug: docker
-description: "Docker : conteneurisation, docker-compose, images, réseaux, volumes."
-chapters:
-  - courses/docker/cours
