@@ -126,6 +126,7 @@ export default defineConfig({
 			disable404Route: true,
 			components: {
 				Header: '@components/StarlightHeader.astro',
+				Sidebar: '@components/Sidebar.astro',
 				Footer: '@components/StarlightFooter.astro',
 			},
 			customCss: [

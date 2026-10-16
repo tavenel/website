@@ -1,0 +1,128 @@
+---
+const { sidebar } = Astro.locals.starlightRoute;
+const pathname = Astro.url.pathname;
+
+/**
+ * Find a sidebar entry matching predicate recursively.
+ */
+function findEntry(entries: any[], pred: (e: any) => boolean): any | null {
+  for (const e of entries) {
+    if (pred(e)) return e;
+    if (e.entries) {
+      const found = findEntry(e.entries, pred);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+/**
+ * Find the parent group's entries (siblings) that contain the current page.
+ */
+function findSiblings(entries: any[]): any[] | null {
+  const current = findEntry(entries, (e: any) => e.type === 'link' && e.isCurrent);
+  if (!current) return null;
+
+  function search(node: any, href: string): any[] | null {
+    if (node.type === 'group' && node.entries) {
+      if (findEntry(node.entries, (e: any) => e.type === 'link' && e.href === href)) {
+        return node.entries;
+      }
+      for (const child of node.entries) {
+        const r = search(child, href);
+        if (r) return r;
+      }
+    }
+    return null;
+  }
+
+  let best: any[] | null = null;
+  for (const e of entries) { const r = search(e, current.href); if (r) best = r; }
+  return best;
+}
+
+/** Render the sidebar tree as nested <ul> with expand/collapse and active tracking. */
+function render(entries: any[]): string {
+  let html = '<ul class="sl-sidebar-tree">';
+  for (const e of entries) {
+    if (e.type === 'link') {
+      const cls = e.isCurrent ? 'sl-sidebar-link active' : 'sl-sidebar-link';
+      html += `<li><a href="${e.href}" class="${cls}">${escape(e.label)}</a></li>`;
+    } else if (e.type === 'group') {
+      const expanded = !e.collapsed;
+      html += `<li class="sl-sidebar-group"><details ${expanded ? 'open' : ''}>
+        <summary class="sl-sidebar-group-label">${escape(e.label)}</summary>`;
+      if (e.entries?.length > 0) html += render(e.entries);
+      html += '</details></li>';
+    }
+  }
+  html += '</ul>';
+  return html;
+}
+
+function escape(s: any): string {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+let displaySidebar = sidebar;
+
+if (pathname.startsWith('/tracks/') && pathname !== '/tracks/') {
+  const siblings = findSiblings(sidebar);
+  if (siblings) {
+    displaySidebar = [
+      { type: 'link', label: '← Tous les cours', href: '/courses', isCurrent: false, badge: undefined, attrs: {} } as any,
+      ...siblings,
+    ];
+  }
+}
+---
+
+<nav class="sidebar">
+  {render(displaySidebar)}
+</nav>
+
+<style>
+  .sl-sidebar-tree { list-style: none; padding: 0; margin: 0.5rem 0; }
+  .sl-sidebar-tree li { margin: 0; }
+  .sl-sidebar-link {
+    display: block; padding: 0.35rem 1rem;
+    color: var(--sl-color-gray-2); text-decoration: none; font-size: var(--sl-text-sm);
+    border-left: 2px solid transparent; transition: color 0.15s, border-color 0.1s;
+  }
+  .sl-sidebar-link:hover { color: var(--sl-color-accent); }
+  .sl-sidebar-link.active { color: var(--sl-color-accent); border-left-color: var(--sl-color-accent); font-weight: 600; }
+  .sl-sidebar-group-label {
+    display: block; padding: 0.35rem 1rem;
+    color: var(--sl-color-gray-3); font-weight: 600; font-size: var(--sl-text-xs);
+    text-transform: uppercase; letter-spacing: 0.03em; cursor: pointer;
+  }
+  .sl-sidebar-group-label:hover { color: var(--sl-color-accent); }
+  details > summary { list-style: disclosure-closed; }
+  details[open] > summary { list-style: disclosure-open; }
+</style>
+
+<script>
+  // Persist open/closed state of sidebar groups via localStorage
+  const STORAGE_KEY = 'sl-sidebar-state';
+  function loadState() {
+    try { const r = localStorage.getItem(STORAGE_KEY); return r ? JSON.parse(r) : {}; } catch { return {}; }
+  }
+  function saveState(s) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {}
+  }
+  // On mount, restore previously open groups
+  const state = loadState();
+  document.querySelectorAll('.sl-sidebar-group details').forEach(d => {
+    const label = d.querySelector('summary')?.textContent?.trim() || '';
+    if (state[label]) d.open = true;
+  });
+  // On toggle, persist
+  document.querySelector('.sidebar')?.addEventListener('toggle', (e) => {
+    const detail = e.target;
+    if (!detail?.closest('.sl-sidebar-group')) return;
+    const label = detail.querySelector('summary')?.textContent?.trim() || '';
+    const s = loadState();
+    s[label] = detail.open;
+    saveState(s);
+  });
+</script>
