@@ -2,7 +2,7 @@
 title: 🧪 Identification de Bounded Context
 type: exo
 sidebar:
-  order: 600
+  order: 2
 description: 🧪 Identification de Bounded Context
 ---
 ## 📝 Spécification fonctionnelle
@@ -50,6 +50,7 @@ Voici les principales fonctionnalités décrites par le service produit :
 4. Pour un des contextes, proposez un **langage ubiquitaire** (5 termes clés).
 
 :::correction
+
 ## ✅ Correction
 
 ### **Bounded Context identifiés**
@@ -61,7 +62,6 @@ Voici les principales fonctionnalités décrites par le service produit :
 | **Payment**               | Paiement en ligne, transferts enseignants, remboursements |
 | **Pedagogical Follow-up** | Suivi des cours, rédaction des comptes-rendus, historique |
 | **Support**               | Gestion des litiges et problèmes utilisateurs             |
-
 
 ### **Carte de contexte (exemple)**
 
@@ -98,6 +98,5 @@ flowchart TD
 | **Réservation**      | Un _Apprenant_ et un _Enseignant_ **s'accordent** sur un _Créneau_  |
 | **Acceptation**      | L'_Enseignant_ **valide** une _Demande_ |
 | **Statut**           | Une _Demande_ **possède** un _État_ : `en attente`, `acceptée`, `refusée`, `annulée` |
-
 
 :::

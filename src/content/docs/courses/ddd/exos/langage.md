@@ -2,7 +2,7 @@
 title: 🧪 Aligner deux descriptions métier contradictoires
 type: exo
 sidebar:
-  order: 600
+  order: 3
 description: 🧪 Aligner deux descriptions métier contradictoires
 ---
 ## 🎯 Objectif pédagogique
@@ -30,6 +30,7 @@ Une startup développe un service de vente de billets pour des événements. Lor
 3. Proposez un **modèle simplifié**, avec un diagramme d'activité, un diagramme de classe et une implémentation du modèle dans le langage de votre choix.
 
 :::correction
+
 ## ✅ Correction
 
 ### Contradictions identifiées
@@ -40,7 +41,6 @@ Une startup développe un service de vente de billets pour des événements. Lor
 | **Achat**         | Acte déclenché après paiement réussi    | N'intervient pas (ou implicite) | Pas de distinction claire            |
 | **Billet échoué** | La place est libérée automatiquement    | Le billet existe, mais échoué   | Existence même du billet en question |
 
-
 ### Langage ubiquitaire aligné (exemple proposé)
 
 | Terme                | Définition métier consensuelle                                        |
@@ -50,7 +50,6 @@ Une startup développe un service de vente de billets pour des événements. Lor
 | **Paiement**         | Action qui transforme une commande en achat                           |
 | **Billet**           | Délivré uniquement après paiement réussi                              |
 | **Commande échouée** | Commande dont le paiement a échoué, sans billet généré                |
-
 
 ### Modèle ou schéma (exemple simplifié)
 
@@ -194,5 +193,5 @@ if __name__ == "__main__":
 - ⏳ Impossible de créer une commande à partir d'une réservation expirée.
 - 🧾 Une commande ne peut être payée ou échouée qu'une seule fois.
 - 🎟️ Un billet n'est généré que si le paiement est réussi.
-:::
 
+:::

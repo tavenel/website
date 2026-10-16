@@ -3,7 +3,7 @@ title: Projet DDD - Logiciel de devis et facturation
 date: 2024 / 2025
 type: projet
 sidebar:
-  order: 500
+  order: 2
 description: Projet DDD - Logiciel de devis et facturation
 ---
 ## Présentation du projet

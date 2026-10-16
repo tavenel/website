@@ -1,9 +1,13 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: 📚 Thèmes à répartir entre les groupes
-layout: '@layouts/BaseLayout.astro'
+tags:
+- ddd
+- pedagogie
+type: cours
+sidebar:
+  order: 1
 ---
-
 
 | Thème | Sujet                                                                                   |
 | ----- | ----------------------------------------------------------------------------------------|

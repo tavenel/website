@@ -2,7 +2,7 @@
 title: 🧪 Refactoring d'un modèle anémique vers un modèle riche
 type: exo
 sidebar:
-  order: 600
+  order: 4
 description: 🧪 Refactoring d'un modèle anémique vers un modèle riche
 ---
 ## 🎯 Objectif pédagogique
@@ -42,14 +42,15 @@ class Order:
    - Ajoutez des validations métier (ex. : pas de paiement sans article).
 
 :::correction
+
 ## ✅ Correction
 
-### Problèmes identifiés :
+### Problèmes identifiés
 
-* `items` est une liste de dictionnaires : structure fragile, non typée.
-* `total` est un champ redondant, sujet à incohérence.
-* `Order` est une **structure de données passive** (pas de logique métier).
-* Aucune **encapsulation** ni validation métier.
+- `items` est une liste de dictionnaires : structure fragile, non typée.
+- `total` est un champ redondant, sujet à incohérence.
+- `Order` est une **structure de données passive** (pas de logique métier).
+- Aucune **encapsulation** ni validation métier.
 
 ### Refactoring proposé
 
@@ -89,4 +90,3 @@ class Order:
 ```
 
 :::
-

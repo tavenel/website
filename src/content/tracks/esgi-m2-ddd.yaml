@@ -4,4 +4,17 @@ school: "ESGI"
 year: "M2"
 module: "ddd"
 chapters:
+  - ddd/cours/ddd
+  - ddd/cours/tactiques
+  - management/team-topologies
+  - tests/cours/bdd
+  - archi/cours/hexagonal
+  - archi/cours/clean
+  - ddd/exos/youtube-amazon
+  - ddd/exos/contexts
+  - ddd/exos/modele
+  - ddd/exos/langage
   - pedagogie/classe-renversee
+  - ddd/projets/classe-renversee-themes
+  - ddd/projets/facturation
+

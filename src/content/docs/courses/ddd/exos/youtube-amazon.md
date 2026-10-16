@@ -2,15 +2,17 @@
 title: Analyse de Amazon et YouTube
 type: exo
 sidebar:
-  order: 600
+  order: 1
 description: Analyse de Amazon et YouTube
 ---
 1. En analysant le site web de YouTube :
-  - Trouver les différents _Bounded Context_ du projet
-  - Décrire les interactions (patterns stratégiques) entre les différents contextes
-2. Mêmes questions pour le site web d'Amazon
+
+- Trouver les différents _Bounded Context_ du projet
+- Décrire les interactions (patterns stratégiques) entre les différents contextes
+1. Mêmes questions pour le site web d'Amazon
 
 :::correction
+
 ## Version complexe
 
 ### Youtube
@@ -29,7 +31,6 @@ description: Analyse de Amazon et YouTube
 | Moderation & Policy Enforcement   | YouTube, communauté          | Respect des règles                  |
 | Notification                      | Tous utilisateurs            | Communication proactive             |
 | Channel & Subscription            | Créateurs, abonnés           | Relation abonné-créateur            |
-
 
 ### Amazon
 
@@ -53,7 +54,6 @@ description: Analyse de Amazon et YouTube
 | Analytics & Reporting             | Internes, vendeurs           | Données d'activité, ventes, performances |
 | Fraud Detection & Security        | Systèmes internes            | Sécurité des transactions et comptes     |
 
-
 ## Version simple
 
 ### Youtube
@@ -75,4 +75,5 @@ description: Analyse de Amazon et YouTube
 | Order Management         | Clients, support       | Commandes, paiements, suivi           |
 | Shipping & Fulfillment   | Clients, logistique    | Livraison et gestion des colis        |
 | Customer Account         | Clients                | Connexion, profil, préférences        |
+
 :::
