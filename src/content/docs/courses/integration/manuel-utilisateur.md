@@ -6,7 +6,7 @@ tags:
 - production
 type: cours
 sidebar:
-  order: 800
+  order: 3
 description: Le manuel utilisateur
 ---
 ## Manuel utilisateur
@@ -88,4 +88,3 @@ On doit trouver en plus dans le manuel d'exploitation :
 - Créer le guide d'utilisateur parfait : <https://www.techsmith.fr/blog/creer-le-guide-d-utilisation-parfait/>
 
 ---
-

@@ -1,12 +1,9 @@
 ---
 type: tp
 sidebar:
-  order: 800
-title: Gestion Parc Informatique
-description: Gestion Parc Informatique
----
-﻿---
+  order: 102
 title: TD OCSInventory
+description: Gestion Parc Informatique
 date: 2023 / 2024
 ---
 
@@ -52,13 +49,12 @@ Pour faciliter le déploiement du parc informatique du projet, on pourra utilise
 En vous aidant de la section Installation du document fourni en annexe :
 
 - Créez et installez les différents systèmes :
-  + Un système Windows (on pourra utiliser le système de l'apprenant) ;
-  + Un système Linux (de préférence Ubuntu Server) pour le serveur OCSInventory, dans une machine virtuelle VirtualBox par exemple ;
-  + Une autre machine virtuelle Linux (de préférence Ubuntu Server ou Fedora Server), hébergeant une stack LAMP complète.
+  - Un système Windows (on pourra utiliser le système de l'apprenant) ;
+  - Un système Linux (de préférence Ubuntu Server) pour le serveur OCSInventory, dans une machine virtuelle VirtualBox par exemple ;
+  - Une autre machine virtuelle Linux (de préférence Ubuntu Server ou Fedora Server), hébergeant une stack LAMP complète.
 - Installez sur le premier système Linux, le serveur d'inventaire et de reporting d'OCSInventory.
 - Installez un agent OCSInventory sur le système Windows et un agent sur le second système Linux et les configurer pour faire remonter les données au serveur.
 - Connectez-vous sur l'interface du serveur pour vérifier son bon fonctionnement et le référencement des agents.
-
 
 # Manuel utilisateur
 
@@ -68,6 +64,7 @@ Réaliser un manuel utilisateur décrivant les fonctionnalités d'inventaire et 
 - Déploiement automatisé et sécurisé d'applications sur les postes de travail du parc
 
 # Formation des utilisateurs
+
 Réaliser des formations pour les nouveaux utilisateurs du parc informatique, concernant l'environnement OCSInventory :
 
 - Une formation à destination des administrateurs système utilisant le serveur OCSInventory

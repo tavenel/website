@@ -6,7 +6,7 @@ tags:
 - production
 type: cours
 sidebar:
-  order: 800
+  order: 2
 description: Formation des utilisateurs
 ---
 ## But de la formation
@@ -31,7 +31,7 @@ La formation doit se limiter aux besoins du client et passer sous silence les au
 La première étape consiste donc à analyser le public cible :
 
 - Quelle sera l'utilisation principale du produit pour le public cible ?
-- Quel est l'expérience et le niveau de connaissance du public cible sur la fonctionnalité proposée ? 
+- Quel est l'expérience et le niveau de connaissance du public cible sur la fonctionnalité proposée ?
 - Quel est le niveau technique du public cible ?
 
 ---
@@ -44,16 +44,16 @@ On analyse ensuite le contexte de la formation :
 
 - Pourquoi une formation est-elle nécessaire ?
 - S'agit-t-il :
-  + d'un nouveau besoin métier
-  + d'un nouveau produit
-  + d'une nouvelle fonctionnalité
-  + d'un changement d'interface dans le produit sans modification fonctionnelle ?
+  - d'un nouveau besoin métier
+  - d'un nouveau produit
+  - d'une nouvelle fonctionnalité
+  - d'un changement d'interface dans le produit sans modification fonctionnelle ?
 
 ---
 
 - Une formation est donc souvent dédiée à une utilisation limitée du produit pour un certain public.
 - Deux formations sur le même service peuvent être totalement différentes.
-  + Exemple : une entreprise met à jour son système d'exploitation sur l'ensemble de ses postes de travail : les formations données aux développeurs seront très différentes de celles reçues par les équipes marketing
+  - Exemple : une entreprise met à jour son système d'exploitation sur l'ensemble de ses postes de travail : les formations données aux développeurs seront très différentes de celles reçues par les équipes marketing
 
 ---
 
@@ -110,4 +110,3 @@ Une formation doit toujours avoir comme fil directeur les besoins du client en s
 Elle ne doit en aucun cas être une description de l'interface utilisateur !
 
 ---
-

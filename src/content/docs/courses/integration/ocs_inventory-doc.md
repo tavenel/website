@@ -1,13 +1,10 @@
 ---
 type: cours
 sidebar:
-  order: 800
-title: Ocs Inventory Doc
-description: Ocs Inventory Doc
----
-﻿---
+  order: 5
 title: L'outil de gestion d'inventaire OCSInventory (Open Computer and Software Inventory)
 date: 2022-2023
+description: Ocs Inventory Doc
 ---
 
 # Présentation du produit
@@ -97,11 +94,11 @@ Ces éléments peuvent être installés sur un seul ordinateur ou sur plusieurs 
 
 OCSInventory travaille dans un environnement web qui fait appel à des scripts php, perl et au SGBD MySQL pour le stockage des informations d'inventaire ; Il est donc nécessaire de disposer d'un serveur Apache2 et du SGBD MySQL.
 
-*Attention, l'installation du serveur MySQL (mysql-server) est obligatoire avant (ou pendant) l'installation d'ocsinventory car aucune dépendance n'a été prévue !* 
+*Attention, l'installation du serveur MySQL (mysql-server) est obligatoire avant (ou pendant) l'installation d'ocsinventory car aucune dépendance n'a été prévue !*
 
-Les paquets à installer sont les suivants : 
+Les paquets à installer sont les suivants :
 
-- ocsinventory-reports - Hardware and software inventory tool (Administration Console) 
+- ocsinventory-reports - Hardware and software inventory tool (Administration Console)
 - ocsinventory-server - Hardware and software inventory tool (Communication Server)
 - libxml-parser-perl : ce paquet n'a pas été pris en compte dans les dépendances, il est pourtant indispensable à la remontée d'inventaire (il y a sinon un "internal error" à ce moment-là)
 
@@ -116,7 +113,7 @@ Cliquez sur « send » et vous devez voir apparaître l'écran page suivante (ne
 
 Les logs seront stockés dans le répertoire : `/var/log/ocsinventory-server/` mais il faut au préalable les activer en positionnant à "on" la variable "LOGLEVEL" sur le serveur.
 
-La configuration pour le serveur WEB se trouve dans les fichiers : 
+La configuration pour le serveur WEB se trouve dans les fichiers :
 
 - `/etc/apache2/conf-available//ocsinventory-server.conf`
 - `/etc/apache2/conf-available//ocsinventory-reports.conf`
@@ -136,7 +133,7 @@ accueillent les variables de configuration ==> Il est donc nécessaire de modifi
 
 Le but étant de ne pas trop charger le réseau, il faut éviter :
 
-- de faire des remontées constamment ; 
+- de faire des remontées constamment ;
 - de faire des remontées systématiques lors de chaque lancement du client ;
 - de faire les remontées de tous les clients en même temps
 
@@ -161,7 +158,7 @@ La collecte automatisée d'informations passe par l'installation sur les postes 
 
 Nous ne développerons pas la problématique de l'installation automatique de l'agent mais il est évident qu'en production lorsque l'agent doit être installé sur des centaines de postes, la question se pose.
 
-## Agent Linux :
+## Agent Linux
 
 Ce type d'agent permet :
 
@@ -191,20 +188,19 @@ tag=Linux_Serveur
 
 Pour forcer la remontée d'inventaire du client sans attendre le déclenchement du cron, il est également possible d'exécuter la commande ocsinventory-agent.
 
-## Agent Windows :
+## Agent Windows
 
 Sous Windows, deux agents OCSinventory sont disponibles :
 
 - `OcsLogon.exe` : cet agent peut être utilisé uniquement sur un domaine Active Directory ou sur Linux via Samba. Il peut être déployé à travers le contrôleur de domaine et par des scripts d'ouverture de session.
 
-- `OCS-NG-Windows-Agent-Setup.exe` : cet agent s'installe sur chaque poste et permet la transmission d'inventaire et également le déploiement d'applications à distance. Une fois installé, le service OCSinventory se lance à chaque démarrage du poste. 
-
+- `OCS-NG-Windows-Agent-Setup.exe` : cet agent s'installe sur chaque poste et permet la transmission d'inventaire et également le déploiement d'applications à distance. Une fois installé, le service OCSinventory se lance à chaque démarrage du poste.
 
 NB : il est aussi possible de créer un fichier `ocspackage.exe` en utilisant le packager OCS Inventory NG, pour déployer la version de l'agent de service Windows, même si l'utilisateur connecté n'a pas les droits d'administrateur.
 
 Un fichier de log (OcsAgentSetup) rendant compte de l'installation est créé dans le répertoire où se trouve l'exécutable `OcsAgentSetup.exe` que l'on vient de lancer.
 
-Les répertoires d'installation sont, par défaut 
+Les répertoires d'installation sont, par défaut
 
 - `C:\Program Files (x86)\OCS Inventory Agent\` pour les exécutables et dll ;
 
@@ -213,7 +209,7 @@ Les répertoires d'installation sont, par défaut
 Une fois l'agent installé sur le client, le service OCSinventory est configuré pour être lancé automatiquement en tant que service au démarrage.
 Les paramètres de configuration se trouvent dans le fichier `C:\ProgramData\OCS Inventory NG\Agent\ocsinventory.ini`.
 
-## Agent Mac :
+## Agent Mac
 
 L'agent Mac OS X est disponible sous forme de package à installer.
 
@@ -231,13 +227,13 @@ Après la première exécution de l'agent, sont créés :
 
 - le fichier de log `/var/log/ocsng.log`
 - le répertoire `/var/lib/ocsinventory-agent/http:__XXXX\_ocsinventory` (avec XXXX correspondant à l'adresse IP ou au nom du serveur OCS à contacter) contenant les fichiers XML suivants :
-  + `last_state` qui décrit le dernier inventaire réalisé.
-  + `ocsinv.conf` contenant les paramètres de configuration générale comme la valeur de la variable `PROLOG_FREQ` (ce qui veut dire que si cette variable est modifiée sur le serveur OCS, elle ne sera prise en compte par le client qu'après le prochain inventaire). Il est toujours possible de la modifier directement dans le fichier.
-  + `ocsinv.adm` qui enregistre les valeurs `TAG` et autres valeurs administrative
+  - `last_state` qui décrit le dernier inventaire réalisé.
+  - `ocsinv.conf` contenant les paramètres de configuration générale comme la valeur de la variable `PROLOG_FREQ` (ce qui veut dire que si cette variable est modifiée sur le serveur OCS, elle ne sera prise en compte par le client qu'après le prochain inventaire). Il est toujours possible de la modifier directement dans le fichier.
+  - `ocsinv.adm` qui enregistre les valeurs `TAG` et autres valeurs administrative
 
 # Gestion des informations collectées
 
-Une fois les inventaires transmis au serveur par les agents et intégrés à la base de données, l'ensemble des machines peut être visionné. 
+Une fois les inventaires transmis au serveur par les agents et intégrés à la base de données, l'ensemble des machines peut être visionné.
 
 Des requêtes de restrictions pourront également être effectuées permettant ainsi d'avoir une vue précise et ciblée des éléments informatiques présents dans l'entreprise.
 
@@ -298,11 +294,11 @@ Par défaut, aucune clef de registre n'est récupérée par les agents OCSinvent
 
 OCSInventory permet de récolter de nombreuses informations sensibles (et d'exécuter des opérations critiques comme nous le verrons dans la prochaine section). Pour sécuriser les communications, un tunnel HTTPS est utilisé.
 
-## Configuration du serveur :
+## Configuration du serveur
 
 Un nouveau certificat `server.crt` doit être créé et configuré sur le serveur Web hébergeant OCS Inventory (par exemple : Apache).
 
-## Configuration des agents :
+## Configuration des agents
 
 L'agent doit avoir un certificat pour valider l'authentification au serveur de déploiement. Il s'agit du fichier `server.crt`. Ce certificat doit être enregistré dans un fichier `cacert.pem` dans le répertoire de l'agent OCS Inventory NG sous Windows et dans `/var/lib/ocsinventory-agent/http:__@IPserveurOCS_ocsinventory/` sous Linux.
 
@@ -312,7 +308,7 @@ L'installation, la mise à jour et la suppression d'applications font partie du 
 
 OCSInventory inclut la fonctionnalité de déploiement de paquets (logiciels, scripts, etc.) sur les stations inventoriées.
 
-## Le principe de base est le suivant :
+## Le principe de base est le suivant
 
 - L'agent se connecte au serveur de communication par le protocole HTTP pour lui demander ce qu'il doit faire. En fonction de sa configuration, le serveur peut répondre :
   - d'envoyer un inventaire ;
@@ -322,10 +318,10 @@ OCSInventory inclut la fonctionnalité de déploiement de paquets (logiciels, sc
 - Lorsque l'agent a l'ordre de déployer un paquet, il contacte via le protocole HTTPS le serveur de déploiement afin d'y récupérer un fichier d'informations (IDA : "Instruction Déploiement d'Applications") associé qui est un fichier XML décrivant le paquet et l'action que l'agent devra exécuter. C'est un fichier qui dispose d'un champ d'action important d'où la nécessité de sécuriser et d'authentifier le serveur sur lequel il se trouve.
 - L'agent devra éventuellement télécharger, via le protocole HTTP, un fichier ou des fragments de fichiers (ce dernier point est optionnel si les instructions ne consistent qu'à exécuter une ou plusieurs commandes).
 
-## L'administrateur devra au préalable : 
+## L'administrateur devra au préalable
 
 - préparer une archive compressée (en .ZIP pour Windows et en .tar.gz pour Linux) des fichiers nécessaires,
-- créer le paquet grâce à la console d'administration, 
+- créer le paquet grâce à la console d'administration,
 - activer le paquet,
 - affecter le paquet aux machines sur lesquelles le déploiement doit s'effectuer.
 
@@ -363,4 +359,3 @@ Le TAG des postes inventoriés peut être modifié manuellement dans OCSInventor
 Pour faciliter la maintenance des tags, un script SQL est déployé sur le serveur pour modifier la base de données d'OCSInventory.
 
 Avant l'exécution de ce script, une sauvegarde de la base de données est réalisée.
-
