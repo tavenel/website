@@ -21,7 +21,7 @@ description: Cours ORM Hibernate
 
 Hibernate est une solution open source de type `ORM` (Object Relational Mapping) qui permet de faciliter le développement de la couche persistance d'une application.
 
-**Hibernate permet donc de représenter une base de données en objets Java et vice versa** 
+**Hibernate permet donc de représenter une base de données en objets Java et vice versa**
 
 Ceci afin d'abstraire l'implémentation de la base de données du code (La plupart des BD sont supportées).
 
@@ -65,8 +65,8 @@ flowchart TD
 
 - Objets mono-threadés à vie courte
 - Contenant :
-  + Un état persistant
-  + Du code métier
+  - Un état persistant
+  - Du code métier
 - Objets ordinaires (JavaBean, POJO)
 - Associés avec une (et une seule) Session.
 - Dès que la Session est fermée, ils sont détachés et libres d'être utilisés par n'importe quelle couche de l'application (par exemple de et vers la présentation).
@@ -99,7 +99,7 @@ flowchart TD
 
 ---
 
-## Exemple de POJO 
+## Exemple de POJO
 
 ```java
 public class MyEntity {
@@ -138,15 +138,15 @@ public class MyEntity {
 - encapsule une connexion JDBC
 - fabrique des objets Transaction
 - la Session contient un cache (de premier niveau) des objets persistants, qui sont utilisés lors de la navigation dans le graphe d'objets ou lors de la récupération d'objets par leur identifiant.
- 
+
 ---
 
 ## Unité de travail
 
 - Séquences de requêtes à la BD pour effectuer une opération atomique dans l'application
-  + => 1 session par opération métier, et pas 1 session par requête BD !
-  + En web, souvent 1 session par requête
-    * `SessionFactory.getCurrentSession()`
+  - => 1 session par opération métier, et pas 1 session par requête BD !
+  - En web, souvent 1 session par requête
+    - `SessionFactory.getCurrentSession()`
 - Hibernate supporte aussi d'autres patterns beaucoup plus complexes
 - Toute opération (lecture et/ou modification) doit avoir lieu dans une transaction
 
@@ -170,13 +170,13 @@ public class MyEntity {
 ## Résumé
 
 - La `SessionFactory` génère des `Session`
-  + Par exemple : `SessionFactory.getCurrentSession()`
+  - Par exemple : `SessionFactory.getCurrentSession()`
 - Les `Session` modélisent une utilisation atomique de la base de données
-  + Par exemple : recherche d'un produit et mise à jour d'un de ses champs
+  - Par exemple : recherche d'un produit et mise à jour d'un de ses champs
 - Les `Session` génèrent des Transaction (obligatoires pour tout dialogue avec la BD)
-  + Session.beginTransaction()
-  + `Transaction.commit()`, `Transaction.rollback()`
- 
+  - Session.beginTransaction()
+  - `Transaction.commit()`, `Transaction.rollback()`
+
 ---
 
 ## Configuration
@@ -225,9 +225,10 @@ Les classes persistées par Hibernate sont des entitées décrites par des POJO 
 ## ORM
 
 Bases du Mapping Objet-Relationel (ORM) :
+
 - Les entitées persistées sont en principe enregistrées en BD selon un schéma très proche :
-  + 1 table par entité
-  + 1 colonne par attribut
+  - 1 table par entité
+  - 1 colonne par attribut
 - Les relations entre classe/table et attribut/colonne sont définies soit dans un fichier XML dédié `nomDeLaClasse.hbm.xml` dans le même package, soit par annotation dans la classe Java
 
 ---
@@ -293,15 +294,15 @@ public class MyEntity {
 
 - L'ORM permet de directement sauver / éditer / supprimer / lister les entités persistées sans avoir à écrire de requête SQL (ou à utiliser JDBC).
 - L'objet Session possède un ensemble de méthodes (`save()`, `delete()`, `update()`, …) qui prennent directement un object en paramètre et réalisent le mapping et la persistance en BD
-  + Exemple : `currentSession.save(myEntity)`
+  - Exemple : `currentSession.save(myEntity)`
 
 ---
 
 ## Ressources
 
-- Tutoriel Hibernate de J.M.Doudoux : https://www.jmdoudoux.fr/java/dej/chap-hibernate.htm
-- Architecture Hibernate : https://docs.jboss.org/hibernate/orm/3.5/reference/fr-FR/html/architecture.html
-- Hibernate ORM mapping : https://docs.jboss.org/hibernate/orm/6.0/quickstart/html_single/ 
+- Tutoriel Hibernate de J.M.Doudoux : <https://www.jmdoudoux.fr/java/dej/chap-hibernate.htm>
+- Architecture Hibernate : <https://docs.jboss.org/hibernate/orm/3.5/reference/fr-FR/html/architecture.html>
+- Hibernate ORM mapping : <https://docs.jboss.org/hibernate/orm/6.0/quickstart/html_single/>
 
 ---
 
@@ -311,4 +312,3 @@ public class MyEntity {
 - Other names may be trademarks of their respective owners
 
 ---
-
