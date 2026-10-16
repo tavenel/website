@@ -42,8 +42,8 @@ layout: '@layouts/BaseLayout.astro'
 - [󰕈 Machine virtuelle Ubuntu Desktop dans VirtualBox](/linux/tp-installation-vbox-ubuntu-workstation)
 - [󰣚  Machine virtuelle Debian serveur dans VirtualBox](/linux/tp-installation-vbox-debian-server)
 - [Installer un serveur Ubuntu sous Virtualbox](https://www.eugenetoons.fr/installer-un-serveur-ubuntu-sous-virtualbox/)
-
 - [✨ Configuration d'un poste de travail Linux](/linux/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
+- Tester des distributions Linux et BSD dans un navigateur : <https://distrosea.com/>
 
 ## Découverte de Linux
 
