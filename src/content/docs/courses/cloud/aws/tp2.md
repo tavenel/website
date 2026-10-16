@@ -1,13 +1,10 @@
 ---
+title: Développement d'une application moderne en utilisant les services avancés AWS
+date: 2023 / 2024
 type: cours
 sidebar:
-  order: 800
-title: Tp2
+  order: 102
 description: Tp2
----
-﻿---
-title: Développement d'une application moderne en utilisant les services avancés d'`AWS`
-date: 2023 / 2024
 tags:
 - aws
 - cloud

@@ -3,7 +3,7 @@ title: TP Découverte d'OpenNebula via miniONE
 date: 2025 / 2026
 type: cours
 sidebar:
-  order: 800
+  order: 101
 description: TP Découverte d'OpenNebula via miniONE
 ---
 ## Objectifs pédagogiques
@@ -46,9 +46,9 @@ description: TP Découverte d'OpenNebula via miniONE
 **Livrable 0 :** capture d'écran du `onehost list` et du dashboard Sunstone.
 
 :::warn
-- miniOne ne sert qu'à installer OpenNebula : une fois installé, le service redémarre avec la VM (donc il ne faut lancer la commande `./minione` qu'une fois).
-- Si la symchronisation d'un hôte par SSH n'est plus possible (par exemple changement de clés SSH), penser à autoriser la connexion à l'hôte, dans notre cas il faut accepter notre VM miniOne à se connecter à elle-même : (en oneadmin) : `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`)
-- Si besoin de réinstallation par miniOne, il existe une commande `./minione --purge` qui semble ne pas nettoyer correctement le système sur les dernières versions. La procédure recommandée est :
+* miniOne ne sert qu'à installer OpenNebula : une fois installé, le service redémarre avec la VM (donc il ne faut lancer la commande `./minione` qu'une fois).
+* Si la symchronisation d'un hôte par SSH n'est plus possible (par exemple changement de clés SSH), penser à autoriser la connexion à l'hôte, dans notre cas il faut accepter notre VM miniOne à se connecter à elle-même : (en oneadmin) : `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`)
+* Si besoin de réinstallation par miniOne, il existe une commande `./minione --purge` qui semble ne pas nettoyer correctement le système sur les dernières versions. La procédure recommandée est :
 
 ```sh
 sudo ./minione --purge
@@ -57,6 +57,7 @@ sudo rm -rf /etc/one/*
 sudo rm -rf /var/log/one/*
 sudo -u oneadmin onehost sync --force
 ```
+
 :::
 
 ## Images et Datastores
@@ -281,5 +282,3 @@ Voir aussi : <https://docs.opennebula.io/7.0/product/operation_references/openne
 * `oned.log` et `sunstone.log` : logs principaux
 
 ---
-
-

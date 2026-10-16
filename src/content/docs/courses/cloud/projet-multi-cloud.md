@@ -5,7 +5,7 @@ tags:
 - cloud
 type: projet
 sidebar:
-  order: 500
+  order: 201
 description: Exécution de programmes dans un environnement Cloud multi-provider
 ---
 ## Contexte du projet
@@ -17,8 +17,7 @@ Dans ce projet, chaque groupe représente un fournisseur de Cloud différent, ay
 
 Les fonctionnalités offertes par les différents fournisseurs de Cloud sont cependant identiques : un système d'exécution de différents types de programmes fournis par les clients, et un système de notification des résultats par mail (voir ci-dessous).
 
-
-### Exécution des programmes clients :
+### Exécution des programmes clients
 
 #### Types de fichiers
 
@@ -39,8 +38,7 @@ Afin de rationaliser les coûts d'infrastructure, les différents fournisseurs d
 
 Le résultat de l'exécution du programme devra être envoyé par mail par le fournisseur de Cloud ayant exécuté le programme sur ses machines, à l'adresse fournie par le client dans le fichier annexe au programme.
 
-
-### Notes générales :
+### Notes générales
 
 - On ne demande pas de mettre en place un service de tarification / gestion de quotas / … que ce soit par rapport aux utilisateurs finaux ou pour la coopération entre fournisseurs de Cloud.
 - Pour pouvoir exécuter les programmes des clients dans différents environnements, on utilisera au minimum 2 environnements d'exécution par groupe (serveur, machine personnelle, machine virtuelle, ...) dont au moins une machine Windows et une machine Linux.
@@ -65,9 +63,9 @@ Il est attendu, par groupe de 5 apprenants :
 
 - Une copie de la norme permettant la coopération entre les différents fournisseurs de Cloud (commune à tous les groupes)
 - Un rapport de projet décrivant :
-  + l'infrastructure mise en place 
-  + les choix d'architecture (différents composants déployés et leur utilité)
-  + les différentes applications client/serveur sur `TCP/IP` déployées dans ce projet
+  - l'infrastructure mise en place
+  - les choix d'architecture (différents composants déployés et leur utilité)
+  - les différentes applications client/serveur sur `TCP/IP` déployées dans ce projet
 - Des copies d'écran des interface(s) utilisateur(s)
 - Le code source du ou des programmes d'interface(s) utilisateur(s)
 - Le code source du ou des programmes internes, s'ils existent
@@ -75,4 +73,3 @@ Il est attendu, par groupe de 5 apprenants :
 - Un email de résultat d'exécution sera envoyé à l'adresse du formateur par l'ajout de cette adresse mail dans un fichier annexe d'un court script choisi par le groupe. L'expéditeur de ce mail devra être l'adresse d'un des apprenants du groupe.
 
 Il n'est pas demandé d'accès au déploiement final de la solution.
-

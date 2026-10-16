@@ -3,7 +3,7 @@ title: Projet Montage d'un Virtual Data Center
 date: 2025 / 2026
 type: projet
 sidebar:
-  order: 500
+  order: 102
 description: Projet Montage d'un Virtual Data Center
 ---
 ## Présentation du projet

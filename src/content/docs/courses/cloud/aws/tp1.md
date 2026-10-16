@@ -1,19 +1,16 @@
 ---
+title: Introduction au Cloud Amazon Web Services
 type: cours
 sidebar:
-  order: 800
-title: Tp1
+  order: 101
 description: Tp1
----
-﻿---
-title: Introduction au Cloud Amazon Web Services
 date: 2023 / 2024
 tags:
 - aws
 - cloud
 ---
 
-# Remarques importantes sur l'utilisation des services `AWS` dans ce module de formation :
+# Remarques importantes sur l'utilisation des services `AWS` dans ce module de formation
 
 ## La facturation des services
 
@@ -25,9 +22,9 @@ Pour les différentes expérimentations de ce module, on se limitera à un usage
 
 - Contrairement à ce qui est indiqué dans les différents sujets de TP, et afin d'éviter aux apprenants de devoir fournir un moyen de paiement pour réaliser la formation, les apprenants pourront (sauf choix contraire de leur part) utiliser le compte `AWS` commun fourni par le formateur (avec un utilisateur qui leur sera dédié).
 - On sera donc particulièrement vigilant sur l'usage et **la facturation des différents services** :
-  + **Arrêter et détruire les instances de services qui ne sont plus utilisés**
-  + Pour les expérimentations, on choisira toujours **les versions minimales des serveurs** (qui suffisent amplement à nos cas d'utilisation)
-  + Le formateur se réserve le droit de détruire toute instance de service dont l'utilisation dépasserait un budget raisonnable
+  - **Arrêter et détruire les instances de services qui ne sont plus utilisés**
+  - Pour les expérimentations, on choisira toujours **les versions minimales des serveurs** (qui suffisent amplement à nos cas d'utilisation)
+  - Le formateur se réserve le droit de détruire toute instance de service dont l'utilisation dépasserait un budget raisonnable
 
 ## Le partage des services
 
