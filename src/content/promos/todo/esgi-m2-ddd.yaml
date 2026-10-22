@@ -1,8 +1,5 @@
 title: "DDD"
 slug: "esgi/m2/ddd"
-school: "ESGI"
-year: "M2"
-module: "ddd"
 chapters:
   - ddd/cours/ddd
   - ddd/cours/tactiques

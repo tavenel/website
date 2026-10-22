@@ -1,8 +1,5 @@
 title: "Analyse de code et maintenabilité"
 slug: "epsi/i1/linter"
-school: "EPSI"
-year: "I1"
-module: "linter"
 chapters:
   - archi/maintenabilite
   - cicd/cours-outils-ci

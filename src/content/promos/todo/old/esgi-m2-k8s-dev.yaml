@@ -1,8 +1,5 @@
 title: "Cours Kubernetes orienté développeur"
 slug: "esgi/m2/k8s-dev"
-school: "ESGI"
-year: "M2"
-module: "k8s-dev"
 chapters:
   - k8s/intro
   - k8s/main

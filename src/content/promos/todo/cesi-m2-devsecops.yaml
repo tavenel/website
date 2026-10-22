@@ -1,9 +1,5 @@
 title: "DevSecOps"
 slug: cesi/m2/devsecops
-description: "DevSecOps pour CESI M2 : sécurité de la supply chain, sécurisation CI/CD, DevSecOps culture."
-school: "CESI"
-year: "M2"
-module: "devsecops"
 chapters:
   - courses/devops/cours
   - courses/devops/yaml

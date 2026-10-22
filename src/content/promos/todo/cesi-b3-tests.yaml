@@ -1,8 +1,5 @@
 title: "Méthodologie des tests"
 slug: "cesi/b3/tests"
-school: "CESI"
-year: "B3"
-module: "tests"
 chapters:
   - pedagogie/classe-renversee
   - tests/classe-renversee-themes

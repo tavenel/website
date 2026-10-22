@@ -1,9 +1,5 @@
 title: "Tests logiciels"
 slug: cesi/b2/tests
-description: "Tests logiciels pour CESI B2 : introduction, méthodologie, TDD, industrialisation, tests unitaires Python."
-school: "CESI"
-year: "B2"
-module: "tests"
 chapters:
   - courses/tests/cours-introduction-tests
   - courses/tests/cours-methodo-tests

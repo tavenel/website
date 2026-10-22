@@ -1,8 +1,5 @@
 title: "Classe renversée DevOps"
 slug: "epsi/b3/devops"
-school: "EPSI"
-year: "B3"
-module: "devops"
 chapters:
   - pedagogie/classe-renversee
   - devops/themes

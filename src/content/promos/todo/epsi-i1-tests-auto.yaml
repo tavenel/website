@@ -1,8 +1,5 @@
 title: "Automatisation des tests"
 slug: "epsi/i1/tests-auto"
-school: "EPSI"
-year: "I1"
-module: "tests-auto"
 chapters:
   - pedagogie/classe-renversee
   - tests/classe-renversee-themes

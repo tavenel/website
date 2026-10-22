@@ -1,8 +1,5 @@
 title: "Cours Gitops"
 slug: "epsi/i2/gitops"
-school: "EPSI"
-year: "I2"
-module: "gitops"
 chapters:
   - cicd/modeles-cd-cours
   - k8s/cicd

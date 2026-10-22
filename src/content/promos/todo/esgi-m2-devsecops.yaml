@@ -1,9 +1,0 @@
-title: "Cours DevSecOps"
-slug: "esgi/m2/devsecops"
-school: "ESGI"
-year: "M2"
-module: "devsecops"
-chapters:
-  - devops/devsecops
-  - cloud/secu
-  - cicd/cours-secu-ci

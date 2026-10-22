@@ -1,8 +1,5 @@
 title: "Linux orienté Développeurs"
 slug: "esgi/b3/linux-dev"
-school: "ESGI"
-year: "B3"
-module: "linux-dev"
 chapters:
   - linux/cours-desktop
   - linux/cours-install

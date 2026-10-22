@@ -1,8 +1,5 @@
 title: "Cours DevSecOps"
 slug: "esgi/m2/devsecops_old"
-school: "ESGI"
-year: "M2"
-module: "devsecops_old"
 chapters:
   - devops/cours
   - cicd/cours-intro-ci

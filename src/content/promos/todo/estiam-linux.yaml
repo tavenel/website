@@ -1,7 +1,5 @@
 title: "Cours Linux"
 slug: "estiam/linux"
-school: "ESTIAM"
-year: "LINUX"
 chapters:
   - linux/cours-backup
   - linux/cours-debug

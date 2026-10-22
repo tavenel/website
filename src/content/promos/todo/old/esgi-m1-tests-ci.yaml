@@ -1,8 +1,5 @@
 title: "Tests et Automatisations"
 slug: "esgi/m1/tests-ci"
-school: "ESGI"
-year: "M1"
-module: "tests-ci"
 chapters:
   - tests/cours-introduction-tests
   - tests/cours-methodo-tests

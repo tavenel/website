@@ -1,8 +1,5 @@
 title: "Cours DevOps"
 slug: "epsi/i2/ansible-terraform"
-school: "EPSI"
-year: "I2"
-module: "ansible-terraform"
 chapters:
   - devops/yaml
   - ansible/cours

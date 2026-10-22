@@ -1,8 +1,5 @@
 title: "Cours Linux d'administration système"
 slug: "epsi/sn2/linux-admin"
-school: "EPSI"
-year: "SN2"
-module: "linux-admin"
 chapters:
   - linux/cours-droits
   - linux/cours-shell

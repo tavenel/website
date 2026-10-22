@@ -1,8 +1,5 @@
 title: "󱃾  Kubernetes"
 slug: "cesi/m2/k8s"
-school: "CESI"
-year: "M2"
-module: "k8s"
 chapters:
   - pedagogie/classe-renversee
   - k8s/classe-renversee-themes

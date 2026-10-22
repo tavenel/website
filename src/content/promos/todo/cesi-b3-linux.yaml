@@ -1,9 +1,5 @@
 title: "Linux administration avancée"
 slug: cesi/b3/linux
-description: "Linux avancé pour CESI B3 ASR : hardware, installation, disques, réseau, sécurité, PAM, VPN, backup, debug."
-school: "CESI"
-year: "B3"
-module: "linux"
 chapters:
   - courses/linux/cours-hardware
   - courses/linux/cours-install

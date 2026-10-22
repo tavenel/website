@@ -1,8 +1,5 @@
 title: "󱃾  Kubernetes"
 slug: "epsi/i2/k8s"
-school: "EPSI"
-year: "I2"
-module: "k8s"
 chapters:
   - pedagogie/classe-renversee
   - k8s/classe-renversee-themes

@@ -4,7 +4,6 @@ date: 2025 / 2026
 type: projet
 sidebar:
   order: 201
-description: 📄 De la culture DevSecOps à la mise en oeuvre CI/CD
 ---
 ## 🎯 Objectif du Projet
 

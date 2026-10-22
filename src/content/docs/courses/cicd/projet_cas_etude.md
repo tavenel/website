@@ -4,7 +4,6 @@ date: 2025 / 2026
 type: projet
 sidebar:
   order: 500
-description: Étude de cas CI/CD - de la théorie à la démonstration
 ---
 ### 📝 Contexte
 

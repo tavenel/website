@@ -1,8 +1,5 @@
 title: "Cours DevOps"
 slug: "cesi/b3/devops"
-school: "CESI"
-year: "B3"
-module: "devops"
 chapters:
   - devops/cours
   - management/team-topologies

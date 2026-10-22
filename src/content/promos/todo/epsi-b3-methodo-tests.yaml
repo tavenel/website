@@ -1,8 +1,5 @@
 title: "Méthodologie des tests"
 slug: "epsi/b3/methodo-tests"
-school: "EPSI"
-year: "B3"
-module: "methodo-tests"
 chapters:
   - pedagogie/classe-renversee
   - tests/classe-renversee-themes

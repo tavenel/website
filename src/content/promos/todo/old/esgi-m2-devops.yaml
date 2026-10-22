@@ -1,8 +1,5 @@
 title: "Cours DevOps"
 slug: "esgi/m2/devops"
-school: "ESGI"
-year: "M2"
-module: "devops"
 chapters:
   - devops/cours
   - devops/legal
