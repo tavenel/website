@@ -26,12 +26,12 @@ Un petit tip
 [Un lien](/test) et une url : <https://www.google.fr>
 :::
 
-:::warn
+:::caution
 Attention ici !
 :::
 
-:::strong
-Une balise strong
+:::danger
+Un danger !!!
 :::
 
 :::exo

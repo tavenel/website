@@ -50,11 +50,6 @@ It is a static website with very little JavaScript intended to be extremely fast
 - W3 analysis : <https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.avenel.pro%2F>
 - Covers come from the <https://undraw.co/> project.
 - Icons from : <https://icons.getbootstrap.com/> and <https://dashboardicons.com/> and <https://www.astroicon.dev/>
-- Markdown to HTML : [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins)
-- HTML transforming : [rehype plugins](https://github.com/rehypejs/rehype/blob/HEAD/doc/plugins.md#list-of-plugins)
-- Lazy-load `Mermaid` (diagrams) JS libraries if needed.
-- Search using `PageFind` used with [astro-pagefind](https://github.com/shishkin/astro-pagefind/)
-- Callouts : `:::tip`, `:::link`, `:::warn`, `:::strong`, `:::exo`, `:::correction` using [remark-callout-directives](https://github.com/Microflash/remark-callout-directives)
 
 ## Generative AI
 
@@ -85,4 +80,3 @@ Anonymous analytics is collected from _Vercel_ : <https://vercel.com/docs/analyt
 ## License
 
 Unless stated otherwise, the full content of this website is under the [󰵫  License: CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) : you are free to share and adapt its content but you must credit me and distribute under the same license.
-

@@ -127,8 +127,6 @@ Quelques paradoxes :
 
 ## Vocabulaire
 
-:::strong
-
 - _Donnée statistique_ : observation ou mesure qui sert de base à un raisonnement. C'est le point de départ pour une recherche.
 - _Individu_ ou _unité statistique_ : Élément observé ou mesuré : par exemple une personne dans un sondage, un objet dans un comparatif.
 - _Population_ : Ensemble des individus observés ou mesurés dans le cadre d'une étude. Peut être infini. Par exemple : l'ensemble des entreprises françaises.
@@ -138,11 +136,9 @@ Quelques paradoxes :
 - _Variable observée_ : variable concrètement observable chez un individu (ex: salaire).
 - _Variable latente_ : variable non observée chez un individu (ex: âge + salaire).
 
-:::
-
 ### Échantillon vs population
 
-:::warn
+:::caution
 Attention à ne pas confondre échantillon et population !
 
 - L'étude d'un échantillon est une science : la statistique descriptive.
@@ -153,7 +149,6 @@ Attention à ne pas confondre échantillon et population !
 
 ### Exercice
 
-:::exo
 On souhaite réaliser un sondage à Paris pour connaître le temps de trajet moyen des utilisateurs des transports en commun pour aller travailler.
 
 Pour cela, pour chaque personne sondée, on recueille :
@@ -168,8 +163,6 @@ Quels sont :
 - L'échantillon de l'étude ?
 - Les variables étudiées ?
 
-:::
-
 :::correction
 
 - Les individus sont les personnes sondées.
@@ -181,7 +174,6 @@ Quels sont :
 
 ## Types de variables
 
-:::strong
 2 types de variables :
 
 - Les variables _quantitatives_ : variables à valeurs numériques, pour lesquelles les opérations arithmétiques ont un sens. Par exemple, un âge, une distance, un volume, etc :
@@ -191,11 +183,7 @@ Quels sont :
   - _ordinale_ : pouvant être ordonné (niveau d'appréciation d'un produit, mention dans un diplôme) ;
   - _nominale_ : aucun ordre (couleur des yeux, ville de naissance).
 
-:::
-
-:::exo
 Quel est le type des variables précédentes ?
-:::
 
 :::correction
 
@@ -227,9 +215,7 @@ Voir [l'article Wikipedia sur la moyenne][wiki-moyenne].
 
 C'est de très loin la moyenne la plus utilisée : somme des valeurs divisé par nombre de valeurs.
 
-:::strong
 $$\mu = \frac{\sum_{i=1}^n{m_i \cdot x_i}}{\sum_{i=1}^n {m_i}}$$
-:::
 
 ### Autres moyennes
 
@@ -291,9 +277,7 @@ La [médiane][wiki-mediane] indique le centre d'une série statistique : c'est l
 
 La médiane se définit formellement par :
 
-:::strong
 $$Med=\displaystyle \text{argmin}_{\alpha \in \mathbb{R}} \sum_{i=1}^n |\alpha-x_i|$$
-:::
 
 où $argmin$ définit la variable pour laquelle une fonction atteint son minimum :
 
@@ -358,11 +342,9 @@ La variance se calcule comme la moyenne des carrés des écarts à la moyenne :
 - On peut le voir comme la "distance" des valeurs à la moyenne.
 - Donne une indication sur l'homogénéité de la distribution.
 
-:::strong
 $$\sigma=\sqrt{V}$$
 
 $$V = \frac{1}{n}\sum_{i=1}^n \left(x_i - \overline{x}\right)^2$$
-:::
 
 ![Exemples avec même moyenne mais ecart-type différent](@assets/data/Comparison_standard_deviations.svg)
 
@@ -436,9 +418,7 @@ Si tous les points du nuage étaient pratiquement situés sur une même droite (
 
 Pour mesurer _l'étendue en surface_ du nuage, on calcule la _covariance_ des deux séries, c'est-à-dire la moyenne des produits des écarts à la moyenne :
 
-:::strong
 $$Cov(x, y) = \frac{1}{n}\sum_{i=1}^n(x_i - \bar{x})(y_i - \bar{y})$$
-:::
 
 À noter que si $y = x, Cov(x, x) = Var(x)$.
 
@@ -450,9 +430,7 @@ Par contre la valeur absolue de la covariance (le fait qu'elle ait une valeur pe
 
 Pour obtenir un équivalent de la covariance qui soit indépendant des unités dans lesquelles ont été exprimé les deux séries de mesures il convient de calculer le coefficient de corrélation linéaire :
 
-:::strong
 $$\rho(x,y)=\frac{Cov(x,y)}{\sqrt{Var(x)Var(y)}}$$
-:::
 
 On peut montrer que sa valeur est toujours comprise entre $-1$ et $+1$.
 
@@ -525,9 +503,7 @@ plt.show()
 
 L'espérance d'une variable aléatoire $X$ correspond à la moyenne des valeurs possibles de $X$ pondérées par les probabilités associées à ces valeurs et est définie par :
 
-:::strong
 $$\bar{X} = \sum_i P_i x_i$$
-:::
 
 ou pour une variable continue à densité :
 
@@ -537,9 +513,7 @@ C'est intuitivement la valeur que l'on s'attend à trouver (en moyenne...).
 
 ### Théorème de Bayes
 
-:::strong
 $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
-:::
 
 :::correction
 Démonstration par $P(A\cap B) = P(A) P(B|A) = P(B) P(A|B)$
@@ -637,9 +611,7 @@ Dans un test statistique, la _p-valeur_ est la probabilité pour un modèle stat
 
 En termes statistiques, la p-valeur s'interprète comme la probabilité d'un résultat au moins aussi "extrême" que le résultat observé, sachant l'hypothèse nulle:
 
-:::strong
 $$p = \mathbb P(x|H_0)$$
-:::
 
 Le résultat d'une p-valeur "improbable" (à définir) implique que l'expérience observée ne suit pas l'hypothèse nulle. Par exemple, imaginons que l'on connaisse la loi répartissant le poids des individus d'une population en surpoids et qu'on teste un traitement amincissant sur un groupe de personnes. On évalue le poids moyen du groupe après le traitement et on vérifie avec la loi initiale si le résultat est probable ou improbable. S'il est improbable, le traitement est efficace.
 
@@ -676,9 +648,7 @@ C'est un test statistique pour rejetter une hypothèse d'indépendance entre var
 
 $H_0$ : $X$ suit une [loi du $\chi^2$][wiki-loi-chi-2] à $k$ degrés de liberté si :
 
-:::strong
 $$X=\sum_{i=1}^k X_i^2$$
-:::
 
 où $X_1, ..., X_k$ sont $k$ variables aléatoires indépendantes qui suivent la loi normale de moyenne 0 et d'écart-type 1 : $\mathcal N(0,1)$.
 
@@ -697,9 +667,7 @@ où $X_1, ..., X_k$ sont $k$ variables aléatoires indépendantes qui suivent la
 
 On définit alors la statistique du $\chi_2$ par :
 
-:::strong
 $$T = \sum_{j=1}^J \frac{(N \hat{p}_j - N p_j)^2}{N p_j}$$
-:::
 
 où :
 
@@ -875,9 +843,7 @@ Le but de la régression linéaire simple (respectivement multiple) est d'expliq
 
 La variable $Y$ est appelée variable _à expliquer_ ou variable _dépendante_ et les variables $X_j (j=1, ... ,q)$ sont appelées variables _explicatives_ ou variables _indépendantes_.
 
-:::strong
 Le but est donc de trouver une fonction $f$ telle que : $y_i \approx f(x_i)$.
-:::
 
 Exemple simple : ajustement affine : $y = ax + b$.
 
@@ -940,9 +906,7 @@ Ces différences peuvent être expliquées par d'autres variables ayant une infl
 
 Pour rendre compte de cette situation, on écrit la relation entre la tension et l'âge sous la forme générale suivante : _droite + erreur_ :
 
-:::strong
 $$Y_i = aX_i + b + \epsilon_i, i=1..n$$
-:::
 
 Pour un âge $x$ donné, la tension d'un individu est la somme de deux termes :
 
@@ -984,11 +948,9 @@ $$\chi^2(\theta) = \sum_{i=1}^N \left(\frac{y_i - f(x_i;\theta)}{\sigma_i}\right
 
 Dans le cas d'une régression linéaire simple, on vérifie que cette valeur est minimale pour $grad(\chi^2) = 0$ et par développement, pour un modèle $Y=aX+b+\epsilon$ et si $Var(X)\neq 0$ :
 
-:::strong
 $$a = \frac{Cov(X,Y)}{Var(X)}$$
 
 $$b = \bar{Y} - a \bar{X}$$
-:::
 
 :::warn
 Attention : dans la pratique, on ne connaît jamais $a$ et $b$ (valeurs exactes du modèle) !
@@ -1084,9 +1046,7 @@ $$SST = \sum (y_i - \bar{y})^2 = SSR + SSE$$
 
 On définit alors $R^2$ le _coefficient de détermination_ qui mesure la part de la variation de $Y$ expliquée par $X$ :
 
-:::strong
 $$R^2 = \frac{SSE}{SST}$$
-:::
 
 Lorsque $R^2$ est proche de 1, le modèle de régression explique bien la variation totale (condition nécessaire mais pas suffisante).
 
@@ -1188,9 +1148,7 @@ $$g(\bar{y}) = log(\bar{y}) = \sum_{j=1}^{p} \beta_j\ X_{ij}$$
 
 $ln\frac{p(X|1)}{p(X|0)}$ (fonction `logit`) est linéaire, c'est-à-dire :
 
-:::strong
 $$ln\left(\frac{p}{1-p}\right) = ln\left(\frac{p(Y=1|X)}{1-p(Y=1|X)}\right) = \sum_{j=1}^{p} \beta_j\ X_{ij}$$
-:::
 
 Ou après transformation, sous forme de [loi logistique][wiki-loi-logistique] :
 
@@ -1335,11 +1293,9 @@ Utilise deux approches principales :
 
 En général, on utilise la méthode des moindres carrés pour minimiser les résidus :
 
-:::strong
 $$\sum_{i=1}^n\sum_{k=1}^K1_k(i)(y_i - (\alpha_k + \beta_k x_i))^2$$
 
 Avec $1_k(i)$ la fonction indicatrice du cluster $k$ : vaut 1 ssi $i\in k$ sinon 0.
-:::
 
 #### Algorithme
 
@@ -1791,9 +1747,7 @@ Par exemple s'il s'agit de malades) notées $(x_i, y_i, ...)$ pour le $i^{eme}$ 
 
 S'il n'y a que deux variables relevées $(x_i, y_i)$ on obtient ainsi un nuage $\Gamma$ de points dans le plan, $\Gamma = {M_i, i = 1, ... , n}$ où $n$ est l'effectif total de la population.
 
-:::strong
 La distance euclidienne de deux individus $M_i$ et $M_j$ est par définition $d_2(M_i, M_j) = \sqrt{(x_i - x_j )^2 + (y_i - y_j )^2}$.
-:::
 
 Elle est d'autant plus petite que les deux individus sont semblables (du point de vue des valeurs des deux critères retenus) et d'autant plus grande qu'ils sont différents.
 
@@ -1816,9 +1770,7 @@ Supposons le nuage $\Gamma = {M_i, i = 1, ... , n}$ décomposé en plusieurs cla
 
 - Le centre de gravité $G$ d'un nuage de points $\Gamma$ est le point moyen du nuage, c'est-à-dire le point $G = (\bar{x}, \bar{y}, ...)$ de coordonnées :
 
-:::strong
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i} , \bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i} , ... $$
-:::
 
 - Si l'on suppose que tous les individus ont le même poids égal à $\frac{1}{n}$ , le poids $p_l$ de la classe $\Gamma_l$ est égal à l'effectif de $\Gamma_l$ divisé par $n$.
   - De cette façon la somme des poids de toutes les classes vaut $1$.
@@ -1829,11 +1781,9 @@ $$\bar{x} = \frac{1}{n}\sum_{i=1}^n{x_i} , \bar{y} = \frac{1}{n}\sum_{i=1}^n{y_i
   - Distance des centres de gravité $d_2(G_m, G_l)$.
   - (Le plus souvent) écart de Ward :
 
-:::strong
 $$ d(\Gamma_m,\Gamma_l) = \frac{p_m p_l}{p_m + p_l}d_2(G_m, G_l)^2 $$
 
 Où $p_l$ et $p_m$ sont les poids des deux classes.
-:::
 
 ### Inertie interclasse et inertie intra-classe
 
@@ -1841,9 +1791,7 @@ On appelle inertie totale I d'un nuage $\Gamma = {M_i, i = 1, ... , n}$ la somme
 
 Donc, si $G$ désigne le centre de gravité de $\Gamma$ et si tous les points du nuage sont de même poids égal à $\frac{1}{n}$ alors l'inertie totale est :
 
-:::strong
 $$ I(\Gamma) = \frac{1}{n}\left(d_2(M_1, G)^2 + d_2(M_2, G)^2 + ... + d_2(M_n, G)^2\right)$$
-:::
 
 Avec $d_2(M_i, G)$ la distance euclidienne de $M_i$ à $G$.
 
@@ -1869,9 +1817,7 @@ On montre le résultat suivant appelé décomposition de Huygens :
 
 L'inertie totale d'un nuage de points composé de différentes classes disjointes deux à deux est la somme de son inertie intra-classe et de son inertie interclasse :
 
-:::strong
 $$I(\Gamma) = I(\Gamma_1 \cup \Gamma_2 \cup ... \cup \Gamma_k) = I_{intra} + I_{inter}$$
-:::
 
 :::tip
 Lorsqu'un nuage est composé de plusieurs classes on a vu que, si chacune est très bien regroupée autour de son centre de gravité, son inertie intra-classe qui est la somme des inerties de chaque classe sera

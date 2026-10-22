@@ -9,6 +9,7 @@ sidebar:
 description: Cahier des charges
 ---
 ## 📘 Rappel - Cycle de vie du projet
+
 - Représente les différentes étapes par lesquelles passe un projet depuis sa conception jusqu'à sa clôture. 🔄
 - Essentiel pour positionner le cahier des charges de manière appropriée. 🎯
 
@@ -134,13 +135,15 @@ Il peut être utilisé dans différents contextes, en interne comme en externe (
 
 ---
 
-On distingue le _cahier des charges technique_ du _cahier des charges fonctionnel_. 🔍
+On distingue le *cahier des charges technique* du *cahier des charges fonctionnel*. 🔍
+
 - Le premier s'intéresse particulièrement aux **exigences et contraintes techniques** du produit 🛠️
 - Le second se focalise sur les besoins **fonctionnels et la manière** dont la solution y répond 🎯
 
 ---
 
 Le cahier des charges technique peut toutefois n'être que la partie technique d'un cahier des charges plus global, qui énumère les contraintes de différents types :
+
 - Économiques 💰
 - Industrielles 🏭
 - Environnementales 🌱
@@ -160,6 +163,7 @@ Le cahier des charges technique peut toutefois n'être que la partie technique d
 ---
 
 ### 📌 Rappel : Méthodes Agile
+
 - Approches de gestion de projet flexibles qui mettent l'accent sur la collaboration, l'adaptabilité et la livraison itérative. 🤝
 
 ---
@@ -167,6 +171,7 @@ Le cahier des charges technique peut toutefois n'être que la partie technique d
 ### Réponse au changement
 
 Les méthodes agiles reconnaissent que les besoins évoluent pendant le projet et le cahier des charges est conçu pour être ajusté en conséquence :
+
 - CDC initial détaillé pour les premières itérations 🔄
 - Itérations ultérieures ajoutées au fur et à mesure. 🔄
 - Révisé à chaque itération pour inclure de nouvelles exigences ou ajustements. 🔄
@@ -185,9 +190,7 @@ Les besoins sont exprimés sous forme de courtes "User Stories", ce qui permet u
 
 ### Le CCF
 
-:::strong
 Rédiger un CCF, c'est **exprimer et formaliser le besoin**. 📝
-:::
 
 C'est donc un document qui présente de manière détaillée et structurée les **attendus** d'un projet (services, produit) et ses **contraintes** (techniques, managériales, contextuelles).
 
@@ -298,7 +301,7 @@ Autre variable déterminante, le délai de réalisation et la date de livraison.
 
 ### Création d'un Document de Référence
 
-Le résultat du cadrage de la demande est généralement formalisé dans un document de référence, qui peut être appelé "_charte de projet_" ou "_note de cadrage_". 📄
+Le résultat du cadrage de la demande est généralement formalisé dans un document de référence, qui peut être appelé "*charte de projet*" ou "*note de cadrage*". 📄
 Sert de base pour la rédaction ultérieure du cahier des charges fonctionnel. 📝
 
 ---
@@ -468,7 +471,7 @@ Décrire le contexte et la démarche, et dresser un éventuel historique des pr�
 
 ---
 
-#### Exemple :
+#### Exemple
 
 « Développement d'une nouvelle application mobile » 📱
 Contexte : application mobile liée au site [monsite.com](https://www.monsite.com) et reprenant ses fonctionnalités, en y ajoutant une messagerie instantanée. 💬
@@ -480,13 +483,14 @@ Historique : réalisation d'une première version de l'application (V1) il y a 1
 ### Besoins et contraintes liés au projet
 
 Décrire la solution à travers :
+
 - L'analyse et l'expression de ses besoins fonctionnels 📋
 - Ses contraintes techniques et son architecture 🏗️
 - Toutes les exigences particulières inhérentes au projet 🔍
 
 ---
 
-#### Exemple :
+#### Exemple
 
 Besoins fonctionnels : accéder aux fonctionnalités de [monsite.com](https://www.monsite.com) à partir de l'application mobile (consultation de profils, lecture d'articles), utiliser une messagerie instantanée pour fluidifier la communication entre les membres du site… 📲
 Contraintes : développement en `Java` et en `Objective C`, application destinée à `Android` et à `iOS` (deux versions), soumission et déploiement sur les app stores à la charge du prestataire. 📦
@@ -495,7 +499,7 @@ Contraintes : développement en `Java` et en `Objective C`, application destiné
 
 ### Diagramme bête à corne
 
-On pourra modéliser le besoin à l'aide d'un diagramme _bête à corne_ :
+On pourra modéliser le besoin à l'aide d'un diagramme *bête à corne* :
 
 ![Le diagramme bête à cornes](@assets/projet/bete-a-cornes.png)
 
@@ -515,7 +519,7 @@ Prestations et/ou produits effectivement attendus à l'issue du projet et les ex
 
 ---
 
-### Exemple :
+### Exemple
 
 Résultats attendus : création de maquettes, intégration, développement effectif de l'application mobile, mise en ligne sur les `App Stores`, … 📲
 Exigences : livraison des fichiers `PSD` / `Sketch`, respect de la charte graphique… 🎨
@@ -549,9 +553,7 @@ Pour réaliser le cahier des charges fonctionnel, on pourra se poser les questio
 
 ### Le cahier des charges technique
 
-:::strong
 Le cahier des charges technique est LE document de référence pour la **MOE**. 📑
-:::
 
 Il est utile à l'ensemble des équipes qui seront en charge de développer, d'installer et de tester les composants de votre projet. 🛠️
 
@@ -560,7 +562,7 @@ C'est l'un (le ?) document le plus important de votre projet. 🏆
 ---
 
 Contrairement au cahier des charges fonctionnel, le cahier des charges technique décrit les moyens à mettre en œuvre pour arriver à un but.
-_En cas de sous-traitance, votre sous-traitant est donc tenu à une obligation de moyen et pas de résultat._ ⚠️
+*En cas de sous-traitance, votre sous-traitant est donc tenu à une obligation de moyen et pas de résultat.* ⚠️
 
 ---
 
@@ -581,6 +583,7 @@ Il est possible d'écrire le cahier des charges technique soit :
 - à partir d'un document vierge et le structurer de façon logique 📝
 
 ---
+
 ### Contenu
 
 #### Rappel du contexte et des objectifs
@@ -590,7 +593,7 @@ Les objectifs sont également repris de notre cahier des charges fonctionnel et 
 
 ---
 
-#### Exemple :
+#### Exemple
 
 Préciser la nécessité d'initier une connexion avec le serveur de base de données de l'application de suivi des flux afin d'alimenter la table "Transaction" que nous avons définie lors de la définition de la base de données de notre solution. 📊
 
@@ -611,17 +614,17 @@ Et, pour chaque environnement technique (développement, intégration, tests, pr
 
 - Le schéma d'architecture de la couche technique, par exemple sous forme de [diagramme d'architecture d'application](https://www.edrawsoft.com/fr/article/application-architecture-diagram.html) ou via le modèle C4 très utilisé en agilité : [C4 model](https://c4model.com/) 📊
 - La liste des composants avec :
-    - La localisation 📍
-    - La zone réseau 🌐
-    - Le système d'exploitation et sa version 🖥️
-    - Les capacités de performances (UC, mémoire) 💪
-    - Les capacités de stockage : disques, `NAS`, `SAN`, … 💾
-    - Les paramètres système particuliers ⚙️
-    - L'adressage `IP` et le nom `DNS` 🌐
-    - Les éventuels certificats 📜
-    - Les middleware installés, leur version, les paramètres particuliers ⚙️
-    - Les ports d'écoute 🔌
-    - Le statut : existant, à mettre à jour, à construire 🏗️
+  - La localisation 📍
+  - La zone réseau 🌐
+  - Le système d'exploitation et sa version 🖥️
+  - Les capacités de performances (UC, mémoire) 💪
+  - Les capacités de stockage : disques, `NAS`, `SAN`, … 💾
+  - Les paramètres système particuliers ⚙️
+  - L'adressage `IP` et le nom `DNS` 🌐
+  - Les éventuels certificats 📜
+  - Les middleware installés, leur version, les paramètres particuliers ⚙️
+  - Les ports d'écoute 🔌
+  - Le statut : existant, à mettre à jour, à construire 🏗️
 
 ---
 
@@ -658,13 +661,13 @@ N'hésitez pas à vous entourer d'experts sur le sujet afin de vous aider à app
 
 ---
 
-### Format standard :
+### Format standard
 
 - Une introduction :
-    - Le nom technique du programme : `dvf.exe` 📁
-    - Les modes d'exécution : `batch`, interactif ainsi que la méthode de lancement 🚀
-    - Les paramètres en entrée et en sortie 🔄
-    - Les fichiers en entrée et en sortie, leur format et leur chemin 📂
+  - Le nom technique du programme : `dvf.exe` 📁
+  - Les modes d'exécution : `batch`, interactif ainsi que la méthode de lancement 🚀
+  - Les paramètres en entrée et en sortie 🔄
+  - Les fichiers en entrée et en sortie, leur format et leur chemin 📂
 - Description des fichiers en entrée et en sortie 📄
 - Un organigramme général, éventuellement des organigrammes détaillés 📊
 - Les algorithmes de chaque traitement 🧠
@@ -679,7 +682,7 @@ Il est donc important de pouvoir l'identifier clairement par un en-tête, de tra
 
 ---
 
-#### Exemple d'en-tête :
+#### Exemple d'en-tête
 
 La page de garde contient a minima :
 
@@ -691,7 +694,7 @@ La page de garde contient a minima :
 
 ---
 
-#### Exemple de cartouche de versioning :
+#### Exemple de cartouche de versioning
 
 Ce cartouche contient a minima :
 
@@ -734,4 +737,3 @@ Cette liste contient a minima :
 - [Vrossault, Bénédicte. Comment faire un cahiers des charges fonctionnel ?. Hubspot.](https://blog.hubspot.fr/marketing/cahier-des-charges-fonctionnels)
 
 ---
-
