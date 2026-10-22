@@ -2,12 +2,8 @@
 title: Références et Liens utiles
 created: "2024-10-17T00:00:00.000Z"
 checked: "2025-01-27T00:00:00.000Z"
-type: cours
-sidebar:
-  order: 800
 description: Références et Liens utiles
 ---
-![](@assets/undraw/undraw_link-shortener_9ro5.svg)
 
 ## Livres
 

@@ -1,5 +1,5 @@
 ---
-title: Fun links and strips
+title: Fun
 date: 2026
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Programmes et outils utiles DevOps et poste de travail
+title: Programmes utiles
 created: "2024-10-17T00:00:00.000Z"
 type: cours
 sidebar:

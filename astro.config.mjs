@@ -37,8 +37,14 @@ export default defineConfig({
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
 			sidebar: [
+				{ slug: 'about' },
 				{ label: 'Écoles', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
 				{ label: 'Cours', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
+				{ slug: 'tools' },
+				{ slug: 'liens' },
+				{ slug: 'website' },
+				{ slug: 'other' },
+				{ slug: 'fun' },
 			],
 			social: [
         { icon: 'sourcehut', label: 'SourceHut', href: 'https://sr.ht/~toma' },
@@ -48,7 +54,6 @@ export default defineConfig({
       ],
 			disable404Route: false,
 			components: {
-				// Header: '@components/StarlightHeader.astro',
 				// Sidebar: '@components/Sidebar.astro',
 				// Footer: '@components/StarlightFooter.astro',
 			},

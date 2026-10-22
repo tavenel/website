@@ -1,11 +1,8 @@
 ---
 title: Website
 type: cours
-sidebar:
-  order: 800
 description: Website
 ---
-![](@assets/undraw/undraw_static-website_x3tn.svg)
 
 ## Accessibility
 

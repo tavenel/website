@@ -1,6 +1,6 @@
 ---
 title: Un test
-date: 2026
+pagefind: false
 ---
 # H1 title
 
