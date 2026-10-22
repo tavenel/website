@@ -2,14 +2,14 @@
 /**
  * Generate track content files from track YAML definitions.
  *
- * For each track in src/content/tracks/*.yaml:
- * - Creates src/content/docs/tracks/<slug>/index.md (landing page)
- * - Creates src/content/docs/tracks/<slug>/<chapter>.md (chapter page)
+ * For each course in src/content/promos/*.yaml:
+ * - Creates src/content/docs/<slug>/index.md (landing page)
+ * - Creates src/content/docs/<slug>/<chapter>.md (chapter page)
  *
  * Chapter content is copied from src/content/docs/courses/** and frontmatter adjusted.
  * YAML track files remain the single source of truth.
  *
- * Usage: node scripts/generate-tracks.js [--dry-run]
+ * Usage: node scripts/generate-promos.js [--dry-run]
  */
 
 import fs from 'node:fs';
@@ -17,8 +17,8 @@ import path from 'node:path';
 import { load as parseYaml } from 'js-yaml';
 
 const DRY_RUN = process.argv.includes('--dry-run');
-const TRACKS_SRC = 'src/content/tracks';
-const DOCS_TRACKS = 'src/content/docs/tracks';
+const PROMOS_SRC = 'src/content/promos';
+const DOCS_DIR = 'src/content/docs';
 const DOCS_COURSES = 'src/content/docs/courses';
 
 function readTrackYaml(trackPath) {
@@ -88,9 +88,9 @@ function serializeFrontmatter(fm) {
 
 function collectTrackSlugs() {
   const slugs = [];
-  if (!fs.existsSync(TRACKS_SRC)) return slugs;
-  for (const f of fs.readdirSync(TRACKS_SRC).filter(f => f.endsWith('.yaml'))) {
-    const track = readTrackYaml(path.join(TRACKS_SRC, f));
+  if (!fs.existsSync(PROMOS_SRC)) return slugs;
+  for (const f of fs.readdirSync(PROMOS_SRC).filter(f => f.endsWith('.yaml'))) {
+    const track = readTrackYaml(path.join(PROMOS_SRC, f));
     if (track.slug && Array.isArray(track.chapters)) {
       slugs.push(track.slug);
     }
@@ -108,7 +108,7 @@ function createIntermediateIndexes(dir) {
   childDirs.sort();
   for (const name of childDirs) {
     const childDir = path.join(dir, name);
-    const relPath = childDir.replace(DOCS_TRACKS + '/', '').replace(DOCS_TRACKS, '');
+    const relPath = childDir.replace(DOCS_DIR + '/', '').replace(DOCS_DIR, '');
     // If this child already has an index.md, it's a track — skip
     if (fs.existsSync(path.join(childDir, 'index.md'))) continue;
     // Check if this child has subdirectories (tracks inside it)
@@ -140,24 +140,19 @@ function createIntermediateIndexes(dir) {
 function main() {
   console.log(`\n${DRY_RUN ? '🔍 DRY RUN' : '🚀'} Generating track content files\n`);
   
-  if (!fs.existsSync(TRACKS_SRC)) {
-    console.error('Tracks source dir not found: ' + TRACKS_SRC);
+  if (!fs.existsSync(PROMOS_SRC)) {
+    console.error('Promos source dir not found: ' + PROMOS_SRC);
     process.exit(1);
   }
   
-  // Clean existing tracks
-  if (!DRY_RUN && fs.existsSync(DOCS_TRACKS)) {
-    fs.rmSync(DOCS_TRACKS, { recursive: true });
-  }
-  
-  const trackFiles = fs.readdirSync(TRACKS_SRC).filter(f => f.endsWith('.yaml'));
+  const trackFiles = fs.readdirSync(PROMOS_SRC).filter(f => f.endsWith('.yaml'));
   console.log(`Found ${trackFiles.length} track definitions.\n`);
   
   let totalChapters = 0;
   let errors = 0;
   
   for (const trackFile of trackFiles) {
-    const track = readTrackYaml(path.join(TRACKS_SRC, trackFile));
+    const track = readTrackYaml(path.join(PROMOS_SRC, trackFile));
     
     if (!track.slug || !Array.isArray(track.chapters) || track.chapters.length === 0) {
       console.warn(`  Skipping ${trackFile}: no slug or chapters`);
@@ -166,8 +161,8 @@ function main() {
     }
     
     const slug = track.slug;
-    const trackDir = path.join(DOCS_TRACKS, slug);
-    console.log(`  tracks/${slug}/ (${track.chapters.length} chapters)`);
+    const trackDir = path.join(DOCS_DIR, slug);
+    console.log(`  promo: ${slug}/ (${track.chapters.length} chapters)`);
     
     const chapters = [];
     for (let i = 0; i < track.chapters.length; i++) {
@@ -228,15 +223,15 @@ function main() {
   }
   
   // Create intermediate index pages for multi-level slugs
-  if (!DRY_RUN && fs.existsSync(DOCS_TRACKS)) {
-    const createdBefore = fs.readdirSync(DOCS_TRACKS, { withFileTypes: true }).filter(e => e.isDirectory()).length;
-    createIntermediateIndexes(DOCS_TRACKS);
-    const createdAfter = fs.readdirSync(DOCS_TRACKS, { withFileTypes: true }).filter(e => e.isDirectory()).length;
+  if (!DRY_RUN && fs.existsSync(DOCS_DIR)) {
+    const createdBefore = fs.readdirSync(DOCS_DIR, { withFileTypes: true }).filter(e => e.isDirectory()).length;
+    createIntermediateIndexes(DOCS_DIR);
+    const createdAfter = fs.readdirSync(DOCS_DIR, { withFileTypes: true }).filter(e => e.isDirectory()).length;
     if (createdAfter > 0) console.log(`\nIntermediate indexes: created for ${createdAfter - createdBefore} container directories`);
   }
   
   console.log(`\n${DRY_RUN ? 'DRY RUN' : 'Done.'}`);
-  console.log(`Tracks: ${trackFiles.length}`);
+  console.log(`Promos: ${trackFiles.length}`);
   console.log(`Chapters: ${totalChapters}`);
   if (errors) console.log(`Errors: ${errors}`);
 }
