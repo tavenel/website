@@ -1,10 +1,6 @@
 ---
 title: Un test
-date: 2025
-type: cours
-sidebar:
-  order: 800
-description: Un test
+date: 2026
 ---
 # H1 title
 
@@ -208,6 +204,8 @@ class A:
  def f(self, y)
     return self.x + y
 ```
+
+# Mermaid diagrams
 
 ```mermaid
 ---

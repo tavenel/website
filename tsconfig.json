@@ -11,7 +11,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@assets/*": [
-				"src/assets/*"
+				"src/content/assets/*"
 			],
 			"@lib/*": [
 				"src/lib/*"
@@ -22,14 +22,8 @@
 			"@css/*": [
 				"src/css/*"
 			],
-			"@courses/*": [
-				"src/courses/*"
-			],
 			"@icons/*": [
 				"src/icons/*"
-			],
-			"@layouts/*": [
-				"src/layouts/*"
 			],
 			"@ts/*": [
 				"src/ts/*"
