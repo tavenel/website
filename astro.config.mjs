@@ -37,7 +37,12 @@ export default defineConfig({
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
 			sidebar: [
-				{ label: 'Écoles', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
+				{ label: 'Écoles', collapsed: true, items: [
+					{ autogenerate: { directory: 'epsi' } },
+					{ autogenerate: { directory: 'esgi' } },
+					{ autogenerate: { directory: 'cesi' } },
+					{ autogenerate: { directory: 'estiam' } },
+				] },
 				{ label: 'Cours', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
 				{ slug: 'tools' },
 				{ slug: 'liens' },
