@@ -22,16 +22,16 @@ Une correction
 Un petit tip
 :::
 
-:::link
-[Un lien](/test) et une url : <https://www.google.fr>
-:::
-
 :::caution
 Attention ici !
 :::
 
 :::danger
 Un danger !!!
+:::
+
+:::note
+[Un lien](/test) et une url : <https://www.google.fr>
 :::
 
 :::exo
