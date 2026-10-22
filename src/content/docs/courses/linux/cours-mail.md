@@ -81,7 +81,7 @@ smtpd_tls_key_file = /etc/ssl/private/mail.key
 smtp_tls_security_level = may # STARTTLS
 ```
 
-:::warn
+:::caution
 Vérifier le port TLS (465 ou 587 dans `master.cf`).
 :::
 

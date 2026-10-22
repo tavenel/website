@@ -84,7 +84,7 @@ On peut par exemple utiliser l'utilitaire `base64` :
 echo MA_CHAINE | base64
 ```
 
-:::warn
+:::caution
 Attention : `Base64` n'est pas un algorithme de chiffrement, uniquement un type d'encodage ! `SMTP` est non sécurisé, l'authentification n'est donc pas chiffrée par le protocole. Cependant, toute la communication est encapsulée dans un tunnel `TLS`, ce qui assure la sécurité des échanges.
 :::
 
@@ -127,7 +127,7 @@ rcpt to: adresse@destinataire.com
 
 Attention, `rcpt to` doit être en minuscule sous `openssl` !
 
-:::warn
+:::caution
 Même une fois authentifié, il est nécessaire de fournir une adresse d'émetteur. En effet, l'émetteur peut avoir plusieurs adresses mails ou des alias. Le protocole `SMTP` permet d'entrer n'importe quelle valeur dans ce champ, ce qui pose un gros problème d'usurpation d'identité ! Pour limiter le spam, la plupart des fournisseurs de mails vérifient que ce champ correspond à une adresse autorisée par l'utilisateur authentifié. Cela n'est pas une garantie : le protocole mail est donc par essence **non sûr** (on pourra résoudre ce problème en ajoutant des certificats dans les messages : `GPG`, ...)
 :::
 

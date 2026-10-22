@@ -139,7 +139,7 @@ Principes clés :
 Différence majeure avec RAID matériel : ZFS reconstruit uniquement les blocs réellement utilisés.
 :::
 
-:::warn
+:::caution
 **RAID-Z n’est pas extensible disque par disque** : on ne peut pas ajouter un disque à un vdev RAID-Z existant.
 :::
 

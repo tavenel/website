@@ -13,7 +13,7 @@ description: Arrêt et redémarrage d'un cluster complet
 - préserver état du control-plane
 - éviter split-brain
 
-:::warn
+:::caution
 Attention : kubeadm ne supporte pas officiellement l'arrêt d'un cluster complet.
 :::
 

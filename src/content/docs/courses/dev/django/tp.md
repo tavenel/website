@@ -8,7 +8,7 @@ description: Partie pratique - Django
 ---
 # Disclamer
 
-:::warn
+:::caution
 `Django` est un framework qui demande une certaine rigueur car les erreurs peuvent être délicates à tracer.
 
 En cas d'erreur, attention à bien vérifier que le bon fichier a été modifié ou créé au bon endroit, etc...
@@ -16,7 +16,7 @@ En cas d'erreur, attention à bien vérifier que le bon fichier a été modifié
 Plutôt que d'essayer de "bidouiller" le code pour résoudre un problème, il est nécessaire également de prendre du recul et comprendre la manipulation à effectuer.
 :::
 
-:::warn
+:::caution
 Le début de ce TP est très guidé et peut être réalisé rapidement sans essayer de comprendre ce qui est réalisé.
 Or il est nécessaire de parfaitement maîtriser les premières étapes avant de passer à la suite pour bien comprendre les notions fondamentales du framework avant d'en étudier les subtilités.
 :::
@@ -112,7 +112,7 @@ Cette commande crée un nouveau répertoire `mon_projet` (le **projet**) avec :
   - `wsgi.py` : interface avec le serveur Web (interne).
 - un script `manage.py` qui servira de version locale de `django-admin` pour ce projet. C'est donc ce script qui remplacera de préférence les commandes `django-admin` dans la suite.
 
-:::warn
+:::caution
 **Par la suite, toutes les commandes `python manage.py` sont à exécuter dans le répertoire de ce fichier !**
 :::
 
@@ -352,7 +352,7 @@ urlpatterns = [
 
 :::
 
-:::warn
+:::caution
 Cette méthode n'est à utiliser que pour le serveur de développement ! En production, on utilisera le serveur Web de déploiement pour charger ces fichiers : `Nginx`, ...
 :::
 
@@ -390,7 +390,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-:::warn
+:::caution
 Chaque fois que vous ferez évoluer le modèle de données, vous devrez exécuter les commandes ci-dessus (elles seront traduites en structure dans la base de données que cela conduise à l'ajout ou au retrait d'objets ou d'attributs).
 :::
 
@@ -441,7 +441,7 @@ On utilisera comme valeurs :
 
 :::
 
-:::warn
+:::caution
 Les objets à persister sont **toujours** définis dans le fichier `models.py` de chaque application et héritent de `django.db.models.Model`.
 :::
 
@@ -541,7 +541,7 @@ Pour une liste des métadonnées disponibles, [voir la page dédiée de la docum
 
 Un modèle peut posséder un ensemble de méthodes, gérées par `Django` ou des méthodes Python indépendantes.
 
-:::warn
+:::caution
 Chaque modèle de données devra a minima définir une implémentation de la méthode `__str__()` pour :
 
 - permettre d'afficher un élément compréhensible qui représentera l'instance de la classe ;
@@ -615,7 +615,7 @@ Utiliser le diagramme de classe UML du modèle pour définir et implémenter les
 
 _On ordonnera les objets `BookInstance` par ordre chronologique des champs `due_back`_.
 
-:::warn
+:::caution
 Pour les relations entre data classes, on utilisera en premier paramètre :
 
 - une chaîne de caractères si la classe destination n'a pas encore été définie en Python : `author = models.ForeignKey('Author', ...)` ;
@@ -656,7 +656,7 @@ Ce site d'administration est très utile pour :
 - Manipuler le data model pendant le développement pour tester l'application ;
 - Corriger / surveiller le data model en production.
 
-:::warn
+:::caution
 Le site d'administration n'a pas vocation à être publié à l'utilisateur final - c'est une vue permettant de manipuler directement les données (et donc la base de données).
 
 On privilégiera toujours une expérience utilisateur orientée métier (et non données...), d'où la nécessité de créer des vues différentes.
@@ -718,7 +718,7 @@ class BookAdmin(admin.ModelAdmin):
     fields = [('title', 'ISBN'), 'author', ... 
 ```
 
-:::warn
+:::caution
 Si l'on veut afficher une relation `ManyToManyField`, on ne peut pas afficher l'ensemble des valeurs directement - cela pourrait être coûteux en base de données et donc `Django` l'interdit par défaut.
 
 Il faut pour cela ajouter une méthode réalisant cette opération, par exemple :
@@ -774,7 +774,7 @@ Pour plus de détails sur le site d'administration, [voir la page dédiée de la
 
 # Création du site de production - page d'accueil
 
-:::warn
+:::caution
 Cette section est importante - elle décrit la base du fonctionnement de `Django`.
 :::
 
@@ -1074,7 +1074,7 @@ Créer le template de la vue : `catalog/templates/catalog/book_list.html` :
 {% endblock %}
 ```
 
-:::warn
+:::caution
 Ce chemin étrange vers le lieu du template n'est pas une faute de frappe : les vues génériques cherchent les template dans `/application_name/the_model_name_list.html` (`catalog/book_list.html` dans ce cas) à l'intérieur du répertoire `/application_name/templates/` (`/catalog/templates/`).
 :::
 

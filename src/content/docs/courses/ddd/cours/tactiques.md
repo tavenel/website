@@ -1070,7 +1070,7 @@ class OrderAppService:
 La **Dependency Injection (DI)** (ou injection de dépendances) est un modèle de conception qui permet d'injecter les dépendances nécessaires à un objet depuis l'extérieur, plutôt que de laisser l'objet créer ou rechercher lui-même ses dépendances. Cela favorise la modularité, la testabilité et la séparation des préoccupations.
 :::
 
-:::warn
+:::caution
 L'injection de dépendance permet d'utiliser massivement des design patterns de _Delegation_ : c'est l'une des techniques les plus utiles pour séparer le code métier des dépendances externes (souvent techniques), par exemple en _Clean Architecture_ et en _Architecture Hexagonale_ mais pas uniquement. **À utiliser massivement !**
 :::
 
@@ -1260,7 +1260,7 @@ Une `Entity` peut représenter différentes choses en fonction du contexte dans 
 3. **Anti-Corruption Layer (ACL)** : Si deux contextes doivent interagir fortement, une couche d'adaptation peut être utilisée pour convertir les données entre les entités.
 4. **Pas de duplication** : Une entité n'est pas copiée : elle est redéfinie avec des attributs et comportements spécifiques au contexte.
 
-:::warn
+:::caution
 Si les besoins des différents contextes se chevauchent significativement, il n'est souvent pas utile d'utiliser de  Split Entity.
 :::
 
@@ -1814,7 +1814,7 @@ class OrderInsertedToDbEvent:
 Principe utilisé dans les systèmes distribués où il est acceptable que les différentes parties du système ne soient pas immédiatement synchronisées, tant qu'elles finissent par atteindre un état cohérent après un certain délai. Cela contraste avec la cohérence forte, où toutes les parties du système doivent être synchronisées immédiatement.
 :::
 
-:::warn
+:::caution
 Dans le contexte du DDD, la cohérence éventuelle est particulièrement pertinente lorsque les différents _Bounded Context_ d'un système ont leurs propres modèles et bases de données. La cohérence éventuelle permet à ces contextes de communiquer via des événements, sans nécessiter une synchronisation immédiate.
 :::
 
@@ -1991,7 +1991,7 @@ class OrderProjectionUpdater:
 Modèle de conception utilisé pour gérer des processus métier ou transactions complexes et de longue durée impliquant plusieurs services ou agrégats.
 :::
 
-:::warn
+:::caution
 Le pattern Saga est particulièrement utile dans les systèmes distribués et pour garantir la **cohérence éventuelle**, lorsque plusieurs services ou composants doivent participer à un processus métier sans pouvoir s'appuyer sur des transactions _ACID_ traditionnelles à l'échelle du système.
 :::
 

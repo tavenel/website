@@ -20,7 +20,7 @@ helm show values gitlab/gitlab > values.yaml
 helm upgrade --install gitlab gitlab/gitlab -f values.yaml
 ```
 
-:::warn
+:::caution
 La helm chart Gitlab est très gourmande en ressources. Pour un serveur d'intégration continue alternatif, on pourra déployer <https://gittea.dev/> qui est compatible avec la CI/CD de Github : <https://docs.gitea.com/installation/install-on-kubernetes>
 :::
 

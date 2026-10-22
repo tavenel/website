@@ -32,7 +32,7 @@ _Il est également possible d'utiliser le `Docker® Lab` pour utiliser un enviro
 
 Une fois le compte `Docker® Hub` configuré, les images sont automatiquement récupérées depuis celui-ci.
 
-:::warn
+:::caution
 Depuis le 01/04/2025, Docker Hub a mis en place un système de quotas stricts pour la récupération d'images :
 
 - Utilisateurs non authentifiés : 10 pulls d'images toutes les 6 heures.
@@ -122,7 +122,7 @@ Lors de la construction de l'image depuis le `Dockerfile`, chaque instruction va
 
 Afin d'optimiser la taille et les performances de notre image, il faut limiter au maximum le nombre de couches d'images et donc le nombre d'instructions, par exemple en enchaînant les commandes par un `&&` !
 
-:::warn
+:::caution
 Les instructions suivantes ne sont pas des commandes Docker ! Il s'agit des instructions à entrer dans un **fichier nommé `Dockerfile`**. Le `Dockerfile` est donc un langage (comme Python par exemple) qui va être interprété par la commande `docker build` et **NON des commandes à taper dans le terminal** !!!
 :::
 
@@ -263,7 +263,7 @@ FROM golang:alpine AS build-stage
 RUN go build main.go # On build le fichier pour créer /go/main
 ```
 
-:::warn
+:::caution
 **Attention à bien ajouter l'instruction manquante au Dockerfile !**
 :::
 

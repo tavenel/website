@@ -17,7 +17,7 @@ description: Déploiement applicatif avec Helm
 - Une instance de la `chart` déployée dans le cluster est appelée `release`. Une `release` est versionnée : (des)installation, upgrade, rollback
 - Il est possible d'ajouter des `hooks` autour des `releases` : avant / après installation, upgrade, …
 
-:::warn
+:::caution
 Attention : tout comme les images Docker, une chart Helm permet de récupérer des configurations et un packaging distribués en ligne. Il faut donc toujours bien vérifier les charts que l'on utilise (`repository` officiel, …)
 :::
 
@@ -103,7 +103,7 @@ dependencies:
     condition: redis.enabled # helm install --set redis.enabled=false …
 ```
 
-:::warn
+:::caution
 Les dépendances doivent être mises à jour par : `helm dependency update` : crée un fichier `Chart.lock` et télécharge les dépendances dans le répertoire `charts/`
 :::
 

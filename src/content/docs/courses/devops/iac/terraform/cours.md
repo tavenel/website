@@ -418,7 +418,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
 ---
 
-:::warn
+:::caution
 Les provisioner de commandes (`remote-exec`, `local-exec`) rendent les déploiements moins déclaratifs et plus difficiles à reproduire.
 :::
 
@@ -553,7 +553,7 @@ variable "instance_type" {
 }
 ```
 
-:::warn
+:::caution
 Ne pas utiliser les workspaces pour des environnements **très différents** (préférez plusieurs répertoires ou modules).
 :::
 

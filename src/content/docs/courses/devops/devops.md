@@ -218,7 +218,7 @@ Voir le [cours sur les gestionnaires de versions (Git)](/git).
 - **métriques** (sondes) : indicateurs sur la santé des composants : CPU, latence réseau, mémoire, … : `prometheus`
 - **traces** : suivi d'un utilisateur / une requête à travers tout le système : `zipkin`, `OpenTelemetry`, …
 
-:::warn
+:::caution
 Cette observabilité doit se coupler à des **alertes** en cas de souci !
 :::
 

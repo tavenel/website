@@ -25,7 +25,7 @@ Le `SUID` (Set User ID) est un mécanisme de permission qui permet à un utilisa
 2. Rendez ce script exécutable et testez son exécution
 3. Modifiez les permissions pour activer le SUID et tester l'exécution du script
 
-:::warn
+:::caution
 La plupart des distributions récentes disposent d'un noyau qui refuse l'exécution du `SUID` pour les scripts shell par mesure de sécurité.
 
 On pourra à la place utiliser un petit programme en C qui affiche l'utilisateur courant :

@@ -27,7 +27,7 @@ Un cluster etcd fonctionne tant qu'un quorum de membres peut être établi. Si l
 
 Déployer etcd entre régions améliore sa tolérance aux pannes, car les membres se trouvent dans des domaines de défaillance distincts. Le coût est une latence plus élevée des requêtes de consensus liées au franchissement des limites des datacenters. Comme etcd repose sur un quorum de membres pour le consensus, la latence liée au franchissement des datacenters sera relativement importante, car au moins une majorité des membres du cluster doivent répondre aux requêtes de consensus. De plus, les données du cluster doivent être répliquées sur tous les homologues, ce qui entraîne également un coût en bande passante.
 
-:::warn
+:::caution
 Avec des latences plus longues, la configuration par défaut d'etcd peut entraîner des élections fréquentes ou des dépassements de délai d'attente.
 :::
 

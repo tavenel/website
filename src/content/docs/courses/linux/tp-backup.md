@@ -55,7 +55,7 @@ sudo rsync -av --delete /etc/ /mnt/backup/etc_bak/
 
 ### 🔹 3. Sauvegarde de partition avec `dump/restore`
 
-:::warn
+:::caution
 Utilisable uniquement sur des partitions ext3/ext4
 :::
 
@@ -132,7 +132,7 @@ sudo apt install backuppc
 4. Lancer une sauvegarde à distance d'un répertoire `/etc`.
 5. Restaurer un fichier depuis l'interface.
 
-:::warn
+:::caution
 Backuppc doit pouvoir accéder les fichiers à sauvegarder (notamment `/etc`) ! Penser à donner les droits :
 
 - soit à l'utilisateur `backuppc` d'accéder directement aux fichiers à sauvegarder (ajout au groupe, changement de droits, …)

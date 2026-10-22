@@ -451,7 +451,7 @@ Voir la [cheatsheet sur Docker®](https://www.avenel.pro/docker/cheatsheet) 🔗
 - Les **conteneurs sont éphémères** ⚠️
 - À l'arrêt ou à la suppression d'un conteneur les données internes sont **perdues**
 
-:::warn
+:::caution
 Ne jamais stocker de données critiques directement dans le conteneur : bases de données, données applicatives
 :::
 
@@ -708,7 +708,7 @@ docker run --network host nginx
 - Permet de gérer un réseau multi-hôtes distribué entre plusieurs `Docker Engine`. 🌐
 - Routage automatique du paquet vers le bon couple : hôte/conteneur. 🌐
 
-:::warn
+:::caution
 Un driver overlay nécessite un orchestrateur de conteneurs comme `Docker Swarm`.
 :::
 

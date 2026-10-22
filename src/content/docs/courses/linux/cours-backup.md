@@ -89,7 +89,7 @@ Pour augmenter la disponibilité d'un service, on utilise généralement **la re
 
 <div class="caption">Chaque élément unique de l'architecture est un SPOF (Source: https://openclassrooms.com/fr/courses/2356316-montez-un-serveur-linux-et-ses-services/5173591-construisez-une-solution-adaptee-a-vos-besoins)</div>
 
-:::warn
+:::caution
 Plus on pousse la disponibilité, plus l'architecture devient complexe et plus la surface d'erreur (et le coût de conception) augmente. Paradoxalement la redondance peut donc créer de nouveaux modes de défaillance si elle est mal gérée.
 :::
 

@@ -100,7 +100,7 @@ nft add rule inet filter input ip saddr 203.0.113.0/28 tcp dport { 80, 443 } acc
 nft add rule inet filter input log prefix "NFT-DROP: " level info
 ```
 
-:::warn
+:::caution
 Le log devra être placé **avant** le drop final si vous utilisez une `chain` explicitement terminée par un `drop` implicite (`policy drop`).
 :::
 

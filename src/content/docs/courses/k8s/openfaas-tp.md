@@ -370,7 +370,7 @@ OpenFaaS inclut un dashboad permettant de suivre les appels d'une fonction :
 Pour plus d'informations, voir : <https://docs.openfaas.com/openfaas-pro/dashboard/>
 :::
 
-:::warn
+:::caution
 Le dashboard n'est disponible que dans les versions pro et enterprise d'OpenFaaS.
 :::
 
@@ -704,7 +704,7 @@ $ kubectl logs deploy/cron-connector -n openfaas
 D'autres types de connecteurs plus poussés existent : _Kafka Connector_ pour écouter un _topic_ Kafka, …
 :::
 
-:::warn
+:::caution
 Attention, certains triggers sont réservés à la licence professionnelle !
 :::
 
@@ -884,7 +884,7 @@ language: mon-python-custom
 fprocess: "python index.py"
 ```
 
-:::warn
+:::caution
 `fprocess` est critique : démarrer directement le serveur ou le script (éviter `ENV fprocess="cd /somewhere && source env/bin/activate && python complicated.py" && …`)
 :::
 

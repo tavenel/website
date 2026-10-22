@@ -50,7 +50,7 @@ sudo mount /dev/sdXn /mnt
 sudo mount /dev/sda1 /mnt
 ```
 
-:::warn
+:::caution
 Si vous utilisez LVM (utilisation classique d'un serveur, par exemple installation par défaut d'Ubuntu Server) il faudra utiliser la partition LVM et non la partition `/dev/sd…`
 
 Par exemple :

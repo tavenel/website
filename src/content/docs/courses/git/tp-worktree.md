@@ -104,7 +104,7 @@ L'intérêt principal des worktrees est leur indépendance.
 
 :::
 
-:::warn
+:::caution
 **Contrainte importante** : Git ne permet pas de checkout de la **même branche** dans deux worktrees différents, sauf si l'un des deux est en mode détaché (detached HEAD). Vous obtiendrez une erreur du type : `fatal: 'feature-A' is already checked out at '...'`.
 :::
 
@@ -160,7 +160,7 @@ git worktree remove --force <chemin>  # attention : supprime sans vérification
 
 :::
 
-:::warn
+:::caution
 Supprimez toujours un worktree via `git worktree remove` plutôt qu'avec `rm -rf`. La commande `remove` nettoie aussi les métadonnées internes de Git (fichiers dans `.git/worktrees/`).
 :::
 

@@ -66,7 +66,7 @@ description: Installation de Linux Debian Serveur dans une machine virtuelle
 - - Entrer le nom de l'utilisateur superutilisateur : `root` et valider (touche <kbd>Entrée</kbd>)
     - Entrer le mot de passe : `osboxes.org` et valider (touche <kbd>Entrée</kbd>)
 
-:::warn
+:::caution
 ### ATTENTION
 
 1. Sur un interpréteur de commandes Linux, rien n'apparaît sur le terminal lorsque vous tapez votre mot de passe. C'est normal ! Cela permet de ne pas afficher d'information sur les mots de passe en cas de copie. Entrer le mot de passe sans changement à l'écran puis valider : vous devriez ensuite voir un message de bienvenue si vous êtes correctement connecté au système. En cas d'erreur, le mot de passe sera demandé de nouveau.

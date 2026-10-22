@@ -71,7 +71,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
-:::warn
+:::caution
 
 ### Attention aux limits
 
@@ -90,7 +90,7 @@ Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/k
 
 ---
 
-:::warn
+:::caution
 
 ### Workloads dynamiques
 

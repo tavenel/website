@@ -70,7 +70,7 @@ Ces contraintes fondent les choix : redondance active/passive ou active/active, 
 - Sans fencing, on risque la corruption des données : deux nœuds écrivant la même ressource.
 - Méthodes : IPMI, iLO, iDRAC, PDU controllable, fence_virt via hyperviseur, fence_xvm, fence_vmware, etc.
 
-:::warn
+:::caution
 Toujours configurer un mécanisme STONITH opérationnel avant tout essai en prod.
 :::
 
@@ -169,7 +169,7 @@ sudo pcs constraint colocation add WebServer VirtualIP INFINITY
 sudo pcs constraint order VirtualIP then WebServer
 ```
 
-:::warn
+:::caution
 Avant toute création de ressources en production, configurer le fencing STONITH.
 :::
 

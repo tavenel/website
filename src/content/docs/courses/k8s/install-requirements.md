@@ -31,7 +31,7 @@ vm.overcommit_memory=1
 
 :::
 
-:::warn
+:::caution
 Si vous tournez le cluster sur votre machine personnelle dans des VMs, Kubernetes peut être très gourmand en I/O.
 
 Appliquer également les paramètres suivants :
@@ -43,7 +43,7 @@ fs.inotify.max_user_watches=1048576
 
 :::
 
-:::warn
+:::caution
 Docker n'est plus supporté nativement par Kubernetes, il faut un _Container Runtime Interface_ (CRI), par exemple `cri-dockerd`. On utilise souvent `containerd` directement (sans Docker). Voir : <https://kubernetes.io/docs/setup/production-environment/container-runtimes/>
 :::
 

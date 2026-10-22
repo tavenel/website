@@ -91,7 +91,7 @@ shutdownGracePeriodCriticalPods: 30s
 kubeadm init --config kubeadm-config.yaml --upload-certs
 ```
 
-:::warn
+:::caution
 Forcer un CIDR pour le réseau des pods peut être obligatoire pour certains CNI (_Calico_) :
 
 ```sh

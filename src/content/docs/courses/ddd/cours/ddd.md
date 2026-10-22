@@ -817,7 +817,7 @@ graph LR
 - Relation subie ou acceptée : le client **adhère pleinement** au modèle (et conventions, règles, …) de l'équipe fournisseur
 - Pas de séparation stricte : le client reprend **tel quel** le modèle, les règles métier, voire les implémentations.
 
-:::warn
+:::caution
 Introduit un **fort couplage** et réduit la flexibilité du client.
 :::
 

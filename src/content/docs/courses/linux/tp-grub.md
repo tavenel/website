@@ -27,7 +27,7 @@ La ligne `init=/bin/sh` change la commande d'`init` du noyau : au lieu de lancer
 
 Dans un premier temps, nous allons détruire le bootloader pour nos tests. Redémarrer la machine virtuelle et ouvrir un terminal une fois connecté dans l'OS.
 
-:::warn
+:::caution
 **Avant toute action, faites un snapshot de votre machine virtuelle !!!**
 :::
 

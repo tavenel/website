@@ -168,7 +168,7 @@ mount | grep nfs
 rpcinfo -p server_IP
 ```
 
-:::warn
+:::caution
 Attention dans le cas d'utilisation d'un conteneur (par exemple LXC), par défaut le conteneur n'a **pas la capacité kernel requise pour monter le pseudo-système NFS**:
 
 - le conteneur n'a pas accès aux modules noyau (`modprobe`, `lockd`, `sunrpc`…),

@@ -632,7 +632,7 @@ _Dans de nombreux cas, ces rôles suffisent._ ✅
 
 - ⚠️ `list` accorde (aussi) des droits de lecture aux ressources ! 📋
 
-:::warn
+:::caution
 
 - **Si un contrôleur doit pouvoir lister les secrets, il pourra aussi les lire** 📋
 
@@ -797,7 +797,7 @@ flowchart LR
   - **Stateful** : isolation à la **connexion**, et ~non par paquet~ 🔄
   - Pour communication Pod A -> Pod B : accepter A vers B (`egress`) **et** B depuis A (`ingress`) 🔄
 
-:::warn
+:::caution
 Certains CNI ne supportent pas (totalement) les _NetworkPolicies_ : la ressource est appliquée mais sans effet ! ⚠️
 :::
 

@@ -69,7 +69,7 @@ kubectl logs …
 
 ### Arrêt / redémarrage d'un cluster de test
 
-:::warn
+:::caution
 Non supporté officiellement, uniquement pour une instance de test !
 :::
 
@@ -131,7 +131,7 @@ export KUBECONFIG=/tmp/config.a /tmp/config.b
 kubectl config view --flatten > ~/.kube/config
 ```
 
-:::warn
+:::caution
 Attention à ne pas merger et rediriger `~/.kube/config` avec lui-même pour ne pas perdre le contenu existant !
 
 ```sh
@@ -243,7 +243,7 @@ Le node-controller applique automatiquement un taint à un nœud lorsque certain
 
 Si un nœud doit être vidé (`kubectl drain`), (`node.kubernetes.io/not-ready` et `node.kubernetes.io/unreachable` ajoutent le _taint_ `NoExecute` (supprimé si la situation se normalise).
 
-:::warn
+:::caution
 Dans certains cas où le nœud est injoignable, l'api-server ne peut pas communiquer avec le kubelet sur ce nœud. La décision de supprimer les pods ne peut être communiquée au kubelet que lorsque la communication avec l'api-server est rétablie. En attendant, les pods dont la suppression est programmée peuvent continuer à s'exécuter sur le nœud partitionné.
 :::
 
@@ -260,7 +260,7 @@ kubectl drain --ignore-daemonsets "<node-name>"
 kubectl uncordon "<node-name>" 
 ```
 
-:::warn
+:::caution
 Attention aux prérequis avant d'arrêter un _Node_ : `PodDisruptionBudget`, … (voir cours)
 :::
 
@@ -273,7 +273,7 @@ Attention aux prérequis avant d'arrêter un _Node_ : `PodDisruptionBudget`, …
 kubectl version
 ```
 
-:::warn
+:::caution
 Un cluster H/A peut avoir des `APIServer` de versions différentes (résultat aléatoire) !
 :::
 
@@ -1725,7 +1725,7 @@ Voir aussi :
 
 :::
 
-:::warn
+:::caution
 Pour accéder à un `Ingress` d'un cluster local :
 
 - Depuis un cluster `Docker` directement dans Linux, par l'adresse IP du _Node_
@@ -2353,7 +2353,7 @@ spec:
       port: 80
 ```
 
-:::warn
+:::caution
 Le CNI doit supporter la `NetworkPolicy` : ce n'est pas le cas de `Flannel` ! La ressource est ajoutée mais sans effet…
 :::
 
@@ -2478,7 +2478,7 @@ Voir aussi : <https://learnkube.com/security-contexts>
 - Le conteneur voit ses propres UID/GID (e.g. `root: Container UID=0`), mappés vers des UID/GID non privilégiés sur l'hôte (e.g. `root: Host UID=10001`).
 - `root` dans le conteneur /= `root` sur l'hôte
 
-:::warn
+:::caution
 
 - Le CRI et le kernel doivent supporter cette option.
 - Souvent problématique pour le stockage partagé : les permissions ne sont plus les mêmes
@@ -2589,7 +2589,7 @@ kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-ke
 kubectl apply -n kube-system -f sealed-secret-key.yaml
 ```
 
-:::warn
+:::caution
 Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas être modifié directement dans le cluster. Toute modification requiert un chiffrement avec kubeseal avant d'être appliquée. Attention : Si une application utilise ce secret, elle ne recevra pas immédiatement la nouvelle valeur.
 :::
 

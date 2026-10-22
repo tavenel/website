@@ -197,7 +197,7 @@ cat /var/lib/misc/dnsmasq.leases
 - Une zone commence toujours par un enregistrement `SOA` (_Start of Authority_).
 - Elle contient aussi des `NS`, `A`, `AAAA`, `CNAME`, `MX`, etc.
 
-:::warn
+:::caution
 
 - Une zone DNS **n'est pas forcément égale à un domaine** : un domaine peut être découpé en plusieurs zones, chacune gérée par un serveur différent.
 
@@ -314,7 +314,7 @@ Cas typiques :
 2. **HMAC** : Lorsqu'un message DNS est envoyé, une **signature HMAC** (ex. HMAC-SHA256) est calculée avec cette clé et ajoutée au message DNS.
 3. **Vérification** : Le destinataire utilise la même clé pour vérifier la signature. Si elle correspond, le message est authentifié.
 
-:::warn
+:::caution
 
 - TSIG **ne chiffre pas** les données DNS : il **authentifie** seulement l'origine et l'intégrité.
 - Pour des besoins modernes et automatisés, certains systèmes remplacent _TSIG_ par des méthodes basées sur **TLS (_DoT_)** ou **HTTPS (_DoH_)**, mais TSIG reste courant dans les infrastructures internes.
@@ -459,7 +459,7 @@ Cela permet :
 
 DANE utilise un **enregistrement DNS de type `TLSA`**, associé à un service TLS (ex : _HTTPS_, _SMTP_, _XMPP_, …).
 
-:::warn
+:::caution
 
 - **DNSSEC doit être activé et fonctionnel**
 - Tous les résolveurs DNS intermédiaires doivent **supporter DNSSEC**

@@ -328,7 +328,7 @@ Voir le [TP sur TestLink](https://example.com).
 
 ---
 
-:::warn
+:::caution
 Ne pas confondre le mode _pipeline_ de Jenkins (implémentation technique d'un enchaînement de jobs) et le _pipeline_ global d'intégration continue (processus formel de validation). Le pipeline Jenkins peut implémenter entièrement le processus global ou en être seulement un morceau (utilisation de plusieurs serveurs d'intégration continue, etc…)
 :::
 

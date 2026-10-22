@@ -38,7 +38,7 @@ http_access allow reseau_local heures_travail
 http_access deny all
 ```
 
-:::warn
+:::caution
 L'ordre est **important** : Squid lit les règles de haut en bas.
 :::
 

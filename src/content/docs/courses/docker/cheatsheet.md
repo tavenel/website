@@ -430,7 +430,7 @@ docker run -d -p 80:80 -p 443:443 --name my_waf modsecurity/modsecurity
 docker inspect -f '{{.GraphDriver.Data.MergedDir}}' mon_conteneur
 ```
 
-:::warn
+:::caution
 Le `MergedDir` n'est exposé que sur un driver `overlay` (non disponible, par exemple, avec un driver `btrfs`).
 :::
 

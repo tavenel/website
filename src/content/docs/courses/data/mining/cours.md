@@ -352,7 +352,7 @@ $$V = \frac{1}{n}\sum_{i=1}^n \left(x_i - \overline{x}\right)^2$$
 
 ### En programmation
 
-:::warn
+:::caution
 Attention : l'écart-type calculé directement avec la formule mathématique peut être [incorrect en programmation][deviation-computing-error] à cause d'arrondis, notamment pour des valeurs faibles (entre 0 et 1).
 
 Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-computing-solution] pour ce besoin.
@@ -628,7 +628,7 @@ On utilise généralement les seuils suivants :
 
 $X$ désigne la loi de probabilité de la statistique de test et $z$ la valeur calculée de la statistique de test. [Source et crédits : Wikimedia](https://commons.wikimedia.org/wiki/File:Valeur-p.jpg)_.
 
-:::warn
+:::caution
 La p-valeur interprète $\mathbb P(x|H_0)$ or en faisant un test statistique, on cherche à savoir quelle est la probabilité que $H_0$ soit vraie sachant les données donc $\mathbb P(H_0|x)$ ! D'après le théorême de Bayes : $\mathbb P(x|H_0) = \frac{\mathbb P(H_0 | x) \mathbb P(x)}{\mathbb P(H_0)}$
 :::
 
@@ -952,7 +952,7 @@ $$a = \frac{Cov(X,Y)}{Var(X)}$$
 
 $$b = \bar{Y} - a \bar{X}$$
 
-:::warn
+:::caution
 Attention : dans la pratique, on ne connaît jamais $a$ et $b$ (valeurs exactes du modèle) !
 
 On calcule donc : $\hat{a}$ et $\hat{b}$, valeurs estimées de $a$ et $b$ dans les conditions de l'expérience.

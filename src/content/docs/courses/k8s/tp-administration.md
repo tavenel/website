@@ -85,7 +85,7 @@ base64 /host/tmp/snapshot | base64 -d > snapshot
 
 ### Restauration etcd
 
-:::warn
+:::caution
 Pas de restauration d'etcd si des _APIServer_ sont en cours d'exécution !
 
 1. Arrêter toutes les instances d'_APIServer_
@@ -105,7 +105,7 @@ crictl ps
 ```
 :::
 
-:::warn
+:::caution
 `etcdutl restore` crée un nouveau répertoire de données à partir du snapshot mais ne met pas à jour le serveur `etcd` en cours d'exécution.
 :::
 
@@ -171,7 +171,7 @@ Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restorin
 L'upgrade d'un cluster suit [la procédure officielle de la documentation](https://kubernetes.io/docs/tasks/administer-cluster/cluster-upgrade/)
 :::
 
-:::warn
+:::caution
 
 - Lors de l'upgrade d'un `Kubelet`, il est recommandé de le _boucler_ (_cordon_) par la commande `kubectl drain` pour retirer tous les Pods exécutés sur celui-ci au préalable.
 - Le déplacement de pods _stateful_ (BDD, …) peut entraîner des interruptions de service ! Utiliser la réplication de BDD (switch de l'instance _primaire_ sur le _Node_ non impacté) - certains `Operator` (ex [CNPG](https://cloudnative-pg.io/)) effectuent ce basculement automatiquement lorsqu'ils détectent qu'un _Node_ devient _cordon_.
@@ -313,7 +313,7 @@ Certains CNI ne supportent pas (totalement) les `NetworkPolicies` : la ressource
 Dans notre cas, on ne demande pas de réinstaller un nouveau CNI mais de définir des NetworkPolicies pour le projet (par exemple, dans le plan de changer un jour de CNI).
 :::
 
-:::warn
+:::caution
 Attention à ne pas bloquer les communications attendues par Kubernetes ! Par exemple, on ne demande pas de définir de NetworkPolicy dans le Namespace: `kube-system`.
 :::
 
@@ -332,7 +332,7 @@ Il est bien entendu également nécessaire d'auditer les actions réellement ré
 
 ### Sealed Secret
 
-:::warn
+:::caution
 Par défaut, les secrets Kubernetes ne sont pas chiffrés mais seulement encodés en base 64 !
 :::
 

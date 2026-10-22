@@ -36,7 +36,7 @@ Le driver réseau `overlay` de Docker repose sur :
 * un mécanisme de **découverte des pairs**
 * une **gestion des endpoints multi-host**
 
-:::warn
+:::caution
 Historiquement, un réseau Overlay en Docker nécessitait Consul + Etcd + ZooKeeper. Cette approche est aujourd'hui abandonnée en faveur **exclusivement** de **Docker Swarm** pour fournir :
 
 * la gestion du cluster

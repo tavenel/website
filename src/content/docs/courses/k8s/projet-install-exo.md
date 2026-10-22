@@ -45,7 +45,7 @@ Réaliser l'installation du cluster Kubernetes :
    - Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
 :::
 
-:::warn
+:::caution
 Attention, on demande bien d'installer un cluster **production-ready** !
 :::
 

@@ -16,7 +16,7 @@ description: Docker buildx
 
 ## Mise en place de `buildx`
 
-:::warn
+:::caution
 Vous devez avoir Docker 19.03+ pour `buildx`.
 :::
 

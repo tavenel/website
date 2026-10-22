@@ -219,7 +219,7 @@ Ceci est la vision finale du projet : on pourra dans un premier temps se limiter
 - isolation compute
 - isolation IAM (groupes / ACL)
 
-:::warn
+:::caution
 ➡️ Le tenant **ne voit jamais l'infrastructure physique**
 :::
 

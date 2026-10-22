@@ -95,7 +95,7 @@ Sous `zsh` on pourra par exemple utiliser [zsh-autosuggestions][zsh-autosuggesti
 
 #### Avertissement
 
-:::warn
+:::caution
 Le shell est un programme relancé très souvent, voire pour certaines parties (prompt par exemple) après chaque commande. Attention à ne pas surcharger votre shell de plugins et extensions inutiles (notamment concernant les autocomplétions) qui le ralentiraient fortement !
 :::
 

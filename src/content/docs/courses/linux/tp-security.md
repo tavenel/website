@@ -339,7 +339,7 @@ Ce n'est pas un utilitaire Linux standard (il n'est donc souvent pas installé p
 5. Pourquoi est-il important de connaître les ports ouverts sur une machine ?
 :::
 
-:::warn
+:::caution
 Remarque : Assurez-vous d'avoir les autorisations nécessaires pour scanner des machines distantes et de respecter les politiques de sécurité en vigueur.
 :::
 

@@ -259,7 +259,7 @@ hdparm -d1 /dev/sda       # Active le DMA
 hdparm -tT /dev/sda       # Test de vitesse
 ```
 
-:::warn
+:::caution
 Les changements ne sont pas persistants. À automatiser via `/etc/hdparm.conf`.
 :::
 

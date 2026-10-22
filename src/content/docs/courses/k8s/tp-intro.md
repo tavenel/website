@@ -657,7 +657,7 @@ Le type `LoadBalancer` est souvent utilisé dans des environnements cloud (comme
 À l'intérieur du Cluster, tous les _Service_ sont _load balancés_ vers l'ensemble des _Pods_ qu'ils visent. Le `LoadBalancer` n'a donc qu'un intérêt pour le trafic **externe** (géré par un fournisseur de Cloud par exemple) !
 :::
 
-:::warn
+:::caution
 Utiliser des `LoadBalancer` peut vite coûter très cher (en principe, paiement à l'usage par le fournisseur de Cloud) - on lui préfère donc parfois un `Ingress` pour créer un point d'accès externe unique et gérer soi-même l'équilibre de charge **dans** le cluster.
 :::
 
