@@ -37,7 +37,6 @@ export default defineConfig({
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
 			sidebar: [
-				{ slug: 'about' },
 				{ label: 'Écoles', collapsed: true, items: [{ autogenerate: { directory: 'tracks' } }] },
 				{ label: 'Cours', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
 				{ slug: 'tools' },
@@ -45,6 +44,7 @@ export default defineConfig({
 				{ slug: 'website' },
 				{ slug: 'other' },
 				{ slug: 'fun' },
+				{ label: 'About me', link: '/about/', attrs: { style: 'font-style: italic' },},
 			],
 			social: [
         { icon: 'sourcehut', label: 'SourceHut', href: 'https://sr.ht/~toma' },
