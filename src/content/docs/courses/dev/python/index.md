@@ -11,12 +11,6 @@ description: Cours sur le langage Python
 
 # 󰌠  Python
 
-## 󰌠 Abrégés Python
-
-- Abrégé Python [pdf](/cours/python/abregepython.pdf)
-- Mémento partie 1 [pdf](/cours/python/Partie_1_memento_Python_3.pdf)
-- Mémento partie 2 [pdf](/cours/python/Partie_2_memento_Python_3.pdf)
-
 ## 💻 Liens utiles d'exercices
 
 - [Exercices de niveau 1](https://supports.uptime-formation.fr/03-python/partie-1/exos-1/)

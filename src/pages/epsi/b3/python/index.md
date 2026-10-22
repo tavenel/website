@@ -8,7 +8,7 @@ layout: '@layouts/BaseLayout.astro'
 ## Présentation du module
 
 ### 🎯 Compétences à acquérir
- 
+
 - S'initier au langage Python®
 
 ### Évaluation
@@ -21,12 +21,6 @@ layout: '@layouts/BaseLayout.astro'
 - Classe inversée : 10H de e-learning
 
 ## 📑 Documents
-
-### 󰌠 Abrégés Python
-
-- Abrégé Python [pdf](/cours/python/abregepython.pdf)
-- Mémento partie 1 [pdf](/cours/python/Partie_1_memento_Python_3.pdf)
-- Mémento partie 2 [pdf](/cours/python/Partie_2_memento_Python_3.pdf)
 
 ### 🤓 Cours
 
