@@ -9,7 +9,7 @@ description: DHCP
 - 🎯 But du serveur DHCP (`dhcpd`) : distribuer des adresses IP dynamiquement ou statiquement, aussi bien en IPv4 qu'en IPv6
 - Parfois simplement dans un rôle d'agent relais.
 
-:::link
+:::note
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [DHCP Configuration](https://lpic2book.github.io/src/lpic2.210.1/)

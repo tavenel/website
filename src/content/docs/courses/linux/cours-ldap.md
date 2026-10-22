@@ -15,7 +15,7 @@ description: LDAP
 
 📚 Serveur libre le plus courant : **OpenLDAP**
 
-:::link
+:::note
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [LDAP client usage](https://lpic2book.github.io/src/lpic2.210.3/)
@@ -204,7 +204,7 @@ Il est souvent intéressant de coupler un service d'authentificatio réseau type
 
 ---
 
-:::link
+:::note
 Pour gérer graphiquement un LDAP, on pourra utiliser <https://phpldapadmin.org/>
 :::
 

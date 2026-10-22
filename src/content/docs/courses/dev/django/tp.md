@@ -74,7 +74,7 @@ C:\> C:\path\to\myenv\Scripts\Activate.ps1
 
 :::
 
-:::link
+:::note
 
 - Il est aussi possible d'utiliser `VSCode` pour générer directement l'environnement virtuel : <https://code.visualstudio.com/docs/python/environments>
 
@@ -134,7 +134,7 @@ Pour vérifier le bon démarrage du serveur, aller sur la page Web indiquée dan
 Starting development server at <http://127.0.0.1:8000/>
 ```
 
-:::link
+:::note
 Il est possible de modifier les paramètres du serveur de développement (port d'écoute, ...) : voir la [page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/django-admin/#runserver).
 :::
 
@@ -278,7 +278,7 @@ DATABASES = {
 }
 ```
 
-:::link
+:::note
 Pour une liste des bases de données supportées et leur configuration, voir la [page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/databases/).
 :::
 
@@ -372,7 +372,7 @@ _La redirection s'est bien effectuée vers l'URL `/catalog/` mais aucune route n
 
 `Django` utilise un `ORM` (object-relational mapping) pour modéliser le schéma d'une base de données relationnelle (SGBD) directement en objets Python.
 
-:::link
+:::note
 Voir le [cours sur la persistence des données Hibernate](https://www.avenel.pro/hibernate) pour plus d'information sur les `ORM`.
 :::
 
@@ -404,7 +404,7 @@ Un avantage non négligeable de ce principe est la possibilité de stocker les s
 Cela permet de revoir et de gérer l'historique des changements dans le SGBD, et participe au principe d'_Infrastructure as Code_ très important en DevOps.
 :::
 
-:::link
+:::note
 Pour plus d'information sur les migrations `Django`, voir [la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/migrations/).
 :::
 
@@ -488,7 +488,7 @@ Principaux type de champs :
 
 :::
 
-:::link
+:::note
 
 - Pour une liste des types de champs disponibles en Django, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#field-types).
 - Pour plus d'information sur les types énumérés, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#enumeration-types).
@@ -510,7 +510,7 @@ Principaux arguments des champs à persister :
 
 :::
 
-:::link
+:::note
 Pour une liste des arguments des champs, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#field-options).
 :::
 
@@ -533,7 +533,7 @@ class Meta:
 
 :::
 
-:::link
+:::note
 Pour une liste des métadonnées disponibles, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/options/)
 :::
 
@@ -568,7 +568,7 @@ record.my_field_name = "New Instance Name"
 record.save()
 ```
 
-:::link
+:::note
 Cette méthode est très pratique pour créer directement des enregistrements dans les fichiers de migration : voir <https://www.webforefront.com/django/setupinitialdatadjangomodels.html>
 :::
 
@@ -596,7 +596,7 @@ Principaux filtres :
 
 :::
 
-:::link
+:::note
 Pour une liste des paramètres de recherche, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/models/querysets/#field-lookups)
 :::
 
@@ -768,7 +768,7 @@ class BookAdmin(admin.ModelAdmin):
 
 ## Documentation du site d'administration
 
-:::link
+:::note
 Pour plus de détails sur le site d'administration, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/contrib/admin/).
 :::
 
@@ -988,7 +988,7 @@ La recherche des template est configurée par la variable `TEMPLATES` du fichier
 
 ### Documentation sur les templates
 
-:::link
+:::note
 Pour plus de détails sur les template, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/templates/).
 :::
 
@@ -1196,7 +1196,7 @@ Tester l'application !
 Tester la pagination
 :::
 
-:::link
+:::note
 Pour plus d'information sur la pagination, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/pagination/#paginator-objects).
 :::
 
@@ -1213,7 +1213,7 @@ Tester l'application - l'application de la bibliothèque est terminée !
 
 ## Documentation sur les vues génériques
 
-:::link
+:::note
 Pour plus d'information sur les vues génériques, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/class-based-views/generic-display/).
 :::
 
@@ -1453,7 +1453,7 @@ urlpatterns = [
 
 ## Documentation sur les formulaires
 
-:::link
+:::note
 Pour plus d'information sur les champs de formulaires, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/ref/forms/fields/).
 :::
 
@@ -1510,7 +1510,7 @@ request.session.modified = True
 
 ## Documentation
 
-:::link
+:::note
 Pour plus d'information sur les sessions, [voir la page dédiée de la documentation officielle](https://docs.djangoproject.com/fr/4.2/topics/http/sessions/)
 
 Voir aussi la [page de tutoriel dédiée](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions#simple_example_%E2%80%94_getting_visit_counts)
@@ -1524,7 +1524,7 @@ Pour gérer les comptes utilisateurs on pourra se référer au tutoriel suivant 
 
 # Tests
 
-:::link
+:::note
 Pour apprendre à tester une application `Django`, [suivre le tutoriel developer.mozilla.org](https://developer.mozilla.org/fr/docs/Learn/Server-side/Django/Testing).
 :::
 
@@ -1532,7 +1532,7 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 
 ## Déploiement en production
 
-:::link
+:::note
 
 - Pour apprendre à configurer une application `Django` pour la production et comment la déployer, [suivre le tutoriel developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment).
 - Voir aussi le tutoriel : <https://zestedesavoir.com/tutoriels/2213/deployer-une-application-django-en-production/>
@@ -1541,7 +1541,7 @@ Pour apprendre à tester une application `Django`, [suivre le tutoriel developer
 
 ## Gestion du cache
 
-:::link
+:::note
 
 - Pour apprendre à gérer le cache, voir le tutoriel : <https://zestedesavoir.com/tutoriels/1295/mise-en-cache-intelligente-avec-django/>
 

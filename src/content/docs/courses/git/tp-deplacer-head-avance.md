@@ -78,7 +78,7 @@ Cela fait revenir votre branche (et l'index si vous utilisez `--hard`) à un poi
 
 ### Ressources
 
-:::link
+:::note
 Voir aussi :
 
 - <https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git>
@@ -154,7 +154,7 @@ La commande suivante permet d'afficher les branches parentes dans l'ordre. Le pr
 git cat-file -p [ID_DU_COMMIT_DE_FUSION]
 ```
 
-:::link
+:::note
 Voir aussi : <https://stackoverflow.com/questions/5970889/why-does-git-revert-complain-about-a-missing-m-option>
 :::
 
@@ -223,6 +223,6 @@ echo $COMMIT_SHA
 git show $(git rev-parse HEAD~2)
 ```
 
-:::link
+:::note
 Documentation de référence : <https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-rev-parse.html>
 :::

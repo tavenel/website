@@ -87,7 +87,7 @@ full avg10=0.00 avg60=0.00 avg300=0.00 total=0
 
 ---
 
-:::link
+:::note
 Voir aussi :
 
 - Le lien : <https://www.brendangregg.com/linuxperf.html> pour plus d'information sur les performances d'un système Linux, et l'ensemble des outils disponibles.

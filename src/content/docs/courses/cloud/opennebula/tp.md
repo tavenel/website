@@ -235,7 +235,7 @@ En cas d'erreur, les logs des VMs sont stockées dans `/var/log/one/<vm_id>.log`
 
 **Livrable 6 :** extrait de logs et explication du diagnostic et de la résolution proposée.
 
-:::link
+:::note
 Voir aussi : <https://docs.opennebula.io/7.0/product/operation_references/opennebula_services_configuration/troubleshooting/>
 :::
 

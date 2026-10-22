@@ -47,7 +47,7 @@ v1.33.0 introduit le _Service IP Expansion_ : l'API `ServiceCIDR` permet d'ajout
   - **Avec gestion des réplicas** 🔄
 - Au moins 2 CIDR (plages réseau) : CIDR Pod et CIDR Services 🌐
 
-:::link
+:::note
 Pour des exemples d'usage concrets, voir : <https://sheakimran.hashnode.dev/kubernetes-services-a-deep-dive-with-examples>
 :::
 

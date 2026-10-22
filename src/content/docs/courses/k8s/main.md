@@ -161,7 +161,7 @@ flowchart TD
   - Parfois intégré à la distribution, sinon à installer séparément 🛠️
   - Par défaut, _Kubelet_ charge les configurations des plugins réseau depuis : `/etc/cni/net.d` 📂
 
-:::link
+:::note
 Voir aussi <https://github.com/containernetworking/cni/> et <https://www.cni.dev/>
 :::
 
@@ -189,7 +189,7 @@ Voir aussi <https://github.com/containernetworking/cni/> et <https://www.cni.dev
 - Plus simple à configurer que les autres options 🛠️
 - Inconvénients : Peut introduire une latence supplémentaire, moins de fonctionnalités avancées (`NetworkPolicies`, …), moins adapté aux très grands clusters ⚠️
 
-:::link
+:::note
 Pour plus d'information sur Flannel, voir : <https://msazure.club/flannel-networking-demystify/>
 :::
 
@@ -210,7 +210,7 @@ Pour plus d'information sur Flannel, voir : <https://msazure.club/flannel-networ
 - Souvent utilisé dans les déploiements Cloud ☁️
 - Inconvénients : Complexe, besoin de compatibilité réseau (BGP) ⚠️
 
-:::link
+:::note
 Voir aussi :
 
 - Calico en VXLAN ou IPIP : <https://docs.tigera.io/calico/latest/networking/configuring/vxlan-ipip>
@@ -376,7 +376,7 @@ Les services gérés coûtent souvent 30 à 50 % de plus que les services autog�
 
 ---
 
-:::link
+:::note
 Il existe de (très) nombreuses manières d'installer Kubernetes : voir <https://github.com/zwindler/101-ways-to-deploy-kubernetes>
 :::
 
@@ -540,7 +540,7 @@ flowchart TD
 
 ---
 
-:::link
+:::note
 **Voir : <https://2021-05-enix.container.training/5.yml.html#50> pour un exemple de fonctionnement du _Control Plane_ suite à la création d'un `Deployment`**
 :::
 
@@ -717,7 +717,7 @@ Le _StatefulSet_ est utile lorsque l'on doit pouvoir différencier et sélection
 Les _Device_ sont assez limités (statiques, réquisition unique, …). Kubernetes introduit les [_Dynamic Ressource Allocation_ (_DRA_)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/)
 :::
 
-:::link
+:::note
 Pour débugger les Pods avec Device, voir : <https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/>
 :::
 

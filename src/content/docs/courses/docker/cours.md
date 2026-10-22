@@ -950,7 +950,7 @@ Docker propose différents projets facilitant l'utilisation et l'intégration d'
   - **Docker MCP Toolkit** : intégration du MCP (+ authentification et sécurité), configuration du conteneur.
 - Champ `models` dans _Docker Compose_
 
-:::link
+:::note
 Pour une liste complète des fonctionnalités IA de Docker, voir : <https://www.docker.com/solutions/docker-ai/>
 :::
 

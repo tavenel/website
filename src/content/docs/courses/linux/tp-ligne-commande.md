@@ -22,7 +22,7 @@ L'argument `--` permet de séparer la commande et ses options des arguments. Ce 
 Par exemple : `rm -- -1` supprime le fichier `-1` (alors que `rm -1` fournit l'option `-1` à la commande `rm`).
 :::
 
-:::link
+:::note
 Voir aussi :
 
 - <https://doc.ubuntu-fr.org/tutoriel/console_ligne_de_commande>
@@ -173,6 +173,6 @@ echo ${^array}.png # one.png two.png three.png
   - `[Alt] + [T]` : inverse les 2 derniers mots
 - Il est possible d'utiliser plutôt les raccourcis `vi` : `set -o vi`
 
-:::link
+:::note
 Voir aussi : <https://blog.hofstede.it/shell-tricks-that-actually-make-life-easier-and-save-your-sanity/>
 :::

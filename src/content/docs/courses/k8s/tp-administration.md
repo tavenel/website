@@ -10,7 +10,7 @@ description: 🏆 Administration de cluster Kubernetes
 
 Administrer un cluster Kubernetes ne se limite pas à son installation : il faut gérer les mises à jour, les maintenances, la sécurité, l'observabilité du cluster, …
 
-:::link
+:::note
 Voir aussi :
 
 - <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/administration/>.
@@ -39,7 +39,7 @@ Voir aussi :
 Automatiser le (re)déploiement d'un cluster (GitOps) peut être une procédure de recovery efficace mais risquée (ne rien oublier !) : continuez les backup d'`etcd`.
 :::
 
-:::link
+:::note
 Des outils dédiés permettent de faire un backup de cluster : _Stash_, _Velero_, …
 :::
 
@@ -109,7 +109,7 @@ crictl ps
 `etcdutl restore` crée un nouveau répertoire de données à partir du snapshot mais ne met pas à jour le serveur `etcd` en cours d'exécution.
 :::
 
-:::link
+:::note
 
 - Voir aussi la [documentation etcd snapshot and restore](https://coreos.com/etcd/docs/latest/op-guide/recovery.html#snapshotting-the-keyspace)
 - Un [environnement de test pour etcd](https://kodekloud.com/playgrounds/playground-ha-etcd-cluster)
@@ -134,7 +134,7 @@ sudo kubeadm init \
 
 #### Procédure k3s
 
-:::link
+:::note
 Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restoring-snapshots>
 :::
 
@@ -167,7 +167,7 @@ Voir : <https://docs.k3s.io/cli/etcd-snapshot?etcdsnap=Multiple+Servers#restorin
 
 ### Procédure
 
-:::link
+:::note
 L'upgrade d'un cluster suit [la procédure officielle de la documentation](https://kubernetes.io/docs/tasks/administer-cluster/cluster-upgrade/)
 :::
 
@@ -211,7 +211,7 @@ Un cluster Kubernetes doit bien sûr être supervisé. On utilise très majorita
 
 ### Endpoints
 
-:::link
+:::note
 Voir [ces slides](https://2021-05-enix.container.training/5.yml.html#217) pour plus d'information sur les APIs internes et de monitoring
 :::
 
@@ -248,7 +248,7 @@ Concrètement, _node-problem-detector_ utilise les _Event_ et les _NodeCondition
 
 Un système de correction (_Remedy system_) est un ou plusieurs processus conçus pour tenter de résoudre les problèmes détectés par le _node-problem-detector_. Les systèmes de correction observent les _Event_ et/ou les _NodeCondition_ émis et prennent les mesures nécessaires pour rétablir l'intégrité du cluster Kubernetes.
 
-:::link
+:::note
 Pour plus d'information, voir le dépôt du projet : <https://github.com/kubernetes/node-problem-detector>
 :::
 
@@ -292,7 +292,7 @@ kubectl get csr
 kubeadm alpha certs renew all
 ```
 
-:::link
+:::note
 Pour la procédure complète, voir la documentation : <https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/#manual-certificate-renewal>
 :::
 
@@ -338,7 +338,7 @@ Par défaut, les secrets Kubernetes ne sont pas chiffrés mais seulement encodé
 
 Des outils externes permettent d'ajouter du chiffrement, on pourra par exemple utiliser _Kubeseal_ pour que seul le cluster soit capable de déchiffrer un secret.
 
-:::link
+:::note
 
 - Voir la [cheatsheet Kubernetes sur Kubeseal](/k8s/cheatsheet#kubeseal)
 - Sur K3s, on peut aussi utiliser la capacité de chiffrage des secrets intégrée à k3s : <https://docs.k3s.io/security/secrets-encryption>
@@ -377,7 +377,7 @@ kubectl create secret tls example-tls \
 
 :::
 
-:::link
+:::note
 Voir aussi :
 
 - La [cheatsheet Kubernetes](/k8s/cheatsheet#tls--clusterissuer-lets-encrypt)

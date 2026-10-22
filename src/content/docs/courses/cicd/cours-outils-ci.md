@@ -314,7 +314,7 @@ Des outils comme `dependabot` (pour _Github Actions_) permettent de créer une p
 
 ---
 
-:::link
+:::note
 Voir aussi [la liste des outils CI/CD sur le site web](/tools#-cicd)
 :::
 

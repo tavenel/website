@@ -127,6 +127,6 @@ Le fichier persistant sera alors dans :
 
 ## Liens
 
-:::link
+:::note
 Voir aussi le wiki Arch Linux : <https://wiki.archlinux.org/title/Nftables>
 :::

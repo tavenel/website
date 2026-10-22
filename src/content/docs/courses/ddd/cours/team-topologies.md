@@ -127,7 +127,7 @@ La topologie d'équipe est une théorie de management d'équipes très populaire
   - soit : collaboration par **requêtes** (en DDD : envie du _Customer_ à remonter au _Supplier_), pas par ~~exigence (besoin)~~
   - soit : API publique (en DDD : _Open Host Service_) indépendant du consommateur (le _Customer_ doit s'adapter au _Supplier_)
 
-:::link
+:::note
 Pour plus d'information, voir le site officiel : <https://teamtopologies.com>
 :::
 

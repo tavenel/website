@@ -10,7 +10,7 @@ description: 🎯 Module en classe renversée
 
 Vous allez découvrir les fondamentaux de ce module **en devenant vous-mêmes les concepteurs du cours**. La classe renversée est une méthode active qui part de l'idée que la meilleure manière d'apprendre est d'enseigner.
 
-:::link
+:::note
 Pour plus d'information sur la classe renversée, voir : <https://edutechwiki.unige.ch/fr/Classe_renvers%C3%A9e>
 :::
 

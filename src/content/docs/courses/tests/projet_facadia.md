@@ -134,7 +134,7 @@ describe('Sample 1 Integration Test Suites', () => {
 - `import '@testing-library/jest-dom'` est nécessaire si vous utilisez des méthodes d'`expect()` de la `testing-library` : `toBeInDocument()`, `toHaveTextContent()`, … Ici on utilise `toEqual()` de jest standard, l'import ne serait donc pas nécessaire.
 - `<h1 data-testid=...` : ajoute un attribut `data-testid` récupéré ensuite avec `getByTestId()`
 
-:::link
+:::note
 La difficulté des tests sur le DOM vient principalement de la sélection des éléments.
 
 Voir :

@@ -83,7 +83,7 @@ description: Bonnes pratiques
 - Certified Kubernetes Administrator (CKA) 📜 [formation LinkedIn](https://www.linkedin.com/learning/certified-kubernetes-administrator-cka-cert-prep-25818035/)
 - Certified Kubernetes Security Specialist (CKS) 📜 [formation LinkedIn](https://www.linkedin.com/learning/certified-kubernetes-security-specialist-cks-cert-prep/)
 
-:::link
+:::note
 
 - Pour plus d'information, voir [une explication des différentes formations](https://gist.github.com/bakavets/05681473ca617579156de033ba40ee7a) et un REX du Kubestronaut : <https://blog.zwindler.fr/2026/01/18/rex-kubestronaut/> 📚
 - Pour s'entraîner aux certifications, utiliser <https://github.com/sailor-sh/CK-X>

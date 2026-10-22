@@ -19,7 +19,7 @@ description: Configuration réseau sous Linux
 | Multicast                             | `ipmaddr`   | `ip maddr`           |
 | Statistiques                          | `netstat`   | `ip -s`, `ss`        |
 
-:::link
+:::note
 Voir aussi :
 
 - <https://www.linuxtricks.fr/wiki/la-commande-ip-reseau-interfaces-routage-table-arp>
@@ -316,7 +316,7 @@ search mydomain.net mydomain.com
 Reprendre l'exercice de persistance en utilisant `/etc/network/interfaces` et utiliser un fichier de configuration `systemd-networkd` à la place.
 :::
 
-:::link
+:::note
 Pour plus d'information, voir la page de cours sur `systemd-networkd` : <https://learning.lpi.org/en/learning-materials/102-500/109/109.2/109.2_02/>
 :::
 

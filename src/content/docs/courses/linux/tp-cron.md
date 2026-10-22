@@ -166,7 +166,7 @@ Par exemple, pour lancer un script toutes les minutes :
   - `*/2` : "tous les deux temps"
 :::
 
-:::link
+:::note
 Pour s'aider à écrire les `crontab` et les vérifier, on pourra utiliser l'excellent site : <https://crontab.guru/>
 :::
 
@@ -346,7 +346,7 @@ Le paramètre `Persistent=true` est très utile pour rattraper des tâches non e
 grep OnCalendar -r /usr/lib/systemd/
 ```
 
-:::link
+:::note
 Pour plus d'information sur les timers systemd, voir ces liens :
 
 - [wiki Archilinux](https://wiki.archlinux.org/title/Systemd_(Fran%C3%A7ais)/Timers_(Fran%C3%A7ais))

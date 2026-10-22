@@ -177,7 +177,7 @@ gpg --keyserver keyserver.example.com --recv-keys ABCDEF0123456789
 gpg --keyserver keyserver.example.com --send-keys ABCDEF0123456789
 ```
 
-:::link
+:::note
 Il existe de nombreux serveurs d'échange de clés publiques, les principaux étant :
 
 - `pgp.mit.edu` - MIT's Public Key Server

@@ -26,7 +26,7 @@ description: Configuration avancée des Pods
 - 🔢 3 modes : `exec` (commande), `httpGet`, `tcpSocket`
 - ⏱️ Si vérification > 1 seconde, préférer précalculer (asynchrone) et retourner un cache
 
-:::link
+:::note
 Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/probes/>
 :::
 

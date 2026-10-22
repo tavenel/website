@@ -22,7 +22,7 @@ Vous êtes administrateur système sur un serveur Debian-like (Debian, Ubuntu). 
 
 Le noyau source choisi sera par exemple la version **LTS** (par exemple 6.12). Vous devez également configurer un module externe pour qu'il se reconstruise automatiquement avec DKMS.
 
-:::link
+:::note
 Pour apprendre à compiler un noyau Linux sous Debian, suivre la [documentation officielle](https://kernel-team.pages.debian.net/kernel-handbook/ch-common-tasks.html#s-common-official).
 :::
 
@@ -201,6 +201,6 @@ dkms status
 modprobe -r hello
 ```
 
-:::link
+:::note
 Ce module DKMS est inspiré de : <https://wiki.ubuntu.com/Kernel/Dev/DKMSPackaging>
 :::

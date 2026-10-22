@@ -50,7 +50,7 @@ describe('Hello test', () => {
 })
 ```
 
-:::link
+:::note
 Pour la liste des `matcher` (fonctions de vérification de Jest), voir : <https://jestjs.io/docs/expect>
 :::
 

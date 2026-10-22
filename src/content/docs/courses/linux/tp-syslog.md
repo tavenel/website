@@ -132,7 +132,7 @@ Côté client :
             queue.type="linkedList" queue.size="10000")
 ```
 
-:::link
+:::note
 Voir aussi [cette page rsyslog](https://www.rsyslog.com/sending-messages-to-a-remote-syslog-server/).
 :::
 

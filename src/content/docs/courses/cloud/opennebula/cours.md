@@ -128,7 +128,7 @@ Menus principaux :
 - **Infrastructure** : hosts, clusters, VNets
 - **System** : users, groups, quotas, ACL
 
-:::link
+:::note
 Pour apprendre à utiliser Sunstone, voir la documentation : <https://docs.opennebula.io/7.0/product/control_plane_configuration/graphical_user_interface/cloud_view/>
 :::
 

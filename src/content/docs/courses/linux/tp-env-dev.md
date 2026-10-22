@@ -37,7 +37,7 @@ Quelques multiplexeurs de terminaux :
 - [wezterm][wezterm] : terminal incluant un multiplexeur de terminal
 - [screen][screen] : un des 2 multiplexeurs historiques, encore très utilisé aujourd'hui.
 
-:::link
+:::note
 Voir le TP tmux sur le site web.
 :::
 
@@ -173,7 +173,7 @@ Il existe de nombreuses distributions `neovim` : pour les tester, on pourra util
 
 ## Voir aussi
 
-:::link
+:::note
 - Une liste complète d'applications utiles : <https://wiki.archlinux.org/title/List_of_applications>
 - <https://homelab.casaursus.net/terminal-tools/>
 - <https://homelab.casaursus.net/newcommands/>

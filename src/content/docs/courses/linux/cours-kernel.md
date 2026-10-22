@@ -57,7 +57,7 @@ cd linux-4.19.299
 - `make oldconfig` : met à jour l'ancienne config
 - `make defconfig` : configuration par défaut
 
-:::link
+:::note
 Pour plus d'information, voir l'excellent guide de la distribution Gentoo : <https://wiki.gentoo.org/wiki/Kernel/Gentoo_Kernel_Configuration_Guide>.
 Voir aussi le guide Arch Linux : <https://wiki.archlinux.org/title/Kernel/Traditional_compilation>.
 :::

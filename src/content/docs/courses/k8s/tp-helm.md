@@ -21,7 +21,7 @@ description: Déploiement applicatif avec Helm
 Attention : tout comme les images Docker, une chart Helm permet de récupérer des configurations et un packaging distribués en ligne. Il faut donc toujours bien vérifier les charts que l'on utilise (`repository` officiel, …)
 :::
 
-:::link
+:::note
 
 - Voir la [cheatsheet Kubernetes](/k8s/cheatsheet) pour les commandes.
 - Voir aussi le [TP Prometheus & Grafana](/k8s/tp-prometheus-grafana) pour apprendre à déployer Prometheus et Grafana en utilisant Helm.
@@ -67,7 +67,7 @@ Les templates de manifests utilisent le système de templates de _Go_ :
 - `{{ template "x.y" }}` fait référence à un [template nommé](https://helm.sh/docs/chart_template_guide/named_templates/#declaring-and-using-templates-with-define-and-template)
   - `{{ template "x.y" . }}` : Le `.` est le _contexte_ pour ce template (pour transmettre au template les variables du contexte local)
 
-:::link
+:::note
 
 - Et aussi : toute la bibliothèque [Sprig](http://masterminds.github.io/sprig/) et des ajouts : `lower` `upper` `quote` `trim` `default` `b64enc` `b64dec` `sha256sum` `indent` `toYaml` …
 - Pour plus d'information voir [la documentation sur les template Go](https://golang.org/pkg/text/template/).
@@ -277,7 +277,7 @@ helm uninstall test1 --namespace chart1-v1
 Les _Helm Charts_ sont puissantes mais l'on se retrouve vite avec beaucoup de _Chart_ différentes à appliquer, des `values` à passer en paramètres, …
 [Helmfile](https://github.com/helmfile/helmfile) permet de gérer tout ceci : _Helm Chart_ locales & distantes (git + hub), _Kustomization_, manifests `yaml`
 
-:::link
+:::note
 Examples: [install essentials on a cluster, Jérôme Petazzoni][helmfile-ex-1], [run a Bento stack, Jérôme Petazzoni][helmfile-ex-2]
 
 [helmfile-ex-1]: https://github.com/jpetazzo/beyond-load-balancers/blob/main/helmfile.yaml

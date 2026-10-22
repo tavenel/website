@@ -99,7 +99,7 @@ Jeu de données complet
                        - Utilisées uniquement pour l'évaluation finale
 ```
 
-:::link
+:::note
 
 - Voir aussi le cours sur [le data mining](/data/mining/cours)
 

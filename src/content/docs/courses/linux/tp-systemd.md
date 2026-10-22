@@ -19,7 +19,7 @@ description: Systemd init
 - Pour plus de détails sur la commande `systemctl`, voir le cours _systemd_, 101.3 Lesson 1 p.41 de la certification LPIC-1.
 :::
 
-:::link
+:::note
 Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/systemd/> et <https://blog.stephane-robert.info/docs/admin-serveurs/linux/services/>
 :::
 
@@ -107,7 +107,7 @@ Les fichiers de logs de `journalctl` sont stockés **au format binaire** (ce qui
 1. Changez la cible par défaut du système pour une cible différente (par exemple, `multi-user.target`).
 1. Utiliser `systemd-analyze blame` pour afficher et trier les temps de lancement des services système au démarrage.
 
-:::link
+:::note
 Voir aussi : <https://blog.stephane-robert.info/docs/admin-serveurs/linux/journalisation/>
 :::
 

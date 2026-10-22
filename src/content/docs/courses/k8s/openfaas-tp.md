@@ -125,7 +125,7 @@ Les appels de fonctions se font depuis l'Ingress OpenFaaS :
 - en synchrone : <http://gateway.openfaas:8080/function/NAME>
 - en asynchrone : <http://gateway.openfaas:8080/async-function/NAME>
 
-:::link
+:::note
 Voir aussi : <https://www.openfaas.com/blog/integrate-with-openfaas/>
 :::
 
@@ -261,7 +261,7 @@ def handle(event, context):
     }
 ```
 
-:::link
+:::note
 Pour plus d'information sur le template Python, voir : <https://docs.openfaas.com/languages/python/>
 :::
 
@@ -326,7 +326,7 @@ functions:
 Un timeout génère une erreur `502`.
 :::
 
-:::link
+:::note
 Voir aussi la documentation officielle : <https://docs.openfaas.com/tutorials/expanded-timeouts/>
 :::
 
@@ -366,7 +366,7 @@ OpenFaaS inclut un dashboad permettant de suivre les appels d'une fonction :
 
 <div class="caption">Monitoring de fonctions dans le dashboard OpenFaaS. Source: https://docs.openfaas.com/openfaas-pro/dashboard/</div>
 
-:::link
+:::note
 Pour plus d'informations, voir : <https://docs.openfaas.com/openfaas-pro/dashboard/>
 :::
 
@@ -382,7 +382,7 @@ OpenFaaS est prévu pour s'intégrer avec _Prometheus_ et _Grafana_ :
 
 <div class="caption">Monitoring de fonctions dans Grafana. Source: https://docs.openfaas.com/openfaas-pro/grafana-dashboards/</div>
 
-:::link
+:::note
 Voir aussi :
 
 - Les métriques Prometheus : <https://docs.openfaas.com/architecture/metrics/>
@@ -392,7 +392,7 @@ Voir aussi :
 
 ## 📜 Gestion des informations sensibles (secrets) et de la configuration (variables d'environnement)
 
-:::link
+:::note
 Voir la documentation officielle :
 
 - <https://github.com/openfaas/workshop/blob/master/lab10.md>
@@ -569,7 +569,7 @@ functions:
 
 ```
 
-:::link
+:::note
 Voir aussi :
 
 - La documentation officielle : <https://docs.openfaas.com/architecture/autoscaling/>
@@ -619,7 +619,7 @@ functions:
       reconcileInterval: "30s"
 ```
 
-:::link
+:::note
 Voir faas-idler : <https://github.com/cuulee/faas-idler>
 :::
 
@@ -631,7 +631,7 @@ OpenFaaS peut réagir à plusieurs types d'événements externes grâce à un co
 - des **messages Kafka, NATS, MQTT** (_événements temps réel_)
 - ou même **des webhooks GitHub, GitLab** (_CI/CD déclenché par un commit_)
 
-:::link
+:::note
 Voir aussi la doccumentation officielle :
 
 - sur le _triggers_ : <https://docs.openfaas.com/reference/triggers/>
@@ -1141,7 +1141,7 @@ curl --data-binary @/chemin/vers/mon/image.jpg http://127.0.0.1:8080/function/up
 
 ## Liens
 
-:::link
+:::note
 
 - Voir aussi, un podcast sur sur le serverless : _Beyond Kubernetes: Serverless Execution Models for Variable Workloads_ : <https://kube.fm/kubernetes-vs-lambda-marc>
 - Une alternative à OpenFaaS : <https://slimfaas.dev/>

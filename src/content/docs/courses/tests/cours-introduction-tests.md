@@ -18,7 +18,7 @@ description: Introduction aux tests logiciels
 - 🔒 OpenSSL sur Debian (génération aléatoire suite warning Valgrind)
 - 💸 Pensions alimentaires britanniques : 1 milliard dollars
 
-:::link
+:::note
 Pour plus d'information : <https://read.thecoder.cafe/p/therac-25>
 :::
 

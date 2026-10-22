@@ -35,7 +35,7 @@ Créer une **premier pipeline** GitLab CI pour :
 
 :::
 
-:::link
+:::note
 
 - Pour apprendre à utiliser Gitlab pour stocker ses images docker, voir : <https://blog.stephane-robert.info/post/gitlab-container-docker-registry/>
 

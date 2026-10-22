@@ -519,7 +519,7 @@ Il existe aussi d'autres pare-feux populaires :
 
 # Ressources
 
-:::link
+:::note
 - Pour des exemples de base de `iptables`, voir [la documentation Ubuntu](https://doc.ubuntu-fr.org/iptables)
 - Voir aussi la [wikiversité](https://fr.wikibooks.org/wiki/Administration_r%C3%A9seau_sous_Linux/Netfilter)
 - Tutoriel complet : <https://www.inetdoc.net/guides/iptables-tutorial/>

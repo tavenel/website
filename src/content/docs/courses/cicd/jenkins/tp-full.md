@@ -416,7 +416,7 @@ Dans cet exemple, nous allons installer un serveur d'analyse SonarQube. Nous int
 5. **Lancer le build**, vérifier que celui-ci n'échoue pas et que la page du projet dans Jenkins affiche un succès d'analyse dans Sonar. Afficher les résultats de l'analyse dans Sonar.
 6. **Analyser le fichier pom.xml dans les sources fournies**. Pour réaliser la couverture des tests, le plugin **jacoco** a été ajouté au projet. L'intégration du projet dans Sonar est réalisée par le biais du plugin **sonar** pour Maven.
 
-:::link
+:::note
 Pour plus d'information sur l'utilisation des scanners SonarQube, on pourra visiter : <https://docs.sonarqube.org/latest/analysis/overview/>
 :::
 
@@ -464,7 +464,7 @@ Dans cet exemple, nous allons intégrer Jenkins avec l'outil TestLink pour enreg
 5. **Lancer un build du job Jenkins**. Vérifier que les résultats de TestLink sont bien intégrés dans la page du projet dans Jenkins.
 6. **Ajouter l'intégration des autres tests du projet dans TestLink.**
 
-:::link
+:::note
 Pour plus d'information sur l'intégration de TestLink dans Jenkins : <https://plugins.jenkins.io/testlink/>
 :::
 
@@ -491,7 +491,7 @@ Dans cet exemple, nous allons intégrer dans Jenkins les rapports des outils d'a
 2. Créer un nouveau job dans Jenkins exécutant les tâches Gradle correspondant à ces outils
 3. A l'aide des plugins correspondants dans Jenkins, intégrer les rapports de qualité (par exemple : spotbugs, pmd, cpd, checkstyle) dans le job du projet
 
-:::link
+:::note
 On pourra utiliser la documentation : <https://jenkins-le-guide-complet.github.io/html/sect-code-quality-tools.html>
 :::
 

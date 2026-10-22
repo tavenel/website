@@ -14,7 +14,7 @@ _Préparation à la certification LPIC-2 v4.5_
 - 60 questions découpées proportionnellement au poids des chapitres : 8 pour chapitre 1, ... (voir plan)
 - Score > 500/800 pour passer (12.5/20)
 
-:::link
+:::note
 Plus d'informations : <https://www.lpi.org/our-certifications/lpic-2-overview/>
 :::
 

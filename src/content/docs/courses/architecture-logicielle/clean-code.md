@@ -606,7 +606,7 @@ def enumerate_array(my_array):
 
 ### Voir aussi
 
-:::link
+:::note
 
 - Voir [cet article de CodeGuru](https://refactoring.guru/refactoring/smells) pour des exemples de _code smell_.
 

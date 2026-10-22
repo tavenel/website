@@ -46,7 +46,7 @@ Pour l'exécution du pipeline, on pourra au choix :
 
 Attention à bien respecter les contraintes d'IaC : la configuration du CI/CD devra ausssi être scripté (en général, fichiers `Yaml`) !
 
-:::link
+:::note
 Pour utiliser Jenkins avec Docker en IaC, on pourra se référer à la documentation des pipelines : <https://www.jenkins.io/doc/book/pipeline/docker/>
 :::
 
@@ -72,7 +72,7 @@ Utiliser un gestionnaire d'artefacts permet à la fois d'éviter d'exposer ceux-
 
 Nexus OSS est un gestionnaire d'_artefacts_, de dépendances, d'images Docker, … pouvant être déployé _on-premise_ et intégrable dans de nombreux outils.
 
-:::link
+:::note
 
 - Pour plus d'information, voir la documentation officielle : <https://help.sonatype.com/en/sonatype-nexus-repository.html>
 - Exemple d'amélioration du temps de build d'image Docker grâce à Nexus : <https://blog.stephane-robert.info/post/homelab-optimisation-temps-build-nexus/>
@@ -89,14 +89,14 @@ L'utilisation du couple `Prometheus` / `Grafana` est la solution de monitoring p
 
 Pour récupérer des sondes `Docker`, on pourra utiliser si besoin `cAdvisor` qui permet d'envoyer à `Prometheus` les informations des conteneurs.
 
-:::link
+:::note
 
 - Pour apprendre à configurer simplement `Prometheus`, `Grafana` et `cAdvisor` en utilisant `docker compose`, on pourra par exemple utiliser [ce tutoriel](https://pramodshehan.medium.com/containers-metrics-in-prometheus-and-grafana-389555499eb8).
 - On pourra, au choix, créer son propre dashboard dans `Grafana`, ou utiliser un modèle existant, par exemple : <https://grafana.com/grafana/dashboards/179-docker-prometheus-monitoring/>.
 
 :::
 
-:::link
+:::note
 Pour plus d'information, voir :
 
 - la très bonne introduction à l'observabilité : <https://blog.stephane-robert.info/docs/observer/introduction/>

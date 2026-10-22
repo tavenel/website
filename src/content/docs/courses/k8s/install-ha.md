@@ -31,7 +31,7 @@ Un cluster Kubernetes HA conçu avec `kubeadm` repose sur les composants suivant
   - un DNS _round-robin_
   - …
 
-:::link
+:::note
 Voir aussi :
 
 - <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/>
@@ -93,7 +93,7 @@ _kube-vip_ permet de déployer un _load-balancer_ pour des control plane H/A, et
 
 <div class="caption">Diagramme kube-vip stacké dans le control-plane.</div>
 
-:::link
+:::note
 
 - Source des diagrammes et plus d'information : <https://www.sobyte.net/post/2021-09/use-kube-vip-ha-k8s-lb/>
 - Voir aussi : <https://kifarunix.com/setup-highly-available-kubernetes-cluster-with-haproxy-and-keepalived/>
@@ -122,7 +122,7 @@ Il est possible de configurer `etcd` en H/A de 2 manières différentes (voir la
 ![External etcd](@assets/k8s/kubeadm-ha-topology-external-etcd.svg)
 <div class="caption">etcd externes. Source: https://kubernetes.io/images/kubeadm/kubeadm-ha-topology-external-etcd.svg</div>
 
-:::link
+:::note
 Source des diagrammes et plus d'information : <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/>
 :::
 

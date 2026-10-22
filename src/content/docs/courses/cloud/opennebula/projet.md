@@ -91,7 +91,7 @@ VDC Tenant B
 …
 ```
 
-:::link
+:::note
 Voir aussi : <https://opennebula.io/blog/experiences/managing-virtual-data-centers-with-opennebula-zones/>
 :::
 

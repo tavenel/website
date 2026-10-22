@@ -122,7 +122,7 @@ Le cycle de vie DevOps est un cycle continu allant des étapes de planification 
   - Dans le code ; 💻
   - Sur la plateforme. 🏗️
 
-:::link
+:::note
 Voir le [cours sur les gestionnaires de versions (Git)](/git).
 :::
 
@@ -132,7 +132,7 @@ Voir le [cours sur les gestionnaires de versions (Git)](/git).
 
 > Ensemble de pratiques permettant de réduire la feedback loop. 🔄
 
-:::link
+:::note
 
 - Voir le [cours sur l'intégration continue](/ci/cours).
 
@@ -256,7 +256,7 @@ Exemples de requêtes :
   - Ex: scripts faisant tomber un service, … 🛠️
 - Populaire en sécurité : DevSecOps et SRE 🔒
 
-:::link
+:::note
 
 - Voir une introduction à la _Simian Army_ dans le [cours sur les tests](/tests/cours-indus#-simian-army).
 
@@ -320,7 +320,7 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 | **Gestion des Incidents** | Gestion des alertes |
 | **Intégration** | Avec de nombreux autres outils |
 
-:::link
+:::note
 Voir aussi : <https://about.gitlab.com/platform/>
 :::
 
@@ -381,7 +381,7 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 Initiative de recherche (aujourd'hui Google Cloud) pour améliorer les pratiques DevOps (métriques, …).
 
-:::link
+:::note
 Pour plus d'information, voir : <https://dora.dev/>
 :::
 

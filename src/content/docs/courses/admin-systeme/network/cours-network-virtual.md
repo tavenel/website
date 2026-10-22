@@ -69,7 +69,7 @@ Voir les liens :
 ip link show type vxlan
 ```
 
-:::link
+:::note
 Voir aussi :
 
 - <https://www.techsyncer.com/fr/vxlan-vmware-basics.html>
@@ -124,7 +124,7 @@ Exemple de `ConnTrackMap` (tracking des connexions) :
 |  4.3.2.3   | 80          |     1.2.3.4    |      8080        | SVC  |      4     |     X      |
 |  4.3.2.3   | 80          |     4.3.2.1    |      8080        | Egress  |      X     |     1      |
 
-:::link
+:::note
 Voir : <https://medium.com/@rickijen/how-to-use-ebpf-to-capture-traffic-over-cilium-vtep-integration-fcb70cef0fc1>
 :::
 
@@ -146,7 +146,7 @@ Voir : <https://medium.com/@rickijen/how-to-use-ebpf-to-capture-traffic-over-cil
 
 - `Bird` & `FRRRouting` : simulateurs BGP
 
-:::link
+:::note
 Voir aussi : <https://une-tasse-de.cafe/blog/bgp-kubernetes/>
 :::
 

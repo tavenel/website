@@ -99,7 +99,7 @@ Le projet <https://containertoolbx.org/> permet d'utiliser `Podman` pour créer 
 
 Podman permet de gérer des conteneurs par des services systemd appelés Quadlets.
 
-:::link
+:::note
 Voir aussi : Podman avec des Quadlets + GitOps avec Materia : <https://une-tasse-de.cafe/blog/podlet/>
 :::
 

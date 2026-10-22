@@ -7,7 +7,7 @@ description: Exemple de fichier Jenkinsfile
 ---
 Pour créer un pipeline d'intégration continue (appelé _Job Jenkins_), il faut créer dans le dépôt Git un fichier _Jenkinsfile_, par exemple : `jenkinsfile.yml`. Dans Jenkins, on crée ensuite un projet de type _Pipeline_ avec une étape _"Pipeline script from SCM"_ et on spécifie le chemin du fichier _Jenkinsfile_ créé.
 
-:::link
+:::note
 - Pour créer le Job Jenkins associé, voir [ce tutoriel](https://medium.com/@sangeetv09/create-a-jenkins-pipeline-using-a-jenkinsfile-f67b11e3f0b3)
 - Pour apprendre à écrire le pipeline, voir la documentation officielle : <https://www.jenkins.io/doc/book/pipeline/jenkinsfile/>
 - Pour des exemples d'utilisation de plugins Jenkins en Infrastructure-as-Code, voir le dépôt officiel : <https://github.com/jenkinsci/configuration-as-code-plugin>

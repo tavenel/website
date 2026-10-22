@@ -195,7 +195,7 @@ Quel est le type des variables précédentes ?
 
 # Statistique descriptive à une dimension
 
-:::link
+:::note
 Pour plus d'information, voir le [cours zeste de savoir de statistique descriptive à une dimension][zds-stat-desc-1d].
 :::
 
@@ -207,7 +207,7 @@ Pour plus d'information, voir le [cours zeste de savoir de statistique descripti
   - Peu robuste aux valeurs extrêmes.
   - Exemple d'un unique salaire élevé.
 
-:::link
+:::note
 Voir [l'article Wikipedia sur la moyenne][wiki-moyenne].
 :::
 
@@ -225,7 +225,7 @@ $$\mu = \frac{\sum_{i=1}^n{m_i \cdot x_i}}{\sum_{i=1}^n {m_i}}$$
 - La moyenne numérique est généralisable : barycentre en géométrie, espérance en probabilités, ...
 - En absence de précision, le terme seul de _moyenne_ décrit la _moyenne arithmétique_.
 
-:::link
+:::note
 Lien vers [la Moyenne de Hölder][wiki-moyenne-holder].
 :::
 
@@ -307,7 +307,7 @@ Pour une série de $n$ éléments :
   - Toute valeur entre l'élément à la position $\frac{n}{2}$ et l'élément à la position $\frac{n}{2}+1$ est une médiane.
   - En pratique, on utilise la moyenne arithmétique de ces deux éléments.
 
-:::link
+:::note
 Lien vers [la page Wikipedia sur la médiane][wiki-mediane].
 :::
 
@@ -372,7 +372,7 @@ Il peut être utile d'utiliser [d'autres algorithmes éprouvés][deviation-compu
 
 :::
 
-:::link
+:::note
 Voir [la page Wikipedia sur l'écart-type][wiki-deviation].
 :::
 
@@ -519,7 +519,7 @@ $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
 Démonstration par $P(A\cap B) = P(A) P(B|A) = P(B) P(A|B)$
 :::
 
-:::link
+:::note
 Voir : [Théorème de Bayes][wiki-bayes].
 :::
 
@@ -563,7 +563,7 @@ Caractéristiques : $\mu = np, \sigma^2 = np(1-p)$
 
 Loi théorique d'une variable _continue_ approchant bien les distributions expérimentales dans lesquelles la dispersion de la variable résulte d'effets nombreux, additifs, indépendants et de même grandeur.
 
-:::link
+:::note
 Voir la [page Wikipedia sur la loi normale][wiki-loi-normale].
 :::
 
@@ -659,7 +659,7 @@ où $X_1, ..., X_k$ sont $k$ variables aléatoires indépendantes qui suivent la
 - On utilise une [table de valeurs des quantiles][wiki-chi-2-table] du $\chi^2$ par degré de liberté.
 - On rejette $H_0$ pour une _p-valeur_ choisie (appelé niveau de risque $\alpha$), généralement : $p\leq 0.05$.
 
-:::link
+:::note
 [Table de valeurs des quantiles][wiki-chi-2-table]
 :::
 
@@ -962,7 +962,7 @@ Ces valeurs ne sont donc pas exactes - nous verrons dans la suite du cours comme
 
 #### Cas général
 
-:::link
+:::note
 Pour un calcul de $grad(\chi^2) = 0$ dans le cas général, voir la [page Wikipedia de la méthode des moindres carrés][wiki-moindres-carres].
 :::
 
@@ -973,7 +973,7 @@ Attention, la méthode des moindres carrés gère mal les valeurs aberrantes. Pl
 - Modifier le $\chi^2$ en ne calculant plus le carré des résidus mais une fonction bien choisie de ceux-ci (méthodes des M-estimateurs) ;
 - Remplacer la somme par la médiane, qui contrairement à la moyenne est un estimateur robuste (méthode des moindres carrés médians).
 
-:::link
+:::note
 La méthode des moindres carrés est un cas particulier du [maximum de vraisemblance][wiki-max-vraisemblance] - cette méthode est utile notamment si les résidus ne sont pas indépendants.
 :::
 
@@ -1127,7 +1127,7 @@ Autrement dit, il existe une fonction de lien $g$ telle que :
 
 $$g(\bar{y}) = \eta = \sum_{j=1}^{p} \beta_j\ X_{ij}$$
 
-:::link
+:::note
 Pour plus de détails sur la régression linéaire généralisée, voir [ce lien][slides-glm].
 :::
 
@@ -1218,7 +1218,7 @@ $$R_{logit}^2 = 1 - \frac{-2LL_{modele}}{-2LL_{base}}$$
 
 :::
 
-:::link
+:::note
 Voir la [page Wikipedia de la Régression logistique][wiki-regression-logistique].
 :::
 
@@ -1274,7 +1274,7 @@ Ses principaux inconvénients sont :
   - Un autre cas, où les corrélations posent problème, est quand les variables d'intérêts sont corrélées avec d'autres variables. Dans ce cas, la consistance de la sélection du lasso n'est plus assurée.
 - La très grande dimension : lorsque notamment la dimension est trop élevée ($p >> n$) ou si le vrai vecteur $\beta$ n'est pas suffisamment creux (trop de variables d'intérêts), le lasso ne pourra pas retrouver l'ensemble de ces variables d'intérêts.
 
-:::link
+:::note
 Pour une vision mathématique du lasso, voir [ce cours][slides-lasso].
 :::
 
@@ -1380,7 +1380,7 @@ flowchart TD
 
 :::
 
-:::link
+:::note
 Voir aussi : [l'article Wikipedia sur la méthode des k plus proches voisins][wiki-k-neighbors] et [l'article Wikipedia sur la recherche de proches voisins][wiki-closest-neighbors].
 :::
 
@@ -1690,7 +1690,7 @@ Le principe de sélection d'un arbre optimal est donc décrit par l'algorithme s
 
 :::
 
-:::link
+:::note
 Voir la [page Wikipedia sur les arbres de décision][wiki-arbres-decision].
 :::
 
@@ -1734,7 +1734,7 @@ stateDiagram-v2
 
 Très utile notamment pour parcourir une base de données dans le but d'en extraire des clusters.
 
-:::link
+:::note
 Autre exemple d'utilisation : [Approche mathématique pour le traitement et le clustering de données sonores][clustering-donnees-sonores].
 :::
 
@@ -1893,11 +1893,11 @@ On peut montrer que la variance intra-classe (somme des distances entre les indi
 
 Les classes finales dépendent beaucoup des $k$ individus choisis pour l'initialisation : certains algorithmes de _k-means_ itèrent plusieurs fois le processus avec des initialisations différentes, dans le but de garder la partition qui minimise le plus la variance intra-classe.
 
-:::link
+:::note
 Les autres algorithmes des méthodes centroïdes peuvent prendre en compte d'autres représentants de classes que la moyenne, comme [le médoïde][wiki-k-medoides], individu le plus central du groupe.
 :::
 
-:::link
+:::note
 Exemples de visualisations : [lien][visu-clustering-k-mean].
 :::
 
@@ -1969,11 +1969,11 @@ Tant que tous les individus n'ont pas été visités, on réitère cette étape 
 
 <div class="caption">L'algorithme DBSCAN pas à pas. Les cercles en mouvement correspondent aux voisinages successifs. Il y a ici 4 zones où la densité est élevée. La forme des cluster s'adapte à la forme des données proposées. Animation : zhuanlan.zhihu.com</div>
 
-:::link
+:::note
 Pour en savoir plus : [article Wikipedia DBSCAN][wiki-dbscan].
 :::
 
-:::link
+:::note
 Exemples de visualisations : [lien][visu-clustering-dbscan].
 :::
 
@@ -2014,7 +2014,7 @@ Lorsque le nombre d'individus est très grands et qu'il est alors difficile de c
 - Permet de _réduire les dimensions_ des données en une ou plusieurs _super variables_ latentes.
 - Variables latentes exprimées comme _combinaison linéaire_ des variables observées.
 
-:::link
+:::note
 Pour une approche mathématique de l'analyse factorielle, voir le très bon [cours de Rodolphe Palm][cours-analyse-facto-maths] (attention, il faut être à l'aise avec le calcul matriciel avancé : vecteurs propres, déterminants, ...).
 :::
 
@@ -2120,7 +2120,7 @@ La définition de la distance de Mahalanobis est nettement plus compliquée lors
 
 ### Approche prédictive
 
-:::link
+:::note
 L'analyse discriminante peut également être prédictive (apprentissage supervisé) : il s'agit de l'[analyse discriminante linéaire][wiki-adl] (comparable à la régression logistique).
 :::
 

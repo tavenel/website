@@ -179,7 +179,7 @@ Un **ADR** (_Architecture Decision Record_) permet de documenter un choix d'arch
 
 > In the context of \<use case/user story>, facing \<concern> we decided for \<option> to achieve \<quality>, accepting \<downside>, because \<additional rationale>.
 
-:::link
+:::note
 Voir aussi : <https://adr.github.io/>
 :::
 
@@ -276,7 +276,7 @@ En 2025 (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/>)
 
 ### Linux, Vim, Docker, Kubernetes, Git
 
-:::link
+:::note
 Voir les pages de cours :
 
 - [Page Linux et Vim](/linux)

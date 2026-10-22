@@ -17,7 +17,7 @@ description: Déploiement dans le cluster
 
 :::
 
-:::link
+:::note
 
 - Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : </k8s/projet-install>
 - Voir aussi la page </k8s/cheatsheet> pour l'installation des dépendances.

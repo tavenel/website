@@ -303,7 +303,7 @@ Si SonarQube permet de quantifier la dette technique d'un projet, il est importa
 - C'est l'un des outils les plus utilisés en Assurance Qualité pour réaliser le suivi des tests. 📊
 - Jenkins permet l'intégration des résultats des tests exécutés en envoyant les rapports d'exécution dans `TestLink`. 📊
 
-:::link
+:::note
 Voir le [TP sur TestLink](https://example.com).
 :::
 
@@ -382,7 +382,7 @@ Ces étapes sont très utiles dans des pipelines de déploiement. Elles permette
 
 ---
 
-:::link
+:::note
 Pour plus d'informations sur l'enchaînement de jobs :
 
 - Le plugin [Depgraph View](https://plugins.jenkins.io/depgraph-view/) permet de représenter les dépendances 📊

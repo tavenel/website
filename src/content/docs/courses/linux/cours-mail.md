@@ -19,7 +19,7 @@ description: Serveurs de Mails
   - Plus simple que Sendmail, très modulaire.
   - Fichier principal : `/etc/exim/exim.conf`
 
-:::link
+:::note
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [Using e-mail servers](https://lpic2book.github.io/src/lpic2.211.1/)
@@ -65,7 +65,7 @@ relay_domains = $mydestination
 home_mailbox = Maildir/
 ```
 
-:::link
+:::note
 Pour plus d'information, voir : <https://www.postfix.org/BASIC_CONFIGURATION_README.html>
 :::
 
@@ -85,7 +85,7 @@ smtp_tls_security_level = may # STARTTLS
 Vérifier le port TLS (465 ou 587 dans `master.cf`).
 :::
 
-:::link
+:::note
 Pour plus d'information, voir : <https://www.postfix.org/TLS_README.html>
 :::
 
@@ -285,7 +285,7 @@ ssl_server_cert_file = /etc/dovecot/ssl-cert.pem
 ssl_server_key_file = /etc/dovecot/ssl-key.pem
 ```
 
-:::link
+:::note
 Voir la documentation : <https://doc.dovecot.org/main/core/config/quick.html>
 :::
 
@@ -326,7 +326,7 @@ protocol lmtp {
 }
 ```
 
-:::link
+:::note
 Voir la documentation : <https://doc.dovecot.org/main/core/plugins/sieve.html#sieve-plugin-sieve>
 :::
 
@@ -356,7 +356,7 @@ vacation
   "Je répondrai à votre message dès mon retour.";
 ```
 
-:::link
+:::note
 Voir la documentation : <https://doc.dovecot.org/main/core/config/sieve/extensions/vacation.html#sieve-vacation-extension>
 :::
 

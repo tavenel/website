@@ -444,7 +444,7 @@ Permet d'exécuter facilement un modèle d'IA.
 docker model run …
 ```
 
-:::link
+:::note
 Voir :
 
 - la documentation : <https://docs.docker.com/ai/model-runner/>
@@ -466,7 +466,7 @@ Démarrer la passerelle (point d'accès unique pour le client) :
 docker mcp gateway run
 ```
 
-:::link
+:::note
 Voir :
 
 - la documentation : <https://docs.docker.com/ai/mcp-catalog-and-toolkit/>
@@ -478,7 +478,7 @@ Voir :
 
 Permet de builder et d'exécuter les conteneurs dans le Cloud.
 
-:::link
+:::note
 Voir la documentation : <https://docs.docker.com/offload/>
 :::
 
@@ -499,7 +499,7 @@ docker run --rm --gpus all hello-world
 
 ## Liens
 
-:::link
+:::note
 Voir aussi :
 
 - <https://spacelift.io/blog/docker-commands-cheat-sheet>
@@ -532,7 +532,7 @@ Voir aussi :
   - Préférer définir uniquement des arguments par défaut et définir la commande dans l'entrypoint (évite de remplacer le processus par un `docker run …`)
 - `HEALTHCHECK` permet d'exécuter une commande dans le conteneur pour vérifier son état : [doc](https://docs.docker.com/reference/dockerfile/#healthcheck). Par exemple : `HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1`
 
-:::link
+:::note
 
 - [Lien : vidéo CMD vs ENTRYPOINT mais c'est quoi la différence ?](https://www.youtube.com/watch?v=kfyDu5R4VrM)
 - D'autres technologies de construction d'images existent : voir la page <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/introduction/>
@@ -617,7 +617,7 @@ build
 - Fonctionnalités avancées comme le support des builds multi-plateformes et des caches de builds distribués.
 - Meilleure sécurité avec des fonctionnalités comme le build *rootless* (sans accès root).
 
-:::link
+:::note
 Pour plus d'information, voir les liens suivants :
 
 - <https://blog.stephane-robert.info/docs/conteneurs/images-conteneurs/build/buildkit/>
@@ -749,7 +749,7 @@ docker compose config
 docker compose watch
 ```
 
-:::link
+:::note
 
 - Voir la documentation : <https://docs.docker.com/compose/how-tos/file-watch/>
 - Pour un exemple, voir : <https://github.com/dockersamples/avatars>
@@ -771,7 +771,7 @@ docker compose watch
 
 Champ `models:` : permet de lancer des modèles d'IA depuis Docker Compose (très similaire aux `services:`).
 
-:::link
+:::note
 Voir la documentation : <https://docs.docker.com/ai/compose/models-and-compose/>
 :::
 
@@ -781,7 +781,7 @@ Voir la documentation : <https://docs.docker.com/ai/compose/models-and-compose/>
 docker compose bridge convert
 ```
 
-:::link
+:::note
 Voir : <https://docs.docker.com/compose/bridge/usage/>
 :::
 

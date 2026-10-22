@@ -682,7 +682,7 @@ Exemples d'utilisations :
 - Provisioning automatique d'infrastructure de test
 - Provisioning automatique de production Cloud (blue/green)
 
-:::link
+:::note
 Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cours#workflows-git-travailler-en-quipe)
 :::
 

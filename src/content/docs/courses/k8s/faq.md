@@ -33,7 +33,7 @@ Avec des latences plus longues, la configuration par défaut d'etcd peut entraî
 
 ### Liens etcd
 
-:::link
+:::note
 Voir aussi la documentation officielle _etcd_, notamment : 
 - la FAQ (source des explications ci-dessus) : <https://etcd.io/docs/latest/faq/>
 - les problèmes courants : <https://etcd.io/docs/latest/learning/design-learner/>

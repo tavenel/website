@@ -9,7 +9,7 @@ sidebar:
   order: 116
 description: TP Intégration de Git dans l'IDE VsCode
 ---
-:::link
+:::note
 Utiliser la documentation suivante pour apprendre à intégrer `git` directement dans l'IDE `VsCode` : <https://code.visualstudio.com/docs/sourcecontrol/overview>
 :::
 
@@ -33,6 +33,6 @@ Comment VsCode fait-il pour afficher chaque modification faite dans un fichier ?
 
 :::
 
-:::link
+:::note
 VsCode est architecturé pour s'intégrer finement avec GitHub. Pour profiter des fonctions avancées de GitHub (`codespace`, ...), voir la documentation suivante : <https://code.visualstudio.com/docs/sourcecontrol/intro-to-git>
 :::

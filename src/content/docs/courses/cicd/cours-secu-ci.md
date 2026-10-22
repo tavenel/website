@@ -96,6 +96,6 @@ La compromission initiale est survenue à cause d'une mauvaise configuration des
 
 ---
 
-:::link
+:::note
 Pour plus d'information, voir aussi cette présentation : <http://conferences.gioria.org/presentations/2026/snowcamp2026/>
 :::

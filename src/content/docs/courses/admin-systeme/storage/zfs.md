@@ -191,6 +191,6 @@ Différence majeure avec RAID matériel : ZFS reconstruit uniquement les blocs r
 
 ---
 
-:::link
+:::note
 Voir aussi : <https://forum.proxmox.com/threads/performance-comparison-between-zfs-and-lvm.124295/>
 :::

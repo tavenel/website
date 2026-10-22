@@ -7,7 +7,7 @@ description: Cheatsheet Kubernetes®
 ---
 # Cheatsheet Kubernetes
 
-:::link
+:::note
 
 - Description des API k8s et schemas : <https://kubespec.dev/>
 - Voir aussi : [kubectl de A à Z (Stéphane Robert)](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kubectl/)
@@ -119,7 +119,7 @@ source <(kubectl completion zsh)
 source <(helm completion zsh)
 ```
 
-:::link
+:::note
 [Exemple de configuration des lignes de commandes : kubectl, helm, …](https://git.sr.ht/~toma/dotfiles/tree/main/item/.config/zsh/k8s.sh)
 :::
 
@@ -164,7 +164,7 @@ kubeadm init \
   --config # fichier de config YAML pour kubeadm
 ```
 
-:::link
+:::note
 Voir aussi : <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#considerations-about-apiserver-advertise-address-and-controlplaneendpoint>
 :::
 
@@ -210,7 +210,7 @@ Il existe **trois effets de taints** dans Kubernetes :
 - `PreferNoSchedule` : règle **souple** ; le scheduler **évite autant que possible** le nœud, mais peut quand même y placer un pod s'il n'y a pas de meilleure option.
 - `NoExecute` : **pas de scheduling** et en plus les **pods existants sont expulsés** du nœud s'ils ne possèdent pas la _toleration_ adéquate (éventuellement avec un délai `tolerationSeconds`).
 
-:::link
+:::note
 Voir la partie _toleration_ de la section _Pod_.
 :::
 
@@ -739,7 +739,7 @@ kubectl debug MON_POD -it --image=busybox --target=MON_CONTENEUR_DANS_LE_POD --p
 Lorsqu'un _debug container_ vise un conteneur spécifique du Pod (`--target=…`) les processus affichés par `ps` sont les mêmes que le conteneur cible. Notamment, le système de fichiers du conteneur cible est accessible sous : `/proc/1/root`
 :::
 
-:::link
+:::note
 Voir aussi :
 
 - La documentation : <https://kubernetes.io/docs/reference/kubectl/generated/kubectl_debug/#examples>
@@ -1008,7 +1008,7 @@ spec:
 
 Pour un `podAffinity`, le champ `topologyKey` spécifie la "topologie" sur laquelle vous voulez appliquer l'affinité. Ici, `kubernetes.io/hostname` signifie que les pods doivent être planifiés sur le même nœud (identifié par le nom d'hôte). Autres exemples : `topology.kubernetes.io/zone` pour contraindre les pods à être répartis sur plusieurs zones de disponibilité (si le cluster est multi-zone, comme dans les environnements cloud) ou `topology.kubernetes.io/region` pour répartir les pods dans différentes régions géographiques (pour les clusters multi-régions).
 
-:::link
+:::note
 Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/affinity-toleration-taint/>
 :::
 
@@ -1415,7 +1415,7 @@ spec:
 L'utilisation de `VolumeSnapshot` et `VolumeSnapshotClass` requiert l'installation de CRDs (souvent automatique avec l'ajout d'une `StorageClass` depuis un _CSI_).
 :::
 
-:::link
+:::note
 
 - Voir aussi la documentation officielle : <https://kubernetes.io/docs/concepts/storage/volume-snapshots/> et <https://kubernetes.io/docs/concepts/storage/volume-snapshot-classes/>
 - Voir un tutoriel pour les snapshots de volumes persistants avec Rook : <https://une-tasse-de.cafe/expresso/snapshot-class/>
@@ -1519,7 +1519,7 @@ Avec DRA :
 - Kubernetes dialogue avec un **Resource Driver**
 - Les devices sont alloués **dynamiquement par Pod**
 
-:::link
+:::note
 Voir aussi :  <https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/>
 :::
 
@@ -1707,7 +1707,7 @@ $ ping my-external-name-service
 helm install traefik traefik --namespace=traefik --create-namespace --repo https://traefik.github.io/charts
 ```
 
-:::link
+:::note
 Pour un mini exemple d'applications Go utilisant un Ingress, voir le dépôt : <https://git.sr.ht/~toma/iac/tree/main/item/k8s/examples/ingress/README.md>
 :::
 
@@ -1715,7 +1715,7 @@ Pour un mini exemple d'applications Go utilisant un Ingress, voir le dépôt : <
 L'ingress Nginx (autrefois populaire) est déprécié mais il est possible d'utiliser la même configuration avec Traefik : <https://doc.traefik.io/traefik/reference/routing-configuration/kubernetes/ingress-nginx/>
 :::
 
-:::link
+:::note
 Voir aussi :
 
 - <https://github.com/traefik/traefik-helm-chart/blob/master/EXAMPLES.md>
@@ -1865,7 +1865,7 @@ helm install cert-manager jetstack/cert-manager \
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
 ```
 
-:::link
+:::note
 
 - Tutoriel : <https://cert-manager.io/docs/tutorials/acme/nginx-ingress/>
 - Débug : <https://cert-manager.io/docs/troubleshooting/>
@@ -2136,7 +2136,7 @@ spec:
           restartPolicy: OnFailure
 ```
 
-:::link
+:::note
 Voir aussi _Kueue_, une solution plus poussée que les `Job` / `CronJob` de Kubernetes : <https://kueue.sigs.k8s.io/>
 :::
 
@@ -2300,7 +2300,7 @@ spec:
 Le _StatefulSet_ est assez proche dans la configuration d'un _Deployment_ : voir celui-ci pour les paramètres.
 :::
 
-:::link
+:::note
 Voir aussi : [Kubernetes Headaches: Unsticking StatefulSets from EBS ReadWriteMany Drama](https://medium.com/@sqanafrica/kubernetes-headaches-unsticking-statefulsets-from-ebs-readwritemany-drama-e603facba912)
 :::
 
@@ -2308,7 +2308,7 @@ Voir aussi : [Kubernetes Headaches: Unsticking StatefulSets from EBS ReadWriteMa
 
 Permet de contrôler le trafic réseau entrant (`Ingress`) ou sortant (`Egress`) entre les pods.
 
-:::link
+:::note
 Pour des exemples, voir : <https://github.com/ahmetb/kubernetes-network-policy-recipes>
 :::
 
@@ -2468,7 +2468,7 @@ spec:
       seLinuxOptions: {...}
 ```
 
-:::link
+:::note
 Voir aussi : <https://learnkube.com/security-contexts>
 :::
 
@@ -2543,7 +2543,7 @@ spec:
     - expression: "object.spec.replicas <= 5" # expression CEL
 ```
 
-:::link
+:::note
 Pour tester les expressions _CEL_, on pourra utiliser le playground : <https://playcel.undistro.io/>
 :::
 
@@ -2593,7 +2593,7 @@ kubectl apply -n kube-system -f sealed-secret-key.yaml
 Contrairement aux Secrets Kubernetes classiques, un SealedSecret ne peut pas être modifié directement dans le cluster. Toute modification requiert un chiffrement avec kubeseal avant d'être appliquée. Attention : Si une application utilise ce secret, elle ne recevra pas immédiatement la nouvelle valeur.
 :::
 
-:::link
+:::note
 Pour plus d'information, voir : <https://github.com/bitnami-labs/sealed-secrets>
 :::
 
@@ -2705,7 +2705,7 @@ kubectl kustomize path/to/local/kustomization
 kubectl apply -k path/to/local/kustomization
 ```
 
-:::link
+:::note
 Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/kustomize/>
 :::
 

@@ -234,7 +234,7 @@ Les expressions régulières permettent d'aller beaucoup plus loin dans la séle
 - Voir aussi la section sur les filtres dans le TP sur la gestion des flux textes.
 :::
 
-:::link
+:::note
 Pour une introduction aux regex, voir les tutoriels <https://thevaluable.dev/regular-expression-basics-vim-grep/> et <https://thevaluable.dev/vim-regular-expressions-in-depth/>
 :::
 
@@ -262,7 +262,7 @@ Pour une introduction aux regex, voir les tutoriels <https://thevaluable.dev/reg
 8. Trouver les lignes qui en contiennent `too` ou `two`.
 9. Trouver toutes les lignes qui commencent par une lettre majuscule.
 
-:::link
+:::note
 Voir aussi les exercices : https://github.com/learnbyexample/TUI-apps
 :::
 

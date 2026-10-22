@@ -192,7 +192,7 @@ Le choix entre ces deux solutions dépend de vos besoins en termes de performanc
 
 Une façon courante d'installer `Loki` est d'utiliser `Helm` : voir <https://grafana.com/docs/loki/latest/setup/install/helm/install-monolithic/> pour un déploiement de test (utilisant comme stockage le filesystem, un mode scalable requiert du stockage S3).
 
-:::link
+:::note
 Pour tester Loki facilement, on pourra s'inspirer de : <https://linuxblog.xyz/posts/grafana-loki/>
 :::
 

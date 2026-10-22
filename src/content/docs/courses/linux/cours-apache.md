@@ -8,7 +8,7 @@ description: Apache
 ---
 _Apache_ (ou _httpd_) est l'un des serveurs web les plus utilisés au monde. Il est libre, open-source, robuste, extensible, et largement supporté sur les systèmes Unix/Linux.
 
-:::link
+:::note
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [Basic Apache Configuration](https://lpic2book.github.io/src/lpic2.208.1/)
@@ -64,7 +64,7 @@ a2ensite exemple.conf && systemctl reload apache2
 ```
 :::
 
-:::link
+:::note
 Voir la documentation : <https://httpd.apache.org/docs/2.4/vhosts/examples.html>
 :::
 
@@ -88,7 +88,7 @@ htpasswd -c /etc/apache2/.htpasswd alice
 Nécessite `AllowOverride AuthConfig` dans la configuration du `<Directory>`.
 :::
 
-:::link
+:::note
 Voir la documentation : <https://httpd.apache.org/docs/current/howto/htaccess.html>
 :::
 
@@ -134,7 +134,7 @@ Ajout dans `apache2.conf` ou dans un hôte virtuel :
 </IfModule>
 ```
 
-:::link
+:::note
 Voir la documentation : <https://httpd.apache.org/docs/2.4/mod/prefork.html>
 :::
 
@@ -156,7 +156,7 @@ Voir la documentation : <https://httpd.apache.org/docs/2.4/mod/prefork.html>
 Require host .exemple.com
 ```
 
-:::link
+:::note
 Voir la documentation :
 
 - <https://httpd.apache.org/docs/2.4/howto/access.html>
@@ -180,7 +180,7 @@ RewriteEngine On
 RewriteRule ^ancien$ /nouveau [R=301,L]
 ```
 
-:::link
+:::note
 Voir la documentation :
 
 - <https://httpd.apache.org/docs/2.4/rewrite/remapping.html>
@@ -258,7 +258,7 @@ ServerTokens ProductOnly
 ServerSignature Off
 ```
 
-:::link
+:::note
 Voir la documentation :
 
 - <https://httpd.apache.org/docs/current/mod/mod_ssl.html>
@@ -338,7 +338,7 @@ Header set Content-Security-Policy "default-src 'self';"
 </FilesMatch>
 ```
 
-:::link
+:::note
 Pour plus d'information, voir aussi : <https://infosecwriteups.com/strengthening-web-service-security-with-apache2-best-practices-for-2025-32cb57eb7fd2>
 :::
 

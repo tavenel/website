@@ -390,7 +390,7 @@ aa-logprof # Génération automatique de profil depuis les logs
 
 ## 📚 Ressources
 
-:::link
+:::note
 
 - Voir le [TP sur SSH et GPG](/linux/tp-ssh-gpg)
 - Voir le [TP sur la sécurité d'un système Linux](/linux/tp-security)

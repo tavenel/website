@@ -49,7 +49,7 @@ Réaliser l'installation du cluster Kubernetes :
 Attention, on demande bien d'installer un cluster **production-ready** !
 :::
 
-:::link
+:::note
 - Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
 - Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
 - Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 

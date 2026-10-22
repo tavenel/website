@@ -177,7 +177,7 @@ On pourra utiliser plusieurs profils (_pipelines_) d'intégration suivant les ch
 
 Les pipelines d'intégration continue sont fortement liés aux workflows de gestion du code source qui conditionnent les process de développement.
 
-:::link
+:::note
 Voir le [cours sur le gestionnaire de versions Git](/git/).
 :::
 
@@ -392,7 +392,7 @@ En pratique, on ajoute souvent une étape de validation manuelle avant le déplo
 - Configuration des **différents environnements** : utiliser des **fichiers / répertoires** dédiés (~pas de branches Git par environnement~)
 - Valeurs **par défaut** : **production** (évite d'envoyer des conf de dev en prod)
 
-:::link
+:::note
 
 - <https://dev.to/codefreshio/how-to-model-your-gitops-environments-and-promote-releases-between-them-1p6i>
 - <https://developers.redhat.com/articles/2022/07/20/git-workflows-best-practices-gitops-deployments>

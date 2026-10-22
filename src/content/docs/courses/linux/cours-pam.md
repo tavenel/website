@@ -22,7 +22,7 @@ auth required pam_unix.so
 account required pam_unix.so
 ```
 
-:::link
+:::note
 Pour plus d'information, voir :
 
 - Le document de la formation LPIC-2 : [PAM authentication](https://lpic2book.github.io/src/lpic2.210.2/)

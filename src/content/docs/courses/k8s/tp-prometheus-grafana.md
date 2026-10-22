@@ -12,7 +12,7 @@ description: Monitoring Kubernetes avec Prometheus et Grafana
 
 Le monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des métriques et `Grafana` pour leur visualisation est une solution courante pour collecter, stocker et visualiser les métriques du cluster, des pods et des applications. Voici un exemple pour mettre en place cette infrastructure de monitoring.
 
-:::link
+:::note
 Une installation courante de _Prometheus_ et _Grafana_ est réalisée via le packager _Helm_ en utilisant la _chart_ `kube-prometheus-stack` : c'est celle que nous utiliserons. Pour plus d'information, voir [le README](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md)
 :::
 
@@ -158,7 +158,7 @@ Par exemple, utilisez l'ID :
 10. `20842` pour monitorer les certificats de _cert-manager_.
 11. `15282` pour un cluster _k3s_.
 
-:::link
+:::note
 Voir aussi les dashboards de la `kube-prometheus-stack` : <https://github.com/dotdc/grafana-dashboards-kubernetes>
 :::
 

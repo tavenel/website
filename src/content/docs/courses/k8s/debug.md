@@ -31,7 +31,7 @@ kubectl exec -it pod -- /bin/sh
 kubectl debug -it pod --image=paulbouwer/hello-kubernetes:1.8
 ```
 
-:::link
+:::note
 Voir [la cheatsheet](/k8s/cheatsheet#debug)
 :::
 
@@ -151,7 +151,7 @@ kubectl run -it --rm debug --image=busybox -- sh
 
 ---
 
-:::link
+:::note
 
 - Voir la cheatsheet pour les commandes de diagnostic.
 - Voir les liens de cours pour des exemples d'images de conteneurs utiles pour le debug.

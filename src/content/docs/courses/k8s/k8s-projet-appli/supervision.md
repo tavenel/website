@@ -16,6 +16,6 @@ Le monitoring d'un cluster `Kubernetes` avec `Prometheus` pour la collecte des m
 
 :::
 
-:::link
+:::note
 Se référer au TP sur Prometheus et Grafana : <https://www.avenel.pro/k8s/tp-prometheus-grafana>
 :::

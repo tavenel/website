@@ -60,7 +60,7 @@ La commande `sysctl` est utilisée pour consulter et modifier les paramètres st
 
 Les modifications apportées à l'aide de `sysctl` sont généralement temporaires et ne sont pas persistantes après le redémarrage du système, sauf si vous configurez explicitement les fichiers de configuration appropriés pour les paramètres du noyau.
 
-:::link
+:::note
 _Sysctl_ comporte de nombreuses options. Pour simplifier son utilisation et obtenir de l'aide sur les configurations on pourra utiliser <https://github.com/orhun/systeroid>
 :::
 

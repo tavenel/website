@@ -17,7 +17,7 @@ description: Serveur de nom de domaine - DNS
 Les anciennes versions de bind utilisent plutôt `/etc/named.conf` et `/var/named`.
 :::
 
-:::link
+:::note
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - []()
@@ -553,7 +553,7 @@ DNSSEC et TSIG sont **complémentaires** et souvent utilisés ensemble :
 
 ## 🔗 Liens
 
-:::link
+:::note
 Pour plus d'information, voir le document de la formation LPIC-2 :
 
 - [Basic DNS server configuration](https://lpic2book.github.io/src/lpic2.207.1/)

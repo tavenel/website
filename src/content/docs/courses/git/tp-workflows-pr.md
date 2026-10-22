@@ -46,7 +46,7 @@ Par exemple, il est possible de réaliser des revues de code avant d'intégrer u
 
 Reprendre le premier exemple en utilisant _GitHub_ ou un autre service Cloud d'hébergement de code source (_Gitlab_, …). Au moment de fusionner la branche de fonctionnalités dans le tronc commun, créer une `pull-request` préparant cette opération de fusion. Le 2e développeur aura alors la responsabilité de relire le code modifié et de proposer des changements. Intégrer ensuite la branche de fonctionnalités en acceptant la pull-request.
 
-:::link
+:::note
 Pour plus d'information sur la revue de code, voir la documentation de _GitHub_ : <https://github.com/features/code-review> et celle de _Gitlab_ : <https://docs.gitlab.com/development/code_review/>.
 :::
 

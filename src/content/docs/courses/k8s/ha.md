@@ -30,7 +30,7 @@ description: Haute Disponibilité d'un Cluster Kubernetes
   - H/A API endpoint dans un cluster managé, virtual IP Cloud, tunnel _Node_ <-> _API Server_ (`k3s`), …
 - Dans de rares cas (par exemple _k3s_), il est possible de passer d'un cluster mono control-plane à un cluster H/A à tout moment.
 
-:::link
+:::note
 Voir aussi :
 
 - <https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/>
