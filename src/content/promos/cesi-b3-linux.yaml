@@ -1,0 +1,40 @@
+title: "Linux administration avancée"
+slug: cesi/b3/linux
+objectives:
+  - "Concevoir et administrer une architecture système basée sur les technologies Linux, répondant aux besoins des entreprises"
+  - "Installer, administrer et faire évoluer une distribution en autonomie."
+  - "Décrire comment paramétrer finement le système"
+  - "Justifier l'intégration de Linux avec l'existant dans l'entreprise"
+details:
+  - "Prérequis : bases de Linux"
+  - "Module de 3 journées (21H)"
+  - "Jour 1 : Administration avancée et tâches de maintenance en CLI : Boot-loader Gub, séquences de boot, crash recovery, gestion des paquetages sous RedHat/Fedora et sous Debian/Ubuntu"
+  - "Jour 2 : Configuration avancée des services réseaux et mse en place de VPN"
+  - "Jour 3 : Virtualisation et continuité de service, chiffrement et sécurisation des données (SSH, Firewall, monitoring réseau), PAM et Sudo, backup et recovery"
+next:
+  - linux
+chapters:
+  - linux/tp-installation-vbox-fedora-workstation
+  - linux/tp-installation-vbox-ubuntu-workstation
+  - linux/tp-installation-vbox-debian-server
+#  - https://www.eugenetoons.fr/installer-un-serveur-ubuntu-sous-virtualbox/ # TODO
+  - courses/linux/cours-linux-hardware
+  - courses/linux/cours-linux-install
+  - courses/linux/cours-linux-disks
+  - courses/linux/cours-linux-network
+  - courses/linux/cours-linux-security
+  - courses/linux/cours-linux-pam
+  - courses/linux/cours-linux-vpn
+  - courses/linux/cours-linux-backup
+  - courses/linux/cours-linux-debug
+  - linux/tp-grub
+  - linux/tp-rescue
+  - linux/tp-rpm-apt
+  - linux/tp-network
+  - linux/tp-vpn
+  - linux/tp-ssh-gpg
+  - linux/tp-security
+  - linux/tp-backup
+  - linux/tp-nfs
+  - linux/tp-iscsi
+  - linux/projet-netfilter-nftables
