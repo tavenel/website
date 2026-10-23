@@ -1,9 +1,6 @@
-cesi-m1-dashboard
 epsi-b3-indus-tests.yaml
 epsi-b3-ci.yaml
-epsi/i2/cdc"><Icon name="journals" /> Cahier des charges techniques et fonctionnelles</a></li>
 epsi/i2/agile"><Icon name="agile" /> Méthodes agiles : les fondamentaux</a></li>
-epsi/i2/iac"><Icon name="terraform" /> Infrastructure-as-Code avancée et Policy-as-Code</a></li>
 esgi-b2 => docker / gestion-projet / git-github
 esgi/b3/linux-admin"><Icon name="linux" /> Linux administration avancée</a></li>
 esgi/b3/devops"><Icon name="infinity" /> Fondamentaux DevOps</a></li>
@@ -19,8 +16,6 @@ epsi-wis3-scrum.yaml
 epsi-b3-docker / python / django / scrum
 epsi/i2/openfaas"><Icon name="lambda" /> OpenFaaS</a></li>
 epsi/i2/packer"><Icon name="hashicorp-packer" /> Packer</a></li>
-epsi/i2/distanciel"><Icon name="people" /> Partage d'informations et collaboration à distance</a></li>
-epsi/i2/multiculturel"><Icon name="globe-americas" /> Manager une équipe multiculturelle</a></li>
 esgi/b3/docker"><Icon name="docker" /> Docker avancé (Filières IW & AL)</a></li>
 esgi/b3/git-admin"><Icon name="git" /> Versioning Git pour l'administrateur (Filière SRC)</a></li>
 esgi/b3/lpic-1"><Icon name="linux" /> Linux administration avancée LPIC-1 (Filières SRC & SI)</a></li>
