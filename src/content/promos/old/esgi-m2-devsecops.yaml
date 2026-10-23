@@ -1,0 +1,31 @@
+title: "Cours DevSecOps"
+slug: "esgi/m2/devsecops_old"
+objectives:
+  - "Automatiser le déploiement et la gestion des applications conteneurisées"
+  - "Utiliser des outils d'orchestration pour automatiser le déploiement, la mise à l'échelle et la gestion des applications sur des clusters de conteneurs."
+details:
+  - "Prérequis : connaissances de base de Kubernetes et des principes d'orchestration de conteneurs"
+  - "Module de 12H"
+  - "Évaluation : Projet"
+next:
+  - devops/
+  - ci/
+  - docker/
+  - k8s/
+chapters:
+  - devops/cours
+  - cicd/cours-intro-ci
+  - git/workflows-cours
+  - cicd/cours-outils-ci
+  - cicd/modeles-cd-cours
+  - k8s/cicd
+  - k8s/tools
+  - argocd/cours
+  - cloud/secu
+  - cicd/cours-secu-ci
+  - k8s/tp-helm
+  - k8s/projet-cicd/context-app-existante
+  - k8s/projet-cicd/cicd
+  - k8s/projet-cicd/argocd
+  - k8s/projet-cicd/flagger
+  - k8s/projet-cicd/kyverno

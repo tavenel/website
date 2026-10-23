@@ -1,0 +1,14 @@
+title: "Infrastructure-as-Code avancée et Policy-as-Code"
+slug: "epsi/i2/iac"
+objectives:
+  - "Être capable de mettre en oeuvre les connaissances acquises dans le module précédent pour déployer une infrastructure à haute disponibilité via Terraform et Ansible"
+  - "Créer le projet Terraform pour déployer nos machines virtuelles dans un cluster de virtualisation ou dans le cloud."
+  - "Créer le playbook Ansible pour déployer les utilisateurs, applicatifs, éléments de configuration voulus (ssh, iptables, applicatifs) sur les VMs précédemment créées"
+details:
+  - "Prérequis : Connaissances de base de Kubernetes et des principes d'orchestration de conteneurs et maîtrise de Git"
+  - "Module de 14H"
+  - "Évaluation par projet"
+next:
+  - devops
+chapters:
+  - devops/projet-iac

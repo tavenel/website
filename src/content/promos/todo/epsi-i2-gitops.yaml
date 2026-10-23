@@ -1,6 +1,0 @@
-title: "Cours Gitops"
-slug: "epsi/i2/gitops"
-chapters:
-  - cicd/modeles-cd-cours
-  - k8s/cicd
-  - argocd/cours

@@ -1,0 +1,30 @@
+title: "Cours Gitops et automatisation avancée"
+slug: "epsi/i2/gitops"
+objectives:
+  - "expliquer les principes fondamentaux du GitOps ;"
+  - "distinguer approche impérative et approche déclarative ;"
+  - "expliquer le rôle de Git comme source de vérité ;"
+  - "expliquer le fonctionnement de la réconciliation ;"
+  - "installer Argo CD sur un cluster Kubernetes ;"
+  - "déployer une application Kubernetes depuis Git et Argo CD."
+details:
+  - "Ce module introduit les principes du GitOps et leur mise en œuvre avec Argo CD sur Kubernetes."
+  - "L'objectif est de comprendre comment un dépôt Git peut devenir la source de vérité d'un environnement Kubernetes et comment Argo CD assure la réconciliation entre l'état souhaité et l'état réel du cluster."
+  - "Prérequis : Connaissances de base de Kubernetes et des principes d'orchestration de conteneurs et maîtrise de Git"
+  - "Module de 12H"
+  - "Évaluation par projet"
+next:
+  - devops
+  - ci
+  - docker
+  - k8s
+chapters:
+  - cicd/modeles-cd-cours
+  - k8s/k8s-cours-cicd
+  - devops/argocd-cours
+  - k8s/projet-cicd/projet-k8s-cicd-context-app-existante
+  - k8s/projet-cicd/projet-k8s-cicd-argocd
+  - k8s/projet-cicd/projet-k8s-cicd-cicd
+  - k8s/projet-cicd/projet-k8s-cicd-flagger
+  - k8s/projet-cicd/projet-k8s-cicd-kyverno
+

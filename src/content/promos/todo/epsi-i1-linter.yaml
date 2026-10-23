@@ -1,7 +1,0 @@
-title: "Analyse de code et maintenabilité"
-slug: "epsi/i1/linter"
-chapters:
-  - archi/maintenabilite
-  - cicd/cours-outils-ci
-  - archi/clean-code
-  - tests/ecrire-code-testable-cours
