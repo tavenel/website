@@ -11,4 +11,4 @@ details:
 next:
   - devops
 chapters:
-  - devops/projet-iac
+  - devops/iac/tp-packer-ansible-terraform
