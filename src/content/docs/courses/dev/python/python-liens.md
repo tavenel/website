@@ -1,17 +1,13 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: 󰌠  Python
+title: 󰌠  Python - liens utiles d'exercices
 tags:
-- python
+  - python
 type: cours
 sidebar:
-  order: 1
-description: Cours sur le langage Python
+  order: 2
+description: Liens utiles d'exercices Python
 ---
-
-# 󰌠  Python
-
-## 💻 Liens utiles d'exercices
 
 - [Exercices de niveau 1](https://supports.uptime-formation.fr/03-python/partie-1/exos-1/)
 - <https://www.codedex.io/python> Jeux Python

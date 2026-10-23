@@ -1,20 +1,16 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Green IT
+title: Green IT - Liens utiles
 tags:
-- greenit
-- rse
+  - greenit
+  - rse
 type: cours
 sidebar:
   order: 1
-description: Informatique responsable GreenIT
+description: Liens utiles informatique responsable GreenIT
 ---
 
-# 💚 Green IT
-
-![](@assets/undraw/undraw_eco-conscious_oqny.svg)
-
-## 🔗 Liens utiles
+## Liens utiles
 
 - 1er quizz d'introduction : <https://quizanthropocene.fr/quiz/fresque-du-numerique>
 - 2ème quizz d'introduction : <https://quizanthropocene.fr/quiz/le-numerique-est-il-ecologique>
