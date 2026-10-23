@@ -3,9 +3,10 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Technologies de Réseau Virtuel
 type: cours
 sidebar:
-  order: 1
+  order: 2
 description: Technologies de Réseau Virtuel
 ---
+
 ## Rappels : NAT, PAT, Bridge
 
 Voir les liens :
@@ -98,7 +99,7 @@ Voir aussi :
 
 - 🧐📊 Surveillance et Observabilité : **Tracing** (appels système, événements réseau, …), **Profiling**
 - 🔒🛡️ Sécurité : **Détection d'intrusion** (comportements suspects, tentatives d'intrusion en temps réel), **Contrôle d'accès**
-- 🌐🛠️ Réseau  : **Filtrage de paquets** en fonction de règles complexes (flexible et performant), **Routage et NAT** directement dans le noyau 🔁
+- 🌐🛠️ Réseau : **Filtrage de paquets** en fonction de règles complexes (flexible et performant), **Routage et NAT** directement dans le noyau 🔁
 - ⚙️⚡ Optimisation des Performances : **Surveillance** et contrôle de l'utilisation des ressources système, **optimisation** mémoire, CPU, I/O 📊🧮
 
 ### Outils et Projets Basés sur eBPF 🛠️📦
@@ -113,16 +114,16 @@ Voir aussi :
 La `ServiceHashMap` (informations de routage) eBPF de Cilium joue le rôle de Load Balancer. Le `Service IP` est l'IP publique (virtuelle) du service. Les "Endpoint IP" sont les IPs des conteneurs des Pods.
 
 | Service IP | Port | Service ID | Endpoint ID | Endpoint IP | Port |
-|------------|------|------------|-------------|-------------|------|
-|  1.2.3.4   | 8080 |      1     |      4      |   4.3.2.1   | 8080 |
-|  1.2.3.4   | 8080 |      1     |      5      |   4.3.2.2   | 8080 |
+| ---------- | ---- | ---------- | ----------- | ----------- | ---- |
+| 1.2.3.4    | 8080 | 1          | 4           | 4.3.2.1     | 8080 |
+| 1.2.3.4    | 8080 | 1          | 5           | 4.3.2.2     | 8080 |
 
 Exemple de `ConnTrackMap` (tracking des connexions) :
 
-| Service IP | Source Port | Destination IP | Destination Port | Type | EndpointID | Service ID |
-|------------|-------------|----------------|------------------|------|------------|------------|
-|  4.3.2.3   | 80          |     1.2.3.4    |      8080        | SVC  |      4     |     X      |
-|  4.3.2.3   | 80          |     4.3.2.1    |      8080        | Egress  |      X     |     1      |
+| Service IP | Source Port | Destination IP | Destination Port | Type   | EndpointID | Service ID |
+| ---------- | ----------- | -------------- | ---------------- | ------ | ---------- | ---------- |
+| 4.3.2.3    | 80          | 1.2.3.4        | 8080             | SVC    | 4          | X          |
+| 4.3.2.3    | 80          | 4.3.2.1        | 8080             | Egress | X          | 1          |
 
 :::note
 Voir : <https://medium.com/@rickijen/how-to-use-ebpf-to-capture-traffic-over-cilium-vtep-integration-fcb70cef0fc1>
@@ -154,18 +155,18 @@ Voir aussi : <https://une-tasse-de.cafe/blog/bgp-kubernetes/>
 
 ## Comparaison 📊
 
-| Critère          | VLAN                          | VXLAN                        | BGP                          | IPinIP                       | eBPF                         |
-|-----------------------|-----------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------------|
-| **Couche OSI**        | Couche 2 (Liaison de données)      | Couche 2 et 3                    | Couche 3 (Réseau)                | Couche 3 (Réseau)                | Couche 3 (Réseau)                |
-| **Scalabilité**       | Limité à 4096 VLANs                | Jusqu'à 16 millions de segments  | Très élevée                      | Moyenne                          | Très élevée                      |
-| **Flexibilité**       | Moyenne                            | Élevée                           | Élevée                           | Élevée                           | Très élevée                      |
-| **Complexité**        | Moyenne                            | Élevée                           | Très élevée                      | Faible                           | Élevée                           |
-| **Utilisation**       | Segmentation de réseaux locaux     | Réseaux virtuels extensibles     | Routage inter-AS sur Internet    | Tunnels virtuels sur réseaux IP  | Surveillance, sécurité, réseau, optimisation des performances |
-| **Sécurité**          | Isolation des segments             | Isolation des segments           | Politiques de routage complexes  | Nécessite des mécanismes supplémentaires | Vérification rigoureuse des programmes |
-| **Performance**       | Bonne                              | Potentielle latence supplémentaire| Bonne                            | Overhead supplémentaire          | Très haute                       |
-| **Compatibilité**     | Réseaux Ethernet                   | Réseaux IP                      | Réseaux IP                       | Réseaux IP                      | Noyau Linux                      |
-| **Intégration**       | Commutateurs et routeurs           | Commutateurs et routeurs         | Routeurs                          | Routeurs                         | Outils de surveillance et sécurité |
-| **Résilience**        | Moyenne                            | Élevée                           | Très élevée                      | Moyenne                          | Très élevée                      |
+| Critère           | VLAN                           | VXLAN                              | BGP                             | IPinIP                                   | eBPF                                                          |
+| ----------------- | ------------------------------ | ---------------------------------- | ------------------------------- | ---------------------------------------- | ------------------------------------------------------------- |
+| **Couche OSI**    | Couche 2 (Liaison de données)  | Couche 2 et 3                      | Couche 3 (Réseau)               | Couche 3 (Réseau)                        | Couche 3 (Réseau)                                             |
+| **Scalabilité**   | Limité à 4096 VLANs            | Jusqu'à 16 millions de segments    | Très élevée                     | Moyenne                                  | Très élevée                                                   |
+| **Flexibilité**   | Moyenne                        | Élevée                             | Élevée                          | Élevée                                   | Très élevée                                                   |
+| **Complexité**    | Moyenne                        | Élevée                             | Très élevée                     | Faible                                   | Élevée                                                        |
+| **Utilisation**   | Segmentation de réseaux locaux | Réseaux virtuels extensibles       | Routage inter-AS sur Internet   | Tunnels virtuels sur réseaux IP          | Surveillance, sécurité, réseau, optimisation des performances |
+| **Sécurité**      | Isolation des segments         | Isolation des segments             | Politiques de routage complexes | Nécessite des mécanismes supplémentaires | Vérification rigoureuse des programmes                        |
+| **Performance**   | Bonne                          | Potentielle latence supplémentaire | Bonne                           | Overhead supplémentaire                  | Très haute                                                    |
+| **Compatibilité** | Réseaux Ethernet               | Réseaux IP                         | Réseaux IP                      | Réseaux IP                               | Noyau Linux                                                   |
+| **Intégration**   | Commutateurs et routeurs       | Commutateurs et routeurs           | Routeurs                        | Routeurs                                 | Outils de surveillance et sécurité                            |
+| **Résilience**    | Moyenne                        | Élevée                             | Très élevée                     | Moyenne                                  | Très élevée                                                   |
 
 ---
 
