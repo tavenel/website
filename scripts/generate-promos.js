@@ -98,45 +98,6 @@ function collectTrackSlugs() {
   return slugs;
 }
 
-function createIntermediateIndexes(dir) {
-  // Find child dirs that are track containers (have subdirectories with index.md)
-  const childDirs = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue;
-    childDirs.push(entry.name);
-  }
-  childDirs.sort();
-  for (const name of childDirs) {
-    const childDir = path.join(dir, name);
-    const relPath = childDir.replace(DOCS_DIR + '/', '').replace(DOCS_DIR, '');
-    // If this child already has an index.md, it's a track — skip
-    if (fs.existsSync(path.join(childDir, 'index.md'))) continue;
-    // Check if this child has subdirectories (tracks inside it)
-    const subDirs = fs.readdirSync(childDir, { withFileTypes: true })
-      .filter(e => e.isDirectory())
-      .map(e => e.name)
-      .sort();
-    if (subDirs.length === 0) continue;
-    // Create index.md for this container directory
-    const parentName = name.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-    const links = subDirs.map(sd => {
-      const sdIndex = path.join(childDir, sd, 'index.md');
-      const sdTitle = fs.existsSync(sdIndex)
-        ? (parseFrontmatter(fs.readFileSync(sdIndex, 'utf8')).frontmatter.title || sd)
-        : sd;
-      return `- [${sdTitle}](./${sd}/)`;
-    }).join('\n');
-    const body = `## ${parentName}\n\n${links}\n`;
-    const fm = { title: parentName, type: 'cours', sidebar: { order: 1 } };
-    fs.writeFileSync(path.join(childDir, 'index.md'), serializeFrontmatter(fm) + body, 'utf8');
-    console.log(`  🏠 ${relPath}/index.md (intermediate)`);
-    // Recurse into subdirs
-    for (const sd of subDirs) {
-      createIntermediateIndexes(path.join(childDir, sd));
-    }
-  }
-}
-
 function main() {
   console.log(`\n${DRY_RUN ? '🔍 DRY RUN' : '🚀'} Generating track content files\n`);
   
@@ -220,14 +181,6 @@ function main() {
     console.log(`    index.md`);
     
     totalChapters += track.chapters.length;
-  }
-  
-  // Create intermediate index pages for multi-level slugs
-  if (!DRY_RUN && fs.existsSync(DOCS_DIR)) {
-    const createdBefore = fs.readdirSync(DOCS_DIR, { withFileTypes: true }).filter(e => e.isDirectory()).length;
-    createIntermediateIndexes(DOCS_DIR);
-    const createdAfter = fs.readdirSync(DOCS_DIR, { withFileTypes: true }).filter(e => e.isDirectory()).length;
-    if (createdAfter > 0) console.log(`\nIntermediate indexes: created for ${createdAfter - createdBefore} container directories`);
   }
   
   console.log(`\n${DRY_RUN ? 'DRY RUN' : 'Done.'}`);
