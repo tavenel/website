@@ -47,7 +47,7 @@ L'estimateur de _Kaplan-Meier_ pour un `t` donné vaut alors :
 
 $$\hat{S}(t) = \prod_{i:t{i}\leq t}\left(1 - \frac{d_i}{n_i}\right)$$
 
-C'est-à-dire : $(1 - d(t)/n(t))$ multiplié par toutes les valeurs précédemment calculées de $S(i)$ pour $i < t$.
+C'est-à-dire : `(1 - d(t)/n(t))` multiplié par toutes les valeurs précédemment calculées de `S(i)` pour `i < t`.
 
 1. Calculer tous les $S(t)$ pour $t$ allant de 1 à 100.
 
