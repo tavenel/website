@@ -1,0 +1,20 @@
+title: "Cahier des charges"
+slug: "epsi/i2/cdc"
+objectives:
+  - Lier besoins et projet
+  - Etablir des indicateurs et critères de validation
+  - Identifier et définir des livrables
+  - Concevoir les cahiers des charges techniques et fonctionnels d'un projet de développement S.I à l'aide des besoins utilisateurs collectés afin de cadrer le développement
+details:
+  - "Module de 14H"
+  - "Évaluation par projet"
+next:
+  - gestion-projet
+chapters:
+  - gestion-projet/cdc
+  - gestion-projet/kano
+  - architecture-logicielle/use-case
+  - gestion-projet/exemples-cdc
+  - gestion-projet/exo-pur-beurre
+  - architecture-logicielle/exos-cas-utilisation-cas-sequence
+  - gestion-projet/projet-cdc
