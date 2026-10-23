@@ -1,6 +1,8 @@
 ---
 title: 🐧 LPIC-2
-layout: '@layouts/BaseLayout.astro'
+type: cours
+sidebar:
+  order: 2
 ---
 
 # 🐧 Linux LPIC-2
@@ -147,19 +149,3 @@ Source : <https://wiki.lpi.org/wiki/LPIC-2_Objectives_V4.5(FR)>
 - Explication graphique de commandes Shell complexes : <https://explainshell.com/>
 - [Créer une distribution "Live" (qui reste en mémoire) - tuto complet, reprend les principes de base, du boot à un système minimal](https://zestedesavoir.com/tutoriels/268/creer-son-premier-rim-linux/)
 - [Présentation et comparaison des certifications Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/certifications/)
-
-## 📅 Déroulé du cours
-
-- 3 Modules de 12H
-- Évaluation : QCM et Projet
-
-## 📑 Documents
-
-<!-- [🏆 Module en classe renversée et contenu de la certification LPIC-2](/esgi/m1/lpic-2/classe-renversee) -->
-- [🏆 Contenu de la certification LPIC-2](/linux/lpic-2/contenu)
-- [🤓 Cours Linux pour la certification LPIC-2](/linux/lpic-2/cours)
-- [🏆 Projet LPIC-2 : Mise en place d'une infrastructure système complète sécurisée et supervisée](/linux/lpic-2/projet)
-
-## 🚀 Pour aller plus loin
-
-- Voir les autres ressources du [cours sur Linux](/linux).

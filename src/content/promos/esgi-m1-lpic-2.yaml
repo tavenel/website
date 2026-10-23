@@ -1,0 +1,41 @@
+title: "Linux Administration système et réseau"
+slug: "esgi/m1/linux-src"
+objectives:
+details:
+  - "3 Modules de 12H"
+  - "Évaluation : Projet"
+next:
+  - linux
+chapters:
+  - linux/lpic-2/presentation-lpic-2
+  - linux/lpic-2/contenu-lpic-2
+  - linux/lpic-2/projet-lpic-2
+  - linux/cours-linux-perfs # 200
+  - linux/cours-linux-hardware # 201, 202.1, 202.2, 202.3
+  - linux/cours-linux-kernel # 201
+  - linux/cours-linux-disks # 203.1, 203.2, 203.3, 204.2, 204.3
+  - linux/cours-smart # 203
+  - linux/cours-linux-raid # 204.1
+  - linux/cours-linux-network # 205.1, 205.2, 205.3, 212.1
+  - linux/cours-linux-make # 206.1
+  - linux/cours-linux-backup # 206.2
+  - linux/cours-linux-info-users # 206.3
+  - linux/cours-linux-dns # 207.1, 207.2, 207.3
+  - linux/cours-apache # 208.1, 208.2, 208.3
+  - linux/cours-squid # 208.3
+  - linux/cours-nginx # 208.4
+  - linux/cours-samba # 209.1
+  - admin-systeme/storage/das-nas-san
+  - admin-systeme/storage/nfs # 209.2
+  - admin-systeme/storage/iscsi
+  - admin-systeme/storage/zfs
+  - linux/cours-linux-dhcp # 210.1
+  - linux/cours-linux-pam # 210.2
+  - linux/cours-linux-ldap # 210.3
+  - linux/cours-linux-ldaps # 210.3
+  - linux/cours-linux-mail # 211.1, 211.2, 211.3
+  # SKIP 212.2 (FTP)
+  - linux/cours-linux-security # 205.3, 212.3, 212.4
+  - linux/cours-linux-vpn # 212.5
+  - linux/cours-linux-debug
+

@@ -1,10 +1,11 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: 📚 Thèmes à répartir entre les groupes
-layout: '@layouts/BaseLayout.astro'
+type: cours
+sidebar:
+  order: 4
 ---
 
-:::exo
 Choisir un thème au choix parmi les suivants :
 
 1. Sujet 200 : **Planification des ressources**
@@ -17,4 +18,3 @@ Choisir un thème au choix parmi les suivants :
 1. Sujet 210 : **Gestion des clients réseau**
 1. Sujet 211 : **Services de courrier électronique**
 1. Sujet 212 : **Sécurité du système**
-:::

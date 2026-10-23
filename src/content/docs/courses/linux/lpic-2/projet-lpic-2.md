@@ -3,9 +3,10 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Projet LPIC-2 - Mise en place d'une infrastructure système complète sécurisée et supervisée
 type: projet
 sidebar:
-  order: 2
+  order: 5
 description: Projet LPIC-2 - Mise en place d'une infrastructure système complète sécurisée et supervisée
 ---
+
 ## Contexte du projet
 
 Une entreprise fictive, **TechCorp**, souhaite mettre en place une infrastructure système Linux robuste pour héberger ses services internes (partage de fichiers, messagerie, accès distant sécurisé, services DNS/DHCP, etc.). Cette infrastructure doit être redondante, sécurisée et supervisée.

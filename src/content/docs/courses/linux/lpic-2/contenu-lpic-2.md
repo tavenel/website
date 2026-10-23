@@ -3,9 +3,10 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Contenu de la certification LPIC-2
 type: cours
 sidebar:
-  order: 1
+  order: 3
 description: Contenu de la certification LPIC-2
 ---
+
 ## Exam 201
 
 ```mermaid
