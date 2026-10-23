@@ -1,0 +1,25 @@
+title: "DevSecOps"
+slug: cesi/m2/devsecops
+objectives:
+  - "Promouvoir la philosophie DevSecOps dans son entreprise"
+  - "S'intégrer dans une équipe DevSecOps"
+  - "Identifier les outils associés au cycle de vie DevSecOps"
+  - "Définir les rôles dans les équipes DevSecOps"
+  - "Connaitre les étapes de la transformation DevSecOps"
+details:
+  - "Prérequis : Méthodes agiles"
+  - "Module de 2 journées (14H)"
+next:
+  - git/
+  - devops/
+  - cicd/
+  - docker/
+chapters:
+  - devops/devops
+  - devops/iac/yaml
+  - devops/themes
+  - cicd/cours-secu-ci
+  - cicd/cours-intro-ci
+  - cicd/cours-outils-ci
+  - devops/devsecops/devsecops
+  - devops/devsecops/projet-devsecops-culture
