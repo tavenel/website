@@ -1,6 +1,5 @@
 ---
 title: 🐧 Tom Avenel - B3 Linux
-layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Linux orienté développeurs
@@ -31,7 +30,7 @@ layout: '@layouts/BaseLayout.astro'
 - [✨ Configuration d'un poste de travail Linux](/linux/tp-env-dev) : Installation de programmes libres alternatifs pour améliorer l'ergonomie de sa station de travail.
 - [🤓 Rappels de cours : découverte de Linux](/linux/cours-1)
 - [🤓 Cours Linux de niveau 2 orienté Développeurs](/esgi/b3/linux-dev/cours)
-- [  TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
+- [ TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
 - [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/linux/tp-fichiers)
 - [👥 TP : Gestion des utilisateurs et de la sécurité](/linux/tp-utilisateurs)
 - [⚙️ TP : Gestion des processus et de leur priorité](/linux/tp-process)
@@ -45,5 +44,5 @@ layout: '@layouts/BaseLayout.astro'
 
 - [📀 TP : utiliser un live-CD pour une restauration système](/linux/tp-rescue)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
-- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/linux/tp-redirections)
+- [↔️ TP : Utilisation des flux, des pipes et des redirections](/linux/tp-redirections)
 - Voir les autres ressources du [cours sur Linux](/linux).

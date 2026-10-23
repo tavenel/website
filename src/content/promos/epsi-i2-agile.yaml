@@ -1,0 +1,18 @@
+title: "Méthodes agiles"
+slug: "epsi/i2/agile"
+objectives:
+  - Comprendre les principes d'une méthode agile
+  - Connaître les principales méthodes agiles
+  - Mettre en oeuvre la méthode agile Scrum
+  - Gérer un projet en utilisant les principes de l'agilité
+  - Mettre en place des indicateurs de mesure propres aux méthodes agiles
+details:
+  - "Module de 18H"
+  - "Évaluation : présentation de projet en groupe"
+next:
+  - gestion-projet
+chapters:
+  # TODO => - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
+  - gestion-projet/agilite/comparaison-methodes-agiles
+  - gestion-projet/agilite/projet_scrum_dev_campus
+

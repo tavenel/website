@@ -1,6 +1,5 @@
 ---
 title:  Tom Avenel - M2 IW CD/CD
-layout: '@layouts/BaseLayout.astro'
 ---
 
 #  Solutions de déploiements continus CI/CD

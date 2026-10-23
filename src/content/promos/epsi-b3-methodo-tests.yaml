@@ -1,0 +1,25 @@
+title: "Méthodologie des tests"
+slug: "epsi/b3/methodo-tests"
+objectives:
+  - Se familiariser avec le jargon des tests.
+  - Comprendre les différents types de tests logiciels.
+  - Utiliser la méthode et les outils de test adaptés au contexte et à la situation.
+  - Développer des tests unitaires dans un projet informatique
+  - Elaborer des jeux d'essais et le déroulement d'une recette fonctionnelle.
+details:
+  - Module de 10H
+  - "Évaluation : Projet noté"
+next:
+  - tests
+chapters:
+  - pedagogie/classe-renversee
+  - tests/tests-classe-renversee-themes
+  - tests/cours-methodo-tests
+  - tests/methodo/exercices_methodo_tests
+  - tests/methodo/exemple-rapport-bug
+  - tests/methodo/exemple-template-plan-tests
+  - tests/unit/python/cours-unittest
+  - tests/unit/python/tp-python-lint-debug
+  - tests/unit/python/tp-python-tests
+  - tests/unit/projet_tests_unit
+

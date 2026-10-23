@@ -1,9 +1,8 @@
 ---
 title: 󰌠  Tom Avenel - B3 Python
-layout: '@layouts/BaseLayout.astro'
 ---
 
-# 󰌠  Python
+# 󰌠 Python
 
 ## Présentation du module
 

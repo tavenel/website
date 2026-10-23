@@ -1,6 +1,5 @@
 ---
 title: 󱃾 Intégration et Déploiement Continu
-layout: '@layouts/BaseLayout.astro'
 ---
 
 #  Intégration et Déploiement Continu

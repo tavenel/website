@@ -1,6 +1,0 @@
-title: "Cours DevOps"
-slug: "epsi/i2/ansible-terraform"
-chapters:
-  - devops/yaml
-  - ansible/cours
-  - terraform/cours

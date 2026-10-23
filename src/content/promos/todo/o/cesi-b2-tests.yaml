@@ -1,9 +1,0 @@
-title: "Tests logiciels"
-slug: cesi/b2/tests
-chapters:
-  - courses/tests/cours-introduction-tests
-  - courses/tests/cours-methodo-tests
-  - courses/tests/cours-tdd
-  - courses/tests/indus-tests-cours
-  - courses/tests/cours-unittest
-  - courses/tests/summary

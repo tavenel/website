@@ -1,9 +1,8 @@
 ---
 title: λ OpenFaaS
-layout: '@layouts/BaseLayout.astro'
 ---
 
-# λ  OpenFaaS
+# λ OpenFaaS
 
 ## Présentation du module
 
@@ -42,4 +41,3 @@ Module de 12H
 - Formations :
   - [Formation gratuite Linux Foundation](https://www.openfaas.com/blog/introduction-to-serverless-linuxfoundation/)
   - [Formation payante Serverless for Everyone Else](https://openfaas.gumroad.com/l/serverless-for-everyone-else)
-

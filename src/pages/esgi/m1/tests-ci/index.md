@@ -1,6 +1,5 @@
 ---
 title: 🧪 Tests et Automatisations
-layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🧪 Tests et Automatisations

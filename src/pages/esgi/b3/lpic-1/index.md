@@ -1,6 +1,5 @@
 ---
 title: 🐧 LPIC-1
-layout: '@layouts/BaseLayout.astro'
 ---
 
 # 🐧 Linux LPIC-1
@@ -33,11 +32,14 @@ _Préparation à la certification LPIC-1 v5.0_
 1. Les concepts principaux sont dans ces slides
 2. Le support détaillé reprend et complète les explications données en cours
 3. Pendant le cours :
-  - prendre des notes, notamment sur les options
-  - reproduire les exercices pendant le cours
-4. En autonomie :
-  - reproduire les exercices
-  - s'exercer aux examens blancs
+
+- prendre des notes, notamment sur les options
+- reproduire les exercices pendant le cours
+
+1. En autonomie :
+
+- reproduire les exercices
+- s'exercer aux examens blancs
 
 La certification LPIC est conséquente et les questions très précises, il faut donc :
 
@@ -117,17 +119,16 @@ La certification LPIC est conséquente et les questions très précises, il faut
 - [▶️ TP : Systemd init](/linux/tp-systemd) : administrer les services et changer de runlevel dans un système systemd.
 - [🗃️ TP : librairies partagées](/linux/tp-shared-lib)
 - [📦 TP : Gestion de paquetages](/linux/tp-rpm-apt) : gérer (installer, mettre à jour, désinstaller) des programmes depuis des packets RedHat via rpm, yum et dnf et des packets Debian via dpkg et apt.
-- [  TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
+- [ TP : Utilisation efficace de la ligne de commande](/linux/tp-ligne-commande)
 - [📃 TP : Traitement de flux de type texte](/linux/tp-texte)
 - [📂 TP : Gestion basique des fichiers - déplacement, copie, liste, types de fichiers](/linux/tp-fichiers)
-- [↔️ TP : Utilisation des flux, des pipes et des redirections ](/linux/tp-redirections)
+- [↔️ TP : Utilisation des flux, des pipes et des redirections](/linux/tp-redirections)
 - [⚙️ TP : Gestion des processus et de leur priorité](/linux/tp-process)
 - [💽 TP : Gestion des partitions et des systèmes de fichiers](/linux/tp-partitions)
 - [💽 TP : Utiliser LVM pour créer, gérer et étendre des volumes logiques](/linux/tp-lvm)
 - [📁 TP : Gestion avancée de fichiers - permissions, liens, recherche](/linux/tp-fichiers-avance)
 - [🔐 TP : Gestion des permissions avancées avec SUID, SGID et ACL](/linux/tp-droits-avance)
 - ✍️ TP : Introduction à `vi` : exécuter la commande `vimtutor`.
-
 
 ## LPIC-102
 

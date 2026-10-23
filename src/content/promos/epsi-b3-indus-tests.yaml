@@ -1,0 +1,16 @@
+title: "Industrialisation des tests logiciels"
+slug: "epsi/b3/indus-tests"
+objectives:
+  - Maitriser les outils d'automatisation des processus de test fonctionnels (Sélénium). 
+  - Piloter les tests d'une application avec une API fonctionnelle.
+  - Utiliser un framework de tests unitaires et de test d'intégration
+details:
+  - Module de 10H
+  - "Évaluation : Projet noté"
+next:
+  - tests
+chapters:
+  - tests/cours-indus-tests
+  - tests/selenium/selenium-cours
+  - tests/selenium/selenium-tp
+  - tests/selenium/selenium-projet

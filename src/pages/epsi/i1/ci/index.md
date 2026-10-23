@@ -1,6 +1,5 @@
 ---
 title:  Tom Avenel - I1 CD/CD
-layout: '@layouts/BaseLayout.astro'
 ---
 
 #  Serveurs d'intégration continue (CI/CD)
