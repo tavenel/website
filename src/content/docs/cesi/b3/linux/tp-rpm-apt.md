@@ -6,7 +6,6 @@ sidebar:
   order: 15
 date: 2026 / 2027
 ---
-
 ## RPM, Yum et DNF
 
 - Voir le cours de la certification LPIC-1 _102.5 Use RPM and YUM package management_ p.122 pour plus de détails.

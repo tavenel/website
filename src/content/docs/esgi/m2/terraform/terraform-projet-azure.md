@@ -7,7 +7,6 @@ sidebar:
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 date: 2025 / 2026
 ---
-
 ## 📋 Présentation du projet
 
 ### Contexte professionnel
@@ -101,10 +100,12 @@ terraform-project/
 
 1. Réfléchir à un [workflow Git](/git/cours#workflows-git-travailler-en-quipe) cohérent par rapport aux environnements à déployer.
 2. Créez un diagramme représentant :
-  - Les dépendances entre composants Azure
-  - Les correspondances entre ressources Azure et ressources Terraform
-  - Les flux de données et de communication
-:::
+
+- Les dépendances entre composants Azure
+- Les correspondances entre ressources Azure et ressources Terraform
+- Les flux de données et de communication
+
+  :::
 
 ### 💻 Développement Terraform
 
