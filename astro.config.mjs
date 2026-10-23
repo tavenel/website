@@ -37,18 +37,17 @@ export default defineConfig({
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
 			sidebar: [
-				{ label: 'Écoles', collapsed: true, items: [
+				{ label: 'Cours 2026-2027', collapsed: true, items: [
 					{ autogenerate: { directory: 'epsi' } },
 					{ autogenerate: { directory: 'esgi' } },
 					{ autogenerate: { directory: 'cesi' } },
 					{ autogenerate: { directory: 'estiam' } },
 				] },
-				{ label: 'Cours', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
-				{ slug: 'tools' },
-				{ slug: 'liens' },
-				{ slug: 'website' },
+				{ label: 'Tous les modules', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
 				{ slug: 'other' },
-				{ slug: 'fun' },
+				{ slug: 'tools' },
+				{ label: 'Références et liens', link: '/liens/' },
+				{ slug: 'website' },
 				{ label: 'About me', link: '/about/', attrs: { style: 'font-style: italic' },},
 			],
 			social: [

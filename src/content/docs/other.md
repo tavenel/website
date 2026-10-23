@@ -7,6 +7,7 @@ sidebar:
   order: 800
 description: Hors piste
 ---
+
 ## Cerveau, Apprentissage, Métacognition
 
 ### Notions d'apprentissage
@@ -84,7 +85,7 @@ description: Hors piste
 ### Sketchnote
 
 - Principe : Représenter graphiquement en dessinant et annotant une prise de notes
-- Très utile en cours magistral / conférence technique /  … pour résumer un concept complexe
+- Très utile en cours magistral / conférence technique / … pour résumer un concept complexe
 - Voir aussi : <https://www.mindmapping.com/>
 - <https://www.insuffle.com/cest-quoi-le-sketchnoting/>
 - <https://www.bienenseigner.com/sketchnote/>
@@ -98,6 +99,40 @@ Voir aussi :
 - [Made to Stick](/liens#made-to-stick)
 - <https://email-is-good.com/> : "A site about email productivity."
 
+## Fun
+
+### Links
+
+- [Learning Kubernetes, Pods & Deployments with Doom (Youtube)](https://www.youtube.com/watch?v=j9DOWkw9-pc)
+- [Doom running inside a PDF file](https://github.com/ading2210/doompdf)
+- [Linux running inside a PDF file](https://github.com/ading2210/linuxpdf)
+- [Doom running over DNS](https://github.com/resumex/doom-over-dns)
+- [Pivot to AI : It can't be that stupid, you must be prompting it wrong.](https://pivot-to-ai.com/)
+- [0.1 + 0.2 != 0.3](https://0.30000000000000004.com/)
+- [Cursed Knowledge](https://immich.app/cursed-knowledge/)
+- [Ubunchu, un manga sur Ubuntu](https://en.wikipedia.org/wiki/Ubunchu!)
+- ["Nerd rock songs about the technology we love and use everyday... popular, state-of-the-art technologies such as BASIC and the 6502 microprocessor](https://thestopbits.bandcamp.com/album/return-from-interrupt)
+- [Un site web hébergé sur une cigarette électronique](https://bogdanthegeek.github.io/blog/projects/vapeserver/)
+- [Cherchez un produit imaginaire et cette fausse boutique e-commerce le génère](https://anycrap.shop/)
+- [Doom in a Web container](https://github.com/CallumHoughton18/Doom-In-Docker)
+
+### Commic strips about Computer Science
+
+![](@assets/fun/agile.gif)
+![](@assets/fun/audit.jpg)
+![](@assets/fun/conference.jpg)
+![](@assets/fun/correlation.jpg)
+![](@assets/fun/all_the_documentation.jpg)
+![](@assets/fun/lazy.png)
+![](@assets/fun/xkcd-linux-tar.png)
+![](@assets/fun/password.webp)
+![](@assets/fun/regex.jpg)
+![](@assets/fun/scroll.webp)
+![](@assets/fun/WFTPM.png)
+![](@assets/fun/works.jpg)
+![](@assets/fun/wsl.jpg)
+![](@assets/fun/xp.git)
+![Crédit : https://programmerhumor.io](@assets/fun/metaProcess.png)
 ---
 
 ## Remerciements
