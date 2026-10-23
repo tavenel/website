@@ -2,14 +2,15 @@
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Introduction au GitOps et à Argo CD
 tags:
-- kubernetes
-- devops
-- argocd
+  - kubernetes
+  - devops
+  - argocd
 type: cours
 sidebar:
-  order: 3
+  order: 4
 description: Introduction au GitOps et à Argo CD
 ---
+
 ## Introduction
 
 Le déploiement d'une application consiste à faire évoluer un système informatique vers un état souhaité.

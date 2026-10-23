@@ -3,9 +3,10 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Le DevOps
 type: cours
 sidebar:
-  order: 2
+  order: 3
 description: Le DevOps
 ---
+
 ## 🎯 Objectifs
 
 - Gérer ses projets tant en développement qu'en infrastructure en adoptant une approche DevOps / SysOps 🛠️
@@ -46,15 +47,15 @@ Le cycle de vie DevOps est un cycle continu allant des étapes de planification 
 
 ![Le cycle de vie DevOps](https://mikadolabs.com//wp-content/uploads/2023/02/article2-1024x527.png)
 
-| Étape | Outils majeurs | Description courte |
-| :---------------- | :------------------------------------------- | :------------------------------------------- |
-| **Planification** | Jira, Trello, GitHub Projects | Suivi des tâches, gestion Agile |
-| **Codage** | Git (GitHub, GitLab, Bitbucket) | Gestion de version et collaboration |
-| **Build** | Jenkins, GitLab CI/CD, Travis CI | Automatisation de la compilation |
-| **Test** | Selenium, JUnit, Jest, Postman | Exécution automatisée des tests |
-| **Release/Déploiement** | Docker, Kubernetes, Ansible, Terraform | Packaging conteneurs et orchestration |
-| **Opération** | Ansible, Puppet, Chef | Gestion dynamique de configuration |
-| **Monitoring** | Prometheus, Grafana, ELK Stack, Datadog | Collecte métriques, logs, alerting |
+| Étape                   | Outils majeurs                          | Description courte                    |
+| :---------------------- | :-------------------------------------- | :------------------------------------ |
+| **Planification**       | Jira, Trello, GitHub Projects           | Suivi des tâches, gestion Agile       |
+| **Codage**              | Git (GitHub, GitLab, Bitbucket)         | Gestion de version et collaboration   |
+| **Build**               | Jenkins, GitLab CI/CD, Travis CI        | Automatisation de la compilation      |
+| **Test**                | Selenium, JUnit, Jest, Postman          | Exécution automatisée des tests       |
+| **Release/Déploiement** | Docker, Kubernetes, Ansible, Terraform  | Packaging conteneurs et orchestration |
+| **Opération**           | Ansible, Puppet, Chef                   | Gestion dynamique de configuration    |
+| **Monitoring**          | Prometheus, Grafana, ELK Stack, Datadog | Collecte métriques, logs, alerting    |
 
 ---
 
@@ -307,18 +308,18 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ## 🛠️ Exemple de solution DevSecOps complète : **Gitlab DevOps Platform**
 
-| Fonctionnalité | Description |
-| --- | --- |
-| **Gestion de Code Source** | Git, branches, merge request |
-| **Gestion de Projet** | Tableaux Kanban, listes de tâches, Gantt, Wikis |
-| **Collaboration d'Équipe** | Plateforme commune, code review |
-| **Suivi des Problèmes** | Suivi des bugs et des demandes de fonctionnalités |
+| Fonctionnalité                 | Description                                                     |
+| ------------------------------ | --------------------------------------------------------------- |
+| **Gestion de Code Source**     | Git, branches, merge request                                    |
+| **Gestion de Projet**          | Tableaux Kanban, listes de tâches, Gantt, Wikis                 |
+| **Collaboration d'Équipe**     | Plateforme commune, code review                                 |
+| **Suivi des Problèmes**        | Suivi des bugs et des demandes de fonctionnalités               |
 | **Gestion des Vulnérabilités** | Analyse statique du code (SAST), analyse des dépendances (DAST) |
-| **Pipelines CI/CD** | Tests, builds, déploiements |
-| **Registry de Conteneurs** | Docker |
-| **Intégration Cloud** | Déploiement et gestion des infrastructures |
-| **Gestion des Incidents** | Gestion des alertes |
-| **Intégration** | Avec de nombreux autres outils |
+| **Pipelines CI/CD**            | Tests, builds, déploiements                                     |
+| **Registry de Conteneurs**     | Docker                                                          |
+| **Intégration Cloud**          | Déploiement et gestion des infrastructures                      |
+| **Gestion des Incidents**      | Gestion des alertes                                             |
+| **Intégration**                | Avec de nombreux autres outils                                  |
 
 :::note
 Voir aussi : <https://about.gitlab.com/platform/>
@@ -342,14 +343,14 @@ Voir aussi : <https://about.gitlab.com/platform/>
 
 ## 🔄 Variations du DevOps
 
-| Variation | Description |
-| --- | --- |
-| **DataOps** | Adaptation au contexte très spécifique du Big Data |
-| **ArchOps** | Réflexions d'architecture dans la boucle DevOps |
-| **TestOps** | Focus tests |
-| **DevSecOps** | Focus sécurité |
-| **MLOps** | DevOps orienté data pour le Machine Learning |
-| **GitOps** | Automatisation et Gestion des Infrastructures par Git |
+| Variation     | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| **DataOps**   | Adaptation au contexte très spécifique du Big Data    |
+| **ArchOps**   | Réflexions d'architecture dans la boucle DevOps       |
+| **TestOps**   | Focus tests                                           |
+| **DevSecOps** | Focus sécurité                                        |
+| **MLOps**     | DevOps orienté data pour le Machine Learning          |
+| **GitOps**    | Automatisation et Gestion des Infrastructures par Git |
 
 ---
 

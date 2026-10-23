@@ -3,9 +3,10 @@ license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: 📚 Résumé des Thèmes DevOps
 type: cours
 sidebar:
-  order: 900
+  order: 2
 description: 📚 Résumé des Thèmes DevOps
 ---
+
 Voici une liste structurée des **principaux thèmes DevOps**, organisée par domaines de compétence, couvrant les aspects essentiels d'une démarche DevOps moderne :
 
 ---
