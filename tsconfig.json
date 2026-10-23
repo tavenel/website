@@ -11,7 +11,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@assets/*": [
-				"src/content/assets/*"
+				"src/assets/*"
 			],
 			"@lib/*": [
 				"src/lib/*"
