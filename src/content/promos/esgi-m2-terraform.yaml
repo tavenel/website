@@ -1,0 +1,19 @@
+title: "Cours Terraform"
+slug: "esgi/m2/terraform"
+objectives:
+  - "Décrire le rôle et les bénéfices de Terraform dans une architecture cloud."
+  - "Utiliser Terraform pour créer, modifier et détruire des ressources cloud de manière automatisée."
+  - "Intégrer Terraform dans un workflow d'équipe basé sur Git."
+  - "Optimiser et sécuriser les configurations Terraform."
+  - "S'interfacer avec des outils d'orchestration ou CI/CD."
+details:
+  - "Prérequis : Compte Azure Cloud, Notions de programmation et connaissance des environnements Cloud"
+  - "Module de 15H"
+  - "Évaluation : Projet au choix parmis les 2 propositions"
+next:
+  - devops/
+chapters:
+  - devops/iac/terraform/cours
+  - cloud/azure/cours
+  - devops/iac/terraform/projet-azure
+  - devops/iac/terraform/projet-k8s
