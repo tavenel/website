@@ -1,0 +1,37 @@
+title: "󱃾  Kubernetes"
+slug: "cesi/m2/k8s"
+objectives:
+  - "Automatiser la gestion des ressources applicatives et la mise à l'échelle"
+  - "Gérer un cluster applicatif"
+  - "Comprendre l'architecture interne d'une plateforme d'orchestration"
+  - "Déterminer les services fournis par la plateforme d'orchestration"
+  - "Déployer une application distribuée dans la plateforme d'orchestration"
+  - "Comprendre une application déployée dans une plateforme d'orchestration"
+details:
+  - "Module de 2 jours (14H)."
+  - "30% théorie, 70% pratique"
+  - "Prérequis : Bonnes connaissances de Docker et des principes de conteneurisation, Connaissances avancées en administration système Linux, Bonnes notions de réseau"
+next:
+  - docker/
+  - k8s/
+chapters:
+  - pedagogie/classe-renversee
+  - k8s/classe-renversee-themes
+  - k8s/cheatsheet
+  - k8s/intro
+  - k8s/main
+  - k8s/network
+  - k8s/storage
+  - k8s/pods-advanced
+  - k8s/extend
+  - k8s/admin
+  - k8s/tools
+  - k8s/mini
+  - k8s/sequence
+  - k8s/debug
+  - k8s/end
+  - k8s/tp-intro
+  - k8s/tp-appli
+  - k8s/tp-helm
+  - k8s/tp-prometheus-grafana
+
