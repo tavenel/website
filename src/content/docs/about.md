@@ -1,6 +1,7 @@
 ---
 title: About me
 type: cours
+tableOfContents: false
 sidebar:
   order: 800
 description: About me
@@ -9,7 +10,7 @@ description: About me
 
 J'interviens à la fois en écoles supérieures d'informatique et en milieu professionnel pour du consulting ou de la formation en DevOps.
 
-[ ![](@icons/linkedin.svg) LinkedIn ](https://www.linkedin.com/in/tom-avenel/).
+[![](@icons/linkedin.svg) LinkedIn](https://www.linkedin.com/in/tom-avenel/).
 
 ## Resume
 

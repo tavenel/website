@@ -1,6 +1,7 @@
 ---
 title: Fun
 date: 2026
+tableOfContents: false
 ---
 
 ## Links
