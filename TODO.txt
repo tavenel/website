@@ -8,7 +8,10 @@
 - update / cleanup pages/website.md with starlight info
 - :::exo to steps ? https://starlight.astro.build/components/steps/ => v2 ?
 - math katex KO (OK to drop ? or import manually when needed) => data/mining + test.md
+- cours => 2+, exos : 100+, projets: 200+, legal: 999
+- review / cleanup script + astro config + roadmap svgs
 ---
+- tsconfig.json
 - tracks => ability to use external link
 - copyright 2026
 - social => website repo links ?
@@ -26,8 +29,20 @@
 ---
 # Files :
 
-- tsconfig.json
-- public/
+public/cours/data/mining/data-to-find.csv|| 
+public/cours/data/mining/exam-browsers.csv|| 
+public/cours/data/mining/kmeans.csv|| 
+public/cours/data/mining/students-breakfast.csv|| 
+public/cours/data/mining/students_hours_exam.csv|| 
+public/cours/python/mots.txt|| 
+public/cours/scrum.pptx|| 
+public/icons/android-chrome-192x192.png|| 
+public/icons/android-chrome-512x512.png|| 
+public/icons/apple-touch-icon.png|| 
+public/icons/favicon.svg|| 
+public/robots.txt|| 
+public/service-worker.js|| 
+public/site.webmanifest|| 
 - src/
 	- assets/ => cleanup
   - components/
@@ -36,12 +51,7 @@
 	- styles/
 	- about => no TOC
 	- content/docs/courses/tech/
-
-===
-
-- cours => 2+, exos : 100+, projets: 200+, legal: 999
-- tracks/ all courses => generate index file
-- review / cleanup script + astro config + roadmap svgs
+  - pages/tech/
 
 ===
 
@@ -58,17 +68,6 @@ gestion-projet
 tests
 
 - add gitlab courses
-
-===
-
-src/pages/
-
-cesi
-epsi
-esgi
-estiam
-
-tech/
 
 ===
 
