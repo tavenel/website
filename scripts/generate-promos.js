@@ -233,7 +233,12 @@ function main() {
   console.log(`\n${DRY_RUN ? 'DRY RUN' : 'Done.'}`);
   console.log(`Promos: ${trackFiles.length}`);
   console.log(`Chapters: ${totalChapters}`);
-  if (errors) console.log(`Errors: ${errors}`);
+  if (errors) {
+		console.log(`Errors: ${errors}`);
+		return errors;
+	} else {
+		return 0;
+	}
 }
 
-main();
+process.exit(main());
