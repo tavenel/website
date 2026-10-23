@@ -1,0 +1,39 @@
+title: "Stratégies de tests"
+slug: "cesi/m2/tests"
+objectives:
+  - "Livrer des produits conformes aux attentes des utilisateurs et du cahier des charges du projet de développement"
+  - "Connaitre les différents concepts liés au tests"
+  - "Mettre en place un plan de test"
+  - "Automatiser un pipeline de test"
+details:
+  - "Prérequis : connaissance d'un framework de tests unitaires"
+  - "Module de 2 journées (14H)."
+  - "Jour 1 matin :"
+  - "Rappel des concepts de tests et liens entre eux (politique, stratégie et plan de tests) en classe renversée"
+  - "Introduction au test-driven development et présentation des étapes du cycle de vie du test logiciel (software testing life cycle) en définissant les différents types de tests (fonctionnels, performance, sécurité, …)"
+  - "Jour 1 après-midi et Jour 2 : présentation des outils / frameworks d'automatisation des tests et des critères de choix et manipulations d'outils de tests tels que :"
+  - "`Selenium` pour les tests fonctionnels"
+  - "`Postman`, `Citrus` pour les tests d'intégration"
+  - "`JMeter` pour les tests de performances"
+  - "`Simian Army` pour les tests de fiabilité, sécurité"
+  - "Intégration des outils dans un pipeline CI/CD"
+  - "Atelier de rédaction d'un plan de test et schématisation du processus de tests"
+next:
+  - tests
+  - cicd
+chapters:
+  - pedagogie/classe-renversee
+  - tests/tests-classe-renversee-themes
+  - tests/cours-tests-summary
+  - tests/cours-strategies-tests
+  - tests/cours-techniques-tests
+  - tests/cours-tdd
+  - tests/cours-bdd
+  - tests/selenium/selenium-cours
+  - tests/selenium/selenium-tp
+  - tests/postman/postman-cours
+  - tests/simian-army/simian-army-cours
+  - tests/jmeter/jmeter-cours
+  - tests/jmeter/jmeter-tp-api
+  - tests/exemples-de-codes-de-tests
+  - tests/projet-tests-full

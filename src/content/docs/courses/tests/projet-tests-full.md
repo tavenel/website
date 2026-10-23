@@ -1,6 +1,8 @@
 ---
 title: 📄 Projet Développement et Tests Complets d'une Application Web
-date: 2025 / 2026
+type: projet
+sidebar:
+  order: 500
 ---
 
 ## 🎯 Objectif du Projet
@@ -40,4 +42,3 @@ L'objectif de ce projet est de réaliser un nouveau projet web ou de récupérer
 
 - Intégrer tous les tests dans un **pipeline CI/CD** en utilisant des outils comme Jenkins, GitLab CI, ou GitHub Actions.
 - **Automatiser** l'exécution des tests à **chaque modification** du code pour s'assurer que les nouvelles modifications ne cassent pas les fonctionnalités existantes.
-
