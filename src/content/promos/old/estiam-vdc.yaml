@@ -13,12 +13,12 @@ next:
   - devops/
 chapters:
   - cloud/cours-vdc
-  - network/cours-network-virtual
-  - opennebula/cours
-  - ansible/cours
-  - terraform/cours
-  - packer/cours
-  - cloud/opennebula/tp
-  - git/tp-ansible
-  - devops/tp-terraform-ansible
-  - cloud/opennebula/projet
+  - admin-systeme/network/cours-network-virtual
+  - cloud/opennebula/opennebula-cours
+  - devops/iac/ansible
+  - devops/iac/terraform/terraform-cours
+  - devops/iac/packer/packer-cours
+  - cloud/opennebula/opennebula-tp
+  - git/tp-git-ansible
+  - devops/iac/tp-terraform-ansible
+  - cloud/opennebula/opennebula-projet

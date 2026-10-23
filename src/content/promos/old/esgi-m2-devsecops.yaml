@@ -13,19 +13,19 @@ next:
   - docker/
   - k8s/
 chapters:
-  - devops/cours
+  - devops/devops-cours
   - cicd/cours-intro-ci
-  - git/workflows-cours
+  - git/git-workflows-cours
   - cicd/cours-outils-ci
   - cicd/modeles-cd-cours
-  - k8s/cicd
-  - k8s/tools
-  - argocd/cours
-  - cloud/secu
+  - k8s/k8s-cours-cicd
+  - k8s/k8s-cours-tools
+  - devops/argocd-cours
+  - cloud/cours-secu-cloud
   - cicd/cours-secu-ci
-  - k8s/tp-helm
-  - k8s/projet-cicd/context-app-existante
-  - k8s/projet-cicd/cicd
-  - k8s/projet-cicd/argocd
-  - k8s/projet-cicd/flagger
-  - k8s/projet-cicd/kyverno
+  - k8s/tp-k8s-helm
+  - k8s/projet-cicd/projet-k8s-cicd-context-app-existante
+  - k8s/projet-cicd/projet-k8s-cicd-cicd
+  - k8s/projet-cicd/projet-k8s-cicd-argocd
+  - k8s/projet-cicd/projet-k8s-cicd-flagger
+  - k8s/projet-cicd/projet-k8s-cicd-kyverno
