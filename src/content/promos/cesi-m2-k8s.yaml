@@ -16,22 +16,22 @@ next:
   - k8s/
 chapters:
   - pedagogie/classe-renversee
-  - k8s/classe-renversee-themes
-  - k8s/cheatsheet
-  - k8s/intro
-  - k8s/main
-  - k8s/network
-  - k8s/storage
-  - k8s/pods-advanced
-  - k8s/extend
-  - k8s/admin
-  - k8s/tools
-  - k8s/mini
-  - k8s/sequence
-  - k8s/debug
-  - k8s/end
-  - k8s/tp-intro
-  - k8s/tp-appli
-  - k8s/tp-helm
-  - k8s/tp-prometheus-grafana
+  - k8s/k8s-classe-renversee-themes
+  - k8s/k8s-cours-cheatsheet
+  - k8s/k8s-cours-intro
+  - k8s/k8s-cours-main
+  - k8s/k8s-cours-network
+  - k8s/k8s-cours-storage
+  - k8s/k8s-cours-pods-advanced
+  - k8s/k8s-cours-extend
+  - k8s/k8s-cours-admin
+  - k8s/k8s-cours-tools
+  - k8s/k8s-cours-mini
+  - k8s/k8s-cours-sequence
+  - k8s/k8s-cours-debug
+  - k8s/k8s-cours-end
+  - k8s/tp-k8s-intro
+  - k8s/tp-k8s-appli
+  - k8s/tp-k8s-helm
+  - k8s/tp-k8s-prometheus-grafana
 

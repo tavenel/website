@@ -23,6 +23,6 @@ next:
   - k8s/
 chapters:
   - devops/devsecops/devsecops
-  - cloud/secu
+  - cloud/cours-secu-cloud
   - cicd/cours-secu-ci
   - devops/devsecops/projet-devsecops

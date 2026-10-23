@@ -13,7 +13,7 @@ details:
 next:
   - devops/
 chapters:
-  - devops/iac/terraform/cours
-  - cloud/azure/cours
-  - devops/iac/terraform/projet-azure
-  - devops/iac/terraform/projet-k8s
+  - devops/iac/terraform/terraform-cours
+  - cloud/azure/azure-cours
+  - devops/iac/terraform/terraform-projet-azure
+  - devops/iac/terraform/terraform-projet-k8s

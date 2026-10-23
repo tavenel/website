@@ -15,9 +15,9 @@ next:
   - cicd/
   - docker/
 chapters:
-  - devops/devops
+  - devops/devops-cours
   - devops/iac/yaml
-  - devops/themes
+  - devops/themes-devops
   - cicd/cours-secu-ci
   - cicd/cours-intro-ci
   - cicd/cours-outils-ci
