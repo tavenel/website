@@ -1,12 +1,12 @@
 /**
- * Starlight plugin: transforms :::correction blocks into <details> elements.
+ * Starlight plugin: transforms custom directives in Starlight content.
+ *
+ * - :::correction → <details class="correction"><summary>Correction</summary>...</details>
+ * - :::exo / :::exercice → <ol class="steps"><li>...</li></ol>
  *
  * Usage:
  *   import { starlightCorrection } from './remark-plugins/remark-correction.mjs';
  *   ... starlight({ plugins: [starlightCorrection()] }) ...
- *
- * The :::correction content is processed as markdown by Starlight.
- * In a plain markdown viewer, the block shows as raw `:::correction` text.
  */
 
 function h(tag, attrs, children = []) {
@@ -33,13 +33,18 @@ export function starlightCorrection() {
               if (!processor || !Array.isArray(processor.options?.mdastPlugins)) return;
 
               processor.options.mdastPlugins.push({
-                name: 'correction-block',
+                name: 'custom-directives',
                 containerDirective(node) {
-                  if (node.name !== 'correction') return;
-                  return h('details', { class: 'correction' }, [
-                    h('summary', {}, [{ type: 'text', value: 'Correction' }]),
-                    ...(node.children || []),
-                  ]);
+                  if (node.name === 'correction') {
+                    return h('details', { class: 'correction' }, [
+                      h('summary', {}, [{ type: 'text', value: 'Correction' }]),
+                      ...(node.children || []),
+                    ]);
+                  }
+                  if (node.name === 'exo' || node.name === 'exercice') {
+                    // Render as an ordered list with steps class (mimics Starlight's Steps component)
+                    return h('ol', { class: 'steps' }, (node.children || []).map(c => h('li', {}, [c])));
+                  }
                 },
               });
             },
