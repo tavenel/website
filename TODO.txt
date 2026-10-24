@@ -1,3 +1,7 @@
+- :::exo to steps ? https://starlight.astro.build/components/steps/ => v2 ?
+- simple main page
+- review / cleanup script + astro config + roadmap svgs
+---
 - tracks :
 	- generate "next" => ## 🚀 Pour aller plus loin Voir les autres ressources du [cours sur le Devops](/devops).
 	- generate "objectives"
@@ -7,7 +11,6 @@
 - review / cleanup script + astro config + roadmap svgs
 ---
 - update / cleanup pages/website.md with starlight info
-- :::exo to steps ? https://starlight.astro.build/components/steps/ => v2 ?
 - math katex KO (OK to drop ? or import manually when needed) => data/mining + test.md
 - cours => 2+, exos : 100+, projets: 200+, legal: 999
 - tsconfig.json
