@@ -15,8 +15,6 @@ next:
   - docker/
   - k8s/
 chapters:
-  - pedagogie/classe-renversee
-  - k8s/k8s-classe-renversee-themes
   - k8s/k8s-cours-cheatsheet
   - k8s/k8s-cours-intro
   - k8s/k8s-cours-main

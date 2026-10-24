@@ -3,7 +3,7 @@ title: Configuration avancée des Pods
 description: Configuration avancée des Pods
 type: cours
 sidebar:
-  order: 8
+  order: 6
 tags:
 - docker
 - kubernetes

@@ -3,7 +3,7 @@ title: Bonnes pratiques
 description: Bonnes pratiques
 type: cours
 sidebar:
-  order: 15
+  order: 13
 tags:
 - docker
 - kubernetes

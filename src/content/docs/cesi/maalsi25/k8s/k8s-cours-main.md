@@ -3,7 +3,7 @@ title: Kubernetes
 description: Kubernetes
 type: cours
 sidebar:
-  order: 5
+  order: 3
 tags:
 - docker
 - kubernetes

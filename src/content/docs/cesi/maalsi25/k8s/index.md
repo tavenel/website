@@ -10,8 +10,6 @@ icon: book
 
 ## Chapitres
 
-- [classe-renversee](./classe-renversee)
-- [k8s-classe-renversee-themes](./k8s-classe-renversee-themes)
 - [k8s-cours-cheatsheet](./k8s-cours-cheatsheet)
 - [k8s-cours-intro](./k8s-cours-intro)
 - [k8s-cours-main](./k8s-cours-main)

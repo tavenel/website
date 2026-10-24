@@ -3,7 +3,7 @@ title: Séquence des opérations
 description: Séquence des opérations
 type: cours
 sidebar:
-  order: 13
+  order: 11
 tags:
 - kubernetes
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0

@@ -3,7 +3,7 @@ title: Résumé Kubernetes basique
 description: Résumé Kubernetes basique
 type: cours
 sidebar:
-  order: 12
+  order: 10
 tags:
 - docker
 - kubernetes

@@ -3,7 +3,7 @@ title: Étendre Kubernetes
 description: Étendre Kubernetes
 type: cours
 sidebar:
-  order: 9
+  order: 7
 tags:
 - docker
 - kubernetes

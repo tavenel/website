@@ -3,7 +3,7 @@ title: Déploiement applicatif avec Helm
 description: Déploiement applicatif avec Helm
 type: tp
 sidebar:
-  order: 18
+  order: 16
 date: 2024 / 2025
 ---
 ## Introduction

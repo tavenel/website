@@ -3,7 +3,7 @@ title: Cheatsheet Kubernetes®
 description: Cheatsheet Kubernetes®
 type: cours
 sidebar:
-  order: 3
+  order: 1
 ---
 # Cheatsheet Kubernetes
 

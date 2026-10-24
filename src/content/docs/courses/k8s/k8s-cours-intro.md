@@ -1,14 +1,15 @@
 ---
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
-title: Kubernetes
+title: Introduction à Kubernetes
 tags:
-- kubernetes
-- intro
+  - kubernetes
+  - intro
 type: cours
 sidebar:
   order: 1
-description: Kubernetes
+description: Introduction à Kubernetes
 ---
+
 ## Introduction
 
 **Kubernetes**, souvent abrégé **K8s**, est une plateforme open-source d'orchestration de conteneurs conçue pour automatiser le déploiement, la mise à l'échelle et la gestion d'applications conteneurisées dans un parc de machines.
@@ -101,4 +102,3 @@ kubectl delete -f my_app.yaml
 ```
 
 ---
-

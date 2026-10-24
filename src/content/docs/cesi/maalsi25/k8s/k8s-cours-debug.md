@@ -3,7 +3,7 @@ title: 🧪 Débug dans Kubernetes
 description: 🧪 Débug dans Kubernetes
 type: cours
 sidebar:
-  order: 14
+  order: 12
 tags:
 - docker
 - kubernetes

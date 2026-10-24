@@ -56,10 +56,10 @@ export default defineConfig({
         { icon: 'sourcehut', label: 'SourceHut', href: 'https://sr.ht/~toma' },
         { icon: 'gitlab', label: 'Gitlab', href: 'https://gitlab.com/tavenel' },
         { icon: 'github', label: 'Github', href: 'https://github.com/tavenel' },
-        { icon: 'discord', label: 'Discord', href: 'https://astro.build/chat' }, // TODO
       ],
 			disable404Route: false,
 			components: {
+				// Header: '@components/Header.astro',
 				// Sidebar: '@components/Sidebar.astro',
 				// Footer: '@components/StarlightFooter.astro',
 			},

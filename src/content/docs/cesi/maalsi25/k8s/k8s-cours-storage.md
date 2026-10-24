@@ -3,7 +3,7 @@ title: 💾 Stockage
 description: 💾 Stockage
 type: cours
 sidebar:
-  order: 7
+  order: 5
 tags:
 - docker
 - kubernetes

@@ -3,7 +3,7 @@ title: 🔧 Administration du cluster
 description: 🔧 Administration du cluster
 type: cours
 sidebar:
-  order: 10
+  order: 8
 tags:
 - docker
 - kubernetes

@@ -3,7 +3,7 @@ title: TP Kubernetes - Création de manifestes et déploiement d'une application
 description: TP Kubernetes - Création de manifestes et déploiement d'une application containerisée avec kubectl
 type: tp
 sidebar:
-  order: 17
+  order: 15
 date: 2025 / 2026
 ---
 Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à **2 services + 1 SGBDR containerisé**.

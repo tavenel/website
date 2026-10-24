@@ -1,9 +1,9 @@
 ---
-title: Kubernetes
-description: Kubernetes
+title: Introduction à Kubernetes
+description: Introduction à Kubernetes
 type: cours
 sidebar:
-  order: 4
+  order: 2
 tags:
 - kubernetes
 - intro
@@ -101,4 +101,3 @@ kubectl delete -f my_app.yaml
 ```
 
 ---
-

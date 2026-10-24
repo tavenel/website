@@ -3,7 +3,7 @@ title: Monitoring Kubernetes avec Prometheus et Grafana
 description: Monitoring Kubernetes avec Prometheus et Grafana
 type: tp
 sidebar:
-  order: 19
+  order: 17
 date: 2024 / 2025
 ---
 # Monitoring Kubernetes avec Prometheus et Grafana

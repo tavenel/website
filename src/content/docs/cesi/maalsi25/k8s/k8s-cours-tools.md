@@ -3,7 +3,7 @@ title: Outils externes
 description: Outils externes
 type: cours
 sidebar:
-  order: 11
+  order: 9
 tags:
 - docker
 - kubernetes

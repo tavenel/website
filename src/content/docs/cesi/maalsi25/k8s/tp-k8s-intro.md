@@ -3,7 +3,7 @@ title: TP Premiers pas avec Kubernetes
 description: TP Premiers pas avec Kubernetes
 type: tp
 sidebar:
-  order: 16
+  order: 14
 date: 2024 / 2025
 ---
 Dans ce TP, nous allons utiliser l'orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l'équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
