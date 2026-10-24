@@ -74,53 +74,15 @@
 .starlight-aside--caution { --sl-color-asides-text-accent: #e65100; }
 /* Correction details blocks (from :::correction directives) */
 details.correction {
-  margin: 1.5em 0;
   padding: 0.75em 1em;
   border: 1px solid var(--sl-color-gray-5);
   border-radius: 6px;
   background: var(--sl-color-gray-6);
   transition: background 0.2s;
 }
-details.correction[open] {
-  background: var(--sl-color-gray-5);
-}
 details.correction summary {
   cursor: pointer;
   font-weight: 700;
-  padding: 0.25em 0.5em;
   font-size: var(--sl-text-sm);
   color: var(--sl-color-gray-2);
-}
-details.correction summary:hover {
-  color: var(--sl-color-accent);
-}
-
-/* Exercise steps (from :::exo directives) */
-ol.steps {
-  counter-reset: step;
-  list-style: none;
-  padding: 0;
-}
-ol.steps > li {
-  counter-increment: step;
-  padding: 0.75em 1em 0.75em 3em;
-  position: relative;
-  border-left: 2px solid var(--sl-color-gray-5);
-  margin-bottom: 0.5em;
-}
-ol.steps > li::before {
-  content: counter(step);
-  position: absolute;
-  left: 0.5em;
-  top: 0.75em;
-  width: 1.75em;
-  height: 1.75em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--sl-color-accent);
-  color: white;
-  border-radius: 50%;
-  font-size: 0.85em;
-  font-weight: 700;
 }

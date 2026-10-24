@@ -3,14 +3,13 @@
 	- generate "objectives"
 	- generate "details"
 - simple main page
-- :::correction to https://starlight.astro.build/guides/authoring-content/#details
 - sub-indexes (and TOC:false)
+- review / cleanup script + astro config + roadmap svgs
+---
 - update / cleanup pages/website.md with starlight info
 - :::exo to steps ? https://starlight.astro.build/components/steps/ => v2 ?
 - math katex KO (OK to drop ? or import manually when needed) => data/mining + test.md
 - cours => 2+, exos : 100+, projets: 200+, legal: 999
-- review / cleanup script + astro config + roadmap svgs
----
 - tsconfig.json
 - tracks => ability to use external link
 - copyright 2026

@@ -2,7 +2,6 @@
  * Starlight plugin: transforms custom directives in Starlight content.
  *
  * - :::correction → <details class="correction"><summary>Correction</summary>...</details>
- * - :::exo / :::exercice → <ol class="steps"><li>...</li></ol>
  *
  * Usage:
  *   import { starlightCorrection } from './remark-plugins/remark-correction.mjs';
@@ -40,10 +39,6 @@ export function starlightCorrection() {
                       h('summary', {}, [{ type: 'text', value: 'Correction' }]),
                       ...(node.children || []),
                     ]);
-                  }
-                  if (node.name === 'exo' || node.name === 'exercice') {
-                    // Render as an ordered list with steps class (mimics Starlight's Steps component)
-                    return h('ol', { class: 'steps' }, (node.children || []).map(c => h('li', {}, [c])));
                   }
                 },
               });
