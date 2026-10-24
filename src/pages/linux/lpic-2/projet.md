@@ -89,6 +89,25 @@ On ne demande pas de réaliser de déploiement hautement disponible.
 - Prévision du besoin de réquisition de ressources supplémentaires
 - Critères : Suivi charge, journalisation, alertes rudimentaires, …
 
+## Découpage en trimestres
+
+Voici la progression attendue pour le projet sur les 3 trimestres. Ce découpage peut être modifié avec accord du formateur.
+
+- Trimestre 1 :
+  - Création des VMs et installation des OS
+  - Stockage avancé pour les VMs : LVM, RAID, LUKS (pas de stockage distribué)
+  - Stack réseau standard : DHCP, DNS
+  - VPN
+- Trimestre 2 :
+  - Mise en place de la plupart des services applicatifs : LDAP, serveur mail, serveur Web HTTPS, reverse proxy
+  - NAS
+- Trimestre 3 :
+  - SAN sécurisé
+  - Monitoring
+  - Sécurité et hardening : pare-feu, …
+  - Bonus 1 : SELinux, Apparmor
+  - Bonus 2 : H/A (Corosymc / Pacemaker)
+
 ## Évaluation
 
 ### Critères techniques
@@ -109,4 +128,3 @@ On ne demande pas de réaliser de déploiement hautement disponible.
 - Implication dans le projet et interaction avec le groupe
 - Difficulté de la tâche réalisée
 - Réponses techniques aux questions lors de la soutenance
-
