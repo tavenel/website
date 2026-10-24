@@ -7,6 +7,7 @@ import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightLinksValidator from 'starlight-links-validator';
 import { visualizer } from "rollup-plugin-visualizer";
+import { starlightCorrection } from './remark-plugins/remark-correction.mjs';
 
 // import { remarkDiagram } from './remark-plugins/mermaid.mjs'; // Custom plugin -- Force loading Mermaid
 // import { remarkModifiedTime } from './remark-plugins/modified-time.mjs'; // Custom plugin -- last time file was modified
@@ -33,6 +34,7 @@ export default defineConfig({
 			plugins: [
 				starlightImageZoom(),
 				starlightLinksValidator(),
+				starlightCorrection(),
 			],
 			title: 'avenel.pro',
 			defaultLocale: 'fr',
@@ -62,7 +64,7 @@ export default defineConfig({
 				// Footer: '@components/StarlightFooter.astro',
 			},
 			customCss: [
-				// 'src/styles/custom.css',
+				'src/styles/custom.css',
 			],
 		}),
 	],
