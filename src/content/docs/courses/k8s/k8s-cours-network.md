@@ -1,16 +1,17 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Réseau
 tags:
-- docker
-- kubernetes
-- devops
-- network
+  - docker
+  - kubernetes
+  - devops
+  - network
 type: cours
 sidebar:
   order: 16
 description: Réseau
 ---
+
 ## 🌐 CIDRs
 
 - Kubernetes utilise uniquement 3 réseaux : 🌐

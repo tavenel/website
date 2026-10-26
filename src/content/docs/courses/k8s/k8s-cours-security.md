@@ -1,16 +1,17 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Sécurité dans Kubernetes
 tags:
-- docker
-- kubernetes
-- devops
-- security
+  - docker
+  - kubernetes
+  - devops
+  - security
 type: cours
 sidebar:
   order: 18
 description: Sécurité dans Kubernetes
 ---
+
 ## Surface d'attaque d'un cluster
 
 Composants critiques :
@@ -187,7 +188,7 @@ Décide **ce que l'utilisateur peut faire** après authn.
 
 ## Public Key Infrastructure (PKI)
 
--  Certificats `X.509` et autorités de certification (CA) pour authentifier **composants**, **nœuds** et **utilisateurs**
+- Certificats `X.509` et autorités de certification (CA) pour authentifier **composants**, **nœuds** et **utilisateurs**
 - Système de confiance interne :
   - authentification mutuelle (mTLS)
   - intégrité des communications
@@ -570,7 +571,7 @@ EOF
 - Presque toujours couplé avec l'**Admission Controller `NodeRestriction`** :
   - Empêche un kubelet de modifier des labels critiques
   - Empêche l'usurpation d'identité d'un autre nœud
-  `--enable-admission-plugins=NodeRestriction`
+    `--enable-admission-plugins=NodeRestriction`
 
 ---
 
@@ -592,9 +593,9 @@ metadata:
   namespace: dev
   name: pod-reader
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
 ```
 
 ```yaml
@@ -604,8 +605,8 @@ metadata:
   name: read-pods
   namespace: dev
 subjects:
-- kind: User
-  name: alice
+  - kind: User
+    name: alice
 roleRef:
   kind: Role
   name: pod-reader

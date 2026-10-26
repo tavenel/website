@@ -1,16 +1,17 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: 🧪 Débug dans Kubernetes
 tags:
-- docker
-- kubernetes
-- devops
-- debug
+  - docker
+  - kubernetes
+  - devops
+  - debug
 type: cours
 sidebar:
   order: 8
 description: 🧪 Débug dans Kubernetes
 ---
+
 ## 🧭 Stratégie de Débug en Kubernetes 🔍🔧
 
 - Approche du **bas vers le haut** :
@@ -200,7 +201,7 @@ kubectl describe pod my-pod
 
     ```yaml
     imagePullSecrets:
-    - name: regcred
+      - name: regcred
     ```
 
   - Tester le **pull manuel** :
@@ -313,13 +314,13 @@ kubectl describe pod my-pod
   - Commande ou binaire inexistant dans l'image :
 
     ```yaml
-    command: ["/start.sh"]  # mais start.sh n'existe pas ?
+    command: ["/start.sh"] # mais start.sh n'existe pas ?
     ```
 
 - 🐚 Shell absent ou mauvaise syntaxe :
 
   ```yaml
-  command: ["bash", "-c", "my-command"]  # mais bash n'est pas dans l'image ?
+  command: ["bash", "-c", "my-command"] # mais bash n'est pas dans l'image ?
   ```
 
 - 🔧 Entrée `args:` mal formée ou mal utilisée avec `command:`
@@ -572,12 +573,12 @@ apiVersion: v1
 kind: Service
 spec:
   ports:
-    - port: 80         # Port du service
+    - port: 80 # Port du service
       targetPort: 8080 # Port du conteneur
 ```
 
 ```yaml
-containerPort: 8080  # ✅ Doit correspondre au targetPort du Service
+containerPort: 8080 # ✅ Doit correspondre au targetPort du Service
 ```
 
 - 🧪 Vérification :
@@ -595,10 +596,10 @@ kubectl describe pod my-pod
 
 #### 🔍 Exemple pour un Service
 
-  ```yaml
-  selector:
-    app: web
-  ```
+```yaml
+selector:
+  app: web
+```
 
 - ✅ Vérifier que les Pods ont les bons labels :
 
@@ -615,7 +616,7 @@ selector:
 template:
   metadata:
     labels:
-      app: myapp  # 🔥 doit correspondre exactement
+      app: myapp # 🔥 doit correspondre exactement
 ```
 
 ---
@@ -653,15 +654,15 @@ kubectl describe ingress my-ingress
 
 ```yaml
 rules:
-- http:
-    paths:
-    - path: /api
-      pathType: Prefix
-      backend:
-        service:
-          name: my-service  # ✅ nom du Service
-          port:
-            number: 80      # ✅ port exposé par le Service
+  - http:
+      paths:
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: my-service # ✅ nom du Service
+              port:
+                number: 80 # ✅ port exposé par le Service
 ```
 
 ✅ **3. Vérifier le Service backend :**

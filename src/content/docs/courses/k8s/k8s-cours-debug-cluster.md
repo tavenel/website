@@ -1,11 +1,12 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Debug du cluster
 type: cours
 sidebar:
   order: 7
 description: Debug du cluster
 ---
+
 - Tester localement kubectl sur un control plane
 
 ```sh
@@ -30,4 +31,3 @@ crictl --runtime-endpoint unix:///run/containerd/containerd.sock logs …
 :::tip
 En _k3s_, le _kubelet_ est directement intégré dans le service de _k3s_ => dans le service systemd `k3s` (_master_) ou `k3s-agent` (_worker_).
 :::
-

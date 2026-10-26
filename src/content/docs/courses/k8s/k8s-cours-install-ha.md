@@ -6,6 +6,7 @@ sidebar:
   order: 12
 description: Installation H/A
 ---
+
 ## 📌 Haute Disponibilité d'un Cluster Kubernetes
 
 Dans un contexte de **production**, un cluster Kubernetes doit être conçu pour **tolérer la panne de composants critiques** sans interruption significative du service. La haute disponibilité (HA) couvre **le control plane** et la **résilience de l'etcd** - le datastore distribué qui contient tout l'état du cluster.

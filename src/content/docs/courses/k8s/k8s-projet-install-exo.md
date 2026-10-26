@@ -1,17 +1,18 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Projet installation du cluster
 type: projet
 sidebar:
   order: 3
 description: Projet installation du cluster
 ---
+
 ## 🎯 Objectifs
 
-- Comprendre les concepts fondamentaux de Kubernetes  
-- Installer et configurer un cluster Kubernetes  
-- Administrer un cluster et gérer son cycle de vie  
-- Déployer et superviser une application dans Kubernetes  
+- Comprendre les concepts fondamentaux de Kubernetes
+- Installer et configurer un cluster Kubernetes
+- Administrer un cluster et gérer son cycle de vie
+- Déployer et superviser une application dans Kubernetes
 
 ## 🛠️ Étapes du Projet
 
@@ -43,18 +44,20 @@ Réaliser l'installation du cluster Kubernetes :
    - Configuration du réseau avec un CNI (`Flannel`, `Calico`, …)
 4. **Cluster H/A uniquement** : on testera la partie **H/A du `control-plane`** :
    - Déconnecter ou simuler la défaillance d'un `control-plane` pour observer la capacité du cluster à basculer automatiquement.
-:::
+     :::
 
 :::caution
 Attention, on demande bien d'installer un cluster **production-ready** !
 :::
 
 :::note
+
 - Voir aussi : <https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/>
 - Documentation de référence : <https://kubernetes.io/docs/setup/production-environment/>
-- Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS. 
+- Pour tester la sécurité du cluster, on pourra utiliser <https://github.com/aquasecurity/kube-bench> pour passer le benchmark CIS.
 - Voir aussi : <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/>
-:::
+
+  :::
 
 ### Phase 2 : Déploiement d'une Application
 
@@ -78,11 +81,11 @@ On testera la résilience du déploiement applicatif (et du `control-plane` **po
 3. Tester la déconnexion d'un _worker node_
 4. Vérifier la réconciliation des ressources
 5. Vérifier le _scaling_ automatique en cas de pic de charge
-:::
+
+   :::
 
 ## 📜 Livrables
 
 - 📂 **Rapport détaillé** avec étapes et configurations
 - 📜 **Code source** des manifestes Kubernetes
 - 🎤 **Présentation** des résultats et démonstration
-

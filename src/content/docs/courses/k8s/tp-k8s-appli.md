@@ -1,11 +1,12 @@
 ---
 title: TP Kubernetes - Création de manifestes et déploiement d'une application containerisée avec kubectl
-date: 2025 / 2026
+date: 2026 / 2027
 type: tp
 sidebar:
   order: 250
 description: TP Kubernetes - Création de manifestes et déploiement d'une application containerisée avec kubectl
 ---
+
 Exemple de création de manifestes et déploiement Kubernetes avec `kubectl` étape par étape, basé sur une mini-application à **2 services + 1 SGBDR containerisé**.
 
 ## 🧭 Objectifs pédagogiques
@@ -361,7 +362,7 @@ metadata:
   labels:
     app: db
 spec:
-  replicas: 1   # Un PVC RWO = un seul Pod
+  replicas: 1 # Un PVC RWO = un seul Pod
   selector:
     matchLabels:
       app: db
@@ -426,7 +427,7 @@ metadata:
   name: db
   namespace: tp-kube-app
 spec:
-  serviceName: db-headless   # obligatoire pour StatefulSet
+  serviceName: db-headless # obligatoire pour StatefulSet
   replicas: 1
   selector:
     matchLabels:

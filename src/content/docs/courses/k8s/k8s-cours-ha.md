@@ -1,15 +1,16 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Haute Disponibilité d'un Cluster Kubernetes
 tags:
-- kubernetes
-- devops
-- HA
+  - kubernetes
+  - devops
+  - HA
 type: cours
 sidebar:
   order: 11
 description: Haute Disponibilité d'un Cluster Kubernetes
 ---
+
 ## Objectifs
 
 - **Éliminer le point de défaillance unique (SPOF)** de l'API server : ne pas dépendre d'un seul nœud pour l'accès au Kubernetes API.

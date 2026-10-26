@@ -1,15 +1,16 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Outils externes
 tags:
-- docker
-- kubernetes
-- devops
+  - docker
+  - kubernetes
+  - devops
 type: cours
 sidebar:
   order: 22
 description: Outils externes
 ---
+
 ## Krew : Gestionnaire de plugins kubectl
 
 - Gestionnaire officiel de plugins kubectl
@@ -26,7 +27,7 @@ description: Outils externes
 | **ctx**          | Changement rapide de contexte              |
 | **ns**           | Changement rapide de namespace             |
 | **tree**         | Vue hiérarchique des ressources            |
-| **neat**         | **Nettoyage des manifests (YAML propre)**      |
+| **neat**         | **Nettoyage des manifests (YAML propre)**  |
 | **view-secret**  | Lecture de secrets décodés                 |
 | **describe-all** | Describe sur toutes les ressources         |
 | **get-all**      | Liste toutes les ressources d'un namespace |
@@ -38,7 +39,7 @@ description: Outils externes
 | **debug**      | Debug éphémère avec ephemeral containers |
 | **doctor**     | Diagnostic du cluster                    |
 | **node-shell** | Shell direct sur un nœud                 |
-| **status**     | **Résumé de l'état du cluster**              |
+| **status**     | **Résumé de l'état du cluster**          |
 | **trace**      | Tracing syscalls (eBPF)                  |
 
 #### 📦 Gestion des ressources

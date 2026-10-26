@@ -1,11 +1,12 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: FAQ etcd
 type: page
 sidebar:
   order: 1
 description: FAQ etcd
 ---
+
 ### Les clients doivent-ils envoyer leurs requêtes au leader etcd ?
 
 etcd utilise le protocole _Raft_ basé sur un leader ; le leader gère toutes les requêtes client nécessitant un consensus du cluster (écriture, …). Cependant, le client n'a pas besoin de savoir quel nœud est le leader. Toute requête nécessitant un consensus envoyée à un _follower_ est automatiquement transmise au leader. Les requêtes ne nécessitant pas de consensus (par exemple, les lectures sérialisées) peuvent être traitées par n'importe quel membre du cluster.
@@ -34,8 +35,9 @@ Avec des latences plus longues, la configuration par défaut d'etcd peut entraî
 ### Liens etcd
 
 :::note
-Voir aussi la documentation officielle _etcd_, notamment : 
+Voir aussi la documentation officielle _etcd_, notamment :
+
 - la FAQ (source des explications ci-dessus) : <https://etcd.io/docs/latest/faq/>
 - les problèmes courants : <https://etcd.io/docs/latest/learning/design-learner/>
-:::
 
+  :::

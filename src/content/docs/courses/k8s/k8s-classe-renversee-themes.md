@@ -1,13 +1,14 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: 📚 Thèmes à répartir entre les groupes
 type: projet
 sidebar:
   order: 4
 description: 📚 Thèmes à répartir entre les groupes
 ---
+
 | Thème | Sujet                                                                                           |
-| ----- | ------------------------------------------------------------------------------------------------|
+| ----- | ----------------------------------------------------------------------------------------------- |
 | 1.1   | Introduction et architecture de Kubernetes (Node, kube-apiserver)                               |
 | 1.2   | Déploiement local et distant de clusters (Minikube, Kind, kubeadm)                              |
 | 2     | Pods, Containers et gestion des ressources (cycle de vie, initContainer, limites CPU / mémoire) |
@@ -17,4 +18,3 @@ description: 📚 Thèmes à répartir entre les groupes
 | 6     | Réseau, sécurité et RBAC (Network Policies, RBAC, service accounts)                             |
 | 7     | Helm et gestion de templates (Charts, paramètres dynamiques, packaging et déploiement)          |
 | 8     | Auto-scaling et haute disponibilité (HPA, VPA, Cluster Autoscaler)                              |
-

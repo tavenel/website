@@ -1,15 +1,16 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Configuration avancée des Pods
 tags:
-- docker
-- kubernetes
-- devops
+  - docker
+  - kubernetes
+  - devops
 type: cours
 sidebar:
   order: 17
 description: Configuration avancée des Pods
 ---
+
 ## 🛠️ Sondes Healthcheck
 
 - `ReadinessProbe`

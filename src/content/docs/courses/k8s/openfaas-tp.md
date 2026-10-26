@@ -1,11 +1,12 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: λ TP OpenFaaS
 type: cours
 sidebar:
   order: 800
 description: λ TP OpenFaaS
 ---
+
 ## Introduction aux Fonctions Serverless
 
 Une fonction _Serverless_ est un morceau de code exécutable à la demande, hébergé sur une plateforme cloud (AWS Lambda, Azure Functions, Google Cloud Functions, …), sans que le développeur n'ait à gérer l'infrastructure sous-jacente (serveurs, mise à l'échelle, maintenance). L'un de ses grands avantages est la simplicité : elle permet de se concentrer sur le code métier, tout en bénéficiant d'une facturation à l'usage (paiement uniquement pour le temps d'exécution) et d'une mise à l'échelle automatique. Cependant, elle présente aussi des inconvénients : la dépendance au fournisseur ("vendor lock-in"), une latence potentielle au démarrage (le _cold start_), et des limites de contrôle sur l'environnement d'exécution.
@@ -205,7 +206,7 @@ Déployer la fonction de test _figlet_ (cette fonction crée un Ascii art depuis
 $ faas-cli store deploy figlet
 
 
-$ faas-cli list               
+$ faas-cli list
 
 Function                       Invocations     Replicas
 figlet                         0               1
@@ -231,7 +232,7 @@ $ curl -X POST http://127.0.0.1:8080/function/figlet \
 $ faas-cli list
 
 Function                       Invocations     Replicas
-figlet                         1               1    
+figlet                         1               1
 ```
 
 ## Une première fonction serverless en Python
@@ -497,17 +498,17 @@ Une fonction simple sans contexte n'est pas très représentative d'un vrai prog
 
 - `uppercase()` : prend un texte en entrée et renvoie le texte en majuscules.
 
-    ```python
-    def handle(event, context):
-        return {"statusCode": 200, "body": event.body.upper()}
-    ```
+  ```python
+  def handle(event, context):
+      return {"statusCode": 200, "body": event.body.upper()}
+  ```
 
 - `reverse()` : prend le texte transformé en majuscules et le renverse.
 
-    ```python
-    def handle(event, context):
-        return {"statusCode": 200, "body": event.body[::-1]}
-    ```
+  ```python
+  def handle(event, context):
+      return {"statusCode": 200, "body": event.body[::-1]}
+  ```
 
 Il suffit alors de créer une 3e fonction réalisant la logique métier des appels :
 
@@ -566,7 +567,6 @@ functions:
     annotations:
       com.openfaas.scale.min: "1"
       com.openfaas.scale.max: "10"
-
 ```
 
 :::note
@@ -782,17 +782,20 @@ functions:
 **Code Node.js :**
 
 ```javascript
-const amqp = require('amqplib');
+const amqp = require("amqplib");
 
 module.exports = async (event, context) => {
-    const url = require('fs').readFileSync('/var/openfaas/secrets/rabbitmq-url', 'utf8');
-    const conn = await amqp.connect(url);
-    const ch = await conn.createChannel();
-    await ch.assertQueue('myqueue');
-    ch.sendToQueue('myqueue', Buffer.from(event.body));
-    await ch.close();
-    await conn.close();
-    return context.status(200).succeed('Message sent!');
+  const url = require("fs").readFileSync(
+    "/var/openfaas/secrets/rabbitmq-url",
+    "utf8",
+  );
+  const conn = await amqp.connect(url);
+  const ch = await conn.createChannel();
+  await ch.assertQueue("myqueue");
+  ch.sendToQueue("myqueue", Buffer.from(event.body));
+  await ch.close();
+  await conn.close();
+  return context.status(200).succeed("Message sent!");
 };
 ```
 
@@ -834,7 +837,7 @@ def handle(event, context):
 
 Créer ou utiliser des **templates personnalisés** dans OpenFaaS est une pratique très puissante pour adapter son environnement de fonctions.
 
-Un **template** OpenFaaS est **l'ossature** d'une fonction :  il fournit tout ce qui est nécessaire pour construire l'image Docker d'une fonction **sans avoir à tout écrire soi-même**.
+Un **template** OpenFaaS est **l'ossature** d'une fonction : il fournit tout ce qui est nécessaire pour construire l'image Docker d'une fonction **sans avoir à tout écrire soi-même**.
 
 Un template contient :
 
@@ -930,12 +933,12 @@ Chaque étape est totalement découplée et utilise un **appel HTTP** ou un **pu
 
 ## 📦 Fonctions du projet
 
-| Fonction            | Rôle                                  | Input                         | Output               |
-|---------------------|----------------------------------------|-------------------------------|----------------------|
-| `upload-function`    | Reçoit une image (via HTTP POST)       | Image brute                   | Événement "Uploaded" |
-| `resize-function`    | Redimensionne l'image (ex: 800px max)  | Image uploadée                | Événement "Resized"  |
-| `watermark-function` | Ajoute un filigrane "© MyCompany"      | Image redimensionnée          | Événement "Watermarked" |
-| `save-function`      | Sauvegarde l'image finale dans MinIO/S3 | Image watermarked             | Succès/Échec         |
+| Fonction             | Rôle                                    | Input                | Output                  |
+| -------------------- | --------------------------------------- | -------------------- | ----------------------- |
+| `upload-function`    | Reçoit une image (via HTTP POST)        | Image brute          | Événement "Uploaded"    |
+| `resize-function`    | Redimensionne l'image (ex: 800px max)   | Image uploadée       | Événement "Resized"     |
+| `watermark-function` | Ajoute un filigrane "© MyCompany"       | Image redimensionnée | Événement "Watermarked" |
+| `save-function`      | Sauvegarde l'image finale dans MinIO/S3 | Image watermarked    | Succès/Échec            |
 
 ## 🛠️ Mise en œuvre
 
@@ -956,10 +959,10 @@ import io
 def handle(event, context):
     img = Image.open(io.BytesIO(event.body))
     img.thumbnail((800, 800))
-    
+
     output = io.BytesIO()
     img.save(output, format='JPEG')
-    
+
     return output.getvalue()
 ```
 

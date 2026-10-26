@@ -1,11 +1,12 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Arrêt et redémarrage d'un cluster complet
 type: cours
 sidebar:
   order: 20
 description: Arrêt et redémarrage d'un cluster complet
 ---
+
 ## 🎯 Objectifs
 
 - éviter corruption d'`etcd`

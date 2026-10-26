@@ -1,13 +1,14 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Séquence des opérations
 tags:
-- kubernetes
+  - kubernetes
 type: cours
 sidebar:
   order: 19
 description: Séquence des opérations
 ---
+
 ```mermaid
 ---
 title: "Création d'un Pod"
@@ -74,4 +75,3 @@ sequenceDiagram
     APIServer->>Etcd: Persist Status
     Etcd-->>APIServer: Ack
 ```
-

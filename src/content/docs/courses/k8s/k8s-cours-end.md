@@ -1,15 +1,16 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Bonnes pratiques
 tags:
-- docker
-- kubernetes
-- devops
+  - docker
+  - kubernetes
+  - devops
 type: cours
 sidebar:
   order: 9
 description: Bonnes pratiques
 ---
+
 ## 📦 Conteneurisation
 
 - **Image légère** : ✅ < 100 MB, ❌ > 1GB 🏷️
