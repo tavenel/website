@@ -6,7 +6,7 @@
 	- generate "next" => ## 🚀 Pour aller plus loin Voir les autres ressources du [cours sur le Devops](/devops).
 	- generate "objectives"
 	- generate "details"
-- :::exo to steps ? https://starlight.astro.build/components/steps/ => v2 ?
+- :::exo to steps ? https://starlight.astro.build/components/steps/ => v2 ? or https://delucis.github.io/starlight-markdown-blocks/blocks/aside/ ?
 - update / cleanup pages/website.md with starlight info
 - math katex KO (OK to drop ? or import manually when needed) => data/mining + test.md
 - cours => 2+, exos : 100+, projets: 200+, legal: 999
@@ -23,6 +23,7 @@
   - https://github.com/prisant-labs/starlight-visual-customizer
 - recherche d'un module
 - upgrade "date:" après vérification des contenus
+- remark => external links
 
 ---
 # Files :
