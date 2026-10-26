@@ -2,14 +2,15 @@
 license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Kubernetes
 tags:
-- docker
-- kubernetes
-- devops
+  - docker
+  - kubernetes
+  - devops
 type: cours
 sidebar:
   order: 2
 description: Kubernetes
 ---
+
 ## 🚀 Comparaison des Plateformes de Conteneurs
 
 ---
@@ -84,11 +85,11 @@ description: Kubernetes
 ### 📊 Comparaison
 
 | Plateforme | Facilité d'utilisation | Évolutivité | Écosystème | Coût |
-|------------|-----------------------|-------------|------------|------|
-| Kubernetes | ⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | 🆓 |
-| OpenShift | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | 💰 |
-| Swarm | ⭐️⭐️⭐️⭐️ | ⭐️⭐️⭐️ | ⭐️⭐️ | 🆓 |
-| Mesos | ⭐️⭐️ | ⭐️⭐️⭐️⭐️ | ⭐️⭐️ | 🆓 |
+| ---------- | ---------------------- | ----------- | ---------- | ---- |
+| Kubernetes | ⭐️⭐️⭐️                 | ⭐️⭐️⭐️⭐️    | ⭐️⭐️⭐️⭐️   | 🆓   |
+| OpenShift  | ⭐️⭐️⭐️⭐️               | ⭐️⭐️⭐️⭐️    | ⭐️⭐️⭐️     | 💰   |
+| Swarm      | ⭐️⭐️⭐️⭐️               | ⭐️⭐️⭐️      | ⭐️⭐️       | 🆓   |
+| Mesos      | ⭐️⭐️                   | ⭐️⭐️⭐️⭐️    | ⭐️⭐️       | 🆓   |
 
 ---
 
@@ -130,7 +131,7 @@ title: Architecture des technologies de conteneurs
 flowchart TD
     A["Docker (CLI)"]
     B[Kubernetes]
-    
+
     A --> ContainerD
     B --> CRI
 
@@ -259,16 +260,16 @@ Voir aussi :
 
 ---
 
-| Critère | Calico | Flannel | Weave Net | Cilium |
-|-------------|------------|-------------|---------------|------------|
-| **Type de Réseau** | Couche 3 (IPIP, BGP, VXLAN) | Couche 3 (VXLAN, UDP) | Couche 2 (Overlay) | Couche 3 (eBPF) |
-| **Sécurité** | Politiques de réseau granulaires | Politiques de réseau basiques | Politiques de réseau basiques | Politiques de réseau granulaires |
-| **Performance** | Haute | Moyenne | Moyenne | Très haute |
-| **Scalabilité** | Très élevée | Moyenne | Moyenne | Très élevée |
-| **Complexité** | Moyenne à élevée | Faible | Faible à moyenne | Élevée |
-| **Fonctionnalités** | Avancées (BGP, IPIP, VXLAN) | Basiques | Basiques à moyennes | Avancées (eBPF, DNS, chiffrement) |
-| **Compatibilité** | Kubernetes, OpenShift, Docker | Kubernetes, Docker | Kubernetes, Docker, Mesos | Kubernetes |
-| **Résilience** | Élevée | Moyenne | Élevée | Élevée |
+| Critère             | Calico                           | Flannel                       | Weave Net                     | Cilium                            |
+| ------------------- | -------------------------------- | ----------------------------- | ----------------------------- | --------------------------------- |
+| **Type de Réseau**  | Couche 3 (IPIP, BGP, VXLAN)      | Couche 3 (VXLAN, UDP)         | Couche 2 (Overlay)            | Couche 3 (eBPF)                   |
+| **Sécurité**        | Politiques de réseau granulaires | Politiques de réseau basiques | Politiques de réseau basiques | Politiques de réseau granulaires  |
+| **Performance**     | Haute                            | Moyenne                       | Moyenne                       | Très haute                        |
+| **Scalabilité**     | Très élevée                      | Moyenne                       | Moyenne                       | Très élevée                       |
+| **Complexité**      | Moyenne à élevée                 | Faible                        | Faible à moyenne              | Élevée                            |
+| **Fonctionnalités** | Avancées (BGP, IPIP, VXLAN)      | Basiques                      | Basiques à moyennes           | Avancées (eBPF, DNS, chiffrement) |
+| **Compatibilité**   | Kubernetes, OpenShift, Docker    | Kubernetes, Docker            | Kubernetes, Docker, Mesos     | Kubernetes                        |
+| **Résilience**      | Élevée                           | Moyenne                       | Élevée                        | Élevée                            |
 
 ---
 
@@ -340,24 +341,24 @@ Voir aussi :
 ---
 
 1. **Docker Desktop** 🐳
-    - Intègre Kubernetes nativement
-    - Offre une expérience utilisateur simplifiée 🖥️
-    - Adapté aux développeurs utilisant Docker 🛠️
+   - Intègre Kubernetes nativement
+   - Offre une expérience utilisateur simplifiée 🖥️
+   - Adapté aux développeurs utilisant Docker 🛠️
 
 ---
 
 1. **Kind (Kubernetes IN Docker)** 🧪
-    - Déploie Kubernetes dans un conteneur pour le développement et le test
-    - Crée rapidement un ou plusieurs clusters localement 🏗️
-    - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, … 🔄
-    - CNI custom : `kindnetd` 🌐
-    - Utilise `kubeadm` 🛠️
+   - Déploie Kubernetes dans un conteneur pour le développement et le test
+   - Crée rapidement un ou plusieurs clusters localement 🏗️
+   - Utile pour tester plusieurs clusters : upgrade, changements d'infrastructure, … 🔄
+   - CNI custom : `kindnetd` 🌐
+   - Utilise `kubeadm` 🛠️
 
 ---
 
 1. **Talos Linux** 🐧
-    - Distribution Linux dédiée
-    - OS immuable : pas de SSH, shell, … 🔒
+   - Distribution Linux dédiée
+   - OS immuable : pas de SSH, shell, … 🔒
 
 ---
 
@@ -415,7 +416,7 @@ Il existe de (très) nombreuses manières d'installer Kubernetes : voir <https:/
 ### ❌Limites
 
 - k8s est fait pour gérer de gros clusters : 🏗️
-- Limitations Kubernetes v1.31 :
+- Limitations Kubernetes v1.35 :
   - < 5,000 Node 🌐
   - < 110 Pod / Node 📦
   - < 150,000 Pod (total) 📦
@@ -686,16 +687,16 @@ Le _StatefulSet_ est utile lorsque l'on doit pouvoir différencier et sélection
 
 #### Deployment vs StatefulSet
 
-| Caractéristique | Deployment | StatefulSet |
-|----------------|------------|-------------|
-| **Nom des pods** | Aléatoire (app-xxx-yyy) | Ordonné (app-0, app-1, app-2) |
-| **Identité** | Interchangeable | Unique et stable |
-| **Nom DNS** | Variable | Stable et prévisible |
-| **Ordre de déploiement** | Parallèle | Séquentiel (0→1→2) |
-| **Ordre de suppression** | Aléatoire | Inverse (2→1→0) |
-| **Stockage** | Partagé ou éphémère | Dédié par pod |
-| **Persistance après redémarrage** | Non garantie | Garantie |
-| **Scaling** | Parallèle | Séquentiel |
+| Caractéristique                   | Deployment              | StatefulSet                   |
+| --------------------------------- | ----------------------- | ----------------------------- |
+| **Nom des pods**                  | Aléatoire (app-xxx-yyy) | Ordonné (app-0, app-1, app-2) |
+| **Identité**                      | Interchangeable         | Unique et stable              |
+| **Nom DNS**                       | Variable                | Stable et prévisible          |
+| **Ordre de déploiement**          | Parallèle               | Séquentiel (0→1→2)            |
+| **Ordre de suppression**          | Aléatoire               | Inverse (2→1→0)               |
+| **Stockage**                      | Partagé ou éphémère     | Dédié par pod                 |
+| **Persistance après redémarrage** | Non garantie            | Garantie                      |
+| **Scaling**                       | Parallèle               | Séquentiel                    |
 
 ---
 
@@ -773,7 +774,7 @@ metadata: # Métadatas de la ressource
   name: … # nom (interne) de la ressource à créer et/ou monitorer
   namespace: mon-namespace # Namespace spécial (optionnel - sinon default)
   labels: # ajout de labels (optionnel)
-    ma-cle: ma-valeur 
+    ma-cle: ma-valeur
   […]
 spec: # Les spécifications de la ressource. Différent pour chaque type de ressource
   […]

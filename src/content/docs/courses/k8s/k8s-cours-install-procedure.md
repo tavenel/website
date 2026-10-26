@@ -6,6 +6,7 @@ sidebar:
   order: 13
 description: Procédure d'installation
 ---
+
 Les installations de clusters Kubernetes sont assez hétérogènes en fonction de l'environnement cible, du _CNI_ utilisé et de la distribution choisie (spécificités `k3s`, …). On retrouve cependant un schéma assez standard :
 
 - Les noeuds _worker_ (noeuds qui exécutent les applications) n'ont besoin que d'un `kubelet` et d'un `kube-proxy` (le `kube-proxy` est optionnel dans de rares cas, par exemple si l'on utilise `Cilium` ou un `kube-router`). Les `kubelet` n'ont finalement besoin que d'un enregistrement auprès de l'`API Server`. La configuration du `kube-proxy` est en général assez simple car le _CNI_ s'occupe des couches basses (à vérifier auprès du _CNI_).
@@ -17,10 +18,10 @@ On effectue donc en principe l'odre de déploiement suivant :
 - Création d'un noeud _control plane_ (aussi appelé _master_) :
   - déploiement `etcd` (ou BDD).
   - déploiement `api-server` utilisant l'`etcd`.
-	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
-	- déploiement `control-manager` et `scheduler` et enregistrement auprès de l'`api-server`
+    - création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
+    - déploiement `control-manager` et `scheduler` et enregistrement auprès de l'`api-server`
 - Création des workers :
-	- création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
+  - création de la configuration du `kubelet`, déploiement et enregistrement auprès de l'`api-server`.
 
 ## Exemple de procédure d'installation sans haute disponibilité
 
@@ -59,7 +60,7 @@ Ou par fichier de configuration :
 # A retrouver après installation dans : /var/lib/kubelet/config.yaml
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
-kubernetesVersion: v1.34.0
+kubernetesVersion: v1.35.0
 ---
 kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1
@@ -97,6 +98,7 @@ Forcer un CIDR pour le réseau des pods peut être obligatoire pour certains CNI
 ```sh
 kubeadm init … --pod-network-cidr=100.0.0/16
 ```
+
 :::
 
 ## Pods statiques
@@ -111,4 +113,3 @@ Pour contourner cette limite, Kubernetes permet de déployer des _Pods_ dits _st
 :::tip
 Dimensionner un cluster Kubernetes est très compliqué. Il est possible de redimensionner dynamiquement un cluster pendant son cycle de vie : voir ces slides sur le [Sizing de Cluster et le ClusterAutoscaler de Nodes](https://2021-05-enix.container.training/4.yml.html#248) et [Scaling with custom metrics](https://2021-05-enix.container.training/4.yml.html#334). Pour information, la base `etcd` ne doit normalement pas dépasser 2GB.
 :::
-
