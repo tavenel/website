@@ -1,11 +1,12 @@
 ---
 title: TP Premiers pas avec Kubernetes
-date: 2024 / 2025
+date: 2026 / 2027
 type: tp
 sidebar:
   order: 250
 description: TP Premiers pas avec Kubernetes
 ---
+
 Dans ce TP, nous allons utiliser l'orchestrateur de conteneurs Kubernetes pour gérer le déploiement, la configuration et l'équilibrage de charge des conteneurs créés par Docker. Le déploiement se fera dans un mono-cluster de test.
 
 ## Installation
@@ -165,14 +166,14 @@ kubectl get nodes -o wide
 - 2. Ajout du label
 
 ```yaml
-#web-pod-label.yml 
+#web-pod-label.yml
 # Configuration du Pod web
 apiVersion: v1
 kind: Pod
 metadata:
   name: web
   labels:
-    app: web-app  # Pour l'utiliser dans l'affinité
+    app: web-app # Pour l'utiliser dans l'affinité
 spec:
   containers:
     - name: web-container
@@ -206,12 +207,12 @@ spec:
   selector:
     app: web-app
   ports:
-    - port: 8182        # Port interne exposé par le service
-      targetPort: 8080   # Port interne sur lequel le conteneur écoute
+    - port: 8182 # Port interne exposé par le service
+      targetPort: 8080 # Port interne sur lequel le conteneur écoute
 ```
 
 ```sh
-kubectl -f web-cluster-ip.yml apply   
+kubectl -f web-cluster-ip.yml apply
 #service/web-clusterip created
 
 kubectl run test --rm -it --image alpine:latest
@@ -238,17 +239,14 @@ spec:
     app: web-app
   ports:
     - protocol: TCP
-      port: 82        # Port interne exposé par le service
-      targetPort: 80   # Port sur lequel le conteneur écoute
-      nodePort: 30001    # Port sur lequel le service sera accessible depuis l'extérieur du cluster
+      port: 82 # Port interne exposé par le service
+      targetPort: 80 # Port sur lequel le conteneur écoute
+      nodePort: 30001 # Port sur lequel le service sera accessible depuis l'extérieur du cluster
 ```
 
 ```sh
 kubectl -f web-node-port.yml apply
 #service/web-clusterip configured
-
-minikube ip
-#192.168.39.48
 
 wget http://192.168.39.48:30001 # ou dans un navigateur
 #Connecting to 192.168.39.48:30001 (192.168.39.48:30001)
@@ -272,7 +270,7 @@ Pour créer un pod avec une affinité pour un nœud ayant un label spécifique, 
 :::
 
 :::tip
-Dans Minikube, il n'y a qu'1 seul `Node`, mais sur un vrai cluster on peut sélectionner le Node qui nous intéresse !
+Si vous disposez d'1 seul `Node`, vous pouvez tester qu'il est refusé de créer 2 Pods avec anti-affinité sur le même `Node`.
 :::
 
 :::correction
@@ -280,7 +278,7 @@ Dans Minikube, il n'y a qu'1 seul `Node`, mais sur un vrai cluster on peut séle
 - 1. Ajout de label
 
 ```sh
-kubectl get nodes              
+kubectl get nodes
 #NAME       STATUS   ROLES           AGE   VERSION
 #minikube   Ready    control-plane   11d   v1.31.0
 
@@ -294,7 +292,7 @@ kubectl get nodes --show-labels
 - 2. Configuration du Pod avec affinité
 
 ```yaml
-#web-pod-affinity.yml 
+#web-pod-affinity.yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -348,14 +346,14 @@ En Kubernetes, vous pouvez définir des affinités inter-pods pour lier deux pod
 - 1. Ajout du label
 
 ```yaml
-#web-pod-label.yml 
+#web-pod-label.yml
 # Configuration du Pod web
 apiVersion: v1
 kind: Pod
 metadata:
   name: web
   labels:
-    app: web-app  # Pour l'utiliser dans l'affinité
+    app: web-app # Pour l'utiliser dans l'affinité
 spec:
   containers:
     - name: nginx-container
@@ -377,7 +375,7 @@ kubectl describe po/web
 - 2. Créer un Pod `cache` avec une affinité pour le Pod `web`.
 
 ```yaml
-#web-pod-cache-affinity.yml 
+#web-pod-cache-affinity.yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -399,7 +397,7 @@ spec:
 kubectl -f web-pod-cache-affinity.yml apply
 pod/cache created
 
-kubectl get po                             
+kubectl get po
 #NAME                              READY   STATUS              RESTARTS      AGE
 #cache                             0/1     ContainerCreating   0             5s
 #web                               1/1     Running             0             48m
@@ -408,7 +406,7 @@ kubectl get po
 - 3. Créer un Pod `antagoniste` avec une anti-affinité pour le Pod `web`.
 
 ```yaml
-#web-pod-antagoniste-affinity.yml 
+#web-pod-antagoniste-affinity.yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -430,19 +428,12 @@ spec:
 kubectl -f web-pod-antagoniste-affinity.yml apply
 #pod/antagoniste created
 
-kubectl get po                                   
-#NAME                              READY   STATUS    RESTARTS      AGE
-#antagoniste                       0/1     Pending   0             111s
+kubectl get po -o wide
+# NAME                              READY   STATUS              RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+# antagoniste                       0/1     ContainerCreating   0          7s    <none>       kind-worker2   <none>           <none>
+# cache                             0/1     ContainerCreating   0          7s    <none>       kind-worker    <none>           <none>
 
-kubectl describe po/antagoniste
-#Events:
-#  Type     Reason            Age   From               Message
-#  ----     ------            ----  ----               -------
-#  Warning  FailedScheduling  18s   default-scheduler  0/1 nodes are available: 1 node(s) didn't match pod anti-affinity rules. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.
-
-# Le pod n'a pas pu être lancé sur Minikube.
-# C'est normal, on ne dispose que d'1 seul Node
-# et on ne veut pas d'affinité avec Web !
+# Les 2 Pods sont sur 2 Nodes différents : `kind-workder` et `kind-worker2`
 ```
 
 :::
@@ -458,7 +449,7 @@ kubectl describe po/antagoniste
 :::correction
 
 ```yaml
-#web-pod-limits.yml 
+#web-pod-limits.yml
 # Configuration du Pod web avec limitation de ressources
 apiVersion: v1
 kind: Pod
@@ -502,7 +493,7 @@ Les ressources de type `Pod` sont en réalité rarement utilisées - on leur pr�
 :::correction
 
 ```yaml
-#web-deployment.yml 
+#web-deployment.yml
 # Deployment pour Pod Web et Service
 apiVersion: apps/v1
 kind: Deployment
@@ -518,10 +509,10 @@ spec:
         app: web-app
     spec:
       containers:
-      - name: web-container
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: web-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -531,18 +522,18 @@ metadata:
     app: web-app
 spec:
   ports:
-  - port: 80
+    - port: 80
   selector:
     app: web-app
 ```
 
 ```sh
 # Utilisation d'un Deployment
-kubectl -f web-deployment.yml apply        
+kubectl -f web-deployment.yml apply
 #deployment.apps/web-deploy created
 #service/web-svc created
 
-kubectl get po                     
+kubectl get po
 NAME                              READY   STATUS    RESTARTS      AGE
 web-deploy-85c575ffc9-hmnz4       1/1     Running   0             3s
 
@@ -550,7 +541,7 @@ kubectl get po
 #NAME                              READY   STATUS    RESTARTS      AGE
 #web-deploy-85c575ffc9-hmnz4       1/1     Running   0             13s
 
-kubectl get svc              
+kubectl get svc
 #NAME             TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
 #web-svc          ClusterIP      10.99.83.92      <none>        80/TCP           20s
 
@@ -592,7 +583,7 @@ La commande `kubectl rollout` est utilisée pour gérer et surveiller les déplo
 
 ```yaml
 #…
-        image: nginx:stable-perl
+image: nginx:stable-perl
 #…
 ```
 
@@ -626,7 +617,7 @@ kubectl rollout status deploy/web-deploy
 
 ```sh
 kubectl rollout history deploy/web-deploy
-#deployment.apps/web-deploy 
+#deployment.apps/web-deploy
 #REVISION  CHANGE-CAUSE
 #1         <none>
 #2         <none>
@@ -717,7 +708,7 @@ Dans Kubernetes, les `accessModes` définissent comment un volume peut être mon
 
 :::exo
 
-1. Pour utiliser un stockage local sur minikube, créer un PV qui utilise un chemin du disque local de Node Minikube. On pourra utiliser la commande `minikube ssh` pour se connecter au Node. Vérifier la création du PV.
+1. Créer un PV qui utilise un chemin du disque local de Node. Vérifier la bonne création du PV.
 2. Créer un PVC afin de permettre de réclamer un PV en fonction des besoins d'une application. Vérifier la création du PVC.
 3. Maintenant que le PVC est créé, vous pouvez l'utiliser dans un pod en le montant en tant que volume. Tester l'accès aux fichiers du dossier hôte dans le conteneur.
 
@@ -733,11 +724,11 @@ metadata:
   name: pv-exemple
 spec:
   capacity:
-    storage: 1Gi  # Capacité du volume
+    storage: 1Gi # Capacité du volume
   accessModes:
-    - ReadWriteOnce  # Seul un pod peut monter ce volume en lecture/écriture à la fois
+    - ReadWriteOnce # Seul un pod peut monter ce volume en lecture/écriture à la fois
   hostPath:
-    path: "/mnt/data"  # Chemin sur le nœud minikube où les données seront stockées
+    path: "/mnt/data" # Chemin sur le nœud où les données seront stockées
 ---
 # pvc.yaml
 apiVersion: v1
@@ -746,10 +737,10 @@ metadata:
   name: pvc-exemple
 spec:
   accessModes:
-    - ReadWriteOnce  # Mode d'accès similaire à celui du PV
+    - ReadWriteOnce # Mode d'accès similaire à celui du PV
   resources:
     requests:
-      storage: 500Mi  # La quantité de stockage demandée par ce PVC
+      storage: 500Mi # La quantité de stockage demandée par ce PVC
 ---
 # pod-using-pvc.yaml
 apiVersion: v1
@@ -758,15 +749,15 @@ metadata:
   name: pvc-pod
 spec:
   containers:
-  - name: pvc-container
-    image: nginx
-    volumeMounts:
-    - mountPath: "/shared"
-      name: storage-volume
+    - name: pvc-container
+      image: nginx
+      volumeMounts:
+        - mountPath: "/shared"
+          name: storage-volume
   volumes:
-  - name: storage-volume
-    persistentVolumeClaim:
-      claimName: pvc-exemple  # Le PVC créé précédemment
+    - name: storage-volume
+      persistentVolumeClaim:
+        claimName: pvc-exemple # Le PVC créé précédemment
 ```
 
 :::
@@ -801,7 +792,7 @@ server2=10.166.10.2
 kubectl create configmap ma-conf-test --from-file=./ma_conf_test.conf
 #configmap/ma-conf-test created
 
-kubectl get cm                                                       
+kubectl get cm
 #NAME               DATA   AGE
 #kube-root-ca.crt   1      12d
 #ma-conf-test       1      7s
@@ -837,19 +828,19 @@ spec:
     - name: nginx-env
       image: nginx:latest
       volumeMounts:
-      - name: mon-volume # voir ci-dessous
-        mountPath: "/configs" # point de montage à l'intérieur du conteneur
+        - name: mon-volume # voir ci-dessous
+          mountPath: "/configs" # point de montage à l'intérieur du conteneur
   volumes:
-  - name: mon-volume # idem conteneur
-    configMap: # ConfigMap déjà créée
-      name: ma-conf-test # où récupérer la configuration ?
+    - name: mon-volume # idem conteneur
+      configMap: # ConfigMap déjà créée
+        name: ma-conf-test # où récupérer la configuration ?
 ```
 
 ```sh
 kubectl -f pod-with-conf-volume.yml apply
 #pod/config-map created
 
-kubectl get po                           
+kubectl get po
 #NAME                          READY   STATUS              RESTARTS      AGE
 #config-map                    0/1     ContainerCreating   0             3s
 #env                           1/1     Running             0             8m53s
@@ -858,7 +849,7 @@ kubectl get po
 #web-deploy-85c575ffc9-kn5gh   1/1     Running             1 (11h ago)   11h
 
 kubectl exec -it config-map -- bash
-root@config-map:/# cat /configs/ma_conf_test.conf 
+root@config-map:/# cat /configs/ma_conf_test.conf
 #[dev]
 #server1=192.168.0.1
 #server2=192.168.0.2
@@ -884,10 +875,10 @@ serveur2=1.2.3.5
 :::correction
 
 ```sh
-kubectl create configmap ma-conf-env --from-env-file=./ma_conf.env      
+kubectl create configmap ma-conf-env --from-env-file=./ma_conf.env
 #configmap/ma-conf-env created
 
-kubectl describe cm/ma-conf-env                                   
+kubectl describe cm/ma-conf-env
 #Name:         ma-conf-env
 #Namespace:    default
 #Labels:       <none>
@@ -922,11 +913,11 @@ spec:
     - name: nginx-env
       image: nginx:latest
       env: # Variables d'environnement à injecter dans le conteneur
-      - name: MON_SERVEUR # variable $MON_SERVEUR
-        valueFrom:
-          configMapKeyRef:
-            name: ma-conf-env # où récupérer la valeur ?
-            key: serveur1 # la valeur de $LOG_LEVEL à injecter
+        - name: MON_SERVEUR # variable $MON_SERVEUR
+          valueFrom:
+            configMapKeyRef:
+              name: ma-conf-env # où récupérer la valeur ?
+              key: serveur1 # la valeur de $LOG_LEVEL à injecter
 ```
 
 ```sh
@@ -955,7 +946,7 @@ On préfère généralement effectuer du scaling vertical sur des machines virtu
 :::exo
 
 1. Utiliser le commande `kubectl` pour effectuer un scaling du déploiement de `nginx`. Modifier si besoin le service du déploiement pour utiliser un LoadBalancer.
-2. Modifier le fichier `/usr/share/nginx/html/index.html` dans chaque conteneur pour savoir quel Pod répond : `POD 1` dans le 1e Pod et `POD 2` dans le 2nd. Tester de nombreuses requêtes pour vérifier le load balancing.
+2. Modifier le fichier `/usr/share/nginx/html/index.html` dans chaque conteneur pour savoir quel Pod répond : `POD 1` dans le 1e Pod et `POD 2` dans le 2nd. Tester de nombreuses requêtes pour vérifier le load balancing du Service lié aux Pods.
 
 :::
 
@@ -971,15 +962,22 @@ kubectl get po
 #web-deploy-85c575ffc9-kws8w   1/1     Running   0          5s
 
 kubectl exec -it web-deploy-85c575ffc9-bzlxn -- bash
-#root@web-deploy-85c575ffc9-bzlxn:/# echo 'POD 1' > /usr/share/nginx/html/index.html 
+#root@web-deploy-85c575ffc9-bzlxn:/# echo 'POD 1' > /usr/share/nginx/html/index.html
 
 kubectl exec -it web-deploy-85c575ffc9-kws8w -- bash
 #root@web-deploy-85c575ffc9-kws8w:/# echo 'POD 2' > /usr/share/nginx/html/index.html
 
-minikube service list
-#| default              | web-svc                            |           80 | http://192.168.39.48:30001 |
+kubectl get service -o wide
+#NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+#web-deploy-svc   NodePort    10.96.10.210   <none>        22:30001/TCP   3h53m   app=web
 
-while true; do curl http://192.168.39.48:30001; done
+kubectl get nodes -o wide
+#NAME                 STATUS   ROLES           AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
+#kind-control-plane   Ready    control-plane   4h4m   v1.35.0   10.89.0.3     <none>        Debian GNU/Linux 12 (bookworm)   6.18.53          containerd://2.2.0
+#kind-worker          Ready    <none>          4h4m   v1.35.0   10.89.0.5     <none>        Debian GNU/Linux 12 (bookworm)   6.18.53          containerd://2.2.0
+#kind-worker2         Ready    <none>          4h4m   v1.35.0   10.89.0.4     <none>        Debian GNU/Linux 12 (bookworm)   6.18.53          containerd://2.2.0
+
+while true; do curl http://10.89.0.5:30001; done
 #POD 2
 #POD 2
 #POD 2
@@ -1012,7 +1010,7 @@ Voir cours
 
 Une des fonctionnalités les plus intéressantes de Kubernetes est sa capacité à gérer l'équilibrage de nos applications : équilibrage horizontal ou vertical des pods, et même scaling des nœuds du cluster !
 
-Pour pouvoir effectuer un équilibrage automatique, il faut disposer d'un [Metrics Server](https://github.com/kubernetes-sigs/metrics-server) :
+Pour pouvoir effectuer un équilibrage automatique, il faut disposer d'un [Metrics Server](https://github.com/kubernetes-sigs/metrics-server) (normalement installé par défaut sauf sur Minikube) :
 
 ```sh
 minikube addons enable metrics-server
@@ -1067,15 +1065,15 @@ spec:
         app: hpa
     spec:
       containers:
-      - name: hpa-exemple
-        image: registry.k8s.io/hpa-example
-        ports:
-          - containerPort: 80
-        resources:
-          requests:
-            cpu: "200m"
-          limits:
-            cpu: "500m"
+        - name: hpa-exemple
+          image: registry.k8s.io/hpa-example
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "200m"
+            limits:
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -1086,8 +1084,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
-    nodePort: 30002    # Port sur lequel le service sera accessible depuis l'extérieur du cluster
+    - port: 80
+      nodePort: 30002 # Port sur lequel le service sera accessible depuis l'extérieur du cluster
   selector:
 ```
 
@@ -1105,23 +1103,23 @@ spec:
   minReplicas: 1
   maxReplicas: 3
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 3 # 3% CPU max
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 3 # 3% CPU max
 ```
 
 ```sh
-kubectl -f hpa-base.yml apply   
+kubectl -f hpa-base.yml apply
 #deployment.apps/hpa-test created
 #service/hpa-svc created
 
 kubectl -f hpa-reel.yml apply
 #horizontalpodautoscaler.autoscaling/haptest-hpa created
 
-kubectl get po                   
+kubectl get po
 #NAME                        READY   STATUS    RESTARTS   AGE
 #hpa-test-5446fc6b74-4wklp   1/1     Running   0          3m7s
 
@@ -1139,7 +1137,7 @@ kubectl get hpa
 #NAME          REFERENCE             TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
 #hpatest-hpa   Deployment/hpa-test   cpu: 215%/3%   1         3         3          3m36s
 
-kubectl get po 
+kubectl get po
 #NAME                       READY   STATUS    RESTARTS   AGE
 #hpa-test-6d5d4548f-m8jsp   1/1     Running   0          23s
 #hpa-test-6d5d4548f-mltbc   1/1     Running   0          23s
@@ -1162,7 +1160,7 @@ kubectl get po
 ```sh
 # Namespace du dashboard
 
-kubectl get namespace   
+kubectl get namespace
 
 # NAME                   STATUS   AGE
 # […]
@@ -1207,12 +1205,12 @@ spec:
 :::correction
 
 ```sh
-kubectl config get-contexts    
+kubectl config get-contexts
 
 # CURRENT   NAME       CLUSTER    AUTHINFO   NAMESPACE
 # *         minikube   minikube   minikube   default
 
-kubectl get namespace   
+kubectl get namespace
 
 # NAME                   STATUS   AGE
 # default                Active   13h
@@ -1276,6 +1274,6 @@ kubectl config view
 
 # Legal
 
-- © 2025 Tom Avenel under CC  BY-SA 4.0
+- © 2026 Tom Avenel under CC BY-SA 4.0
 - Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein.
 - Kubernetes® is a registered trademark of The Linux Foundation in the United States and/or other countries.
