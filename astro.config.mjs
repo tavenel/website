@@ -9,10 +9,7 @@ import starlightLinksValidator from 'starlight-links-validator';
 import { visualizer } from "rollup-plugin-visualizer";
 import { starlightCorrection } from './remark-plugins/remark-correction.mjs';
 
-// import { remarkDiagram } from './remark-plugins/mermaid.mjs'; // Custom plugin -- Force loading Mermaid
 // import { remarkModifiedTime } from './remark-plugins/modified-time.mjs'; // Custom plugin -- last time file was modified
-
-// import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
