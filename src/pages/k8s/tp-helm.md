@@ -160,87 +160,96 @@ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get-helm-3
 1. Ajouter le dépôt.
 
 ```sh
-helm repo add kubernetes https://kubernetes.github.io/dashboard
-# "kubernetes" has been added to your repositories
+helm repo add headlamp https://kubernetes-sigs.github.io/headlamp/
+# "headlamp" has been added to your repositories
 ```
 
-2. Chercher la chart.
+1. Chercher la chart.
 
 ```sh
-helm search repo kubernetes-dashboard
-# NAME                            CHART VERSION APP VERSION DESCRIPTION                                   
-# kubernetes/kubernetes-dashboard 7.14.0                    General-purpose web UI for Kubernetes clusters
+helm search repo headlamp
+
+#NAME              CHART VERSION APP VERSION DESCRIPTION                                       
+#headlamp/headlamp 0.46.0        0.46.0      Headlamp is an easy-to-use and extensible Kuber...
+helm install my-headlamp headlamp/headlamp --namespace kube-system
 ```
 
-3. Installation de la chart :
+1. Installation de la chart :
 
 - `helm upgrade --install` installe ou met à jour la chart.
 
 ```sh
-helm upgrade -i my-dashboard kubernetes/kubernetes-dashboard
+helm upgrade -i my-headlamp headlamp/headlamp --namespace kube-system
 
-# Release "my-dashboard" does not exist. Installing it now.
-# I0113 13:47:46.289080   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.289108   52883 warnings.go:110] "Warning: unrecognized format \"int32\""
-# I0113 13:47:46.289076   52883 warnings.go:110] "Warning: unrecognized format \"int32\""
-# I0113 13:47:46.295739   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.296583   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.311456   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.319156   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.323256   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.323876   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.338284   52883 warnings.go:110] "Warning: unrecognized format \"int64\""
-# I0113 13:47:46.338305   52883 warnings.go:110] "Warning: unrecognized format \"int32\""
-# NAME: my-dashboard
-# LAST DEPLOYED: Tue Jan 13 13:47:48 2026
-# NAMESPACE: default
-# STATUS: deployed
-# REVISION: 1
-# TEST SUITE: None
-# NOTES:
-# *************************************************************************************************
-# *** PLEASE BE PATIENT: Kubernetes Dashboard may need a few minutes to get up and become ready ***
-# *************************************************************************************************
-# 
-# Congratulations! You have just installed Kubernetes Dashboard in your cluster.
-# 
-# To access Dashboard run:
-#   kubectl -n default port-forward svc/my-dashboard-kong-proxy 8443:443
-# 
-# NOTE: In case port-forward command does not work, make sure that kong service name is correct.
-#       Check the services in Kubernetes Dashboard namespace using:
-#         kubectl -n default get svc
-# 
-# Dashboard will be available at:
-#   https://localhost:8443
+#NAME: my-headlamp
+#LAST DEPLOYED: Tue Oct 27 09:56:41 2026
+#NAMESPACE: kube-system
+#STATUS: deployed
+#REVISION: 1
+#TEST SUITE: None
+#NOTES:
+#1. Get the application URL by running these commands:
+#  export POD_NAME=$(kubectl get pods --namespace kube-system -l "app.kubernetes.io/name=headlamp,app.kubernetes.io/instance=my-headlamp" -o jsonpath="{.items[0].metadata.name}")
+#  export CONTAINER_PORT=$(kubectl get pod --namespace kube-system $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+#  echo "Visit http://127.0.0.1:8080 to use your application"
+#  kubectl --namespace kube-system port-forward $POD_NAME 8080:$CONTAINER_PORT
+#2. Get the token using
+#  kubectl create token my-headlamp --namespace kube-system
 ```
 
-4. Vérifier l'installation
+1. Vérifier l'installation
 
 ```sh
-helm list
-# NAME         NAMESPACE REVISION UPDATED                                 STATUS   CHART                       APP VERSION
-# my-dashboard default   1        2026-01-13 13:47:48.412406821 +0100 CET deployed kubernetes-dashboard-7.14.0
+helm list -n kube-system
 
-# Exposition du dashboard sur la machine personnelle
-kubectl -n default port-forward svc/my-dashboard-kong-proxy 8443:443
+#NAME        NAMESPACE   REVISION UPDATED                                 STATUS   CHART           APP VERSION
+#my-headlamp kube-system 1        2026-10-27 09:56:41.585748629 +0100 CET deployed headlamp-0.46.0 0.46.0
 ```
 
-Vérifier l'accès au dashboard : <https://localhost:8443>
+Suivre les indications à l'installation de la chart pour générer un token et se connecter au dashboard de Headlamp.
 
 ## Upgrade et rollback
 
 Helm supporte les upgrade et rollback de _Chart_. Pour cela, l'entièreté de la stack est stockée sur le cluster via des `Secret` Kubernetes de `TYPE: helm.sh/release.v1`.
 
 ```sh
-kubectl get secrets
-kubectl describe secret sh.helm.release.v1.ma-release.v1
-kubectl get secret sh.helm.release.v1.ma-release.v1 \
+kubectl get secrets -n kube-system
+kubectl describe secret -n kube-system sh.helm.release.v1.my-headlamp.v1
+#Name:         sh.helm.release.v1.my-headlamp.v1
+#Namespace:    kube-system
+#Labels:       modifiedAt=1793091401
+#              name=my-headlamp
+#              owner=helm
+#              status=deployed
+#              version=1
+#Annotations:  <none>
+#
+#Type:  helm.sh/release.v1
+#
+#Data
+#====
+#release:  83832 bytes
+kubectl get secret -n kube-system sh.helm.release.v1.my-headlamp.v1 \
       -o go-template='{{ .data.release | base64decode | base64decode }}' \
       | gunzip -c > release-info.json
-helm history ma-release
-helm upgrade ma-release
-helm rollback ma-release
+
+helm history my-headlamp -n kube-system
+#REVISION UPDATED                  STATUS   CHART           APP VERSION DESCRIPTION
+#1        Tue Oct 27 09:56:41 2026 deployed headlamp-0.46.0 0.46.0      Install complete
+
+helm upgrade -n kube-system my-headlamp headlamp/headlamp
+#Release "my-headlamp" has been upgraded. Happy Helming!
+
+helm list -n kube-system
+#NAME        NAMESPACE   REVISION UPDATED                                STATUS   CHART           APP VERSION
+#my-headlamp kube-system 2        2026-10-27 10:20:56.94641168 +0100 CET deployed headlamp-0.46.0 0.46.0
+
+helm rollback -n kube-system my-headlamp
+#Rollback was a success! Happy Helming!
+
+helm list -n kube-system
+#NAME        NAMESPACE   REVISION UPDATED                                 STATUS   CHART           APP VERSION
+#my-headlamp kube-system 3        2026-10-27 10:21:17.218248489 +0100 CET deployed headlamp-0.46.0 0.46.0
 ```
 
 ## Créer sa propre Helm Chart
