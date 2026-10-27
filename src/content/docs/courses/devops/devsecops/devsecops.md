@@ -608,7 +608,7 @@ Runtime + Observability
 | **Kubernetes security**       | Vérifier manifests/configuration K8s        | Kubescape, Trivy, Kube-score                                | Avant déploiement    |
 | **SBOM**                      | Inventorier composants et dépendances       | Syft, Trivy, CycloneDX                                      | Build/release        |
 | **Image signing**             | Garantir l'intégrité/provenance             | Cosign, Sigstore                                            | Après build          |
-| **Provenance / Supply Chain** | Prouver comment l'artefact a été construit  | SLSA, GitHub Attestations, Cosign                           | Build/release        |
+| **Provenance / Supply Chain** | Prouver comment l'artefact a été construit  | SLSA (in-toto), GitHub Attestations, Cosign                           | Build/release        |
 | **License scanning**          | Vérifier les licences des dépendances       | FOSSA, Snyk, ScanCode Toolkit                               | PR / build           |
 | **Dependency update**         | Maintenir les dépendances à jour            | Renovate, Dependabot                                        | Automatique          |
 | **Linting**                   | Détecter erreurs et mauvaises pratiques     | ESLint, Ruff, golangci-lint, hadolint                       | Commit / PR          |
@@ -618,3 +618,5 @@ Runtime + Observability
 | **DAST/API security**         | Tester API et endpoints                     | OWASP ZAP, StackHawk                                        | Staging              |
 | **Monitoring / SIEM**         | Détecter incidents                          | Grafana, Prometheus, Loki, ELK, Wazuh                       | Runtime              |
 | **Vulnerability management**  | Centraliser et suivre les vulnérabilités    | DefectDojo, Snyk, Dependency-Track                          | Continu              |
+
+Pour un exemple complet de pipeline DevSecOps, voir le projet fil rouge : <https://www.stephane-robert.info/docs/devops/implementation/projets-fil-rouge-devsecops/>
