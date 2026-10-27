@@ -2,6 +2,8 @@
 - simple main page
 - review / cleanup script + astro config + roadmap svgs
 ---
+- https://starlight-page-actions.dlcastillop.com/docs/getting-started or https://www.npmjs.com/package/starlight-contextual-menu
+- https://github.com/Windmillcode/starlight-fullview-mode
 - tracks :
 	- generate "next" => ## 🚀 Pour aller plus loin Voir les autres ressources du [cours sur le Devops](/devops).
 	- generate "objectives"
@@ -13,7 +15,7 @@
 - tsconfig.json
 - tracks => ability to use external link
 - social => website repo links ?
-- https://docs.astro.build/en/recipes/rss/
+- https://docs.astro.build/en/recipes/rss/ + social => RSS icon
 - date file modified : https://docs.astro.build/en/recipes/modified-time/ => and combine with https://starlight.astro.build/guides/authoring-content/#details
 - tag cloud : https://frostybee.github.io/starlight-tags/getting-started/
 - PWA
@@ -24,6 +26,8 @@
 - recherche d'un module
 - upgrade "date:" après vérification des contenus
 - remark => external links
+- pagefind => rm esgi/ epsi/ cesi/ estiam/
+- cleanup emojis
 
 ---
 # Files :
