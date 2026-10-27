@@ -19,8 +19,8 @@ description: Déploiement dans le cluster
 
 :::note
 
-- Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : </k8s/projet-install>
-- Voir aussi la page </k8s/cheatsheet> pour l'installation des dépendances.
+- Pour plus d'information sur le déploiement d'un cluster Kubernetes, voir le projet dédié : <./k8s/projet-install>
+- Voir aussi la page <./k8s/cheatsheet> pour l'installation des dépendances.
 
 :::
 
@@ -82,7 +82,7 @@ On recommande l'utilisation de fichiers de manifeste `yml` pour créer les resso
 - Limitation de ressources
 - Droits du cluster
 
-6. Ajouter un certificat TLS (autosigné s'il n'est pas possible de le générer via _Let's Encrypt_) grâce à `certmanager` déployé via `Helm`
+1. Ajouter un certificat TLS (autosigné s'il n'est pas possible de le générer via _Let's Encrypt_) grâce à `certmanager` déployé via `Helm`
 
 :::
 
