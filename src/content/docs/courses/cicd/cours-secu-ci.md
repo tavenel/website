@@ -97,5 +97,9 @@ La compromission initiale est survenue à cause d'une mauvaise configuration des
 ---
 
 :::note
-Pour plus d'information, voir aussi cette présentation : <http://conferences.gioria.org/presentations/2026/snowcamp2026/>
+Pour plus d'information, voir aussi :
+
+- Le guide OWASP des 10 risques principaux en CI/CD : <https://github.com/OWASP/www-project-top-10-ci-cd-security-risks>
+- Cette présentation : [Comment survivre aux Supply Chain Attacks sans finir en dépendance toxique](http://conferences.gioria.org/presentations/2026/snowcamp2026/)
+
 :::
