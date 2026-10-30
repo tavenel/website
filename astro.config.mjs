@@ -42,7 +42,7 @@ export default defineConfig({
 					{ autogenerate: { directory: 'cesi' } },
 					{ autogenerate: { directory: 'estiam' } },
 				] },
-				{ label: 'Tous les modules', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
+				{ label: 'Tous les supports', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
 				{ slug: 'other' },
 				{ slug: 'tools' },
 				{ label: 'Références et liens', link: '/liens/' },
