@@ -4,7 +4,7 @@ description: Déploiement continu avec Flagger
 type: cours
 sidebar:
   order: 7
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 date: 2025 / 2026
 ---
 Dans un contexte de déploiement continu, la mise en production de nouvelles versions d'une application peut présenter des risques si elle est réalisée brutalement. C'est là qu'intervient **Flagger**, un opérateur Kubernetes qui automatise les **modèles de déploiement progressif** tels que *canary*, *blue/green*, ou *A/B testing*. Flagger s'intègre avec des outils de service mesh ou d'ingress controller comme **Istio**, **Linkerd**, ou **Traefik** pour rediriger progressivement le trafic vers la nouvelle version.

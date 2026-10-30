@@ -4,7 +4,7 @@ description: Serveurs de Mails
 type: cours
 sidebar:
   order: 27
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## 🧠 Protocole SMTP
 

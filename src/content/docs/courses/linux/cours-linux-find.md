@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Recherche de fichiers et placement des fichiers aux endroits adéquats
 type: cours
 sidebar:

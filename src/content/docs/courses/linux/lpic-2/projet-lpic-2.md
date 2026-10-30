@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Projet LPIC-2 - Mise en place d'une infrastructure système complète sécurisée et supervisée
 type: projet
 sidebar:

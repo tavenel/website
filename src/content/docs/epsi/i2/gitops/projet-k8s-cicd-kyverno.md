@@ -4,7 +4,7 @@ description: Bonus - Ajouter des politiques de sécurité grâce à Kyverno
 type: cours
 sidebar:
   order: 8
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 date: 2024 / 2025
 ---
 Dans un cluster Kubernetes, garantir la sécurité passe par le **contrôle des configurations** déployées par les utilisateurs et les applications. **Kyverno** permet d'appliquer, de valider, de muter ou de générer automatiquement des ressources selon des règles déclaratives.

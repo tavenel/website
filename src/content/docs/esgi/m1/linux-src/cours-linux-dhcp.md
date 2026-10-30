@@ -4,7 +4,7 @@ description: DHCP
 type: cours
 sidebar:
   order: 23
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 - 🎯 But du serveur DHCP (`dhcpd`) : distribuer des adresses IP dynamiquement ou statiquement, aussi bien en IPv4 qu'en IPv6
 - Parfois simplement dans un rôle d'agent relais.

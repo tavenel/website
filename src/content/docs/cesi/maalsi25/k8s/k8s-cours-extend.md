@@ -8,7 +8,7 @@ tags:
 - docker
 - kubernetes
 - devops
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4.yml.html#103)
 

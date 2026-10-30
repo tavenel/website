@@ -4,7 +4,7 @@ description: NFS - Network File System
 type: cours
 sidebar:
   order: 20
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## NFS
 

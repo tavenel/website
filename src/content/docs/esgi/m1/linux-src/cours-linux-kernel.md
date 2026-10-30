@@ -4,7 +4,7 @@ description: Le noyau Linux
 type: cours
 sidebar:
   order: 6
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## Composants du noyau
 

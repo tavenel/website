@@ -7,7 +7,7 @@ sidebar:
 tags:
 - architecture
 - dette-technique
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## Pourquoi un Clean Code ?
 

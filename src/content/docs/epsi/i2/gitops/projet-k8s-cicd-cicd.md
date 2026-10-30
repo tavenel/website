@@ -4,7 +4,7 @@ description: CI/CD - Intégration et Déploiement continus dans Kubernetes
 type: cours
 sidebar:
   order: 6
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 date: 2024 / 2025
 ---
 L'adoption de pratiques CI/CD est cruciale pour assurer une livraison rapide, fiable et efficace des nouvelles fonctionnalités et corrections, tout en minimisant les risques d'erreurs humaines. Dans cette section, vous allez mettre en place les différentes étapes du pipeline depuis l'intégration du code source jusqu'au déploiement en production en passant par les tests automatisés et la gestion des artefacts.

@@ -4,7 +4,7 @@ description: Projet LPIC-2 - Mise en place d'une infrastructure système complè
 type: projet
 sidebar:
   order: 3
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## Contexte du projet
 

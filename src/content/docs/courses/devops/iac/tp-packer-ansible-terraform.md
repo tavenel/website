@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: TP Infrastructure as Code avec Packer, Ansible et Terraform
 date: 2025 / 2026
 type: projet

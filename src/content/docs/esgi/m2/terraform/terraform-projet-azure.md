@@ -4,7 +4,7 @@ description: 🎯 Projet Déploiement d'une infrastructure multi-environnement s
 type: projet
 sidebar:
   order: 3
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 date: 2025 / 2026
 ---
 ## 📋 Présentation du projet

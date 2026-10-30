@@ -4,7 +4,7 @@ description: 📚 Thèmes à répartir entre les groupes
 type: projet
 sidebar:
   order: 2
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 | Thème | Sujet                                                                                           |
 | ----- | ------------------------------------------------------------------------------------------------|

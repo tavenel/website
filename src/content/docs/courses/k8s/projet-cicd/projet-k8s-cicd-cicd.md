@@ -1,5 +1,5 @@
 ---
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: CI/CD - Intégration et Déploiement continus dans Kubernetes
 date: 2024 / 2025
 type: cours

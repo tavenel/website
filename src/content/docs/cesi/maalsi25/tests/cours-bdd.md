@@ -9,7 +9,7 @@ tags:
 - bdd
 - test
 - agile
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## But
 

@@ -4,7 +4,7 @@ description: SMART - Surveillance des disques
 type: cours
 sidebar:
   order: 8
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## S.M.A.R.T.
 

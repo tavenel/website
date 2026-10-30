@@ -8,7 +8,7 @@ tags:
 - docker
 - kubernetes
 - devops
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 - Condensé de [ces slides sur la _disruption_ dans un Cluster](https://github.com/jpetazzo/container.training/blob/main/slides/k8s/disruptions.md)
 

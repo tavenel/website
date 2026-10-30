@@ -4,7 +4,7 @@ description: Squid Proxy
 type: cours
 sidebar:
   order: 16
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 - _Squid_ est un serveur mandataire (proxy) et de cache pour HTTP open-source.
 - Toutes les requêtes sont gérées en un seul processus d'entrée/sortie asynchrone.

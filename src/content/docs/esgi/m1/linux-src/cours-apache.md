@@ -4,7 +4,7 @@ description: Apache
 type: cours
 sidebar:
   order: 15
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 _Apache_ (ou _httpd_) est l'un des serveurs web les plus utilisés au monde. Il est libre, open-source, robuste, extensible, et largement supporté sur les systèmes Unix/Linux.
 

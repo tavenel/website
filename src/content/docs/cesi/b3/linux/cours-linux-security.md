@@ -4,7 +4,7 @@ description: Tâches d'administration de sécurité et configuration de la sécu
 type: cours
 sidebar:
   order: 8
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ![Run as an admin…](@assets/linux/run_as_admin.jpg)
 

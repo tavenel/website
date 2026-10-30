@@ -4,7 +4,7 @@ description: DAS vs NAS vs SAN
 type: cours
 sidebar:
   order: 19
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 - **DAS** (*Direct Attached Storage*) : solution de stockage directement connectée à un serveur
   - **SATA**, **SCSI**, **USB**

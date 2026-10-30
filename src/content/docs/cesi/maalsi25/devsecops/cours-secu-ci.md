@@ -4,7 +4,7 @@ description: Sécurité de la Supply Chain
 type: cours
 sidebar:
   order: 4
-license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ---
 ## Supply Chain
 
