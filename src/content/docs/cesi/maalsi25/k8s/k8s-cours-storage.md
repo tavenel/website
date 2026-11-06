@@ -99,12 +99,12 @@ flowchart TD
 
 ### 💾 Quelques solutions de stockage
 
-| Solution | Type | Mode d'accès | Cas d'usage |
-|---------|------|--------------|-------------|
-| _AWS EBS CSI_ | Stockage en bloc | `RWO` (noeud unique) | Stockage haute performance sur AWS 🌐 |
-| _Google Persistent Disk CSI_ | Stockage en bloc | `RWO` (noeud unique) | Applications cloud-native sur GCP ☁️ |
-| _Ceph RBD CSI_ | Stockage distribué | `RWO`, `RWX` | Bases de données distribuées 🗃️ |
-| _Longhorn CSI_ | Stockage local | `RWO`, `RWX` | Stockage persistant natif Kubernetes 📦 |
+| Solution                     | Type               | Mode d'accès         | Cas d'usage                             |
+| ---------------------------- | ------------------ | -------------------- | --------------------------------------- |
+| _AWS EBS CSI_                | Stockage en bloc   | `RWO` (noeud unique) | Stockage haute performance sur AWS 🌐   |
+| _Google Persistent Disk CSI_ | Stockage en bloc   | `RWO` (noeud unique) | Applications cloud-native sur GCP ☁️    |
+| _Ceph RBD CSI_               | Stockage distribué | `RWO`, `RWX`         | Bases de données distribuées 🗃️         |
+| _Longhorn CSI_               | Stockage local     | `RWO`, `RWX`         | Stockage persistant natif Kubernetes 📦 |
 
 ---
 

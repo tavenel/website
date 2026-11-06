@@ -99,6 +99,8 @@ Proposition de stack technique standard :
 
 Les outils proposés peuvent être remplacés par des solutions équivalentes, à condition de justifier ce choix.
 
+On pourra aussi utilise `poutine` pour trouver des problèmes de sécurité dans l'écriture du fichier de pipeline lui-même.
+
 ## Scénario
 
 Vous recevez un dépôt initial contenant une mini application Flask, un Dockerfile et des manifests Kubernetes.

@@ -40,6 +40,7 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 ---
 
 ## 🔄 Aggregation Layer
+
 - Ressources [APIServer](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/) : lien `kind: …` à un service externe 🔗
 - Délègue des parties de l'`API Server` à des API externes 🔄
 - Exemple : `metrics-server` 📊
@@ -90,4 +91,3 @@ Voir aussi : [ces slides de formation](https://2021-05-enix.container.training/4
 - **variant** : **version finale** de la ressource Kubernetes après application des _bases_ et _overlay_ 📦
 
 ---
-

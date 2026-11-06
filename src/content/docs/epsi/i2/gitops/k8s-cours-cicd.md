@@ -14,6 +14,7 @@ license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 ## 🔔 Rappels
 
 ### 🔄 CI/CD : Définitions
+
 - **CI (Intégration Continue)** : Automatisation de la compilation, des tests et des validations à chaque modification du code source. 🛠️
 - **CD (Déploiement Continu / Continuous Deployment)** : Automatisation de la mise en production de l'application à chaque validation réussie. 🚀
 
@@ -21,13 +22,13 @@ license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 
 ## 🛠 Chaîne d'outils typique
 
-   Étape | Outil recommandé | Rôle |
- |------|------------------|------|
- | Versioning | Git (GitHub, GitLab, etc.) | Suivi du code source 📜 |
- | Build & Test | GitLab CI / Jenkins / GitHub Actions | Construction d'images et tests 🧪 |
- | Packaging | Docker, Buildah | Création d'images de conteneur 📦 |
- | Déploiement | Helm / Kustomize / Argo CD | Déploiement déclaratif 📝 |
- | Monitoring | Prometheus / Grafana | Supervision du déploiement 📊 |
+| Étape        | Outil recommandé                     | Rôle                              |
+| ------------ | ------------------------------------ | --------------------------------- |
+| Versioning   | Git (GitHub, GitLab, etc.)           | Suivi du code source 📜           |
+| Build & Test | GitLab CI / Jenkins / GitHub Actions | Construction d'images et tests 🧪 |
+| Packaging    | Docker, Buildah                      | Création d'images de conteneur 📦 |
+| Déploiement  | Helm / Kustomize / Argo CD           | Déploiement déclaratif 📝         |
+| Monitoring   | Prometheus / Grafana                 | Supervision du déploiement 📊     |
 
 ---
 
@@ -120,4 +121,3 @@ service:
 - Ne jamais stocker les ~secrets~ dans le dépôt Git : utiliser **Kubernetes Secrets** ou des solutions comme **_Vault_/_Sealed Secrets_**. 🔒
 
 ---
-

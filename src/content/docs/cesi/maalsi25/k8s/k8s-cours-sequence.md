@@ -74,4 +74,3 @@ sequenceDiagram
     APIServer->>Etcd: Persist Status
     Etcd-->>APIServer: Ack
 ```
-

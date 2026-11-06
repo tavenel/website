@@ -220,7 +220,7 @@ variable "mes_ips" {
 resource "null_resource" "mes_hosts" {
     count = "${length(var.mes_ips)}"
     triggers = { foo = element(var.mes_ips, count.index } # déclenché si mes_ips change
-    provisioner "local_exec" {
+    provisioner "local-exec" {
         command = "echo '${element(var.mes_ips, count.index)}' >> hosts.txt"
     }
 ```
@@ -231,7 +231,7 @@ resource "null_resource" "mes_hosts" {
 
 ```tf
 variable "mes_distributions" {
-    type = "map"
+    type = map(string)
     default = {
         clef1 = "ubuntu"
         clef2 = "rhel"
@@ -357,6 +357,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   custom_data = filebase64("init.sh")
 }
 ```
+
 :::
 
 ---
@@ -450,6 +451,7 @@ provisioner "local-exec" {
   command = "ansible-playbook -i '${self.public_ip_address},' playbook.yml --user azureuser --private-key ~/.ssh/id_rsa"
 }
 ```
+
 :::
 
 ---
@@ -543,7 +545,8 @@ output "id_vm1" {
 ## 📦 Workspaces
 
 - Chaque Workspace a son **propre état `terraform.tfstate`**
-* Utilisent **le même code Terraform** sans changer le répertoire ou dupliquer les fichiers
+- Utilisent **le même code Terraform** sans changer le répertoire ou dupliquer les fichiers
+
 - Utile pour séparer **plusieurs environnements** : dev, test, staging, prod
 - Possibilité d'utiliser des **variables conditionnelles** selon le workspace :
 
@@ -556,7 +559,6 @@ variable "instance_type" {
 :::caution
 Ne pas utiliser les workspaces pour des environnements **très différents** (préférez plusieurs répertoires ou modules).
 :::
-
 
 | Commande                            | Description                      |
 | ----------------------------------- | -------------------------------- |
@@ -571,11 +573,14 @@ Ne pas utiliser les workspaces pour des environnements **très différents** (pr
 
 1. Marquer la variable `sensitive` (pas d'historique) 🔒
 2. Utiliser _Vault_ (via provider `vault`) pour sécuriser le fichier de variables 🗄️
-  - Gestion **centralisée** des **secrets**
-  - ex : récupérer dynamiquement des identifiants pour un compte AWS
-3. Déplacer l'état `terraform.tfstate` vers un **état sécurisé** par un Cloud provider ☁️
-4. Utiliser _Sentinel_ : moteur de **politique as code** pour bloquer des opérations Terraform
-  - ex : empêcher la création de ressources dans des régions non autorisées
+
+- Gestion **centralisée** des **secrets**
+- ex : récupérer dynamiquement des identifiants pour un compte AWS
+
+1. Déplacer l'état `terraform.tfstate` vers un **état sécurisé** par un Cloud provider ☁️
+2. Utiliser _Sentinel_ : moteur de **politique as code** pour bloquer des opérations Terraform
+
+- ex : empêcher la création de ressources dans des régions non autorisées
 
 ---
 
@@ -708,8 +713,7 @@ Le pipeline d'intégration continue est à lier avec [le workflow Git](/git/cour
 
 ---
 
-## Legal 
+## Legal
 
 - Terraform is a trademark and brand of HashiCorp, Inc.
 - Other names may be trademarks of their respective owners
-
