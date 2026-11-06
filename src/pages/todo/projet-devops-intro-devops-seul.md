@@ -1,11 +1,9 @@
 ---
-license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
+license: © 2025 Tom Avenel under 󰵫  BY-SA 4.0
 title: Présentation du projet
-type: projet
-sidebar:
-  order: 201
-description: Présentation du projet
+layout: '@layouts/CoursePartLayout.astro'
 ---
+
 ## 🎯 Objectif général
 
 Déployer une **application multi-composants** (par exemple une application web avec front, back et base de données) dans un **environnement de type production**, en suivant les **bonnes pratiques DevOps** : conteneurisation, Infrastructure-as-Code, intégration et déploiement continus, observabilité et gestion des logs.
@@ -18,8 +16,3 @@ Le projet à utiliser est une application multi-composants (typiquement, une app
 
 Le formateur jouera l'ensemble des rôles externes à l'équipe projet (et donc principalement celui de client pour l'application finale).
 
-## Résultat attendu
-
-- Un document décrivant les différents éléments à mettre en place et résumant l'ensemble des principes Devops suivis dans le projet et comment ceux-ci seront implémentés. Ce document sera remis en cours de réalisation
-- Le ou les dépôts de code source utilisés, que ce soit pour la gestion du code source des applications métier, ou pour la gestion des configurations des infrastructures.
-- Le rapport et les détails d'implémentation seront présentés lors d'une soutenance de projet (dernier cours).
