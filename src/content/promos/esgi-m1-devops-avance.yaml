@@ -1,0 +1,23 @@
+title: "DevOps Avancé"
+slug: "esgi/m1/devops-avance"
+objectives:
+details:
+  - "Prérequis : Connaissances en conteneurisation, maîtrise de Git"
+  - "Module de 15H"
+  - "Évaluation par projet commun"
+next:
+  - cicd
+  - devops
+  - docker
+chapters:
+  - devops/devops-cours
+  - devops/themes-devops
+  - cicd/cours-intro-ci
+  - cicd/cours-outils-ci
+  - cicd/modeles-cd-cours
+  - git/git-workflows-cours
+  - devops/iac/yaml
+  - devops/iac/ansible
+  - devops/iac/terraform/terraform-cours
+  - devops/projets/projet-devops-intro-devops-sysops
+  - devops/projets/projet-devops
