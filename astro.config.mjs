@@ -4,6 +4,7 @@ import { defineConfig, fontProviders } from "astro/config";
 import icon from 'astro-icon';
 import mermaid from 'astro-mermaid';
 import starlight from '@astrojs/starlight';
+import starlightFullViewMode from 'starlight-fullview-mode';
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightLinksValidator from 'starlight-links-validator';
 import { visualizer } from "rollup-plugin-visualizer";
@@ -29,6 +30,7 @@ export default defineConfig({
 		}), // ⚠️ Must come BEFORE starlight
 		starlight({
 			plugins: [
+				starlightFullViewMode(),
 				starlightImageZoom(),
 				starlightLinksValidator(),
 				starlightCorrection(),
