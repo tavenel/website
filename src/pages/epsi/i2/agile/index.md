@@ -28,6 +28,7 @@ Module de 18H
 
 - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
 - [🤓 Comparaison des méthodes agiles classiques (cours)](/projet/agile/comparaison-methodes)
+- [📝 Exercice : story mapping](/projet/atelier_story_mapping)
 - [🏆 Projet Campus TaskForce](/projet/agile/projet_scrum_dev_campus)
 
 ## 🚀 Pour aller plus loin
