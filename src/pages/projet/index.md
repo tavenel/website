@@ -17,6 +17,8 @@ layout: '@layouts/BaseLayout.astro'
 - [📝 Exercice Pur Beurre : définir le contexte](/projet/exo-pur-beurre)
 - [📝 Exercice Osiris](/projet/exo-contexte-osiris)
 - [📝 Exercice : plannification par diagramme de Gantt](/projet/exo-gantt)
+- [📝 Exercice : story mapping](/projet/atelier_story_mapping)
+- [📝 Exercice : diagramme de Kano](/projet/exo-kano)
 - [🏆 Projet fil rouge](/projet/projet-fil-rouge) : un projet fil rouge servant d'introduction globale à la Gestion de Projet : définition du contexte, des besoins, cahier des charges, choix du cycles de développement, réalisation technique, ...
 - 🔗 Liens : <https://github.com/ProductivityDirectory/awesome-productivity-tools>
 
