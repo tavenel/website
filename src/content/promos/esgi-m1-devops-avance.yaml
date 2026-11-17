@@ -6,6 +6,7 @@ details:
   - "Module de 15H"
   - "Évaluation par projet commun"
 next:
+  - git
   - cicd
   - devops
   - docker
