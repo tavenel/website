@@ -1,8 +1,9 @@
 ---
 title: /home/tavenel
-description: Tom Avenel personal website. Tech articles and teachings.
 tableOfContents: false
 pagefind: false
+editUrl: false
+lastUpdated: false
 ---
 
 <!-- [TODO]

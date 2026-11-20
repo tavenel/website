@@ -1,0 +1,18 @@
+---
+import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
+---
+
+<DefaultFooter>
+  <slot />
+</DefaultFooter>
+
+<div class="license">
+	<p>© Tom Avenel. Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license"> Creative Commons BY-SA 4.0</a></p>
+</div>
+
+<style>
+  .license {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+</style>

@@ -10,8 +10,6 @@ import starlightLinksValidator from 'starlight-links-validator';
 import { visualizer } from "rollup-plugin-visualizer";
 import { starlightCorrection } from './remark-plugins/remark-correction.mjs';
 
-// import { remarkModifiedTime } from './remark-plugins/modified-time.mjs'; // Custom plugin -- last time file was modified
-
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.avenel.pro',
@@ -36,15 +34,30 @@ export default defineConfig({
 				starlightCorrection(),
 			],
 			title: 'avenel.pro',
-			defaultLocale: 'fr',
+			description: 'Tom Avenel personal website. Tech articles and teachings.',
+			// TODO: FIXME
+			// logo: {
+			// 	src: '/icons/favicon.svg',
+			// },
+			editLink: {
+				baseUrl: 'https://github.com/tavenel/website/edit/main/', // 'https://gitlab.com/tavenel/website/-/edit/main/',
+			},
+			lastUpdated: true, // show "last updated: " in footer
+			components: {
+				// Sidebar: '@components/Sidebar.astro',
+				Footer: '@components/LicenseFooter.astro',
+			},
+			customCss: [
+				'src/styles/custom.css',
+			],
 			sidebar: [
 				{ label: 'Cours 2026-2027', collapsed: true, items: [
-					{ autogenerate: { directory: 'epsi' } },
-					{ autogenerate: { directory: 'esgi' } },
-					{ autogenerate: { directory: 'cesi' } },
-					{ autogenerate: { directory: 'estiam' } },
+					{ autogenerate: { directory: 'epsi', collapsed: true } },
+					{ autogenerate: { directory: 'esgi', collapsed: true } },
+					{ autogenerate: { directory: 'cesi', collapsed: true } },
+					{ autogenerate: { directory: 'estiam', collapsed: true } },
 				] },
-				{ label: 'Tous les supports', collapsed: true, items: [{ autogenerate: { directory: 'courses' } }] },
+				{ label: 'Tous les supports', collapsed: true, items: [{ autogenerate: { directory: 'courses', collapsed: true } }] },
 				{ slug: 'other' },
 				{ slug: 'tools' },
 				{ label: 'Références et liens', link: '/liens/' },
@@ -56,15 +69,6 @@ export default defineConfig({
         { icon: 'gitlab', label: 'Gitlab', href: 'https://gitlab.com/tavenel' },
         { icon: 'github', label: 'Github', href: 'https://github.com/tavenel' },
       ],
-			disable404Route: false,
-			components: {
-				// Header: '@components/Header.astro',
-				// Sidebar: '@components/Sidebar.astro',
-				// Footer: '@components/StarlightFooter.astro',
-			},
-			customCss: [
-				'src/styles/custom.css',
-			],
 		}),
 	],
 
