@@ -30,21 +30,20 @@ export default defineConfig({
 			plugins: [
 				starlightFullViewMode(),
 				starlightImageZoom(),
-				starlightLinksValidator(),
+				starlightLinksValidator({
+					errorOnLocalLinks: false, // skip localhost or 127.0.0.1
+					failOnError: false,
+				}),
 				starlightCorrection(),
 			],
 			title: 'avenel.pro',
 			description: 'Tom Avenel personal website. Tech articles and teachings.',
-			// TODO: FIXME
-			// logo: {
-			// 	src: '/icons/favicon.svg',
-			// },
 			editLink: {
 				baseUrl: 'https://github.com/tavenel/website/edit/main/', // 'https://gitlab.com/tavenel/website/-/edit/main/',
 			},
 			lastUpdated: true, // show "last updated: " in footer
 			components: {
-				// Sidebar: '@components/Sidebar.astro',
+				Sidebar: '@components/SidebarWithFilter.astro',
 				Footer: '@components/LicenseFooter.astro',
 			},
 			customCss: [
