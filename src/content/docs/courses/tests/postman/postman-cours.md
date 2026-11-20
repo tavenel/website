@@ -80,3 +80,6 @@ pm.sendRequest({
 
 ---
 
+## Alternatives
+
+Postman dispose d'une offre "free forever" mais de nombreux services sont maintenant payants ou nécessitent un compte utilisateur. Il existe des alternatives open-source comme _Bruno_, souvent plus simples et moins puissantes, utiles notamment pour une intégration simple dans la CI/CD.
