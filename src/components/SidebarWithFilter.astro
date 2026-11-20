@@ -3,342 +3,454 @@ import DefaultSidebar from '@astrojs/starlight/components/Sidebar.astro';
 ---
 
 <div class="sidebar-filter" data-sidebar-filter-root>
-  <label class="sr-only" for="sidebar-filter-input">
-    Filter documentation pages
-  </label>
+	<label class="sr-only" for="sidebar-filter-input">
+		Filter documentation directories
+	</label>
 
-  <input
-    id="sidebar-filter-input"
-    data-sidebar-filter-input
-    type="search"
-    placeholder="Filter pages..."
-    autocomplete="off"
-    spellcheck="false"
-    aria-controls="starlight__sidebar"
-  />
+	<input
+			id="sidebar-filter-input"
+			data-sidebar-filter-input
+			type="search"
+			placeholder="Filter..."
+			autocomplete="off"
+			spellcheck="false"
+			aria-controls="starlight__sidebar"
+			/>
 
-  <p class="sidebar-filter__hint">
-    ↑ ↓ navigate · Enter open · Esc clear
-  </p>
+			<div class="sidebar-filter__modes" role="group" aria-label="Search mode">
+				<button
+						type="button"
+						data-filter-mode="directories"
+						aria-pressed="true"
+						>
+						Cours
+				</button>
 
-  <p
-    class="sidebar-filter__status"
-    data-sidebar-filter-status
-    role="status"
-    aria-live="polite"
-    hidden
-  ></p>
+					<button
+							type="button"
+							data-filter-mode="pages"
+							aria-pressed="false"
+							>
+							Pages
+					</button>
+			</div>
+
+			<p class="sidebar-filter__hint">
+			↑ ↓ navigate · Enter open · Esc clear
+			</p>
+
+			<p
+					class="sidebar-filter__status"
+					data-sidebar-filter-status
+					role="status"
+					aria-live="polite"
+					hidden
+					></p>
 </div>
 
 <DefaultSidebar />
 
 <script>
-  const initSidebarFilter = () => {
-    const pane = document.getElementById('starlight__sidebar');
-    if (!pane) return;
 
-    const wrapper = pane.querySelector('[data-sidebar-filter-root]');
-    const input = wrapper?.querySelector('[data-sidebar-filter-input]');
-    const list = pane.querySelector('ul.top-level');
 
-    if (
-      !(input instanceof HTMLInputElement) ||
-      !list ||
-      wrapper.dataset.initialized === 'true'
-    ) {
-      return;
-    }
+	const initSidebarFilter = () => {
+		const pane = document.getElementById('starlight__sidebar');
+		if (!pane) return;
+
+		const wrapper = pane.querySelector('[data-sidebar-filter-root]');
+		const input = wrapper?.querySelector('[data-sidebar-filter-input]');
+		const list = pane.querySelector('ul.top-level');
+
+		if (
+			!(input instanceof HTMLInputElement) ||
+			!list ||
+			wrapper.dataset.initialized === 'true'
+		) {
+			return;
+		}
+
+		wrapper.dataset.initialized = 'true';
 
-    wrapper.dataset.initialized = 'true';
+		const status = wrapper.querySelector('[data-sidebar-filter-status]');
+		const modeButtons = [
+			...wrapper.querySelectorAll('button[data-filter-mode]'),
+		];
 
-    const status = wrapper.querySelector('[data-sidebar-filter-status]');
+		let mode = 'directories';
+		let savedDetailsState = null;
 
-    let savedDetailsState = null;
+		const normalize = (value) =>
+			String(value)
+				.normalize('NFD')
+				.replace(/[\u0300-\u036f]/g, '')
+				.toLowerCase();
 
-    const normalize = (value) =>
-      String(value)
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase();
+		const getPath = (anchor) => {
+			let pathname = anchor.getAttribute('href') || '';
 
-    // Include the visible page title and its URL path/slug.
-    const getLinkSearchText = (anchor) => {
-      const href = anchor.getAttribute('href') || '';
+			try {
+				pathname = new URL(pathname, window.location.href).pathname;
+			} catch {}
 
-      let pathname = href;
+			try {
+				pathname = decodeURIComponent(pathname);
+			} catch {}
 
-      try {
-        pathname = new URL(href, window.location.href).pathname;
-      } catch {}
+			return pathname;
+		};
 
-      try {
-        pathname = decodeURIComponent(pathname);
-      } catch {}
+		// Directory path = URL without its final page segment.
+		const getDirectoryPath = (anchor) =>
+			getPath(anchor).split('/').filter(Boolean).slice(0, -1);
 
-      const filename = pathname
-        .replace(/\/+$/, '')
-        .split('/')
-        .pop() || '';
+		// Search text for directory groups.
+		const getGroupSearchText = (details) => {
+			const summary = details.querySelector(':scope > summary');
+			const anchors = [...details.querySelectorAll('a[href]')];
 
-      return normalize(
-        `${anchor.textContent} ${pathname} ${filename.replace(/[-_]/g, ' ')}`
-      );
-    };
+			const paths = anchors.map(getDirectoryPath);
+			let commonPath = paths[0] || [];
+
+			for (const path of paths.slice(1)) {
+				let i = 0;
+
+				while (
+					i < commonPath.length &&
+					i < path.length &&
+					commonPath[i] === path[i]
+				) {
+					i++;
+				}
+
+				commonPath = commonPath.slice(0, i);
+			}
+
+			return normalize(
+				`${summary?.textContent || ''} ${commonPath.join('/')}`
+			);
+		};
+
+		// Search text for individual pages.
+		const getPageSearchText = (anchor) => {
+			const pathname = getPath(anchor);
+			const filename = pathname.split('/').filter(Boolean).pop() || '';
+
+			return normalize(
+				`${anchor.textContent} ${pathname} ${filename.replace(/[-_]/g, ' ')}`
+			);
+		};
+
+		const filterList = (ul, query) => {
+			let hasMatches = false;
+
+			for (const li of ul.children) {
+				if (!(li instanceof HTMLLIElement)) continue;
+
+				const directLink = li.querySelector(':scope > a[href]');
+
+				// Leaf: individual page.
+				if (directLink) {
+					const matches =
+						mode === 'pages' &&
+						getPageSearchText(directLink).includes(query);
+
+					li.hidden = !matches;
+					li.dataset.sidebarFilterMatch = String(matches);
+
+					hasMatches ||= matches;
+					continue;
+				}
+
+				// Group: directory.
+				const details = li.querySelector(':scope > details');
+
+				if (!details) {
+					li.hidden = true;
+					continue;
+				}
+
+				const nested = details.querySelector(':scope > ul');
+
+				// Search descendants first.
+				const childMatches = nested
+					? filterList(nested, query)
+					: false;
+
+				// Only directory mode matches group names and paths.
+				const matches =
+					mode === 'directories' &&
+					getGroupSearchText(details).includes(query);
+
+				li.hidden = !matches && !childMatches;
+				li.dataset.sidebarFilterMatch = String(matches);
+
+				// Expand directories containing matching descendants.
+				details.open = childMatches;
+
+				hasMatches ||= matches || childMatches;
+			}
+
+			return hasMatches;
+		};
+
+		const getVisibleTargets = () => {
+			const selector =
+				mode === 'directories'
+				? 'li[data-sidebar-filter-match="true"] > details > summary'
+				: 'li[data-sidebar-filter-match="true"] > a[href]';
+
+			return [...list.querySelectorAll(selector)].filter(
+				(element) =>
+				!element.closest('li[hidden]') &&
+				element.getClientRects().length > 0
+			);
+		};
+
+		const updateModeButtons = () => {
+			for (const button of modeButtons) {
+				button.setAttribute(
+					'aria-pressed',
+					String(button.dataset.filterMode === mode)
+				);
+			}
+
+			input.placeholder =
+				mode === 'directories'
+				? 'Filtrer les cours...'
+				: 'Filtrer les pages...';
+		};
+
+		const updateFilter = () => {
+			const rawQuery = input.value.trim();
+
+			// Also accept searches such as "example.md".
+			const query = normalize(rawQuery).replace(/\.(md|mdx)$/, '');
+
+			if (!query) {
+				// Restore original visibility.
+				for (const li of list.querySelectorAll('li')) {
+					li.hidden = false;
+					delete li.dataset.sidebarFilterMatch;
+				}
+
+				// Restore original expanded/collapsed state.
+				if (savedDetailsState) {
+					for (const [details, wasOpen] of savedDetailsState) {
+						details.open = wasOpen;
+					}
+
+					savedDetailsState = null;
+				}
+
+				status.hidden = true;
+			} else {
+				// Save original state only once.
+				if (!savedDetailsState) {
+					savedDetailsState = new Map(
+						[...list.querySelectorAll('details')].map((details) => [
+							details,
+							details.open,
+						])
+					);
+				}
+
+				filterList(list, query);
+
+				const count = list.querySelectorAll(
+					'li[data-sidebar-filter-match="true"]'
+				).length;
+
+				status.textContent =
+					count === 0
+					? `Aucun résultat.`
+					: `${count} résultats.`;
+
+				status.hidden = false;
+			}
+
+			// Restore focus if the active item became hidden.
+			const activeElement = document.activeElement;
+
+			if (
+				activeElement instanceof HTMLElement &&
+				activeElement.closest('li[hidden]')
+			) {
+				input.focus();
+			}
+		};
+
+		// Switch between directories and pages.
+		for (const button of modeButtons) {
+			button.addEventListener('click', () => {
+				const nextMode = button.dataset.filterMode;
+
+				if (nextMode !== 'directories' && nextMode !== 'pages') return;
+
+				mode = nextMode;
+				updateModeButtons();
+				updateFilter();
+				input.focus();
+			});
+		}
+
+		input.addEventListener('input', updateFilter);
+
+		// Keyboard navigation.
+		pane.addEventListener('keydown', (event) => {
+			const target = event.target;
+
+			const inputFocused = target === input;
+
+			const itemFocused =
+				target instanceof HTMLElement &&
+				target.matches('a[href], summary') &&
+				!!target.closest('#starlight__sidebar');
+
+			if (event.key === 'Escape' && (inputFocused || itemFocused)) {
+				event.preventDefault();
+
+				input.value = '';
+				updateFilter();
+				input.focus();
+
+				return;
+			}
+
+			if (
+				(event.key === 'ArrowDown' || event.key === 'ArrowUp') &&
+				(inputFocused || itemFocused)
+			) {
+				const targets = getVisibleTargets();
+
+				if (!targets.length) return;
+
+				event.preventDefault();
+
+				const currentIndex = itemFocused
+					? targets.indexOf(target)
+					: -1;
+
+				const nextIndex = inputFocused
+					? event.key === 'ArrowDown'
+					? 0
+					: targets.length - 1
+					: (
+						currentIndex +
+						(event.key === 'ArrowDown' ? 1 : -1) +
+						targets.length
+					) % targets.length;
+
+				targets[nextIndex].focus();
+
+				return;
+			}
+
+			// Enter opens the first matching directory or page.
+			if (inputFocused && event.key === 'Enter') {
+				const first = getVisibleTargets()[0];
+
+				if (!first) return;
+
+				event.preventDefault();
+
+				if (mode === 'directories') {
+					first.parentElement.open = true;
+					first.focus();
+				} else {
+					first.click();
+				}
+			}
+		});
+
+		updateModeButtons();
+	};
+
+	initSidebarFilter();
+
+	document.addEventListener('astro:page-load', initSidebarFilter);
 
-    // Show all entries recursively, for a matching group name.
-    const revealAll = (ul) => {
-      for (const li of ul.children) {
-        if (!(li instanceof HTMLLIElement)) continue;
-
-        li.hidden = false;
-
-        const details = li.querySelector(':scope > details');
-
-        if (details) {
-          details.open = true;
-
-          const nested = details.querySelector(':scope > ul');
-
-          if (nested) revealAll(nested);
-        }
-      }
-    };
-
-    // Filter a sidebar list recursively.
-    const filterList = (ul, query) => {
-      let hasMatches = false;
-
-      for (const li of ul.children) {
-        if (!(li instanceof HTMLLIElement)) continue;
-
-        const anchor = li.querySelector(':scope > a');
-
-        if (anchor) {
-          const matches = getLinkSearchText(anchor).includes(query);
-
-          li.hidden = !matches;
-          hasMatches ||= matches;
-
-          continue;
-        }
-
-        const details = li.querySelector(':scope > details');
-
-        if (details) {
-          const summary = details.querySelector(':scope > summary');
-          const nested = details.querySelector(':scope > ul');
-
-          const groupLabel = normalize(summary?.textContent || '');
-
-          // If the group name matches, reveal all its children.
-          if (groupLabel.includes(query)) {
-            li.hidden = false;
-            details.open = true;
-
-            if (nested) revealAll(nested);
-
-            hasMatches = true;
-            continue;
-          }
-
-          // Otherwise, show only groups containing matching pages.
-          if (nested) {
-            const childMatches = filterList(nested, query);
-
-            li.hidden = !childMatches;
-
-            if (childMatches) details.open = true;
-
-            hasMatches ||= childMatches;
-          } else {
-            li.hidden = true;
-          }
-
-          continue;
-        }
-
-        const matches = normalize(li.textContent).includes(query);
-
-        li.hidden = !matches;
-        hasMatches ||= matches;
-      }
-
-      return hasMatches;
-    };
-
-    const getVisibleLinks = () =>
-      [...list.querySelectorAll('a[href]')].filter(
-        (anchor) => !anchor.closest('li[hidden]')
-      );
-
-    const updateFilter = () => {
-      const rawQuery = input.value.trim();
-
-      // Allow searching for filenames such as example.md.
-      const query = normalize(rawQuery).replace(/\.(md|mdx)$/, '');
-
-      if (!query) {
-        // Restore the original sidebar visibility and group states.
-        for (const li of list.querySelectorAll('li')) {
-          li.hidden = false;
-        }
-
-        if (savedDetailsState) {
-          for (const [details, wasOpen] of savedDetailsState) {
-            details.open = wasOpen;
-          }
-
-          savedDetailsState = null;
-        }
-
-        status.hidden = true;
-      } else {
-        // Save the original expanded/collapsed state only once.
-        if (!savedDetailsState) {
-          savedDetailsState = new Map(
-            [...list.querySelectorAll('details')].map((details) => [
-              details,
-              details.open,
-            ])
-          );
-        }
-
-        filterList(list, query);
-
-        const count = getVisibleLinks().length;
-
-        status.textContent =
-          count === 0
-            ? 'No matching pages.'
-            : `${count} matching ${count === 1 ? 'page' : 'pages'}.`;
-
-        status.hidden = false;
-      }
-
-      // Avoid leaving keyboard focus on an item that is now hidden.
-      const activeElement = document.activeElement;
-
-      if (
-        activeElement instanceof HTMLElement &&
-        activeElement.closest('li[hidden]')
-      ) {
-        input.focus();
-      }
-    };
-
-    input.addEventListener('input', updateFilter);
-
-    // Keyboard navigation through visible sidebar links.
-    pane.addEventListener('keydown', (event) => {
-      const target = event.target;
-
-      const inputFocused = target === input;
-      const linkFocused =
-        target instanceof HTMLAnchorElement &&
-        target.closest('#starlight__sidebar');
-
-      if (event.key === 'Escape' && (inputFocused || linkFocused)) {
-        event.preventDefault();
-
-        input.value = '';
-        updateFilter();
-        input.focus();
-
-        return;
-      }
-
-      if (
-        (event.key === 'ArrowDown' || event.key === 'ArrowUp') &&
-        (inputFocused || linkFocused)
-      ) {
-        const links = getVisibleLinks();
-
-        if (!links.length) return;
-
-        event.preventDefault();
-
-        const currentIndex = linkFocused
-          ? links.indexOf(target)
-          : -1;
-
-        const nextIndex = inputFocused
-          ? event.key === 'ArrowDown'
-            ? 0
-            : links.length - 1
-          : (currentIndex +
-              (event.key === 'ArrowDown' ? 1 : -1) +
-              links.length) %
-            links.length;
-
-        links[nextIndex].focus();
-
-        return;
-      }
-
-      // Enter on the search field opens the first matching page.
-      if (inputFocused && event.key === 'Enter') {
-        const firstLink = getVisibleLinks()[0];
-
-        if (firstLink) {
-          event.preventDefault();
-          firstLink.click();
-        }
-      }
-    });
-  };
-
-  initSidebarFilter();
-
-  // Also initialize after Astro client-side navigation.
-  document.addEventListener('astro:page-load', initSidebarFilter);
 </script>
 
 <style>
-  .sidebar-filter {
-    width: 100%;
-  }
+	.sidebar-filter {
+		width: 100%;
+	}
 
-  .sidebar-filter input {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.65rem 0.75rem;
+	.sidebar-filter input {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0.65rem 0.75rem;
 
-    border: 1px solid var(--sl-color-hairline);
-    border-radius: 0.5rem;
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 0.5rem;
 
-    background: var(--sl-color-bg);
-    color: var(--sl-color-text);
+		background: var(--sl-color-bg);
+		color: var(--sl-color-text);
 
-    font: inherit;
-    font-size: var(--sl-text-sm);
-  }
+		font: inherit;
+		font-size: var(--sl-text-sm);
+	}
 
-  .sidebar-filter input::placeholder {
-    color: var(--sl-color-gray-3);
-  }
+	.sidebar-filter input::placeholder {
+		color: var(--sl-color-gray-3);
+	}
 
-  .sidebar-filter input:focus-visible {
-    outline: 2px solid var(--sl-color-text-accent);
-    outline-offset: 2px;
-  }
+	.sidebar-filter input:focus-visible {
+		outline: 2px solid var(--sl-color-text-accent);
+		outline-offset: 2px;
+	}
 
-  .sidebar-filter__hint,
-  .sidebar-filter__status {
-    margin: 0.4rem 0 0;
-    color: var(--sl-color-gray-3);
-    font-size: var(--sl-text-xs);
-  }
+	.sidebar-filter__hint,
+	.sidebar-filter__status {
+		margin: 0.4rem 0 0;
+		color: var(--sl-color-gray-3);
+		font-size: var(--sl-text-xs);
+	}
 
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+
+	.sidebar-filter__modes {
+		display: flex;
+		gap: 0.35rem;
+		margin-top: 0.6rem;
+	}
+
+	.sidebar-filter__modes button {
+		flex: 1;
+		padding: 0.4rem 0.5rem;
+
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 0.4rem;
+
+		background: transparent;
+		color: var(--sl-color-gray-2);
+
+		font: inherit;
+		font-size: var(--sl-text-xs);
+		cursor: pointer;
+	}
+
+	.sidebar-filter__modes button[aria-pressed="true"] {
+		background: var(--sl-color-accent-low);
+		border-color: var(--sl-color-accent);
+		color: var(--sl-color-text-accent);
+	}
+
+	.sidebar-filter__modes button:focus-visible {
+		outline: 2px solid var(--sl-color-text-accent);
+		outline-offset: 2px;
+	}
+
 </style>
 
