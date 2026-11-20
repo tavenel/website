@@ -1,8 +1,8 @@
 - simple main page
 - review / cleanup script + astro config + roadmap svgs
+- search files list (recherche d'un module)
 ---
 - https://starlight-page-actions.dlcastillop.com/docs/getting-started or https://www.npmjs.com/package/starlight-contextual-menu
-- https://github.com/Windmillcode/starlight-fullview-mode
 - tracks :
 	- generate "next" => ## 🚀 Pour aller plus loin Voir les autres ressources du [cours sur le Devops](/devops).
 	- generate "objectives"
@@ -22,7 +22,6 @@
 - theme switcher :
 	- https://starlight-theme-rose-pine.netlify.app/
   - https://github.com/prisant-labs/starlight-visual-customizer
-- recherche d'un module
 - upgrade "date:" après vérification des contenus
 - remark => external links
 - pagefind => rm esgi/ epsi/ cesi/ estiam/
@@ -54,6 +53,7 @@ public/site.webmanifest||
 	- about => no TOC
 	- content/docs/courses/tech/
   - pages/tech/
+  - pages/todo/
 
 ===
 
