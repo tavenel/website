@@ -5,7 +5,7 @@ tableOfContents: false
 pagefind: false
 ---
 
-<!-- TODO
+<!-- [TODO]
 <div id="cours-cards">
 	<div class="item global-item"><a href="/promotions"><Icon name="classroom" /> École</a></div>
 	<div class="item global-item"><a href="/fun"><Icon name="emoji-laughing" /> Fun</a></div>

@@ -1,12 +1,7 @@
 epsi-b3-ci.yaml
 esgi/b3/linux-admin"><Icon name="linux" /> Linux administration avancée</a></li>
 esgi/b3/devops"><Icon name="infinity" /> Fondamentaux DevOps</a></li>
-esgi/m1/devops"><Icon name="infinity" /> Devops avancé</a></li>
 esgi/m1/tdd"><Icon name="test-tube-solid" /> TDD</a></li>
 esgi/m2/k8s-admin"><Icon name="kubernetes" /> Kubernetes pour l'administrateur système</a></li>
 
-# old
-
-esgi/b3/lpic-1"><Icon name="linux" /> Linux administration avancée LPIC-1 (Filières SRC & SI)</a></li>
-esgi/m1/cicd"><Icon name="jenkins" /> Intégration et Déploiement Continu</a></li>
-esgi/m2/cicd"><Icon name="jenkins" /> Solutions de déploiements continus CI/CD (Filières IW & AL)</a></li>
+# old => esgi/b3/lpic-1"><Icon name="linux" /> Linux administration avancée LPIC-1 (Filières SRC & SI)</a></li>
