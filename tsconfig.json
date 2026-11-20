@@ -13,20 +13,8 @@
 			"@assets/*": [
 				"src/assets/*"
 			],
-			"@lib/*": [
-				"src/lib/*"
-			],
-			"@components/*": [
-				"src/components/*"
-			],
-			"@css/*": [
-				"src/styles/*"
-			],
 			"@icons/*": [
 				"src/icons/*"
-			],
-			"@ts/*": [
-				"src/ts/*"
 			],
 		}
 	}
