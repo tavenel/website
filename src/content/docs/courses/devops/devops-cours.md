@@ -1,6 +1,6 @@
 ---
 license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
-title: Le DevOps
+title: Cours sur le DevOps
 type: cours
 sidebar:
   order: 3

@@ -1,6 +1,8 @@
 - review / cleanup :
   - scripts/generate-promos
 	- SidebarWithFilter.astro
+	  => click on course name OK ?
+- index pages for courses => new collection ?
 ---
 - tracks :
 	- generate "next" => ## 🚀 Pour aller plus loin Voir les autres ressources du [cours sur le Devops](/devops).
@@ -22,6 +24,7 @@
 - remark => external links
 - pagefind => rm esgi/ epsi/ cesi/ estiam/ => https://starlight.astro.build/reference/configuration/#pagefind
 - cleanup emojis
+- badges `cours` / `exo` / `projet` => https://starlight.astro.build/guides/sidebar/#badges
 
 ---
 # Files :
