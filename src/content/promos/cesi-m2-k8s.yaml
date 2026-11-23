@@ -22,7 +22,6 @@ chapters:
   - k8s/k8s-cours-storage
   - k8s/k8s-cours-pods-advanced
   - k8s/k8s-cours-extend
-  - k8s/k8s-cours-admin
   - k8s/k8s-cours-tools
   - k8s/k8s-cours-mini
   - k8s/k8s-cours-sequence
