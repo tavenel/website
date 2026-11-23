@@ -1,6 +1,6 @@
 ---
 title: Atelier pratique - Présentation en distanciel
-type: cours
+type: exo
 sidebar:
   order: 101
 description: Atelier pratique - Présentation en distanciel

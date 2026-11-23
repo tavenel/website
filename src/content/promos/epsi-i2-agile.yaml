@@ -14,5 +14,6 @@ next:
 chapters:
   # TODO => - [🤓 Scrum et les méthodes agiles (cours) (PowerPoint, 2M)](/cours/scrum.pptx)
   - gestion-projet/agilite/comparaison-methodes-agiles
+  - gestion-projet/atelier_story_mapping
   - gestion-projet/agilite/projet_scrum_dev_campus
 
