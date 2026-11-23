@@ -448,12 +448,6 @@ L'examen des données existantes, comme les rapports d'activité ou les retours 
 
 ---
 
-### 📊 Diagramme de Kano
-
-Voir le [cours de gestion de projet sur le diagramme de Kano](/projet/kano). 📚
-
----
-
 ### 🔍 Analyse fonctionnelle
 
 - Vise à décomposer le système ou le projet en sous-systèmes, composants et fonctionnalités pour en comprendre le fonctionnement global et les interactions entre les différentes parties. 🧩

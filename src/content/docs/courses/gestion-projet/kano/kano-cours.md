@@ -2,20 +2,20 @@
 license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: Diagramme de Kano
 tags:
-- projet
+- kano
 type: cours
 sidebar:
-  order: 800
-description: Diagramme de Kano
+  order: 2
+description: Cours sur le diagramme de Kano
 ---
-### 📊 Diagramme de Kano
+## 📊 Diagramme de Kano
 
 - Outil permettant de classer les fonctionnalités en fonction de leur impact sur la satisfaction des utilisateurs selon 3 types d'attentes. 🔍
 - Aide à déterminer quelles fonctionnalités sont cruciales pour la satisfaction des utilisateurs et quelles fonctionnalités peuvent être des avantages concurrentiels. 🏆
 
 ---
 
-### Fonctions Obligatoires
+## Fonctions Obligatoires
 
 Fonctionnalités de base considérée comme obligatoire par les utilisateurs. 🔧
 
@@ -24,7 +24,7 @@ Fonctionnalités de base considérée comme obligatoire par les utilisateurs. �
 
 ---
 
-### Fonctions Proportionnelles
+## Fonctions Proportionnelles
 
 Fonctionnalité attendue des utilisateurs. 📈
 
@@ -34,7 +34,7 @@ Fonctionnalité attendue des utilisateurs. 📈
 
 ---
 
-### Fonctions Attractives
+## Fonctions Attractives
 
 Surprennent les utilisateurs et génèrent une grande satisfaction lorsqu'elles sont présentes. 🎁
 
@@ -43,7 +43,7 @@ Surprennent les utilisateurs et génèrent une grande satisfaction lorsqu'elles 
 
 ---
 
-### Exemple de Diagramme de Kano
+## Exemple de Diagramme de Kano
 
 Imaginons un projet de développement d'une application de livraison de repas : 🍔
 

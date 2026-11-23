@@ -12,9 +12,10 @@ next:
   - gestion-projet
 chapters:
   - gestion-projet/cdc
-  - gestion-projet/kano
-  - architecture-logicielle/use-case
   - gestion-projet/exemples-cdc
   - gestion-projet/exo-pur-beurre
+  - architecture-logicielle/use-case
   - architecture-logicielle/exos-cas-utilisation-cas-sequence
+  - gestion-projet/kano/kano-cours
+  - gestion-projet/kano/kano-exo
   - gestion-projet/projet-cdc
