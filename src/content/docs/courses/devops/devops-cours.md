@@ -117,6 +117,21 @@ Le cycle de vie DevOps est un cycle continu allant des étapes de planification 
 
 ---
 
+- [The State of IaC 2025 (Firefly)](https://www.firefly.ai/state-of-iac-2025) rapporte spécifiquement l'adoption de l'Infrastructure as Code :
+  - 89 % des organisations interrogées ont adopté l'IaC.
+  - 68 % travaillent dans des environnements multicloud.
+  - Terraform reste la solution IaC dominante.
+  - Seulement 6 % ont entièrement codifié leur infrastructure.
+- [State of Platform Engineering 2025 (RedHat)](https://regmedia.co.uk/2025/10/28/state_of_platform_engineering.pdf) étudie les organisations utilisant des solutions IaC :
+  - Terraform	20 %
+  - Ansible	17 %
+  - Puppet	13 %
+  - Chef	10 %
+  - Pulumi 7 %
+
+---
+
+
 ## 🔄 Gestion des versions
 
 - Objectif : segmenter tout changement et gérer un historique : 📜

@@ -71,10 +71,6 @@ mindmap
 
 ---
 
-> Outil de _provisionning_ les plus utilisés (2025) : Terraform (39%), Ansible (35%), GCP (32%) (d'après : <https://www.docker.com/blog/2025-docker-state-of-app-dev/>).
-
----
-
 ## 🏗️ Architecture
 
 ---
