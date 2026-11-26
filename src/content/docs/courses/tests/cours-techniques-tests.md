@@ -38,6 +38,10 @@ Soit `1<=n<=5` avec `n` un entier positif :
 
 ---
 
+L'enquête [GTB 2024](https://www.asqf.de/en/a-look-back-and-then-forward-results-of-the-2011-2024-surveys-software-testing-in-practice-and-research/) révèle qu'environ 40 % seulement des répondants utilisent principalement l'analyse des valeurs limites ou le partitionnement en classes d'équivalence comme techniques de tests.
+
+---
+
 ### 📋 Test de tables de décision
 
 - 📌 Chaque ligne identifie des **conditions** (entrées) (en haut dans le tableau) ou des **sorties** (en bas dans le tableau) du système ;

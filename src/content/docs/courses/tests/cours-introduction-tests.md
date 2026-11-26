@@ -65,48 +65,71 @@ Voir aussi : [Fireship - The horrors of software bugs](https://www.youtube.com/w
 
 ---
 
-## 📊 Enquête 2017-2018 ISTQB (International Software Testing Qualifications Board)
+## 📊 Software Testing Trends (2025-2026)
 
----
+### Main improvement areas in software testing
 
-Main improvement areas in software testing are :
-- 🤖 Test automation
-- 📚 Knowledge about test processes
-- 🗣️ Communication between development and testing
+- 🤖 AI-assisted testing and test automation
+- 🔄 Continuous testing and CI/CD integration
+- 📚 Quality Engineering practices and test processes
+- 🗣️ Cross-functional collaboration between development, testing and business teams
+- 🔐 Security, performance and reliability testing
 
----
+### Key test design techniques
 
-Top five test design techniques utilized by software testing teams are :
-- 📝 Use case testing
+- 📝 Use case and scenario-based testing
 - 🔍 Exploratory testing
 - 📏 Boundary value analysis
-- ✅ Checklist based
+- 📊 Equivalence partitioning
+- 🔀 Decision table and state transition testing
+- ✅ Checklist-based testing
 - 🤔 Error guessing
 
+### New technologies and subjects affecting software testing
+
+- 🤖 Generative AI and AI-assisted testing
+- 🧠 Autonomous and agentic AI
+- 🔐 Cybersecurity and privacy
+- 📊 Big data and data quality
+- ☁️ Cloud-native architectures and microservices
+- 🌐 IoT and connected systems
+
+### Trending topics in software testing
+
+- 🤖 AI-driven test automation
+- 🏃 Agile and continuous testing
+- 🔄 Shift-left and shift-right testing
+- 🏗️ Quality Engineering
+- 🔐 Security and performance testing
+- 🧪 Testing AI-based systems
+
+### Non-testing skills expected from a modern software tester
+
+- 🗣️ Communication and collaboration skills
+- 🧠 Critical thinking and analytical skills
+- 📚 Business and domain knowledge
+- 💻 Programming and scripting skills
+- 🤖 AI literacy and prompt engineering
+- 📊 Data literacy
+- 📈 Adaptability and continuous learning
+
 ---
 
-New technologies or subjects that are expected to affect software testing in near future are :
-- 🔐 Security
-- 🤖 Artificial intelligence
-- 📊 Big data
+Le rapport [World Quality Report 2025-26 - Capgemini / Sogeti / OpenText](https://www.opentext.com/en/media/report/world-quality-report-17th-edition-2025-26-en.pdf) donne des indications chiffrées intéressantes sur les compétences attendues des Quality Engineers :
 
----
+- Generative AI	63 %
+- Core Quality Engineering skills	60 %
+- Development / coding skills	58 %
+- Domain knowledge	56 %
+- Soft skills	51 %
+- CI/CD orchestration	44 %
+- Cloud	41 %
 
-Trending topics for software testing profession in near future will be :
-- 🤖 Test automation
-- 🏃 Agile testing
-- 🔐 Security testing
+Voir aussi ces autres enquêtes :
 
----
-
-Non-testing skills expected from a typical tester are :
-- 🗣️ Soft skills
-- 📚 Business/domain knowledge
-- 📈 Business analysis skills
-
----
-
-- [Étude JetBrains (2020) sur le test dans les projets informatiques](https://www.jetbrains.com/lp/devecosystem-2020/testing/)
+- [Software Testing in Practice and Research 2024 – German Testing Board](https://www.asqf.de/en/a-look-back-and-then-forward-results-of-the-2011-2024-surveys-software-testing-in-practice-and-research/)
+- [State of Software Quality 2024 – Katalon](https://www.katalon.com/reports/state-quality-2024)
+- [State of Developer Ecosystem 2025 – JetBrains](https://www.jetbrains.com/fr-fr/developer-research/)
 
 ---
 
