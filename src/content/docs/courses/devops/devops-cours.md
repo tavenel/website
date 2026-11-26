@@ -293,6 +293,23 @@ _L'association des pratiques DevOps et Agiles est si courante que ces deux conce
 
 ---
 
+## Uniformisation des outils et généricité
+
+L'un des objectifs majeurs du DevOps est d'**uniformiser au maximum la stack technique et les outils** utilisés à travers les différentes équipes.
+
+* **Objectif :** Capitaliser sur la généricité. En utilisant des standards communs (comme les conteneurs, les pipelines CI/CD standardisés ou l'Infrastructure as Code), on évite de réinventer la roue à chaque projet.
+
+---
+
+## Compromis de l'abstraction
+
+Mettre en place des pratiques DevOps implique d'**ajouter des couches d'abstraction** (scripts d'automatisation, templates, orchestration).
+
+* **Au démarrage :** Cet investissement initial représente une **perte de temps apparente** pour une seule application (le setup est plus lourd que de tout faire "à la main").
+* **À l'échelle :** Cet effort devient extrêmement rentable par la suite. Si le déploiement de la première application est long, le déploiement de la 10ème, de la 50ème ou des mises à jour continues devient **rapide, fiable et industrialisé**.
+
+---
+
 ## ❌Inconvénients du DevOps
 
 - Infrastructure plus complexe
