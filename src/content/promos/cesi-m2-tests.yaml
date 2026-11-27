@@ -28,7 +28,7 @@ chapters:
   - tests/cours-strategies-tests
   - tests/cours-techniques-tests
   - tests/cours-tdd
-  - tests/cours-bdd
+  - ddd/cours/cours-bdd
   - tests/selenium/selenium-cours
   - tests/selenium/selenium-tp
   - tests/postman/postman-cours

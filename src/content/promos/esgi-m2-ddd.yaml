@@ -14,10 +14,10 @@ details:
 - "Évaluation par projet : Context Map & Langage ubiquitaire, Architecture logicielle et implémentation"
 next:
 chapters:
-  - ddd/cours/ddd
-  - ddd/cours/tactiques
+  - ddd/cours/cours-ddd
+  - ddd/cours/cours-tactiques
   - ddd/cours/team-topologies
-  - tests/cours-bdd
+  - ddd/cours/cours-bdd
   - architecture-logicielle/cours-hexagonal
   - architecture-logicielle/cours-clean-architecture
   - ddd/exos/exo-youtube-amazon

@@ -112,15 +112,88 @@ Est-ce vraiment le seul **résultat** à vérifier ?
 
 ---
 
-![Le dialogue en BDD](https://www.arolla.fr/bdd-dialogue-png/) <!-- TODO: REDO DIAG -->
+```mermaid
+---
+title: Le dialogue en BDD
+---
+flowchart LR
+    subgraph G["Parties prenantes"]
+        direction TB
+        A["Analyste fonctionnel"]
+        C["Client"]
+        Q["Assurance qualité"]
+    end
 
-<div class="caption">Le dialogue en BDD ©www.arolla.fr</div>
+    US[["📄 User Stories"]]
+
+    subgraph D["Équipe de développement"]
+        direction TB
+        DEV1["Développeur 1"]
+        DEV2["Développeur 2"]
+    end
+
+    A -->|"Et si…"| US
+    C -->|"Il faut que…"| US
+    Q -->|"Par exemple…"| US
+    DEV1 -->|"Dans le cas de…"| US
+    DEV2 -->|"Que se passe-t-il si…"| US
+```
 
 ---
 
-![Résumé du BDD](https://blog.octo.com/le-bdd/behavior-driven-development-1-702x1024.webp) <!-- TODO: REDO DIAG -->
+```mermaid
+---
+title: Avant le développement - 3 Amigos
+---
+flowchart
+    subgraph A["1. Conversation - Dialogue entre les 3 Amigos"]
+        DEV["Développeur"]
+        PO["Product Owner"]
+        QA["Testeur"]
+    end
 
-<div class="caption">Résumé du BDD. ©blog.octo.com</div>
+    subgraph B["2. Explorer les règles métier et illustrer avec un exemple"]
+        EX["Donne-moi un exemple"]
+        LIM["Cas limites : est-ce que tu vois un exemple où ça ne se passe pas comme ça ?"]
+        NON["Cas non passants : est-ce que tu vois un exemple où l'exemple 1 ne marche pas ?"]
+        EX --> LIM
+        LIM --> NON
+    end
+
+    subgraph C["3. Formaliser le comportement attendu"]
+        PRIORITE["Prioriser les cas"]
+        CRITERES["Critères d'acceptation : pas de surprise à la recette"]
+        COMPORTEMENT["Comportement attendu compris"]
+
+        PRIORITE --> CRITERES
+        CRITERES --> COMPORTEMENT
+    end
+
+    A --> B
+    B --> C
+```
+
+---
+
+
+```mermaid
+---
+title: Développement en double loop TDD
+---
+flowchart
+   ATELIER["Atelier des 3 Amigos"]
+   INTEG["Tests d'intégration = Fil rouge"]
+   UNIT["Tests unitaires"]
+   DEVLOOP["Développement et vérification"]
+   UI["Test d'interface"]
+
+   ATELIER --> INTEG
+   INTEG --> UNIT
+   UNIT --> DEVLOOP
+   DEVLOOP -.->|"Boucle de feedback"| INTEG
+   UNIT --> |TDD| UNIT
+   UNIT --x UI
+```
 
 ---
 
