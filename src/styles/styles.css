@@ -745,7 +745,7 @@ aside.callout-correction {
 	--menu-about: #986801;
 	--card-item-bg: inherit;
 	--card-item-global-bg: inherit;
-	--card-item-hover: #FFFFFF; /* TODO */
+	--card-item-hover: #FFFFFF;
 	--card-item-hover-bg: #3A3F4B;
 	--card-text: #383A42;
 	--versioning: #3A3F4B;
@@ -1103,7 +1103,7 @@ aside.callout-correction {
 	--menu-about: #ffffff;
 	--card-item-bg: #463465;
 	--card-item-global-bg: #463465;
-	--card-item-hover: var(--text); /*TODO*/
+	--card-item-hover: var(--text);
 	--card-item-hover-bg: #fede5d;
 	--card-text: #ffffff;
 	--versioning: #ffffff80;

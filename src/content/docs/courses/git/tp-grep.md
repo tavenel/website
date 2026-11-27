@@ -73,7 +73,7 @@ Autres méthodes de recherche utiles :
 1. Chercher dans les messages de commits :
 
  ```sh
- git log --grep "TODO"
+ git log --grep "WIP"
  ```
 
 ## Recherche dans le contenu des fichiers avec `git grep`
@@ -141,9 +141,9 @@ Autres méthodes de recherche utiles :
 
 ## Exercices Pratiques
 
-1. **Recherche de TODOs** :
-   - Utilisez `git grep` pour trouver tous les commentaires TODO dans votre codebase.
-   - Utilisez `git log --grep` pour trouver les commits mentionnant "TODO" dans leurs messages.
+1. **Recherche de work-in-progress** :
+   - Utilisez `git grep` pour trouver tous les commentaires WIP dans votre codebase.
+   - Utilisez `git log --grep` pour trouver les commits mentionnant "WIP" dans leurs messages.
 2. **Suivi d'une fonction** :
    - Utilisez `git log -S` pour trouver les commits où une fonction spécifique a été modifiée.
    - Comparez les résultats avec ceux obtenus en utilisant `git grep` pour rechercher la même fonction dans les fichiers.

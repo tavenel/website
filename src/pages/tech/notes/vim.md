@@ -167,7 +167,7 @@ To change every occurrence of a character string between two lines,
 ## Search / Match
 
 - `:highlight` => lists highlights
-- `match <highlight> /<search>/` // `2match …` // `3match …` => colored search using highlight pattern (e.g. : `SpellBad`, `Todo`, …)
+- `match <highlight> /<search>/` // `2match …` // `3match …` => colored search using highlight pattern
 
 ## Katas and tips
 

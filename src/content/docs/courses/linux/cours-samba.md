@@ -127,7 +127,7 @@ uidNumber: 10001
 gidNumber: 100
 homeDirectory: /home/smbuser
 loginShell: /bin/bash
-sambaSID: # TODO REPLACE
+sambaSID: # à remplace par le SID
 # sambaNTPassword: <NT_HASH>
 sambaAcctFlags: [U]
 ```
