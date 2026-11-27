@@ -222,3 +222,616 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
    - Démonstration du pipeline de CI/CD en action
    - Déploiement live (ou préenregistré) sur l'environnement de production
    - Visualisation des dashboards Grafana et logs
+
+## Critères de réussite
+
+Le projet pourra être considéré comme terminé lorsque les points suivants seront démontrés :
+
+- [ ] **Application :** tous les composants métier sont conteneurisés et fonctionnels.
+- [ ] **Staging :** un environnement de test séparé est opérationnel.
+- [ ] **IaC :** Ansible permet d'installer et de configurer les environnements.
+- [ ] **Git :** l'intégralité du code applicatif et de l'infrastructure est versionnée.
+- [ ] **CI :** un commit déclenche les contrôles qualité, les tests et la construction des images.
+- [ ] **Registry :** les images sont publiées et récupérables.
+- [ ] **CD :** les composants applicatifs peuvent être mis à jour automatiquement.
+- [ ] **Production :** l'application fonctionne sur Kubernetes réparti sur deux VM.
+- [ ] **Zero-downtime :** les mises à jour applicatives sont réalisées sans interruption de service.
+- [ ] **Auto-scaling :** le scaling automatique des Pods fonctionne dès la deuxième itération.
+- [ ] **Monitoring :** Prometheus collecte les métriques et Grafana permet leur visualisation.
+- [ ] **Golden Signals :** latence, trafic, erreurs et saturation sont observables.
+- [ ] **Logging :** les logs de tous les services sont centralisés et consultables.
+- [ ] **Tracing :** une requête peut être suivie à travers les composants applicatifs.
+- [ ] **Documentation :** l'architecture, les choix techniques et les procédures sont documentés.
+- [ ] **Soutenance :** le pipeline, le déploiement, le monitoring et les logs sont démontrables.
+
+## Checklist opérationnelle
+
+Voici une proposition de checklist détaillant toutes les actions à réaliser dans le projet :
+
+### Organisation et cadrage du projet
+
+#### Répartition des responsabilités
+
+- [ ] **[OBLIGATOIRE]** Répartir les responsabilités entre les membres :
+  - [ ] Développement applicatif (Dev).
+  - [ ] Infrastructure et systèmes (Ops).
+  - [ ] Intégration et déploiement continu (CI/CD).
+  - [ ] Monitoring et observabilité.
+- [ ] Définir un responsable pour chaque domaine.
+- [ ] Définir les interfaces entre les différents responsables.
+- [ ] Mettre en place un backlog des tâches.
+- [ ] Définir les jalons des différentes itérations.
+- [ ] Définir un processus de revue et de validation des changements.
+
+#### Choix de l'application
+
+- [ ] **[OBLIGATOIRE]** Identifier une application existante à reprendre (solution privilégiée) ou choisir une application exemple.
+- [ ] **[OBLIGATOIRE]** Vérifier que l'application est composée de plusieurs services métier.
+- [ ] Identifier les différents composants :
+  - [ ] Frontend.
+  - [ ] Backend / API.
+  - [ ] Base de données.
+  - [ ] Autres services éventuels.
+- [ ] Identifier les dépendances entre les composants.
+- [ ] Identifier les ports et protocoles de communication.
+- [ ] Identifier les besoins en stockage persistant.
+- [ ] Identifier les variables de configuration nécessaires.
+- [ ] Définir comment les composants seront démarrés et arrêtés.
+- [ ] Identifier les éventuels endpoints de santé de l'application.
+
+#### Architecture et dépôt de code
+
+- [ ] **[OBLIGATOIRE]** Définir l'architecture cible.
+- [ ] Réaliser un schéma représentant les composants et leurs interactions.
+- [ ] Définir la stratégie de gestion du code :
+  - [ ] Monorepo (`/app`, `/infra`, `/ci`, etc.).
+  - [ ] Ou multirepo (frontend, backend, DevOps, etc.).
+- [ ] **[OBLIGATOIRE]** Créer les dépôts Git partagés.
+- [ ] **[OBLIGATOIRE]** Définir le workflow Git, par exemple branches de développement et de livraison.
+- [ ] Définir une convention de nommage des commits et des versions.
+- [ ] Définir comment les versions applicatives seront identifiées.
+- [ ] Documenter les choix techniques.
+
+### Conteneurisation de l'application
+
+#### Préparation de Docker
+
+- [ ] **[OBLIGATOIRE]** Installer Docker sur l'environnement de développement.
+- [ ] Vérifier le fonctionnement du moteur Docker.
+- [ ] Vérifier la possibilité de construire et d'exécuter des images.
+- [ ] Définir une organisation des images par composant.
+
+#### Création des Dockerfiles
+
+- [ ] **[OBLIGATOIRE]** Créer un Dockerfile pour le frontend.
+- [ ] **[OBLIGATOIRE]** Créer un Dockerfile pour le backend.
+- [ ] Créer les Dockerfiles des autres services éventuels.
+- [ ] Définir les images de base.
+- [ ] Configurer les dépendances nécessaires au fonctionnement des composants.
+- [ ] Définir les commandes de démarrage (`CMD` / `ENTRYPOINT`).
+- [ ] Exposer les ports nécessaires.
+- [ ] Prévoir le passage des paramètres de configuration par variables d'environnement.
+- [ ] Prévoir les mécanismes de stockage persistant nécessaires aux composants avec état.
+- [ ] Optimiser les étapes de construction des images.
+
+#### Tests locaux
+
+- [ ] **[OBLIGATOIRE]** Construire chaque image Docker.
+- [ ] Vérifier que chaque image se construit sans erreur.
+- [ ] Démarrer chaque conteneur individuellement.
+- [ ] Vérifier le bon fonctionnement de chaque composant.
+- [ ] Vérifier les communications entre les composants.
+- [ ] Vérifier les accès à la base de données.
+- [ ] Vérifier la persistance des données après redémarrage des conteneurs.
+- [ ] Corriger les erreurs de configuration.
+- [ ] Documenter les commandes permettant de construire et démarrer les conteneurs.
+
+**Livrables :** un Dockerfile par composant et des images Docker fonctionnelles.
+
+### Création de l'environnement de staging
+
+#### Préparation de l'environnement
+
+- [ ] **[OBLIGATOIRE]** Identifier les ressources nécessaires au staging.
+- [ ] **[OBLIGATOIRE]** Vérifier la disponibilité d'une VM ou d'un environnement de test.
+- [ ] Vérifier que l'OS Linux est installé.
+- [ ] Préparer les accès réseau nécessaires.
+- [ ] Prévoir un environnement isolé de la production.
+
+#### Choix de la technologie
+
+- [ ] Choisir la technologie de staging : Docker Compose ou Kubernetes léger (k3s)
+- [ ] Documenter le choix retenu.
+
+#### Déploiement de la stack
+
+- [ ] **[OBLIGATOIRE]** Créer le fichier `docker-compose.yml` ou les configurations Kubernetes.
+- [ ] Définir les différents services.
+- [ ] Définir les réseaux.
+- [ ] Définir les volumes nécessaires.
+- [ ] Configurer les dépendances entre services.
+- [ ] Configurer les variables d'environnement du staging.
+- [ ] Définir les ports accessibles.
+- [ ] Démarrer l'ensemble de la stack.
+- [ ] Vérifier le fonctionnement de tous les composants.
+- [ ] Tester les communications entre services.
+- [ ] Tester les fonctionnalités principales de l'application.
+
+#### Validation du staging
+
+- [ ] **[OBLIGATOIRE]** Réaliser un premier déploiement manuel.
+- [ ] Vérifier que l'application est fonctionnelle.
+- [ ] Vérifier les journaux des conteneurs.
+- [ ] Vérifier la persistance des données.
+- [ ] Corriger les problèmes détectés.
+- [ ] Documenter la procédure de déploiement manuel.
+
+**Livrable :** environnement de staging fonctionnel et reproductible.
+
+### Infrastructure as Code avec Ansible
+
+#### Préparation du dépôt IaC
+
+- [ ] **[OBLIGATOIRE]** Créer ou préparer le dépôt Git dédié à l'infrastructure ou intégrer dans le monorepo.
+- [ ] Organiser les fichiers Ansible.
+- [ ] Créer les inventaires des environnements.
+- [ ] Séparer les variables de staging et de production.
+- [ ] Préparer les templates de configuration.
+- [ ] Définir une organisation par rôles Ansible.
+
+#### Automatisation des environnements
+
+- [ ] **[OBLIGATOIRE]** Écrire les playbooks Ansible d'installation de Docker.
+- [ ] Écrire les playbooks de configuration de Docker.
+- [ ] Écrire les playbooks d'installation de Kubernetes.
+- [ ] Configurer les nœuds Kubernetes.
+- [ ] Configurer les prérequis nécessaires au fonctionnement des services.
+- [ ] Automatiser les configurations réseau nécessaires.
+- [ ] Vérifier que les playbooks fonctionnent sur les OS Linux déjà installés.
+- [ ] Vérifier que les playbooks peuvent être réexécutés sans provoquer de modifications inutiles.
+
+#### Automatisation du déploiement applicatif
+
+- [ ] **[OBLIGATOIRE]** Écrire les playbooks permettant de déployer la stack applicative.
+- [ ] Automatiser le déploiement des services sur staging.
+- [ ] Automatiser le déploiement des services sur production.
+- [ ] Automatiser la configuration des paramètres propres à chaque environnement.
+- [ ] Automatiser les mises à jour des composants applicatifs.
+- [ ] Prévoir une procédure de vérification après déploiement.
+- [ ] Documenter les commandes d'exécution des playbooks.
+
+#### Validation de l'IaC
+
+- [ ] **[OBLIGATOIRE]** Versionner tous les fichiers Ansible dans Git.
+- [ ] Tester l'installation automatisée sur une VM vierge (OS déjà installé).
+- [ ] Tester le déploiement complet depuis les playbooks.
+- [ ] Vérifier que l'environnement peut être reconstruit à partir du dépôt.
+- [ ] Vérifier que les configurations ne dépendent pas de manipulations manuelles non documentées.
+
+#### Terraform
+
+- [ ] Étudier la pertinence de Terraform.
+- [ ] Définir les ressources à provisionner.
+- [ ] Créer les configurations Terraform.
+- [ ] Automatiser la création des VM si nécessaire.
+- [ ] Éventuellement automatiser le déploiement de la stack applicative.
+- [ ] Versionner les fichiers Terraform.
+
+**Livrable :** infrastructure et déploiements reproductibles grâce à Ansible et/ou Terraform.
+
+### Intégration continue
+
+#### Choix de l'orchestrateur
+
+- [ ] Choisir un outil CI/CD
+- [ ] Définir l'emplacement de l'orchestrateur : serveur dédié ou SaaS.
+- [ ] Préparer les accès aux dépôts Git.
+- [ ] Préparer les accès au registry Docker.
+- [ ] Configurer les permissions nécessaires.
+
+#### Configuration du pipeline
+
+- [ ] **[OBLIGATOIRE]** Créer le fichier de pipeline.
+- [ ] **[OBLIGATOIRE]** Versionner la configuration du pipeline dans Git.
+- [ ] Configurer le déclenchement du pipeline lors d'un commit.
+- [ ] Associer le commit Git à la version produite.
+- [ ] Organiser les différentes étapes du pipeline.
+
+#### Contrôle de qualité
+
+- [ ] **[OBLIGATOIRE]** Ajouter une étape de lint.
+- [ ] **[OBLIGATOIRE]** Ajouter une analyse statique du code.
+- [ ] **[OBLIGATOIRE]** Ajouter les tests automatisés.
+- [ ] Vérifier que les erreurs de lint font échouer le pipeline.
+- [ ] Vérifier que les tests en échec bloquent la publication.
+- [ ] Conserver les rapports de tests.
+
+#### Construction des images Docker
+
+- [ ] **[OBLIGATOIRE]** Construire les images Docker depuis les sources Git.
+- [ ] Construire une image par composant.
+- [ ] Associer chaque image à un commit ou une version identifiable.
+- [ ] Vérifier que les images sont correctement construites.
+- [ ] Tester les images produites.
+- [ ] Conserver une traçabilité entre commit, pipeline et image.
+
+#### Publication des images
+
+- [ ] **[OBLIGATOIRE]** Choisir le registry : Docker Hub, Github / GitLab Container Registry, Registry privée.
+- [ ] Configurer les informations de connexion.
+- [ ] Publier les images après validation du pipeline.
+- [ ] Vérifier que les images sont disponibles dans le registry.
+- [ ] Vérifier que les environnements peuvent télécharger les images.
+
+**Livrable :** pipeline CI automatisé qui contrôle, construit et publie les images Docker.
+
+### Déploiement continu
+
+#### Déploiement automatique en staging
+
+- [ ] **[OBLIGATOIRE]** Ajouter une étape de déploiement dans le pipeline.
+- [ ] Récupérer les images produites par la CI.
+- [ ] Déployer les nouvelles versions sur staging.
+- [ ] Utiliser les configurations Ansible ou les manifests appropriés.
+- [ ] Exécuter les contrôles après déploiement.
+- [ ] Vérifier le bon fonctionnement de l'application.
+- [ ] Rendre le résultat du déploiement visible dans le pipeline.
+
+#### Déploiement en production
+
+- [ ] **[OBLIGATOIRE]** Préparer le processus de déploiement en production.
+- [ ] Définir les conditions de promotion d'une version vers la production.
+- [ ] Prévoir une validation manuelle ou automatique de la livraison.
+- [ ] Déployer les versions validées.
+- [ ] Automatiser les mises à jour applicatives.
+- [ ] Prévoir la vérification du fonctionnement après chaque déploiement.
+- [ ] Documenter la procédure de retour à une version précédente.
+
+**Livrable :** déploiement automatisé des composants métier, sans intervention manuelle systématique.
+
+### Déploiement de production - Kubernetes
+
+#### Préparation de l'infrastructure
+
+- [ ] **[OBLIGATOIRE]** Préparer les deux VM de production.
+- [ ] Vérifier que les OS Linux sont installés.
+- [ ] Vérifier les ressources CPU, RAM et stockage.
+- [ ] Préparer les accès SSH.
+- [ ] Préparer les communications réseau entre les deux VM.
+- [ ] Identifier le rôle de chaque nœud.
+- [ ] Définir les accès réseau nécessaires à l'application.
+- [ ] Définir les modalités d'accès aux images Docker.
+
+#### Installation du cluster Kubernetes
+
+- [ ] **[OBLIGATOIRE]** Installer Kubernetes sur les deux VM.
+- [ ] Automatiser l'installation avec Ansible.
+- [ ] Configurer le cluster.
+- [ ] Vérifier l'état des nœuds.
+- [ ] Vérifier la communication entre les nœuds.
+- [ ] Vérifier le fonctionnement du réseau Kubernetes.
+- [ ] Vérifier que le cluster peut lancer des Pods.
+- [ ] Documenter les opérations d'administration du cluster.
+
+#### Préparation des manifests Kubernetes
+
+- [ ] **[OBLIGATOIRE]** Créer les manifests Kubernetes.
+- [ ] Créer les Deployments des composants applicatifs.
+- [ ] Créer les Services Kubernetes.
+- [ ] Définir les ConfigMaps nécessaires.
+- [ ] Définir les paramètres de configuration propres à la production.
+- [ ] Configurer les volumes persistants nécessaires.
+- [ ] Définir les ressources CPU et RAM des composants.
+- [ ] Définir les modalités d'accès à l'application.
+- [ ] Préparer les configurations nécessaires aux sondes de santé.
+
+#### Déploiement de l'application
+
+- [ ] **[OBLIGATOIRE]** Déployer les composants applicatifs sur Kubernetes.
+- [ ] Vérifier le lancement des Pods.
+- [ ] Vérifier que les Pods sont opérationnels.
+- [ ] Vérifier les services et la communication entre composants.
+- [ ] Vérifier l'accès à l'application depuis l'extérieur.
+- [ ] Vérifier le fonctionnement de la base de données.
+- [ ] Vérifier la persistance des données.
+- [ ] Tester les fonctionnalités principales.
+- [ ] Vérifier que toutes les images utilisées proviennent du registry.
+
+**Livrable :** application fonctionnelle sur un cluster Kubernetes réparti sur deux VM.
+
+### Zero-downtime
+
+#### Définition de la stratégie
+
+- [ ] **[OBLIGATOIRE]** Définir une stratégie de mise à jour sans interruption.
+- [ ] Étudier les stratégies disponibles : Rolling Update, Blue/Green, Canary Deployment.
+- [ ] Choisir la stratégie adaptée à l'architecture.
+- [ ] Documenter le fonctionnement de la mise à jour.
+- [ ] Définir les conditions de réussite ou d'échec d'un déploiement.
+
+#### Configuration Kubernetes
+
+- [ ] **[OBLIGATOIRE]** Utiliser des Deployments Kubernetes pour gérer les mises à jour.
+- [ ] Configurer les paramètres de Rolling Update si cette stratégie est retenue.
+- [ ] Prévoir suffisamment de réplicas pour maintenir le service pendant une mise à jour.
+- [ ] Définir les readiness probes.
+- [ ] Définir les liveness probes.
+- [ ] Vérifier que les nouveaux Pods sont opérationnels avant de retirer les anciens.
+- [ ] Prévoir un arrêt progressif des composants.
+- [ ] Vérifier le traitement des connexions en cours.
+
+#### Zero-downtime applicatif
+
+- [ ] **[OBLIGATOIRE]** Tester une mise à jour du backend.
+- [ ] Tester une mise à jour du frontend.
+- [ ] Tester une mise à jour de chaque composant métier.
+- [ ] Vérifier que les utilisateurs continuent à accéder au service.
+- [ ] Vérifier qu'aucune interruption n'est provoquée par le remplacement des Pods.
+- [ ] Tester un déploiement avec des requêtes applicatives en cours.
+- [ ] Définir une procédure de rollback.
+- [ ] Tester le rollback.
+
+#### Zero-downtime de l'infrastructure
+
+- [ ] **[OBLIGATOIRE]** Identifier les opérations d'infrastructure susceptibles de provoquer une interruption.
+- [ ] Définir un ordre d'exécution des mises à jour des composants techniques.
+- [ ] Prévoir les mises à jour progressives des services concernés.
+- [ ] Tester les modifications de configuration.
+- [ ] Tester les opérations de maintenance des nœuds.
+- [ ] Vérifier que l'application reste accessible pendant les opérations autorisées.
+
+#### Flagger (facultatif)
+
+- [ ] Étudier l'intégration de Flagger.
+- [ ] Configurer les déploiements progressifs.
+- [ ] Définir les conditions de promotion d'une nouvelle version.
+- [ ] Définir les conditions d'arrêt d'un déploiement.
+- [ ] Tester un déploiement Canary.
+- [ ] Tester le retour automatique à la version précédente.
+
+**Livrable :** démonstration d'une mise à jour applicative sans interruption perceptible du service.
+
+### Auto-scaling
+
+#### Préparation
+
+- [ ] Préparer l'architecture pour supporter plusieurs réplicas.
+- [ ] Identifier les composants susceptibles de subir des montées en charge.
+- [ ] Définir les besoins de montée en charge.
+- [ ] Définir les ressources CPU et RAM nécessaires.
+- [ ] Configurer les ressources demandées et les limites des conteneurs.
+- [ ] Identifier les métriques nécessaires au scaling.
+
+#### Activation de l'auto-scaling
+
+- [ ] Installer ou configurer les composants nécessaires à l'auto-scaling Kubernetes.
+- [ ] Configurer les métriques nécessaires au Horizontal Pod Autoscaler.
+- [ ] Créer un HorizontalPodAutoscaler (HPA).
+- [ ] Définir le nombre minimum de réplicas.
+- [ ] Définir le nombre maximum de réplicas.
+- [ ] Définir les seuils de déclenchement.
+- [ ] Configurer le scaling en fonction des métriques retenues.
+- [ ] Vérifier que Kubernetes sait augmenter le nombre de Pods.
+- [ ] Vérifier que Kubernetes sait réduire le nombre de Pods.
+
+#### Tests de montée en charge
+
+- [ ] Définir un scénario de test de charge.
+- [ ] Générer progressivement du trafic.
+- [ ] Observer les ressources consommées.
+- [ ] Vérifier le déclenchement de l'auto-scaling.
+- [ ] Vérifier l'augmentation du nombre de réplicas.
+- [ ] Vérifier que les nouveaux Pods sont opérationnels.
+- [ ] Vérifier que l'application reste accessible.
+- [ ] Réduire la charge.
+- [ ] Vérifier le retour progressif au nombre minimum de réplicas.
+- [ ] Documenter les résultats.
+
+**Livrable :** HPA fonctionnel et démonstration d'une adaptation automatique à la charge.
+
+### Observabilité
+
+#### Installation de Prometheus
+
+- [ ] **[OBLIGATOIRE]** Installer Prometheus.
+- [ ] Configurer les sources de métriques.
+- [ ] Configurer les cibles de collecte.
+- [ ] Vérifier que Prometheus récupère les métriques.
+- [ ] Surveiller les composants applicatifs.
+- [ ] Surveiller les composants techniques.
+- [ ] Surveiller l'état des services Docker ou Kubernetes.
+- [ ] Vérifier la disponibilité des métriques.
+
+#### Monitoring des conteneurs
+
+- [ ] Configurer cAdvisor lorsque nécessaire pour les métriques Docker.
+- [ ] Connecter les métriques de cAdvisor à Prometheus.
+- [ ] Vérifier la collecte des métriques des conteneurs.
+- [ ] Vérifier le suivi du CPU.
+- [ ] Vérifier le suivi de la mémoire.
+- [ ] Vérifier le suivi des ressources disponibles.
+
+#### Installation de Grafana
+
+- [ ] **[OBLIGATOIRE]** Installer Grafana.
+- [ ] Connecter Prometheus comme source de données.
+- [ ] Vérifier que Grafana peut interroger Prometheus.
+- [ ] Créer un dashboard de supervision.
+- [ ] Configurer des tableaux par service ou composant.
+- [ ] Rendre les tableaux de bord accessibles aux membres de l'équipe.
+
+#### Dashboard SRE : les quatre Golden Signals
+
+- [ ] **[OBLIGATOIRE] Latence**
+  - [ ] Mesurer le temps de réponse de l'application.
+  - [ ] Mesurer les temps de réponse des différents services.
+  - [ ] Identifier les éventuelles dégradations.
+
+- [ ] **[OBLIGATOIRE] Trafic**
+  - [ ] Mesurer le nombre de requêtes.
+  - [ ] Observer les variations de trafic.
+  - [ ] Identifier les pics d'utilisation.
+
+- [ ] **[OBLIGATOIRE] Erreurs**
+  - [ ] Mesurer le nombre d'erreurs applicatives.
+  - [ ] Identifier les erreurs HTTP.
+  - [ ] Suivre les crashs des composants.
+  - [ ] Permettre la corrélation des erreurs entre services.
+
+- [ ] **[OBLIGATOIRE] Saturation**
+  - [ ] Mesurer le CPU consommé.
+  - [ ] Mesurer la mémoire consommée.
+  - [ ] Surveiller les ressources disponibles.
+  - [ ] Surveiller les ressources réseau.
+  - [ ] Identifier les composants proches de leur limite.
+
+#### Validation de l'observabilité
+
+- [ ] Générer une charge applicative.
+- [ ] Vérifier que les métriques évoluent correctement.
+- [ ] Provoquer une erreur applicative de test.
+- [ ] Vérifier que l'erreur est observable.
+- [ ] Vérifier que les crashs sont détectables.
+- [ ] Vérifier que les tableaux de bord permettent de diagnostiquer les problèmes.
+
+**Livrable :** système de monitoring opérationnel avec dashboards Grafana.
+
+### Centralisation des logs et tracing
+
+#### Choix de la solution
+
+- [ ] **[OBLIGATOIRE]** Choisir une solution de centralisation des logs : ELK, Loki (alternative plus légère), autre.
+- [ ] Documenter le choix.
+- [ ] Définir les composants qui doivent envoyer leurs logs.
+
+#### Déploiement du système de logging
+
+- [ ] **[OBLIGATOIRE]** Installer la solution retenue.
+- [ ] Configurer la collecte des logs des composants applicatifs.
+- [ ] Configurer la collecte des logs des conteneurs.
+- [ ] Configurer la collecte des logs des composants techniques.
+- [ ] Centraliser les logs dans la plateforme.
+- [ ] Vérifier la réception des événements.
+
+#### Exploitation des logs
+
+- [ ] **[OBLIGATOIRE]** Permettre la recherche de logs par service.
+- [ ] **[OBLIGATOIRE]** Permettre la recherche par date.
+- [ ] **[OBLIGATOIRE]** Permettre la recherche par niveau de gravité.
+- [ ] Vérifier la possibilité de retrouver les erreurs.
+- [ ] Vérifier la possibilité de corréler les événements entre composants.
+- [ ] Tester le diagnostic d'un incident à partir des logs.
+
+#### Distributed tracing
+
+- [ ] **[OBLIGATOIRE]** Choisir une solution de tracing : OpenTelemetry, Zipkin, autre.
+- [ ] Installer et configurer la solution retenue.
+- [ ] Instrumenter les différents composants applicatifs.
+- [ ] Configurer la transmission des traces.
+- [ ] Vérifier le suivi d'une requête d'un service à l'autre.
+- [ ] Vérifier que les traces permettent d'identifier les points de ralentissement.
+- [ ] Prévoir la corrélation entre logs et traces.
+
+**Livrable :** plateforme de logs centralisés et dispositif de suivi des requêtes.
+
+### Gestionnaire d'artefacts (bonus)
+
+- [ ] Étudier la mise en place d'un gestionnaire d'artefacts.
+- [ ] Évaluer Nexus OSS.
+- [ ] Définir les dépôts nécessaires.
+- [ ] Étudier la gestion des images Docker.
+- [ ] Étudier la mise en cache des dépendances.
+- [ ] Configurer le registry Docker si cette solution est retenue.
+- [ ] Connecter le gestionnaire d'artefacts au pipeline CI/CD.
+- [ ] Vérifier la publication et la récupération des artefacts.
+- [ ] Documenter son utilisation.
+
+### Tests transverses et validation finale
+
+#### Tests fonctionnels
+
+- [ ] Vérifier le fonctionnement complet de l'application.
+- [ ] Vérifier les communications entre composants.
+- [ ] Vérifier le fonctionnement de la base de données.
+- [ ] Vérifier la persistance des données.
+- [ ] Vérifier les fonctionnalités principales sur staging.
+- [ ] Vérifier les fonctionnalités principales sur production.
+
+#### Tests DevOps
+
+- [ ] Vérifier qu'un commit déclenche le pipeline CI.
+- [ ] Vérifier que les tests sont exécutés.
+- [ ] Vérifier que les images Docker sont construites.
+- [ ] Vérifier que les images sont publiées dans le registry.
+- [ ] Vérifier que le déploiement staging est automatisé.
+- [ ] Vérifier que le déploiement production est reproductible.
+- [ ] Vérifier qu'Ansible permet de reconstruire la configuration.
+- [ ] Vérifier que les changements applicatifs peuvent être déployés sans interruption.
+- [ ] Vérifier le rollback.
+- [ ] Vérifier le fonctionnement de l'auto-scaling dès la deuxième itération.
+
+#### Tests d'observabilité
+
+- [ ] Vérifier que les métriques applicatives sont disponibles.
+- [ ] Vérifier que les métriques d'infrastructure sont disponibles.
+- [ ] Vérifier les quatre Golden Signals.
+- [ ] Vérifier que Grafana affiche correctement les données.
+- [ ] Vérifier la collecte des logs.
+- [ ] Vérifier les recherches de logs.
+- [ ] Vérifier la disponibilité des traces.
+- [ ] Simuler un incident et vérifier qu'il est possible de l'analyser.
+
+### Documentation et livrables
+
+#### Dossier de projet
+
+- [ ] **[OBLIGATOIRE]** Rédiger une documentation décrivant l'architecture déployée.
+- [ ] Décrire les différents composants applicatifs.
+- [ ] Décrire l'architecture Docker.
+- [ ] Décrire l'architecture Kubernetes.
+- [ ] Décrire les environnements staging et production.
+- [ ] Décrire les mécanismes IaC.
+- [ ] Décrire le pipeline CI/CD.
+- [ ] Décrire le mécanisme de déploiement sans interruption.
+- [ ] Décrire l'auto-scaling.
+- [ ] Décrire la supervision et l'observabilité.
+- [ ] Décrire le système de centralisation des logs.
+- [ ] Présenter les choix techniques et les outils retenus.
+- [ ] Présenter les pratiques DevOps appliquées.
+- [ ] Documenter les difficultés rencontrées.
+- [ ] Documenter les solutions proposées.
+- [ ] Présenter la répartition des rôles.
+
+#### Dépôts Git
+
+- [ ] **[OBLIGATOIRE]** Publier le code source de l'application.
+- [ ] Publier les Dockerfiles.
+- [ ] Publier les fichiers Docker Compose.
+- [ ] Publier les scripts et playbooks Ansible.
+- [ ] Publier les configurations CI/CD.
+- [ ] Publier les manifests Kubernetes.
+- [ ] Publier les configurations de monitoring.
+- [ ] Publier les configurations de logging.
+- [ ] Publier les fichiers de configuration nécessaires à la maintenance.
+- [ ] Vérifier que les dépôts sont accessibles aux membres de l'équipe.
+- [ ] Vérifier que les instructions de déploiement sont documentées.
+
+#### Soutenance finale
+
+- [ ] **[OBLIGATOIRE]** Préparer la présentation orale.
+- [ ] Présenter l'architecture générale.
+- [ ] Expliquer les choix techniques.
+- [ ] Montrer les dépôts Git.
+- [ ] Démontrer le pipeline CI/CD en action.
+- [ ] Présenter la construction des images Docker.
+- [ ] Montrer leur publication dans le registry.
+- [ ] Démontrer le déploiement sur staging.
+- [ ] Démontrer le déploiement sur production.
+- [ ] Présenter le cluster Kubernetes sur deux VM.
+- [ ] Démontrer une mise à jour sans interruption.
+- [ ] Démontrer l'auto-scaling.
+- [ ] Montrer les dashboards Grafana.
+- [ ] Montrer la centralisation des logs.
+- [ ] Présenter les traces distribuées.
+- [ ] Présenter les difficultés rencontrées et les solutions apportées.
+
