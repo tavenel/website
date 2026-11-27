@@ -1,7 +1,6 @@
 - review / cleanup :
   - scripts/generate-promos
-	- SidebarWithFilter.astro
-	  => click on course name OK ?
+	- SidebarWithFilter.astro => courses => manque pages d'index (click on course name OK) ?
 - index pages for courses => new collection ?
 ---
 - tracks :
@@ -25,18 +24,12 @@
 - pagefind => rm esgi/ epsi/ cesi/ estiam/ => https://starlight.astro.build/reference/configuration/#pagefind
 - cleanup emojis
 - badges `cours` / `exo` / `projet` => https://starlight.astro.build/guides/sidebar/#badges
+- `TODO`s in pages
+- promos/todo/*
 
 ---
 # Files :
 
-public/cours/scrum.pptx|| 
-public/cours/cloud-web.pptx|| 
-public/cours/data/mining/data-to-find.csv|| 
-public/cours/data/mining/exam-browsers.csv|| 
-public/cours/data/mining/kmeans.csv|| 
-public/cours/data/mining/students-breakfast.csv|| 
-public/cours/data/mining/students_hours_exam.csv|| 
-public/cours/python/mots.txt|| 
 public/icons/android-chrome-192x192.png|| 
 public/icons/android-chrome-512x512.png|| 
 public/icons/apple-touch-icon.png|| 
