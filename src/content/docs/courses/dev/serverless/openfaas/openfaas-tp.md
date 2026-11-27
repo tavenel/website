@@ -3,7 +3,7 @@ license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
 title: λ TP OpenFaaS
 type: cours
 sidebar:
-  order: 800
+  order: 10
 description: λ TP OpenFaaS
 ---
 

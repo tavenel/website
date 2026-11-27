@@ -1,7 +1,13 @@
 ---
 license: © 2026 Tom Avenel under 󰵫  BY-SA 4.0
-title: λ TP Noté - Déploiement d'une application serverless complète avec OpenFaaS
-date: 2025 / 2026
+title: λ TP Noté
+tags:
+  - serverless
+  - openfaas
+type: projet
+sidebar:
+  order: 100
+description: Déploiement d'une application serverless complète avec OpenFaaS
 ---
 
 ## 🎯 Objectifs pédagogiques
