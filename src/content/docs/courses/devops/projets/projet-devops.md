@@ -123,7 +123,7 @@ Un environnement de type Cloud peut contenir de nombreux éléments, générant 
 
 Pour faciliter ce travail, on mettra en place un système de logging centralisé : stack ELK, …
 
-Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dans un cas réel, car il devient vite compliqué de suivre la requête d'un client depuis le reverse proxy à l'entrée du datacenter, jusqu'aux différents services applicatifs et techniques. En pratique, on utilise donc également des outils de tracing qui permettent de suivre précisément une requête à travers tous les composants déployés : `zipkin`, `OpenTelemetry`, … On ne demande pas de mettre en place ce service de tracing dans ce projet.
+Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dans un cas réel, car il devient vite compliqué de suivre la requête d'un client depuis le reverse proxy à l'entrée du datacenter, jusqu'aux différents services applicatifs et techniques. En pratique, on utilise donc également des outils de tracing qui permettent de suivre précisément une requête à travers tous les composants déployés : `zipkin`, `OpenTelemetry`, …
 
 ## 💡 Conseils
 
@@ -200,10 +200,11 @@ Si ce travail est nécessaire en 1e approche, ce n'est souvent pas suffisant dan
 - Utiliser `cAdvisor` pour surveiller les conteneurs.
 - Créer un dashboard avec les 4 signaux SRE : **Latence**, **Trafic**, **Erreurs**, **Saturation**
 
-### Étape 9 – Centralisation des logs (bonus)
+### Étape 9 – Centralisation des logs et traces
 
 - Déployer une stack de **logging centralisé** : ELK ou (plus léger) Loki.
 - Permettre la recherche de logs par service, par date, par niveau de gravité.
+- Mettre en place un framework de traces, par exemple `OpenTelemetry` dans chacun des composants
 
 ## 📦 Livrables attendus
 
